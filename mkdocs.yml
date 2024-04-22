@@ -1,0 +1,45 @@
+site_name: Verge.io Documentation
+site_url: https://docs.verge.io/
+repo_url: https://github.com/vergedocs/docs
+repo_name: vergedocs/docs
+edit_uri: edit/develop/docs/
+
+theme:
+  name: material
+  features:
+    - navigaation.tabs
+    - navigaation.sections
+    - toc.integrate
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+  language: en
+  palette:
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: grey
+      accent: deep orange
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+    # Palette toggle for light mode
+    - scheme: default
+      primary: grey
+      accent: deep orange
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  
+nav:
+  - Introduction:
+    - Welcome: index.md
+  - Implementation Guide:
+    - Introduction: implementation-guide/introduction.md
+    - Design Architechtures: implementation-guide/architechture.md
