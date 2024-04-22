@@ -7,8 +7,8 @@ edit_uri: edit/develop/docs/
 theme:
   name: material
   features:
-    - navigaation.tabs
-    - navigaation.sections
+    - navigation.tabs
+    - navigation.sections
     - toc.integrate
     - navigation.top
     - search.suggest
@@ -36,9 +36,31 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
-  
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.snippets:
+  - pymdownx.arithmatex:
+      generic: true
+  - footnotes
+  - pymdownx.mark
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+extra:
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/VergeIO_Inc
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/verge-io/
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/channel/UCnFu28s0GBVi18j7Ez3MXRg
+copyright: |
+  &copy; 2021 <a href="https://verge.io" target="_blank" rel="noopener"> Verge.io</a>
+
 nav:
-  - Introduction:
+  - Home:
     - Welcome: index.md
   - Implementation Guide:
     - Introduction: implementation-guide/introduction.md
