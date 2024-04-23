@@ -9,7 +9,7 @@ theme:
   features:
     - navigation.tabs
     - navigation.sections
-    - toc.integrate
+    #- toc.integrate
     - navigation.top
     - search.suggest
     - search.highlight
@@ -64,4 +64,6 @@ nav:
     - Welcome: index.md
   - Implementation Guide:
     - Introduction: implementation-guide/introduction.md
-    - Design Architechtures: implementation-guide/architechture.md
+    - Design Architechtures:
+      - Key Terms / Glossary: implementation-guide/glossary.md
+      - Basic Cluster Design: implementation-guide/basic-cluster-design.md
