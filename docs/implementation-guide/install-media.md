@@ -66,23 +66,18 @@
 !!! warning "This USB drive **will be overwritten**."
 
 
-3.  Using Mint’s file browser, navigate to the location **of the downloaded ISO**
-1.  **Right-click** on the ISO and choose ‘**Make bootable USB stick**’
-1.  As USB Image Writer loads, select the **USB media to write the installation file to.**
-1.  As a security measure, Linux will prompt you to supply an admin password
-1.  Click **Authenticate** to begin writing the installation to USB
-1.  Wait while the installation is written to USB.
-1.  When finished this message will appear.
+1.  Using Mint’s file browser, navigate to the location **of the downloaded ISO**
+2.  **Right-click** on the ISO and choose ‘**Make bootable USB stick**’
+![](https://lh4.googleusercontent.com/egCzLNxDVrhoKnZh_cJ4YgVX9BypXA3-ZyasjsjVN-pJ37He6SG0VrFHilCDzx34J_tQ6ioy2IyqUbH5DYK7chPdQIILI0wZqkQo2-daZiSBYd3AwKnpj8ujrrWoIjiDiQIQVa6HnlH_gs9QrtFgjw)
+3.  As USB Image Writer loads, select the **USB media to write the installation file to.**
+![](https://lh4.googleusercontent.com/xygTF3JRWMBGQOHO7ShLn6VMROo2W5AezO7bmMQRWOXaU6r-5smG8BdZc-BBY8PgVQpylOXE2kbWuDuGXWCQNuyFRvPFvdyyhV4x76_h_TlS9a92f49r3nlrxH4ZGv-A3Xpm8-oJVZgPd7xClexvfA)
+4.  As a security measure, Linux will prompt you to supply an admin password
+5.  Click **Authenticate** to begin writing the installation to USB
+6.  Wait while the installation is written to USB.
+7.  When finished this message will appear.
 
 ![](https://lh6.googleusercontent.com/0-nr7O3NXfg-9xYnInAM9gYIwyY6EPYVIPH8xDnK8znxpwxbtRQ4dmJs9bUpLKwUoX-nJnJ15XM27V0QW6gpvaG74IUIaEk_TrYnRAtn-fE2J1R4YkzCZYr4zBU2U7Tljjgj64aAXsZP60be_QKVRw)
 
-![](https://lh5.googleusercontent.com/XYNhvshwic0BqgfnCJFOBWQ6PrPLM3R4IcogH8mSJh-Bk5GvRG5uepdcBoda8d7yq04bP2zBQ8KnbNRwxTr-HG7jOjEoFcSI0_85rCfso9g17MqY32HA_wAVipmhCvAPVFpatUZS5Pyli0_cOqn01w)
-
-![](https://lh4.googleusercontent.com/mBduduMcSOAN04aXExClKSrBJMOldme7K48ZateZ0Kno4rZQGiHqLJy-I-P5pxea_RVB8CGyHGGH4rXRQdOIwcIDgc_WeQSmO6C1FPSTGGo-58fdCczL6QePKaB-_AaN9sufuq5BW4JGcdbqXUgAww)
-
-![](https://lh4.googleusercontent.com/xygTF3JRWMBGQOHO7ShLn6VMROo2W5AezO7bmMQRWOXaU6r-5smG8BdZc-BBY8PgVQpylOXE2kbWuDuGXWCQNuyFRvPFvdyyhV4x76_h_TlS9a92f49r3nlrxH4ZGv-A3Xpm8-oJVZgPd7xClexvfA)
-
-![](https://lh4.googleusercontent.com/egCzLNxDVrhoKnZh_cJ4YgVX9BypXA3-ZyasjsjVN-pJ37He6SG0VrFHilCDzx34J_tQ6ioy2IyqUbH5DYK7chPdQIILI0wZqkQo2-daZiSBYd3AwKnpj8ujrrWoIjiDiQIQVa6HnlH_gs9QrtFgjw)
 
 
 <br>

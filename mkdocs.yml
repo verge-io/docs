@@ -8,6 +8,7 @@ edit_uri: edit/develop/docs/
 theme:
   name: material
   logo: assets/logo.svg
+  favicon: assets/logo-noname.png
   features:
     - navigation.tabs
     - navigation.sections
