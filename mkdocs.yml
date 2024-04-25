@@ -78,3 +78,5 @@ nav:
       - Key Terms / Glossary: implementation-guide/glossary.md
       - Basic Cluster Design: implementation-guide/basic-cluster-design.md
       - Advanced Cluster Design: implementation-guide/advanced-cluster-design.md
+      - Network Design: implementation-guide/network-design.md
+      - Memory / RAM Considerations: implementation-guide/ram-design.md
