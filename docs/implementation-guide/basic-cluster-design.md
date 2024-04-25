@@ -49,3 +49,56 @@ In a 2 node configuration, cross-connecting the nodes is the quickest/easiest wa
 - **External Network:** 2x 1Gb or greater
 - **IPMI (Management):** 1x 1Gb or greater
 - **PXE (Management):** Network: 1x 1Gb or greater
+
+### Example Cluster Scale-Out 
+
+When **Scaling out** a cluster you can add a minimum of 1 additional node at a time.
+
+
+**Additional nodes beyond the first two nodes** in a system **do not require Tier 0** storage.
+
+<br>
+
+
+![VergeIO Cluster Example](../assets/1u.png){align=left}
+
+| **Example Scale Out Nodes** |
+|------------------------|
+| 1U – 8x SATA/SAS + 2x NVMe Chassis |
+| Intel Xeon or AMD EPYC Processor |
+| (8x) 32GB DDR4 ECC RDIMM |
+| ~~**(2x) 800 GB PCIe NVMe**~~ ***(Not Used)*** |
+| (4x) 3.84TB SATA 6.0Gb/SSD |
+| 25-Gigabit Ethernet Adapter (2x SFP28) |
+| 10-Gigabit Ethernet Network (2x RJ45) |
+| On-Board IPMI |
+| On-Board Dual 1 GBE Port |
+| Redundant Power Supplies |
+
+<br>
+
+
+### Example Cluster Scale-Up
+![VergeIO Cluster Example](../assets/3.png)
+
+**Scale-Up Example:**
+
+The chassis has 4 available drive bays for additional SSDs.
+
+-   1U – 8x SATA/SAS + 2x NVMe Chassis
+-   **(4x) 3.84TB SATA 6.0Gb/s SSD**
+
+**All** nodes will have **4 additional drives added** thus expanding the available tier space in the cluster.
+
+**No downtime** is required for this operation. Data on the storage tier will rebalance automatically as a background process.
+
+!!! warning "When adding more drives to an existing tier ensure that the drives are the same endurance and size as the existing drives in that tier"
+
+<br>
+
+### Additional Requirements
+For more detailed cluster designs visit the [Advanced Cluster Design Module](advanced-cluster-design.md).
+
+<br>
+
+!!! note "Need more Help? Email <a href="mailto:support@verge.io?subject=Support Inquiry" target="_blank" rel="noopener noreferrer">support@verge.io</a> or call us at <a href="tel:+855-855-8300">(855) 855-8300</a>"
