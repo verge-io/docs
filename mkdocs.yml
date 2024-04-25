@@ -1,11 +1,13 @@
-site_name: Verge.io Documentation
+site_name: Documentation
 site_url: https://docs.verge.io/
 repo_url: https://github.com/vergedocs/docs
 repo_name: vergedocs/docs
 edit_uri: edit/develop/docs/
 
+
 theme:
   name: material
+  logo: assets/logo.svg
   features:
     - navigation.tabs
     - navigation.sections
