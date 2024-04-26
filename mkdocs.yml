@@ -87,4 +87,6 @@ nav:
       - Key Terms / Glossary: implementation-guide/pre-installation.md
       - Checklist: implementation-guide/pre-install-checklist.md
       - Bootable Media: implementation-guide/install-media.md
+    - vergeOS Installtion:
+      - Key Terms / Glossary: implementation-guide/installation.md
 
