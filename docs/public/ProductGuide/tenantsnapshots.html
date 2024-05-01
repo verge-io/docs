@@ -1,0 +1,53 @@
+<!--
+title: Product Guide - Tenant Snapshots
+description: Information/instructions for tenants to access and restore from provider snapshots
+published: false
+date: 2023-04-07T14:44:01.492Z
+tags: 
+editor: ckeditor
+dateCreated: 2023-04-07T14:44:01.492Z
+-->
+
+<h1>Tenant Snapshots</h1>
+<p>Snapshots provide a way to obtain quick recovery points. Cloud snapshots allow for a complete rollback of a system (to the point in time of a snapshot) to protect in the event of major unforeseen issues that may arise. A cloud snapshot includes whole-system snapshots for each tenant as well. A tenant can be allowed (a per-tenant setting) to browse a listing of available provider snapshots and “self-serve” download selected timestamps to restore their entire system or individual VMs.</p>
+<p><i>Tenants also have the ability to manage their own Verge.io snapshots within their system; this can allow a tenant to customize scheduling/retention as they wish. (Note: Tenant will need adequate provisioned storage to retain snapshots.)</i></p>
+<h2>How To Quick Reference</h2>
+<h3>To Allow Tenant to Browse/Restore from Provider Snapshots:</h3>
+<ol>
+  <li>From the Main Dashboard, click <strong>Tenants</strong>.</li>
+  <li>The <strong>Tenants Listing</strong> will appear. <strong>Double-click the desired tenant</strong>.</li>
+  <li>Click <strong>Edit</strong> on the left menu.</li>
+  <li>Enable the <i><strong>Expose Cloud Snapshots</strong></i> (check box) option.</li>
+  <li>Click <strong>Submit</strong>.</li>
+</ol>
+<h3>Instructions for the Tenant to Access their Data from Provider Snapshots</h3>
+<ol>
+  <li>From the Main Dashboard, click <strong>System</strong> on the left menu.</li>
+  <li>Click <strong>Cloud Snapshots</strong> on the left menu.</li>
+  <li><strong>Select the desired provider snapshot from the list of available timestamps.</strong>
+    <ul>
+      <li>Snapshots from the service provider will have a type = “Provider”.</li>
+      <li>Snapshots taken by the tenant will show a type of “Local”.</li>
+      <li>Notice the Created Date/Time column to aid in selecting the correct snapshot.</li>
+    </ul>
+  </li>
+  <li>Click <strong>Request From Provider</strong> on the left menu.</li>
+</ol>
+<h3>Instructions for the Tenant to Restore their Entire System from the Provider Snapshot</h3>
+<ol>
+  <li><strong>Select</strong> the <strong>snapshot</strong>.</li>
+  <li>Click <strong>Restore</strong> on the left menu.</li>
+  <li>By default, the option is selected to <strong>take a snapshot of the entire cloud before this restore</strong>. This allows for later reverting the cloud back to the state right before the restore operation, if needed.</li>
+  <li>By default, the option to <strong>Reboot all nodes</strong> after the restore is enabled. This will let the system handle the node reboots (Recommended). Reboot is necessary to actually apply the restore.</li>
+  <li>Click the <strong>Proceed</strong> button to continue/ or <strong>Cancel to abort</strong>.</li>
+  <li>Another confirmation message will appear; to continue with the cloud restore, click the <strong>Proceed</strong> button or leave alone as the restore operation will continue in 60 seconds unless canceled.<br><strong>To Cancel the operation, the Cancel button must be clicked within 60 seconds; otherwise, the restore operation will automatically continue!</strong></li>
+</ol>
+<h3>Instructions for the Tenant to Recover Individual VMs from Provider Snapshot</h3>
+<ol>
+  <li><strong>Select the snapshot</strong>.</li>
+  <li>Click <strong>View VMs</strong> on the left menu.</li>
+  <li>A <strong>listing of the individual VMs</strong> included in the snapshot appears. <strong>Select a VM</strong> to restore.</li>
+  <li>Click <strong>Recover</strong> on the left menu.</li>
+  <li>The <i><strong>VM Name</strong></i> will default to the original name, but can be changed.<br><strong>Note:</strong> To recover a deleted VM, this name can be left the same. However, if there currently is a VM with the same name (e.g. the original VM still exists,) the VM name will need to be changed before it can be recovered.</li>
+  <li>Click <strong>Submit</strong>.</li>
+</ol>

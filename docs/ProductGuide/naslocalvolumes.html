@@ -1,0 +1,41 @@
+<!--
+title: Product Guide - NAS Local Volumes
+description: Explanation of local volumes and instructions to create a new local volume
+published: false
+date: 2023-03-29T00:09:06.773Z
+tags: 
+editor: ckeditor
+dateCreated: 2023-03-29T00:09:06.773Z
+-->
+
+<h1>Local Volumes</h1>
+<p>Local Volumes are file systems stored within Verge.io, consuming storage in the Verge.io vSAN. Each local Volume can have different sharing, syncing, tiering, and permission settings.</p>
+<p><i>Note: A NAS Service must be in place before creating Volumes. See </i><a href="https://yottadoc.ro.verge.io/#help?id=nas-service"><i>NAS Service</i></a><i> page for NAS Service instructions.</i></p>
+<h3>Create a Local Volume</h3>
+<ol>
+  <li>From the Cloud Dashboard, select <strong>NAS</strong> from the left menu.</li>
+  <li>Select <strong>Volumes</strong> from the left menu.</li>
+  <li>Select <strong>New</strong> from the left menu.</li>
+  <li>Select the appropriate <i><strong>NAS Service</strong></i> from the dropdown list.</li>
+  <li>Enter a <i><strong>Name</strong></i> for the Volume (required). Note: spaces are not permitted.</li>
+  <li>Enter a <i><strong>Description</strong></i> for the Volume (optional).</li>
+  <li>In the <i><strong>Filesystem Type</strong></i> dropdown list, select <strong>Local Volume (EXT4)</strong>.</li>
+  <li>The <i><strong>Encrypt Volume</strong></i> option can be selected to encrypt the entire volume (AES-XTS).<ul>
+      <li>Encryption selection is only made when creating; Volume cannot be changed from encrypted to unencrypted or vice-versa after creation.</li>
+      <li>Minor to moderate performance implications are involved with enabling Volume encryption.</li>
+      <li>It is crucial to remember the encryption key defined when creating the volume; this encryption key must be entered each time the Volume is brought online (e.g. after disabling/enabling a Volume or after its NAS service is rebooted, etc.) <strong>Without the encryption key, it will not be possible to bring the Volume online!</strong></li>
+    </ul>
+  </li>
+  <li>Specify a <i><strong>Max Size</strong></i> for the Volume, by entering an integer and selecting the unit (B/KB/MB/GB/TB). (When Max size is reached, the volume will show out of space and will continue to be readable, but will not allow further writes.)</li>
+  <li>The <i><strong>Discard</strong></i> option is enabled by default. When Discard enabled: as data is deleted from the volume, that space is reclaimed back to the vSAN.</li>
+  <li>The Volume can optionally be set to <strong>Read Only</strong>.</li>
+  <li>The <i><strong>Automatically Mount Snapshots</strong></i> option can be selected to make snapshots readily available for browsing/file restores.</li>
+  <li>Specify <i><strong>Owner</strong></i> for the volume directory (optional).</li>
+  <li>Specify a <i><strong>Group</strong></i> for Volume directory (optional).</li>
+  <li>Select a <i><strong>Snapshot Profile</strong></i> for the Volume (optional). See <a href="https://yottadoc.ro.verge.io/#help?id=snapshots-profiles">Snapshot Profiles</a> page for information regarding Snapshot Profiles.</li>
+  <li>Select <i><strong>Preferred Tier</strong></i> for storing this Volume. Preferred tier is the tier first attempted. See the <a href="https://yottadoc.ro.verge.io/#help?id=vsan-preferred-tier">Preferred Tiers</a> page for more information.</li>
+  <li>Click <strong>Submit</strong> to save the settings and create the Local Volume.</li>
+  <li>The Dashboard for the new Local Volume is displayed. It may take a few minutes for the new Volume to come online. If the Volume Status does not become Online, refer to the logs section (bottom of Dashboard) to view error messages for troubleshooting.</li>
+  <li>Files in the online Volume can be viewed using the <strong>Browse</strong> option from the left menu.</li>
+  <li>To expose the local Volume, create CIFS and/or NFS <a href="https://yottadoc.ro.verge.io/#help?id=nas-shares">Share(s)</a>.</li>
+</ol>

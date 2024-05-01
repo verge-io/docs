@@ -1,0 +1,63 @@
+<!--
+title: Product Guide - NAS Volume Snapshots and Restores
+description: Provides instructions to use the NAS volume snapshot feature to obtain quiesced backup of individual NAS volumes (manually or scheduled); also gives instructions for restoring NAS volume snapshots to create a new volume or overwrite the existing volume.
+published: false
+date: 2023-04-06T00:19:51.329Z
+tags: 
+editor: ckeditor
+dateCreated: 2023-04-05T19:45:40.101Z
+-->
+
+<h1>NAS Volume Snapshots and Restores</h1>
+<p>Volume-level snapshots allow for customizing snapshot schedule and retention rules per individual NAS volume and provide the option for a quiesced snapshot. (Non-quiesced NAS volumes can be imported from cloud snapshots to be used for restore.)</p>
+<h2>Quiesced Snapshots</h2>
+<p>Quiesced volume snapshots freeze file system I/O during the snapshot process. The Quiesce option can be selected when taking a manual volume snapshot and can be enabled within the snapshot profile for automated snapshots.</p>
+<h2>Scheduling Volume Snapshots</h2>
+<h3>Assign a Snapshot Profile to a Volume</h3>
+<ol>
+  <li>From the Volume dashboard, click <strong>Edit</strong> on the left menu.</li>
+  <li>In the <i><strong>Snapshot profile</strong></i> field, select the desired profile from the dropdown list.</li>
+  <li>Click <strong>Submit</strong> at the bottom of the page.</li>
+</ol>
+<h2>Manual Volume Snapshots</h2>
+<h3>Take a Manual Snapshot of a Volume</h3>
+<ol>
+  <li>From the volume dashboard, click <strong>Take Snapshot</strong> on the left menu.</li>
+  <li>Enter a <i><strong>Name</strong></i> for the snapshot (required).</li>
+  <li>Enter a <i><strong>Description</strong></i> (optional).</li>
+  <li>The <i><strong>Quiesce</strong></i> option can be selected to freeze I/O during the snapshot process.</li>
+  <li>In the <i><strong>Expires</strong></i> field, select/enter a date and time for expiration.</li>
+  <li>Click <strong>Submit</strong> at the bottom of the page.</li>
+</ol>
+<h2>Restoring a Volume from Snapshot</h2>
+<p><i>Note: Individual volumes can be restored from cloud snapshots. The volume snapshot must first be imported from the cloud snapshot as detailed below. To restore from an individual volume snapshot, skip the import section of instructions and continue to <strong>Restore to overwrite -Or- Restore to create new instructions</strong></i></p>
+<h3><i>Import Volume Snapshot from a Cloud Snapshot (to make it available for a volume restore).</i></h3>
+<ol>
+  <li><i>From the volume dashboard, click <strong>Cloud Snapshots</strong> on the left menu.</i></li>
+  <li><i>Click to <strong>select desired cloud snapshot</strong>.</i></li>
+  <li><i>Click <strong>Import Snapshot</strong> on the left menu.</i></li>
+  <li><i><strong>Name, Description and Expiration fields</strong> will default to the values from the cloud snapshot; make changes if desired; changes made will only apply to the import and will not affect the underlying cloud snapshot.</i></li>
+  <li><i>Click <strong>Submit</strong> to continue.</i></li>
+  <li><i>(If the process was continued,) a message should appear stating the import process has begun. Click the <strong>Ok</strong> button to acknowledge.</i></li>
+  <li><i>When the import is complete, the snapshot will be available for restore using instructions below.</i></li>
+</ol>
+<h3><i>Restore a Volume (to overwrite existing current version of volume)</i></h3>
+<ol>
+  <li><i>From the volume dashboard, click <strong>Snapshots</strong> on the left menu.</i></li>
+  <li><i>A listing of available snapshots is displayed. Click to <strong>select the desired snapshot</strong>.</i></li>
+  <li><i>Select <strong>Restore over Source</strong> from the left menu.</i></li>
+  <li><i>A Warning message will appear to caution that this will overwrite the existing volume and all of its data.</i></li>
+</ol>
+<p><i>By default, <strong>Restore Data Only</strong> is selected; this option will restore over data within the volume, but not modify any current volume settings. The alternate option: <strong>Restore Data and Settings</strong> will both restore over volume data and will replace volume settings with those in the snapshot.</i></p>
+<ol>
+  <li><i>Click the <strong>Proceed</strong> button to continue/ or <strong>Cancel</strong> to abort.</i></li>
+</ol>
+<h3><i>Restore a Volume (to create a new volume)</i></h3>
+<ol>
+  <li><i>From the volume dashboard, click <strong>Snapshots</strong> on the left menu.</i></li>
+  <li><i>A listing of available snapshots is displayed. Click to <strong>select the desired snapshot</strong>.</i></li>
+  <li><i>Click <strong>Restore To New</strong> on the left menu.</i></li>
+  <li><i>The <strong>Destination Service VM</strong> defaults to the NAS service of the source volume; if multiple NAS services exist on the system, a different service can be selected on which to restore the volume.</i></li>
+  <li><i>The <strong>Volume Name</strong> (for the new volume instance) will default to ORIGINALVOLUMENAME_restored; change name if desired.</i></li>
+  <li><i>Click the <strong>Submit</strong> button to create the new volume from snapshot.</i></li>
+</ol>

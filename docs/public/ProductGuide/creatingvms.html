@@ -1,0 +1,70 @@
+<!--
+title: Product Guide - Creating Virtual Machines (VMs)
+description: Description of the 4 different methods of creating a VM (custom, from recipe, import, clone) ; general instructions for custom, recipe and clone methods
+published: false
+date: 2023-04-08T00:27:35.821Z
+tags: 
+editor: ckeditor
+dateCreated: 2023-04-08T00:27:35.821Z
+-->
+
+<h1>Creating Virtual Machines (VMs)</h1>
+<p>There are multiple methods to Create a VM in Verge.io:</p>
+<ul>
+  <li><a href="https://support.yottabyte.com/#help?id=vms-creating&amp;bookmark=custom"><strong>Create a Custom VM</strong></a> ------- A blank custom VM is created without drives or NICs. (Drives and NICs can be added after VM creation.) A guest operating system can be installed by adding a CD-ROM device with media file set to a bootable install ISO or adding an import disk that has OS installed. See <a href="https://support.yottabyte.com/#help?id=vms-drives">VM Drives</a> and <a href="https://support.yottabyte.com/#help?id=vms-nics">VM NICs</a> for help in adding drives/NICs.</li>
+  <li><a href="https://support.yottabyte.com/#help?id=vms-creating&amp;bookmark=recipe"><strong>Create a VM from a Recipe</strong></a> ------- The VM is created using a predefined recipe; recipes are VM image templates that allow quick launching of new VMs with a preloaded operating systems, applications, configuration info., etc. Recipes allow for very quick and convenient launching of new instances of machines with various preloaded software and configurations. Recipes can contain questions to be asked at the time of creation to customize each instance (such as drive sizes or RAM amount). Some service-VM recipes are included in your Verge.io installation; your Service Provider may also provide recipes. Every Verge.io Cloud can create and use their own local recipes as well.</li>
+  <li><a href="https://support.yottabyte.com/#help?id=vms-importing"><strong>Import</strong></a> ------- VM created from a standard format configuration file (e.g. OVF, VMX, XML, etc) with associated drives created from disk image files, such as *.VMDK. See <a href="https://support.yottabyte.com/#help?id=vms-importing">Importing VMs</a></li>
+  <li><a href="https://support.yottabyte.com/#help?id=vms-creating&amp;bookmark=clone"><strong>Create a VM from a Clone</strong></a> ------- A new VM instance is launched as a copy of an existing VM. A clone, by default, will be given different MAC address(es) than the original VM allowing the clone to run in the same network as the original VM without causing an IP conflict; optionally, MAC addresses can be preserved when needed.</li>
+</ul>
+<h2>Best Practices</h2>
+<p><strong>Review&nbsp;</strong></p>
+<p><a href="https://support.yottabyte.com/#help?id=vms-best-practices"><strong>VM Best Practices</strong></a></p>
+<p><strong>&nbsp;for important considerations and recommendations regarding creating VMs.</strong></p>
+<h2>How To Quick Reference</h2>
+<p><br>&nbsp;</p>
+<h3>Create a new Custom VM</h3>
+<ol>
+  <li>From the Cloud Dashboard, click <strong>Machines</strong> on the left menu.</li>
+  <li>Click <strong>Virtual Machines</strong> from the menu or click the Virtual Machines quick-link on the dashboard.</li>
+  <li>Click <strong>New</strong> from the left menu.</li>
+  <li>From the options list on the left, select <strong>-- Custom --</strong>.<ul>
+      <li><i>"Custom VM" will now display under the selection area on the right and will be the selected item.</i></li>
+    </ul>
+  </li>
+  <li>Click <strong>Next</strong> (bottom of the screen).</li>
+  <li>Enter/select fields as appropriate for the desired VM. See <a href="https://support.yottabyte.com/#help?id=vms-field-desc">VM Field Descriptions</a> for further information.</li>
+  <li>When fields are completed, click <strong>Submit</strong>.</li>
+  <li>A message should appear indicating the VM was created successfully and stating drives and NICS can now be created for the VM. Click Ok to see the Dashboard page for the VM.</li>
+  <li>Add drives to the VM as needed. See <a href="https://support.yottabyte.com/#help?id=vms-drives">Virtual Machine Drives</a> for instructions.</li>
+  <li>Add NICs to the VM as needed. See <a href="https://support.yottabyte.com/#help?id=vms-nics">Virtual Machine NICs</a> for instructions.</li>
+</ol>
+<h3>Create a VM from a Recipe</h3>
+<ol>
+  <li>From the Cloud Dashboard, select <strong>Machines</strong> from the menu or click the Machines quick-link on the dashboard.</li>
+  <li>Click <strong>Virtual Machines</strong> from the menu or click the Virtual Machines quick-link on the dashboard.</li>
+  <li>Click <strong>New</strong> from the left menu.</li>
+  <li>A list of Available Catalogs displays at the top of the Options list on the <strong>left</strong>. <i><strong>Select a Catalog</strong></i> from the list.</li>
+  <li><strong>Select the desired recipe</strong> from the <i><strong>Selections Available</strong></i> list on the <strong>right</strong>.</li>
+  <li>Click <strong>Next</strong> (bottom of the screen).</li>
+  <li>Enter/select fields as appropriate for the desired VM. Specific entry fields will vary per recipe; See <a href="https://support.yottabyte.com/#help?id=vms-field-desc">VM Field Descriptions</a> or consult with the Service Provider/ recipe publisher for more information regarding specific entry fields for a recipe</li>
+  <li>When fields are completed, click <strong>Submit</strong>.</li>
+  <li>A message should appear indicating the VM was created successfully and stating drives and NICS can now be created for the VM. Click <i><strong>Ok</strong></i> to see the Dashboard page for the VM.</li>
+  <li>Typically, VM drive(s) and NIC(s) will be included in the VM recipe. Additional drives and NICs can be added to the VM as needed: see <a href="https://support.yottabyte.com/#help?id=vms-drives">Virtual Machine Drives</a> and <a href="https://support.yottabyte.com/#help?id=vms-nics">Virtual Machine NICs</a> for instructions.</li>
+</ol>
+<h3>Importing VMs</h3>
+<h3>Create a VM from a Clone</h3>
+<ol>
+  <li>From the Cloud Dashboard, select <strong>Machines</strong> from the menu or click the Machines quick-link on the dashboard.</li>
+  <li>Click <strong>Virtual Machines</strong> from the menu or click the Virtual Machines quick-link on the dashboard.</li>
+  <li>Click <strong>New</strong> from the left menu.</li>
+  <li>Select <strong>--Clone-- </strong>from the Options list on the left. The Selection list on the right will now be populated with <strong>a list of all existing VMs</strong>.</li>
+  <li><strong>Select the VM to clone</strong> from the Selections Available list (on the right),</li>
+  <li>Click <strong>Next</strong> (bottom of page).</li>
+  <li>The <i><strong>VM Name</strong></i> will default to the original VM Name + "clone"; however, <strong>the name can be changed</strong> as desired.</li>
+  <li>By default, the new clone instance will employ unique MAC address(es) that are different from the source VM (for all NIC devices). <strong>"Preserve MAC Addresses"</strong> option can be enabled in order to copy MAC addresses from the original VM to the new clone instance; however, this option should be used with caution as NICs with duplicate addresses running on the same network will cause problems.</li>
+  <li><i><strong>Preserve Device UUIDs</strong></i> can be checked to create the clone with same UUIDs as the original. VMs running with the same UUIDs may cause problems. Use this option only if required.</li>
+  <li><i><strong>Quiesce File System</strong></i> provides for an application-consistent clone of a VM that is in a running state. <strong>(Verge.io Guest Agent must be installed and running on the VM.)</strong><br>When the option is selected: if the source VM is running the file system is put into a state suitable for backups (i.e. notify VSS-aware applications, freeze filesystem. flush buffers, etc.)</li>
+  <li>Click <strong>Submit.</strong></li>
+  <li>A message should appear indicating the VM was created successfully and stating drives and NICS can now be created for the VM. Click <strong>Ok</strong> to see the Dashboard page for the VM.</li>
+  <li>VM drive(s) and NIC(s) from the original VM will automatically carry over to the cloned VM. Additional drives and NICs can be added to the VM as needed: see <a href="https://support.yottabyte.com/#help?id=vms-drives">Virtual Machine Drives</a> and <a href="https://support.yottabyte.com/#help?id=vms-nics">Virtual Machine NICs</a> for instructions.</li>
+</ol>

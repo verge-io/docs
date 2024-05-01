@@ -1,0 +1,65 @@
+<!--
+title: Product Guide - Drive Replacement
+description: Instructions for replacing a (defective or end-of-life) vsan-participating drive
+published: false
+date: 2023-03-10T19:38:57.974Z
+tags: 
+editor: ckeditor
+dateCreated: 2023-03-10T19:38:57.974Z
+-->
+
+<h1>Replacing a Defective or End-of-life Drive</h1>
+<p>This page covers replacing a drive (participating in the vSAN) due to defect or end of lifespan. Expedient replacement of problem drives is crucial to maintaining vSAN data protection.</p>
+<h2>When Does a Drive Need to be Replaced?</h2>
+<p>The Verge interface will provide warnings or alerts to indicate when there is a problem with a physical drive. When a drive has a warning or error status, an indicator will "bubble up" to the System dashboard Page (To access the System dashboard: from the main dashboard, select System on the left menu.)</p>
+<figure class="image"><img src="https://yottadoc.ro.verge.io/help/sshots/drivecountbox.png"></figure>
+<p>Click anywhere within the drive count box to access the full list of drives.</p>
+<p>Double-click a drive with an error/warning to view its dashboard that displays more detail.</p>
+<figure class="image"><img src="https://yottadoc.ro.verge.io/help/sshots/drivelisting-warning.png"></figure>
+<figure class="image"><img src="https://yottadoc.ro.verge.io/help/sshots/drivedashboard.png"></figure>
+<h4>Example Warning/Error Statuses</h4>
+<ul>
+  <li>Warning - Wear level exceeded maximum threshold(s)</li>
+  <li>Warning - Reallocated sectors exceeded maximum threshold(s)</li>
+  <li>Error - Drive is unresponsive; read or write error threshold reached</li>
+</ul>
+<p><i><strong>It is highly recommended to configure on-demand and scheduled subscriptions (with target type=System Dashboard) to ensure timely awareness of drive issues.</strong> </i><a href="https://yottadoc.ro.verge.io/#help?id=subscriptions-overview"><i>Go here for information on setting up subscriptions.</i></a></p>
+<h3>Determining the Correct Physical Drive for Replacement</h3>
+<ol>
+  <li>Navigate to the <strong>node dashboard</strong>.</li>
+  <li><strong>Activate</strong> the drive <strong>LED</strong></li>
+</ol>
+<h4>If <i><strong>LED Status</strong></i> indicates <strong>Off</strong>, click <strong>Turn on LED</strong> on the left menu.</h4>
+<figure class="image"><img src="https://yottadoc.ro.verge.io/help/sshots/LEDoff.png"></figure>
+<h4>If <i><strong>LED Status</strong></i> field indicates <strong>Unsupported</strong>, click <strong>Locate LED</strong> on the left menu.</h4>
+<figure class="image"><img src="https://yottadoc.ro.verge.io/help/sshots/LEDunsupported.png"></figure>
+<ol>
+  <li>The Diagnostics window will appear with settings pre-filled.Click <strong>Send -&gt;</strong> to activate the drive LED .</li>
+  <li>Once the LED is activated, the physical drive can be located by identifying the one with a solid light. After identifying the drive, <strong>deactivate the LED</strong>:</li>
+</ol>
+<h3>To Replace the Drive</h3>
+<ul>
+  <li>all nodes are operational (none are powered off or in maintenance mode)</li>
+  <li>no other drive repairs are in process on a different node (for the same storage tier) Drive repairs running on the same physical node pose no problem.</li>
+  <li>the correct physical drive is confidently identified before removal (See directions above.)</li>
+</ul>
+<ol>
+  <li>From the node dashboard, click <strong>Drives</strong>.</li>
+  <li>Click to <strong>select the particular drive</strong> (Selected drive shows a check mark on the left.)</li>
+  <li>Click <strong>Close/Take Offline</strong> on the left menu.</li>
+  <li>When the drive status appears as <strong>Offline:</strong></li>
+</ol>
+<p><strong>physically remove the drive - being extremely careful to remove the correct drive.</strong></p>
+<ol>
+  <li>Verify the UI reflects the drive is missing to verify that the proper drive was removed.</li>
+  <li><strong>Insert the replacement drive</strong>.</li>
+  <li><strong>Wait</strong> for the drive to be detected; the dashboard will show the drive as <strong>Offline</strong>.</li>
+  <li>Click <strong>Format</strong> on the left menu.</li>
+  <li>Wait until the dashboard no longer indicates the disk is formatting.</li>
+  <li>Click <strong>Initialize</strong> on the left menu.<ul>
+      <li><strong>During a drive repair operation, nodes should not be reset or powered off; it is important that all other nodes remain fully operational during the repair process.</strong></li>
+      <li><strong>Additional drive replace/repair operations should NOT be initiated until this repair operation has fully completed, unless the additional drive resides: within the same node - OR - on another storage tier.</strong></li>
+    </ul>
+  </li>
+</ol>
+<figure class="image"><img src="https://yottadoc.ro.verge.io/help/sshots/diag-LEDON.png"></figure>

@@ -1,0 +1,46 @@
+<!--
+title: Product Guide - Using Google for Authentication
+description: Configuration instructions for using Google for VergeIO user authentication
+published: false
+date: 2023-03-23T15:21:04.247Z
+tags: 
+editor: ckeditor
+dateCreated: 2023-03-23T15:18:25.974Z
+-->
+
+<h1>Using Google Authorization</h1>
+<h3>&nbsp;</h3>
+<h3>To Configure a Google Authorization Source</h3>
+<ol>
+  <li>Obtain <strong>Client ID</strong> and <strong>Client Secret</strong> from the Google system. These values should be generated based on the public URL of the VergeIO system. See Google documentation for instructions, such as <a href="https://developers.google.com/identity/protocols/oauth2"><strong>https://developers.google.com/identity/protocols/oauth2</strong></a></li>
+</ol>
+<p><i>Client ID and Secret can typically be generated at: </i><a href="https://console.developers.google.com/"><i><strong>https://console.developers.google.com</strong></i></a></p>
+<ol>
+  <li>From the &nbsp;VergeIO Main Dashboard, click <strong>System</strong> on the left menu.</li>
+  <li>Click <strong>Authorization Sources</strong> on the left menu.</li>
+  <li>Click <strong>New </strong>on the left menu.</li>
+  <li>Enter a <i><strong>Name </strong></i>for the source (such as "Google"). This name will appear on the sign-in button of the &nbsp;VergeIO login page.</li>
+  <li>In the <i><strong>Driver </strong></i>field (dropdown list), select <strong>Google</strong>.</li>
+  <li><i><strong>Redirect URI</strong></i> should be populated with URL of the &nbsp;VergeIO system . This must be a public address that can be accessed by the Google API.</li>
+  <li>Enter the <i><strong>Client ID </strong></i>and <i><strong>Client Secret </strong></i>values obtained from Google.</li>
+  <li><i><strong>Remote User Fields</strong></i> is the list of fields used to initially find the Google user; this field is auto-populated with (sub,preferred_username,email nickname), a default list that can typically work for Google implementations. <strong>Note: For security reasons, it is not recommended to locate remote users based on fields that are changeable by the end user on the remote system.</strong>
+    <ul>
+      <li><i><strong>Update Remote User: </strong></i>- once user is located in the Google system, update &nbsp;VergeIO user <i>Remote Username</i> field to the corresponding Google unique ID (sub string)</li>
+    </ul>
+  </li>
+</ol>
+<p><i>Enabling the Update Remote User will allow the&nbsp;</i> VergeIO<i> system to store the unique Google ID in the&nbsp;</i> VergeIO<i> user record (after initially locating the Google user with fields defined in Remote User Fields), so the unique identifier can subsequently be used for finding the Google user; this is typically recommended since fields such as email address are subject to change.</i></p>
+<ul>
+  <li><i><strong>Update User Email Address: </strong></i>- update &nbsp;VergeIO user Email address to match email address within Google.</li>
+  <li><i><strong>Update User Display Name: </strong></i>- update &nbsp;VergeIO user display name to match display name within Google.</li>
+</ul>
+<p>&nbsp;</p>
+<h3>To Add &nbsp;VergeIO Users that will use Google Auth</h3>
+<p><strong>After the authorization source is created, users can be created to utilize the Google source for login. &nbsp;Create new VergeIO users with the following configuration: &nbsp;</strong></p>
+<ul>
+  <li><i><strong>Authorization Source: </strong></i>Select the Google source from the dropdown list</li>
+  <li><i><strong>Username: </strong></i>unique name within the &nbsp;VergeIO system; typically it is recommended to use the same login name used within Google.</li>
+  <li><i><strong>Remote Username: </strong></i>use value of one of the fields defined as Remote User fields, which are fields that are searched on in Google;User email address or the sub string, which is equivalent to the user's Google ID, are typically best.</li>
+  <li><i><strong>Display Name: </strong></i>(optional) If <i>Update User Display Name</i> is enabled on the Google auth source, display name will synchronize from the Google user.</li>
+  <li><i><strong>Email Address: </strong></i>(optional) If <i>Update User Email Address</i> is enabled on the Google auth source, Email address will synchronize from the Google user.</li>
+</ul>

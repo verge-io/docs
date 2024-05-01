@@ -1,0 +1,55 @@
+<!--
+title: Product Guide -VDI Instructions for the Administrator
+description: VDI instructions for the administrator, including creating a VDI user, giving console access to a VDI user, assigning a VM owner, adding VMs to a normal user's VM favorites
+published: false
+date: 2023-04-13T14:44:07.997Z
+tags: 
+editor: ckeditor
+dateCreated: 2023-04-10T19:52:01.777Z
+-->
+
+<h1>VDI Instructions for the Administrator</h1>
+<h2><strong>User type=VDI</strong></h2>
+<p>A user of type=VDI accesses only the VDI portion of the Verge.io UI. When a VDI User logs in, the VDI Dashboard appears which displays all of the VMS to which the User has access.</p>
+<p>The following screenshot shows a sample VDI User Dashboard. In this example, the VDI User has access to 5 VMs.</p>
+<figure class="image"><img src="https://yottadoc.ro.verge.io/help/sshots/VDI-myvirtualmachines.png"></figure>
+<h3>To create a VDI User:</h3>
+<ol>
+  <li><strong>Create a new User</strong>; select <strong>VDI</strong> in the <i><strong>User Type</strong></i> field</li>
+</ol>
+<h3>To Give VM Console Access to a VDI User:</h3>
+<ol>
+  <li>Navigate to the <strong>User Dashboard</strong> (Users -&gt;double-click User in the listing.)</li>
+  <li>Click <strong>VM Console Access</strong> on the left menu.</li>
+  <li>Click <strong>Add VMs to Direct</strong> on the left menu.</li>
+  <li><strong>Select the desired VM(s)</strong> in the list. (<i><strong>Hint:</strong></i> <i>Holding Shift or Ctrl allows selecting multiple VMs.)</i></li>
+  <li>When desired VM(s) selected, click <strong>Add.</strong></li>
+  <li>Navigate to the <strong>User Dashboard</strong> (Users -&gt;Double-click User in the listing.)</li>
+  <li>Click <strong>Permissions</strong> on the left menu.</li>
+  <li><strong>Double-click</strong> the existing <strong>Permission for the VM</strong> in the list (Type=Virtual Machines, Name=<i>NameofVM</i>)</li>
+  <li>Enable the Permissions <i><strong>modify</strong></i> checkbox.</li>
+  <li>Click <strong>Submit</strong> to save the change.</li>
+</ol>
+<h2><strong>User type=Normal</strong></h2>
+<p>A user of type=Normal has access to the complete Verge.io UI. When a Normal User logs in, they are taken to the main Dashboard from which all system components can be accessed (user-permission dependent). A Normal User accesses his VDI Dashboard by selecting&nbsp;</p>
+<p><strong>My Virtual Machines</strong></p>
+<p>&nbsp;after login. A Normal User sees Favorited VMs in his/her VDI Dashboard.</p>
+<h3>To add VMs to a Normal User's VM Favorites (adds the VM to the User's VDI Dashboard):</h3>
+<ol>
+  <li>Navigate to the <strong>User Dashboard</strong> (Users -&gt;Double-click User in the listing.)</li>
+  <li>Click <strong>VM favorites</strong> on the left menu.</li>
+  <li>Click <strong>Add VMs</strong> on the left menu.</li>
+  <li><strong>Select</strong> the desired <strong>VM(s)</strong> in the list. (<i><strong>Hint:</strong></i> <i>Hold Shift or Ctrl to select multiple VMs.)</i></li>
+  <li>When desired VM(s) selected, click <strong>Add.</strong></li>
+</ol>
+<h2><strong>VM Owner</strong></h2>
+<p>If a VM is assigned an&nbsp;</p>
+<p><i><strong>Owner User</strong></i></p>
+<p>, the VM will automatically be deleted if the associated Owner User is deleted. Note: assigning a User as the Owner User will also automatically assign proper permissions to give the User Console Access to the VM (List/Read)</p>
+<h3>To Assign an Owner User to a VM:</h3>
+<ol>
+  <li>Navigate to the <strong>VM Dashboard </strong>(Main Dashboard -&gt;Machines -&gt; Virtual Machines -&gt;double-click the VM in the listing.)</li>
+  <li>Click <strong>Edit</strong> on the left menu.</li>
+  <li>In the <i><strong>Owner User</strong></i> field, select the User from the dropdown list.</li>
+  <li>Click <strong>Submit</strong> to save the change.</li>
+</ol>

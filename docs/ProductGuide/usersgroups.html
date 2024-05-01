@@ -1,0 +1,76 @@
+<!--
+title: Product Guide - Users and Groups
+description: Definitions of the different user types; explanation of the use of groups; instructions for creating new users,  creating new groups, and adding users to groups
+published: false
+date: 2023-04-07T18:06:55.867Z
+tags: 
+editor: ckeditor
+dateCreated: 2023-04-07T18:06:55.867Z
+-->
+
+<h1>Users</h1>
+<p>A separate user account should be created for each individual that will utilize the system. Note: When using an Authorization Source, there is an option to auto-create users from the source.</p>
+<h4>User Types:</h4>
+<ul>
+  <li><strong>Normal</strong> - intended for full UI access</li>
+  <li><strong>API</strong> - intended for service accounts only; e.g. running scripts, syncs, etc.</li>
+  <li><strong>VDI</strong> - VDI user dashboard only</li>
+</ul>
+<h1>Groups</h1>
+<p>A group is a collection of users. Groups can also contain other groups.</p>
+<p>Administration of permissions and subscriptions can often be simplified by the use of groups.</p>
+<h2>How-to Quick Reference</h2>
+<h3>To Create a New User:</h3>
+<ol>
+  <li>From the Main Dashboard, select <strong>System</strong>.</li>
+  <li>Select <strong>Users</strong>.</li>
+  <li>Select <strong>New</strong>.</li>
+  <li>Select an <i><strong>Authorization Source</strong></i> if appropriate (This field will not display if no third-party authorization sources are configured for the system.). The default selection of "--None--" creates a user that authenticates directly via Verge.io.</li>
+  <li>Enter a <i><strong>Username</strong></i>; this will be the user's login name. The username must be unique within this Verge.io Cloud (Note: each tenant is a separate Verge.io Cloud).</li>
+  <li>Select appropriate user <i><strong>Type</strong></i>:<ul>
+      <li><strong>Normal</strong> - users that will log in to the full UI</li>
+      <li><strong>API</strong> - used for service accounts, such as those used for site syncs</li>
+      <li><strong>VDI</strong> - user that will log in only to a VDI dashboard</li>
+    </ul>
+  </li>
+  <li>Enter a <i><strong>Password</strong></i> for the user. Passwords must conform to password complexity settings defined for this Verge.io cloud; requirements are listed underneath the field. Complexity settings are defined in System -&gt; Settings -&gt; Password Complexity Requirement.</li>
+  <li>Re-enter the password in the <i><strong>Confirm Password</strong></i> field.</li>
+  <li>Optionally, the <i><strong>Require Password Change</strong></i> option can be enabled to prompt the user to create their own password upon first login.</li>
+  <li>Optionally, a <i><strong>Display Name</strong></i> can be specified for the user. The Display Name is shown in the top right corner of the screen when the user is logged into the UI.</li>
+  <li>When enabled, <i><strong>Two Factor Authentication</strong></i> requires use of a security code (received via user email) in addition to username/password for login to the Verge.io system.</li>
+  <li><i><strong>Email Address</strong></i> is used when sending subscription reports and alerts assigned to the user and for Two-Factor Authentication, if applicable.</li>
+  <li>The <i><strong>Physical Access</strong></i> option can be checked to allow the user direct console access to nodes. <strong>CAUTION:</strong> Enabling this option allows the account to log in at the command-line via physical access (e.g. crashcart, ipmi remote control) and SSH. <strong>This should only be granted to users entrusted with low-level Verge.io server administration.</strong>
+    <ul>
+      <li>An initial blank line will appear where an SSH key can be typed in.</li>
+      <li>Additional keys can be added, as needed, by clicking the plus [ ] button which will insert a new blank line where an SSH key can be typed in.</li>
+      <li>Selected entries will display a check in the box at the left.</li>
+      <li>Selection is a toggle: click an unselected entry to select it; click a selected entry to deselect it.</li>
+      <li>Multiple keys can be selected for a delete or move.</li>
+      <li>Click to select the desired key for edit.</li>
+      <li>Click the edit [ ] button.</li>
+      <li>The selected key appears and can be modified. When editing is complete, click the edit [ ] button again to save the changes.</li>
+      <li>Click to select the desired key for deletion.</li>
+      <li>Click the delete [ ] button.</li>
+    </ul>
+  </li>
+  <li>Optionally, under <i><strong>Member of Groups</strong></i>, groups can be selected in which to add the user. Hint: Multiple groups can be selected by holding down the Shift or Ctrl key.</li>
+  <li>Click <strong>Submit</strong> to save the new user.</li>
+</ol>
+<h3>To Create a New Group</h3>
+<ol>
+  <li>From the Main Dashboard, select <strong>Groups</strong> from the top quick-links.</li>
+  <li>Select <strong>New</strong> on the left menu.</li>
+  <li>Enter a <i><strong>Name</strong></i> for the group (required).</li>
+  <li>Optionally, a <i><strong>Description</strong></i> can be specified for the group.</li>
+  <li>Optionally, an <i><strong>Email Address</strong></i> can be specified to receive subscription alerts and reports assigned to the group.</li>
+  <li>Click <strong>Submit</strong> to save the new group.</li>
+</ol>
+<h3>To Add Members (users and/or groups) to a Group</h3>
+<ol>
+  <li>From the Main Dashboard, select <strong>Groups</strong> from the top quick-links.</li>
+  <li><strong>Double-click the desired group</strong> in the list to display the group dashboard.</li>
+  <li>Click <strong>Members</strong>.</li>
+  <li>Click <strong>Add Users</strong> or <strong>Add Groups</strong> on the left menu.</li>
+  <li>Select users/groups from the displayed list. Hint: Multiple groups can be selected by holding down the Shift or Ctrl key.</li>
+  <li>Click <strong>Submit</strong> to apply the changes.</li>
+</ol>

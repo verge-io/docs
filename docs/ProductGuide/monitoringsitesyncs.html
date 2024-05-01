@@ -1,0 +1,58 @@
+<!--
+title: Product Guide - Monitoring Site Syncs
+description: Instruction on tracking syncing activity - through dashboards and subscriptions -  to verify successful offsite backups. 
+published: false
+date: 2023-04-04T14:57:35.172Z
+tags: 
+editor: ckeditor
+dateCreated: 2023-04-04T14:57:35.172Z
+-->
+
+<h1>Monitoring Site Syncs</h1>
+<p>Given the importance of syncs, which are used to provide off-site data protection, best practices include regular monitoring to verify expected ongoing sync operations.</p>
+<p>Ongoing tracking of sync activity can be done from the sending system or the receiving system.</p>
+<h2>Outgoing Sync Dashboard (Sending System)</h2>
+<figure class="image"><img src="https://yottadoc.ro.verge.io/help/sshots/outgoingsync-dash.png"></figure>
+<ul>
+  <li>The most recently synchronized Snapshots</li>
+  <li>Currently synching Snapshot (if applicable)</li>
+  <li>Snapshots in the waiting list to sync.</li>
+</ul>
+<h2>Incoming Sync Dashboard (Receiving System)</h2>
+<figure class="image"><img src="https://yottadoc.ro.verge.io/help/sshots/incomingsync-dash.png"></figure>
+<h2>Sync Logs</h2>
+<p>On both Incoming Sync and Outgoing Sync dashboards, logs are displayed at the bottom of the page. A log entry is created to mark the start of each Snapshot sync. Another log entry is created when the sync is completed, displaying statistics for the amount checked, scanned, sent, sent net, directory and file counts.</p>
+<h2>Sync Statistics</h2>
+<p>Statistics shown in sync dashboard listings and log entries. These numbers update to show the progress of the sync, with final numbers displayed at the end of the sync process.</p>
+<ul>
+  <li><strong>Checked</strong> - total size of all files that have been determined need to be compared (file level, pre-deduplication)</li>
+  <li><strong>Scanned</strong> - total size of data blocks compared</li>
+  <li><strong>Sent</strong> - amount of data determined as needed to be sent - e.g. changed data (pre-compression)</li>
+  <li><strong>Net Sent</strong> - actual amount of data transferred on the wire (post-compression)</li>
+  <li><strong>Dirs Checked</strong> - total number of files within the source</li>
+  <li><strong>Files Checked</strong> - total number of files within the source</li>
+</ul>
+<h2>Using Subscriptions to Monitor Syncs</h2>
+<p>Subscriptions are available from both the sending system and the receiving system to oversee sync activity.</p>
+<p><i>For general information about using Subscriptions: </i><a href="https://yottadoc.ro.verge.io/#help?id=subscriptions-overview"><i>Subscriptions</i></a></p>
+<h3>Example Subscriptions</h3>
+<h3>Get a Daily Report of the Sync Dashboard (Sending Site)</h3>
+<ol>
+  <li>Navigate to the <strong>Incoming Sync Dashboard</strong> page.</li>
+  <li>Click <strong>Subscriptions </strong>on the left menu.</li>
+  <li>Click <strong>New</strong> on the left menu.</li>
+  <li>Provide a <i><strong>Name</strong></i> for the Subscription (the name will appear in the subject of the received email notification.)</li>
+  <li>Set the <i><strong>Type</strong></i> = <strong>Scheduled</strong></li>
+  <li>Set the <i><strong>Subscription profile</strong></i> = <strong>Site Sync Dashboard</strong>.</li>
+  <li>Click <strong>Submit</strong> to save the Subscription.</li>
+</ol>
+<h3>Receive a Notification each Time a New Sync is Completed (Receiving Site)</h3>
+<ol>
+  <li>Navigate to the <strong>Outgoing Sync Dashboard</strong> page.</li>
+  <li>Click <strong>Subscriptions</strong> on the left menu.</li>
+  <li>Click <strong>New</strong> on the left menu.</li>
+  <li>Provide a <i><strong>Name</strong></i> for the Subscription (the name will appear in the subject of the received email notification.)</li>
+  <li>The <i><strong>Type</strong></i> field should be left at the default setting of <strong>On-demand</strong></li>
+  <li>Set <i><strong>Subscription profile</strong></i> = <strong>Site Sync Received</strong></li>
+  <li>Click <strong>Submit</strong> to save the Subscription.</li>
+</ol>

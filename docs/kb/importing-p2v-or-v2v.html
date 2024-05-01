@@ -1,0 +1,299 @@
+<!--
+title: Importing a VM
+description: 
+published: true
+date: 2022-08-10T19:18:14.014Z
+tags: ptov, vtov, p2v, v2v
+editor: ckeditor
+dateCreated: 2022-08-10T19:18:14.014Z
+-->
+
+<p><br><br><br><br><br><br>&nbsp;</p>
+<p><strong>Verge.io MOVE Tool</strong></p>
+<p><strong>Clone ISO Transfer Utility</strong></p>
+<p><strong>Mar 2021</strong></p>
+<p>ISO Version 4.8.2</p>
+<p><strong>For PtoV and VtoV Import</strong></p>
+<p>&nbsp;</p>
+<p>The Verge.io MOVE tool (Verge.io-clone.iso) can be used to import external servers (physical or virtual) into Verge.io virtual machines.&nbsp; Zero block detection is used in transferring source drives, providing efficiency as only used blocks require transfer.&nbsp; The Verge.io Clone Utility is recommended for PtoV imports (importing physical computers) and for non-VMware VtoV (importing existing virtual machines). The verge VMware connector is recommended for importing VMware virtual machines.</p>
+<p>&nbsp;&nbsp;</p>
+<h1><strong>Prerequisites</strong></h1>
+<h2><strong>Verge System (destination):</strong></h2>
+<ul>
+  <li>Network URL that can be accessible from source VMs to be imported.</li>
+  <li>Verge.io username/password with permissions to create VMs</li>
+  <li>Adequate available vSAN storage for cloned VM drives (Note: Verge.io vSAN global deduplication handles zero blocks, thus only actual used drive space required.)&nbsp;</li>
+  <li>Although not necessary for the clone-import process itself, adequate resources (RAM/CPU) will need to be available on the destination verge system to run imported VMs.</li>
+</ul>
+<h2><strong>VM/Physical Machine to Clone (source):&nbsp;</strong></h2>
+<ul>
+  <li>Network connection (attached to network that can reach the destination verge system)</li>
+  <li>Attached USB/CD-ROM device (containing Verge.io-clone.iso)</li>
+  <li>Minimum 1GB RAM (to boot from/run the iso)</li>
+</ul>
+<h1>&nbsp;</h1>
+<h2><strong>Determining Appropriate Sync Method</strong></h2>
+<p>The appropriate sync method to use will depend on the nature of the network connection between the source VM and destination Verge.io system.&nbsp;</p>
+<h3><strong>HTTPS upload</strong></h3>
+<p>Transferring using this method has minimal network configuration requirements.&nbsp; This transfer method is automatically selected by default.&nbsp;</p>
+<h3><strong>vSAN-direct Sync</strong></h3>
+<p><strong>The vSAN-direct sync method can be used for optimum throughput over a LAN connection; it is not intended for WAN connections.</strong>&nbsp;</p>
+<p><strong>vSAN-direct syncs are only allowed to the host system (not directly to a tenant)&nbsp;</strong></p>
+<p>This method provides for faster transfer speeds, but involves additional network requirements.&nbsp; &nbsp; The vSAN-direct method can be selected under<strong> Advanced</strong> settings from the confirmation screen (last dialog).&nbsp;</p>
+<p><strong>Additional Network Requirements for vSAN-direct Sync method:</strong></p>
+<ul>
+  <li>Source side static IP</li>
+  <li>Destination Verge.io system static IP</li>
+  <li>NAT and SNAT rules on the UI(external) and core networks of Verge.io system</li>
+</ul>
+<p>Refer&nbsp; to&nbsp; <a href="https://docs.google.com/document/d/198X1V2CjzGYQ0hzzSytHCBZnCR_jACIGMR-vjREYT9U/edit#bookmark=id.tdegw6254x18"><u>Direct vSAN Network Configuration</u></a> section for details.&nbsp;&nbsp;</p>
+<h2>&nbsp;</h2>
+<h2><strong>Obtaining the Verge.io-clone.iso File</strong></h2>
+<ol>
+  <li>From the <strong>Main Dashboard</strong>, click <strong>Backup/DR</strong> on the left menu.</li>
+  <li>Click the<strong> Download ISO</strong> button in the Clone ISO Utility section.&nbsp;</li>
+</ol>
+<figure class="image image_resized" style="width:523px;"><img src="https://lh5.googleusercontent.com/6-z7yccqv6AJGVxMKxoqAhLg39tX0QMPkl1pHgwuuogEqLjoYqvJzy4JoVz7n9do2nzJ_gHFNYw_oz_jUcK9WfNiId1Xbw43ooSTOb_qSHmdCYl9PgUai5XRd5ijqNb9u4hlrx_hc9ZbU4C8SRWqxA"></figure>
+<ol>
+  <li>The Clone ISO dialog appears giving options for creation of a public download link for the ISO file:&nbsp;</li>
+</ol>
+<ul>
+  <li><strong>No </strong><i>(default selection)</i><strong>- </strong>no public download link created.&nbsp; The Clone ISo will only be downloadable from the verge UI.</li>
+  <li><strong>Yes, make the link Anonymous (uuid) - </strong>creates a public download link with GUID (128bit long number)&nbsp;</li>
+</ul>
+<p><i>(ex: https://verge.example.com/273b5d6a--b205-1e1b-6ae6-01cfa7ed1233)</i></p>
+<ul>
+  <li><strong>Yes, use filename as the link - </strong>creates a public download link using the original file name <i>(ex: https://verge.example.com/verge.io-clone.iso)</i></li>
+  <li><strong>Yes, specify a custom name - </strong>creates a public download link with file name entered <i>(ex: https://verge.example.com/myfilename.iso)</i></li>
+</ul>
+<figure class="image image_resized" style="width:604px;"><img src="https://lh5.googleusercontent.com/-x1yxfkJaz98iFi37885c8jDy31VI2MPkRd5DhLFTnfB7VBfcwzQEAgZJbbWRIORoy0aPlNIWdRmsTfmff94pKBLq3pz-mchxcDJpFCaMnsKk_4FAhlL3hh4NRXtEyJp6WlJeNKBe_wLhnRXmg_2Cw"></figure>
+<ol>
+  <li>Click <strong>OK</strong> after selecting the desired option.&nbsp; The build process may take a few minutes to complete.&nbsp;&nbsp;</li>
+</ol>
+<figure class="image image_resized" style="width:412px;"><img src="https://lh6.googleusercontent.com/7O8Hyd5mdcVYKAHYM7NB5dYu9fQf2M-0hLziYy303S75lDor5xgSwAORgKDDcxLHUmBdJPhyqaOag2vQHGhRp13hheVEe7v4RROgxjDjHLYAi79E7FR2giHnLSaQpJZ4-NsYjDmwUMbGzH9WSnxlhw"></figure>
+<ol>
+  <li>Once the build is complete, the Clone ISO section will show a Status of Ready.&nbsp; Additionally the version, public link (if applicable) and the build date/time will display.&nbsp; &nbsp; Note: the copy icon next to the public link field can be used to duplicate the URL to the clipboard.&nbsp;&nbsp;</li>
+</ol>
+<p>&nbsp;</p>
+<ol>
+  <li>Download the ISO; it can now be downloaded from:&nbsp;</li>
+</ol>
+<ul>
+  <li>within the verge UI</li>
+</ul>
+<p>-OR-</p>
+<ul>
+  <li>the public link (if created)</li>
+</ul>
+<p>The bootable Clone ISO can be used on CD or USB.</p>
+<h2>&nbsp;</h2>
+<h2><strong>Using the Verge Clone Utility&nbsp;</strong></h2>
+<ol>
+  <li>Power down the source computer and <strong>boot from the Clone ISO</strong> ( Verge.io-clone.iso)&nbsp;</li>
+  <li>Hit <strong>&lt;Enter&gt;</strong> or simply allow the clone utility to boot automatically.&nbsp;</li>
+</ol>
+<figure class="image image_resized" style="width:662px;"><img src="https://lh4.googleusercontent.com/EAckwN_at3mZlfI8M7DH_B_aUBRDdG-TVXZgUQL-jQvWxGZ1pCrkdL7YC3-M-BNcYKpXBI5wibTNGuTcZ574QQCD7ClXTIg8M8r86HOhNALFTenI-OGdBU8lpA3ivaChAVn2uBimKamX970rZ1r5PQ"></figure>
+<ol>
+  <li>Select <strong>Launch Clone Utility</strong>.</li>
+</ol>
+<figure class="image image_resized" style="width:338px;"><img src="https://lh3.googleusercontent.com/hD-buCNCSqGNFcR4jNvGPtgjTZQtpZ8BA2qx5wEf2D1zzeuClN1cUW6To8Co7GoDFeUcYaUK_wia7ybDWSzxB8O1YQCPrJCe1lsYoRwVrC5YNFfRq45rpamyDf4iNZ7Jou0On__9NX8P5agh9u-WgQ"></figure>
+<ol>
+  <li>Hit &lt;<strong>Enter&gt;</strong> to confirm the introduction message.&nbsp;</li>
+</ol>
+<figure class="image image_resized" style="width:640px;"><img src="https://lh6.googleusercontent.com/kKONQ_qoE0eGrJmDtbggBppmH7mdnrPrupz-BtePXnyNujsSdqqBxnkEJgExgTaZJRN8hmMk98XozsHROy2vJ0UTwuSwwJHxjyYTuGWw9rrgT3wtPx1YAsuaYgVP5rMN8Mgvyj-c3z83wGrLj5sFig"></figure>
+<ol>
+  <li><strong>Select the NIC</strong> to be used to connect to the destination Verge.io system.&nbsp; Only one NIC is selected for connecting to the destination; however, all NICS from the source system are brought over in the VM import.&nbsp;</li>
+</ol>
+<figure class="image image_resized" style="width:662px;"><img src="https://lh4.googleusercontent.com/67Ei-8iX7uQHFMkntVnNBKZqrX4JtZ5EgbWBbNn4DpUP8p65hiFpmatIu_EEQE1w_XeGykgYz3ammxoXcZG8_s2xVJSyKi3kAAucUCWm0l24z3K6N1WyiBfQPtwRZkWjO9YsclBev4zW_AVHHNYRiA"></figure>
+<ol>
+  <li>Select appropriate choice (<strong>DHCP or Static</strong>) for the connecting network.&nbsp;</li>
+</ol>
+<figure class="image image_resized" style="width:402px;"><img src="https://lh4.googleusercontent.com/yvyd2FDG0YLLreH9U_OYf6uuIyYhAL5N6a1qhBqraq0bG-L24uNxoEePA5PRN7XCdzirxngZ4Uh91PG3boC1MtgIGpETP1_zm-6gEtUHsGVIzGzEMK2Y0YtJjsKlIZvEY4wLjKL3HVfb1AyxbITgZA"></figure>
+<p>&nbsp;</p>
+<p><strong>Static IP configuration</strong></p>
+<p>&nbsp;If static IP configuration selected, use <strong>up/down ↑/↓&nbsp; arrows</strong> to select different fields.&nbsp; Selected field is highlighted in blue. &nbsp; Hit <strong>&lt;Enter&gt;</strong> while a field is selected to modify that field.&nbsp; Once all the static fields are configured as needed, use arrow keys to highlight the <strong>Done</strong> option and <strong>&lt;Enter&gt;</strong> to proceed.&nbsp;&nbsp;</p>
+<figure class="image image_resized" style="width:402px;"><img src="https://lh5.googleusercontent.com/B2FzNnfCme6wCjl1Ugn-YTkKB39AEPMtq1j76YRCnvMu0zr6YFE8un64BxsMgfqR7zH9a1c0dcvN-_ZYcwuFs5MJu3VI1HJunhpYNIYfgv8iZdL6hgm5_CVDE1qw8SP6SMFeY21TA7QIp0pF7hW1xA"></figure>
+<figure class="image image_resized" style="width:399px;"><img src="https://lh5.googleusercontent.com/-0XboF_mo5ILWxufOU6TPws086bDBp8HR57UXZBeI9Wr_HtCdd-CxW2P-tBKKbxqEqcZPIdgMal5VDfQEowVSOaTxkgXtXPUsI8p4G9DBM6uwN9VeORSujnyjG1gQzAro3-uq3om3EQuUbXLIvemsA"></figure>
+<ol>
+  <li>Enter the URL (hostname or IP address) of the verge system.</li>
+</ol>
+<p>&nbsp;</p>
+<ol>
+  <li>Enter verge username and password. Note: user must have permissions to create and modify virtual machines to successfully complete a clone import.</li>
+</ol>
+<figure class="image image_resized" style="width:403px;"><img src="https://lh3.googleusercontent.com/2KoFyN6jXHpGddZ5oQZlaRxjH7oNL5o8onpRoQDw1N97-Rc1yISQM-Ib_37_hQAVhG7XLYjrF3OTC8qWira070RtXRlF6UNnOQxtElg8g-6niZ0dajDHbpm5noRN0UIyjAx7xe5lWmafKB6mVxFvoA"></figure>
+<figure class="image image_resized" style="width:400px;"><img src="https://lh6.googleusercontent.com/a4yYGQtOVEAukq5TH10djmdCVeyMaCwYD2Bkik63kBeGyEz75sJoaWky32wftiHJI3fUAE6SMCupd3jg6xMSekMq71jXRh0bgcPCDUpWLC_g5BahrN8EQPoLW5FulDQblHJZykaGil7f_7vBP4MvSg"></figure>
+<ol>
+  <li>If the utility is successful in connecting to the verge system, a success message displays.&nbsp;</li>
+</ol>
+<figure class="image image_resized" style="width:646px;"><img src="https://lh3.googleusercontent.com/nSLICrvZnWp2B4rA_7OgHNypOFtHnTE9qgErOCuILzLvOjGMH8gUHsHYQ8ehqtWXJKYYKch28RKw_zzgQbrXthUKkdJdzO2Mm1pV0vFuDdG6NRZIjAU_HdGOw0UMUp12Pbthabqcu_c_iZ28_MmRHA"></figure>
+<p>&nbsp;</p>
+<p><a href="https://docs.google.com/document/d/198X1V2CjzGYQ0hzzSytHCBZnCR_jACIGMR-vjREYT9U/edit#bookmark=id.a1bt3llzkfaf"><u>Clone Utility Troubleshooting</u></a></p>
+<ol>
+  <li>Enter a name for the VM (the name that will be given to the VM created on the verge system).&nbsp;</li>
+</ol>
+<figure class="image image_resized" style="width:399px;"><img src="https://lh3.googleusercontent.com/y9j63BMiVj6hfDFM8KGZsixNuB4a3UXOVN-mSis074y3t7g1pUUdnOmU3M8DfRCHwfmryVxRgWk-AQ0rlZpk7KtDsrkI0RLpaPHSar8YbmGl71KZuHDd-eD1Md1HU9cbFjfG9FkahQr1JZPN-Qy91A"></figure>
+<ol>
+  <li>Use arrows and spacebar to <strong>select/deselect drives for import</strong>.&nbsp; By default the boot device containing the ISO (e.g. CD/DVD, USB) is not selected as it is not necessary to import the contents of the clone iso. Drives that are not selected are created as empty devices on the destination virtual machine.&nbsp;&nbsp;</li>
+</ol>
+<figure class="image image_resized" style="width:662px;"><img src="https://lh5.googleusercontent.com/Wt087mYEPHPZWA-3eyJdEtUPf18FLXppdq7uRQVuZRPZSmAIaxREqm0HZOYKO42qsmk09CfhEUxHM8Rkad5zFZBpX0DFxg2VsxaMDvoIDl-OxZRAK7Wn-JOISq8H7FeGFOaHdHt7DyyEuTnMMUGApw"></figure>
+<ol>
+  <li>&nbsp;<strong>Advanced Settings</strong></li>
+</ol>
+<p>Advanced options are accessed by selecting “Advanced” and hitting &lt;Enter&gt;.</p>
+<figure class="image image_resized" style="width:399px;"><img src="https://lh4.googleusercontent.com/zzbQ0Di0PULQHbCtCLwpRRxtCe9LOz13vMxW_E6KS_01lf-7ITgx811dvJISZA-ahPL-OCue6zPX4c99TuDrimGIjajt355Przyb4tH3kXd7xe2RsJffBHVLBMqyTuGeaelypbwO_SWDOKr4zu9qdQ"></figure>
+<figure class="image image_resized" style="width:407px;"><img src="https://lh6.googleusercontent.com/6xrbLwH-RWVdPMTY6k_X_NwbI3sTPe2k_gZJsmHjHM1QIL3YNxpJ7bpd-sFVe2CagCTnJq4ylrXfcWQ8Elgb4-RS2zE5vU6UDjZZpWJ_LJY4tNIYKWEGXl2e6ukxzK2mF84LUx36O4NeTi7FYK2MBQ"></figure>
+<p><strong>Send Threads -</strong> number of parallel work threads to use for clone transfer.</p>
+<p><strong>Default=4&nbsp;</strong></p>
+<p>The default thread setting is optimized for typical WAN connections and normally need not be changed.&nbsp; However, threads can be increased to maximize bandwidth use in situations where there is high latency or over very fast connections.&nbsp; Note: Setting threads too high can have a negative impact on performance.&nbsp;&nbsp;</p>
+<p><strong>&nbsp;</strong></p>
+<p><strong>MAC addresses - </strong>clone existing or create new MAC addresses&nbsp;</p>
+<p><strong>Default = clone </strong>(MAC addresses are duplicated from the source)</p>
+<p><strong>Local Network - </strong>NIC selection for connecting to the Verge.io destination system.</p>
+<p><strong>Default =Previously selected NIC</strong></p>
+<p><strong>Connecting Using vSAN </strong>- method for transfer to destination Verge.io system</p>
+<p><strong>Default=No</strong> (use standard HTTPS transfer method)</p>
+<p><strong>Guest</strong> - (legacy/deprecated)&nbsp;</p>
+<p><strong>Yes</strong>/<strong>Sync directly</strong>&nbsp; use direct vSAN connection method. This method can provide for faster transfers as it allows for writing directly to the Verge.io vSAN.&nbsp; Using this method requires additional network configuration; refer to&nbsp; <a href="https://docs.google.com/document/d/198X1V2CjzGYQ0hzzSytHCBZnCR_jACIGMR-vjREYT9U/edit#bookmark=id.tdegw6254x18"><u>Direct vSAN Network Configuration</u></a> section for instructions.</p>
+<figure class="image image_resized" style="width:392px;"><img src="https://lh3.googleusercontent.com/lrLGA__dJRDtl9Kzy0d8P4eDwlfcbQMBFCIsiAtCU9buCHrGiCWVxBmYyfSSLYC0XxSlNPiKzoJQGTiQGF69CBISaN9cilBIJyyuNeJVe2mcGjNlEXNXxUtDiwN83p8RGMYlAvsiexqtdV2O4URptA"></figure>
+<ol>
+  <li><strong>&lt;Enter&gt; </strong>while the <strong>Start Clone </strong>field is selected to confirm and begin the clone.&nbsp;</li>
+  <li>Progress updates will display.&nbsp; As each drive is cloned, number of bytes already transferred,&nbsp; percentage complete, transfer rate, and elapsed time of this drive transfer are reported.&nbsp;</li>
+</ol>
+<figure class="image image_resized" style="width:662px;"><img src="https://lh5.googleusercontent.com/EA6OtrCaucjiAgCEkekrAA74mi9-3lEBOLAi4BCkEbm26ov_nwcqceepAgmvwQ9qi7CUcRbZuDJef1MXneed9d05xhDtPRImBkirx-CgDM0zTKYhCiosc49SXDE4q-Pa-7cRHTQ3BlT7EG8Dl1Zbjw"></figure>
+<h2><strong>IMPORTANT: Once import is complete, before powering up VM for the first time in Verge.io, it is highly recommended to take a snapshot. This will allow returning to the original version after any initial guest OS/driver changes are performed, if needed.</strong></h2>
+<p>A Snapshot of an individual VM can be created using the <i><strong>Take Snapshot</strong></i> option on the left menu of the VM Dashboard.&nbsp;&nbsp;&nbsp;</p>
+<p>Taking a Snapshot before making any changes or booting the new VM for the first time will allow for rolling back a change if necessary.&nbsp; Once it is verified that the new VM is booting successfully and no additional configuration or driver changes are needed, the snapshot is no longer needed.&nbsp;</p>
+<h2>&nbsp;</h2>
+<h2>&nbsp;</h2>
+<h2><strong>Resuming a Clone import</strong></h2>
+<p>A Clone import that successfully started, but did not complete (due to a network disruption, for example) can be resumed.&nbsp;&nbsp;&nbsp;</p>
+<ol>
+  <li>Boot the source computer from the verge clone iso again and follow the same process, being sure to input the VM name exactly as it was the first time.&nbsp; (The VM name can be verified on the destination verge system, in the <i>Virtual Machines</i> list.)</li>
+</ol>
+<figure class="image image_resized" style="width:402px;"><img src="https://lh3.googleusercontent.com/Me0dqhREOpibZoOv4rpsvdkROAjVF5NMZQMm2vLco-LZrjzyCWN5GHpkbalMFcmOa9jl3c8JdEa28q8zLZ_35KhtWqoOk_vDosAdKyMC08S0WiIICWPRufh5yw1OxlK2sBAbX8K5e0U4fjoi_RAcXg"></figure>
+<ol>
+  <li>Use the right arrow <strong>→ key</strong> or <strong>&lt;Tab&gt;</strong> to select the <strong>Resume</strong> option, and hit <strong>&lt;Enter&gt;</strong>.</li>
+</ol>
+<figure class="image image_resized" style="width:639px;"><img src="https://lh4.googleusercontent.com/adIaoJeabhQW95hy9zvNIfClJoyw6YIW1Oy2ogf6iE67407DLfrOhv5uNkZEk6SN_MXdNOHe78A_O0JF11BpfWtrPCF-_9thwL5cmFUP87eJ03gdWWUNqc1RK0O6NvKF18wTVGvOWwwuvuC9ed3Jlw"></figure>
+<p>The clone import will continue from where it left off.&nbsp;</p>
+<h2><strong>Rebuilding the Clone ISO</strong></h2>
+<p>The Clone ISO can be rebuilt in order to take advantage of code updates.&nbsp;&nbsp;</p>
+<p><strong>To manually initiate this process:&nbsp;</strong></p>
+<ol>
+  <li>From the Main Dashboard, click <strong>Backup/DR</strong> on the left menu.</li>
+  <li>Click <strong>Edit Clone ISO</strong> on the left menu.&nbsp;</li>
+  <li>Check the <strong>Force Rebuild</strong> checkbox.</li>
+  <li>Click <strong>OK.</strong></li>
+</ol>
+<p>The rebuild may take a few minutes.&nbsp; While in process, status will indicate “Building”</p>
+<figure class="image image_resized" style="width:542px;"><img src="https://lh4.googleusercontent.com/Qjw-eHzoF5SFIPpavDN7uROe53uhw6vB10bMxqnpqqKIIHF8gbJc--1HNpoRn5UpQ8o059at4drWt996Wg8Pcrv2NMk_f4vkjORAlZw98hJI9wXW2zecgQlRj-bGM7a43HaKHGSPWoVYN6UM-6hn7g"></figure>
+<p>Status will change to “Ready” when the ISO build is complete.&nbsp;</p>
+<p>&nbsp;</p>
+<p>Rebuilding the ISO can be automated.&nbsp; Some customers opt to update the clone ISO anytime the system is updated.&nbsp;&nbsp;</p>
+<p><strong>To schedule automatic ISO rebuilds:</strong></p>
+<ol>
+  <li>From the main dashboard, click <strong>System</strong> on the left menu.</li>
+  <li>Click <strong>Tasks/Events</strong> on the left menu.&nbsp;</li>
+  <li>Click <strong>New</strong> on the left menu.&nbsp;</li>
+  <li>Configure the task as shown to automatically rebuild the ISO each time the verge system is updated :</li>
+</ol>
+<figure class="image image_resized" style="width:662px;"><img src="https://lh4.googleusercontent.com/XzykGdPuzd3E1Q5xRws_OicBS55pU6eNGweQMqyxwMDzh3MxfenKyafamZdXT2MCdaOcJDVlX3Hjv8-W-1A6aRKyUfWWQAfy8C3lEqtcDON99jos1C4rjj7ClFZGv520Xs-RlbfBtBHKdlcSHGLHgA"></figure>
+<ol>
+  <li>Click <strong>Submit </strong>to save the new task.</li>
+</ol>
+<p>&nbsp;</p>
+<h2><strong>Clone Utility Troubleshooting</strong></h2>
+<p><strong>ISSUE: Failed dhcp</strong></p>
+<p>DHCP option was selected but no dhcp service found</p>
+<figure class="image image_resized" style="width:662px;"><img src="https://lh3.googleusercontent.com/QDCIVT8k4cQ7mB0_oXpoPUf0xV3Scb6s14kkM9CXwt6WOvlAEBVnRwFimgSnkfOs11Vify6j5qOTtySD22CvfQh4ojJ6CHSbHkZxAZ2S9Hm5L8ODt1LEqtgPvpSLBbdAlGVGEXkkQauzumCBJGxQkg"></figure>
+<ul>
+  <li>Verify there is a dhcp service available via the selected NIC.</li>
+  <li>Verify the selected network actually has a connection.&nbsp;&nbsp;</li>
+</ul>
+<p><strong>ISSUE: Login failed message</strong></p>
+<figure class="image image_resized" style="width:641px;"><img src="https://lh5.googleusercontent.com/WyQ2E1cD1iy3UZmdwmb36iRqkijy5CmU8LSLcqxdeEHyZVYlGCSxBHUB-lpg4PYmmawSppd6W7gGa-_-3YdqoVl4WkzHhYisKfKmKBvQMe-PYuiYWWvvyqWH0zj915ZHPkNpufEkL252mkpZL_n3Hw"></figure>
+<ul>
+  <li>Verify input of correct username and password&nbsp;</li>
+  <li>The Login failed message can also appear when there is an issue with network connection or URL.&nbsp; Verify input of correct Verge.io system host/IP address. <strong>Note: the address should be entered without preceding “https://”&nbsp;</strong></li>
+</ul>
+<p>&nbsp;</p>
+<ul>
+  <li>Verify static IP configuration information (if applicable)<ul>
+      <li>The IP address and gateway must be valid addresses for the attached network. Note: IP address must be entered in cidr notation (e.g. 192.168.0.50/24).</li>
+      <li>Verify no IP conflict with the used IP address.</li>
+      <li>Correct DNS address must be used to connect the verge system via hostname.</li>
+    </ul>
+  </li>
+  <li>Verify underlying network connection.&nbsp; Boot the computer without the clone ISO to test reaching the Verge.io host/IP address; confirm connection over specific NIC, using same configuration (e.g. dhcp or static addressing).</li>
+</ul>
+<p><strong>ISSUE: OPENSSL errors during the transfer</strong></p>
+<p>Openssl errors during the transfer indicate a network issue. &nbsp; The clone operation will retry and can often recover from an openssl error. &nbsp; The clone operation will abort if timeout or number of retries threshold reached.</p>
+<figure class="image image_resized" style="width:662px;"><img src="https://lh6.googleusercontent.com/2XGfL7UU_c_5tpqrIYjlxvucb8YPPwpO56BmgSXzWZPCnR30oJHYQQ0jthWcBqhUi-jNdW3DiWZJ3t2QxPA7uHhyg1C_enATubQ65_fevhnkOBMQFaqu1i0BgyAOhYvCPR27yZwTVLrDpnixxJum8A"></figure>
+<ul>
+  <li>A possible cause for sporadic OPENSSL errors, can be MTU size mismatches.&nbsp; Verify MTU configuration on connecting networks.&nbsp;&nbsp;</li>
+</ul>
+<p><strong>Note:&nbsp;</strong></p>
+<p>If a network issue causes a clone import to fail before finishing: a partial clone import can be restarted where it left off by:</p>
+<ul>
+  <li>&nbsp;resetting the machine and booting again from the verge Clone ISO</li>
+</ul>
+<p>-or-&nbsp;</p>
+<ul>
+  <li>&nbsp;using the &lt;ESC&gt; key to return the command line and use the command:&nbsp;</li>
+</ul>
+<p>/usr/bin/verge.io-clone-vm.sh</p>
+<p>See directions above for <a href="https://docs.google.com/document/d/198X1V2CjzGYQ0hzzSytHCBZnCR_jACIGMR-vjREYT9U/edit#bookmark=id.j5lclnbebtsj"><u>Resuming a Clone import</u></a>&nbsp;</p>
+<p><strong>ISSUE: Permission denied</strong></p>
+<p>If the verge user provided does not have adequate permissions, the clone will begin and create the new Virtual Machine record; however, it will not be able to create any VM drives or NICs.</p>
+<figure class="image image_resized" style="width:487px;"><img src="https://lh6.googleusercontent.com/0ct7gMGGBktUUl56niUc83Hvsla04AbdxPUFTtBi1ZDYO-0EAa-VCVvnaY7ABzInECywe2MktT1ck8nrPiU6z0rd1tU6t_5SXDnFrX5CU_Ociq9aEjKFMnIhOz34EyzdLj-PC-Vdx-OxBxcdSPz3JA"></figure>
+<ul>
+  <li>Restart the clone ISO providing username/password of a verge user with List, Read, Create and Modify permissions to Virtual Machines.&nbsp; Note: Since the empty VM will have been created on the destination verge system (when run initially without adequate permissions): when run again with proper permissions, the clone operation can be performed as a resume or the VM can be removed on the destination system before starting the clone again.&nbsp;&nbsp;</li>
+</ul>
+<h2><strong>Direct vSAN Network Configuration</strong></h2>
+<p><strong>Direct vSAN transfer method is provided for use over local networks; it is not intended for use over WAN connections.</strong></p>
+<p><strong>Direct vSAN transfer method can only be used to transfer to a root system (not directly to a Tenant).</strong></p>
+<p>In order to use the vSAN Mount (direct sync) method of the Clone Iso utility, three networking rules must be in place (2 on the core network and 1 on the external ui network).</p>
+<p>The following section outlines the network rules necessary for a system to accept a Clone ISO transfer using the direct vSAN method.&nbsp; For a Verge.io system that has been configured to accept incoming syncs, some of these rules may already be in place.&nbsp;&nbsp;</p>
+<h3>&nbsp;</h3>
+<h3>Core Network&nbsp; Rule - 14201 PAT Rule</h3>
+<p><i>Note: For systems already configured for accepting incoming syncs, this Rule may already be in place.</i></p>
+<ul>
+  <li><strong>Name (required):</strong> ex: “vSAN PAT”</li>
+  <li><strong>Action:</strong><u> Translate</u></li>
+  <li><strong>Protocol: </strong><u>TCP</u></li>
+  <li><strong>Direction: </strong><u>Incoming</u></li>
+  <li><strong>Source:</strong> <u>Any / None (default)</u></li>
+  <li><strong>Destination Type:</strong> <i><u>Custom</u> *<strong>Custom Filter:</strong> <u>ui</u></i> <strong>Destination Ports:</strong> <i><u>14201</u></i></li>
+  <li><strong>Target Type:</strong><i> <u>IP/Custom</u>&nbsp;&nbsp;<strong> *Target IP:</strong> <u>ui&nbsp;</u></i></li>
+</ul>
+<p><i>&nbsp;*&nbsp; ui is a Verge.io keyword; it must be entered in lower case, exactly as noted.</i></p>
+<figure class="image image_resized" style="width:662px;"><img src="https://lh4.googleusercontent.com/vBshOAaht2AOmQ0cRfDpudgT9R80T69eE220t2nkzRejr24B6eMWi6h-bjgf8l7n375wwF9o_UErPsK9yg0kjO0nx5XKLw8LiPN-07REsI18AS6h4nCMq5ajgM8b8OSvPXf7gJLnY-NAvYtfRSl8uA"></figure>
+<h3>Core Network SNAT</h3>
+<ul>
+  <li><strong>Name (required):</strong> ex: “vSAN SNAT for Clone Utility”</li>
+  <li><strong>Action:</strong> <u>Translate</u></li>
+  <li><strong>Protocol: </strong><u>TCP</u></li>
+  <li><strong>Direction: </strong><u>Outgoing</u></li>
+  <li><strong>Interface</strong>: <u>Router</u>&nbsp;</li>
+  <li><strong>Source:</strong> <u>Any / None (default)</u></li>
+  <li><strong>Destination Type:</strong> <i><u>My Network Address</u></i>&nbsp; <strong>Destination Ports/Ranges:</strong> <i><u>14201</u></i></li>
+  <li><strong>Target Type:</strong><i> <u>My Router IP</u></i></li>
+</ul>
+<p>&nbsp;</p>
+<p>The new rules will appear in the Rules list for the Core network.</p>
+<p>Click <strong>Apply Rules</strong> on the left menu to put the new rules into effect.</p>
+<h3>External Network - 14201 PAT rule</h3>
+<ul>
+  <li><strong>Name (required):</strong> ex: “vsan PAT”</li>
+  <li><strong>Action:</strong> <u>Translate</u></li>
+  <li><strong>Protocol: </strong><u>TCP</u></li>
+  <li><strong>Direction: </strong>I<u>ncoming</u></li>
+  <li><strong>Source:</strong> Source IP/IP range from which clone transfer will come. <i><strong>Note:</strong> It is important to Include a source IP/Network here in order to restrict incoming 14201 traffic to only valid sync/clone transfer sources.<strong>&nbsp;</strong></i></li>
+  <li><strong>Destination Type:</strong> <i><u>My Router IP</u></i> &nbsp;&nbsp;<strong>Destination Ports/Ranges:</strong> <i><u>14201</u></i></li>
+  <li><strong>Target Type:</strong><i> <u>IP/Custom</u>&nbsp;</i> <strong>&nbsp;Target IP:</strong><i> <u>ui&nbsp;</u> <strong>(</strong>This is a Verge.io keyword; it must be entered in lower case, exactly as noted)</i></li>
+</ul>
+<p>&nbsp;</p>
+<p>The new External vsan Rule will appear in the Rules list for the External network.</p>
+<p>Click <strong>Apply Rules</strong> on the left menu to put the new rule into effect.&nbsp;</p>
+<p>&nbsp;</p>

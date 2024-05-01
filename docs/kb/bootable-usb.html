@@ -1,0 +1,85 @@
+<!--
+title: Creating Bootable Installation Media
+description: How to create a bootable USB to install Verge.io
+published: true
+date: 2022-08-04T18:16:50.678Z
+tags: iso, rufus, bootable, usb
+editor: ckeditor
+dateCreated: 2022-08-04T18:16:50.678Z
+-->
+
+<h3>How to burn the Verge installer onto a USB drive</h3>
+<h1>Windows:</h1>
+<ol>
+  <li>Download the latest version of the Verge.io installation ISO.<ol>
+      <li><a href="https://updates.verge.io/public/verge-install-4.9.2.iso"><u>https://updates.verge.io/public/verge-install-4.9.2.iso</u></a></li>
+      <li><strong>Disclaimer: This may not be the most recent version. Please talk to your account representative to make sure you have the latest version.</strong></li>
+    </ol>
+  </li>
+  <li>Insert a USB disk into the computer. <strong>This USB drive will be overwritten.</strong></li>
+  <li>Launch Rufus.<ol>
+      <li><a href="https://rufus.ie/en/"><u>https://rufus.ie/en/</u></a></li>
+    </ol>
+  </li>
+</ol>
+<figure class="image image_resized" style="width:236px;"><img src="https://lh3.googleusercontent.com/V9Ut7KmQK5lRzuN9Hry4isv2Ppxn89clmElAuw_ftBsU87fyDb-I1co_vi3yCDkwSoe46XdFfl504W_96jjbTuJZoR-2bYDz9OquXISCWtcj_rb-6bYDYNgE7RtY8ZPQ9cqAYRFCNzGcxRp-oCCg8g"></figure>
+<ol>
+  <li>Once Rufus is loaded, select the USB device to write to for the area labeled Device.</li>
+  <li>Click the CD-ROM icon next to ‘Create a bootable disk using’ and then select the Verge.io installation ISO image.</li>
+  <li>Once the ISO image is selected, change the setting for ’Create a bootable disk image using’ to DD Image.</li>
+  <li>After selecting DD Image mode, click Start and Rufus will begin building the bootable USB device.</li>
+</ol>
+<p>&nbsp;</p>
+<h1>&nbsp;</h1>
+<h1>Apple MacOS:</h1>
+<ol>
+  <li>Download the latest version of the Verge.io installation ISO.<ol>
+      <li><a href="https://updates.verge.io/public/verge-install-4.9.2.iso"><u>https://updates.verge.io/public/verge-install-4.9.2.iso</u></a></li>
+      <li><strong>Disclaimer: This may not be the most recent version. Please talk to your account representative to make sure you have the latest version.</strong></li>
+    </ol>
+  </li>
+</ol>
+<figure class="image image_resized" style="width:394px;"><img src="https://lh5.googleusercontent.com/-_mr5en0ePpUwSiyWVDpaC2SSURakbGXlWaa_CG6dgN_Gl8X8hEDMs3uQ1He-cuWuMreGxooe352SUQqaB99BNoKgAMxThfwj_SMfZRBbJL__2oUs62SbrUf0Dls2GhVjAC6xGwPwMNv0zPToVXcdw"></figure>
+<ol>
+  <li>Download and install the BalenaEtcher image flasher for the macOS.<ol>
+      <li><a href="https://www.balena.io/etcher/"><u>https://www.balena.io/etcher/</u></a></li>
+    </ol>
+  </li>
+  <li>Startup the BalenaEtcher app.</li>
+  <li>Click on Flash from file.</li>
+</ol>
+<figure class="image image_resized" style="width:392px;"><img src="https://lh5.googleusercontent.com/7EOxDyTcc68ggf5wQV998hBVKEX2c6BLbr-S5hdUTrfLB0JOMXNMK1dOouEs-sCpxoGn_IMaf9A2fJ_6KzbVjVvvXy9ZWokLnDghQlvR-CEQqT96xblB7mVvULF2I6VrbFaY6lhsVApq7427Z9OMlg"></figure>
+<ol>
+  <li>Pick the VergeOS ISO file that you downloaded.</li>
+  <li>Select your target USB disk, but NOT the hidden drives</li>
+  <li>Click on Flash!</li>
+</ol>
+<figure class="image image_resized" style="width:435px;"><img src="https://lh5.googleusercontent.com/IhmI9uk2q5iBanMvyiMB3Nk6TlJynghQ2oUwwGqdtKDCdi44SdeziwwuiyC2WhI4J-ncjQVLDSnBEZfmSEvsmT4RzLxEXJXNLVfoZVvNXLONTU3YCOUCpnQvw6Rg9ugLqxNsHH7Z6NWMBJs4VPBeFQ"></figure>
+<ol>
+  <li>This will build your bootable flash drive on your USB stick using the VergeOS ISO installer. This process usually takes a few minutes to complete and then you can “eject” your USB flash drive to boot and start the installation on your servers.</li>
+</ol>
+<h1>&nbsp;</h1>
+<h1>Linux Mint:</h1>
+<ol>
+  <li>Download the latest version of the Verge.io installation ISO<ol>
+      <li><a href="https://updates.verge.io/public/verge-install-4.9.2.iso"><u>https://updates.verge.io/public/verge-install-4.9.2.iso</u></a></li>
+      <li><strong>Disclaimer: This may not be the most recent version. Please talk to your account representative to make sure you have the latest version.</strong></li>
+    </ol>
+  </li>
+  <li>Using Mint’s file browser, navigate to the location of the downloaded ISO</li>
+  <li>Right-click on the ISO and choose ‘Make bootable USB stick’</li>
+  <li>As USB Image Writer loads, select the USB media to write the installation file to</li>
+  <li>As a security measure, Linux will prompt you to supply an admin password</li>
+  <li>Click Authenticate to begin writing the installation to USB</li>
+  <li>Wait while the installation is written to USB.</li>
+  <li>When finished this message will appear.</li>
+</ol>
+<figure class="image image_resized" style="width:283px;"><img src="https://lh6.googleusercontent.com/0-nr7O3NXfg-9xYnInAM9gYIwyY6EPYVIPH8xDnK8znxpwxbtRQ4dmJs9bUpLKwUoX-nJnJ15XM27V0QW6gpvaG74IUIaEk_TrYnRAtn-fE2J1R4YkzCZYr4zBU2U7Tljjgj64aAXsZP60be_QKVRw"></figure>
+<figure class="image image_resized" style="width:397px;"><img src="https://lh5.googleusercontent.com/XYNhvshwic0BqgfnCJFOBWQ6PrPLM3R4IcogH8mSJh-Bk5GvRG5uepdcBoda8d7yq04bP2zBQ8KnbNRwxTr-HG7jOjEoFcSI0_85rCfso9g17MqY32HA_wAVipmhCvAPVFpatUZS5Pyli0_cOqn01w"></figure>
+<figure class="image image_resized" style="width:402px;"><img src="https://lh4.googleusercontent.com/mBduduMcSOAN04aXExClKSrBJMOldme7K48ZateZ0Kno4rZQGiHqLJy-I-P5pxea_RVB8CGyHGGH4rXRQdOIwcIDgc_WeQSmO6C1FPSTGGo-58fdCczL6QePKaB-_AaN9sufuq5BW4JGcdbqXUgAww"></figure>
+<figure class="image image_resized" style="width:406px;"><img src="https://lh4.googleusercontent.com/xygTF3JRWMBGQOHO7ShLn6VMROo2W5AezO7bmMQRWOXaU6r-5smG8BdZc-BBY8PgVQpylOXE2kbWuDuGXWCQNuyFRvPFvdyyhV4x76_h_TlS9a92f49r3nlrxH4ZGv-A3Xpm8-oJVZgPd7xClexvfA"></figure>
+<figure class="image image_resized" style="width:486px;"><img src="https://lh4.googleusercontent.com/egCzLNxDVrhoKnZh_cJ4YgVX9BypXA3-ZyasjsjVN-pJ37He6SG0VrFHilCDzx34J_tQ6ioy2IyqUbH5DYK7chPdQIILI0wZqkQo2-daZiSBYd3AwKnpj8ujrrWoIjiDiQIQVa6HnlH_gs9QrtFgjw"></figure>
+<figure class="image image_resized" style="width:442px;"><img src="https://lh4.googleusercontent.com/J92S3ASKseU2HzuouO43MBKvF2y0uC1cok6hV5n7VOiaRKakN2BK1oLHMof69wc_0Wb39KrKu7WXAQsdTAu1qGT8cuyXBzyjMEyCUfMrsM10xqJYjXQhJFObwiewBBlWbwugTDTqL1pwgOb4aqvuPA"></figure>
+<figure class="image image_resized" style="width:437px;"><img src="https://lh6.googleusercontent.com/jXYidar45PS86znGcVhqt50jkQg27g7cTVtv616in_En9IxAkbubMosnan3bwLuxtRNF9mViX0X_2fOAvXiAjNOHDIg_V-S7EflSge4iRnJmS_6cNS9zghfH2HjCsxcrn9lor4EB3hDKc62sUk0eug"></figure>
+<figure class="image image_resized" style="width:439px;"><img src="https://lh6.googleusercontent.com/-3XipAqr-dKeLqMHS9OTuZLr3y7vwioZI2YFyvj98mNH7AUoxk8-39wB3C9vQE1gFwrD36dulWAiok6_LN94SYxzotbYQxM6jx3nhM1lo276BJT6tS-sX1a6mSR-1-felSq64_p3wXOJyrt5bgaYng"></figure>
+<figure class="image image_resized" style="width:476px;"><img src="https://lh4.googleusercontent.com/JXv2wU3no2hBTid6T9oEJSuO2Tptg_uSteJpOFh9ZcEtbRJSFy8kpWCcqoARZENy3y2pNT9yPYFp9FYXhW9W8it9XETLPM61UsjWkjopuaLXymn1X-Ug3CHY5wXFfLcx2c0O62l57Q8LOAHmIQys6w"></figure>

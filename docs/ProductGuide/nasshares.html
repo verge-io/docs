@@ -1,0 +1,63 @@
+<!--
+title: Product Guide - NAS Shares
+description: Instructions for creating CIFS and NFS shares to NAS volumes
+published: false
+date: 2023-03-29T14:11:50.104Z
+tags: 
+editor: ckeditor
+dateCreated: 2023-03-29T00:52:17.468Z
+-->
+
+<h1>Shares</h1>
+<p>Shares can be created to provide NFS and/or CIFS access to a VergeIO NAS Volume.</p>
+<p><i>Multiple Shares can be created for a single Volume to provide varying security/different access for separate sets of users.</i></p>
+<h3>Create an NFS Share</h3>
+<ol>
+  <li>From the Cloud Dashboard, select <strong>NAS</strong> from the left menu.</li>
+  <li>Select <strong>Volumes</strong> from the left menu.</li>
+  <li>Select <strong>NFS Shares</strong> from the left menu.</li>
+  <li>Select <strong>New</strong> from the left menu.</li>
+  <li>Enter a <i><strong>Name</strong></i> for the New NFS Share (required).</li>
+  <li>Enter a <i><strong>Share Path</strong></i> (or leave blank to share the entire volume).</li>
+  <li>Enter a <i><strong>Description</strong></i> for the Share (optional).</li>
+  <li>The <i><strong>Allow Everyone</strong></i> checkbox can be selected to allow all Hosts</li>
+</ol>
+<p>&nbsp;</p>
+<h6>H6</h6>
+<p>Specify one or more <i><strong>Allowed Hosts</strong></i> to grant access only from particular machines. Hosts can be specified by IP address or FQDN; wildcards can be used to allow entire domains, example: *.companyabc.com.</p>
+<ol>
+  <li>Optionally, a <i><strong>Filesystem ID</strong></i> can be specified.</li>
+  <li>Select desired <i><strong>Data Access</strong></i> from the dropdown list (Read Only or Read and Write).</li>
+  <li>Select <i><strong>User/Group Squashing</strong></i> option<ul>
+      <li><strong>No Squashing (default)</strong></li>
+      <li><strong>Squash Root</strong></li>
+      <li><strong>Squash All</strong></li>
+    </ul>
+  </li>
+  <li>Specify <i><strong>Anonymous User ID </strong></i>(optional). Anonymously-connected users are given permission level of ID assigned here.</li>
+  <li>Specify <i><strong>Anonymous Group ID </strong></i>(optional). Anonymously-connected users operate as if they were in Group assigned here.</li>
+  <li>The <i><strong>Asynchronous </strong></i>option can be selected to improve performance. However, in the event of an unclean server restart, there is a risk of data corruption/loss when the Asynchronous option is enabled.</li>
+  <li>Optionally, the <i><strong>No ACLs</strong></i> option can be selected to disable ACLs (access-control lists).</li>
+  <li>Click <strong>Submit</strong> to save the settings and create the new NFS Share.</li>
+</ol>
+<h3>Create a CIFS Share</h3>
+<ol>
+  <li>From the Cloud Dashboard, select <strong>NAS</strong> from the left menu.</li>
+  <li>Select <strong>Volumes</strong> from the left menu.</li>
+  <li>Select <strong>CIFS Shares</strong> from the left menu.</li>
+  <li>Select <strong>New</strong> from the left menu.</li>
+  <li>Enter a <i><strong>Name</strong></i> for the New CIFS Share (required).</li>
+  <li>Enter a <i><strong>Share Path</strong></i> (or leave blank to share the entire volume).</li>
+  <li>Optionally, a <i><strong>Description</strong></i> can be entered for the Share.</li>
+  <li>Enter a <i><strong>Comment</strong></i> for the Share (optional).</li>
+  <li>Specify a <i><strong>Valid Users</strong></i> list (optional). List one User per line.</li>
+  <li>Specify a <i><strong>Valid Groups</strong></i> list (optional). List one Group per line.</li>
+  <li>Specify an <i><strong>Allowed Hosts</strong></i> list (optional). One Host per line. Note: hostname, IP address, domain name, netgroup, and subnet are all valid entries.</li>
+  <li>Specify a <i><strong>Denied Hosts</strong></i> list (optional). One Host per line. Note: hostname, IP address, domain name, netgroup, and subnet are all valid entries.</li>
+  <li>The <i><strong>Read Only</strong></i> option can be selected to deny any write operations via this Share.</li>
+  <li>The <i><strong>Browseable</strong></i> option can be selected to make the share visible in lists of available shares. This option is disabled by default.</li>
+  <li>Specify a list of <i><strong>Admin Users</strong></i> (optional).</li>
+  <li>A <i><strong>Force User Option / Force Group Option</strong></i> can be specified to define a user or group that will be used for all file operations performed via this Share (regardless of the user account used to connect).</li>
+  <li><i><strong>Advanced Configuration Options (advanced samba share options)</strong></i> can be specified to handle special-case scenarios. (Advanced Use only; please consult with VergeIO Support for assistance.)</li>
+  <li>Click <strong>Submit</strong> to save the settings and create the new CIFS Share.</li>
+</ol>

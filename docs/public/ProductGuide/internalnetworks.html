@@ -1,0 +1,78 @@
+<!--
+title: Product Guide - Creating an Internal Network
+description: General instructions for creating a new internal network.  
+published: false
+date: 2023-03-29T22:05:40.420Z
+tags: 
+editor: ckeditor
+dateCreated: 2023-03-29T21:57:30.517Z
+-->
+
+<h3>To Create an Internal Network</h3>
+<ol>
+  <li>From the Main Dashboard, select <strong>Networks</strong> from the left menu.</li>
+  <li>Click the <strong>Internals</strong> quick-link.</li>
+  <li>Click <strong>New Internal</strong> from the left menu.</li>
+  <li>Enter a <i><strong>Name</strong></i> for the network (required). Note: spaces are not permitted.</li>
+  <li>Enter a <i><strong>Description</strong></i> for the network (optional).</li>
+  <li>Optionally, a <i><strong>HA Group</strong></i> can be specified. HA Groups define two or more networks to provide high availability. When multiple networks are assigned to the same HA Group, the system attempts to run the networks across different physical nodes to increase availability.</li>
+  <li>Select a <i><strong>Cluster</strong></i> on which the network will run, or leave at the -- Default -- setting to use the system-defined default cluster (System -&gt; Settings -&gt; Advanced -&gt; <i>Default cluster for networks</i>) .</li>
+  <li>Select a <i><strong>Failover cluster</strong></i> to define a cluster to run the network when the primary cluster is unavailable -or- leave at the -- Default -- setting to use the system-defined default failover cluster (System -&gt; Settings -&gt; Advanced -&gt; <i>Default failover cluster for networks</i>).</li>
+  <li>Select a <i><strong>Preferred Node</strong></i> to specify a "first-choice" node for running this network -OR- leave at the -- Default -- setting to use the system-defined default for the preferred node.</li>
+  <li>Select a <i><strong>Port Mirroring</strong></i> setting. The default value is Off. Port mirroring can be enabled to replicate network traffic to a VM NICk, allowing packet analysis:<ul>
+      <li>North/South - only mirror traffic that passes through the router</li>
+      <li>East/West* - mirror all traffic, including traffic between VMs in the network and traffic through the router</li>
+    </ul>
+  </li>
+  <li>Select <i><strong>IP Address Type</strong></i>:<ul>
+      <li><strong>static (default)</strong> - creates a layer 3 network with routing, DNS, DHCP features available</li>
+      <li><strong>None</strong> - produces a simple layer2 network in which network administration is to be performed via third-party applications</li>
+    </ul>
+  </li>
+  <li>Choose a <i><strong>DNS option</strong></i>:<ul>
+      <li><strong>Bind</strong> - run a full-featured DNS server (authoritative, etc)</li>
+      <li><strong>Disabled</strong> - do not run a DNS server but offer the DNS server list to DHCP clients</li>
+      <li><strong>Other Network</strong> - forward DNS requests to another network and auto-create A records for DHCP clients</li>
+      <li><strong>Simple (default)</strong> - run a forwarding DNS server(s). If no forwarding servers are listed, the default gateway network dns is used</li>
+    </ul>
+  </li>
+  <li>If applicable, enter a <i><strong>DNS server list</strong></i>:<ul>
+      <li>An initial blank line will appear where a server address can be typed in.</li>
+      <li>Additional entries can be added, as needed, by clicking the plus [ ] button which will insert a new blank line where an address can be typed in.</li>
+      <li>Selection is a toggle: click an unselected entry to select it; click a selected entry to deselect it.</li>
+      <li>Selected entries will display a check in the box at the left.</li>
+      <li>Multiple entries can be selected for a delete or move.</li>
+      <li>Click to select the desired entry for edit.</li>
+      <li>Click the edit [ ] button.</li>
+      <li>The selected key appears and can be modified. When editing is complete, click the edit [ ] button again to save the changes.</li>
+      <li>Click to select the desired entry for deletion.</li>
+      <li>Click the delete [ ] button.</li>
+      <li>Click to select entries to move.</li>
+      <li>Click the up or down arrow [ ] / [ ] button to move the entries up or down one position at a time.</li>
+    </ul>
+  </li>
+  <li>Select an existing Verge.io network from the dropdown list as the <i><strong>Default Gateway</strong></i> -OR- leave set to -- None -- to not select a gateway.</li>
+  <li>The <i><strong>DHCP</strong></i> option is checked by default. This sets up a DHCP server and displays associated configuration options.</li>
+  <li>The <i><strong>Monitor Gateway</strong></i> option can be selected to perform a continual ping of the gateway and report uptime to the UI. When this option is enabled, additional cards are added to the network dashboard displaying history of gateway quality and latency statistics.</li>
+  <li><i><strong>On Power Loss</strong></i> determines the action taken when power is restored to the network (This would be after a physical node power loss or in the case of a network within a tenant: after the tenant is powered off/on in Verge.io UI.)<ul>
+      <li><strong>Last State</strong> - network will only be powered on if it was on at the time of power loss.</li>
+      <li><strong>Leave Off</strong> - network will not be powered on when power is restored (regardless of its state at the time of power loss).</li>
+      <li><strong>Power On</strong> - network will be powered on when power is restored (regardless of its state at the time of power loss).</li>
+    </ul>
+  </li>
+  <li>The <i><strong>Track Statistics For All Rules</strong></i> option allows tracking total packets/bytes, per rule, for all rules assigned to this network.</li>
+  <li>The <i><strong>Track DMZ Statistics</strong></i> option allows tracking total packets/bytes from this network through the DMZ network.</li>
+  <li>The <i><strong>Trace/Debug Rules</strong></i> option traces all traffic through the firewall for diagnostic purposes.</li>
+  <li>Optionally, the <i><strong>Enable Rate Limiting On Routing</strong></i> can be selected to to set a throttle on the network router.<ul>
+      <li><i><strong>Rate Limit</strong></i> - limit amount.</li>
+      <li><i><strong>Rate Type</strong></i> - limit rate type, e.g. Megabytes Per Second.</li>
+      <li><i><strong>Rate Limit Burst</strong></i> - amount allowed when the rate exceeds the specified rate limit.</li>
+    </ul>
+  </li>
+  <li>Enter <i><strong>Domain name for this network</strong></i> (optional). This allows setting DNS domain name for guest VMs (fully qualified domain names(FQDN)).</li>
+  <li>Optionally, a <i><strong>Gateway</strong></i> option can be defined for dhcp clients. By default, the network router address is used as the dhcp client gateway.</li>
+  <li>The <i><strong>Dynamic DHCP</strong></i> option is enabled by default - allowing the network to assign dynamic addresses to hosts; this option can be disabled to only allow static addresses via the DHCP server.</li>
+  <li><i><strong>DHCP Start Address</strong></i> defines the beginning of the DHCP scope (range of addresses to assign dynamically).</li>
+  <li><i><strong>DHCP Stop Address</strong></i> defines the end of the DHCP scope (range of addresses to assign dynamically).</li>
+  <li><i><strong>DHCP Sequential Addresses</strong></i> allows the option to assign dynamic addresses (from the scope defined with stop and start addresses,) in sequential order. Sequential DHCP addressing is generally not recommended as clients which allow a lease to expire are much more likely to obtain a different IP address.</li>
+</ol>

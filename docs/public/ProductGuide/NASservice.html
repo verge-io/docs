@@ -1,0 +1,55 @@
+<!--
+title: Product Guide - NAS Service
+description: Instructions for Configuring a new NAS service instance; these steps are necessary in order to use NAS within VergeIO.
+published: false
+date: 2023-03-28T20:15:38.513Z
+tags: 
+editor: ckeditor
+dateCreated: 2023-03-28T20:15:38.513Z
+-->
+
+<h1>NAS</h1>
+<p>The NAS feature provides file-level storage/access within a Verge.io system. NAS functionality can be added by downloading and implementing an instance of the standard NAS VM Recipe.</p>
+<h3>Add a NAS Service (Implement an instance of the NAS VM Recipe)</h3>
+<ul>
+  <li>From the Cloud Dashboard, select <strong>NAS</strong> from the left menu.</li>
+  <li>Select <strong>New NAS Service</strong> from the left menu.</li>
+  <li>If the Recipe requires a download: a message will appear including a download link; <strong>Click the Link to download</strong> the NAS VM Recipe. Select <strong>Download</strong> from the left menu. Click the <strong>Yes</strong> button to Confirm downloading this VM Recipe. The status will display as "Downloading" while it is in progress. When the download is complete, the status will display "Online" and the "Downloaded" checkbox will display as checked.</li>
+  <li>Enter a <i><strong>Name</strong></i> for the new NAS Service.</li>
+  <li>The default setting for <i><strong>Cores</strong></i> is 4; this setting is suitable for typical, general-purpose NAS workloads. Heavy antivirus operations and/or frequent sync activity may affect core needs.</li>
+  <li>The default setting for <i><strong>RAM</strong></i> is 4 GB; this setting is suitable for typical, general-purpose NAS workloads. Heavy file caching operations can affect RAM needs.</li>
+  <li>The system-defined-default <i><strong>Cluster</strong></i> is automatically selected. If desired, a different Cluster can be selected on which to run the NAS Service.</li>
+  <li>Select the <i><strong>Network</strong></i> on which the NAS should run.<ul>
+      <li>Options will include Internal and External networks defined in this Verge.io Cloud.</li>
+    </ul>
+  </li>
+  <li>Select <i><strong>IP Address Type</strong></i> for the NAS Service. Options include <strong>DHCP</strong> and <strong>Static</strong>
+    <ul>
+      <li>If the NAS service is hosted on a Verge.io Internal network, it is generally recommended to select DHCP and define a static IP address for the NAS VM within the network's IP settings.</li>
+      <li>For networks controlled externally, Static vs DHCP would be selected, depending upon factors of the particular network.</li>
+      <li>When utilizing DHCP, it is recommended to configure a static reservation so that the IP address will remain constant.</li>
+      <li>When utilizing a Static address, care should be used to avoid conflicting with other static IP addresses or DHCP lease scope</li>
+      <li>When <strong>Static</strong> is selected, <i><strong>IP Address</strong></i>, <i><strong>Gateway</strong></i>, and <i><strong>DNS Server list</strong></i> should also be specified.</li>
+    </ul>
+  </li>
+  <li>Define a <i><strong>Hostname</strong></i> for the NAS Service VM. (Hostname defaults to "nas")</li>
+  <li>Enter a <i><strong>domain (optional).</strong></i> (CIFS/Samba functionality will require a domain. If the Domain field is left blank, the system will default the domain to "workgroup". If the NAS Service will be used to serve out CIFS shares, the AD Domain in use should be specified.</li>
+  <li><i><strong>Timezone</strong></i> will default to the default time zone for the Verge.io Cloud. If needed, a different timezone can be defined for the NAS Service.</li>
+  <li>Generally, the <strong>default</strong> <i><strong>NTP Servers</strong></i> setting is recommended. This defines the Network Time Protocol(NTP) servers list (used for keeping the NAS service time synchronized.) If needed, the default NTP server list can be overridden, in order to explicitly define the NTP server list to be used.</li>
+  <li>(Optional) Enter the address of a <i><strong>Remote Syslog server.</strong></i></li>
+  <li>(Optional) Enter a <i><strong>Remote Syslog Template.</strong></i></li>
+  <li>Click <strong>Submit</strong> to save the settings and create the New NAS Service.</li>
+  <li>The new NAS will now appear in the <strong>NAS Service list</strong>. <strong>Double-click the Service</strong> within the list to bring up the Dashboard for the Service.</li>
+  <li>Select <strong>Power On</strong> from the left menu to start the NAS.</li>
+  <li>Click the <strong>Yes</strong> button to confirm power on.</li>
+  <li>To utilize the NAS service, at least one <strong>Volume</strong> will need to be implemented. Information regarding Volumes is provided below.</li>
+</ul>
+<h2>Volumes</h2>
+<p>A NAS service will consist of one or more Volumes. Each Volume is a separate directory structure with its own settings for security, snapshots, storage tier, max size, antivirus, and sharing.</p>
+<ul>
+  <li><strong>Local Volumes</strong> are file systems stored within Verge.io and consume storage in the Verge.io vSAN.</li>
+</ul>
+<p>See <a href="https://yottadoc.ro.verge.io/#help?id=nas-volumes">Local Volumes</a> for instructions on creating Local Volumes.</p>
+<ul>
+  <li><strong>Remote Volumes</strong> are external file systems that are mounted to the Verge.io system and presented as if local.</li>
+</ul>

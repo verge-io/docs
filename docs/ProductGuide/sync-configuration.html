@@ -1,0 +1,106 @@
+<!--
+title: Product Guide - Configuring a Site Sync
+description: Full manual instructions for creating syncs between systems.  Some of these tasks can be done automatically, when adding a site to a Sites Dashboard. 
+published: false
+date: 2023-04-01T01:01:04.521Z
+tags: 
+editor: ckeditor
+dateCreated: 2023-03-31T20:44:16.506Z
+-->
+
+<h1>Configuring a Site Sync</h1>
+<p>Site Sync provides replication of Cloud Snapshots to a separate Verge.io system; this provides off-site data backup facilitating disaster recovery and business continuity.</p>
+<h4><strong>Setting up a Site Sync Involves:</strong></h4>
+<ul>
+  <li><a href="https://yottadoc.ro.verge.io/#help?id=sitesyncs-config&amp;bookmark=netconfig"><strong>Network Configuration</strong></a></li>
+  <li><a href="https://yottadoc.ro.verge.io/#help?id=sitesyncs-config&amp;bookmark=incoming"><strong>Creating Incoming Sync (on the receiving system)</strong></a></li>
+  <li><a href="https://yottadoc.ro.verge.io/#help?id=sitesyncs-config&amp;bookmark=outgoing"><strong>Creating Outgoing Sync (on the sending system/and registering with the receiving system)</strong></a></li>
+  <li><a href="https://yottadoc.ro.verge.io/#help?id=sitesyncs-config&amp;bookmark=sshot-retention"><strong>Specifying Snapshots to Sync and Retention on the Receiving System</strong></a></li>
+  <li><a href="https://yottadoc.ro.verge.io/#help?id=sitesyncs-config&amp;bookmark=schedule"><strong>Configuring Sync Scheduling (optional)</strong></a></li>
+  <li><a href="https://yottadoc.ro.verge.io/#help?id=sitesyncs-config&amp;bookmark=repair"><strong>Creating a Repair Server (recommended)</strong></a></li>
+</ul>
+<p><br><br>&nbsp;</p>
+<p><strong>Network Configuration</strong></p>
+<p>Network Rules are necessary to translate incoming sync traffic to the vSAN. <strong>Note:</strong> These Rules are created at the Host level (not within a Tenant.)</p>
+<h3>To Configure 14201 PAT Rule for Sync traffic to the vSAN:</h3>
+<ol>
+  <li><strong>Login</strong> to the <strong>receiving</strong> Verge.io system at the <strong>HOST level (not in Tenant)</strong>.</li>
+  <li>Navigate to <strong>Networks</strong>.</li>
+  <li>Click <strong>All Networks</strong>.</li>
+  <li><strong>Double-click</strong> on the <strong>Core Network</strong> to access its Dashboard.</li>
+  <li>Click <strong>Rules</strong> on the left menu.</li>
+  <li>Click <strong>New</strong> on the left menu.</li>
+  <li>Build a Rule with the following values:</li>
+</ol>
+<p><strong>Rule</strong></p>
+<ul>
+  <li><i><strong>Name (required):</strong></i> Should be something helpful for future administration</li>
+  <li><i><strong>Action:</strong></i> Translate</li>
+  <li><i><strong>Protocol:</strong></i> TCP</li>
+  <li><i><strong>Direction:</strong></i> Incoming</li>
+  <li><i><strong>Interface:</strong></i> Auto</li>
+  <li><i><strong>Pin:</strong></i> No</li>
+  <li><i><strong>Type:</strong></i> Any/None</li>
+  <li><i><strong>Type:</strong></i> Custom</li>
+  <li><i><strong>Custom Filter:</strong></i> ui (This is a Verge.io keyword; it must be entered in lower case, exactly as noted)</li>
+  <li><i><strong>Destination Ports/Ranges:</strong></i> 14201</li>
+  <li><i><strong>Type:</strong></i> IP/Custom</li>
+  <li><i><strong>Target IP:</strong></i> ui (This is a Verge.io keyword; it must be entered in lower case, exactly as noted)</li>
+</ul>
+<ol>
+  <li>Click <strong>Submit</strong> to save the new rule.</li>
+  <li>The system will prompt to Apply Rules. Click <strong>Apply Rules</strong> on the left menu to put the rule into effect.</li>
+</ol>
+<h3>To Create PAT Rule for Incoming Sync:</h3>
+<ol>
+  <li><strong>Login</strong> to the <strong>receiving</strong> Verge.io system at the <strong>HOST level (not in Tenant)</strong> .</li>
+  <li>Navigate to <strong>Networks</strong>.</li>
+  <li>Click <strong>Externals</strong>.</li>
+  <li><strong>Double-click</strong> the appropriate <strong>External Network</strong>.</li>
+  <li>Click <strong>Rules</strong> on the left menu.</li>
+  <li>Click <strong>New</strong> on the left menu.</li>
+  <li>Build a rule with the following values:</li>
+</ol>
+<p><strong>Rule</strong></p>
+<ul>
+  <li><i><strong>Name(required):</strong></i> Use a name that will be helpful to future administration, for example: sNAT-<i>customername</i></li>
+  <li><i><strong>Action:</strong></i> Translate</li>
+  <li><i><strong>Protocol:</strong></i> TCP</li>
+  <li><i><strong>Direction:</strong></i> Incoming</li>
+  <li><i><strong>Interface:</strong></i> Auto</li>
+  <li><i><strong>Type: </strong></i>Custom</li>
+  <li><i><strong>Custom Filter (recommended):</strong></i> Enter the IP address of the sending Verge.io system. If adding to an existing vSAN NAT rule, add the IP address making sure all addresses are separated by commas.</li>
+  <li><i><strong>Type:</strong></i> My Router IP</li>
+  <li><i><strong>Destination Ports/Ranges:</strong></i> 14201</li>
+  <li><i><strong>Type: </strong></i>IP/Custom</li>
+  <li><i><strong>Target:</strong></i> ui (This is a Verge.io keyword; it must be entered in lower case, exactly as noted)</li>
+</ul>
+<ol>
+  <li>Click <strong>Submit</strong> to save the new rule.</li>
+  <li>Click <strong>Apply Rules</strong> on the left menu to put the rule into effect.</li>
+</ol>
+<p><br>&nbsp;</p>
+<p><i>If the hostname/IP for receiving syncs is different than the vSAN address, there is a system setting to override: on the sync receiving system (host level): <strong>System -&gt;Settings -&gt; vSAN host/IP override(used for incoming syncs).</strong></i></p>
+<p><br><br><br>&nbsp;</p>
+<p><strong>Creating Incoming Sync</strong></p>
+<p><i>Note: Incoming syncs may be auto-generated via cloud snapshot send/receive options when adding a site to the Sites Dashboard; when incoming/outgoing syncs are auto-created through adding sites, proceed to the </i><a href="https://yottadoc.ro.verge.io/#help?id=sitesyncs-config&amp;bookmark=sshot-retention"><i><strong>Specifying Snapshots to Sync and Retention on the Receiving System</strong></i></a><i> section to complete the site sync configuration.</i></p>
+<h3>To Configure the Incoming sync (creates authorization key)</h3>
+<ol>
+  <li><strong>Login</strong> to the <strong>receiving Tenant</strong> system.</li>
+  <li>From the main dashboard, click <strong>Backup / DR</strong> on the left menu.</li>
+  <li>Click <strong>Incoming Syncs</strong> on the left menu.</li>
+  <li>Click <strong>New</strong> on the left menu.</li>
+  <li>Complete the Configuration for the Incoming Sync:<ul>
+      <li><i><strong>Name (required):</strong></i> Provide a name that is helpful for administration, for example, the name of the site the sync will come from.</li>
+      <li><i><strong>Description:</strong></i> Optionally, more administrative information can be stored for this incoming sync.</li>
+      <li><i><strong>Force Tier:</strong></i> This can be defined to select a tier to which this sync will be directed, regardless of the originating Tier or any outgoing sync settings. (If the selected tier does not exist, the next appropriate tier will be used.) Leave this field set to <strong>-- None --</strong> to allow the sync tier to be determined from the sending system.)</li>
+      <li><i><strong>URL of this system that the remote system will use to connect:</strong></i> This is the URL to the system you are currently logged into. This URL should be reachable from the sending system.</li>
+      <li><i><strong>VSAN Host:</strong></i> URL for the VSAN Host. This will default to the URL of the current (receiving) system.</li>
+      <li><i><strong>VSAN Port (Default 14201):</strong></i> This is the port used in the PAT rule that was created above.</li>
+      <li><i><strong>Minimum Snapshots (Default 1):</strong></i> This is the minimum number of snapshots that the system will retain regardless of retention periods defined.This helps prevent having all snapshots expire in the event of a prolonged outage or incorrect retention setup.</li>
+    </ul>
+  </li>
+  <li>Click <strong>Submit</strong> to save the Incoming Sync.</li>
+  <li>The Incoming Syncs list appears. <strong>Double-click the sync just created.</strong> The dashboard for the incoming sync appears, along with a Registration Code (It may take a minute or two for the Registration Code to generate.).</li>
+  <li>When the Registration key appears, click the <i><strong>Copy</strong></i> button to copy the key to the clipboard.</li>
+</ol>

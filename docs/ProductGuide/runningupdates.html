@@ -1,0 +1,44 @@
+<!--
+title: Product Guide - Running Updates
+description: 
+published: false
+date: 2023-04-07T16:37:29.916Z
+tags: 
+editor: ckeditor
+dateCreated: 2023-04-07T16:34:04.834Z
+-->
+
+<h1>Running Updates</h1>
+<p><i>System Updates are only run from the Host system (top-level parent); tenant systems are automatically updated from their host system.</i></p>
+<p>Verge.io regularly publishes updates to provide enhancements and improvements. Administrators should aim to keep systems updated by scheduling auto updates or regularly checking and applying available updates. The update process can be initiated within the UI or via task scheduling. The update process is then handled by the system with changes automatically propagated to all nodes, rebooting and applying one node at a time. Updates can be performed without any downtime (provided there are adequate resources in place), as the system can automatically migrate workloads to other nodes before applying an update and restarting/rebooting a node.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>To Run a System Update (on-demand):</h2>
+<ol>
+  <li>From the Cloud Dashboard, click <strong>System</strong> on the left menu.</li>
+  <li>Click <strong>Updates</strong> on the left menu. The <strong>Updates Dashboard </strong>Appears.&nbsp;</li>
+  <li>Click <strong>Check For Updates</strong> on the left menu.</li>
+  <li>Click <strong>Yes</strong> to confirm.&nbsp;</li>
+  <li>Click <strong>Download</strong> on the left menu.</li>
+  <li>Click <strong>Yes</strong> to confirm the Download.</li>
+  <li>Click <strong>Install</strong> on the left menu.</li>
+  <li>Click <strong>Yes</strong> to confirm the Install.</li>
+  <li>Click <strong>Reboot</strong> on the left menu.</li>
+  <li>Click <strong>Yes</strong> to confirm reboot and apply updates.</li>
+</ol>
+<h3>To Schedule Update(s):</h3>
+<ol>
+  <li>From the Cloud Dashboard, click <strong>System</strong> on the left menu.</li>
+  <li>Click <strong>Updates</strong> on the left menu.</li>
+  <li>Click <strong>Tasks</strong> on the left menu.</li>
+  <li>Click <strong>New</strong> on the left menu.</li>
+  <li>By default, <i><strong>Repeat Every</strong></i> is set to <strong>Does Not Repeat</strong>.<strong>Optionally,</strong> the task can be configured to repeat on a regular basis, (for example each week, every 2 weeks, monthly, etc.).</li>
+  <li>Select desired <i><strong>Start Date</strong></i> and <i><strong>At</strong></i> time.</li>
+  <li>When a Task is set to recur, an <i><strong>Ends</strong></i> date/time can Optionally be selected.</li>
+  <li>Enter a <i><strong>Name</strong></i> for the Task (required).</li>
+  <li>A <i><strong>Description</strong></i> can be entered to store additional administrative information.</li>
+  <li>To schedule a complete update operation, select <strong>Download, Install, and Reboot</strong> in <i><strong>Task Type</strong></i></li>
+  <li><strong>Optionally</strong>, the <i><strong>Delete After Running</strong></i> checkbox can be selected to completely delete this task after it runs.</li>
+  <li>When configured as desired, click <strong>Submit</strong> to save the Task.</li>
+</ol>
+<figure class="image"><img src="https://support.yottabyte.com/help/sshots/Updates-scheduleonetime.png"></figure>

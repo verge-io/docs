@@ -1,0 +1,29 @@
+<!--
+title: Product Guide - Importing VMs from a VMware Service Backup Job
+description: Instructions for importing VMware VMs using the built-in VMware service
+published: false
+date: 2023-04-13T14:33:20.438Z
+tags: 
+editor: ckeditor
+dateCreated: 2023-04-09T14:03:06.099Z
+-->
+
+<h1>Importing VMs from a VMware Service Backup Job</h1>
+<p>This is the recommended method for importing a number of production VMware VMs. The Verge.io VMware service creates a direct agent connection to a VMware environment and provides for synchronizing backups of running VMs to Verge.io.</p>
+<p>Typically, for import: a backup operation is run multiple times while VMs are still running in production. After the backup job runs one or more times, the duration of each backup job should begin to decrease. When backup job durations start to level off (e.g. backup duration is about the same each time) one last backup is performed while the VMs are powered down and then the import operation is completed using that backup job (directions below).</p>
+<h3>Import from Backup Job (VMware Service)</h3>
+<p><i>The following directions cover importing from an existing VMware backup Job. See the </i><a href="https://wiki.verge.io/en/public/kb/vmware-backup-dr-guide"><i>VMware-Backup-DR-Guide</i></a><i> (on the Verge.io wiki) for guidance on configuring the VMware Backup service.</i></p>
+<ol>
+  <li>From the <i><strong>Main Dashboard</strong></i>, click <strong>Backup/DR</strong> on the left menu.</li>
+  <li>Click <strong>VMware</strong> on the left menu.</li>
+  <li><strong>Double-click the appropriate VMware service</strong> in the listing.</li>
+  <li>Click <strong>Backup Jobs</strong> on the left menu.</li>
+  <li><strong>Double-click the desired Backup Job</strong> in the listing.</li>
+  <li>Click <strong>Import VMs</strong> on the left menu.</li>
+  <li>All VMs that were included in the backup job are selected, by default. <strong>Individual VMs can be deselected to exclude from the import, if desired.</strong></li>
+  <li>By default, the <i><strong>Preserve MAC Addresses</strong></i> option is selected, which will carry over MAC addresses. Typically, this is the preferred setting to avoid necessary network reconfiguration within VM (guest OS will see new MAC addresses as new network devices). This option can be deselected to create new MAC addresses on the imported VMs, if needed.</li>
+  <li>Select <i><strong>Preferred Tier</strong></i>, or leave at <strong>--default--</strong>. This determines the tier first attempted for VM storage. See the <a href="https://yottadoc.ro.verge.io/#help?id=vsan-preferred-tier">Preferred Tiers</a> page for more information.</li>
+</ol>
+<p>See&nbsp;</p>
+<p><a href="https://yottadoc.ro.verge.io/#help?id=vms-viewimportjobs">Viewing Import Jobs</a></p>
+<p>&nbsp;for instructions on viewing the details of an Import Job.</p>

@@ -1,0 +1,72 @@
+<!--
+title: Product Guide - Network Diagnostics
+description: Instructions on using the built-in Network Diagnostics Tool, including examples.
+published: false
+date: 2023-03-31T17:27:02.783Z
+tags: 
+editor: ckeditor
+dateCreated: 2023-03-31T17:27:02.783Z
+-->
+
+<h1>The Network Diagnostics Tool</h1>
+<p>The built-in Diagnostics query engine allows quick and easy access to extended network information, such as DNS queries, traceroute, ping, arp, TPC Dump, BGP Quagga. The Diagnostics Tool is available for each network.</p>
+<h3>To Access Diagnostics:</h3>
+<ol>
+  <li>Navigate to the desired <strong>Network Dashboard</strong>.</li>
+  <li>Click <strong>Diagnostics</strong> on the left menu.</li>
+  <li>The Query list dropdown provides a comprehensive set of available diagnostic queries.</li>
+</ol>
+<h2>Diagnostic Query List</h2>
+<p><i>Some query options are only intended for very advanced, low-level troubleshooting. Contact Verge.io Support for additional assistance.</i></p>
+<h4>ARP Table</h4>
+<ul>
+  <li>Standard ARP cache</li>
+</ul>
+<h4>ARP Scan</h4>
+<ul>
+  <li>Standard ARP scan tool used to discover all active devices in an IPV4 range. Caution should be used as an ARP scan has the potential to be disruptive to a network.</li>
+</ul>
+<h4>DNS Lookup</h4>
+<ul>
+  <li>Test DNS functionality from your network, searching specific host names/query types.</li>
+</ul>
+<h4>Show Firewall Rules</h4>
+<ul>
+  <li>NFT format (low-level) translation of network firewall rules. Typically, viewing firewall configuration through the Verge.io UI (Rules) will be adequate. This query is made available for advanced firewall troubleshooting.</li>
+</ul>
+<h4>IP</h4>
+<ul>
+  <li>Standard Linux IP command provided for advanced troubleshooting of interfaces, routing, etc. Documentation for this command can be found at: https://linux.die.net/man/8/ip</li>
+</ul>
+<h4>Logs</h4>
+<ul>
+  <li>Display network’s container log.</li>
+</ul>
+<h4>Ping</h4>
+<ul>
+  <li>Standard Ping command</li>
+</ul>
+<h4>Quagga BGP/OSPF</h4>
+<ul>
+  <li>A comprehensive set of commands that can be used to diagnose BGP/OSPF installations. More information on Quagga commands can be found at: https://www.nongnu.org/quagga/docs/docs-multi/Command-Index.html</li>
+</ul>
+<h4>TCP Dump</h4>
+<ul>
+  <li>Standard TCP Dump (packet sniffer)</li>
+</ul>
+<h4>Top CPU Usage</h4>
+<ul>
+  <li>Top CPU-using processes within the network’s container.</li>
+</ul>
+<h4>Top Network Usage</h4>
+<ul>
+  <li>Although Information about a network’s top net usage (e.g. Virtual Machines) can be viewed easily on the network’s dashboard, this query can provide more detailed information including IP address and destination. This can be helpful to track a network that might be flooded from an external source.</li>
+</ul>
+<h4>Trace Route</h4>
+<ul>
+  <li>Standard Trace route functionality; provides detail about the routers and hop counts from the given network to a destination address.</li>
+</ul>
+<h4>What’s my IP</h4>
+<ul>
+  <li>Returns the current IP address that this network is using to get out to the Internet.</li>
+</ul>

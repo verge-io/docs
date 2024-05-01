@@ -1,0 +1,46 @@
+<!--
+title: Product Guide - Remote NAS Volumes
+description: Explanation and configuration instructions for NAS Remote Volumes
+published: false
+date: 2023-03-29T15:26:22.778Z
+tags: 
+editor: ckeditor
+dateCreated: 2023-03-29T00:17:29.208Z
+-->
+
+<h1>Remote Volumes</h1>
+<p>Remote volumes are external file systems mounted to the Verge.io System via standard NFS or CIFS. A common use for a remote volume would be to allow syncing external data into the Verge.io vSAN (from other Verge.io sites or other storage systems), for a one-time operation or recurring backups.</p>
+<p><i>Note: A NAS Service must be in place before creating volumes. See </i><a href="https://yottadoc.ro.verge.io/#help?id=nas-service"><i>NAS Service</i></a><i> page for instructions to create a NAS service.</i></p>
+<h3>Create a Remote CIFS Volume</h3>
+<ol>
+  <li>From the Cloud Dashboard, select <strong>NAS</strong> from the left menu.</li>
+  <li>Select <strong>Volumes</strong> from the left menu.</li>
+  <li>Select <strong>New</strong> from the left menu.</li>
+  <li>Select the appropriate <i><strong>NAS Service</strong></i> from the dropdown list.</li>
+  <li>Enter a <i><strong>Name</strong></i> for the volume (required). Note: spaces are not permitted.</li>
+  <li>Enter a <i><strong>Description</strong></i> for the volume (optional).</li>
+  <li>In the <i><strong>Filesystem Type</strong></i> dropdown list, select <strong>Remote CIFS</strong>.</li>
+  <li>In the <i><strong>Remote Mount Target</strong></i> field enter the UNC path to access the CIFS Share. (Examples: //10.10.2.2/fshare; //file-01/corp)</li>
+  <li>Enter an appropriate <i><strong>Username</strong></i> and <i><strong>Password</strong></i>, if needed.</li>
+  <li>Select the appropriate <i><strong>SMB Protocol Version</strong></i> from the dropdown list. (Typically, leaving the default selection is recommended as it should work in the majority of situations. The system will auto-detect the version needed, using the newest version detected to be compatible.)</li>
+  <li>Enter <i><strong>Mount Options</strong></i> (These are optional CIFS parameters for advanced use. More information is available at: <a href="https://linux.die.net/man/8/mount.cifs">https://linux.die.net/man/8/mount</a>)</li>
+  <li>Select the <i><strong>Read Only</strong></i> checkbox if the file system should be mounted as read-only within the volume. (Note: Read-only access may already be determined by the user permissions defined on the source CIFS share.)</li>
+  <li>Click <strong>Submit</strong> to save the settings and create the new remote volume.</li>
+  <li>The Dashboard for the new remote volume is displayed. If the remote CIFS share was successfully mounted to the Verge.io system, an Online Status will appear; if the volume does not mount successfully, refer to the logs section toward the bottom of the Dashboard to view error messages.</li>
+</ol>
+<h3>Create a Remote NFS Volume</h3>
+<ol>
+  <li>From the Cloud Dashboard, select <strong>NAS</strong> from the left menu.</li>
+  <li>Select <strong>Volumes</strong> from the left menu.</li>
+  <li>Select <strong>New</strong> from the left menu.</li>
+  <li>Select the appropriate <i><strong>NAS Service</strong></i> from the dropdown list.</li>
+  <li>Enter a <i><strong>Name</strong></i> for the new volume (required). Note: spaces are not permitted.</li>
+  <li>Enter a <i><strong>Description</strong></i> for the volume (optional).</li>
+  <li>In the <i><strong>Filesystem Type</strong></i> dropdown list, select <strong>Remote NFS</strong>.</li>
+  <li>In the <i><strong>Remote Mount Target</strong></i> field enter the NFS path. <strong>NFS Path syntax: SERVER:/FullPathtoShare </strong>(Example1: server01:/export/svrdata Example2: server01:/data/testdata/Jan)</li>
+  <li>If necessary, select the proper <i><strong>NFS protocol version</strong></i> from the dropdown list. (Typically, leaving the default selection is recommended as it should work in the majority of situations. The system will auto-detect the version needed, using the newest version detected to be compatible.)</li>
+  <li>Optionally, <i><strong>Mount Options</strong></i> can be entered. (This allows for advanced, optional NFS mount parameters; more information is available at: <a href="https://linux.die.net/man/5/nfs">https://linux.die.net/man/5/nfs</a>)</li>
+  <li>Select the <i><strong>Read Only</strong></i> checkbox if the file system should be mounted as a read-only within the volume.</li>
+  <li>Click <strong>Submit</strong> to save the settings and create the new remote volume.</li>
+  <li>The Dashboard for the new remote volume is displayed. If the remote NFS share was successfully mounted to the Verge.io system, the status will display Online; if the volume does not mount successfully, refer to the logs section at the bottom of the Dashboard to view encountered errors for troubleshooting.</li>
+</ol>

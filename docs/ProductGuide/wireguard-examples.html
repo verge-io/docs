@@ -1,0 +1,68 @@
+<!--
+title: Product Guide - Wireguard Configuration Examples
+description: Examples (using sample addressing scenarios) for creating site-to-site VPN tunnel, testing a site-to-site and configuring remote access on a Windows client
+published: false
+date: 2023-04-14T16:26:49.510Z
+tags: 
+editor: ckeditor
+dateCreated: 2023-04-10T20:05:56.342Z
+-->
+
+<h1>WireGuard Configuration Examples</h1>
+<p>The following are provided as example WireGuard implementations. Refer to the general WireGuard help page for more guidance on individual field settings. Note: The following examples use sample addressing scenarios; actual implementations should be configured with addresses/settings appropriate to the the particular environments.</p>
+<h3>Example: Creating a VPN Tunnel between Two Verge.io Systems</h3>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<ol>
+  <li><strong>Create a WireGuard Interface.</strong></li>
+  <li><strong>Copy</strong> the generated Public key (for the Interface) to the clipboard, using the copy icon.</li>
+  <li><strong>Create a WireGuard Interface.</strong></li>
+  <li><strong>Create a Peer</strong> definition (to allow SystemA to connect to this system.)<ul>
+      <li>In the <i><strong>Public</strong></i> key field, paste in the key already copied from SystemA.</li>
+      <li>In the <i><strong>Allowed IPs</strong></i> section:<ul>
+          <li>add an entry for the address of the <strong>WireGuard interface on SystemA</strong>.</li>
+          <li>add an entry for the <strong>connected network on SystemA</strong> (e.g. the network to which WireGuard is connected.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>While still on SystemB</strong>, copy the generated public key, using the copy icon.</li>
+  <li>Create a new Peer definition (for SystemB to connect here.)<ul>
+      <li>In the <i><strong>Public key</strong></i> field, paste in the key <strong>copied from SystemB</strong>.</li>
+      <li>In the <i><strong>Allowed IPs</strong></i> section:<ul>
+          <li>add an entry for the address of the WireGuard interface on <strong>SystemB</strong>.</li>
+          <li>add an entry for the <strong>connected network on SystemB</strong> (e.g. the network to which WireGuard is connected.)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Apply Rules</strong> (on the networks where Wireguard interfaces were created) to put system-generated network rules into effect.</li>
+</ol>
+<h3>Testing the site-to-site VPN Connection</h3>
+<ul>
+  <li><strong>On SystemA:</strong> navigate to the Network Dashboard (the network to which WireGuard is attached)</li>
+  <li><strong>Select ping</strong> from the Query list dropdown.</li>
+  <li><strong>Ping the interface address on SystemB</strong>(from our example: 192.68.1.2)</li>
+  <li>Similarly, other IP addresses from SystemB (e.g. VMs on the attached Network ) can also be ping-tested here.</li>
+  <li><strong>Perform the same tests from SystemB to ping addresses on SystemA</strong></li>
+</ul>
+<h3>Example: Configuring for Remote Access - Windows client</h3>
+<ol>
+  <li>On the Verge.io system, navigate to the <strong>WireGuard(VPN) dashboard</strong>.</li>
+  <li>Click <strong>New Peer</strong> on the left menu.</li>
+  <li>Select the appropriate WireGuard <i><strong>Interface</strong></i> from the dropdown list.</li>
+  <li>Assign a <i><strong>Name</strong></i> to the peer, such as the remote user's name.</li>
+  <li>Optionally, a <i><strong>Description</strong></i> can be entered to store additional information about this peer.</li>
+  <li>Check the <i><strong>Auto-Generate Peer Configuration</strong></i> checkbox to automate settings and create a configuration file that can be used on the client.</li>
+  <li>Enter the <i><strong>Endpoint </strong></i>for the Peer (the external-facing IP address, hostname, or URL this system will use to communicate with the peer.)</li>
+  <li>In the <i><strong>Configure Firewall</strong></i> dropdown, select <strong>Remote User</strong></li>
+  <li>Click <strong>Submit</strong> to save the new peer entry.</li>
+  <li>Click the Download Config button on the peer record and select a location for the file; download to a location that will be accessible to the client computer or from which can otherwise be transferred to the client.</li>
+  <li>Click <strong>Add Tunnel</strong>.</li>
+  <li>Navigate to and <strong>select the generated configuration file</strong>.</li>
+  <li>The configuration file is used to automatically create an interface and peer on the client machine. Click the <strong>Activate</strong> button to open the tunnel, if it was not automatically activated.</li>
+</ol>

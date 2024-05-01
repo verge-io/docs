@@ -1,0 +1,96 @@
+<!--
+title: Product Guide - Using Azure AD for Authentication
+description: Configuration instructions for using an Azure AD for VergeIO user authentication
+published: false
+date: 2023-03-22T18:47:58.172Z
+tags: 
+editor: ckeditor
+dateCreated: 2023-03-22T18:46:18.889Z
+-->
+
+<h1>Using Azure AD for Authentication</h1>
+<h3>To Configure an Azure AD Authorization Source</h3>
+<ol>
+  <li>In Azure services: register a single-tenant web application, setting the <i><strong>Redirect URI</strong></i> to the URL of the Verge.io system and creating a new client secret. <strong>Azure Active Directory -&gt; App Registrations -&gt; New Registration</strong></li>
+  <li>Create a new client secret. <strong>App Registrations -&gt; Client Credentials -&gt; Add a certificate or secret. Click +New client secret.</strong>
+    <ul>
+      <li>Enter a <strong>description and expiration date</strong> for the new client secret.</li>
+      <li><strong>Obtain the following from Azure</strong> to be used in configuration of the authorization source within Verge.io:<ul>
+          <li><strong>Tenant ID</strong></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ol>
+<p><strong>Hint: </strong>All services -&gt; Azure Active Directory -&gt; Overview. The Tenant ID is listed under Basic Information.</p>
+<ul>
+  <li><mark class="marker-green"><strong>Client ID</strong></mark></li>
+</ul>
+<p><strong>Hint: </strong>Azure App Registrations-&gt; Configured Item -&gt; Client Credentials.</p>
+<ul>
+  <li><mark class="marker-yellow"><strong>Client Secret</strong></mark></li>
+</ul>
+<p><strong>Hint: </strong>Azure App Registrations-&gt; Configured Item -&gt; Client Credentials; use the "VALUE" field.</p>
+<ol>
+  <li>From the Verge.io Main Dashboard click <strong>System</strong> on the left menu.</li>
+  <li>Click <strong>Authorization Sources</strong> on the left menu.</li>
+  <li>Click <strong>New </strong>on the left menu.</li>
+  <li>Enter a <i><strong>Name </strong></i>for the source (such as "Azure"). This name will appear on the sign-in button of the Verge.io login page.</li>
+  <li>In the <i><strong>Driver</strong></i> field (dropdown list), select <strong>Azure AD</strong>.</li>
+  <li>Enter the <i><strong>Tenant ID</strong></i> obtained in the previous step.</li>
+  <li>The <i><strong>Redirect URI</strong></i> should be the URL to your Verge.io system (for ex: https://verge.io.mycompanyabc.com)</li>
+  <li>Enter <i><strong>Endpoint URL for user to logout session token</strong></i> (https://login.microsoftonline.com/<i>TENANTID</i>/oauth2/v2.0/logout</li>
+  <li><i><strong>Scope</strong></i> should typically be left at the default value: "OpenID profile email".</li>
+  <li><i><strong>Group Scope</strong></i> needs to be set if users should be auto-created based on group membership; typically, this is set to the word "groups" with no punctuation.</li>
+  <li>Enter the <i><strong>Client ID</strong></i> obtained in the previous step.</li>
+  <li>Enter the <i><strong>Client Secret</strong></i> obtained in the previous step.</li>
+  <li><i><strong>Remote User Fields</strong></i> is the list of fields used to initially find the Azure user; this field is auto-populated with (sub,preferred_username,email nickname), a default list that can typically work for most implementations. <strong>Note: For security reasons, it is not recommended to locate remote users based on fields that are changeable by the end user on the remote system.</strong></li>
+  <li>To carry over group membership from Azure to Verge.io, check the <i><strong>Update Group Membership</strong></i> checkbox. Groups must be created in Verge.io using instructions below.</li>
+  <li>Configure <strong>User Auto-Creation Features (optional)</strong>:</li>
+</ol>
+<p>Users can be auto-created upon initial login to Verge.io; this can be selected for all Azure AD users -OR- limited to users in specified Azure AD groups.</p>
+<ul>
+  <li><i><strong>Auto-Create Users</strong></i> -If all users should be auto-created, enter <strong>*</strong> here.</li>
+  <li><i><strong>Auto Create Users in Group</strong></i> - To only auto-create users that are members of specified Azure AD groups, enter the Azure group object ID(s) in regular expression (regex) form.</li>
+</ul>
+<p><strong>Hint: </strong>Multiple specific group IDs can be entered using the format: (ID)|(ID)|(ID)</p>
+<ul>
+  <li>the <strong>Group Scope</strong> must be defined. (Group Scope field defined above)</li>
+  <li><strong>Token Configuration</strong> must be setup in Azure AD (instructions below).</li>
+  <li>Azure AD <strong>groups</strong> specified for Auto Create <strong>must be created on the Verge.io side</strong> (instructions below).</li>
+  <li>To auto-create based on group, the <i><strong>Auto Create Users</strong></i><strong> field must be blank</strong>&gt;</li>
+  <li><i><strong>Update Remote User: </strong></i>- once the user is located in Azure AD, update Verge.io user <i>Remote Username</i> field to the corresponding Azure unique ID.</li>
+</ul>
+<p><i>Enabling the Update Remote User will allow the Verge.io system to store the unique Azure ID in the Verge.io user record (after initially locating the Azure AD user with fields defined in Remote User Fields), so the unique identifier can subsequently be used for finding Azure AD user; this is typically recommended since fields such as email address are subject to change.</i></p>
+<ul>
+  <li><i><strong>Update User Email Address: </strong></i>- update Verge.io user Email address to match email address within Azure.</li>
+  <li><i><strong>Update User Display Name: </strong></i>- update Verge.io user display name to match display name within Azure.</li>
+</ul>
+<h2>Adding Azure Groups to Verge OS</h2>
+<p>Interfacing with Azure groups requires a token on the Azure AD app registration and creation of groups in Verge.io:</p>
+<h3>To set up a Token Configuration in Azure AD</h3>
+<ol>
+  <li>Navigate to the <strong>App registration page</strong> for the App created above.</li>
+  <li>Click on <strong>Token Configuration</strong> on the left menu and click <strong>+Add groups claim</strong>.</li>
+  <li>Check the appropriate <strong>group types</strong>.</li>
+  <li>Set the <strong>ID, Access, and SAML to sAMAccountName</strong>.</li>
+</ol>
+<h3>To Add Azure Groups to Verge OS</h3>
+<ol>
+  <li>Navigate to <strong>System -&gt; Groups.</strong></li>
+  <li>Click <strong>New</strong> on the left menu.</li>
+  <li>Enter the group <i><strong>Name</strong></i> to match the group name in Azure AD.</li>
+  <li>Optionally, an <i><strong>Email</strong></i> can be entered for the group. This email address is used for sending subscription alerts and/or reports assigned to the group.</li>
+  <li>Copy the coordinating <strong>Object Id</strong> from the Groups/All Groups page in Azure AD to the <i><strong>Identifier</strong></i> field.</li>
+  <li>Click <strong>Submit</strong> (bottom of the page) to save the new group.</li>
+</ol>
+<h2>Manually Adding Users from Azure</h2>
+<p>After the Azure auth source is created, users can be manually created in Verge.io to utilize the Authorization source for login authentication. Manually creating users is only necessary when users are not configured to be auto-created.</p>
+<h3>To Add Verge.io Users that will use the Azure AD Auth</h3>
+<ul>
+  <li><i><strong>Authorization Source: </strong></i>Select the Azure AD source from the dropdown list</li>
+  <li><i><strong>Username: </strong></i>unique name within the Verge.io system; typically it is recommended to use the Azure principal name.</li>
+  <li><i><strong>Remote Username: </strong></i>use value of one of the fields defined as <i>Remote User fields</i> these are fields that are searched on in Azure (e.g. username, email)</li>
+  <li><i><strong>Display Name: </strong></i>(optional) If <i>Update User Display Name</i> is enabled on the Azure AD auth source, display name will automatically synchronize from the Azure AD user.</li>
+  <li><i><strong>Email Address: </strong></i>(optional) If <i>Update User Email Address</i> is enabled on the Azure AD auth source, Email address will automatically synchronize from the Azure AD user.</li>
+</ul>

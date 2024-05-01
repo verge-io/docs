@@ -1,0 +1,61 @@
+<!--
+title: Product Guide - Uploading to the vSAN (Media Images)
+description: Instructions for uploading files for consumption in VergeOS
+published: false
+date: 2023-03-27T20:48:07.222Z
+tags: 
+editor: ckeditor
+dateCreated: 2023-03-27T20:48:07.222Z
+-->
+
+<h1>Uploading to the vSAN (Media Images)</h1>
+<p>The Media Images section allows for uploading files to the Verge.io vSAN allowing *.iso files, drive images, VM definition files, etc. to be easily accessible for creating/installing/importing VMs. Optionally, files that are uploaded to vSAN media images can be shared via a public link.</p>
+<h2>How To Quick Reference</h2>
+<h3>To Upload a File from Local computer</h3>
+<ol>
+  <li>From the Main Dashboard, select <strong>Media Images</strong>.</li>
+  <li>Select <strong>Upload</strong>.</li>
+  <li>Click the <strong>Choose Files</strong> button</li>
+  <li>The File Browser Dialog appears. Browse to the desired folder and select the desired file(s). Holding down the ctrl or shift key allows for multi-selection.</li>
+  <li>Click the <strong>Open</strong> button<ul>
+      <li>Selected Files, along with size and type are displayed.</li>
+    </ul>
+  </li>
+  <li>Click the <strong>Upload</strong> button.</li>
+  <li>An Upload Progress popup window will appear showing the upload progress. From this window, the upload can be canceled or paused, if needed. When the upload operation is complete, the file(s) will display in green in the Upload Progress popup.</li>
+</ol>
+<h3>To Upload a File from a web link (URL)</h3>
+<ol>
+  <li>From the Main Dashboard, select <strong>Media Images</strong>.</li>
+  <li>Select <strong>Upload from URL</strong></li>
+  <li>Enter a valid URL (for example: https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso)</li>
+  <li>Enter desired name for the file.</li>
+  <li>Optionally, a <i><strong>File Description</strong></i> can be entered to provide additional information.</li>
+  <li>The <i><strong>Allow insecure SSL links to be used</strong></i> option will permit the file download from a site without a valid CA-signed certificate (e.g. missing, invalid, expired, or self-signed certs). <strong>This option is provided primarily for downloads within a private network in which self-signed certificates are used; downloading from a public URL without secure SSL can be risky.</strong></li>
+  <li>Click the <strong>Submit</strong> button</li>
+  <li>The file will appear in the Media Images listing.</li>
+</ol>
+<h3>To Create a Download Link for a Media Images File</h3>
+<ol>
+  <li>From the Main Dashboard, click <strong>Media Images</strong> on the left menu.</li>
+  <li>Click <strong>Add Public Link</strong> on the left menu.</li>
+  <li>Select the desired <i><strong>File</strong></i> in the dropdown list (the list includes all the files in Media Images).</li>
+  <li>Select a <i><strong>Link Format</strong></i>
+    <ul>
+      <li><strong>Anonymous(uuid)</strong> - creates a public download link using a GUID(128-bit number) <i>ex: https://verge.example.com/273b5d6a--b205-1e1b-6ae6-01cfa7ed1233</i></li>
+      <li><strong>Custom</strong> - creates a public download link using the name entered <i>ex: https://verge.example.com/customname</i></li>
+      <li><strong>Use File Name (recommended)</strong> - creates a public download link using the original filename <i>ex: https://verge.example.com/virtio-win-1.9.6.iso</i></li>
+    </ul>
+  </li>
+  <li>Select <i><strong>Expiration Type</strong></i>
+    <ul>
+      <li><i><strong>Never Expire (default) </strong></i>to make the download link perpetual. (Public Link can be manually edited or deleted later if needed.)</li>
+      <li><i><strong>Set Date </strong></i>to select a specific date/time to cease the download link.</li>
+    </ul>
+  </li>
+  <li>Click <strong>Submit</strong> to save the link.<ul>
+      <li>Click Link to directly download the file from the page.</li>
+      <li>Click the <strong>copy icon</strong> to copy the download address to the clipboard.</li>
+    </ul>
+  </li>
+</ol>

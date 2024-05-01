@@ -1,0 +1,30 @@
+<!--
+title: Product Guide - Port Mirroring
+description: Explanation and instructions for setting up port mirroring on a network.
+published: false
+date: 2023-03-31T18:02:03.335Z
+tags: 
+editor: ckeditor
+dateCreated: 2023-03-30T13:28:55.005Z
+-->
+
+<h1>Port Mirroring</h1>
+<p>Port mirroring replicates a network's traffic to a VM NIC, allowing packet analysis for monitoring or diagnostics.</p>
+<h3>To Configure Port Mirroring</h3>
+<ol>
+  <li>Enable <i><strong>Port Mirroring</strong></i> in the network settings.<ul>
+      <li>Select <i><strong>North/South</strong></i> - to copy packets that traverse the network router.</li>
+      <li>Select <i><strong>East/West*</strong></i> - to copy packets that traverse the router AND all intra-network packets.</li>
+    </ul>
+  </li>
+  <li>Click <strong>Submit</strong> to save the change.</li>
+  <li>Click <strong>Restart</strong> on the left menu to boot the network.</li>
+  <li>Create <strong>a VM that will be used for port analysis</strong> (or use an existing VM).</li>
+  <li><a href="https://yottadoc.ro.verge.io/#help?id=vms-nics">Add a NIC to the VM</a>:<ul>
+      <li>In the <i><strong>Network</strong></i> field, select: <i>NETWORKNAME</i>_mirror.</li>
+      <li>Click <strong>Submit</strong> (bottom of page) to save.</li>
+    </ul>
+  </li>
+  <li><strong>(Re)boot the VM</strong>.</li>
+  <li>Operating system/application software of choice can be used in the VM for <strong>packet analysis</strong>.</li>
+</ol>

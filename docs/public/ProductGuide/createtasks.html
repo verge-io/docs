@@ -1,0 +1,89 @@
+<!--
+title: Product Guide - Create Tasks
+description: Instructions for creating a both a scheduled task and an event-based task and examples of both types of tasks.
+published: false
+date: 2023-05-16T18:46:25.938Z
+tags: 
+editor: ckeditor
+dateCreated: 2023-04-03T19:42:47.423Z
+-->
+
+<h1>Creating Tasks</h1>
+<p>This page includes general directions for creating a schedule-based task and an event-based task followed by three specific examples.</p>
+<h3>Create a Schedule-based Task:</h3>
+<ol>
+  <li>From the Main Dashboard, click <strong>System</strong> on the left menu.</li>
+  <li>Click <strong>Tasks/Events</strong> on the left menu.</li>
+  <li>Click <strong>New</strong> on the left menu.</li>
+  <li>In <i><strong>Task Triggered by: </strong></i>select <strong>Schedule</strong>.</li>
+  <li>By Default, a scheduled task is configured to run one time. Optionally, the <i><strong>Repeat Every</strong></i> setting can be configured to create a recurring task, run at a frequency based on: <strong>day(s), hour(s), minute(s), month(s), week(s), year(s) </strong>.</li>
+  <li>If a repeat interval was specified, corresponding frequency criteria should be configured. For example, if day(s) specified, select the number of days or days of the week.</li>
+  <li>Select a <i><strong>Start Date</strong></i> for the task to begin.</li>
+  <li>Select time <strong>hour / minute</strong> settings for the scheduled task to start. (These settings do not apply to tasks that run at an hour or minute repeat intervals.)</li>
+  <li>Specify a descriptive <i><strong>Name</strong></i> for the task.</li>
+  <li><strong>Optionally</strong>, additional information about the task can be entered in the <i><strong>Description</strong></i> field.</li>
+  <li>Select the desired <i><strong>Section</strong></i> from the dropdown list; this is the category of object on which to perform the task; (e.g. user, virtual machine, tenant, etc.)</li>
+  <li><strong>Additional </strong><i><strong>Settings</strong></i><strong> are needed for some selected types, such as SMTP. These will appear in the lower left or far right area of the screen</strong>.</li>
+  <li><strong>Most selected Sections</strong> will include a dropdown list from which a <strong>specific object</strong> is selected; for example: the particular user or particular virtual machine to perform the task on.</li>
+  <li>Select the desired <i><strong>Task Type</strong></i>. The tasks available in this dropdown will be <strong>specific to the Section selected </strong>; for example: for Virtual Machines, available Types would be operations such as: Power On; Power Off, Take Snapshot, Reset, Clone, etc. <i>(Note: for Section <strong>type=SMTP</strong>, there is <strong>no Task Type</strong> field)</i>.</li>
+  <li>The <i><strong>Delete Task After Running</strong></i> option can be selected to automatically delete the task once completed. If the task is configured to repeat, the task would be deleted after the date/time defined in the <strong>Ends</strong> field.</li>
+  <li>Click <strong>Submit</strong> to create the new task.</li>
+</ol>
+<h3>Create an Event-based Task:</h3>
+<ol>
+  <li>From the Main Dashboard, click <strong>System</strong> on the left menu.</li>
+  <li>Click <strong>Tasks/Events</strong> on the left menu.</li>
+  <li>Click <strong>New</strong> on the left menu.</li>
+  <li>In <i><strong>Task Triggered by:</strong></i> select <strong>Event</strong>.</li>
+  <li>In the first dialog area, select the <i><strong>Section</strong></i> and <i><strong>Event</strong></i> that will be used to trigger the task. The <i><strong>Event</strong></i> dropdown list will vary depending on the <i><strong>Section</strong></i> selected. For example, for Section="User", Event options will include: <i>Logged In</i> and <i>Logged Out</i>.</li>
+  <li>Select the specific <i><strong>Object </strong></i>that will trigger the task (for example, the particular user or virtual machine).</li>
+  <li>Specify a descriptive <i><strong>Name</strong></i> for the task.</li>
+  <li>Optionally, additional information about the task can be entered in the <i><strong>Description</strong></i> field.</li>
+  <li>In the second dialog area, select a <i><strong>Section</strong></i> from the dropdown list to choose the category of object on which to perform the task; for example: Users, Virtual Machines, Tenants,etc.</li>
+  <li><strong>Additional </strong><i><strong>Settings</strong></i><strong> are required for some selections ,such as SMTP. These will appear in the lower left or far right area of the screen</strong>.</li>
+  <li>Most selections will include a dropdown list from which a <strong>specific object</strong> is specified; for example: the particular user or particular virtual machine on which the task will be performed.</li>
+  <li>Select the desired <i><strong>Task Type</strong></i>. The tasks available in this dropdown will be specific to the <strong>Section</strong> selected; for example: for Virtual Machines, available Types would be operations such as: Power On; Power Off, Take Snapshot, Reset, Clone, etc. <i>(Note: for Section <strong>type=SMTP</strong>, there is <strong>no Task Type</strong> field)</i>.</li>
+  <li>Optionally, the <i><strong>Delete Task After Running </strong></i>option can be selected to delete the task after it has completed once.</li>
+  <li>Click <strong>Submit</strong> to create the new task.</li>
+</ol>
+<h3>Example Task - Disable a User on a Specific Date:</h3>
+<ul>
+  <li><i>Task Triggered by:</i> <strong>Schedule</strong></li>
+  <li><i>Repeat Every:</i>: <strong>Does Not Repeat</strong></li>
+  <li><strong>Specific </strong><i><strong>Date/Time</strong></i><strong> to disable the account</strong></li>
+  <li><i>Name</i>: <strong>a descriptive name for the task</strong>, such as "Disable-contractor-account"</li>
+  <li><i>Description</i>: <strong>(optional)</strong> further information about the task that would be helpful for future administration</li>
+  <li><i>Section</i>: <strong>Users</strong></li>
+  <li><i>Users</i>: <strong>specific user account to be disabled</strong></li>
+  <li><i>Task Type</i>: <strong>Disable</strong></li>
+  <li><i>Delete Task After Running</i>: <strong>checked</strong> (since the task will no longer be needed after it runs).</li>
+</ul>
+<h3>Example Task - Send Notification When a System Update Completes:</h3>
+<ul>
+  <li><i>Task Triggered by:</i> <strong>Event</strong></li>
+  <li><i>Section</i>: <strong>System Update</strong></li>
+  <li><i>Event</i>: <strong>Update Completed</strong></li>
+  <li><i>Name</i>: <strong>a descriptive name for the task</strong>, ex: "Email-updatecomplete"</li>
+  <li><i>Description</i>: <strong>(optional)</strong> further information about the task that would be helpful for future administration</li>
+  <li><i>Section</i>: <strong>SMTP</strong></li>
+  <li><i>SMTP</i> field is <strong>automatically set to the from address configured in SMTP global settings</strong>.</li>
+  <li><i>From Address</i>: from address for the email; <strong>Can be left blank</strong> to default to the the From Address defined in SMTP global settings.</li>
+  <li><i>From Name</i>: from display name for the email; <strong>Can be left blank</strong> to default to the the From Name defined in SMTP global settings.</li>
+  <li><i>To List</i>:<strong> list of one or more email addresses to receive the alert; The semicolon (;) is used to separate multiple addresses.</strong></li>
+  <li><i>CC List</i>: <strong>(optional)</strong> list of one or more email addresses to be copied on the alert; The semicolon (;) is used to separate multiple addresses.</li>
+  <li><i>BCC List</i>: <strong>(optional)</strong> list of one or more email addresses to be blind copied on the alert; The semicolon (;) is used to separate multiple addresses.</li>
+  <li><i>Subject</i>: <strong>email subject line text</strong></li>
+  <li><i>Body</i>: <strong>email content text</strong></li>
+</ul>
+<h3>Example Task - Power on a VM When a Specific User Logs in</h3>
+<ul>
+  <li><i>Task Triggered by:</i> <strong>Event</strong></li>
+  <li><i>Section</i>: <strong>User</strong></li>
+  <li><i>Event</i>: <strong>Logged In</strong></li>
+  <li><i>Object</i>: <strong>user to power on VM for</strong></li>
+  <li><i>Name</i>: <strong>a descriptive name</strong> for the task, ex: "Power on CTApp VM for bswanson"</li>
+  <li><i>Description</i>: <strong>(optional)</strong> further text about the task that would be helpful for future administration</li>
+  <li><i>Section</i>: <strong>Virtual Machines</strong></li>
+  <li><i>Virtual Machines</i>: <strong>VM to start up</strong></li>
+  <li><i>Task Type</i>: <strong>Power On</strong></li>
+</ul>

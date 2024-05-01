@@ -1,0 +1,53 @@
+<!--
+title: Product Guide - Maintenance Mode
+description: Instructions for using the built-in Maintenance Mode for a node that will be offline in order to gracefully migrate workloads and maintain vSAN redundancy.
+published: false
+date: 2023-03-28T19:09:31.540Z
+tags: 
+editor: ckeditor
+dateCreated: 2023-03-28T19:09:31.540Z
+-->
+
+<h1>Maintenance Mode</h1>
+<p>Maintenance Mode prepares a node to be taken offline.&nbsp;</p>
+<p><strong>Maintenance Mode should be used prior to any operation that will include a reboot / powercycle or will otherwise render the node unavailable.</strong></p>
+<h3>Putting a Node into Maintenance Mode</h3>
+<ol>
+  <li><strong>IMPORTANT: Before starting any maintenance verify node servers can be reached via a backup method, i.e. physical console or ipmi access.</strong></li>
+  <li>From the main dashboard, click <strong>Nodes</strong>.</li>
+  <li><strong>Double-click the desired node</strong> in the list.</li>
+  <li>Click <strong>Enable Maintenance</strong> on the left menu.</li>
+  <li>A Confirmation message will appear. Click <strong>Yes</strong> to continue with placing the node into maintenance mode.</li>
+  <li><strong>Monitor Progress.</strong> The node dashboard will provide information about the Maintenance Mode progress:</li>
+  <li>After verifying the <i><strong>Node Status</strong></i> displays <strong>Maintenance Mode</strong>, perform maintenance operations,<br>using the <strong>Reboot</strong> <strong>-And/Or-</strong> <strong>Power Off</strong> options (on the left menu of tMaintenance Mode</li>
+</ol>
+<p>Maintenance Mode prepares a node to be taken offline.&nbsp;</p>
+<p><strong>Maintenance Mode should be used prior to any operation that will include a reboot / powercycle or will otherwise render the node unavailable.</strong></p>
+<h3>Putting a Node into Maintenance Mode</h3>
+<ol>
+  <li><strong>IMPORTANT: Before starting any maintenance verify node servers can be reached via a backup method, i.e. physical console or ipmi access.</strong></li>
+  <li>From the main dashboard, click <strong>Nodes</strong>.</li>
+  <li><strong>Double-click the desired node</strong> in the list.</li>
+  <li>Click <strong>Enable Maintenance</strong> on the left menu.</li>
+  <li>A Confirmation message will appear. Click <strong>Yes</strong> to continue with placing the node into maintenance mode.</li>
+  <li><strong>Monitor Progress.</strong> The node dashboard will provide information about the Maintenance Mode progress:</li>
+  <li>After verifying the <i><strong>Node Status</strong></i> displays <strong>Maintenance Mode</strong>, perform maintenance operations,<br>using the <strong>Reboot</strong> <strong>-And/Or-</strong> <strong>Power Off</strong> options (on the left menu of the node dashboard) as needed.</li>
+  <li><strong>After all service is completed</strong> and the node is ready to be utilized again, <strong>take the node out of Maintenance Mode</strong> so it can service workloads again.</li>
+</ol>
+<h3>Taking a Node out of Maintenance Mode</h3>
+<ol>
+  <li>From the <strong>node dashboard</strong>, click <strong>Disable Maintenance</strong> on the left menu.</li>
+  <li>A Confirmation message will appear. Click <strong>Yes</strong> to continue taking the node out of Maintenance Mode.</li>
+  <li>The <i><strong>Node Status</strong></i> displays "Leaving Maintenance" while in the process of coming out of Maintenance Mode.</li>
+  <li>The <i><strong>Node Status</strong></i> field will display "Running" when it has fully come out of Maintenance Mode and workloads have been migrated back to the node.</li>
+  <li>If necessary, <strong>power on any non-migratable VMs or tenant nodes that were shutdown for maintenance</strong>.he node dashboard) as needed.</li>
+  <li><strong>After all service is completed</strong> and the node is ready to be utilized again, <strong>take the node out of Maintenance Mode</strong> so it can service workloads again.</li>
+</ol>
+<h3>Taking a Node out of Maintenance Mode</h3>
+<ol>
+  <li>From the <strong>node dashboard</strong>, click <strong>Disable Maintenance</strong> on the left menu.</li>
+  <li>A Confirmation message will appear. Click <strong>Yes</strong> to continue taking the node out of Maintenance Mode.</li>
+  <li>The <i><strong>Node Status</strong></i> displays "Leaving Maintenance" while in the process of coming out of Maintenance Mode.</li>
+  <li>The <i><strong>Node Status</strong></i> field will display "Running" when it has fully come out of Maintenance Mode and workloads have been migrated back to the node.</li>
+  <li>If necessary, <strong>power on any non-migratable VMs or tenant nodes that were shutdown for maintenance</strong>.</li>
+</ol>

@@ -1,0 +1,42 @@
+<!--
+title: Product Guide - Tracking Network Statistics
+description: Instructions for enabling statistics tracking and viewing those tracked statistics on NAT/PAT and Firewall rules
+published: false
+date: 2023-03-31T15:07:35.562Z
+tags: 
+editor: ckeditor
+dateCreated: 2023-03-31T15:07:35.562Z
+-->
+
+<h1>Tracking Network Statistics</h1>
+<p>Statistics tracking can be enabled for Accept, Drop, Reject and Translate rules. This allows viewing the total number of packets/bytes processed by a rule.</p>
+<p>(Currently, statistics cannot be tracked for Route rules.)</p>
+<h3>Turn on Statistics Tracking for All Non-routing Rules of a Network</h3>
+<p>(requires a restart of the network)</p>
+<ol>
+  <li>From the network dashboard, click <strong>Edit</strong> on the left menu.</li>
+  <li>Check the <i><strong>Track Statistics For All Rules</strong></i> checkbox.</li>
+  <li>Click <strong>Submit</strong>.</li>
+  <li>Click <strong>Restart</strong> on the left menu to reset and apply the change. A typical restart will cause a momentary disruption.</li>
+</ol>
+<h3>Turn on Statistics Tracking for Individual Rules</h3>
+<ol>
+  <li>From the network dashboard, click <strong>Rules</strong> on the left menu.</li>
+  <li><strong>Double-click the desired rule</strong>.</li>
+  <li>Check the <i><strong>Track Rule Statistics</strong></i> checkbox.</li>
+  <li>Click <strong>Submit</strong>.</li>
+  <li>Click <strong>Apply Rules</strong> on the left menu.</li>
+</ol>
+<h3>Reset Counter/Clear Statistics for an Individual Rule</h3>
+<ol>
+  <li>From the network dashboard, click <strong>Rules</strong> on the left menu.</li>
+  <li><strong>Click the desired rule to select</strong>.</li>
+  <li>Verify the desired rule is selected (checkbox on the left will be checked.)</li>
+  <li>Click <strong>Clear Statistics</strong> on the left menu.</li>
+</ol>
+<h3>Display Rule Statistics</h3>
+<ol>
+  <li>From the network dashboard, click <strong>Rules</strong> on the left menu.</li>
+  <li><strong>Right-click on the columns heading</strong> section at the top.</li>
+  <li>Check the boxes for <i><strong>Packets</strong></i> and/or <i><strong>Bytes</strong></i> to display these columns.</li>
+</ol>

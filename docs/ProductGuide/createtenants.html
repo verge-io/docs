@@ -1,0 +1,103 @@
+<!--
+title: Product Guide - Creating Tenants
+description: Instructions for creating a new tenant, using 3 methods: Custom Tenant Wizard, cloning, tenant recipes
+published: false
+date: 2023-04-06T20:32:55.832Z
+tags: 
+editor: ckeditor
+dateCreated: 2023-04-06T20:32:11.428Z
+-->
+
+<h1>Creating Tenants</h1>
+<h3>There are 3 methods available for creating a new tenant:</h3>
+<ul>
+  <li>Using the <strong>Custom Tenant Wizard</strong></li>
+  <li><strong>Cloning</strong> an Existing tenant</li>
+  <li>Using a <strong>Tenant Recipe</strong></li>
+</ul>
+<h3>Method 1: Custom Tenant Wizard</h3>
+<p>The Custom Tenant Wizard steps through multiple input forms to create a new custom tenant.</p>
+<h3>To Create a New Tenant via the Custom Tenant Wizard:</h3>
+<ol>
+  <li>Click <strong>Tenants</strong> from the Main Dashboard (quick-link or left menu).</li>
+  <li>Click <strong>New Tenant</strong> on the left menu.</li>
+  <li>From the <strong>Catalog list</strong> (top left), select <i><strong>--Custom--.</strong></i></li>
+  <li>Click <strong>Next</strong> (bottom of the screen).</li>
+  <li>The <strong>Tenant Settings form appears.</strong></li>
+  <li>Enter a <i><strong>Name</strong></i> for the tenant.</li>
+  <li><i><strong>URL</strong></i> is simply a helper field to provide a link to the tenant's UI. (The <i><strong>Connect to UI </strong></i>menu link in the service provider's Verge.io UI.) This field can be left blank as it will automatically be populated when the first External IP is assigned to the tenant.</li>
+  <li>Enter an <i><strong>Admin User Password</strong></i> and again in the <i><strong>Confirm Admin User Password</strong></i> field (required). This sets the password for the tenant’s “admin” root user that will be auto-created.</li>
+  <li><strong>Optionally,</strong> <i><strong>Require Password Change</strong></i> (checkbox) can be selected to “force” a password change when the tenant admin initially logs in.</li>
+  <li><strong>Optionally</strong>, a <i><strong>Description</strong></i> can be entered to record more information about the tenant.</li>
+  <li>By default, the <i><strong>Expose Cloud Snapshots</strong></i> option (checkbox) is selected. When selected, the tenant is able to browse the cloud snapshots of the parent and “self-serve” download their own tenant snapshot from the provider's snapshot timestamps.</li>
+  <li><strong>Optionally</strong>, the <i><strong>Allow Custom Branding</strong></i> option (checkbox) can be selected to enable the tenant to customize their own Verge.io UI with different colors and logo.</li>
+  <li><strong>Optionally</strong>, the <i><strong>Custom help URL</strong></i> allows for providing alternate help content for the tenant by providing a URL to the location of the alternate help content. When a URL is defined here, the tenant users will see the content at the provided URL rather than the built-in help content.</li>
+  <li>Click <strong>Submit</strong> (bottom of page) to proceed.</li>
+  <li>Select the number of <i><strong>Cores</strong></i> to provision to the tenant node.</li>
+  <li>Select the amount of <i><strong>RAM</strong></i> to provision to the tenant node (can be specified in Gigabyte or Megabyte).</li>
+  <li><strong>Optionally</strong>, a <i><strong>Cluster</strong></i> can be selected to run the tenant, or it can be left at --Default -- (specified by System -&gt;Settings -&gt;Default cluster for tenant nodes)</li>
+  <li><strong>Optionally</strong>, a <i><strong>Failover cluster</strong></i> can be selected to run the tenant if the primary selected cluster is not available. Or it can be left at --Default -- (specified by <i><strong>System -&gt; Settings -&gt;Default cluster for tenant nodes</strong></i>)</li>
+  <li>Defining a <i><strong>Preferred node</strong></i> is <strong>Typically Not Recommended</strong> for a tenant node. This is an advanced setting for tenant nodes; setting this incorrectly can adversely affect built-in redundancy. Use this setting with care and consult with Verge.io Support for additional assistance.</li>
+  <li><strong>Optionally</strong>, a <i><strong>Description</strong></i> can be entered to record further information for this initial tenant node.</li>
+  <li>Select desired <i><strong>On Power Loss</strong></i> setting:<ul>
+      <li><strong>Last State</strong> - tenant will only be powered on if it was on at the time of power loss.</li>
+      <li><strong>Leave Off</strong> - tenant will not be powered on when power is restored (regardless of its state at the time of power loss).</li>
+      <li><strong>Power On</strong> - tenant will be powered on when power is restored (regardless of its state at the time of power loss).</li>
+    </ul>
+  </li>
+  <li>Click the <strong>Submit </strong>button (bottom of page) to proceed.</li>
+  <li>Select a <i><strong>Storage Tier </strong></i>from the dropdown list.</li>
+  <li>Enter an amount in <i><strong>Provisioned</strong></i> and select the desired unit of measure: Byte(B), Kilobyte(KB), Megabyte(MB), Gigabyte(GB), Terabyte(TB). NOTE: Storage is thin provisioned.</li>
+  <li>Click <strong>Submit</strong> (to provision defined storage)<br><strong>-OR-</strong><br><strong>Skip</strong> to proceed without provisioning storage (can be provisioned later).</li>
+  <li>Here you can optionally assign one External IP to the tenant. External IPs can be assigned to a tenant after creation as well. By default, the first External IP assigned to a tenant is configured to be the tenant's UI address.<ul>
+      <li>Select from the <i><strong>Assign External IP* </strong></i>dropdown. (This list will include all unassigned Virtual IPs defined in the Parent).<ol>
+          <li>Select appropriate external <i><strong>Network</strong></i> from the dropdown list.</li>
+          <li>In the <i><strong>Type </strong></i>field,make sure <strong>Virtual IP</strong> is selected.</li>
+          <li>In the <i><strong>IP Address </strong></i>field, enter the Public(external) IP address or leave blank to auto-create the next available IP in the network.</li>
+          <li><strong>Hostname and Description fields can be left blank</strong>.</li>
+          <li>The <i><strong>Owner field</strong></i> (dropdown list) should display the name of the new tenant.</li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+  <li>Click <strong>Submit</strong> to finish. You should see a message saying the tenant was created successfully and you are taken to the new tenant dashboard.</li>
+</ol>
+<p><strong>To Start the New Tenant:</strong></p>
+<h3>Method 2: Tenant Clone</h3>
+<p>Cloning a tenant will make a duplicate of an existing tenant. This can be very useful for testing, development, restores, and other scenarios when you need a copy of a tenant (such as running the tenant in a separate network for testing).</p>
+<h3>To Create a New Tenant from a Clone:</h3>
+<ol>
+  <li>Click <strong>Tenants</strong> from the Main Dashboard (quick-link or left menu.)</li>
+  <li>Click <strong>New Tenant</strong> from the left menu.</li>
+  <li>From the <i><strong>Catalog list (top left)</strong></i>, select <i><strong>--Clone Existing--</strong></i>.</li>
+  <li>All VMs will be listed under the <i><strong>Selection</strong></i> area on the right. <strong>Select the desired VM.</strong> Click <strong>Next</strong> (bottom of page).</li>
+  <li>The <i><strong>Name</strong></i> for the tenant clone can be changed as desired. (The Name will default to the <i>NameofSourceVM</i> +”clone”, for example: when cloning a tenant named “Tenant2”, the Name will default to “Tenant2 clone”.)</li>
+  <li>Optionally, the <i><strong>Clone as New Tenant</strong></i> option can be selected to create the new tenant instance without accompanying history statistics, logs, and snapshots with expiration; this is the recommended option when these items are not needed.</li>
+  <li>Click <strong>Submit</strong> (bottom of page).</li>
+</ol>
+<p><strong>To Start the New Tenant:</strong></p>
+<h3>Method 3: Tenant from Recipe</h3>
+<p>Tenant recipes allow for creating an entire tenant from an existing, predefined tenant. Recipes have questions that allow customizing each new tenant.</p>
+<h3>To Create a New Tenant using a Recipe:</h3>
+<ol>
+  <li>Click <strong>Tenants</strong> from the Main Dashboard (quick-link or left menu.)</li>
+  <li>Click <strong>Tenant Recipes</strong> from the left menu or count box.</li>
+  <li><strong>Double-click the desired recipe</strong> to use (or check the box and click View on the left menu).</li>
+  <li>Click <strong>New From Recipe</strong> on the left menu.</li>
+  <li>The next screen will be unique based on the questions defined in the tenant recipe. <strong>Fill out all the appropriate fields</strong>.</li>
+  <li>Click <strong>Submit</strong> (bottom of page).</li>
+</ol>
+<p><strong>To Start the New Tenant:</strong></p>
+<p><br><br>&nbsp;</p>
+<h3>Method 3: Tenant from Recipe</h3>
+<p>Tenant recipes allow for creating an entire tenant from an existing, predefined tenant. Recipes have questions that allow customizing each new tenant.</p>
+<h3>To Create a New Tenant using a Recipe:</h3>
+<ol>
+  <li>Click <strong>Tenants</strong> from the Main Dashboard (quick-link or left menu.)</li>
+  <li>Click <strong>Tenant Recipes</strong> from the left menu or count box.</li>
+  <li><strong>Double-click the desired recipe</strong> to use (or check the box and click View on the left menu).</li>
+  <li>Click <strong>New From Recipe</strong> on the left menu.</li>
+  <li>The next screen will be unique based on the questions defined in the tenant recipe. <strong>Fill out all the appropriate fields</strong>.</li>
+  <li>Click <strong>Submit</strong> (bottom of page).</li>
+</ol>
+<p><strong>To Start the New Tenant:</strong></p>

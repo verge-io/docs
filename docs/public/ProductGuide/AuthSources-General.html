@@ -1,0 +1,68 @@
+<!--
+title: Product Guide - Authorization Sources
+description: General information about using third-party identity management systems for user authentication 
+published: false
+date: 2023-03-17T12:34:15.315Z
+tags: 
+editor: ckeditor
+dateCreated: 2023-03-17T12:34:15.315Z
+-->
+
+<h1>Authorization Sources - General Information</h1>
+<p>Authorization Sources allow utilizing third party Oauth2 identity management systems (such as: Okta, GitLab, Azure AD, Google) for user authentication in Verge.io.</p>
+<h3>General Instructions for Creating an Authorization Source</h3>
+<ol>
+  <li>Obtain <strong>Client ID</strong> and <strong>Client Secret</strong> from the third party system; these credentials are created based on the URL of the Verge.io system.</li>
+  <li>From the Verge.io Main Dashboard, click <strong>System</strong> on the left menu.</li>
+  <li>Click <strong>Authorization Sources</strong> on the left menu.</li>
+  <li>Click <strong>New</strong> on the left menu.</li>
+  <li><i><strong>Name: </strong></i>a name to identify this authorization source; this name will appear on the sign on button on the Verge.io login page.</li>
+  <li><i><strong>Driver: </strong></i>(dropdown list)<ul>
+      <li>Azure AD</li>
+      <li>GitLab</li>
+      <li>Google</li>
+      <li>Okta</li>
+      <li>Open ID</li>
+      <li>Open ID (Well-Known Config)</li>
+    </ul>
+  </li>
+  <li><i><strong>Redirect URI: </strong></i>automatically populated with the address of the Verge.io UI and normally need not be changed <strong>Note:</strong> this address must be a public address or otherwise accessible by the remote Oauth source.</li>
+  <li><i><strong>Client ID</strong></i> and <i><strong>Client Secret: </strong></i>values generated on the remote Oauth source, based on the URL of the Verge.io system.</li>
+  <li><i><strong>Remote User Fields: </strong></i>defines one or more fields that can be used for locating users in the Oauth source. The field is auto-populated with a default list of common fields (sub,preferred_username,email,nickname) that work across various common Oauth implementations <strong>Note: For security reasons, it is not recommended to locate remote users based on fields that are changeable by end user on the Oauth sources.</strong></li>
+</ol>
+<h4>Options (enabled recommended):</h4>
+<ul>
+  <li><i><strong>Update Remote User: </strong></i>updates the Remote Username field (of the Verge.io user) to the user's unique ID from the Oauth Source. Enabling this option allows for initially locating the user based on more friendly fields (defined in Remote User Fields, above) and subsequently changing the Verge.io user Remote Username field to a unique id from the Oauth Source system. This ensures the user record remains constant even as extraneous fields such as email address or friendly username may change over time.</li>
+  <li><i><strong>Update User Email Address: </strong></i>updates Email address field based on email address from the Oauth source.</li>
+  <li><i><strong>Update User Display Name: </strong></i>updates user display name based on display name from the Oauth source.</li>
+</ul>
+<h4>Additional Optional Fields:</h4>
+<ul>
+  <li><i><strong>Scope: </strong></i>varies with different implementations; consult source Oauth2 documentation for more information. In most cases the default "openid profile email" will work.</li>
+  <li><i><strong>Group Scope: </strong></i>varies with different implementations; consult source Oauth2 documentation for more information. In most cases, the Group Scope can be set to the word "groups". <strong>Note:</strong> Group Scope is required when using the Update Group Membership option.</li>
+  <li><i><strong>Require Verified Email Address: </strong></i>(for Oauth2 implementations that support verifying user email address) only allow authentication of users with the verified email address flag enabled/true in the Oauth2 source.</li>
+  <li><i><strong>Update Group Membership: </strong></i>update user's group membership within Verge.io (each time user logs in) to correspond with group membership from the Oauth source</li>
+</ul>
+<h4>User Creation:</h4>
+<ul>
+  <li><i><strong>Auto-Create Users: </strong></i>users created automatically in Verge.io (on-demand, upon initial Verge.io login) corresponding to users in the Oauth source. Use "<strong>*</strong>" without the quotes to apply to all users.</li>
+  <li><i><strong>Auto-Create Users in Group: </strong></i>users within specified Oauth2 source groups are created automatically, in the Verge.io system, on-demand upon initial login. A specific group name can be entered or a regular expression to include group(s) with matching pattern.</li>
+</ul>
+<p><i>In order to auto-create users based on group only, the <strong>Auto-Create Users</strong> field should be set blank.</i></p>
+<ol>
+  <li>Users that will use an external Authorization Source can optionally be created manually in Verge.io. When creating user:<ul>
+      <li>Select appropriate <i><strong>Authorization Source</strong></i> (dropdown list).</li>
+      <li>Set <i><strong>Remote Username</strong></i> to match one of the fields defined in <i>Remote User Fields</i> (fields that are used to find the user in the external authorization source); typically it is best to use the user's login name or unique user ID.</li>
+    </ul>
+  </li>
+</ol>
+<h4>Login Styling:</h4>
+<ul>
+  <li><i><strong>Sign-in Button Background Color:</strong></i> background color for the sign-in button.</li>
+  <li><i><strong>Sign-in Button Text Color:</strong></i> text color of the sign-in button.</li>
+  <li><i><strong>Sign-in Button Font Awesome Icon:</strong></i> specifies an alternate icon for the sign-in button; <a href="https://fontawesome.com/v4.7.0/cheatsheet/">https://fontawesome.com/v4.7.0/cheatsheet/</a> contains a listing of available Font Awesome Icons.</li>
+  <li><i><strong>Sign-in Button Font Awesome Icon Color:</strong></i> specifies an alternate color for the sign-in button; use standard HEX code, ex: #FF5733.</li>
+</ul>
+<ol>
+  <li><i><strong>Debug: </strong></i>(checkbox) turns on verbose logging for this authorization source; should only be used when troubleshooting as large amounts of authentication can potentially impact performance.</li>
+</ol>

@@ -1,0 +1,78 @@
+<!--
+title: Product Guide - Glossary of Terms
+description: Defines terms and concepts used within the  Verge.io product
+published: false
+date: 2023-03-09T21:20:46.138Z
+tags: 
+editor: ckeditor
+dateCreated: 2023-03-09T21:20:46.138Z
+-->
+
+<h1>Glossary of Terms</h1>
+<p style="text-align:justify;">&nbsp;</p>
+<p style="text-align:justify;"><strong>Authorization Sources</strong></p>
+<p style="text-align:justify;">An Authorization Source defines a user management authority (GibLab, Google, OpenID) for a Verge.io cloud. This allows a single sign-on experience for users as credentials from the defined authorization source can be appointed for users to log in to a Verge.io system.</p>
+<p style="text-align:justify;"><strong>Catalog</strong></p>
+<p style="text-align:justify;">A Catalog is a group of related Recipes. For example, one Catalog may contain many varied Windows VM Recipes, while another Catalog in the same Repository could contain all Linux-based VM Recipes. Customers can group Recipes into Catalogs in whatever way makes sense for their particular organization.</p>
+<p style="text-align:justify;"><strong>Cluster</strong></p>
+<p style="text-align:justify;">A Cluster is a group of Nodes (Physical or Virtual) with like hardware resources, used as a pool for storage, compute, or HCI functions. A single Verge.io system can contain a variety of different clusters to provide an array of performance/costing options. The resources of a single cluster can be divided up among multiple Tenants and a single Tenant can be given resources to multiple clusters within the same system.</p>
+<p style="text-align:justify;"><strong>Host</strong></p>
+<p style="text-align:justify;">Refers to the top-level Virtual Data Center(VDC), aka Verge.io Cloud, which is created during the initial Verge.io install on the physical hardware. The Host has direct control over the hardware, whereas Tenants/sub-Tentants will have resources assigned to them, but no access to physical components.</p>
+<p style="text-align:justify;"><strong>Media Images</strong></p>
+<p style="text-align:justify;">Media Images are files uploaded to the Verge.io vSAN to make available inside the Verge.io environment. Common files uploaded are those used for installing new Virtual Machines (e.g. *.iso) or importing Machines or drives from existing systems (e.g. *.ova, *.ovf, *.raw, *.qcow, *.vmdk, etc).</p>
+<p style="text-align:justify;"><strong>Nested Multi-Tenancy</strong></p>
+<p style="text-align:justify;">Nested Multi-Tenancy provides layers of tenancy; the Host Tenant can allocate any portion of its base resources to child Tenants and those child Tenants can then divide and apportion any of its resources down to its own child Tenants, and so on.</p>
+<p style="text-align:justify;"><strong>Network (Core)</strong></p>
+<p style="text-align:justify;">The Core Network is a virtual network used to handle all intra-node communication. Every Verge.io Cloud has 1 Core Network, which is created automatically during the Verge.io installation (on the Host) or at the point of Tenant creation (for each Tenant.)</p>
+<p style="text-align:justify;"><strong>Network (DMZ)</strong></p>
+<p style="text-align:justify;">The DMZ Network is a virtual network used to connect all other networks with the Core Network. Every Verge.io Cloud has 1 DMZ Network, which is created automatically during the Verge.io installation (on the Host) or at the point of Tenant creation (for each Tenant.)</p>
+<p style="text-align:justify;"><strong>Network (External)</strong></p>
+<p style="text-align:justify;">An External Network is a network outside of the Verge.io system; any pre-existing network that will be interfaced with Verge.io (e.g. company LAN, direct WAN connections, Wi-Fi networks). In a Verge.io system, there is typically at least one External Network and there can be multiple External networks. External Networks can be defined during or after Verge.io system installation.</p>
+<p style="text-align:justify;"><i>&nbsp;Note: External does not necessarily indicate that the network is a direct Internet Connection (although it can be), but rather only External to the Verge.io system.</i></p>
+<p style="text-align:justify;"><strong>Network (Internal)</strong></p>
+<p style="text-align:justify;">An Internal Network is a virtual network originated within Verge.io. Any number of Internal Networks can be created. An Internal Network is created default-secure; with built-in Verge.io networking functionality allowing for opening up access between Internal Networks and to External Networks as needed.</p>
+<p style="text-align:justify;"><strong>Network (Maintenance)</strong></p>
+<p style="text-align:justify;">A Maintenance Network is an External network that can be created to handle IPMI access to Physical Nodes and optional PXE boot.</p>
+<p style="text-align:justify;"><strong>Node (Physical)</strong></p>
+<p style="text-align:justify;">Physical Nodes are actual hardware servers that host the base Verge.io cloud.</p>
+<p style="text-align:justify;"><strong>Node (Tenant)</strong></p>
+<p style="text-align:justify;">Tenant Nodes are virtual servers that simulate physical nodes. Each Tenant is assigned at least one Tenant Node and more Tenant Nodes can be added for scale and/or to accommodate clustering software such as Kubernetes, Hadoop, etc..</p>
+<p style="text-align:justify;"><strong>Recipe (VM)</strong></p>
+<p style="text-align:justify;">A VM Recipe is a customizable template for launching new Virtual Machine instances. A VM Recipe can include initial hardware specifications (e.g. number of cores, RAM, CPU type, drives, NICs, etc). and resource pool specification. Additionally, custom fields can be added to the Recipe to gather input at the time of recipe consumption. This data, input by the recipe consumer, can then be utilized to adjust elements within the new VM guest OS; typically at first startup. For example, a Recipe can be configured to prompt for a database username and password, or for disk/ram size settings to input into an application conf file. Verge.io VM Recipes are compatible with Cloud-Init. <a href="https://cloud-init.io/">See &nbsp;https://cloud-init.io </a>for cloud-init documentation.</p>
+<p style="text-align:justify;"><strong>Recipe (Tenant)</strong></p>
+<p style="text-align:justify;">A Tenant Recipe is a customizable template for creating a new Tenant instance. A Tenant Recipe can include predefined settings for configuration/resource allocation and can include custom fields to gather input at the time of Recipe consumption in order to adjust elements of the resulting Recipe instance.</p>
+<p style="text-align:justify;"><strong>Recipe Consumer</strong></p>
+<p style="text-align:justify;">The Recipe Consumer is the verge.io User creating a new Tenant or VM instance using a Recipe.</p>
+<p style="text-align:justify;"><strong>Repository</strong></p>
+<p style="text-align:justify;">A Repository is a site collection of Recipe Catalogs. Typically, a Tenant has access to a Repository provided by its Verge.io Service Provider. Each Tenant can also create a local Repository to store its own Recipe Catalogs.</p>
+<p style="text-align:justify;"><i>The verge.io Repository is also included by default on a verge.io Installation. The verge.io Repository includes the standard NAS Service VM.</i></p>
+<p style="text-align:justify;"><strong>Site</strong></p>
+<p style="text-align:justify;">A Site is a Verge.io system with its own physical hardware. Typically Verge.io sites are separated by geographical location. Multiple sites can be synchronized to allow for robust disaster recovery/business continuity options.</p>
+<p style="text-align:justify;"><strong>Snapshot</strong></p>
+<p style="text-align:justify;">A Snapshot captures the state of an entity at a particular point in time. Snapshots can be used to create point-in-time capture of an entire Verge.io Cloud, Tenant, an individual Virtual Machine, or a NAS volume. Snapshots allow "rolling back" a system, which can be helpful for recovery, development, and testing purposes.</p>
+<p style="text-align:justify;"><strong>Snapshot Profile</strong></p>
+<p style="text-align:justify;">A Snapshot Profile defines a schedule for Snapshot creation and cleanup.</p>
+<p style="text-align:justify;"><strong>Storage Tier</strong></p>
+<p style="text-align:justify;">A Storage Tier is a pool of storage with equivalent underlying physical storage devices. Storage Tiering is a feature built into the Verge.io-vSAN allowing splitting data between different types of physical media based on requirements for performance, accessibility, capacity, and cost. Storage tiering can dramatically reduce costs by taking better advantage of more expensive disks where most needed while using less expensive (e.g. spinning disk) for cold storage, like archives, etc. See <a href="https://support.yottabyte.com/#help?id=vsan-tiers">vSAN Tiers</a> for a description of standard Storage Tiers.</p>
+<p style="text-align:justify;"><strong>Subscriptions</strong></p>
+<p style="text-align:justify;">Subscriptions allow for monitoring a system (or components of a system) by defining system information to send to users via Email.</p>
+<ul>
+  <li>Subscriptions with the <strong>On Demand</strong> type send alerts triggered by warnings, errors, or thresholds.</li>
+  <li>Subscriptions with the <strong>Scheduled</strong> type send reporting information at regularly scheduled intervals (e.g. hourly, daily, weekly, etc).</li>
+</ul>
+<p style="text-align:justify;"><strong>Subscription Profiles</strong></p>
+<p style="text-align:justify;">Subscription Profiles define the aspects of a Subscription (on Demand/Scheduled, trigger criteria/schedule). Many Subscription Profiles are pre-loaded by default with the Verge.io Install. Additional Subscription Profiles can also be created.</p>
+<p style="text-align:justify;"><strong>Tenant</strong></p>
+<p style="text-align:justify;">A Tenant is a complete and separate Virtual Data Center, running its own instance of the Verge.io OS. Child tenants are apportioned from a parent Verge.io Cloud. The Nested, Multi-Tenancy infrastructure allows each Verge.io cloud to subdivide any portion of its resources to provide multiple, sub-divisions of resources. Each Tenant is a complete Verge.io Cloud with its own storage, networking, and security. Tenants are isolated from each other, with each autonomously managed. This provides the mechanism for service providers or IT departments to allocate and administer resources dynamically, keeping autonomous units for different customers/business groups.</p>
+<p style="text-align:justify;"><strong>Verge.io Cloud</strong></p>
+<p style="text-align:justify;">Verge.io Cloud refers to each autonomous Virtual Data Center (VDC) created within a Verge.io system. This includes the VDC created at the base level (when Verge.io is installed on physical hardware) as well as the VDC that is created with each subsequent Tenant and subtenant.</p>
+<p style="text-align:justify;"><strong>Verge.io OS</strong></p>
+<p style="text-align:justify;">The Verge.io Operating System (verge.io OS) is a complete operating system specifically designed for rapidly deployed, complete virtual data centers, with nested tenancy functionality. Verge.io OS is installed/run directly on base hardware as well as within virtual nodes (used for Tenants).</p>
+<p style="text-align:justify;"><strong>vGPU</strong></p>
+<p style="text-align:justify;">A vGPU is a physical GPU installed on a host node that is dissected into multiple virtual GPUs. vGPU provides access to multiple VMs simultaneously from a single piece of GPU hardware.</p>
+<p style="text-align:justify;"><strong>Volume</strong></p>
+<p style="text-align:justify;">A Volume is a directory structure/collection of files within a Verge.io NAS. A Verge.io NAS can contain one or more Volumes, with each individual Volume allowing different settings for aspects such as security, snapshot, tiering, max size, Anti-Virus settings, shares, etc.</p>
+<ul>
+  <li>Remote Volume - mounts a pre-existing (external) NFS or CIFS file system to make it accessible within a Verge.io system.</li>
+  <li>Local Volume - stored within the Verge.io-vSAN</li>
+</ul>

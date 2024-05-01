@@ -1,0 +1,42 @@
+<!--
+title: Product Guide - Snapshots Overview
+description: Overview of snapshots - automated vs. manual, and the different levels of snapshot/restore protection
+published: false
+date: 2023-04-05T14:22:09.089Z
+tags: 
+editor: ckeditor
+dateCreated: 2023-04-05T14:22:09.089Z
+-->
+
+<h1>Snapshots</h1>
+<p>Snapshots provide quick, point-in-time backups, allowing for roll back to a previous instance in the event of a hardware failure, faulty application upgrade, VM Bluescreens, etc.. Snapshots/restores can be done at various levels: cloud (entire system), tenant, individual virtual machine, NAS volume.</p>
+<h3>Automated Snapshots</h3>
+<p>Snapshots can be automated to take at regularly scheduled intervals using snapshot profiles. A snapshot profile consists of one or more profile periods. Each period determines a frequency for taking a snapshot as well as a retention time. More information about snapshot profiles is available here:&nbsp;</p>
+<p><a href="https://yottadoc.ro.verge.io/#help?id=snapshots-profiles">Snapshot Profiles</a></p>
+<h3>Manual Snapshots</h3>
+<p>Snapshots can also be taken manually, with settable expiration. Manual snapshots can be useful for backup (of a VM, volume, or entire system) immediately before a configuration change, upgrade, or maintenance operation.</p>
+<h3>Cloud (System) Snapshot/Restore</h3>
+<p>Cloud Snapshots provide backup of the entire Verge.io system, including all tenants, VMs, networks, and settings.</p>
+<h4>What can be restored from a Cloud Snapshot?</h4>
+<p>A cloud snapshot can be used to restore:</p>
+<ul>
+  <li>Entire Verge.io system</li>
+  <li>Individual VMs (unquiesced)</li>
+  <li>Individual tenants</li>
+</ul>
+<p>For information regarding cloud snapshots, see:&nbsp;</p>
+<p><a href="https://yottadoc.ro.verge.io/#help?id=snapshots-cloud">Cloud Snapshots</a></p>
+<p>.</p>
+<h3>VM Snapshot/Restore</h3>
+<p>VM snapshots allow for quiesced snapshotting (requires guest agent) and schedule/retention customizable per individual VM. For related instructions, see:&nbsp;</p>
+<p><a href="https://yottadoc.ro.verge.io/#help?id=snapshots-vm">VM Snapshots</a></p>
+<p>.</p>
+<h3>Tenant Snapshot/Restore</h3>
+<p>Individual tenants can be restored from the parent's cloud snapshot. For related instructions, see:&nbsp;</p>
+<p><a href="https://yottadoc.ro.verge.io/#help?id=snapshots-tenant">Tenant Snapshots</a></p>
+<p>. Additionally, each tenant can utilize&nbsp;</p>
+<p><a href="https://yottadoc.ro.verge.io/#help?id=snapshots-cloud">Cloud Snapshots</a></p>
+<p>&nbsp;independently within their environments to backup their own systems.</p>
+<h3>NAS Snapshot/Restore</h3>
+<p>Volume snapshots provide for quiesced backup/restore of individual NAS volumes. For related instructions, see:&nbsp;</p>
+<p><a href="https://yottadoc.ro.verge.io/#help?id=snapshots-nas">Volume Snapshots</a></p>

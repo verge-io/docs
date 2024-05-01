@@ -1,0 +1,64 @@
+<!--
+title: Product Guide - VM Snapshots and Restores
+description: Provides information and instructions on the various ways to snapshot and restore individual VMs
+published: false
+date: 2023-04-05T23:55:44.619Z
+tags: 
+editor: ckeditor
+dateCreated: 2023-04-05T19:50:37.174Z
+-->
+
+<p><mark class="marker-yellow">PLACEHOLDER PAGE</mark></p>
+<p>&nbsp;</p>
+<h1>VM Snapshots and Restores</h1>
+<p>Although cloud snapshots include all VMs and allow for restoring an individual VM, VM-level snapshots allow for customizing schedule and retention rules per individual virtual machine (for example, it may be desirable to capture more frequently or retain snapshots longer for certain VMs). Additionally, VM-level snapshots provide the option for a quiesced snapshot.</p>
+<h2>Quiesced Snapshots</h2>
+<p>The quiesce option provides an application-consistent snapshot of a running VM in which the system freezes the filesystem and flushes write buffers; additionally, VSS writers are invoked in order for VSS-aware applications (Windows VMs) to prepare for the snapshot. The Quiesce option can be selected when taking a manual snapshot and can be enabled within the snapshot profile for automated snapshots.</p>
+<h3>Assign a Snapshot Profile to a VM (for automated scheduled VM-level snapshots)</h3>
+<ol>
+  <li>From the VM dashboard, click <strong>Edit</strong> on the left menu.</li>
+  <li>In the <i><strong>Snapshot profile</strong></i> field, select the desired profile from the dropdown list. Instructions for configuring snapshot profiles can be found here: <a href="https://yottadoc.ro.verge.io/#help?id=snapshots-profiles">Snapshot Profiles</a>.</li>
+  <li>Click <strong>Submit</strong> at the bottom of the page.</li>
+</ol>
+<h3>Take a Manual Snapshot of a VM</h3>
+<ol>
+  <li>From the VM dashboard, select <strong>Snapshots</strong> on the left menu.</li>
+  <li>Click <strong>Take Snapshot</strong> on the left menu.</li>
+  <li>Enter a <i><strong>Name</strong></i> for the snapshot (required).</li>
+  <li>Enter a <i><strong>Description</strong></i> (optional).</li>
+  <li>The <i><strong>Quiesce</strong></i> option can be selected to freeze disk activity while the snapshot is being taken. This provides application-consistent backups for VMs. (<a href="https://yottadoc.ro.verge.io/#help?id=vms-agent">VM Guest Agent</a>) must be installed and registered on VM for quiesced snapshots.</li>
+  <li>In the <i><strong>Expires</strong></i> field, select/enter date and time for expiration.</li>
+  <li>Click <strong>Submit</strong> at the bottom of the page.</li>
+</ol>
+<h2>Restoring a VM from Snapshot</h2>
+<p><i>To restore an individual VM from a cloud snapshot, it must first be imported from the cloud snapshot as detailed below. To restore from an individual VM snapshot, skip the import section of instructions and continue to <strong>Restore Overwrite -Or- Restore to a Clone instructions.</strong></i></p>
+<h3><i>Import VM Snapshot from a Cloud Snapshot (to make it available for a VM restore)</i></h3>
+<ol>
+  <li><i>From the VM dashboard, select <strong>Snapshots</strong> from the left menu.</i></li>
+  <li><i>Click <strong>Cloud Snapshots</strong> on the left menu.</i></li>
+  <li><i>Click to <strong>select desired cloud snapshot</strong>.</i></li>
+  <li><i>Click <strong>Import VM Snapshot</strong> on the left menu.</i></li>
+  <li><i><strong>Name, Description, and Expiration fields</strong> will default to the values from the cloud snapshot; if desired, change values for this import of the VM snapshot. Changes made will only apply to the VM snapshot import and will not affect the underlying cloud snapshot.</i></li>
+  <li><i>Click <strong>Submit</strong> to continue.</i></li>
+  <li><i>(If the process was continued,) a message should appear stating the import process has begun. Click the <strong>Ok</strong> button to acknowledge.</i></li>
+  <li><i>When the imported VM snapshot appears in the list, it can be selected to use for restore.</i></li>
+</ol>
+<h3><i>Restore a VM Snapshot (to overwrite existing current version of VM).</i></h3>
+<ol>
+  <li><i><strong>Power off</strong> the source VM. Use proper guest OS and application shutdown procedures whenever possible.</i></li>
+  <li><i><strong>Consider taking a temporary snapshot of the VM right before</strong> restoring over it. This can allow taking the VM back to this point (before the restore), if necessary.</i></li>
+  <li><i>From the VM Dashboard, click <strong>Snapshots &gt; Snapshots </strong>on the left menu.</i></li>
+  <li><i>A listing of available snapshots is displayed. Click to <strong>select the desired snapshot</strong>.</i></li>
+  <li><i>Select <strong>Restore over Source</strong> from the left menu.</i></li>
+  <li><i>A Warning message will appear to caution that this will overwrite the existing Virtual Machine. Click the <strong>Proceed</strong> button to continue/ or <strong>Cancel</strong> to abort.</i></li>
+  <li><i>(If the process was continued,) a message should appear stating the Restore process has begun. Click the <strong>Ok</strong> button to acknowledge the message.</i></li>
+</ol>
+<h3><i>Restore a VM Snapshot to a Clone</i></h3>
+<ol>
+  <li><i>From the VM Dashboard, click <strong>Snapshots &gt; Snapshots </strong>on the left menu.</i></li>
+  <li><i>Click to <strong>select the desired snapshot in the listing</strong>.</i></li>
+  <li><i>Click <strong>Restore To New</strong> from the left menu.</i></li>
+  <li><i>The <strong>VM Name</strong> will default to the name of the snapshot + " restored". Change the name, if desired.</i></li>
+  <li><i>The <strong>Preserve MAC Addresses</strong> option will default to unselected, which means new MAC Address(es) will be auto-generated by the Verge.io system. The option can be enabled to keep the same MAC address(es) on the new VM. Caution should be used when selecting this option, as to avoid duplicate MAC addresses within the same network.</i></li>
+  <li><i>Click the <strong>Submit</strong> button to create the new VM.</i></li>
+</ol>

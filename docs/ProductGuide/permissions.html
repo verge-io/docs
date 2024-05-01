@@ -1,0 +1,102 @@
+<!--
+title: Product Guide - Permissions
+description: Explanation of permissions structure and defaults along with examples.  Also includes instructions for viewing, granting, and modifying permissions.
+published: false
+date: 2023-03-31T20:02:44.625Z
+tags: 
+editor: ckeditor
+dateCreated: 2023-03-31T20:02:44.625Z
+-->
+
+<h1>Permissions</h1>
+<p>User and group permissions provide for a high degree of granularity, allowing access to be configured down to a particular object instance. Users are created and administered for each Verge.io Cloud; each tenant created is a separate Verge.io cloud and thus has its own users, groups and permission settings to control activity within the tenant.</p>
+<h3>Permission Levels</h3>
+<p>The following Permission levels are used throughout the system:</p>
+<ul>
+  <li>list</li>
+  <li>read</li>
+  <li>create</li>
+  <li>modify</li>
+  <li>delete</li>
+</ul>
+<h3>Permission Scopes</h3>
+<ul>
+  <li><strong>Cloud level</strong> - Permission applies to the entire Cloud - all areas</li>
+  <li><strong>Object Types</strong> - Permission applies to all objects of that Type (e.g. virtual machines, tenants, users, networks, etc))</li>
+  <li><strong>Individual objects</strong> - Permission applies to a specific object instance e.g. individual virtual machine, a particular tenant, a specific user, etc.</li>
+</ul>
+<h3>Root-Level "admin" Account</h3>
+<p>When a Verge.io cloud is created (during initial install on hardware or when a new tenant is created,) a root-level user account is automatically created and is granted full access (list/read/create/modify/delete) to the entire Verge.io Cloud. By default, this user is named 'admin'; however, the account can be named as desired during hardware installation or can be changed post-installation/post-tenant creation. This special system user cannot be deleted.</p>
+<h3>New User Default Permissions</h3>
+<ul>
+  <li><strong>Type = Normal/API:</strong> list/read to everything; list/read/modify to his/her own user</li>
+  <li><strong>Type = VDI:</strong> list to everything; list/read/modify to his/her own user.</li>
+</ul>
+<p>After a user is created, the user's permissions can be customized as needed.</p>
+<h3>Effective Permissions</h3>
+<p>The effective permissions of a user is cumulative of all permissions assigned to the user, including those directly assigned, and permissions via group memberships. Permissions can be granted at an object-type level giving the user permissions to all objects of a certain type or can be given to specific instances of objects. Permissions are verified at the time an action is initiated; if any permission assigned to the user (or to a group of which the user is a member) applies, the operation is allowed.</p>
+<ul>
+  <li>JSmith is assigned list/read permissions to the Cloud.</li>
+  <li>JSmith is a member of the "machine-operators" group; the "machine-operators" group is assigned full (list/read/create/modify/ delete) permissions to virtual machines.</li>
+  <li>JSmith is a member of the "assistants" group; the "assistants" group is assigned only list/read/modify permissions to several particular virtual machines.</li>
+  <li>Effective permissions for JSmith for all virtual machines: list/read/create/modify.</li>
+  <li>RJohnson is assigned list/read permissions to the Cloud.</li>
+  <li>RJohnson is a member of the "tenant-admins" group; the "tenant-admins" group is assigned permissions of list/read/modify to tenants.</li>
+  <li>RJohnson is assigned list/read/modify/delete permissions to the particular "Zcorp" tenant.</li>
+  <li>Effective permissions for RJohnson for all tenants: list/read/modify</li>
+  <li>Effective permissions for RJohnson for the "Zcorp" tenant: list/read/modify/delete.</li>
+</ul>
+<h2>How-to Quick Reference</h2>
+<h3>To Give a User Full Permissions to Entire Verge.io Cloud:</h3>
+<ol>
+  <li>From the Cloud Dashboard, select <strong>System</strong>.</li>
+  <li>Click <strong>Permissions</strong>.</li>
+  <li>Click <strong>Add User</strong>.</li>
+  <li>Select the desired user from the <i><strong>User Name</strong></i> dropdown.</li>
+  <li>Check the boxes for <i><strong>list</strong></i>, <i><strong>read</strong></i>, <i><strong>create</strong></i>, <i><strong>modify</strong></i>, and <i><strong>delete</strong></i>.</li>
+  <li>In the <i><strong>Type</strong></i> dropdown field, select <strong>"Your Cloud" (default)</strong>.</li>
+  <li><i><strong>--All sections--</strong></i> will be selected by default</li>
+  <li>Click the <strong>Submit</strong> button.</li>
+</ol>
+<h3>To View a User's Permissions:</h3>
+<ol>
+  <li>From the Cloud dashboard, Click <strong>System</strong>.</li>
+  <li>Click <strong>Users</strong>. This will display a list of all users.</li>
+  <li><strong>Double-click the desired user</strong> in the list The user Dashboard appears, all permissions assigned to the user are displayed. (Remember: users can also have permissions via group memberships; group memberships are also displayed on the User Dashboard.)</li>
+</ol>
+<h3>To Give a User/Group Permissions to All Objects of a Certain Type (e.g. machines, users, tenants, etc)</h3>
+<ol>
+  <li>From the Cloud Dashboard, Click <strong>System</strong>.</li>
+  <li>Click <strong>Permissions</strong>.</li>
+  <li>Click <strong>Add User</strong> or <strong>Add Group</strong></li>
+  <li>Select the desired <strong>User/Group</strong> from the first dropdown.</li>
+  <li>Check the boxes for desired access levels (<i><strong>list/read/create/modify/delete</strong></i>).</li>
+  <li>In the <i><strong>Type</strong></i> dropdown field, select the object type to apply this permission to.</li>
+  <li>In the <i><strong>Name</strong></i> dropdown field, select <i><strong>--All--</strong></i></li>
+  <li>Click the <strong>Submit</strong> button.</li>
+</ol>
+<h3>To Give a User/Group Permissions to a Specific Object Instance (e.g. a particular VM)</h3>
+<ol>
+  <li>From the Cloud Dashboard, select <strong>System</strong>.</li>
+  <li>Select <strong>Permissions</strong>.</li>
+  <li>Click <strong>Add User</strong> or <strong>Add Group</strong>.<ul>
+      <li>Select the desired <strong>User/Group</strong> from the first dropdown.</li>
+      <li>Check the boxes for desired access levels (<i><strong>list/read/create/modify/delete</strong></i>).</li>
+      <li>In the <i><strong>Type</strong></i> dropdown field, select the object type to apply this permission to.</li>
+      <li>In the <i><strong>Name</strong></i> dropdown field, select the particular object (for example, the name of the particular virtual machine)</li>
+    </ul>
+  </li>
+  <li>Click the <strong>Submit</strong> button.</li>
+</ol>
+<h3>To View all Permissions:</h3>
+<ol>
+  <li>From the Main Dashboard, click <strong>System</strong>.</li>
+  <li>Click <strong>Permissions</strong>.</li>
+  <li>All permissions for the entire Verge.io Cloud are displayed. Hint: List can be sorted or filtered to focus on certain permissions.</li>
+  <li>Permissions can be selected from the list to edit/delete.</li>
+</ol>
+<h3>To View Permissions for a Particular Section:</h3>
+<ol>
+  <li>From the desired section, click <strong>Permissions</strong> on the left menu. Hint: The Type field will display the general section to which the permission applies; while the Name field will indicate it applies to all objects of that particular type or will display the name of the particular object to which it applies.</li>
+  <li>Permissions can be selected from the list to edit or delete.</li>
+</ol>

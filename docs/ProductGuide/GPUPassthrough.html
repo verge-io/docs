@@ -1,0 +1,34 @@
+<!--
+title: Product Guide - GPU Passthrough
+description: Instructions for host and guest configuration to use GPU passthrough
+published: false
+date: 2023-03-27T19:53:35.522Z
+tags: 
+editor: ckeditor
+dateCreated: 2023-03-27T19:53:35.522Z
+-->
+
+<h1>GPU Passthrough</h1>
+<h3>Host Installation/Configuration</h3>
+<ol>
+  <li>From the Main Dashboard, click <strong>Nodes</strong>.</li>
+  <li>Click <strong>Drivers</strong> on the left menu.</li>
+  <li>Click <strong>New</strong> on the left menu.</li>
+  <li>Select <i><strong>node</strong></i> from the dropdown list.</li>
+  <li>Select <i><strong>VFIO-PCI Passthrough</strong></i> in the <i><strong>Driver</strong></i> dropdown list.</li>
+  <li>Check/select all display controller PCI devices to be used for GPU passthrough, in the <i><strong>Apply to PCI Devices</strong></i> section.</li>
+  <li>Click <strong>Submit</strong> at the bottom of the page.</li>
+</ol>
+<h3>Guest Configuration</h3>
+<ol>
+  <li><strong>Power down the VM</strong>.</li>
+  <li>Navigate to the <strong>dashboard of the desired VM</strong> (From the main dashboard click <strong>Machines</strong> on the left menu, <strong>Virtual Machines</strong>, <strong>double-click desired VM</strong> in the listing.)</li>
+  <li>Click <strong>Devices</strong> on the left menu.</li>
+  <li>Click <strong>New</strong> on the left menu. The Device Entry Form appears.</li>
+  <li>Optionally, a <i><strong>Name</strong></i> and <i><strong>Description</strong></i> can be entered for the device.</li>
+  <li>Select <strong>GPU Passthrough</strong> in the <i><strong>Type</strong></i> dropdown list.</li>
+  <li><i><strong>UUID</strong></i> is a universally unique identifier and is persistent across reboots. Typically UUID should be left blank to allow the system to automatically assign one to the device; a specific UUID can be entered if necessary (e.g. imported or cloned VMs with existing GPU PCI device).</li>
+  <li>Click <strong>Submit</strong> at the bottom of the page.</li>
+  <li><strong>Power on the VM</strong>.</li>
+  <li><strong>Install appropriate guest driver</strong>. Required guest driver(s) will depend on specific GPU hardware and guest OS version. Consult your GPU hardware documentation for guidance.</li>
+</ol>
