@@ -1,7 +1,3 @@
-Here is a revised installation guide following the guidelines for writing Verge guides:
-
----
-
 # VergeOS Installation Guide
 
 ## Introduction 
