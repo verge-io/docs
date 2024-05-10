@@ -16,7 +16,7 @@ Properly configured networks are critical for a successful VergeOS installation.
 
 3. In the installer, you'll be prompted to configure the external and core networks. 
 
-> Tip: Obtaining the MAC addresses for each server port from the switches helps identify the physical cabling.
+!!! tip "Obtaining the MAC addresses for each server port from the switches helps identify the physical cabling"
 
 ## Install First Controller Node
 
@@ -58,7 +58,7 @@ You can now install additional nodes as needed:
 - **Compute**: Compute-only nodes without vSAN (boot device only)
 - **PXE**: Compute nodes that network boot (no local boot device)
 
-> Note: The PXE option uses a network boot image of VergeOS, not the PXE installer
+!!! note "The PXE option uses a network boot image of VergeOS, not the PXE installer"
 
 Follow the same process as the second controller node, selecting the appropriate node type when prompted.
 
@@ -70,7 +70,7 @@ Once installation is complete:
 2. Verify the new nodes were added successfully without errors
 3. Start deploying VMs and containers!
 
-> Note: "Root key" errors in the logs during node installation are normal and can be ignored
+!!! note ""Root key" errors in the logs during node installation are normal and can be ignored"
 
 ## Troubleshooting & Support
 
