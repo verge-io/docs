@@ -14,8 +14,9 @@
 1. Once Rufus is loaded, select the **USB device** to write to for the area labeled **Device**.
 2. Click the **Select button** to select the VergeIO installation ISO image.
 3. Click **Start**
-  ![rufus2.png](../assets/rufus2.png)
 4. Rufus will prompt you to choose an ISO Mode. Choose DD. Rufus will begin building the bootable USB device.
+<br>
+![rufus2.png](../assets/rufus2.png)
 <br>
 
 ## Apple MacOS:
