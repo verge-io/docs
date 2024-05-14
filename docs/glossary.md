@@ -5,13 +5,13 @@
 A vergeOS system is a collection of nodes used to deploye workloads across a common vSAN instance. A single vergeOS system can be made up of 1 or more Clusters and vSAN Storage Tiers. A vergeOS system can be connected to other vergeOS systems for the purposes of centralized montoring, authentication, and management as well as replicating snapshots and vSAN repair service
 
 ### Controller Nodes
-In any VergeOS Site, the first two nodes (node1 and node2) are considered the Controller nodes. They handle the controller functions of VergeOS. These are functions like handling the User Interface, Networking, and VSAN functions. For larger environments, they can be set as dedicated controllers where they only handle controller functions and don't run workloads.
+The first two nodes in a vergeOS system are considered the Controller Nodes. These are functions like handling the User Interface, Networking, and VSAN functions. For larger environments, they can be set as dedicated controllers where they only handle controller functions and don't run workloads.
 
 ### Cluster
 Cluster is the term we use for a set of Nodes. Nodes are bound to a cluster set based on like hardware. A cluster can consist of all HCI nodes, a compute-only cluster, or a storage-only cluster. You may also have a separate cluster for different types of hardware, like AMD vs Intel.
 
 ### Node
-A Node is a single server running VergeOS.
+A Node is a single server running vergeOS. Node names are sequential starting with "node1".
 
 ### Physical Network
 lorum ipsom
@@ -37,6 +37,18 @@ A Tenant is a virtual data center(Site) inside of another site. You can nest ten
 ### IPMI
 IPMI (Intelligent Platform Management Interface) is a set of standardized specifications for hardware-based platform management systems that makes it possible to control and monitor servers centrally. Each hardware manufacturer has its own software to handle IPMI (like Dell's iDrac or BMC)
 
+<<<<<<< Updated upstream
+=======
+### vergeOS Core Network
+This is the main network that VergeOS uses to communicate Core functions like VSAN traffic and Node to Node communication.
+
+### External Network
+This is the network used for any communication Outside of VergeOS. The word "External" means external to VergeOS and not necessarily external to your site unless configured for it. Typical systems will have one External network. If using VLANs, each VLAN will get its own External Network.
+
+### Internal Network
+This is a network inside VergeOS that is segregated by default. Each Internal Network can have its own subnet, router, DHCP, DNS, etc. Since Internal Networks are segregated by default, you can have multiple Internal Networks with the same subnet.
+
+>>>>>>> Stashed changes
 ### vSAN Storage Tiers:
 Storage tiering is the method of storing data on various types of media based on performance, availability, and recovery requirements. Utilizing this method significantly reduces storage costs while still meeting necessary data access demands for different workloads.
 
@@ -52,7 +64,11 @@ Hyperconverged infrastructure (HCI) is a software-defined, unified system that c
 ### Compute-Only Cluster
 A Compute-only Cluster is a set of nodes that are added to VergeOS with the sole intention of expanding only compute resources like RAM and/or Cores. Placing a VM in a Compute-only Cluster does not mean it doesn't get storage. Storage of a VM is determined by which Tier (1,2,3,4) you choose when setting up the disks.
 
+<<<<<<< Updated upstream
 ### Storage-Only Cluster
+=======
+### Storage-Only Cluster:
+>>>>>>> Stashed changes
 A Storage-only Cluster is a set of nodes that are added to VergeOS with the sole intention of expanding storage. They can be added to an existing Tier of storage if they have like hardware or added as a new Tier.  
 
 ### Repair Server
