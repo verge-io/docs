@@ -1,4 +1,4 @@
-# Key Terms / Glossary
+# Key Terms
 
 ***
 ### System
