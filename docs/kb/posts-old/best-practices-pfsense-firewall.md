@@ -1,5 +1,6 @@
 ---
 title: Best Practices - Running a pfSense Virtual Firewall
+slug: running-a-pfsense-virtual-firewall
 description: 
 published: true
 date: 2023-01-24T19:25:40.944Z

@@ -12,6 +12,7 @@ theme:
   features:
     - navigation.tabs
     - navigation.sections
+    - navigation.indexes
     #- toc.integrate
     - navigation.top
     - search.suggest
@@ -36,6 +37,13 @@ theme:
         icon: material/brightness-7
         name: Switch to dark mode
 plugins:
+  - blog:
+      blog_dir: kb
+      post_url_format: "{slug}"
+  - search:
+      prebuild_index: true
+      lang:
+      - en
   - glightbox
 markdown_extensions:
   - sane_lists
@@ -61,6 +69,12 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
+  - toc:
+      permalink: "#"
+#  - material.extensions.preview:
+#      targets:
+#        include:
+#          - glossary.md      
 
 extra:
   social:
@@ -92,15 +106,18 @@ nav:
 #      - Key Terms / Glossary: implementation-guide/installation.md
       - Installation: implementation-guide/installation-guide.md
   - Knowledge Base:
-    - Trim: kb/trim.md
-    - API Tables: kb/API-Tables.md
-    - Allow Root to Tenant Site: kb/AllowRootToTenantSite.md
-    - DiskDiscard: kb/Disk-Discard.md
-    - Import VM from Media: kb/Importing-VMs-from-Media.md
-    - Accessing the User Interface from an Internal Network: kb/access-ui-from-internal.md
-    - Accessing the User Interface from a VM: kb/accessing-ui-from-a-vm.md
-    - Add Media to Tenant: kb/add-media-to-tenants.md
-    - Add a vlan: kb/adding-a-vlan.md
+    - kb/index.md      
+#  - Knowledge Base: 
+#    - "": kb/*.md
+#    - Trim: kb/trim.md
+#    - API Tables: kb/API-Tables.md
+#    - Allow Root to Tenant Site: kb/AllowRootToTenantSite.md
+#    - DiskDiscard: kb/Disk-Discard.md
+#    - Import VM from Media: kb/Importing-VMs-from-Media.md
+#    - Accessing the User Interface from an Internal Network: kb/access-ui-from-internal.md
+#    - Accessing the User Interface from a VM: kb/accessing-ui-from-a-vm.md
+#    - Add Media to Tenant: kb/add-media-to-tenants.md
+#    - Add a vlan: kb/adding-a-vlan.md
 #    kb/adding-resources.md
 #    kb/adding-storage.md
 #    kb/api.md

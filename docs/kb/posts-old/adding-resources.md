@@ -1,5 +1,6 @@
 ---
 title: Scaling Up VS. Scaling Out
+slug: scaling-up-vs-scaling-out
 description: 
 published: true
 date: 2023-01-24T19:16:07.815Z

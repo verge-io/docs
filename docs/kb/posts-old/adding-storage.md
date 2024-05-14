@@ -1,9 +1,10 @@
 ---
 title: KB Template
+slug: adding-storage
 description: 
 published: false
 date: 2022-08-09T20:29:55.061Z
-tags: 
+tags: incomplete
 editor: markdown
 dateCreated: 2022-08-09T20:21:23.483Z
 ---

@@ -1,5 +1,6 @@
 ---
 title: Accessing the Verge.io UI from a VM
+slug: accessing-the-verge_io-ui-from-a-vm
 description: 
 published: true
 date: 2023-01-24T19:21:32.815Z

@@ -1,5 +1,6 @@
 ---
 title: Sharing Media Images to Tenants
+slug: sharing-media-images-to-tenants
 description: 
 published: true
 date: 2023-01-24T19:20:42.724Z

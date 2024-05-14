@@ -1,5 +1,6 @@
 ---
 title: Accessing the User Interface from an Internal Network
+slug: accessing-the-user-interface-from-an-internal-network
 description: 
 published: true
 date: 2023-01-24T15:41:14.296Z

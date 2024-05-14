@@ -1,5 +1,6 @@
 ---
 title: Allow Root to Tenant Site Connection
+slug: allow-root-to-tenant-site-connection
 description: Instructions for how to create a site from a root system to a tenant
 published: true
 date: 2023-09-12T15:19:47.449Z

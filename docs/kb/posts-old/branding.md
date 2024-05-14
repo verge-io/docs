@@ -1,5 +1,6 @@
 ---
 title: Customizing the User Interface
+slug: customizing-the-user-interface
 description: 
 published: true
 date: 2023-01-23T22:24:24.831Z
