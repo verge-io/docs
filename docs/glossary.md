@@ -1,6 +1,9 @@
 # Key Terms / Glossary
 
 ***
+### System
+A vergeOS system is a collection of nodes used to deploye workloads across a common vSAN instance. A single vergeOS system can be made up of 1 or more Clusters and vSAN Storage Tiers. A vergeOS system can be connected to other vergeOS systems for the purposes of centralized montoring, authentication, and management as well as replicating snapshots and vSAN repair service
+
 ### Controller Nodes
 In any VergeOS Site, the first two nodes (node1 and node2) are considered the Controller nodes. They handle the controller functions of VergeOS. These are functions like handling the User Interface, Networking, and VSAN functions. For larger environments, they can be set as dedicated controllers where they only handle controller functions and don't run workloads.
 
@@ -59,6 +62,9 @@ A Compute-only Cluster is a set of nodes that are added to VergeOS with the sole
 
 ### Storage-Only Cluster:
 A Storage-only Cluster is a set of nodes that are added to VergeOS with the sole intention of expanding storage. They can be added to an existing Tier of storage if they have like hardware or added as a new Tier.  
+
+### Repair Server:
+lorum ipsom  
 
 !!! note "For a more complete Glossary of terms, see the product in-line help within the VergeIO software."
     
