@@ -79,17 +79,17 @@ nav:
   - Implementation Guide:
     - Introduction: implementation-guide/introduction.md
     - Design Architechtures:
-      - Key Terms / Glossary: implementation-guide/glossary.md
+ #     - Key Terms / Glossary: implementation-guide/glossary.md
       - Basic Cluster Design: implementation-guide/basic-cluster-design.md
       - Advanced Cluster Design: implementation-guide/advanced-cluster-design.md
       - Network Design: implementation-guide/network-design.md
       - Memory / RAM Considerations: implementation-guide/ram-design.md
     - Pre-Installation: 
-      - Key Terms / Glossary: implementation-guide/pre-installation.md
+#      - Key Terms / Glossary: implementation-guide/pre-installation.md
       - Checklist: implementation-guide/pre-install-checklist.md
       - Bootable Media: implementation-guide/install-media.md
     - vergeOS Installation:
-      - Key Terms / Glossary: implementation-guide/installation.md
+#      - Key Terms / Glossary: implementation-guide/installation.md
       - Installation: implementation-guide/installation-guide.md
   - Knowledge Base:
     - Trim: kb/trim.md

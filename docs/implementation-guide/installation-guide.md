@@ -12,7 +12,7 @@ Before diving in, check out the Deployment Planning Guide for important guidance
 
 Properly configured networks are critical for a successful VergeOS installation. Here's what you'll need to do:
 
- - Identify the physical NICs that will connect to your [External](glossary.md/#external-network) and [Core](glossary.md/#fabriccore-network) networks for regular operations and, optionally, a maintenance network for iPMI access and PXE boot. 
+ - Identify the physical NICs that will connect to your [External](glossary.md/#external-network "Clcik for definition") and [Core](glossary.md/#fabriccore-network) networks for regular operations and, optionally, a maintenance network for iPMI access and PXE boot. 
 
  - Collect the MAC addresses for each NIC port and identify which network (External/Core/Maintenace) they will be assigned to.
 
