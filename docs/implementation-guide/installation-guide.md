@@ -6,6 +6,8 @@ Welcome! In this guide, we'll walk through installing VergeOS to get your enviro
 
 Before diving in, check out the Deployment Planning Guide for important guidance on hardware selection, network setup, VLANs, and more to ensure a smooth installation.
 
+---
+
 ## Configure Networking
 
 Properly configured networks are critical for a successful VergeOS installation. Here's what you'll need to do:
@@ -15,6 +17,8 @@ Properly configured networks are critical for a successful VergeOS installation.
  - Collect the MAC addresses for each NIC port and identify which network (External/Core/Maintenace) they will be assigned to.
 
 !!! tip "Obtaining the MAC addresses for each NIC port helps identify the physical cabling."
+
+---
 
 ## Install First Controller Node
 
@@ -95,6 +99,8 @@ Now you're ready to install the first controller node:
 
 The installer will format drives, install VergeOS, and reboot. Once complete, the VergeOS login screen will appear and the first controller node is ready!
 
+---
+
 ## Add Second Controller Node  
 
 With the first node installed, let's add the second controller:
@@ -111,6 +117,8 @@ With the first node installed, let's add the second controller:
 
 After drive formatting and installation, the second node will reboot and automatically join the first one to form an HA cluster. 
 
+---
+
 ## Install Additional Nodes
 
 You can now install additional nodes as needed:
@@ -123,6 +131,8 @@ You can now install additional nodes as needed:
 
 Follow the same process as the second controller node, selecting the appropriate node type when prompted.
 
+---
+
 ## Verify and Next Steps
 
 Once installation is complete:
@@ -132,6 +142,8 @@ Once installation is complete:
 3. Start deploying VMs and containers!
 
 !!! note "Log entries indicating “root key” errors during the process of adding nodes to a system are normal and can be ignored."
+
+---
 
 ## Troubleshooting & Support
 
