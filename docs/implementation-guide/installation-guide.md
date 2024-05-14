@@ -12,7 +12,7 @@ Before diving in, check out the Deployment Planning Guide for important guidance
 
 Properly configured networks are critical for a successful VergeOS installation. Here's what you'll need to do:
 
- - Identify the physical NICs that will connect to your external and core networks for regular operations and, optionally, a maintenance network for iPMI access and PXE boot. 
+ - Identify the physical NICs that will connect to your [External](glossary.md/#external-network) and [Core](glossary.md/#fabriccore-network) networks for regular operations and, optionally, a maintenance network for iPMI access and PXE boot. 
 
  - Collect the MAC addresses for each NIC port and identify which network (External/Core/Maintenace) they will be assigned to.
 
@@ -39,7 +39,7 @@ Now you're ready to install the first controller node:
 
 ### Setup Networking
 
-1. Select the number of physical switches you will be connecting to, by default this will be set to the number of NICs detected by the OS.
+1. Select the number of [Physical](glossary.md/#fabriccore-network) switches you will be connecting to, by default this will be set to the number of NICs detected by the OS.
 
 !!! tip "It is strongly recommended to keep the number that is originally shown so you can configure ALL detected NICs during the installation (even if you not planning to use all of them initially)."
 
@@ -47,7 +47,7 @@ Now you're ready to install the first controller node:
 
 2. Choose "Yes" to automatically detect network configuration. The installer will find the interfaces if NICs are cabled properly.
 
-3. Select the NIC to be used for the first **Core Network**
+3. Select the NIC to be used for the first **[Core Network](glossary.md/#fabriccore-network)**
 !!! tip "NICs with an active link will have an asterisk (*) at the beginning of the device description."
 
 4. Configure the first **Physical Core Switch**

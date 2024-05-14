@@ -1,7 +1,7 @@
 site_name: Documentation
 site_url: https://docs.verge.io/
-repo_url: https://github.com/vergedocs/docs
-repo_name: vergedocs/docs
+repo_url: https://github.com/verge-io/docs
+repo_name: verge-io/docs
 edit_uri: edit/develop/docs/
 
 
@@ -88,7 +88,7 @@ nav:
       - Key Terms / Glossary: implementation-guide/pre-installation.md
       - Checklist: implementation-guide/pre-install-checklist.md
       - Bootable Media: implementation-guide/install-media.md
-    - vergeOS Installtion:
+    - vergeOS Installation:
       - Key Terms / Glossary: implementation-guide/installation.md
       - Installation: implementation-guide/installation-guide.md
   - Knowledge Base:
@@ -155,3 +155,4 @@ nav:
 #    kb/wireguard-nameservers.md
 #    kb/wireguard-setup-remote-access-vpn.md
 #    kb/workloads-failing-to-migrate.md
+  - Glossary: glossary.md
