@@ -1,13 +1,14 @@
 # Key Terms / Glossary
+
 ***
+### Controller Nodes
+In any VergeOS Site, the first two nodes (node1 and node2) are considered the Controller nodes. They handle the controller functions of VergeOS. These are functions like handling the User Interface, Networking, and VSAN functions. For larger environments, they can be set as dedicated controllers where they only handle controller functions and don't run workloads.
 
 ### Cluster
 Cluster is the term we use for a set of Nodes. Nodes are bound to a cluster set based on like hardware. A cluster can consist of all HCI nodes, a compute-only cluster, or a storage-only cluster. You may also have a separate cluster for different types of hardware, like AMD vs Intel.
 
-
 ### Node
 A Node is a single server running VergeOS.
-
 
 ### Virtual Datacenter (VDC)
 A VDC is a data center in a box. All components of a standard data center are virtualized into a server(s).
@@ -19,11 +20,6 @@ A Site is essentially a single virtual data center with a minimum of 2 Nodes. It
 
 ### Tenant
 A Tenant is a virtual data center(Site) inside of another site. You can nest tenants inside of tenants. Each Tenant has its own separate user interface and URL.
-
-
-### Controller Nodes:
-In any VergeOS Site, the first two nodes (node1 and node2) are considered the Controller nodes. They handle the controller functions of VergeOS. These are functions like handling the User Interface, Networking, and VSAN functions. For larger environments, they can be set as dedicated controllers where they only handle controller functions and don't run workloads.
-
 
 ### IPMI
 IPMI (Intelligent Platform Management Interface) is a set of standardized specifications for hardware-based platform management systems that makes it possible to control and monitor servers centrally. Each hardware manufacturer has its own software to handle IPMI (like Dell's iDrac or BMC)
