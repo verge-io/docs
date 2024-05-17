@@ -5,6 +5,8 @@ description:
 published: true
 date: 2023-04-21T13:37:38.002Z
 tags: sql, best practice, database, db
+categories:
+  - Best Practices
 editor: markdown
 dateCreated: 2022-09-01T17:00:25.460Z
 ---

@@ -4,7 +4,9 @@ slug: proper-power-sequence-for-a-vergeio-environment
 description: 
 published: true
 date: 2023-01-23T22:25:43.163Z
-tags: verge.io, shutdown, power on
+tags: vergeOS, shutdown, power on, troubleshooting, maintenance
+categories:
+  - Troubleshooting
 editor: markdown
 dateCreated: 2022-06-24T13:49:31.305Z
 ---

@@ -4,7 +4,9 @@ slug: generating-system-diagnostics
 description: 
 published: true
 date: 2024-03-28T15:48:32.403Z
-tags: 
+tags: troubleshooting, diagnostics, support
+categories:
+  - Troubleshooting
 editor: markdown
 dateCreated: 2022-09-02T15:35:21.754Z
 ---

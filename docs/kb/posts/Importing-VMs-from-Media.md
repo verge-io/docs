@@ -5,6 +5,9 @@ description:
 published: true
 date: 2024-02-06T15:26:24.755Z
 tags: vm, import, boot, sata, ide, media, images, scsi, secure boot, disk, media images, not bootable, not booting, troubleshooting, troubleshoot, vm wont boot, wont start, import vm
+categories:
+  - Migration
+  - Troubleshooting
 editor: markdown
 dateCreated: 2023-01-19T14:38:43.388Z
 ---

@@ -5,6 +5,8 @@ description:
 published: true
 date: 2023-01-24T19:25:06.933Z
 tags: vm, network, isolate
+categories:
+  - VM
 editor: markdown
 dateCreated: 2022-09-07T17:13:03.825Z
 ---

@@ -5,6 +5,8 @@ description:
 published: true
 date: 2023-01-23T22:25:11.107Z
 tags: media, images, managing, cd, dvd, iso
+categories:
+  - Media Images
 editor: markdown
 dateCreated: 2022-07-11T18:35:05.374Z
 ---

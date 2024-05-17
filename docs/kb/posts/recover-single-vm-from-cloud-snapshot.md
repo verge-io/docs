@@ -5,6 +5,11 @@ description:
 published: true
 date: 2023-01-24T19:26:35.798Z
 tags: vm, snapshot, cloud, recover, single
+categories:
+  - VM
+  - Troubleshooting
+  - Snapshot
+  - Backup
 editor: markdown
 dateCreated: 2022-09-07T18:26:22.587Z
 ---

@@ -5,6 +5,8 @@ description: How to create a bootable USB to install Verge.io
 published: true
 date: 2023-03-27T18:31:37.067Z
 tags: iso, rufus, bootable, usb
+categories:
+  - Installation
 editor: markdown
 dateCreated: 2022-08-04T18:16:50.678Z
 ---

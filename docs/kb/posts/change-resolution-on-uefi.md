@@ -5,6 +5,9 @@ description:
 published: true
 date: 2023-11-15T21:13:25.425Z
 tags: vm, uefi, resolution
+categories:
+  - VM
+  - Troubleshooting
 editor: markdown
 dateCreated: 2022-09-07T17:26:07.927Z
 ---

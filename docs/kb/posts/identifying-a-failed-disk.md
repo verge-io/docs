@@ -4,7 +4,10 @@ slug: identifying-a-failed-disk-drive
 description: 
 published: true
 date: 2023-01-24T19:14:51.610Z
-tags: disk, failed, identifying
+tags: disk, failed, troubleshooting, diagnostics, support, vsan
+categories:
+  - Troubleshooting
+  - vSAN
 editor: markdown
 dateCreated: 2022-08-10T18:33:28.938Z
 ---

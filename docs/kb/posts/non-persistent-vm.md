@@ -5,6 +5,8 @@ description:
 published: true
 date: 2023-01-24T19:25:26.189Z
 tags: vm, persistent, non persistent
+categories:
+  - VM
 editor: markdown
 dateCreated: 2022-09-16T15:26:27.931Z
 ---

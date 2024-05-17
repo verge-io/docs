@@ -5,8 +5,8 @@ description: Addressing UEFI Devices on Imported VMs
 published: true
 date: 2023-01-24T14:15:45.862Z
 categories:
-  - vm
-  - uefi
+  - VM
+  - Troubleshooting
 tags: vm, import, uefi, secure boot
 editor: markdown
 dateCreated: 2022-06-28T14:46:35.084Z

@@ -5,6 +5,8 @@ description:
 published: true
 date: 2023-01-24T19:20:02.121Z
 tags: tenant, password, reset
+categories:
+  - Tenant
 editor: markdown
 dateCreated: 2022-08-17T17:43:09.744Z
 ---

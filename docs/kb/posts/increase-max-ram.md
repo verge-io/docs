@@ -4,7 +4,9 @@ slug: max-ram-per-machine
 description: Adjusting the Max RAM per machine Cluster Setting
 published: true
 date: 2024-04-18T23:14:17.032Z
-tags: 
+tags: cluster settings, cluster, configuration, vm, settings
+categories:
+  - Cluster Settings
 editor: markdown
 dateCreated: 2024-04-18T16:22:33.961Z
 ---

@@ -5,6 +5,9 @@ description:
 published: true
 date: 2023-01-24T15:45:22.430Z
 tags: routing, internal, route, networks
+categories:
+  - Network
+  - Network Rules
 editor: markdown
 dateCreated: 2022-09-07T13:11:47.555Z
 ---

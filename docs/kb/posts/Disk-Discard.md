@@ -5,6 +5,9 @@ description:
 published: true
 date: 2023-09-12T16:53:09.094Z
 tags: disk management, trim, discard, storage, vsan, disk performance, disk
+categories:
+  - Best Practices
+  - VM
 editor: markdown
 dateCreated: 2023-03-30T13:36:19.727Z
 ---

@@ -4,7 +4,9 @@ slug: preferred-tier-usage
 description: 
 published: true
 date: 2023-01-24T19:25:57.114Z
-tags: tier, preferred tier
+tags: tier, preferred tier, vsan, vm, disk, media
+categories:
+  - vSAN
 editor: markdown
 dateCreated: 2022-09-01T16:25:52.340Z
 ---

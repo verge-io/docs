@@ -5,6 +5,9 @@ description: How to configure the VergeIO NAS VM Export Volume
 published: true
 date: 2024-02-27T19:42:16.752Z
 tags: vm export, export, backup, nas, snapshot
+categories:
+  - Snapshot
+  - Backup
 editor: markdown
 dateCreated: 2023-05-25T19:53:15.389Z
 ---

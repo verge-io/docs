@@ -5,6 +5,9 @@ description:
 published: true
 date: 2023-01-23T22:24:24.831Z
 tags: branding, color, dashboard, logo
+categories:
+  - UI
+  - Branding
 editor: markdown
 dateCreated: 2022-06-29T18:26:45.499Z
 ---

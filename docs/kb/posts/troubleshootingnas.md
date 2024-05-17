@@ -5,6 +5,9 @@ description:
 published: false
 date: 2023-09-18T15:54:21.904Z
 tags: cifs, nas, nfs, shares, volumes, troubleshooting, troubleshoot, guest, lanmanager, smb
+categories:
+  - Troubleshooting
+  - NAS
 editor: markdown
 dateCreated: 2023-09-18T15:20:34.352Z
 ---

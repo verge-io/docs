@@ -5,6 +5,9 @@ description: How to load Virtio Disk and Storage drivers in Windows Recovery Con
 published: true
 date: 2023-01-24T14:18:13.900Z
 tags: virtio, storage, recovery console, recovery, console, drivers, hard drive
+categories:
+  - VM
+  - Troubleshooting
 editor: markdown
 dateCreated: 2022-07-29T15:28:29.904Z
 ---

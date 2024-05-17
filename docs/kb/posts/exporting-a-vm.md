@@ -5,6 +5,10 @@ description:
 published: true
 date: 2023-01-24T19:22:21.109Z
 tags: vm, export
+categories:
+  - Backup
+  - VM
+  - Snapshot
 editor: markdown
 dateCreated: 2022-07-11T18:16:54.516Z
 ---

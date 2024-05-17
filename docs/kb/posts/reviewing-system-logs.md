@@ -4,7 +4,9 @@ slug: reviewing-system-logs
 description: 
 published: true
 date: 2023-08-30T18:05:00.332Z
-tags: 
+tags: logs, cluster, troubleshooting, support
+categories:
+  - Troubleshooting
 editor: markdown
 dateCreated: 2022-08-23T19:19:56.461Z
 ---

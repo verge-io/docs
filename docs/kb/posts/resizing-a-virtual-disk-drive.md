@@ -5,6 +5,8 @@ description:
 published: true
 date: 2023-01-24T19:27:42.060Z
 tags: resize, disk, inside vm, inside virtual machine
+categories:
+  - VM
 editor: markdown
 dateCreated: 2022-07-11T17:45:53.753Z
 ---

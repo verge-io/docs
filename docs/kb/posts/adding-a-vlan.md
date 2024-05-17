@@ -6,7 +6,6 @@ published: true
 date: 2023-06-06T14:17:24.473Z
 tags: vlan, networking
 categories:
-  - VLAN
   - Network
 editor: markdown
 dateCreated: 2022-06-30T15:23:20.794Z

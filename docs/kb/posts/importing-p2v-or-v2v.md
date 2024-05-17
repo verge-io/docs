@@ -4,7 +4,9 @@ slug: importing-a-physicalvirtual-machine-into-vergeio
 description: 
 published: true
 date: 2024-02-07T14:21:34.627Z
-tags: vtov, ptov, p2v, v2v
+tags: vtov, ptov, p2v, v2v, import, migrate, clone
+categories:
+  - Migration
 editor: markdown
 dateCreated: 2022-08-10T19:18:14.014Z
 ---

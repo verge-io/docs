@@ -5,6 +5,9 @@ description:
 published: true
 date: 2023-01-24T19:28:10.839Z
 tags: vm, tenant, share
+categories:
+  - Tenant
+  - VM
 editor: markdown
 dateCreated: 2022-09-01T16:10:26.690Z
 ---

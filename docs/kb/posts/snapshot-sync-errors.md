@@ -5,6 +5,9 @@ description:
 published: true
 date: 2023-01-24T19:17:04.187Z
 tags: snapshot, error
+categories:
+  - Snapshot
+  - Troubleshooting
 editor: markdown
 dateCreated: 2022-09-02T15:54:31.531Z
 ---

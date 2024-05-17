@@ -5,6 +5,9 @@ description:
 published: true
 date: 2023-01-24T19:15:40.203Z
 tags: scale up, vsan, scaling
+categories:
+  - vSAN
+  - Scale Up
 editor: markdown
 dateCreated: 2022-08-17T15:48:21.549Z
 ---

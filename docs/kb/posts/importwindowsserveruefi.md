@@ -5,6 +5,8 @@ description:
 published: true
 date: 2024-04-03T13:55:51.067Z
 tags: vm, windows, import, virtio, scsi, uefi, disk, qemu, vms, media file, guest agent
+categories:
+  - Migration
 editor: markdown
 dateCreated: 2024-03-14T16:15:12.992Z
 ---
