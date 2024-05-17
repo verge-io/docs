@@ -40,6 +40,8 @@ plugins:
   - blog:
       blog_dir: kb
       post_url_format: "{slug}"
+      blog_toc: true
+      archive: false
   - search:
       prebuild_index: true
       lang:

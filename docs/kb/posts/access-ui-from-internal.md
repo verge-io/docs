@@ -4,7 +4,9 @@ slug: accessing-the-user-interface-from-an-internal-network
 description: 
 published: true
 date: 2023-01-24T15:41:14.296Z
-tags: 
+tags: internal network, UI access, network routing, rule, UI, routing
+categories:
+  - Network Rules
 editor: markdown
 dateCreated: 2022-07-25T19:08:58.594Z
 ---

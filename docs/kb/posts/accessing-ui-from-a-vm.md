@@ -5,6 +5,9 @@ description:
 published: true
 date: 2023-01-24T19:21:32.815Z
 tags: vm, access, ui, hairpin, hair-pin, hairpinning, hair-pinning
+categories:
+  - Network Rules
+  - Network
 editor: markdown
 dateCreated: 2022-09-07T17:52:09.082Z
 ---

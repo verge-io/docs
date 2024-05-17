@@ -5,6 +5,9 @@ description:
 published: true
 date: 2023-01-24T19:20:42.724Z
 tags: media, tenant, media images, tenants
+categories:
+  - Tenants
+  - Media Images
 editor: markdown
 dateCreated: 2022-08-01T20:59:20.590Z
 ---

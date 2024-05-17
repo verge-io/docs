@@ -5,6 +5,8 @@ description:
 published: false
 date: 2023-10-06T14:10:54.764Z
 tags: api, tables, schema, definitions, description, methods, development, dev, devops
+categories:
+  - API
 editor: markdown
 dateCreated: 2023-09-15T20:21:58.872Z
 ---

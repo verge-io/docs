@@ -4,7 +4,7 @@ slug: setting-up-an-ipsec-vpn
 description: 
 published: true
 date: 2024-02-05T18:35:40.364Z
-tags: 
+tags: ipsec, vpn, dmz, security
 editor: markdown
 dateCreated: 2022-10-04T18:38:59.908Z
 ---

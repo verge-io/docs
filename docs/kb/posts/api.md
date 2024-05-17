@@ -4,7 +4,7 @@ slug: api-documentation
 description: 
 published: true
 date: 2023-08-21T19:00:54.373Z
-tags: 
+tags: api, tables, schema, definitions, description, methods, development, dev, devops
 editor: markdown
 dateCreated: 2022-12-19T16:54:06.293Z
 ---

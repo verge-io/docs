@@ -9,20 +9,6 @@ editor: markdown
 dateCreated: 2022-08-09T20:21:23.483Z
 ---
 
-```mermaid
-flowchart TB
-    c1-->a2
-    subgraph one
-    a1-->a2
-    end
-    subgraph two
-    b1-->b2
-    end
-    subgraph three
-    c1-->c2
-    B["fab:fa-twitter for peace"]
-    end
-```
 
 <!--- Delete between this line and the next commented out line
 
