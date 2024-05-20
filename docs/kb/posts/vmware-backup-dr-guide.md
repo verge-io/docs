@@ -4,7 +4,11 @@ slug: vmwarebackupdrguide
 description: 
 published: true
 date: 2023-01-24T19:34:49.819Z
-tags: 
+tags: VMware, backups, vSphere, scheduling, DR
+categories:
+  - Best Practices
+  - Backup
+  - VMware
 editor: markdown
 dateCreated: 2022-08-31T17:20:02.684Z
 ---

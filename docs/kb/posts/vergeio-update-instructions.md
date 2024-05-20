@@ -4,7 +4,10 @@ slug: vergeio-update-instructions
 description: 
 published: true
 date: 2023-01-24T15:39:06.743Z
-tags: verge.io, update, upgrade
+tags: verge.io, update, upgrade, maintenance, vergeOS
+categories:
+  - Maintenance
+  - Troubleshooting
 editor: markdown
 dateCreated: 2022-06-28T13:29:03.267Z
 ---

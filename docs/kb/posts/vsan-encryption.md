@@ -4,7 +4,9 @@ slug: vsan-encryption-information
 description: 
 published: true
 date: 2023-01-24T19:18:29.667Z
-tags: encryption
+tags: encryption, vsan
+categories:
+  - vSAN
 editor: markdown
 dateCreated: 2022-08-25T17:23:10.582Z
 ---

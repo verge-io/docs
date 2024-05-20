@@ -4,7 +4,10 @@ slug: understanding-traffic-flow
 description: 
 published: true
 date: 2024-03-21T18:44:21.203Z
-tags: 
+tags: network, traffic, flow, traffic flow, routing
+categories:
+  - Network
+  - Network Rules
 editor: markdown
 dateCreated: 2023-11-29T16:50:57.491Z
 ---

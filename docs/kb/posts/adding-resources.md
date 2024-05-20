@@ -6,8 +6,8 @@ published: true
 date: 2023-01-24T19:16:07.815Z
 tags: scaling, up, out, adding resources, add disk
 categories:
-  - Scaling Up
-  - Scaling Out
+  - Scale Up
+  - Scale Out
 editor: markdown
 dateCreated: 2022-09-07T13:28:01.240Z
 ---

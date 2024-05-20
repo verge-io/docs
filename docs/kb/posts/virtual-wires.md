@@ -5,6 +5,10 @@ description: Virtual Wire How To
 published: true
 date: 2024-03-15T21:42:46.809Z
 tags: vlan, virtual wire, network, tenant
+categories:
+  - Maintenance
+  - Tenant
+  - Network Rules
 editor: markdown
 dateCreated: 2022-06-29T19:58:59.133Z
 ---
