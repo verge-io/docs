@@ -4,7 +4,10 @@ slug: windows--time-shift
 description: 
 published: true
 date: 2023-01-24T14:20:54.833Z
-tags: 
+tags: windows, time, ntp, utc, dst, drift
+categories:
+  - Troubleshooting
+  - VM
 editor: markdown
 dateCreated: 2022-10-12T14:45:26.462Z
 ---

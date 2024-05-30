@@ -92,6 +92,8 @@ copyright: |
 nav:
   - Home:
     - Welcome: index.md
+#  - Writing Guide:
+#    - Writing Guide: how-to-write-a-verge-guide.md
   - Implementation Guide:
     - Introduction: implementation-guide/introduction.md
     - Design Architechtures:

@@ -5,6 +5,9 @@ description: Possible reasons why workloads fail to migrate from node to node
 published: true
 date: 2023-01-23T22:27:27.361Z
 tags: vm, workloads, migrate, migration
+categories:
+  - Troubleshooting
+  - Migration
 editor: markdown
 dateCreated: 2022-06-28T14:56:28.820Z
 ---

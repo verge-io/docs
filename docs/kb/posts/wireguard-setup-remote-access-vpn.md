@@ -5,6 +5,8 @@ description: How to setup a Remote Access VPN using Wireguard
 published: true
 date: 2024-02-06T18:49:12.726Z
 tags: network, vpn, wireguard, remote access, networking, 4.11
+categories:
+  - VPN
 editor: markdown
 dateCreated: 2022-06-28T16:17:24.344Z
 ---

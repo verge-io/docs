@@ -5,6 +5,9 @@ description:
 published: true
 date: 2023-01-24T14:16:57.949Z
 tags: windows, offline, restarting, disks
+categories:
+  - Troubleshooting
+  - VM
 editor: markdown
 dateCreated: 2022-08-10T18:23:27.988Z
 ---

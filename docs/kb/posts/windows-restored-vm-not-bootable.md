@@ -5,6 +5,9 @@ description:
 published: true
 date: 2023-01-23T22:31:03.605Z
 tags: windows, restored, not bootable, not booting, not restarting, bsod, blue screen
+categories:
+  - Troubleshooting
+  - VM
 editor: markdown
 dateCreated: 2022-08-10T18:45:23.678Z
 ---

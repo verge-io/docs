@@ -5,6 +5,9 @@ description:
 published: true
 date: 2023-01-23T22:31:40.674Z
 tags: vm, windows, virtio, scsi
+categories:
+  - Troubleshooting
+  - VM
 editor: markdown
 dateCreated: 2022-06-24T13:27:06.698Z
 ---

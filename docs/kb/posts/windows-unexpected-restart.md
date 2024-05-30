@@ -5,6 +5,9 @@ description:
 published: true
 date: 2023-01-24T14:19:20.724Z
 tags: vm, windows, restart, restarted, rebooted, unexpectedly
+categories:
+  - Troubleshooting
+  - VM
 editor: markdown
 dateCreated: 2022-08-17T18:15:41.557Z
 ---

@@ -5,6 +5,8 @@ description:
 published: true
 date: 2023-01-24T15:48:19.439Z
 tags: windows, wireguard, nameserver, config, linux
+categories:
+  - VPN
 editor: markdown
 dateCreated: 2022-09-13T15:37:08.228Z
 ---

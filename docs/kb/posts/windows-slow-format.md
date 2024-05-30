@@ -5,6 +5,9 @@ description:
 published: true
 date: 2023-01-23T22:31:24.436Z
 tags: vm, windows, slow, format
+categories:
+  - Troubleshooting
+  - VM
 editor: markdown
 dateCreated: 2022-08-25T17:12:31.551Z
 ---
