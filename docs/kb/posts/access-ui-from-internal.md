@@ -11,16 +11,23 @@ editor: markdown
 dateCreated: 2022-07-25T19:08:58.594Z
 ---
 
-## How To Set Up An Internal UI Route
+## How to Set Up an Internal UI Route
 
-On occasion a user will need to access the User Interface from within a virtual machine located in a VergeIO environment. To do this a special route rule will need to be created on the network (typically an internal network) the VM is attached to.
+Sometimes, you may need to access the User Interface (UI) from a virtual machine (VM) within a VergeIO environment. To achieve this, you need to create a special route rule on the network (usually an internal network) to which the VM is connected.
 
-1. Navigate to the dashboard of the network that the virtual machine is attached to
-1. Create a new rule using the settings in the following example
-![ui-access-rule.png](/public/ui-access-rule.png)
-1. Submit the rule to be brought back a list view of the rules on the network
-1. Select and apply the newly created rule which will be highlighted
-1. Within the virtual machine open a web browser and navigate to the IP address of the network router ex: https://192.168.4.1
+### Steps to Create the Route Rule
+
+1. **Navigate to the Dashboard**: Go to the dashboard of the network that your VM is connected to.
+
+2. **Create a New Rule**: Create a new rule using the settings shown in the example below:
+   
+   ![ui-access-rule.png](/public/ui-access-rule.png)
+
+3. **Submit the Rule**: Submit the rule. You will be taken back to the list view of the rules on the network.
+
+4. **Select and Apply the Rule**: Select the newly created rule, which will be highlighted, and apply it.
+
+5. **Access the UI from the VM**: Open a web browser within the VM and navigate to the IP address of the network router, for example: `https://192.168.4.1`.
 
 <br>
 
@@ -29,6 +36,5 @@ On occasion a user will need to access the User Interface from within a virtual 
 
 <br>
 <div style="text-align: center">
-  <a href="https://wiki.verge.io/en/public/kb"><button class="button-grey"> <b>↺</b> Back to Knowledgebase</button></a>
 <a href="https://www.verge.io/test-drive"><button class="button-orange">🚗 Take a Test Drive Today!</button></a>
 </div>

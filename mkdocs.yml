@@ -96,6 +96,7 @@ nav:
 #    - Writing Guide: how-to-write-a-verge-guide.md
   - Implementation Guide:
     - Introduction: implementation-guide/introduction.md
+    - Core Concepts: implementation-guide/concepts.md
     - Design Architechtures:
  #     - Key Terms / Glossary: implementation-guide/glossary.md
       - Basic Cluster Design: implementation-guide/basic-cluster-design.md
