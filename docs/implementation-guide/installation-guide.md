@@ -139,7 +139,7 @@ Once installation is complete:
 
 1. Open the VergeOS web UI via the system's IP address 
 2. Verify the new nodes were added successfully without errors
-3. Start deploying VMs and containers!
+3. Start deploying VMs!
 
 !!! note "Log entries indicating “root key” errors during the process of adding nodes to a system are normal and can be ignored."
 
@@ -152,4 +152,4 @@ If issues arise during installation:
 - Press `Esc` to cancel and get a command prompt
 - Type `yb-install` to resume or `yb-install --restart` to start over
 
-Need more help? Email support@verge.io or call (855) 855-8300.
+Need more help? Email [support@verge.io](mailto:support@verge.io) or call (855) 855-8300.
