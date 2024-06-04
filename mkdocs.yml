@@ -97,6 +97,7 @@ nav:
   - Implementation Guide:
     - Introduction: implementation-guide/introduction.md
     - Core Concepts: implementation-guide/concepts.md
+    - Sizing: implementation-guide/sizing.md
     - Design Architechtures:
  #     - Key Terms / Glossary: implementation-guide/glossary.md
       - Basic Cluster Design: implementation-guide/basic-cluster-design.md
@@ -108,73 +109,14 @@ nav:
       - Checklist: implementation-guide/pre-install-checklist.md
       - Bootable Media: implementation-guide/install-media.md
     - vergeOS Installation:
-#      - Key Terms / Glossary: implementation-guide/installation.md
       - Installation: implementation-guide/installation-guide.md
+      - Scale Out Nodes: implementation-guide/scale-out-nodes.md
+      - Compute Nodes: implementation-guide/compute-nodes.md
+      - Storage Nodes: implementation-guide/storage-nodes.md
+    - vergeOS Post Installation:
+      - vSAN: implementation-guide/vsan.md
+      - SSL: implementation-guide/ssl.md
+      - Tenants: implementation-guide/tenant.md
   - Knowledge Base:
     - kb/index.md      
-#  - Knowledge Base: 
-#    - "": kb/*.md
-#    - Trim: kb/trim.md
-#    - API Tables: kb/API-Tables.md
-#    - Allow Root to Tenant Site: kb/AllowRootToTenantSite.md
-#    - DiskDiscard: kb/Disk-Discard.md
-#    - Import VM from Media: kb/Importing-VMs-from-Media.md
-#    - Accessing the User Interface from an Internal Network: kb/access-ui-from-internal.md
-#    - Accessing the User Interface from a VM: kb/accessing-ui-from-a-vm.md
-#    - Add Media to Tenant: kb/add-media-to-tenants.md
-#    - Add a vlan: kb/adding-a-vlan.md
-#    kb/adding-resources.md
-#    kb/adding-storage.md
-#    kb/api.md
-#    kb/best-practices-pfsense-firewall.md
-#    kb/bootable-usb.md
-#    kb/branding.md
-#    kb/change-resolution-on-uefi.md
-#    kb/configuring-ipsec.md
-#    kb/configuring-vm-export.md
-#    kb/db-best-practices.md
-#    kb/exporting-a-vm.md
-#    kb/generating-system-diags.md
-#    kb/identifying-a-failed-disk.md
-#    kb/importing-p2v-or-v2v.md
-#    kb/importwindowsserveruefi.md
-#    kb/increase-max-ram.md
-#    kb/isolate-a-vm.md
-#    kb/loading-virtio-drivers-in-windowsrc.md
-#    kb/managing-media-images.md
-#    kb/network-blocks.md
-#    kb/non-persistent-vm.md
-#    kb/preferred-tier-usage.md
-#    kb/preinstall-checklist.md
-#    kb/proper-power-sequence.md
-#    kb/proxy.md
-#    kb/recover-single-vm-from-cloud-snapshot.md
-#    kb/reset-tenant-admin-password.md
-#    kb/resizing-a-virtual-disk-drive.md
-#    kb/reviewing-system-logs.md
-#    kb/routing-internal-networks.md
-#    kb/scaling-up-a-vsan.md
-#    kb/share-vm-into-tenant.md
-#    kb/snapshot-sync-errors.md
-#    kb/tenant-statistics.md
-#    kb/trim.md
-#    kb/troubleshootingnas.md
-#    kb/uefi-tweaks-for-imported-vms.md
-#    kb/understanding-traffic-flow.md
-#    kb/unexpected-vsan-growth.md
-#    kb/vergeio-update-instructions.md
-#    kb/virtual-wires.md
-#    kb/vm-network-connectivity-issues.md
-#    kb/vmware-backup-dr-guide.md
-#    kb/vsan-encryption.md
-#    kb/win11-bypass-tpm.md
-#    kb/windows-disks-offline-after-restart.md
-#    kb/windows-restored-vm-not-bootable.md
-#    kb/windows-slow-format.md
-#    kb/windows-time-shift.md
-#    kb/windows-unable-to-detect-drive.md
-#    kb/windows-unexpected-restart.md
-#    kb/wireguard-nameservers.md
-#    kb/wireguard-setup-remote-access-vpn.md
-#    kb/workloads-failing-to-migrate.md
   - Glossary: glossary.md
