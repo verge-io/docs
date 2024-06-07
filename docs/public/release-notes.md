@@ -8,9 +8,41 @@ editor: markdown
 dateCreated: 2022-08-19T20:39:26.714Z
 ---
 
-# 4.12.4 - April 2024
+# Release Notes
 
-## Features / Fixes
+## 4.12.5 - May 2024
+
+### Features / Fixes
+* Added the Windows key to the virtual keyboard toggle on the VM console page
+* Fixed an issue where deleting a virtual IP address was automatically applying firewall rules
+* BGP now handles graceful restarts more efficiently
+* If you create multiple virtual IPs at once and assign them to a tenant (or delete them), only a single refresh is sent
+* Network diagnostic queries will now clean themselves up if they become stale
+* Sped up generating the NAS recipe
+* Fixed an issue where creating a user with an invalid display name would leave a reference to the user in the database
+* Increased the VM console paste limit to 1024 characters
+* VMware backups will now make a copy of VMX files
+* Fixed a false-positive error that could be logged during a VM migration
+* Added an advanced network option to enable 802.1ad (QinQ)
+* Optimized the machines dashboard API query
+* If a node went unresponsive, you were unable to send diagnostic queries to the node until it was rebooted
+* Changing a cluster's Target max ram pct will now update the overall cluster RAM usage
+* Changed the maximum password length from 64 to 256
+* Fixed an issue where max vxlan fdb entries might not get set to 0
+
+### OS
+* Fixed an issue where removing a tier of storage would not complete the process until node1 was rebooted
+* Added the ability to delete a vSAN drive while the node was online (CLI only)
+* Fixed a rare scenario where repairs could be found on the vSAN under certain conditions with certain CPUs
+* Added support for additional NIC vendors and devices
+* Added missing NFT counter module for firewall tracking in the 5.10 kernel
+* Fixed an issue where PXE booted nodes were using the 5.10 kernel
+* Fixed an issue partitioning and discovering disks
+* Changed the timeout while partitioning disks to accomodate for systems with slow drive discovery
+
+## 4.12.4 - April 2024
+
+### Features / Fixes
 * Fixed an issue synchronizing a group with a DUO auth source
 * A warning is now displayed if a VM won't boot properly with virtio-scsi drives and UEFI
 * Fixed an issue attaching a GPU device to a tenants VM if it also has a TPM device
@@ -31,7 +63,7 @@ dateCreated: 2022-08-19T20:39:26.714Z
 * Fixed an issue where graphs still show data after a VM is powered off
 * Fix an issue where some user could not see sites
 
-## OS
+### OS
 * Sped up flashing the boot partitions
 * The node hardware clock is now forced to sync with UTC
 * EFI boot registration now sets the boot-next option
@@ -39,7 +71,7 @@ dateCreated: 2022-08-19T20:39:26.714Z
 * Fixed a 404 error that can occur when an API token expires
 * Various vSAN fixes and enhancements
 
-## Install
+### Install
 * Core and DMZ network MTU is now determined by the install
 * Changed the swap configuration screen to better reflect how much swap the system will have during the install
 * Removed the VLAN option when configuring a non-core physical network

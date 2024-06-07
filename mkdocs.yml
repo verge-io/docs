@@ -1,4 +1,4 @@
-site_name: Documentation
+site_name: VergeOS Docs
 site_url: https://docs.verge.io/
 repo_url: https://github.com/verge-io/docs
 repo_name: verge-io/docs
@@ -7,8 +7,9 @@ edit_uri: edit/develop/docs/
 
 theme:
   name: material
-  logo: assets/logo.svg
-  favicon: assets/logo-noname.png
+  custom_dir: overrides
+  logo: assets/vergelogomark.svg
+  favicon: assets/vergelogomark.svg
   features:
     - navigation.tabs
     - navigation.sections
@@ -20,18 +21,19 @@ theme:
     - content.tabs.link
     - content.code.annotation
     - content.code.copy
+    - announce.dismiss
   language: en
   palette:
     # Palette toggle for dark mode
     - scheme: slate
-      primary: grey
+      primary: black
       accent: deep orange
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
     # Palette toggle for light mode
     - scheme: default
-      primary: grey
+      primary: indigo
       accent: deep orange
       toggle:
         icon: material/brightness-7
@@ -63,6 +65,7 @@ markdown_extensions:
   - footnotes
   - pymdownx.mark
   - attr_list
+  - md_in_html
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
@@ -73,6 +76,7 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
   - toc:
       permalink: "#"
+
 #  - material.extensions.preview:
 #      targets:
 #        include:
@@ -86,8 +90,9 @@ extra:
       link: https://www.linkedin.com/company/verge-io/
     - icon: fontawesome/brands/youtube
       link: https://www.youtube.com/channel/UCnFu28s0GBVi18j7Ez3MXRg
+  generator: false
 copyright: |
-  &copy; 2021 <a href="https://verge.io" target="_blank" rel="noopener"> Verge.io</a>
+  &copy; 2024 <a href="https://verge.io" target="_blank" rel="noopener"> Verge.io</a>
 
 nav:
   - Home:
@@ -120,3 +125,5 @@ nav:
   - Knowledge Base:
     - kb/index.md      
   - Glossary: glossary.md
+
+  
