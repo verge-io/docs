@@ -103,11 +103,15 @@ nav:
     - Introduction: implementation-guide/introduction.md
     - Core Concepts: implementation-guide/concepts.md
     - Sizing: implementation-guide/sizing.md
-    - Design Architechtures:
- #     - Key Terms / Glossary: implementation-guide/glossary.md
-      - Basic Cluster Design: implementation-guide/basic-cluster-design.md
-      - Advanced Cluster Design: implementation-guide/advanced-cluster-design.md
+    - Deployment Planning:
       - Network Design: implementation-guide/network-design.md
+      - Edge / 2 Node Cluster: implementation-guide/edge.md
+      - SMB : implementation-guide/smb.md
+      - Cloud Providers: implementation-guide/csp.md
+      - Enterprise: implementation-guide/enterprise.md
+      - Life / Data Science: implementation-guide/data-sciense.md
+      - VMware Backup: implementation-guide/vmware-backup.md
+      - Education: implementation-guide/edu.md
 #      - Memory / RAM Considerations: implementation-guide/ram-design.md
     - Pre-Installation: 
 #      - Key Terms / Glossary: implementation-guide/pre-installation.md
