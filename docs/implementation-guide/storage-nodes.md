@@ -46,10 +46,6 @@ After the node reboots:
 - Log into the VergeOS web UI using the cluster’s IP address.
 - Navigate to the cluster configuration page to verify that the new storage node has been successfully added and is operational within the new storage cluster.
 
-## Conclusion
-
-This guide outlines the process for expanding your VergeOS environment by adding dedicated storage nodes into a new storage cluster. By following these steps, you can efficiently scale your storage capabilities, ensuring robust and segmented storage solutions tailored to specific operational needs.
-
 ---
 
 ### 2. Select a Storage Tier
