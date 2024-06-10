@@ -43,16 +43,20 @@
 
 ---
 
-## Maximum and Minimum Supported Hardware Specifications
+## Maximum and Minimum Supported Hardware Specifications[^1]
 
 | Resource                          | Minimum          | Maximum        |
 |-----------------------------------|------------------|----------------|
 | **Nodes per System**              | 2                | 256            |
-| **Disks per VM (virtio SCSI)**    | -                | 2000           |
+| **Disks per VM (virtio SCSI)**    | -                | 2000[^2]        |
 | **Storage per System**            | -                | 1 Petabyte     |
 | **Individual Physical Disk Size** | -                | 64 Terabytes   |
-| **vDisk Size**                    | -                | 2000 Terabytes |
-| **RAM per Host**                  | 8 GB             | 5 TB           |
+| **vDisk Size**                    | 512 bytes        | 2000 Terabytes |
+| **RAM per Host**                  | 8 GB[^3]         | 5 TB           |
 | **Clusters per System**           | 1                | 1000           |
 | **Tiers of Storage per System**   | -                | 5              |
 | **Failure Domains per System**    | -                | 2              |
+
+[^1]: As of v4.12
+[^2]: vSAN nodes require a minimum 1GB of RAM per 1TB of Storage
+[^3]: Virtio-SCSI Interface required
