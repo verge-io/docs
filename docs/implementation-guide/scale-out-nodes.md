@@ -3,7 +3,7 @@
 
 ## Introduction
 
-Welcome to the Scale-out Node Installation Guide for VergeOS. This guide provides step-by-step instructions for installing additional Scale-out nodes using a USB installer. Scale-out nodes are essential for expanding your VergeOS hyper-converged cluster, as they add both storage and compute capacity.
+Welcome to the Scale-out Node Installation Guide for VergeOS. This guide provides step-by-step instructions for installing additional Scale-out nodes using a USB installer.
 
 These nodes are designed to have identical hardware specifications to your controller nodes, including CPU, storage, network capabilities, and RAM, ensuring uniformity and compatibility within your infrastructure. When added, the disks from Scale-out nodes will integrate seamlessly into your existing vSAN tiers, increasing your cluster's storage capacity.
 
@@ -38,20 +38,30 @@ Ensure the following before starting the installation of a Scale-out node:
 4. **Network Configuration:**
 
    * Allow the installer to auto-detect the network configuration, ensuring that NICs are correctly cabled and match the configuration documented during the initial setup.
+
+!!! note "The installer may ask for you to identify which NIC is used for the EXTERNAL switch if it cannot autodetect"
+
+5. **Cluster Selection:** (OPTIONAL)
+
+   * If prompted, select the cluster your scale-out node is joining.
+
+   * Select the node this new nodes resembles the most
+
+!!! note "You will only see this question if you have multiple clusters"
    
-5. **vSAN Configuration:**
+6. **vSAN Configuration:**
 
    * The installer will automatically configure this node to integrate with the existing vSAN. Confirm that the storage tiers or custom configurations align with the initial setup to maintain uniformity across the infrastructure.
    
    * Review and finalize the disk selections and storage configurations.
 
-6. **Complete Installation:**
+7. **Complete Installation:**
 
    * The installer will format the necessary drives, install VergeOS, and integrate the node into your cluster.
 
    * The node will automatically reboot upon the completion of the installation process.
 
-7. **Verify Installation:**
+8. **Verify Installation:**
    
    * After rebooting, log into the VergeOS web UI using the cluster’s IP address.
    
