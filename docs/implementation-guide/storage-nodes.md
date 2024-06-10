@@ -5,8 +5,6 @@
 
 Welcome to the Storage Only Node Installation Guide for VergeOS. This guide provides step-by-step instructions for installing additional Storage Only nodes using a USB installer.
 
-These Storage Only nodes are specifically designed to host new or existing storage tiers within a dedicated storage cluster. Each node within this cluster should have identical hardware specifications, including CPU, storage, network capabilities, and RAM, to ensure uniformity and compatibility. This consistency is crucial for the seamless integration of these nodes into your VergeOS environment, optimizing storage resource management and scalability.
-
 By deploying additional Storage Only nodes, you effectively enhance your hyper-converged environment's capacity to handle larger data volumes and improve data accessibility. These nodes are pivotal in expanding the overall storage capabilities of your infrastructure, focusing solely on accommodating growth in data storage needs without altering compute capacities.
 
 This guide will help ensure that your addition of Storage Only nodes is executed smoothly and effectively, maintaining the high standards of efficiency and reliability expected in your VergeOS environment, and maximizing your storage strategy.
