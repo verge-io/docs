@@ -23,6 +23,7 @@ Ensure the following before starting the installation of a Scale-out node:
 ## Installation Steps
 
 1. **Boot from the VergeOS USB Installer:**
+
    * Insert the VergeOS USB installer into the server designated as the Scale-out node.
 
    * Reboot the server and select the USB drive as the boot device from the boot menu.
@@ -39,19 +40,19 @@ Ensure the following before starting the installation of a Scale-out node:
 
    * Allow the installer to auto-detect the network configuration, ensuring that NICs are correctly cabled and match the configuration documented during the initial setup.
 
-!!! note "The installer may ask for you to identify which NIC is used for the EXTERNAL switch if it cannot autodetect"
+!!! info "The installer may ask for you to identify which NIC is used for the EXTERNAL switch if it cannot autodetect"
 
-5. **Cluster Selection:** (OPTIONAL)
+5. **Cluster Selection:** 
 
    * If prompted, select the cluster your scale-out node is joining.
 
    * Select the node this new nodes resembles the most
 
-!!! note "You will only see this question if you have multiple clusters"
+!!! tip "You will only see this question if you have multiple clusters"
    
 6. **vSAN Configuration:**
 
-   * The installer will automatically configure this node to integrate with the existing vSAN. Confirm that the storage tiers or custom configurations align with the initial setup to maintain uniformity across the infrastructure.
+   * Confirm that the storage tiers or custom configurations align with the initial setup to maintain uniformity across the infrastructure.
    
    * Review and finalize the disk selections and storage configurations.
 

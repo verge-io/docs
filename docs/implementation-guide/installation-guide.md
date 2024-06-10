@@ -123,8 +123,9 @@ After drive formatting and installation, the second node will reboot and automat
 
 You can now install additional nodes as needed:
 
-- **Scale-out**: Member nodes that expand the vSAN storage 
-- **Compute**: Compute-only nodes without vSAN (boot device only)
+- [**Scale-out**](implementation-guide/scale-out-node.md): Member nodes that expand the vSAN storage 
+- [**Compute**](implementation-guide/compute-nodes.md): Compute only nodes without vSAN (boot device only)
+- [**Storage**](implementation-guide/storage-nodes.md): Storage only nodes
 - **PXE**: Compute nodes that network boot (no local boot device)
 
 !!! note "The PXE option uses a network boot image of VergeOS, not the PXE installer"

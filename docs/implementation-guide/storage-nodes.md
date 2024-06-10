@@ -1,53 +1,83 @@
 # VergeOS Storage Node Installation Guide
 
+
 ## Introduction
 
-This guide provides instructions on how to add a storage node to your VergeOS environment
+Welcome to the Storage Only Node Installation Guide for VergeOS. This guide provides step-by-step instructions for installing additional Storage Only nodes using a USB installer.
 
-## Prerequisites
+These Storage Only nodes are specifically designed to host new or existing storage tiers within a dedicated storage cluster. Each node within this cluster should have identical hardware specifications, including CPU, storage, network capabilities, and RAM, to ensure uniformity and compatibility. This consistency is crucial for the seamless integration of these nodes into your VergeOS environment, optimizing storage resource management and scalability.
 
-Ensure the following before beginning the installation:
-- An operational VergeOS environment with an existing cluster.
-- Access to the VergeOS web UI with administrative privileges.
+By deploying additional Storage Only nodes, you effectively enhance your hyper-converged environment's capacity to handle larger data volumes and improve data accessibility. These nodes are pivotal in expanding the overall storage capabilities of your infrastructure, focusing solely on accommodating growth in data storage needs without altering compute capacities.
 
-## Steps to Create a New Storage Cluster
-
-### 1. Create a New Cluster in the VergeOS UI
-- Navigate to the **Clusters** section in the VergeOS web UI.
-- Click **New** to create a new cluster.
-- Enter a name for your new cluster and adjust any other necessary settings to tailor the cluster configuration to your needs.
-- **Important:** Check the **Storage** box to designate this as a storage cluster. This action configures the cluster specifically for storage operations.
-
-## Installation of Storage Node
-
-### 1. Boot from the VergeOS USB Installer
-- Insert the VergeOS USB installer into the server designated as the new storage node.
-- Reboot the server and select the USB drive as the boot device from the boot menu.
-
-### 2. Begin Installation Process
-- When prompted by the installer, choose **Storage Node**.
-
-### 3. **Enter Admin Credentials:**
-   - You will be prompted to enter the admin credentials for the VergeOS cluster. These credentials are necessary to authenticate and authorize the addition of the new node to the existing cluster.
-
-### 3. Select Node Model
-- During the installation, you will be prompted to select a node that the new storage nodes are similar to. Choose the node model that best matches the hardware configuration of the new storage node. This selection helps VergeOS make assumptions about networking and other configuration details based on the chosen model.
-
-### 4. Network Configuration
-- The installation process will proceed with network configurations, automatically detecting settings where possible. Ensure all network configurations align with those used in existing clusters to maintain consistency and connectivity.
-
-### 5. Complete Installation
-- After all settings are configured, the installer will proceed to format necessary drives, install VergeOS, and integrate the node into the newly created storage cluster.
-- The node will automatically reboot once the installation is complete.
-
-## Verify Installation
-
-After the node reboots:
-- Log into the VergeOS web UI using the cluster’s IP address.
-- Navigate to the cluster configuration page to verify that the new storage node has been successfully added and is operational within the new storage cluster.
+This guide will help ensure that your addition of Storage Only nodes is executed smoothly and effectively, maintaining the high standards of efficiency and reliability expected in your VergeOS environment, and maximizing your storage strategy.
 
 ---
 
-### 2. Select a Storage Tier
-- It is crucial to select a different storage tier from what is already in use within your existing cluster. For example, if your current cluster utilizes Tier 1 storage, choose either Tier 2 or Tier 3 for the new storage cluster.
-- **Note:** Selecting the same storage tier as an existing cluster can cause the UI to display only the nodes from the initial cluster and not the new cluster. Ensure you select a different tier to avoid this issue.
+## Prerequisites
+
+Ensure the following before starting the installation of a Scale-out node:
+
+* The 2 node cluster from the [Installation Guide](implementation-guide/installation-guide.md) is installed and fully operational.
+* All network configurations, including VLANs and physical NIC assignments, have been set up according to the main installation guide.
+
+!!! warning "If this will be the first node in a new storage cluster"
+    In the VergeOS UI navigate to Clusters and Create a new cluster selecting only **Storage**
+
+---
+
+## Installation Steps
+
+1. **Boot from the VergeOS USB Installer:**
+
+   * Insert the VergeOS USB installer into the server designated as the Scale-out node.
+
+   * Reboot the server and select the USB drive as the boot device from the boot menu.
+
+2. **Select Node Type:**
+   
+   * When prompted by the installer, select the "Scale-Out" option. This indicates that the node is being installed specifically to expand the existing vSAN storage.
+
+3. **Enter Admin Credentials:**
+   
+   * You will be prompted to enter the admin credentials for the VergeOS cluster. These credentials are necessary to authenticate and authorize the addition of the new node to the existing cluster.
+
+4. **Network Configuration:**
+
+   * Allow the installer to auto-detect the network configuration, ensuring that NICs are correctly cabled and match the configuration documented during the initial setup.
+
+!!! note "The installer may ask for you to identify which NIC is used for the EXTERNAL switch if it cannot autodetect"
+
+5. **Cluster Selection:**
+
+   * If prompted, select the cluster your scale-out node is joining.
+
+   * Select the node this new nodes resembles the most
+ 
+6. **vSAN Configuration:**
+
+   * Confirm that the storage tiers or custom configurations align with the initial setup to maintain uniformity across the infrastructure.
+   
+   * Review and finalize the disk selections and storage configurations.
+
+7. **Complete Installation:**
+
+   * The installer will format the necessary drives, install VergeOS, and integrate the node into your cluster.
+
+   * The node will automatically reboot upon the completion of the installation process.
+
+8. **Verify Installation:**
+   
+   * After rebooting, log into the VergeOS web UI using the cluster’s IP address.
+   
+   * Check the Nodes page to ensure that the Scale-out node has been successfully added and is operational.
+
+---
+
+## Troubleshooting & Support
+
+If issues arise during installation:
+
+- Press `Esc` to cancel and get a command prompt
+- Type `yb-install` to resume or `yb-install --restart` to start over
+
+Need more help? Email [support@verge.io](mailto:support@verge.io) or call (855) 855-8300.
