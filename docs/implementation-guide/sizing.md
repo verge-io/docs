@@ -1,7 +1,7 @@
-# VergeOS Sizing Guide - Minimum Requirements
+# VergeOS Sizing Guide 
 
-## Server (Node) Specifications
-
+## Minimum Requirements
+---
 ### CPU
 - **Type:** Intel or AMD 64-bit processor
 - **Consistency:** Processor family must be consistent across the cluster
@@ -24,6 +24,12 @@
 - **External Communication:** 1 x 1GbE NIC per server for UI access and outgoing guest traffic.
 - **NIC Recommendations:** Intel, Mellanox, and Broadcom NICs are highly recommended for compatibility and performance.
 
+### Additional Network Considerations
+- **Core Switches:** For environments with more than two servers, "core" switches are required for node communication.
+- **Jumbo Frames:** Required for "core" networking to facilitate efficient data handling.
+- **MTU Settings:** All switch ports in the "core" network should have an MTU setting of 9216 or greater.
+- **VLAN Configuration:** All core switch ports must be on the same VLAN per switch, ideally using a Native VLAN / PVID for core communication.
+
 ### GPU (Optional)
 **vGPU Requirements:**
 
@@ -35,11 +41,18 @@
 
   - Compatible with any AMD, Intel, or Nvidia GPU.
 
-## Cluster / Environment Specifications
+---
 
-### Additional Network Considerations
-- **Core Switches:** For environments with more than two servers, "core" switches are required for node communication.
-- **Jumbo Frames:** Required for "core" networking to facilitate efficient data handling.
-- **MTU Settings:** All switch ports in the "core" network should have an MTU setting of 9216 or greater.
-- **VLAN Configuration:** All core switch ports must be on the same VLAN per switch, ideally using a Native VLAN / PVID for core communication.
+## Maximum and Minimum Supported Hardware Specifications
 
+| Resource                          | Minimum          | Maximum        |
+|-----------------------------------|------------------|----------------|
+| **Nodes per System**              | 2                | 256            |
+| **Disks per VM (virtio SCSI)**    | -                | 2000           |
+| **Storage per System**            | -                | 1 Petabyte     |
+| **Individual Physical Disk Size** | -                | 64 Terabytes   |
+| **vDisk Size**                    | -                | 2000 Terabytes |
+| **RAM per Host**                  | 8 GB             | 5 TB           |
+| **Clusters per System**           | 1                | 1000           |
+| **Tiers of Storage per System**   | -                | 5              |
+| **Failure Domains per System**    | -                | 2              |

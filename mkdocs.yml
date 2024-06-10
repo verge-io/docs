@@ -108,7 +108,7 @@ nav:
       - Basic Cluster Design: implementation-guide/basic-cluster-design.md
       - Advanced Cluster Design: implementation-guide/advanced-cluster-design.md
       - Network Design: implementation-guide/network-design.md
-      - Memory / RAM Considerations: implementation-guide/ram-design.md
+#      - Memory / RAM Considerations: implementation-guide/ram-design.md
     - Pre-Installation: 
 #      - Key Terms / Glossary: implementation-guide/pre-installation.md
       - Checklist: implementation-guide/pre-install-checklist.md
