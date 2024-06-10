@@ -1,4 +1,4 @@
-## Welcome to the VergeIO Implementation Module
+## Welcome to the VergeIO Implementation Guide
 ***
 - Select the module you want by clicking on the tab.
 - Start at the beginning of each module, with the outline.
