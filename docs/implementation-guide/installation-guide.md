@@ -4,7 +4,7 @@
 
 Welcome! In this guide, we'll walk through installing VergeOS to get your environment optimally configured for performance and stability. 
 
-Before diving in, check out the Deployment Planning Guide for important guidance on hardware selection, network setup, VLANs, and more to ensure a smooth installation.
+Before diving in, check out our [Reference Architecture](network-design.md) for important guidance on hardware selection, network setup, VLANs, and more to ensure a smooth installation.
 
 ---
 
