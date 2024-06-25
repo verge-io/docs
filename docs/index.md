@@ -4,6 +4,25 @@ hide:
   - toc
 ---
 
+<!--
+Paste this script at the bottom of your HTML before the </body> tag.
+See more style and config options on our docs
+https://github.com/Mintplex-Labs/anything-llm/tree/master/embed/README.md
+-->
+<script
+  data-embed-id="1321e816-9003-440e-9c18-6c0823c38ae7"
+  data-base-api-url="https://vergebot.subether.me/api/embed"
+  data-chat-icon="chatCircle"
+  data-greeting="Welcome to the VergeBot, what can I help you with today?"
+  data-no-sponsor="please"
+  data-assistant-name="VergeBot"
+  data-brand-image-url="https://www.verge.io/wp-content/uploads/2022/12/vergeio-icon.png"
+  data-assistant-icon="https://www.verge.io/wp-content/uploads/2022/12/vergeio-icon.png"
+  data-support-email="support@verge.io"
+  src="https://vergebot.subether.me/embed/anythingllm-chat-widget.min.js">
+</script>
+
+
 # Welcome to VergeOS Documentation
 Comprehensive guides, references, example code, and more for VergeOS, powered by Verge.io.
 

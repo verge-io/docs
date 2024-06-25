@@ -27,17 +27,17 @@ Edge clusters are essential for organizations with distributed locations due to 
 
 * **Enhanced Performance**: Local processing and storage reduce latency, improving the performance of applications and services critical to edge environments.
 
-# Overview
+## **Overview**
 
 VergeOS has a highly adaptable and configurable solution for customers looking to deploy workloads to remote sites. Depending on the solution, a remote site can be centrally managed, provide centralized backup and recovery options, offiste archiving of the centralized backups, and centraly managed VM templates.
 
 Below we will detail several deployment scenerios:
 
-* Scnerio 1: Centralized management using an edge cluster in the primary site
-* Scnerio 2: Deploy VergeOS cluster in a Primary DC to proivide backup and recovery servies to branch offices
-* Scenrio 3: Utilize the companies DR site to deploy a VergeOS cluster to provide long term backup storage
+* [Scenario 1](#scenario-1): Centralized management using an edge cluster in the primary site
+* [Scenario 2](#scenario-2): Deploy VergeOS cluster in a Primary DC to proivide backup and recovery servies to branch offices
+* [Scenario 3](#scenario-3): Utilize the companies DR site to deploy a VergeOS cluster to provide long term backup storage
 
-## Scenerio 1
+## Scenario 1
 2 node VergeOS clusters deployed at all sites 
 
 ## Summary
@@ -71,7 +71,7 @@ The deployment will leverage the following VergeOS features:
 
 ---
 
-## Scenerio 2
+## Scenario 2
 2 node VergeOS clusters deployed to each of the 20 branch locations with a UCI VergeOS cluster in their primary data center.
 
 ## Summary
@@ -122,7 +122,7 @@ The deployment will leverage the following VergeOS features:
 ---
 
 
-## Scenerio 3
+## Scenario 3
 2 node VergeOS clusters deployed to each of the 20 branch locations with a UCI VergeOS cluster in their primary data center.
 
 ## Summary

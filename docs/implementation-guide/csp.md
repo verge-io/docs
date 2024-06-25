@@ -33,18 +33,22 @@ A tenant in VergeOS functions as a self-contained virtual environment. Each tena
 * Portability
 * DR
 
-# Overview
+---
+
+## ***Overview***
 
 VergeOS offers a highly adaptable solution for CSPs looking to deploy and manage IaaS offerings. Depending on the deployment scenario, CSPs can provide centralized management, backup and recovery options, and self-service capabilities for their customers.
 
 Below we will detail several deployment scenarios that represent a growing CSP:
 
-* Scenario 1: Deploy 2 primary sites utilizing site sync for DR
-* Scenario 2: Deploy edge clusters to gain presence in new reegions
-* Scenario 3: Scale out edge cluster to meet demand
-* Scenario 4: Cloudhoster launches a new S3 compatable storage offering
+* [Scenario 1](#scenario-1): Deploy 2 primary sites utilizing site sync for DR
+* [Scenario 2](#scenario-2): Deploy edge clusters to gain presence in new reegions
+* [Scenario 3](#scenario-3): Scale out edge cluster to meet demand
+* [Scenario 4](#scenario-4): Cloudhoster launches a new S3 compatable storage offering
 
-## Scenario 1
+---
+
+## Scenario 1: 2 sites with DR
 6 node clusters deployed in seperate data centers. 
 
 ## Summary
@@ -82,7 +86,7 @@ The deployment will leverage the following VergeOS features:
 
 ---
 
-## Scenario 2
+## Scenario 2: Edge clusters
 Deploy (6) 2 node clusters to 3rd party data centers. 
 
 ## Summary
@@ -116,7 +120,7 @@ The deployment will leverage the following VergeOS features:
 
 ---
 
-## Scenario 3
+## Scenario 3: Scle out
 Scale out 2 locations by adding new clusters to the existing 2 node sites. 
 
 ## Summary
@@ -155,7 +159,7 @@ The deployment will leverage the following VergeOS features:
 
 ---
 
-## Scenario 4
+## Scenario 4: Storage Clusters
 Deploy storage clusters to 4 of the sites.
 
 ## Summary
