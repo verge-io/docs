@@ -12,7 +12,7 @@ https://github.com/Mintplex-Labs/anything-llm/tree/master/embed/README.md
 <script
   data-embed-id="1321e816-9003-440e-9c18-6c0823c38ae7"
   data-base-api-url="https://vergebot.subether.me/api/embed"
-  data-chat-icon="chatCircle"
+  data-chat-icon="support"
   data-greeting="Welcome to the VergeBot, what can I help you with today?"
   data-no-sponsor="please"
   data-assistant-name="VergeBot"
