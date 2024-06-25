@@ -4,11 +4,7 @@ hide:
   - toc
 ---
 
-<!--
-Paste this script at the bottom of your HTML before the </body> tag.
-See more style and config options on our docs
-https://github.com/Mintplex-Labs/anything-llm/tree/master/embed/README.md
--->
+
 <script
   data-embed-id="1321e816-9003-440e-9c18-6c0823c38ae7"
   data-base-api-url="https://vergebot.subether.me/api/embed"
