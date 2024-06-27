@@ -114,7 +114,7 @@ nav:
     - Reference Architecture:
       - Network Design: implementation-guide/network-design.md
       - Edge / ROBO: implementation-guide/edge.md
-      - SMB : implementation-guide/smb.md
+      # - SMB : implementation-guide/smb.md
       - Cloud Providers: implementation-guide/csp.md
       #- Enterprise: implementation-guide/enterprise.md
       - Life / Data Science: implementation-guide/data-sciense.md
