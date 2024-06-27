@@ -131,7 +131,7 @@ nav:
       - Compute Nodes: implementation-guide/compute-nodes.md
       - Storage Nodes: implementation-guide/storage-nodes.md
     - vergeOS Post Installation:
-      - vSAN: implementation-guide/vsan.md
+      # - vSAN: implementation-guide/vsan.md
       - SSL: implementation-guide/ssl.md
       - Tenants: implementation-guide/tenant.md
   - Knowledge Base:
