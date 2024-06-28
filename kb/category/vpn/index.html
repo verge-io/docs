@@ -1,0 +1,2356 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://docs.verge.io/kb/category/vpn/">
+      
+      
+        <link rel="prev" href="../vmware/">
+      
+      
+        <link rel="next" href="../vsan/">
+      
+      
+      <link rel="icon" href="../../../assets/vergelogomark.svg">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
+    
+    
+      
+        <title>VPN - VergeOS Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#vpn" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+              <button class="md-banner__button md-icon" aria-label="Don't show this again">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+              </button>
+            
+            
+  For updates follow <strong>verge.io</strong> on
+  <a rel="me" href="https://twitter.com/VergeIO_Inc">
+    <span class="twemoji x">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9L389.2 48zm-24.8 373.8h39.1L151.1 88h-42l255.3 333.8z"/></svg>
+    </span>
+  </a>
+  and
+  <a rel="me" href="https://twitter.com/VergeIO_Inc">
+    <span class="twemoji linkedin">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
+    </span>
+  </a>
+
+
+          </div>
+          
+            <script>var content,el=document.querySelector("[data-md-component=announce]");el&&(content=el.querySelector(".md-typeset"),__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0))</script>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="VergeOS Docs" class="md-header__button md-logo" aria-label="VergeOS Docs" data-md-component="logo">
+      
+  <img src="../../../assets/vergelogomark.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            VergeOS Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              VPN
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-orange"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/verge-io/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    verge-io/docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../implementation-guide/concepts/" class="md-tabs__link">
+          
+  
+    
+  
+  Implementation Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../reference-architecture/edge/" class="md-tabs__link">
+          
+  
+    
+  
+  Reference Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  Knowledge Base
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../glossary/" class="md-tabs__link">
+        
+  
+    
+  
+  Glossary
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="VergeOS Docs" class="md-nav__button md-logo" aria-label="VergeOS Docs" data-md-component="logo">
+      
+  <img src="../../../assets/vergelogomark.svg" alt="logo">
+
+    </a>
+    VergeOS Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/verge-io/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    verge-io/docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../.." class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Home
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Implementation Guide
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Implementation Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../implementation-guide/concepts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../implementation-guide/sizing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sizing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../implementation-guide/pre-installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VergeOS Pre-Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    VergeOS Installation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            VergeOS Installation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../implementation-guide/install-media/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bootable Media
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../implementation-guide/installation-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../implementation-guide/scale-out-nodes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scale Out Nodes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../implementation-guide/compute-nodes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compute Nodes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../implementation-guide/storage-nodes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Storage Nodes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../implementation-guide/post-installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VergeOS Post-Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Reference Architecture
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Reference Architecture
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference-architecture/edge/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Edge / ROBO
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference-architecture/csp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cloud Providers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference-architecture/data-science/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Life / Data Science
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference-architecture/vmware-backup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VMware Backup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Knowledge Base
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Knowledge Base
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Categories
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Categories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../backup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Backup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../best-practices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Best Practices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../branding/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Branding
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../cluster-settings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cluster Settings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../firewall/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Firewall
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../maintenance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Maintenance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../media-images/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Media Images
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../migration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Migration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../nas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NAS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../network/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Network
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../network-rules/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Network Rules
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../scale-out/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scale Out
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../scale-up/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scale Up
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../snapshot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Snapshot
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../tenant/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tenant
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../ui/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../vm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../vmware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VMware
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    
+      
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    VPN
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    VPN
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#wireguard-setup-remote-access-vpn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wireguard - Setup Remote Access VPN
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-an-ipsec-vpn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting up an IPSEC VPN
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wireguard-adding-nameserver-entries-to-client-configs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wireguard - Adding Nameserver entries to Client Configs
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../vsan/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    vSAN
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#wireguard-setup-remote-access-vpn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wireguard - Setup Remote Access VPN
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-an-ipsec-vpn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting up an IPSEC VPN
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wireguard-adding-nameserver-entries-to-client-configs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wireguard - Adding Nameserver entries to Client Configs
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content" data-md-component="content">
+    <div class="md-content__inner">
+      <header class="md-typeset">
+        <h1 id="vpn">VPN<a class="headerlink" href="#vpn" title="Permanent link">#</a></h1>
+      </header>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2024-02-06 18:49:12.726000+00:00">February 6, 2024</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="./" class="md-meta__link">VPN</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              6 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="wireguard-setup-remote-access-vpn"><a class="toclink" href="../../wireguard--setup-remote-access-vpn/">Wireguard - Setup Remote Access VPN</a></h2>
+<h3 id="how-to-setup-a-wireguard-remote-access-vpn"><a class="toclink" href="../../wireguard--setup-remote-access-vpn/#how-to-setup-a-wireguard-remote-access-vpn">How to Setup a Wireguard Remote Access VPN</a></h3>
+<p>Here are instructions on how to set up a Remote Access VPN using the Built-In Wireguard capabilities of VergeOS. More information can be found in the Help section of the VergeOS User Interface. 
+<br></p>
+<h4 id="create-the-wireguard-setup-on-your-internal-network"><a class="toclink" href="../../wireguard--setup-remote-access-vpn/#create-the-wireguard-setup-on-your-internal-network">Create the Wireguard Setup on your Internal Network</a></h4>
+<blockquote>
+<p class="is-info">You can use an existing Internal Network or <strong>create a new</strong> Internal Network.</p>
+</blockquote>
+<ol>
+<li>In the Verge OS UI, Navigate to <strong>Networks-&gt;Internals</strong> and View or <strong>double-click</strong> on the Internal Network that you want to use.</li>
+<li>In the left menu, Click on <strong>Wireguard (VPN)</strong></li>
+<li>
+<p>Click on <strong>Add New Interface</strong>
+<img alt="wireguardvpn-img1.png" src="/public/wireguardvpn-img1.png" /></p>
+</li>
+<li>
+<p>Enter the Information below:</p>
+<ul>
+<li>Enter a unique <strong>Name</strong> for this Interface</li>
+<li>Enter a <strong>Description</strong> (optional)</li>
+<li>Check <strong>Enabled</strong></li>
+<li>Enter the <strong>IP Address</strong> to be used for this Wireguard Internal Network. This <strong>must be</strong> separate from your existing Internal network IP scheme. For example: If your Internal Network is using 192.168.0.1/24, you must choose a different unique IP scheme like 192.168.255.1/24.</li>
+<li>Enter the <strong>Listen Port</strong> to be used when connecting to the VPN (<strong>Default: 51820</strong>). This is the port that you will use on your External network to send VPN traffic into your Internal Network.</li>
+<li>Enter a <strong>Private Key</strong> or leave it blank to Auto-generate a key.</li>
+<li>Enter an <strong>Endpoint IP</strong> or leave it blank and the system will attempt to auto-detect the IP. We <strong>highly recommend</strong> you enter the IP manually to ensure the correct config. This IP is the External IP of your environment, Usually, it is the same IP as your UI. You can find your External IP by going to <strong>Networks-&gt;Externals</strong> and viewing your External network. In the Network Router section, it should be the IP address as seen below:
+<img alt="wireguardvpn-img3-fixed.png" src="/public/wireguardvpn-img3-fixed.png" /></li>
+</ul>
+</li>
+<li>
+<p>Click <strong>Submit</strong> to add the new interface</p>
+</li>
+<li>
+<p>After adding the interface, it will take you to the dashboard where you will see your new interface.
+<img alt="wireguardvpn-img2.png" src="/public/wireguardvpn-img2.png" /></p>
+</li>
+<li>
+<p>Click <strong>Apply Rules</strong> on the left menu bar to apply the firewall rules. Here are the rules that it adds:
+<img alt="wireguardvpn-img-intrules.png" src="/public/wireguardvpn-img-intrules.png" /></p>
+</li>
+</ol>
+<ul>
+<li>It automatically creates two firewall rules to accept inbound UDP traffic on port 51820 to both the Router IP and the DMZ IP of the <strong>Internal Network</strong>.
+<br></li>
+</ul>
+<h4 id="external-network-pat-rule"><a class="toclink" href="../../wireguard--setup-remote-access-vpn/#external-network-pat-rule">External Network PAT Rule</a></h4>
+<p>In order for the internal network to be connected, we need an external <strong>PAT</strong> (Port Address Translation) rule to translate the port (<strong>default 51820</strong>) to the <strong>internal network</strong>. </p>
+<p><img alt="2023-09-06_11_56_18-training___rules.png" src="/public/2023-09-06_11_56_18-training___rules.png" /></p>
+<p><strong>Add External PAT Rule</strong></p>
+<ol>
+<li>From the <strong>External network</strong> Dashboard, Click <strong>Rules</strong> on the left menu.</li>
+<li>Click <strong>New</strong> on the left menu.</li>
+<li>Enter a <strong><em>Name</em></strong> that will be helpful to future administration.</li>
+<li><strong>Optionally</strong>, a <strong><em>Description</em></strong> can be entered to record additional administration information.</li>
+<li>In the <strong><em>Action</em></strong> dropdown, select <strong>Translate</strong>.</li>
+<li>In the <strong><em>Protocol</em></strong> dropdown, select <strong>UDP</strong>.</li>
+<li>In the <strong><em>Direction</em></strong> dropdown, select <strong>Incoming</strong>.</li>
+</ol>
+<p><strong>Source:</strong>
+8.  In the <strong><em>Type</em></strong> dropdown, select <strong>Any/None</strong>.  <strong>Optionally</strong> you can source-lock the VPN traffic here if you have that requirement.</p>
+<p><strong>Destination:</strong>
+9.  In the <strong><em>Type</em></strong> dropdown, select <strong>My Router IP</strong>. If you are inside of a <strong>Tenant</strong>, change this to <strong>My IP Addresses</strong> and choose the IP of the <strong>Tenant UI</strong>. This should be the same as the <strong>Endpoint IP</strong> used above. If you plan to use a different IP than the UI IP, we recommend that you to create a <strong>SNAT</strong> rule on the <strong>External</strong> network. See <a href="#snat">below for instructions</a>.
+10.  In the <strong><em>Destination Ports/Ranges</em></strong> field, enter the <strong>Port</strong> (Default Port is 51820)</p>
+<p><strong>Target:</strong>
+11.  In the <strong><em>Type</em></strong> dropdown, select <strong>Other Network DMZ IP</strong>.
+12.  In the <strong><em>Target Network</em></strong> dropdown, select the <strong>Target Network</strong>.
+13.  In the <strong><em>Target Ports/Ranges</em></strong> field, leave this <strong>blank</strong>.
+14.  Click <strong>Submit</strong>.
+15.  Click <strong>Apply Rules</strong> on the left menu to put the new rule into effect.</p>
+<p><br></p>
+<p><a id="snat"></a></p>
+<h4 id="snat-rule-recommended-if-not-using-the-ui-ip"><a class="toclink" href="../../wireguard--setup-remote-access-vpn/#snat-rule-recommended-if-not-using-the-ui-ip">SNAT rule recommended if not using the UI IP</a></h4>
+<p>If you are adding <strong>Wireguard</strong> and you are not using the IP address of the <strong>UI</strong>, we recommend creating an <strong>SNAT</strong> rule on the <strong>External</strong> network. </p>
+<ol>
+<li>From the <strong>External network</strong> Dashboard, Click <strong>Rules</strong> on the left menu.</li>
+<li>Click <strong>New</strong> on the left menu.</li>
+<li>Enter a <strong><em>Name</em></strong> that will be helpful to future administration.</li>
+<li><strong>Optionally</strong>, a <strong><em>Description</em></strong> can be entered to record additional administration information.</li>
+<li>In the <strong><em>Action</em></strong> dropdown, select <strong>Translate</strong>.</li>
+<li>In the <strong><em>Protocol</em></strong> dropdown, select <strong>UDP</strong>.</li>
+<li>In the <strong><em>Direction</em></strong> dropdown, select <strong>Outgoing</strong>.</li>
+</ol>
+<p><strong>Source:</strong>
+8.  In the <strong><em>Type</em></strong> dropdown, select <strong>Other Network DMZ IP</strong>.
+9.  In the <strong><em>Network</em></strong> dropdown, select the Internal Network that Wireguard is on. 
+10. In the <strong><em>Source Ports/Ranges</em></strong> field, leave this <strong>blank</strong>.</p>
+<p><strong>Destination:</strong>
+11.  In the <strong><em>Type</em></strong> dropdown, select <strong>Any / None</strong>. 
+12.  In the <strong><em>Destination Ports/Ranges</em></strong> field, leave this <strong>blank</strong>.</p>
+<p><strong>Target:</strong>
+13.  In the <strong><em>Type</em></strong> dropdown, select <strong>My IP Addresses</strong>.
+14.  In the <strong><em>IP Address</em></strong> dropdown, select the <strong>IP address</strong> you want to use.
+15.  In the <strong><em>Target Ports/Ranges</em></strong> field, leave this <strong>blank</strong>.
+16.  Click <strong>Submit</strong>.
+17.  Click <strong>Apply Rules</strong> on the left menu to put the new rule into effect.</p>
+<blockquote>
+<p class="is-info">This SNAT rule is recommended to force any outgoing traffic coming from the DMZ IP of the internal network to use the correct IP instead. By default it will go out the IP of the UI and this can cause some flapping issues.</p>
+</blockquote>
+<p><br></p>
+<h4 id="adding-a-remote-user-peer"><a class="toclink" href="../../wireguard--setup-remote-access-vpn/#adding-a-remote-user-peer">Adding a Remote User Peer</a></h4>
+<blockquote>
+<p class="is-info">You will set up a <strong>Peer</strong> for each User connecting to the VPN</p>
+</blockquote>
+<ol>
+<li>
+<p>From the Wireguard Interface screen, Click <strong>Add new peer</strong>.
+<img alt="wireguardvpn-img4.png" src="/public/wireguardvpn-img4.png" /></p>
+</li>
+<li>
+<p>Assign a <strong>Name</strong> to the peer, such as the remote user's name.</p>
+</li>
+<li>Optionally, a <strong>Description</strong> can be entered to store additional information about this peer.</li>
+<li>Check the <strong>Auto-Generate Peer Configuration</strong> checkbox to automate settings and create a configuration file that can be used on the client.</li>
+<li>Enter the <strong>Endpoint</strong> for the Peer (the external-facing IP address, hostname, or URL this system will use to communicate with the peer). This can be left blank if the internal network will never be initiating traffic across the VPN (i.e. roaming client).</li>
+<li>For <strong>Allowed IPs</strong>, Enter the /32 IP for this peer.</li>
+<li>In the <strong>Configure Firewall</strong> dropdown, select <strong>Remote User</strong></li>
+<li>Click <strong>Submit</strong> to save the new peer entry.</li>
+</ol>
+<!--![2023-03-02_13_04_44-support___new_peer.png](/public/2023-03-02_13_04_44-support___new_peer.png)-->
+
+<ol start="9">
+<li>This will create a Firewall rule to allow the Peer to connect through UDP on port 51820 to the Router IP on the Internal Network.
+<img alt="wireguardvpn-img6.png" src="/public/wireguardvpn-img6.png" /></li>
+</ol>
+<h5 id="download-the-configuration-file"><a class="toclink" href="../../wireguard--setup-remote-access-vpn/#download-the-configuration-file">Download the Configuration File:</a></h5>
+<ol start="10">
+<li>Click the Download Config button on the peer record and select a location for the file; download to a location that will be accessible to the client computer or from which can otherwise be transferred to the client.</li>
+</ol>
+<p><img alt="download-link.png" src="/public/download-link.png" />
+<img alt="configuration-file.png" src="/public/configuration-file.png" /></p>
+<h5 id="install-wireguard-software-on-client"><a class="toclink" href="../../wireguard--setup-remote-access-vpn/#install-wireguard-software-on-client">Install WireGuard Software on Client:</a></h5>
+<p>WireGuard Client software can be downloaded from: https://wireguard.com/install . (In this example, we download and install WireGuard for Windows-64bit to use on a Windows 10 Pro machine.)</p>
+<p><img alt="add-tunnel.png" src="/public/add-tunnel.png" /></p>
+<ol start="11">
+<li>Click Add Tunnel.</li>
+<li>Navigate to and select the generated configuration file.</li>
+<li>The configuration file is used to automatically create interface and peer on the client machine. Click the Activate button to open the tunnel, if it was not automatically activated.
+<img alt="tunnel-active.png" src="/public/tunnel-active.png" /></li>
+</ol>
+<p><br></p>
+<!--
+## Troubleshooting Guide
+
+This guide will take you through some common testing and diagnostic tools to help troubleshoot why the **VPN** is not working. 
+
+### WireGuard Status
+
+The WireGuard status diagnostics tool can give you an idea of the peers that are connecting and what their settings are.
+
+1. Navigate to the **WireGuard Interface**.
+1. Click on the **Heart Pulse** icon near the top. 
+![2024-02-06_13_46_55-diaghearticon.png](/public/knowledgebase/2024-02-06_13_46_55-diaghearticon.png)
+1. Set the **Query** to **WireGuard** and hit send
+![2024-02-06_10_35_23-wireguarddiags.png](/public/knowledgebase/2024-02-06_10_35_23-wireguarddiags.png)
+1. This will show you interface settings and peers. Check to make sure everything looks correct. Specifically look to make sure the **Allowed IPs** are set correctly. 
+
+
+
+### Connection issues
+
+If you are receiving a bunch of retransmit messages then you may be having connection issues. Most commonly this is caused by incorrect network rules or firewall setups. Below is a common list of things to check.
+
+1. Click on **Diagnostics** on the left menu.
+1. Change the **Query** to **Ping**.
+1. Change the **Host** to the IP of the VPN network's **Remote Gateway**.
+1. Hit **Send** and look for packet failures.
+
+If you are not able to ping the **Remote Gateway** then you have something blocking your connection or a missing route. This is also assuming that the gateway is responding to pings, confirm this by pinging the **Remote Gateway** outside of **VergeOS**. 
+
+#### Other things to check
+
+1. Test if you can ping **8.8.8.8**, this will tell you if you have internet on this network. If you can't, confirm that you have a **Default Route** in your **Rules**. 
+1. Run the diagnostic query "What's My IP". Assuming your VPN is over the WAN, you should get a response.
+1. Run a diagnostic **TCP Connection test** to the **Remote Gateway** on the **IKE port** (default 500). This is assuming your firewall has TCP and UDP allowed on that port, if you are only allowing UDP incoming then this will fail anyway but a lot of times both are open and it's a good test. 
+1. Run a diagnostic **Trace Route** to the **Remote Gateway**. Check that the traffic is routing correctly. If not, look at your **Default route** rules in the **VPN** and **External** networks. 
+1. Run a diagnostic **IPsec** with **Status All**. This will give you the current state of the IPsec Tunnel. You can also change this to **Show Config** and review the config for accuracy. 
+1. Check for other logs in the Diagnostics **Logs**. You can change the results to show more than 100 lines if needed. 
+
+
+
+
+-->
+
+<p><br></p>
+<blockquote>
+<p class="is-info">Need more Help? Email <a href="mailto:support@verge.io?subject=Support Inquiry" target="_blank" rel="noopener noreferrer">support@verge.io</a> or call us at <a href="tel:+855-855-8300">(855) 855-8300</a></p>
+</blockquote>
+<p><br></p>
+<div style="text-align: center">
+  <a href="https://wiki.verge.io/en/public/kb"><button class="button-grey"> <b>↺</b> Back to Knowledgebase</button></a>
+<a href="https://www.verge.io/test-drive"><button class="button-orange">🚗 Take a Test Drive Today!</button></a>
+</div>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2024-02-05 18:35:40.364000+00:00">February 5, 2024</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="./" class="md-meta__link">VPN</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              7 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="setting-up-an-ipsec-vpn"><a class="toclink" href="../../setting-up-an-ipsec-vpn/">Setting up an IPSEC VPN</a></h2>
+<h3 id="how-to-create-an-ipsec-vpn-tunnel-in-vergeio"><a class="toclink" href="../../setting-up-an-ipsec-vpn/#how-to-create-an-ipsec-vpn-tunnel-in-vergeio">How to create an IPSEC VPN tunnel in VergeIO</a></h3>
+<p>In VergeIO, the <strong>DMZ Network</strong> is where the basic routing between networks is handled.
+-   Every <strong>router</strong> has a <strong>NIC and an IP address in the DMZ</strong>. This is how traffic transverses from network to network inside the VergeIO platform.
+-   Each <strong>vNet</strong> is its own <strong>VXLAN or VLAN</strong>.
+<br></p>
+<blockquote>
+<p class="is-info">These instructions are for setting up the IPsec Tunnel to connect to a VergeOS <strong>Internal Network</strong>. If you are connecting the tunnel to an <strong>External Network</strong> or have a special use case, the network rules below will have to be adjusted to accomodate those changes.</p>
+</blockquote>
+<ol>
+<li>Reserve a <strong>static IP</strong> address on the <strong>Internal (LAN) network</strong> which will be used by the VPN connection on that network.  In this example, an <strong>IP address of 192.168.0.254</strong> was set to <strong>static</strong> on the <strong>internal network</strong> named Internal.
+<img alt="ipsec-1.png" src="/public/ipsec-1.png" /> </li>
+</ol>
+<ul>
+<li>For <strong>Type</strong>, set to <strong>Static</strong>.</li>
+<li>For <strong>IP Address</strong>, choose one of the available IP addresses in the system.  If there are no unused IP addresses, an additional IP will need to be added.</li>
+</ul>
+<p><br></p>
+<ol start="2">
+<li>Navigate to <strong>Main Dashboard &gt; Networks</strong> and click <strong>New VPN</strong> on the left menu.
+These settings are variable based on each connection but are important to define.<ul>
+<li>For Network, <strong>Layer 2</strong> - configure as required by the connection.</li>
+<li>For Network, <strong>Interface Network</strong> - Select the network being bridged to the VPN Connection.</li>
+<li>For Network, set the <strong>IP Addr</strong>ess Type<strong> to </strong>Static**.</li>
+<li>For <strong>Network Router</strong>, <strong>IP Address</strong> - Enter the IP address reserved in Step 1.
+<img alt="ipsec-2.png" src="/public/ipsec-2.png" /> </li>
+</ul>
+</li>
+</ol>
+<p><br></p>
+<ol start="3">
+<li>From the <strong>newly created VPN Dashboard</strong>, click on <strong>Edit IPSec</strong> to edit the configuration if necessary to add/update <strong>connection-specific information</strong>.
+<img alt="ipsec-3.png" src="/public/ipsec-3.png" /> </li>
+</ol>
+<p><br></p>
+<ol start="4">
+<li>
+<p>Click on <strong>IPSec Tunnels</strong> to start creating the IPSec Tunnel between the Verge.io environment and the remote site.
+   -   For <strong>Remote Gateway</strong> - configure as required by the connection.
+   -   For <strong>Phase 1 Proposal (Authentication)</strong>, define the Authentication Method and Pre-Shared Key with connection-specific information.
+   <img alt="ipsec-4.png" src="/public/ipsec-4.png" /> 
+<br></p>
+</li>
+<li>
+<p>When completing the Phase 1 setup, you will automatically be launched to configuring Phase 2.
+If navigating manually, navigate to <strong>Main Dashboard &gt; Networks Dashboard &gt; VPNs &gt; <em>VPN Connection</em>&gt; Phase 1s</strong>. Highlight the Phase 1 created previously, and click <strong>‘View P2s’</strong></p>
+<ul>
+<li>For <strong>Mode</strong>, set to <strong>Tunnel</strong>.</li>
+<li>For <strong>Local Network</strong>, configure as required by the connection.</li>
+<li>For <strong>Remote Network</strong> - configure as required by the connection.</li>
+<li>For <strong>Phase 2 Proposal</strong>, configure as required by the connection.
+<img alt="ipsec-5.png" src="/public/ipsec-5.png" /> <blockquote>
+<p class="is-info"><strong>NOTE:</strong> This will <strong>automatically create rules</strong> on the VPN network.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>VPN Network Rules</strong> - <strong>Review the rules</strong> to verify their configuration.</p>
+</li>
+</ol>
+<ul>
+<li><strong>Accept incoming</strong>, named <strong>Allow IKE</strong>, Protocol <strong>UDP</strong>, Destination IP: <strong>My Router IP</strong>, Port: <strong>500</strong></li>
+<li><strong>Accept incoming</strong>, named <strong>Allow IPSEC NAT - Traversal</strong>, <strong>UDP</strong>, Destination IP: <strong>My Router</strong> IP, Port <strong>4500</strong></li>
+<li><strong>Accept incoming</strong>, named <strong>Allow ESP</strong>, Protocol <strong>ESP</strong>, Destination IP: <strong>My Router IP</strong></li>
+<li><strong>Accept incoming</strong>, named <strong>Allow AH</strong>, Protocol <strong>AH</strong>, Destination IP: <strong>My Router IP</strong>
+   <img alt="ipsec-6.png" src="/public/ipsec-6.png" /> 
+<br></li>
+</ul>
+<ol>
+<li>
+<p><strong>External Network Virtual IP Assignment</strong> - Assign a <strong>new virtual IP</strong> to the new <strong>VPN network</strong> from the <strong>External network</strong>.  This will be the <strong>Public</strong> side of the VPN tunnel.
+<img alt="ipsec-7.png" src="/public/ipsec-7.png" /> </p>
+<ul>
+<li><strong>VPN Network Rule</strong> - This will <strong>automatically</strong> create an <strong>outgoing route rule</strong> on the <strong>VPN network with that virtual IP address</strong>, which will have to have the rule applied.  <strong>Verify that the rule is present</strong> and then <strong>Apply Rules</strong> to save the changes.
+<img alt="ipsec-8.png" src="/public/ipsec-8.png" />
+<br></li>
+</ul>
+</li>
+<li>
+<p><strong>VPN Network Rule</strong> - Create a <strong>Default Route</strong> rule for the new VPN network to define the <strong>default path outbound</strong> for <strong>traffic inside this network</strong>.
+<img alt="ipsec-9.png" src="/public/ipsec-9.png" />
+<br></p>
+</li>
+<li>
+<p><strong>VPN Network Rule</strong> - <strong>Create an sNAT rule</strong> on the new VPN network to mask external traffic
+<img alt="ipsec-10.png" src="/public/ipsec-10.png" />
+<br></p>
+</li>
+<li>
+<p><strong>VPN Network Rule</strong> - <strong>Create a general sNAT rule</strong> to work as a <strong>catchall</strong> for traffic from this network.
+<img alt="ipsec-11.png" src="/public/ipsec-11.png" />
+<br></p>
+</li>
+<li>
+<p><strong>VPN Network Rule</strong> - <strong>Create a new Translate rule</strong> to <strong>allow traffic</strong> from the <strong>VPN tunnel to access this network</strong>.
+<img alt="ipsec-12.png" src="/public/ipsec-12.png" />
+<br></p>
+</li>
+<li>
+<p><strong>VPN Network Rule</strong> - <strong>Create a new accept rule</strong> on the <strong>VPN network</strong> to allow traffic from the <strong>remote network</strong> incoming.
+<img alt="ipsec-14.png" src="/public/ipsec-14.png" />
+<br></p>
+</li>
+<li>
+<p><strong>VPN Network Rule</strong> - <strong>Create a new accept rule</strong> on the <strong>VPN network</strong> to allow traffic
+<img alt="ipsec-16.png" src="/public/ipsec-16.png" />
+<br></p>
+</li>
+<li>
+<p><strong>Internal Network Rule</strong> - <strong>Create a new route rule</strong> on the <strong>internal network</strong> to send traffic <strong>properly out of the VPN tunnel</strong>.
+<img alt="ipsec-13.png" src="/public/ipsec-13.png" />
+<br></p>
+</li>
+<li>
+<p><strong>Internal Network Rule</strong> - <strong>Create a new accept rule</strong> on the <strong>internal network</strong> to allow traffic <strong>from the remote network</strong>.
+<img alt="ipsec-15.png" src="/public/ipsec-15.png" />
+<br></p>
+</li>
+</ol>
+<h5 id="connecting-to-ipsec"><a class="toclink" href="../../setting-up-an-ipsec-vpn/#connecting-to-ipsec">Connecting to IPsec</a></h5>
+<ol>
+<li>Open the <strong>VPN network's Dashboard</strong> (Networks-&gt;VPNs then double-click on the Network).</li>
+<li>Scroll down to the <strong>IPsec Connections</strong> section and click the plug icon to connect.
+<img alt="2024-02-05_ipsec_connect.png" src="/public/knowledgebase/2024-02-05_ipsec_connect.png" /></li>
+<li>Watch for the <strong>IPsec</strong> status to show <strong>connected</strong>. If it doesn't, continue on to the next step.</li>
+</ol>
+<h3 id="troubleshooting-guide"><a class="toclink" href="../../setting-up-an-ipsec-vpn/#troubleshooting-guide">Troubleshooting Guide</a></h3>
+<p>This guide will take you through some common testing and diagnostic tools to help troubleshoot why the IPsec VPN is not working. </p>
+<h4 id="checking-logsstatus"><a class="toclink" href="../../setting-up-an-ipsec-vpn/#checking-logsstatus">Checking Logs/Status</a></h4>
+<p>Logs will not be shown in the VPN logs section for the IPsec connection. These are shown in diagnostics. </p>
+<ol>
+<li>Click on <strong>Diagnostics</strong> on the left menu.</li>
+<li>Change the <strong>Query</strong> to <strong>Logs</strong> and click <strong>Send</strong>.
+<img alt="2024-02-05_09_47_04-logs.png" src="/public/knowledgebase/2024-02-05_09_47_04-logs.png" /></li>
+<li>Scroll down to the latest logs at the bottom and review the errors. 
+<img alt="2024-02-05_09_49_29-retransmit.png" src="/public/knowledgebase/2024-02-05_09_49_29-retransmit.png" /></li>
+<li>The most common cause of issues is not able to connect to the tunnel as you can see above it will retry.</li>
+</ol>
+<h4 id="connection-issues"><a class="toclink" href="../../setting-up-an-ipsec-vpn/#connection-issues">Connection issues</a></h4>
+<p>If you are receiving a bunch of retransmit messages then you may be having connection issues. Most commonly this is caused by incorrect network rules or firewall setups. Below is a common list of things to check.</p>
+<ol>
+<li>Click on <strong>Diagnostics</strong> on the left menu.</li>
+<li>Change the <strong>Query</strong> to <strong>Ping</strong>.</li>
+<li>Change the <strong>Host</strong> to the IP of the VPN network's <strong>Remote Gateway</strong>.</li>
+<li>Hit <strong>Send</strong> and look for packet failures.</li>
+</ol>
+<p>If you are not able to ping the <strong>Remote Gateway</strong> then you have something blocking your connection or a missing route. This is also assuming that the gateway is responding to pings, confirm this by pinging the <strong>Remote Gateway</strong> outside of <strong>VergeOS</strong>. </p>
+<h5 id="other-things-to-check"><a class="toclink" href="../../setting-up-an-ipsec-vpn/#other-things-to-check">Other things to check</a></h5>
+<ol>
+<li>Test if you can ping <strong>8.8.8.8</strong>, this will tell you if you have internet on this network. If you can't, confirm that you have a <strong>Default Route</strong> in your <strong>Rules</strong>. </li>
+<li>Run the diagnostic query "What's My IP". Assuming your VPN is over the WAN, you should get a response.</li>
+<li>Run a diagnostic <strong>TCP Connection test</strong> to the <strong>Remote Gateway</strong> on the <strong>IKE port</strong> (default 500). This is assuming your firewall has TCP and UDP allowed on that port, if you are only allowing UDP incoming then this will fail anyway but a lot of times both are open and it's a good test. </li>
+<li>Run a diagnostic <strong>Trace Route</strong> to the <strong>Remote Gateway</strong>. Check that the traffic is routing correctly. If not, look at your <strong>Default route</strong> rules in the <strong>VPN</strong> and <strong>External</strong> networks. </li>
+<li>Run a diagnostic <strong>IPsec</strong> with <strong>Status All</strong>. This will give you the current state of the IPsec Tunnel. You can also change this to <strong>Show Config</strong> and review the config for accuracy. </li>
+<li>Check for other logs in the Diagnostics <strong>Logs</strong>. You can change the results to show more than 100 lines if needed. </li>
+</ol>
+<p><br></p>
+<blockquote>
+<p class="is-info">Need more Help? Email <a href="mailto:support@verge.io?subject=Support Inquiry" target="_blank" rel="noopener noreferrer">support@verge.io</a> or call us at <a href="tel:+855-855-8300">(855) 855-8300</a></p>
+</blockquote>
+<p><br></p>
+<div style="text-align: center">
+  <a href="https://wiki.verge.io/en/public/kb"><button class="button-grey"> <b>↺</b> Back to Knowledgebase</button></a>
+<a href="https://www.verge.io/test-drive"><button class="button-orange">🚗 Take a Test Drive Today!</button></a>
+</div>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2023-01-24 15:48:19.439000+00:00">January 24, 2023</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="./" class="md-meta__link">VPN</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              1 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="wireguard-adding-nameserver-entries-to-client-configs"><a class="toclink" href="../../wireguard--adding-nameserver-entries-to-client-configs/">Wireguard - Adding Nameserver entries to Client Configs</a></h2>
+<h3 id="wireguard-config-entries"><a class="toclink" href="../../wireguard--adding-nameserver-entries-to-client-configs/#wireguard-config-entries">Wireguard Config Entries</a></h3>
+<p>The following is instructions for adding a postup and postdown script to the <strong>Wireguard</strong> config.
+For <strong>Windows</strong>, this adds <strong>Powershell</strong> commands for adding and removing a <strong>DNS Client Rule</strong> when the client connects and disconnects.  </p>
+<p><br></p>
+<h4 id="windows-clients"><a class="toclink" href="../../wireguard--adding-nameserver-entries-to-client-configs/#windows-clients">Windows Clients</a></h4>
+<ol>
+<li>In the <strong>Windows</strong> Wireguard client, <strong>edit the config</strong>.</li>
+<li>Add the following commands in the <strong>[Interface]</strong> section</li>
+</ol>
+<div class="codem">
+<b>PostUp</b> = powershell -command "Add-DnsClientNrptRule -Namespace '<b>domainname.com</b>' -NameServers '<b>10.1.10.2</b>'"
+<br>
+<b>PostDown</b> = powershell -command "Get-DnsClientNrptRule | Where { $_.Namespace -match '.*<b>domainname\.com</b>' } | Remove-DnsClientNrptRule -force"
+</div>
+
+<ol start="3">
+<li>Change the following entries to match <strong>your</strong> setup:
+- <strong>Namespace</strong> - A comma-separated list of domain names to add.
+- <strong>NameServers</strong> - A comma-separated list of name server IP addresses.</li>
+</ol>
+<blockquote>
+<p class="is-info">For the <strong>-match</strong> make sure to include a <strong>backslash</strong> (\) before each <strong>period</strong> (.)</p>
+</blockquote>
+<p><br></p>
+<h4 id="linux-clients"><a class="toclink" href="../../wireguard--adding-nameserver-entries-to-client-configs/#linux-clients">Linux Clients</a></h4>
+<p>This may be different based on your distribution of Linux.</p>
+<ol>
+<li><strong>Edit the config file</strong> on the <strong>Linux</strong> client.</li>
+<li>In the <strong>[Interface]</strong> section, add the following:</li>
+</ol>
+<div class="codem">
+<b>PostUp</b> = resolvectl dns %i <b>10.1.10.2</b>; resolvectl domain %i <b>domainname.com</b>
+<br><b>PreUp</b> = iptables -A INPUT -i wg -m state --state ESTABLISHED,RELATED -j ACCEPT
+<br><b>PreUp</b> = iptables -A INPUT -i wg -j REJECT
+<br><b>PostDown</b> = iptables -D INPUT -i wg -m state --state ESTABLISHED,RELATED -j ACCEPT
+<br><b>PostDown</b> = iptables -D INPUT -i wg -j REJECT
+</div>
+
+<ol start="3">
+<li>Replace <strong>10.1.10.2</strong> with the correct IP of your <strong>nameserver</strong>.</li>
+<li>Replace domainname.com with your domain name.</li>
+</ol>
+<p><br></p>
+<blockquote>
+<p class="is-info">Need more Help? Email <a href="mailto:support@verge.io?subject=Support Inquiry" target="_blank" rel="noopener noreferrer">support@verge.io</a> or call us at <a href="tel:+855-855-8300">(855) 855-8300</a></p>
+</blockquote>
+<p><br></p>
+<div style="text-align: center">
+  <a href="https://wiki.verge.io/en/public/kb"><button class="button-grey"> <b>↺</b> Back to Knowledgebase</button></a>
+<a href="https://www.verge.io/test-drive"><button class="button-orange">🚗 Take a Test Drive Today!</button></a>
+</div>
+    
+  </div>
+</article>
+      
+      
+        
+          
+
+
+
+<nav class="md-pagination">
+  
+</nav>
+        
+      
+    </div>
+  </div>
+
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2024 <a href="https://verge.io" target="_blank" rel="noopener"> Verge.io</a>
+
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/VergeIO_Inc" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/company/verge-io/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/channel/UCnFu28s0GBVi18j7Ez3MXRg" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "announce.dismiss"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

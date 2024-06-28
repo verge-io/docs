@@ -1,0 +1,2460 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://docs.verge.io/kb/category/network/">
+      
+      
+        <link rel="prev" href="../nas/">
+      
+      
+        <link rel="next" href="../network-rules/">
+      
+      
+      <link rel="icon" href="../../../assets/vergelogomark.svg">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
+    
+    
+      
+        <title>Network - VergeOS Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#network" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+              <button class="md-banner__button md-icon" aria-label="Don't show this again">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+              </button>
+            
+            
+  For updates follow <strong>verge.io</strong> on
+  <a rel="me" href="https://twitter.com/VergeIO_Inc">
+    <span class="twemoji x">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9L389.2 48zm-24.8 373.8h39.1L151.1 88h-42l255.3 333.8z"/></svg>
+    </span>
+  </a>
+  and
+  <a rel="me" href="https://twitter.com/VergeIO_Inc">
+    <span class="twemoji linkedin">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
+    </span>
+  </a>
+
+
+          </div>
+          
+            <script>var content,el=document.querySelector("[data-md-component=announce]");el&&(content=el.querySelector(".md-typeset"),__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0))</script>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="VergeOS Docs" class="md-header__button md-logo" aria-label="VergeOS Docs" data-md-component="logo">
+      
+  <img src="../../../assets/vergelogomark.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            VergeOS Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Network
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-orange"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/verge-io/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    verge-io/docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../implementation-guide/concepts/" class="md-tabs__link">
+          
+  
+    
+  
+  Implementation Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../reference-architecture/edge/" class="md-tabs__link">
+          
+  
+    
+  
+  Reference Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  Knowledge Base
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../glossary/" class="md-tabs__link">
+        
+  
+    
+  
+  Glossary
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="VergeOS Docs" class="md-nav__button md-logo" aria-label="VergeOS Docs" data-md-component="logo">
+      
+  <img src="../../../assets/vergelogomark.svg" alt="logo">
+
+    </a>
+    VergeOS Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/verge-io/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    verge-io/docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../.." class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Home
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Implementation Guide
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Implementation Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../implementation-guide/concepts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../implementation-guide/sizing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sizing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../implementation-guide/pre-installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VergeOS Pre-Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    VergeOS Installation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            VergeOS Installation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../implementation-guide/install-media/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bootable Media
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../implementation-guide/installation-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../implementation-guide/scale-out-nodes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scale Out Nodes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../implementation-guide/compute-nodes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compute Nodes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../implementation-guide/storage-nodes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Storage Nodes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../implementation-guide/post-installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VergeOS Post-Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Reference Architecture
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Reference Architecture
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference-architecture/edge/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Edge / ROBO
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference-architecture/csp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cloud Providers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference-architecture/data-science/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Life / Data Science
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference-architecture/vmware-backup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VMware Backup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Knowledge Base
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Knowledge Base
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Categories
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Categories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../backup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Backup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../best-practices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Best Practices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../branding/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Branding
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../cluster-settings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cluster Settings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../firewall/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Firewall
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../maintenance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Maintenance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../media-images/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Media Images
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../migration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Migration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../nas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NAS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    
+      
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Network
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Network
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-traffic-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding Traffic Flow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network Blocks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#allow-root-to-tenant-site-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Allow Root to Tenant Site Connection
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vlan-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      VLAN Creation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vm-network-connectivity-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      VM Network Connectivity Issues
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accessing-the-vergeio-ui-from-a-vm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accessing the Verge.io UI from a VM
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routing-between-internal-vergeio-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Routing Between Internal Verge.io Networks
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../network-rules/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Network Rules
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../scale-out/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scale Out
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../scale-up/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scale Up
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../snapshot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Snapshot
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../tenant/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tenant
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../ui/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../vm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../vmware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VMware
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../vpn/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VPN
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../vsan/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    vSAN
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-traffic-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding Traffic Flow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network Blocks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#allow-root-to-tenant-site-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Allow Root to Tenant Site Connection
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vlan-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      VLAN Creation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vm-network-connectivity-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      VM Network Connectivity Issues
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accessing-the-vergeio-ui-from-a-vm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accessing the Verge.io UI from a VM
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routing-between-internal-vergeio-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Routing Between Internal Verge.io Networks
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content" data-md-component="content">
+    <div class="md-content__inner">
+      <header class="md-typeset">
+        <h1 id="network">Network<a class="headerlink" href="#network" title="Permanent link">#</a></h1>
+      </header>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2024-03-21 18:44:21.203000+00:00">March 21, 2024</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="./" class="md-meta__link">Network</a>, 
+              <a href="../network-rules/" class="md-meta__link">Network Rules</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              1 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="understanding-traffic-flow"><a class="toclink" href="../../understanding-traffic-flow/">Understanding Traffic Flow</a></h2>
+<h3 id="trafficnetwork-flow-diagram"><a class="toclink" href="../../understanding-traffic-flow/#trafficnetwork-flow-diagram">Traffic/Network Flow Diagram</a></h3>
+<p><img alt="vergeio-traffic-flow_(1).png" src="/public/knowledgebase/vergeio-traffic-flow_(1).png" /></p>
+<p><br></p>
+<h3 id="example-of-an-external-network-using-vlan-55-and-an-internal-network"><a class="toclink" href="../../understanding-traffic-flow/#example-of-an-external-network-using-vlan-55-and-an-internal-network">Example of an External Network using VLAN 55 and an Internal Network</a></h3>
+<p><img alt="vnet_wiring.png" src="/public/knowledgebase/vnet_wiring.png" /></p>
+<p><br></p>
+<h3 id="example-of-the-core-network-configuration"><a class="toclink" href="../../understanding-traffic-flow/#example-of-the-core-network-configuration">Example of the Core Network Configuration</a></h3>
+<p><img alt="core_config.jpg" src="/public/core_config.jpg" /></p>
+<p><br></p>
+<blockquote>
+<p class="is-info">Need more Help? Email <a href="mailto:support@verge.io?subject=Support Inquiry" target="_blank" rel="noopener noreferrer">support@verge.io</a> or call us at <a href="tel:+855-855-8300">(855) 855-8300</a></p>
+</blockquote>
+<p><br></p>
+<div style="text-align: center">
+  <a href="https://wiki.verge.io/en/public/kb"><button class="button-grey"> <b>↺</b> Back to Knowledgebase</button></a>
+<a href="https://www.verge.io/test-drive"><button class="button-orange">🚗 Take a Test Drive Today!</button></a>
+</div>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2024-01-03 18:42:31.354000+00:00">January 3, 2024</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="./" class="md-meta__link">Network</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              2 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="network-blocks"><a class="toclink" href="../../network-blocks/">Network Blocks</a></h2>
+<p>Network blocks are a handy way to assign multiple IP addresses to a tenant or network for workload use. It is the preferred method over virtual wires since the VergeIO network foundation is focused on Layer 3 connectivity. Using this method helps to circumnavigate the pitfalls of relying on Layer 2 (virtual wires) for tenant workload connectivity to resources originating outside of the environment.  It also gives you the ability to assign public IP addresses directly to VMs inside of an Internal network or a Tenant.</p>
+<h3 id="creating-a-network-block"><a class="toclink" href="../../network-blocks/#creating-a-network-block">Creating a Network Block</a></h3>
+<ol>
+<li>In the VergeIO UI navigate to the external network that the network block will originate from.</li>
+<li>In the left menu select "Network Blocks" then select "New".</li>
+<li>Enter the information for the corresponding block (in CIDR notation a.b.c.d/n). </li>
+<li>To assign the new block to a tenant on creation set the Owner Type to "Tenant" and then select the destination tenant from the Owner drop down.
+<img alt="new-network-block.png" src="/public/new-network-block.png" /></li>
+<li>Submit your work.</li>
+<li>To apply the automatically created rules select the "External" breadcrumb in the header to navigate back to the networks dashboard and then select "Apply Rules" on the left menu or on the notification pop up.
+<img alt="net-block-rules.png" src="/public/net-block-rules.png" /></li>
+<li>To create a network from the new block for use inside of the tenant navigate to the tenants URL and login with the necessary credentials.</li>
+<li>Navigate to networks, then to the External network dashboard.</li>
+<li>Select "Network Blocks" in the left menu.</li>
+<li>Select the network block assigned to the tenant.</li>
+<li>Select "New Network" from the left menu.
+<img alt="new-net-from-block.png" src="/public/new-net-from-block.png" /></li>
+<li>Give the new network a name. All other details will be automatically filled out with the provided information from the CIDR. Edit any information within the new network form that the default selections do not satisfy.</li>
+<li>Submit your work to be redirected to the new networks dashboard. A new network with all of the necessary route and accept rules will be created for use. (Note: the new network will drop inbound traffic by default so you will need to add the appropriate firewall rules to allow inbound access.)</li>
+<li>Power on the network using "Power On" in the left menu.</li>
+<li>Assign any desired virtual machines and test connectivity.
+<br></li>
+</ol>
+<blockquote>
+<p>Need more Help? Email <a href="mailto:support@verge.io?subject=Support Inquiry" target="_blank" rel="noopener noreferrer">support@verge.io</a> or call us at <a href="tel:+855-855-8300">(855) 855-8300</a>{.is-info}</p>
+</blockquote>
+<p><br></p>
+<div style="text-align: center">
+  <a href="https://wiki.verge.io/public/kb"><button class="button-25" style="appearance: button; background-color: #64B5f6; border-radius: 8px; color: #ffffff; padding: 10px 21px;">🢀  Back to Knowledgebase</button></a>   
+<a href="https://www.verge.io/test-drive"><button class="button-25" style="appearance: button; background-color: #D9693B; border-radius: 8px; color: #ffffff; padding: 10px 21px;">🚗 Take a Test Drive Today!</button></a>
+</div>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2023-09-12 15:19:47.449000+00:00">September 12, 2023</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../network-rules/" class="md-meta__link">Network Rules</a>, 
+              <a href="./" class="md-meta__link">Network</a>, 
+              <a href="../tenant/" class="md-meta__link">Tenant</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              2 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="allow-root-to-tenant-site-connection"><a class="toclink" href="../../allow-root-to-tenant-site-connection/">Allow Root to Tenant Site Connection</a></h2>
+<h3 id="how-to-allow-a-root-system-to-connect-to-a-tenant-as-a-site"><a class="toclink" href="../../allow-root-to-tenant-site-connection/#how-to-allow-a-root-system-to-connect-to-a-tenant-as-a-site">How To Allow a Root system to connect to a Tenant as a Site</a></h3>
+<blockquote>
+<p class="is-warning">Warning: Adding this rule will allow tenants to connect on the DMZ network. By default we disable this for security reasons. </p>
+</blockquote>
+<p>The Sites feature was designed to connect two <strong>VergeOS</strong> sites together. The root system already has a list of tenants and can manage them from the tenant screen. If you wish to use the Sites features for your Tenants, a special rule is required on the Root system's <strong>External</strong> Network. This rule will translate outgoing traffic from the <strong>DMZ Interface</strong> network to use the <strong>Router IP</strong>. Without this the request will get blocked. Here is how to add the rule:</p>
+<ol>
+<li>In the <strong>Root</strong> System, click on <strong>Networks</strong> then <strong>External Networks</strong>. </li>
+<li>Double-click on the <strong>External</strong> network.</li>
+<li>In the <strong>Left</strong> menu, click on <strong>Rules</strong>.</li>
+<li>Before adding the rule, check that it doesn't exist already.</li>
+<li>Click <strong>New</strong> on the <strong>Left</strong> menu.</li>
+<li>Enter the following details:<ul>
+<li><strong>Name</strong>: Enter a descriptive name like "Allow Tenant to Root"</li>
+<li><strong>Action</strong>: Translate</li>
+<li><strong>Protocol</strong>: ANY</li>
+<li><strong>Direction</strong>: Outgoing</li>
+<li><strong>Interface</strong>: DMZ</li>
+<li><strong>Source</strong>: Other Network Address: DMZ</li>
+<li><strong>Destination</strong>: Any/None</li>
+<li><strong>Target</strong>: My Router IP
+<img alt="2023-09-12_10_28_52-training___edit_rule__allow_tenant_to_root.png" src="/public/2023-09-12_10_28_52-training___edit_rule__allow_tenant_to_root.png" /></li>
+</ul>
+</li>
+<li>Click <strong>Submit</strong>.</li>
+<li>Click on <strong>Apply Rules</strong> at the top or <strong>Left</strong> Menu.</li>
+</ol>
+<p>After this rule is applied, you should now be able to connect to the <strong>Tenant</strong> Site from the <strong>Root</strong> system. </p>
+<h3 id="testing-rule"><a class="toclink" href="../../allow-root-to-tenant-site-connection/#testing-rule">Testing Rule</a></h3>
+<p>To test is this works, follow the instructions below:
+1. From the <strong>Home</strong> screen, Click <strong>System</strong> on the <strong>Left</strong> menu.
+1. Click on <strong>Nodes</strong> on the <strong>Left</strong> menu.
+1. <strong>Double-Click</strong> on <strong>Node1</strong> or Select <strong>Node1</strong> and click <strong>View</strong> on the <strong>Left</strong> menu.
+1. Click on <strong>Diagnostics</strong> on the <strong>Left</strong> menu.
+1. Change the <strong>Query</strong> to <strong>TCP Connection Test</strong>.
+1. Set <strong>Host</strong> to the <strong>UI IP/Host</strong> of the <strong>Tenant</strong> system.
+1. Set <strong>Port</strong> to <strong>443</strong>.
+1. Click <strong>Send</strong>.
+<img alt="2023-09-12_11_12_21-training___diagnostics.png" src="/public/2023-09-12_11_12_21-training___diagnostics.png" /></p>
+<p>The <strong>Response</strong> should say <strong>Connection successful</strong>. If it doesn't, double check the rule for accuracy. Note that the <strong>Interface</strong> is set to <strong>DMZ</strong> instead of the normal <strong>Auto</strong>. Make sure there are not any block rules.</p>
+<p><br></p>
+<blockquote>
+<p class="is-info">Need more Help? Email <a href="mailto:support@verge.io?subject=Support Inquiry" target="_blank" rel="noopener noreferrer">support@verge.io</a> or call us at <a href="tel:+855-855-8300">(855) 855-8300</a></p>
+</blockquote>
+<p><br></p>
+<div style="text-align: center">
+  <a href="https://wiki.verge.io/en/public/kb"><button class="button-grey"> <b>↺</b> Back to Knowledgebase</button></a>
+<a href="https://www.verge.io/test-drive"><button class="button-orange">🚗 Take a Test Drive Today!</button></a>
+</div>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2023-06-06 14:17:24.473000+00:00">June 6, 2023</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="./" class="md-meta__link">Network</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              1 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="vlan-creation"><a class="toclink" href="../../vlan-creation/">VLAN Creation</a></h2>
+<h3 id="adding-a-vlan-in-the-user-interface"><a class="toclink" href="../../vlan-creation/#adding-a-vlan-in-the-user-interface">Adding a VLAN in the User Interface</a></h3>
+<ol>
+<li>Add the desired VLAN(s) to the appropriate switchports so they are accessible to the nodes running the VergeIO environment.</li>
+<li>From the <strong>Main Dashboard</strong> navigate to <strong>Networks</strong>, then <strong>select "New External"</strong> in the left menu.</li>
+<li>In the network creation page enter the following settings:
+<img alt="new-vlan.png" src="/public/new-vlan.png" /><blockquote>
+<p class="is-info"><strong>NOTE:</strong> For the "Interface Network" option be sure to select the physical network on the nodes that the VLAN enters the environment on. These are typically appended with the name "Switch" during install. For all other settings the default options are typically sufficient.</p>
+</blockquote>
+</li>
+<li>Submit your configuration, you will then be brought to the newly created networks dashboard where you should see a status of <strong>"Running"</strong> if the same configuration from above was used.</li>
+<li>Workloads can now be attached to the newly created network. </li>
+</ol>
+<blockquote>
+<p class="is-info"><strong>NOTE:</strong> See the <a href="/public/kb/virtual-wires">Virtual Wires KB</a> article for adding VLANS into Tenants.</p>
+</blockquote>
+<p><br></p>
+<blockquote>
+<p class="is-info">Need more Help? Email <a href="mailto:support@verge.io?subject=Support Inquiry" target="_blank" rel="noopener noreferrer">support@verge.io</a> or call us at <a href="tel:+855-855-8300">(855) 855-8300</a></p>
+</blockquote>
+<p><br></p>
+<div style="text-align: center">
+  <a href="https://wiki.verge.io/en/public/kb"><button class="button-grey"> <b>↺</b> Back to Knowledgebase</button></a>
+<a href="https://www.verge.io/test-drive"><button class="button-orange">🚗 Take a Test Drive Today!</button></a>
+</div>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2023-01-24 19:28:39.954000+00:00">January 24, 2023</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../troubleshooting/" class="md-meta__link">Troubleshooting</a>, 
+              <a href="../vm/" class="md-meta__link">VM</a>, 
+              <a href="./" class="md-meta__link">Network</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              2 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="vm-network-connectivity-issues"><a class="toclink" href="../../vm-network-connectivity-issues/">VM Network Connectivity Issues</a></h2>
+<h3 id="troubleshooting-vm-network-connectivity-issues"><a class="toclink" href="../../vm-network-connectivity-issues/#troubleshooting-vm-network-connectivity-issues">Troubleshooting VM Network Connectivity Issues</a></h3>
+<p>Before you begin, verify if other virtual machines in the environment can access the internet. If no other machines can, then there is likely a network issue upstream of the VergeIO platform preventing access to the outside world. 
+If other VMs are still able to access the internet, the most likely cause is that a configuration step was missed.</p>
+<p>The following are the most common configuration mistakes which cause this:
+- The newly created VM does not have a NIC configured. To verify this, review the NICs section of the VM dashboard.  Is there at least one NIC present? If not, add one.
+- The newly created VM does have a NIC present but is not connected to the correct network.  To verify this, review the NICs section of the VM dashboard.  Is there at least one NIC present with the status of Up and under the Network a network is listed?  If not, edit the NIC and set the Network to match a VM which has access to the internet.
+- The newly created VM does not have an IP address configured properly.   Typically, this is resolved at the guest level.  Consult with documentation on best practices of the guest operating system to verify that the NIC is detected, installed (including guest level drivers) and configured properly at the guest level.
+- The Virtio drivers are not installed. Information about installing the virtio drivers can be found in the inline help within the category titled Virtual Machines under the section labeled VM NICs.</p>
+<p><br></p>
+<blockquote>
+<p class="is-info">Need more Help? Email <a href="mailto:support@verge.io?subject=Support Inquiry" target="_blank" rel="noopener noreferrer">support@verge.io</a> or call us at <a href="tel:+855-855-8300">(855) 855-8300</a></p>
+</blockquote>
+<p><br></p>
+<div style="text-align: center">
+  <a href="https://wiki.verge.io/en/public/kb"><button class="button-grey"> <b>↺</b> Back to Knowledgebase</button></a>
+<a href="https://www.verge.io/test-drive"><button class="button-orange">🚗 Take a Test Drive Today!</button></a>
+</div>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2023-01-24 19:21:32.815000+00:00">January 24, 2023</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="../network-rules/" class="md-meta__link">Network Rules</a>, 
+              <a href="./" class="md-meta__link">Network</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              2 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="accessing-the-vergeio-ui-from-a-vm"><a class="toclink" href="../../accessing-the-verge_io-ui-from-a-vm/">Accessing the Verge.io UI from a VM</a></h2>
+<h3 id="how-to-access-the-vergeio-ui-from-a-vm"><a class="toclink" href="../../accessing-the-verge_io-ui-from-a-vm/#how-to-access-the-vergeio-ui-from-a-vm">How to Access the VergeIO UI from a VM</a></h3>
+<p>In networking terminology, this process is commonly known as hair-pinning. Hair-pinning occurs when a packet travels to an interface, goes out towards the Internet, but instead of continuing, it makes a “hairpin turn” and comes back in on the same interface.</p>
+<h4 id="steps-to-create-a-new-rule-on-the-internal-network"><a class="toclink" href="../../accessing-the-verge_io-ui-from-a-vm/#steps-to-create-a-new-rule-on-the-internal-network">Steps to Create a New Rule on the Internal Network</a></h4>
+<p>To access the VergeIO UI from a VM running inside the platform, follow these steps to create a new rule:</p>
+<ol>
+<li>
+<p><strong>Navigate to the Internal Network</strong>: Go to the internal network that the VM is currently connected to.</p>
+</li>
+<li>
+<p><strong>Create a New Rule</strong>:</p>
+</li>
+</ol>
+<ul>
+<li>
+<p>Under <strong>Rule</strong>, set the following values:</p>
+<ul>
+<li><strong>Name</strong>: Use a reference name, such as <strong>hit ui</strong></li>
+<li><strong>Action</strong>: Translate</li>
+<li><strong>Protocol</strong>: TCP</li>
+<li><strong>Direction</strong>: Incoming</li>
+<li><strong>Interface</strong>: Auto</li>
+<li><strong>Pin</strong>: No</li>
+</ul>
+</li>
+<li>
+<p>Under <strong>Source</strong>, set the following values:</p>
+<ul>
+<li><strong>Type</strong>: Any / None</li>
+<li><strong>Source Ports/Ranges</strong>: Leave this blank</li>
+</ul>
+</li>
+<li>
+<p>Under <strong>Destination</strong>, set the following values:</p>
+<ul>
+<li><strong>Type</strong>: My Network Address</li>
+<li><strong>Destination Ports/Ranges</strong>: 80, 443</li>
+</ul>
+</li>
+<li>
+<p>Under <strong>Target</strong>, set the following values:</p>
+<ul>
+<li><strong>Type</strong>: Other Network DMZ IP</li>
+<li><strong>Target Network</strong>: Core</li>
+<li><strong>Target Ports/Ranges</strong>: Leave this blank</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li>
+<p><strong>Submit the Rule</strong>: Click <strong>Submit</strong> to save the rule. </p>
+</li>
+<li>
+<p><strong>Apply the Rule</strong>: Click <strong>Apply Rules</strong> to apply the new rule to the running network.</p>
+</li>
+</ol>
+<p><img alt="hairpin.png" src="/public/hairpin.png" /></p>
+<h4 id="accessing-the-vergeio-ui-from-the-vm"><a class="toclink" href="../../accessing-the-verge_io-ui-from-a-vm/#accessing-the-vergeio-ui-from-the-vm">Accessing the VergeIO UI from the VM</a></h4>
+<p>From within the VM, use a web browser to navigate to the IP address of the internal network instead of the standard address. For example, if the internal network has an IP address of 192.168.0.1, use this address to access the VergeIO platform.</p>
+<blockquote>
+<p class="is-info">Need more Help? Email <a href="mailto:support@verge.io?subject=Support Inquiry" target="_blank" rel="noopener noreferrer">support@verge.io</a> or call us at <a href="tel:+855-855-8300">(855) 855-8300</a></p>
+</blockquote>
+<p><br></p>
+<div style="text-align: center">
+<a href="https://www.verge.io/test-drive"><button class="button-orange">🚗 Take a Test Drive Today!</button></a>
+</div>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2023-01-24 15:45:22.430000+00:00">January 24, 2023</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="./" class="md-meta__link">Network</a>, 
+              <a href="../network-rules/" class="md-meta__link">Network Rules</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              3 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="routing-between-internal-vergeio-networks"><a class="toclink" href="../../routing-between-internal-vergeio-networks/">Routing Between Internal Verge.io Networks</a></h2>
+<h3 id="how-to-configure-routing-between-networks"><a class="toclink" href="../../routing-between-internal-vergeio-networks/#how-to-configure-routing-between-networks">How to Configure Routing Between Networks</a></h3>
+<p>The following is a simple method to establish a route between two networks in the VergeIO platform. 
+<br></p>
+<h4 id="create-a-network-rule-on-the-first-network-to-route-traffic-to-the-second-network"><a class="toclink" href="../../routing-between-internal-vergeio-networks/#create-a-network-rule-on-the-first-network-to-route-traffic-to-the-second-network">Create a network rule on the first network to route traffic to the second network</a></h4>
+<ol>
+<li>Navigate to the first network that you would like to be able to reach the other network.</li>
+<li>From that network dashboard, on the left navigation menu, click on <strong>Rules</strong>.</li>
+<li>In the Rules menu, on the left navigation menu, click on <strong>New</strong> to create a new network rule.</li>
+<li>The following settings should be configured for this rule:
+   - Under Rule<ul>
+<li>Name: <em>Something to indicate this rule is a route to the second network.</em></li>
+<li>Action: Route</li>
+<li>Protocol: Any</li>
+<li>Direction Outgoing</li>
+<li>Under Source</li>
+<li>Type: My Network Address</li>
+<li>Under Destination</li>
+<li>Type: Other Network Address</li>
+<li>network: The name of the second network</li>
+<li>Under Target</li>
+<li>Type: Other network DMZ IP</li>
+<li>Target Network: The name of the second network</li>
+</ul>
+</li>
+<li>After completing this rule, click <strong>Submit</strong> to save the rule.
+<br></li>
+</ol>
+<h4 id="create-a-network-rule-on-the-first-network-to-allow-traffic-from-the-second-network"><a class="toclink" href="../../routing-between-internal-vergeio-networks/#create-a-network-rule-on-the-first-network-to-allow-traffic-from-the-second-network">Create a network rule on the first network to allow traffic from the second network</a></h4>
+<ol>
+<li>From the same network dashboard, on the left navigation menu, click on <strong>Rules</strong>.</li>
+<li>In the Rules menu, on the left navigation menu, click on <strong>New</strong> to create a new network rule.</li>
+<li>The following settings should be configured for this rule:
+   - Under Rule<ul>
+<li>Name: <em>Something to indicate this rule is an allow traffic rule from the second network</em></li>
+<li>Action: Accept</li>
+<li>Protocol: Any</li>
+<li>Direction Incoming</li>
+<li>Under Source</li>
+<li>Type: Other Network Address</li>
+<li>Network: The name of the second network</li>
+<li>Under Destination</li>
+<li>Type: My Network Address</li>
+</ul>
+</li>
+<li>After completing this rule, click <strong>Submit</strong> to save the rule.</li>
+<li>After submitting both of these rules, the network will need to have the rule enabled by clicking on <strong>Apply Rules</strong>.
+<br></li>
+</ol>
+<blockquote>
+<p class="is-info">After completing the two rules on the first network, you will need to create identical rules on the second network.</p>
+</blockquote>
+<p><br></p>
+<h4 id="create-a-network-rule-on-the-second-network-to-route-traffic-to-the-first-network"><a class="toclink" href="../../routing-between-internal-vergeio-networks/#create-a-network-rule-on-the-second-network-to-route-traffic-to-the-first-network">Create a network rule on the second network to route traffic to the first network</a></h4>
+<ol>
+<li>Navigate to the <strong>second</strong> network that you would like to be able to reach the other network.</li>
+<li>From that network dashboard, on the left navigation menu, click on <strong>Rules</strong>.</li>
+<li>In the Rules menu, on the left navigation menu, click on <strong>New</strong> to create a new network rule.</li>
+<li>The following settings should be configured for this rule:
+   - Under Rule<ul>
+<li>Name: <em>Something to indicate this rule is a route to the first network</em></li>
+<li>Action: Route</li>
+<li>Protocol: Any</li>
+<li>Direction Outgoing</li>
+<li>Under Source</li>
+<li>Type: My Network Address</li>
+<li>Under Destination</li>
+<li>Type: Other Network Address</li>
+<li>network: The name of the first network</li>
+<li>Under Target</li>
+<li>Type: Other Network DMZ IP</li>
+<li>Target network: The name of the first network</li>
+</ul>
+</li>
+<li>After completing this rule, click <strong>Submit</strong> to save the rule.
+<br></li>
+</ol>
+<h4 id="create-a-network-rule-on-the-second-network-to-allow-traffic-from-the-first-network"><a class="toclink" href="../../routing-between-internal-vergeio-networks/#create-a-network-rule-on-the-second-network-to-allow-traffic-from-the-first-network">Create a network rule on the second network to allow traffic from the first network</a></h4>
+<ol>
+<li>From the same network dashboard, on the left navigation menu, click on Rules.</li>
+<li>In the Rules menu, on the left navigation menu, click on New to create a new network rule.</li>
+<li>The following settings should be configured for this rule:
+   - Under Rule<ul>
+<li>Name: <em>Something to indicate this rule is an allow traffic rule from the first network</em></li>
+<li>Action: Accept</li>
+<li>Protocol: Any</li>
+<li>Direction Incoming</li>
+<li>Under Source</li>
+<li>Type: Other Network Address</li>
+<li>network: The name of the first network</li>
+<li>Under Destination</li>
+<li>Type: My Network Address</li>
+</ul>
+</li>
+<li>After completing this rule, click <strong>Submit</strong> to save the rule</li>
+<li>After submitting both of these rules, the network will need to have the rule enabled by clicking on <strong>Apply Rules</strong>.</li>
+</ol>
+<p><br></p>
+<blockquote>
+<p class="is-info">Need more Help? Email <a href="mailto:support@verge.io?subject=Support Inquiry" target="_blank" rel="noopener noreferrer">support@verge.io</a> or call us at <a href="tel:+855-855-8300">(855) 855-8300</a></p>
+</blockquote>
+<p><br></p>
+<div style="text-align: center">
+  <a href="https://wiki.verge.io/en/public/kb"><button class="button-grey"> <b>↺</b> Back to Knowledgebase</button></a>
+<a href="https://www.verge.io/test-drive"><button class="button-orange">🚗 Take a Test Drive Today!</button></a>
+</div>
+    
+  </div>
+</article>
+      
+      
+        
+          
+
+
+
+<nav class="md-pagination">
+  
+</nav>
+        
+      
+    </div>
+  </div>
+
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2024 <a href="https://verge.io" target="_blank" rel="noopener"> Verge.io</a>
+
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/VergeIO_Inc" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/company/verge-io/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/channel/UCnFu28s0GBVi18j7Ez3MXRg" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "announce.dismiss"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

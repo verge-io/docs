@@ -1,0 +1,2167 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://docs.verge.io/kb/api-documentation/">
+      
+      
+        <link rel="prev" href="../vlan-creation/">
+      
+      
+        <link rel="next" href="../reviewing-system-logs/">
+      
+      
+      <link rel="icon" href="../../assets/vergelogomark.svg">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
+    
+    
+      
+        <title>API Documentation - VergeOS Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#api-introduction" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+              <button class="md-banner__button md-icon" aria-label="Don't show this again">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+              </button>
+            
+            
+  For updates follow <strong>verge.io</strong> on
+  <a rel="me" href="https://twitter.com/VergeIO_Inc">
+    <span class="twemoji x">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9L389.2 48zm-24.8 373.8h39.1L151.1 88h-42l255.3 333.8z"/></svg>
+    </span>
+  </a>
+  and
+  <a rel="me" href="https://twitter.com/VergeIO_Inc">
+    <span class="twemoji linkedin">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
+    </span>
+  </a>
+
+
+          </div>
+          
+            <script>var content,el=document.querySelector("[data-md-component=announce]");el&&(content=el.querySelector(".md-typeset"),__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0))</script>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="VergeOS Docs" class="md-header__button md-logo" aria-label="VergeOS Docs" data-md-component="logo">
+      
+  <img src="../../assets/vergelogomark.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            VergeOS Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              API Documentation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-orange"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/verge-io/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    verge-io/docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
+          
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../implementation-guide/concepts/" class="md-tabs__link">
+          
+  
+    
+  
+  Implementation Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../reference-architecture/edge/" class="md-tabs__link">
+          
+  
+    
+  
+  Reference Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+    
+  
+  Knowledge Base
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../glossary/" class="md-tabs__link">
+        
+  
+    
+  
+  Glossary
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="VergeOS Docs" class="md-nav__button md-logo" aria-label="VergeOS Docs" data-md-component="logo">
+      
+  <img src="../../assets/vergelogomark.svg" alt="logo">
+
+    </a>
+    VergeOS Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/verge-io/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    verge-io/docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../.." class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Home
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Implementation Guide
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Implementation Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../implementation-guide/concepts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../implementation-guide/sizing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sizing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../implementation-guide/pre-installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VergeOS Pre-Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    VergeOS Installation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            VergeOS Installation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../implementation-guide/install-media/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bootable Media
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../implementation-guide/installation-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../implementation-guide/scale-out-nodes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scale Out Nodes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../implementation-guide/compute-nodes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compute Nodes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../implementation-guide/storage-nodes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Storage Nodes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../implementation-guide/post-installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VergeOS Post-Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Reference Architecture
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Reference Architecture
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference-architecture/edge/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Edge / ROBO
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference-architecture/csp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cloud Providers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference-architecture/data-science/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Life / Data Science
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference-architecture/vmware-backup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VMware Backup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Knowledge Base
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Knowledge Base
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Categories
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Categories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/backup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Backup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/best-practices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Best Practices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/branding/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Branding
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/cluster-settings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cluster Settings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/firewall/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Firewall
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/maintenance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Maintenance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/media-images/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Media Images
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/migration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Migration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/nas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NAS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/network/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Network
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/network-rules/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Network Rules
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/scale-out/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scale Out
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/scale-up/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scale Up
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/snapshot/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Snapshot
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/tenant/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tenant
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/troubleshooting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/ui/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/vm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/vmware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VMware
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/vpn/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VPN
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/vsan/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    vSAN
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#api-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      API Introduction
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
+                        <time datetime="2023-08-21 19:00:54.373000+00:00" class="md-ellipsis">August 21, 2023</time>
+                      </div>
+                    </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3H9m3 2 4 13 3-1-4-13-3 1M5 5v13h3V5H5M3 19v2h18v-2H3Z"/></svg>
+                          <span class="md-ellipsis">
+                            in
+                            
+                              <a href="../category/api/">API</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              6 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+
+  
+  
+
+
+  <h1>API Documentation</h1>
+
+<h2 id="api-introduction">API Introduction<a class="headerlink" href="#api-introduction" title="Permanent link">#</a></h2>
+<p>The VergeIO system offers an API interface for custom development integration.  This document serves to outline use of the API.  Detailed information for the API can be found within the VergeIO UI, as a Swagger wiki page; the wiki page is created dynamically and will show a complete listing of VergeIO tables to access.  
+<br></p>
+<h3 id="swagger-interface">Swagger Interface<a class="headerlink" href="#swagger-interface" title="Permanent link">#</a></h3>
+<p>Customers can access the inline Swagger documentation by navigating following these steps:</p>
+<ol>
+<li><strong>Login</strong> in to any VergeIO system with valid user credentials </li>
+<li>From the Main Dashboard, click <strong>System</strong> on the left menu.</li>
+<li>
+<p>Once inside the System Dashboard, at the <strong>bottom left, there is a link to the API documentation.</strong></p>
+</li>
+<li>
+<p><strong>Click the link to launch the Swagger documentation wiki</strong> (Note: The page may take a couple minutes to load.) The swagger page provides examples of each function, a list of operations for each, and an ability to test each.</p>
+</li>
+<li>
+<p><strong>Click</strong> an <strong>individual table</strong> in the line to access options:
+<a class="glightbox" href="/public/api1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="api1.png" src="/public/api1.png" /></a></p>
+</li>
+<li>
+<p><strong>Click</strong> one of the <strong>GET/POST/DELETE/PUT</strong> options:
+<a class="glightbox" href="/public/api2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="api2.png" src="/public/api2.png" /></a></p>
+</li>
+<li>
+<p><strong>Specify</strong> parameters and <strong>click</strong> the <strong>Execute Button</strong> to run the API Command
+This will return the response which includes the response body and header. Included is a curl example to be used in your program.
+<a class="glightbox" href="/public/api3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="api3.png" src="/public/api3.png" /></a>
+<br></p>
+</li>
+</ol>
+<h3 id="authentication">Authentication<a class="headerlink" href="#authentication" title="Permanent link">#</a></h3>
+<p>The following are ways to pass authentication through the API. Currently, VergeIO offers two methods: </p>
+<ol>
+<li>Basic http authentication </li>
+<li>API database table</li>
+</ol>
+<p>For the basic http authentication, the API is only available through SSL.</p>
+<p>For API Database table, this is done by</p>
+<ol>
+<li>Passing a database into the table </li>
+<li>The table responds with a token </li>
+<li>That token needs to pass in all subsequent functions in the header </li>
+</ol>
+<p>To get a login token, developers will need to post to the <strong>/sys/tokens</strong> table for the customer system. As an example, the API URL for a test tenant would be <strong><em>https://systemname.systemdomain.com/api/sys/tokens</em></strong> . Here is an example curl:</p>
+<p>curl --header "X-JSON-Non-Compact: 1" --basic --data-ascii '{"login": "USERNAME", "password": "PASSWORD"}' --insecure --request "POST" --header 'Content-Type: application/json' 'https://test.cloud.Verge.io.com/api/sys/tokens’</p>
+<p>Here is an example of what would be returned:</p>
+<p>{</p>
+<p>"location":"\/sys\/tokens\/3a334563456378845634563b7b82d2efcadce9",</p>
+<p>"dbpath":"tokens\/3a334563456378845634563b7b82d2efcadce9",</p>
+<p>"$row":1,</p>
+<p>"$key":"<strong>3a334563456378845634563b7b82d2efcadce9</strong>"</p>
+<p>}</p>
+<p>Developers would now need to pass the value in "<strong>$key</strong>" in the HTTP header "<strong>x-yottabyte-token</strong>".  So in this example a developer would send the following header:</p>
+<p>x-yottabyte-token: 3a334563456378845634563b7b82d2efcadce9</p>
+<p>To issue a logout for this token/session, the API will need to send a DELETE HTTP Method to <strong>/sys/tokens/3a334563456378845634563b7b82d2efcadce9</strong></p>
+<p>Optionally, when sending API requests, developers can pass the header "<strong>X-JSON-Non-Compact: 1</strong>" to have all responses sent back as friendly-spaced JSON.
+<br></p>
+<h3 id="api-helper-script">API Helper Script<a class="headerlink" href="#api-helper-script" title="Permanent link">#</a></h3>
+<p>Developers can request a copy of the "yb-api" script which is a helper used to make API calls.  For help and a list of options developers can run "yb-api --help".  To run this, connect to a node in your cluster, either directly or through SSH. Then type in the commands there.</p>
+<p><a class="glightbox" href="/public/api4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="api4.png" src="/public/api4.png" /></a></p>
+<p>Notes regarding yb-api helper script: </p>
+<p>The helper "yb-api" script uses wget, which may not automatically be installed on OSX.  </p>
+<p>The helper "yb-api" script also uses curl on an upload function.</p>
+<p><em>The following are example commands using yb-api:</em> </p>
+<p><strong>Get a list of VMs (the filter will make this query exclude VM snapshots):</strong></p>
+<p>yb-api --get --user=admin --server=10.0.0.100 --fields='name,$key,ram,machine#status#status as machine_status' --filter='is_snapshot eq false' /v4/vms</p>
+<p><strong>Get a list of VMs Simple Dump (--server, --user, --filter, --fields are optional):</strong></p>
+<p>yb-api --get /v4/vms</p>
+<p><strong>Get most of the fields, including drives and nics, for VM 1 (this number would be the value of $key that is returned in the above query):</strong></p>
+<p>yb-api --get --user=admin --server=10.0.0.100 --fields='most,machine[most,drives[most],nics[most]]' /v4/vms/1</p>
+<p><strong>Change the name of VM 1:</strong></p>
+<p>yb-api --put='{"name":"NEWNAME"}' --user=admin --server=10.0.0.100 /v4/vms/1</p>
+<p><strong>Delete VM 1:</strong></p>
+<p>yb-api --delete --user=admin --server=10.0.0.100 --fields='name,$key,ram' /v4/vms/1</p>
+<p><strong>Create a new VM:</strong></p>
+<p>yb-api --post='{"name":"NEWVM","enabled":true,"description":"test vm","os_family":"linux","cpu_cores":4,"ram":"8192"}' --user=admin --server=10.0.0.100 /v4/vms</p>
+<p><strong>Get the VMs database table schema:</strong></p>
+<p>yb-api --get --user=admin --server=10.0.0.100 '/v4/vms/$table'</p>
+<p><strong>Clone VM 1:</strong></p>
+<p>yb-api --get --user=admin --server=10.0.0.100 '/v4/vm_actions' --post='{"vm":1, "action": "clone", "params": {"name": "NEW VM NAME"}}'</p>
+<p><strong>Power on VM 1:</strong></p>
+<p>yb-api --get --user=admin --server=10.0.0.100 '/v4/vm_actions' --post='{"vm":1, "action": "poweron"}'
+<br></p>
+<h3 id="api-basics">API Basics<a class="headerlink" href="#api-basics" title="Permanent link">#</a></h3>
+<p><strong>Overview</strong></p>
+<p>The yCenter API is <a href="https://en.wikipedia.org/wiki/Representational_state_transfer"><em>RESTlike</em></a>. All API requests must be made over HTTPS and should be authenticated with <a href="https://en.wikipedia.org/wiki/Basic_access_authentication"><em>Basic Access Authentication</em></a>. It is also possible to POST to /api/sys/tokens to create a session and pass that as the header "x-yottabyte-token" which needs to be deleted to log out.</p>
+<p><strong>Resources</strong></p>
+<p>Below is an example URL used to query a list of machines.</p>
+<p><em>Example: https://user1:xxxxxx@server1.verge.io/api/v4/machines?fields=all</em></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>https://</td>
+<td>user</td>
+<td>:</td>
+<td>password</td>
+<td>@</td>
+<td>server</td>
+<td>/api</td>
+<td>/v4/machines</td>
+<td>?</td>
+<td>filter=&amp;fields=all&amp;sort=&amp;limit=</td>
+</tr>
+<tr>
+<td></td>
+<td>User name</td>
+<td></td>
+<td>User Password</td>
+<td></td>
+<td>Server host name or IP</td>
+<td></td>
+<td>Resource location (URI)</td>
+<td></td>
+<td>These options are described below</td>
+</tr>
+</tbody>
+</table>
+<p><strong>GET Options</strong></p>
+<p><strong><em>Fields</em></strong></p>
+<ul>
+<li><strong>Specify which fields to return in the result set (may also be a view if there is one defined for the table schema)</strong></li>
+<li><strong>all is a view for every field</strong></li>
+<li><strong>most is a view for every field except for argument fields and rows</strong></li>
+<li><strong>summary is the default value and only fields that have 'summary' set to 'true' in their schema will be returned</strong></li>
+<li><strong><em>fields=name,email,enabled,groups[all] as all_groups,collapse(groups[name]) as first_groups_name</em></strong></li>
+<li><strong>field functions:</strong><ul>
+<li><strong>collapse</strong></li>
+<li><strong>datetime</strong></li>
+<li><strong>upper</strong></li>
+<li><strong>lower</strong></li>
+<li><strong>count</strong></li>
+<li><strong>diskspace</strong></li>
+<li><strong>display</strong></li>
+<li><strong>hex</strong></li>
+<li><strong>sha1</strong></li>
+<li><strong>sum</strong></li>
+<li><strong>avg</strong></li>
+<li><strong>min</strong></li>
+<li><strong>max</strong></li>
+</ul>
+</li>
+</ul>
+<p><strong><em>Filter</em></strong></p>
+<ul>
+<li><strong>Filter result set by specified criteria</strong></li>
+<li><strong>Similar to</strong> <a href="https://msdn.microsoft.com/en-us/library/gg309461%28v=crm.7%29.aspx#BKMK_filter"><strong>OData</strong></a></li>
+<li><strong>filter=enabled eq true and size gt 1048576</strong></li>
+<li><strong>filter=cputype eq 'qemu' or cputype eq 'kvm'</strong></li>
+<li><strong>When creating a filter a field, it may not be required, make sure it is included in the</strong> <strong>fields list</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Operator</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr>
+<td><em>eq</em></td>
+<td>Equal</td>
+</tr>
+<tr>
+<td><em>ne</em></td>
+<td>Not equal</td>
+</tr>
+<tr>
+<td><em>gt</em></td>
+<td>Greater than</td>
+</tr>
+<tr>
+<td><em>ge</em></td>
+<td>Greater than or equal</td>
+</tr>
+<tr>
+<td><em>lt</em></td>
+<td>Less than</td>
+</tr>
+<tr>
+<td><em>le</em></td>
+<td>Less than or equal</td>
+</tr>
+<tr>
+<td><em>bw</em></td>
+<td>Begins with</td>
+</tr>
+<tr>
+<td><em>ew</em></td>
+<td>Ends with</td>
+</tr>
+<tr>
+<td><em>and</em></td>
+<td>Logical and</td>
+</tr>
+<tr>
+<td><em>or</em></td>
+<td>Logical or</td>
+</tr>
+<tr>
+<td><em>cs</em></td>
+<td>Contains string (case sensitive)</td>
+</tr>
+<tr>
+<td><em>ct</em></td>
+<td>Contains text (case insensitive)</td>
+</tr>
+<tr>
+<td><em>rx</em></td>
+<td>Regex match</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Sort</strong></p>
+<ul>
+<li><strong>Sort results by the field specified</strong></li>
+<li><strong><em>sort=+name</em></strong></li>
+<li><strong><em>sort=-id ##</em></strong></li>
+</ul>
+<p><strong>Limit</strong></p>
+<ul>
+<li><strong>(</strong><strong><em>integer</em></strong><strong>) limit result set - value of 0 for unlimited</strong></li>
+<li><strong>limit=</strong><strong><em>1</em></strong></li>
+</ul>
+<p><strong>Generic HTTP Response Codes</strong></p>
+<ul>
+<li><strong>400 - Bad request</strong></li>
+<li><strong>401 - Failed login / login required</strong></li>
+<li><strong>403 - Permission denied</strong></li>
+<li><strong>404 - Row or API doesn't exist</strong></li>
+<li><strong>405 - Not permitted</strong></li>
+<li><strong>409 - Row exists</strong></li>
+<li><strong>422 - Failed validation / Invalid parameter</strong></li>
+<li><strong>500 - Unhandled error code</strong></li>
+</ul>
+<p><strong>Post Specific</strong></p>
+<ul>
+<li><strong>201 – Created row</strong></li>
+</ul>
+<p><strong>Websocket Specific (Used for VNC/SPICE)</strong></p>
+<ul>
+<li><strong>101 – Switching protocol</strong></li>
+</ul>
+<p><strong>PUT/GET/DELETE</strong></p>
+<ul>
+<li><strong>200 – Success</strong>
+<br></li>
+</ul>
+<h3 id="schema-table-definitions">Schema Table Definitions<a class="headerlink" href="#schema-table-definitions" title="Permanent link">#</a></h3>
+<h4 id="field-types"><strong>Field types:</strong><a class="headerlink" href="#field-types" title="Permanent link">#</a></h4>
+<ul>
+<li><strong>bool</strong></li>
+<li><strong>text</strong></li>
+<li><strong>string</strong></li>
+<li><strong>num</strong></li>
+<li><strong>uint8</strong></li>
+<li><strong>uint16</strong></li>
+<li><strong>uint32</strong></li>
+<li><strong>uint64</strong></li>
+<li><strong>int8</strong></li>
+<li><strong>int16</strong></li>
+<li><strong>int32</strong></li>
+<li><strong>int64</strong></li>
+<li><strong>enabled</strong></li>
+<li><strong>created</strong></li>
+<li><strong>created_ms</strong></li>
+<li><strong>created_us</strong></li>
+<li><strong>modified</strong></li>
+<li><strong>modified_ms</strong></li>
+<li><strong>modified_us</strong></li>
+<li><strong>filename</strong></li>
+<li><strong>filesize</strong></li>
+<li><strong>fileused</strong></li>
+<li><strong>fileallocated</strong></li>
+<li><strong>filemodified</strong></li>
+<li><strong>json</strong></li>
+<li><strong>row</strong></li>
+<li><strong>rows</strong></li>
+</ul>
+<p><strong>Schema Owner / Parent Field</strong></p>
+<ul>
+<li><strong>owner field: if owner field is null then normal permissions apply, if owner field has value then permissions are replaced by a permission check to the owner</strong></li>
+<li><strong>parent field: the permission check is applied to the row itself, and if permissions fail then permissions are also checked on the parent</strong>
+<br></li>
+</ul>
+<h3 id="full-table-schema">Full Table Schema<a class="headerlink" href="#full-table-schema" title="Permanent link">#</a></h3>
+<p>To retrieve a table’s schema append <em>$table</em> to the URI: </p>
+<p><strong>/api/v4/machines/$table</strong> (replace machines with the table name)</p>
+<p>It will ask for your credentials, this does not support your other authentication methods and requires your VergeIO admin credentials. </p>
+<p><strong>Note:</strong> The output is in JSON format. Firefox will display this by default in a nice readable format. For other browsers you may want to output to another program to view the JSON correctly.
+<br></p>
+<h3 id="example-errors">Example Errors<a class="headerlink" href="#example-errors" title="Permanent link">#</a></h3>
+<h4 id="example-error-from-server-http-code-422"><strong>Example Error from Server (HTTP Code 422)</strong><a class="headerlink" href="#example-error-from-server-http-code-422" title="Permanent link">#</a></h4>
+<p>{<br />
+    "err": "Validation error on field: 'dhcp_start' - 'fails validation test'"<br />
+}</p>
+<p><br></p>
+<blockquote>
+<p class="is-info">Need more Help? Email <a href="mailto:support@verge.io?subject=Support Inquiry" target="_blank" rel="noopener noreferrer">support@verge.io</a> or call us at <a href="tel:+855-855-8300">(855) 855-8300</a></p>
+</blockquote>
+<p><br></p>
+<div style="text-align: center">
+  <a href="https://wiki.verge.io/en/public/kb"><button class="button-grey"> <b>↺</b> Back to Knowledgebase</button></a>
+<a href="https://www.verge.io/test-drive"><button class="button-orange">🚗 Take a Test Drive Today!</button></a>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2024 <a href="https://verge.io" target="_blank" rel="noopener"> Verge.io</a>
+
+    </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/VergeIO_Inc" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/company/verge-io/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/channel/UCnFu28s0GBVi18j7Ez3MXRg" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "announce.dismiss"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
