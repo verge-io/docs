@@ -105,35 +105,22 @@ copyright: |
 nav:
   - Home:
     - Welcome: index.md
-#  - Writing Guide:
-#    - Writing Guide: how-to-write-a-verge-guide.md
   - Implementation Guide:
-    - Introduction: implementation-guide/introduction.md
-    - Core Concepts: implementation-guide/concepts.md
+    - Introduction: implementation-guide/concepts.md
     - Sizing: implementation-guide/sizing.md
-    - Reference Architecture:
-      - Network Design: implementation-guide/network-design.md
-      - Edge / ROBO: implementation-guide/edge.md
-      # - SMB : implementation-guide/smb.md
-      - Cloud Providers: implementation-guide/csp.md
-      #- Enterprise: implementation-guide/enterprise.md
-      - Life / Data Science: implementation-guide/data-sciense.md
-      - VMware Backup: implementation-guide/vmware-backup.md
-      #- Education: implementation-guide/edu.md
-#      - Memory / RAM Considerations: implementation-guide/ram-design.md
-    - Pre-Installation: 
-#      - Key Terms / Glossary: implementation-guide/pre-installation.md
-      - Checklist: implementation-guide/pre-install-checklist.md
+    - VergeOS Pre-Installation: implementation-guide/pre-installation.md
+    - VergeOS Installation:
       - Bootable Media: implementation-guide/install-media.md
-    - vergeOS Installation:
       - Installation: implementation-guide/installation-guide.md
       - Scale Out Nodes: implementation-guide/scale-out-nodes.md
       - Compute Nodes: implementation-guide/compute-nodes.md
       - Storage Nodes: implementation-guide/storage-nodes.md
-    - vergeOS Post Installation:
-      # - vSAN: implementation-guide/vsan.md
-      - SSL: implementation-guide/ssl.md
-      - Tenants: implementation-guide/tenant.md
+    - VergeOS Post-Installation: implementation-guide/post-installation.md
+  - Reference Architecture:
+    - Edge / ROBO: reference-architecture/edge.md
+    - Cloud Providers: reference-architecture/csp.md
+    - Life / Data Science: reference-architecture/data-science.md
+    - VMware Backup: reference-architecture/vmware-backup.md
   - Knowledge Base:
     - kb/index.md      
   - Glossary: glossary.md
