@@ -1,30 +1,46 @@
-name: ci 
+name: Publish docs
 on:
+  pull_request:
+    branches:
+      - "main"
   push:
     branches:
-      - src 
+      - "main"
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.BOT_ACCESS_TOKEN }}
-      - name: Configure Git Credentials
-        run: |
-          git config user.name lludlow
-          git config user.email 2191492+lludlow@users.noreply.github.com
-      - uses: actions/setup-python@v5
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Setup Python, install plugins, and build site
+        uses: actions/setup-python@v5
         with:
           python-version: 3.x
-      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
-      - uses: actions/cache@v4
-        with:
-          key: mkdocs-material-${{ env.cache_id }}
-          path: .cache
-          restore-keys: |
-            mkdocs-material-
       - run: if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-      - run: mkdocs gh-deploy --force -d site -b main
+      - run: mkdocs build --site-dir ./_site
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
