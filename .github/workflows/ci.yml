@@ -1,0 +1,30 @@
+name: ci 
+on:
+  push:
+    branches:
+      - src 
+permissions:
+  contents: write
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.BOT_ACCESS_TOKEN }}
+      - name: Configure Git Credentials
+        run: |
+          git config user.name lludlow
+          git config user.email 2191492+lludlow@users.noreply.github.com
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
+      - uses: actions/cache@v4
+        with:
+          key: mkdocs-material-${{ env.cache_id }}
+          path: .cache
+          restore-keys: |
+            mkdocs-material-
+      - run: if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - run: mkdocs gh-deploy --force -d site -b main
