@@ -1,12 +1,4 @@
----
-title: Product Guide - System Event Log (SEL)
-description: Overview of what the IPMI System Event Log (SEL) is and instructions for clearing a Node's SEL
-published: true
-date: 2023-06-26T12:32:00.510Z
-tags: 
-editor: markdown
-dateCreated: 2023-03-28T18:28:52.668Z
----
+
 
 # The System Event Log (SEL)
 

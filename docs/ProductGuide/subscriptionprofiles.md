@@ -1,12 +1,4 @@
----
-title: Product Guide - Subscription Profiles
-description: Definition of subscription profiles
-published: true
-date: 2023-06-26T15:12:43.426Z
-tags: 
-editor: markdown
-dateCreated: 2023-04-06T13:04:31.955Z
----
+
 
 # Subscription Profiles
 Subscription profiles define the information to send in a subscription notification.

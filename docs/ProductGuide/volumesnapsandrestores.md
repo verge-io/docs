@@ -1,12 +1,4 @@
----
-title: Product Guide - NAS Volume Snapshots and Restores
-description: Provides instructions to use the NAS volume snapshot feature to obtain quiesced backup of individual NAS volumes (manually or scheduled); also gives instructions for restoring NAS volume snapshots to create a new volume or overwrite the existing volume.
-published: true
-date: 2024-03-25T17:38:36.755Z
-tags: 
-editor: markdown
-dateCreated: 2023-04-05T19:45:40.101Z
----
+
 
 # NAS Volume Snapshots and Restores
 

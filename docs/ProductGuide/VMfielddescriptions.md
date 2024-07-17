@@ -1,12 +1,4 @@
----
-title: Product Guide - Virtual Machine Fields
-description: Description of each field available when creating a new custom VM
-published: true
-date: 2023-06-23T14:49:12.180Z
-tags: 
-editor: markdown
-dateCreated: 2023-04-08T01:09:11.922Z
----
+
 
 # Virtual Machine Fields
 

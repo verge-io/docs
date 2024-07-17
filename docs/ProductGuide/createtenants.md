@@ -1,12 +1,4 @@
----
-title: Product Guide - Creating Tenants
-description: Instructions for creating a new tenant, using 3 methods: Custom Tenant Wizard, cloning, tenant recipes
-published: true
-date: 2024-03-25T17:50:14.978Z
-tags: 
-editor: markdown
-dateCreated: 2023-04-06T20:32:11.428Z
----
+
 
 # Creating Tenants
 

@@ -1,12 +1,4 @@
----
-title: Product Guide - Glossary of Terms
-description: Defines terms and concepts used within the  Verge.io product
-published: true
-date: 2023-06-23T14:45:08.924Z
-tags: 
-editor: markdown
-dateCreated: 2023-03-09T21:20:46.138Z
----
+
 
 # Glossary of Terms
 

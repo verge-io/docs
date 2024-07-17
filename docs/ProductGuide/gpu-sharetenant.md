@@ -1,12 +1,4 @@
----
-title: Product Guide - Sharing a GPU Device to a Tenant
-description: 
-published: true
-date: 2023-06-26T12:30:20.492Z
-tags: 
-editor: markdown
-dateCreated: 2023-05-08T18:36:24.106Z
----
+
 
 # Sharing a GPU Device to a Tenant
 

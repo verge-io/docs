@@ -1,12 +1,4 @@
----
-title: Product Guide - Server Certficates
-description: Instructions for implementing a server certificate (Let's Encrypt/ACME is the default, but certificates from other authorities can be applied.)
-published: true
-date: 2023-06-26T12:28:26.212Z
-tags: 
-editor: markdown
-dateCreated: 2023-03-23T18:56:44.584Z
----
+
 
 # Server Certificates
 

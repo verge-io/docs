@@ -1,12 +1,4 @@
----
-title: Product Guide - Users and Groups
-description: Definitions of the different user types; explanation of the use of groups; instructions for creating new users,  creating new groups, and adding users to groups
-published: true
-date: 2023-06-26T12:35:38.077Z
-tags: 
-editor: markdown
-dateCreated: 2023-04-07T18:06:55.867Z
----
+
 
 # Users
 A separate user account should be created for each individual that will utilize the system. 

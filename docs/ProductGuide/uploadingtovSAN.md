@@ -1,12 +1,4 @@
----
-title: Product Guide - Uploading to the vSAN (Media Images)
-description: Instructions for uploading files for consumption in VergeOS
-published: true
-date: 2023-06-23T14:38:25.414Z
-tags: 
-editor: markdown
-dateCreated: 2023-03-27T20:48:07.222Z
----
+
 
 # Uploading to the vSAN (Media Images)
 

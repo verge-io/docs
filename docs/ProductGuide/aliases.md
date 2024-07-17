@@ -1,15 +1,3 @@
----
-title: Product Guide - Using Aliases
-description: Explanation of aliases and instructions for common uses.
-published: true
-date: 2023-06-26T15:27:27.578Z
-tags: 
-editor: markdown
-dateCreated: 2023-05-19T15:22:54.181Z
----
-
-
-
 # Aliases
 
 Aliases are helpers that centralize management of address sets that will be used in multiple places.  For example, if we have a group of remote administrators we are specifically allowing port access, based on IP address, an alias called "PortAccess" could be created to include the list of allowed addresses.  The alias can then be selected in the configuration of necessary rules, eliminating the need to manually input all the addresses in each rule. Thereafter, whenever the list needs to change, it can be modified in the alias configuration rather than modifying all the associated rules.  

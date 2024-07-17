@@ -1,12 +1,4 @@
----
-title: Product Guide - Reducing a Tenant's Resources
-description: Instructions and considerations for reducing resources  provisioned to a tenant
-published: true
-date: 2023-06-26T12:33:08.909Z
-tags: 
-editor: markdown
-dateCreated: 2023-04-07T14:31:49.606Z
----
+
 
 # Reducing a Tenant's Resources
 

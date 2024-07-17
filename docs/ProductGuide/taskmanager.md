@@ -1,12 +1,4 @@
----
-title: Product Guide - Task Manager
-description: overview of the task manager feature and definitions/examples of event-based and scheduled tasks
-published: false
-date: 2023-05-17T18:06:08.597Z
-tags: 
-editor: markdown
-dateCreated: 2023-05-17T17:59:54.706Z
----
+
 
 # Task Manager
 

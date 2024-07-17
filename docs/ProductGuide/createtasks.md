@@ -1,12 +1,4 @@
----
-title: Product Guide - Create Tasks
-description: Instructions for creating a both a scheduled task and an event-based task and examples of both types of tasks.
-published: true
-date: 2023-06-26T15:13:03.326Z
-tags: 
-editor: markdown
-dateCreated: 2023-04-03T19:42:47.423Z
----
+
 
 # Creating Tasks
 

@@ -1,12 +1,4 @@
----
-title: Product Guide - Importing VMs from Uploaded Media Images
-description: Instructions for importing a VM from standard data files, such as: vmx, vmdk, ovf, vhd(x); includes instructions for manually creating a VM shell and importing individual raw image disks to the VM. 
-published: true
-date: 2023-06-28T13:55:28.573Z
-tags: 
-editor: markdown
-dateCreated: 2023-04-09T14:00:56.818Z
----
+
 
 # Importing VMs from Uploaded Media Images
 

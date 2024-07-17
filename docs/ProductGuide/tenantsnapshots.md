@@ -1,12 +1,4 @@
----
-title: Product Guide - Tenant Snapshots
-description: Information/instructions for tenants to access and restore from provider snapshots
-published: true
-date: 2023-06-27T14:31:55.595Z
-tags: 
-editor: markdown
-dateCreated: 2023-04-07T14:44:01.492Z
----
+
 
 # Tenant Snapshots
 

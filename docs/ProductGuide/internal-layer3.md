@@ -1,12 +1,4 @@
----
-title: Product Guide - Create an Internal Network Managed within VergeIO
-description: Instructions for creating an internal network with management, such as dhcp, routing, etc, handled by VergeOS
-published: true
-date: 2023-06-27T20:14:02.166Z
-tags: 
-editor: markdown
-dateCreated: 2023-03-29T21:24:27.278Z
----
+
 
 ## Creating an Internal Network managed within VergeIO (layer3)
 

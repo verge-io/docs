@@ -1,12 +1,4 @@
----
-title: Product Guide - Sites Dashboard
-description: Overview of the Sites Dashboard and how it is used
-published: true
-date: 2023-06-27T14:27:25.882Z
-tags: 
-editor: markdown
-dateCreated: 2023-03-31T20:27:16.666Z
----
+
 
 # Sites Dashboard
 

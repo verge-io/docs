@@ -1,12 +1,4 @@
----
-title: Product Guide - Viewing Import Jobs
-description: Instructions for viewing import jobs and the VMs imported from an import jobs
-published: true
-date: 2023-06-23T14:56:49.892Z
-tags: 
-editor: markdown
-dateCreated: 2023-04-09T14:09:02.853Z
----
+
 
 # Viewing Import Jobs
 

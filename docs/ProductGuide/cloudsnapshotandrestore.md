@@ -1,12 +1,4 @@
----
-title: Product Guide - Cloud Snapshots and Restores
-description: Explanation of how cloud snapshots (which backup an entire system) and restores work.  Specific instructions for setting schedule, running a manual snap, and restoring an entire system or component of a system from a cloud snapshot
-published: true
-date: 2023-06-27T14:29:44.020Z
-tags: 
-editor: markdown
-dateCreated: 2023-04-03T18:43:32.314Z
----
+
 
 # Cloud Snapshots and Restores
 
@@ -111,9 +103,8 @@ A manual snapshot can be taken at any time.
     -   By default, the option to **Reboot all nodes after the restore** is enabled. This will let the system handle the node reboots.
     
     
----
+
      Reboot  of all nodes is necessary to complete the cloud restore. 
----
 
 
 6.  Click the **Proceed** button to continue/ or **Cancel** to abort.

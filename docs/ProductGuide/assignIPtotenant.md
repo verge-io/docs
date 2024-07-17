@@ -1,13 +1,3 @@
----
-title: Product Guide - Assign IPs to a Tenant
-description: Instructions for giving external IP addresses to a tenant
-published: true
-date: 2023-06-26T12:33:28.336Z
-tags: 
-editor: markdown
-dateCreated: 2023-05-17T18:13:46.900Z
----
-
 # Assigning External IP Addresses to a Tenant
 
 External IP addresses can be assigned to tenants. When an external IP is assigned, appropriate routing rules are created automatically.

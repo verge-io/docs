@@ -1,12 +1,4 @@
----
-title: Product Guide - NAS Service
-description: Instructions for Configuring a new NAS service instance; these steps are necessary in order to use NAS within VergeIO.
-published: true
-date: 2023-06-27T14:34:32.250Z
-tags: 
-editor: markdown
-dateCreated: 2023-03-28T20:15:38.513Z
----
+
 
 # NAS
 

@@ -1,12 +1,4 @@
----
-title: Product Guide - Increasing a Tenant's Resources
-description: Instructions and considerations for allotting additional resources to a tenant - including storage, RAM and cores
-published: true
-date: 2023-06-27T13:47:33.391Z
-tags: 
-editor: markdown
-dateCreated: 2023-04-07T14:25:53.744Z
----
+
 
 # Increasing a Tenant's Resources
 

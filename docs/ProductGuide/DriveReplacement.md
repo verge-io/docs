@@ -1,12 +1,4 @@
----
-title: Product Guide - Drive Replacement
-description: Instructions for replacing a (defective or end-of-life) vsan-participating drive
-published: true
-date: 2023-07-12T21:49:37.403Z
-tags: 
-editor: markdown
-dateCreated: 2023-03-10T19:38:57.974Z
----
+
 
 # Replacing a Defective or End-of-life Drive
 

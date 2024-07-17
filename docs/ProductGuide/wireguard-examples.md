@@ -1,12 +1,4 @@
----
-title: Product Guide - Wireguard Configuration Examples
-description: Examples (using sample addressing scenarios) for creating site-to-site VPN tunnel, testing a site-to-site and configuring remote access on a Windows client
-published: true
-date: 2023-06-27T15:22:22.445Z
-tags: 
-editor: markdown
-dateCreated: 2023-04-10T20:05:56.342Z
----
+
 
 # WireGuard Configuration Examples
 

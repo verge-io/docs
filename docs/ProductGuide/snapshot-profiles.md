@@ -1,12 +1,4 @@
----
-title: Product Guide - Snapshot Profiles (Snapshot Scheduling)
-description: Explanation of snapshot profiles and how they are used; instructions for creating, modifing and assigning snapshot profiles
-published: true
-date: 2023-06-27T20:50:47.430Z
-tags: 
-editor: markdown
-dateCreated: 2023-03-29T00:47:41.780Z
----
+
 
 # Snapshot Profiles (Snapshot Scheduling)
 

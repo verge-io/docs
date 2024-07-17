@@ -1,12 +1,4 @@
----
-title: Product Guide - NAS Local Volumes
-description: Explanation of local volumes and instructions to create a new local volume
-published: true
-date: 2023-06-27T14:36:10.343Z
-tags: 
-editor: markdown
-dateCreated: 2023-03-29T00:09:06.773Z
----
+
 
 # Local Volumes
 

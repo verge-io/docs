@@ -1,12 +1,4 @@
----
-title: Product Guide - Using Google for Authentication
-description: Configuration instructions for using Google for VergeIO user authentication
-published: true
-date: 2023-06-27T13:34:24.793Z
-tags: 
-editor: markdown
-dateCreated: 2023-03-23T15:18:25.974Z
----
+
 
 # Using Google Authorization
 

@@ -1,12 +1,4 @@
----
-title: Product Guide - Tenant Restores
-description: Provides instructions for restoring an individual tenant from cloud snapshots
-published: true
-date: 2023-06-27T14:30:00.877Z
-tags: 
-editor: markdown
-dateCreated: 2023-04-05T19:47:26.842Z
----
+
 
 # Tenant Restores
 

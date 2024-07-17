@@ -1,13 +1,3 @@
----
-title: Product Guide - Assign an External IP to an Internal Network
-description: Instructions for designating a particular external IP address to an internal network
-published: true
-date: 2023-06-27T14:30:48.164Z
-tags: 
-editor: markdown
-dateCreated: 2023-03-29T21:29:19.450Z
----
-
 # Assigning External IP Addresses to Internal Networks
 <br>
 

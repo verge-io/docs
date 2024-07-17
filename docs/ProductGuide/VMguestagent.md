@@ -1,12 +1,4 @@
----
-title: Product Guide - VM Guest Agent
-description: provide description of the guest agent and its uses, along with instructions for downloading, enabling, installing and verifying the guest agent on a VM.
-published: true
-date: 2024-03-25T17:58:21.644Z
-tags: 
-editor: markdown
-dateCreated: 2023-04-06T00:02:57.965Z
----
+
 
 # VM Guest Agent
 The guest agent is a program installed inside the guest OS allowing the host to run commands within the VM. This allows consistent, reliable backups by freezing the guest file system before snapshots and proper shutdown of a guest without reliance on ACPI, policies, etc.

@@ -1,12 +1,4 @@
----
-title: Product Guide - Wireguard
-description: Basic Configuration information for integrated Wireguard functionality; Wireguard allows secure tunnels between VergeIO systems and for secure remote access 
-published: true
-date: 2023-06-27T19:23:31.975Z
-tags: 
-editor: markdown
-dateCreated: 2023-04-10T20:02:46.034Z
----
+
 
 # WireGuard
 WireGuard is a modern, open-source VPN software and tunnel protocol that provides fast communication, utilizing state-of-the-art cryptography. WireGuard has been integrated into VergeOS for the implementation of secure tunnels with minimal setup effort. These secure tunnels can be used for both remote user access and site-to-site connectivity. The following outlines the fundamental components of setup; for detailed reference examples, see [**WireGuard Examples**](/public/ProductGuide/wireguard-examples)

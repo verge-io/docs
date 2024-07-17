@@ -1,12 +1,4 @@
----
-title: Product Guide - Remote NAS Volumes
-description: Explanation and configuration instructions for NAS Remote Volumes
-published: true
-date: 2023-06-27T14:49:00.770Z
-tags: 
-editor: markdown
-dateCreated: 2023-03-29T00:17:29.208Z
----
+
 
 # Remote Volumes
 

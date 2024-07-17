@@ -1,12 +1,4 @@
----
-title: Product Guide - Configuring a Site Sync
-description: Full manual instructions for creating syncs between systems.  Some of these tasks can be done automatically, when adding a site to a Sites Dashboard. 
-published: true
-date: 2024-04-09T15:05:45.391Z
-tags: 
-editor: markdown
-dateCreated: 2023-03-31T20:44:16.506Z
----
+
 
 # Configuring a Site Sync
 

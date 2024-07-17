@@ -1,12 +1,4 @@
----
-title: Product Guide - Using Azure AD for Authentication
-description: Configuration instructions for using an Azure AD for VergeIO user authentication
-published: true
-date: 2024-03-29T18:27:21.806Z
-tags: 
-editor: markdown
-dateCreated: 2023-03-22T18:46:18.889Z
----
+
 
 # Using Azure AD for Authentication
 

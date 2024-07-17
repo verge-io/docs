@@ -1,12 +1,4 @@
----
-title: Product Guide - Retrieving a Snapshot back (Sync Back)
-description: Instructions for configuring a Sync-back, which allows for accessing a snapshot that was sync'd to another system to use for a local restore.
-published: true
-date: 2023-06-27T14:22:52.994Z
-tags: 
-editor: markdown
-dateCreated: 2023-04-04T15:42:33.384Z
----
+
 
 # Retrieving a Snapshot back (Sync Back)
 

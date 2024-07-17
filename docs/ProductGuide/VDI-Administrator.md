@@ -1,12 +1,4 @@
----
-title: Product Guide -VDI Instructions for the Administrator
-description: VDI instructions for the administrator, including creating a VDI user, giving console access to a VDI user, assigning a VM owner, adding VMs to a normal user's VM favorites
-published: true
-date: 2023-06-23T14:57:30.203Z
-tags: 
-editor: markdown
-dateCreated: 2023-04-10T19:52:01.777Z
----
+
 
 # VDI Instructions for the Administrator
 <br>

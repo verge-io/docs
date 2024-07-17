@@ -1,12 +1,4 @@
----
-title: Product Guide - UI Overview
-description: Basic information about navigating the VergeIO user interface
-published: true
-date: 2024-03-26T17:54:51.891Z
-tags: 
-editor: markdown
-dateCreated: 2023-03-16T00:42:24.112Z
----
+
 
 # Navigating the VergeIO User Interface
 

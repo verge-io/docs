@@ -1,12 +1,4 @@
----
-title: Product Guide -VDI Instructions for the User
-description: Instructions for the VDI user, including changing password and 2-factor authentication, viewing messages, using the remote console (link)
-published: true
-date: 2023-06-23T14:58:15.608Z
-tags: 
-editor: markdown
-dateCreated: 2023-04-10T19:54:04.823Z
----
+
 
 # VDI Instructions for the User
 

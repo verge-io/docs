@@ -1,12 +1,4 @@
----
-title: Product Guide - VM Snapshots and Restores
-description: Provides information and instructions on the various ways to snapshot and restore individual VMs
-published: true
-date: 2023-06-27T14:24:46.358Z
-tags: 
-editor: markdown
-dateCreated: 2023-04-05T19:50:37.174Z
----
+
 
 # VM Snapshots and Restores
 

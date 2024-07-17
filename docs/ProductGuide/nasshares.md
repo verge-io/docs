@@ -1,12 +1,4 @@
----
-title: Product Guide - NAS Shares
-description: Instructions for creating CIFS and NFS shares to NAS volumes
-published: true
-date: 2023-06-26T15:14:30.701Z
-tags: 
-editor: markdown
-dateCreated: 2023-03-29T00:52:17.468Z
----
+
 
 # Shares
 

@@ -1,12 +1,4 @@
----
-title: Product Guide - Creating Virtual Machines (VMs)
-description: Description of the 4 different methods of creating a VM (custom, from recipe, import, clone) ; general instructions for custom, recipe and clone methods
-published: true
-date: 2023-06-28T13:50:29.003Z
-tags: 
-editor: markdown
-dateCreated: 2023-04-08T00:27:35.821Z
----
+
 
 # Creating Virtual Machines (VMs)
 

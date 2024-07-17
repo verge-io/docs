@@ -1,12 +1,4 @@
----
-title: Product Guide - Create an Internal Network with External Access
-description: Instructions for providing external access (outside of the VergeIO environment) to an internal network
-published: true
-date: 2023-06-27T14:18:47.959Z
-tags: 
-editor: markdown
-dateCreated: 2023-03-29T21:21:37.557Z
----
+
 
 ## Creating an Internal Network with External Access
 

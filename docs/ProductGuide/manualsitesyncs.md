@@ -1,12 +1,4 @@
----
-title: Product Guide - Manual Site Sync
-description: Instructions to add a snapshot to the sync queue (outside of auto sync configuration)
-published: true
-date: 2023-06-27T14:23:07.719Z
-tags: 
-editor: markdown
-dateCreated: 2023-04-04T17:16:11.932Z
----
+
 
 # Manual Site Sync
 

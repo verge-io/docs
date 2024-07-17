@@ -1,12 +1,4 @@
----
-title: Product Guide - Virtual Desktop Infrastructure (VDI)
-description: Overview of VDI within VergeIO
-published: true
-date: 2023-06-23T14:57:11.760Z
-tags: 
-editor: markdown
-dateCreated: 2023-04-10T19:49:33.167Z
----
+
 
 # Virtual Desktop Infrastructure (VDI)
 

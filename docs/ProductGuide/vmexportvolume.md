@@ -1,12 +1,4 @@
----
-title: Product Guide - VM Export Volume
-description: Explains process of using a NAS Verge.io export volume to extract VMs to standard raw disk format.  
-published: true
-date: 2024-03-29T18:48:51.587Z
-tags: 
-editor: markdown
-dateCreated: 2023-06-06T20:30:15.063Z
----
+
 
 ## How To Configure VM Export
 

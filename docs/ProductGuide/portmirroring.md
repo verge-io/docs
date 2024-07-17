@@ -1,12 +1,4 @@
----
-title: Product Guide - Port Mirroring
-description: Explanation and instructions for setting up port mirroring on a network.
-published: true
-date: 2023-06-27T15:09:11.521Z
-tags: 
-editor: markdown
-dateCreated: 2023-03-30T13:28:55.005Z
----
+
 
 # Port Mirroring
 

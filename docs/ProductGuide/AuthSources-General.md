@@ -1,12 +1,4 @@
----
-title: Product Guide - Authorization Sources
-description: General information about using third-party identity management systems for user authentication 
-published: true
-date: 2024-03-28T15:10:50.078Z
-tags: 4.11
-editor: markdown
-dateCreated: 2023-03-17T12:34:15.315Z
----
+
 
 # Authorization Sources - General Information
 

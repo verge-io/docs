@@ -1,12 +1,4 @@
----
-title: Product Guide - Configuring NAT 1-to-1 Translation
-description: Instructions for mapping one internal private IP address to one external IP address
-published: true
-date: 2023-06-27T19:50:43.542Z
-tags: 
-editor: markdown
-dateCreated: 2023-03-29T21:31:35.969Z
----
+
 
 # Configuring NAT 1-to-1 translation
 

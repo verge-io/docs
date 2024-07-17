@@ -1,12 +1,4 @@
----
-title: Product Guide - Adding Sites to the Dashboard
-description: Instructions for adding a site to the Sites Dashboard, with information about configuration settings for: snapshot sync, statistic syncing, remote machine management, and enabling repair servers, 
-published: true
-date: 2023-06-26T15:12:04.583Z
-tags: 
-editor: markdown
-dateCreated: 2023-03-31T20:36:12.523Z
----
+
 
 # Configuring the Sites Dashboard (Adding Sites)
 

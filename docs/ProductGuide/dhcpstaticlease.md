@@ -1,12 +1,4 @@
----
-title: Product Guide - Create a DHCP Static Entry
-description: Instructions for creating a DHCP static lease
-published: true
-date: 2023-06-27T15:08:05.179Z
-tags: 
-editor: markdown
-dateCreated: 2023-03-29T21:26:04.464Z
----
+
 
 # Create a DHCP Static Lease
 

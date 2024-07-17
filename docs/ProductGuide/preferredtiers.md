@@ -1,12 +1,4 @@
----
-title: Product Guide - Preferred Tier
-description: Definition and examples to explain how preferred storage tiers work
-published: true
-date: 2023-06-23T14:42:29.565Z
-tags: 
-editor: markdown
-dateCreated: 2023-03-29T00:49:43.304Z
----
+
 
 # Preferred Tier
 

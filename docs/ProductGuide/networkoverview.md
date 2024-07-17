@@ -1,12 +1,4 @@
----
-title: Product Guide - Networking Overview 
-description: High-level overview of some of the networking terms and concepts used in VergeIO
-published: true
-date: 2023-06-27T14:51:24.056Z
-tags: 
-editor: markdown
-dateCreated: 2023-03-29T18:36:29.086Z
----
+
 
 # Networking Overview
 

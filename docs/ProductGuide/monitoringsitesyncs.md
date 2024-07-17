@@ -1,12 +1,4 @@
----
-title: Product Guide - Monitoring Site Syncs
-description: Instruction on tracking syncing activity - through dashboards and subscriptions -  to verify successful offsite backups. 
-published: true
-date: 2023-06-27T20:41:27.922Z
-tags: 
-editor: markdown
-dateCreated: 2023-04-04T14:57:35.172Z
----
+
 
 # Monitoring Site Syncs
 

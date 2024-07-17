@@ -1,12 +1,4 @@
----
-title: Product Guide - Snapshots Overview
-description: Overview of snapshots - automated vs. manual, and the different levels of snapshot/restore protection
-published: true
-date: 2023-06-27T14:23:57.830Z
-tags: 
-editor: markdown
-dateCreated: 2023-04-05T14:22:09.089Z
----
+
 
 # Snapshots
 

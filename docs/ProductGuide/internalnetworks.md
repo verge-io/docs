@@ -1,12 +1,4 @@
----
-title: Product Guide - Creating an Internal Network
-description: General instructions for creating a new internal network.  
-published: true
-date: 2024-04-23T17:40:13.631Z
-tags: 
-editor: markdown
-dateCreated: 2023-03-29T21:57:30.517Z
----
+
 
 # Internal Networks (General Instructions)
 Internal networks are originated within VergeIO; an internal network can be created as [**Layer3**](../ProductGuide/internal-layer3) (recommended)  or  [**Layer2**](../ProductGuide/internal-layer2)

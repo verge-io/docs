@@ -1,12 +1,4 @@
----
-title: Product Guide - Network Rules
-description: Covers rule types and instructions for creating and modify rules, pinning rules and changing rule order.
-published: true
-date: 2023-06-27T19:55:38.179Z
-tags: 
-editor: markdown
-dateCreated: 2023-03-29T21:07:06.892Z
----
+
 
 # Network Rules
 

@@ -1,12 +1,4 @@
----
-title: Product Guide - Tracking Network Statistics
-description: Instructions for enabling statistics tracking and viewing those tracked statistics on NAT/PAT and Firewall rules
-published: true
-date: 2023-06-27T15:07:37.385Z
-tags: 
-editor: markdown
-dateCreated: 2023-03-31T15:07:35.562Z
----
+
 
 # Tracking Network Statistics
 

@@ -1,12 +1,4 @@
----
-title: Product Guide - Importing VMs from a NAS Volume
-description: General instructions for importing a VM from a NAS volume (VM sync'd into a NAS volume to be imported);  not the recommended method for VMware imports
-published: true
-date: 2023-06-23T14:56:29.468Z
-tags: 
-editor: markdown
-dateCreated: 2023-04-09T14:07:38.856Z
----
+
 
 # Importing VMs from a NAS Volume
 

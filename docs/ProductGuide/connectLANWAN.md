@@ -1,12 +1,4 @@
----
-title: Product Guide - Connect VergeIO to an Existing LAN/WAN
-description: Instructions for connecting to a network outside of your VergeIO environnment, such as company LAN, WAN connection, etc.
-published: true
-date: 2023-06-27T14:31:15.381Z
-tags: 
-editor: markdown
-dateCreated: 2023-03-29T21:15:08.665Z
----
+
 
 # Connect VergeIO  to an Existing LAN/WAN
 

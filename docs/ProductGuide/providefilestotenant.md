@@ -1,12 +1,4 @@
----
-title: Product Guide - Providing Files to a Tenant
-description: Instructions for a host to make files in their own vSAN available to a tenant
-published: true
-date: 2023-06-27T13:58:43.450Z
-tags: 
-editor: markdown
-dateCreated: 2023-04-07T14:37:41.501Z
----
+
 
 # Providing Files to a Tenant
 
