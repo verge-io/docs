@@ -7,11 +7,12 @@ edit_uri: edit/develop/docs/
 
 theme:
   name: material
-  custom_dir: overrides
+  custom_dir: docs/overrides
   logo: assets/vergelogomark.svg
   favicon: assets/vergelogomark.svg
   features:
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.sections
     - navigation.indexes
     #- toc.integrate
@@ -88,7 +89,10 @@ markdown_extensions:
 #  - material.extensions.preview:
 #      targets:
 #        include:
-#          - glossary.md      
+#          - glossary.md   
+#    analytics:
+#        provider: google
+#        property: G-EXFP0W7LTY   
 
 extra:
   social:
@@ -102,12 +106,19 @@ extra:
 copyright: |
   &copy; 2024 <a href="https://verge.io" target="_blank" rel="noopener"> Verge.io</a>
 
+extra_javascript:
+  - javascripts/extra.js
+
+#extra_css:
+#  - stylesheets/extra.css
+
 nav:
-  - Home:
-    - Welcome: index.md
+  - Home: index.md
+#    - Welcome: index.md
   - Implementation Guide:
     - Introduction: implementation-guide/concepts.md
     - Sizing: implementation-guide/sizing.md
+    - Network Design: implementation-guide/network-design.md
     - VergeOS Pre-Installation: implementation-guide/pre-installation.md
     - VergeOS Installation:
       - Bootable Media: implementation-guide/install-media.md
