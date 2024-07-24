@@ -35,10 +35,6 @@ Port mirroring replicates a network's traffic to a VM NIC, allowing packet analy
 6.  **(Re)boot the VM**.
 7.  Operating system/application software of choice can be used in the VM for **packet analysis**.
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

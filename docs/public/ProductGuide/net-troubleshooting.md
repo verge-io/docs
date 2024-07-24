@@ -184,10 +184,6 @@ When a VM is able to reach Internet IP addresses but not URL addresses, a DNS pr
 
 For Additional Troubleshooting help, contact the VergeIO Support Team at: Support@Verge.io
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

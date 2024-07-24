@@ -89,10 +89,6 @@ Selected GPU appears in the first field (PCI Device).
 
 > Required guest driver(s) will depend on specific GPU hardware and guest OS version. Consult NVIDIA vGPU documentation for guidance. {.is-success}
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

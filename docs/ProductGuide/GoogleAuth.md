@@ -53,10 +53,6 @@ After the authorization source is created, users can be created to utilize the G
 -   ***Display Name:*** (optional) If *Update User Display Name* is enabled on the Google auth source, display name will synchronize from the Google user.
 -   ***Email Address:*** (optional) If *Update User Email Address* is enabled on the Google auth source, Email address will synchronize from the Google user.
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

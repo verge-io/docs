@@ -168,10 +168,6 @@ Rules are processed from the top of list to the bottom. There are situations whe
 
 > Rule changes are applied after Applying Rules (from the left menu option) or otherwise, the next time the network is restarted. {.is-info}
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

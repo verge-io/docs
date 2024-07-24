@@ -27,10 +27,6 @@ Typically, site syncs will be handled with an Auto Sync Configuration, which def
 6.  ***Prefix the snapshot name with this on the destination (optional)*** can be used to assign added text to the beginning of the existing snapshot name.
 7.  Click **Submit** to add to queue.
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

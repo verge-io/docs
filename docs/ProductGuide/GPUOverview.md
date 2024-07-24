@@ -15,10 +15,6 @@ A physical GPU installed on the host node is presented to a virtual machine; pas
 ### vGPU
 A physical GPU installed on the host node is dissected into multiple virtual GPUs; vGPU provides access to multiple VMs simultaneously from a single piece of GPU hardware.  Instructions for configuring NVIDIA GRID (NVIDIA vGPU implementation) on VergeIO are available here: [**NVIDIA vGPU**](/public/ProductGuide/nvidiavGPU)
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

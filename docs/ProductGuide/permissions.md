@@ -135,10 +135,6 @@ Permissions can be viewed for a particular section of the system; for example, f
 1.  From the desired section, click **Permissions** on the left menu. Hint: The Type field will display the general section to which the permission applies; while the Name field will indicate it applies to all objects of that particular type or will display the name of the particular object to which it applies.
 2.  Permissions can be selected from the list to edit or delete.
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

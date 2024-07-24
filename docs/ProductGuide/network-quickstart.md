@@ -29,10 +29,6 @@
 - ### [Create an Internal Layer2 Network](../ProductGuide/internal-layer2)
 
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

@@ -74,10 +74,6 @@ Additionally, each tenant can utilize [**Cloud Snapshots**](/public/ProductGuid
 
 Volume snapshots provide for quiesced backup/restore of individual NAS volumes. For related instructions, see:  [**NAS Volume Snapshots and Restores**](/public/ProductGuide/volumesnapsandrestores)
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

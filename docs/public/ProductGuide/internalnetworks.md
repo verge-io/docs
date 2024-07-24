@@ -106,10 +106,6 @@ The following options appear when the DHCP option is selected (checked):
  - ***DHCP Sequential Addresses*** allows the option to assign dynamic addresses (from the scope defined with stop and start addresses,) in sequential order. Sequential DHCP addressing is generally not recommended as clients which allow a lease to expire are much more likely to obtain a different IP address.
  > Default (non-sequential) DHCP addressing allows IP to be chosen based on a hash of the client's MAC address, greatly increasing the chances that a client will receive the same IP again after a lease expire/re-lease. {.is-success}
  
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

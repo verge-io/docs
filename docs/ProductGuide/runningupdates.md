@@ -83,10 +83,6 @@ After the updates have been distributed to all nodes and are ready to apply, the
 12.  When configured as desired, click **Submit** to save the Task.
 The Form is closed and the Update Tasks list page appears displaying the update task.
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

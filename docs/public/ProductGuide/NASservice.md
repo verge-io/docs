@@ -70,10 +70,6 @@ A NAS service will consist of one or more Volumes. Each Volume is a separate dir
 -   **Remote Volumes** are external file systems that are mounted to the VergeIO system and presented as if local.
 See [**NAS Remote Volumes**](/public/ProductGuide/nasremotevolumes) for instructions on creating Local Volumes.
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

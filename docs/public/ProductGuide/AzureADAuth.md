@@ -145,10 +145,6 @@ When creating the new user, use the following configuration:
 
 ![](/public/userguide-sshots/azure-newuser.png)
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

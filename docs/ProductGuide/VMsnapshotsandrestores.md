@@ -93,10 +93,6 @@ This option allows for using a snapshot to restore to a new VM instance, rather 
 > **Tip:** To avoid issues with running both clone and source VM simultaneously, cloned VM drives can be mounted to a different VM in order to access restored data without powering on the clone: working on a separate VM, add a new drive, select the Clone Disk option, selecting the *.raw file for the restored VM drive.{.is-success}
 
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

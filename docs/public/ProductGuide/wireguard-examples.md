@@ -122,10 +122,6 @@ This example covers setup for a single, remote access peer (a Windows client), a
 13.  The configuration file is used to automatically create an interface and peer on the client machine. Click the **Activate** button to open the tunnel, if it was not automatically activated.
    ![tunnel-active.png](/public/userguide-sshots/tunnel-active.png)
    
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

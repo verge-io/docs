@@ -88,10 +88,6 @@ Using this option, a configuration file is generated and the following fields ar
 ### Apply Rules:
 System-generated network rules (e.g. NAT, firewall, routes) are not automatically applied. Click ***Apply Rules*** on the left menu to put these rules into effect.
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

@@ -25,10 +25,6 @@ Additionally, there is a quick-link to directly reach the login page for the sit
 
 See [**Add Sites**](../ProductGuide/configuringsitesdash-addingsites) for instructions on adding a site to the Sites Dashboard.
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

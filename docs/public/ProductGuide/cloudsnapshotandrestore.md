@@ -130,10 +130,6 @@ A manual snapshot can be taken at any time.
 -   See [**Tenant Restores**](/public/ProductGuide/tenantrestores) for instructions on restoring an individual tenant from a cloud snapshot.
 -   See [**Volume Snapshots and Restores**](/public/ProductGuide/volumesnapsandrestores) for instructions on restoring an individual tenant from a cloud snapshot.
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

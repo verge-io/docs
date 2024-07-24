@@ -59,10 +59,6 @@ Remote volumes are external file systems mounted to the VergeIO System via stand
 
 > Files in the online volume can be viewed using the Browse option from the left menu. {.is-success}
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

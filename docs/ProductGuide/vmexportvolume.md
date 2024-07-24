@@ -31,10 +31,6 @@ Within the VergeIO volume configuration, there is an option to create a volume t
 
 1. Create an **event** inside the VM Export Volume to schedule an export.
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

@@ -54,10 +54,6 @@ The node dashboard will indicate IPMI ***status*** and ***date/time of last time
 3.  Under the **IPMI** submenu on the left menu, click **Connect**.
 4.  A new browser tab is opened to the IPMI web interface login page.
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

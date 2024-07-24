@@ -124,10 +124,6 @@ Specify ***Frequency*** and **scheduling options**, (such as time, day of week, 
 
 1.  Click **Submit** to save the subscription.
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

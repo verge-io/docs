@@ -51,10 +51,6 @@ This setting determines the amount of time a security code is stored on a user's
 5.  The ***Email Address*** field becomes required when Two Factor Authentication is enabled. Verify that a valid, accessible email address is entered for the user as security codes (necessary for login) will be sent to the Email address specified.
 6.  Click **Submit** to save the change.
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

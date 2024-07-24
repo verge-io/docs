@@ -21,10 +21,6 @@ External IP addresses can be assigned to Internal Networks. When an external IP 
 11.  Navigate to the **Internal**. Network Dashboard
 12.  Click **Apply Rules** (to apply to the Internal Network).
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

@@ -96,10 +96,6 @@ Click **Send ->** to activate the drive LED .
 <br>
 **Additional drive replace/repair operations should NOT be initiated until this repair operation has fully completed** unless the additional drive resides: within the same node - OR - on another storage tier. {.is-warning}  
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

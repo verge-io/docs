@@ -91,10 +91,6 @@ A **drive must be offline before it can be deleted**; a drive can be taken offli
 4.  **Modify** fields as desired.
 5.  Click **Submit**.
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

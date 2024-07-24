@@ -30,10 +30,6 @@ To configure a secure tunnel connection for remote users to access a Verge.io sy
 IPSec functionality is provided for scenarios where VergeIO needs to interface with an IPSec device at another site (e.g. Cisco, PFSense, etc.)
 Information regarding creating a IPSec peer for a VPN tunnel to a third-party IPSec peer can be found at:  [**IPSEC Configuration**](/public/ProductGuide/IPSEC)
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

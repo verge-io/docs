@@ -59,10 +59,6 @@ Once the snapshot displays as "Local" it is now available to use; see restore in
     **Note:** To recover a deleted VM, this name can be left the same. However, if there currently is a VM with the same name (e.g. the original VM still exists,) the VM name will need to be changed before it can be recovered.
 6.  Click **Submit**.
 The UI will redirect to the VM’s dashboard page, where Power on/Clone/Edit/etc. operations can be performed as desired.
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

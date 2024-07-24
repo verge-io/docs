@@ -75,10 +75,6 @@ Rules govern incoming and outgoing traffic to the network:
  
  More information about working with network rules is available here: [**Network Rules**](../ProductGuide/networkrules) 
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

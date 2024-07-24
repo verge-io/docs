@@ -91,10 +91,6 @@ Login styling defines the appearance of the sign-in button on the VergeIO login 
 
 15. ***Show In A Menu:*** (checkbox) changes the display to show a drop down menu instead of a list. 
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

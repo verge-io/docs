@@ -27,10 +27,6 @@ A Service Provider can provide files (that are already uploaded to the vSAN) to 
 
 The process is near-instant as it is done with a branch command. The file is now available to the tenant within their own [**Media Images**](/public/ProductGuide/uploadingtovSAN)  section.
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

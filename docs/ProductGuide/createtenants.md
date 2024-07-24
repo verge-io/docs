@@ -133,10 +133,6 @@ Tenant recipes allow for creating an entire tenant from an existing, predefined 
 
 **To Start the New Tenant:**
 Upon creating a tenant, the UI will land at the tenant dashboard page. From this dashboard page, the tenant can be started by clicking **Power On** on the left menu.  
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

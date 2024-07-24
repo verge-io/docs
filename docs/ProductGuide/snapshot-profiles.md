@@ -115,10 +115,6 @@ The profile set here determines the schedule used for creating snapshots of the 
 3.  Click **Submit** at the bottom of the page.
 
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

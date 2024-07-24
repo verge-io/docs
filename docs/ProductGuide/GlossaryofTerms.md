@@ -164,10 +164,6 @@ A Volume is a directory structure/collection of files within a VergeIO NAS. A Ve
 -    Remote Volume - mounts a pre-existing (external) NFS or CIFS file system to make it accessible within a VergeIO system.
 -   Local Volume - stored within the VergeIO vSAN
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

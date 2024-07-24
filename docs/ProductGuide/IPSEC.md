@@ -198,10 +198,6 @@ Additional network configuration (e.g. firewall rules, routing) may be required 
 
 From the **VPN Network Dashboard**, click **Power On** on the left menu.
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

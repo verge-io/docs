@@ -12,10 +12,6 @@ Internal Networks can be created as Layer2 (with layer 3 functions to be handled
 
 Full Internal Network Instructions can be found here: [**Internal Networks**](/public/ProductGuide/internalnetworks)
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

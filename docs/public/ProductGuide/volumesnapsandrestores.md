@@ -98,10 +98,6 @@ Quiesced volume snapshots freeze file system I/O during the snapshot process. Th
 5.  The **Volume Name** (for the new volume instance) will default to ORIGINALVOLUMENAME\_restored; change name if desired.
 6.  Click the **Submit** button to create the new volume from snapshot.
 The new volume is brought online automatically. To view the new volume's dashboard, return to Volumes and double-click on the volume in the listing.
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

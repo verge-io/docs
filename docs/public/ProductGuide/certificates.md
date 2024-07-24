@@ -51,10 +51,6 @@ These instructions allow you to generate, register and configure a Let's Encrypt
 9.  If the key involves a chain of trust (i.e., certificate containing an ordered list of certificates, including the end-user certificate and intermediate CA certificates), paste the complete chain into the ***Chain Key*** field.
 10.  Click ***Submit*** to implement the new key.
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

@@ -41,10 +41,6 @@ In order to delete a tenant node, it must first be powered off.
 5.  **Select** the **node**.
 6.  Click **Delete** on the left menu.
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

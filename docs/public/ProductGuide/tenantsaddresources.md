@@ -87,10 +87,6 @@ For additional guidance in planning tenant node resources, contact Support. Inst
 4.  Change the ***Provisioned*** field to the total amount to be provisioned to the tenant. (For example, if the current amount is 50GB and you want to add 25GB, enter the new desired total: 75GB).
 5.  Click **Submit** to save the change.
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

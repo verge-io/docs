@@ -77,10 +77,6 @@ Volume Syncs allow for synchronizing data between two volumes. A volume sync can
 
 The dashboard for the new volume sync will appear. The sync job will be offline until either run manually or automatically started per the specified start profile. **To Start the sync manually select Start Sync from the left menu.**
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

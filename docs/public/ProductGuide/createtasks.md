@@ -113,10 +113,6 @@ This task will power on a VM every time the specified user logs into the Verge.i
 -   *Task Type*: **Power On**
 ![task-poweron.png](/public/userguide-sshots/task-poweron.png)
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

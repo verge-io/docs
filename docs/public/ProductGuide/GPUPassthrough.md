@@ -50,10 +50,6 @@ dateCreated: 2023-03-27T19:53:35.522Z
 9.  **Power on the VM**.
 10.  **Install appropriate guest driver**. Required guest driver(s) will depend on specific GPU hardware and guest OS version. Consult your GPU hardware documentation for guidance.
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

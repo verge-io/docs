@@ -55,10 +55,6 @@ Statistics tracking can be enabled for Accept, Drop, Reject and Translate rules.
 
 > Enabling the "Statistics" column will show whether or not statistics tracking is enabled for each rule. {.is-success}
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

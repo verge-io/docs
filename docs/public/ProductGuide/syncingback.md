@@ -41,10 +41,6 @@ Now a name is listed in the sync-back field (i.e. Sync-back for NAMEofSYNC) This
 5.  After options are configured as desired, click **Submit** to initiate the sync-back.
 The dashboard for the configured sync-back (Incoming Sync) appears. A log entry will indicate a started sync. When the sync-back retrieval is completed, another log entry is generated showing statistics. The completed sync'd back snapshot can be accessed by clicking the Received snapshots count-box on this page. Select the snapshot in the list to access menu options that allow for restoring the entire local system or individual VMs contained within the snapshot.
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

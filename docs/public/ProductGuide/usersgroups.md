@@ -103,10 +103,6 @@ A group is a collection of users. Groups can also contain other groups.  Adminis
 5.  Select users/groups from the displayed list. Hint: Multiple groups can be selected by holding down the Shift or Ctrl key.
 6.  Click **Submit** to apply the changes.
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

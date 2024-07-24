@@ -22,10 +22,6 @@ Select an appropriate external network in the *Default Gateway* field, when crea
 
 ![setdefgw.png](/public/userguide-sshots/setdefgw.png)
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

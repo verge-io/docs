@@ -86,10 +86,6 @@ Click the delete button. ![icon-trash-delete.png](/public/userguide-sshots/icon-
 
 <!--  background-color: #d8e7f2;-->
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

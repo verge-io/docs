@@ -51,10 +51,6 @@ Local volumes are file systems stored within VergeIO, consuming storage in the V
 19.  Files in the online volume can be viewed using the **Browse** option from the left menu.
 20.  To expose the local volume, create CIFS and/or NFS [**Share(s)**](/public/ProductGuide/nasshares).
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

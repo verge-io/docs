@@ -68,10 +68,6 @@ In order to allow a tenant to use a GPU device, the device must be added to one 
 
 GPU Guest configuration instructions are covered on [**GPU Passthrough**](/public/ProductGuide/GPUPassthrough) and [**NVIDIA vGPU**](/public/ProductGuide/nvidiavGPU) pages.
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

@@ -59,10 +59,6 @@ Determines the amount of time to retain the update snapshot (taken pre-update wh
 **Keep System Information Anonymous When Sending Usage Statistics**
 Excludes proprietary information, such as VM, tenant and network names from usage information that is sent to the Update Server.
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

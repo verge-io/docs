@@ -68,10 +68,6 @@ Connecting to a network that exists outside of your VergeIO environment (such as
 22.  Click **Submit** to finish creation of the new network.
 23.  The **dashboard** for the new network appears. Click **Power on** from the left menu to start the network.
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

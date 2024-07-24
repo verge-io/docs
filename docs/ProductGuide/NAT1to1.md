@@ -40,10 +40,6 @@ Before creating the translate rule to NAT an external IP to an internal IP:
 14.  Click **Apply Rules** on the left menu to put the new rule into effect.
 
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

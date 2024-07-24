@@ -15,10 +15,6 @@ Data is accessed using the **VMware agent** for direct connection (independent o
 <br>
 - [**From a NAS Volume**](/public/ProductGuide/importfromNAS)
 Data is pulled from **CIFS or NFS share** accessing existing VM data storage.
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

@@ -83,10 +83,6 @@ Dashboards, providing at-a-glance information (and quick-link access to more det
   ![](/public/userguide-sshots/vmdashboard.png)
   
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

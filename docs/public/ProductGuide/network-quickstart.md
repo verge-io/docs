@@ -37,10 +37,6 @@ dateCreated: 2023-03-29T21:11:29.419Z
 - ### [Create an Internal Layer2 Network](../ProductGuide/internal-layer2)
 
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

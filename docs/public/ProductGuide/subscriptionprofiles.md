@@ -14,10 +14,6 @@ A comprehensive array of subscription profiles is included, by default, with ins
 
 Available Subscription Profiles appear for selection in the dropdown fields when creating a new Subscription.
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

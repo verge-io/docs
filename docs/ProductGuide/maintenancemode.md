@@ -74,10 +74,6 @@ Node Status is displayed at the top of the node dashboard. While a node is in th
 
 5.  If necessary,  **power on any non-migratable VMs or tenant nodes that were shutdown for maintenance**.
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

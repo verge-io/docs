@@ -14,10 +14,6 @@ The System Event Log (SEL) contains events from the hardware IPMI interface. Sin
 3.  Click **Clear SEL** on the left menu.
 4.  Click **Yes** to confirm.
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

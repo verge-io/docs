@@ -37,10 +37,6 @@ Create a new IP Address entry, specifying the MAC address from the VM Nic and th
 7.  **Optionally**, a ***Description*** can be entered to record additional administrative information.
 8.  Click **Submit**.
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">

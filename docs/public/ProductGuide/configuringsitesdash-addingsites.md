@@ -78,10 +78,6 @@ Each site that is added to the Sites Dashboard can be included with options:
 
 2.  Click **Submit** (bottom of page) to finish adding the site.
 
-<br>   
-
-
-
 <br>
 
 <div style="text-align:center; margin-bottom:5px">
