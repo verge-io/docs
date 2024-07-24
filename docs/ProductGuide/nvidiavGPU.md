@@ -83,4 +83,4 @@ Selected GPU appears in the first field (PCI Device).
 
 <br>
 
-[Get vergeOS license keys](https://www.verge.io/test-drive){target="_blank"}{ .md-button }
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

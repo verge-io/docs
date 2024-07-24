@@ -68,4 +68,4 @@ Volume snapshots provide for quiesced backup/restore of individual NAS volumes. 
 
 <br>
 
-[Get vergeOS license keys](https://www.verge.io/test-drive){target="_blank"}{ .md-button }
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

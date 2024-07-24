@@ -64,4 +64,4 @@ Shares can be created to provide NFS and/or CIFS access to a NAS Volume.
 
 <br>
 
-[Get vergeOS license keys](https://www.verge.io/test-drive){target="_blank"}{ .md-button }
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

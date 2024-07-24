@@ -79,4 +79,4 @@ The dashboard for the new volume sync will appear. The sync job will be offline 
 
 <br>
 
-[Get vergeOS license keys](https://www.verge.io/test-drive){target="_blank"}{ .md-button }
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

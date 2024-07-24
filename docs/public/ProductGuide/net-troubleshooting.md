@@ -186,4 +186,4 @@ For Additional Troubleshooting help, contact the VergeIO Support Team at: Suppor
 
 <br>
 
-[Get vergeOS license keys](https://www.verge.io/test-drive){target="_blank"}{ .md-button }
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

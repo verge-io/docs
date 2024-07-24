@@ -126,4 +126,4 @@ Specify ***Frequency*** and **scheduling options**, (such as time, day of week, 
 
 <br>
 
-[Get vergeOS license keys](https://www.verge.io/test-drive){target="_blank"}{ .md-button }
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

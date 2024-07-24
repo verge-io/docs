@@ -103,4 +103,4 @@ This option allows for using a snapshot to restore to a new VM instance, rather 
 
 <br>
 
-[Get vergeOS license keys](https://www.verge.io/test-drive){target="_blank"}{ .md-button }
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

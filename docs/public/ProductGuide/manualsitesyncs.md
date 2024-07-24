@@ -29,4 +29,4 @@ Typically, site syncs will be handled with an Auto Sync Configuration, which def
 
 <br>
 
-[Get vergeOS license keys](https://www.verge.io/test-drive){target="_blank"}{ .md-button }
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

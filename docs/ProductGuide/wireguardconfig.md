@@ -90,4 +90,4 @@ System-generated network rules (e.g. NAT, firewall, routes) are not automaticall
 
 <br>
 
-[Get vergeOS license keys](https://www.verge.io/test-drive){target="_blank"}{ .md-button }
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

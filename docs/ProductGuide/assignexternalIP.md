@@ -23,4 +23,4 @@ External IP addresses can be assigned to Internal Networks. When an external IP 
 
 <br>
 
-[Get vergeOS license keys](https://www.verge.io/test-drive){target="_blank"}{ .md-button }
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

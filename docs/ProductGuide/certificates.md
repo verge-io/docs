@@ -45,4 +45,4 @@ These instructions allow you to generate, register and configure a Let's Encrypt
 
 <br>
 
-[Get vergeOS license keys](https://www.verge.io/test-drive){target="_blank"}{ .md-button }
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

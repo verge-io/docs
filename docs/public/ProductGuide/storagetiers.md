@@ -55,4 +55,4 @@ HDD (spinning disk) - Intended for cold storage needs, slower performance on rea
 
 <br>
 
-[Get vergeOS license keys](https://www.verge.io/test-drive){target="_blank"}{ .md-button }
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

@@ -93,4 +93,4 @@ Login styling defines the appearance of the sign-in button on the VergeIO login 
 
 <br>
 
-[Get vergeOS license keys](https://www.verge.io/test-drive){target="_blank"}{ .md-button }
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

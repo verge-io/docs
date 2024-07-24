@@ -8,5 +8,5 @@ Available Subscription Profiles appear for selection in the dropdown fields when
 
 <br>
 
-[Get vergeOS license keys](https://www.verge.io/test-drive){target="_blank"}{ .md-button }
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }
 

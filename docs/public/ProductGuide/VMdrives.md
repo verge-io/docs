@@ -101,4 +101,4 @@ A **drive must be offline before it can be deleted**; a drive can be taken offli
 
 <br>
 
-[Get vergeOS license keys](https://www.verge.io/test-drive){target="_blank"}{ .md-button }
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

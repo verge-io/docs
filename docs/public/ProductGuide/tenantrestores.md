@@ -66,4 +66,4 @@ The snapshot will now appear with type "Tenant Snapshot" on the provider's syste
 
 <br>
 
-[Get vergeOS license keys](https://www.verge.io/test-drive){target="_blank"}{ .md-button }
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

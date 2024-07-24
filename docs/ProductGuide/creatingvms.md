@@ -95,4 +95,4 @@ A new VM instance is launched as a copy of an existing VM. A clone, by default, 
 
 <br>
 
-[Get vergeOS license keys](https://www.verge.io/test-drive){target="_blank"}{ .md-button }
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

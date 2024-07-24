@@ -53,4 +53,4 @@ Local volumes are file systems stored within VergeIO, consuming storage in the V
 
 <br>
 
-[Get vergeOS license keys](https://www.verge.io/test-drive){target="_blank"}{ .md-button }
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

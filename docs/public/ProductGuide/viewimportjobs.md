@@ -41,4 +41,4 @@ dateCreated: 2023-04-09T14:09:02.853Z
 
 <br>
 
-[Get vergeOS license keys](https://www.verge.io/test-drive){target="_blank"}{ .md-button }
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

@@ -89,4 +89,4 @@ For additional guidance in planning tenant node resources, contact Support. Inst
 
 <br>
 
-[Get vergeOS license keys](https://www.verge.io/test-drive){target="_blank"}{ .md-button }
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

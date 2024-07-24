@@ -72,4 +72,4 @@ See [**NAS Remote Volumes**](/public/ProductGuide/nasremotevolumes) for instruct
 
 <br>
 
-[Get vergeOS license keys](https://www.verge.io/test-drive){target="_blank"}{ .md-button }
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

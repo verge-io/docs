@@ -17,4 +17,4 @@ A physical GPU installed on the host node is dissected into multiple virtual GPU
 
 <br>
 
-[Get vergeOS license keys](https://www.verge.io/test-drive){target="_blank"}{ .md-button }
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

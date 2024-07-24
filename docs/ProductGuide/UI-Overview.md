@@ -77,4 +77,4 @@ Dashboards, providing at-a-glance information (and quick-link access to more det
 
 <br>
 
-[Get vergeOS license keys](https://www.verge.io/test-drive){target="_blank"}{ .md-button }
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

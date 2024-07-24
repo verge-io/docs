@@ -84,4 +84,4 @@ Node Status is displayed at the top of the node dashboard. While a node is in th
 
 <br>
 
-[Get vergeOS license keys](https://www.verge.io/test-drive){target="_blank"}{ .md-button }
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

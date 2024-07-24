@@ -25,4 +25,4 @@ Data is accessed using the **VMware agent** for direct connection (independent o
 Data is pulled from **CIFS or NFS share** accessing existing VM data storage.
 <br>
 
-[Get vergeOS license keys](https://www.verge.io/test-drive){target="_blank"}{ .md-button }
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

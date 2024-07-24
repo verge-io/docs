@@ -178,4 +178,4 @@ Rules are processed from the top of list to the bottom. There are situations whe
 
 <br>
 
-[Get vergeOS license keys](https://www.verge.io/test-drive){target="_blank"}{ .md-button }
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

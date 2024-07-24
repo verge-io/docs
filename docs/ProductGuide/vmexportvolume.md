@@ -33,6 +33,6 @@ Within the VergeIO volume configuration, there is an option to create a volume t
 
 <br>
 
-[Get vergeOS license keys](https://www.verge.io/test-drive){target="_blank"}{ .md-button }
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }
 
 

@@ -142,4 +142,4 @@ Media Images are files uploaded to the VergeIO vSAN to make available inside the
 A Volume is a directory structure/collection of files within a VergeIO NAS. A VergeIO NAS can contain one or more Volumes, with each individual Volume allowing different settings for aspects such as security, snapshot, tiering, max size, Anti-Virus settings, shares, etc.
 
 <br>
-[Get vergeOS license keys](https://www.verge.io/test-drive){ .md-button }
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

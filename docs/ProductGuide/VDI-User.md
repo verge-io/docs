@@ -74,4 +74,4 @@ click the My Virtual Machines breadcrumb (near the top left) to return to the VD
 
 <br>
 
-[Get vergeOS license keys](https://www.verge.io/test-drive){target="_blank"}{ .md-button }
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

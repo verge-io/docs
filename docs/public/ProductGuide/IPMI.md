@@ -64,4 +64,4 @@ The node dashboard will indicate IPMI ***status*** and ***date/time of last time
 
 <br>
 
-[Get vergeOS license keys](https://www.verge.io/test-drive){target="_blank"}{ .md-button }
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

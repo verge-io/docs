@@ -88,5 +88,5 @@ Click the delete button. ![icon-trash-delete.png](/public/userguide-sshots/icon-
 
 <br>
 
-[Get vergeOS license keys](https://www.verge.io/test-drive){target="_blank"}{ .md-button }
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }
 

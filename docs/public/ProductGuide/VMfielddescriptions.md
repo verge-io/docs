@@ -208,4 +208,4 @@ By default, when a reboot is initiated from the guest OS, the system will perfor
 
 <br>
 
-[Get vergeOS license keys](https://www.verge.io/test-drive){target="_blank"}{ .md-button }
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

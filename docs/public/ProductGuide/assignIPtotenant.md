@@ -34,4 +34,4 @@ External IP addresses can be assigned to tenants. When an external IP is assigne
 
 <br>
 
-[Get vergeOS license keys](https://www.verge.io/test-drive){target="_blank"}{ .md-button }
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

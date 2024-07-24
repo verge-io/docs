@@ -27,4 +27,4 @@ The Preferred Tier setting will establish a "first choice" for the storage tier 
 
 <br>
 
-[Get vergeOS license keys](https://www.verge.io/test-drive){target="_blank"}{ .md-button }
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

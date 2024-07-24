@@ -17,4 +17,4 @@ VDI functionality allows for hosting virtual desktops and provides an individual
 
 <br>
 
-[Get vergeOS license keys](https://www.verge.io/test-drive){target="_blank"}{ .md-button }
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

@@ -100,4 +100,4 @@ Quiesced volume snapshots freeze file system I/O during the snapshot process. Th
 The new volume is brought online automatically. To view the new volume's dashboard, return to Volumes and double-click on the volume in the listing.
 <br>
 
-[Get vergeOS license keys](https://www.verge.io/test-drive){target="_blank"}{ .md-button }
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

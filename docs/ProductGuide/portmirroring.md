@@ -29,4 +29,4 @@ Port mirroring replicates a network's traffic to a VM NIC, allowing packet analy
 
 <br>
 
-[Get vergeOS license keys](https://www.verge.io/test-drive){target="_blank"}{ .md-button }
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

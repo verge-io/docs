@@ -32,4 +32,4 @@ Information regarding creating a IPSec peer for a VPN tunnel to a third-party IP
 
 <br>
 
-[Get vergeOS license keys](https://www.verge.io/test-drive){target="_blank"}{ .md-button }
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

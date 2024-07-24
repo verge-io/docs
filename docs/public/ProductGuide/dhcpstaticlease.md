@@ -47,4 +47,4 @@ Create a new IP Address entry, specifying the MAC address from the VM Nic and th
 
 <br>
 
-[Get vergeOS license keys](https://www.verge.io/test-drive){target="_blank"}{ .md-button }
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

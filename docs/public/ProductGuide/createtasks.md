@@ -115,4 +115,4 @@ This task will power on a VM every time the specified user logs into the Verge.i
 
 <br>
 
-[Get vergeOS license keys](https://www.verge.io/test-drive){target="_blank"}{ .md-button }
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

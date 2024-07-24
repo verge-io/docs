@@ -143,4 +143,4 @@ Tenant recipes allow for creating an entire tenant from an existing, predefined 
 Upon creating a tenant, the UI will land at the tenant dashboard page. From this dashboard page, the tenant can be started by clicking **Power On** on the left menu.  
 <br>
 
-[Get vergeOS license keys](https://www.verge.io/test-drive){target="_blank"}{ .md-button }
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

@@ -32,4 +32,4 @@ When all references are removed, the ISO file can be deleted from the vSAN using
 
 <br>
 
-[Get vergeOS license keys](https://www.verge.io/test-drive){target="_blank"}{ .md-button }
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

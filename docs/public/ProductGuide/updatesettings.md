@@ -61,4 +61,4 @@ Excludes proprietary information, such as VM, tenant and network names from usag
 
 <br>
 
-[Get vergeOS license keys](https://www.verge.io/test-drive){target="_blank"}{ .md-button }
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

@@ -97,4 +97,4 @@ A group is a collection of users. Groups can also contain other groups.  Adminis
 
 <br>
 
-[Get vergeOS license keys](https://www.verge.io/test-drive){target="_blank"}{ .md-button }
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

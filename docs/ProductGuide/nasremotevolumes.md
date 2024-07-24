@@ -53,4 +53,4 @@ Remote volumes are external file systems mounted to the VergeIO System via stand
 
 <br>
 
-[Get vergeOS license keys](https://www.verge.io/test-drive){target="_blank"}{ .md-button }
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

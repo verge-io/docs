@@ -62,4 +62,4 @@ Connecting to a network that exists outside of your VergeIO environment (such as
 
 <br>
 
-[Get vergeOS license keys](https://www.verge.io/test-drive){target="_blank"}{ .md-button }
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

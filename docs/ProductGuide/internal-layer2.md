@@ -14,4 +14,4 @@ Full Internal Network Instructions can be found here: [**Internal Networks**](/p
 
 <br>
 
-[Get vergeOS license keys](https://www.verge.io/test-drive){target="_blank"}{ .md-button }
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

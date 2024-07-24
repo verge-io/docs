@@ -124,4 +124,4 @@ This example covers setup for a single, remote access peer (a Windows client), a
    
 <br>
 
-[Get vergeOS license keys](https://www.verge.io/test-drive){target="_blank"}{ .md-button }
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }
