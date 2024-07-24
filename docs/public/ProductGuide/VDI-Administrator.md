@@ -11,8 +11,6 @@ dateCreated: 2023-04-10T19:52:01.777Z
 # VDI Instructions for the Administrator
 <br>
 
-<br>
-
 ## User type=VDI
 
 A user of type=VDI accesses only the VDI portion of the user interface. When a VDI user logs in, the VDI Dashboard appear displaying all of the VMS to which the user has access.
