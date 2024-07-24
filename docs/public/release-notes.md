@@ -953,5 +953,5 @@ VergeOS Atria introduces the feature of Virtual Machine Exporting, for those wit
 <br>
 <br>
 <div style="text-align:center; margin-bottom:5px">
-  <a href="https://www.verge.io/test-drive#Demo-Section"><button class="button-cta">🚗 Take a Test Drive Today!</button></a>
+  <a href="https://www.verge.io/test-drive#Demo-Section"><button class="button-cta">Request Trial</button></a>
 </div>

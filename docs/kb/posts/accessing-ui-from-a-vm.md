@@ -56,10 +56,9 @@ To access the VergeIO UI from a VM running inside the platform, follow these ste
 From within the VM, use a web browser to navigate to the IP address of the internal network instead of the standard address. For example, if the internal network has an IP address of 192.168.0.1, use this address to access the VergeIO platform.
 
 
-> Need more Help? Email <a href="mailto:support@verge.io?subject=Support Inquiry" target="_blank" rel="noopener noreferrer">support@verge.io</a> or call us at <a href="tel:+855-855-8300">(855) 855-8300</a>
-{.is-info}
+
 
 <br>
 <div style="text-align: center">
-<a href="https://www.verge.io/test-drive"><button class="button-orange">🚗 Take a Test Drive Today!</button></a>
+<a href="https://www.verge.io/test-drive" target="_blank"><button class="button-orange">Request Trial</button></a>
 </div>

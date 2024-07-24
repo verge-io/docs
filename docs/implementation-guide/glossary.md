@@ -68,4 +68,4 @@ A Storage-only Cluster is a set of nodes that are added to VergeOS with the sole
     
 
 <br>
-[🚗 Take a Test Drive Today!](https://www.verge.io/test-drive){ .md-button }
+[Request Trial](https://www.verge.io/test-drive){ .md-button }

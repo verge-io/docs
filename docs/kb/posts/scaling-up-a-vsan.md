@@ -40,12 +40,7 @@ Upon completion, the screen will refresh and the drives will disappear. Go back 
 Repeat the steps for each node as necessary.
 
 <br>
-
-> Need more Help? Email <a href="mailto:support@verge.io?subject=Support Inquiry" target="_blank" rel="noopener noreferrer">support@verge.io</a> or call us at <a href="tel:+855-855-8300">(855) 855-8300</a>
-{.is-info}
-
-<br>
 <div style="text-align: center">
-  <a href="https://wiki.verge.io/en/public/kb"><button class="button-grey"> <b>↺</b> Back to Knowledgebase</button></a>
-<a href="https://www.verge.io/test-drive"><button class="button-orange">🚗 Take a Test Drive Today!</button></a>
+  
+<a href="https://www.verge.io/test-drive" target="_blank"><button class="button-orange">Request Trial</button></a>
 </div>

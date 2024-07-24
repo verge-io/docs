@@ -77,4 +77,3 @@ If issues arise during installation:
 - Press `Esc` to cancel and get a command prompt
 - Type `yb-install` to resume or `yb-install --restart` to start over
 
-Need more help? Email [support@verge.io](mailto:support@verge.io) or call (855) 855-8300.

@@ -19,12 +19,7 @@ Users can set a preferred tier when creating or modifying a virtual machine (VM)
 - When setting a preferred tier to a value that doesn't exist, for example setting it to Tier 3 in a system with only Tier 1 and Tier 2 storage available, that does not have a lower tier of storage available, the system will next attempt to pick the next lower (faster) tier.  In this example, since there is no Tier 3 storage available, the system will pick Tier 2 instead.
 
 <br>
-
-> Need more Help? Email <a href="mailto:support@verge.io?subject=Support Inquiry" target="_blank" rel="noopener noreferrer">support@verge.io</a> or call us at <a href="tel:+855-855-8300">(855) 855-8300</a>
-{.is-info}
-
-<br>
 <div style="text-align: center">
-  <a href="https://wiki.verge.io/en/public/kb"><button class="button-grey"> <b>↺</b> Back to Knowledgebase</button></a>
-<a href="https://www.verge.io/test-drive"><button class="button-orange">🚗 Take a Test Drive Today!</button></a>
+  
+<a href="https://www.verge.io/test-drive" target="_blank"><button class="button-orange">Request Trial</button></a>
 </div>

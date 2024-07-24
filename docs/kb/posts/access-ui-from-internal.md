@@ -30,11 +30,6 @@ Sometimes, you may need to access the User Interface (UI) from a virtual machine
 5. **Access the UI from the VM**: Open a web browser within the VM and navigate to the IP address of the network router, for example: `https://192.168.4.1`.
 
 <br>
-
-> Need more Help? Email <a href="mailto:support@verge.io?subject=Support Inquiry" target="_blank" rel="noopener noreferrer">support@verge.io</a> or call us at <a href="tel:+855-855-8300">(855) 855-8300</a>
-{.is-info}
-
-<br>
 <div style="text-align: center">
-<a href="https://www.verge.io/test-drive"><button class="button-orange">🚗 Take a Test Drive Today!</button></a>
+<a href="https://www.verge.io/test-drive" target="_blank"><button class="button-orange">Request Trial</button></a>
 </div>

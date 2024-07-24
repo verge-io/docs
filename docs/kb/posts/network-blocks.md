@@ -33,11 +33,7 @@ Network blocks are a handy way to assign multiple IP addresses to a tenant or ne
 1. Power on the network using "Power On" in the left menu.
 1. Assign any desired virtual machines and test connectivity.
 <br>
-
-> Need more Help? Email <a href="mailto:support@verge.io?subject=Support Inquiry" target="_blank" rel="noopener noreferrer">support@verge.io</a> or call us at <a href="tel:+855-855-8300">(855) 855-8300</a>{.is-info}
-
-<br>
 <div style="text-align: center">
   <a href="https://wiki.verge.io/public/kb"><button class="button-25" style="appearance: button; background-color: #64B5f6; border-radius: 8px; color: #ffffff; padding: 10px 21px;">🢀  Back to Knowledgebase</button></a>   
-<a href="https://www.verge.io/test-drive"><button class="button-25" style="appearance: button; background-color: #D9693B; border-radius: 8px; color: #ffffff; padding: 10px 21px;">🚗 Take a Test Drive Today!</button></a>
+<a href="https://www.verge.io/test-drive"><button class="button-25" style="appearance: button; background-color: #D9693B; border-radius: 8px; color: #ffffff; padding: 10px 21px;">Request Trial</button></a>
 </div>

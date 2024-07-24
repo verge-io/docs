@@ -52,6 +52,7 @@ plugins:
 markdown_extensions:
   - sane_lists
   - admonition
+  - attr_list
   - pymdownx.details
   - pymdownx.superfences
   - md_in_html
@@ -98,9 +99,13 @@ extra:
       link: https://www.linkedin.com/company/verge-io/
     - icon: fontawesome/brands/youtube
       link: https://www.youtube.com/channel/UCnFu28s0GBVi18j7Ez3MXRg
+    - icon: fontawesome/solid/paper-plane
+      link: mailto:support@verge.io
+    - icon: fontawesome/solid/phone
+      link: tel:855-855-8300
   generator: false
 copyright: |
-  &copy; 2024 <a href="https://verge.io" target="_blank" rel="noopener"> Verge.io</a>
+  &copy; 2024 <a href="https://verge.io" target="_blank" rel="noopener"> Verge.io</a> | Need more help? Email <a href="mailto:support@verge.io">support@verge.io</a> or call us at <a href="tel:855-855-8300"> 855-855-8300 </a>
 
 nav:
   - Home:

@@ -30,11 +30,7 @@ dateCreated: 2022-09-01T17:00:25.460Z
 - Use virtIO network drivers **whenever possible** as they normally will provide the best performance. The latest stable virtIO drivers are available for download at [https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso](https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso)
 
 <br>
-
-> Need more Help? Email <a href="mailto:support@verge.io?subject=Support Inquiry" target="_blank" rel="noopener noreferrer">support@verge.io</a> or call us at <a href="tel:+855-855-8300">(855) 855-8300</a>{.is-info}
-
-<br>
 <div style="text-align: center">
-  <a href="https://wiki.verge.io/en/public/kb"><button class="button-grey"> <b>↺</b> Back to Knowledgebase</button></a>
-<a href="https://www.verge.io/test-drive"><button class="button-orange">🚗 Take a Test Drive Today!</button></a>
+  
+<a href="https://www.verge.io/test-drive" target="_blank"><button class="button-orange">Request Trial</button></a>
 </div>

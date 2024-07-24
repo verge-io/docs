@@ -31,6 +31,6 @@ A typical use case for a tenant recipe would be for an administrator that has to
 <br>
 <br>
 <div style="text-align:center; margin-bottom:5px">
-  <a href="https://www.verge.io/test-drive#Demo-Section"><button class="button-cta">🚗 Take a Test Drive Today!</button></a>
+  <a href="https://www.verge.io/test-drive#Demo-Section"><button class="button-cta">Request Trial</button></a>
 </div>
 

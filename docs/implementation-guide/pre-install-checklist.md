@@ -35,4 +35,4 @@
 
 
 <br>
-[🚗 Take a Test Drive Today!](https://www.verge.io/test-drive){ .md-button .md-button--primary }
+[Request Trial](https://www.verge.io/test-drive){ .md-button .md-button--primary }
