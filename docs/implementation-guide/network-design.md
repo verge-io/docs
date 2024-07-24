@@ -36,7 +36,6 @@ External Networks connect outside infrastructure to a VergeIO system. External n
 !!! info "The External network can be shared with the Fabric network port as long as it is in a different VLan(s)"
 
 
-  
 <br>
 
 ### Management Networks

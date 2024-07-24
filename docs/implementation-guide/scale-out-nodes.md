@@ -1,4 +1,4 @@
-# VergeOS Scale-out Node Installation Guide
+# Scale-out Node Installation Guide
 
 
 ## Introduction

@@ -1,4 +1,4 @@
-# VergeOS Storage Node Installation Guide
+# Storage Node Installation Guide
 
 
 ## Introduction

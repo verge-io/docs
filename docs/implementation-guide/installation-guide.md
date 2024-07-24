@@ -1,4 +1,4 @@
-# VergeOS Installation Guide
+# Installation Guide
 
 
 ## Introduction
