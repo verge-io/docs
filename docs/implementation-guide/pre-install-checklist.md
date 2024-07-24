@@ -30,9 +30,4 @@
 - [ ] Correct Gateway IP tested/pingable
 
 <br>
-
-!!! note "Need more Help? Email <a href="mailto:support@verge.io?subject=Support Inquiry" target="_blank" rel="noopener noreferrer">support@verge.io</a> or call us at <a href="tel:+855-855-8300">(855) 855-8300</a>"
-
-
-<br>
 [Request Trial](https://www.verge.io/test-drive){ .md-button .md-button--primary }

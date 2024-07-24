@@ -136,9 +136,4 @@ These are the interfaces that you may see in a network container.
   Loopback interface.
 <br>
 
-
-
-
-<br>
-
 [Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }
