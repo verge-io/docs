@@ -101,7 +101,4 @@ If a VM is assigned an ***Owner User***, the VM will automatically be deleted i
 
 <br>
 
-<div style="text-align:center; margin-bottom:5px">
-
-  <a href="https://www.verge.io/test-drive#Demo-Section"><button class="button-cta">Request Trial</button></a>
-</div>
+[Get vergeOS license keys](https://www.verge.io/test-drive){target="_blank"}{ .md-button }

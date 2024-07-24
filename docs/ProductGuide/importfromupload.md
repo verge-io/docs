@@ -45,7 +45,4 @@ Importing via Media Images is a convenient way to import a single VM at a time. 
 
 <br>
 
-<div style="text-align:center; margin-bottom:5px">
-
-  <a href="https://www.verge.io/test-drive#Demo-Section"><button class="button-cta">Request Trial</button></a>
-</div>
+[Get vergeOS license keys](https://www.verge.io/test-drive){target="_blank"}{ .md-button }

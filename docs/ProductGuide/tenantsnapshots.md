@@ -61,7 +61,4 @@ Once the snapshot displays as "Local" it is now available to use; see restore in
 The UI will redirect to the VM’s dashboard page, where Power on/Clone/Edit/etc. operations can be performed as desired.
 <br>
 
-<div style="text-align:center; margin-bottom:5px">
-
-  <a href="https://www.verge.io/test-drive#Demo-Section"><button class="button-cta">Request Trial</button></a>
-</div>
+[Get vergeOS license keys](https://www.verge.io/test-drive){target="_blank"}{ .md-button }
