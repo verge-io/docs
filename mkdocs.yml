@@ -130,7 +130,7 @@ nav:
         - Authorization Sources: ProductGuide/AuthSources-General.md
         - Azure AD: ProductGuide/AzureADAuth.md
         - Google: ProductGuide/GoogleAuth.md
-      - Two Factor Authentication: ProductGuide/2factorEmailAuth.md
+        - Multi-Factor Authentication: ProductGuide/2factorEmailAuth.md
       - Certificates: ProductGuide/certificates.md
       - GPU:
         - Passthrough: ProductGuide/GPUPassthrough.md
@@ -197,7 +197,7 @@ nav:
         - WireGuard Examples: ProductGuide/wireguard-examples.md
       - Troubleshooting:
         - Network Troubleshooting: ProductGuide/net-troubleshooting.md
-    - DR & Backup:
+    - Backup & DR:
       - Site Syncs:
         - Configuration: ProductGuide/sync-configuration.md
         - Monitoring: ProductGuide/monitoringsitesyncs.md
