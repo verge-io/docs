@@ -20,9 +20,9 @@ You can reach the log viewer by navigating from the Main Menu > Machines > Virtu
 
 From the Log view, search through (or filter the results) under the Message section. Several status messages will indicate why the VM stopped running.  The following are the most common and a brief explanation of each:
 - Message: VM action 'kill' sent.
-    This indicates that a VergeIO user issued a Kill Power command from the VergeIO interface. The log will indicate the user under the Source column
+    This indicates that a VeregOS user issued a Kill Power command from the VeregOS interface. The log will indicate the user under the Source column
     In this scenario, consult with the system user to determine the reason for issuing this command.
-- Message: VM action 'poweroff' sent.  This indicates that a VergeIO user issued a graceful Power Off command from the VergeIO interface.  This command successfully interacted with the Guest OS ACPI to gracefully stop the VM. The log will indicate the user under the Source column.
+- Message: VM action 'poweroff' sent.  This indicates that a VeregOS user issued a graceful Power Off command from the VeregOS interface.  This command successfully interacted with the Guest OS ACPI to gracefully stop the VM. The log will indicate the user under the Source column.
     In this scenario, consult with the system user to determine the reason for issuing this command.
 - Message: VM has shutdown.  This indicates that the shutdown command was issued from inside the guest operating system directly.
     In this scenario, consult with the guest operating system logs to determine the reason for the shutdown command.

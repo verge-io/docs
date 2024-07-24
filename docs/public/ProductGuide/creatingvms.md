@@ -17,7 +17,7 @@ A blank custom VM is created without drives or NICs. (Drives and NICs can be add
 <br>
 
 -   [**Create a VM from a Recipe**](#create-a-vm-from-a-recipe)
-The VM is created using a predefined recipe; recipes are VM image templates that allow quick launching of new VMs with a preloaded operating systems, applications, configuration info., etc. Recipes allow for very quick and convenient launching of new instances of machines with various preloaded software and configurations. Recipes can contain questions to be asked at the time of creation to customize each instance (such as drive sizes or RAM amount). Some service-VM recipes are included in your installation; your Service Provider may also provide recipes. Every VergeIO Cloud can create and use their own local recipes as well.
+The VM is created using a predefined recipe; recipes are VM image templates that allow quick launching of new VMs with a preloaded operating systems, applications, configuration info., etc. Recipes allow for very quick and convenient launching of new instances of machines with various preloaded software and configurations. Recipes can contain questions to be asked at the time of creation to customize each instance (such as drive sizes or RAM amount). Some service-VM recipes are included in your installation; your Service Provider may also provide recipes. Every VeregOS Cloud can create and use their own local recipes as well.
 <br>
 -   [**Import**](/public/ProductGuide/importingVMs)
 VM is created from a standard format configuration file (e.g. OVF, VMX, XML, etc) with associated drives created from disk image files, such as \*.VMDK. See: [**VM Import Methods**](/public/ProductGuide/importingVMs)
@@ -61,7 +61,7 @@ A new VM instance is launched as a copy of an existing VM. A clone, by default, 
 
 <a name="recipe"></a>
 ## Create a VM from a Recipe
-> Recipe files may be available for download from your VergeIO Service Provider's Repository.  Each Tenant is also able to create and use its own VM recipes.{.is-success}
+> Recipe files may be available for download from your VeregOS Service Provider's Repository.  Each Tenant is also able to create and use its own VM recipes.{.is-success}
 
 1.  From the Cloud Dashboard, select **Machines** from the menu or click the Machines quick-link on the dashboard.
 2.  Click **Virtual Machines** from the menu or click the Virtual Machines quick-link on the dashboard.
@@ -89,7 +89,7 @@ A new VM instance is launched as a copy of an existing VM. A clone, by default, 
 7.  The ***VM Name*** will default to the original VM Name + "clone"; however, **the name can be changed** as desired.
 8.  By default, the new clone instance will employ unique MAC address(es) that are different from the source VM (for all NIC devices). **"Preserve MAC Addresses"** option can be enabled in order to copy MAC addresses from the original VM to the new clone instance; however, this option should be used with caution as NICs with duplicate addresses running on the same network will cause problems.
 9.  ***Preserve Device UUIDs*** can be checked to create the clone with same UUIDs as the original. VMs running with the same UUIDs may cause problems. Use this option only if required.
-10.  ***Quiesce File System*** provides for an application-consistent clone of a VM that is in a running state. **(VergeIO Guest Agent must be installed and running on the VM.)**  
+10.  ***Quiesce File System*** provides for an application-consistent clone of a VM that is in a running state. **(VeregOS Guest Agent must be installed and running on the VM.)**  
     When the option is selected: if the source VM is running the file system is put into a state suitable for backups (i.e. notify VSS-aware applications, freeze filesystem. flush buffers, etc.)
 11.  Click **Submit.**
 12.  A message should appear indicating the VM was created successfully and stating drives and NICS can now be created for the VM. Click **Ok** to see the Dashboard page for the VM.

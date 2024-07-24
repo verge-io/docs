@@ -12,11 +12,11 @@ editor: markdown
 dateCreated: 2022-08-10T18:33:28.938Z
 ---
 
-## How To Identify a Failed Disk In Your VergeIO Environment
+## How To Identify a Failed Disk In Your VeregOS Environment
 
-There is a diagnostic function in the VergeIO platform to turn on and off a disk drive's LED light for easy identification.
+There is a diagnostic function in the VeregOS platform to turn on and off a disk drive's LED light for easy identification.
 To access this function follow these steps:
-1. Login into the VergeIO platform and navigate to the dashboard of the node that you'd like to identify a disk drive for removal.
+1. Login into the VeregOS platform and navigate to the dashboard of the node that you'd like to identify a disk drive for removal.
 1. Once at the Node dashboard, on the left-hand column select the function labeled Diagnostics
 1. In the Diagnostics page, change the Query to LED Control (Drive)
 1. In the LED Control (Drive) details section, modify the Path to the drive that needs to be replaced.  (If in doubt, consult recent system alerts and logs for previous errors/warnings) Example: /dev/sdb

@@ -1,8 +1,8 @@
 ## Main Items
-- [ ] Site Survey completed and approved by VergeIO
+- [ ] Site Survey completed and approved by VeregOS
 - [ ] ISO downloaded and installed on a USB drive
 - [ ] Encryption Key USB installed and ready (if enabling at-rest encryption)
-- [ ] Nodes powered up with ISO booted to VergeIO Install screen
+- [ ] Nodes powered up with ISO booted to VeregOS Install screen
 - [ ] Crash cart ready if applicable
 - [ ] Remote screen share capability or remote IPMI access (WAN or VPN)
 

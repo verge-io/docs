@@ -1,6 +1,6 @@
 ---
 title: Product Guide - Wireguard
-description: Basic Configuration information for integrated Wireguard functionality; Wireguard allows secure tunnels between VergeIO systems and for secure remote access 
+description: Basic Configuration information for integrated Wireguard functionality; Wireguard allows secure tunnels between VeregOS systems and for secure remote access 
 published: true
 date: 2023-06-27T19:23:31.975Z
 tags: 
@@ -20,7 +20,7 @@ WireGuard is a modern, open-source VPN software and tunnel protocol that provide
 
 ### Select the Network:
 
--   WireGuard is attached to one VergeIO network; this should be a network that has access to all networks to which the VPN should reach.
+-   WireGuard is attached to one VeregOS network; this should be a network that has access to all networks to which the VPN should reach.
 
 <br>
 
@@ -67,7 +67,7 @@ A peer definition needs to be created for each entity that will connect to this 
 
 -   ***Peer IP*** - the IP address that routes the traffic here; typically this is the internal address assigned to the local interface on this peer.
 -   ***Public Key*** - the 64base public key from the peer.
-> If the peer is another VergeIO system, this key can be copied from the dashboard on that system, using the copy icon.{.is-success}
+> If the peer is another VeregOS system, this key can be copied from the dashboard on that system, using the copy icon.{.is-success}
 -   ***Preshared Key (optional)*** - can be entered to provide an extra layer of security. This allows for symmetrical encryption to be used in addition to the required public-private key pair encryption. If a preshared key is entered here, the same key must be entered in the configuration at the associated peer.
 -   ***Allowed IPs*** - one or more IP address segments, in CIDR format (e.g. 192.168.0.1/24; 10.135.12.65/27;10.10.125.9/29); these are source addresses that will be allowed incoming from this peer and to which traffic will be routed for this peer.
 -   ***Configure Firewall*** - selection determines auto-configuration of firewall rules:

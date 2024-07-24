@@ -11,10 +11,10 @@ editor: markdown
 dateCreated: 2024-01-03T17:19:47.187Z
 ---
 
-Network blocks are a handy way to assign multiple IP addresses to a tenant or network for workload use. It is the preferred method over virtual wires since the VergeIO network foundation is focused on Layer 3 connectivity. Using this method helps to circumnavigate the pitfalls of relying on Layer 2 (virtual wires) for tenant workload connectivity to resources originating outside of the environment.  It also gives you the ability to assign public IP addresses directly to VMs inside of an Internal network or a Tenant.
+Network blocks are a handy way to assign multiple IP addresses to a tenant or network for workload use. It is the preferred method over virtual wires since the VeregOS network foundation is focused on Layer 3 connectivity. Using this method helps to circumnavigate the pitfalls of relying on Layer 2 (virtual wires) for tenant workload connectivity to resources originating outside of the environment.  It also gives you the ability to assign public IP addresses directly to VMs inside of an Internal network or a Tenant.
 
 ## Creating a Network Block
-1. In the VergeIO UI navigate to the external network that the network block will originate from.
+1. In the VeregOS UI navigate to the external network that the network block will originate from.
 1. In the left menu select "Network Blocks" then select "New".
 1. Enter the information for the corresponding block (in CIDR notation a.b.c.d/n). 
 1. To assign the new block to a tenant on creation set the Owner Type to "Tenant" and then select the destination tenant from the Owner drop down.

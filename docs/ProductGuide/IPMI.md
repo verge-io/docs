@@ -2,7 +2,7 @@
 
 # IPMI
 
-IPMI is a universal standard (supported by almost all hardware) for managing and accessing servers. It is accessible even when a server is powered off and allows for remotely controlling servers and monitoring hardware status, including things such as temperature, power consumption, voltage, hardware errors, etc. VergeIO integrates with IPMI to provide for remote server power control (power on, power cycle, etc.) and convenient access via the VergeIO user interface.
+IPMI is a universal standard (supported by almost all hardware) for managing and accessing servers. It is accessible even when a server is powered off and allows for remotely controlling servers and monitoring hardware status, including things such as temperature, power consumption, voltage, hardware errors, etc. VeregOS integrates with IPMI to provide for remote server power control (power on, power cycle, etc.) and convenient access via the VeregOS user interface.
 
 > Because IPMI deals with physical hardware, it only applies to host level nodes (not tenant nodes). {.is-info}
 
@@ -25,7 +25,7 @@ The node dashboard will indicate IPMI ***status*** and ***date/time of last time
   - **IPMI Status** - "OK" indicates that the last attempt to connect was successful. If the last attempt was unsuccessful, an error message is displayed.
   <br>
 
-  - **IPMI Last Connected** - displays the last date/time the VergeIO system successfully connected to IPMI. (If there was never a successful IPMI connection, the field will report "NA".)
+  - **IPMI Last Connected** - displays the last date/time the VeregOS system successfully connected to IPMI. (If there was never a successful IPMI connection, the field will report "NA".)
   <br>
 
 ![nodedash-ipmistatus.png.png](/public/userguide-sshots/nodedash-ipmistatus.png)
@@ -47,7 +47,7 @@ The node dashboard will indicate IPMI ***status*** and ***date/time of last time
 
 ## To Access the IPMI Web Interface
 
-> Successfully connecting to the IPMI web interface through the VergeIO user interface requires valid username/password is stored and appropriate networking configuration is in place for the system to interact with the node's IPMI. {.is-info}
+> Successfully connecting to the IPMI web interface through the VeregOS user interface requires valid username/password is stored and appropriate networking configuration is in place for the system to interact with the node's IPMI. {.is-info}
 
 1.  From the main dashboard, click **Nodes**.
 2.  **Double-click the desired node** to access the node dashboard.

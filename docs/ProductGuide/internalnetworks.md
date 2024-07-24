@@ -1,7 +1,7 @@
 
 
 # Internal Networks (General Instructions)
-Internal networks are originated within VergeIO; an internal network can be created as [**Layer3**](../ProductGuide/internal-layer3) (recommended)  or  [**Layer2**](../ProductGuide/internal-layer2)
+Internal networks are originated within VeregOS; an internal network can be created as [**Layer3**](../ProductGuide/internal-layer3) (recommended)  or  [**Layer2**](../ProductGuide/internal-layer2)
 
 <br>
 <br>
@@ -65,13 +65,13 @@ Internal networks are originated within VergeIO; an internal network can be crea
 
 <br>
 
-14.  Select an existing VergeIO network from the dropdown list as the ***Default Gateway*** -OR- leave set to -- None -- to not select a gateway.
+14.  Select an existing VeregOS network from the dropdown list as the ***Default Gateway*** -OR- leave set to -- None -- to not select a gateway.
 
-> To give an Internal network access outside of this VergeIO Cloud (e.g. the Internet, external Corporate network), select the proper external network as the default gateway; an appropriate routing rule will be created automatically. If no default gateway is selected while creating the network, appropriate rules will need to be created manually to route through an external network.15.  The ***DHCP*** option is checked by default. This sets up a DHCP server and displays associated configuration options. {.is-success}
+> To give an Internal network access outside of this VeregOS Cloud (e.g. the Internet, external Corporate network), select the proper external network as the default gateway; an appropriate routing rule will be created automatically. If no default gateway is selected while creating the network, appropriate rules will need to be created manually to route through an external network.15.  The ***DHCP*** option is checked by default. This sets up a DHCP server and displays associated configuration options. {.is-success}
 
 
 16.  The ***Monitor Gateway*** option can be selected to perform a continual ping of the gateway and report uptime to the UI. When this option is enabled, additional cards are added to the network dashboard displaying history of gateway quality and latency statistics.
-17.  ***On Power Loss*** determines the action taken when power is restored to the network (This would be after a physical node power loss or in the case of a network within a tenant: after the tenant is powered off/on in VergeIO UI.)
+17.  ***On Power Loss*** determines the action taken when power is restored to the network (This would be after a physical node power loss or in the case of a network within a tenant: after the tenant is powered off/on in VeregOS UI.)
     -   **Last State** - network will only be powered on if it was on at the time of power loss.
     -   **Leave Off** - network will not be powered on when power is restored (regardless of its state at the time of power loss).
     -   **Power On** - network will be powered on when power is restored (regardless of its state at the time of power loss).

@@ -1,5 +1,5 @@
 ---
-title: VergeIO Updates
+title: VeregOS Updates
 description: Update Process
 published: true
 date: 2023-01-27T21:50:15.504Z
@@ -8,8 +8,8 @@ editor: markdown
 dateCreated: 2022-03-01T17:29:58.280Z
 ---
 
-## VergeIO Updates
-VergeIO targets a quarterly release schedule with new features and enhancements to the core product. Hotfixes and security updates are released on an as needed basis as soon as they are determined to be ready for general availability. When updates are available, administrators should apply them in a timely fashion.
+## VeregOS Updates
+VeregOS targets a quarterly release schedule with new features and enhancements to the core product. Hotfixes and security updates are released on an as needed basis as soon as they are determined to be ready for general availability. When updates are available, administrators should apply them in a timely fashion.
 
 ## Update Features
 

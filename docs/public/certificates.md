@@ -9,7 +9,7 @@ dateCreated: 2022-03-01T16:56:35.603Z
 ---
 
 ## Self Signed
-During the initial installation of VergeIO a self signed certificate is created automatically for the "root" level of the system. Upon [tenant](/public/tenants) creation a new self signed certificate is also automatically created for the instance.
+During the initial installation of VeregOS a self signed certificate is created automatically for the "root" level of the system. Upon [tenant](/public/tenants) creation a new self signed certificate is also automatically created for the instance.
 
 ## Let's Encrypt
 Using the built in functionality of [Let's Encrypt](https://letsencrypt.org/) an administrator is able to create a trusted SSL certificate on a per VDC basis providing the setting is enabled. This method is "set and forget" since once the certificate is created all renewals are handled automatically by the software every 60 days.

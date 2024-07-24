@@ -34,7 +34,7 @@ Provides further documentation area for the VM; intended for additional informat
 <br>
 
 **Snapshot Profile \[dropdown\]**
-Defines the snapshot schedule for the individual VM. Typically, this field is left blank as VM restores can easily be extracted from cloud snapshots, which include everything within the VergeIO Cloud; however, defining a snapshot profile here provides a way to perform additional, more frequent snapshots and/or longer snapshot retention for the VM. The selection list includes all 
+Defines the snapshot schedule for the individual VM. Typically, this field is left blank as VM restores can easily be extracted from cloud snapshots, which include everything within the VeregOS Cloud; however, defining a snapshot profile here provides a way to perform additional, more frequent snapshots and/or longer snapshot retention for the VM. The selection list includes all 
 [**Snapshot Profiles**](/public/ProductGuide/snapshot-profiles) available in the system.
  
  <br>
@@ -126,7 +126,7 @@ This allows drives and NICs to be added without restarting the VM. Disable if gu
 -   VNC - provides basic graphical console connectivity; no audio or virtual USB support; adequate for most administrative uses
 -   Spice - audio pass-through support; USB pass-through support (Note: audio and USB support require Spice client software.)
 -   Serial Console - when selected, no graphics card is added and all VM output is directed to the serial port. A terminal emulator (xterm.js) can be used to connect to the serial port.
--   None - no console access is provided through the VergeIO user interface.
+-   None - no console access is provided through the VeregOS user interface.
 
 <br>
 
@@ -159,7 +159,7 @@ When selected, a tablet pointer is emulated rather than a mouse, providing for l
 **RTC Base**
 Sets the time clock for the VM
 -   UTC - Universal Time Clock
--   Local Time - local time, based on the timezone of the VergeIO system
+-   Local Time - local time, based on the timezone of the VeregOS system
     -   Linux typically expects time in UTC format
     -   Windows typically expects time in local time; hence, this setting should be set to Local Time -OR- appropriate registry change can be made within Windows to use UTC
     
@@ -181,7 +181,7 @@ When enabled, a virtual serial port is created; used only for guest OS compatibi
 <br>
 
 **On Power Loss \[dropdown\]**
-Determines the action taken when power is restored to the VM. (This can be after a physical power loss or after the owning tenant is powered off/on in the VergeIO UI.)
+Determines the action taken when power is restored to the VM. (This can be after a physical power loss or after the owning tenant is powered off/on in the VeregOS UI.)
 -   Last State - VM will only be powered on if it was on at the time of power loss.
 -   Leave Off - VM will not be powered on when power is restored (regardless of its state at time of power loss)
 -   Power On - VM will be powered on when power is restored (regardless of its state at the time of power loss)

@@ -14,7 +14,7 @@ dateCreated: 2022-09-07T13:28:01.240Z
 
 ## Adding Additional Resources
 
-There are several methods to add additional resources to your VergeIO environment, and it is recommended that you consult with your sales representative on planning for the option that makes the most sense for your environment.
+There are several methods to add additional resources to your VeregOS environment, and it is recommended that you consult with your sales representative on planning for the option that makes the most sense for your environment.
 
 Here are a few key things to remember when planning for expanding the system.
 <br>

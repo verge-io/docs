@@ -8,7 +8,7 @@ editor: markdown
 dateCreated: 2023-06-07T14:22:38.870Z
 ---
 
-Welcome to the Product Guide for VergeIO. If you cannot find what you are looking for, please use the **search function at the top of the page**.
+Welcome to the Product Guide for VeregOS. If you cannot find what you are looking for, please use the **search function at the top of the page**.
 
 You can also find a variety of content located in the [Knowledgebase](/public/kb). 
 

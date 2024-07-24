@@ -9,7 +9,7 @@
 - A cluster consists of at least 2 servers (nodes) with like architecture. Multiple clusters can exist within a system.
 
 ### Memory
-- Minimum of 16 GB dedicated to VergeIO for OS and application server operations.
+- Minimum of 16 GB dedicated to VeregOS for OS and application server operations.
 - Additional memory must be designated for guest operations.
 - 1 GB of RAM per 1 TB of storage for each node participating in storage activities.
 
@@ -54,7 +54,7 @@
 - Must support VT-x (for Intel) or AMD-V/AMD-SVM (for AMD)
 
 ### Memory
-- Minimum of 16 GB dedicated to VergeIO for OS and application server operations.
+- Minimum of 16 GB dedicated to VeregOS for OS and application server operations.
 - **Compute Nodes**: Memory to Core ratio of 8-1/16-1
 - **Storage Nodes**: 1.5GB per 1TB of RAW storage
 
@@ -77,13 +77,13 @@
 |---------------------------------|---------|---------|---------------|
 | nodes per system (physical servers) |   1 | 65000   | node          |
 | VMs per host                    |         |         | vm            |
-| Disks per VM (virtio SCSI)      |         | 2000    | vdisk         |
+| Disks per VM (virtio SCSI)[^3]  |         | 2000    | vdisk         |
 | Storage per system              |         |         | terabyte      |
 | Storage per node                |         |         | terabyte      |
 | Individual physical disk size   |         | 64      | terabyte      |
 | vDisk size                      |         | 2000    | terabyte      |
 | Logical processors per host     |         |         | procs         |
-| RAM per host                    |         | 5       | terabyte      |
+| RAM per host[^2]                    |         | 5       | terabyte      |
 | RAM per VM                      |         |         | terabyte      |
 | Virtual processors per host     |         |         | procs         |
 | Virtual processors per VM       |         |         | procs         |

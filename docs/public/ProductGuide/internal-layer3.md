@@ -1,5 +1,5 @@
 ---
-title: Product Guide - Create an Internal Network Managed within VergeIO
+title: Product Guide - Create an Internal Network Managed within VeregOS
 description: Instructions for creating an internal network with management, such as dhcp, routing, etc, handled by VergeOS
 published: true
 date: 2023-06-27T20:14:02.166Z
@@ -8,9 +8,9 @@ editor: markdown
 dateCreated: 2023-03-29T21:24:27.278Z
 ---
 
-## Creating an Internal Network managed within VergeIO (layer3)
+## Creating an Internal Network managed within VeregOS (layer3)
 
-Internal Networks can be created as Layer2 or Layer3. To create a layer3 Internal network (in which dhcp, DNS, firewall, routing and throttling can be managed within VergeIO) select ***IP Address Type =*** **Static**
+Internal Networks can be created as Layer2 or Layer3. To create a layer3 Internal network (in which dhcp, DNS, firewall, routing and throttling can be managed within VeregOS) select ***IP Address Type =*** **Static**
 
 .
 ![internallayer3.png](/public/userguide-sshots/internallayer3.png)

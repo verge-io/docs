@@ -10,7 +10,7 @@ dateCreated: 2023-03-29T00:09:06.773Z
 
 # Local Volumes
 
-Local volumes are file systems stored within VergeIO, consuming storage in the VergeIO vSAN. Each local volume can have different sharing, syncing, tiering, and permission settings.
+Local volumes are file systems stored within VeregOS, consuming storage in the VeregOS vSAN. Each local volume can have different sharing, syncing, tiering, and permission settings.
 
 > A NAS Service must be in place before creating volumes. See the [**NAS Service**](/public/ProductGuide/NASservice)   page for instructions. {.is-success}
 

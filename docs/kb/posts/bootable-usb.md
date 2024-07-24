@@ -13,7 +13,7 @@ dateCreated: 2022-08-04T18:16:50.678Z
 
 ## Windows:
 
-1.  Download the latest version of the VergeIO installation ISO.
+1.  Download the latest version of the VeregOS installation ISO.
  [_https://updates.verge.io/download_](https://updates.verge.io/download)
 > **NOTE:** This may not be the most recent version. Please talk to your account representative to make sure you have the latest version.
 {.is-info}
@@ -26,14 +26,14 @@ dateCreated: 2022-08-04T18:16:50.678Z
 ![rufus.png](/public/rufus.png)
 
 1. Once Rufus is loaded, select the **USB device** to write to for the area labeled **Device**.
-2. Click the **Select button** to select the VergeIO installation ISO image.
+2. Click the **Select button** to select the VeregOS installation ISO image.
 3. Click **Start**
   ![rufus2.png](/public/rufus2.png)
 4. Rufus will prompt you to choose an ISO Mode. Choose DD. Rufus will begin building the bootable USB device.
 <br>
 ## Apple MacOS:
 
-1.  Download the latest version of the VergeIO installation ISO. [_https://updates.verge.io/download_](https://updates.verge.io/download)
+1.  Download the latest version of the VeregOS installation ISO. [_https://updates.verge.io/download_](https://updates.verge.io/download)
 > **NOTE:** This may not be the most recent version. Please talk to your account representative to make sure you have the latest version.
 {.is-info}
 
@@ -70,7 +70,7 @@ dateCreated: 2022-08-04T18:16:50.678Z
 
 ## Linux Mint:
 
-1.  Download the latest version of the VergeIO installation ISO
+1.  Download the latest version of the VeregOS installation ISO
     1.  [_https://updates.verge.io/download_](https://updates.verge.io/download)
 > **NOTE:** This may not be the most recent version. Please talk to your account representative to make sure you have the latest version.
 {.is-info}

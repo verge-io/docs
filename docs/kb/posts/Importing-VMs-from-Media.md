@@ -14,7 +14,7 @@ dateCreated: 2023-01-19T14:38:43.388Z
 
 # Importing VMs from Media Images
 
-Importing via Media Images is a convenient way to import a single VM at a time. VM Data files, such as vmx, vmdk, ovf, vhd(x), are uploaded to the VergeIO vSAN and then selected for import.
+Importing via Media Images is a convenient way to import a single VM at a time. VM Data files, such as vmx, vmdk, ovf, vhd(x), are uploaded to the VeregOS vSAN and then selected for import.
 
 ## Import VM (config and disks) from Media Images
 

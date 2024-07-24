@@ -25,7 +25,7 @@ Each site that is added to the Sites Dashboard can be included with options:
 ![newsiteform.png](/public/userguide-sshots/newsiteform.png)
 
 3.  Enter a ***Name*** that clearly identifies the system, such as a location description.
-4.  Enter the ***URL*** to reach the system, Ex: https:/[]()/Chicago-verge.abcco.com  (URL must be reachable from this VergeIO system)
+4.  Enter the ***URL*** to reach the system, Ex: https:/[]()/Chicago-verge.abcco.com  (URL must be reachable from this VeregOS system)
 5.  ***Allow Insecure SSL Connection*** will permit site connections without a valid CA-signed certificate (e.g. missing, invalid, expired, or self-signed certs). 
 
 > ***The Allow Insecure SSL Connection* option is NOT intended for normal use; it should only be selected in cases where site connections are secure (e.g. behind a common firewall, connected via private lines), or for short durations to troubleshoot initial connection issues.** {.is-warning}

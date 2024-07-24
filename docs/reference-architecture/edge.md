@@ -7,7 +7,7 @@ Organizations that need to manage many locations efficiently can leverage VergeO
 ## Acme Insurance example
 
 
-Aceme Insurance will be used throughout this document to explain the key concepts and details around an edge cluster deployment. Acme came to Verge.io to simplify their branch office deployments and asked for options that would provide for more resiliency and cost savings.
+Acme Insurance will be used throughout this document to explain the key concepts and details around an edge cluster deployment. Acme came to Verge.io to simplify their branch office deployments and asked for options that would provide for more resiliency and cost savings.
 
 
 ## What is an Edge Cluster

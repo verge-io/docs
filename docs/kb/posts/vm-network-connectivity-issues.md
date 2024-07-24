@@ -15,7 +15,7 @@ dateCreated: 2022-08-26T17:43:47.993Z
 
 ## Troubleshooting VM Network Connectivity Issues
 
-Before you begin, verify if other virtual machines in the environment can access the internet. If no other machines can, then there is likely a network issue upstream of the VergeIO platform preventing access to the outside world. 
+Before you begin, verify if other virtual machines in the environment can access the internet. If no other machines can, then there is likely a network issue upstream of the VeregOS platform preventing access to the outside world. 
 If other VMs are still able to access the internet, the most likely cause is that a configuration step was missed.
 
 The following are the most common configuration mistakes which cause this:

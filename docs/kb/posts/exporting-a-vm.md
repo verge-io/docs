@@ -13,9 +13,9 @@ editor: markdown
 dateCreated: 2022-07-11T18:16:54.516Z
 ---
 
-### Exporting VMs from VergeIO
+### Exporting VMs from VeregOS
 
-1. Login into the VergeIO platform and navigate to the **dashboard of the virtual machine** that you'd like to export.
+1. Login into the VeregOS platform and navigate to the **dashboard of the virtual machine** that you'd like to export.
 1. On the left, click on **Drives** to open a **list view** of the virtual disk drives attached to **this VM**.
 1. Select **a drive** and choose '**Download**' on the left.  This will download the drive as a **.raw** format, which is supported by most current hypervisors.
 1. The system will begin downloading the disk image using the **default settings of your web browser**.

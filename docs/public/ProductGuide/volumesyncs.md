@@ -14,10 +14,10 @@ Volume Syncs allow for synchronizing data between two volumes. A volume sync can
 <br>
 
 
--   Easily transfer an external file system into VergeIO storage.
--   Use VergeIO as a target for file-level backups of an external system.
--   Transport data from a VergeIO NAS to an external storage system.
--   Perform regular backups of VergeIO native-NAS data to another VergeIO system or a third-party storage.
+-   Easily transfer an external file system into VeregOS storage.
+-   Use VeregOS as a target for file-level backups of an external system.
+-   Transport data from a VeregOS NAS to an external storage system.
+-   Perform regular backups of VeregOS native-NAS data to another VeregOS system or a third-party storage.
 
 
 <br>
@@ -65,7 +65,7 @@ Volume Syncs allow for synchronizing data between two volumes. A volume sync can
 ### Advanced Options
 
 -   Specify a ***Run As User*** (optional). By default, the sync operation is run as "root"
--   ***Freeze Filesystem*** (default - disabled) - Applies only when source volume is a local VergeIO volume; temporarily blocks write operations while buffers are flushed, the filesystem is branched and a clean-state snapshot is taken for the sync operation. Although not as instantaneous as a crash-consistent snapshot operation, a filesystem freeze can be a relatively quick operation.
+-   ***Freeze Filesystem*** (default - disabled) - Applies only when source volume is a local VeregOS volume; temporarily blocks write operations while buffers are flushed, the filesystem is branched and a clean-state snapshot is taken for the sync operation. Although not as instantaneous as a crash-consistent snapshot operation, a filesystem freeze can be a relatively quick operation.
 -   ***Preserve ACLs*** (default - enabled) - Can be disabled for performance, when ACLs are unnecessary on the destination (for example: converting Linux volume to Windows)
 -   ***Preserve Extended Attributes*** (default - enabled) - Can be disabled to omit extended attributes from sync transfer.
 -   ***Copy Symlinks*** (default - enabled) - Can be disabled where symlinks point to external/separate file systems.
@@ -78,7 +78,7 @@ Volume Syncs allow for synchronizing data between two volumes. A volume sync can
 -   ***Omit setting symlink time*** (default - disabled) - Symlink times are not transferred from source data.
 -   ***Update destination files in-place*** (default - disabled) - When a file needs to be updated, the sync will update the data directly rather than the default method of creating a new copy of the file and moving it into place when it is complete.
 -   ***Preserve CIFS ACLs*** (default - enabled) - Sync will update destination ACLs to be the same as the source ACLs. The source and destination system must have compatible ACL entries for this option to work properly.
--   ***Extended properties*** - Extended properties can be specified to provide additional features/constraints for this sync; contact VergeIO Support for assistance with extended properties.
+-   ***Extended properties*** - Extended properties can be specified to provide additional features/constraints for this sync; contact VeregOS Support for assistance with extended properties.
 - ***Number of simultaneous workers*** (default - 4) - Specifies the number of threads to be used for the sync operation. Increasing this number can improve sync completion times, particularly where syncs are performed over high-latency connections. 
 
 19.  Click **Submit** to save the settings and create the new volume sync.

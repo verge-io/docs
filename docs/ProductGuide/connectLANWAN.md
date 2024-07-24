@@ -1,10 +1,10 @@
 
 
-# Connect VergeIO  to an Existing LAN/WAN
+# Connect VeregOS  to an Existing LAN/WAN
 
 <br>
 
-Connecting to a network that exists outside of your VergeIO environment (such as an existing company LAN, or a WAN connection) requires a VergeIO  external network. Typically one external network is created during the VergeIO  system install and mapped to a physical network that is also defined during installation. Multiple Externals can be created to take advantage of multiple available phsicals. Additionally, more than one external network can be mapped to the same physical network, with each utilizing a different vLAN. The following instructions walk through creating an external network after install, from the VergeIO  UI; all settings are reviewed and thus can also be used to guide modifying the external network created during installation if needed.
+Connecting to a network that exists outside of your VeregOS environment (such as an existing company LAN, or a WAN connection) requires a VeregOS  external network. Typically one external network is created during the VeregOS  system install and mapped to a physical network that is also defined during installation. Multiple Externals can be created to take advantage of multiple available phsicals. Additionally, more than one external network can be mapped to the same physical network, with each utilizing a different vLAN. The following instructions walk through creating an external network after install, from the VeregOS  UI; all settings are reviewed and thus can also be used to guide modifying the external network created during installation if needed.
 
 <br>
 <br>
@@ -27,7 +27,7 @@ Connecting to a network that exists outside of your VergeIO environment (such as
 9.  **Optionally**, a specific ***Cluster*** can be selected to specify the primary cluster where this vnet will run.
 10.  **Optionally**, a specific ***Failover Cluster*** can be selected to specify a cluster on which to run if the primary is not available.
 11.  **Optionally**, a ***Preferred node*** can be selected to specify a particular Node as a "first-choice" on which to run the vnet.
-12.  **Optionally**, this network can be set to allow ***PXE*** boot for VergeIO  nodes (by default PXE is not enabled.)
+12.  **Optionally**, this network can be set to allow ***PXE*** boot for VeregOS  nodes (by default PXE is not enabled.)
 13.  Select the appropriate ***Interface Network*** from the dropdown list of physical and external Networks. Typically, a physical network would be selected here; selecting an external (rather than a physical) would be for Q-in-Q (vlan inside of vlan).
 14.  Select the appropriate ***IP Address Type***:
     -   **Static** - to specify a particular address for the network

@@ -16,7 +16,7 @@
 
 GRID vGPU drivers can be downloaded from your NVIDIA licensing portal or by registering for an NVIDIA free evaluation: [**https://nvidia.com/en-us/data-center/resources/vgpu-evaluation**](https://nvidia.com/en-us/data-center/resources/vgpu-evaluation).
 
-2.  Upload the vGPU driver to the VergeIO vSAN. For directions on uploading to the vSAN, see: 
+2.  Upload the vGPU driver to the VeregOS vSAN. For directions on uploading to the vSAN, see: 
 
 [**Uploading to the vSAN (Media Images)**](/public/ProductGuide/uploadingtovSAN)
 
@@ -49,7 +49,7 @@ Selected GPU appears in the first field (PCI Device).
 <br>
 
 15.  Select ***vGPu profile*** (for the selected GPU device) from the dropdown list provided; available vGPU profile options will depend upon the specific GPU hardware.
-16.  **For VergeIO nodes containing more than one vGPU device: Repeat** the process for each additional vGPU device within the selected node, designating each physical device in the ***PCI Device*** dropdown list and selecting ***vGPU Profile*** to assign to the selected device.
+16.  **For VeregOS nodes containing more than one vGPU device: Repeat** the process for each additional vGPU device within the selected node, designating each physical device in the ***PCI Device*** dropdown list and selecting ***vGPU Profile*** to assign to the selected device.
 17.  When finished selecting Profile(s) for all vGPU devices for the node, click **Submit** at the bottom of the page.
 
 <br>

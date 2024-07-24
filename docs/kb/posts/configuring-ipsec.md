@@ -11,10 +11,10 @@ editor: markdown
 dateCreated: 2022-10-04T18:38:59.908Z
 ---
 
-## How to create an IPSEC VPN tunnel in VergeIO
+## How to create an IPSEC VPN tunnel in VeregOS
 
-In VergeIO, the **DMZ Network** is where the basic routing between networks is handled.
--   Every **router** has a **NIC and an IP address in the DMZ**. This is how traffic transverses from network to network inside the VergeIO platform.
+In VeregOS, the **DMZ Network** is where the basic routing between networks is handled.
+-   Every **router** has a **NIC and an IP address in the DMZ**. This is how traffic transverses from network to network inside the VeregOS platform.
 -   Each **vNet** is its own **VXLAN or VLAN**.
 <br>
 

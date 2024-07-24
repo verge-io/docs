@@ -10,7 +10,7 @@ dateCreated: 2023-06-06T20:30:15.063Z
 
 ## How To Configure VM Export
 
-Within the VergeIO volume configuration, there is an option to create a volume that contains an export of selected VMs. This special volume can then be used to backup the VMs using 3^rd^ party backup software. This volume contains VM snapshots from the last time the VM Export was ran.
+Within the VeregOS volume configuration, there is an option to create a volume that contains an export of selected VMs. This special volume can then be used to backup the VMs using 3^rd^ party backup software. This volume contains VM snapshots from the last time the VM Export was ran.
 <br>
 
 ### To configure this volume, follow these steps:
@@ -22,7 +22,7 @@ Within the VergeIO volume configuration, there is an option to create a volume t
 > Additional Information about configuration of the NAS and NAS user configuration can be found in the self-paced training at [https://wiki.verge.io/public/training/6-0](https://wiki.verge.io/public/training/6-0)
 {.is-info}
 
-5. **Create a new volume**. Set the Filesystem type to **VergeIO VM Export**
+5. **Create a new volume**. Set the Filesystem type to **VeregOS VM Export**
 1. Under "**Export VMs**", select **Start** to start the VM export.
 1. Answer **Yes** at the Confirmation screen. The VM Export volume has now been created. 
 <br>

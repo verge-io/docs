@@ -12,7 +12,7 @@ dateCreated: 2022-06-30T15:23:20.794Z
 ---
 
 ## Adding a VLAN in the User Interface
-1. Add the desired VLAN(s) to the appropriate switchports so they are accessible to the nodes running the VergeIO environment.
+1. Add the desired VLAN(s) to the appropriate switchports so they are accessible to the nodes running the VeregOS environment.
 1. From the **Main Dashboard** navigate to **Networks**, then **select "New External"** in the left menu.
 1. In the network creation page enter the following settings:
 ![new-vlan.png](/public/new-vlan.png)

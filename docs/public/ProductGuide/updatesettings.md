@@ -15,11 +15,11 @@ dateCreated: 2023-04-07T17:40:20.697Z
 <br>
   
 **Update Server**
-Should be set to "**Vergeio Updates**"
+Should be set to "**VeregOS Updates**"
 <br>
 
 **User/Password**
-Login credentials for the Update Server (provided by the VergeIO Implementation Team) 
+Login credentials for the Update Server (provided by the VeregOS Implementation Team) 
 > It is cruicial to have proper username/password entered here; without authentication to the Update Server, system functionality will effectually be disabled (virtual machines cannot be started, no NAS functionality, etc.) {.is-warning}
 
 <br>

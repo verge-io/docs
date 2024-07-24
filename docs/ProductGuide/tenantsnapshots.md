@@ -4,7 +4,7 @@
 
 Snapshots provide a way to obtain quick recovery points. Cloud snapshots allow for a complete rollback of a system (to the point in time of a snapshot) to protect in the event of major unforeseen issues that may arise. A cloud snapshot includes whole-system snapshots for each tenant as well. A tenant can be allowed (a per-tenant setting) to browse a listing of available provider snapshots and “self-serve” download selected timestamps to restore their entire system or individual VMs.
 
- > Tenants also have the ability to manage their own VergeIO snapshots within their system; this can allow a tenant to customize scheduling/retention as they wish. (The tenant will need adequate provisioned storage to retain snapshots.){.is-success}
+ > Tenants also have the ability to manage their own VeregOS snapshots within their system; this can allow a tenant to customize scheduling/retention as they wish. (The tenant will need adequate provisioned storage to retain snapshots.){.is-success}
 
 <br>
 <br>

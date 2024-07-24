@@ -10,7 +10,7 @@ dateCreated: 2023-04-08T00:42:30.042Z
 
 # VM Import Methods
 
-Multiple methods are available for importing existing VMs into VergeIO:
+Multiple methods are available for importing existing VMs into VeregOS:
 
 <br>
 

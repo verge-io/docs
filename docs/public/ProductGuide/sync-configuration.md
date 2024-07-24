@@ -10,7 +10,7 @@ dateCreated: 2023-03-31T20:44:16.506Z
 
 # Configuring a Site Sync
 
-Site Sync provides replication of Cloud Snapshots to a separate VergeIO system; this provides off-site data backup facilitating disaster recovery and business continuity.
+Site Sync provides replication of Cloud Snapshots to a separate VeregOS system; this provides off-site data backup facilitating disaster recovery and business continuity.
 <br>
 
 
@@ -37,7 +37,7 @@ Network Rules are necessary to translate incoming sync traffic to the vSAN. **No
 ### To Configure 14201 PAT Rule for Sync traffic to the vSAN:
 **(Create this rule once to accomodate all incoming syncs to this system.)**
 
-1.  **Login** to the **receiving** VergeIO system at the **HOST level (not in tenant)**.
+1.  **Login** to the **receiving** VeregOS system at the **HOST level (not in tenant)**.
 2.  Navigate to **Networks**.
 3.  Click **All Networks**.
 4.  **Double-click** on the **Core Network** to access its Dashboard.
@@ -58,12 +58,12 @@ Network Rules are necessary to translate incoming sync traffic to the vSAN. **No
 	<br>
     #### Destination
     - ***Type:*** Custom
-    - ***Custom Filter:*** ui (This is a VergeIO keyword; it must be entered in lower case, exactly as noted)
+    - ***Custom Filter:*** ui (This is a VeregOS keyword; it must be entered in lower case, exactly as noted)
     - ***Destination Ports/Ranges:*** 14201
     <br>
      #### Target
     -   ***Type:*** IP/Custom
-    -   ***Target IP:*** ui (This is a VergeIO keyword; it must be entered in lower case, exactly as noted)
+    -   ***Target IP:*** ui (This is a VeregOS keyword; it must be entered in lower case, exactly as noted)
 
 ![rule-core-vsanpat.png](/public/userguide-sshots/rule-core-vsanpat.png)
 
@@ -76,7 +76,7 @@ Network Rules are necessary to translate incoming sync traffic to the vSAN. **No
 ### To Create PAT Rule for Incoming Sync:
 > Incoming syncs will require PAT rules(s) for port 14201. Source-filtering based on incoming sync sources is recommended; for multiple sync sources, this can be done with a separate rule for each different source or by using a list of addresses (separated by commas) in the *Source field* within a single rule. {.is-info}
 
-1.  **Login** to the **receiving** VergeIO system at the **HOST level (not in tenant)** .
+1.  **Login** to the **receiving** VeregOS system at the **HOST level (not in tenant)** .
 2.  Navigate to **Networks**.
 3.  Click **Externals**.
 4.  **Double-click** the appropriate **External Network**.
@@ -94,11 +94,11 @@ Network Rules are necessary to translate incoming sync traffic to the vSAN. **No
 <br>
 
     -   ***Type:*** Custom
-    -   ***Custom Filter (recommended):*** Enter the IP address of the sending VergeIO system. If adding to an existing vSAN NAT rule, add the IP address making sure all addresses are separated by commas.
+    -   ***Custom Filter (recommended):*** Enter the IP address of the sending VeregOS system. If adding to an existing vSAN NAT rule, add the IP address making sure all addresses are separated by commas.
     -   ***Type:*** My Router IP
     -   ***Destination Ports/Ranges:*** 14201
     -   ***Type:*** IP/Custom
-    -   ***Target:*** ui (This is a VergeIO keyword; it must be entered in lower case, exactly as noted)
+    -   ***Target:*** ui (This is a VeregOS keyword; it must be entered in lower case, exactly as noted)
  ![sync-snat.png](/public/userguide-sshots/sync-snat.png)
  
 8.  Click **Submit** to save the new rule.

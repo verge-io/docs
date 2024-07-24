@@ -11,7 +11,7 @@ editor: markdown
 dateCreated: 2022-06-24T13:49:31.305Z
 ---
 
-## Proper Shutdown Sequence for a VergeIO Environment
+## Proper Shutdown Sequence for a VeregOS Environment
 
 To power off a cluster (a collection of two or more like nodes) follow these steps:
 1. Check any running workloads on each node of the cluster. This can be accomplished by navigating to the node dashboard for each node of the cluster and reviewing the list under the section **Running Machines**
@@ -25,9 +25,9 @@ To power off a cluster (a collection of two or more like nodes) follow these ste
 > If an environment contains multiple clusters _**ALWAYS**_ shutdown the cluster that contains the controller nodes (Node1 & Node2) _**LAST**_!<br>
 {.is-warning}
 
-## Proper Power on Sequence for a VergeIO Environment
+## Proper Power on Sequence for a VeregOS Environment
 
-To properly power on a VergeIO environment perform the following steps:
+To properly power on a VeregOS environment perform the following steps:
 1. Power on **Node1** 
 1. Once **Node1** comes online power on **Node2**
 1. Power on all other nodes waiting approximately 1 minute in between power actions

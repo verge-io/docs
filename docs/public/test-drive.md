@@ -24,7 +24,7 @@ dateCreated: 2022-10-17T17:29:11.218Z
 * [Follow Us on Linked.in](https://www.linkedin.com/company/verge-io/)
 * [Visit Us on Youtube](https://www.youtube.com/channel/UCnFu28s0GBVi18j7Ez3MXRg)
 * [Youtube - Installation of a 2 Node Cluster](https://youtu.be/hOUg8_MgIjA)
-* [Youtube - Upgrading VergeIO](https://youtu.be/cf4J4Gj9AUo)
+* [Youtube - Upgrading VeregOS](https://youtu.be/cf4J4Gj9AUo)
 * [Youtube - UI Dashboard Overview](https://youtu.be/oQx2BkWp7hc)
 * [Youtube - Deduplication & Tenancy](https://youtu.be/f0ZwAIlc_c4)
 * [Youtube - Clone an Entire Virtual Data Center](https://youtu.be/hq_h65ESYbU)

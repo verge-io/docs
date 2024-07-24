@@ -23,7 +23,7 @@
 5.  Child import Jobs are displayed on the Import Job Dashboard that appears. The VM column will display the names of the imported VMs.  
 > Hint: A -View More-- link is available at the bottom of the Child Import Jobs section to view additional child jobs when all do not fit on a single page. {.is-success}
 
-> A UUID (rather than the VM name) displayed in the VM field indicates that a VM with that unique identifier already existed in the VergeIO system (e.g. previously imported). If a UUID is displayed, the VM was imported as a snapshot to avoid inadvertently overwriting an existing VergeIO VM. See the Snapshots section for more information regarding using snapshots. {.is-info}
+> A UUID (rather than the VM name) displayed in the VM field indicates that a VM with that unique identifier already existed in the VeregOS system (e.g. previously imported). If a UUID is displayed, the VM was imported as a snapshot to avoid inadvertently overwriting an existing VeregOS VM. See the Snapshots section for more information regarding using snapshots. {.is-info}
 
 <br>   
 

@@ -1,6 +1,6 @@
 ---
 title: Glossary
-description: Specific Terms Used by VergeIO
+description: Specific Terms Used by VeregOS
 published: true
 date: 2023-01-27T21:49:43.555Z
 tags: auth, catalog, cluster, host, media, images, network, nested, multi tenancy, tenant, node, recipe, repository, scale out, scale up, snapshot, profile, tier, storage, subscription, sync, physical, core, dmz, external, internal, maintenance
@@ -12,7 +12,7 @@ dateCreated: 2022-02-15T16:19:49.652Z
   
   <summary>Auth Source</summary>
   
-  An auth source defines a user management authority (GitLab, Google, OpenID) for a VergeIO environment. This allows a single sign-on experience for users as credentials from the defined auth source can be appointed for users to login to a VergeIO envrironment.
+  An auth source defines a user management authority (GitLab, Google, OpenID) for a VeregOS environment. This allows a single sign-on experience for users as credentials from the defined auth source can be appointed for users to login to a VeregOS envrironment.
 
   </details>
   <details>
@@ -32,19 +32,19 @@ dateCreated: 2022-02-15T16:19:49.652Z
   
   <summary>Cluster</summary>
   
-  A cluster is a group of nodes consisting of like hardware resources, used as a pool for storage, compute or HCI functions. A single VergeIO environment can contain different types of clusters to provide an array of performance/costing options. The resources of a single cluster can be divided up among multiple tenants and a single tenant can be given resources to multiple clusters within the same environment.
+  A cluster is a group of nodes consisting of like hardware resources, used as a pool for storage, compute or HCI functions. A single VeregOS environment can contain different types of clusters to provide an array of performance/costing options. The resources of a single cluster can be divided up among multiple tenants and a single tenant can be given resources to multiple clusters within the same environment.
 </details>
 <details>
   
   <summary>Host</summary>
-  Refers to the top-level Virtual Data Center (VDC), aka "root", which is created during the initial VergeIO install on physical hardware. The host has direct control over the hardware, whereas tenants/subtentants will have resources assigned to them, but no visibility into the underlying infrastructure.
+  Refers to the top-level Virtual Data Center (VDC), aka "root", which is created during the initial VeregOS install on physical hardware. The host has direct control over the hardware, whereas tenants/subtentants will have resources assigned to them, but no visibility into the underlying infrastructure.
 
   </details>
   <details>
   
   <summary>Media Images</summary>
   
-  Media images are files uploaded to the VergeIO vSAN to make available inside the VergeIO environment. Common files uploaded are those used for installing new virtual machines (e.g. \*.iso) or importing Machines or drives from existing systems (e.g. \*.ova, \*.ovf, \*.raw, \*.qcow, \*.vmdk, etc).
+  Media images are files uploaded to the VeregOS vSAN to make available inside the VeregOS environment. Common files uploaded are those used for installing new virtual machines (e.g. \*.iso) or importing Machines or drives from existing systems (e.g. \*.ova, \*.ovf, \*.raw, \*.qcow, \*.vmdk, etc).
   
   </details>
   <details>
@@ -59,13 +59,13 @@ dateCreated: 2022-02-15T16:19:49.652Z
   <summary>Network</summary>
   
   - #### Core
-  	The core network is a highly available virtual network used to handle all inter-node communication. Every VergeIO environment has 1 core network, which is created automatically during installation on the host or at the point of tenant creation (for each tenant).
+  	The core network is a highly available virtual network used to handle all inter-node communication. Every VeregOS environment has 1 core network, which is created automatically during installation on the host or at the point of tenant creation (for each tenant).
   - #### DMZ
-	The dmz network is a virtual network used to connect all networks with each other. Every VergeIO environment has 1 dmz network, which is created automatically during installation on the host or at the point of tenant creation (for each tenant).
+	The dmz network is a virtual network used to connect all networks with each other. Every VeregOS environment has 1 dmz network, which is created automatically during installation on the host or at the point of tenant creation (for each tenant).
   - #### External
-	An external network is a network that exists outside of the VergeIO environment. Any pre-existing network that will be interfaced with VergeIO (e.g. company LAN, direct WAN connections, wi-fi networks) is considered to be an external network. In a VergeIO system there is at least one external that is used to communicate to the UI and send traffic out of the environment.
+	An external network is a network that exists outside of the VeregOS environment. Any pre-existing network that will be interfaced with VeregOS (e.g. company LAN, direct WAN connections, wi-fi networks) is considered to be an external network. In a VeregOS system there is at least one external that is used to communicate to the UI and send traffic out of the environment.
   - #### Internal
-	An internal network is a virtual network originated within VergeIO. Any number of internal networks can be created. An internal network is created default-secure; with built-in VergeIO networking functionality allowing for opening up access between internal networks and/or external networks as needed.
+	An internal network is a virtual network originated within VeregOS. Any number of internal networks can be created. An internal network is created default-secure; with built-in VeregOS networking functionality allowing for opening up access between internal networks and/or external networks as needed.
   - #### Maintenance
 	A maintenance network is an external network that can be created to handle IPMI access to physical nodes and optional PXE boot.
   - #### Physical
@@ -77,7 +77,7 @@ dateCreated: 2022-02-15T16:19:49.652Z
   <summary>Node</summary>
   
   - #### Physical
-	Physical nodes are actual hardware servers that host the base VergeIO environment
+	Physical nodes are actual hardware servers that host the base VeregOS environment
   - #### Tenant
 	Tenant nodes are virtual servers that simulate physical nodes. Each tenant is assigned at least one tenant node with the ability to add more tenant nodes on the fly for scale and/or to accommodate clustering software.
   
@@ -96,7 +96,7 @@ dateCreated: 2022-02-15T16:19:49.652Z
   
   <summary>Repository</summary>
   
-  A repository is a site collection of recipe catalogs. Typically, a tenant has access to a repository provided by its service provider. Each tenant can also create a local repository to store its own recipe catalogs. The VergeIO repository is also included by default on a VergeIO installation. The VergeIO repository includes the standard NAS Service VM and a "30 Day Trial POC" tenant.
+  A repository is a site collection of recipe catalogs. Typically, a tenant has access to a repository provided by its service provider. Each tenant can also create a local repository to store its own recipe catalogs. The VeregOS repository is also included by default on a VeregOS installation. The VeregOS repository includes the standard NAS Service VM and a "30 Day Trial POC" tenant.
   
   </details>
   <details>
@@ -131,7 +131,7 @@ dateCreated: 2022-02-15T16:19:49.652Z
   
   <summary>Storage Tier</summary>
   
-  A storage tier is a pool of storage with equivalent underlying physical storage devices. Storage tiering is a feature built into the VergeIO vSAN allowing splitting data between different types of physical media based on requirements for performance, accessibility, capacity and cost. Storage tiering can dramatically reduce costs by taking better advantage of more expensive disk where it's most needed while using less expensive (e.g. spinning disk) for cold storage.
+  A storage tier is a pool of storage with equivalent underlying physical storage devices. Storage tiering is a feature built into the VeregOS vSAN allowing splitting data between different types of physical media based on requirements for performance, accessibility, capacity and cost. Storage tiering can dramatically reduce costs by taking better advantage of more expensive disk where it's most needed while using less expensive (e.g. spinning disk) for cold storage.
   
   </details>
   <details>
@@ -145,19 +145,19 @@ dateCreated: 2022-02-15T16:19:49.652Z
   
   <summary>Subscription Profiles</summary>
   
-  Subscription profiles define the aspects of a subscription (on demand/scheduled, trigger criteria/schedule). Many subscription profiles are pre-loaded by default with the VergeIO install. Custom subscription profiles can also be created with knowledge of the API.
+  Subscription profiles define the aspects of a subscription (on demand/scheduled, trigger criteria/schedule). Many subscription profiles are pre-loaded by default with the VeregOS install. Custom subscription profiles can also be created with knowledge of the API.
   
   </details>
   <details>
   
   <summary>Sync</summary>
-  The process of syncronizing blocks of data between two VergeIO environments to facilitate DR capabilities or archive backups.
+  The process of syncronizing blocks of data between two VeregOS environments to facilitate DR capabilities or archive backups.
   
   </details>
   <details>
   
   <summary>Tenant</summary>
-  A tenant is a completely separate Virtual Data Center, running its own instance of VergeIO. Child tenants are apportioned from a parent VergeIO environment. The nested, multi-tenancy infrastructure allows each VergeIO environment to divide any portion of its resources to provide multiple, sub-divisions of resources. Each tenant is allocated its own storage, networking, and compute resources. Tenants are isolated from each other, with each being individually managed by its own UI. This provides the mechanism for service providers or IT departments to allocate and administer resources dynamically.
+  A tenant is a completely separate Virtual Data Center, running its own instance of VeregOS. Child tenants are apportioned from a parent VeregOS environment. The nested, multi-tenancy infrastructure allows each VeregOS environment to divide any portion of its resources to provide multiple, sub-divisions of resources. Each tenant is allocated its own storage, networking, and compute resources. Tenants are isolated from each other, with each being individually managed by its own UI. This provides the mechanism for service providers or IT departments to allocate and administer resources dynamically.
   
   </details>
   <details>

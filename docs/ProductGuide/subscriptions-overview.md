@@ -29,7 +29,7 @@ Subscriptions deliver emails for scheduled reporting and triggered alerting.
      
 <br>
 
-> Efficiently monitoring a VergeIO Cloud will involve creating **multiple ***On-Demand***  and multiple ***Scheduled*** subscriptions** {.is-info}
+> Efficiently monitoring a VeregOS Cloud will involve creating **multiple ***On-Demand***  and multiple ***Scheduled*** subscriptions** {.is-info}
 
 .<br>
 <br>
@@ -60,7 +60,7 @@ Subscriptions deliver emails for scheduled reporting and triggered alerting.
 > Multiple Scheduled subscriptions (to the same owner) set for the same time will be combined into a single email message. {.is-success}
    
    
-11.  Select ***Subscription Profile*** from the dropdown list. (The options available will depend on the option selected in the ***Target*** field.) defines the information to receive in the notification. A wide array of subscription profiles exist by default, providing the means to oversee all the different parts of your VergeIO Cloud, such as: physical hardware (host tenant only), storage utilization per tier, import jobs, system warnings and errors, and more. Additional [**Subscription Profiles**](/public/ProductGuide/subscriptionprofiles) can be defined if further notification/alert scenarios are needed.  
+11.  Select ***Subscription Profile*** from the dropdown list. (The options available will depend on the option selected in the ***Target*** field.) defines the information to receive in the notification. A wide array of subscription profiles exist by default, providing the means to oversee all the different parts of your VeregOS Cloud, such as: physical hardware (host tenant only), storage utilization per tier, import jobs, system warnings and errors, and more. Additional [**Subscription Profiles**](/public/ProductGuide/subscriptionprofiles) can be defined if further notification/alert scenarios are needed.  
 
 12. **For On Demand Subscriptions** (alerts): Select a ***Reminder while active*** interval from the dropdown list to define how often reminder alerts should be received until a Resolved state (at which point, a Resolved alert is sent.) This setting pertains to alerts based on error/warning statuses or thresholds. *Applies to **On-Demand subscriptions only.***  
           <br>

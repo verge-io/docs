@@ -14,14 +14,14 @@ dateCreated: 2022-06-28T14:46:35.084Z
 
 ## UEFI disks as boot devices will not boot properly  
 
-After importing VM images leveraging UEFI disks as boot devices, sometimes the VM will not boot properly inside the VergeIO platform.  To resolve this, tweaks to boot order/options need to be made.
+After importing VM images leveraging UEFI disks as boot devices, sometimes the VM will not boot properly inside the VeregOS platform.  To resolve this, tweaks to boot order/options need to be made.
 
 
 Here is a list of suggested solutions for issues with imported VMs not booting because of guest UEFI bios settings:
 
 ### Solution 1
 
-1. From a fresh import of the VM (before trying to power it up inside VergeIO), edit the VM in Verge and enable the UEFI boot option.
+1. From a fresh import of the VM (before trying to power it up inside VeregOS), edit the VM in Verge and enable the UEFI boot option.
 2. Power on the VM
 3. Hit ESC within 5 seconds to get into the VM BIOS (you can edit the VM settings in Verge to increase the boot timer if necessary)
 4. Enter the BIOS and navigate to Boot Manager options (varies by bios)
@@ -31,7 +31,7 @@ Here is a list of suggested solutions for issues with imported VMs not booting b
 
 ### Solution 2
 
-1. From a fresh import of the VM (before trying to power it up inside VergeIO), edit the VM in Verge and enable the UEFI boot option.
+1. From a fresh import of the VM (before trying to power it up inside VeregOS), edit the VM in Verge and enable the UEFI boot option.
 1. Power on the VM
 1. Hit ESC within 5 seconds to get into the VM BIOS (you can edit the VM settings in Verge to increase the boot timer if necessary)
 1. Enter the BIOS and navigate to Boot Manager options (varies by bios)

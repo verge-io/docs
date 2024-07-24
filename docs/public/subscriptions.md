@@ -10,7 +10,7 @@ dateCreated: 2022-03-01T17:00:57.669Z
 
 ## Subscriptions
 
-Subscriptions in the VergeIO platform are where administrators configure alert notifications to monitor the overall health of the system.  There are two types of alert subscriptions: On demand or scheduled.
+Subscriptions in the VeregOS platform are where administrators configure alert notifications to monitor the overall health of the system.  There are two types of alert subscriptions: On demand or scheduled.
 
 - Subscriptions can be configured to send to an individual user or a group.
 - Once an error is being tracked, a subscription alert can be temporarily halted by using the Suspend option until the issue has been resolved.
@@ -28,7 +28,7 @@ Scheduled subscriptions are typically used to monitor changes over a period of t
 
 ## Custom Subscriptions
 
-In addition to a number of built-in subscriptions to the VergeIO platform, administrators can build custom subscriptions to monitor particular changes.  Custom subscriptions can be created with a working knowledge of the API.
+In addition to a number of built-in subscriptions to the VeregOS platform, administrators can build custom subscriptions to monitor particular changes.  Custom subscriptions can be created with a working knowledge of the API.
 
 <br>
 <br>

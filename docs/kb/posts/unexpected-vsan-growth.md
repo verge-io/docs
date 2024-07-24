@@ -33,7 +33,7 @@ Lastly, filter on the current month and note if there are any sudden spikes in s
 
 
 **Possible Reasons for Storage increase**
-There are several areas of the VergeIO platform that leverage storage; the most common areas where customers have unexpected growth are listed below.
+There are several areas of the VeregOS platform that leverage storage; the most common areas where customers have unexpected growth are listed below.
 - Review Cloud Snapshots.  Navigate from the Main Dashboard to System>Cloud Snapshots. 
    - Are any being held past the expected expiration time?
    - Are there snapshots that do not have a Snapshot Profile set?  If so, these were taken manually.  Investigate when and why the snapshot was taken.

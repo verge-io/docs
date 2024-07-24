@@ -25,14 +25,14 @@ dateCreated: 2022-03-01T17:31:51.484Z
 > Live migration is only possible when a physical device is not passed through to the vm.
 {.is-warning}
 - Automatic balancing on vm startup
-> When a vm is started the VergeIO appserver will look for the node with the most available compute resources in the cluster the vm is assigned to and start it on the determined node.
+> When a vm is started the VeregOS appserver will look for the node with the most available compute resources in the cluster the vm is assigned to and start it on the determined node.
 {.is-info}
 
 ## Importing Virtual Machines
-Virtual machines use the **.raw** format for virtual drives. When a vm is imported it is converted from the imported drive type to the .raw format automatically. Virtual machines can be imported into VergeIO in 4 ways.
+Virtual machines use the **.raw** format for virtual drives. When a vm is imported it is converted from the imported drive type to the .raw format automatically. Virtual machines can be imported into VeregOS in 4 ways.
 1. The [VMware backup service](/public/backup#vmware-backup-service)
-2. The [VergeIO NAS service](/public/nas)
-3. Using the VergeIO clone utility (only accessible by downloading from your environment)
+2. The [VeregOS NAS service](/public/nas)
+3. Using the VeregOS clone utility (only accessible by downloading from your environment)
 4. Uploading the vm drives and configuration files directly to the media images section of your environment [Click Here for Instructions](/public/kb/Importing-VMs-from-Media)
 > The following type of files are supported when using media images for import
 {.is-info}

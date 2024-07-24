@@ -65,7 +65,7 @@ select **Manual** in the ***Credentialling** dropdown list.
    -   ***VSAN Host*** url to the root level of the remote system
    -   ***VSAN Port*** default 14201, a different port can be used but must be configured on the remote side as well and ports open on intermediate firewall(s).
    -   ***User***
-   -   ***Password*** and ***Confirm Password*** for the specified VergeIO User.
+   -   ***Password*** and ***Confirm Password*** for the specified VeregOS User.
    -   ***Encryption***
 6.  Click **Submit** to complete the creation.
 

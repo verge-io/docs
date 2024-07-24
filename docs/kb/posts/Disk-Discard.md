@@ -19,7 +19,7 @@ The Discard option on a VM Disk tells the system to TRIM/DISCARD unused blocks. 
 
 ![2023-03-30_10_43_52-diskdiscardwindow.png](/public/2023-03-30_10_43_52-diskdiscardwindow.png)
 
-> The only time you should disable Discard is for performance reasons. Please consult with VergeIO Support before disabling. 
+> The only time you should disable Discard is for performance reasons. Please consult with VeregOS Support before disabling. 
 {.is-warning}
 
 
