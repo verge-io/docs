@@ -291,7 +291,4 @@ It will ask for your credentials, this does not support your other authenticatio
 
 
 <br>
-<div style="text-align: center">
-  
-<a href="https://www.verge.io/test-drive" target="_blank"><button class="button-orange">Request Trial</button></a>
-</div>
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

@@ -68,7 +68,4 @@ To enable auto trim run ``` sudo systemctl enable fstrim.time ``` from the termi
 For more information on fstrim you can visit the man page [here](https://man7.org/linux/man-pages/man8/fstrim.8.html).
 
 <br>
-<div style="text-align: center">
-  
-<a href="https://www.verge.io/test-drive" target="_blank"><button class="button-orange">Request Trial</button></a>
-</div>
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

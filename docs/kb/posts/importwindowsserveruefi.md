@@ -42,10 +42,7 @@ How to migrate a Windows Server VM with UEFI enabled from VMware into VergeOS.
 
 
 <br>
-<div style="text-align: center">
-  
-<a href="https://www.verge.io/test-drive" target="_blank"><button class="button-orange">Request Trial</button></a>
-</div>
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }
 
 <!--- 
 Keep page URLs short (4 words and under if possible) (new-page-blah-blah)

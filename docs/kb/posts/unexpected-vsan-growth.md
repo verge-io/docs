@@ -55,7 +55,4 @@ There are several areas of the VergeIO platform that leverage storage; the most 
   - If unexplained growth is found, administrators will need to search inside the tenant for all of the same possible reasons of storage increase (listed above), and possibly inside sub-tenants, if any are present.
 
 <br>
-<div style="text-align: center">
-  
-<a href="https://www.verge.io/test-drive" target="_blank"><button class="button-orange">Request Trial</button></a>
-</div>
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

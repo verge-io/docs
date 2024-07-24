@@ -24,7 +24,4 @@ The Discard option on a VM Disk tells the system to TRIM/DISCARD unused blocks. 
 
 
 <br>
-<div style="text-align: center">
-  
-<a href="https://www.verge.io/test-drive" target="_blank"><button class="button-orange">Request Trial</button></a>
-</div>
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

@@ -1,4 +1,4 @@
-# Core Concepts for vergeOS
+# Core Concepts
 
 
 ## Overview

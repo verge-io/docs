@@ -35,7 +35,4 @@ Information about creating an Internal Network can be found in the inline help w
 When creating a new internal network, make sure to set a Default Gateway so that this network has outbound access.
 After creating a new internal network, modify the virtual machine's NIC so that it is connected to the newly created internal network.
 <br>
-<div style="text-align: center">
-  
-<a href="https://www.verge.io/test-drive" target="_blank"><button class="button-orange">Request Trial</button></a>
-</div>
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

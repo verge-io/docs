@@ -18,7 +18,4 @@ Frequently, pfSense is used as a virtual firewall inside the VergeIO platform an
 - Inside pfSense, Hardware Checksum Offloading should be disabled for systems experiencing intermittent slowness or packet loss. Enabing the setting disables the virtual machine from relying on the NIC to process this, slowing down the VM considerably.
 
 <br>
-<div style="text-align: center">
-  
-<a href="https://www.verge.io/test-drive" target="_blank"><button class="button-orange">Request Trial</button></a>
-</div>
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

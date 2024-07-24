@@ -26,7 +26,4 @@ dateCreated: 2023-11-29T16:50:57.491Z
 ![core_config.jpg](/public/core_config.jpg)
 
 <br>
-<div style="text-align: center">
-  
-<a href="https://www.verge.io/test-drive" target="_blank"><button class="button-orange">Request Trial</button></a>
-</div>
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

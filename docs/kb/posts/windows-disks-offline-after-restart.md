@@ -24,7 +24,4 @@ To change this to the recommended setting run the following Windows PowerShell:
 
 Additionally, this can be done from the command line using diskpart or from Disk Management.
 <br>
-<div style="text-align: center">
-  
-<a href="https://www.verge.io/test-drive" target="_blank"><button class="button-orange">Request Trial</button></a>
-</div>
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

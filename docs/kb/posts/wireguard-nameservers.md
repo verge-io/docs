@@ -55,8 +55,5 @@ This may be different based on your distribution of Linux.
 4. Replace domainname.com with your domain name.
 
 <br>
-<div style="text-align: center">
-  
-<a href="https://www.verge.io/test-drive" target="_blank"><button class="button-orange">Request Trial</button></a>
-</div>
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }
 

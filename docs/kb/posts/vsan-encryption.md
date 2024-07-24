@@ -25,7 +25,4 @@ You can confirm that the vSAN has encryption enabled by navigating to **Nodes> N
 - Default encryption is set for all snapshot synchronizations through a site-sync.  Information about encrypting a Site Synchronization can be found in the inline help within the category titled, Site Syncs, under the section labeled 'Creating Outgoing Sync.'
 
 <br>
-<div style="text-align: center">
-  
-<a href="https://www.verge.io/test-drive" target="_blank"><button class="button-orange">Request Trial</button></a>
-</div>
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

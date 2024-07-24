@@ -102,7 +102,4 @@ The following is a simple method to establish a route between two networks in th
 1. After submitting both of these rules, the network will need to have the rule enabled by clicking on **Apply Rules**.
 
 <br>
-<div style="text-align: center">
-  
-<a href="https://www.verge.io/test-drive" target="_blank"><button class="button-orange">Request Trial</button></a>
-</div>
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

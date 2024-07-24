@@ -35,7 +35,4 @@ To properly power on a VergeIO environment perform the following steps:
 ![main-dash-stoplights.png](/public/main-dash-stoplights.png)
 
 <br>
-<div style="text-align: center">
-  
-<a href="https://www.verge.io/test-drive" target="_blank"><button class="button-orange">Request Trial</button></a>
-</div>
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

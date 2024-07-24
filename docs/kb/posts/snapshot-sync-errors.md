@@ -58,7 +58,4 @@ Occasionally, the system may generate a system alert from a new Message Log entr
 - The sync task was unable to start, the connection timed out.  Typically, this error message is the result of requesting a snapshot back from the destination side to the original sending side.  In most cases, either a firewall is blocking the traffic or the destination side is missing the required traffic rules.  The required rules can be found in the inline help within the category titled 'Site Syncs' under the section labeled 'Sync Configuration'.
 
 <br>
-<div style="text-align: center">
-  
-<a href="https://www.verge.io/test-drive" target="_blank"><button class="button-orange">Request Trial</button></a>
-</div>
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

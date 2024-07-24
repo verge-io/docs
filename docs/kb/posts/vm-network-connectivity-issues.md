@@ -25,7 +25,4 @@ The following are the most common configuration mistakes which cause this:
 - The Virtio drivers are not installed. Information about installing the virtio drivers can be found in the inline help within the category titled Virtual Machines under the section labeled VM NICs.
 
 <br>
-<div style="text-align: center">
-  
-<a href="https://www.verge.io/test-drive" target="_blank"><button class="button-orange">Request Trial</button></a>
-</div>
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

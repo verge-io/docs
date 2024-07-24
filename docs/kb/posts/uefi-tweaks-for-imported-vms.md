@@ -39,7 +39,4 @@ Here is a list of suggested solutions for issues with imported VMs not booting b
 1. Exit the UEFI BIOS
 1. Reboot the VM 
 <br>
-<div style="text-align: center">
-  
-<a href="https://www.verge.io/test-drive" target="_blank"><button class="button-orange">Request Trial</button></a>
-</div>
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

@@ -56,7 +56,4 @@ To test is this works, follow the instructions below:
 The **Response** should say **Connection successful**. If it doesn't, double check the rule for accuracy. Note that the **Interface** is set to **DMZ** instead of the normal **Auto**. Make sure there are not any block rules.
 
 <br>
-<div style="text-align: center">
-  
-<a href="https://www.verge.io/test-drive" target="_blank"><button class="button-orange">Request Trial</button></a>
-</div>
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

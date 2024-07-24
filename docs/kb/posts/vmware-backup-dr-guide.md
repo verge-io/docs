@@ -312,7 +312,4 @@ The following strategies are recommended to mitigate potential risks posed by us
 2.  Although VergeIO stores all backups in the vSAN such that they are stand-alone (any backup, including differential, can be used directly and does not rely on another backup for restore operations), a prudent backup strategy will include a schedule of both Full backups and Differential backups in between.  For example, a common schedule used by many organizations is to run a Full backup weekly or twice weekly and differentials on days in between.  
 3.  When possible, use Full-Thick Provisioned backup for those that are intended for long-term retention.
 <br>
-<div style="text-align: center">
-  
-<a href="https://www.verge.io/test-drive" target="_blank"><button class="button-orange">Request Trial</button></a>
-</div>
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

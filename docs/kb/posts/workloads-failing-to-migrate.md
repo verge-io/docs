@@ -24,7 +24,4 @@ The main reasons a workload fails to migrate from one node to another in the sys
 	* Verify that each Tenant VM is not configured with the CPU Type set to 'Host Processor'
 
 <br>
-<div style="text-align: center">
-  
-<a href="https://www.verge.io/test-drive" target="_blank"><button class="button-orange">Request Trial</button></a>
-</div>
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

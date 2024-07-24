@@ -23,7 +23,4 @@ When you setup a VM using UEFI, only the resolution that is configured in the OV
 1. Select your "Prefered Resolution".
 1. Save, and reboot the VM.
 <br>
-<div style="text-align: center">
-  
-<a href="https://www.verge.io/test-drive" target="_blank"><button class="button-orange">Request Trial</button></a>
-</div>
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

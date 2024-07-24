@@ -38,7 +38,4 @@ dateCreated: 2022-10-10T19:52:07.207Z
 - [ ] Correct Supported SFP modules (if applicable)
 - [ ] Correct IPs validated and available
 <br>
-<div style="text-align: center">
-  
-<a href="https://www.verge.io/test-drive" target="_blank"><button class="button-orange">Request Trial</button></a>
-</div>
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

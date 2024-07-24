@@ -28,7 +28,4 @@ If a machine that has more RAM allocated than allowed tries to start a "**Machin
 1. Start the virtual machine
 
 <br>
-<div style="text-align: center">
-  
-<a href="https://www.verge.io/test-drive" target="_blank"><button class="button-orange">Request Trial</button></a>
-</div>
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

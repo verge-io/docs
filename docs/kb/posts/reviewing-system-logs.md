@@ -45,7 +45,4 @@ The log in the following screenshot shows several specific events as examples of
 -   From the entry time-stamped on March 28th, 2022 at 9:22:53, the user, admin, changed their own password in this environment.
 
 <br>
-<div style="text-align: center">
-  
-<a href="https://www.verge.io/test-drive" target="_blank"><button class="button-orange">Request Trial</button></a>
-</div>
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

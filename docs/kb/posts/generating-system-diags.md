@@ -27,7 +27,4 @@ Here are the steps to create and download a System Diagnostics file.
 1. When sending completes, you can also download the file to your local computer.
 
 <br>
-<div style="text-align: center">
-  
-<a href="https://www.verge.io/test-drive" target="_blank"><button class="button-orange">Request Trial</button></a>
-</div>
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

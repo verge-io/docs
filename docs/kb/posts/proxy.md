@@ -75,7 +75,4 @@ Using a Proxy grants the ability to use 1 IP address for multiple Tenant environ
 1. Test access to the tenant by navigating to it's url in a browser tab
 
 <br>
-<div style="text-align: center">
-  
-<a href="https://www.verge.io/test-drive" target="_blank"><button class="button-orange">Request Trial</button></a>
-</div>
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

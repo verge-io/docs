@@ -54,7 +54,4 @@ If you also want to bypass the RAM requirement, add a DWORD values for BypassRAM
 7. Close regedit and <kbd>exit</kbd> the command prompt. You can now continue with your Windows 11 installation as normal.
 
 <br>
-<div style="text-align: center">
-  
-<a href="https://www.verge.io/test-drive" target="_blank"><button class="button-orange">Request Trial</button></a>
-</div>
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

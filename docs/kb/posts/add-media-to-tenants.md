@@ -30,7 +30,4 @@ A Service Provider can provide files (that are already uploaded to the vSAN) to 
    - The process is near-instant as it is done with a branch command. The file is now available to the Tenant within their own Media Images section.
 
 <br>
-<div style="text-align: center">
-  
-<a href="https://www.verge.io/test-drive" target="_blank"><button class="button-orange">Request Trial</button></a>
-</div>
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

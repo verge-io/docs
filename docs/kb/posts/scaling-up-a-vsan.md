@@ -40,7 +40,4 @@ Upon completion, the screen will refresh and the drives will disappear. Go back 
 Repeat the steps for each node as necessary.
 
 <br>
-<div style="text-align: center">
-  
-<a href="https://www.verge.io/test-drive" target="_blank"><button class="button-orange">Request Trial</button></a>
-</div>
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

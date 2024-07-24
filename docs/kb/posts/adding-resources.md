@@ -31,7 +31,4 @@ Clusters must contain two or more nodes of the same configuration, this means wh
 If adding a matching node is not an option, then a new cluster can be added to the system.  However, every cluster must contain two or more nodes of the same configuration.
 
 <br>
-<div style="text-align: center">
-  
-<a href="https://www.verge.io/test-drive" target="_blank"><button class="button-orange">Request Trial</button></a>
-</div>
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

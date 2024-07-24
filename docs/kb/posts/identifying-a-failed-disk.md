@@ -25,7 +25,4 @@ To access this function follow these steps:
 
 Additional Information about identifying and replacing a physical drive can be found in the inline help within the category titled Maintenance, under the section Drive Replacement.  This section walks through the entire drive replacement process.
 <br>
-<div style="text-align: center">
-  
-<a href="https://www.verge.io/test-drive" target="_blank"><button class="button-orange">Request Trial</button></a>
-</div>
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

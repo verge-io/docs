@@ -36,7 +36,4 @@ The following describes how to make a VM that is Non-Persistent, meaning any cha
 This will boot the VM using the only available non-persistent disk. The disk is fully writable but upon a reboot the system will revert the disk back to the original raw file. Do not delete the original disk, it will not take up any additional space due to Deduplication. 
 
 <br>
-<div style="text-align: center">
-  
-<a href="https://www.verge.io/test-drive" target="_blank"><button class="button-orange">Request Trial</button></a>
-</div>
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

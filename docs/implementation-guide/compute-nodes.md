@@ -1,4 +1,4 @@
-# VergeOS Compute Only Node Installation Guide
+# Compute Only Node Installation Guide
 
 ## Introduction
 

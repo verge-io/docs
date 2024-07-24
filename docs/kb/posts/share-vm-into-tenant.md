@@ -40,7 +40,4 @@ The VergeIO platform provides an easy way to share a virtual machine (VM) image 
    1. Click Submit to create the new Virtual Machine.
 
 <br>
-<div style="text-align: center">
-  
-<a href="https://www.verge.io/test-drive" target="_blank"><button class="button-orange">Request Trial</button></a>
-</div>
+[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }
