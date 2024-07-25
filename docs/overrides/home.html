@@ -60,23 +60,28 @@
     }
 
     .tx-hero .md-button {
-        margin-top: .5rem;
-        margin-right: .5rem;
-        margin-left: 5rem;
-        color: var(--md-primary-bg-color)
+    margin-top: .5rem;
+    margin-right: .5rem;
+    margin-left: 0; /* Remove the left margin */
+    color: var(--md-primary-bg-color);
+    display: inline-block; /* Ensures the button doesn't take full width */
+    }
+
+    .tx-hero__content {
+        text-align: left; /* Aligns all content to the left */
     }
 
     .tx-hero .md-button--primary {
         background-color: var(--md-primary-bg-color);
         color: rgb(255, 0, 0);
-        border-color: var(--md-primary-bg-color)
+        border-color: var(--md-primary-bg-color);
     }
 
     .tx-hero .md-button:focus,
     .tx-hero .md-button:hover {
         background-color: var(--md-accent-fg-color);
         color: var(--md-default-bg-color);
-        border-color: var(--md-accent-fg-color)
+        border-color: var(--md-accent-fg-color);
     }
 
     .feature-item h2 svg {
@@ -87,20 +92,19 @@
     }
 
     .top-hr {
-        margin-top: 42px;
-        background-color: #fff;
+    margin-top: 42px;
     }
 
     .feature-item {
         font-family: 'Lato', sans-serif;
         font-weight: 300;
         box-sizing: border-box;
-        padding: 0 15px;
-        word-break: break-word
+        padding: 15px;
+        word-break: break-word;
+        transition: all 0.3s ease-in-out;
     }
 
     .feature-item h2 {
-        color: #333;
         font-weight: 300;
         font-size: 25px;
         white-space: nowrap;
@@ -118,9 +122,64 @@
         line-height: 1.8em;
         text-rendering: optimizeLegibility;
         -webkit-font-smoothing: antialiased;
-        color: #111;
         margin: 0 0 10px;
         display: block;
+    }
+
+    /* Light mode specific styles */
+    [data-md-color-scheme="default"] .top-hr {
+        background-color: #fff;
+    }
+
+    [data-md-color-scheme="default"] .feature-item {
+        background-color: #ffffff;
+        border-color: rgba(0, 0, 0, 0.1);
+    }
+
+    [data-md-color-scheme="default"] .feature-item:hover {
+        background-color: #f8f8f8;
+    }
+
+    [data-md-color-scheme="default"] .feature-item h2 {
+        color: #333;
+    }
+
+    [data-md-color-scheme="default"] .feature-item p {
+        color: #111;
+    }
+
+    /* Dark mode specific styles */
+    [data-md-color-scheme="slate"] .top-hr {
+        background-color: #1e1e1e;
+    }
+
+    [data-md-color-scheme="slate"] .feature-item {
+        background-color: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+    }
+
+    [data-md-color-scheme="slate"] .feature-item:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        transform: translateY(-5px);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    [data-md-color-scheme="slate"] .feature-item h2 {
+        color: #e0e0e0;
+    }
+
+    [data-md-color-scheme="slate"] .feature-item p {
+        color: #b0b0b0;
+    }
+
+    [data-md-color-scheme="slate"] .feature-item svg {
+        filter: invert(1);
+    }
+
+    [data-md-color-scheme="slate"] .feature-item a {
+        color: inherit;
+        text-decoration: none;
     }
 
     @media screen and (max-width:30em) {
@@ -241,15 +300,18 @@
     <div class="md-grid md-typeset">
         <div class="tx-hero">
             <div class="tx-hero__image">
-                <img src="assets/vergeos-home.png" draggable="false">
+             <!--   <img src="assets/vergeos-home.png" draggable="false"> -->
             </div>
             <div class="tx-hero__content">
                 <h1>VergeOS Documentation</h1>
-                <h3>Comprehensive tutorials, references, product guides, and more for Verge.io products </h3>
-                <a href="/getting-started/why-this-site/" title="Getting started"
-                    class="md-button md-button--primary">
-                    Get started
-                </a>
+                <h3>Comprehensive tutorials, references, product guides, and more for VergeOS, by <a href="https://verge.io" target="_blank" rel="noopener noreferrer">Verge.io</a></h3>                
+                <a href="https://www.verge.io/contact/" 
+                title="Connect with us"
+                class="md-button md-button--primary"
+                target="_blank"
+                rel="noopener noreferrer">
+                 Connect with us
+             </a>
             </div>
         </div>
     </div>
@@ -285,7 +347,7 @@
             </svg>
             Deploy VergeOS
         </h2>
-        <p>Check out our implementation guide and reference architectures.</p>
+        <p>Explore our implementation guide and reference architectures to seamlessly deploy and optimize your VergeOS environment</p>
     </a>
     </div>
     <div class="feature-item">
@@ -318,7 +380,7 @@
             </svg>
             Knowledge Base
         </h2>
-        <p>Reusable architectural patterns with code and examples to help quickly setup your data pipelines.</p>
+        <p>Access our comprehensive collection of how-to documents, providing guidance on configuring, managing, and troubleshooting VergeOS</p>
     </a>
     </div>
     <div class="feature-item">
@@ -347,8 +409,36 @@
             </svg>
             Product Guide
         </h2>
-        <p>Full-blown demos illustrating through concrete use cases how you can use the different
-          tools and patterns to create you own intelligent solutions.</p>
+        <p>Discover in-depth tutorials, user manuals, and best practices to master every aspect of VergeOS and unlock its full potential for your organization</p>
+        </a>
+    </div>
+    <div class="feature-item">
+        <a href="/ProductGuide/UI-Overview">
+        <h2>
+            <svg width="24" height="24" viewBox="0 0 24 24">
+                <defs id="defs784">
+                    <style id="style782">
+                        .cls-1 {
+                            fill: none;
+                            stroke: #020202;
+                            stroke-miterlimit: 10;
+                            stroke-width: 1.92px;
+                        }
+                    </style>
+                </defs>
+                <g id="presentation_standing" data-name="presentation standing"
+                    transform="matrix(1.0434783,0,0,1.0434578,-0.52173913,-0.54306164)">
+                    <line class="cls-1" x1="0.5" y1="1.48" x2="23.5" y2="1.48" id="line786" />
+                    <line class="cls-1" x1="0.5" y1="16.809999" x2="23.5" y2="16.809999" id="line788" />
+                    <rect class="cls-1" x="2.4200001" y="1.48" width="19.17" height="15.33" id="rect790" />
+                    <line class="cls-1" x1="12" y1="16.809999" x2="12" y2="23.52" id="line792" />
+                    <polyline class="cls-1" points="8.17 23.52 8.17 22.56 12 19.69" id="polyline794" />
+                    <polyline class="cls-1" points="15.83 23.52 15.83 22.56 12 19.69" id="polyline796" />
+                </g>
+            </svg>
+            Get Support
+        </h2>
+        <p>Connect directly with our expert support team by opening an email request, for your VergeOS inquiries and technical challenges.</p>
         </a>
     </div>
 </div>
