@@ -10,6 +10,8 @@ theme:
   custom_dir: docs/overrides
   logo: assets/vergelogomark.svg
   favicon: assets/vergelogomark.svg
+  icon:
+    repo: fontawesome/brands/github
   features:
     - navigation.tabs
     - navigation.tabs.sticky
@@ -23,6 +25,7 @@ theme:
     - content.code.annotation
     - content.code.copy
     - announce.dismiss
+    - navigation.footer
   language: en
   palette:
     # Palette toggle for dark mode
@@ -108,6 +111,7 @@ extra:
     - icon: fontawesome/solid/phone
       link: tel:855-855-8300
   generator: false
+
 copyright: |
   &copy; 2024 <a href="https://verge.io" target="_blank" rel="noopener"> Verge.io</a> | Need more help? Email <a href="mailto:support@verge.io">support@verge.io</a> or call us at <a href="tel:855-855-8300"> 855-855-8300 </a>
 
@@ -119,7 +123,6 @@ extra_css:
 
 nav:
   - Home: index.md
-#    - Welcome: index.md
   - Implementation Guide:
     - Introduction: implementation-guide/concepts.md
     - Sizing: implementation-guide/sizing.md
@@ -176,9 +179,10 @@ nav:
         - Profiles: ProductGuide/subscriptionprofiles.md
       - Tasks / Events:
         - Create Automated Tasks: ProductGuide/createtasks.md
-      - Updates:
+      - Updates / Licensing:
         - Applying Updates: ProductGuide/runningupdates.md
         - Settings: ProductGuide/updatesettings.md
+        - Air-Gap License: ProductGuide/airgap-license.md
     - NAS:
       - Overview:
         - NAS Service: ProductGuide/NASservice
