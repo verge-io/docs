@@ -8,7 +8,7 @@ Internal Networks can be created as Layer2 or Layer3. To create a layer3 Interna
 ![internallayer3.png](/docs/public/userguide-sshots/internallayer3.png)
 
 
-Full internal network instructions can be found at: [**Internal Networks (General Instructions)**](..//product-guide/internalnetworks).
+Full internal network instructions can be found at: [**Internal Networks (General Instructions)**](/docs/product-guide/internalnetworks).
 
 <br>
 

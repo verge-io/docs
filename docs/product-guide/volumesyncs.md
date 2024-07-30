@@ -26,7 +26,7 @@ Volume Syncs allow for synchronizing data between two volumes. A volume sync can
 7.  Enter a ***Description*** for the volume Sync (optional).
 8.  Specify ***Max Run Time*** by entering an integer and selecting ***Units*** (Hours/Days) from the dropdown list, **\-or-** Select **'Forever' in the Units field to set an unlimited run time.**
 9.  The ***Max Errors*** setting will default to 1000. This will determine at what number of errors the sync job will automatically abort.
-10. [Verge.io](Verge.io) sync  is the default sync ***Method***. While this method may provide better performance, alternately, the **rsync** method can be selected to include synchronization of CIFS file permissions.
+10. Verge.io sync  is the default sync ***Method***. While this method may provide better performance, alternately, the **rsync** method can be selected to include synchronization of CIFS file permissions.
 11.  Select ***Destination Delete*** setting from the dropdown list. This setting specifies how files are handled that exist at the destination, but (no longer) exist at the source.
 
    -  **Delete after transfer*** - Files are deleted from the destination after all data is transferred; the delete part of the sync operation will entail an additional walk of the filesystem.
