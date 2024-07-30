@@ -4,9 +4,6 @@
 
 This page provides general information about the VergeOS User Interface (UI). Detailed information about performing specific actions in the software can be found in the content sections of the Help.
 
-<br>
-<br>
-
 ### The Main Dashboard
 
 The home screen of the VergeOS UI is the Main Dashboard for your VergeOS Cloud. It provides overall system information, including:
@@ -19,19 +16,10 @@ The home screen of the VergeOS UI is the Main Dashboard for your VergeOS Cloud. 
 
 ![](/docs/public/userguide-sshots/maindash.png)
 
-<br>
-<br>
 
 ### Dark Mode
 
 By selecting the User Menu in the upper-right, you can enable Dark Mode. This may also affect customized colors from custom branding.
-
-![darkmode.png](/docs/public/userguide-sshots/darkmode.png)
-![darkmodess.png](/docs/public/userguide-sshots/darkmodess.png)
-
-
-<br>
-<br>
 
 ### Breadcrumbs
 
@@ -43,15 +31,10 @@ The first breadcrumb (a home icon, labeled with the system name) will always pro
 
 >  Clicking the Home breadcrumb will also clear all other breadcrumbs. {.is-success}
 
-<br>
-<br>
-
 ### Left Nav Menu
 
 Most screens will include a left navigation menu with action items relating to the currently selected section. The heading on the top of the Left Nav Menu indicates the current section.
 
-<br>
-<br>
 
 ### More Dashboards
 Dashboards, providing at-a-glance information (and quick-link access to more detailed information), are available throughout the system. Subsections, such as networks, machines, and storage each have one. Specific instances of objects also have their own dashboard as well, such as each individual: VM, network, node, tenant, etc. Every dashboard contains many links that can be used to dive further into more detailed information.
@@ -76,5 +59,3 @@ Dashboards, providing at-a-glance information (and quick-link access to more det
   
 
 <br>
-
-[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }
