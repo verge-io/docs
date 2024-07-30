@@ -11,7 +11,7 @@ A vergeOS system is a collection of nodes used to deploy workloads across a sing
 A node is a single server running vergeOS. There are 4 types of nodes in a vergeOS system (controller, compute and storage (HCI), compute-only, and storage-only). Node names are hard-coded and sequential starting with "node1".
 
 #### Controller
-The first two nodes in a vergeOS system are considered the Controller Nodes. These are functions like handling the User Interface, Networking, and VSAN functions. For larger environments, they can be set as dedicated controllers where they only handle controller functions and don't run workloads.
+The first two nodes in a vergeOS system are considered the Controller Nodes. These are functions like handling the User Interface, Networking, and vSAN functions. For larger environments, they can be set as dedicated controllers where they only handle controller functions and don't run workloads.
 
 #### Compute and Storage (HCI)
 Hyperconverged infrastructure (HCI) is a software-defined, unified system that combines all the elements of a traditional data center: storage, compute, networking, and management.

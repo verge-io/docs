@@ -15,7 +15,7 @@ A Repair Server provides a potential repair mechanism after a system experiences
 
 > There is a higher chance of repair success when there is a good network connection, with relatively low latency, between the system and its Repair Server.{.is-success}
 
-A Repair Server is created using the existing outgoing sync configuration: VSAN Host (address of the remote destination), VSAN Port, system-generated authorized username/password, and encryption setting (enabled or disabled based on the associated sync configuration).
+A Repair Server is created using the existing outgoing sync configuration: vSAN Host (address of the remote destination), vSAN Port, system-generated authorized username/password, and encryption setting (enabled or disabled based on the associated sync configuration).
 
 
 <br>
@@ -24,7 +24,7 @@ A Repair Server is created using the existing outgoing sync configuration: VSAN 
 
 ## To Create a Repair Server from an Outgoing Sync (common method)
 
-> Note: Repair servers may be auto-generated when [**Adding Sites to the Dashboard**](/public/ProductGuide/configuringsitesdash-addingsites#Repairserver).{.is-info}
+> Note: Repair servers may be auto-generated when [**Adding Sites to the Dashboard**](/product-guide/configuringsitesdash-addingsites#Repairserver).{.is-info}
 
 Typically, a repair server is created from an Outgoing Sync because the sync destination would contain a recent copy of the data. This is the recommended method in most cases.
 
@@ -32,7 +32,7 @@ Typically, a repair server is created from an Outgoing Sync because the sync des
 2.  Enter a ***Name*** for the Repair Server. Use a name that will be helpful for future administration, for example a name that includes that of the remote system.
 3.  Optionally, a ***Description*** can be entered to store additional information.
 4.  Click **Submit** to complete the creation.
-A Repair Server is created using the outgoing sync configuration details, including: VSAN Host (address of the remote destination), VSAN Port, system-generated authorized username/password, and encryption setting.
+A Repair Server is created using the outgoing sync configuration details, including: vSAN Host (address of the remote destination), vSAN Port, system-generated authorized username/password, and encryption setting.
 
 <br>
 <br>
@@ -62,8 +62,8 @@ To manually enter credential information:
 select **Manual** in the ***Credentialling** dropdown list.
 
 ### Credential Fields
-   -   ***VSAN Host*** url to the root level of the remote system
-   -   ***VSAN Port*** default 14201, a different port can be used but must be configured on the remote side as well and ports open on intermediate firewall(s).
+   -   ***vSAN Host*** url to the root level of the remote system
+   -   ***vSAN Port*** default 14201, a different port can be used but must be configured on the remote side as well and ports open on intermediate firewall(s).
    -   ***User***
    -   ***Password*** and ***Confirm Password*** for the specified VeregOS User.
    -   ***Encryption***

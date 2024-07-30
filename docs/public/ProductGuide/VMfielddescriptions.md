@@ -43,7 +43,7 @@ Provides further documentation area for the VM; intended for additional informat
 
 **Snapshot Profile \[dropdown\]**
 Defines the snapshot schedule for the individual VM. Typically, this field is left blank as VM restores can easily be extracted from cloud snapshots, which include everything within the VeregOS Cloud; however, defining a snapshot profile here provides a way to perform additional, more frequent snapshots and/or longer snapshot retention for the VM. The selection list includes all 
-[**Snapshot Profiles**](/public/ProductGuide/snapshot-profiles) available in the system.
+[**Snapshot Profiles**](/product-guide/snapshot-profiles) available in the system.
  
  <br>
 

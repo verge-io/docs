@@ -12,7 +12,7 @@ dateCreated: 2023-07-01T13:47:34.893Z
 
 <br>
 
-[**Virtual Wires**](/public/ProductGuide/virtualwires) must first be configured to give a tenant VLAN access to an external network.  
+[**Virtual Wires**](/product-guide/virtualwires) must first be configured to give a tenant VLAN access to an external network.  
 
 
 <br>
@@ -33,4 +33,4 @@ dateCreated: 2023-07-01T13:47:34.893Z
 9. Other field values can be selected as desired; typically, default settings for these fields will be fine.
 10. Click **Submit** to save the new network.
 
-Tenant workloads can now be attached to this network for layer2 access to external VLANs (provided [**Virtual Wires**](/public/ProductGuide/virtualwires) have been configured appropriately to pass into the tenant.)
+Tenant workloads can now be attached to this network for layer2 access to external VLANs (provided [**Virtual Wires**](/product-guide/virtualwires) have been configured appropriately to pass into the tenant.)

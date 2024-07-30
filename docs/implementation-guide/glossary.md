@@ -22,7 +22,7 @@ A Tenant is a virtual data center(Site) inside of another site. You can nest ten
 
 
 ### Controller Nodes:
-In any VergeOS Site, the first two nodes (node1 and node2) are considered the Controller nodes. They handle the controller functions of VergeOS. These are functions like handling the User Interface, Networking, and VSAN functions. For larger environments, they can be set as dedicated controllers where they only handle controller functions and don't run workloads.
+In any VergeOS Site, the first two nodes (node1 and node2) are considered the Controller nodes. They handle the controller functions of VergeOS. These are functions like handling the User Interface, Networking, and vSAN functions. For larger environments, they can be set as dedicated controllers where they only handle controller functions and don't run workloads.
 
 
 ### IPMI:
@@ -30,7 +30,7 @@ IPMI (Intelligent Platform Management Interface) is a set of standardized specif
 
 
 ### Fabric/Core network:
-This is the main network that VergeOS uses to communicate Core functions like VSAN traffic and Node to Node communication.
+This is the main network that VergeOS uses to communicate Core functions like vSAN traffic and Node to Node communication.
 
 
 ### External network:

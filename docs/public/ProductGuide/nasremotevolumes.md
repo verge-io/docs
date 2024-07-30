@@ -12,7 +12,7 @@ dateCreated: 2023-03-29T00:17:29.208Z
 
 Remote volumes are external file systems mounted to the VeregOS System via standard NFS or CIFS. A common use for a remote volume would be to allow syncing external data into the VeregOS vSAN (from other VeregOS sites or other storage systems), for a one-time operation or recurring backups.
 
-> A [**NAS Service**](/public/ProductGuide/NASservice) must be in place before creating volumes. {.is-success} 
+> A [**NAS Service**](/product-guide/NASservice) must be in place before creating volumes. {.is-success} 
 
 
 <br>

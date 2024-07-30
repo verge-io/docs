@@ -104,7 +104,7 @@ Network Rules are necessary to translate incoming sync traffic to the vSAN. **No
 8.  Click **Submit** to save the new rule.
 9.  Click **Apply Rules** on the left menu to put the rule into effect.
 
-> If the hostname/IP for receiving syncs is different than the vSAN address, there is a system setting to override: on the sync receiving system (host level): **System ->Settings -> Edit** VSAN Host. {.is-success}
+> If the hostname/IP for receiving syncs is different than the vSAN address, there is a system setting to override: on the sync receiving system (host level): **System ->Settings -> Edit** vSAN Host. {.is-success}
 
 
  <br>
@@ -130,8 +130,8 @@ Network Rules are necessary to translate incoming sync traffic to the vSAN. **No
     -   ***Description:*** Optionally, more administrative information can be stored for this incoming sync.
     -   ***Force Tier:*** This can be defined to select a tier to which this sync will be directed, regardless of the originating Tier or any outgoing sync settings. (If the selected tier does not exist, the next appropriate tier will be used.) Leave this field set to **\-- None --** to allow the sync tier to be determined from the sending system.)
     -   ***URL of this system that the remote system will use to connect:*** This is the URL to the system you are currently logged into. This URL should be reachable from the sending system.
-    -   ***VSAN Host:*** URL for the VSAN Host. This will default to the URL of the current (receiving) system.
-    -   ***VSAN Port (Default 14201):*** This is the port used in the PAT rule that was created above.
+    -   ***vSAN Host:*** URL for the vSAN Host. This will default to the URL of the current (receiving) system.
+    -   ***vSAN Port (Default 14201):*** This is the port used in the PAT rule that was created above.
     -   ***Minimum Snapshots (Default 1):*** This is the minimum number of snapshots that the system will retain regardless of retention periods defined.This helps prevent having all snapshots expire in the event of a prolonged outage or incorrect retention setup.
 6.  Click **Submit** to save the Incoming Sync.
 7.  The Incoming Syncs list appears. **Double-click the sync just created.** The dashboard for the incoming sync appears, along with a Registration Code (It may take a minute or two for the Registration Code to generate.).
@@ -201,7 +201,7 @@ When a specific tier(1-5) is selected here, the sync directs all data to the sel
 
 ## Specifying Snapshots to Auto Sync Along with Remote Retention
 
-> The *Cloud Snapshot Profile* determines the snapshot take and retention schedule for the entire local system (Cloud Snapshots include a complete recovery point of the entire VDC, including: VMs, networks, tenants, VSAN, NAS, etc.) These are the snapshots that can be selected for an automatic site sync. To change the profile used to control local system snapshots: System -> Cloud Snapshots > Select Snapshot Profile.  For more information about Cloud Snapshots: see [**Cloud Snapshots and Restores**](/public/ProductGuide/cloudsnapshotandrestore) Snapshots {.is-success}
+> The *Cloud Snapshot Profile* determines the snapshot take and retention schedule for the entire local system (Cloud Snapshots include a complete recovery point of the entire VDC, including: VMs, networks, tenants, vSAN, NAS, etc.) These are the snapshots that can be selected for an automatic site sync. To change the profile used to control local system snapshots: System -> Cloud Snapshots > Select Snapshot Profile.  For more information about Cloud Snapshots: see [**Cloud Snapshots and Restores**](/product-guide/cloudsnapshotandrestore) Snapshots {.is-success}
 
 <br>
 
@@ -249,7 +249,7 @@ When no schedule is defined for the sync, Snapshots defined in the Auto Sync Con
 3. Create a **Task** with **Task type = Enable** to set a start time for the sync.
 4. Create an **additional Task** with **Task type = Disable** to set a stop time for the sync.
 
-More information on creating Tasks is available here: [**Create Tasks**](/public/ProductGuide/createtasks)
+More information on creating Tasks is available here: [**Create Tasks**](/product-guide/createtasks)
 
 
 <br>
@@ -265,7 +265,7 @@ More information on creating Tasks is available here: [**Create Tasks**](/public
 **-OR-**
 Create **an additional Task** with **Task type = Throttle Sync** configuring a schedule to implement an alternate bandwidth limit for throttle.
 
-More information on creating Tasks is available here: [**Create Tasks**](/public/ProductGuide/createtasks)
+More information on creating Tasks is available here: [**Create Tasks**](/product-guide/createtasks)
 
 <br>
 <br>
@@ -275,7 +275,7 @@ More information on creating Tasks is available here: [**Create Tasks**](/public
 
 ## Repair Server
 
-A Repair Server will allow vSAN data blocks to be replicated from the sync destination back to the source when needed; this provides automatic restoration attempts in the event of hardware or power issues that surpass redundancy levels. See the [**Repair Server**](/public/ProductGuide/repairserver) page for more information.
+A Repair Server will allow vSAN data blocks to be replicated from the sync destination back to the source when needed; this provides automatic restoration attempts in the event of hardware or power issues that surpass redundancy levels. See the [**Repair Server**](/product-guide/repairserver) page for more information.
 
 
 <br>   

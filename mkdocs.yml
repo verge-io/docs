@@ -44,7 +44,7 @@ theme:
         name: Switch to dark mode
 plugins:
   - blog:
-      blog_dir: kb
+      blog_dir: knowledge-base
       post_url_format: "{slug}"
       blog_toc: true
       archive: false
@@ -135,13 +135,13 @@ nav:
       - Compute Nodes: implementation-guide/compute-nodes.md
       - Storage Nodes: implementation-guide/storage-nodes.md
     - VergeOS Post-Installation: implementation-guide/post-installation.md
-  - Reference Architecture:
-    - Edge / ROBO: reference-architecture/edge.md
-    - Cloud Providers: reference-architecture/csp.md
-    - Life / Data Science: reference-architecture/data-science.md
-    - VMware Backup: reference-architecture/vmware-backup.md
+    - Reference Architecture:
+      - Edge / ROBO: reference-architecture/edge.md
+      - Cloud Providers: reference-architecture/csp.md
+      - Life / Data Science: reference-architecture/data-science.md
+      - VMware Backup: reference-architecture/vmware-backup.md
   - Knowledge Base:
-    - kb/index.md
+    - knowledge-base/index.md
   - Product Guide:
     - VergeIO User Interface: ProductGuide/UI-Overview.md
     - Configuration:
@@ -248,7 +248,7 @@ nav:
         - Instructions for the Administrator: ProductGuide/VDI-Administrator.md
         - Instructions for the User: ProductGuide/VDI-User.md
         - Virtual Machine Remote Console: ProductGuide/VM-RemoteConsole.md
-    - VSAN:
+    - vSAN:
       - Overview:
         - Storage Tiers: ProductGuide/storagetiers.md
         - Uploading to the vSAN: ProductGuide/uploadingtovSAN.md

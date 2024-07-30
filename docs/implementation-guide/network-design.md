@@ -2,7 +2,7 @@ Nodes in a VeregOS system utilize several different networks for operations. The
 <br>
 ### Fabric Networks
 
-The Fabric Networks connect VeregOS nodes to one another for internal system communications and VSAN traffic.
+The Fabric Networks connect VeregOS nodes to one another for internal system communications and vSAN traffic.
 
 #### Requirements
 
