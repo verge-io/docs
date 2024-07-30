@@ -44,7 +44,7 @@ dateCreated: 2023-03-23T15:18:25.974Z
 
 11. #### Additional Optional Fields:
 
-See  [**Authorization Sources (General)**](/public/ProductGuide/AuthSources-General) for information regarding additional optional Fields.
+See  [**Authorization Sources (General)**](/product-guide/AuthSources-General) for information regarding additional optional Fields.
 
 <br>
 <br>

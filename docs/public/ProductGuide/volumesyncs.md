@@ -10,7 +10,7 @@ dateCreated: 2023-03-29T14:36:03.275Z
 
 # Volume Syncs
 
-Volume Syncs allow for synchronizing data between two volumes. A volume sync can be used as a one-time transfer or recurring in order to synchronize data on a regular schedule. Volume syncs can involve both [**Remote Volumes**](/public/ProductGuide/nasremotevolumes) and [**Local Volumes**](/public/ProductGuide/naslocalvolumes), providing the ability to:
+Volume Syncs allow for synchronizing data between two volumes. A volume sync can be used as a one-time transfer or recurring in order to synchronize data on a regular schedule. Volume syncs can involve both [**Remote Volumes**](/product-guide/nasremotevolumes) and [**Local Volumes**](/product-guide/naslocalvolumes), providing the ability to:
 <br>
 
 
@@ -55,7 +55,7 @@ Volume Syncs allow for synchronizing data between two volumes. A volume sync can
 17.  Specify a ***Destination Start Directory*** (or leave blank to sync to the root of the volume).
 18.  ***Start Profile*** option should be enabled to provide a recurring, regularly-scheduled sync; disable Start Profile for a one-time sync or a sync that can only be started manually. Select a ***Start Time Profile*** from the dropdown list
 **\-or-**
- leave the **\-- Default -** setting to utilize the start time of the built-in **"NAS Volume Syncs"** Profile. The ***Start Time Profile*** determines when the recurring sync will start. Snapshot Profiles are used to control volume sync Start Profiles. See [Snapshot Profiles](/public/ProductGuide/snapshot-profiles) for information about Snapshot Profiles.
+ leave the **\-- Default -** setting to utilize the start time of the built-in **"NAS Volume Syncs"** Profile. The ***Start Time Profile*** determines when the recurring sync will start. Snapshot Profiles are used to control volume sync Start Profiles. See [Snapshot Profiles](/product-guide/snapshot-profiles) for information about Snapshot Profiles.
 
 > **The Start Time Profile setting determines the start time of the sync only; it does not control snapshots for the volume!** {.is-warning}
 

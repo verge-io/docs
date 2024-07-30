@@ -19,7 +19,7 @@ A node is an individual server running vergeOS.
 **Node Types:**
 
 
- - **Controller Nodes:** Manage the User Interface, Networking, and VSAN functions. In larger environments, they can be dedicated solely to controller functions.
+ - **Controller Nodes:** Manage the User Interface, Networking, and vSAN functions. In larger environments, they can be dedicated solely to controller functions.
  - **Compute and Storage (HCI):** Hyperconverged infrastructure combining storage, compute, networking, and management.
  - **Compute-Only Nodes:** Expand compute resources within the vergeOS system.
  - **Storage-Only Nodes:** Expand storage resources within the vergeOS system. These must be added in pairs for redundancy.

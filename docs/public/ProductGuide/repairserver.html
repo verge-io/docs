@@ -11,7 +11,7 @@ dateCreated: 2023-03-31T20:46:27.474Z
 <h1>Repair Server</h1>
 <p>A Repair Server provides a potential repair mechanism after a system experiences a problem that extends beyond its redundancy tolerance (e.g. simultaneous, multiple drive failures spanning multiple nodes). Typically, a Repair Server is a sync destination that contains a fairly recent replication of the given system. A Repair Server will automatically attempt to pull back any needed blocks from the remote system, potentially avoiding the need to roll back using a Snapshot. It is generally recommended to have a Repair Server in place whenever possible.</p>
 <p><i>Note: There is a higher chance of repair success when there is a good network connection, with relatively low latency, between the system and its Repair Server.</i></p>
-<p>A Repair Server is created using the existing outgoing sync configuration: VSAN Host (address of the remote destination), VSAN Port, system-generated authorized username/password, and encryption setting (enabled or disabled based on the associated sync configuration).</p>
+<p>A Repair Server is created using the existing outgoing sync configuration: vSAN Host (address of the remote destination), vSAN Port, system-generated authorized username/password, and encryption setting (enabled or disabled based on the associated sync configuration).</p>
 <h3>To Create a Repair Server from an Outgoing Sync (common method)</h3>
 <p><i>Note: Repair servers may be auto-generated when adding a site to the Sites Dashboard; </i><a href="https://yottadoc.ro.verge.io/#help?id=sites-add&amp;bookmark=repair-server"><i>Configuring the Sites Dashboard (Adding Sites): Repair Server</i></a></p>
 <ol>
@@ -27,8 +27,8 @@ dateCreated: 2023-03-31T20:46:27.474Z
   <li>Click <strong>New</strong> on the left menu.</li>
   <li>Enter a <i><strong>Name</strong></i> for the Repair Server. Use a name that will be helpful for future administration, for example a name that includes that of the remote system.</li>
   <li>Optionally, a <i><strong>Description </strong></i>can be entered to store additional information.<ul>
-      <li><i><strong>VSAN Host</strong></i> url to the root level of the remote system</li>
-      <li><i><strong>VSAN Port</strong></i> default 14201, a different port can be used but must be configured on the remote side as well and ports open on intermediate firewall(s).</li>
+      <li><i><strong>vSAN Host</strong></i> url to the root level of the remote system</li>
+      <li><i><strong>vSAN Port</strong></i> default 14201, a different port can be used but must be configured on the remote side as well and ports open on intermediate firewall(s).</li>
       <li><i><strong>User</strong></i></li>
       <li><i><strong>Password</strong></i> and <i><strong>Confirm Password</strong></i> for the specified Verge.io User.</li>
       <li><i><strong>Encryption</strong></i></li>

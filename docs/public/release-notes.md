@@ -92,7 +92,7 @@ dateCreated: 2022-08-19T20:39:26.714Z
 * Fixed styling issues related to dark mode
 
 ## OS / Install
-* Added additional advanced VSAN settings for tweaking high-latency environments
+* Added additional advanced vSAN settings for tweaking high-latency environments
 * Fixed an issue where the current boot option could be unusable if you hard-power off a node while the boot partitions are being updated
 
 
@@ -103,8 +103,8 @@ dateCreated: 2022-08-19T20:39:26.714Z
 * When you disable a site, it's status is now set to idle
 * Two Factor Authentication and Require Password Change have been completely overhauled
 * Fixed an issue where IPMI addresses weren't being loaded into the UI
-* You can now issue a clear reference counts from VSAN diagnostics
-* VSAN rates on the main dashboard now show decimals
+* You can now issue a clear reference counts from vSAN diagnostics
+* vSAN rates on the main dashboard now show decimals
 * IPMI services are now restarted if the device is marked as "busy"
 * Fixed an issue where L2 networks would allow you to run a diagnostic query, but they would never expire
 * You can now register a root CA with the system using the API
@@ -113,7 +113,7 @@ dateCreated: 2022-08-19T20:39:26.714Z
 * Increased supported nodes per-cluster to 255
 * Fixed a couple minor issues initializing BGP in a network
 * Fixed issue downloading remote recipe devices
-* You can now multiselect VSAN drives for closing/initializing/formatting
+* You can now multiselect vSAN drives for closing/initializing/formatting
 * Fixed CPU vendor for host mode Intel cpu
 * Added fiber channel scan to refresh drives
 * Changed cluster power off to cluster shutdown
@@ -129,7 +129,7 @@ dateCreated: 2022-08-19T20:39:26.714Z
 * Over 50 additional minor fixes and enhancements
 * Added the ability to skip the file size when using Upload from URL (for 1-time URLs that get burned after their first use)
 * Fixed an issue where the license request file was incorrect
-* Added VSAN online since and up since times to node drives
+* Added vSAN online since and up since times to node drives
 * Fixed total read / write on the node drive dashboard
 * Fixed spice console password
 * Fixed an issue building the clone ISO
@@ -148,8 +148,8 @@ dateCreated: 2022-08-19T20:39:26.714Z
 * Kernel 6.1.81 and 5.10.212
 * Added additional FC drivers
 * Fixed an issue restarting the installer when using a core physical network that has a tagged vlan
-* Fixed a scale-out issue where the VSAN could stay in a warning status
-* Fixed an issue auto-negotiating the VSAN encryption key during boot
+* Fixed a scale-out issue where the vSAN could stay in a warning status
+* Fixed an issue auto-negotiating the vSAN encryption key during boot
 
 
 # 4.12.1 - March 2024
