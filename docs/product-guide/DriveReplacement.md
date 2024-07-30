@@ -16,7 +16,7 @@ The Verge interface will provide warnings or alerts to indicate when there is a 
 
 - Double-click a drive with an error/warning to view its dashboard that displays more detail.
 
-![](public/userguide-sshots/drivelisting-warning.png)
+![](/docs/public/userguide-sshots/drivelisting-warning.png)
 
 ![](/docs/public/userguide-sshots/drivedashboard.png)
 

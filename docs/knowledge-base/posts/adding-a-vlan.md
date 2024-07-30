@@ -21,7 +21,7 @@ dateCreated: 2022-06-30T15:23:20.794Z
 4. Submit your configuration, you will then be brought to the newly created networks dashboard where you should see a status of **"Running"** if the same configuration from above was used.
 1. Workloads can now be attached to the newly created network. 
 
->**NOTE:** See the [Virtual Wires KB](/docs/knowledge-base /virtual-wires) article for adding VLANS into Tenants.
+>**NOTE:** See the [Virtual Wires KB](/docs/knowledge-base/virtual-wires) article for adding VLANS into Tenants.
 {.is-info}
 
 <br>

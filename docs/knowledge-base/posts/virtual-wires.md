@@ -25,7 +25,7 @@ A virtual wire is the process of providing a tenant the ability to gain access t
 {.is-info}
 
 ## Creating a 1:1 Virtual Wire
-1. Ensure the VLAN(s) have been created in the VergeOS UI. If they have not, follow the steps to create VLAN(s) [here](/docs/knowledge-base /adding-a-vlan).
+1. Ensure the VLAN(s) have been created in the VergeOS UI. If they have not, follow the steps to create VLAN(s) [here](/docs/knowledge-base/adding-a-vlan).
 1. From the Main Dashboard select "Networks" in the left menu and you will be brought to the "Networks Dashboard".
 1. Select "Virtual Wires" in the left menu and you will be brought to the list view of all virtual wires in the environment.
 1. Select "New" and you will be brought to the virtual wire creation page.
