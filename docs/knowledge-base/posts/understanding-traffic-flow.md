@@ -13,7 +13,7 @@ dateCreated: 2023-11-29T16:50:57.491Z
 ---
 
 ## Traffic/Network Flow Diagram
-![VeregOS-traffic-flow_(1).png](/docs/public/knowledgebase/vergeio-traffic-flow_(1).png)
+![VergeOS-traffic-flow_(1).png](/docs/public/knowledgebase/vergeio-traffic-flow_(1).png)
 
 <br>
 

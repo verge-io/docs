@@ -12,7 +12,7 @@ dateCreated: 2023-04-07T16:34:04.834Z
 
 > System Updates are **only run from the host system (top-level parent);** tenant systems are automatically updated from their host system.{.is-info}
 
-VeregOS regularly publishes updates to provide enhancements and improvements. Administrators should aim to keep systems updated by scheduling auto updates or regularly checking and applying available updates. The update process can be initiated within the UI or via task scheduling. The update process is then handled by the system with changes automatically propagated to all nodes, rebooting and applying one node at a time. Updates can be performed without any downtime (provided there are adequate resources in place), as the system can automatically migrate workloads to other nodes before applying an update and restarting/rebooting a node.
+VergeOS regularly publishes updates to provide enhancements and improvements. Administrators should aim to keep systems updated by scheduling auto updates or regularly checking and applying available updates. The update process can be initiated within the UI or via task scheduling. The update process is then handled by the system with changes automatically propagated to all nodes, rebooting and applying one node at a time. Updates can be performed without any downtime (provided there are adequate resources in place), as the system can automatically migrate workloads to other nodes before applying an update and restarting/rebooting a node.
 
 <br>
 <br>

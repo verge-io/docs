@@ -1,6 +1,6 @@
 ---
 title: Product Guide - Storage Tiers
-description: Explanation of how tiering works within VeregOS, along with a listing of typical tier definitions, 0-5
+description: Explanation of how tiering works within VergeOS, along with a listing of typical tier definitions, 0-5
 published: true
 date: 2024-02-29T03:18:25.670Z
 tags: 

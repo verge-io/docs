@@ -2,7 +2,7 @@
 
 # IPSec Configuration
 
-IPSec compatibility is available to provide a VPN tunnel between a VeregOS network and a third-party IPSec Peer.
+IPSec compatibility is available to provide a VPN tunnel between a VergeOS network and a third-party IPSec Peer.
 
 ***Notes:***
 
@@ -12,7 +12,7 @@ IPSec compatibility is available to provide a VPN tunnel between a VeregOS netwo
 
 
 
-# Basic Steps to Configure VeregOS IPSec VPN:
+# Basic Steps to Configure VergeOS IPSec VPN:
 
 -   [**Creating a VPN Network**](#creating-a-vpn-network)
 -   [**Editing IPSec Settings (as needed)**](#editing-ipsec-configuration)
@@ -31,14 +31,14 @@ IPSec compatibility is available to provide a VPN tunnel between a VeregOS netwo
 3.  Click **New VPN** from the left menu.
 ![int-networksetting.png](/docs/public/userguide-sshots/int-networksetting.png)
 
-**--None--** to create a separate VPN network, where connections to other VeregOS networks are all handled with layer 3 routing. (Recommended method)
+**--None--** to create a separate VPN network, where connections to other VergeOS networks are all handled with layer 3 routing. (Recommended method)
 
 **-OR-**
 
 **Select an existing network** to attach the VPN network directly to that network via layer 2.
 
 > Note: if an existing network is selected for the Interface Network and VPN connectivity is needed 
-> to additional VeregOS networks, further routing rules will be needed and additional unnecessary network hops will be introduced; therefore, if the VPN will need to connect to multiple networks and will be utilizing a public IP address (recommended), it is best to select --None-- for interface network and handle connections to all networks via layer 3 routing.
+> to additional VergeOS networks, further routing rules will be needed and additional unnecessary network hops will be introduced; therefore, if the VPN will need to connect to multiple networks and will be utilizing a public IP address (recommended), it is best to select --None-- for interface network and handle connections to all networks via layer 3 routing.
 {.is-info}
 
 

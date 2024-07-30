@@ -1,6 +1,6 @@
 
 
-Welcome to the Product Guide for VeregOS. If you cannot find what you are looking for, please use the **search function at the top of the page**.
+Welcome to the Product Guide for VergeOS. If you cannot find what you are looking for, please use the **search function at the top of the page**.
 
 You can also find a variety of content located in the [Knowledgebase](/docs/public/kb). 
 

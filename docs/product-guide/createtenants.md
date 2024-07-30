@@ -30,12 +30,12 @@ The Custom Tenant Wizard steps through multiple input forms to create a new cust
 4.  Click **Next** (bottom of the screen). The ***Tenant Settings* form appears.**
 
 6.  Enter a ***Name*** for the tenant.
-7.  ***URL*** is simply a helper field to provide a link to the tenant's UI. (The ***Connect to UI*** menu link in the service provider's VeregOS user interface.) This field can be left blank as it will automatically be populated when the first External IP is assigned to the tenant.
+7.  ***URL*** is simply a helper field to provide a link to the tenant's UI. (The ***Connect to UI*** menu link in the service provider's VergeOS user interface.) This field can be left blank as it will automatically be populated when the first External IP is assigned to the tenant.
 8.  Enter an ***Admin User Password*** and again in the ***Confirm Admin User Password*** field (required). This sets the password for the tenant’s “admin” root user that will be auto-created.
 9.  **Optionally,** ***Require Password Change*** (checkbox) can be selected to “force” a password change when the tenant admin initially logs in.
 10.  **Optionally**, a ***Description*** can be entered to record more information about the tenant.
 11.  By default, the ***Expose Cloud Snapshots*** option (checkbox) is selected. When selected, the tenant is able to browse the cloud snapshots of the parent and “self-serve” download their own tenant snapshot from the provider's snapshot timestamps.
-12.  **Optionally**, the ***Allow Custom Branding*** option (checkbox) can be selected to enable the tenant to customize their own VeregOS dashboard with different colors and logo.
+12.  **Optionally**, the ***Allow Custom Branding*** option (checkbox) can be selected to enable the tenant to customize their own VergeOS dashboard with different colors and logo.
 13.  **Optionally**, the ***Custom help URL*** allows for providing alternate help content for the tenant by providing a URL to the location of the alternate help content. When a URL is defined here, the tenant users will see the content at the provided URL rather than the built-in help content.
 14.  Click **Submit** (bottom of page) to proceed. The ***New Tenant Node* form appears**.
 
@@ -61,7 +61,7 @@ The Custom Tenant Wizard steps through multiple input forms to create a new cust
     
 26.  Here you can optionally assign one External IP to the tenant. External IPs can be assigned to a tenant after creation as well. By default, the first External IP assigned to a tenant is configured to be the tenant's UI address.
 
-> Remember that an External IP is one that is simply external to the VeregOS system; it may or may not be a public Internet address; an External IP can be a private address on your external LAN/WAN, for example: 10.10.10.100. {.is-success}
+> Remember that an External IP is one that is simply external to the VergeOS system; it may or may not be a public Internet address; an External IP can be a private address on your external LAN/WAN, for example: 10.10.10.100. {.is-success}
 
    -   Select from the ***Assign External IP\**** dropdown. (This list will include all unassigned Virtual IPs defined in the Parent).
 **-OR-**

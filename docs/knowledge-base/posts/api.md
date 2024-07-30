@@ -13,14 +13,14 @@ dateCreated: 2022-12-19T16:54:06.293Z
 
 ## API Introduction
 
-The VeregOS system offers an API interface for custom development integration.  This document serves to outline use of the API.  Detailed information for the API can be found within the VeregOS UI, as a Swagger wiki page; the wiki page is created dynamically and will show a complete listing of VeregOS tables to access.  
+The VergeOS system offers an API interface for custom development integration.  This document serves to outline use of the API.  Detailed information for the API can be found within the VergeOS UI, as a Swagger wiki page; the wiki page is created dynamically and will show a complete listing of VergeOS tables to access.  
 <br>
 
 ### Swagger Interface
 
 Customers can access the inline Swagger documentation by navigating following these steps:
 
-1.  **Login** in to any VeregOS system with valid user credentials 
+1.  **Login** in to any VergeOS system with valid user credentials 
 2.  From the Main Dashboard, click **System** on the left menu.
 3.  Once inside the System Dashboard, at the **bottom left, there is a link to the API documentation.**
 
@@ -39,7 +39,7 @@ This will return the response which includes the response body and header. Inclu
 
 ### Authentication
 
-The following are ways to pass authentication through the API. Currently, VeregOS offers two methods: 
+The following are ways to pass authentication through the API. Currently, VergeOS offers two methods: 
 
 1.  Basic http authentication 
 2.  API database table
@@ -275,7 +275,7 @@ To retrieve a table’s schema append *$table* to the URI: 
 
 **/api/v4/machines/$table** (replace machines with the table name)
 
-It will ask for your credentials, this does not support your other authentication methods and requires your VeregOS admin credentials. 
+It will ask for your credentials, this does not support your other authentication methods and requires your VergeOS admin credentials. 
 
 **Note:** The output is in JSON format. Firefox will display this by default in a nice readable format. For other browsers you may want to output to another program to view the JSON correctly.
 <br>

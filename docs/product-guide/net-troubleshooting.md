@@ -26,7 +26,7 @@ This page contains common network testing/troubleshooting steps.
 
 ## Verify VM has Appropriate IP Address
 
-> By default, an Internal VeregOS network is configured to serve DHCP addresses. {.is-success}
+> By default, an Internal VergeOS network is configured to serve DHCP addresses. {.is-success}
 
 **To Check if the VM received a DHCP address:**
 
@@ -56,7 +56,7 @@ To check a network's addressing, see [Determining Network Addresses](#determinin
 
 ## Verify Correct NIC Interface and Driver
 
-Virtio is generally the recommended interface for NIC devices, as it typically will provide the best performance. Virtio drivers need to be added for Windows VMs. VeregOS custom Windows Iso files include Virtio drivers and can be used for initial guest OS installation; otherwise, the latest Virtio drivers can be downloaded at: https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso 
+Virtio is generally the recommended interface for NIC devices, as it typically will provide the best performance. Virtio drivers need to be added for Windows VMs. VergeOS custom Windows Iso files include Virtio drivers and can be used for initial guest OS installation; otherwise, the latest Virtio drivers can be downloaded at: https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso 
 
 **To check the NIC interface:**
 
@@ -174,7 +174,7 @@ When a VM is able to reach Internet IP addresses but not URL addresses, a DNS pr
 
 > If the VM is configured with DHCP and successfully receiving an address it will also automatically receive DNS configuration from the network {.is-success}
 
-For Additional Troubleshooting help, contact the VeregOS Support Team at: Support@Verge.io
+For Additional Troubleshooting help, contact the VergeOS Support Team at: Support@Verge.io
 
 <br>
 

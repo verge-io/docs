@@ -19,11 +19,11 @@ dateCreated: 2022-07-29T15:28:29.904Z
 
 **Before starting with recovery work on a guest OS, ensure that the administrator has:**
 1. Access to the VM including **tested/known working credentials**
-1. The ISO for Virtio is loaded as available in the VeregOS environment under Media Images
-1. The OS installation ISO loaded and available in the VeregOS environment
+1. The ISO for Virtio is loaded as available in the VergeOS environment under Media Images
+1. The OS installation ISO loaded and available in the VergeOS environment
 
 **To load Windows drivers from a Windows Guest OS recovery console, administrators will need to have the following things before hand:**
-1. VeregOS UI platform access to the environment running the Guest OS with an issue
+1. VergeOS UI platform access to the environment running the Guest OS with an issue
 1. A copy of the (latest) virtio disk drivers in an ISO format
 1. A copy of the installed system operating system ISO [example: windows boot disk]
 

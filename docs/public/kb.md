@@ -1,5 +1,5 @@
 ---
-title: Welcome to the VeregOS Knowledge Base.
+title: Welcome to the VergeOS Knowledge Base.
 description: 
 published: true
 date: 2024-04-10T20:50:20.542Z
@@ -16,7 +16,7 @@ You can also find a variety of content located in the **in-line help documentati
 **There are three easy ways to access in-line help:**
 1. Click the <kbd>?</kbd> in the **upper right** of the dashboard.
 1. Click on the word <kbd>Help</kbd> in the **bottom left**. 
-1. Navigate to **https://URLorIPofyourVeregOSSystem/#help**.
+1. Navigate to **https://URLorIPofyourVergeOSSystem/#help**.
 <br>
 
 # KB Articles{.tabset}
@@ -30,7 +30,7 @@ You can also find a variety of content located in the **in-line help documentati
 * [Proper Power Sequence](/docs/public/kb/proper-power-sequence)
 * [Release Notes](/docs/public/release-notes)
 * [Reviewing System Logs](/docs/public/kb/reviewing-system-logs)
-* [VeregOS Update Instructions](/docs/public/kb/vergeio-update-instructions)
+* [VergeOS Update Instructions](/docs/public/kb/vergeio-update-instructions)
 * [Workloads Failing to Migrate](/docs/public/kb/workloads-failing-to-migrate)
 {.links-list}
 
@@ -53,7 +53,7 @@ You can also find a variety of content located in the **in-line help documentati
 * [Adding a VLAN in the User Interface](/docs/public/kb/adding-a-vlan)
 * [Allow Root to Tenant site connection](/docs/public/kb/AllowRootToTenantSite)
 * [Configuring an IPSEC VPN Connection](/docs/public/kb/configuring-ipsec)
-* [Routing Between Internal VeregOS Networks](/docs/public/kb/routing-internal-networks)
+* [Routing Between Internal VergeOS Networks](/docs/public/kb/routing-internal-networks)
 * [Understanding Traffic Flow](/docs/public/kb/understanding-traffic-flow)
 * [Virtual Wires - Providing Layer 2 Access to a Tenant](/docs/public/kb/virtual-wires)
 * [Wireguard - Setup Remote Access VPN](/docs/public/kb/wireguard-setup-remote-access-vpn)
@@ -82,10 +82,10 @@ You can also find a variety of content located in the **in-line help documentati
 {.links-list}
 
 ## Virtual Machines
-* [Accessing the VeregOS UI From Inside a VM](/docs/public/kb/accessing-ui-from-a-vm)
+* [Accessing the VergeOS UI From Inside a VM](/docs/public/kb/accessing-ui-from-a-vm)
 * [Change Screen Resolution on UEFI VM](/docs/public/kb/change-resolution-on-uefi)
 * [Exporting a Virtual Machine](/docs/public/kb/exporting-a-vm)
-* [Importing a Physical/Virtual Machine into VeregOS](/docs/public/kb/importing-p2v-or-v2v)
+* [Importing a Physical/Virtual Machine into VergeOS](/docs/public/kb/importing-p2v-or-v2v)
 * [Importing VMs from Media Images](/docs/public/kb/Importing-VMs-from-Media)
 * [Import Windows Server with UEFI](/docs/public/kb/importwindowsserveruefi)
 * [Isolating a VM](/docs/public/kb/isolate-a-vm)
@@ -105,7 +105,7 @@ You can also find a variety of content located in the **in-line help documentati
 * [Follow Us on Linkedin](https://www.linkedin.com/company/verge-io/)
 * [Visit Us on Youtube](https://www.youtube.com/channel/UCnFu28s0GBVi18j7Ez3MXRg)
 * [Youtube - Installation of a 2 Node Cluster](https://youtu.be/hOUg8_MgIjA)
-* [Youtube - Upgrading VeregOS](https://youtu.be/cf4J4Gj9AUo)
+* [Youtube - Upgrading VergeOS](https://youtu.be/cf4J4Gj9AUo)
 * [Youtube - UI Dashboard Overview](https://youtu.be/oQx2BkWp7hc)
 * [Youtube - Deduplication & Tenancy](https://youtu.be/f0ZwAIlc_c4)
 * [Youtube - Clone an Entire Virtual Data Center](https://youtu.be/hq_h65ESYbU)

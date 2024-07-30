@@ -67,7 +67,7 @@ An external network is a layer 3 network deployed OUTSIDE a vergeOS system or te
 A core network that VergeOS uses to communicate vSAN traffic, Node to Node communication, VM migrations, etc.
 
 #### DMZ
-The DMZ network is a virtual network (created automatically during the VeregOS installation/Tenant creation) as a connection point for all networks. Every VeregOS Cloud has 1 DMZ Network (There is a DMZ network at the physical host level; additionally, each Tenant has a DMZ network.).
+The DMZ network is a virtual network (created automatically during the VergeOS installation/Tenant creation) as a connection point for all networks. Every VergeOS Cloud has 1 DMZ Network (There is a DMZ network at the physical host level; additionally, each Tenant has a DMZ network.).
 
 #### Management UI/API (External)
 An internal network is a layer 3 network deployed OUTSIDE a vergeOS system or tenant. A BGP connection to your Internet provider and a layer 2 VLAN trunked into a vergeOS system are examples of external networks. The management of a vergeOS system will use an external network.
@@ -101,7 +101,7 @@ A tenant tecipe is a customizable template for creating a new tenant instance. A
 Sites are the way you connect vergeOS systems together. You can have multiple Sites in a single building/rack or at separate physical locations. You connect other vergeOS systems for the purposes of replicating snapshots, centralized monitoring and management, and vSAN Repair Server services.
 
 ### Cloud Snapshots
-A snapshot captures the state of an entity at a particular point in time. Snapshots can be used to create point-in-time capture of an entire VeregOS cloud, tenant, an individual virtual machine, or a NAS volume. Snapshots allow "rolling back" a system, which can be helpful for recovery, development, and testing purposes.
+A snapshot captures the state of an entity at a particular point in time. Snapshots can be used to create point-in-time capture of an entire VergeOS cloud, tenant, an individual virtual machine, or a NAS volume. Snapshots allow "rolling back" a system, which can be helpful for recovery, development, and testing purposes.
 
 ### Snapshot Profile
 A snapshot profile defines a schedule for snapshot creation and cleanup.
@@ -116,30 +116,30 @@ A repair server provides a potential reconstruction mechanism for a system that 
 A catalog is a group of related recipes. For example, one catalog may contain many varied Windows VM recipes, while another catalog in the same repository could contain all Linux-based VM recipes. Customers can group recipes into catalogs in whatever way makes sense for their particular organization.
 
 ### Recipe (VM)
-A VM recipe is a customizable template for launching new virtual machine instances. A VM recipe can include initial hardware specifications (e.g. number of cores, RAM, CPU type, drives, NICs, etc). and resource pool specification. Additionally, custom fields can be added to the recipe to gather input at the time of recipe consumption. This data, input by the recipe consumer, can then be utilized to adjust elements within the new VM guest OS; typically at first startup. For example, a recipe can be configured to prompt for a database username and password, or for disk/ram size settings to input into an application conf file. VeregOS VM recipes are compatible with Cloud-Init. See https://cloud-init.io for cloud-init documentation.
+A VM recipe is a customizable template for launching new virtual machine instances. A VM recipe can include initial hardware specifications (e.g. number of cores, RAM, CPU type, drives, NICs, etc). and resource pool specification. Additionally, custom fields can be added to the recipe to gather input at the time of recipe consumption. This data, input by the recipe consumer, can then be utilized to adjust elements within the new VM guest OS; typically at first startup. For example, a recipe can be configured to prompt for a database username and password, or for disk/ram size settings to input into an application conf file. VergeOS VM recipes are compatible with Cloud-Init. See https://cloud-init.io for cloud-init documentation.
 
 ### Repository
-A repository is a site collection of recipe catalogs. Typically, a tenant has access to a repository provided by its VeregOS service provider. Each tenant can also create a local repository to store its own recipe catalogs.
+A repository is a site collection of recipe catalogs. Typically, a tenant has access to a repository provided by its VergeOS service provider. Each tenant can also create a local repository to store its own recipe catalogs.
 
-!!! note "The VeregOS Repository is also included by default on a VeregOS Installation. The VeregOS Repository includes the standard NAS Service VM."
+!!! note "The VergeOS Repository is also included by default on a VergeOS Installation. The VergeOS Repository includes the standard NAS Service VM."
 
 ### Subscriptions
 Subscriptions allow for monitoring a system (or components of a system) by defining system information to send to users via Email.
 
 ### Subscription Profiles
-Subscription profiles define the aspects of a subscription (on Demand/Scheduled, trigger criteria/schedule). Many subscription profiles are pre-loaded by default with the VeregOS Install. Additional subscription profiles can also be created.
+Subscription profiles define the aspects of a subscription (on Demand/Scheduled, trigger criteria/schedule). Many subscription profiles are pre-loaded by default with the VergeOS Install. Additional subscription profiles can also be created.
 
 ### Volume
-A Volume is a directory structure/collection of files within a VeregOS NAS. A VeregOS NAS can contain one or more Volumes, with each individual Volume allowing different settings for aspects such as security, snapshot, tiering, max size, Anti-Virus settings, shares, etc. Remote Volume - mounts a pre-existing (external) NFS or CIFS file system to make it accessible within a VeregOS system. Local Volume - stored within the VeregOS vSAN.
+A Volume is a directory structure/collection of files within a VergeOS NAS. A VergeOS NAS can contain one or more Volumes, with each individual Volume allowing different settings for aspects such as security, snapshot, tiering, max size, Anti-Virus settings, shares, etc. Remote Volume - mounts a pre-existing (external) NFS or CIFS file system to make it accessible within a VergeOS system. Local Volume - stored within the VergeOS vSAN.
 
 ### Snapshot Profile
 A snapshot profile defines a schedule for snapshot creation and cleanup.
 
 ### Media Images
-Media Images are files uploaded to the VeregOS vSAN to make available inside the VeregOS environment. Common files uploaded are those used for installing new virtual machines (e.g. *.iso) or importing machines or drives from existing systems (e.g. *.ova, *.ovf, *.raw, *.qcow, *.vmdk, etc).
+Media Images are files uploaded to the VergeOS vSAN to make available inside the VergeOS environment. Common files uploaded are those used for installing new virtual machines (e.g. *.iso) or importing machines or drives from existing systems (e.g. *.ova, *.ovf, *.raw, *.qcow, *.vmdk, etc).
 
 ### Volume
-A Volume is a directory structure/collection of files within a VeregOS NAS. A VeregOS NAS can contain one or more Volumes, with each individual Volume allowing different settings for aspects such as security, snapshot, tiering, max size, Anti-Virus settings, shares, etc.
+A Volume is a directory structure/collection of files within a VergeOS NAS. A VergeOS NAS can contain one or more Volumes, with each individual Volume allowing different settings for aspects such as security, snapshot, tiering, max size, Anti-Virus settings, shares, etc.
 
 <br>
 [Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

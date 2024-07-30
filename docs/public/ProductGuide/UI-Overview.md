@@ -1,6 +1,6 @@
 ---
 title: Product Guide - UI Overview
-description: Basic information about navigating the VeregOS user interface
+description: Basic information about navigating the VergeOS user interface
 published: true
 date: 2024-03-26T17:54:51.891Z
 tags: 
@@ -8,19 +8,19 @@ editor: markdown
 dateCreated: 2023-03-16T00:42:24.112Z
 ---
 
-# Navigating the VeregOS User Interface
+# Navigating the VergeOS User Interface
 
-This page provides general information about the VeregOS User Interface (UI). Detailed information about performing specific actions in the software can be found in the content sections of the Help.
+This page provides general information about the VergeOS User Interface (UI). Detailed information about performing specific actions in the software can be found in the content sections of the Help.
 
 <br>
 <br>
 
 ### The Main Dashboard
 
-The home screen of the VeregOS UI is the Main Dashboard for your VeregOS Cloud. It provides overall system information, including:
+The home screen of the VergeOS UI is the Main Dashboard for your VergeOS Cloud. It provides overall system information, including:
 
 
-  *   **Top-level, statistical information for the VeregOS Cloud**
+  *   **Top-level, statistical information for the VergeOS Cloud**
   *   **Main system logs**
   *   **Left Navigation menu to access subsections of the application**
   *   **Quick links within the Dashboard section to drill down to subsections**

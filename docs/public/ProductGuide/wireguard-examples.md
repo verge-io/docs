@@ -16,9 +16,9 @@ The following are provided as example WireGuard implementations. Refer to the ge
 <br>
 
 
-## Example: Creating a VPN Tunnel between Two VeregOS Systems
+## Example: Creating a VPN Tunnel between Two VergeOS Systems
 
-For this example, "SystemA" and "SystemB" will be used to denote the 2 VeregOS systems to be connected via VPN.
+For this example, "SystemA" and "SystemB" will be used to denote the 2 VergeOS systems to be connected via VPN.
 <br>
 
 ### On SystemA:
@@ -86,12 +86,12 @@ A simple ping test can be done using the Diagnostics tool on each system as an i
 
 ## Example: Configuring for Remote Access - Windows Client
 
-This example covers setup for a single, remote access peer (a Windows client), and presumes a WireGuard Interface has already been created on the server side (the VeregOS system).
+This example covers setup for a single, remote access peer (a Windows client), and presumes a WireGuard Interface has already been created on the server side (the VergeOS system).
 
 <br>
 
 ### Create New Peer:
-1.  On the VeregOS system, navigate to the **WireGuard(VPN) dashboard**.
+1.  On the VergeOS system, navigate to the **WireGuard(VPN) dashboard**.
 2.  Click **New Peer** on the left menu.
 3.  Select the appropriate WireGuard ***Interface*** from the dropdown list.
 4.  Assign a ***Name*** to the peer, such as the remote user's name.

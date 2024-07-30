@@ -2,7 +2,7 @@
 
 # Importing VMs from a VMware Service Backup Job
 
-This is the recommended method for importing a number of production VMware VMs. The VeregOS VMware service creates a direct agent connection to a VMware environment and provides for synchronizing backups of running VMs to VeregOS.
+This is the recommended method for importing a number of production VMware VMs. The VergeOS VMware service creates a direct agent connection to a VMware environment and provides for synchronizing backups of running VMs to VergeOS.
 
 Typically, for import: a backup operation is run multiple times while VMs are still running in production. After the backup job runs one or more times, the duration of each backup job should begin to decrease. When backup job durations start to level off (e.g. backup duration is about the same each time) one last backup is performed while the VMs are powered down and then the import operation is completed using that backup job (directions below).
 

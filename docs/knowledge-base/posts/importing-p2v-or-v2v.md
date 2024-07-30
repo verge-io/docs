@@ -1,5 +1,5 @@
 ---
-title: Importing a Physical/Virtual Machine into VeregOS
+title: Importing a Physical/Virtual Machine into VergeOS
 slug: importing-a-physicalvirtual-machine-into-vergeio
 description: 
 published: true
@@ -11,23 +11,23 @@ editor: markdown
 dateCreated: 2022-08-10T19:18:14.014Z
 ---
 
-## How to import Physical/Virtual Machines into VeregOS 
+## How to import Physical/Virtual Machines into VergeOS 
 **Clone ISO Transfer Utility**
 ISO Version 4.8.2
 
-The VeregOS Clone Utility (VeregOS-clone.iso) can be used to import external servers (physical or virtual) into VeregOS virtual machines.  Zero block detection is used in transferring source drives, providing efficiency as only used blocks require transfer.  The VeregOS Clone Utility is recommended for PtoV imports (importing physical computers) and non-VMware VtoV (importing existing virtual machines). The VeregOS VMware connector is recommended for importing VMware virtual machines.
+The VergeOS Clone Utility (VergeOS-clone.iso) can be used to import external servers (physical or virtual) into VergeOS virtual machines.  Zero block detection is used in transferring source drives, providing efficiency as only used blocks require transfer.  The VergeOS Clone Utility is recommended for PtoV imports (importing physical computers) and non-VMware VtoV (importing existing virtual machines). The VergeOS VMware connector is recommended for importing VMware virtual machines.
 
 ### Prerequisites
 
-1. **VeregOS System (destination):**
+1. **VergeOS System (destination):**
 	-   Network URL that can be accessible from Source VMs to be imported.
-	-   VeregOS username/password with permissions to create VMs
-	-   Adequate available vSAN storage for cloned VM drives (Note: VeregOS vSAN global deduplication handles zero blocks; thus, only actual used drive space is required.) 
+	-   VergeOS username/password with permissions to create VMs
+	-   Adequate available vSAN storage for cloned VM drives (Note: VergeOS vSAN global deduplication handles zero blocks; thus, only actual used drive space is required.) 
 	-   Although not necessary for the clone-import process, adequate resources (RAM/CPU) will need to be available on the destination system to run imported VMs.
 
 1. **VM/Physical Machine to Clone (Source):**
 	-   Network connection (attached to a network that can reach the destination system)
-	-   Attached USB/CD-ROM device (containing VeregOS -clone.iso)
+	-   Attached USB/CD-ROM device (containing VergeOS -clone.iso)
 	-   Minimum 1GB RAM (to boot from/run the iso)
 
 1. **Determining Appropriate Sync Method**
@@ -44,11 +44,11 @@ This method provides for faster transfer speeds but involves additional network 
 
 1. **Additional Network Requirements for vSAN-direct Sync method:**
 	- 	Source side static IP
-	- 	Destination VeregOS system static IP
-	- 	NAT and SNAT rules on the UI(external) and core networks of the VeregOS system
+	- 	Destination VergeOS system static IP
+	- 	NAT and SNAT rules on the UI(external) and core networks of the VergeOS system
 <br>
 
-### Obtaining the VeregOS-clone.iso File
+### Obtaining the VergeOS-clone.iso File
 
 1. From the **Main Dashboard**, click **Backup/DR** on the left menu.
 2. Click the **Add Clone ISO** button in the Clone ISO Utility section. 
@@ -56,7 +56,7 @@ This method provides for faster transfer speeds but involves additional network 
 
 3. The Clone ISO dialog appears, giving options for the creation of a public download link for the ISO file: 
 
--   **No** No public download link is created.  The Clone ISO will only be downloadable from the VeregOS UI.
+-   **No** No public download link is created.  The Clone ISO will only be downloadable from the VergeOS UI.
 -   **Yes, make the link Anonymous (UUID) (default selection)** - creates a public download link with GUID (128bit long number) 
 
 *(ex: https://Verge.example.com/273b5d6a--b205-1e1b-6ae6-01cfa7cj1233)*
@@ -75,16 +75,16 @@ This method provides for faster transfer speeds but involves additional network 
 
 6. Download the ISO; it can now be downloaded from: 
 
--   Within the VeregOS UI
+-   Within the VergeOS UI
     \-OR-
 -   The public link (if created)
 
 The bootable Clone ISO can be used on CD or USB. See [bootable-usb](/docs/public/kb/bootable-usb) for instructions on making a bootable USB. Substitute the Clone ISO.
 <br>
 
-### Using the VeregOS Clone Utility
+### Using the VergeOS Clone Utility
 
-1. Power down the source computer and **boot from the Clone ISO** ( VeregOS-clone.iso)
+1. Power down the source computer and **boot from the Clone ISO** ( VergeOS-clone.iso)
 1. Hit <kbd>Enter</kbd> or allow the clone utility to boot automatically. 
 
    ![enablecloneiso4.png](/docs/public/enablecloneiso4.png)
@@ -97,7 +97,7 @@ The bootable Clone ISO can be used on CD or USB. See [bootable-usb](/docs/public
 
    ![enablecloneiso6.png](/docs/public/enablecloneiso6.png)
 
-5.  **Select the NIC** to be used to connect to the destination VeregOS system.  Only one NIC is selected for connecting to the destination; however, all NICS from the source system are brought over in the VM import. 
+5.  **Select the NIC** to be used to connect to the destination VergeOS system.  Only one NIC is selected for connecting to the destination; however, all NICS from the source system are brought over in the VM import. 
 
    ![enablecloneiso7.png](/docs/public/enablecloneiso7.png)
 
@@ -113,9 +113,9 @@ The bootable Clone ISO can be used on CD or USB. See [bootable-usb](/docs/public
 
    ![enablecloneiso10.png](/docs/public/enablecloneiso10.png)
 
-1. Enter the VeregOS system's URL (hostname or IP address).
+1. Enter the VergeOS system's URL (hostname or IP address).
 
-2. Enter VeregOS username and password. 
+2. Enter VergeOS username and password. 
   >**Note:** The user must have permission to create and modify virtual machines to complete a clone import.
 {.is-warning}
 
@@ -123,7 +123,7 @@ The bootable Clone ISO can be used on CD or USB. See [bootable-usb](/docs/public
 
    ![enablecloneiso12.png](/docs/public/enablecloneiso12.png)
 
-3. A success message displays if the utility successfully connects to the VeregOS system. 
+3. A success message displays if the utility successfully connects to the VergeOS system. 
 
    ![enablecloneiso13.png](/docs/public/enablecloneiso13.png)
 
@@ -131,7 +131,7 @@ The bootable Clone ISO can be used on CD or USB. See [bootable-usb](/docs/public
 
 ### Clone Utility Troubleshooting
 
-Enter a name for the VM (the name given to the VM created on the VeregOS system). 
+Enter a name for the VM (the name given to the VM created on the VergeOS system). 
 
    ![enablecloneiso14.png](/docs/public/enablecloneiso14.png)
 
@@ -142,7 +142,7 @@ Use arrows and spacebar to **select/deselect drives for import**. By default, t
 
 ### Advanced Settings
 
-> **NOTE: Use the following with EXTREME CAUTION. Adjusting the settings here can cause additional stress on your system and could cause performance issues. Contact VeregOS support for more information.**
+> **NOTE: Use the following with EXTREME CAUTION. Adjusting the settings here can cause additional stress on your system and could cause performance issues. Contact VergeOS support for more information.**
 {.is-warning}
 
 Advanced options are accessed by selecting **Advanced** and hitting <kbd>Enter</kbd>.
@@ -162,15 +162,15 @@ The default thread setting is optimized for typical WAN connections and usually 
 **MAC addresses -** Clone existing or create new MAC addresses 
 - Default = Clone (MAC addresses are duplicated from the Source)
 
-**Local Network -** NIC selection for connecting to the VeregOS destination system.
+**Local Network -** NIC selection for connecting to the VergeOS destination system.
 - Default = Previously selected NIC
 
-**Connecting Using vSAN -**  The method for transfer to destination VeregOS system
+**Connecting Using vSAN -**  The method for transfer to destination VergeOS system
 - Default = No (Use the standard https transfer method)
 
 **Guest** - (legacy/deprecated) 
 
-**Yes**/**Sync directly**  Use direct vSAN connection method. This method can provide faster transfers, allowing for writing directly to the VeregOS vSAN.  This method requires additional network configuration. Contact Support for more information.
+**Yes**/**Sync directly**  Use direct vSAN connection method. This method can provide faster transfers, allowing for writing directly to the VergeOS vSAN.  This method requires additional network configuration. Contact Support for more information.
 
    ![enablecloneiso18.png](/docs/public/enablecloneiso18.png)
 
@@ -179,7 +179,7 @@ The default thread setting is optimized for typical WAN connections and usually 
 
    ![enablecloneiso19.png](/docs/public/enablecloneiso19.png)
 
-> **NOTE: Once the import is complete, before powering up VM for the first time in VeregOS , it is _highly recommended_ to take a snapshot. If needed, this will allow returning to the original version after any initial guest OS/driver changes are performed.**
+> **NOTE: Once the import is complete, before powering up VM for the first time in VergeOS , it is _highly recommended_ to take a snapshot. If needed, this will allow returning to the original version after any initial guest OS/driver changes are performed.**
 {.is-info}
 
 A Snapshot of an individual VM can be created using the **Take Snapshot** option on the left menu of the VM Dashboard.   
@@ -190,7 +190,7 @@ Taking a Snapshot before making any changes or booting the new VM for the first 
 
 A Clone import that successfully started but did not complete (due to network disruption, for example) can be resumed.   
 
-1. Boot the source computer from the VeregOS clone ISO again and follow the same process, ensuring to input the VM name exactly as it was the first time.  (The VM name can be verified on the destination VeregOS system in the **Virtual Machines** list.)
+1. Boot the source computer from the VergeOS clone ISO again and follow the same process, ensuring to input the VM name exactly as it was the first time.  (The VM name can be verified on the destination VergeOS system in the **Virtual Machines** list.)
 
    ![enablecloneiso20.png](/docs/public/enablecloneiso20.png)
 
@@ -224,7 +224,7 @@ Rebuilding the ISO can be automated. Some customers opt to update the clone ISO
 1. Click **System** on the left menu from the main dashboard.
 2. Click **Tasks/Events** on the left menu. 
 3. Click **New** on the left menu. 
-4. Configure the task as shown to automatically rebuild the ISO each time the VeregOS system is updated :
+4. Configure the task as shown to automatically rebuild the ISO each time the VergeOS system is updated :
 
    ![enablecloneiso23.png](/docs/public/enablecloneiso23.png)
 
@@ -238,7 +238,7 @@ Rebuilding the ISO can be automated. Some customers opt to update the clone ISO
 
 To use the vSAN Mount (direct sync) method of the Clone ISO utility, three networking rules must be in place (2 on the core network and 1 on the external UI network).
 
-The following section outlines the network rules for a system to accept a Clone ISO transfer using the direct vSAN method.  Some of these rules may already be in place for a VeregOS system that has been configured to accept incoming syncs.  
+The following section outlines the network rules for a system to accept a Clone ISO transfer using the direct vSAN method.  Some of these rules may already be in place for a VergeOS system that has been configured to accept incoming syncs.  
 
 ### Core Network  Rule - 14201 PAT Rule
 
@@ -252,7 +252,7 @@ The following section outlines the network rules for a system to accept a Clone 
 -   **Destination Type:** *_Custom_ \***Custom Filter:** _ui_* **Destination Ports:** *_14201_*
 -   **Target Type:** *_IP/Custom_   **\*Target IP:** _ui_* 
 
- *\*  UI is a VeregOS keyword; it must be entered in lower case, exactly as noted.*
+ *\*  UI is a VergeOS keyword; it must be entered in lower case, exactly as noted.*
 
    ![enablecloneiso24.png](/docs/public/enablecloneiso24.png)
 
@@ -280,7 +280,7 @@ Click **Apply Rules** on the left menu to put the new rules into effect.
 -   **Direction:** I_ncoming_
 -   **Source:** Source IP/IP range from which clone transfer will come. ***Note:** It is important to include a source IP/Network here in order to restrict incoming 14201 traffic to only valid sync/clone transfer sources.* 
 -   **Destination Type:** *_My Router IP_*   **Destination Ports/Ranges:** *_14201_*
--   **Target Type:** *_IP/Custom_*   **Target IP:** *_ui_  **(**This is a VeregOS keyword; it must be entered in lower case, exactly as noted)*
+-   **Target Type:** *_IP/Custom_*   **Target IP:** *_ui_  **(**This is a VergeOS keyword; it must be entered in lower case, exactly as noted)*
 
 The new External vSAN Rule will appear in the Rules list for the External network.
 
@@ -302,15 +302,15 @@ DHCP option was selected, but no DHCP service was found
    ![enablecloneiso26.png](/docs/public/enablecloneiso26.png)
 
 -   Verify input of correct username and password 
--   The Login failed message can also appear when there is an issue with network connection or URL.  Verify input of correct VeregOS system host/IP address. 
+-   The Login failed message can also appear when there is an issue with network connection or URL.  Verify input of correct VergeOS system host/IP address. 
 > **Note:** The address should be entered without preceding "https://"
 {.is-warning}
 
 -   Verify static IP configuration information (if applicable)
     -   The IP address and gateway must be valid addresses for the attached network. Note: The IP address must be entered in CIDR notation (e.g. 192.168.0.50/24).
     -   Verify that there are no IP conflict with the used IP address.
-    -   The correct DNS address must be used to connect the VeregOS system via hostname.
--   Verify underlying network connection. Boot the computer without the clone ISO to test reaching the VeregOS host/IP address; confirm connection over specific NIC, using the same configuration (e.g., DHCP or static addressing).
+    -   The correct DNS address must be used to connect the VergeOS system via hostname.
+-   Verify underlying network connection. Boot the computer without the clone ISO to test reaching the VergeOS host/IP address; confirm connection over specific NIC, using the same configuration (e.g., DHCP or static addressing).
 
 **ISSUE: OpenSSL errors during the transfer**
 
@@ -322,7 +322,7 @@ OpenSSL errors during the transfer indicate a network issue. The clone operation
 
 If a network issue causes a clone import to fail before finishing: a partial clone import can be restarted where it left off by:
 
--    Resetting the machine and booting again from the VeregOS Clone ISO
+-    Resetting the machine and booting again from the VergeOS Clone ISO
 
 \-or- 
 
@@ -331,12 +331,12 @@ If a network issue causes a clone import to fail before finishing: a partial clo
 
 **ISSUE: Permission denied**
 
-If the VeregOS user provided does not have adequate permissions, the clone will begin and create the new Virtual Machine record; however, it will not be able to create any VM drives or NICs.
+If the VergeOS user provided does not have adequate permissions, the clone will begin and create the new Virtual Machine record; however, it will not be able to create any VM drives or NICs.
 
    ![enablecloneiso28.png](/docs/public/enablecloneiso28.png)
 
--   Restart the clone ISO providing username/password of a VeregOS user with List, Read, Create and Modify permissions to Virtual Machines.
-> **Note:** Since the empty VM will have been created on the destination VeregOS system (when run initially without adequate permissions): when run again with proper permissions, the clone operation can be performed as a resume, or the VM can be removed on the destination system before starting the clone again.  
+-   Restart the clone ISO providing username/password of a VergeOS user with List, Read, Create and Modify permissions to Virtual Machines.
+> **Note:** Since the empty VM will have been created on the destination VergeOS system (when run initially without adequate permissions): when run again with proper permissions, the clone operation can be performed as a resume, or the VM can be removed on the destination system before starting the clone again.  
 {.is-info}
 
 <br>

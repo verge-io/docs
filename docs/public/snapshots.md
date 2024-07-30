@@ -18,11 +18,11 @@ Snapshots/Restores can be done at various levels:
 
 ## Snapshot Features
 
-- Cloud snapshots, when synchronized to another VeregOS system can be considered 'warm standby' for Business Continuity/Disaster Recovery (BC/DR) planning
+- Cloud snapshots, when synchronized to another VergeOS system can be considered 'warm standby' for Business Continuity/Disaster Recovery (BC/DR) planning
 - Recover a clone copy of a VM to perform upgrade testing
 - Are branched against the initial data blocks, minimizing additional storage consumption
 - Quickly revert an entire physical or virtual environment to a previous state, e.g. rapid recovery from a cryptolocker attack
-- VeregOS architecture allows for rapid restores from snapshots by removing the need for collapsing disk images
+- VergeOS architecture allows for rapid restores from snapshots by removing the need for collapsing disk images
 - Providing disk images are not set to quiesce, snapshots are taken instantly by simply updating or adding a pointer to a data block during that point in time
 
 <br>

@@ -14,7 +14,7 @@ dateCreated: 2022-09-01T16:10:26.690Z
 
 ## How to share a VM into a Tenant
 
-The VeregOS platform provides an easy way to share a virtual machine (VM) image from a parent environment into a Tenant located beneath the current environment. To accomplish this task, perform the following steps:
+The VergeOS platform provides an easy way to share a virtual machine (VM) image from a parent environment into a Tenant located beneath the current environment. To accomplish this task, perform the following steps:
 1. Navigate to the VM dashboard of the VM that you wish to move to a Tenant.
 1. Before moving a VM, it is best practice to gracefully power down the VM following the best practices of the guest operating system.
 1. At the VM dashboard, expand Snapshots in the left navigation menu to see snapshot commands available.

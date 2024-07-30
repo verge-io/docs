@@ -10,7 +10,7 @@ dateCreated: 2023-03-27T20:48:07.222Z
 
 # Uploading to the vSAN (Media Images)
 
-The Media Images section allows for uploading files to the VeregOS vSAN allowing \*.iso files, drive images, VM definition files, etc. to be easily accessible for creating/installing/importing VMs. Optionally, files that are uploaded to vSAN media images can be shared via a public link.
+The Media Images section allows for uploading files to the VergeOS vSAN allowing \*.iso files, drive images, VM definition files, etc. to be easily accessible for creating/installing/importing VMs. Optionally, files that are uploaded to vSAN media images can be shared via a public link.
 
 <br>
 

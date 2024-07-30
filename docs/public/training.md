@@ -1,5 +1,5 @@
 ---
-title: VeregOS Self-Paced Training
+title: VergeOS Self-Paced Training
 description: 
 published: true
 date: 2023-02-08T21:05:43.831Z
@@ -10,7 +10,7 @@ dateCreated: 2022-08-24T19:16:10.250Z
 
 # Training{.tabset .tabset-fade}
 ## Introduction
-### Welcome to the VeregOS Self-Paced Training.
+### Welcome to the VergeOS Self-Paced Training.
 
 Each module provides in-depth training for each of the major functions of the Verge-OS.  
 
@@ -24,7 +24,7 @@ Each module provides in-depth training for each of the major functions of the V
 
 > **WARNINGS:** Warnings look like this. Warnings are **critically important**. {.is-warning}
 {.links-list}
-## Module 1 —<br>VeregOS Basics
+## Module 1 —<br>VergeOS Basics
 * [1.0 — Introduction & Basics Outline](/docs/public/training/1-0)
 * [1.1 — Key Terms / Glossary](/docs/public/training/1-1)
 * [1.2 — User Interface](/docs/public/training/1-2)
@@ -108,7 +108,7 @@ Each module provides in-depth training for each of the major functions of the V
 ## Discover More
 * [Visit our Knowledge Base](https://wiki.verge.io/public/kb)
 * [Read More Technical Information on Our Knowledgebase](https://wiki.verge.io/public/kb)
-* [Watch How Easy it is to Upgrade VeregOS.](https://www.youtube.com/watch?v=cf4J4Gj9AUo)
+* [Watch How Easy it is to Upgrade VergeOS.](https://www.youtube.com/watch?v=cf4J4Gj9AUo)
 * [Take a Test drive](https://www.verge.io/test-drive)
 * [Browse Additional Test Drive guides](https://www.verge.io/resources/documents/)
 * [Follow Us on Linked.in](https://www.linkedin.com/company/verge-io/)

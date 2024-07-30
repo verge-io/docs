@@ -10,15 +10,15 @@ dateCreated: 2022-03-01T17:02:07.410Z
 
 ## Nested Multi Tenancy
 
-Tenancy in a VeregOS environment is the process of creating an entire virtual data center (VDC) that has been allocated portions of storage and compute resources from the overall hardware footprint.
+Tenancy in a VergeOS environment is the process of creating an entire virtual data center (VDC) that has been allocated portions of storage and compute resources from the overall hardware footprint.
 
 ## Secure Enclaves
 
-VeregOS uniquely provides secure, nested, multi-tenancy, which is done by provisioning each tenant it's own virtual node(s) of compute resources provisioned from the level above it. Service providers can provision portions of available resources as independant instances of VeregOS virtual data centers for customers.
+VergeOS uniquely provides secure, nested, multi-tenancy, which is done by provisioning each tenant it's own virtual node(s) of compute resources provisioned from the level above it. Service providers can provision portions of available resources as independant instances of VergeOS virtual data centers for customers.
 
 ## Nested Multi Tenancy Features
 
-- Every tenant is a dedicated instance of the complete VeregOS environment excluding visibility into the hardware infrastructure
+- Every tenant is a dedicated instance of the complete VergeOS environment excluding visibility into the hardware infrastructure
 - Ability to host multiple customers on the same hardware resources, while still maintaining complete isolation
 - Every tenant can provision tenants beneath it, for further isolation of customers
 - Individual network management per tenant

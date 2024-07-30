@@ -549,7 +549,7 @@ VergeOS Atria introduces the feature of Virtual Machine Exporting, for those wit
 * Added additional PXE boot options for running the installer (including providing an install-seed file via a webserver)
 * Reworded an error in the installer when you don't select a core NIC
 * When adding the first node to a new cluster, you can now pick the node that you are most "like"
-* Changed the default hostname for external networks to VeregOS
+* Changed the default hostname for external networks to VergeOS
 * Added the ability to set energy policy at install time
 
 # 4.10.3.1 - January 2023

@@ -1,6 +1,6 @@
 ---
 title: Product Guide - Virtual Desktop Infrastructure (VDI)
-description: Overview of VDI within VeregOS
+description: Overview of VDI within VergeOS
 published: true
 date: 2023-06-23T14:57:11.760Z
 tags: 

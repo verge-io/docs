@@ -13,7 +13,7 @@ dateCreated: 2022-08-10T18:23:27.988Z
 ---
 
 ## How to Correct Disks showing Offline after a Windows VM is Restarted
-After importing a VM into the VeregOS platform, some (virtual) disks may not come online after a restart of the guest VM.
+After importing a VM into the VergeOS platform, some (virtual) disks may not come online after a restart of the guest VM.
 
 Beginning in Windows 2008, Microsoft added a setting for the default state of additional (non OS) disk drives.
 Occasionally when restarting, Windows may detect a hardware change, which is more likely if the VM was imported from an alternate hypervisor.

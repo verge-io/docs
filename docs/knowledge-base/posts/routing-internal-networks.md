@@ -14,7 +14,7 @@ dateCreated: 2022-09-07T13:11:47.555Z
 
 ## How to Configure Routing Between Networks
 
-The following is a simple method to establish a route between two networks in the VeregOS platform. 
+The following is a simple method to establish a route between two networks in the VergeOS platform. 
 <br>
 ### Create a network rule on the first network to route traffic to the second network
 1. Navigate to the first network that you would like to be able to reach the other network.

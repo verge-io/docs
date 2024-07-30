@@ -15,7 +15,7 @@ dateCreated: 2023-03-27T19:53:35.522Z
 
 ## Host Installation/Configuration
 
-> VeregOS includes the driver for generic PCI address passthrough; typically, no additional host drivers are needed for GPU passthrough. {.is-info}
+> VergeOS includes the driver for generic PCI address passthrough; typically, no additional host drivers are needed for GPU passthrough. {.is-info}
 
 1.  From the Main Dashboard, click **Nodes**.
 2.  Click **Drivers** on the left menu.

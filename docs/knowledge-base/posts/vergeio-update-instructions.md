@@ -1,6 +1,6 @@
 ---
-title: VeregOS Update Instructions
-slug: VeregOS-update-instructions
+title: VergeOS Update Instructions
+slug: VergeOS-update-instructions
 description: 
 published: true
 date: 2023-01-24T15:39:06.743Z
@@ -12,14 +12,14 @@ editor: markdown
 dateCreated: 2022-06-28T13:29:03.267Z
 ---
 
-## How to Update your VeregOS Environment
+## How to Update your VergeOS Environment
 
 > **WARNING: DO NOT SKIP MAJOR VERSIONS**. For example, if you are on version 4.8, please update to version 4.9 before updating to 4.10. **Skipping versions could cause major database and configuration issues.**
 {.is-danger}
 
 
 
-The VeregOS platform supports 'zero downtime' updating.  This means that during a routine update process, guest workloads (VMs and tenant environments) can be left on and running as normal.
+The VergeOS platform supports 'zero downtime' updating.  This means that during a routine update process, guest workloads (VMs and tenant environments) can be left on and running as normal.
 
 Information on updating the Verge.io software to the latest version can be found in the inline help within the category titled Updates, under the section titled Running Updates.  This section walks through the entire update process.  Additionally, information about each setting found under Update Server Settings can be found within the category titled Updates, under the section titled Update Settings.
 
@@ -38,24 +38,24 @@ The time frame an update can take to complete varies between every environment. 
 {.is-warning}
 
 
-1. Log in to the VeregOS UI. 
+1. Log in to the VergeOS UI. 
 2. Navigate to System > Updates and then select “Check for Updates” in the left menu.
-![VeregOSupgrade-new-img1.png](/docs/public/vergeioupgrade-new-img1.png)
+![VergeOSupgrade-new-img1.png](/docs/public/vergeioupgrade-new-img1.png)
 	- A pop-up will confirm Yes or No, select Yes.
 > While the update check runs a banner may appear stating “A new minor version is available on a different branch". This is dependent on the version & release. If the banner does not appear it is safe to move on to the next step.
-![VeregOSupgrade-new-img2.png](/docs/public/vergeioupgrade-new-img2.png)
+![VergeOSupgrade-new-img2.png](/docs/public/vergeioupgrade-new-img2.png)
 To change to this new branch, select "Change Branch" in the left menu. 
 A pop-up will confirm Yes or No, select Yes. <br>
 {.is-info}
 3. The packages that are to be downloaded will now be highlighted.
-![VeregOSupgrade-new-img3.png](/docs/public/vergeioupgrade-new-img3.png)
+![VergeOSupgrade-new-img3.png](/docs/public/vergeioupgrade-new-img3.png)
 	- Select **"Download"** in the left menu.
 	- A pop-up will confirm Yes or No, select Yes. 
 	- When the download initiates you will see the download process running on the dashboard in the “Current Update Server” tile.
 1. Once the download completes, the **“Install”** action will become available in the left menu indicating that the updates are ready to be saved to the system. 
-![VeregOSupgrade-new-img4.png](/docs/public/vergeioupgrade-new-img4.png)
+![VergeOSupgrade-new-img4.png](/docs/public/vergeioupgrade-new-img4.png)
 1. Select **Install** in the left menu when you are ready to do the upgrade. 
-![VeregOSupgrade-new-img5.png](/docs/public/vergeioupgrade-new-img5.png)
+![VergeOSupgrade-new-img5.png](/docs/public/vergeioupgrade-new-img5.png)
 	- A pop-up will confirm Yes or No, select Yes.
 	- A brief install of the new package(s) and then a request to reboot the system will occur.
 1. Select **Reboot** in the left menu to initiate a rolling reboot. This will install the new software updates across all nodes in the system.
@@ -86,7 +86,7 @@ The verify and repair processes time to completion depends on factors such as co
     - Select Send
     	- If DNS is properly configured the response will come back with an IP address for Verge.io.
       - If a reponse of "No Response" is returned check DNS settings in the external (UI) network and attempt a DNS query again.
-- Update Server credentials may have expired. These are tied to the systems license and must be obtained from your VeregOS sales representative.
+- Update Server credentials may have expired. These are tied to the systems license and must be obtained from your VergeOS sales representative.
 
 <br>
 [Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

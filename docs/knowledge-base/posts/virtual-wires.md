@@ -13,10 +13,10 @@ editor: markdown
 dateCreated: 2022-06-29T19:58:59.133Z
 ---
 
-A virtual wire is the process of providing a tenant the ability to gain access to a VLAN outside of the VeregOS environment without having to go through routing steps.
+A virtual wire is the process of providing a tenant the ability to gain access to a VLAN outside of the VergeOS environment without having to go through routing steps.
 
 ## Prerequisite Steps
-1. Add the desired VLAN(s) to the appropriate switchports so they are accessible to the nodes running the VeregOS environment.
+1. Add the desired VLAN(s) to the appropriate switchports so they are accessible to the nodes running the VergeOS environment.
 1. Determine whether or not the tenant will need access to a single VLAN or multiple. **This will determine the manner in which the virtual wire is configured**.
 > VLANS 1 & 100-102 cannot be used in a virtual wire capacity. These VLANS are reserved for internal traffic that allows the tenant nodes to communicate with each other and with the tenant network hosted above it. They can however be remapped to another VLAN to be consumed in the tenant.
 {.is-warning}
@@ -25,7 +25,7 @@ A virtual wire is the process of providing a tenant the ability to gain access t
 {.is-info}
 
 ## Creating a 1:1 Virtual Wire
-1. Ensure the VLAN(s) have been created in the VeregOS UI. If they have not, follow the steps to create VLAN(s) [here](/docs/public/kb/adding-a-vlan).
+1. Ensure the VLAN(s) have been created in the VergeOS UI. If they have not, follow the steps to create VLAN(s) [here](/docs/public/kb/adding-a-vlan).
 1. From the Main Dashboard select "Networks" in the left menu and you will be brought to the "Networks Dashboard".
 1. Select "Virtual Wires" in the left menu and you will be brought to the list view of all virtual wires in the environment.
 1. Select "New" and you will be brought to the virtual wire creation page.

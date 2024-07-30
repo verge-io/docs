@@ -25,7 +25,7 @@ Snapshots can also be taken manually, with settable expiration. Manual snapshots
 
 ## Cloud (System) Snapshot/Restore
 
-Cloud Snapshots provide backup of the entire VeregOS system, including all tenants, VMs, networks, and settings.
+Cloud Snapshots provide backup of the entire VergeOS system, including all tenants, VMs, networks, and settings.
 
 <br>
 <br>
@@ -35,7 +35,7 @@ Cloud Snapshots provide backup of the entire VeregOS system, including all tenan
 
 A cloud snapshot can be used to restore:
 
--   Entire VeregOS system
+-   Entire VergeOS system
 -   Individual VMs (unquiesced)
 -   Individual tenants
 

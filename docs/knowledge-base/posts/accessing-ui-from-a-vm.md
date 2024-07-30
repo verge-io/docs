@@ -12,13 +12,13 @@ editor: markdown
 dateCreated: 2022-09-07T17:52:09.082Z  
 ---
 
-## How to Access the VeregOS UI from a VM
+## How to Access the VergeOS UI from a VM
 
 In networking terminology, this process is commonly known as hair-pinning. Hair-pinning occurs when a packet travels to an interface, goes out towards the Internet, but instead of continuing, it makes a “hairpin turn” and comes back in on the same interface.
 
 ### Steps to Create a New Rule on the Internal Network
 
-To access the VeregOS UI from a VM running inside the platform, follow these steps to create a new rule:
+To access the VergeOS UI from a VM running inside the platform, follow these steps to create a new rule:
 
 1. **Navigate to the Internal Network**: Go to the internal network that the VM is currently connected to.
 
@@ -51,9 +51,9 @@ To access the VeregOS UI from a VM running inside the platform, follow these ste
 
 ![hairpin.png](/docs/public/hairpin.png)
 
-### Accessing the VeregOS UI from the VM
+### Accessing the VergeOS UI from the VM
 
-From within the VM, use a web browser to navigate to the IP address of the internal network instead of the standard address. For example, if the internal network has an IP address of 192.168.0.1, use this address to access the VeregOS platform.
+From within the VM, use a web browser to navigate to the IP address of the internal network instead of the standard address. For example, if the internal network has an IP address of 192.168.0.1, use this address to access the VergeOS platform.
 
 
 

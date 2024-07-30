@@ -14,7 +14,7 @@ dateCreated: 2022-09-02T15:54:31.531Z
 
 ## Common Snapshot Synchronization Error Messages Explained
 
-The VeregOS platform provides a feature known as Site Syncs to replicate a copy of a cloud snapshot.
+The VergeOS platform provides a feature known as Site Syncs to replicate a copy of a cloud snapshot.
 
 > **NOTE:** For more information on Snapshots, please review the inline help within the category titled, Glossary. For more information on Site Sync, please review the inline help within the category titled, Site Syncs.
 {.is-info}
@@ -23,14 +23,14 @@ Occasionally, the system may generate a system alert from a new Message Log entr
 <br>
 
 ### ybvsan: Error walking tier 3 refs: (2) No such file or directory
-- This error can occur if the VeregOS software version is mismatched between the sending side and the destination side.
+- This error can occur if the VergeOS software version is mismatched between the sending side and the destination side.
 <br>
 ### Unable to delete snapshot that no longer exists: Resource '/v4/cloud_snapshots/1' not found during delete
 - This error is usually the result of a timing issue for a snapshot being deleted and the reference being deleted in the metadata of the system.
 <br>
    
 ### Error notifying client with 'notify_complete' Error (403) while communicating with server
-- The snapshot successfully synchronized, but this error appeared during the sync clean-up process. If this error occurs on multiple snapshot synchronizations, the handshake credentials between the two systems may have stopped working. In that case, consult with VeregOS support for assistance.
+- The snapshot successfully synchronized, but this error appeared during the sync clean-up process. If this error occurs on multiple snapshot synchronizations, the handshake credentials between the two systems may have stopped working. In that case, consult with VergeOS support for assistance.
 <br>
 
 ### Error - Sync back not found and no registration code supplied.

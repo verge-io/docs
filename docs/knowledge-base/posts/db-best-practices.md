@@ -14,7 +14,7 @@ dateCreated: 2022-09-01T17:00:25.460Z
 ## Database Performance Adjustments
 <br>
 
-### Below are the best practices for running most databases and database applications on Microsoft Windows in VeregOS.
+### Below are the best practices for running most databases and database applications on Microsoft Windows in VergeOS.
 <br>
 
 - **Locate** backups on VergeOS for best performance.

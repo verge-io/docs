@@ -2,7 +2,7 @@
 
 # Permissions
 
-User and group permissions provide for a high degree of granularity, allowing access to be configured down to a particular object instance. Users are created and administered for each separate cloud; each tenant created is a separate VeregOS cloud and thus has its own users, groups and permission settings to control activity within the tenant.
+User and group permissions provide for a high degree of granularity, allowing access to be configured down to a particular object instance. Users are created and administered for each separate cloud; each tenant created is a separate VergeOS cloud and thus has its own users, groups and permission settings to control activity within the tenant.
 
 <br>
 <br>
@@ -30,7 +30,7 @@ The following Permission levels are used throughout the system:
 
 ## Root-Level "admin" Account
 
-When a VeregOS cloud is created (during initial install on hardware or when a new tenant is created,) **a root-level user account is automatically created and is granted full access (list/read/create/modify/delete) to the entire cloud.** By default, this user is named 'admin'; however, the account can be named as desired during hardware installation or can be changed post-installation/post-tenant creation. This special system user cannot be deleted.
+When a VergeOS cloud is created (during initial install on hardware or when a new tenant is created,) **a root-level user account is automatically created and is granted full access (list/read/create/modify/delete) to the entire cloud.** By default, this user is named 'admin'; however, the account can be named as desired during hardware installation or can be changed post-installation/post-tenant creation. This special system user cannot be deleted.
 <br>
 
 
@@ -70,7 +70,7 @@ The effective permissions of a user is cumulative of all permissions assigned to
 <br>
 <br>
 
-## To Give a User Full Permissions to Entire VeregOS Cloud:
+## To Give a User Full Permissions to Entire VergeOS Cloud:
 
 1.  From the Cloud Dashboard, select **System**.
 2.  Click **Permissions**.
@@ -121,7 +121,7 @@ The effective permissions of a user is cumulative of all permissions assigned to
 
 
 ## To View all Permissions:
-This will display all permissions defined for the VeregOS Cloud.
+This will display all permissions defined for the VergeOS Cloud.
 1.  From the Main Dashboard, click **System**.
 2.  Click **Permissions**.
 3.  All permissions for the entire cloud are displayed. Hint: List can be sorted or filtered to focus on certain permissions.
