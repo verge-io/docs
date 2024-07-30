@@ -13,7 +13,7 @@ dateCreated: 2022-07-25T19:08:58.594Z
 
 ## How to Set Up an Internal UI Route
 
-Sometimes, you may need to access the User Interface (UI) from a virtual machine (VM) within a VeregOS environment. To achieve this, you need to create a special route rule on the network (usually an internal network) to which the VM is connected.
+Sometimes, you may need to access the User Interface (UI) from a virtual machine (VM) within a VergeOS environment. To achieve this, you need to create a special route rule on the network (usually an internal network) to which the VM is connected.
 
 ### Steps to Create the Route Rule
 
@@ -21,7 +21,7 @@ Sometimes, you may need to access the User Interface (UI) from a virtual machine
 
 2. **Create a New Rule**: Create a new rule using the settings shown in the example below:
    
-   ![ui-access-rule.png](/public/ui-access-rule.png)
+   ![ui-access-rule.png](/docs/public/ui-access-rule.png)
 
 3. **Submit the Rule**: Submit the rule. You will be taken back to the list view of the rules on the network.
 

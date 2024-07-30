@@ -13,11 +13,11 @@ dateCreated: 2022-05-18T21:40:52.344Z
 
 ## How to TRIM your drives
 
-After importing a virtual machine from another hypervisor, sometimes the free space available inside the virtual machine does not match the free space reported to the VeregOS platform. This is likely the result of the virtual disk being thick provisioned from the VM source and the VeregOS hypervisor is unaware of the blank (unused) portion of the disk in terms of size. To correct this, a TRIM/UNMAP operation needs to be run on the virtual disk from within the virtual machine.
+After importing a virtual machine from another hypervisor, sometimes the free space available inside the virtual machine does not match the free space reported to the VergeOS platform. This is likely the result of the virtual disk being thick provisioned from the VM source and the VergeOS hypervisor is unaware of the blank (unused) portion of the disk in terms of size. To correct this, a TRIM/UNMAP operation needs to be run on the virtual disk from within the virtual machine.
 
 ## Prerequisites for running a trim command
 
-1. Edit the virtual drive(s) in question in the VeregOS UI and ensure 'Discard' is enabled
+1. Edit the virtual drive(s) in question in the VergeOS UI and ensure 'Discard' is enabled
 1. Ensure the virtual drive(s) is using a drive type of virtIO-SCSI or SATA
 1. Ensure the virtual drive(s) is assigned to a Solid State tier (usually tier 1-3)
 
@@ -31,7 +31,7 @@ To perform a manual TRIM operation in a Windows environment, perform the followi
 	 `Optimize-Volume -DriveLetter E -ReTrim -Verbose`
 1. Press enter and wait while the command completes.
 
-As the TRIM operation is progressing, administrators can watch the reported free space from the VeregOS dashboard begin to increase as the blank data on the volume is removed.
+As the TRIM operation is progressing, administrators can watch the reported free space from the VergeOS dashboard begin to increase as the blank data on the volume is removed.
 
 If this does not resolve the issue, then trim is not enabled. To fix this, do the following from a command prompt (and then rerun the trim commands).
 
@@ -59,7 +59,7 @@ If trim is enabled an operation will run on the next scheduled time based from t
 
 If trim is not enabled a manual trim can be run from the terminal using ``` fstrim -av ```.
 
-> It is recommended you enable the automatic trim option to ensure data usage is reflected accurately between VeregOS and the guest OS.
+> It is recommended you enable the automatic trim option to ensure data usage is reflected accurately between VergeOS and the guest OS.
 {.is-info}
 
 

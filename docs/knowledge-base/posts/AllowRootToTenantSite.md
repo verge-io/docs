@@ -34,7 +34,7 @@ The Sites feature was designed to connect two **VergeOS** sites together. The ro
 	- **Source**: Other Network Address: DMZ
 	- **Destination**: Any/None
 	- **Target**: My Router IP
-![2023-09-12_10_28_52-training___edit_rule__allow_tenant_to_root.png](/public/2023-09-12_10_28_52-training___edit_rule__allow_tenant_to_root.png)
+![2023-09-12_10_28_52-training___edit_rule__allow_tenant_to_root.png](/docs/public/2023-09-12_10_28_52-training___edit_rule__allow_tenant_to_root.png)
 1. Click **Submit**.
 1. Click on **Apply Rules** at the top or **Left** Menu.
 
@@ -51,7 +51,7 @@ To test is this works, follow the instructions below:
 1. Set **Host** to the **UI IP/Host** of the **Tenant** system.
 1. Set **Port** to **443**.
 1. Click **Send**.
-![2023-09-12_11_12_21-training___diagnostics.png](/public/2023-09-12_11_12_21-training___diagnostics.png)
+![2023-09-12_11_12_21-training___diagnostics.png](/docs/public/2023-09-12_11_12_21-training___diagnostics.png)
 
 The **Response** should say **Connection successful**. If it doesn't, double check the rule for accuracy. Note that the **Interface** is set to **DMZ** instead of the normal **Auto**. Make sure there are not any block rules.
 

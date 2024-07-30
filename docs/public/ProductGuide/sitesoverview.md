@@ -10,13 +10,13 @@ dateCreated: 2023-03-31T20:27:16.666Z
 
 # Sites Dashboard
 
-The Sites Dashboard provides a central location for monitoring and administration of multiple VeregOS systems. This dashboard aggregates top-level statistics from all the systems to a single screen, with drill-down links to access and view more detailed information. A specific site page can be selected by clicking on its UI card or map coordinate pin (placement based on specified latitude/longitude values).
+The Sites Dashboard provides a central location for monitoring and administration of multiple VergeOS systems. This dashboard aggregates top-level statistics from all the systems to a single screen, with drill-down links to access and view more detailed information. A specific site page can be selected by clicking on its UI card or map coordinate pin (placement based on specified latitude/longitude values).
 
-![sitedash-main.png](/public/userguide-sshots/sitedash-main.png)
+![sitedash-main.png](/docs/public/userguide-sshots/sitedash-main.png)
 
 ### Example: Individual Site Page
 
-![sitepage.png](/public/userguide-sshots/sitepage.png)
+![sitepage.png](/docs/public/userguide-sshots/sitepage.png)
 
 -   view more detailed information specific to the site
 -   manage the site's networks, nodes, and VMs(if enabled)

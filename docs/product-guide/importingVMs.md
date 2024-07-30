@@ -2,7 +2,7 @@
 
 # VM Import Methods
 
-Multiple methods are available for importing existing VMs into VeregOS:
+Multiple methods are available for importing existing VMs into VergeOS:
 
 <br>
 

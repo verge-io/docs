@@ -12,7 +12,7 @@ dateCreated: 2023-04-07T16:34:04.834Z
 
 > System Updates are **only run from the host system (top-level parent);** tenant systems are automatically updated from their host system.{.is-info}
 
-VeregOS regularly publishes updates to provide enhancements and improvements. Administrators should aim to keep systems updated by scheduling auto updates or regularly checking and applying available updates. The update process can be initiated within the UI or via task scheduling. The update process is then handled by the system with changes automatically propagated to all nodes, rebooting and applying one node at a time. Updates can be performed without any downtime (provided there are adequate resources in place), as the system can automatically migrate workloads to other nodes before applying an update and restarting/rebooting a node.
+VergeOS regularly publishes updates to provide enhancements and improvements. Administrators should aim to keep systems updated by scheduling auto updates or regularly checking and applying available updates. The update process can be initiated within the UI or via task scheduling. The update process is then handled by the system with changes automatically propagated to all nodes, rebooting and applying one node at a time. Updates can be performed without any downtime (provided there are adequate resources in place), as the system can automatically migrate workloads to other nodes before applying an update and restarting/rebooting a node.
 
 <br>
 <br>
@@ -75,11 +75,11 @@ After the updates have been distributed to all nodes and are ready to apply, the
 #### Schedule
 5.  By default, ***Repeat Every*** is set to **Does Not Repeat**.
 
-![updates-scheduleonetime.png](/public/userguide-sshots/updates-scheduleonetime.png)
+![updates-scheduleonetime.png](/docs/public/userguide-sshots/updates-scheduleonetime.png)
 
 
 **Optionally,** the task can be configured to repeat on a regular basis, (for example each week, every 2 weeks, monthly, etc.).6.  Select desired ***Start Date*** and ***At*** time.
-![updates-schedulerecurring.png](/public/userguide-sshots/updates-schedulerecurring.png)
+![updates-schedulerecurring.png](/docs/public/userguide-sshots/updates-schedulerecurring.png)
 
 7.  When a Task is set to recur, an ***Ends*** date/time can Optionally be selected.
 

@@ -13,7 +13,7 @@ dateCreated: 2022-08-25T17:23:10.582Z
 
 You can confirm that the vSAN has encryption enabled by navigating to **Nodes> Node 1> Drives** and then **double-clicking on the first drive** in the list. There is a checkbox for encryption.  If it is encrypted, it will be checked.
 
-![encryption.png](/public/encryption.png)
+![encryption.png](/docs/public/encryption.png)
 
 - Encryption for the vSAN is configured **during the initial installation only**.
 

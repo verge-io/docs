@@ -67,7 +67,7 @@ Shares can be created to provide NFS and/or CIFS access to a NAS Volume.
 14.  The ***Browseable*** option can be selected to make the share visible in lists of available shares. This option is disabled by default.
 15.  Specify a list of ***Admin Users*** (optional).
 16.  A ***Force User Option / Force Group Option*** can be specified to define a user or group that will be used for all file operations performed via this Share (regardless of the user account used to connect).
-17.  ***Advanced Configuration Options (advanced samba share options)*** can be specified to handle special-case scenarios. (Advanced Use only; please consult with VeregOS Support for assistance.)
+17.  ***Advanced Configuration Options (advanced samba share options)*** can be specified to handle special-case scenarios. (Advanced Use only; please consult with VergeOS Support for assistance.)
 18.  Click **Submit** to save the settings and create the new CIFS Share.
 
 <br>

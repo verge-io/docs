@@ -10,11 +10,11 @@ dateCreated: 2023-03-29T21:11:29.419Z
 
 <br>
 
-- ### [_Connect VeregOS to your existing LAN/WAN_](../product-guide/connectLANWAN)
+- ### [_Connect VergeOS to your existing LAN/WAN_](../product-guide/connectLANWAN)
 
 <br>
 
-- ### [Provide External Access to an Internal Network](../product-guide/internalwithextaccess) (Internal Network with access via a VeregOS External Network)
+- ### [Provide External Access to an Internal Network](../product-guide/internalwithextaccess) (Internal Network with access via a VergeOS External Network)
 
 <br>
 

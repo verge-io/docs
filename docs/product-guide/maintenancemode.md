@@ -26,23 +26,23 @@ The system will only allow putting a node into Maintenance Mode when proper cond
 
 - **Node Logs**
 	Scroll to the bottom of the node dashboard to view node logs.  A log entry will appear for each machine the system attempts to migrate. A log entry indicating the status is now *'Maintenance Mode'* indicates when the maintenance process completes successfully. 
- ![nodelogcomplete.png](/public/userguide-sshots/nodelogcomplete.png)
+ ![nodelogcomplete.png](/docs/public/userguide-sshots/nodelogcomplete.png)
   <br>
   If any machines could not be migrated, an error entry will appear in the node logs; those machines will need to be powered off manually; see note above regarding Non-Migratable workloads.  
-![nodelog-errormigrating.png ](/public/userguide-sshots/nodelog-errormigrating.png )
+![nodelog-errormigrating.png ](/docs/public/userguide-sshots/nodelog-errormigrating.png )
  <br>
   
 - **Running Machines**
 The *Running Machines* section indicates workloads currently on the node, both running and migrating. To successfully move into maintenance mode, all running machines need to be migrated or powered off; the Running Machines section willl be empty when this has occurred. 
-![runningmachines-onemigrating.png](/public/userguide-sshots/runningmachines-onemigrating.png)
+![runningmachines-onemigrating.png](/docs/public/userguide-sshots/runningmachines-onemigrating.png)
 <br>
 
 - **Node Status**
 Node Status is displayed at the top of the node dashboard. While a node is in the process of migrating workloads, a status of ***"Migrating"*** is displayed.  
-![nodestatusmigrating.png](/public/userguide-sshots/nodestatusmigrating.png)
+![nodestatusmigrating.png](/docs/public/userguide-sshots/nodestatusmigrating.png)
 <br>
  A status of ***"Maintenance Mode"*** indicates that all workloads have been successfully migrated/powered off.
-![nodestatusmaintenancemode.png](/public/userguide-sshots/nodestatusmaintenancemode.png)
+![nodestatusmaintenancemode.png](/docs/public/userguide-sshots/nodestatusmaintenancemode.png)
 
  <br>
  <br>
@@ -64,12 +64,12 @@ Node Status is displayed at the top of the node dashboard. While a node is in th
 1.  From the **node dashboard**, click **Disable Maintenance** on the left menu.
 2.  A Confirmation message will appear. Click **Yes** to continue taking the node out of Maintenance Mode.
 3.  The ***Node Status*** displays "Leaving Maintenance" while in the process of coming out of Maintenance Mode. 
-![nodestatusleavingmaint.png](/public/userguide-sshots/nodestatusleavingmaint.png)
+![nodestatusleavingmaint.png](/docs/public/userguide-sshots/nodestatusleavingmaint.png)
 
 <br>
 
 4.  The ***Node Status*** field will display "Running" when it has fully come out of Maintenance Mode and workloads have been migrated back to the node. 
-![nodestatusrunning.png](/public/userguide-sshots/nodestatusrunning.png)
+![nodestatusrunning.png](/docs/public/userguide-sshots/nodestatusrunning.png)
 <br>
 
 5.  If necessary,  **power on any non-migratable VMs or tenant nodes that were shutdown for maintenance**.

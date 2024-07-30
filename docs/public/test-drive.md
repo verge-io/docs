@@ -12,19 +12,19 @@ dateCreated: 2022-10-17T17:29:11.218Z
 
 ## Test Drive
 * [🚗 Take a Test Drive Today](https://www.verge.io/test-drive)
-* [🚗 Test Drive Guide - Cloning](/public/test-drive/cloning)
-* [🚗 Test Drive Guide - Global Deduplication](/public/test-drive/deduplication)
-* [🚗 Test Drive Guide - Tenancy](/public/test-drive/tenancy)
-* [🚗 Test Drive Guide - Tenant Recipes](/public/test-drive/tenant-recipes)
-* [🚗 Test Drive Guide - UI Branding](/public/test-drive/ui-branding)
-* [🚗 Test Drive Guide - VM Recipes](/public/test-drive/vm-recipes)
+* [🚗 Test Drive Guide - Cloning](/docs/public/test-drive/cloning)
+* [🚗 Test Drive Guide - Global Deduplication](/docs/public/test-drive/deduplication)
+* [🚗 Test Drive Guide - Tenancy](/docs/public/test-drive/tenancy)
+* [🚗 Test Drive Guide - Tenant Recipes](/docs/public/test-drive/tenant-recipes)
+* [🚗 Test Drive Guide - UI Branding](/docs/public/test-drive/ui-branding)
+* [🚗 Test Drive Guide - VM Recipes](/docs/public/test-drive/vm-recipes)
 {.links-list}
 
 ## Training, Videos & Social Media
 * [Follow Us on Linked.in](https://www.linkedin.com/company/verge-io/)
 * [Visit Us on Youtube](https://www.youtube.com/channel/UCnFu28s0GBVi18j7Ez3MXRg)
 * [Youtube - Installation of a 2 Node Cluster](https://youtu.be/hOUg8_MgIjA)
-* [Youtube - Upgrading VeregOS](https://youtu.be/cf4J4Gj9AUo)
+* [Youtube - Upgrading VergeOS](https://youtu.be/cf4J4Gj9AUo)
 * [Youtube - UI Dashboard Overview](https://youtu.be/oQx2BkWp7hc)
 * [Youtube - Deduplication & Tenancy](https://youtu.be/f0ZwAIlc_c4)
 * [Youtube - Clone an Entire Virtual Data Center](https://youtu.be/hq_h65ESYbU)

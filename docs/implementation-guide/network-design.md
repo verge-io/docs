@@ -1,8 +1,8 @@
-Nodes in a VeregOS system utilize several different networks for operations. These networks span three different categories: **Fabric Networks, External Networks,** and **Management Networks**.
+Nodes in a VergeOS system utilize several different networks for operations. These networks span three different categories: **Fabric Networks, External Networks,** and **Management Networks**.
 <br>
 ### Fabric Networks
 
-The Fabric Networks connect VeregOS nodes to one another for internal system communications and vSAN traffic.
+The Fabric Networks connect VergeOS nodes to one another for internal system communications and vSAN traffic.
 
 #### Requirements
 
@@ -23,7 +23,7 @@ The Fabric Networks connect VeregOS nodes to one another for internal system com
 
 ### External Networks
 
-External Networks connect outside infrastructure to a VeregOS system. External networks can consist of handoffs from an ISP, or Uplink(s) into an existing network infrastructure.
+External Networks connect outside infrastructure to a VergeOS system. External networks can consist of handoffs from an ISP, or Uplink(s) into an existing network infrastructure.
 
 #### Requirements
 
@@ -40,7 +40,7 @@ External Networks connect outside infrastructure to a VeregOS system. External n
 
 ### Management Networks
 
-VeregOS systems can utilize two additional Management Networks for hardware management and scale-out operations. Both networks can share port functionality with an external network port if the hardware supports it. 
+VergeOS systems can utilize two additional Management Networks for hardware management and scale-out operations. Both networks can share port functionality with an external network port if the hardware supports it. 
 
 #### Requirements
 

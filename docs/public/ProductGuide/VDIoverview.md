@@ -1,6 +1,6 @@
 ---
 title: Product Guide - Virtual Desktop Infrastructure (VDI)
-description: Overview of VDI within VeregOS
+description: Overview of VDI within VergeOS
 published: true
 date: 2023-06-23T14:57:11.760Z
 tags: 
@@ -12,7 +12,7 @@ dateCreated: 2023-04-10T19:49:33.167Z
 
 VDI functionality allows for hosting virtual desktops and provides an individualized VDI Dashboard for each user to access virtual desktops.
 
-![vdi.png](/public/userguide-sshots/vdi.png)
+![vdi.png](/docs/public/userguide-sshots/vdi.png)
 
 -   Help for the **VDI User** can be found at: [**Instructions for the VDI User**](/product-guide/VDI-User)
 -   Help for the **VDI Admin** can be found at: [**Instructions for the VDI Admin**](/product-guide/VDI-Administrator)

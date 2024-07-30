@@ -9,7 +9,7 @@ The Preferred Tier setting will establish a "first choice" for the storage tier 
 
 ## The following diagram shows an example, in which Tier 4 has been specified as the Preferred Tier
 
-![preferredtier.png](/public/userguide-sshots/preferredtier.png)
+![preferredtier.png](/docs/public/userguide-sshots/preferredtier.png)
 
 <br>   
 

@@ -24,37 +24,37 @@ An externally facing network has the ability to become a DHCP client, an interna
 </details>
 <details>  
 
-<summary>Can I use my existing storage infrastructure with a VeregOS environment?</summary>
+<summary>Can I use my existing storage infrastructure with a VergeOS environment?</summary>
   
-Guest workloads can be connected to external storage, but VeregOS cannot leverage 3rd party storage architectures.
+Guest workloads can be connected to external storage, but VergeOS cannot leverage 3rd party storage architectures.
 
 </details>
 <details>
   
-<summary>What is VeregOS based on?</summary>
+<summary>What is VergeOS based on?</summary>
 
-VeregOS is a custom linux distro.
+VergeOS is a custom linux distro.
 
 </details>
 <details>
   
-<summary>Can I install VeregOS myself?</summary>
+<summary>Can I install VergeOS myself?</summary>
 
-Yes, follow the installation instructions [here](/public/implementation/3-2).
+Yes, follow the installation instructions [here](/docs/public/implementation/3-2).
 
 </details>
 <details>
   
 <summary>Can I run containers?</summary>
 
-Containers cannot be run natively in VeregOS. However running containers can be achieved by creating a virtual machine and running your specific containerization platform inside of the vm.
+Containers cannot be run natively in VergeOS. However running containers can be achieved by creating a virtual machine and running your specific containerization platform inside of the vm.
 
 </details>
 <details>
   
 <summary>Can I use my existing VXLAN(s) inside of the environment?</summary>
 
-VXLAN capabilities within VeregOS do not extend outside of the environment. They are created specifically to control high availability of any network that exists inside of VeregOS.
+VXLAN capabilities within VergeOS do not extend outside of the environment. They are created specifically to control high availability of any network that exists inside of VergeOS.
 
 </details>
 <details>
@@ -89,7 +89,7 @@ The vSAN stores a SHA1 hash of every block of data that is written to it. When t
   
 <summary>Can I use large spinning drives in my environment?</summary>
   
-Yes, VeregOS does not have a size limitation on drives. It is important to note that through extensive research and testing that drives larger than 8TB in size are not recommended. Typically the rebuild time in larger drives can take an extended period of time leaving the possibility for a single point of failure. Spinning disks aren't recommended for production (hot) data and are typically used for archive/backup environments or (cold) data.
+Yes, VergeOS does not have a size limitation on drives. It is important to note that through extensive research and testing that drives larger than 8TB in size are not recommended. Typically the rebuild time in larger drives can take an extended period of time leaving the possibility for a single point of failure. Spinning disks aren't recommended for production (hot) data and are typically used for archive/backup environments or (cold) data.
 
 </details>
 <details>
@@ -107,47 +107,47 @@ Updates can be run in two forms, either a rolling update or a full environment r
   
 <summary>What RAID level does the vSAN work at?</summary>
   
-The VeregOS vSAN works as a Redundant Array of Independant Nodes (RAIN). This is accomplished by striping the data across all drives in a tier of storage while concurrently writing the data set to its mirror on another node participating in the same tier of storage thereby guaranteeing data integrity.
+The VergeOS vSAN works as a Redundant Array of Independant Nodes (RAIN). This is accomplished by striping the data across all drives in a tier of storage while concurrently writing the data set to its mirror on another node participating in the same tier of storage thereby guaranteeing data integrity.
   
 </details>
 <details>
   
-<summary>Can VeregOS restrict, disable, and prevent the use of nonessential programs, functions, ports, protocols, and services?</summary>
+<summary>Can VergeOS restrict, disable, and prevent the use of nonessential programs, functions, ports, protocols, and services?</summary>
   
-VeregOS will not control anything within the guest. Port management of traffic, protocols, and services can be managed via the VeregOS firewall. 
+VergeOS will not control anything within the guest. Port management of traffic, protocols, and services can be managed via the VergeOS firewall. 
 
 </details>
 <details>
   
-<summary>How does VeregOS isolate service-specific traffic?</summary>
+<summary>How does VergeOS isolate service-specific traffic?</summary>
   
-Creating different internal networks inside the VeregOS platform allows for the delivery of multiple manageable networks that are all completely isolated from one another.
+Creating different internal networks inside the VergeOS platform allows for the delivery of multiple manageable networks that are all completely isolated from one another.
   
 </details>
 <details>
   
-<summary>Can data be taken or read from an individual drive in VeregOS?</summary>
+<summary>Can data be taken or read from an individual drive in VergeOS?</summary>
   
-No, all data is cryptohashed and cryptoverified on every disk VeregOS is installed on.
+No, all data is cryptohashed and cryptoverified on every disk VergeOS is installed on.
 
 </details>  
 <details>  
   
-<summary>Does VeregOS support encryption?</summary>
+<summary>Does VergeOS support encryption?</summary>
   
 Data at rest (DARE) is AES 256bit encrypted **if** encryption is turned on at the time of install.
 
 </details>
 <details>
 
-<summary>How is data between VeregOS sites encrypted?</summary>
+<summary>How is data between VergeOS sites encrypted?</summary>
 
 SSL encryption, and AES 256 for synchronization.
 
 </details>
 <details>
   
-<summary>How does VeregOS handle network isolation?</summary>
+<summary>How does VergeOS handle network isolation?</summary>
 
 VxLAN and containerized networks. VxLANs give you the ability to segregate networks with the same IP address scheme.
 
@@ -170,7 +170,7 @@ Only if the vnet is the router and/or dhcp server for the network.
   
 <summary>Is Active Directory/LDAP or SAML supported?</summary>
 
-No, to view a list of supported auth sources please see the [auth sources](/public/auth) wiki page.
+No, to view a list of supported auth sources please see the [auth sources](/docs/public/auth) wiki page.
   
 </details>
 <br>

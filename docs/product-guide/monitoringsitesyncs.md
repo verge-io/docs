@@ -11,7 +11,7 @@ Ongoing tracking of sync activity can be done from the sending system or the rec
 
 ## Outgoing Sync Dashboard (Sending System)
 
-![outgoingsync-dash.png](/public/userguide-sshots/outgoingsync-dash.png)
+![outgoingsync-dash.png](/docs/public/userguide-sshots/outgoingsync-dash.png)
 
 - ### Sync Status
     The top left area of the Dashboard displays the current status of the sync (e.g. Offline, syncing, error). A status of "Offline" indicates that no sync activity is currently in progress.
@@ -44,7 +44,7 @@ Ongoing tracking of sync activity can be done from the sending system or the rec
 
 ## Incoming Sync Dashboard (Receiving System)
 
-![incomingsync-dash.png](/public/userguide-sshots/incomingsync-dash.png)
+![incomingsync-dash.png](/docs/public/userguide-sshots/incomingsync-dash.png)
 
 - ### Sync Status
     The top left area of the Dashboard displays the current status of the sync (e.g. offline, synching, error)
@@ -105,7 +105,7 @@ Subscriptions are available from both the sending system and the receiving syste
 6.  Set the ***Subscription profile*** = **Site Sync Dashboard**.
 7.  Click **Submit** to save the subscription.
 
-![subscription-syncdash.png](/public/userguide-sshots/subscription-syncdash.png)
+![subscription-syncdash.png](/docs/public/userguide-sshots/subscription-syncdash.png)
 
 <br>
 <br>
@@ -121,7 +121,7 @@ Subscriptions are available from both the sending system and the receiving syste
 6.  Set ***Subscription profile*** = **Site Sync Received**
 7.  Click **Submit** to save the subscription.
 
-![subscription-syncreceived.png](/public/userguide-sshots/subscription-syncreceived.png)
+![subscription-syncreceived.png](/docs/public/userguide-sshots/subscription-syncreceived.png)
 
 <br>   
 

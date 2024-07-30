@@ -13,9 +13,9 @@ dateCreated: 2022-08-17T17:43:09.744Z
 
 ## How to Reset a Tenant Administrative Password
 
-If you need to change the administrative credentials to a tenant environment underneath your current VeregOS environment, you can easily accomplish this task by completing the following steps:
+If you need to change the administrative credentials to a tenant environment underneath your current VergeOS environment, you can easily accomplish this task by completing the following steps:
 
-1. Login to the VeregOS environment where the tenant is hosted.
+1. Login to the VergeOS environment where the tenant is hosted.
 1. Once inside navigate to the Tenant Dashboard section of the tenant for which you need to change the admin password.
 1. At that Tenant Dashboard, click the Edit button in the left navigation menu. This will launch the Tenant Edit screen.
 1. In the new screen, type a new password to use in the field labeled: Admin User Password

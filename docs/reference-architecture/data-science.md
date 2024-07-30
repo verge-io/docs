@@ -7,7 +7,7 @@ Organizations looking to accelerate their analytics and model training processes
 ## Data Science Inc. Example
 
 
-Data Science Inc. will be used throughout this document to explain the key concepts and details around a high-performance cluster deployment. Data Science Inc. approached VeregOS to enhance their machine learning and data processing workloads with a solution that offers high performance, scalability, and simplified management.
+Data Science Inc. will be used throughout this document to explain the key concepts and details around a high-performance cluster deployment. Data Science Inc. approached VergeOS to enhance their machine learning and data processing workloads with a solution that offers high performance, scalability, and simplified management.
 
 
 ## What is a High-Performance Cluster

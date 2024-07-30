@@ -128,7 +128,7 @@ Now you're ready to install the first controller node:
 
 
 3. Configure Swap
-   - There are multiple factors to consider in planning swap including: availability of storage, system use, disk type, etc. **Review this Guide** **WRITE THIS DOC** or consult with the VeregOS implementation team for further information. The recommendation is to configure enough swap to hold the largest workload expected to run.
+   - There are multiple factors to consider in planning swap including: availability of storage, system use, disk type, etc. **Review this Guide** **WRITE THIS DOC** or consult with the VergeOS implementation team for further information. The recommendation is to configure enough swap to hold the largest workload expected to run.
 
 
 ### Finalize Installation

@@ -22,7 +22,7 @@ dateCreated: 2023-03-16T15:25:45.176Z
 - Click on **History** in the left menu
 - Choose your month/year and click apply.
 - Scroll down to the bottom.
-![consumptionstats-image_(14).png](/public/consumptionstats-image_(14).png)
+![consumptionstats-image_(14).png](/docs/public/consumptionstats-image_(14).png)
 <br>
 
 **RAM Consumption: Total RAM Allocated 95th percentile**

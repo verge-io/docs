@@ -10,14 +10,14 @@ dateCreated: 2023-04-07T18:29:15.849Z
 
 # Virtual Machine Best Practices
 
-The following recommendations are for creating virtual machines to be used within VeregOS. Some involve the settings of the machine e.g. (RAM allocation, NICs, etc), while others pertain to configuration within the guest OS. Following best practice guidelines can avoid potential issues and provide better performance.
+The following recommendations are for creating virtual machines to be used within VergeOS. Some involve the settings of the machine e.g. (RAM allocation, NICs, etc), while others pertain to configuration within the guest OS. Following best practice guidelines can avoid potential issues and provide better performance.
 
 <br>
 <br>
 
 ## Recommendations for Importing from existing VMs or migrating physical to virtual:
 
--   Prior to export from other systems, uninstall all hypervisor guest applications e.g. VMware guest agent, Hyper-V integration components, etc. These guest applications will serve no purpose when running in VeregOS, thus wasting resources and potentially causing other adverse results.
+-   Prior to export from other systems, uninstall all hypervisor guest applications e.g. VMware guest agent, Hyper-V integration components, etc. These guest applications will serve no purpose when running in VergeOS, thus wasting resources and potentially causing other adverse results.
 
 -   Remove any hardware-specific drivers/software (for example BIOS update monitors, etc) prior to exporting a physical image.
 
@@ -25,7 +25,7 @@ The following recommendations are for creating virtual machines to be used withi
 
 -   Otherwise, keep hardware configuration as similar as possible (number and size of drives, number and type of CPU(s))
 
--   Often, it is preferable to keep MAC addresses from the previous machine the same on the new VeregOS machine, otherwise, a different MAC address will detect as a new network device within the guest OS and require reconfiguration of all guest network settings. For a machine that was imported using VeregOS auto import utilities, you are prompted with the choice to reserve the MAC address or auto-generate a new MAC address. For machines that are manually imported (e.g. VM shell created and drives imported,) the MAC address can be noted from the existing machine and then manually entered when creating the new machine NIC.
+-   Often, it is preferable to keep MAC addresses from the previous machine the same on the new VergeOS machine, otherwise, a different MAC address will detect as a new network device within the guest OS and require reconfiguration of all guest network settings. For a machine that was imported using VergeOS auto import utilities, you are prompted with the choice to reserve the MAC address or auto-generate a new MAC address. For machines that are manually imported (e.g. VM shell created and drives imported,) the MAC address can be noted from the existing machine and then manually entered when creating the new machine NIC.
 
 > It is important to remember that two machines should never be running within the same network using the same MAC address. {.is-warning}
 
@@ -34,7 +34,7 @@ The following recommendations are for creating virtual machines to be used withi
 <br>
 
 ## Ram Allocation
-The amount of RAM to allocate to a VM is the amount needed to adequately run the workloads within the VM. When a VM is powered on, RAM is allocated to that VM out of an available pool of memory and then cannot be allocated to other VMs (this is regardless of activity within the guest OS.). Generally, a virtual machine in VeregOS can be given less RAM than when run bare metal and in other virtual environments; RAM that would typically be needed within the VM to accommodate disk performance functions, caching, etc. is not needed because these functions are handled automatically by the vSAN.
+The amount of RAM to allocate to a VM is the amount needed to adequately run the workloads within the VM. When a VM is powered on, RAM is allocated to that VM out of an available pool of memory and then cannot be allocated to other VMs (this is regardless of activity within the guest OS.). Generally, a virtual machine in VergeOS can be given less RAM than when run bare metal and in other virtual environments; RAM that would typically be needed within the VM to accommodate disk performance functions, caching, etc. is not needed because these functions are handled automatically by the vSAN.
 
 <br>
 
@@ -61,7 +61,7 @@ All power-saving features should be disabled within the guest OS as these featur
 
 ## ACPI
 
-Without ACPI support, it will be necessary to enter the guest operating system to carry out a clean shutdown of the VM; this is not optimal, particularly with a larger quantity of machines. ACPI should be enabled and configured within the guest operating system to allow for gracefully powering down a VM from the VeregOS management interface (or via API). It is recommended to test shutting down and rebooting a virtual machine prior to moving it to production, including a power off from the VeregOS dashboard while the machine is at a login prompt/locked screen.
+Without ACPI support, it will be necessary to enter the guest operating system to carry out a clean shutdown of the VM; this is not optimal, particularly with a larger quantity of machines. ACPI should be enabled and configured within the guest operating system to allow for gracefully powering down a VM from the VergeOS management interface (or via API). It is recommended to test shutting down and rebooting a virtual machine prior to moving it to production, including a power off from the VergeOS dashboard while the machine is at a login prompt/locked screen.
 
 <br>
 
@@ -76,7 +76,7 @@ Generally all VM servers, particularly those running time-critical applications,
 
 By default, the system provides the time to virtual machines in UTC format. Windows, by default, expects to receive time in local time; therefore, for Windows virtual machines, do one of the following:
 
--   **Configure VeregOS settings to use Local time (for the VM)** - Select local time for the clock source in the VM settings.
+-   **Configure VergeOS settings to use Local time (for the VM)** - Select local time for the clock source in the VM settings.
 -   **Configure Windows to use UTC** - Make appropriate registry key changes within the Windows VM to use UTC format.
 
 <br>
@@ -97,7 +97,7 @@ For Windows machines, the latest virtio drivers can be downloaded here: [https:/
 
 ## Security
 
-It is important to remember that the remote console provides direct monitor/keyboard-mouse access to a virtual machine; gaining console access provides access to the current state of the system (e.g if previous user leaves guest OS logged in, a subsequent user then has access under that guest OS login.) When the Spice or VNC console option is enabled for a machine, a console password can be assigned to provide access control. A console password, however, does not substitute for using smart login guidelines within the guest operating system (e.g. individual logins, complex password requirements, etc). VeregOS permissions allow very granular control of user access. Utilize user and group permissions to limit access to virtual machines where appropriate.
+It is important to remember that the remote console provides direct monitor/keyboard-mouse access to a virtual machine; gaining console access provides access to the current state of the system (e.g if previous user leaves guest OS logged in, a subsequent user then has access under that guest OS login.) When the Spice or VNC console option is enabled for a machine, a console password can be assigned to provide access control. A console password, however, does not substitute for using smart login guidelines within the guest operating system (e.g. individual logins, complex password requirements, etc). VergeOS permissions allow very granular control of user access. Utilize user and group permissions to limit access to virtual machines where appropriate.
 
 <br>
 
@@ -107,7 +107,7 @@ It is important to remember that the remote console provides direct monitor/keyb
 - Use virtio network drivers when possible as will normally provide the best performance. The latest stable virtio drivers are available for download at: [https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso](https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso)  
 Use legacy network drivers when necessary, but consider upgrading your operating system to a newer version if it will not support virtio network drivers.
 
-- Keep in mind -- NIC teaming is generally not beneficial on VeregOS VMs as network redundancy and load balancing are already provided through the infrastructure. Using NIC teaming within the guest OS would consume unnecessary resources and potentially cause issues. (The only exception to this rule would be in cases where the machine is using physical network pass-through hardware.)
+- Keep in mind -- NIC teaming is generally not beneficial on VergeOS VMs as network redundancy and load balancing are already provided through the infrastructure. Using NIC teaming within the guest OS would consume unnecessary resources and potentially cause issues. (The only exception to this rule would be in cases where the machine is using physical network pass-through hardware.)
 
 
 <br>
@@ -126,13 +126,13 @@ Use legacy network drivers when necessary, but consider upgrading your operating
 
 A wise data-protection plan will include use of both snapshots and syncs.
 
-- **Cloud Snapshots** provide rollback points for an entire system, allowing restoration of that entire VeregOS cloud to a particular point in time. Typically it is best to configure your snapshots at the cloud level; this will include everything within that Cloud and allows for restoration of the entire system, including individual VMs and Tenants. There is generally no need to configure additional snapshots at the VM level unless there are particular VMs that should be captured on a more frequent basis or retained longer.
+- **Cloud Snapshots** provide rollback points for an entire system, allowing restoration of that entire VergeOS cloud to a particular point in time. Typically it is best to configure your snapshots at the cloud level; this will include everything within that Cloud and allows for restoration of the entire system, including individual VMs and Tenants. There is generally no need to configure additional snapshots at the VM level unless there are particular VMs that should be captured on a more frequent basis or retained longer.
 
 - **Manual VM Snapshots** can be taken immediately prior to making changes, such as a guest OS/Application update or advanced configuration change; snapshots can then be saved until VM changes are verified.
 
-- **Site Syncs** allow for copying data to remote VeregOS systems/locations. Syncs are an important strategy for allowing data protection and business continuity by getting a quick-recovery copy of data off-site.
+- **Site Syncs** allow for copying data to remote VergeOS systems/locations. Syncs are an important strategy for allowing data protection and business continuity by getting a quick-recovery copy of data off-site.
 
-Contact Support for assistance in designing your data protection strategy using built-in VeregOS functionality.
+Contact Support for assistance in designing your data protection strategy using built-in VergeOS functionality.
 
 
 <br>

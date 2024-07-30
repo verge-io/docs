@@ -64,7 +64,7 @@ A Compute-only Cluster is a set of nodes that are added to VergeOS with the sole
 ### Storage-only Cluster:
 A Storage-only Cluster is a set of nodes that are added to VergeOS with the sole intention of expanding storage. They can be added to an existing Tier of storage if they have like hardware or added as a new Tier.  
 
-!!! note "For a more complete Glossary of terms, see the product in-line help within the VeregOS software."
+!!! note "For a more complete Glossary of terms, see the product in-line help within the VergeOS software."
     
 
 <br>

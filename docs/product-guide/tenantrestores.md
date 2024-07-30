@@ -2,7 +2,7 @@
 
 # Tenant Restores
 
-Individual tenant restores can be obtained from cloud snapshots. Each tenant can also schedule/perform cloud snapshots of their own individual environment and restore directly from those snapshots with no intervention necessary from their VeregOS povider (Parent).
+Individual tenant restores can be obtained from cloud snapshots. Each tenant can also schedule/perform cloud snapshots of their own individual environment and restore directly from those snapshots with no intervention necessary from their VergeOS povider (Parent).
 
 <br>
 

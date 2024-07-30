@@ -61,7 +61,7 @@ If the Two Factor Authentication option is disabled (unchecked), you will simply
 
 The Message Center icon will indicate if you have any new messages from the administrator.
 
-![vdi-messageicon.png](/public/userguide-sshots/vdi-messageicon.png)
+![vdi-messageicon.png](/docs/public/userguide-sshots/vdi-messageicon.png)
 
 <br>
 

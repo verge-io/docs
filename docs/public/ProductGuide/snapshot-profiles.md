@@ -10,7 +10,7 @@ dateCreated: 2023-03-29T00:47:41.780Z
 
 # Snapshot Profiles (Snapshot Scheduling)
 
-A snapshot profile defines a schedule for taking and expiring snapshots. A snapshot profile can be assigned to an entire VeregOS cloud, a VM, or a NAS volume.  Multiple, default snapshot profiles are created by the installation; these default profiles can be modified. Additionally, new snapshot profiles can be created.
+A snapshot profile defines a schedule for taking and expiring snapshots. A snapshot profile can be assigned to an entire VergeOS cloud, a VM, or a NAS volume.  Multiple, default snapshot profiles are created by the installation; these default profiles can be modified. Additionally, new snapshot profiles can be created.
 
 
 
@@ -42,7 +42,7 @@ Default profiles are created automatically at system installation. The following
    -   Daily (at midnight) snapshots retained for 3 days
    -   Daily (at noon) snapshots retained for 1 day
 
-> \*The ***Cloud Snapshots*** profile is assigned to any new VeregOS installation to provide snapshots of the entire system according to this schedule. The schedule for cloud snapshots can be modified by altering this default profile or assigning a different profile for cloud snapshots (System -> Cloud Snapshots -> Select desired profile from the dropdown list). {.is-info}
+> \*The ***Cloud Snapshots*** profile is assigned to any new VergeOS installation to provide snapshots of the entire system according to this schedule. The schedule for cloud snapshots can be modified by altering this default profile or assigning a different profile for cloud snapshots (System -> Cloud Snapshots -> Select desired profile from the dropdown list). {.is-info}
 
 
 
@@ -102,7 +102,7 @@ A period defines a frequency and retention term. Adding multiple periods allows 
 
 ## Change the Snapshot Profile Assigned at the Cloud level
 
-The profile set here determines the schedule used for creating snapshots of the entire system. At install, a new VeregOS system is assigned the built-in "Cloud Snapshots" profile. 
+The profile set here determines the schedule used for creating snapshots of the entire system. At install, a new VergeOS system is assigned the built-in "Cloud Snapshots" profile. 
 
 1.  From the main dashboard, click **System** on the left menu.
 2.  Click **Cloud Snapshots** from the left menu.

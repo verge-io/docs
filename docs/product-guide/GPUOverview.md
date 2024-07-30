@@ -2,7 +2,7 @@
 
 # GPU Overview
 
-VeregOS supports both vGPU and GPU passthrough to allow for advanced computational workloads ,e.g. machine learning, research computing and enhanced graphics within VMs.
+VergeOS supports both vGPU and GPU passthrough to allow for advanced computational workloads ,e.g. machine learning, research computing and enhanced graphics within VMs.
 
 <br>
 <br>
@@ -13,7 +13,7 @@ A physical GPU installed on the host node is presented to a virtual machine; pas
 <br>
 
 ### vGPU
-A physical GPU installed on the host node is dissected into multiple virtual GPUs; vGPU provides access to multiple VMs simultaneously from a single piece of GPU hardware.  Instructions for configuring NVIDIA GRID (NVIDIA vGPU implementation) on VeregOS are available here: [**NVIDIA vGPU**](/product-guide/nvidiavGPU)
+A physical GPU installed on the host node is dissected into multiple virtual GPUs; vGPU provides access to multiple VMs simultaneously from a single piece of GPU hardware.  Instructions for configuring NVIDIA GRID (NVIDIA vGPU implementation) on VergeOS are available here: [**NVIDIA vGPU**](/product-guide/nvidiavGPU)
 
 <br>
 

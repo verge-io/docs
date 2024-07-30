@@ -17,13 +17,13 @@
 4.  Select ***Media*** (type) for the drive:
     -   **Disk (default option)** - empty disk; emulates typical SSD/HDD device
     -   **CD-ROM** - emulates CD-ROM device; read-only; associated \*.iso file simulates inserted CD media; typically used for installing OS or other software.
-    -   **Clone Disk** - create a duplicate of an existing disk from the same VeregOS Cloud.
+    -   **Clone Disk** - create a duplicate of an existing disk from the same VergeOS Cloud.
     -   **EFI Disk** - this drive type is auto-generated and handled by the system; there should never be a need to manually create a drive of this type.
     -   **Import Disk** - allows selection of a standard format disk file (\*.raw,\*.vmdk,\*.qcow, \*.vhd(x), etc).
-    -   **Non-Persistent** - allows for a drive that does not maintain changes between boots; each time the VM is started, the non-persistent drive reverts back to the \*.raw file image (an existing disk drive in the VeregOS Cloud) to which it is referenced. A typical use for the Non-Persistent drive would be maintaining a “golden image” OS install where all updates and modifications can be made centrally; this is particularly useful for solutions, such as VDI, where a consistent installation needs to be maintained for many virtual machines.
+    -   **Non-Persistent** - allows for a drive that does not maintain changes between boots; each time the VM is started, the non-persistent drive reverts back to the \*.raw file image (an existing disk drive in the VergeOS Cloud) to which it is referenced. A typical use for the Non-Persistent drive would be maintaining a “golden image” OS install where all updates and modifications can be made centrally; this is particularly useful for solutions, such as VDI, where a consistent installation needs to be maintained for many virtual machines.
     
 5.  Select ***Interface***:
-    -   **Virtio-SCSI** - (typically recommended option). provides para-virtualized SCSI device; with high performance, while still maintaining standard command set, device passthrough, and device naming within guest OS. There is built-in support in most Linux distros, but not standard in default Windows installations, however, Virtio drivers are available at: [https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso](https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso) ; virtio drivers are also included within VeregOS custom Windows \*.iso files.
+    -   **Virtio-SCSI** - (typically recommended option). provides para-virtualized SCSI device; with high performance, while still maintaining standard command set, device passthrough, and device naming within guest OS. There is built-in support in most Linux distros, but not standard in default Windows installations, however, Virtio drivers are available at: [https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso](https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso) ; virtio drivers are also included within VergeOS custom Windows \*.iso files.
     -   **Virtio(Legacy)** - this driver was previously scheduled to be phased out; however, development has commenced again. It can be used for utmost I/O performance with the tradeoff being that some native SCSI features, such as TRIM are not supported.
     -   **Virtio-SCSI (Dedicated Controller)** - provides a para-virtualized SCSI device with its own controller. Use this option if adding a virtio-SCSI drive to reside on a different storage tier than existing virtio-SCSI drives within the same VM. For example, if tier 3 virtio-SCSI drive(s) have already been created for the VM, create a tier 2 Virtio-SCSI drive as Dedicated Controller to keep the different tiered drives on separate virtual controllers.
     -   **LSI\*\*\*** - LSI, native VMware options provided for compatibility, where needed.
@@ -34,7 +34,7 @@
     -   For **CD-ROM:** Select \*.iso file from the dropdown list. Note: \*.iso file can also be selected after VM creation.
     -   For **Clone Disk:** Select \*.raw file from the dropdown list
     -   For **Import Disk:** Select disk image file\* from the dropdown list. Supported file types: (\*.raw, \*.qcow, \*.qcow2, \*.vhd, \*.vhdx, \*.vmdk)
-    -   For **Non-Persistent Disk:** Select \*.raw file from the dropdown list displaying all existing VeregOS drives in this Cloud.
+    -   For **Non-Persistent Disk:** Select \*.raw file from the dropdown list displaying all existing VergeOS drives in this Cloud.
     
  > See [**Media Images**](/product-guide/uploadingtovSAN) for instructions on uploading *.iso and Disk Image Files to the vSAN {.is-success}  
     

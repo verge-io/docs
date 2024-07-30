@@ -14,9 +14,9 @@ When performing planned maintenance on a physical node, that node can be entered
 
 Maintenance mode was designed to maintain high availability while performing physical maintenance. Therefore no more than 1 node can be place into maintenance at a time.
 
-Entering maintenance mode is as simple as selecting the node from the node list in the user interface and enabling maintenance mode. VeregOS takes care of everything else automatically to include migrating tenant nodes, virtual machines, and vnets if necessary.
+Entering maintenance mode is as simple as selecting the node from the node list in the user interface and enabling maintenance mode. VergeOS takes care of everything else automatically to include migrating tenant nodes, virtual machines, and vnets if necessary.
 
-Disabling maintenance mode is just as simple. Once the maintenance is complete and the node has been booted back up the user only has to disable maintenance mode on the node. VeregOS takes care of moving all workloads that originated on the node back to it, therefore rebalancing the workloads back out across the cluster.
+Disabling maintenance mode is just as simple. Once the maintenance is complete and the node has been booted back up the user only has to disable maintenance mode on the node. VergeOS takes care of moving all workloads that originated on the node back to it, therefore rebalancing the workloads back out across the cluster.
 
 <br>
 <br>

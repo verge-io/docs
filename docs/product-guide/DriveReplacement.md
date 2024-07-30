@@ -10,7 +10,7 @@ This page covers replacing a drive (participating in the vSAN) due to defect or 
 
 The Verge interface will provide warnings or alerts to indicate when there is a problem with a physical drive. When a drive has a warning or error status, an indicator will "bubble up" to the System dashboard Page (To access the System dashboard: from the main dashboard, select System on the left menu.)
 
-![](/public/userguide-sshots/drivecountbox.png)
+![](/docs/public/userguide-sshots/drivecountbox.png)
 
 - Click anywhere within the drive count box to access the full list of drives.
 
@@ -18,7 +18,7 @@ The Verge interface will provide warnings or alerts to indicate when there is a 
 
 ![](public/userguide-sshots/drivelisting-warning.png)
 
-![](/public/userguide-sshots/drivedashboard.png)
+![](/docs/public/userguide-sshots/drivedashboard.png)
 
 <br>
 <br>
@@ -41,20 +41,20 @@ The Verge interface will provide warnings or alerts to indicate when there is a 
 
 - If ***LED Status*** indicates **Off**, click **Turn on LED** on the left menu.
 
-    ![ledoff.png](/public/userguide-sshots/ledoff.png)
+    ![ledoff.png](/docs/public/userguide-sshots/ledoff.png)
 
 - If ***LED Status*** field indicates **Unsupported**, click **Locate LED** on the left menu.
 
-   ![ledunsupported.png](/public/userguide-sshots/ledunsupported.png)
+   ![ledunsupported.png](/docs/public/userguide-sshots/ledunsupported.png)
 
 
 The Diagnostics window will appear with settings pre-filled.
 
-  ![diag-ledon.png](/public/userguide-sshots/diag-ledon.png) 
+  ![diag-ledon.png](/docs/public/userguide-sshots/diag-ledon.png) 
 Click **Send ->** to activate the drive LED .
 
 3.  Once the LED is activated, the physical drive can be located by identifying the one with a solid light. After identifying the drive, **deactivate the LED**:
-![](/public/userguide-sshots/diag-ledoff.png)
+![](/docs/public/userguide-sshots/diag-ledoff.png)
 <br>
 <br>
 

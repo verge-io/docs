@@ -22,23 +22,23 @@ How to migrate a Windows Server VM with UEFI enabled from VMware into VergeOS.
 1. [Import the VM](/product-guide/importvmware) from the **VMware service**.
 1. Set the primary disk set to **SATA**.
 1. Change the primary disk **Boot Order** to **0** in VergeOS.
-![2024-03-14_12_04_15-windowsdrivespage.png](/public/knowledgebase/2024-03-14_12_04_15-windowsdrivespage.png)
+![2024-03-14_12_04_15-windowsdrivespage.png](/docs/public/knowledgebase/2024-03-14_12_04_15-windowsdrivespage.png)
 1. **Power On** the VM.
 1. Install the **virtio-win-guest-tools.exe** (If these are already installed you may skip this step.)
-![2024-03-14_12_05_24-windows-virtagent.png](/public/knowledgebase/2024-03-14_12_05_24-windows-virtagent.png)
+![2024-03-14_12_05_24-windows-virtagent.png](/docs/public/knowledgebase/2024-03-14_12_05_24-windows-virtagent.png)
 1. **Power Off** the VM.
 1. Delete the **EFI drive**.
-![2024-03-14_12_06_20-deleteefidrive.png](/public/knowledgebase/2024-03-14_12_06_20-deleteefidrive.png)
+![2024-03-14_12_06_20-deleteefidrive.png](/docs/public/knowledgebase/2024-03-14_12_06_20-deleteefidrive.png)
 1. Change the primary disk to **Virtio-SCSI**.
 1. Remove the media file from the **CD drive**.
-![2024-03-14_12_07_04-changedisk1.png](/public/knowledgebase/2024-03-14_12_07_04-changedisk1.png)
+![2024-03-14_12_07_04-changedisk1.png](/docs/public/knowledgebase/2024-03-14_12_07_04-changedisk1.png)
 1. Change the **NIC driver** to **Virtio**.
-![2024-03-14_12_10_24-changenetworktovirtio.png](/public/knowledgebase/2024-03-14_12_10_24-changenetworktovirtio.png)
+![2024-03-14_12_10_24-changenetworktovirtio.png](/docs/public/knowledgebase/2024-03-14_12_10_24-changenetworktovirtio.png)
 1. Enable the **QEMU Guest Agent** on the VM edit screen.
-![2024-03-14_12_11_34-enableguestagent.png](/public/knowledgebase/2024-03-14_12_11_34-enableguestagent.png)
+![2024-03-14_12_11_34-enableguestagent.png](/docs/public/knowledgebase/2024-03-14_12_11_34-enableguestagent.png)
 1. **Power On** the VM.
 1. Ensure the guest agent is reporting back to VergeOS.
-![2024-03-14_12_14_40-showguestagent.png](/public/knowledgebase/2024-03-14_12_14_40-showguestagent.png)
+![2024-03-14_12_14_40-showguestagent.png](/docs/public/knowledgebase/2024-03-14_12_14_40-showguestagent.png)
 
 
 <br>

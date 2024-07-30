@@ -16,7 +16,7 @@
 
 GRID vGPU drivers can be downloaded from your NVIDIA licensing portal or by registering for an NVIDIA free evaluation: [**https://nvidia.com/en-us/data-center/resources/vgpu-evaluation**](https://nvidia.com/en-us/data-center/resources/vgpu-evaluation).
 
-2.  Upload the vGPU driver to the VeregOS vSAN. For directions on uploading to the vSAN, see: 
+2.  Upload the vGPU driver to the VergeOS vSAN. For directions on uploading to the vSAN, see: 
 
 [**Uploading to the vSAN (Media Images)**](/product-guide/uploadingtovSAN)
 
@@ -24,7 +24,7 @@ GRID vGPU drivers can be downloaded from your NVIDIA licensing portal or by regi
 4.  The Nodes listing page appears. **Double-click the desired node**.
 5.  Click **Drivers** on the left menu.
 6.  Click **New** on the left menu.
-![](/public/userguide-sshots/newdrivernvidiavgpu.png)
+![](/docs/public/userguide-sshots/newdrivernvidiavgpu.png)
 
 
 7.  From the ***Driver*** dropdown list, select the GPU driver (uploaded to media files in previous step.)
@@ -43,13 +43,13 @@ GRID vGPU drivers can be downloaded from your NVIDIA licensing portal or by regi
 13.  Click **GPUs** on the left menu.
 14.  **Double-click the desired GPU** in the list.
 
-![](/public/userguide-sshots/gpuprofiledropdown.png)
+![](/docs/public/userguide-sshots/gpuprofiledropdown.png)
 Selected GPU appears in the first field (PCI Device).
 
 <br>
 
 15.  Select ***vGPu profile*** (for the selected GPU device) from the dropdown list provided; available vGPU profile options will depend upon the specific GPU hardware.
-16.  **For VeregOS nodes containing more than one vGPU device: Repeat** the process for each additional vGPU device within the selected node, designating each physical device in the ***PCI Device*** dropdown list and selecting ***vGPU Profile*** to assign to the selected device.
+16.  **For VergeOS nodes containing more than one vGPU device: Repeat** the process for each additional vGPU device within the selected node, designating each physical device in the ***PCI Device*** dropdown list and selecting ***vGPU Profile*** to assign to the selected device.
 17.  When finished selecting Profile(s) for all vGPU devices for the node, click **Submit** at the bottom of the page.
 
 <br>
@@ -62,7 +62,7 @@ Selected GPU appears in the first field (PCI Device).
 3.  Click **Devices** on the left menu.
 4.  Click **New** on the left menu.
 5.  The Device Entry Form appears.
-![](/public/userguide-sshots/newvmdevicenvidia.png)
+![](/docs/public/userguide-sshots/newvmdevicenvidia.png)
 
 6.  Optionally, a ***Name*** can be entered for the device.
 7.  Select **NVIDIA vGPU** in the ***Type*** dropdown list.

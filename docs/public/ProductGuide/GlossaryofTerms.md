@@ -11,7 +11,7 @@ dateCreated: 2023-03-09T21:20:46.138Z
 # Glossary of Terms
 
 **Authorization Sources**
-An Authorization Source defines a user management authority (GibLab, Google, OpenID) for a VeregOS cloud. This allows a single sign-on experience for users as credentials from the defined authorization source can be appointed for users to log in to a VeregOS system.
+An Authorization Source defines a user management authority (GibLab, Google, OpenID) for a VergeOS cloud. This allows a single sign-on experience for users as credentials from the defined authorization source can be appointed for users to log in to a VergeOS system.
 
 <br>
 
@@ -20,23 +20,23 @@ A catalog is a group of related recipes. For example, one catalog may contain ma
 
 <br>
 
-**Cloud (VeregOS Cloud)**
-In VeregOS, "cloud" refers to each autonomous Virtual Data Center (VDC) created within a VeregOS system. This includes the VDC created at the base level (when VeregOS is installed on physical hardware) as well as the VDC that is created with each subsequent tenant and subtenant.
+**Cloud (VergeOS Cloud)**
+In VergeOS, "cloud" refers to each autonomous Virtual Data Center (VDC) created within a VergeOS system. This includes the VDC created at the base level (when VergeOS is installed on physical hardware) as well as the VDC that is created with each subsequent tenant and subtenant.
 
 <br>
 
 **Cluster**
-A cluster is a group of nodes (physical or virtual) with like hardware resources, used as a pool for storage, compute, or HCI functions. A single VeregOS system can contain a variety of different clusters to provide an array of performance/costing options. The resources of a single cluster can be divided up among multiple tenants and a single tenant can be given resources to multiple clusters within the same system.
+A cluster is a group of nodes (physical or virtual) with like hardware resources, used as a pool for storage, compute, or HCI functions. A single VergeOS system can contain a variety of different clusters to provide an array of performance/costing options. The resources of a single cluster can be divided up among multiple tenants and a single tenant can be given resources to multiple clusters within the same system.
 
 <br>
 
 **Host**
-Refers to the top-level Virtual Data Center(VDC), aka VeregOS cloud, which is created during the initial VeregOS install on the physical hardware. The Host has direct control over the hardware, whereas tenants/subtentants will have resources assigned to them, but no access to physical components.
+Refers to the top-level Virtual Data Center(VDC), aka VergeOS cloud, which is created during the initial VergeOS install on the physical hardware. The Host has direct control over the hardware, whereas tenants/subtentants will have resources assigned to them, but no access to physical components.
 
 <br>
 
 **Media Images**
-Media Images are files uploaded to the VeregOS vSAN to make available inside the VeregOS environment. Common files uploaded are those used for installing new virtual machines (e.g. \*.iso) or importing machines or drives from existing systems (e.g. \*.ova, \*.ovf, \*.raw, \*.qcow, \*.vmdk, etc).
+Media Images are files uploaded to the VergeOS vSAN to make available inside the VergeOS environment. Common files uploaded are those used for installing new virtual machines (e.g. \*.iso) or importing machines or drives from existing systems (e.g. \*.ova, \*.ovf, \*.raw, \*.qcow, \*.vmdk, etc).
 
 <br>
 
@@ -46,25 +46,25 @@ Nested Multi-Tenancy provides layers of tenancy; the host tenant can allocate an
 <br>
 
 **Network (Core)**
-The Core Network is a virtual network used to handle all intra-node communication. Every VeregOS cloud has 1 Core Network, which is created automatically during the VeregOS installation (on the Host) or at the point of tenant creation (for each tenant.)
+The Core Network is a virtual network used to handle all intra-node communication. Every VergeOS cloud has 1 Core Network, which is created automatically during the VergeOS installation (on the Host) or at the point of tenant creation (for each tenant.)
 
 <br>
 
 **Network (DMZ)**
-The DMZ Network is a virtual network used to connect all other networks with the Core Network. Every VeregOS cloud has 1 DMZ Network, which is created automatically during the VeregOS installation (on the Host) or at the point of tenant creation (for each tenant.)
+The DMZ Network is a virtual network used to connect all other networks with the Core Network. Every VergeOS cloud has 1 DMZ Network, which is created automatically during the VergeOS installation (on the Host) or at the point of tenant creation (for each tenant.)
 
 <br>
 
 **Network (External)**
-An External Network is a network outside of the VeregOS system; any pre-existing network that will be interfaced with VeregOS (e.g. company LAN, direct WAN connections, Wi-Fi networks). In a VeregOS system, there is typically at least one External Network and there can be multiple External networks. External Networks can be defined during or after VeregOS system installation.
+An External Network is a network outside of the VergeOS system; any pre-existing network that will be interfaced with VergeOS (e.g. company LAN, direct WAN connections, Wi-Fi networks). In a VergeOS system, there is typically at least one External Network and there can be multiple External networks. External Networks can be defined during or after VergeOS system installation.
 
 
- *Note: External does not necessarily indicate that the network is a direct Internet Connection (although it can be), but rather only External to the VeregOS system.*
+ *Note: External does not necessarily indicate that the network is a direct Internet Connection (although it can be), but rather only External to the VergeOS system.*
  
  <br>
 
 **Network (Internal)**
-An Internal Network is a virtual network originated within VeregOS. Any number of Internal Networks can be created. An Internal Network is created default-secure; with built-in VeregOS networking functionality allowing for opening up access between Internal Networks and to External Networks as needed.
+An Internal Network is a virtual network originated within VergeOS. Any number of Internal Networks can be created. An Internal Network is created default-secure; with built-in VergeOS networking functionality allowing for opening up access between Internal Networks and to External Networks as needed.
 
 <br>
 
@@ -74,7 +74,7 @@ A Maintenance Network is an External network that can be created to handle IPMI 
 <br>
 
 **Node (Physical)**
-Physical nodes are actual hardware servers that host the base VeregOS cloud.
+Physical nodes are actual hardware servers that host the base VergeOS cloud.
 
 <br>
 
@@ -84,7 +84,7 @@ Tenant nodes are virtual servers that simulate physical nodes. Each tenant is as
 <br>
 
 **Recipe (VM)**
-A VM recipe is a customizable template for launching new virtual machine instances. A VM recipe can include initial hardware specifications (e.g. number of cores, RAM, CPU type, drives, NICs, etc). and resource pool specification. Additionally, custom fields can be added to the recipe to gather input at the time of recipe consumption. This data, input by the recipe consumer, can then be utilized to adjust elements within the new VM guest OS; typically at first startup. For example, a recipe can be configured to prompt for a database username and password, or for disk/ram size settings to input into an application conf file. VeregOS VM recipes are compatible with Cloud-Init. See [https://cloud-init.io](https://cloud-init.io/) for cloud-init documentation.
+A VM recipe is a customizable template for launching new virtual machine instances. A VM recipe can include initial hardware specifications (e.g. number of cores, RAM, CPU type, drives, NICs, etc). and resource pool specification. Additionally, custom fields can be added to the recipe to gather input at the time of recipe consumption. This data, input by the recipe consumer, can then be utilized to adjust elements within the new VM guest OS; typically at first startup. For example, a recipe can be configured to prompt for a database username and password, or for disk/ram size settings to input into an application conf file. VergeOS VM recipes are compatible with Cloud-Init. See [https://cloud-init.io](https://cloud-init.io/) for cloud-init documentation.
 
 <br>
 
@@ -94,7 +94,7 @@ A tenant tecipe is a customizable template for creating a new tenant instance. A
 <br>
 
 **Recipe Consumer**
-The recipe consumer is the VeregOS user creating a new tenant or VM instance using a recipe.
+The recipe consumer is the VergeOS user creating a new tenant or VM instance using a recipe.
 
 <br>
 
@@ -106,14 +106,14 @@ A repair server provides a potential reconstruction mechanism for a system that 
 <br>
 
 **Repository**
-A repository is a site collection of recipe catalogs. Typically, a tenant has access to a repository provided by its VeregOS service provider. Each tenant can also create a local repository to store its own recipe catalogs.
+A repository is a site collection of recipe catalogs. Typically, a tenant has access to a repository provided by its VergeOS service provider. Each tenant can also create a local repository to store its own recipe catalogs.
 
-*The VeregOS Repository is also included by default on a VeregOS Installation. The VeregOS Repository includes the standard NAS Service VM.*
+*The VergeOS Repository is also included by default on a VergeOS Installation. The VergeOS Repository includes the standard NAS Service VM.*
 
 <br>
 
 **Site**
-A site is a VeregOS system with its own physical hardware. Typically VeregOS sites are separated by geographical location. Multiple sites can be synchronized to allow for robust disaster recovery/business continuity options.
+A site is a VergeOS system with its own physical hardware. Typically VergeOS sites are separated by geographical location. Multiple sites can be synchronized to allow for robust disaster recovery/business continuity options.
 
 <br>
 
@@ -123,7 +123,7 @@ The Sites Dashboard provides a central page for monitoring and administering mul
 <br>
 
 **Snapshot**
-A snapshot captures the state of an entity at a particular point in time. Snapshots can be used to create point-in-time capture of an entire VeregOS cloud, tenant, an individual virtual machine, or a NAS volume. Snapshots allow "rolling back" a system, which can be helpful for recovery, development, and testing purposes.
+A snapshot captures the state of an entity at a particular point in time. Snapshots can be used to create point-in-time capture of an entire VergeOS cloud, tenant, an individual virtual machine, or a NAS volume. Snapshots allow "rolling back" a system, which can be helpful for recovery, development, and testing purposes.
 
 <br>
 
@@ -133,7 +133,7 @@ A snapshot profile defines a schedule for snapshot creation and cleanup.
 <br>
 
 **Storage Tier**
-A Storage Tier is a pool of storage with equivalent underlying physical storage devices. Storage Tiering is a feature built into the VeregOS vSAN, allowing splitting data between different types of physical media based on requirements for performance, accessibility, capacity, and cost. Storage tiering can dramatically reduce costs by taking better advantage of more expensive disks where most needed while using less expensive (e.g. spinning disk) for cold storage, like archives, etc. See [**vSAN Tiers**](/product-guide/storagetiers) for a description of standard Storage Tiers.
+A Storage Tier is a pool of storage with equivalent underlying physical storage devices. Storage Tiering is a feature built into the VergeOS vSAN, allowing splitting data between different types of physical media based on requirements for performance, accessibility, capacity, and cost. Storage tiering can dramatically reduce costs by taking better advantage of more expensive disks where most needed while using less expensive (e.g. spinning disk) for cold storage, like archives, etc. See [**vSAN Tiers**](/product-guide/storagetiers) for a description of standard Storage Tiers.
 
 <br>
 
@@ -146,18 +146,18 @@ Subscriptions allow for monitoring a system (or components of a system) by defin
 <br>
 
 **Subscription Profiles**
-Subscription profiles define the aspects of a subscription (on Demand/Scheduled, trigger criteria/schedule). Many subscription profiles are pre-loaded by default with the VeregOS Install. Additional subscription profiles can also be created.
+Subscription profiles define the aspects of a subscription (on Demand/Scheduled, trigger criteria/schedule). Many subscription profiles are pre-loaded by default with the VergeOS Install. Additional subscription profiles can also be created.
 
 <br>
 
 **Tenant**
-A tenant is a complete and separate Virtual Data Center, running its own instance of the VeregOS OS. Child tenants are apportioned from a parent VeregOS cloud. The nested, multi-tenancy infrastructure allows each VeregOS cloud to subdivide any portion of its resources to provide multiple, sub-divisions of resources. Each tenant is a complete VeregOS cloud with its own storage, networking, and security. Tenants are isolated from each other, with each autonomously managed. This provides the mechanism for service providers or IT departments to allocate and administer resources dynamically, keeping autonomous units for different customers/business groups.
+A tenant is a complete and separate Virtual Data Center, running its own instance of the VergeOS OS. Child tenants are apportioned from a parent VergeOS cloud. The nested, multi-tenancy infrastructure allows each VergeOS cloud to subdivide any portion of its resources to provide multiple, sub-divisions of resources. Each tenant is a complete VergeOS cloud with its own storage, networking, and security. Tenants are isolated from each other, with each autonomously managed. This provides the mechanism for service providers or IT departments to allocate and administer resources dynamically, keeping autonomous units for different customers/business groups.
 
 <br>
 
 
 **VergeOS**
-The VeregOS Operating System (Verge OS) is a complete operating system specifically designed for rapidly deployed, complete virtual data centers, with nested tenancy functionality. Verge OS is installed/run directly on base hardware as well as within virtual nodes (used for tenants).
+The VergeOS Operating System (Verge OS) is a complete operating system specifically designed for rapidly deployed, complete virtual data centers, with nested tenancy functionality. Verge OS is installed/run directly on base hardware as well as within virtual nodes (used for tenants).
 
 <br>
 
@@ -167,10 +167,10 @@ A vGPU is a physical GPU installed on a host node that is dissected into multipl
 <br>
 
 **Volume**
-A Volume is a directory structure/collection of files within a VeregOS NAS. A VeregOS NAS can contain one or more Volumes, with each individual Volume allowing different settings for aspects such as security, snapshot, tiering, max size, Anti-Virus settings, shares, etc.
+A Volume is a directory structure/collection of files within a VergeOS NAS. A VergeOS NAS can contain one or more Volumes, with each individual Volume allowing different settings for aspects such as security, snapshot, tiering, max size, Anti-Virus settings, shares, etc.
 
--    Remote Volume - mounts a pre-existing (external) NFS or CIFS file system to make it accessible within a VeregOS system.
--   Local Volume - stored within the VeregOS vSAN
+-    Remote Volume - mounts a pre-existing (external) NFS or CIFS file system to make it accessible within a VergeOS system.
+-   Local Volume - stored within the VergeOS vSAN
 
 <br>
 

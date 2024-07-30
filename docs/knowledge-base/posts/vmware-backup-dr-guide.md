@@ -14,7 +14,7 @@ dateCreated: 2022-08-31T17:20:02.684Z
 ---
 
 ## **Overview**
-The VeregOS VMware feature provides a direct interface with vSphere (storage independent) to run a backup agent for VMware virtual machines. The VeregOS agent initiates snapshots, with the ability to access both full and incremental backups for either a one-time import or ongoing backup and DR for vSphere environments.
+The VergeOS VMware feature provides a direct interface with vSphere (storage independent) to run a backup agent for VMware virtual machines. The VergeOS agent initiates snapshots, with the ability to access both full and incremental backups for either a one-time import or ongoing backup and DR for vSphere environments.
 <br>
 
 ### **Setting up VMware Backups - High-level Steps**
@@ -24,7 +24,7 @@ The VeregOS VMware feature provides a direct interface with vSphere (storage ind
 <br>
 
 ### Creating a VMware Service
-The first step to creating a backup/import of VMware VMs to VeregOS is to create a VMware Service.
+The first step to creating a backup/import of VMware VMs to VergeOS is to create a VMware Service.
 The VMware service establishes a direct agent connection with vSphere; network access and admin login credentials to the vSphere environment is required.
 <br>
 
@@ -33,7 +33,7 @@ The VMware service establishes a direct agent connection with vSphere; network a
 1.  Click **VMware** on the left menu. (Any existing VMware Services will appear in the list view.)
 1.  Click **New** on the left menu.
 
-![dr1.png](/public/dr1.png)
+![dr1.png](/docs/public/dr1.png)
 
 ### VMware Service Settings:
 
@@ -55,7 +55,7 @@ The VMware service establishes a direct agent connection with vSphere; network a
 <br>
 
 ### vSphere Settings:
-![dr1-1.png](/public/dr1-1.png)
+![dr1-1.png](/docs/public/dr1-1.png)
 
 1.  Enter the **vSphere DNS or IP** (required).  The address should be reachable from the network selected for the service. 
 
@@ -87,7 +87,7 @@ Click **Edit** on the left menu.
 -   **Name for the auto-created snapshot during backup - the name given to the temporary, VMware-created snapshot used during the backup operation.**
 -   **Default VM backup schedule - defines the backup schedule to be assigned automatically to all new VMware VMs discovered by the service.  Initially, this is set to  --None-, which will set new VMs to use no Schedule (no backups) by default.  After Schedules are created, the default can be changed to assign a specific backup schedule to any newly detected VMs.**
 -   **Automatically enable change tracking per VM - this setting will automatically turn on the VMware CBT (changed block tracking) feature for each VM included in differential and thin-provisioned backups. By default, this setting is enabled (Enabled is recommended).  If this setting is disabled, and CBT is not otherwise enabled on VMware,  a differential backup will default back to a full backup (backup logs will indicate this change.)**
--   **Backup storage tier - the VeregOS storage tier in which to store backup data.   By default, this is set to tier 4.**  ***Note: Changing this setting affects new Full Backups only.  (In other words: if a backup has already taken place to a different tier, differential backups will continue to be stored in that tier; the new setting will take effect as soon as another Full backup is performed.*** 
+-   **Backup storage tier - the VergeOS storage tier in which to store backup data.   By default, this is set to tier 4.**  ***Note: Changing this setting affects new Full Backups only.  (In other words: if a backup has already taken place to a different tier, differential backups will continue to be stored in that tier; the new setting will take effect as soon as another Full backup is performed.*** 
 
 When vSphere settings have been changed as needed, click **Submit.**  
 <br>
@@ -118,7 +118,7 @@ When a new VMWare Service is created, a Schedule named “Default” is created 
 1.  Click **Schedules** on the left menu.
 1.  Click **New** on the left menu.
 
-![dr2.png](/public/dr2.png)
+![dr2.png](/docs/public/dr2.png)
 
 4.  Enter a **Name** for the new Schedule.
 1.  **Optionally, a Description** can be entered to record more information.
@@ -137,19 +137,19 @@ At this point the Schedule is just an empty container; one or more tasks need to
 
 ***Ex: Every weekday  at 5:15 PM***
 
-![dr3.png](/public/dr3.png)  
+![dr3.png](/docs/public/dr3.png)  
 
 ***Ex: Every 2 hours, from 7 AM - 5 PM, except for Sunday:***
 
-![dr4.png](/public/dr4.png)
+![dr4.png](/docs/public/dr4.png)
 
 ***Ex: Monthly, on the last day of the month:***
 
-![dr6.png](/public/dr6.png)
+![dr6.png](/docs/public/dr6.png)
 
 ***Ex: One time only, on 2019-04-01 at Noon:***
 
-![dr7.png](/public/dr7.png)
+![dr7.png](/docs/public/dr7.png)
 
 10.  By default, a recurring Task is set to run perpetually.  **Optionally,  a Task Expiration** can be defined which will cause the Task to cease on the selected date and time.  To set an expiration for the Task: De-select the Never checkbox and enter desired expiration date and time. 
 
@@ -199,7 +199,7 @@ At this point the Schedule is just an empty container; one or more tasks need to
 
 ## Assigning Schedules
 Once the VMware service is created and successfully connects to the VSphere system, the list of discovered VMware Virtual Machines will appear on the VMware Service Dashboard.   
-![dr8.png](/public/dr8.png)
+![dr8.png](/docs/public/dr8.png)
 By default, all VMs have their schedule set to --None--.
 <br>
 
@@ -259,9 +259,9 @@ For manual backups, the *Name* displayed will be the name of the first VM select
 <br>
 
 ### File-level
-The VM is imported to the VeregOS environment (From the *Backup Job Dashboard, double click the individual VM -> click Import VM*.)
+The VM is imported to the VergeOS environment (From the *Backup Job Dashboard, double click the individual VM -> click Import VM*.)
 
-VM is powered on in the VeregOS environment where files can be extracted to the VeregOS NAS and accessed via CIFS or NFS.
+VM is powered on in the VergeOS environment where files can be extracted to the VergeOS NAS and accessed via CIFS or NFS.
 <br>
 
 ### Restore systems to a VMware environment
@@ -269,7 +269,7 @@ Individual VMs or entire VMware system backups can be pushed back to the VMware 
 <br>
 
 ### DR/Business Continuity
-VMware VMS are powered up in VeregOS from the backup.  Built-in Site-Sync provides the mechanism to synchronize VMware backups offsite to be prepared for quick recovery in the event of a disaster or primary facility outage. 
+VMware VMS are powered up in VergeOS from the backup.  Built-in Site-Sync provides the mechanism to synchronize VMware backups offsite to be prepared for quick recovery in the event of a disaster or primary facility outage. 
 
 ## Appendix A
 <br>
@@ -299,7 +299,7 @@ Note: Check Logs (at the bottom of the Dashboard page) for possible additional i
 
 ### VMware’s Changed Block Tracking (CBT)
 
-Differential and Full(Thin Provisioned) backups utilize VMware’s CBT feature, to request only blocks that have changed since the last full backup, or blocks in use.  This can provide for quicker operations that utilize less bandwidth.  (There is a VeregOS option to automatically turn on CBT for all VMs.)  The following VMware KB article provides more information, including VMware requirements for using CBT: [_https://kb.vmware.com/s/article/1020128_](https://kb.vmware.com/s/article/1020128)
+Differential and Full(Thin Provisioned) backups utilize VMware’s CBT feature, to request only blocks that have changed since the last full backup, or blocks in use.  This can provide for quicker operations that utilize less bandwidth.  (There is a VergeOS option to automatically turn on CBT for all VMs.)  The following VMware KB article provides more information, including VMware requirements for using CBT: [_https://kb.vmware.com/s/article/1020128_](https://kb.vmware.com/s/article/1020128)
 <br>
 
 #### CBT Considerations/Cautions
@@ -309,7 +309,7 @@ Differential and Full(Thin Provisioned) backups utilize VMware’s CBT feature, 
 The following strategies are recommended to mitigate potential risks posed by using the CBT feature: 
 
 1.  As a VMware customer/user, stay abreast of known issues and apply available updates and patches as they become available. In the past, there have been bugs involving the CBT feature, for which VMware has provided patches to fix known CBT defects.
-2.  Although VeregOS stores all backups in the vSAN such that they are stand-alone (any backup, including differential, can be used directly and does not rely on another backup for restore operations), a prudent backup strategy will include a schedule of both Full backups and Differential backups in between.  For example, a common schedule used by many organizations is to run a Full backup weekly or twice weekly and differentials on days in between.  
+2.  Although VergeOS stores all backups in the vSAN such that they are stand-alone (any backup, including differential, can be used directly and does not rely on another backup for restore operations), a prudent backup strategy will include a schedule of both Full backups and Differential backups in between.  For example, a common schedule used by many organizations is to run a Full backup weekly or twice weekly and differentials on days in between.  
 3.  When possible, use Full-Thick Provisioned backup for those that are intended for long-term retention.
 <br>
 [Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

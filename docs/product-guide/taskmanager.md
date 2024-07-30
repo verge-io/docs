@@ -11,7 +11,7 @@ The Task Manager allows initiating automatic operations based on an event or a s
 ## Examples of *Event*\-based Tasks
 
 -   Send an email message when a system update has completed
--   Power on a particular Virtual Machine any time a certain User logs into VeregOS
+-   Power on a particular Virtual Machine any time a certain User logs into VergeOS
 
 
 <br>

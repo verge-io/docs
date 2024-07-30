@@ -26,14 +26,14 @@ This page contains common network testing/troubleshooting steps.
 
 ## Verify VM has Appropriate IP Address
 
-> By default, an Internal VeregOS network is configured to serve DHCP addresses. {.is-success}
+> By default, an Internal VergeOS network is configured to serve DHCP addresses. {.is-success}
 
 **To Check if the VM received a DHCP address:**
 
 1.  Navigate to the VM Dashboard.
 2.  Scroll down to the ***NICs*** section of the screen.
 If the Network assigned a DHCP address to the NIC, it will display in the IP Address field.
-![troubleshooting-verifyipaddress.png](/public/userguide-sshots/troubleshooting-verifyipaddress.png)
+![troubleshooting-verifyipaddress.png](/docs/public/userguide-sshots/troubleshooting-verifyipaddress.png)
 
 **If an IP address was manually assigned within the guest OS (rather than utilizing DHCP):**
 
@@ -56,14 +56,14 @@ To check a network's addressing, see [Determining Network Addresses](#determinin
 
 ## Verify Correct NIC Interface and Driver
 
-Virtio is generally the recommended interface for NIC devices, as it typically will provide the best performance. Virtio drivers need to be added for Windows VMs. VeregOS custom Windows Iso files include Virtio drivers and can be used for initial guest OS installation; otherwise, the latest Virtio drivers can be downloaded at: https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso 
+Virtio is generally the recommended interface for NIC devices, as it typically will provide the best performance. Virtio drivers need to be added for Windows VMs. VergeOS custom Windows Iso files include Virtio drivers and can be used for initial guest OS installation; otherwise, the latest Virtio drivers can be downloaded at: https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso 
 
 **To check the NIC interface:**
 
 1.  Navigate to the VM Dashboard.
 2.  Scroll down to the ***NICs*** section of the screen.
 3.  The ***Interface*** column will display for each NIC.
-![troubleshooting-verifyinterface.png](/public/userguide-sshots/troubleshooting-verifyinterface.png)
+![troubleshooting-verifyinterface.png](/docs/public/userguide-sshots/troubleshooting-verifyinterface.png)
 
 <br>
 <br>
@@ -92,7 +92,7 @@ Some common network diagnostic queries are explained within this section; see [*
 
    3.  Select ***Ping*** from the Diagnostics Query dropdown list.
 
-![diagnostics-querylist.png](/public/userguide-sshots/diagnostics-querylist.png)
+![diagnostics-querylist.png](/docs/public/userguide-sshots/diagnostics-querylist.png)
 
    4.  Click **Send** to test a ping to 8.8.8.8 (This is the default Host value; it is Google's Public DNS.)
 5.  An unsuccessful ping may indicate an incorrect network configuration.
@@ -111,7 +111,7 @@ In order for an internal network to receive Internet connectivity, it must have 
 2.  Click **Rules** on the left menu.
 3.  Verify there is a route rule with the appropriate External network defined as the Target.  
     ***Example:***
-![showdefgwrule.png](/public/userguide-sshots/showdefgwrule.png)
+![showdefgwrule.png](/docs/public/userguide-sshots/showdefgwrule.png)
 
 >    **Hint:** When creating a new internal network, select the external network in the Default Gateway setting; this will automatically create the needed default gateway route rule. A route rule can also be manually created after network creation,using the following instructions. {.is-success}
 
@@ -126,7 +126,7 @@ In order for an internal network to receive Internet connectivity, it must have 
 11.  In the ***Target Network*** field, select the appropriate external network.
 
 **Example:**
-![defaultgw-create.png](/public/userguide-sshots/defaultgw-create.png) <br>
+![defaultgw-create.png](/docs/public/userguide-sshots/defaultgw-create.png) <br>
  <br>
   
   
@@ -140,7 +140,7 @@ A network's gateway address and network segment can be found on the network dash
 -   **Network**: network segment in CIDR format (ex: 192.168.0.0/24; 10.10.0.0/24)
 -   **IP Address**: network router address (ex: 192.168.01; 10.10.0.1)
 
-![findnetworkaddress.png](/public/userguide-sshots/findnetworkaddress.png)
+![findnetworkaddress.png](/docs/public/userguide-sshots/findnetworkaddress.png)
 
 > By default, internal layer-3 networks are configured with network segment: 192.168.0.0/24 and router IP Address: 192.168.0.1 {.is-info}
 
@@ -174,7 +174,7 @@ When a VM is able to reach Internet IP addresses but not URL addresses, a DNS pr
 
 > If the VM is configured with DHCP and successfully receiving an address it will also automatically receive DNS configuration from the network {.is-success}
 
-For Additional Troubleshooting help, contact the VeregOS Support Team at: Support@Verge.io
+For Additional Troubleshooting help, contact the VergeOS Support Team at: Support@Verge.io
 
 <br>
 

@@ -423,22 +423,22 @@ dateCreated: 2022-08-19T20:39:26.714Z
 ### Site Manager
 VergeOS Atria includes Site Manager’s integrated global monitoring and management capability. Customers can now monitor and operate all their sites from anywhere.  Site Manager enables one or more locations to monitoring and adminster multiple VergeOS systems, regarless of location. You can view top-level statistics from all the systems on a single dashboard, with drill-down links to access and view more detailed information.
 
-![sites-dashboard.png](/public/sites-dashboard.png =90%x)
+![sites-dashboard.png](/docs/public/sites-dashboard.png =90%x)
 
 ### Marketplace
 VergeOS Atria takes the next step in simplifying IT with its Recipe Marketplace, which powers faster startup and more rapid response to ongoing provisioning requests. This release includes over a dozen recipes, with more to come. Enterprises and service providers can create their own recipes and marketplace to offer to their organizations or customers for true self-service IT. We have also included improvements to help you develop your own marketplace, including simulating the creation of a recipe, and rendering cloud-init templates server-side to create recipe functionality dynamically.
 
-![market-os.png](/public/market-os.png =70%x)
+![market-os.png](/docs/public/market-os.png =70%x)
 
 ### OIDC Applications
 IT admins can now centralize logins for all their separate environments. Managed Service Providers can streamline support processes by having a central login linked back to their environment in all their tenants. You no longer need to create an authentication application or token in your upstream authentication provider (Google, Azure, etc..) for all physical environments or tenants. Simply create one token/application and point it to your primary environment.
 
-![auth-oidc-applications.png](/public/auth-oidc-applications.png =70%x)
-![auth-tenant-oidc.png](/public/auth-tenant-oidc.png =70%x)
+![auth-oidc-applications.png](/docs/public/auth-oidc-applications.png =70%x)
+![auth-tenant-oidc.png](/docs/public/auth-tenant-oidc.png =70%x)
 
 ### Virtual Machine Export
 VergeOS Atria introduces the feature of Virtual Machine Exporting, for those with requirements to have a 3rd party backup solution. The release introduces a new filesystem type named "Verge.io VM Export" to VergeOS' integrated NAS service. Backing up is as simple as creating the volume and exposing a share to your backup service.
-![export-dash.png](/public/export-dash.png =50%x) ![export-volume.png](/public/export-volume.png =49%x)
+![export-dash.png](/docs/public/export-dash.png =50%x) ![export-volume.png](/docs/public/export-volume.png =49%x)
 
 # Changelog - Atria
 
@@ -549,7 +549,7 @@ VergeOS Atria introduces the feature of Virtual Machine Exporting, for those wit
 * Added additional PXE boot options for running the installer (including providing an install-seed file via a webserver)
 * Reworded an error in the installer when you don't select a core NIC
 * When adding the first node to a new cluster, you can now pick the node that you are most "like"
-* Changed the default hostname for external networks to VeregOS
+* Changed the default hostname for external networks to VergeOS
 * Added the ability to set energy policy at install time
 
 # 4.10.3.1 - January 2023

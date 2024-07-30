@@ -23,7 +23,7 @@ Here are instructions on how to set up a Remote Access VPN using the Built-In Wi
 1. In the Verge OS UI, Navigate to **Networks->Internals** and View or **double-click** on the Internal Network that you want to use.
 1. In the left menu, Click on **Wireguard (VPN)**
 1. Click on **Add New Interface**
-![wireguardvpn-img1.png](/public/wireguardvpn-img1.png)
+![wireguardvpn-img1.png](/docs/public/wireguardvpn-img1.png)
 
 1. Enter the Information below:
 	- Enter a unique **Name** for this Interface
@@ -33,14 +33,14 @@ Here are instructions on how to set up a Remote Access VPN using the Built-In Wi
 	- Enter the **Listen Port** to be used when connecting to the VPN (**Default: 51820**). This is the port that you will use on your External network to send VPN traffic into your Internal Network.
 	- Enter a **Private Key** or leave it blank to Auto-generate a key.
 	- Enter an **Endpoint IP** or leave it blank and the system will attempt to auto-detect the IP. We **highly recommend** you enter the IP manually to ensure the correct config. This IP is the External IP of your environment, Usually, it is the same IP as your UI. You can find your External IP by going to **Networks->Externals** and viewing your External network. In the Network Router section, it should be the IP address as seen below:
-![wireguardvpn-img3-fixed.png](/public/wireguardvpn-img3-fixed.png)
+![wireguardvpn-img3-fixed.png](/docs/public/wireguardvpn-img3-fixed.png)
 
 1. Click **Submit** to add the new interface
 1. After adding the interface, it will take you to the dashboard where you will see your new interface.
-![wireguardvpn-img2.png](/public/wireguardvpn-img2.png)
+![wireguardvpn-img2.png](/docs/public/wireguardvpn-img2.png)
 
 1. Click **Apply Rules** on the left menu bar to apply the firewall rules. Here are the rules that it adds:
-![wireguardvpn-img-intrules.png](/public/wireguardvpn-img-intrules.png)
+![wireguardvpn-img-intrules.png](/docs/public/wireguardvpn-img-intrules.png)
 
 - It automatically creates two firewall rules to accept inbound UDP traffic on port 51820 to both the Router IP and the DMZ IP of the **Internal Network**.
 <br>
@@ -49,7 +49,7 @@ Here are instructions on how to set up a Remote Access VPN using the Built-In Wi
 
 In order for the internal network to be connected, we need an external **PAT** (Port Address Translation) rule to translate the port (**default 51820**) to the **internal network**. 
 
-![2023-09-06_11_56_18-training___rules.png](/public/2023-09-06_11_56_18-training___rules.png)
+![2023-09-06_11_56_18-training___rules.png](/docs/public/2023-09-06_11_56_18-training___rules.png)
 
 **Add External PAT Rule**
 
@@ -121,7 +121,7 @@ If you are adding **Wireguard** and you are not using the IP address of the **UI
 {.is-info}
 
 1. From the Wireguard Interface screen, Click **Add new peer**.
-![wireguardvpn-img4.png](/public/wireguardvpn-img4.png)
+![wireguardvpn-img4.png](/docs/public/wireguardvpn-img4.png)
 
 1. Assign a **Name** to the peer, such as the remote user's name.
 1. Optionally, a **Description** can be entered to store additional information about this peer.
@@ -130,28 +130,28 @@ If you are adding **Wireguard** and you are not using the IP address of the **UI
 1. For **Allowed IPs**, Enter the /32 IP for this peer.
 1. In the **Configure Firewall** dropdown, select **Remote User**
 1. Click **Submit** to save the new peer entry.
-<!--![2023-03-02_13_04_44-support___new_peer.png](/public/2023-03-02_13_04_44-support___new_peer.png)-->
+<!--![2023-03-02_13_04_44-support___new_peer.png](/docs/public/2023-03-02_13_04_44-support___new_peer.png)-->
 
 9. This will create a Firewall rule to allow the Peer to connect through UDP on port 51820 to the Router IP on the Internal Network.
-![wireguardvpn-img6.png](/public/wireguardvpn-img6.png)
+![wireguardvpn-img6.png](/docs/public/wireguardvpn-img6.png)
 
 #### Download the Configuration File:
 
 10. Click the Download Config button on the peer record and select a location for the file; download to a location that will be accessible to the client computer or from which can otherwise be transferred to the client.
 
-![download-link.png](/public/download-link.png)
-![configuration-file.png](/public/configuration-file.png)
+![download-link.png](/docs/public/download-link.png)
+![configuration-file.png](/docs/public/configuration-file.png)
 
 #### Install WireGuard Software on Client:
 
 WireGuard Client software can be downloaded from: https://wireguard.com/install . (In this example, we download and install WireGuard for Windows-64bit to use on a Windows 10 Pro machine.)
 
-![add-tunnel.png](/public/add-tunnel.png)
+![add-tunnel.png](/docs/public/add-tunnel.png)
 
 11. Click Add Tunnel.
 12. Navigate to and select the generated configuration file.
 13. The configuration file is used to automatically create interface and peer on the client machine. Click the Activate button to open the tunnel, if it was not automatically activated.
-![tunnel-active.png](/public/tunnel-active.png)
+![tunnel-active.png](/docs/public/tunnel-active.png)
 
 <br>
 
@@ -166,9 +166,9 @@ The WireGuard status diagnostics tool can give you an idea of the peers that are
 
 1. Navigate to the **WireGuard Interface**.
 1. Click on the **Heart Pulse** icon near the top. 
-![2024-02-06_13_46_55-diaghearticon.png](/public/knowledgebase/2024-02-06_13_46_55-diaghearticon.png)
+![2024-02-06_13_46_55-diaghearticon.png](/docs/public/knowledgebase/2024-02-06_13_46_55-diaghearticon.png)
 1. Set the **Query** to **WireGuard** and hit send
-![2024-02-06_10_35_23-wireguarddiags.png](/public/knowledgebase/2024-02-06_10_35_23-wireguarddiags.png)
+![2024-02-06_10_35_23-wireguarddiags.png](/docs/public/knowledgebase/2024-02-06_10_35_23-wireguarddiags.png)
 1. This will show you interface settings and peers. Check to make sure everything looks correct. Specifically look to make sure the **Allowed IPs** are set correctly. 
 
 

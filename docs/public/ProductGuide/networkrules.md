@@ -80,7 +80,7 @@ Rules are processed from the top of list to the bottom. There are situations whe
     -   **Other Router IP** - helper option, to select a different network and use that network's IP address (single IP address).
     -   **Other Network DMZ IP** - helper option, to select the DMZ IP address of another network.
     
-> Any specific IP address or network can be entered by using the *Custom* option; however,  it is typically best to use one of the above helper options to select a variable setting that automatically handles inputting the correct address information. Using a helper option rather than specifying static addresses will allow the rule to continue working even when specific addresses are modified within VeregOS networks and allows for efficient cloning and recipe templates that include these network rules. {.is-info}
+> Any specific IP address or network can be entered by using the *Custom* option; however,  it is typically best to use one of the above helper options to select a variable setting that automatically handles inputting the correct address information. Using a helper option rather than specifying static addresses will allow the rule to continue working even when specific addresses are modified within VergeOS networks and allows for efficient cloning and recipe templates that include these network rules. {.is-info}
 
 
 9.  Click **Submit** to save the new rule.
@@ -115,7 +115,7 @@ Rules are processed from the top of list to the bottom. There are situations whe
     -   **Other Router IP** - to select a different network and use that network's IP address (single IP address) .
     -   **Other Network DMZ IP** - to select the DMZ IP address of another network.
     
- > Any specific IP address or network can be entered by using the *Custom* option; however,  it is typically best to use one of the above helper options to select a variable setting that automatically handles inputting the correct address information. Using a helper option rather than specifying static addresses will allow the rule to continue working even when specific addresses are modified within VeregOS networks and allows for efficient cloning and recipe templates that include these network rules.{.is-info}    
+ > Any specific IP address or network can be entered by using the *Custom* option; however,  it is typically best to use one of the above helper options to select a variable setting that automatically handles inputting the correct address information. Using a helper option rather than specifying static addresses will allow the rule to continue working even when specific addresses are modified within VergeOS networks and allows for efficient cloning and recipe templates that include these network rules.{.is-info}    
     
 9.  Specify ***Source/Destination/Target Ports/Ranges*** (only applies to TCP/UDP protocols). Ports can be individual ports (with multiple individual ports separated by commas ex: 8080,8088) and port ranges ex: 1000-1005
 10.  Click **Submit** to save the new rule.
@@ -157,7 +157,7 @@ Rules are processed from the top of list to the bottom. There are situations whe
     -   An upside-down pin icon indicates the rule is pinned to the bottom.
     
     
-![pinnedrules.png](/public/userguide-sshots/pinnedrules.png)    
+![pinnedrules.png](/docs/public/userguide-sshots/pinnedrules.png)    
     
 
     
