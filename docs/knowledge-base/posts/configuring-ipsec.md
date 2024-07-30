@@ -23,7 +23,7 @@ In VeregOS, the **DMZ Network** is where the basic routing between networks is h
 
 
 1.  Reserve a **static IP** address on the **Internal (LAN) network** which will be used by the VPN connection on that network.  In this example, an **IP address of 192.168.0.254** was set to **static** on the **internal network** named Internal.
-![ipsec-1.png](/public/ipsec-1.png) 
+![ipsec-1.png](/docs/public/ipsec-1.png) 
 
    -   For **Type**, set to **Static**.
    -   For **IP Address**, choose one of the available IP addresses in the system.  If there are no unused IP addresses, an additional IP will need to be added.
@@ -36,19 +36,19 @@ These settings are variable based on each connection but are important to define
     - For Network, **Interface Network** - Select the network being bridged to the VPN Connection.
     - For Network, set the **IP Addr**ess Type** to **Static**.
     - For **Network Router**, **IP Address** - Enter the IP address reserved in Step 1.
-    ![ipsec-2.png](/public/ipsec-2.png) 
+    ![ipsec-2.png](/docs/public/ipsec-2.png) 
 
 <br>
 
 3. From the **newly created VPN Dashboard**, click on **Edit IPSec** to edit the configuration if necessary to add/update **connection-specific information**.
-![ipsec-3.png](/public/ipsec-3.png) 
+![ipsec-3.png](/docs/public/ipsec-3.png) 
 
 <br>
 
 4. Click on **IPSec Tunnels** to start creating the IPSec Tunnel between the Verge.io environment and the remote site.
    -   For **Remote Gateway** - configure as required by the connection.
    -   For **Phase 1 Proposal (Authentication)**, define the Authentication Method and Pre-Shared Key with connection-specific information.
-   ![ipsec-4.png](/public/ipsec-4.png) 
+   ![ipsec-4.png](/docs/public/ipsec-4.png) 
 <br>
 
 1. When completing the Phase 1 setup, you will automatically be launched to configuring Phase 2.
@@ -57,7 +57,7 @@ If navigating manually, navigate to **Main Dashboard > Networks Dashboard > VPNs
     -   For **Local Network**, configure as required by the connection.
     -   For **Remote Network** - configure as required by the connection.
     -   For **Phase 2 Proposal**, configure as required by the connection.
-    ![ipsec-5.png](/public/ipsec-5.png) 
+    ![ipsec-5.png](/docs/public/ipsec-5.png) 
 > **NOTE:** This will **automatically create rules** on the VPN network.
 {.is-info}
 
@@ -67,52 +67,52 @@ If navigating manually, navigate to **Main Dashboard > Networks Dashboard > VPNs
    -   **Accept incoming**, named **Allow IPSEC NAT - Traversal**, **UDP**, Destination IP: **My Router** IP, Port **4500**
    -   **Accept incoming**, named **Allow ESP**, Protocol **ESP**, Destination IP: **My Router IP**
    -   **Accept incoming**, named **Allow AH**, Protocol **AH**, Destination IP: **My Router IP**
-   ![ipsec-6.png](/public/ipsec-6.png) 
+   ![ipsec-6.png](/docs/public/ipsec-6.png) 
 <br>
 
 1.  **External Network Virtual IP Assignment** - Assign a **new virtual IP** to the new **VPN network** from the **External network**.  This will be the **Public** side of the VPN tunnel.
-![ipsec-7.png](/public/ipsec-7.png) 
+![ipsec-7.png](/docs/public/ipsec-7.png) 
     - **VPN Network Rule** - This will **automatically** create an **outgoing route rule** on the **VPN network with that virtual IP address**, which will have to have the rule applied.  **Verify that the rule is present** and then **Apply Rules** to save the changes.
-![ipsec-8.png](/public/ipsec-8.png)
+![ipsec-8.png](/docs/public/ipsec-8.png)
 <br>
 
 1.  **VPN Network Rule** - Create a **Default Route** rule for the new VPN network to define the **default path outbound** for **traffic inside this network**.
-![ipsec-9.png](/public/ipsec-9.png)
+![ipsec-9.png](/docs/public/ipsec-9.png)
 <br>
 
 1.  **VPN Network Rule** - **Create an sNAT rule** on the new VPN network to mask external traffic
-![ipsec-10.png](/public/ipsec-10.png)
+![ipsec-10.png](/docs/public/ipsec-10.png)
 <br>
 
 1.  **VPN Network Rule** - **Create a general sNAT rule** to work as a **catchall** for traffic from this network.
-![ipsec-11.png](/public/ipsec-11.png)
+![ipsec-11.png](/docs/public/ipsec-11.png)
 <br>
 
 1.  **VPN Network Rule** - **Create a new Translate rule** to **allow traffic** from the **VPN tunnel to access this network**.
-![ipsec-12.png](/public/ipsec-12.png)
+![ipsec-12.png](/docs/public/ipsec-12.png)
 <br>
 
 1.  **VPN Network Rule** - **Create a new accept rule** on the **VPN network** to allow traffic from the **remote network** incoming.
-![ipsec-14.png](/public/ipsec-14.png)
+![ipsec-14.png](/docs/public/ipsec-14.png)
 <br>
 
 1.  **VPN Network Rule** - **Create a new accept rule** on the **VPN network** to allow traffic
-![ipsec-16.png](/public/ipsec-16.png)
+![ipsec-16.png](/docs/public/ipsec-16.png)
 <br>
 
 1.  **Internal Network Rule** - **Create a new route rule** on the **internal network** to send traffic **properly out of the VPN tunnel**.
-![ipsec-13.png](/public/ipsec-13.png)
+![ipsec-13.png](/docs/public/ipsec-13.png)
 <br>
 
 1.  **Internal Network Rule** - **Create a new accept rule** on the **internal network** to allow traffic **from the remote network**.
-![ipsec-15.png](/public/ipsec-15.png)
+![ipsec-15.png](/docs/public/ipsec-15.png)
 <br>
 
 #### Connecting to IPsec
 
 1. Open the **VPN network's Dashboard** (Networks->VPNs then double-click on the Network).
 1. Scroll down to the **IPsec Connections** section and click the plug icon to connect.
-![2024-02-05_ipsec_connect.png](/public/knowledgebase/2024-02-05_ipsec_connect.png)
+![2024-02-05_ipsec_connect.png](/docs/public/knowledgebase/2024-02-05_ipsec_connect.png)
 1. Watch for the **IPsec** status to show **connected**. If it doesn't, continue on to the next step.
 
 ## Troubleshooting Guide
@@ -126,9 +126,9 @@ Logs will not be shown in the VPN logs section for the IPsec connection. These a
 
 1. Click on **Diagnostics** on the left menu.
 1. Change the **Query** to **Logs** and click **Send**.
-![2024-02-05_09_47_04-logs.png](/public/knowledgebase/2024-02-05_09_47_04-logs.png)
+![2024-02-05_09_47_04-logs.png](/docs/public/knowledgebase/2024-02-05_09_47_04-logs.png)
 1. Scroll down to the latest logs at the bottom and review the errors. 
-![2024-02-05_09_49_29-retransmit.png](/public/knowledgebase/2024-02-05_09_49_29-retransmit.png)
+![2024-02-05_09_49_29-retransmit.png](/docs/public/knowledgebase/2024-02-05_09_49_29-retransmit.png)
 1. The most common cause of issues is not able to connect to the tunnel as you can see above it will retry.
 
 ### Connection issues

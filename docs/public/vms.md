@@ -18,9 +18,9 @@ dateCreated: 2022-03-01T17:31:51.484Z
 - Virtio paravirtualization device support for disks and network interface cards
 - Hotplug support for disk drives and network interface cards
 - Host processor and GPU passthrough support
-> Currently only NVIDIA GPU architecture is supported. See the [GPU](/public/gpu) wiki page for more information.
+> Currently only NVIDIA GPU architecture is supported. See the [GPU](/docs/public/gpu) wiki page for more information.
 {.is-info}
-- Cloud-init support allowing guest level automation on new deployments. See the [recipes](/public/recipes) wiki for more information.
+- Cloud-init support allowing guest level automation on new deployments. See the [recipes](/docs/public/recipes) wiki for more information.
 - Live migration with no downtime allowing physical host maintenance without interrupting workloads
 > Live migration is only possible when a physical device is not passed through to the vm.
 {.is-warning}
@@ -30,10 +30,10 @@ dateCreated: 2022-03-01T17:31:51.484Z
 
 ## Importing Virtual Machines
 Virtual machines use the **.raw** format for virtual drives. When a vm is imported it is converted from the imported drive type to the .raw format automatically. Virtual machines can be imported into VeregOS in 4 ways.
-1. The [VMware backup service](/public/backup#vmware-backup-service)
-2. The [VeregOS NAS service](/public/nas)
+1. The [VMware backup service](/docs/public/backup#vmware-backup-service)
+2. The [VeregOS NAS service](/docs/public/nas)
 3. Using the VeregOS clone utility (only accessible by downloading from your environment)
-4. Uploading the vm drives and configuration files directly to the media images section of your environment [Click Here for Instructions](/public/kb/Importing-VMs-from-Media)
+4. Uploading the vm drives and configuration files directly to the media images section of your environment [Click Here for Instructions](/docs/public/kb/Importing-VMs-from-Media)
 > The following type of files are supported when using media images for import
 {.is-info}
 - IMG (Raw Disk Image)

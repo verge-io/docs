@@ -38,7 +38,7 @@ Additionally, in many areas of the platform, such as a specific VM dashboard, th
   
 The log in the following screenshot shows several specific events as examples of logged activity.  
  
-![system_logs.png](/public/system_logs.png)
+![system_logs.png](/docs/public/system_logs.png)
 
 -   From the entry time-stamped on March 28th, 2022 at 9:21:35, there is a record of the IP address from where the admin user logged in (IP address) and the date and time of the login.
 -   From the entry time-stamped on March 28th, 2022 at 9:21:55, this log entry recorded that the user named 'admin' had the password changed from the root environment (parent system) above this tenant.

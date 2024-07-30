@@ -16,19 +16,19 @@ dateCreated: 2022-08-17T15:48:21.549Z
 
 - Physically add the drives into the available empty slots on the Node you want to scale up.
 - Login to the host system's UI and select the appropriate cluster you want to scale out from the top compute cluster section on the home page.
-![scaleupvsan1.png](/public/scaleupvsan1.png)
+![scaleupvsan1.png](/docs/public/scaleupvsan1.png)
 - Select the node that you are scaling up.
-![scaleupvsan2.png](/public/scaleupvsan2.png)
+![scaleupvsan2.png](/docs/public/scaleupvsan2.png)
  - Select "Refresh" on the left menu, and choose "Drives & NICs" from the dropdown. Select Yes to confirm your choice.
-![scaleupvsan4.png](/public/scaleupvsan4.png)
+![scaleupvsan4.png](/docs/public/scaleupvsan4.png)
 
  - Select the Scale Up option on the left menu.
-![scaleupvsan3.png](/public/scaleupvsan3.png)
+![scaleupvsan3.png](/docs/public/scaleupvsan3.png)
 
 
 - The page will now show the new inserted drives in an offline state.
 - Select the drive(s), then under Node Drives, select the “Scale Up” function.
-![scaleupvsan5.png](/public/scaleupvsan5.png)
+![scaleupvsan5.png](/docs/public/scaleupvsan5.png)
 
 Select the appropriate tier for the drive(s) and submit. 
 

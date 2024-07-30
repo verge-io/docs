@@ -42,7 +42,7 @@ This is easily achieved for systems that are successfully configured to send a c
 1. On the origin (sending) side navigate to the configured outgoing site sync.  This is accomplished from The Main Dashboard >Backup/DR >Outgoing Syncs and then double-clicking into the configured outgoing sync.
 1. From the outgoing sync dashboard, click on Refresh Remote Snaps on the left navigation menu.  This will query the remote side for any new snapshots and list them.  It should find the snapshot created in the steps above.
 1. Once the newly created snapshot is detected, it will be listed under the Remote Snapshots section of the page.  Find the snapshot and click on the Request to Download icon to the far right of the listed snapshot.
-![request-to-download.png](/public/request-to-download.png)
+![request-to-download.png](/docs/public/request-to-download.png)
 
 1. The Request Cloud Snapshot menu will load. Set a reasonable expiration date for how long the recovered snapshot will be retained on this system and click **Submit**.
 1. The system will load the Sync-Back / Incoming Sync.  The length of time it will take to transfer the snapshot back can vary greatly depending on several factors, including the bandwidth speed, and the size of the data to transfer.

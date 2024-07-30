@@ -74,7 +74,7 @@ A manual snapshot can be taken at any time.
 6.  After the process is confirmed, transferring a snapshot down from the host can take 15 or more seconds. Once transferred the snapshot will now display with a type of ***Local*** with a green indicator; at this point it can be used for cloud, tenant, VM and volume restores from cloud snapshots as described below.
 
 
-    ![snapshotlocal.png](/public/userguide-sshots/snapshotlocal.png)
+    ![snapshotlocal.png](/docs/public/userguide-sshots/snapshotlocal.png)
     
     <br>
     <br>

@@ -29,7 +29,7 @@ IPSec compatibility is available to provide a VPN tunnel between a VeregOS netwo
 1.  From the Cloud Dashboard, click **Networks** from the left menu.
 2.  Click **Networks** again from the left menu.
 3.  Click **New VPN** from the left menu.
-![int-networksetting.png](/public/userguide-sshots/int-networksetting.png)
+![int-networksetting.png](/docs/public/userguide-sshots/int-networksetting.png)
 
 **--None--** to create a separate VPN network, where connections to other VeregOS networks are all handled with layer 3 routing. (Recommended method)
 

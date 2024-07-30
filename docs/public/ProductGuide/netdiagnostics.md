@@ -21,7 +21,7 @@ The built-in Diagnostics query engine allows quick and easy access to extended n
 3.  The Query list dropdown provides a comprehensive set of available diagnostic queries. (See the bottom of this page for a list of each query option, along with a brief description.) 
 
 
-![diagnostics-querylistall.png](/public/userguide-sshots/diagnostics-querylistall.png)
+![diagnostics-querylistall.png](/docs/public/userguide-sshots/diagnostics-querylistall.png)
 
 <br>
 

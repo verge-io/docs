@@ -25,28 +25,28 @@ If you have the Windows 11 install disk or ISO, you can bypass the Windows TPM a
 
 
 1. **Boot** off of your Windows 11 install disk. [If you don't have one, one can be downloaded from here.](https://www.microsoft.com/en-us/software-download/windows11) The first screen should ask you to choose the language of your install (which should be correct).
-![tpm-1.png](/public/tpm-1.png)
+![tpm-1.png](/docs/public/tpm-1.png)
 <br>
 
 2. Press **<kbd>SHIFT</kbd> + <kbd>F10</kbd>** to launch the command prompt. 
-![tpm-2.png](/public/tpm-2.png)
+![tpm-2.png](/docs/public/tpm-2.png)
 <br>
 
 3. Type **regedit** and hit <kbd>Enter</kbd> to launch registry editor.
-![tpm-3.png](/public/tpm-3.png)
+![tpm-3.png](/docs/public/tpm-3.png)
 <br>
 
 4. Navigate to **HKEY_LOCAL_MACHINE\SYSTEM\Setup**. 
-![tpm-4.png](/public/tpm-4.png)
+![tpm-4.png](/docs/public/tpm-4.png)
 <br>
 
 5. Create a **new registry key** under Setup and name it **LabConfig**. To create a registry key, **right click** in the right window pane and select **New->Key**. Then enter the key name.
-![tpm-5.png](/public/tpm-5.png)
+![tpm-5.png](/docs/public/tpm-5.png)
 <br>
 
 6. Within **LabConfig**, create 2 new **DWORD** values called **BypassTPMCheck** and **BypassSecureBoot** and set each to **1**. To create a new DWORD value, **right click** in the right window and select new **DWORD (32-bit) Value** then name the key, **double-click** to open it and set it to **1**.
 If you also want to bypass the RAM requirement, add a DWORD values for BypassRAMCheck.
-![tpm-6.png](/public/tpm-6.png)
+![tpm-6.png](/docs/public/tpm-6.png)
 <br>
 
 

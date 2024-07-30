@@ -24,7 +24,7 @@ Aliases are helpers that centralize management of address sets that will be used
 4. Enter a **Name** for the alias. Use a name that is descriptive and useful for future administration.  <!-- any names that can't or shouldn't be used? -->
 5. Optionally, a **Description** can be entered to provide further information about the alias and its purpose.
 6. **Create the address set:** 
-   - Click the edit button ![icon-pencil-edit.png](/public/userguide-sshots/icon-pencil-edit.png) to enter in a pipe( | )- delimited list (ex: 10.10.10.10|10.200.10.0/32|10.200.1.1)
+   - Click the edit button ![icon-pencil-edit.png](/docs/public/userguide-sshots/icon-pencil-edit.png) to enter in a pipe( | )- delimited list (ex: 10.10.10.10|10.200.10.0/32|10.200.1.1)
 **\-OR\-**
    - To administer individual entries, see ***Managing a List Field*** instructions at the bottom of the page.
  
@@ -76,7 +76,7 @@ When creating network rules, select ***Type*** = *Alias* in the  Source/Destinat
   
 **To add a new entry:**
   An initial blank line will appear where an entry can be typed in.
-  To add more entries, click the add button to insert a new blank line where an address can be typed in. ![icon-plus-add.png](/public/userguide-sshots/icon-plus-add.png)
+  To add more entries, click the add button to insert a new blank line where an address can be typed in. ![icon-plus-add.png](/docs/public/userguide-sshots/icon-plus-add.png)
 
     
 **To select and deselect entries for move/edit/delete:**
@@ -87,12 +87,12 @@ Multiple entries can be selected for a delete or move.
   
 **To edit an existing IP entry:**
 Click to select the desired entry for edit.
-Click the edit button ![icon-pencil-edit.png](/public/userguide-sshots/icon-pencil-edit.png).
+Click the edit button ![icon-pencil-edit.png](/docs/public/userguide-sshots/icon-pencil-edit.png).
 The selected entry appears and can be modified. When editing is complete, click the edit button again to save the changes.
   
 **To delete an existing entry:**
 Click to select the desired entry.
-Click the delete button. ![icon-trash-delete.png](/public/userguide-sshots/icon-trash-delete.png)
+Click the delete button. ![icon-trash-delete.png](/docs/public/userguide-sshots/icon-trash-delete.png)
 </div>
 
 

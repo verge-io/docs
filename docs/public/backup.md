@@ -9,7 +9,7 @@ dateCreated: 2022-03-01T16:59:47.257Z
 ---
 
 ## Native Backup
-VeregOS natively contains the ability to backup (sync) a VeregOS environment to another VeregOS environment. This is accomplished by using the integrated [snapshot](/public/snapshots) and sync engines. A custom sync profile can be configured to send cloud snapshots on desired intervals to another environment and retain them for any desired amount of time.
+VeregOS natively contains the ability to backup (sync) a VeregOS environment to another VeregOS environment. This is accomplished by using the integrated [snapshot](/docs/public/snapshots) and sync engines. A custom sync profile can be configured to send cloud snapshots on desired intervals to another environment and retain them for any desired amount of time.
 
 Some benefits to using the integrated functions are:
 - A snapshot sync occurs at the block level using the same hashing algorithm to ensure data integrity

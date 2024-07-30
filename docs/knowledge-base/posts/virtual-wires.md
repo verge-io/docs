@@ -25,12 +25,12 @@ A virtual wire is the process of providing a tenant the ability to gain access t
 {.is-info}
 
 ## Creating a 1:1 Virtual Wire
-1. Ensure the VLAN(s) have been created in the VeregOS UI. If they have not, follow the steps to create VLAN(s) [here](/public/kb/adding-a-vlan).
+1. Ensure the VLAN(s) have been created in the VeregOS UI. If they have not, follow the steps to create VLAN(s) [here](/docs/public/kb/adding-a-vlan).
 1. From the Main Dashboard select "Networks" in the left menu and you will be brought to the "Networks Dashboard".
 1. Select "Virtual Wires" in the left menu and you will be brought to the list view of all virtual wires in the environment.
 1. Select "New" and you will be brought to the virtual wire creation page.
 1. Enter the following settings:
-![virtual-wire-create-settings.png](/public/virtual-wire-create-settings.png)
+![virtual-wire-create-settings.png](/docs/public/virtual-wire-create-settings.png)
 > **NOTE:** The "Network" dropdown will list all networks inside of the environment. Choose the network with the corresponding VLAN to be passed into the tenant.<br>
 The "Destination Wire" dropdown will automatically select "Empty List" if there are no unconnected virtual wires detected.<br>
 Leave the PVID field set to **_1_**!
@@ -38,7 +38,7 @@ Leave the PVID field set to **_1_**!
 6. Submit your changes and you will be brought back to the virtual wires list view.
 1. Select "New" and you will be brought to the virtual wire creation page.
 1. Enter the following settings:
-![virtual-wire-create-settings-tenant.png](/public/virtual-wire-create-settings-tenant.png)
+![virtual-wire-create-settings-tenant.png](/docs/public/virtual-wire-create-settings-tenant.png)
 > **NOTE:** In the "Network" dropdown select the tenant network that the VLAN will be passed to. This should be named "tenant_'$TENANTNAME'".<br>
 The "Destination Wire" dropdown will automatically select the other half of the virtual wire created earlier _if it is the only free one available_. If it does not select the appropriate wire.<br>
 Change the PVID field to the actual VLAN ID of the network that it is being attached to.
@@ -62,7 +62,7 @@ Change the PVID field to the actual VLAN ID of the network that it is being atta
 {.is-info}
 4. Select "Edit" in the left menu to enter configuration page for the network.
 1. In the configuration page enter the following settings:
-![network-bridge-mode.png](/public/network-bridge-mode.png)
+![network-bridge-mode.png](/docs/public/network-bridge-mode.png)
 > Select the "Physical Bridged" checkbox to enable Bridge Mode.<br>
 You may leave this networks "On Power Loss" setting to either "Last State" or "Power On". In either event the network must be turned on to make use of virtual wires.<br>
 In most cases all other settings can stay with their default values.
@@ -77,7 +77,7 @@ In most cases all other settings can stay with their default values.
 1. Select "Virtual Wires" in the left menu and you will be brought to the list view of all virtual wires in the environment.
 1. Select "New" and you will be brought to the virtual wire creation page.
 1. Enter the following settings:
-![vw-trunk-host.png](/public/vw-trunk-host.png)
+![vw-trunk-host.png](/docs/public/vw-trunk-host.png)
 > The "Network" dropdown will list all networks inside of the environment. Choose the corresponding "Physical Network" that the VLANS are trunked to.<br>
 The "Destination Wire" dropdown will automatically select "Empty List" if there are no unconnected virtual wires detected. If it does not select "Empty List" change it "None".<br>
 Change the PVID field to **_0_**!<br>
@@ -86,7 +86,7 @@ Enter the VLANS to be passed into the tenant in the "Allowed VLAN List". This li
 6. Submit your configuration.
 1. Select "New" and you will be brought to the virtual wire creation page.
 1. Enter the following settings:
-![vw-trunk-tenant.png](/public/vw-trunk-tenant.png)
+![vw-trunk-tenant.png](/docs/public/vw-trunk-tenant.png)
 > In the "Network" dropdown select the tenant network that the VLAN will be passed to. This should be named "tenant_'$TENANTNAME'".<br>
 The "Destination Wire" dropdown will automatically select the other half of the virtual wire created earlier _if it is the only free one available_. If it does not select the appropriate wire.<br>
 Change the PVID field to **_0_**!<br>
@@ -102,7 +102,7 @@ Enter the VLANS to be passed into the tenant in the "Allowed VLAN List". This li
 1. Navigate to the **tenant UI** that the vlan is to be passed into and login.
 1. From the Main Dashboard navigate to Networks, then select "New External" in the left menu.
 1. In the network creation page enter the following settings:
-![virtual-wire-network-in-tenant.png](/public/virtual-wire-network-in-tenant.png)
+![virtual-wire-network-in-tenant.png](/docs/public/virtual-wire-network-in-tenant.png)
 > For the interface network it is **IMPORTANT** to select **"Physical"**. This represents a physical network interface given to a tenant node.<br>
 You may leave this networks "On Power Loss" setting to "leave off" as it is not necessary for this one to be running unless you are passing the VLAN into a sub tenant. In which case you will follow the appropriate set of instructions from the start.
 {.is-info}

@@ -31,7 +31,7 @@ Using a Proxy grants the ability to use 1 IP address for multiple Tenant environ
    - Set the external network DNS back to the original setting (Prior to Version 4.12.4)
    - Select 'Rules'
    - Create a new rule that looks like the following image
-   ![proxy_accept_rule.png](/public/proxy_accept_rule.png)
+   ![proxy_accept_rule.png](/docs/public/proxy_accept_rule.png)
    - Restart the network and apply the rules
    - Test the rule by opening a browser tab and navigating to the URL using the IP Alias address assigned in the previous step. If it works properly the UI login page will open on the IP Alias address.
 
@@ -50,7 +50,7 @@ Using a Proxy grants the ability to use 1 IP address for multiple Tenant environ
 {.is-info}
 
 6. In the new tenant dashboard select 'Apply Proxy' in the highlighted warning
-   ![apply_proxy.png](/public/apply_proxy.png)
+   ![apply_proxy.png](/docs/public/apply_proxy.png)
 7. Start the tenant and navigate to its URL in a browser tab to login
 
 ## Editing an Existing Tenant to use Proxy
@@ -67,11 +67,11 @@ Using a Proxy grants the ability to use 1 IP address for multiple Tenant environ
    - Select the tenant name
    - Enter the FQDN of the tenant (The A record created in step 1 of this section)
 1. Navigate to the tenant dashboard and select 'Apply Proxy' in the highlighted warning
-   ![apply_proxy.png](/public/apply_proxy.png)
+   ![apply_proxy.png](/docs/public/apply_proxy.png)
 1. Select the tenant network (highlighted) from the tenant dashboard
-   ![tenant_apply_rules.png](/public/tenant_apply_rules.png)
+   ![tenant_apply_rules.png](/docs/public/tenant_apply_rules.png)
 1. Select 'Apply Rules' in the highlighted warning
-   ![tenant_rules_highlighted.png](/public/tenant_rules_highlighted.png)
+   ![tenant_rules_highlighted.png](/docs/public/tenant_rules_highlighted.png)
 1. Test access to the tenant by navigating to it's url in a browser tab
 
 <br>

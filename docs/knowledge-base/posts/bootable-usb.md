@@ -23,12 +23,12 @@ dateCreated: 2022-08-04T18:16:50.678Z
 {.is-warning}
 
 3.  Launch Rufus. [_https://rufus.ie/en/_](https://rufus.ie/en/)
-![rufus.png](/public/rufus.png)
+![rufus.png](/docs/public/rufus.png)
 
 1. Once Rufus is loaded, select the **USB device** to write to for the area labeled **Device**.
 2. Click the **Select button** to select the VeregOS installation ISO image.
 3. Click **Start**
-  ![rufus2.png](/public/rufus2.png)
+  ![rufus2.png](/docs/public/rufus2.png)
 4. Rufus will prompt you to choose an ISO Mode. Choose DD. Rufus will begin building the bootable USB device.
 <br>
 ## Apple MacOS:

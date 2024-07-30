@@ -157,7 +157,7 @@ Rules are processed from the top of list to the bottom. There are situations whe
     -   An upside-down pin icon indicates the rule is pinned to the bottom.
     
     
-![pinnedrules.png](/public/userguide-sshots/pinnedrules.png)    
+![pinnedrules.png](/docs/public/userguide-sshots/pinnedrules.png)    
     
 
     

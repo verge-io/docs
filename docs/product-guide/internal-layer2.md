@@ -3,7 +3,7 @@
 Creating an Internal Layer 2 Network
 Internal Networks can be created as Layer2 (with layer 3 functions to be handled by third party software). To create a layer2 Internal network select **IP Address Type: ***None***.**
 
-![internal-layer2.png](/public/userguide-sshots/internal-layer2.png)
+![internal-layer2.png](/docs/public/userguide-sshots/internal-layer2.png)
 
 
 

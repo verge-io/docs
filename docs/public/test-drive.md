@@ -12,12 +12,12 @@ dateCreated: 2022-10-17T17:29:11.218Z
 
 ## Test Drive
 * [🚗 Take a Test Drive Today](https://www.verge.io/test-drive)
-* [🚗 Test Drive Guide - Cloning](/public/test-drive/cloning)
-* [🚗 Test Drive Guide - Global Deduplication](/public/test-drive/deduplication)
-* [🚗 Test Drive Guide - Tenancy](/public/test-drive/tenancy)
-* [🚗 Test Drive Guide - Tenant Recipes](/public/test-drive/tenant-recipes)
-* [🚗 Test Drive Guide - UI Branding](/public/test-drive/ui-branding)
-* [🚗 Test Drive Guide - VM Recipes](/public/test-drive/vm-recipes)
+* [🚗 Test Drive Guide - Cloning](/docs/public/test-drive/cloning)
+* [🚗 Test Drive Guide - Global Deduplication](/docs/public/test-drive/deduplication)
+* [🚗 Test Drive Guide - Tenancy](/docs/public/test-drive/tenancy)
+* [🚗 Test Drive Guide - Tenant Recipes](/docs/public/test-drive/tenant-recipes)
+* [🚗 Test Drive Guide - UI Branding](/docs/public/test-drive/ui-branding)
+* [🚗 Test Drive Guide - VM Recipes](/docs/public/test-drive/vm-recipes)
 {.links-list}
 
 ## Training, Videos & Social Media

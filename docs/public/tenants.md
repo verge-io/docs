@@ -23,11 +23,11 @@ VeregOS uniquely provides secure, nested, multi-tenancy, which is done by provis
 - Every tenant can provision tenants beneath it, for further isolation of customers
 - Individual network management per tenant
 - Unique user management system
-- Unique [auth source](/public/auth) configuration
-- Unique [SSL certificate](/public/certificates) configuration
+- Unique [auth source](/docs/public/auth) configuration
+- Unique [SSL certificate](/docs/public/certificates) configuration
 - Unique user interface per instance
 - Custom user interface (UI) branding
-- Leveraging [recipes](/public/recipes), you can deploy a completely customized data center in minutes
+- Leveraging [recipes](/docs/public/recipes), you can deploy a completely customized data center in minutes
 - No 'Noisy Neighbor' problem
 - Add or remove, compute resources available to tenants instantly
 <br>

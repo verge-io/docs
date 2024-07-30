@@ -49,7 +49,7 @@ To access the VeregOS UI from a VM running inside the platform, follow these ste
 
 4. **Apply the Rule**: Click **Apply Rules** to apply the new rule to the running network.
 
-![hairpin.png](/public/hairpin.png)
+![hairpin.png](/docs/public/hairpin.png)
 
 ### Accessing the VeregOS UI from the VM
 

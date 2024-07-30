@@ -21,7 +21,7 @@ Sometimes, you may need to access the User Interface (UI) from a virtual machine
 
 2. **Create a New Rule**: Create a new rule using the settings shown in the example below:
    
-   ![ui-access-rule.png](/public/ui-access-rule.png)
+   ![ui-access-rule.png](/docs/public/ui-access-rule.png)
 
 3. **Submit the Rule**: Submit the rule. You will be taken back to the list view of the rules on the network.
 

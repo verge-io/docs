@@ -27,14 +27,14 @@ Customers can access the inline Swagger documentation by navigating following th
 1.  **Click the link to launch the Swagger documentation wiki** (Note: The page may take a couple minutes to load.) The swagger page provides examples of each function, a list of operations for each, and an ability to test each.
 
 1. **Click** an **individual table** in the line to access options:
-![api1.png](/public/api1.png)
+![api1.png](/docs/public/api1.png)
 
 1. **Click** one of the **GET/POST/DELETE/PUT** options:
-![api2.png](/public/api2.png)
+![api2.png](/docs/public/api2.png)
 
 1. **Specify** parameters and **click** the **Execute Button** to run the API Command
 This will return the response which includes the response body and header. Included is a curl example to be used in your program.
-![api3.png](/public/api3.png)
+![api3.png](/docs/public/api3.png)
 <br>
 
 ### Authentication
@@ -83,7 +83,7 @@ Optionally, when sending API requests, developers can pass the header "**X-JSON-
 
 Developers can request a copy of the "yb-api" script which is a helper used to make API calls.  For help and a list of options developers can run "yb-api --help".  To run this, connect to a node in your cluster, either directly or through SSH. Then type in the commands there.
 
-![api4.png](/public/api4.png)
+![api4.png](/docs/public/api4.png)
 
 Notes regarding yb-api helper script: 
 

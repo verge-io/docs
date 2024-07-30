@@ -15,13 +15,13 @@ dateCreated: 2022-06-30T15:23:20.794Z
 1. Add the desired VLAN(s) to the appropriate switchports so they are accessible to the nodes running the VeregOS environment.
 1. From the **Main Dashboard** navigate to **Networks**, then **select "New External"** in the left menu.
 1. In the network creation page enter the following settings:
-![new-vlan.png](/public/new-vlan.png)
+![new-vlan.png](/docs/public/new-vlan.png)
 > **NOTE:** For the "Interface Network" option be sure to select the physical network on the nodes that the VLAN enters the environment on. These are typically appended with the name "Switch" during install. For	all other settings the default options are typically sufficient.
 {.is-info}
 4. Submit your configuration, you will then be brought to the newly created networks dashboard where you should see a status of **"Running"** if the same configuration from above was used.
 1. Workloads can now be attached to the newly created network. 
 
->**NOTE:** See the [Virtual Wires KB](/public/kb/virtual-wires) article for adding VLANS into Tenants.
+>**NOTE:** See the [Virtual Wires KB](/docs/public/kb/virtual-wires) article for adding VLANS into Tenants.
 {.is-info}
 
 <br>

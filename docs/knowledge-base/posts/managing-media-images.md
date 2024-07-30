@@ -21,13 +21,13 @@ To upload a media image, first check that the file is in one of the supported fo
 
 From the main dashboard select **Media Images** in the left menu and then **Upload**. You may also choose **Upload from URL** if you have the URL or are sharing a file from another site.
 
-![mediaimages1.png](/public/mediaimages1.png)
+![mediaimages1.png](/docs/public/mediaimages1.png)
 
 Once the file is done transferring, it will show up in the list of available files to use in the desired manner.
 ### Creating a Public Link 
 To create a **Public Link** select a file and then **Add Public Link** in the left menu.
 
-![mediaimages2.png](/public/mediaimages2.png)
+![mediaimages2.png](/docs/public/mediaimages2.png)
 
 From here the format in which the file is shared can be edited.
 #### Link Format
@@ -38,14 +38,14 @@ From here the format in which the file is shared can be edited.
 - <ins>Never Expire</ins> as the name implies, never expire the link
 - <ins>Set Date</ins> set a date & time to expire the link
 
-![pub-link-format.png](/public/pub-link-format.png)
+![pub-link-format.png](/docs/public/pub-link-format.png)
 
-The **Public Link** can then be shared for use by another system, general file sharing, or with local tenants to provide access to the file without needing to re-download it from the internet. However, this method of sharing to a tenant does use network bandwidth. For a more streamlined method of sharing files to a tenant see the [adding media to tenants](/public/kb/add-media-to-tenants) wiki page.
+The **Public Link** can then be shared for use by another system, general file sharing, or with local tenants to provide access to the file without needing to re-download it from the internet. However, this method of sharing to a tenant does use network bandwidth. For a more streamlined method of sharing files to a tenant see the [adding media to tenants](/docs/public/kb/add-media-to-tenants) wiki page.
 
 > In the **Media Images** section you can also manipulate **Public Links**, **Download** files, **Edit** file names and tiers , **View and Remove References** to files, and **Delete** files.
 {.is-info}
 
-![mediaimages3.png](/public/mediaimages3.png)
+![mediaimages3.png](/docs/public/mediaimages3.png)
 
 
 <br>

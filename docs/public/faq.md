@@ -40,7 +40,7 @@ VeregOS is a custom linux distro.
   
 <summary>Can I install VeregOS myself?</summary>
 
-Yes, follow the installation instructions [here](/public/implementation/3-2).
+Yes, follow the installation instructions [here](/docs/public/implementation/3-2).
 
 </details>
 <details>
@@ -170,7 +170,7 @@ Only if the vnet is the router and/or dhcp server for the network.
   
 <summary>Is Active Directory/LDAP or SAML supported?</summary>
 
-No, to view a list of supported auth sources please see the [auth sources](/public/auth) wiki page.
+No, to view a list of supported auth sources please see the [auth sources](/docs/public/auth) wiki page.
   
 </details>
 <br>

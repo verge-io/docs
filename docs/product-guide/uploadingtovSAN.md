@@ -53,7 +53,7 @@ The Media Images section allows for uploading files to the VeregOS vSAN allowing
 
 
 
-![](/public/userguide-sshots/mediaimages-link-copy.png)
+![](/docs/public/userguide-sshots/mediaimages-link-copy.png)
 
 The Media Images list appears. Download options appear on the far right of the given file:
    -   Click ***Link*** to directly download the file from the page.

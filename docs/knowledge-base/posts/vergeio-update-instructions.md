@@ -40,22 +40,22 @@ The time frame an update can take to complete varies between every environment. 
 
 1. Log in to the VeregOS UI. 
 2. Navigate to System > Updates and then select “Check for Updates” in the left menu.
-![VeregOSupgrade-new-img1.png](/public/vergeioupgrade-new-img1.png)
+![VeregOSupgrade-new-img1.png](/docs/public/vergeioupgrade-new-img1.png)
 	- A pop-up will confirm Yes or No, select Yes.
 > While the update check runs a banner may appear stating “A new minor version is available on a different branch". This is dependent on the version & release. If the banner does not appear it is safe to move on to the next step.
-![VeregOSupgrade-new-img2.png](/public/vergeioupgrade-new-img2.png)
+![VeregOSupgrade-new-img2.png](/docs/public/vergeioupgrade-new-img2.png)
 To change to this new branch, select "Change Branch" in the left menu. 
 A pop-up will confirm Yes or No, select Yes. <br>
 {.is-info}
 3. The packages that are to be downloaded will now be highlighted.
-![VeregOSupgrade-new-img3.png](/public/vergeioupgrade-new-img3.png)
+![VeregOSupgrade-new-img3.png](/docs/public/vergeioupgrade-new-img3.png)
 	- Select **"Download"** in the left menu.
 	- A pop-up will confirm Yes or No, select Yes. 
 	- When the download initiates you will see the download process running on the dashboard in the “Current Update Server” tile.
 1. Once the download completes, the **“Install”** action will become available in the left menu indicating that the updates are ready to be saved to the system. 
-![VeregOSupgrade-new-img4.png](/public/vergeioupgrade-new-img4.png)
+![VeregOSupgrade-new-img4.png](/docs/public/vergeioupgrade-new-img4.png)
 1. Select **Install** in the left menu when you are ready to do the upgrade. 
-![VeregOSupgrade-new-img5.png](/public/vergeioupgrade-new-img5.png)
+![VeregOSupgrade-new-img5.png](/docs/public/vergeioupgrade-new-img5.png)
 	- A pop-up will confirm Yes or No, select Yes.
 	- A brief install of the new package(s) and then a request to reboot the system will occur.
 1. Select **Reboot** in the left menu to initiate a rolling reboot. This will install the new software updates across all nodes in the system.
@@ -68,11 +68,11 @@ A pop-up will confirm Yes or No, select Yes. <br>
 <br>
 
 #### Workloads are failing to migrate
-This will be accompanied by an error stating "Not enough resources to start machine "X"". This is typically due to a constraint on RAM resources in the specific cluster the workload is assigned to. To address the issue, other workloads in the same cluster may need to be migrated or "juggled" to make enough available space to give the migrating workload enough RAM to start on a single node. Other possible causes for failed migrations can be found [here](/public/kb/workloads-failing-to-migrate).
+This will be accompanied by an error stating "Not enough resources to start machine "X"". This is typically due to a constraint on RAM resources in the specific cluster the workload is assigned to. To address the issue, other workloads in the same cluster may need to be migrated or "juggled" to make enough available space to give the migrating workload enough RAM to start on a single node. Other possible causes for failed migrations can be found [here](/docs/public/kb/workloads-failing-to-migrate).
 <br>
 #### The vSAN is taking a long time to verify
 The verify and repair processes time to completion depends on factors such as core network speed, drive speed, and the amount of data consumed. Any nodes that contain spinning disk will inherently take some time to complete their processes. NVMe and SSD nodes take exponentially less time to complete vs HDD nodes. On any system greater than version 4.9.0 you can navigate to the tiers dashboard and confirm its "Full Walk Progress". This indicates how far along the verification process is.
-![walk-percentage.png](/public/walk-percentage.png)
+![walk-percentage.png](/docs/public/walk-percentage.png)
 > **This process must complete before any other nodes are rebooted or a double failure will occur causing workloads to _crash_.**
 {.is-danger}
 

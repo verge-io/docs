@@ -52,7 +52,7 @@ This method provides for faster transfer speeds but involves additional network 
 
 1. From the **Main Dashboard**, click **Backup/DR** on the left menu.
 2. Click the **Add Clone ISO** button in the Clone ISO Utility section. 
-   ![cloneisoutility.png](/public/cloneisoutility.png)
+   ![cloneisoutility.png](/docs/public/cloneisoutility.png)
 
 3. The Clone ISO dialog appears, giving options for the creation of a public download link for the ISO file: 
 
@@ -63,11 +63,11 @@ This method provides for faster transfer speeds but involves additional network 
 
 -   **Yes, use the filename as the link -** creates a public download link using the original file name *(ex: https://verge.example.com/VergeIO -clone.iso)*
 -   **Yes, specify a custom name -** creates a public download link with file name entered *(ex: https://verge.example.com/myfilename.iso)*
-   ![enablecloneiso2.png](/public/enablecloneiso2.png)
+   ![enablecloneiso2.png](/docs/public/enablecloneiso2.png)
 
 4. Click **OK** after selecting the desired option. The build process may take a few minutes to complete.  
 
-   ![enablecloneiso3.png](/public/enablecloneiso3.png)
+   ![enablecloneiso3.png](/docs/public/enablecloneiso3.png)
 
 5. Once the build is complete, the Clone ISO section will show a Ready status. Additionally, the version, public link (if applicable), and the build date/time will display.    
 > **Note:** the copy icon next to the public link field can be used to copy the URL to the clipboard.  
@@ -79,7 +79,7 @@ This method provides for faster transfer speeds but involves additional network 
     \-OR-
 -   The public link (if created)
 
-The bootable Clone ISO can be used on CD or USB. See [bootable-usb](/public/kb/bootable-usb) for instructions on making a bootable USB. Substitute the Clone ISO.
+The bootable Clone ISO can be used on CD or USB. See [bootable-usb](/docs/public/kb/bootable-usb) for instructions on making a bootable USB. Substitute the Clone ISO.
 <br>
 
 ### Using the VeregOS Clone Utility
@@ -87,31 +87,31 @@ The bootable Clone ISO can be used on CD or USB. See [bootable-usb](/public/kb/b
 1. Power down the source computer and **boot from the Clone ISO** ( VeregOS-clone.iso)
 1. Hit <kbd>Enter</kbd> or allow the clone utility to boot automatically. 
 
-   ![enablecloneiso4.png](/public/enablecloneiso4.png)
+   ![enablecloneiso4.png](/docs/public/enablecloneiso4.png)
 
 3. Select **Launch Clone Utility**.
 
-   ![enablecloneiso5.png](/public/enablecloneiso5.png)
+   ![enablecloneiso5.png](/docs/public/enablecloneiso5.png)
 
 4.  Hit <kbd>Enter</kbd> to confirm the introduction message. 
 
-   ![enablecloneiso6.png](/public/enablecloneiso6.png)
+   ![enablecloneiso6.png](/docs/public/enablecloneiso6.png)
 
 5.  **Select the NIC** to be used to connect to the destination VeregOS system.  Only one NIC is selected for connecting to the destination; however, all NICS from the source system are brought over in the VM import. 
 
-   ![enablecloneiso7.png](/public/enablecloneiso7.png)
+   ![enablecloneiso7.png](/docs/public/enablecloneiso7.png)
 
 6. Select the appropriate choice (**DHCP or Static**) for the connecting network. 
 
-   ![enablecloneiso8.png](/public/enablecloneiso8.png)
+   ![enablecloneiso8.png](/docs/public/enablecloneiso8.png)
 
 ### Static IP configuration
 
  If static IP configuration is selected, use **up/down ↑/↓ arrows** to select different fields. The selected field is highlighted in blue. Hit <kbd>Enter</kbd> while a field is selected to modify that field. Once all the static fields are configured as needed, use arrow keys to highlight the **Done** option and <kbd>Enter</kbd> to proceed.  
 
-   ![enablecloneiso9.png](/public/enablecloneiso9.png)
+   ![enablecloneiso9.png](/docs/public/enablecloneiso9.png)
 
-   ![enablecloneiso10.png](/public/enablecloneiso10.png)
+   ![enablecloneiso10.png](/docs/public/enablecloneiso10.png)
 
 1. Enter the VeregOS system's URL (hostname or IP address).
 
@@ -119,13 +119,13 @@ The bootable Clone ISO can be used on CD or USB. See [bootable-usb](/public/kb/b
   >**Note:** The user must have permission to create and modify virtual machines to complete a clone import.
 {.is-warning}
 
-   ![enablecloneiso11.png](/public/enablecloneiso11.png)
+   ![enablecloneiso11.png](/docs/public/enablecloneiso11.png)
 
-   ![enablecloneiso12.png](/public/enablecloneiso12.png)
+   ![enablecloneiso12.png](/docs/public/enablecloneiso12.png)
 
 3. A success message displays if the utility successfully connects to the VeregOS system. 
 
-   ![enablecloneiso13.png](/public/enablecloneiso13.png)
+   ![enablecloneiso13.png](/docs/public/enablecloneiso13.png)
 
 <br>
 
@@ -133,11 +133,11 @@ The bootable Clone ISO can be used on CD or USB. See [bootable-usb](/public/kb/b
 
 Enter a name for the VM (the name given to the VM created on the VeregOS system). 
 
-   ![enablecloneiso14.png](/public/enablecloneiso14.png)
+   ![enablecloneiso14.png](/docs/public/enablecloneiso14.png)
 
 Use arrows and spacebar to **select/deselect drives for import**. By default, the boot device containing the ISO (e.g., CD/DVD, USB) is not selected as it is not necessary to import the contents of the clone iso. Not selected drives are created as empty devices on the destination virtual machine.  
 
-   ![enablecloneiso15.png](/public/enablecloneiso15.png)
+   ![enablecloneiso15.png](/docs/public/enablecloneiso15.png)
 <br>
 
 ### Advanced Settings
@@ -147,9 +147,9 @@ Use arrows and spacebar to **select/deselect drives for import**. By default, t
 
 Advanced options are accessed by selecting **Advanced** and hitting <kbd>Enter</kbd>.
 
-   ![enablecloneiso16.png](/public/enablecloneiso16.png)
+   ![enablecloneiso16.png](/docs/public/enablecloneiso16.png)
 
-   ![enablecloneiso17.png](/public/enablecloneiso17.png)
+   ![enablecloneiso17.png](/docs/public/enablecloneiso17.png)
 
 **Send Threads -** number of parallel threads to use for clone transfer.
 - Default=4
@@ -172,12 +172,12 @@ The default thread setting is optimized for typical WAN connections and usually 
 
 **Yes**/**Sync directly**  Use direct vSAN connection method. This method can provide faster transfers, allowing for writing directly to the VeregOS vSAN.  This method requires additional network configuration. Contact Support for more information.
 
-   ![enablecloneiso18.png](/public/enablecloneiso18.png)
+   ![enablecloneiso18.png](/docs/public/enablecloneiso18.png)
 
 1.  <kbd>Enter</kbd> while the **Start Clone** field is selected to confirm and begin the clone. 
 2. Progress updates will display. As each drive is cloned, the number of bytes already transferred, percentage complete, transfer rate, and elapsed time of this drive transfer are reported. 
 
-   ![enablecloneiso19.png](/public/enablecloneiso19.png)
+   ![enablecloneiso19.png](/docs/public/enablecloneiso19.png)
 
 > **NOTE: Once the import is complete, before powering up VM for the first time in VeregOS , it is _highly recommended_ to take a snapshot. If needed, this will allow returning to the original version after any initial guest OS/driver changes are performed.**
 {.is-info}
@@ -192,11 +192,11 @@ A Clone import that successfully started but did not complete (due to network di
 
 1. Boot the source computer from the VeregOS clone ISO again and follow the same process, ensuring to input the VM name exactly as it was the first time.  (The VM name can be verified on the destination VeregOS system in the **Virtual Machines** list.)
 
-   ![enablecloneiso20.png](/public/enablecloneiso20.png)
+   ![enablecloneiso20.png](/docs/public/enablecloneiso20.png)
 
 2.  Use the right arrow **→ key** or <kbd>Tab</kbd> to select the **Resume** option, and hit <kbd>Enter</kbd>.
 
-   ![enablecloneiso21.png](/public/enablecloneiso21.png)
+   ![enablecloneiso21.png](/docs/public/enablecloneiso21.png)
 
 The clone import will continue from where it left off. 
 
@@ -213,7 +213,7 @@ The Clone ISO can be rebuilt to take advantage of code updates.  
 
 The rebuild may take a few minutes. While in process, the status will indicate "Building."
 
-   ![enablecloneiso22.png](/public/enablecloneiso22.png)
+   ![enablecloneiso22.png](/docs/public/enablecloneiso22.png)
 
 The status will change to "Ready" when the ISO build is complete. 
 
@@ -226,7 +226,7 @@ Rebuilding the ISO can be automated. Some customers opt to update the clone ISO
 3. Click **New** on the left menu. 
 4. Configure the task as shown to automatically rebuild the ISO each time the VeregOS system is updated :
 
-   ![enablecloneiso23.png](/public/enablecloneiso23.png)
+   ![enablecloneiso23.png](/docs/public/enablecloneiso23.png)
 
 1. Click **Submit** to save the new task.
 
@@ -254,7 +254,7 @@ The following section outlines the network rules for a system to accept a Clone 
 
  *\*  UI is a VeregOS keyword; it must be entered in lower case, exactly as noted.*
 
-   ![enablecloneiso24.png](/public/enablecloneiso24.png)
+   ![enablecloneiso24.png](/docs/public/enablecloneiso24.png)
 
 
 ### Core Network SNAT
@@ -292,14 +292,14 @@ Click **Apply Rules** on the left menu to put the new rule into effect.
 
 DHCP option was selected, but no DHCP service was found
 
-   ![enablecloneiso25.png](/public/enablecloneiso25.png)
+   ![enablecloneiso25.png](/docs/public/enablecloneiso25.png)
 
 -   Verify there is a DHCP service available via the selected NIC.
 -   Verify the selected network actually has a connection.  
 
 **ISSUE: Login failed message**
 
-   ![enablecloneiso26.png](/public/enablecloneiso26.png)
+   ![enablecloneiso26.png](/docs/public/enablecloneiso26.png)
 
 -   Verify input of correct username and password 
 -   The Login failed message can also appear when there is an issue with network connection or URL.  Verify input of correct VeregOS system host/IP address. 
@@ -316,7 +316,7 @@ DHCP option was selected, but no DHCP service was found
 
 OpenSSL errors during the transfer indicate a network issue. The clone operation will retry and can often recover from an OpenSSL error. The clone operation will abort if timeout or number of retries threshold reached.
 
-   ![enablecloneiso27.png](/public/enablecloneiso27.png)
+   ![enablecloneiso27.png](/docs/public/enablecloneiso27.png)
 
 -   A possible cause for sporadic OpenSSL errors, can be MTU size mismatches. Verify the MTU configuration on connecting networks.  
 
@@ -333,7 +333,7 @@ If a network issue causes a clone import to fail before finishing: a partial clo
 
 If the VeregOS user provided does not have adequate permissions, the clone will begin and create the new Virtual Machine record; however, it will not be able to create any VM drives or NICs.
 
-   ![enablecloneiso28.png](/public/enablecloneiso28.png)
+   ![enablecloneiso28.png](/docs/public/enablecloneiso28.png)
 
 -   Restart the clone ISO providing username/password of a VeregOS user with List, Read, Create and Modify permissions to Virtual Machines.
 > **Note:** Since the empty VM will have been created on the destination VeregOS system (when run initially without adequate permissions): when run again with proper permissions, the clone operation can be performed as a resume, or the VM can be removed on the destination system before starting the clone again.  

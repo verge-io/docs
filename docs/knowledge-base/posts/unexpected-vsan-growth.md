@@ -29,7 +29,7 @@ If every hour there is a dip and then a spike, or possibly once a day, then this
 If observing a week, note if the total storage consumed on this tier at the start of the week, relative to the total storage consumed at the end of the week.  If for example, the growth is roughly 10%, then change the time filter to a week prior.  Does the growth percentage week after week seem to fairly consistent? If so, this represents an average of your weekly growth (change) rate. This percentage can help a system administrator plan for future hardware expansion.
 Lastly, filter on the current month and note if there are any sudden spikes in storage consumption on the Storage Usage Graph.  This will likely represent when unexpected storage was consumed by the system.  In the below example, between April 11th and April 13th, there was a 30GB increase in storage.  This suggests a time frame to focus on.  You can click and drag a mouse over the time in question to zoom in to a more detailed time window.  At any point you can hover the mouse cursor over the graph and specific date/time information will be displayed below the graph.
 
-![vsan_unexpected_growth.png](/public/vsan_unexpected_growth.png)
+![vsan_unexpected_growth.png](/docs/public/vsan_unexpected_growth.png)
 
 
 **Possible Reasons for Storage increase**

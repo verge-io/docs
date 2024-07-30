@@ -20,7 +20,7 @@ Every layer of tenancy has the ability to customize their user interface brandin
 1. From the **Main Ddashboard** select **System -> Settings -> Edit UI Branding**.
 1. Check **"Enabled"** if it is unchecked to reveal the settings for custom branding.
 
-![edit-ui-branding.png](/public/edit-ui-branding.png)
+![edit-ui-branding.png](/docs/public/edit-ui-branding.png)
 
 
 <br>
