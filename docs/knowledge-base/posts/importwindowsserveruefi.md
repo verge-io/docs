@@ -19,7 +19,7 @@ How to migrate a Windows Server VM with UEFI enabled from VMware into VergeOS.
 {.is-info}
 
 
-1. [Import the VM](/product-guide/importvmware) from the **VMware service**.
+1. [Import the VM](/docs/product-guide/importvmware) from the **VMware service**.
 1. Set the primary disk set to **SATA**.
 1. Change the primary disk **Boot Order** to **0** in VergeOS.
 ![2024-03-14_12_04_15-windowsdrivespage.png](/docs/public/knowledgebase/2024-03-14_12_04_15-windowsdrivespage.png)

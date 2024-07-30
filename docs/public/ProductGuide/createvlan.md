@@ -16,7 +16,7 @@ dateCreated: 2023-06-15T15:43:25.482Z
 > For VLAN configuration **at the host level:** verify switchports are configured appropriately so that physical VergeOS nodes have access to the desired VLAN(s).
 {.is-info}
 
-> For VLAN configuration within a **tenant:** [**Virtual Wires**](/product-guide/virtualwires) must first be configured to provide external layer2 access to the tenant. {.is-info} 
+> For VLAN configuration within a **tenant:** [**Virtual Wires**](/docs/product-guide/virtualwires) must first be configured to provide external layer2 access to the tenant. {.is-info} 
 
 <br>
 <br>

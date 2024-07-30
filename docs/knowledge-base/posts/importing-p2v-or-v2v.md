@@ -79,7 +79,7 @@ This method provides for faster transfer speeds but involves additional network 
     \-OR-
 -   The public link (if created)
 
-The bootable Clone ISO can be used on CD or USB. See [bootable-usb](/docs/public/kb/bootable-usb) for instructions on making a bootable USB. Substitute the Clone ISO.
+The bootable Clone ISO can be used on CD or USB. See [bootable-usb](/docs/knowledge-base /bootable-usb) for instructions on making a bootable USB. Substitute the Clone ISO.
 <br>
 
 ### Using the VergeOS Clone Utility

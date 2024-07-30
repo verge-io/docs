@@ -33,7 +33,7 @@ Virtual machines use the **.raw** format for virtual drives. When a vm is import
 1. The [VMware backup service](/docs/public/backup#vmware-backup-service)
 2. The [VergeOS NAS service](/docs/public/nas)
 3. Using the VergeOS clone utility (only accessible by downloading from your environment)
-4. Uploading the vm drives and configuration files directly to the media images section of your environment [Click Here for Instructions](/docs/public/kb/Importing-VMs-from-Media)
+4. Uploading the vm drives and configuration files directly to the media images section of your environment [Click Here for Instructions](/docs/knowledge-base /Importing-VMs-from-Media)
 > The following type of files are supported when using media images for import
 {.is-info}
 - IMG (Raw Disk Image)

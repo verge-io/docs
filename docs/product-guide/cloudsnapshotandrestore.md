@@ -8,7 +8,7 @@ Cloud Snapshots contain a backup of everything in a system, including all tenant
 -   Individual NAS volumes
 -   Individual VMs\*
 
-> \*VM snapshots contained within a cloud snapshot are crash-consistent. Individual VM snapshots allow a quiesce option (guest agent required). See [**VM Snapshots and Restores**](/product-guide/VMsnapshotsandrestores) for VM-level snapshot instructions. {.is-info}
+> \*VM snapshots contained within a cloud snapshot are crash-consistent. Individual VM snapshots allow a quiesce option (guest agent required). See [**VM Snapshots and Restores**](/docs/product-guide/VMsnapshotsandrestores) for VM-level snapshot instructions. {.is-info}
 
 <br>
 <br>
@@ -23,7 +23,7 @@ By default cloud snapshots run according to the included **Cloud Snapshots**  p
 1.  From the main dashboard, Click **System** on the left menu.
 2.  Click **Cloud Snapshots** on the left menu.
 3.  Click **Select Snapshot Profile** on the left menu.
-4.  **Select the desired snapshot profile** from the dropdown list. (For instructions regarding modifying or adding new snapshot profiles, see: [**Snapshot Profiles (Snapshot Scheduling)**](/product-guide/snapshot-profiles).
+4.  **Select the desired snapshot profile** from the dropdown list. (For instructions regarding modifying or adding new snapshot profiles, see: [**Snapshot Profiles (Snapshot Scheduling)**](/docs/product-guide/snapshot-profiles).
 5.  Click **Submit** at the bottom of the page.
 
 <br>
@@ -117,9 +117,9 @@ A manual snapshot can be taken at any time.
 
 ### Partial Restores From a Cloud Snapshot
 
--   See [**VM Snapshots and Restores**](/product-guide/VMsnapshotsandrestores) for instructions on restoring an individual VM from a cloud snapshot.
--   See [**Tenant Restores**](/product-guide/tenantrestores) for instructions on restoring an individual tenant from a cloud snapshot.
--   See [**Volume Snapshots and Restores**](/product-guide/volumesnapsandrestores) for instructions on restoring an individual tenant from a cloud snapshot.
+-   See [**VM Snapshots and Restores**](/docs/product-guide/VMsnapshotsandrestores) for instructions on restoring an individual VM from a cloud snapshot.
+-   See [**Tenant Restores**](/docs/product-guide/tenantrestores) for instructions on restoring an individual tenant from a cloud snapshot.
+-   See [**Volume Snapshots and Restores**](/docs/product-guide/volumesnapsandrestores) for instructions on restoring an individual tenant from a cloud snapshot.
 
 <br>
 

@@ -29,7 +29,7 @@ The Verge interface will provide warnings or alerts to indicate when there is a 
 -   **Warning** - Reallocated sectors exceeded maximum threshold(s)
 -   **Error** - Drive is unresponsive; read or write error threshold reached
 
-> **It is highly recommended to configure on-demand and scheduled subscriptions (with target type=System Dashboard) to ensure timely awareness of drive issues.** [*Go here for information on setting up subscriptions.*](/product-guide/subscriptions-overview) {.is-warning}
+> **It is highly recommended to configure on-demand and scheduled subscriptions (with target type=System Dashboard) to ensure timely awareness of drive issues.** [*Go here for information on setting up subscriptions.*](/docs/product-guide/subscriptions-overview) {.is-warning}
 
 <br>
 <br>

@@ -18,7 +18,7 @@ GRID vGPU drivers can be downloaded from your NVIDIA licensing portal or by regi
 
 2.  Upload the vGPU driver to the VergeOS vSAN. For directions on uploading to the vSAN, see: 
 
-[**Uploading to the vSAN (Media Images)**](/product-guide/uploadingtovSAN)
+[**Uploading to the vSAN (Media Images)**](/docs/product-guide/uploadingtovSAN)
 
 3.  From the Main Dashboard, click **Nodes**.
 4.  The Nodes listing page appears. **Double-click the desired node**.

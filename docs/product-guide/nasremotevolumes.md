@@ -4,7 +4,7 @@
 
 Remote volumes are external file systems mounted to the VergeOS System via standard NFS or CIFS. A common use for a remote volume would be to allow syncing external data into the VergeOS vSAN (from other VergeOS sites or other storage systems), for a one-time operation or recurring backups.
 
-> A [**NAS Service**](/product-guide/NASservice) must be in place before creating volumes. {.is-success} 
+> A [**NAS Service**](/docs/product-guide/NASservice) must be in place before creating volumes. {.is-success} 
 
 
 <br>

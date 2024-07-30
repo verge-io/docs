@@ -19,7 +19,7 @@ The quiesce option provides an application-consistent snapshot of a running VM i
 >  By default, VM-level snapshots are not configured (VM Snapshot Profile setting="--None--"). {.is-success}
 
 1.  From the **VM dashboard**, click **Edit** on the left menu.
-2.  In the ***Snapshot profile*** field, select the desired profile from the dropdown list. Instructions for configuring snapshot profiles can be found here: [**Snapshot Profiles (Snapshot Scheduling)**](/product-guide/snapshot-profiles).
+2.  In the ***Snapshot profile*** field, select the desired profile from the dropdown list. Instructions for configuring snapshot profiles can be found here: [**Snapshot Profiles (Snapshot Scheduling)**](/docs/product-guide/snapshot-profiles).
 3.  Click **Submit** at the bottom of the page.
 
 
@@ -32,7 +32,7 @@ The quiesce option provides an application-consistent snapshot of a running VM i
 2.  Click **Take Snapshot** on the left menu.
 3.  Enter a ***Name*** for the snapshot (required).
 4.  Enter a ***Description*** (optional).
-5.  The ***Quiesce*** option can be selected to freeze disk activity while the snapshot is being taken. This provides application-consistent backups for VMs. ([**VM Guest Agent**](/product-guide/VMguestagent)) must be installed and registered on VM for quiesced snapshots.
+5.  The ***Quiesce*** option can be selected to freeze disk activity while the snapshot is being taken. This provides application-consistent backups for VMs. ([**VM Guest Agent**](/docs/product-guide/VMguestagent)) must be installed and registered on VM for quiesced snapshots.
 6.  In the ***Expires*** field, select/enter date and time for expiration.
 
 > **Choosing Expiration:** Consider vSAN space when selecting snapshot expirations. Snapshots held for long periods can have a significant effect; initially source and snapshot are the same and thus have no impact on storage utilization; however, as source data diverges more from the snapshot data, there is less deduplication between the two and therefore more vSAN utilization. It is typically not recommended to use the Never Expire option unless necessary. {.is-warning}

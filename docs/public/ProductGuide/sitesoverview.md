@@ -31,7 +31,7 @@ Additionally, there is a quick-link to directly reach the login page for the sit
 
 <br>
 
-See [**Add Sites**](../product-guide/configuringsitesdash-addingsites) for instructions on adding a site to the Sites Dashboard.
+See [**Add Sites**](/docs/product-guide/configuringsitesdash-addingsites) for instructions on adding a site to the Sites Dashboard.
 
 <br>
 

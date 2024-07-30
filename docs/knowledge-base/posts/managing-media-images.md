@@ -40,7 +40,7 @@ From here the format in which the file is shared can be edited.
 
 ![pub-link-format.png](/docs/public/pub-link-format.png)
 
-The **Public Link** can then be shared for use by another system, general file sharing, or with local tenants to provide access to the file without needing to re-download it from the internet. However, this method of sharing to a tenant does use network bandwidth. For a more streamlined method of sharing files to a tenant see the [adding media to tenants](/docs/public/kb/add-media-to-tenants) wiki page.
+The **Public Link** can then be shared for use by another system, general file sharing, or with local tenants to provide access to the file without needing to re-download it from the internet. However, this method of sharing to a tenant does use network bandwidth. For a more streamlined method of sharing files to a tenant see the [adding media to tenants](/docs/knowledge-base /add-media-to-tenants) wiki page.
 
 > In the **Media Images** section you can also manipulate **Public Links**, **Download** files, **Edit** file names and tiers , **View and Remove References** to files, and **Delete** files.
 {.is-info}

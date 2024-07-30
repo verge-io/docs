@@ -62,13 +62,13 @@ A NAS service will consist of one or more Volumes. Each Volume is a separate dir
 -   **Local Volumes** are file systems stored within VergeOS and consume storage in the VergeOS vSAN.
 
 
-	  See [**NAS Local Volumes**](/product-guide/naslocalvolumes)  for instructions on creating Local Volumes.
+	  See [**NAS Local Volumes**](/docs/product-guide/naslocalvolumes)  for instructions on creating Local Volumes.
 
 
 <br>
 
 -   **Remote Volumes** are external file systems that are mounted to the VergeOS system and presented as if local.
-See [**NAS Remote Volumes**](/product-guide/nasremotevolumes) for instructions on creating Local Volumes.
+See [**NAS Remote Volumes**](/docs/product-guide/nasremotevolumes) for instructions on creating Local Volumes.
 
 <br>
 
