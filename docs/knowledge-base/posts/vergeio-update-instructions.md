@@ -68,7 +68,7 @@ A pop-up will confirm Yes or No, select Yes. <br>
 <br>
 
 #### Workloads are failing to migrate
-This will be accompanied by an error stating "Not enough resources to start machine "X"". This is typically due to a constraint on RAM resources in the specific cluster the workload is assigned to. To address the issue, other workloads in the same cluster may need to be migrated or "juggled" to make enough available space to give the migrating workload enough RAM to start on a single node. Other possible causes for failed migrations can be found [here](/docs/knowledge-base /workloads-failing-to-migrate).
+This will be accompanied by an error stating "Not enough resources to start machine "X"". This is typically due to a constraint on RAM resources in the specific cluster the workload is assigned to. To address the issue, other workloads in the same cluster may need to be migrated or "juggled" to make enough available space to give the migrating workload enough RAM to start on a single node. Other possible causes for failed migrations can be found [here](/docs/knowledge-base/workloads-failing-to-migrate).
 <br>
 #### The vSAN is taking a long time to verify
 The verify and repair processes time to completion depends on factors such as core network speed, drive speed, and the amount of data consumed. Any nodes that contain spinning disk will inherently take some time to complete their processes. NVMe and SSD nodes take exponentially less time to complete vs HDD nodes. On any system greater than version 4.9.0 you can navigate to the tiers dashboard and confirm its "Full Walk Progress". This indicates how far along the verification process is.
