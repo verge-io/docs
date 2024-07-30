@@ -78,7 +78,7 @@ Users can be auto-created upon initial login to VergeOS; this can be selected fo
 19. #### Additional Optional Fields:
 
 
-See  [**Authorization Sources (General)**](/product-guide/AuthSources-General) for information regarding additional optional Fields.
+See  [**Authorization Sources (General)**](/docs/product-guide/AuthSources-General) for information regarding additional optional Fields.
 
 
 <br>

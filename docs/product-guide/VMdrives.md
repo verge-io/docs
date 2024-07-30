@@ -36,14 +36,14 @@
     -   For **Import Disk:** Select disk image file\* from the dropdown list. Supported file types: (\*.raw, \*.qcow, \*.qcow2, \*.vhd, \*.vhdx, \*.vmdk)
     -   For **Non-Persistent Disk:** Select \*.raw file from the dropdown list displaying all existing VergeOS drives in this Cloud.
     
- > See [**Media Images**](/product-guide/uploadingtovSAN) for instructions on uploading *.iso and Disk Image Files to the vSAN {.is-success}  
+ > See [**Media Images**](/docs/product-guide/uploadingtovSAN) for instructions on uploading *.iso and Disk Image Files to the vSAN {.is-success}  
     
 8.  Select ***Preferred Tier***. This option only applies to Media types: **Disk/EFI Disk**.
     -   Options include all storage tiers to which you have access.
     -   **\--Default--** can also be selected to use the default storage tier defined for this cloud in System Settings.
 9.  Select the ***Override Preferred Tier*** checkbox: (only applies to Media type: **Clone Disk/Import Disk /Non-Persistent**), if a different Tier is desired (different from the current tier of the selected Media File.) This option only applies to Media Type: **CD-ROM/Clone Disk/Import Disk/ Non-Persistent**.
 
-> For more information about vSAN Storage tiers, see [**Storage Tiers**](/product-guide/storagetiers) {.is-success}
+> For more information about vSAN Storage tiers, see [**Storage Tiers**](/docs/product-guide/storagetiers) {.is-success}
 
 10.  Enter a ***Description*** for the drive (optional, but recommended when there will be more than one drive)
 11.  The ***Asset*** field can be used to define a unique identifier for this drive (e.g. OS, Data drive, etc.) for a drive that can be used within Recipes.

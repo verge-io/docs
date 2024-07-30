@@ -24,7 +24,7 @@ A Repair Server is created using the existing outgoing sync configuration: vSAN 
 
 ## To Create a Repair Server from an Outgoing Sync (common method)
 
-> Note: Repair servers may be auto-generated when [**Adding Sites to the Dashboard**](/product-guide/configuringsitesdash-addingsites#Repairserver).{.is-info}
+> Note: Repair servers may be auto-generated when [**Adding Sites to the Dashboard**](/docs/product-guide/configuringsitesdash-addingsites#Repairserver).{.is-info}
 
 Typically, a repair server is created from an Outgoing Sync because the sync destination would contain a recent copy of the data. This is the recommended method in most cases.
 

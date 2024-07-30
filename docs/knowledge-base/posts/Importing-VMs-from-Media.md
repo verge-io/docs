@@ -22,7 +22,7 @@ Importing via Media Images is a convenient way to import a single VM at a time. 
 {.is-info}
 
 
-1.  Upload configuration and disk image files to the vSAN. For instructions on uploading files to the vSAN, see [Managing Media Images](/docs/public/kb/managing-media-images).
+1.  Upload configuration and disk image files to the vSAN. For instructions on uploading files to the vSAN, see [Managing Media Images](/docs/knowledge-base /managing-media-images).
 2.  From the **Cloud Dashboard**, Click **Machines** from the left menu.
 3.  Click **New VM** from the left menu.
 4.  From the options list, select **\--Import from Media Images--**. Available files (that have been uploaded to the vSAN via **Media Images**) will appear in the Selections Available list on the right side. Click to **select the VM configuration file** (e.g. \*.vmx, \*.ovf)
@@ -31,7 +31,7 @@ Importing via Media Images is a convenient way to import a single VM at a time. 
 ![2023-01-19_11_08_23-yottadoc__import_job.png](/docs/public/2023-01-19_11_08_23-yottadoc__import_job.png)
 6.  The **VM Name** will default to the name of the selected configuration file if left blank; otherwise a name can be specified.
 7.  **Preserve MAC Address** - By default MAC Address(es) of VM NICs will stay the same as the source VM. If this option is unselected, the system will generate a new, unique MAC address(es).
-8.  Select **Preferred Tier**, or leave at --default--. This determines the tier first attempted for VM storage. See [Preferred Tier Usage](/docs/public/kb/preferred-tier-usage) for information on how Storage Tiers are handled.
+8.  Select **Preferred Tier**, or leave at --default--. This determines the tier first attempted for VM storage. See [Preferred Tier Usage](/docs/knowledge-base /preferred-tier-usage) for information on how Storage Tiers are handled.
 9.  When fields are entered as desired, click Submit.
 10.  The VM instance is created and the dashboard for the new VM is presented.
 
@@ -39,7 +39,7 @@ Importing via Media Images is a convenient way to import a single VM at a time. 
 
 When it is not possible to import from a configuration file, a **VM shell** (disk-less VM) can be created, and then disks imported from standard files (such as vhd(x)).
 
-1.  Upload disk image files to the vSAN. For instructions on uploading files to the vSAN, see [Managing Media Images](/docs/public/kb/managing-media-images).
+1.  Upload disk image files to the vSAN. For instructions on uploading files to the vSAN, see [Managing Media Images](/docs/knowledge-base /managing-media-images).
 2.  Create a new **Custom VM**, assigning appropriate hardware specifications and NIC device(s). See Creating VMs section of the VergeOS help for information on how to create a Custom VM (Append *#help?id=vms-creating&bookmark=custom* to the end of your VergeOS URL for a direct link).
 3.  Add a new drive to the VM, being sure to select **Import Disk** in the Media field.
 ![2023-01-19_11_20_24-importdiskvm.png](/docs/public/2023-01-19_11_20_24-importdiskvm.png)

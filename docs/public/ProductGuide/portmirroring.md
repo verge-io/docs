@@ -29,7 +29,7 @@ Port mirroring replicates a network's traffic to a VM NIC, allowing packet analy
 2.  Click **Submit** to save the change.
 3.  Click **Restart** on the left menu to boot the network.
 4.  Create **a VM that will be used for port analysis** (or use an existing VM).
-5.  [**Add a NIC to the VM**](/product-guide/VMNics):
+5.  [**Add a NIC to the VM**](/docs/product-guide/VMNics):
     -   In the ***Network*** field, select: *NETWORKNAME*\_mirror.
     -   Click **Submit** (bottom of page) to save.
 6.  **(Re)boot the VM**.

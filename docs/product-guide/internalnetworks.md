@@ -1,7 +1,7 @@
 
 
 # Internal Networks (General Instructions)
-Internal networks are originated within VergeOS; an internal network can be created as [**Layer3**](../product-guide/internal-layer3) (recommended)  or  [**Layer2**](../product-guide/internal-layer2)
+Internal networks are originated within VergeOS; an internal network can be created as [**Layer3**](/docs/product-guide/internal-layer3) (recommended)  or  [**Layer2**](/docs/product-guide/internal-layer2)
 
 <br>
 <br>
@@ -22,7 +22,7 @@ Internal networks are originated within VergeOS; an internal network can be crea
 10.  Select a ***Port Mirroring*** setting. The default value is Off. Port mirroring can be enabled to replicate network traffic to a VM NIC, allowing packet analysis:
     -   North/South - only mirror traffic that passes through the router
     -   East/West\* - mirror all traffic, including traffic between VMs in the network and traffic through the router
-> East/West port mirroring is typically only recommended for short durations. See: [**Port Mirroring**](/product-guide/portmirroring) for additional instructions. {.is-info}  
+> East/West port mirroring is typically only recommended for short durations. See: [**Port Mirroring**](/docs/product-guide/portmirroring) for additional instructions. {.is-info}  
     
 11.  Select ***IP Address Type***:
     -   **static (default)** - creates a layer 3 network with routing, DNS, DHCP features available
