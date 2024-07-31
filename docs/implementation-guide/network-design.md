@@ -75,7 +75,7 @@ This model uses Layer 3 routing for the External network while maintaining a ded
 - Switching infrastructure that supports stacking (MLAG)
 - Nodes belonging to a system need their own dedicated network segment to prevent crosstalk with other systems
 
-> NOTE: The Core Fabric Networks for Two Node VergeOS systems may be cross-connected
+> !!! note "The Core Fabric Networks for Two Node VergeOS systems may be cross-connected"
 
 ### Network Configuration
 - Two separate physical networks:
@@ -84,6 +84,10 @@ This model uses Layer 3 routing for the External network while maintaining a ded
 - Core 1 and Core 2 - Dedicated Layer 2 networks for Fabric traffic
 - VLAN Y - External (Layer 3 routed)
 - VLAN Z - Workloads (Layer 3 routed)
+
+### Diagram
+
+![](/docs/assets/layer3bonded.png)
 
 ## Additional Considerations
 
