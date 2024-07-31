@@ -1,52 +1,96 @@
-Nodes in a VergeOS system utilize several different networks for operations. These networks span three different categories: **Fabric Networks, External Networks,** and **Management Networks**.
-<br>
-### Fabric Networks
+# Network Design Models
 
-The Fabric Networks connect VergeOS nodes to one another for internal system communications and vSAN traffic.
+Please review our oncepts doc first to learn more about VergeOS Network types before reviewing this document.
 
-#### Requirements
+!!! note "The following designs all reflect fully redundant environments from a networking perspective"
 
--   Minimum dual-10Gb connection (25Gb - 100GB is also supported)
--   Jumbo Frames (Minimum MTU of 9216 at the switches)
--   Inexpensive Layer 2 or Layer 2+ switches 
--   Two separate physical networks for system redundancy (shown below) 
-> NOTE: Two Node clusters may be cross-connected
-{.is-info}
-- Nodes belonging to a system need in their own dedicated native VLAN to prevent crosstalk with other systems
+## Layer 2 Bonded
 
+### Overview
+In this model, all virtual networks (Core Fabric, External/Management, Workloads) are combined into a single bonded network VergeOS Physical Network.
 
-| **Fabric Network 1** | **Fabric Network 2** |
-|------------------|------------------|
-| Connected to an independent physical switch | Connected to an independent physical switch |
-| Example Subnet: 172.16.1.0/24 | Example Subnet: 172.16.2.0/24 |
-| Example VLAN: Native VLAN 10 | Example VLAN: Native VLAN 20 |
+### Use Cases
+- Proof of concepts
+- Edge deployments
+- Disaster recovery setups
+- Lower performance production environments
 
-### External Networks
+### Requirements
+- 2 x 10/25/100Gb network adapters
+- 9216 MTU configured on all switchports
+- Ability to trunk VLANs and set a native VLAN on switch 
+- Switching infrastructure that supports stacking (MLAG)
 
-External Networks connect outside infrastructure to a VergeOS system. External networks can consist of handoffs from an ISP, or Uplink(s) into an existing network infrastructure.
+### Network Configuration
+- All networks VLAN tagged
+- Core Fabric VLAN set as native
+- 1 VergeOS Physical Network (Bonded)
+- VLAN X - Core (Fabric)
+- VLAN Y - External/Management
+- VLAN Z - Workloads
 
-#### Requirements
+## Layer 2 Bonded External + Dedicated Core Fabric
 
-- One 1Gbe connection (10Gb - 100Gb is also supported) 
+### Overview
+This model uses Layer 2 for the External/Management network while maintaining a dedicated Layer 2 network for the Core (Fabric) traffic.
 
-#### Recommended
+### Use Cases
+- High performance production environments
+- Environments requiring advanced network segmentation
 
-- Two 1Gbe connections Bonded together (preferrably 10Gb+)
+### Requirements
+- 4 x 10/25/100Gb network adapters
+- 9216 MTU configured on all switchports
+- Ability to trunk VLANs and set a native VLAN on switch 
+- Switching infrastructure that supports stacking (MLAG)
+- Nodes belonging to a system need their own dedicated native VLAN to prevent crosstalk with other systems
 
-!!! info "The External network can be shared with the Fabric network port as long as it is in a different VLan(s)"
+> !!! note "The Core Fabric Networks for Two Node VergeOS systems may be cross-connected"
 
+### Network Configuration
+- 3 VergeOS Physical Networks:
+  1. Core Fabric Network 1
+  2. Core Fabric Network 2
+  3. Bonded Physical Network for External/Management traffic
+- Core Fabrics (on dedicated VLAN or dedicated switching infrastructure)
+- Core Fabrics isolated from eachother and rest of client network
+- VLAN Y - External/Management (on bonded network)
+- VLAN Z - Other VLANs per customer requirement (on bonded network)
 
-<br>
+## Layer 3 Bonded External + Dedicated Core Fabric
 
-### Management Networks
+### Overview
+This model uses Layer 3 routing for the External network while maintaining a dedicated Layer 2 network for the Core (Fabric) traffic.
 
-VergeOS systems can utilize two additional Management Networks for hardware management and scale-out operations. Both networks can share port functionality with an external network port if the hardware supports it. 
+### Use Cases
+- High performance production environments
+- Large-scale deployments
+- Environments requiring advanced network segmentation
 
-#### Requirements
+### Requirements
+- 4 x 10/25/100Gb network adapters
+- 9216 MTU configured on all switchports
+- Layer 3 capable switches for the External network
+- Two separate physical networks for system redundancy
+- Switching infrastructure that supports stacking (MLAG)
+- Nodes belonging to a system need their own dedicated network segment to prevent crosstalk with other systems
 
--   IPMI access for hardware monitoring and issuing of hardware restart commands 
--   PXE boot network for scale-out installations of additional nodes (PXE not required to add additional nodes)
+> !!! note "The Core Fabric Networks for Two Node VergeOS systems may be cross-connected"
 
-<br>
-<br>
-[Request Trial](https://www.verge.io/test-drive){ .md-button .md-button--primary }
+### Network Configuration
+- Two separate physical networks:
+  1. Dedicated Layer 2 Core (Fabric) network
+  2. Layer 3 routed network for External traffic
+- Core 1 and Core 2 - Dedicated Layer 2 networks for Fabric traffic
+- VLAN Y - External (Layer 3 routed)
+- VLAN Z - Workloads (Layer 3 routed)
+
+### Diagram
+
+![](/docs/assets/layer3bonded.png)
+
+## Additional Considerations
+
+!!! info "I don't know what to put here yet"
+
+By choosing the appropriate network design model based on your specific use case and requirements, you can ensure optimal performance and scalability for your VergeOS deployment.
