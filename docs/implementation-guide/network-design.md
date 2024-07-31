@@ -45,7 +45,7 @@ This model uses Layer 2 for the External/Management network while maintaining a 
 - Switching infrastructure that supports stacking (MLAG)
 - Nodes belonging to a system need their own dedicated native VLAN to prevent crosstalk with other systems
 
-> NOTE: The Core Fabric Networks for Two Node VergeOS systems may be cross-connected
+> !!! note "The Core Fabric Networks for Two Node VergeOS systems may be cross-connected"
 
 ### Network Configuration
 - 3 VergeOS Physical Networks:
