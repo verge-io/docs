@@ -143,34 +143,36 @@ nav:
   - Knowledge Base:
     - knowledge-base/index.md
   - Product Guide:
-    - VergeIO User Interface: product-guide/UI-Overview.md
-    - Configuration:
+    - VergeOS User Interface: product-guide/UI-Overview.md
+    - System Configuration:
       - Authentication:
         - Authorization Sources: product-guide/AuthSources-General.md
         - Azure AD: product-guide/AzureADAuth.md
         - Google: product-guide/GoogleAuth.md
         - Multi-Factor Authentication: product-guide/2factorEmailAuth.md
       - Certificates: product-guide/certificates.md
-      - GPU:
-        - Passthrough: product-guide/GPUPassthrough.md
-        - NVIDIA vGPU: product-guide/nvidiavGPU.md
-        - Tenant GPU: product-guide/gpu-sharetenant.md
-      - IPMI:
+      - Cloud Snapshots:
+        - Overview: product-guide/snapshots-overview.md
+        - Profiles: product-guide/snapshot-profiles.md
+        - VM Snapshots and Restore: product-guide/VMsnapshotsandrestores.md
+        - Tenant Snapshots: product-guide/tenantsnapshots.md
+        - Cloud Snapshots and Restore: product-guide/cloudsnapshotandrestore.md
+        - NAS Snapshots and Restore: product-guide/volumesnapsandrestores.md
+      - Clusters:
+        - Overview: product-guide/clustersoverview.md
+        - Adding Clusters: product-guide/addingclusters.md
+        - Removing Clusters: product-guide/removingclusters.md
+        - Cluster Settings: product-guide/clustersettings.md
+      - Permissions:
+        - Users and Groups: product-guide/usersgroups.md
+        - Permissions: product-guide/permissions.md
+      - Nodes:
+        - Overview: product-guide/nodesoverview.md
         - IPMI: product-guide/IPMI.md
         - System Event Log (SEL): product-guide/SEL
-      - Tenants:
-        - Creating Tenants: product-guide/createtenants.md
-        - Increasing Resources: product-guide/tenantsaddresources.md
-        - Reducing Resources: product-guide/reducetenantresources.md
-        - Assigning External IP Addresses: product-guide/assignIPtotenant.md
-        - Sharing Files: product-guide/providefilestotenant.md
-        - Snapshots: product-guide/tenantsnapshots.md
-    - Permissions:
-      - Users and Groups: product-guide/usersgroups.md
-      - Permissions: product-guide/permissions.md
-    - Maintenance & Monitoring:
-      - Drive Replacement: product-guide/DriveReplacement.md
-      - Maintenance Mode: product-guide/maintenancemode.md
+      - OIDC Applications:
+        - Overview: product-guide/OIDCoverview.md
+        - Adding Applications: product-guide/OIDCadding.md
       - Sites Dashboard:
         - Overview: product-guide/sitesoverview.md
         - Adding Sites: product-guide/configuringsitesdash-addingsites.md
@@ -183,6 +185,32 @@ nav:
         - Applying Updates: product-guide/runningupdates.md
         - Settings: product-guide/updatesettings.md
         - Air-Gap License: product-guide/airgap-license.md
+    - Virtual Machines:
+      - Quick Start:
+        - Best Practices: product-guide/VMbestpractices.md
+        - Creating Virtual Machines: product-guide/creatingvms.md
+        - Virtual Machine Drives: product-guide/VMdrives.md
+        - Virtual Machine Network Interfaces: product-guide/VMNics.md
+        - Virtual Machine Fields: product-guide/VMfielddescriptions.md
+        - VM Guest Agent: product-guide/VMguestagent.md
+      - Importing VMs: 
+        - From Media Images: product-guide/importfromupload.md
+        - From VMware Backup: product-guide/importvmware.md
+        - From NAS Volume: product-guide/importfromNAS.md
+        - Viewing Import Jobs: product-guide/viewimportjobs.md
+      - VDI:
+        - Instructions for the Administrator: product-guide/VDI-Administrator.md
+        - Instructions for the User: product-guide/VDI-User.md
+        - Virtual Machine Remote Console: product-guide/VM-RemoteConsole.md
+    - Tenants:
+      - Creating Tenants: product-guide/createtenants.md
+      - Increasing Resources: product-guide/tenantsaddresources.md
+      - Reducing Resources: product-guide/reducetenantresources.md
+      - Assigning External IP Addresses: product-guide/assignIPtotenant.md
+      - Sharing Files: product-guide/providefilestotenant.md
+      - Snapshots: product-guide/tenantsnapshots.md
+    - Catalogs:
+      - Overview: product-guide/catalogs-overview.md
     - NAS:
       - Overview:
         - NAS Service: product-guide/NASservice
@@ -192,6 +220,8 @@ nav:
         - Shares: product-guide/nasshares.md
         - VM Export: product-guide/vmexportvolume.md
         - Volume Syncs: product-guide/volumesyncs.md
+    - Media Images:
+      - Overview: product-guide/mediaimages-overview.md
     - Networking:
       - Quick Start: 
         - Overview: product-guide/networkoverview.md
@@ -231,29 +261,20 @@ nav:
         - Tenant Snapshots: product-guide/tenantsnapshots.md
         - Cloud Snapshots and Restore: product-guide/cloudsnapshotandrestore.md
         - NAS Snapshots and Restore: product-guide/volumesnapsandrestores.md
-    - Virtual Machines:
-      - Quick Start:
-        - Best Practices: product-guide/VMbestpractices.md
-        - Creating Virtual Machines: product-guide/creatingvms.md
-        - Virtual Machine Drives: product-guide/VMdrives.md
-        - Virtual Machine Network Interfaces: product-guide/VMNics.md
-        - Virtual Machine Fields: product-guide/VMfielddescriptions.md
-        - VM Guest Agent: product-guide/VMguestagent.md
-      - Importing VMs: 
-        - From Media Images: product-guide/importfromupload.md
-        - From VMware Backup: product-guide/importvmware.md
-        - From NAS Volume: product-guide/importfromNAS.md
-        - Viewing Import Jobs: product-guide/viewimportjobs.md
-      - VDI:
-        - Instructions for the Administrator: product-guide/VDI-Administrator.md
-        - Instructions for the User: product-guide/VDI-User.md
-        - Virtual Machine Remote Console: product-guide/VM-RemoteConsole.md
     - vSAN:
       - Overview:
         - Storage Tiers: product-guide/storagetiers.md
         - Uploading to the vSAN: product-guide/uploadingtovSAN.md
         - Preferred Tier: product-guide/preferredtiers.md
         - Removing ISO Files with References: product-guide/removing-isorefs.md
+    - GPU:
+      - Overview: product-guide/GPUoverview.md
+      - Passthrough: product-guide/GPUPassthrough.md
+      - NVIDIA vGPU: product-guide/nvidiavGPU.md
+      - Tenant GPU: product-guide/gpu-sharetenant.md
+    - Maintenance & Monitoring:
+      - Drive Replacement: product-guide/DriveReplacement.md
+      - Maintenance Mode: product-guide/maintenancemode.md
   - Glossary: glossary.md
 
 #build
