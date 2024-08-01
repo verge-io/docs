@@ -1,6 +1,6 @@
 # Network Design Models
 
-Please review our oncepts doc first to learn more about VergeOS Network types before reviewing this document.
+Please review our <a href="/docs/implementation-guide/concepts/">Concepts</a> doc first to learn more about VergeOS Network types before reviewing this document.
 
 !!! note "The following designs all reflect fully redundant environments from a networking perspective"
 
@@ -13,7 +13,7 @@ In this model, all virtual networks (Core Fabric, External/Management, Workloads
 - Proof of concepts
 - Edge deployments
 - Disaster recovery setups
-- Lower performance production environments
+- Normal production workloads
 
 ### Requirements
 - 2 x 10/25/100Gb network adapters
@@ -27,7 +27,7 @@ In this model, all virtual networks (Core Fabric, External/Management, Workloads
 - 1 VergeOS Physical Network (Bonded)
 - VLAN X - Core (Fabric)
 - VLAN Y - External/Management
-- VLAN Z - Workloads
+- Any other VLANs required for your workloads
 
 ## Layer 2 Bonded External + Dedicated Core Fabric
 
@@ -55,7 +55,7 @@ This model uses Layer 2 for the External/Management network while maintaining a 
 - Core Fabrics (on dedicated VLAN or dedicated switching infrastructure)
 - Core Fabrics isolated from eachother and rest of client network
 - VLAN Y - External/Management (on bonded network)
-- VLAN Z - Other VLANs per customer requirement (on bonded network)
+- Any other VLANs required for your workloads (on bonded network)
 
 ## Layer 3 Bonded External + Dedicated Core Fabric
 
