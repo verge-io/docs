@@ -143,7 +143,7 @@ nav:
   - Knowledge Base:
     - knowledge-base/index.md
   - Product Guide:
-    - VergeIO User Interface: product-guide/UI-Overview.md
+    - VergeOS User Interface: product-guide/UI-Overview.md
     - System Configuration:
       - Authentication:
         - Authorization Sources: product-guide/AuthSources-General.md
