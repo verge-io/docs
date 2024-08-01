@@ -57,7 +57,7 @@ This model uses Layer 2 for the External/Management network while maintaining a 
 - VLAN Y - External/Management (on bonded network)
 - Any other VLANs required for your workloads (on bonded network)
 
-## Layer 3 Bonded External + Dedicated Core Fabric
+## Layer 3 External + Dedicated Core Fabric
 
 ### Overview
 This model uses Layer 3 routing for the External network while maintaining a dedicated Layer 2 network for the Core (Fabric) traffic.
@@ -70,17 +70,18 @@ This model uses Layer 3 routing for the External network while maintaining a ded
 ### Requirements
 - 4 x 10/25/100Gb network adapters
 - 9216 MTU configured on all switchports
-- Layer 3 capable switches for the External network
+- Layer 3 capable switching infrastructure for the External network
 - Two separate physical networks for system redundancy
-- Switching infrastructure that supports stacking (MLAG)
+- BGP, OSPF, or EIGRP capabilities
 - Nodes belonging to a system need their own dedicated network segment to prevent crosstalk with other systems
 
 > !!! note "The Core Fabric Networks for Two Node VergeOS systems may be cross-connected"
 
 ### Network Configuration
-- Two separate physical networks:
-  1. Dedicated Layer 2 Core (Fabric) network
-  2. Layer 3 routed network for External traffic
+- 4 VergeOS Physical Networks:
+  1. Core Fabric Network 1
+  2. Core Fabric Network 2
+  3. Dynamically routed 
 - Core 1 and Core 2 - Dedicated Layer 2 networks for Fabric traffic
 - VLAN Y - External (Layer 3 routed)
 - VLAN Z - Workloads (Layer 3 routed)

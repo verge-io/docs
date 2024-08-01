@@ -3,18 +3,19 @@
 ## Minimum Requirements
 ---
 ### CPU
-- Intel or AMD 64-bit processor
-- Processor family must be consistent across the cluster
+- Intel or AMD x86 64-bit processor
+- Processor family must be consistent across clusters within a system
 - Must support VT-x (for Intel) or AMD-V/AMD-SVM (for AMD)
 - A cluster consists of at least 2 servers (nodes) with like architecture. Multiple clusters can exist within a system.
 
 ### Memory
-- Minimum of 16 GB dedicated to VergeOS for OS and application server operations.
+- Minimum of 16 GB dedicated to VergeOS for OS and application server operations on each node.
 - Additional memory must be designated for guest operations.
 - 1 GB of RAM per 1 TB of storage for each node participating in storage activities.
 
 ### Storage
 - HBA or RAID controller that supports JBOD mode (NO RAID) and is certified for the latest LTS Linux Kernel.
+!!! info "HBA is preferred for optimum performance"
 - 1 High Endurance (~3 DWPD) NVMe of at least 240 GB, required only by the first two controller nodes for metadata.
 - Minimum of one NVMe or SATA/SAS SSD per node for guest usage; more SSDs are recommended for enhanced performance.
 - HDDs can replace NVMe or SATA/SAS SSDs, though this may impact performance. 
@@ -42,6 +43,7 @@
 **GPU Passthrough:**
 
   - Compatible with any AMD, Intel, or Nvidia GPU.
+  - Nvidia vGPU also supported
 
 ---
 
