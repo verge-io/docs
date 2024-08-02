@@ -29,6 +29,10 @@ In this model, all virtual networks (Core Fabric, External/Management, Workloads
 - VLAN Y - External/Management
 - Any other VLANs required for your workloads
 
+### Diagram
+
+![](/docs/assets/layer2bonded.png)
+
 ## Layer 2 Bonded External + Dedicated Core Fabric
 
 ### Overview
@@ -56,6 +60,10 @@ This model uses Layer 2 for the External/Management network while maintaining a 
 - Core Fabrics isolated from eachother and rest of client network
 - VLAN Y - External/Management (on bonded network)
 - Any other VLANs required for your workloads (on bonded network)
+
+### Diagram
+
+![](/docs/assets/layer2bonded-dc.png)
 
 ## Layer 3 External + Dedicated Core Fabric
 
@@ -88,7 +96,7 @@ This model uses Layer 3 routing for the External network while maintaining a ded
 
 ### Diagram
 
-![](/docs/assets/layer3bonded.png)
+![](/docs/assets/layer3-dc.png)
 
 ## Additional Considerations
 
