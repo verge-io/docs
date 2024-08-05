@@ -20,12 +20,9 @@ Within the VergeOS volume configuration, there is an option to create a volume t
 ### To configure this volume, follow these steps:
 
 1. **Edit any VMs** you want to export & check the option for "**Allow Export**" You can also choose to quiesce the VM images as well.
-1. Create the **NAS**.
-1. Start the **NAS**.
-1. Create a **NAS user**.
-> Additional Information about configuration of the NAS and NAS user          configuration can be found in the self-paced training at [https://wiki.verge.io/public/training/6-0](https://wiki.verge.io/public/training/6-0)
-{.is-info}
-
+2. Create the **NAS**.
+3. Start the **NAS**.
+4. Create a **NAS user**.
 5. **Create a new volume**. Set the Filesystem type to **VergeOS VM Export**
 1. Under "**Export VMs**", select **Start** to start the VM export.
 1. Answer **Yes** at the Confirmation screen.

@@ -23,8 +23,8 @@
 ***
 
 1.  Download the latest version of the VergeOS installation ISO. [_https://updates.verge.io/download_](https://updates.verge.io/download)
-> **NOTE:** This may not be the most recent version. Please talk to your account representative to make sure you have the latest version.
-{.is-info}
+!!! note: "This may not be the most recent version. Please talk to your account representative to make sure you have the latest version."
+
 
 2.  Insert a USB disk into the computer. 
 !!! warning "This USB drive **will be overwritten**"
