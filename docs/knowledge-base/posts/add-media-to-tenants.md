@@ -23,8 +23,8 @@ A Service Provider can provide files (that are already uploaded to the vSAN) to 
 1. Double click on the desired Tenant.
 1. Select **Add File** in the left menu.
 1. Select File Type from the dropdown list .
-> **NOTE:** Select **ALL** to get a listing of all files available, regardless of type. This will include .raw files (VM disk images) from the parent VDC.
-{.is-info}
+!!! note "Select **ALL** to get a listing of all files available, regardless of type. This will include .raw files (VM disk images) from the parent VDC."
+
 6. Select specific File from the dropdown list.
 1. Submit the changes (bottom of page).
    - The process is near-instant as it is done with a branch command. The file is now available to the Tenant within their own Media Images section.
