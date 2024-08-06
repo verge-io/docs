@@ -1,145 +1,105 @@
-# vergeOS Key Terms
+# VergeOS Glossary of Key Terms
 
-***
-vergeOS (by verge.io) is a complete operating system specifically designed for rapid deployment, complete virtual data centers, with nested tenancy functionality. vergeOS is installed/run directly on base hardware as well as within virtual nodes (used for tenants).
+## A
 
-A vergeOS system is a collection of nodes used to deploy workloads across a single vSAN instance. A single vergeOS system can be made up of 1 or more Clusters and vSAN Storage Tiers. A vergeOS system can be connected to other vergeOS systems for the purposes of centralized montoring, authentication, and management as well as replicating snapshots and vSAN repair service.
+**Anti-Virus Settings**: Configuration options within VergeOS for virus scanning and protection, particularly for NAS volumes.
 
-## PHYSICAL
+## C
 
-### Nodes
-A node is a single server running vergeOS. There are 4 types of nodes in a vergeOS system (controller, compute and storage (HCI), compute-only, and storage-only). Node names are hard-coded and sequential starting with "node1".
+**Catalog**: A group of related recipes in VergeOS. Catalogs can contain various VM or tenant recipes grouped in a way that makes sense for the organization.
 
-#### Controller
-The first two nodes in a vergeOS system are considered the Controller Nodes. These are functions like handling the User Interface, Networking, and vSAN functions. For larger environments, they can be set as dedicated controllers where they only handle controller functions and don't run workloads.
+**Cloud Snapshots**: Point-in-time captures of an entire VergeOS cloud, tenant, individual virtual machine, or NAS volume. Used for recovery, development, and testing purposes.
 
-#### Compute and Storage (HCI)
-Hyperconverged infrastructure (HCI) is a software-defined, unified system that combines all the elements of a traditional data center: storage, compute, networking, and management.
+**Cluster**: A logical grouping of Nodes in VergeOS that are alike from a hardware perspective. Types include Compute and Storage (HCI), Compute-Only, and Storage-Only clusters.
 
-#### Compute-Only
-A compute-only node expands compute resources in vergeOS system. 
+**Compute-Only Cluster**: A set of nodes in VergeOS added solely to expand compute resources.
 
-#### Storage-Only
-A storage-only node expands storage resources in vergeOS system. 
+**Compute-Only Node**: A node that expands only the compute resources in a VergeOS system.
 
-!!! note "Storage-only nodes need to be added in like pairs for redundancy."
+**Controller Node**: The first two nodes in a VergeOS system, responsible for handling the User Interface, Networking, and vSAN functions.
 
-### Cluster
-A cluster is a logical grouping of Nodes that are alike from a hardware perspective.
+**Core Network**: A virtual network used by VergeOS for vSAN traffic, Node to Node communication, VM migrations, and other system-level communications.
 
-!!! note "You may also have a separate cluster for different types of hardware, like AMD vs Intel."
+## D
 
-#### Compute and Storage (HCI)
-Hyperconverged infrastructure (HCI) is a software-defined, unified system that combines all the elements of a traditional data center: storage, compute, networking, and management.
+**DMZ Network**: A virtual network automatically created during VergeOS installation or Tenant creation, serving as a connection point for all networks.
 
-#### Compute-Only
-A Compute-only Cluster is a set of nodes that are added to VergeOS with the sole intention of expanding only compute resources. Placing a VM in a Compute-only Cluster does not mean it doesn't get storage. Storage of a VM is determined by which Tier (1,2,3,4) you choose when setting up the disks.
+## E
 
-#### Storage-Only
-A Storage-only Cluster is a set of nodes that are added to VergeOS with the sole intention of expanding storage. They can be added to an existing Tier of storage if they have like hardware or added as a new Tier.
+**External Network**: A layer 3 network deployed outside a VergeOS system or tenant, such as a BGP connection to an Internet provider or a layer 2 VLAN trunked into a VergeOS system.
 
-### Actions
+## H
 
-#### Scale Out
-Adding additional Nodes to a vergeOS System.
+**Hyperconverged Infrastructure (HCI)**: A software-defined, unified system in VergeOS that combines storage, compute, networking, and management in a single infrastructure.
 
-#### Scale Up
-Adding additional resources to existing Nodes in a vergeOS System.
+## I
 
-------------
+**Internal Network**: A software-defined layer 3 network deployed inside a VergeOS system or tenant, with its own subnet, router, DHCP, and DNS.
 
-## NETWORKS
+## L
 
-### Physical Networks
+**Local Volume**: A volume stored within the VergeOS vSAN.
 
-#### Physical
-A physical network is a collection of NICs across nodes that serve the same purpose (i.e. Core Network 1). 
+## M
 
-#### Maintenance
-The maintenance network is an External network that can be created to handle IPMI access to Physical Nodes and optional PXE boot.
+**Maintenance Network**: An External network in VergeOS created to handle IPMI access to Physical Nodes and optional PXE boot.
 
-#### External
-An external network is a layer 3 network deployed OUTSIDE a vergeOS system or tenant. A BGP connection to your Internet provider and a layer 2 VLAN trunked into a vergeOS system are examples of external networks. The management of a vergeOS system will use an external network.
+**Media Images**: Files uploaded to the VergeOS vSAN to make them available inside the VergeOS environment, such as VM installation files or imported machine images.
 
-### Virtual Networks
+## N
 
-#### Core
-A core network that VergeOS uses to communicate vSAN traffic, Node to Node communication, VM migrations, etc.
+**Node**: A single server running VergeOS. Types include controller, compute and storage (HCI), compute-only, and storage-only.
 
-#### DMZ
-The DMZ network is a virtual network (created automatically during the VergeOS installation/Tenant creation) as a connection point for all networks. Every VergeOS Cloud has 1 DMZ Network (There is a DMZ network at the physical host level; additionally, each Tenant has a DMZ network.).
+## P
 
-#### Management UI/API (External)
-An internal network is a layer 3 network deployed OUTSIDE a vergeOS system or tenant. A BGP connection to your Internet provider and a layer 2 VLAN trunked into a vergeOS system are examples of external networks. The management of a vergeOS system will use an external network.
+**Physical Network**: A collection of NICs across nodes in VergeOS that serve the same purpose.
 
-!!! note "External does not indicate that the network has an direct Internet Connection (although it can be), but rather only External to the vergeOS System."
+## R
 
-#### Internal
-An internal network is a software-defined layer 3 network deployed INSIDE vergeOS system or tenant. Each internal network has its own subnet, router, DHCP, DNS, etc. Internal networks are fully isoloted containers so you can have multiple internal networks with the same subnet.
+**Recipe (Tenant)**: A customizable template for creating a new tenant instance in VergeOS, including predefined settings and custom fields.
 
-#### Virtual Wire
-A virtual wire is the equivalent of an uplink between two virtual switches (networks) used to provide Layer 2 connectivity.
+**Recipe (VM)**: A customizable template for launching new virtual machine instances in VergeOS, including hardware specifications and resource pool specifications.
 
-------------
+**Remote Volume**: A pre-existing (external) NFS or CIFS file system mounted to make it accessible within a VergeOS system.
 
-## MULTI-TENANCY
+**Repair Server**: A mechanism in VergeOS for potential reconstruction of a system that experienced a problem beyond its redundancy tolerance.
 
-### Tenant
-A Tenant is a virtual data center(Site) inside of another site. You can nest tenants inside of tenants. Each Tenant has its own separate user interface and URL. Sometimes this is referred to as a Virtual Datacenter (VDC) is a data center in a box. All components of a standard data center are virtualized into a server(s).
+**Repository**: A site collection of recipe catalogs in VergeOS. Each tenant can create a local repository to store its own recipe catalogs.
 
-### Node (Tenant)
-Tenant nodes are virtual servers that simulate physical nodes. Each tenant is assigned at least one tenant node and more tenant nodes can be added for scale and/or to accommodate clustering software such as Kubernetes, Hadoop, etc..
+## S
 
-### Recipe (Tenant)
-A tenant tecipe is a customizable template for creating a new tenant instance. A tenant recipe can include predefined settings for configuration/resource allocation and can include custom fields to gather input at the time of recipe consumption in order to adjust elements of the resulting tenant instance.
+**Scale Out**: The process of adding additional Nodes to a VergeOS System.
 
-------------
+**Scale Up**: The process of adding additional resources to existing Nodes in a VergeOS System.
 
-## SYSTEM STUFF?
+**Sites**: The way to connect multiple VergeOS systems together, either in a single location or across different physical locations.
 
-### Sites
-Sites are the way you connect vergeOS systems together. You can have multiple Sites in a single building/rack or at separate physical locations. You connect other vergeOS systems for the purposes of replicating snapshots, centralized monitoring and management, and vSAN Repair Server services.
+**Snapshot Profile**: A definition of the schedule for snapshot creation and cleanup in VergeOS.
 
-### Cloud Snapshots
-A snapshot captures the state of an entity at a particular point in time. Snapshots can be used to create point-in-time capture of an entire VergeOS cloud, tenant, an individual virtual machine, or a NAS volume. Snapshots allow "rolling back" a system, which can be helpful for recovery, development, and testing purposes.
+**Storage-Only Cluster**: A set of nodes in VergeOS added solely to expand storage resources.
 
-### Snapshot Profile
-A snapshot profile defines a schedule for snapshot creation and cleanup.
+**Storage-Only Node**: A node that expands only the storage resources in a VergeOS system.
 
-### Storage Tiers
-Storage tiering is the method of storing data on various types of media based on performance, availability, and recovery requirements. Utilizing this method significantly reduces storage costs while still meeting necessary data access demands for different workloads.
+**Storage Tiers**: A method of storing data on various types of media based on performance, availability, and recovery requirements in VergeOS.
 
-### Repair Server
-A repair server provides a potential reconstruction mechanism for a system that experienced a problem extending beyond its redundancy tolerance (e.g. simultaneous, multiple drive failures spanning multiple nodes). Typically, a repair server is a sync destination that contains a fairly recent replication of the given system. A repair server will automatically attempt to pull back any needed blocks from the remote system, potentially avoiding the need to roll back using a snapshot. It is generally recommended to have a repair server in place whenever possible.
+**Subscriptions**: A feature in VergeOS that allows for monitoring a system (or components of a system) by defining system information to send to users via Email.
 
-### Catalog
-A catalog is a group of related recipes. For example, one catalog may contain many varied Windows VM recipes, while another catalog in the same repository could contain all Linux-based VM recipes. Customers can group recipes into catalogs in whatever way makes sense for their particular organization.
+**Subscription Profiles**: Definitions of the aspects of a subscription in VergeOS, such as on-demand/scheduled and trigger criteria/schedule.
 
-### Recipe (VM)
-A VM recipe is a customizable template for launching new virtual machine instances. A VM recipe can include initial hardware specifications (e.g. number of cores, RAM, CPU type, drives, NICs, etc). and resource pool specification. Additionally, custom fields can be added to the recipe to gather input at the time of recipe consumption. This data, input by the recipe consumer, can then be utilized to adjust elements within the new VM guest OS; typically at first startup. For example, a recipe can be configured to prompt for a database username and password, or for disk/ram size settings to input into an application conf file. VergeOS VM recipes are compatible with Cloud-Init. See https://cloud-init.io for cloud-init documentation.
+## T
 
-### Repository
-A repository is a site collection of recipe catalogs. Typically, a tenant has access to a repository provided by its VergeOS service provider. Each tenant can also create a local repository to store its own recipe catalogs.
+**Tenant**: A virtual data center (Site) inside of another site in VergeOS. Tenants can be nested and each has its own separate user interface and URL.
 
-!!! note "The VergeOS Repository is also included by default on a VergeOS Installation. The VergeOS Repository includes the standard NAS Service VM."
+**Tenant Node**: Virtual servers in VergeOS that simulate physical nodes, used within tenants.
 
-### Subscriptions
-Subscriptions allow for monitoring a system (or components of a system) by defining system information to send to users via Email.
+## V
 
-### Subscription Profiles
-Subscription profiles define the aspects of a subscription (on Demand/Scheduled, trigger criteria/schedule). Many subscription profiles are pre-loaded by default with the VergeOS Install. Additional subscription profiles can also be created.
+**VergeOS**: A complete operating system designed for rapid deployment of complete virtual data centers, with nested tenancy functionality.
 
-### Volume
-A Volume is a directory structure/collection of files within a VergeOS NAS. A VergeOS NAS can contain one or more Volumes, with each individual Volume allowing different settings for aspects such as security, snapshot, tiering, max size, Anti-Virus settings, shares, etc. Remote Volume - mounts a pre-existing (external) NFS or CIFS file system to make it accessible within a VergeOS system. Local Volume - stored within the VergeOS vSAN.
+**VergeOS System**: A collection of nodes used to deploy workloads across a single vSAN instance in VergeOS.
 
-### Snapshot Profile
-A snapshot profile defines a schedule for snapshot creation and cleanup.
+**Virtual Wire**: The equivalent of an uplink between two virtual switches (networks) in VergeOS, used to provide Layer 2 connectivity.
 
-### Media Images
-Media Images are files uploaded to the VergeOS vSAN to make available inside the VergeOS environment. Common files uploaded are those used for installing new virtual machines (e.g. *.iso) or importing machines or drives from existing systems (e.g. *.ova, *.ovf, *.raw, *.qcow, *.vmdk, etc).
+**Volume**: A directory structure/collection of files within a VergeOS NAS. Can be configured with different settings for security, snapshots, tiering, max size, Anti-Virus settings, shares, etc.
 
-### Volume
-A Volume is a directory structure/collection of files within a VergeOS NAS. A VergeOS NAS can contain one or more Volumes, with each individual Volume allowing different settings for aspects such as security, snapshot, tiering, max size, Anti-Virus settings, shares, etc.
-
-<br>
-[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }
+**vSAN**: The software-defined storage system used in VergeOS to provide shared storage across nodes.
