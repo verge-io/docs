@@ -1,4 +1,4 @@
-# VergeOS Glossary of Key Terms
+# Glossary of Key Terms
 
 ## A
 
