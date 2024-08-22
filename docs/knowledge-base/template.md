@@ -65,13 +65,12 @@ resource:
 ## Additional Resources
 
 - [Link to related vergeOS documentation]
-- [Link to verge.io community forums]
 - [Link to vergeOS video tutorials if available]
 
 ## Feedback
 
 !!! question "Need Help?"
-    If you need further assistance or have any questions about this article, please don't hesitate to reach out to our support team or post in the verge.io community forums.
+    If you need further assistance or have any questions about this article, please don't hesitate to reach out to our support team.
 
 ---
 
