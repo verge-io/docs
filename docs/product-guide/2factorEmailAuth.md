@@ -1,4 +1,6 @@
+
 # Two Factor Authentication
+
 
 Two-factor authentication is an option that provides an added layer of security for user logins. When two-factor authentication is enabled, login requires authorization via a TOTP authenticator application or user's email address in addition to the username and password. The first time a user initiates a login from a new device, a security code is emailed to the user's email address. This code then must be entered to complete the login process. Optionally, the user can select to store the security code on the local device, for automatic retrieval on subsequent login actions from the same local device. (This function is intended for personal devices, such as a user's home computer, personal laptop, cellphone, etc.)
 
@@ -7,7 +9,7 @@ Two-factor authentication is an option that provides an added layer of security 
 
 ## System Settings for Two Factor Authentication
 
-To access these settings, navigate to **System -> Settings -> 0Advanced Settings**  from the Main Dashboard.
+
 
 - ***Two-factor authentication:***
 
@@ -30,6 +32,8 @@ This setting determines the amount of time a security code is stored on a user's
 <br>
 <br>
 
+
+
 ### To Enable Two-Factor Authentication for a User
 
 > If the system setting is set as Two-factor authentication = Required, all users automatically have Two-factor authentication enabled and the option does not appear on the User edit form. {.is-info}
@@ -44,3 +48,4 @@ This setting determines the amount of time a security code is stored on a user's
 <br>
 
 [Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }
+
