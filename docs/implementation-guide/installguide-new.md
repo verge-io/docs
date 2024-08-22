@@ -21,7 +21,7 @@ The VergeOS installation is a single [bootable ISO image](/docs/implementation-g
 ### Network
 - Establish the networks that will be used for your new Verge system and check your network cabling. Verify each node is connected to each core fabric switch. 
 
-- Prior to installing a node, **identify the MAC address for each NIC** and the network to which it will be connected (Core Switch1/Core Switch2/External/Maintenance, etc.).
+- Prior to installing a node, **identify the MAC address for each NIC** and the network to which it will be connected (Core1/Core2/External/Maintenance, etc.).
 
  - If necessary, have **VLAN id(s)** available to specify during install. PVID ports are always preferred, but vlan tags can be accommodated where necessary.
 
@@ -77,25 +77,21 @@ Repeat the following steps to define all of the physical networks for the node. 
 
     * **Description** (optional) - Text can be entered here to provide any additional administrative information. 
 
-    * **MTU** - The MTU setting must always be a value supported by the physical switching hardware.  For core networks, the MTU should be large enough to support the levels of tenancy that will be provided; the default is 9192,a setting that is compatible with many switches and will support about 5 levels of nested tenancy.   
+    * **MTU** - The MTU setting must always be a value supported by the physical switching hardware.  For core networks, the MTU should be large enough to support the levels of tenancy that will be provided; the default is 9192,a setting that is compatible with many switches and will support about 5 levels of nested tenancy. *  
 
-!!! tip "When configuring external networks: The Internet standard MTU for most Ethernet networks is 1500.  The standard for VPN connections is 1400 bytes (will vary depending on the service.)" 
- 
-    * **Core-Network:** 
-If a core network will reside here, the value needs to be "yes".  Otherwise, change the value to blank or "no"
-<!-- verify blank can be used here -->
+    * **Core-Network:** -If a core network will reside here, the value needs to be "yes".  Otherwise, change the value to blank or "no"
 
-**VLAN** - PVID port is always preferred (0 or blank for none), but a vLAN tag can be accommodated by entering the correct vlan ID here.   
+    * **VLAN** - PVID port is always preferred (0 or blank for none), but a vLAN tag can be accommodated by entering the correct vlan ID here. 
 
+    !!! tip "* When configuring external networks: The Internet standard MTU for most Ethernet networks is 1500.  The standard for VPN connections is 1400 bytes (will vary depending on the service.)"
 
-Repeat the above steps to configure all of your physical networks until every NIC has been assigned.  If there is a NIC that is not plugged in or otherwise not being used, it is still recommended to set it up; this will allow for easier configuration later should you decide to eventually use it.      
+- **Repeat the above steps to configure all of your physical networks** until every NIC has been assigned.  If there is a NIC that is not plugged in, it should still be configured in the install; it can be given a name such as "unplugged" or "unused".      
 
 - Select a **physical external network that will provide UI/LAN/WAN access**. (Use [Space bar] to select/deselect ) 
 !!! tip "During the installation, select a single external physical network to provide UI access.  If you would like to use multiple physical external networks for UI access, this can be configured post-install from within the UI."
 
 
-- Enter appropriate **VLAN ID for the External/UI network**; leave blank for no VLAN id.  
-!!! note "Use PVID port when possible (0 or blank)"
+- Enter appropriate **VLAN ID for the External/UI network**; leave blank for no VLAN id. Use PVID ports when possible (0 or blank)"
 
 
 - Specify a **network address** for the external/UI network:
@@ -149,13 +145,12 @@ Press [Enter] to select **User Interface**. This will bring you to the main dash
 ## Install Secondary Controller Node
 !!! note "The primary controller node needs to be fully installed and booted before installing the secondary controller node."  
 
-- Select controller (default selection)
+- Select **controller** (default selection)
 - Select **No** to indicate this is a new install **(Not a new system)**.  
 
-!!! warning "Important: MMM it will try to create a new separate system rather than joining the system already established with the installed primary node controller."
+!!! warning "If you do not select "No" here, the install will create a new separate system rather than joining the system already established with the installed primary node controller."
 
 - Enter the **admin credentials** created on the previous (primary controller node) installation.  You will be prompted to enter the admin (root) password for the system you are joining.
-
 
 - Select **Yes** to attempt automatic detection of existing network configuration.  This is recommended as it will attempt to detect the installed core network and automatically configure the new node accordingly, avoiding manual network misconfigurations.  Network detection may take a minute or two.
 
