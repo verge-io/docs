@@ -1,5 +1,3 @@
-Here's a draft Release Notes page based on the provided information:
-
 # Release Notes
 
 ## 4.12.6 - July 2024
