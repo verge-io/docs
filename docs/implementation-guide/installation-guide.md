@@ -1,224 +1,195 @@
-# Installation Guide
-
 
 ## Introduction
+The VergeOS installation is a single [bootable ISO image](install-media.md) containing all packages needed for the complete System. 
+
+This document provides general instructions for installing a VergeOS system.   <!-- VergeOS is designed to be flexible for different environments.  --> 
+For production systems, use datacenter-quality hardware and follow our reference architectures located in the implementation guide.
+<!-- would like to have a link to send them to here - perhaps we can add a general landing page for ref arch..[Reference architecture Recommendations](/docs/implementation-guide/concepts).-->
+
+### Installation Process
+
+```mermaid
+graph LR
+    A["Pre-Install<br>- Establish network info<br>- Verify BIOS settings"] --> B["Install Primary<br>Controller Node"]
+    B --> C["Install Secondary<br>Controller Node"]
+    C --> D["Install Additional<br>Nodes, as needed<br>Scale-out compute,<br>FTE"]
+    D --> E["Verify your System"]
+    E --> F["Next Steps<br>Post-Install Checklist"]
+```
+
+## Pre-Installaltion Steps
+
+Before you proceed with the installation please make sure you've reviewed the following documents:
+  
+  * [Pre-Install Checklist](pre-installation.md)
+  * [Bootable Media](install-media.md)
+---
+## Install the Primary Controller Node 
+!!! warning "VergeOS is installed as a complete operating system on each node.  Selected drives are formatted and existing data on those drives will be lost." 
+
+1. **Boot** the first node with the install ISO. The full installer will load into memory with loading progress indicated on the screen. Loading times will vary depending on the medium used to install.  
+2. Select **Standard Install** (default).  This is the default selection; the install will automatically continue with a standard install.  Non-standard install options should only be selected when you are working closely with VergeIO Support.
+
+3. Select **Controller** (default selection). The first two nodes of the system will be controller nodes.
+4. Select **Yes** to indicate this is a **New Install**.
+5. Select appropriate **date/time, time zone and NTP server settings**.  
+!!! info "Correct date/time are very important for vSAN operation.  Be sure that during installation, date is set correctly and time is set reasonably close to the accurate time, to avoid potential problems."
+  * Time zone selection is generally based on the geographical location of the servers, but can alternately be configured based on administration preference.  Windows VMs will, by default, inherit the system time zone; a registry change is required to configure a Windows VM to UTC time.  
 
 
-Welcome! In this guide, we'll walk through installing VergeOS to get your environment optimally configured for performance and stability.
+6. Enter a **System Name**. This will be the name of your VergeOS System; it will appear in your: dashboard, alerts and reports coming from this system, and site syncs. Your Cloud name can be changed post-install from within the UI. 
+
+7. Enter **admin user credentials**.  The password must be at least 8 characters. These credentials can be changed post-install, however it is important to have username/password available for initial login to the system.
+
+<!-- !!! warning "Make sure to note the admin user credentials established during install; without them, you may be left with no way to access the system." -->
+
+8. Enter **admin email address**.  This address is used for admin account password resets and receiving subscription alerts/reports directed to the admin user.
+
+### Configuring Physical Networks
+
+**The following steps are used to define each of the physical networks for the node.**
+  <!-- possibly something here about the abstraction put in place for flexibility, ease of configuration...helps accomodate lots of different configuration options based on how many networks you will employ, use of vlans, bonded ports, etc.--> 
+
+9. How many physical networks will you be plugging into?
+
+!!! tip "A bonded network, whether LACP or Active/Backup, equals 1 physical network connection"
+
+10. A list of all detected NICs is displayed.
+  **Select a NIC (or multiple NICs, for port-bonded)**, to configure the associated physical network.  
+  
+!!! note "Port bonding (LAG) should not be used for Core Fabric networks as it will interfere with the built-in redundancy based on multiple physical Core Fabric networks."
 
 
-Before diving in, check out our [Reference Architecture](network-design.md) for important guidance on hardware selection, network setup, VLANs, and more to ensure a smooth installation.
+11. **Specify Physical Network Settings:**
+!!! tip "**Keyboard Hints:** [Tab] does not move field-to-field, but rather between action items (Finish/Edit/Cancel).  [Enter] toggles edit mode. When edit mode is OFF, an entry field is highlighted in blue, and you can move between fields with the up/down arrow keys.  When edit mode is ON, you can modify the field with the cursor."
 
+* **Name** - This name will be used in the User interface to identify this network. Enter a name that will help to identify where the NIC(s) is plugged in, such as the switch hostname or organizational naming convention. This can be changed after installation.
+
+* **Description** (optional) - Text can be entered here to provide any additional administrative information. 
+
+* **MTU*** - The MTU setting must always be a value supported by the physical switching hardware.  For Core Fabric networks, the MTU should be large enough to support the levels of tenancy that will be provided; the default is 9192.
+
+* **Core-Network:** -If a core network will reside here, the value needs to be "yes".  Otherwise, change the value to blank or "no".
+
+* **VLAN** - PVID port is always preferred (0 or blank for none), but a VLAN tag can be accommodated by entering the correct VLAN ID here.
+
+12. **Repeat the above steps to configure all of your physical networks** until every NIC has been assigned.  If there is a NIC that is not plugged in, it should still be configured here during installation; it can be given a name such as "unplugged" or "unused".
+
+!!! tip "When configuring an external network MTU: The Internet standard MTU for most Ethernet networks is 1500.  The standard for VPN connections is 1400 bytes (will vary depending on the service)."
+
+13. Select a **physical external network that will provide UI/LAN/WAN access**. (Use [Space bar] to select/deselect).
+
+
+14. Enter appropriate **VLAN ID for the External/UI network** Use PVID ports when possible (0 or blank), otherwise enter the appropriate VLAN ID.  
+
+
+15. Specify a **network address** for the external/UI network:
+    * **Static:** Enter the address in CIDR format (for example 10.0.0.2/24).  You will also be prompted for the default gateway and DNS server address(es).
+
+    **-OR-**
+
+    * **DHCP:** An entry of blank or "dhcp" allows the network to receive an external DHCP address.  Using DHCP will limit the network to a single IP address; this is typically only appropriate for test/evaluation systems or storage-only systems. If DHCP is selected, you will also be prompted for the name/domain to be used by this DHCP client.
+
+
+16. Enter **license server settings** (username and password).  License server credentials are provided by your VergeOS sales or Implementation representative.  These settings can be left blank during installation and added post-install within the VergeOS UI.  
+
+!!! note "Although license key credentials are not needed to complete the installation, they must be in place in order to run workloads or syncs on your installed system."
+
+
+17. Configure **Encryption settings**. (optional, at-rest encryption).  Encryption selection is not reversible post-install; changing from encrypted to unencrypted or vice-versa would require a system reinstall.
+
+    * If encryption is selected, you will be prompted for an **AES256 encryption key passphrase**.
+    Passphrase must be between 8 and 64 characters.    
+
+
+    * Optionally, you can **write the generated encryption key to a USB drive/dedicated device**.  Before selecting "Yes" to this option you must make sure the USB drive/dedicated storage device is plugged in.  On the next screen, verify the intended device is selected before hitting < OK >.
+
+<!--Also, include the information about how the key is not needed for maintenance mode, system updates, etc where a single node reboots at a time?-->
+
+18. **Select drives that will be used in the vSAN**.  All detected drives are displayed and selected by default. **Deselect any drives that should be excluded.  Make sure to deselect any removable devices or any drives that will be used to store an optional encryption key.**   
+The system will display an automatically-selected tier for each drive.  Take notice of these tier assignments; they can be modified in a subsequent dialog, if needed.
+
+
+!!! warning "Selected drives display an asterisk;  make sure any drives that you want to deselect do not have the asterisk on the far left before hitting < OK >. "
+
+19. **Change Drive Tier Assignments (optional)**
+If you verified all drive tiers were selected as desired (previous screen), simply press [Enter] to proceed.  Otherwise, select **< Yes >**
+ and **[Enter]** to view all drives and optionally change any tier assignments.
+     
+ <!--change this sshot to one from a physical system.>  ![selectdiskfortierchg.png](/docs/assets/selectdiskfortierchg.png) -->
+
+<!-- insert a link to tier definitions?  and some verbiage about changing them-->
+
+ ![selecttier.png](/docs/assets/selecttier.png)
+
+ 20. Configure **Swap**: There are multiple factors to consider in planning swap including: availability of storage, system use, disk type, etc. Consult with the VergeIO implementation team for further information. <!--Development should discuss this and come up with recommendations/best practices for this -->
+
+
+21. UEFI partitions - if you're asked to register the UEFI partitions please select "Yes".
+
+When installation selections are finalized, the vSAN will be initialized and packages installed.  Each selected drive is formatted one by one (large drives may take several minutes to format) and added to the vSAN.
+
+22. The install will indicate when it is complete.  **Remove the install media and hit [Enter] to reboot.** 
+
+### After Reboot 
+
+23. When the vSAN is successfully mounted and the system is started, the user menu will appear. Press **[Enter]** to select **User Interface** and enter admin login credentials. 
+The main dashboard for your new system will display.  Status indicators should all be green.  
+
+![initialdashboard.png](/docs/assets/initialdashboard.png)
 
 ---
 
-
-## Configure Networking
-
-
-Properly configured networks are critical for a successful VergeOS installation. Here's what you'll need to do:
+## Install the Secondary Controller Node
+!!! note "The primary controller node needs to be fully installed and booted before installing the secondary controller node."  
 
 
-- Identify the physical NICs that will connect to your [External](../glossary.md/#external-network "Clcik for definition") and [Core](../glossary.md/#core-network) networks for regular operations and, optionally, a maintenance network for iPMI access and PXE boot.
+1. **Boot** the second node with the install ISO.  The full installer will load into memory. The loading progress is indicated on the screen. Loading times will vary depending on the medium used to install.  
+2. Select **Standard Install** (default).  This is the default selection; the installation process will automatically continue with this selection.  Non-standard install options should only be selected when you are working closely with VergeIO Support.
+3. Select **Controller** (default selection). 
+4. Select **No** to indicate this is NOT a new system. (You will be connecting to the system already created above.)  
+
+!!! warning "If you do not select "No" here, the install program will create a new separate system rather than joining the installed primary node controller."
+
+5. You will be prompted to enter the **admin (root) password for the system you are joining.**;  enter the **admin credentials** created on the previous install.  
+
+6. Select **Yes** to attempt automatic detection of network configuration.  This is recommended as it will attempt to detect the existing networks and automatically configure the new node accordingly, avoiding manual network misconfigurations.  Network detection may take a few minutes.
+
+7. Upon successful detection of the core network, information for the associated NIC will display.  **Verify** this is the correct NIC to connect to the first core network and click **Yes** to continue automatic network configuration.   
+<!-- Later we should include a link to troubleshooting information when it does not successfully detect the networks, for ex:  double check configuration and physical connections and restart install as needed - either primary controller again or reseat cables and restart secondary controller node install. -->
+
+8. Select **Encryption settings**; these settings must match those entered during the primary controller installation. 
+
+9. Select **drives that will be used in the vSAN** and **(optionally) change Drive Tier assignments**; these selections should be made to coincide with the drive/tier configurations made on the primary controller node install. 
+<!-- include more detailed info here - what other guidance can we provide here about matching the drive assignment?  maybe a link here to explain the need for like-geometry on drives?--> 
+
+10. The installation program will indicate when it has finished.  Remove the install media and hit [Enter] to reboot.
+ 
+
+### After Reboot 
+11. Wait for the system to load and show the user menu.  Select **User Interface**, and enter admin login credentials.  
+12. Verify green status indicators before proceeding with a subsequent node install.  
 
 
-- Collect the MAC addresses for each NIC port and identify which network (External/Core/Maintenance) they will be assigned to.
 
+## Install Additional Nodes (as needed)
+Additional nodes can be installed as needed. These nodes can be:
 
-!!! tip "Obtaining the MAC addresses for each NIC port helps identify the physical cabling."
+* [**Scale-out**](scale-out-nodes.md)
+* [**Compute-only**](compute-nodes.md)
+* [**Storage-only**](storage-nodes.md) 
 
+<!-- add any additional information needed for these install types, either here or link to separate pages. -->
+
+## Post-Installation Steps
+When node installations are complete, see [**Post Installation**](post-installation.md) for next steps.
 
 ---
-
-
-## Install First Controller Node
-
-
-Now you're ready to install the first controller node:
-
-
-### Installation Type
-
-
-1. Boot the server from the VergeOS installer ISO image.
-
-
-2. Select "Controller" and "Yes" when asked if this is a new install.
-
-
-3. Follow the prompts for setting the timezone and current date / local time.
-
-
-4. Name your cloud and enter your new admin credentials
-
-
-!!! note "This field cannot be blank and must be at least 8 characters in length"
-   Make sure to have this password available for the initial login to the installed VergeOS system. The password can be changed post-install by editing the admin user.
-
-
-### Setup Networking
-
-
-1. Select the number of [Physical](../glossary.md/#physical-network) switches you will be connecting to, by default this will be set to the number of active NICs detected by the OS.
-
-
-!!! tip "It is recommended to keep the number that is originally shown so you can configure ALL detected NICs during the installation (even if you are not planning to use all of them initially)."
-
-
-!!! warning "If the External Network ports are to be bonded (LAG), choose one less than what is displayed on this screen."
-
-
-2. Select the NIC to be used for the first **[Core Network](../glossary.md/#core-network)**
-!!! tip "NICs with an active link will have an asterisk (*) at the beginning of the device description."
-
-
-3. Configure the first **Physical Core Switch**
-   - Name: The name that will be shown in the UI
-   - MTU: The MTU setting must be a value supported by the physical switching hardware and large enough to support the required levels of tenancy. The default MTU is 9192. This setting is compatible with nearly all modern switches and will support 5 levels of nested tenancy.
-   - Core-Network: Yes indicates that the NIC is designated to be a part of the core network. To remove this designation, edit the field and remove "Yes". You can either type "No" or leave the field blank to remove the designation. In this scenario, "Yes" is the correct answer.
-   - VLAN: If the NICs are designated to be in a tagged VLAN, enter the VLAN ID here. In most cases, this setting is left blank since the NICs for the core network should be in a Native VLAN or PVID.
-!!! tip "Keyboard Hints:"
-   **[Tab]** will not move you between fields but rather moves between the form options(Finish/Edit/Cancel). 
-
-
-   **[Enter]** toggles edit mode on/off. When a field shows a cursor, edit mode is ON, and you can modify the contents. When a field is highlighted in blue, edit mode is OFF, and you can move between fields with the up/down arrow keys.
-4. Repeat the above process for your remaining **Core Network Networks**
-
-
-5. Configure the **Physical External Network**
-   - Name: The name that will be shown in the UI.
-   - MTU: The MTU setting must be a value supported by the physical switching hardware
-   - Core-Network: Change this value to **"no"** as this is our external switch
-
-
-6. Select the switch that will provide **external** access
-
-
-7.  VLAN: If the NICs are designated to be in a tagged VLAN, enter the VLAN ID here.
-
-
-8. Configure network addressing for your external network
-
-
-!!! note "This will be the IP address used to access VergeOS UI and API"
-
-
-### Verge.io Credentials (Optional)
-
-
-1. Enter email addresa and password used for your VergeOS licensing.
-
-
-### vSAN Encryption
-
-
-!!! danger "This option is irreversible and cannot be changed without a full re-install. Do not continue until you are certain whether you are encrypting the vSAN or not. **Click here for our vSAN Encryption guide**"
-
-
-### vSAN Storage
-
-
-1. Unselect drives that should be excluded from the vSAN
-
-
-2. Optionally set custom storage tiers for drives or use the defaults.
-
-
-!!! warning "All drives in a tier of storage **MUST** have similar geometry!"
-
-
-3. Configure Swap
-   - There are multiple factors to consider in planning swap including: availability of storage, system use, disk type, etc. **Review this Guide** **WRITE THIS DOC** or consult with the VergeOS implementation team for further information. The recommendation is to configure enough swap to hold the largest workload expected to run.
-
-
-### Finalize Installation
-
-
-1. If the installation asks you to register the UEFI partitions select **yes**
-
-
-The installer will now format drives, install VergeOS, and reboot. Once complete, the VergeOS login screen will appear and the first controller node is ready!
-
-
----
-
-
-## Add Second Controller Node 
-
-
-With the first node installed, let's add the second controller:
-
-
-1. Boot the second node from the installer ISO.
-
-
-2. Select "No" when asked if this is a new install to join this node to the first one.
-
-
-3. Enter the admin username and password configured during the first node's installation.
-
-
-4. As before, auto-detect the network config, enable encryption if previously enabled, and select drives for the vSAN.
-
-
-5. Ensure the storage tier assignments match the first node.
-
-
-After drive formatting and installation, the second node will reboot and automatically join the first one to form an HA cluster.
-
-
----
-
-
-## Install Additional Nodes
-
-
-You can now install additional nodes as needed:
-
-
-- [**Scale-out**](scale-out-nodes.md): Member nodes that expand the vSAN storage
-- [**Compute**](compute-nodes.md): Compute only nodes without vSAN (boot device only)
-- [**Storage**](storage-nodes.md): Storage only nodes
-- **PXE**: Compute nodes that network boot (no local boot device)
-
-
-!!! note "The PXE option uses a network boot image of VergeOS, not the PXE installer"
-
-
-Follow the same process as the second controller node, selecting the appropriate node type when prompted.
-
-
----
-
-
-## Verify and Next Steps
-
-
-Once installation is complete:
-
-
-1. Open the VergeOS web UI via the system's IP address
-2. Verify the new nodes were added successfully without errors
-3. Start deploying VMs!
-
-
-!!! note "Log entries indicating “root key” errors during the process of adding nodes to a system are normal and can be ignored."
-
-
----
-
 
 ## Troubleshooting & Support
 
 
 If issues arise during installation:
 
-
 - Press `Esc` to cancel and get a command prompt
 - Type `yb-install` to resume or `yb-install --restart` to start over
-
-
-
-
-
-
