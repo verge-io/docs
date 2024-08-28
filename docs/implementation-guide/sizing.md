@@ -8,7 +8,7 @@
 - Intel or AMD x86 64-bit processor with hardware virtualization support
 - Minimum of 16GB RAM dedicated to VergeOS
 - HBA (preferred) or RAID controller that supports JBOD mode - NO RAID
-- 2 x 1/10/25/40GbE NICs (Intel, Mellanox, or Broadcom)
+- 2 x 1/10/25/40/100GbE NICs (Intel, Mellanox, or Broadcom)
 
 !!! note "1GbE only recommended for External Network communication"
 
@@ -50,8 +50,8 @@
 - Minimum of 16GB RAM dedicated to VergeOS
 - HBA (preferred) or RAID controller that supports JBOD mode - NO RAID
 - Minimum of 16GB RAM dedicated to VergeOS
-- 2 x 25/40GbE NICs (Intel, Mellanox, or Broadcom)
-- 2 x 10/25GbE NICs (Intel, Mellanox, or Broadcom)
+- 2 x 25/40/100GbE NICs (Intel, Mellanox, or Broadcom)
+- 2 x 10/25/40/100GbE NICs (Intel, Mellanox, or Broadcom)
 - **Dedicated Controller Nodes**
 
 ### Controller Nodes (Node 1 and Node 2) - Recommended
