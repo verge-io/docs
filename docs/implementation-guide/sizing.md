@@ -7,20 +7,19 @@
 
 - Intel or AMD x86 64-bit processor with hardware virtualization support
 - Minimum of 16GB RAM dedicated to VergeOS
-- HBA (preferred) or RAID controller that supports JBOD mode - NO RAID
-- 2 x 1/10/25/40/100GbE NICs (Intel, Mellanox, or Broadcom)
-
-!!! note "1GbE only recommended for External Network communication"
+- HBA (preferred) or RAID controller that supports JBOD or IT mode - NO RAID
+- 1 x 1GbE NIC for External Network (Intel, Mellanox, or Broadcom)
+- 1 x 10GbE NIC for Core Fabric Network (Intel, Mellanox, or Broadcom)
 
 ### Controller Nodes (Node 1 and Node 2)
 
 - 1GB of RAM per 1TB of storage for each node
-- 1 x 800GB+ 3 DWPD NVMe-based SSD for vSAN metadata
-- 5GB of vSAN metadata storage per 1TB of usable capacity in your VergeOS System
+- **Tier 0**: 1 x NVMe-based SSD for vSAN metadata with 3 Drive Writes Per Day (DWPD)
+- **Tier 0**: 10GB of storage per 1TB of usable capacity for vSAN metadata
 
 ### Storage Nodes (Nodes that partipate in vSAN storage)
 
-- 1GB of RAM per 1TB of storage for each node
+- 1GB of RAM per 1TB of RAW storage for each node
 - Minimum of one NVMe or SATA/SAS SSD per node for workload storage
 - HDDs can be used for snapshot, archive, or file based service storage
 - At least 2 nodes with the same disk configuration for data redundancy
@@ -48,7 +47,7 @@
 
 - Intel or AMD x86 64-bit processor with hardware virtualization support
 - Minimum of 16GB RAM dedicated to VergeOS
-- HBA (preferred) or RAID controller that supports JBOD mode - NO RAID
+- HBA controller that supports JBOD mode - NO RAID
 - Minimum of 16GB RAM dedicated to VergeOS
 - 2 x 25/40/100GbE NICs (Intel, Mellanox, or Broadcom)
 - 2 x 10/25/40/100GbE NICs (Intel, Mellanox, or Broadcom)
@@ -56,15 +55,15 @@
 
 ### Controller Nodes (Node 1 and Node 2) - Recommended
 
-- 1 x +3.0Ghz CPU clockrate
-- 2 x 800GB+ 3 DWPD NVMe-based SSD for vSAN metadata (Tier 0)
-- 5GB of storage per 1TB of usable capacity for vSAN metadata (Tier 0)
+- 1 x +3.0Ghz CPU
+- **Tier 0**: 2 x NVMe-based SSD for vSAN metadata with 3 Drive Writes Per Day (DWPD)
+- **Tier 0**: 10GB of storage per 1TB of usable capacity for vSAN metadata
 
 ### Storage Nodes (Nodes that partipate in vSAN storage) - Recommended
 
-- 2 x +3.0Ghz CPU clockrate
+- 2 x +3.0Ghz CPU
 - 1 CPU core per disk
-- 1GB of RAM per 1TB of storage for each node
+- 1.5GB of RAM per 1TB of storage for each node
 - 2 x NVMe or SATA/SAS SSD per node for guest usage; more SSDs recommended for enhanced performance
 - At least 2 nodes with the same disk configuration for data redundancy
 
@@ -88,11 +87,10 @@ The following table outlines the maximum supported hardware specifications for v
 | Disks per VM [^3]               | 2000    | vdisk         |
 | Individual physical disk size   | 64      | terabyte      |
 | vDisk size                      | 2000    | terabyte      |
-| RAM per hos [^2]                | 5       | terabyte      |
+| RAM per host [^2]                | 5       | terabyte      |
 | Clusters per system             | 1000    | cluster       |
 | Tiers of storage per system     | 5       | tiers         |
 | vSAN Fault domains per system   | 2       | vSAN          |
-| Systems w/o Dedicated Controller Nodes | 10 | node |
 
 [^2]: vSAN nodes require a minimum 1GB of RAM per 1TB of Storage
 [^3]: Virtio-SCSI Interface required
