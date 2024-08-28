@@ -124,19 +124,22 @@ extra_javascript:
 nav:
   - Home: index.md
   - Implementation Guide:
-    - Introduction: implementation-guide/concepts.md
-    - Sizing: implementation-guide/sizing.md
+    - Intro: implementation-guide/intro.md
+    - Core Concepts: implementation-guide/concepts.md
+    - Node Sizing: implementation-guide/sizing.md
     - Network Design: implementation-guide/network-design.md
-    - VergeOS Pre-Installation: implementation-guide/pre-installation.md
-    - VergeOS Installation:
+    - Installation:
+      - Pre-Installation: implementation-guide/pre-installation.md
       - Bootable Media: implementation-guide/install-media.md
       - Installation: implementation-guide/installation-guide.md
+      - Post-Installation: implementation-guide/post-installation.md
+    - Install Additional Nodes:
       - Scale Out Nodes: implementation-guide/scale-out-nodes.md
       - Compute Nodes: implementation-guide/compute-nodes.md
       - Storage Nodes: implementation-guide/storage-nodes.md
-    - VergeOS Post-Installation: implementation-guide/post-installation.md
     - Reference Architecture:
       - Edge / ROBO: reference-architecture/edge.md
+      - Enterprise Multi-Site: reference-architecture/enterprise-multi-site.md
       - Cloud Providers: reference-architecture/csp.md
       - Life / Data Science: reference-architecture/data-science.md
       - VMware Backup: reference-architecture/vmware-backup.md
