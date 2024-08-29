@@ -1,10 +1,11 @@
 ---
 title: Sharing Media Images to Tenants
 slug: sharing-media-images-to-tenants
-description: 
+description: Learn how to share media images from a Service Provider to Tenants in the VergeOS system.
+author: vergeOS Documentation Team
 published: true
 date: 2023-01-24T19:20:42.724Z
-tags: media, tenant, media images, tenants
+tags: [media, tenant, media images, tenants]
 categories:
   - Tenant
   - Media Images
@@ -12,22 +13,80 @@ editor: markdown
 dateCreated: 2022-08-01T20:59:20.590Z
 ---
 
-## Providing Files to a Tenant
+# Sharing Media Images to Tenants
 
-A Service Provider can provide files (that are already uploaded to the vSAN) to a Tenant.
+## Overview
 
-### To Provide a File to a Tenant:
-1. From the Main Dashboard, select Tenants on the left menu.
-   - This takes you to the generic Tenants Dashboard.
-1. Select Tenants to view a listing of all your Tenants.
-1. Double click on the desired Tenant.
-1. Select **Add File** in the left menu.
-1. Select File Type from the dropdown list .
-!!! note "Select **ALL** to get a listing of all files available, regardless of type. This will include .raw files (VM disk images) from the parent VDC."
+!!! info "Key Points"
+    - Service Providers can share files with Tenants
+    - Files must already be uploaded to Media Images
+    - Process is quick and uses a branch command
 
-6. Select specific File from the dropdown list.
-1. Submit the changes (bottom of page).
-   - The process is near-instant as it is done with a branch command. The file is now available to the Tenant within their own Media Images section.
+This article guides Service Providers through the process of sharing files, specifically media images, with their Tenants in the VergeOS system. This feature allows Tenants to access specific files within their own Media Images section.
 
-<br>
-[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }
+## Prerequisites
+
+- Access to the VergeOS system as a Service Provider
+- Files already uploaded to the vSAN
+- Existing Tenants in the system
+
+## Steps
+
+1. Navigate to the Tenants Dashboard
+   - From the Main Dashboard, select "Tenants" on the left menu
+
+2. Access Tenant List
+   - Select "Tenants" to view a listing of all your Tenants
+
+3. Select the Desired Tenant
+   - Double click on the Tenant you want to share files with
+
+4. Access the Add File Feature
+   - Select "Add File" in the left menu
+
+5. Choose File Type
+   - Select File Type from the dropdown list
+   
+!!! note "Tip"
+    Select "ALL" to get a listing of all files available, regardless of type. This will include .raw files (VM disk images) from the parent VDC.
+
+6. Select Specific File
+   - Choose the specific file you want to share from the dropdown list
+
+7. Submit Changes
+   - Click the submit button at the bottom of the page
+
+8. Confirmation
+   - The process is near-instant as it is done with a branch command
+   - The file is now available to the Tenant within their own Media Images section
+
+## Troubleshooting
+
+!!! warning "Common Issues"
+    - Problem: File not appearing in Tenant's Media Images section
+      - Solution: 
+        1. Verify that the file was successfully uploaded to Media Images
+        2. Check if the correct file type was selected
+        3. Ensure that the changes were submitted properly
+
+    - Problem: Unable to select a specific file
+      - Solution: 
+        1. Confirm that the file exists in Media Images
+        2. Try selecting "ALL" in the File Type dropdown to see if the file appears
+
+## Additional Resources
+
+- [Understanding vSAN in VergeOS](/docs/product-guide/uploadingtovSAN/)
+- [Managing Tenants](/docs/product-guide/createtenants/)
+- [Media Images](/docs/product-guide/mediaimages-overview)
+
+## Feedback
+
+!!! question "Need Help?"
+    If you encounter any issues while sharing media images or have questions about this process, please don't hesitate to contact our support team.
+
+---
+
+!!! note "Document Information"
+    - Last Updated: 2023-08-24
+    - VergeOS Version: 4.12.6
