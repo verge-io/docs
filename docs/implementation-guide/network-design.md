@@ -1,105 +1,153 @@
 # Network Design Models
 
-Please review our <a href="/docs/implementation-guide/concepts/">Concepts</a> doc first to learn more about VergeOS Network types before reviewing this document.
+Please review the [core concepts](concepts.md) first to learn more about VergeOS Network types before reviewing this document.
 
-!!! note "The following designs all reflect fully redundant environments from a networking perspective"
+!!! note "The following network models are designed for redundancy"
 
-## Layer 2 Bonded
+## Generic Requirements (All network design models)
 
-### Overview
-In this model, all virtual networks (Core Fabric, External/Management, Workloads) are combined into a single bonded network VergeOS Physical Network.
+- For environments with more than 2 nodes, switches are required for Core Fabric Networks
+- Jumbo Frames configured on all Core Fabric Network switchports
 
-### Use Cases
-- Proof of concepts
-- Edge deployments
-- Disaster recovery setups
-- Normal production workloads
+    * Minimum MTU size 9000
+    * Recommended MTU size of **9192** and above
 
-### Requirements
-- 2 x 10/25/100Gb network adapters
-- 9216 MTU configured on all switchports
-- Ability to trunk VLANs and set a native VLAN on switch 
-- Switching infrastructure that supports stacking (MLAG)
+- Core Fabric Networks 1 and 2 on their **own** dedicated layer 2 networks
+- VergeOS Systems located in the same site need to be completely isolated from eachother
 
-### Network Configuration
-- All networks VLAN tagged
-- Core Fabric VLAN set as native
-- 1 VergeOS Physical Network (Bonded)
-- VLAN X - Core (Fabric)
-- VLAN Y - External/Management
-- Any other VLANs required for your workloads
+## Layer 2 Static + Dedicated Core Fabric
 
-### Diagram
-
-![](/docs/assets/layer2bonded.png)
-
-## Layer 2 Bonded External + Dedicated Core Fabric
-
-### Overview
-This model uses Layer 2 for the External/Management network while maintaining a dedicated Layer 2 network for the Core (Fabric) traffic.
+This model uses a bonded Layer 2 network for the External, UI and API Management Networks, while maintaining dedicated Layer 2 networks for the Core Fabric traffic.
 
 ### Use Cases
+
 - High performance production environments
-- Environments requiring advanced network segmentation
+- Existing VMware environments using a Distributed Switch
+- Environments where you want to deploy VMs directly in VLANs that are External to VergeOS
 
 ### Requirements
-- 4 x 10/25/100Gb network adapters
-- 9216 MTU configured on all switchports
-- Ability to trunk VLANs and set a native VLAN on switch 
-- Switching infrastructure that supports stacking (MLAG)
-- Nodes belonging to a system need their own dedicated native VLAN to prevent crosstalk with other systems
 
-> !!! note "The Core Fabric Networks for Two Node VergeOS systems may be cross-connected"
+- 4 x 10/25/40/100GbE NICs
+- Switching infrastructure that supports stacking (MLAG) - For External Network
 
 ### Network Configuration
-- 3 VergeOS Physical Networks:
-  1. Core Fabric Network 1
-  2. Core Fabric Network 2
-  3. Bonded Physical Network for External/Management traffic
-- Core Fabrics (on dedicated VLAN or dedicated switching infrastructure)
-- Core Fabrics isolated from eachother and rest of client network
-- VLAN Y - External/Management (on bonded network)
-- Any other VLANs required for your workloads (on bonded network)
+
+- 4 VergeOS Physical Networks:
+
+    * Core Fabric Network 1
+    * Core Fabric Network 2
+    * External Network 1 - Primary bond
+    * External Network 2 - Secondary bond
+
+- Core Fabric Networks 1 and 2 on their **own** dedicated layer 2 networks
+- A single VLAN for UI/API Management (on primary bonded External Network)
+- Any other VLANs required for your workloads (on primary bonded External Network)
 
 ### Diagram
 
-![](/docs/assets/layer2bonded-dc.png)
+![Layer 2 Bonded + Dedicated Core](/docs/assets/layer2bonded-dc.png)
 
-## Layer 3 External + Dedicated Core Fabric
+## Layer 3 Dynamic + Dedicated Core Fabric
 
-### Overview
-This model uses Layer 3 routing for the External network while maintaining a dedicated Layer 2 network for the Core (Fabric) traffic.
+This model uses dynamically advertised Layer 3 networks for the External, UI and API Management Networks, while maintaining dedicated Layer 2 networks for the Core Fabric traffic.
 
-### Use Cases
+### Use Cases for L3+DC
+
 - High performance production environments
 - Large-scale deployments
 - Environments requiring advanced network segmentation
 
 ### Requirements
-- 4 x 10/25/100Gb network adapters
-- 9216 MTU configured on all switchports
-- Layer 3 capable switching infrastructure for the External network
-- Two separate physical networks for system redundancy
-- BGP, OSPF, or EIGRP capabilities
-- Nodes belonging to a system need their own dedicated network segment to prevent crosstalk with other systems
 
-> !!! note "The Core Fabric Networks for Two Node VergeOS systems may be cross-connected"
+- 4 x 10/25/40/100Gb network adapters
+- A layer 3 network External to the System that VergeOS can peer with
+- BGP, OSPF, or EIGRP capabilities
+- Using VergeOS Internal Networks for workloads
 
 ### Network Configuration
+
 - 4 VergeOS Physical Networks:
-  1. Core Fabric Network 1
-  2. Core Fabric Network 2
-  3. Dynamically routed 
-- Core 1 and Core 2 - Dedicated Layer 2 networks for Fabric traffic
-- VLAN Y - External (Layer 3 routed)
-- VLAN Z - Workloads (Layer 3 routed)
+
+    * Core Fabric Network 1
+    * Core Fabric Network 2
+    * External Network 1
+    * External Network 2
+
+- Core Fabric Networks 1 and 2 on their **own** dedicated layer 2 networks
+- A single dynamically advertised network for UI/API Management
+- Any other dynamically advertised networks required for your workloads
 
 ### Diagram
 
-![](/docs/assets/layer3-dc.png)
+![Layer 3 Bonded + Dedicated Core](/docs/assets/layer3dynamic.png)
 
-## Additional Considerations
+## Layer 3 Static + Dedicated Core Fabric
 
-!!! info "I don't know what to put here yet"
+This model uses a bonded Layer 3 network for the External, UI and API Management Networks, while maintaining dedicated Layer 2 networks for the Core Fabric traffic.
+
+### Use Cases for L3+DC
+
+- High performance production environments
+- Large-scale deployments
+- Environments requiring advanced network segmentation
+
+### Requirements
+
+- 4 x 10/25/40/100Gb network adapters
+- Switching infrastructure that supports stacking (MLAG) - For External Network
+- Layer 3 capable switching infrastructure for the External network
+- Using VergeOS Internal Networks for workloads
+
+### Network Configuration
+
+- 4 VergeOS Physical Networks:
+
+    * Core Fabric Network 1
+    * Core Fabric Network 2
+    * External Network 1 - Primary bond
+    * External Network 2 - Secondary bond
+
+- Core Fabric Networks 1 and 2 on their **own** dedicated layer 2 networks
+- A single statically routed network for UI/API Management
+- Any other statically routed networks required for your workloads
+
+### Diagram
+
+![Layer 3 Bonded + Dedicated Core](/docs/assets/layer3bonded-dc.png)
+
+## Layer 2 Static using 2 NICs
+
+In this model, all networks (Core Fabric, External/Management, Workloads) are combined into a single bonded network VergeOS Physical Network.
+
+### Use Cases - 2 NICs
+
+- Proof of concepts
+- Small Edge deployments
+- Disaster recovery setups
+- Development workloads
+- Bare Metal Cloud Providers
+
+!!! note "Each statically assigned network you route to VergeOS in this system design will be non-redunant"
+
+### Requirements - 2 NICs
+
+- 2 x 10/25/40/100GbE network adapters
+- Ability to trunk VLANs and set a native VLAN on switch
+
+### Network Configuration - 2 NICs
+
+- 2 Physical Networks
+
+    * Core Fabric Network 1
+    * Core Fabric Network 2
+
+- All networks VLAN tagged
+- Core Network VLANs set as native
+- A single VLAN for UI/API Management (Either Core Fabric Network)
+- Any other VLANs required for your workloads (Either Core Fabric Network)
+
+### Diagram - 2 NICs
+
+![Layer 2 Bonded](/docs/assets/2nic.png)
 
 By choosing the appropriate network design model based on your specific use case and requirements, you can ensure optimal performance and scalability for your VergeOS deployment.
