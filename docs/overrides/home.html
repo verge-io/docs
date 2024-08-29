@@ -1,430 +1,241 @@
-<!-- Custom HTML site displayed as the Home chapter -->
-
 {% extends "main.html" %}
 {% block tabs %}
 {{ super() }}
+
 <style>
     .md-main {
-        flex-grow: 0
+        display: none;
     }
-
-    .md-main__inner {
+    .md-content {
+        display: none;
+    }
+    #custom-home {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Lato', 'Helvetica', 'Arial', sans-serif;
+        min-height: 100vh;
         display: flex;
-        height: 100%;
+        flex-direction: column;
     }
-
-    .tx-container {
-        padding-top: .0rem;
+    .header {
+        background-image: url('assets/home-banner.jpg');
+        background-size: cover;
+        background-position: center;
+        padding: 80px 20px;
+        text-align: center;
         position: relative;
     }
-
-    .tx-container::before {
-        /*using pseudo element to change background image opacity*/
-        content: " ";
-        background-image: url(assets/home-banner.jpg);
-        background-image: url(assets/home-banner.jpg), linear-gradient(to bottom, #af1a4f, #05061c 99%);
-        background-size: cover;
+    .header::before {
+        content: '';
         position: absolute;
-        opacity: 0.75;
-        top: 0px;
-        right: 0px;
-        bottom: 0px;
-        left: 0px;
-        z-index: -1;
-        /* Below other contents */
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(10, 10, 26, 0.7);
     }
-
-    .tx-hero {
-        margin: 32px 2.8rem;
-        color: var(--md-primary-bg-color);
-        justify-content: center;
+    .header-content {
+        position: relative;
+        z-index: 1;
     }
-
-    .tx-hero h1 {
-        margin-bottom: 1rem;
-        color: currentColor;
-        font-weight: 700
+    .header h1 {
+        font-size: 3.5em;
+        margin-bottom: 20px;
     }
-
-    .tx-hero__content {
-        padding-bottom: 1rem;
-        margin: 0 auto;
-    }
-
-    .tx-hero__image {
-        width: 17rem;
-        height: 17rem;
-        order: 1;
-        padding-top: 1rem;
-        padding-right: 2.5rem;
-    }
-
-    .tx-hero .md-button {
-    margin-top: .5rem;
-    margin-right: .5rem;
-    margin-left: 0; /* Remove the left margin */
-    color: var(--md-primary-bg-color);
-    display: inline-block; /* Ensures the button doesn't take full width */
-    }
-
-    .tx-hero__content {
-        text-align: left; /* Aligns all content to the left */
-    }
-
-    .tx-hero .md-button--primary {
-        background-color: var(--md-primary-bg-color);
-        color: rgb(255, 0, 0);
-        border-color: var(--md-primary-bg-color);
-    }
-
-    .tx-hero .md-button:focus,
-    .tx-hero .md-button:hover {
-        background-color: var(--md-accent-fg-color);
-        color: var(--md-default-bg-color);
-        border-color: var(--md-accent-fg-color);
-    }
-
-    .feature-item h2 svg {
-        height: 30px;
-        float: left;
-        margin-right: 10px;
-        transform: translateY(10%);
-    }
-
-    .top-hr {
-    margin-top: 42px;
-    }
-
-    .feature-item {
-        font-family: 'Lato', sans-serif;
-        font-weight: 300;
-        box-sizing: border-box;
-        padding: 15px;
-        word-break: break-word;
-        transition: all 0.3s ease-in-out;
-    }
-
-    .feature-item h2 {
-        font-weight: 300;
-        font-size: 25px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        line-height: normal;
-        margin-top: 20px;
-        margin-bottom: 10px;
-        font-family: inherit;
-    }
-
-    .feature-item p {
-        font-size: 16px;
-        font-weight: 370;
-        line-height: 1.8em;
-        text-rendering: optimizeLegibility;
-        -webkit-font-smoothing: antialiased;
-        margin: 0 0 10px;
-        display: block;
-    }
-
-    /* Light mode specific styles */
-    [data-md-color-scheme="default"] .top-hr {
-        background-color: #fff;
-    }
-
-    [data-md-color-scheme="default"] .feature-item {
-        background-color: #ffffff;
-        border-color: rgba(0, 0, 0, 0.1);
-    }
-
-    [data-md-color-scheme="default"] .feature-item:hover {
-        background-color: #f8f8f8;
-    }
-
-    [data-md-color-scheme="default"] .feature-item h2 {
-        color: #333;
-    }
-
-    [data-md-color-scheme="default"] .feature-item p {
-        color: #111;
-    }
-
-    /* Dark mode specific styles */
-    [data-md-color-scheme="slate"] .top-hr {
-        background-color: #1e1e1e;
-    }
-
-    [data-md-color-scheme="slate"] .feature-item {
-        background-color: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 8px;
-    }
-
-    [data-md-color-scheme="slate"] .feature-item:hover {
-        background-color: rgba(255, 255, 255, 0.1);
-        transform: translateY(-5px);
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    }
-
-    [data-md-color-scheme="slate"] .feature-item h2 {
-        color: #e0e0e0;
-    }
-
-    [data-md-color-scheme="slate"] .feature-item p {
-        color: #b0b0b0;
-    }
-
-    [data-md-color-scheme="slate"] .feature-item svg {
-        filter: invert(1);
-    }
-
-    [data-md-color-scheme="slate"] .feature-item a {
-        color: inherit;
-        text-decoration: none;
-    }
-
-    @media screen and (max-width:30em) {
-        .tx-hero h1 {
-            font-size: 1.4rem
-        }
-    }
-
-    @media screen and (min-width:60em) {
-        .md-sidebar--secondary {
-            display: none
-        }
-
-        .tx-hero {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .tx-hero__content {
-            max-width: 22rem;
-            margin-top: 0.5rem;
-            margin-bottom: 0.5rem;
-            margin-left: 1.0rem;
-            margin-right: 4.0rem;
-            align-items: center;
-        }
-    }
-
-    @media screen and (min-width:76.25em) {
-        .md-sidebar--primary {
-            display: none
-        }
-
-        .top-hr {
-            width: 100%;
-            display: flex;
-            max-width: 61rem;
-            margin-right: auto;
-            margin-left: auto;
-            padding: 0 .2rem;
-        }
-
-        .bottom-hr {
-            margin-top: 10px;
-            width: 100%;
-            display: flex;
-            max-width: 61rem;
-            margin-right: auto;
-            margin-left: auto;
-            padding: 0 .2rem;
-        }
-
-        .feature-item {
-            flex: 1;
-            min-width: 0;
-        }
-
-        .feature-item:hover {
-            background-color: #fe525247;
-            border-radius: 3px;
-        }
-    }
-
-    .hr {
-        border-bottom: 1px solid #eee;
-        width: 100%;
-        margin: 20px 0;
-    }
-
-    .text-center {
-        text-align: center;
-        padding-right: 15px;
-        padding-left: 15px;
-        margin-right: auto;
-        margin-left: auto;
-        margin-top: 15px;
-        font-family: 'Lato', sans-serif;
-        font-size: 23px;
-        font-weight: 300;
-        padding-bottom: 10px;
-    }
-
-    .logos {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-flow: row wrap;
-        margin: 0 auto;
-    }
-
-    .logos img {
-        flex: 1 1 auto;
-        padding: 25px;
-        max-height: 130px;
-        vertical-align: middle;
-    }
-
-    .hr-logos {
-        margin-top: 0;
+    .subtitle {
+        font-size: 1.5em;
         margin-bottom: 30px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
     }
-
-    .md-footer-meta__inner {
+    .download-btn {
+        background-color: #DD6B20;
+        color: #ffffff;
+        padding: 15px 30px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        font-size: 1.2em;
+        display: inline-block;
+        transition: background-color 0.3s;
+    }
+    .download-btn:hover {
+        background-color: rgba(221, 107, 32, 0.8); /* #DD6B20 with 80% opacity */
+    }
+    .features {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
-        margin-top: 1.0rem;
+        justify-content: center;
+        padding: 60px 20px;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    .feature-card {
+        border-radius: 10px;
+        padding: 30px;
+        margin: 15px;
+        width: calc(25% - 30px);
+        box-sizing: border-box;
+        transition: transform 0.3s, background-color 0.3s;
+        text-decoration: none;
+        display: block;
+    }
+    .feature-card:hover {
+        transform: translateY(-5px);
+    }
+    .feature-card h2 {
+        font-size: 1.8em;
+        margin-bottom: 15px;
+    }
+    .feature-card p {
+        font-size: 1.1em;
+    }
+    .subtitle a {
+        text-decoration: none;
+        transition: color 0.3s, text-decoration 0.3s;
     }
 
-    .md-footer-social {
-        padding-top: 20px;
+    .subtitle a:hover {
+        text-decoration: underline;
+    }
+    @media (max-width: 1200px) {
+        .feature-card {
+            width: calc(50% - 30px);
+        }
+    }
+    @media (max-width: 768px) {
+        .feature-card {
+            width: 100%;
+        }
+    }
+
+    /* Dark mode styles */
+    [data-md-color-scheme="slate"] #custom-home {
+        color: #ffffff;
+        background-color: #0a0a1a;
+    }
+    [data-md-color-scheme="slate"] .subtitle {
+        color: #a0a0a0;
+    }
+    [data-md-color-scheme="slate"] .feature-card {
+        background-color: rgba(255, 255, 255, 0.05);
+        color: inherit;
+    }
+    [data-md-color-scheme="slate"] .feature-card:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    [data-md-color-scheme="slate"] .feature-card h2 {
+        color: #ffffff;
+    }
+    [data-md-color-scheme="slate"] .feature-card p {
+        color: #a0a0a0;
+    }
+    [data-md-color-scheme="slate"] .subtitle a {
+        color: #4a90e2;
+    }
+    [data-md-color-scheme="slate"] .subtitle a:hover {
+        color: #64a8ff;
+    }
+
+    /* Light mode styles */
+    [data-md-color-scheme="default"] #custom-home {
+        color: #333333;
+        background-color: #ffffff;
+    }
+    [data-md-color-scheme="default"] .subtitle {
+        color: #666666;
+    }
+    [data-md-color-scheme="default"] .feature-card {
+        background-color: #f5f5f5;
+        color: inherit;
+    }
+    [data-md-color-scheme="default"] .feature-card:hover {
+        background-color: #e8e8e8;
+    }
+    [data-md-color-scheme="default"] .feature-card h2 {
+        color: #333333;
+    }
+    [data-md-color-scheme="default"] .feature-card p {
+        color: #666666;
+    }
+    [data-md-color-scheme="default"] .subtitle a {
+        color: #2979ff;
+    }
+    [data-md-color-scheme="default"] .subtitle a:hover {
+        color: #4d94ff;
+    }
+    /* Light mode styles */
+    [data-md-color-scheme="default"] #custom-home {
+        color: #333333;
+        background-color: #ffffff;
+    }
+    [data-md-color-scheme="default"] .subtitle {
+        color: #666666;
+    }
+    [data-md-color-scheme="default"] .feature-card {
+        background-color: #f5f5f5;
+        color: inherit;
+    }
+    [data-md-color-scheme="default"] .feature-card:hover {
+        background-color: #e8e8e8;
+    }
+    [data-md-color-scheme="default"] .feature-card h2 {
+        color: #333333;
+    }
+    [data-md-color-scheme="default"] .feature-card p {
+        color: #666666;
+    }
+    [data-md-color-scheme="default"] .subtitle a {
+        color: #2979ff;
+    }
+    [data-md-color-scheme="default"] .subtitle a:hover {
+        color: #4d94ff;
+    }
+
+    /* New styles for light mode header content */
+    [data-md-color-scheme="default"] .header-content {
+        color: #ffffff; /* Keep text white for better contrast against the background image */
+    }
+    [data-md-color-scheme="default"] .header-content h1 {
+        color: #ffffff;
+    }
+    [data-md-color-scheme="default"] .header-content .subtitle {
+        color: #f0f0f0; /* Slightly off-white for subtitle in light mode */
+    }
+    [data-md-color-scheme="default"] .header-content .subtitle a {
+        color: #4a90e2; /* Blue color for links in the header, similar to dark mode */
+    }
+    [data-md-color-scheme="default"] .header-content .subtitle a:hover {
+        color: #64a8ff;
     }
 </style>
 
-<!-- Main site Entry button descriptions -->
-<section class="tx-container">
-    <div class="md-grid md-typeset">
-        <div class="tx-hero">
-            <div class="tx-hero__image">
-            <!--    <img src="assets/architecture-home.png" draggable="false"> -->
-            </div>
-            <div class="tx-hero__content">
-                <h1>VergeOS Documentation</h1>
-                <h3>Comprehensive tutorials, references, product guides, and more for VergeOS, by <a href="https://verge.io" target="_blank" rel="noopener noreferrer">Verge.io</a></h3>                
-                <a href="/docs/implementation-guide/concepts/" 
-                title="Get started"
-                class="md-button md-button--primary"
-                target="_blank"
-                rel="noopener noreferrer">
-                 Get Started
-             </a>
-            </div>
+<section id="custom-home">
+    <div class="header">
+        <div class="header-content">
+            <h1>VergeOS Documentation</h1>
+            <p class="subtitle">Comprehensive tutorials, references, product guides, and more for VergeOS, by <a href="https://verge.io" target="_blank" rel="noopener noreferrer">Verge.io</a></p>
+            <a href="/docs/implementation-guide/intro" class="download-btn">Deploy VergeOS</a>
         </div>
     </div>
+    <div class="features">
+        <a href="/docs/implementation-guide/intro" class="feature-card">
+            <h2>Implementation Guide</h2>
+            <p>Explore our implementation guide and reference architectures to seamlessly deploy and optimize VergeOS</p>
+        </a>
+        <a href="/docs/knowledge-base" class="feature-card">
+            <h2>Knowledge Base</h2>
+            <p>A collection of how-to documents, providing guidance on configuring, managing, and troubleshooting</p>
+        </a>
+        <a href="/docs/product-guide/UI-Overview/" class="feature-card">
+            <h2>Product Guide</h2>
+            <p>User manuals and best practices to master every aspect all the functionality of VergeOS</p>
+        </a>
+        <a href="/docs/support" class="feature-card">
+            <h2>Support</h2>
+            <p>Connect directly with our expert support team for your VergeOS inquiries and technical challenges</p>
+        </a>
+    </div>
 </section>
-
-<!-- Main site box descriptions -->
-
-<div class="top-hr">
-    <div class="feature-item">
-        <a href="/docs/implementation-guide/intro">
-        <h2>
-            <svg width="24" height="24" viewBox="0 0 24 24">
-                <defs id="defs335">
-                    <style id="style333">
-                        .cls-1 {
-                            fill: none;
-                            stroke: #020202;
-                            stroke-miterlimit: 10;
-                            stroke-width: 1.91px;
-                        }
-                    </style>
-                </defs>
-                <rect class="cls-1" x="-5.6564951" y="14.854859" width="11.313831" height="4.2426867"
-                    transform="rotate(-45.000003)" id="rect337" />
-                <circle class="cls-1" cx="18.99782" cy="5.0021806" id="circle339" r="4.0017443" />
-                <circle class="cls-1" cx="5.0021806" cy="18.99782" id="circle341" r="4.0017443" />
-                <path class="cls-1"
-                    d="M 11.999992,9.0039256 9.0039239,11.999994 5.997378,9.0039256 H 3.9965059 A 3.0065459,3.006546 0 0 1 1.000436,5.9973796 V 3.9965075 L 1.4194666,4.4155383 A 2.1999115,2.1999118 0 0 0 4.3422061,4.6669568 2.095154,2.095154 0 0 0 4.4993428,1.5242257 L 3.9965059,1.0004372 H 5.997378 a 3.0065459,3.006546 0 0 1 3.0065459,2.9960703 v 2.0008721 z"
-                    id="path343" />
-                <path class="cls-1"
-                    d="m 20.003481,14.996065 a 3.0065459,3.006546 0 0 1 2.996069,3.006545 v 2.000872 l -0.419027,-0.419031 a 2.1999115,2.1999118 0 0 0 -2.922738,-0.251418 2.095154,2.095154 0 0 0 -0.157137,3.142731 l 0.502838,0.502837 h -2.000878 a 3.0065459,3.006546 0 0 1 -3.006546,-2.99607 V 18.00261 l -2.99607,-3.006545 2.99607,-2.996071 3.006546,2.996071 z"
-                    id="path345" />
-            </svg>
-            Deploy VergeOS
-        </h2>
-        <p>Explore our implementation guide and reference architectures to seamlessly deploy and optimize your VergeOS environment</p>
-    </a>
-    </div>
-    <div class="feature-item">
-        <a href="/docs/knowledge-base">
-        <h2>
-            <svg width="24" height="24" viewBox="0 0 24 24">
-                <defs id="defs1040">
-                    <style id="style1038">
-                        .cls-1 {
-                            fill: none;
-                            stroke: #020202;
-                            stroke-miterlimit: 10;
-                            stroke-width: 1.91px;
-                        }
-                    </style>
-                </defs>
-                <ellipse class="cls-1" cx="3.0013094" cy="3.0013096" id="circle1042" rx="2.0008729" ry="2.0008731" />
-                <ellipse class="cls-1" cx="12" cy="3.0013096" id="circle1044" rx="2.0008729" ry="2.0008731" />
-                <ellipse class="cls-1" cx="20.99869" cy="3.0013096" id="circle1046" rx="2.0008729" ry="2.0008731" />
-                <ellipse class="cls-1" cx="3.0013094" cy="12" id="circle1048" rx="2.0008729" ry="2.0008731" />
-                <ellipse class="cls-1" cx="12" cy="12" id="circle1050" rx="2.0008729" ry="2.0008731" />
-                <ellipse class="cls-1" cx="20.99869" cy="12" id="circle1052" rx="2.0008729" ry="2.0008731" />
-                <ellipse class="cls-1" cx="3.0013094" cy="20.998692" id="circle1054" rx="2.0008729" ry="2.0008731" />
-                <ellipse class="cls-1" cx="12" cy="20.998692" id="circle1056" rx="2.0008729" ry="2.0008731" />
-                <ellipse class="cls-1" cx="20.99869" cy="20.998692" id="circle1058" rx="2.0008729" ry="2.0008731" />
-                <line class="cls-1" x1="10.585771" y1="10.585771" x2="4.4155393" y2="4.4155393" id="line1060" />
-                <line class="cls-1" x1="12" y1="18.997818" x2="12" y2="14.000874" id="line1062" />
-                <line class="cls-1" x1="18.997818" y1="3.0013096" x2="14.000873" y2="3.0013096" id="line1064" />
-                <line class="cls-1" x1="9.9991264" y1="3.0013096" x2="5.002183" y2="3.0013096" id="line1066" />
-            </svg>
-            Knowledge Base
-        </h2>
-        <p>Access our comprehensive collection of how-to documents, providing guidance on configuring, managing, and troubleshooting VergeOS</p>
-    </a>
-    </div>
-    <div class="feature-item">
-        <a href="/docs/product-guide/UI-Overview">
-        <h2>
-            <svg width="24" height="24" viewBox="0 0 24 24">
-                <defs id="defs784">
-                    <style id="style782">
-                        .cls-1 {
-                            fill: none;
-                            stroke: #020202;
-                            stroke-miterlimit: 10;
-                            stroke-width: 1.92px;
-                        }
-                    </style>
-                </defs>
-                <g id="presentation_standing" data-name="presentation standing"
-                    transform="matrix(1.0434783,0,0,1.0434578,-0.52173913,-0.54306164)">
-                    <line class="cls-1" x1="0.5" y1="1.48" x2="23.5" y2="1.48" id="line786" />
-                    <line class="cls-1" x1="0.5" y1="16.809999" x2="23.5" y2="16.809999" id="line788" />
-                    <rect class="cls-1" x="2.4200001" y="1.48" width="19.17" height="15.33" id="rect790" />
-                    <line class="cls-1" x1="12" y1="16.809999" x2="12" y2="23.52" id="line792" />
-                    <polyline class="cls-1" points="8.17 23.52 8.17 22.56 12 19.69" id="polyline794" />
-                    <polyline class="cls-1" points="15.83 23.52 15.83 22.56 12 19.69" id="polyline796" />
-                </g>
-            </svg>
-            Product Guide
-        </h2>
-        <p>Discover in-depth tutorials, user manuals, and best practices to master every aspect of VergeOS and unlock its full potential for your organization</p>
-        </a>
-    </div>
-    <div class="feature-item">
-        <a href="/docs/support">
-        <h2>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
-                <path d="M80 160c0-35.3 28.7-64 64-64l32 0c35.3 0 64 28.7 64 64l0 3.6c0 21.8-11.1 42.1-29.4 53.8l-42.2 27.1c-25.2 16.2-40.4 44.1-40.4 74l0 1.4c0 17.7 14.3 32 32 32s32-14.3 32-32l0-1.4c0-8.2 4.2-15.8 11-20.2l42.2-27.1c36.6-23.6 58.8-64.1 58.8-107.7l0-3.6c0-70.7-57.3-128-128-128l-32 0C73.3 32 16 89.3 16 160c0 17.7 14.3 32 32 32s32-14.3 32-32zm80 320a40 40 0 1 0 0-80 40 40 0 1 0 0 80z"/>
-                </svg>
-            Get Support
-        </h2>
-        <p>Connect directly with our expert support team by opening an email request, for your VergeOS inquiries and technical challenges.</p>
-        </a>
-    </div>
-</div>
-
 
 {% endblock %}
 {% block content %}{% endblock %}
