@@ -13,47 +13,84 @@ editor: markdown
 dateCreated: 2023-09-12T14:48:12.332Z
 ---
 
-## How To Allow a Root system to connect to a Tenant as a Site
+# Allow Root to Tenant Site Connection
 
-> Warning: Adding this rule will allow tenants to connect on the DMZ network. By default we disable this for security reasons. 
-{.is-warning}
+## Overview
 
-The Sites feature was designed to connect two **VergeOS** sites together. The root system already has a list of tenants and can manage them from the tenant screen. If you wish to use the Sites features for your Tenants, a special rule is required on the Root system's **External** Network. This rule will translate outgoing traffic from the **DMZ Interface** network to use the **Router IP**. Without this the request will get blocked. Here is how to add the rule:
+!!! warning "Important"
+    Adding this rule will allow tenants to connect on the DMZ network. By default, this is disabled for security reasons.
 
-1. In the **Root** System, click on **Networks** then **External Networks**. 
-1. Double-click on the **External** network.
-1. In the **Left** menu, click on **Rules**.
-1. Before adding the rule, check that it doesn't exist already.
-1. Click **New** on the **Left** menu.
-1. Enter the following details:
-	- **Name**: Enter a descriptive name like "Allow Tenant to Root"
-	- **Action**: Translate
-	- **Protocol**: ANY
-	- **Direction**: Outgoing
-	- **Interface**: DMZ
-	- **Source**: Other Network Address: DMZ
-	- **Destination**: Any/None
-	- **Target**: My Router IP
-![2023-09-12_10_28_52-training___edit_rule__allow_tenant_to_root.png](/docs/public/2023-09-12_10_28_52-training___edit_rule__allow_tenant_to_root.png)
-1. Click **Submit**.
-1. Click on **Apply Rules** at the top or **Left** Menu.
+This guide provides instructions on how to connect a root system to a tenant site in VergeOS. The **Sites** feature is typically used to connect two VergeOS sites together, but to extend this functionality to a tenant site, you’ll need to add a specific rule on the root system's **External** network.
 
-After this rule is applied, you should now be able to connect to the **Tenant** Site from the **Root** system. 
+## Prerequisites
 
-## Testing Rule
+- Access to the **Root** system with administrative privileges.
+- A basic understanding of network rules and DMZ interfaces in VergeOS.
 
-To test is this works, follow the instructions below:
-1. From the **Home** screen, Click **System** on the **Left** menu.
-1. Click on **Nodes** on the **Left** menu.
-1. **Double-Click** on **Node1** or Select **Node1** and click **View** on the **Left** menu.
-1. Click on **Diagnostics** on the **Left** menu.
-1. Change the **Query** to **TCP Connection Test**.
-1. Set **Host** to the **UI IP/Host** of the **Tenant** system.
-1. Set **Port** to **443**.
-1. Click **Send**.
-![2023-09-12_11_12_21-training___diagnostics.png](/docs/public/2023-09-12_11_12_21-training___diagnostics.png)
+## Steps
 
-The **Response** should say **Connection successful**. If it doesn't, double check the rule for accuracy. Note that the **Interface** is set to **DMZ** instead of the normal **Auto**. Make sure there are not any block rules.
+1. **Access External Networks**
+   - In the **Root** system, navigate to **Networks** and then **External Networks**.
+   - Double-click on the **External** network.
 
-<br>
-[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }
+2. **Add the Rule**
+   - In the left menu, click on **Rules**.
+   - Before adding a new rule, ensure it doesn’t already exist.
+   - Click **New** in the left menu.
+   - Enter the following details:
+   
+     - **Name**: Enter a descriptive name such as "Allow Tenant to Root".
+     - **Action**: Translate.
+     - **Protocol**: ANY.
+     - **Direction**: Outgoing.
+     - **Interface**: DMZ.
+     - **Source**: Other Network Address (DMZ).
+     - **Destination**: Any/None.
+     - **Target**: My Router IP.
+
+   ![Rule Configuration](/docs/public/2023-09-12_10_28_52-training___edit_rule__allow_tenant_to_root.png)
+
+3. **Submit and Apply**
+   - Click **Submit**.
+   - In the left menu or at the top, click **Apply Rules** to activate the new rule.
+
+After the rule is applied, the root system should now be able to connect to the tenant site.
+
+## Testing the Rule
+
+To verify that the rule works, follow these steps:
+
+1. From the **Home** screen, click **System** in the left menu.
+2. Click on **Nodes** in the left menu.
+3. **Double-click** on **Node1** or select **Node1** and click **View**.
+4. In the left menu, click on **Diagnostics**.
+5. Change the **Query** to **TCP Connection Test**.
+6. Set **Host** to the **UI IP/Host** of the tenant system.
+7. Set **Port** to **443**.
+8. Click **Send**.
+
+   ![Diagnostics](/docs/public/2023-09-12_11_12_21-training___diagnostics.png)
+
+The **Response** should say **Connection successful**. If the connection fails, review the rule to ensure accuracy, particularly ensuring that the **Interface** is set to **DMZ** rather than **Auto**.
+
+## Troubleshooting
+
+!!! warning "Common Issues"
+    - **Issue:** Connection test fails.
+      - **Solution:** Double-check that the rule is configured correctly, especially the interface settings. Also, ensure there are no blocking rules that could prevent the connection.
+
+## Additional Resources
+
+- [Network Overview](/docs/product-guide/networkoverview)
+- [Tenant Management](/docs/product-guide/createtenants/)
+
+## Feedback
+
+!!! question "Need Help?"
+    If you encounter any issues while setting up the root-to-tenant site connection, or have any questions, feel free to contact our support team.
+
+---
+
+!!! note "Document Information"
+    - Last Updated: 2023-09-12
+    - VergeOS Version: 4.12.6
