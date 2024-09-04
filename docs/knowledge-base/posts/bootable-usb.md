@@ -1,7 +1,7 @@
 ---
 title: Creating Bootable Installation Media
 slug: creating-bootable-installation-media
-description: How to create a bootable USB to install Verge.io
+description: How to create a bootable USB to install VergeOS.
 published: true
 date: 2023-03-27T18:31:37.067Z
 tags: iso, rufus, bootable, usb
@@ -11,95 +11,77 @@ editor: markdown
 dateCreated: 2022-08-04T18:16:50.678Z
 ---
 
-## Windows:
+# Creating Bootable Installation Media
 
-1.  Download the latest version of the VergeOS installation ISO.
- [_https://updates.verge.io/download_](https://updates.verge.io/download)
-> **NOTE:** This may not be the most recent version. Please talk to your account representative to make sure you have the latest version.
-{.is-info}
+This guide explains how to create a bootable USB to install VergeOS on different operating systems.
 
-2.  Insert a USB disk into the computer. 
-> **WARNING:** This USB drive **will be overwritten**.
-{.is-warning}
+## Windows
 
-3.  Launch Rufus. [_https://rufus.ie/en/_](https://rufus.ie/en/)
-![rufus.png](/docs/public/rufus.png)
+1. **Download the VergeOS installation ISO** from [https://updates.verge.io/download](https://updates.verge.io/download).
 
-1. Once Rufus is loaded, select the **USB device** to write to for the area labeled **Device**.
-2. Click the **Select button** to select the VergeOS installation ISO image.
-3. Click **Start**
-  ![rufus2.png](/docs/public/rufus2.png)
-4. Rufus will prompt you to choose an ISO Mode. Choose DD. Rufus will begin building the bootable USB device.
-<br>
-## Apple MacOS:
+2. **Insert a USB drive** into your computer.
 
-1.  Download the latest version of the VergeOS installation ISO. [_https://updates.verge.io/download_](https://updates.verge.io/download)
-> **NOTE:** This may not be the most recent version. Please talk to your account representative to make sure you have the latest version.
-{.is-info}
+    !!! warning
+        This USB drive will be overwritten.
 
-2.  Insert a USB disk into the computer. 
-> **WARNING:** This USB drive **will be overwritten**.
-{.is-warning}
+3. **Download and launch Rufus** from [https://rufus.ie/en/](https://rufus.ie/en/).
 
+4. In Rufus:
+    - Select your **USB device** under **Device**.
+    - Click the **Select** button and choose the VergeOS installation ISO.
+    - Click **Start**.
 
-![](https://lh5.googleusercontent.com/-_mr5en0ePpUwSiyWVDpaC2SSURakbGXlWaa_CG6dgN_Gl8X8hEDMs3uQ1He-cuWuMreGxooe352SUQqaB99BNoKgAMxThfwj_SMfZRBbJL__2oUs62SbrUf0Dls2GhVjAC6xGwPwMNv0zPToVXcdw)
+5. **Choose ISO mode** when prompted by Rufus, then select **DD** mode to proceed.
 
-3.  Download and install the BalenaEtcher image flasher for the macOS.
-    1.  [_https://www.balena.io/etcher/_](https://www.balena.io/etcher/)
-4.  Startup the BalenaEtcher app.
-5.  Click on Flash from file.
+    !!! danger "It is critical to choose **DD mode** during this step. Selecting the wrong mode can result in an unbootable USB drive"
 
-![](https://lh5.googleusercontent.com/7EOxDyTcc68ggf5wQV998hBVKEX2c6BLbr-S5hdUTrfLB0JOMXNMK1dOouEs-sCpxoGn_IMaf9A2fJ_6KzbVjVvvXy9ZWokLnDghQlvR-CEQqT96xblB7mVvULF2I6VrbFaY6lhsVApq7427Z9OMlg)
+6. Rufus will begin creating the bootable USB. Once complete, your USB is ready to be used for VergeOS installation.
 
-6.  Pick the VergeOS ISO file that you downloaded.
-7.  Select your target USB disk, but NOT the hidden drives
-8.  Click on Flash!
+---
 
-![](https://lh5.googleusercontent.com/IhmI9uk2q5iBanMvyiMB3Nk6TlJynghQ2oUwwGqdtKDCdi44SdeziwwuiyC2WhI4J-ncjQVLDSnBEZfmSEvsmT4RzLxEXJXNLVfoZVvNXLONTU3YCOUCpnQvw6Rg9ugLqxNsHH7Z6NWMBJs4VPBeFQ)
+## macOS
 
-9.  This will build your bootable flash drive on your USB stick using the VergeOS ISO installer. This process usually takes a few minutes to complete and then you can “eject” your USB flash drive to boot and start the installation on your servers.
+1. **Download the VergeOS installation ISO** from [https://updates.verge.io/download](https://updates.verge.io/download).
 
-![](https://lh4.googleusercontent.com/J92S3ASKseU2HzuouO43MBKvF2y0uC1cok6hV5n7VOiaRKakN2BK1oLHMof69wc_0Wb39KrKu7WXAQsdTAu1qGT8cuyXBzyjMEyCUfMrsM10xqJYjXQhJFObwiewBBlWbwugTDTqL1pwgOb4aqvuPA)
+    !!! note
+        This may not be the most recent version. Check with your account representative for the latest version.
 
-![](https://lh6.googleusercontent.com/jXYidar45PS86znGcVhqt50jkQg27g7cTVtv616in_En9IxAkbubMosnan3bwLuxtRNF9mViX0X_2fOAvXiAjNOHDIg_V-S7EflSge4iRnJmS_6cNS9zghfH2HjCsxcrn9lor4EB3hDKc62sUk0eug)
+2. **Insert a USB drive** into your computer.
 
-![](https://lh6.googleusercontent.com/-3XipAqr-dKeLqMHS9OTuZLr3y7vwioZI2YFyvj98mNH7AUoxk8-39wB3C9vQE1gFwrD36dulWAiok6_LN94SYxzotbYQxM6jx3nhM1lo276BJT6tS-sX1a6mSR-1-felSq64_p3wXOJyrt5bgaYng)
+    !!! warning
+        This USB drive will be overwritten.
 
-![](https://lh4.googleusercontent.com/JXv2wU3no2hBTid6T9oEJSuO2Tptg_uSteJpOFh9ZcEtbRJSFy8kpWCcqoARZENy3y2pNT9yPYFp9FYXhW9W8it9XETLPM61UsjWkjopuaLXymn1X-Ug3CHY5wXFfLcx2c0O62l57Q8LOAHmIQys6w)
-<br>
+3. **Download and install BalenaEtcher** from [https://www.balena.io/etcher/](https://www.balena.io/etcher/).
 
-## Linux Mint:
+4. **Launch BalenaEtcher** and:
+    - Click **Flash from file**, and select the VergeOS ISO.
+    - Select the target **USB disk** (be careful not to select hidden drives).
+    - Click **Flash!** to start the process.
 
-1.  Download the latest version of the VergeOS installation ISO
-    1.  [_https://updates.verge.io/download_](https://updates.verge.io/download)
-> **NOTE:** This may not be the most recent version. Please talk to your account representative to make sure you have the latest version.
-{.is-info}
+5. Once the flashing process is complete, your USB drive will be ready to boot and install VergeOS.
 
-2.  Insert a USB disk into the computer. 
-> **WARNING:** This USB drive **will be overwritten**.
-{.is-warning}
+---
 
-3.  Using Mint’s file browser, navigate to the location **of the downloaded ISO**
-1.  **Right-click** on the ISO and choose ‘**Make bootable USB stick**’
-1.  As USB Image Writer loads, select the **USB media to write the installation file to.**
-1.  As a security measure, Linux will prompt you to supply an admin password
-1.  Click **Authenticate** to begin writing the installation to USB
-1.  Wait while the installation is written to USB.
-1.  When finished this message will appear.
+## Linux Mint
 
-![](https://lh6.googleusercontent.com/0-nr7O3NXfg-9xYnInAM9gYIwyY6EPYVIPH8xDnK8znxpwxbtRQ4dmJs9bUpLKwUoX-nJnJ15XM27V0QW6gpvaG74IUIaEk_TrYnRAtn-fE2J1R4YkzCZYr4zBU2U7Tljjgj64aAXsZP60be_QKVRw)
+1. **Download the VergeOS installation ISO** from [https://updates.verge.io/download](https://updates.verge.io/download).
 
-![](https://lh5.googleusercontent.com/XYNhvshwic0BqgfnCJFOBWQ6PrPLM3R4IcogH8mSJh-Bk5GvRG5uepdcBoda8d7yq04bP2zBQ8KnbNRwxTr-HG7jOjEoFcSI0_85rCfso9g17MqY32HA_wAVipmhCvAPVFpatUZS5Pyli0_cOqn01w)
+    !!! note
+        This may not be the most recent version. Check with your account representative for the latest version.
 
-![](https://lh4.googleusercontent.com/mBduduMcSOAN04aXExClKSrBJMOldme7K48ZateZ0Kno4rZQGiHqLJy-I-P5pxea_RVB8CGyHGGH4rXRQdOIwcIDgc_WeQSmO6C1FPSTGGo-58fdCczL6QePKaB-_AaN9sufuq5BW4JGcdbqXUgAww)
+2. **Insert a USB drive** into your computer.
 
-![](https://lh4.googleusercontent.com/xygTF3JRWMBGQOHO7ShLn6VMROo2W5AezO7bmMQRWOXaU6r-5smG8BdZc-BBY8PgVQpylOXE2kbWuDuGXWCQNuyFRvPFvdyyhV4x76_h_TlS9a92f49r3nlrxH4ZGv-A3Xpm8-oJVZgPd7xClexvfA)
+    !!! warning
+        This USB drive will be overwritten.
 
-![](https://lh4.googleusercontent.com/egCzLNxDVrhoKnZh_cJ4YgVX9BypXA3-ZyasjsjVN-pJ37He6SG0VrFHilCDzx34J_tQ6ioy2IyqUbH5DYK7chPdQIILI0wZqkQo2-daZiSBYd3AwKnpj8ujrrWoIjiDiQIQVa6HnlH_gs9QrtFgjw)
+3. Using Mint’s file browser, navigate to the downloaded ISO file:
+    - **Right-click** the ISO and choose **Make bootable USB stick**.
+    - In the USB Image Writer, select the **USB media** to write the installation file to.
+    - Authenticate with your admin password when prompted.
+    - Click **Authenticate** to start writing the ISO to the USB drive.
 
+4. Once the process is finished, your bootable USB stick will be ready for VergeOS installation.
 
-<br>
-<div style="text-align: center">
+---
 
-<a href="https://www.verge.io/test-drive" target="_blank"><button class="button-orange">Request Trial</button></a>
-</div>
+By following these steps for your specific operating system, you'll have a bootable USB ready to install VergeOS on your server.
