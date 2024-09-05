@@ -2,7 +2,7 @@
 title: UEFI Tweaks for Imported VMs
 slug: uefi-tweaks-for-imported-vms
 description: Addressing UEFI Devices on Imported VMs
-published: true
+draft: false
 date: 2023-01-24T14:15:45.862Z
 categories:
   - VM

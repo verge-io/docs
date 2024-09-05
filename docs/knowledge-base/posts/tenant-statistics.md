@@ -2,7 +2,7 @@
 title: Viewing Tenant Consumption Statistics
 slug: viewing-tenant-consumption-statistics
 description: 
-published: true
+draft: false
 date: 2023-03-16T15:34:52.280Z
 tags: tenant, stats, dashboard, consumption
 categories:

@@ -2,7 +2,7 @@
 title: Reasons a Windows VM Restarted Unexpectedly
 slug: reasons-a-windows-vm-restarted-unexpectedly
 description: 
-published: true
+draft: false
 date: 2023-01-24T14:19:20.724Z
 tags: vm, windows, restart, restarted, rebooted, unexpectedly
 categories:

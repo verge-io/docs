@@ -2,7 +2,7 @@
 title: Windows is Unable to Detect a Virtual Disk Drive
 slug: windows-is-unable-to-detect-a-virtual-disk-drive
 description: 
-published: true
+draft: false
 date: 2023-01-23T22:31:40.674Z
 tags: vm, windows, virtio, scsi
 categories:

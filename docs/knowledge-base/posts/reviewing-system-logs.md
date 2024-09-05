@@ -2,7 +2,7 @@
 title: Reviewing System Logs
 slug: reviewing-system-logs
 description: 
-published: true
+draft: false
 date: 2023-08-30T18:05:00.332Z
 tags: logs, cluster, troubleshooting, support
 categories:

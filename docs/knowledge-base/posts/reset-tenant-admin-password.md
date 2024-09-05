@@ -2,7 +2,7 @@
 title: Reset a Tenant's Administrative Password
 slug: reset-a-tenants-administrative-password
 description: 
-published: true
+draft: false
 date: 2023-01-24T19:20:02.121Z
 tags: tenant, password, reset
 categories:

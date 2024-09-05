@@ -2,7 +2,7 @@
 title: VM Network Connectivity Issues
 slug: vm-network-connectivity-issues
 description: 
-published: true
+draft: false
 date: 2023-01-24T19:28:39.954Z
 tags: vm, networking, NIC, IP, virtio, troubleshooting
 categories:

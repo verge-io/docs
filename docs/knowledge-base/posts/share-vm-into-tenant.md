@@ -2,7 +2,7 @@
 title: Sharing a VM into a Tenant
 slug: sharing-a-vm-into-a-tenant
 description: 
-published: true
+draft: false
 date: 2023-01-24T19:28:10.839Z
 tags: vm, tenant, share
 categories:

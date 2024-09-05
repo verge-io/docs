@@ -2,7 +2,7 @@
 title: Virtual Drive TRIM
 slug: virtual-drive-trim
 description: How to regain space on a virtual SSD
-published: true
+draft: false
 date: 2023-01-24T14:15:07.757Z
 tags: disk management, trim, discard, storage, vsan, disk performance, disk
 categories:

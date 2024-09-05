@@ -2,7 +2,7 @@
 title: Snapshot Synchronization Errors Explained
 slug: snapshot-synchronization-errors-explained
 description: 
-published: true
+draft: false
 date: 2023-01-24T19:17:04.187Z
 tags: snapshot, error
 categories:

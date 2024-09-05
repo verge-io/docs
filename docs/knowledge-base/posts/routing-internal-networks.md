@@ -2,7 +2,7 @@
 title: Routing Between Internal Verge.io Networks
 slug: routing-between-internal-vergeio-networks
 description: 
-published: true
+draft: false
 date: 2023-01-24T15:45:22.430Z
 tags: routing, internal, route, networks
 categories:

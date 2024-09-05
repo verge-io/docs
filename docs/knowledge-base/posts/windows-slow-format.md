@@ -2,7 +2,7 @@
 title: Windows - Slow to Format a New Disk
 slug: windows--slow-to-format-a-new-disk
 description: 
-published: true
+draft: false
 date: 2023-01-23T22:31:24.436Z
 tags: vm, windows, slow, format
 categories:

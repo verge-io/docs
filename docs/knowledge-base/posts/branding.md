@@ -2,7 +2,7 @@
 title: Customizing the User Interface
 slug: customizing-the-user-interface
 description: Guide on how to customize branding and colors in the VergeOS UI.
-published: true
+draft: false
 date: 2023-01-23T22:24:24.831Z
 tags: branding, color, dashboard, logo
 categories:

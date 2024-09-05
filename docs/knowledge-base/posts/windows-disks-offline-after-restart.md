@@ -2,7 +2,7 @@
 title: Windows Disks Showing Offline After Restarting
 slug: windows-disks-showing-offline-after-restarting
 description: 
-published: true
+draft: false
 date: 2023-01-24T14:16:57.949Z
 tags: windows, offline, restarting, disks
 categories:

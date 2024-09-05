@@ -2,7 +2,7 @@
 title: Scaling Up a vSAN
 slug: scaling-up-a-vsan
 description: 
-published: true
+draft: false
 date: 2023-01-24T19:15:40.203Z
 tags: scale up, vsan, scaling
 categories:

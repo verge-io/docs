@@ -2,7 +2,7 @@
 title: Changing Resolution on a UEFI VM
 slug: changing-resolution-on-a-uefi-vm
 description: Steps to change the screen resolution on a UEFI-based VM.
-published: true
+draft: false
 date: 2023-11-15T21:13:25.425Z
 tags: vm, uefi, resolution
 categories:

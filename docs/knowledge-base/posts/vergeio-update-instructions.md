@@ -2,7 +2,7 @@
 title: VergeOS Update Instructions
 slug: VergeOS-update-instructions
 description: 
-published: true
+draft: false
 date: 2023-01-24T15:39:06.743Z
 tags: verge.io, update, upgrade, maintenance, vergeOS
 categories:

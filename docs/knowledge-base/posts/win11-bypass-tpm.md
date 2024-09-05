@@ -2,7 +2,7 @@
 title: Bypassing TPM Requirements in Windows 11
 slug: bypassing-tpm-requirements-in-windows-11
 description: 
-published: true
+draft: false
 date: 2023-02-21T21:28:53.099Z
 tags: windows, tpm, troubleshooting, bypass, registry
 categories:

@@ -2,7 +2,7 @@
 title: Windows - Time Shift
 slug: windows--time-shift
 description: 
-published: true
+draft: false
 date: 2023-01-24T14:20:54.833Z
 tags: windows, time, ntp, utc, dst, drift
 categories:

@@ -2,7 +2,7 @@
 title: Wireguard - Adding Nameserver entries to Client Configs
 slug: wireguard--adding-nameserver-entries-to-client-configs
 description: 
-published: true
+draft: false
 date: 2023-01-24T15:48:19.439Z
 tags: windows, wireguard, nameserver, config, linux
 categories:

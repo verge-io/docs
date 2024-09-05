@@ -2,7 +2,7 @@
 title: API Helper Script
 slug: api-helper-script
 description: A guide to using the VergeOS API helper script, yb-api, for managing VMs and making API calls.
-published: true
+draft: false
 date: 2024-08-03T16:30:00.000Z
 tags: api, helper script, development, vergeos, vm management
 categories:

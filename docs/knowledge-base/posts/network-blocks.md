@@ -2,7 +2,7 @@
 title: Network Blocks
 slug: network-blocks
 description: Creating Network Blocks
-published: true
+draft: false
 date: 2024-01-03T18:42:31.354Z
 tags: network, networking, network blocks, subnet
 categories:
@@ -11,29 +11,32 @@ editor: markdown
 dateCreated: 2024-01-03T17:19:47.187Z
 ---
 
-Network blocks are a handy way to assign multiple IP addresses to a tenant or network for workload use. It is the preferred method over virtual wires since the VergeOS network foundation is focused on Layer 3 connectivity. Using this method helps to circumnavigate the pitfalls of relying on Layer 2 (virtual wires) for tenant workload connectivity to resources originating outside of the environment.  It also gives you the ability to assign public IP addresses directly to VMs inside of an Internal network or a Tenant.
+## Network Blocks Overview
+
+Network blocks in VergeOS are a powerful way to assign multiple IP addresses to tenants or networks for workloads. This method is preferred over virtual wires since VergeOS focuses on Layer 3 connectivity, avoiding the common issues associated with Layer 2 connections (like virtual wires). Network blocks also allow the direct assignment of public IP addresses to VMs inside an internal network or a tenant.
 
 ## Creating a Network Block
-1. In the VergeOS UI navigate to the external network that the network block will originate from.
-1. In the left menu select "Network Blocks" then select "New".
-1. Enter the information for the corresponding block (in CIDR notation a.b.c.d/n). 
-1. To assign the new block to a tenant on creation set the Owner Type to "Tenant" and then select the destination tenant from the Owner drop down.
-![new-network-block.png](/docs/public/new-network-block.png)
-1. Submit your work.
-1. To apply the automatically created rules select the "External" breadcrumb in the header to navigate back to the networks dashboard and then select "Apply Rules" on the left menu or on the notification pop up.
-![net-block-rules.png](/docs/public/net-block-rules.png)
-1. To create a network from the new block for use inside of the tenant navigate to the tenants URL and login with the necessary credentials.
-1. Navigate to networks, then to the External network dashboard.
-1. Select "Network Blocks" in the left menu.
-1. Select the network block assigned to the tenant.
-1. Select "New Network" from the left menu.
-![new-net-from-block.png](/docs/public/new-net-from-block.png)
-1. Give the new network a name. All other details will be automatically filled out with the provided information from the CIDR. Edit any information within the new network form that the default selections do not satisfy.
-1. Submit your work to be redirected to the new networks dashboard. A new network with all of the necessary route and accept rules will be created for use. (Note: the new network will drop inbound traffic by default so you will need to add the appropriate firewall rules to allow inbound access.)
-1. Power on the network using "Power On" in the left menu.
-1. Assign any desired virtual machines and test connectivity.
-<br>
-<div style="text-align: center">
-  <a href="https://wiki.verge.io/public/kb"><button class="button-25" style="appearance: button; background-color: #64B5f6; border-radius: 8px; color: #ffffff; padding: 10px 21px;">🢀  Back to Knowledgebase</button></a>   
-<a href="https://www.verge.io/test-drive"><button class="button-25" style="appearance: button; background-color: #D9693B; border-radius: 8px; color: #ffffff; padding: 10px 21px;">Request Trial</button></a>
-</div>
+
+1. In the **VergeOS UI**, navigate to the **External Network** where the network block will originate.
+2. In the left menu, select **Network Blocks**, then click **New**.
+3. Enter the network block information in **CIDR notation** (e.g., a.b.c.d/n).
+4. To assign the block to a tenant at creation, set the **Owner Type** to **Tenant**, then select the tenant from the **Owner** drop-down.
+   ![new-network-block.png](/docs/public/new-network-block.png)
+5. Submit your work to create the block.
+6. To apply the automatically created rules, select the **External** breadcrumb in the header to return to the network dashboard. Then, select **Apply Rules** from the left menu or click the notification pop-up.
+   ![net-block-rules.png](/docs/public/net-block-rules.png)
+
+## Creating a Network from a Network Block
+
+1. Log in to the tenant's URL with the necessary credentials.
+2. Navigate to **Networks**, then go to the **External Network Dashboard**.
+3. In the left menu, select **Network Blocks**.
+4. Select the network block assigned to the tenant.
+5. Click **New Network** in the left menu.
+   ![new-net-from-block.png](/docs/public/new-net-from-block.png)
+6. Give the new network a **name**. The rest of the details will be pre-filled based on the CIDR information.
+7. Modify any details in the form if necessary, then submit to create the network.
+8. After creation, the system will redirect you to the new network's dashboard. The necessary routes and accept rules will be set up automatically, but note that **inbound traffic will be dropped by default**. Add appropriate firewall rules to allow inbound access.
+9. **Power on** the network using the option in the left menu.
+10. Assign any desired virtual machines to the network and **test connectivity**.
+

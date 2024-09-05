@@ -2,7 +2,7 @@
 title: How to Achieve Network Micro-Segmentation on VergeOS
 slug: how-to-achieve-network-micro-segmentation-on-vergeos
 description: A comprehensive guide on implementing network micro-segmentation using VergeOS features
-published: true
+draft: false
 date: 2024-08-04T14:30:00.000Z
 tags: micro-segmentation, network security, internal networks, network rules, VPN, tenant isolation, zero trust
 categories:

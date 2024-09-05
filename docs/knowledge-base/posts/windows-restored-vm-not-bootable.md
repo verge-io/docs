@@ -2,7 +2,7 @@
 title: Windows Restored VM Not Bootable
 slug: windows-restored-vm-not-bootable
 description: 
-published: true
+draft: false
 date: 2023-01-23T22:31:03.605Z
 tags: windows, restored, not bootable, not booting, not restarting, bsod, blue screen
 categories:

@@ -1,38 +1,44 @@
 ---
-title: Isolating a VM
-slug: isolating-a-vm
-description: 
-published: true
-date: 2023-01-24T19:25:06.933Z
-tags: vm, network, isolate
-categories:
-  - VM
-editor: markdown
-dateCreated: 2022-09-07T17:13:03.825Z
+title: Isolating a VM  
+slug: isolating-a-vm  
+description:  
+draft: false  
+date: 2023-01-24T19:25:06.933Z  
+tags: vm, network, isolate  
+categories:  
+  - VM  
+editor: markdown  
+dateCreated: 2022-09-07T17:13:03.825Z  
 ---
 
-## How to Isolate a Virtual Machine
+# How to Isolate a Virtual Machine
 
-There are several ways that this can be accomplished, and the best solution depends on a few considerations.
-<br>
-### Remove the attached network from the VM
+Isolating a virtual machine (VM) can be done in several ways, depending on the specific requirements of the environment. Below are two common methods for isolating a VM within VergeOS.
 
-In this scenario, the virtual machine will function as if it simply has no network cable plugged in.
-If the virtual machine requires no external connectivity to any other network, then before powering on the virtual machine edit the NIC and remove the attached network.  
-To accomplish this follow these steps:
-1. Navigate to the virtual machine dashboard
-1. On the virtual machine dashboard click on **NIC**s, in the left navigation menu to edit the machine's virtual network adapters.
-1. Select the NIC and click on **Edit** in the left navigation menu. 
-1. In the NIC configuration window, using the drop-down list options, change the Network from its current value to **--None--**.
-1. If there are multiple NICs, make sure to repeat this step for **all active/enabled** NICs attached to this VM.
-<br>
+## Remove the Attached Network from the VM
 
-### Create a new Internal Network
+This method essentially simulates unplugging a network cable from the VM, making it function without any external connectivity. It’s suitable when the VM doesn’t need to communicate with any other network.
 
-In this scenario, an administrator will create a new internal network that contains no other virtual machines. 
-If the VM requires external network connectivity, this is the preferred method.
-Information about creating an Internal Network can be found in the inline help within the category titled Networking in the section titled "Internal Networks".
-When creating a new internal network, make sure to set a Default Gateway so that this network has outbound access.
-After creating a new internal network, modify the virtual machine's NIC so that it is connected to the newly created internal network.
-<br>
-[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }
+### Steps to Remove the Network:
+
+1. Navigate to the **Virtual Machine Dashboard**.
+2. Click on **NICs** in the left navigation menu to access the VM's virtual network adapters.
+3. Select the NIC you want to edit and click **Edit** from the left navigation menu.
+4. In the **NIC configuration window**, use the drop-down list to change the **Network** from its current value to **--None--**.
+5. If the VM has multiple NICs, repeat this process for all active/enabled NICs.
+
+By removing the network from all NICs, the VM will no longer have network access.
+
+## Create a New Internal Network
+
+If the VM requires connectivity but still needs to be isolated from other networks, creating a **new internal network** with no other VMs connected is the preferred solution.
+
+### Steps to Create an Internal Network:
+
+1. From the VergeOS dashboard, navigate to **Networking** and create a new **Internal Network**.
+2. Set a **Default Gateway** for outbound access if needed.
+3. After the internal network is created, return to the **VM dashboard** and update the **NIC** to attach the VM to the newly created internal network.
+
+!!! note "For more detailed instructions on creating internal networks, refer to the VergeOS inline help under **Networking** in the **Internal Networks** section."
+
+This method allows the VM to have restricted network access while still providing outbound connectivity through the internal network.

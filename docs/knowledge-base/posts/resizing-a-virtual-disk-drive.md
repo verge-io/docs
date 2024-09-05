@@ -2,7 +2,7 @@
 title: Resizing a Virtual Disk Drive
 slug: resizing-a-virtual-disk-drive
 description: 
-published: true
+draft: false
 date: 2023-01-24T19:27:42.060Z
 tags: resize, disk, inside vm, inside virtual machine
 categories:

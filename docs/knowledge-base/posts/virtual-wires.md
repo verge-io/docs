@@ -2,7 +2,7 @@
 title: Virtual Wire Setup and Use
 slug: virtual-wire-setup-and-use
 description: Virtual Wire How To
-published: true
+draft: false
 date: 2024-03-15T21:42:46.809Z
 tags: vlan, virtual wire, network, tenant
 categories:
