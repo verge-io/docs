@@ -14,49 +14,79 @@ dateCreated: 2024-08-19T16:30:00.000Z
 
 # Updating a VergeOS System with Airgap License
 
-For VergeOS systems using air-gap licensing, software updates must be performed manually using an ISO file. This guide will walk you through the process of updating your air-gapped VergeOS system.
+## Overview
+
+!!! info "Key Points"
+    - This guide details the process of manually updating a VergeOS system using an air-gap license.
+    - The update is performed using an ISO file, ensuring that systems without internet access can be kept up-to-date.
+    - Ensure you have a valid air-gap license and the latest ISO file before starting.
+
+This guide provides a step-by-step process to manually update your air-gapped VergeOS system using an ISO file.
 
 ## Prerequisites
 
-- Access to the VergeOS Cloud Dashboard
-- The latest VergeOS update ISO file
-- A valid airgap license
+- Access to the VergeOS Cloud Dashboard.
+- The latest VergeOS update ISO file.
+- A valid air-gap license.
+- A recent backup of your VergeOS system.
 
-## Update Process
-
-Follow these steps to update your VergeOS system:
+## Steps
 
 1. **Download the Update ISO**
-   - Visit https://updates.verge.io/download
-   - Download the latest VergeOS release ISO file
+   - Visit the VergeOS updates page at [https://updates.verge.io/download](https://updates.verge.io/download).
+   - Download the latest VergeOS release ISO file.
+   
+   !!! tip "Pro Tip"
+       Ensure that the ISO file corresponds to your current VergeOS version to avoid compatibility issues.
 
 2. **Upload the ISO to VergeOS**
-   - Log in to your VergeOS Cloud Dashboard
-   - Navigate to the Media Images section
-   - Upload the downloaded ISO file to Media Images
+   - Log in to your VergeOS Cloud Dashboard.
+   - Navigate to **Media Images** in the left-hand menu.
+   - Upload the downloaded ISO file to the **Media Images** section.
+
+   !!! note
+       The upload process may take a few minutes depending on your network speed.
 
 3. **Configure Update Settings**
-   - Go to **System** > **Updates** > **Edit Settings**
-   - Change the **Update Source** to "-- Update ISO --"
-   - Select the ISO that you just uploaded to Media Images
-   - Click **Submit** to save the settings
+   - Go to **System** > **Updates** > **Edit Settings**.
+   - In the **Update Source** dropdown menu, select `-- Update ISO --`.
+   - Choose the ISO file you just uploaded from the **Media Images**.
+   - Click **Submit** to save the settings.
 
 4. **Perform the Update**
-   - In the Updates section, click **Check For Updates**
-   - Once updates are detected, click **Download**
-   - After the download completes, click **Install**
-   - When prompted, **Reboot** the system to apply the updates
+   - Return to the **Updates** section and click **Check For Updates**.
+   - Once the update is detected, click **Download**.
+   - After the download completes, click **Install**.
+   - Follow the prompts to **Reboot** the system to apply the updates.
 
-## Important Considerations
-
-- Always create a backup of your system before performing any software updates
-- Ensure that your airgap license is valid and up-to-date before initiating the update process
-- The update process may take some time. Do not interrupt the process once it has started
+   !!! warning "Important"
+       Do not interrupt the update process. Ensure that the system remains powered on and connected during the update.
 
 ## Troubleshooting
 
-If you encounter any issues during the update process:
+!!! warning "Common Issues"
+    - **Issue:** Update not detected after uploading the ISO.
+      - **Solution:** Ensure the ISO was uploaded correctly and reselect it in the Update Source settings.
+    
+    - **Issue:** Errors during the update process.
+      - **Solution:** Check system logs for detailed error messages and verify that your air-gap license is valid.
+    
+    - **Issue:** System fails to reboot after the update.
+      - **Solution:** Contact Verge support for assistance.
+      - 
+## Additional Resources
 
-1. Check the system logs for any error messages
-2. Ensure that the ISO file was downloaded and uploaded correctly
-3. Verify that your airgap license is valid and not expired
+- [VergeOS ISO Downloads](https://updates.verge.io/download)
+- [Sanpshots](/docs/product-guide/snapshots-overview/)
+- [VergeOS Product Guide](/docs/product-guide)
+
+## Feedback
+
+!!! question "Need Help?"
+    If you encounter any issues during the update process or have any questions, please reach out to our support team.
+
+---
+
+!!! note "Document Information"
+    - Last Updated: 2024-08-19
+    - VergeOS Version: 4.12.6

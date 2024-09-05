@@ -1,64 +1,108 @@
 ---
-title: Accessing the Verge.io UI from a VM  
-slug: accessing-the-verge_io-ui-from-a-vm  
-description:  
-published: true  
-date: 2023-01-24T19:21:32.815Z  
-tags: vm, access, ui, hairpin, hair-pin, hairpinning, hair-pinning  
-categories:  
-  - Network Rules  
-  - Network  
-editor: markdown  
-dateCreated: 2022-09-07T17:52:09.082Z  
+title: Accessing the Verge.io UI from a VM
+slug: accessing-the-verge_io-ui-from-a-vm
+description: Learn how to set up hair-pinning to access the VergeOS UI from a virtual machine within your environment.
+author: vergeOS Documentation Team
+published: true
+date: 2023-01-24T19:21:32.815Z
+tags: [vm, access, ui, hairpin, hair-pin, hairpinning, hair-pinning]
+categories:
+  - Network Rules
+  - Network
+editor: markdown
+dateCreated: 2022-09-07T17:52:09.082Z
 ---
 
-## How to Access the VergeOS UI from a VM
+# Accessing the Verge.io UI from a VM
 
-In networking terminology, this process is commonly known as hair-pinning. Hair-pinning occurs when a packet travels to an interface, goes out towards the Internet, but instead of continuing, it makes a “hairpin turn” and comes back in on the same interface.
+## Overview
 
-### Steps to Create a New Rule on the Internal Network
+!!! info "Key Points"
+    - Access the VergeOS UI from a VM within your environment
+    - Utilize hair-pinning network technique
+    - Create a specific network rule on the internal network
 
-To access the VergeOS UI from a VM running inside the platform, follow these steps to create a new rule:
+This article guides you through the process of setting up access to the VergeOS User Interface (UI) from a virtual machine (VM) running inside the VergeOS system. This is accomplished using a networking technique known as hair-pinning, where a packet travels to an interface, goes out towards the Internet, but instead of continuing, it makes a "hairpin turn" and comes back in on the same interface.
 
-1. **Navigate to the Internal Network**: Go to the internal network that the VM is currently connected to.
+## Prerequisites
 
-2. **Create a New Rule**:
+- A running VergeOS environment
+- A virtual machine (VM) within your VergeOS environment
+- Access to the VergeOS UI
+- Basic understanding of network rules in VergeOS
 
-   - Under **Rule**, set the following values:
-     - **Name**: Use a reference name, such as **hit ui**
-     - **Action**: Translate
-     - **Protocol**: TCP
-     - **Direction**: Incoming
-     - **Interface**: Auto
-     - **Pin**: No
+## Steps
 
-   - Under **Source**, set the following values:
-     - **Type**: Any / None
-     - **Source Ports/Ranges**: Leave this blank
+1. Navigate to the Internal Network
+   - Log into your VergeOS environment
+   - Go to the internal network that your target VM is connected to
 
-   - Under **Destination**, set the following values:
-     - **Type**: My Network Address
-     - **Destination Ports/Ranges**: 80, 443
+2. Create a New Rule
+   - Locate the option to create a new rule
+   - Configure the rule with the following settings:
+     
+     **Rule:**
+     - Name: Use a reference name, such as "Allow UI"
+     - Action: Translate
+     - Protocol: TCP
+     - Direction: Incoming
+     - Interface: Auto
+     - Pin: No
 
-   - Under **Target**, set the following values:
-     - **Type**: Other Network DMZ IP
-     - **Target Network**: Core
-     - **Target Ports/Ranges**: Leave this blank
+     **Source:**
+     - Type: Any / None
+     - Source Ports/Ranges: Leave blank
 
-3. **Submit the Rule**: Click **Submit** to save the rule. 
+     **Destination:**
+     - Type: My Network Address
+     - Destination Ports/Ranges: 80, 443
 
-4. **Apply the Rule**: Click **Apply Rules** to apply the new rule to the running network.
+     **Target:**
+     - Type: Other Network DMZ IP
+     - Target Network: Core
+     - Target Ports/Ranges: Leave blank
+
+3. Submit the Rule
+   - Click "Submit" to save the rule
+
+4. Apply the New Rule
+   - Click "Apply Rules" to activate the newly created rule
+
+5. Access the UI from the VM
+   - Open a web browser within your VM
+   - Navigate to the IP address of the internal network (e.g., if the internal network IP is 192.168.0.1, use this address)
+
+!!! tip "Pro Tip"
+    Always ensure that your VM's network settings are correctly configured to use the internal network where you've set up this rule.
+
+## Visual Guide
+
+Here's a visual representation of the rule configuration:
 
 ![hairpin.png](/docs/public/hairpin.png)
 
-### Accessing the VergeOS UI from the VM
+## Troubleshooting
 
-From within the VM, use a web browser to navigate to the IP address of the internal network instead of the standard address. For example, if the internal network has an IP address of 192.168.0.1, use this address to access the VergeOS platform.
+!!! warning "Common Issues"
+    - Problem: Unable to access the UI after creating the rule
+      - Solution: 
+        1. Verify that the rule is applied correctly
+        2. Check if the VM's network interface is on the correct internal network
+        3. Ensure no firewall rules are blocking the connection
 
+## Additional Resources
 
+- [Network Overview](/docs/product-guide/networkoverview)
+- [Network Rules](/docs/product-guide/networkrules)
+- [Creating an Internal Network](/docs/product-guide/internalnetworks)
 
+## Feedback
 
-<br>
-<div style="text-align: center">
-<a href="https://www.verge.io/test-drive" target="_blank"><button class="button-orange">Request Trial</button></a>
-</div>
+!!! question "Need Help?"
+    If you encounter any issues while setting up UI access or have questions about this process, please don't hesitate to contact our support team.
+
+---
+
+!!! note "Document Information"
+    - Last Updated: 2024-08-29
+    - VergeOS Version: 4.12.6

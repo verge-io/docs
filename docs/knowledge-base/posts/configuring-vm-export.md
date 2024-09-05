@@ -1,50 +1,95 @@
 ---
 title: Configuring a VM Export Volume
 slug: configuring-a-vm-export-volume
-description: How to configure the VergeOS NAS VM Export Volume
+description: How to configure the VergeOS NAS VM Export Volume for backup purposes.
 published: true
 date: 2024-02-27T19:42:16.752Z
 tags: vm export, export, backup, nas, snapshot
 categories:
   - Snapshot
   - Backup
+  - VM
+  - NAS
 editor: markdown
 dateCreated: 2023-05-25T19:53:15.389Z
 ---
 
-## How To Configure VM Export
+# How to Configure a VM Export Volume
 
-Within the VergeOS volume configuration, there is an option to create a volume that contains an export of selected VMs. This special volume can then be used to backup the VMs using 3^rd^ party backup software. This volume contains VM snapshots from the last time the VM Export was ran.
-<br>
+In VergeOS, you can create a volume specifically for exporting selected virtual machines (VMs). This export volume can then be used with third-party backup software to back up the VMs. The volume contains VM snapshots from the most recent export.
 
-### To configure this volume, follow these steps:
+## Steps to Configure a VM Export Volume
 
-1. **Edit any VMs** you want to export & check the option for "**Allow Export**" You can also choose to quiesce the VM images as well.
-2. Create the **NAS**.
-3. Start the **NAS**.
-4. Create a **NAS user**.
-5. **Create a new volume**. Set the Filesystem type to **VergeOS VM Export**
-1. Under "**Export VMs**", select **Start** to start the VM export.
-1. Answer **Yes** at the Confirmation screen.
-1. The status will change to "**Reset Needed - There is a newer VM export available for this volume. Reset the volume to refresh**".
-1. Select the **Reset** button from the **left menu**.
-1. Answer **Yes** at the Confirmation screen. The VM Export volume has now been created. 
-<br>
+### 1. Preparing the VMs for Export
 
-### How to setup a share to share the data.
+1. **Edit the VMs** you want to export:
+    - Navigate to the VM settings and enable the option for **Allow Export**. 
 
-1. **Create** a CIFS share to said volume. [https://wiki.verge.io/public/training/6-6](https://wiki.verge.io/public/training/6-6)
-1. **Add** the user we created above to the allowable users.
-1. **Browse** to **\\\IPorDNSnameoftheNAS\CIFSShareYouCreated**
-1. When prompted for credentials, **use the user we created above**. You can also enable Guest mode, but Windows users will need to edit the GPO or the Registry to connect using the Guest account.
-<br>
+### 2. Setting Up the NAS Service
 
-### Automating the export:
+To host the VM export volume, you will need to create and configure a NAS service:
 
-1. Create an **event** inside the VM Export Volume to schedule an export.
+1. Navigate to **NAS > NAS Services**.
+2. Click **New**.
+3. Provide **Name, Hostname, TimeZone, and Networking** for the NAS service.
+6. Click **Submit** to initialize the NAS service.
 
+### 3. Starting the NAS Service
 
+Once the NAS service is created:
 
+1. Select the NAS service from the list.
+2. Click **Power On** to bring the NAS online and prepare it to host the export volume.
 
-<br>
-[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }
+### 4. Creating a NAS User
+
+You’ll need to create a user to access the NAS:
+
+1. Navigate to **NAS > NAS Services > The NAS Service you created**.
+2. Click **NAS Users > New**.
+3. Provide a username and password.
+
+### 5. Creating a New Volume for VM Export
+
+1. Navigate to **NAS > Volumes > New**
+3. Provide a **Name** for the volume and choose **VergeOS VM Export** as the filesystem type.
+4. Select the appropriate NAS service to host the export volume.
+5. Make sure **Quiesced** is checked.
+6. Adjust the number of exports to store.
+7. Click **Submit**.
+
+### 6. Starting the VM Export
+
+1. Under **Export VMs**, select **Start** to initiate the VM export process.
+2. Confirm by clicking **Yes** at the prompt.
+
+## Setting up a CIFS Share for the Exported Data
+
+To access the exported VM snapshots, set up a CIFS share on the NAS volume:
+
+1. **Create a CIFS Share**:
+   - Navigate to **NAS > CIFS Shares > New**.
+   - Select the export volume you created earlier as the target volume.
+   - Provide a **Share Name** and assign the NAS user you created in step 4 to access the share.
+
+2. **Access the Share**:
+   - Browse to `\\IPorDNSnameoftheNAS\CIFSShareYouCreated`.
+   - Use the NAS user credentials when prompted.
+   
+   !!! note "For Windows Users"
+   You may need to edit the Group Policy (GPO) or modify the Windows Registry to connect using the Guest account if Guest mode is enabled.
+
+## Automating the VM Export
+
+You can schedule regular exports by setting up an automated event:
+
+1. Navigate to the **VM Export Volume**.
+2. Select **Events > New**.
+3. Select ***Scheduled** as the Task Triggered by.
+4. Provide a **Name** for the task.
+5. Select **VM Exports** for section.
+6. Ensure **VM Exports** as the volume you created previously.
+7. Configure the event to trigger the export at your desired intervals.
+8. Click **Submit**
+
+By following these steps, you'll have a properly configured VM export volume that can be used with third-party backup solutions, along with automated export scheduling.
