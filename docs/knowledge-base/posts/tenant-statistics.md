@@ -11,33 +11,25 @@ editor: markdown
 dateCreated: 2023-03-16T15:25:45.176Z
 ---
 
-
-> This information may not pertain to your particular pricing model. Consult your sales representative for more information.
-{.is-warning}
+!!! warning "This information may not pertain to your particular pricing model. Consult your sales representative for more information."
 
 ## Tenant Consumption Statistics:
 
 - Navigate to **Tenants Dashboard**
-- Browse for your tenant, Click **View**
+- Browse for your tenant, click **View**
 - Click on **History** in the left menu
-- Choose your month/year and click apply.
+- Choose your month/year and click **Apply**
 - Scroll down to the bottom.
+  
 ![consumptionstats-image_(14).png](/docs/public/consumptionstats-image_(14).png)
-<br>
 
-**RAM Consumption: Total RAM Allocated 95th percentile**
-**Storage Consumption: Tier X (Provisioned) add up all Tiers 95th percentile**
+**RAM Consumption**: Total RAM Allocated 95th percentile  
+**Storage Consumption**: Tier X (Provisioned) - add up all tiers at the 95th percentile
 
-> For RAM, tenants consume everything that they are allocated. If the Tenant is not using all the RAM that that it is allocated, reduce the RAM allocated amount to lower the consumption overall. 
-{.is-info}
-
-
-<br>
-[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }
-
+!!! info "For RAM, tenants consume everything that they are allocated. If the tenant is not using all the RAM that it is allocated, reduce the RAM allocated amount to lower overall consumption."
 
 ---
 
 !!! note "Document Information"
-    - Last Updated: 2024-08-29
-    - vergeOS Version: 4.12.6
+    - Last Updated: 2024-09-03
+    - VergeOS Version: 4.12.6

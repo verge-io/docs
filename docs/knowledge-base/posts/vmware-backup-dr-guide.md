@@ -15,18 +15,21 @@ dateCreated: 2022-08-31T17:20:02.684Z
 
 ## **Overview**
 The VergeOS VMware feature provides a direct interface with vSphere (storage independent) to run a backup agent for VMware virtual machines. The VergeOS agent initiates snapshots, with the ability to access both full and incremental backups for either a one-time import or ongoing backup and DR for vSphere environments.
-<br>
+
+---
 
 ### **Setting up VMware Backups - High-level Steps**
 -   **Create a VMware Service** (This creates a direct connection to the vSphere environment.)
 -   **Create Schedule(s).**
 -   **Assign Schedules to VMs** (different schedules can be assigned to different VMs.)
-<br>
+
+---
 
 ### Creating a VMware Service
 The first step to creating a backup/import of VMware VMs to VergeOS is to create a VMware Service.
 The VMware service establishes a direct agent connection with vSphere; network access and admin login credentials to the vSphere environment is required.
-<br>
+
+---
 
 ### To Create a New VMware Service:
 1.  From the **Main Dashboard**, click **Backup/DR.**
@@ -49,18 +52,17 @@ The VMware service establishes a direct agent connection with vSphere; network a
     -   ***Power On*** - Service will be powered on when power is restored (regardless of its state at the time of power loss).
 1.  Select a **Network** on which to run the VMware service.  
 
-> **Note:** DHCP is required on the selected network. 
-{.is-info}
+!!! note "DHCP is required on the selected network."
 
-<br>
+
+---
 
 ### vSphere Settings:
 ![dr1-1.png](/docs/public/dr1-1.png)
 
 1.  Enter the **vSphere DNS or IP** (required).  The address should be reachable from the network selected for the service. 
 
-> **Note:** It is recommended to connect to the vSphere cluster rather than an individual ESX(i) node.
-{.is-info}
+!!! note "It is recommended to connect to the vSphere cluster rather than an individual ESX(i) node."
 
 1.  The default **vSphere Port** is ***443***; this is the typical listening port for VMware client connections.  Change to alternate port if needed. 
 2.  Enter the **vSphere Use**r name.
@@ -72,14 +74,14 @@ The VMware service establishes a direct agent connection with vSphere; network a
 
 After the service is started, **double-click to bring up the VMWare Service Dashboard.** 
 
-<br>
+
+---
 
 ### Modify Advanced vSphere Settings (Optional):
 
 Once the service is  powered on, advanced vSphere settings can be changed, if desired.  
 
-> **Note:** default settings will be appropriate for most installations.
-{.is-info}
+!!! note "Default settings will be appropriate for most installations."
 
 Click **Edit** on the left menu.
 
@@ -90,7 +92,8 @@ Click **Edit** on the left menu.
 -   **Backup storage tier - the VergeOS storage tier in which to store backup data.   By default, this is set to tier 4.**  ***Note: Changing this setting affects new Full Backups only.  (In other words: if a backup has already taken place to a different tier, differential backups will continue to be stored in that tier; the new setting will take effect as soon as another Full backup is performed.*** 
 
 When vSphere settings have been changed as needed, click **Submit.**  
-<br>
+
+---
 
 ### Advanced VSphere Settings:
 
@@ -101,17 +104,20 @@ On the Dashboard, check the Status (top left). If the service successfully conn
 An Error Status indicates the connection was not made due to: incorrect login credentials, insecure SSL (without enabling the option for insecure SSL), invalid address, or a network issue reaching the VSphere system. 
 
 See Appendix A: Troubleshooting Connection Errors for more information.
-<br>
+
+---
 
 ## Creating a VMware Backup Schedule
 A schedule is a grouping of backup Tasks.  A single schedule might include various backups, such as hourly, daily, weekly and monthly backups, and allow for taking backups at different intervals, each with different retention rules.  Additionally, different types of backups can be included within the same schedule: Full (thick provisioned), Full (thin provisioned), and Differential. 
 
 Different schedules can be created to be applied to different VMs, for example a general schedule could be used for production VMs, while a less rigorous schedule is applied to development and testing VMs; yet another schedule that includes frequent backups with shorter retention might be applied to SQL VMs, etc. 
-<br>
+
+---
 
 ### Default Schedule
 When a new VMWare Service is created, a Schedule named “Default” is created automatically. This Schedule can be modified to fit your organization’s needs.  You can also create any number of new Schedules.  
-<br>
+
+---
 
 ### To Create a New Schedule:
 1.  From the **VMware Service Dashboard** (Main Dashboard -> Backup/DR → VMware -> double click VMware service in the list.)  
@@ -131,7 +137,8 @@ At this point the Schedule is just an empty container; one or more tasks need to
 
 1.  Enter a descriptive **Name** for the Task (for ex: Midnight\_7days; weekly\_1monthretention; yearly\_perpetual, etc.)
 2.  Select the desired Scheduling for the backup Task.  (Granular options allow for great flexibility in task scheduling.)
-<br>
+
+---
 
 ### Example Task Scheduling:
 
@@ -165,8 +172,8 @@ At this point the Schedule is just an empty container; one or more tasks need to
 **Example:** The entry: “*%m-%d-%Y:%H%M-sqlbackup*”, run on Jan 26, 2019 at 11AM produces a backup named “*01-26-2019:11:00-sqlbackup*”  
 
 12.  Select the desired **Backup Job Retention**; this is the amount of time to keep the backup.  (Units that can be selected: Minutes,  Days (default), Hours, Years, Forever). 
-> **Note:** After a backup is run, the expiration of individual Backup Job instances can be modified manually; backup job instances can also be manually deleted before the expiration date/time.
-{.is-info}
+
+!!! note "After a backup is run, the expiration of individual Backup Job instances can be modified manually; backup job instances can also be manually deleted before the expiration date/time."
 
 
 1.  The **Quiesce Snapshots** option can be selected to invoke the VMWare quiesce feature **(Note: VMware Guest Tools required.)**  When this option is enabled, VMWare pauses running processes on the guest operating system so that the file system contents are in a known consistent state when the snapshot is taken; this process might include such operations as flushing dirty buffers from the Operating System’s in-memory cache to disk, or other application-specific tasks. Consult VMware documentation for more information about the quiesce feature.
@@ -177,31 +184,31 @@ At this point the Schedule is just an empty container; one or more tasks need to
 
 -   **Differential** - only transfers changes since the last Full VMware  backup.  Because of the  way that differential backups are stored in the vSAN, a differential backup can be used directly and does not rely on a full backup or other differentials for a restore operation.  
 
-> **NOTE:**: This Requires Changed Block Tracking (CBT) enabled on vSphere VMs.
-{.is-info}
+!!! note "This requires Changed Block Tracking (CBT) enabled on vSphere VMs."
 
 -   **Full Backup (Thick provisioned)** \- Full Backup, requesting all blocks from VMware.
 -   **Full Backup (Thin provisioned)** - Full Backup, requesting only allocated blocks from VMware.
-> **NOTE:** This Requires Changed Block Tracking (CBT) enabled on vSphere VMs.
-{.is-info}
+
+!!! note "This requires Changed Block Tracking (CBT) enabled on vSphere VMs."
 
 **\*** Differential and Thin Provisioned Full backups  utilize the CBT vSphere feature.  Please see Appendix B for information and considerations regarding this feature.
-<br>
+
+---
 
 ### Using Differential and Full Backups
-> **NOTE:** A Full backup is needed initially and should also be done on a regular basis.  Differential backups are quicker and use fewer resources/bandwidth as only changes since the last full backup are requested.   A prudent strategy will include performing full backups regularly (ex: daily, weekly, bi-weekly), with differential backups at intervals in between.
-{.is-info}
-
+!!! note "A Full backup is needed initially and should also be done on a regular basis.  Differential backups are quicker and use fewer resources/bandwidth as only changes since the last full backup are requested.   A prudent strategy will include performing full backups regularly (ex: daily, weekly, bi-weekly), with differential backups at intervals in between."
 
 16.  When the Task is configured as desired, click **Submit.**  
 1.  You are returned to the Schedule page and the new task will appear in the Tasks section.  Click the **\+ Add Task** button and repeat the above steps to append additional tasks to the schedule. 
-<br>
+
+---
 
 ## Assigning Schedules
 Once the VMware service is created and successfully connects to the VSphere system, the list of discovered VMware Virtual Machines will appear on the VMware Service Dashboard.   
 ![dr8.png](/docs/public/dr8.png)
 By default, all VMs have their schedule set to --None--.
-<br>
+
+---
 
 ### To apply a Schedule to VM(s):
 
@@ -211,7 +218,8 @@ By default, all VMs have their schedule set to --None--.
 
 1.  **Select** the **Schedule** from the dropdown list and click **Submit.**
 2.  The Backup Schedule assigned to each VM is displayed in the VMware VMs listing.  
-<br>
+
+---
 ### Setting the Default Backup Schedule
 
 The default VM Backup Schedule can be defined to automatically assign a backup schedule to all new VMware VMs discovered by the service.   
@@ -221,11 +229,13 @@ The default VM Backup Schedule can be defined to automatically assign a backup s
 3.  Click **Submit** to save the change. 
 
 The Default Backup Schedule is displayed on the VMware Service Dashboard.
-<br>
+
+---
 ## Manual Backups
 
 Manual backups can also be performed on VMs using the VMware service; this can be helpful in creating a backup immediately before maintenance work,  such as a guest OS upgrade, application update, or other configuration changes. 
-<br>
+
+---
 ### To Perform a Manual VM Backup:
 
 1.  From the VMware Service Dashboard, click **Virtual Machines** on the left menu. 
@@ -239,7 +249,8 @@ The Manual Backup should appear at the top of the listing and will display a sta
 
 For manual backups, the *Name* displayed will be the name of the first VM selected for backup, and the *Schedule Task* column will indicate  a Manual backup.  Additional columns display the Number of VMs backed up (*VM Count*),  *Started* and *Finished* time and, the *Expires* setting for the backup. 
 
-<br>
+
+---
 
 ### **To Change the Name and/or Expiration of a Backup Job:** 
 
@@ -248,7 +259,8 @@ For manual backups, the *Name* displayed will be the name of the first VM select
 1.  The Backup Job Dashboard displays.  Click **Edit** on the left menu. 
 2.  Make **changes to Name/Expires fields** as desired. 
 3.  Click **Submit** to save the changes.
-<br>
+
+---
 ### **To Delete a Backup Job:**
 
 1.  **Double-click the Backup Job** in the listing.
@@ -256,23 +268,27 @@ For manual backups, the *Name* displayed will be the name of the first VM select
 3.  Click **Yes** to confirm the delete operation.
 
 ## Restores
-<br>
+
+---
 
 ### File-level
 The VM is imported to the VergeOS environment (From the *Backup Job Dashboard, double click the individual VM -> click Import VM*.)
 
 VM is powered on in the VergeOS environment where files can be extracted to the VergeOS NAS and accessed via CIFS or NFS.
-<br>
+
+---
 
 ### Restore systems to a VMware environment
 Individual VMs or entire VMware system backups can be pushed back to the VMware environment. 
-<br>
+
+---
 
 ### DR/Business Continuity
 VMware VMS are powered up in VergeOS from the backup.  Built-in Site-Sync provides the mechanism to synchronize VMware backups offsite to be prepared for quick recovery in the event of a disaster or primary facility outage. 
 
 ## Appendix A
-<br>
+
+---
 
 ### Troubleshooting VMware Connection Errors
 
@@ -285,8 +301,7 @@ Note: Check Logs (at the bottom of the Dashboard page) for possible additional i
 -   The network on which the VMware service is running must have access to the Vsphere address/port provided on port 443 (or port selected). 
 -   The network on which the VMware service is running must be DHCP.  
 
-> **Note:** The built-in Diagnostics engine can assist in testing the network connection.  (*VMware Services Dashboard -> View Service -> Diagnostics*)
-{.is-info}
+!!! note "The built-in Diagnostics engine can assist in testing the network connection.  (VMware Services Dashboard -> View Service -> Diagnostics)"
 
 -   **Verify Login Credentials to vsphere**
     -   Must be the correct username/password for a VSphere administrator account
@@ -295,12 +310,14 @@ Note: Check Logs (at the bottom of the Dashboard page) for possible additional i
     -   If using a self-signed certificate, the option to allow insecure certificates must be enabled.  To modify an existing VMware service: From the *VMware Service Dashboard -> Edit -> check the box for Disable SSL host certificate verification*
 
 ## Appendix B
-<br>
+
+---
 
 ### VMware’s Changed Block Tracking (CBT)
 
-Differential and Full(Thin Provisioned) backups utilize VMware’s CBT feature, to request only blocks that have changed since the last full backup, or blocks in use.  This can provide for quicker operations that utilize less bandwidth.  (There is a VergeOS option to automatically turn on CBT for all VMs.)  The following VMware KB article provides more information, including VMware requirements for using CBT: [_https://kb.vmware.com/s/article/1020128_](https://kb.vmware.com/s/article/1020128)
-<br>
+Differential and Full(Thin Provisioned) backups utilize VMware’s CBT feature, to request only blocks that have changed since the last full backup, or blocks in use.  This can provide for quicker operations that utilize less bandwidth.  (There is a VergeOS option to automatically turn on CBT for all VMs.)  The following VMware KB article provides more information, including VMware requirements for using CBT: [https://kb.vmware.com/s/article/1020128_](https://kb.vmware.com/s/article/1020128)
+
+---
 
 #### CBT Considerations/Cautions
 
@@ -311,10 +328,9 @@ The following strategies are recommended to mitigate potential risks posed by us
 1.  As a VMware customer/user, stay abreast of known issues and apply available updates and patches as they become available. In the past, there have been bugs involving the CBT feature, for which VMware has provided patches to fix known CBT defects.
 2.  Although VergeOS stores all backups in the vSAN such that they are stand-alone (any backup, including differential, can be used directly and does not rely on another backup for restore operations), a prudent backup strategy will include a schedule of both Full backups and Differential backups in between.  For example, a common schedule used by many organizations is to run a Full backup weekly or twice weekly and differentials on days in between.  
 3.  When possible, use Full-Thick Provisioned backup for those that are intended for long-term retention.
-<br>
-[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }
+
 ---
 
 !!! note "Document Information"
-    - Last Updated: 2024-08-29
-    - vergeOS Version: 4.12.6
+    - Last Updated: 2024-09-03
+    - VergeOS Version: 4.12.6

@@ -26,9 +26,9 @@ dateCreated: 2023-11-29T16:50:57.491Z
 ![core_config.jpg](/docs/public/core_config.jpg)
 
 <br>
-[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }
+
 ---
 
 !!! note "Document Information"
-    - Last Updated: 2024-08-29
-    - vergeOS Version: 4.12.6
+    - Last Updated: 2024-03-21
+    - vergeOS Version: 4.12.5
