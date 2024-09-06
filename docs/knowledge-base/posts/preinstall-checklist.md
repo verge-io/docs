@@ -4,7 +4,10 @@ slug: preinstallation-checklist
 description: 
 draft: false
 date: 2023-04-21T13:29:50.040Z
-tags: installation, checklist, install guide
+tags:
+  - installation
+  - checklist
+  - install guide
 categories:
   - Installation
 editor: markdown

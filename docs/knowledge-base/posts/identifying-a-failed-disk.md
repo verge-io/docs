@@ -4,7 +4,13 @@ slug: identifying-a-failed-disk-drive
 description: Learn how to identify and locate a failed disk drive in your VergeOS environment using diagnostic tools.
 draft: false
 date: 2023-01-24T19:14:51.610Z
-tags: disk, failed, troubleshooting, diagnostics, support, vsan
+tags:
+  - disk
+  - failed
+  - troubleshooting
+  - diagnostics
+  - support
+  - vsan
 categories:
   - Troubleshooting
   - vSAN

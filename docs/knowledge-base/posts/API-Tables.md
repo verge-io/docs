@@ -4,7 +4,16 @@ slug: api-tables-description
 description: 
 published: false
 date: 2023-10-06T14:10:54.764Z
-tags: api, tables, schema, definitions, description, methods, development, dev, devops
+tags:
+  - api
+  - tables
+  - schema
+  - definitions
+  - description
+  - methods
+  - development
+  - dev
+  - devops
 categories:
   - API
 editor: markdown

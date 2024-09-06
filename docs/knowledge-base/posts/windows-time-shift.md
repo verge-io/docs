@@ -4,7 +4,13 @@ slug: windows--time-shift
 description: Addressing time drift issues with Windows VMs on VergeOS.
 draft: false
 date: 2023-01-24T14:20:54.833Z
-tags: windows, time, ntp, utc, dst, drift
+tags:
+  - windows
+  - time
+  - ntp
+  - utc
+  - dst
+  - drift
 categories:
   - Troubleshooting
   - VM

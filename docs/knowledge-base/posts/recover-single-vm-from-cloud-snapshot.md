@@ -4,7 +4,12 @@ slug: recovering-a-single-vm-from-a-remote-cloud-snapshot
 description: 
 draft: false
 date: 2023-01-24T19:26:35.798Z
-tags: vm, snapshot, cloud, recover, single
+tags:
+  - vm
+  - snapshot
+  - cloud
+  - recover
+  - single
 categories:
   - VM
   - Troubleshooting

@@ -4,7 +4,13 @@ slug: configuring-proxy
 description: Configuring a Proxy Connection for a Tenant
 draft: false
 date: 2024-04-11T16:30:54.826Z
-tags: proxy setup, network, alia, tenant, DNS, proxy
+tags:
+  - proxy setup
+  - network
+  - alia
+  - tenant
+  - DNS
+  - proxy
 categories:
   - Tenant
   - Cluster Settings

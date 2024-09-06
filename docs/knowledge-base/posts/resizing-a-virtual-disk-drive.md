@@ -4,7 +4,11 @@ slug: resizing-a-virtual-disk-drive
 description: 
 draft: false
 date: 2024-01-24T19:27:42.060Z
-tags: resize, disk, inside vm, inside virtual machine
+tags:
+  - resize
+  - disk
+  - inside vm
+  - inside virtual machine
 categories:
   - VM
 editor: markdown

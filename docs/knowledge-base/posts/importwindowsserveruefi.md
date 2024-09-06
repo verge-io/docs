@@ -4,7 +4,18 @@ slug: importing-windows-server-with-uefi-into-vergeos
 description:  
 draft: false  
 date: 2024-04-03T13:55:51.067Z  
-tags: vm, windows, import, virtio, scsi, uefi, disk, qemu, vms, media file, guest agent  
+tags:
+  - vm
+  - windows
+  - import
+  - virtio
+  - scsi
+  - uefi
+  - disk
+  - qemu
+  - vms
+  - media file
+  - guest agent
 categories:  
   - Migration  
 editor: markdown  

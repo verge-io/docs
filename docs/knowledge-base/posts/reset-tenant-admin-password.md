@@ -4,7 +4,10 @@ slug: reset-a-tenants-administrative-password
 description: 
 draft: false
 date: 2023-01-24T19:20:02.121Z
-tags: tenant, password, reset
+tags:
+  - tenant
+  - password
+  - reset
 categories:
   - Tenant
 editor: markdown

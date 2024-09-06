@@ -4,7 +4,11 @@ slug: database-best-practices
 description: Best practices for optimizing database performance on Microsoft Windows in VergeOS.
 draft: false
 date: 2023-04-21T13:37:38.002Z
-tags: sql, best practice, database, db
+tags:
+  - sql
+  - best practice
+  - database
+  - db
 categories:
   - Best Practices
 editor: markdown

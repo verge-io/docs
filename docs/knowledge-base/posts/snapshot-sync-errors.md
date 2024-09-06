@@ -4,7 +4,9 @@ slug: snapshot-synchronization-errors-explained
 description: 
 draft: false
 date: 2023-01-24T19:17:04.187Z
-tags: snapshot, error
+tags:
+  - snapshot
+  - error
 categories:
   - Snapshot
   - Troubleshooting

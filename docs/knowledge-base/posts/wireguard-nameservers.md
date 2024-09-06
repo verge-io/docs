@@ -4,7 +4,12 @@ slug: wireguard--adding-nameserver-entries-to-client-configs
 description: 
 draft: false
 date: 2023-01-24T15:48:19.439Z
-tags: windows, wireguard, nameserver, config, linux
+tags:
+  - windows
+  - wireguard
+  - nameserver
+  - config
+  - linux
 categories:
   - VPN
 editor: markdown
@@ -13,50 +18,44 @@ dateCreated: 2022-09-13T15:37:08.228Z
 
 ## Wireguard Config Entries
 
-The following is instructions for adding a postup and postdown script to the **Wireguard** config.
-For **Windows**, this adds **Powershell** commands for adding and removing a **DNS Client Rule** when the client connects and disconnects.  
-
-<br>
+The following are instructions for adding a **PostUp** and **PostDown** script to the **Wireguard** config.  
+For **Windows**, this adds **Powershell** commands for adding and removing a **DNS Client Rule** when the client connects and disconnects.
 
 ### Windows Clients
-1. In the **Windows** Wireguard client, **edit the config**.
-1. Add the following commands in the **[Interface]** section
 
-<div class="codem">
-<b>PostUp</b> = powershell -command "Add-DnsClientNrptRule -Namespace '<b>domainname.com</b>' -NameServers '<b>10.1.10.2</b>'"
-<br>
-<b>PostDown</b> = powershell -command "Get-DnsClientNrptRule | Where { $_.Namespace -match '.*<b>domainname\.com</b>' } | Remove-DnsClientNrptRule -force"
-</div>
+1. In the **Windows** Wireguard client, **edit the config**.
+2. Add the following commands in the **[Interface]** section:
+
+```pwsh
+PostUp = powershell -command "Add-DnsClientNrptRule -Namespace 'domainname.com' -NameServers '10.1.10.2'"
+PostDown = powershell -command "Get-DnsClientNrptRule | Where { $_.Namespace -match '.*domainname\.com' } | Remove-DnsClientNrptRule -force"
+```
 
 3. Change the following entries to match **your** setup:
-- **Namespace** - A comma-separated list of domain names to add.
-- **NameServers** - A comma-separated list of name server IP addresses.
+    - **Namespace**: A comma-separated list of domain names to add.
+    - **NameServers**: A comma-separated list of nameserver IP addresses.
 
-> For the **-match** make sure to include a **backslash** (\\) before each **period** (.)
-{.is-info}
+!!! info "For the **-match**, make sure to include a **backslash** (\\) before each **period** (.)"
 
-<br>
+---
 
 ### Linux Clients
-This may be different based on your distribution of Linux.
+
+This may vary based on your Linux distribution.
 
 1. **Edit the config file** on the **Linux** client.
 2. In the **[Interface]** section, add the following:
 
-<div class="codem">
-<b>PostUp</b> = resolvectl dns %i <b>10.1.10.2</b>; resolvectl domain %i <b>domainname.com</b>
-<br><b>PreUp</b> = iptables -A INPUT -i wg -m state --state ESTABLISHED,RELATED -j ACCEPT
-<br><b>PreUp</b> = iptables -A INPUT -i wg -j REJECT
-<br><b>PostDown</b> = iptables -D INPUT -i wg -m state --state ESTABLISHED,RELATED -j ACCEPT
-<br><b>PostDown</b> = iptables -D INPUT -i wg -j REJECT
-</div>
+```bash
+PostUp = resolvectl dns %i 10.1.10.2; resolvectl domain %i domainname.com
+PreUp = iptables -A INPUT -i wg -m state --state ESTABLISHED,RELATED -j ACCEPT
+PreUp = iptables -A INPUT -i wg -j REJECT
+PostDown = iptables -D INPUT -i wg -m state --state ESTABLISHED,RELATED -j ACCEPT
+PostDown = iptables -D INPUT -i wg -j REJECT
+```
 
 3. Replace **10.1.10.2** with the correct IP of your **nameserver**.
-4. Replace domainname.com with your domain name.
-
-<br>
-[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }
-
+4. Replace **domainname.com** with your domain name.
 
 ---
 

@@ -4,7 +4,13 @@ slug: understanding-and-explaining-unexpected-vsan-growth
 description: 
 draft: false
 date: 2023-01-24T19:17:41.331Z
-tags: unexpected, unexplained, growth, disk growth, maleware, vsan
+tags:
+  - unexpected
+  - unexplained
+  - growth
+  - disk growth
+  - maleware
+  - vsan
 categories:
   - VM
   - Troubleshooting

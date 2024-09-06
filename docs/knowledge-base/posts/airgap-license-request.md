@@ -4,7 +4,12 @@ slug: requesting-an-airgap-license
 description: Guide on how to request and obtain an airgap license for VergeOS Systems with no outbound Internet access
 draft: false
 date: 2024-08-19T15:41:14.296Z
-tags: [airgap, license, verge, vergeos, air-gapped]
+tags:
+  - [airgap
+  - license
+  - verge
+  - vergeos
+  - air-gapped]
 categories:
   - Licensing
   - System Administration

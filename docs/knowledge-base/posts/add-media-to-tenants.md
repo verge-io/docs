@@ -5,7 +5,11 @@ description: Learn how to share media images from a Service Provider to Tenants 
 author: vergeOS Documentation Team
 draft: false
 date: 2023-01-24T19:20:42.724Z
-tags: [media, tenant, media images, tenants]
+tags:
+  - [media
+  - tenant
+  - media images
+  - tenants]
 categories:
   - Tenant
   - Media Images

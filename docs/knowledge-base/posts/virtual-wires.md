@@ -4,7 +4,11 @@ slug: virtual-wire-setup-and-use
 description: Virtual Wire How To
 draft: false
 date: 2024-03-15T21:42:46.809Z
-tags: vlan, virtual wire, network, tenant
+tags:
+  - vlan
+  - virtual wire
+  - network
+  - tenant
 categories:
   - Maintenance
   - Tenant

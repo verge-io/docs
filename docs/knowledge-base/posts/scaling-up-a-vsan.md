@@ -4,7 +4,10 @@ slug: scaling-up-a-vsan
 description: 
 draft: false
 date: 2023-01-24T19:15:40.203Z
-tags: scale up, vsan, scaling
+tags:
+  - scale up
+  - vsan
+  - scaling
 categories:
   - vSAN
   - Scale Up

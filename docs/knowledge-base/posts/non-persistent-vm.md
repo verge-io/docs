@@ -4,7 +4,10 @@ slug: making-a-nonpersistent-vm
 description: 
 draft: false
 date: 2023-01-24T19:25:26.189Z
-tags: vm, persistent, non persistent
+tags:
+  - vm
+  - persistent
+  - non persistent
 categories:
   - VM
 editor: markdown

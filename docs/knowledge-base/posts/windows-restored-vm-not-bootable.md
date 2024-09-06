@@ -4,7 +4,14 @@ slug: windows-restored-vm-not-bootable
 description: Troubleshooting steps for a Windows VM that is not booting after being restored from a snapshot.
 draft: false
 date: 2023-01-23T22:31:03.605Z
-tags: windows, restored, not bootable, not booting, not restarting, bsod, blue screen
+tags:
+  - windows
+  - restored
+  - not bootable
+  - not booting
+  - not restarting
+  - bsod
+  - blue screen
 categories:
   - Troubleshooting
   - VM

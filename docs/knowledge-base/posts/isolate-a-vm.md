@@ -4,7 +4,10 @@ slug: isolating-a-vm
 description:  
 draft: false  
 date: 2023-01-24T19:25:06.933Z  
-tags: vm, network, isolate  
+tags:
+  - vm
+  - network
+  - isolate
 categories:  
   - VM  
 editor: markdown  
