@@ -1,8 +1,8 @@
 ---
 title: Identifying a Failed Disk Drive
 slug: identifying-a-failed-disk-drive
-description: 
-published: true
+description: Learn how to identify and locate a failed disk drive in your VergeOS environment using diagnostic tools.
+draft: false
 date: 2023-01-24T19:14:51.610Z
 tags: disk, failed, troubleshooting, diagnostics, support, vsan
 categories:
@@ -12,17 +12,25 @@ editor: markdown
 dateCreated: 2022-08-10T18:33:28.938Z
 ---
 
-## How To Identify a Failed Disk In Your VergeOS Environment
+# How To Identify a Failed Disk In Your VergeOS Environment
 
-There is a diagnostic function in the VergeOS platform to turn on and off a disk drive's LED light for easy identification.
-To access this function follow these steps:
-1. Login into the VergeOS platform and navigate to the dashboard of the node that you'd like to identify a disk drive for removal.
-1. Once at the Node dashboard, on the left-hand column select the function labeled Diagnostics
-1. In the Diagnostics page, change the Query to LED Control (Drive)
-1. In the LED Control (Drive) details section, modify the Path to the drive that needs to be replaced.  (If in doubt, consult recent system alerts and logs for previous errors/warnings) Example: /dev/sdb
-1. In the LED Control (Drive) details set the State to `On` and click `Send` to activate the LED.
-1. After the drive has been physically located, set the State to `Off` and click `Send` to deactivate the LED.
+VergeOS offers a diagnostic function that allows system administrators to turn a disk drive's LED light on or off, making it easier to physically identify a failed or problematic drive. Follow the steps below to locate a failed disk drive for replacement.
 
-Additional Information about identifying and replacing a physical drive can be found in the inline help within the category titled Maintenance, under the section Drive Replacement.  This section walks through the entire drive replacement process.
-<br>
-[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }
+## Steps to Identify a Failed Disk
+
+1. **Log in** to the VergeOS UI and navigate to the **dashboard** of the node where the failed disk resides.
+2. On the **Node Dashboard**, locate and select **Diagnostics** from the left-hand column.
+3. In the **Diagnostics** page, change the **Query** to **LED Control (Drive)**.
+4. In the **LED Control (Drive)** details section:
+    - **Path**: Enter the path to the drive you want to locate (e.g., `/dev/sdb`). If you're unsure of the path, check the system alerts and logs for recent error or warning messages.
+    - **State**: Set the LED state to `On`, then click **Send** to activate the LED light on the drive.
+5. **Locate the drive** with the active LED indicator in your physical server.
+6. Once the drive has been identified and replaced, set the **State** to `Off` and click **Send** to deactivate the LED light.
+
+!!! note "For detailed instructions on drive replacement, refer to the Maintenance section in the inline help under **[Drive Replacement](docs/product-guide/DriveReplacement)**. This section guides you through the entire process."
+
+---
+
+!!! note "Document Information"
+    - Last Updated: 2024-08-29
+    - vergeOS Version: 4.12.6

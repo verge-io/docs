@@ -3,7 +3,7 @@ title: Accessing the Verge.io UI from a VM
 slug: accessing-the-verge_io-ui-from-a-vm
 description: Learn how to set up hair-pinning to access the VergeOS UI from a virtual machine within your environment.
 author: vergeOS Documentation Team
-published: true
+draft: false
 date: 2023-01-24T19:21:32.815Z
 tags: [vm, access, ui, hairpin, hair-pin, hairpinning, hair-pinning]
 categories:

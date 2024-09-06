@@ -2,7 +2,7 @@
 title: Generating System Diagnostics
 slug: generating-system-diagnostics
 description: 
-published: true
+draft: false
 date: 2024-03-28T15:48:32.403Z
 tags: troubleshooting, diagnostics, support
 categories:
@@ -13,7 +13,7 @@ dateCreated: 2022-09-02T15:35:21.754Z
 
 ## How to Generate System Diagnostics
 
-VergeOS support may request that a system administrator generate a system diagnostics file for detailed logs from the platform. The diagnostic file will include detailed logs from all nodes in a system and package it into a single compressed file which can easily be then uploaded to support automatically or downloaded to be sent via email or a 3^rd^ party file-sharing service.
+VergeOS support may request that a system administrator generate a system diagnostics file for detailed logs from the platform. The diagnostic file will include detailed logs from all nodes in a system and package it into a single compressed file which can easily be then uploaded to support automatically or downloaded to be sent via email or a 3rd party file-sharing service.
 
 Here are the steps to create and download a System Diagnostics file.
 1. **Log in** to the **parent/root** environment.  The diagnostics file needs to be generated at the **Parent environment**, rather than a **Tenant**.
@@ -26,5 +26,9 @@ Here are the steps to create and download a System Diagnostics file.
 1. When it is finished, the status will change to **'Sent to Support'**.
 1. When sending completes, you can also download the file to your local computer.
 
-<br>
-[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }
+
+---
+
+!!! note "Document Information"
+    - Last Updated: 2024-08-29
+    - vergeOS Version: 4.12.6

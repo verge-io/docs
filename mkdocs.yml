@@ -48,6 +48,7 @@ plugins:
       post_url_format: "{slug}"
       blog_toc: true
       archive: false
+      pagination_per_page: 50
   - search:
       prebuild_index: true
       lang:
@@ -130,7 +131,7 @@ nav:
     - Network Design: implementation-guide/network-design.md
     - Installation:
       - Pre-Installation: implementation-guide/pre-installation.md
-      - Bootable Media: implementation-guide/install-media.md
+      - Bootable Media: knowledge-base/bootable-usb.md
       - Installation: implementation-guide/installation-guide.md
       - Post-Installation: implementation-guide/post-installation.md
     - Install Additional Nodes:
@@ -139,10 +140,10 @@ nav:
       - Storage Nodes: implementation-guide/storage-nodes.md
     - Reference Architecture:
       - Edge / ROBO: reference-architecture/edge.md
-      - Enterprise Multi-Site: reference-architecture/enterprise-multi-site.md
+      #- Enterprise Multi-Site: reference-architecture/enterprise-multi-site.md
       - Cloud Providers: reference-architecture/csp.md
       - Life / Data Science: reference-architecture/data-science.md
-      - VMware Backup: reference-architecture/vmware-backup.md
+      #- VMware Backup: reference-architecture/vmware-backup.md
   - Knowledge Base:
     - knowledge-base/index.md
   - Product Guide:

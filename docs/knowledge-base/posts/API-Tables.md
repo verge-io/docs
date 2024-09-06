@@ -297,4 +297,9 @@ Tracks status for machines.
 ### machines
 Main table for machine data.
 
+
 ---
+
+!!! note "Document Information"
+    - Last Updated: 2024-08-29
+    - vergeOS Version: 4.12.6

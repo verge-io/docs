@@ -2,7 +2,7 @@
 title: Virtual Drive TRIM
 slug: virtual-drive-trim
 description: How to regain space on a virtual SSD
-published: true
+draft: false
 date: 2023-01-24T14:15:07.757Z
 tags: disk management, trim, discard, storage, vsan, disk performance, disk
 categories:
@@ -11,61 +11,94 @@ editor: markdown
 dateCreated: 2022-05-18T21:40:52.344Z
 ---
 
-## How to TRIM your drives
+# How to TRIM your Drives
 
-After importing a virtual machine from another hypervisor, sometimes the free space available inside the virtual machine does not match the free space reported to the VergeOS platform. This is likely the result of the virtual disk being thick provisioned from the VM source and the VergeOS hypervisor is unaware of the blank (unused) portion of the disk in terms of size. To correct this, a TRIM/UNMAP operation needs to be run on the virtual disk from within the virtual machine.
+After importing a virtual machine from another hypervisor, sometimes the free space available inside the virtual machine does not match the free space reported to the VergeOS platform. This discrepancy is often due to the virtual disk being thick-provisioned from the VM source, making VergeOS unaware of the unused disk space. To resolve this, a TRIM/UNMAP operation needs to be performed on the virtual disk from within the virtual machine.
 
-## Prerequisites for running a trim command
+## Prerequisites for Running a TRIM Command
 
-1. Edit the virtual drive(s) in question in the VergeOS UI and ensure 'Discard' is enabled
-1. Ensure the virtual drive(s) is using a drive type of virtIO-SCSI or SATA
-1. Ensure the virtual drive(s) is assigned to a Solid State tier (usually tier 1-3)
+1. Edit the virtual drive(s) in question in the VergeOS UI and ensure **Discard** is enabled.
+2. Ensure the virtual drive(s) is using a drive type of **virtIO-SCSI** or **SATA**.
+3. Ensure the virtual drive(s) is assigned to a **Solid State Tier** (usually tier 1-3).
 
 ## Trimming a Windows Drive
-To perform a manual TRIM operation in a Windows environment, perform the following steps:
 
-1. Launch Powershell as an admin user
-1. From the powershell prompt, type the following command:
-`Optimize-Volume -DriveLetter YourDriveLetter -ReTrim -Verbose`
-   Sample syntax:
-	 `Optimize-Volume -DriveLetter E -ReTrim -Verbose`
-1. Press enter and wait while the command completes.
+To perform a manual TRIM operation in a Windows environment, follow these steps:
 
-As the TRIM operation is progressing, administrators can watch the reported free space from the VergeOS dashboard begin to increase as the blank data on the volume is removed.
+1. Launch **PowerShell** as an admin user.
+2. From the PowerShell prompt, type the following command:
+   
+   ```powershell
+   Optimize-Volume -DriveLetter YourDriveLetter -ReTrim -Verbose
+   ```
+   Example:
+   
+   ```powershell
+   Optimize-Volume -DriveLetter E -ReTrim -Verbose
+   ```
+3. Press **Enter** and wait for the command to complete.
 
-If this does not resolve the issue, then trim is not enabled. To fix this, do the following from a command prompt (and then rerun the trim commands).
+As the TRIM operation progresses, you can watch the reported free space in the VergeOS dashboard increase as the blank data on the volume is removed.
 
-To check if trim is not enabled run an FSUTIL command: 
-`Fsutil behavior query disabledeletenotify`
-If the value is _1_ then trim is not enabled on this drive.
+If this does not resolve the issue, TRIM may not be enabled. To check if TRIM is enabled:
 
-To set the trim option
-``` Fsutil behavior set disabledeletenotify 0 ```
-<br>
+1. Run the following **FSUTIL** command:
+
+   ```powershell
+   fsutil behavior query disabledeletenotify
+   ```
+
+   If the value is **1**, TRIM is not enabled on the drive.
+
+2. To enable TRIM, run:
+
+   ```powershell
+   fsutil behavior set disabledeletenotify 0
+   ```
+
+   After enabling, rerun the TRIM commands.
+
 ## Trimming a Linux Drive
-Newer Linux distros have trim enabled by default using a systemd service or a cron job. You can check if automated TRIM is enabled by doing the following.
 
-***Ensure the prerequisite steps from above are complete***
+Newer Linux distros have TRIM enabled by default via a systemd service or a cron job. To check if automated TRIM is enabled, follow these steps:
 
-Example: Ubuntu Server
-1. Launch a terminal
-1. Enter the following commands to check status
-1. Check trim Timer/Schedule Status
-``` sudo systemctl status fstrim.time ```
-1. Check Trim Status
-``` sudo systemctl status ```
+1. **Ensure the prerequisite steps** from above are complete.
 
-If trim is enabled an operation will run on the next scheduled time based from the above commands.
+Example: **Ubuntu Server**
 
-If trim is not enabled a manual trim can be run from the terminal using ``` fstrim -av ```.
+1. Launch a terminal.
+2. Enter the following commands to check the status:
 
-> It is recommended you enable the automatic trim option to ensure data usage is reflected accurately between VergeOS and the guest OS.
-{.is-info}
+   - Check TRIM Timer/Schedule Status:
+     
+     ```bash
+     sudo systemctl status fstrim.timer
+     ```
+   - Check TRIM Service Status:
+     
+     ```bash
+     sudo systemctl status fstrim
+     ```
 
+If TRIM is enabled, an operation will run at the next scheduled time. If TRIM is not enabled, you can run a manual TRIM using:
 
-To enable auto trim run ``` sudo systemctl enable fstrim.time ``` from the terminal.
+```bash
+sudo fstrim -av
+```
 
-For more information on fstrim you can visit the man page [here](https://man7.org/linux/man-pages/man8/fstrim.8.html).
+!!! info
+    It is recommended to enable automatic TRIM to ensure that data usage is reflected accurately between VergeOS and the guest OS.
 
-<br>
-[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }
+To enable automatic TRIM, run:
+
+```bash
+sudo systemctl enable fstrim.timer
+```
+
+For more information on `fstrim`, visit the [man page](https://man7.org/linux/man-pages/man8/fstrim.8.html).
+
+---
+
+!!! note "Document Information"
+    - Last Updated: 2024-09-03
+    - VergeOS Version: 4.12.6

@@ -3,7 +3,7 @@ title: Accessing the User Interface from an Internal Network
 slug: accessing-the-user-interface-from-an-internal-network
 description: Learn how to set up an internal UI route to access the vergeOS User Interface from a virtual machine within your environment.
 author: vergeOS Documentation Team
-published: true
+draft: false
 date: 2023-01-24T14:20:54.833Z
 tags: [internal network, UI access, network routing, rule, UI, routing]
 categories:

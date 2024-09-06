@@ -2,7 +2,7 @@
 title: Changing Resolution on a UEFI VM
 slug: changing-resolution-on-a-uefi-vm
 description: Steps to change the screen resolution on a UEFI-based VM.
-published: true
+draft: false
 date: 2023-11-15T21:13:25.425Z
 tags: vm, uefi, resolution
 categories:
@@ -37,3 +37,9 @@ In a UEFI-based virtual machine (VM), the screen resolution is controlled by the
 - UEFI settings may vary slightly depending on the VM and configuration, so some steps may look a little different in certain environments.
 
 By following these steps, you can successfully adjust the screen resolution for your UEFI-based VM.
+
+---
+
+!!! note "Document Information"
+    - Last Updated: 2024-08-29
+    - vergeOS Version: 4.12.6

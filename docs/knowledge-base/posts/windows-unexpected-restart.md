@@ -2,7 +2,7 @@
 title: Reasons a Windows VM Restarted Unexpectedly
 slug: reasons-a-windows-vm-restarted-unexpectedly
 description: 
-published: true
+draft: false
 date: 2023-01-24T14:19:20.724Z
 tags: vm, windows, restart, restarted, rebooted, unexpectedly
 categories:
@@ -34,3 +34,8 @@ From the Log view, search through (or filter the results) under the Message sect
 
 <br>
 [Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }
+---
+
+!!! note "Document Information"
+    - Last Updated: 2024-08-29
+    - vergeOS Version: 4.12.6

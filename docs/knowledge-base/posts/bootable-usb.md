@@ -2,7 +2,7 @@
 title: Creating Bootable Installation Media
 slug: creating-bootable-installation-media
 description: How to create a bootable USB to install VergeOS.
-published: true
+draft: false
 date: 2023-03-27T18:31:37.067Z
 tags: iso, rufus, bootable, usb
 categories:
@@ -43,8 +43,6 @@ This guide explains how to create a bootable USB to install VergeOS on different
 
 1. **Download the VergeOS installation ISO** from [https://updates.verge.io/download](https://updates.verge.io/download).
 
-    !!! note
-        This may not be the most recent version. Check with your account representative for the latest version.
 
 2. **Insert a USB drive** into your computer.
 
@@ -66,8 +64,6 @@ This guide explains how to create a bootable USB to install VergeOS on different
 
 1. **Download the VergeOS installation ISO** from [https://updates.verge.io/download](https://updates.verge.io/download).
 
-    !!! note
-        This may not be the most recent version. Check with your account representative for the latest version.
 
 2. **Insert a USB drive** into your computer.
 
@@ -85,3 +81,9 @@ This guide explains how to create a bootable USB to install VergeOS on different
 ---
 
 By following these steps for your specific operating system, you'll have a bootable USB ready to install VergeOS on your server.
+
+---
+
+!!! note "Document Information"
+    - Last Updated: 2024-08-29
+    - vergeOS Version: 4.12.6

@@ -2,7 +2,7 @@
 title: How to Achieve Network Micro-Segmentation on VergeOS
 slug: how-to-achieve-network-micro-segmentation-on-vergeos
 description: A comprehensive guide on implementing network micro-segmentation using VergeOS features
-published: true
+draft: false
 date: 2024-08-04T14:30:00.000Z
 tags: micro-segmentation, network security, internal networks, network rules, VPN, tenant isolation, zero trust
 categories:
@@ -116,3 +116,9 @@ Use port mirroring to monitor traffic:
 
 By utilizing these features and following these steps, you can create a highly segmented network architecture on VergeOS, implementing zero trust principles and reducing the potential attack surface.
 
+
+---
+
+!!! note "Document Information"
+    - Last Updated: 2024-08-29
+    - vergeOS Version: 4.12.6

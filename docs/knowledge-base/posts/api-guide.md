@@ -2,7 +2,7 @@
 title: API Guide
 slug: verge-api-guide
 description: A comprehensive guide to using the VergeOS API.
-published: true
+draft: false
 date: 2024-09-02T16:54:06.293Z
 tags: api, tables, schema, definitions, description, methods, development, dev, devops
 categories:
@@ -498,3 +498,9 @@ VergeOS uses standard HTTP status codes to indicate the result of an API request
 - **500 Internal Server Error**: A server error occurred.
 
 
+
+---
+
+!!! note "Document Information"
+    - Last Updated: 2024-08-29
+    - vergeOS Version: 4.12.6

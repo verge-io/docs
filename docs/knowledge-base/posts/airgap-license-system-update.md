@@ -2,7 +2,7 @@
 title: Updating a VergeOS System with Airgap License
 slug: updating-vergeos-system-with-airgap-license
 description: Step-by-step guide on how to perform a software update on a VergeOS system using air-gap licensing
-published: true
+draft: false
 date: 2024-08-19T16:30:00.000Z
 tags: airgap, license, verge, vergeos, air-gapped, software update, system update
 categories:

@@ -2,7 +2,7 @@
 title: Pre-installation Checklist
 slug: preinstallation-checklist
 description: 
-published: true
+draft: false
 date: 2023-04-21T13:29:50.040Z
 tags: installation, checklist, install guide
 categories:
@@ -14,28 +14,34 @@ dateCreated: 2022-10-10T19:52:07.207Z
 ## Main Items
 - [ ] Site Survey completed and approved by VergeOS
 - [ ] ISO downloaded and installed on a USB drive
-- [ ] Encryption Key USB installed and ready (if enabling encryption)
-- [ ] Nodes powered up with ISO booted to VergeOS Install screen
-- [ ] Crash cart ready if applicable
-- [ ] Remote screen share capability or remote IPMI access (WAN or VPN)
+- [ ] Encryption Key USB prepared (if enabling encryption)
+- [ ] Nodes powered up with ISO booted to the VergeOS Install screen
+- [ ] Crash cart ready, if applicable
+- [ ] Remote screen share capability or remote IPMI access (via WAN or VPN)
 
 ## Hardware
-- [ ] Hardware burn-in complete
-- [ ] All Drives setup for JBOD, **NO RAID**
-- [ ] BIOS set to proper boot settings (Legacy / Dual / UEFI) **UEFI is required if all drives are NVMe**
-- [ ] Redundant Power supplies setup and connected (recommended)
+- [ ] Hardware burn-in completed
+- [ ] All drives set up for **JBOD** (No RAID)
+- [ ] BIOS configured to the proper boot settings (Legacy / Dual / UEFI)
+    - **Note:** UEFI is required if all drives are NVMe
+- [ ] Redundant power supplies connected and set up (recommended)
 - [ ] IPMI ports patched and configured
-- [ ] IPMI setup / configured / tested
-- [ ] Latest IPMI firmware (recommended)
-- [ ] Test IPMI remote console capability (in case of incorrect licensing)
+- [ ] IPMI setup tested and configured
+- [ ] Latest IPMI firmware installed (recommended)
+- [ ] Remote console capability tested via IPMI (in case of licensing issues)
 
 ## Network
 - [ ] All switches online and tested
-- [ ] All cables patched
+- [ ] All cables patched and connected
 - [ ] All VLANs configured (core and external)
 - [ ] All switch ports configured (core and external)
-- [ ] 2 NICs per node minimum and separate switches
-- [ ] Correct Supported SFP modules (if applicable)
-- [ ] Correct IPs validated and available
-<br>
-[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }
+- [ ] Minimum of 2 NICs per node with connections to separate switches
+- [ ] Correct supported SFP modules in use (if applicable)
+- [ ] IP addresses validated and available
+
+
+---
+
+!!! note "Document Information"
+    - Last Updated: 2024-08-29
+    - vergeOS Version: 4.12.6

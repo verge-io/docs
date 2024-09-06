@@ -2,7 +2,7 @@
 title: Windows Disks Showing Offline After Restarting
 slug: windows-disks-showing-offline-after-restarting
 description: 
-published: true
+draft: false
 date: 2023-01-24T14:16:57.949Z
 tags: windows, offline, restarting, disks
 categories:
@@ -20,8 +20,14 @@ Occasionally when restarting, Windows may detect a hardware change, which is mor
 When windows detects a hardware change, it may not bring secondary virtual disks online automatically.
 To change this to the recommended setting run the following Windows PowerShell:
 
-`Set-StorageSetting -NewDiskPolicy OnlineAll`
+```ps1con
+Set-StorageSetting -NewDiskPolicy OnlineAll
+```
 
 Additionally, this can be done from the command line using diskpart or from Disk Management.
-<br>
-[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }
+
+---
+
+!!! note "Document Information"
+    - Last Updated: 2024-08-10
+    - vergeOS Version: 4.11

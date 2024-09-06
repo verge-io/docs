@@ -3,7 +3,7 @@ title: Sharing Media Images to Tenants
 slug: sharing-media-images-to-tenants
 description: Learn how to share media images from a Service Provider to Tenants in the VergeOS system.
 author: vergeOS Documentation Team
-published: true
+draft: false
 date: 2023-01-24T19:20:42.724Z
 tags: [media, tenant, media images, tenants]
 categories:

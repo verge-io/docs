@@ -2,7 +2,7 @@
 title: Customizing the User Interface
 slug: customizing-the-user-interface
 description: Guide on how to customize branding and colors in the VergeOS UI.
-published: true
+draft: false
 date: 2023-01-23T22:24:24.831Z
 tags: branding, color, dashboard, logo
 categories:
@@ -90,3 +90,9 @@ Here are all the elements you can modify for VergeOS branding:
 ---
 
 By following these steps and using the available options, you can fully customize the VergeOS UI to reflect your organization's brand. Make sure to save your settings once you're satisfied with the changes.
+
+---
+
+!!! note "Document Information"
+    - Last Updated: 2024-08-29
+    - vergeOS Version: 4.12.6

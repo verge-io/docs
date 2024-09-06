@@ -2,7 +2,7 @@
 title: Wireguard - Setup Remote Access VPN
 slug: wireguard--setup-remote-access-vpn
 description: How to setup a Remote Access VPN using Wireguard
-published: true
+draft: false
 date: 2024-02-06T18:49:12.726Z
 tags: network, vpn, wireguard, remote access, networking, 4.11
 categories:
@@ -200,3 +200,8 @@ If you are not able to ping the **Remote Gateway** then you have something block
 
 <br>
 [Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }
+---
+
+!!! note "Document Information"
+    - Last Updated: 2024-08-29
+    - vergeOS Version: 4.12.6

@@ -2,30 +2,41 @@
 title: Resizing a Virtual Disk Drive
 slug: resizing-a-virtual-disk-drive
 description: 
-published: true
-date: 2023-01-24T19:27:42.060Z
+draft: false
+date: 2024-01-24T19:27:42.060Z
 tags: resize, disk, inside vm, inside virtual machine
 categories:
   - VM
 editor: markdown
-dateCreated: 2022-07-11T17:45:53.753Z
+dateCreated: 2024-07-11T17:45:53.753Z
 ---
 
-## How to Resize a Disk Drive Inside a Virtual Machine
+# How to Resize a Virtual Disk Drive
 
+!!! info "Note"
+    Drives can only be increased in size; they cannot be reduced. Verify whether your guest OS supports resizing without a power cycle, particularly for Virtio-SCSI drives.
 
-Information about resizing a particular VM disk drive can be found in the inline help within the category titled, Virtual Machines, under the section labeled **'Modify a VM Drive'**.
+To resize a virtual disk drive within a VM, follow these steps:
 
-**Some items of note:**
-> **NOTE:** If the VM configuration is set to allow hot-plugging, the disk interface is set to 'Virtio-SCSI' and the guest Operating System (OS) supports it, drive size usually can be added without power cycling the VM.
-{.is-info}
+1. From the **VM Dashboard**, click **Drives** in the left menu.
+2. Select the drive to be modified.
+3. Click **Edit** in the left menu.
+4. Modify the drive size as desired.
+5. Click **Submit**.
 
+## Important Notes
 
-> **WARNING:** Drives cannot be reduced in size. (Inside the guest OS, Partitions may be able to be resized but not drives.)
-> {.is-danger}
+!!! info "Note"
+    If the VM configuration allows hot-plugging, the disk interface is set to **Virtio-SCSI**, and the guest Operating System (OS) supports it, the drive size can typically be increased without power cycling the VM.
 
-> **WARNING:** Modifications to drive size will most likely require corresponding modifications within the guest Operating System to use the newly created space.
-> {.is-danger}
+!!! danger "Warning"
+    Drives cannot be reduced in size. While partitions may be resized inside the guest OS, the disk drive itself cannot be shrunk.
 
-<br>
-[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }
+!!! danger "Warning"
+    Modifications to drive size will most likely require corresponding changes within the guest Operating System to utilize the newly added space.
+
+---
+
+!!! note "Document Information"
+    - Last Updated: 2024-08-29
+    - vergeOS Version: 4.12.6
