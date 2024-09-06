@@ -131,7 +131,7 @@ nav:
     - Network Design: implementation-guide/network-design.md
     - Installation:
       - Pre-Installation: implementation-guide/pre-installation.md
-      - Bootable Media: knowledge-base/bootable-usb.md
+      - Bootable Media: implementation-guide/install-media.md
       - Installation: implementation-guide/installation-guide.md
       - Post-Installation: implementation-guide/post-installation.md
     - Install Additional Nodes:
