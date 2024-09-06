@@ -4,7 +4,11 @@ slug: routing-between-internal-vergeio-networks
 description: 
 draft: false
 date: 2023-01-24T15:45:22.430Z
-tags: routing, internal, route, networks
+tags:
+  - routing
+  - internal
+  - route
+  - networks
 categories:
   - Network
   - Network Rules

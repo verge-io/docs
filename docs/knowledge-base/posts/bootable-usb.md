@@ -4,7 +4,11 @@ slug: creating-bootable-installation-media
 description: How to create a bootable USB to install VergeOS.
 draft: false
 date: 2023-03-27T18:31:37.067Z
-tags: iso, rufus, bootable, usb
+tags:
+  - iso
+  - rufus
+  - bootable
+  - usb
 categories:
   - Installation
 editor: markdown

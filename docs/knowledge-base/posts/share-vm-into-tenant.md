@@ -4,7 +4,10 @@ slug: sharing-a-vm-into-a-tenant
 description: 
 draft: false
 date: 2023-01-24T19:28:10.839Z
-tags: vm, tenant, share
+tags:
+  - vm
+  - tenant
+  - share
 categories:
   - Tenant
   - VM

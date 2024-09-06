@@ -4,7 +4,13 @@ slug: vm-network-connectivity-issues
 description: 
 draft: false
 date: 2023-01-24T19:28:39.954Z
-tags: vm, networking, NIC, IP, virtio, troubleshooting
+tags:
+  - vm
+  - networking
+  - NIC
+  - IP
+  - virtio
+  - troubleshooting
 categories:
   - Troubleshooting
   - VM

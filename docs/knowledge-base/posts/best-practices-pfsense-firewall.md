@@ -4,7 +4,11 @@ slug: running-a-pfsense-virtual-firewall
 description: Best practices for deploying and managing pfSense as a virtual firewall within VergeOS.
 draft: false
 date: 2023-01-24T19:25:40.944Z
-tags: pfsense, firewall, best, practice
+tags:
+  - pfsense
+  - firewall
+  - best
+  - practice
 categories:
   - Firewall
   - Best Practices

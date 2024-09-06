@@ -4,7 +4,9 @@ slug: exporting-a-virtual-machine
 description: Learn how to export a virtual machine from VergeOS and download its disk as a .raw file.
 draft: false
 date: 2023-01-24T19:22:21.109Z
-tags: vm, export
+tags:
+  - vm
+  - export
 categories:
   - Backup
   - VM

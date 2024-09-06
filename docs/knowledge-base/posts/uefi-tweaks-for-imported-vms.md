@@ -7,7 +7,14 @@ date: 2023-01-24T14:15:45.862Z
 categories:
   - VM
   - Troubleshooting
-tags: vm, import, uefi, secure boot, troubleshooting, bios, boot order
+tags:
+  - vm
+  - import
+  - uefi
+  - secure boot
+  - troubleshooting
+  - bios
+  - boot order
 editor: markdown
 dateCreated: 2022-06-28T14:46:35.084Z
 ---

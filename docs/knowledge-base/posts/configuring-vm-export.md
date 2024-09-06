@@ -4,7 +4,12 @@ slug: configuring-a-vm-export-volume
 description: How to configure the VergeOS NAS VM Export Volume for backup purposes.
 draft: false
 date: 2024-02-27T19:42:16.752Z
-tags: vm export, export, backup, nas, snapshot
+tags:
+  - vm export
+  - export
+  - backup
+  - nas
+  - snapshot
 categories:
   - Snapshot
   - Backup

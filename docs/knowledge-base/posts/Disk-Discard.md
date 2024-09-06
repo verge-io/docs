@@ -4,7 +4,14 @@ slug: vm-disk-discard
 description: Managing disk discard settings for virtual machines in VergeOS to optimize storage usage.
 draft: false
 date: 2023-09-12T16:53:09.094Z
-tags: disk management, trim, discard, storage, vsan, disk performance, disk
+tags:
+  - disk management
+  - trim
+  - discard
+  - storage
+  - vsan
+  - disk performance
+  - disk
 categories:
   - Best Practices
   - VM

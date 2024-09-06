@@ -4,7 +4,11 @@ slug: network-blocks
 description: Creating Network Blocks
 draft: false
 date: 2024-01-03T18:42:31.354Z
-tags: network, networking, network blocks, subnet
+tags:
+  - network
+  - networking
+  - network blocks
+  - subnet
 categories:
   - Network
 editor: markdown

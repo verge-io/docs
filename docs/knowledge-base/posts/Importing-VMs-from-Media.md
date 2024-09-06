@@ -4,7 +4,25 @@ slug: import-vms-from-media
 description: Learn how to import VMs using media images into VergeOS.
 draft: false
 date: 2024-02-06T15:26:24.755Z
-tags: vm, import, boot, sata, ide, media, images, scsi, secure boot, disk, media images, not bootable, not booting, troubleshooting, troubleshoot, vm wont boot, wont start, import vm
+tags:
+  - vm
+  - import
+  - boot
+  - sata
+  - ide
+  - media
+  - images
+  - scsi
+  - secure boot
+  - disk
+  - media images
+  - not bootable
+  - not booting
+  - troubleshooting
+  - troubleshoot
+  - vm wont boot
+  - wont start
+  - import vm
 categories:
   - Migration
   - Troubleshooting

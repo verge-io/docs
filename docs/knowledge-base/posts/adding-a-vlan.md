@@ -4,7 +4,9 @@ slug: vlan-creation
 description: Adding a VLAN to the Verge.io Environment
 draft: false
 date: 2023-06-06T14:17:24.473Z
-tags: [vlan, networking]
+tags:
+  - [vlan
+  - networking]
 categories:
   - Network
 editor: markdown

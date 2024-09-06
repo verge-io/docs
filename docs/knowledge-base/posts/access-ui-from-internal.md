@@ -5,7 +5,13 @@ description: Learn how to set up an internal UI route to access the vergeOS User
 author: vergeOS Documentation Team
 draft: false
 date: 2023-01-24T14:20:54.833Z
-tags: [internal network, UI access, network routing, rule, UI, routing]
+tags:
+  - [internal network
+  - UI access
+  - network routing
+  - rule
+  - UI
+  - routing]
 categories:
   - Network Rules
 editor: markdown

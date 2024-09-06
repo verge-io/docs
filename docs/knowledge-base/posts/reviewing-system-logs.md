@@ -4,7 +4,11 @@ slug: system-logs
 description: 
 draft: false
 date: 2023-08-30T18:05:00.332Z
-tags: logs, cluster, troubleshooting, support
+tags:
+  - logs
+  - cluster
+  - troubleshooting
+  - support
 categories:
   - Troubleshooting
 editor: markdown

@@ -4,7 +4,11 @@ slug: windows--slow-to-format-a-new-disk
 description: Troubleshooting slow disk formatting in Windows VMs.
 draft: false
 date: 2023-01-23T22:31:24.436Z
-tags: vm, windows, slow, format
+tags:
+  - vm
+  - windows
+  - slow
+  - format
 categories:
   - Troubleshooting
   - VM

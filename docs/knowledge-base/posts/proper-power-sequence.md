@@ -4,7 +4,12 @@ slug: proper-power-sequence-for-vergeos
 description: Proper Power Sequence
 draft: false
 date: 2023-01-23T22:25:43.163Z
-tags: vergeOS, shutdown, power on, troubleshooting, maintenance
+tags:
+  - vergeOS
+  - shutdown
+  - power on
+  - troubleshooting
+  - maintenance
 categories:
   - Best Practices
   - Troubleshooting

@@ -4,7 +4,17 @@ slug: troubleshooting-nas-shares
 description: 
 published: false
 date: 2023-09-18T15:54:21.904Z
-tags: cifs, nas, nfs, shares, volumes, troubleshooting, troubleshoot, guest, lanmanager, smb
+tags:
+  - cifs
+  - nas
+  - nfs
+  - shares
+  - volumes
+  - troubleshooting
+  - troubleshoot
+  - guest
+  - lanmanager
+  - smb
 categories:
   - Troubleshooting
   - NAS

@@ -4,7 +4,14 @@ slug: importing-a-physicalvirtual-machine-into-vergeio
 description: Learn how to use the VergeOS Clone Utility to import physical or virtual machines into the VergeOS environment.
 draft: false
 date: 2024-02-07T14:21:34.627Z
-tags: vtov, ptov, p2v, v2v, import, migrate, clone
+tags:
+  - vtov
+  - ptov
+  - p2v
+  - v2v
+  - import
+  - migrate
+  - clone
 categories:
   - Migration
 editor: markdown

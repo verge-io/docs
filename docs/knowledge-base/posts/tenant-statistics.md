@@ -4,7 +4,11 @@ slug: viewing-tenant-consumption-statistics
 description: 
 draft: false
 date: 2023-03-16T15:34:52.280Z
-tags: tenant, stats, dashboard, consumption
+tags:
+  - tenant
+  - stats
+  - dashboard
+  - consumption
 categories:
   - Tenant
 editor: markdown

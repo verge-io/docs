@@ -4,7 +4,11 @@ slug: setting-up-an-ipsec-vpn
 description: How to create and configure an IPsec VPN in VergeOS.
 draft: false
 date: 2024-02-05T18:35:40.364Z
-tags: ipsec, vpn, dmz, security
+tags:
+  - ipsec
+  - vpn
+  - dmz
+  - security
 categories:
   - VPN
 editor: markdown

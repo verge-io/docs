@@ -4,7 +4,12 @@ slug: scaling-up-vs-scaling-out
 description: Understanding different methods to add resources to your VergeOS environment
 draft: false
 date: 2023-01-24T19:16:07.815Z
-tags: [scaling, up, out, adding resources, add disk]
+tags:
+  - [scaling
+  - up
+  - out
+  - adding resources
+  - add disk]
 categories:
   - Scale Up
   - Scale Out

@@ -5,7 +5,14 @@ description: Learn how to set up hair-pinning to access the VergeOS UI from a vi
 author: vergeOS Documentation Team
 draft: false
 date: 2023-01-24T19:21:32.815Z
-tags: [vm, access, ui, hairpin, hair-pin, hairpinning, hair-pinning]
+tags:
+  - [vm
+  - access
+  - ui
+  - hairpin
+  - hair-pin
+  - hairpinning
+  - hair-pinning]
 categories:
   - Network Rules
   - Network

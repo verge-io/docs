@@ -4,7 +4,13 @@ slug: managing-media-images
 description:  
 draft: false  
 date: 2023-01-23T22:25:11.107Z  
-tags: media, images, managing, cd, dvd, iso  
+tags:
+  - media
+  - images
+  - managing
+  - cd
+  - dvd
+  - iso
 categories:  
   - Media Images  
 editor: markdown  
