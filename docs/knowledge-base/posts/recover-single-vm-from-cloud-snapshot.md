@@ -58,3 +58,9 @@ This is easily achieved for systems that are successfully configured to send a c
         Sync for 'Morning_20220901' complete (4m 17s) checked [78.1GB] scanned [1.76TB] sent [5.16GB] sent net [2.16GB] dirs [210] files [641] updated [31]
 
 7. At this point, the snapshot has been successfully transferred back to the original location. Administrators can now perform standard recovery tasks on the VM contained within the snapshot.
+
+---
+
+!!! note "Document Information"
+    - Last Updated: 2024-08-29
+    - vergeOS Version: 4.12.6

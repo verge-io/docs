@@ -87,3 +87,9 @@ Using a Proxy grants the ability to use 1 IP address for multiple Tenant environ
    ![tenant_rules_highlighted.png](/docs/public/tenant_rules_highlighted.png)
 
 9. Test access to the tenant by navigating to its URL in a browser tab.
+
+---
+
+!!! note "Document Information"
+    - Last Updated: 2024-08-29
+    - vergeOS Version: 4.12.6

@@ -64,3 +64,8 @@ VergeOS provides an easy way to share a virtual machine (VM) image from a parent
     - Click **Submit** to create the new virtual machine in the tenant.
 
 ---
+---
+
+!!! note "Document Information"
+    - Last Updated: 2024-08-29
+    - vergeOS Version: 4.12.6

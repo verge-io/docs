@@ -26,3 +26,9 @@ Here are the steps to create and download a System Diagnostics file.
 1. When it is finished, the status will change to **'Sent to Support'**.
 1. When sending completes, you can also download the file to your local computer.
 
+
+---
+
+!!! note "Document Information"
+    - Last Updated: 2024-08-29
+    - vergeOS Version: 4.12.6

@@ -39,3 +39,9 @@ dateCreated: 2022-10-10T19:52:07.207Z
 - [ ] Correct supported SFP modules in use (if applicable)
 - [ ] IP addresses validated and available
 
+
+---
+
+!!! note "Document Information"
+    - Last Updated: 2024-08-29
+    - vergeOS Version: 4.12.6

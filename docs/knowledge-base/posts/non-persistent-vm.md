@@ -38,3 +38,9 @@ A Non-Persistent VM reverts to its original state after a reboot, discarding any
 This will boot the VM using the non-persistent disk. The disk is fully writable during the session, but all changes will be discarded upon reboot, reverting the VM back to its original state. 
 
 !!! warning "Do not delete the original disk. It will not take up additional space due to **Deduplication**."
+
+---
+
+!!! note "Document Information"
+    - Last Updated: 2024-08-29
+    - vergeOS Version: 4.12.6

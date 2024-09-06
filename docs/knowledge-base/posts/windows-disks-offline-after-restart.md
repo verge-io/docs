@@ -25,3 +25,8 @@ To change this to the recommended setting run the following Windows PowerShell:
 Additionally, this can be done from the command line using diskpart or from Disk Management.
 <br>
 [Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }
+---
+
+!!! note "Document Information"
+    - Last Updated: 2024-08-29
+    - vergeOS Version: 4.12.6

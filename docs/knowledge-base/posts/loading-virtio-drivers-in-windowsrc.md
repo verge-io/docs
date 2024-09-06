@@ -84,3 +84,9 @@ wmic logicaldisk get deviceid, volumename, description
 ```
 
 Press <kbd>ENTER</kbd>. You should now see the newly mounted disk.
+
+---
+
+!!! note "Document Information"
+    - Last Updated: 2024-08-29
+    - vergeOS Version: 4.12.6

@@ -47,3 +47,9 @@ This guide covers how to migrate a Windows Server VM with UEFI enabled from VMwa
 
 !!! tip "Monitoring the Guest Agent"
     The guest agent status can be viewed on the VM's dashboard. If it doesn't report back, ensure the guest agent service is running inside the VM.
+
+---
+
+!!! note "Document Information"
+    - Last Updated: 2024-08-29
+    - vergeOS Version: 4.12.6

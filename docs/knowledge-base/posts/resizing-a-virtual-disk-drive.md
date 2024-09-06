@@ -34,3 +34,9 @@ To resize a virtual disk drive within a VM, follow these steps:
 
 !!! danger "Warning"
     Modifications to drive size will most likely require corresponding changes within the guest Operating System to utilize the newly added space.
+
+---
+
+!!! note "Document Information"
+    - Last Updated: 2024-08-29
+    - vergeOS Version: 4.12.6

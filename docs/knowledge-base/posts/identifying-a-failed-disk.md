@@ -28,3 +28,9 @@ VergeOS offers a diagnostic function that allows system administrators to turn a
 6. Once the drive has been identified and replaced, set the **State** to `Off` and click **Send** to deactivate the LED light.
 
 !!! note "For detailed instructions on drive replacement, refer to the Maintenance section in the inline help under **[Drive Replacement](docs/product-guide/DriveReplacement)**. This section guides you through the entire process."
+
+---
+
+!!! note "Document Information"
+    - Last Updated: 2024-08-29
+    - vergeOS Version: 4.12.6

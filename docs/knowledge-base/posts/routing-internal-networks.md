@@ -102,3 +102,9 @@ The following is a simple method to establish a route between two networks in th
      - Type: **My Network Address**
 4. After completing this rule, click **Submit** to save the rule.
 5. Click **Apply Rules** to enable the rule.
+
+---
+
+!!! note "Document Information"
+    - Last Updated: 2024-08-29
+    - vergeOS Version: 4.12.6

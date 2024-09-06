@@ -49,3 +49,4 @@ Remember, consulting with your sales representative is crucial for planning the 
 !!! note "Document Information"
     - Last Updated: 2023-01-24
     - VergeOS Version: 4.12.6
+

@@ -73,3 +73,9 @@ This is often a driver issue. You may encounter a **Windows Inaccessible Boot De
 3. Shut down the VM.
 4. Switch the drive interface back to **virtio-scsi**.
 5. Start the VM again.
+
+---
+
+!!! note "Document Information"
+    - Last Updated: 2024-08-29
+    - vergeOS Version: 4.12.6

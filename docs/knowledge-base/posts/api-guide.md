@@ -498,3 +498,9 @@ VergeOS uses standard HTTP status codes to indicate the result of an API request
 - **500 Internal Server Error**: A server error occurred.
 
 
+
+---
+
+!!! note "Document Information"
+    - Last Updated: 2024-08-29
+    - vergeOS Version: 4.12.6

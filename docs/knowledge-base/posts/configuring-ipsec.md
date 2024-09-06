@@ -160,3 +160,9 @@ If pinging the **Remote Gateway** fails, verify that your connection is not bloc
 ---
 
 By following these steps and rules, you can successfully set up an IPsec VPN tunnel in VergeOS, troubleshoot common issues, and ensure that traffic flows properly between networks.
+
+---
+
+!!! note "Document Information"
+    - Last Updated: 2024-08-29
+    - vergeOS Version: 4.12.6

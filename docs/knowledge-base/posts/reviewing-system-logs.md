@@ -123,3 +123,9 @@ To configure a third-party system logger:
 - **Utilize 3rd Party Tools**: Use third-party logging tools for enhanced log analysis, long-term storage, and better integration with your overall monitoring setup.
 
 
+
+---
+
+!!! note "Document Information"
+    - Last Updated: 2024-08-29
+    - vergeOS Version: 4.12.6

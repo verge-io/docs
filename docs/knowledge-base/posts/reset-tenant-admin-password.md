@@ -23,3 +23,9 @@ If you need to change the administrative credentials for a tenant environment in
 6. After entering the same password in both fields, click **Submit**. If the passwords do not match, an error message will appear.
 7. After successfully updating the admin password, open a web browser and navigate to the tenant environment where the password was changed.
 8. Log in as the admin. The username will be **admin** and the password will be the new password you saved in step 6.
+
+---
+
+!!! note "Document Information"
+    - Last Updated: 2024-08-29
+    - vergeOS Version: 4.12.6

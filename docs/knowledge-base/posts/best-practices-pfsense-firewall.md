@@ -54,3 +54,9 @@ In certain environments, pfSense may experience network performance issues like 
 ---
 
 Following these best practices ensures that pfSense operates efficiently and securely within VergeOS, providing a reliable and high-performance firewall solution for your virtualized network environment.
+
+---
+
+!!! note "Document Information"
+    - Last Updated: 2024-08-29
+    - vergeOS Version: 4.12.6

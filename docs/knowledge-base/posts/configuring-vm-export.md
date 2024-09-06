@@ -93,3 +93,9 @@ You can schedule regular exports by setting up an automated event:
 8. Click **Submit**
 
 By following these steps, you'll have a properly configured VM export volume that can be used with third-party backup solutions, along with automated export scheduling.
+
+---
+
+!!! note "Document Information"
+    - Last Updated: 2024-08-29
+    - vergeOS Version: 4.12.6

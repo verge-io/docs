@@ -42,3 +42,9 @@ If the VM requires connectivity but still needs to be isolated from other networ
 !!! note "For more detailed instructions on creating internal networks, refer to the VergeOS inline help under **Networking** in the **Internal Networks** section."
 
 This method allows the VM to have restricted network access while still providing outbound connectivity through the internal network.
+
+---
+
+!!! note "Document Information"
+    - Last Updated: 2024-08-29
+    - vergeOS Version: 4.12.6

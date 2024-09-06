@@ -165,3 +165,9 @@ These errors indicate network problems. Check for MTU mismatches or other networ
 Ensure the VergeOS user has the necessary permissions to create VMs.
 
 !!! note "If the initial clone fails due to permissions, you can resume the process or delete the VM and restart the clone."
+
+---
+
+!!! note "Document Information"
+    - Last Updated: 2024-08-29
+    - vergeOS Version: 4.12.6

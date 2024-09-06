@@ -40,3 +40,9 @@ Network blocks in VergeOS are a powerful way to assign multiple IP addresses to 
 9. **Power on** the network using the option in the left menu.
 10. Assign any desired virtual machines to the network and **test connectivity**.
 
+
+---
+
+!!! note "Document Information"
+    - Last Updated: 2024-08-29
+    - vergeOS Version: 4.12.6

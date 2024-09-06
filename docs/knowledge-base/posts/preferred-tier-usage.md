@@ -23,3 +23,9 @@ When creating or modifying a virtual machine (VM) disk drive in VergeOS, users c
 
 In both scenarios, VergeOS ensures that the closest available tier is selected based on the user’s preference.
 
+
+---
+
+!!! note "Document Information"
+    - Last Updated: 2024-08-29
+    - vergeOS Version: 4.12.6

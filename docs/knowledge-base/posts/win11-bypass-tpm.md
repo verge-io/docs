@@ -55,3 +55,8 @@ If you also want to bypass the RAM requirement, add a DWORD values for BypassRAM
 
 <br>
 [Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }
+---
+
+!!! note "Document Information"
+    - Last Updated: 2024-08-29
+    - vergeOS Version: 4.12.6

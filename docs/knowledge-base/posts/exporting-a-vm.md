@@ -33,3 +33,9 @@ Exporting a virtual machine (VM) from VergeOS allows you to download the VM’s 
 
 
 By following these steps, you can successfully export and download virtual machines from VergeOS for use in other environments.
+
+---
+
+!!! note "Document Information"
+    - Last Updated: 2024-08-29
+    - vergeOS Version: 4.12.6

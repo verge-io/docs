@@ -56,3 +56,9 @@ Running databases on VergeOS can deliver excellent performance when properly con
 - **Monitor Disk I/O**: Regularly monitor the disk I/O performance, especially on high-write activity volumes like log files or tempdb files, and consider allocating high-performance SSD or NVMe drives if required.
 
 By following these best practices, you can optimize the performance and reliability of your database systems running on VergeOS. If further fine-tuning is required, VergeOS supports additional features that can help monitor and improve VM performance in real-time.
+
+---
+
+!!! note "Document Information"
+    - Last Updated: 2024-08-29
+    - vergeOS Version: 4.12.6

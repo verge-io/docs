@@ -81,3 +81,9 @@ This guide explains how to create a bootable USB to install VergeOS on different
 ---
 
 By following these steps for your specific operating system, you'll have a bootable USB ready to install VergeOS on your server.
+
+---
+
+!!! note "Document Information"
+    - Last Updated: 2024-08-29
+    - vergeOS Version: 4.12.6

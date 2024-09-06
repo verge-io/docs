@@ -44,3 +44,9 @@ To scale up a vSAN, follow the steps below. However, before proceeding, ensure t
 Upon completion, the screen will refresh and the drives will disappear from the view. Go back to the main page, where you will see the **vSAN tiers** change color to **yellow**, indicating that it is in a repair state. This is expected, and the vSAN will return to a **green/healthy** state after a few minutes, showing the newly added tier or increased space on an existing tier.
 
 Repeat these steps for each node as necessary.
+
+---
+
+!!! note "Document Information"
+    - Last Updated: 2024-08-29
+    - vergeOS Version: 4.12.6

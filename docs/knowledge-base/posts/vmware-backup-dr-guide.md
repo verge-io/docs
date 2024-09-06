@@ -313,3 +313,8 @@ The following strategies are recommended to mitigate potential risks posed by us
 3.  When possible, use Full-Thick Provisioned backup for those that are intended for long-term retention.
 <br>
 [Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }
+---
+
+!!! note "Document Information"
+    - Last Updated: 2024-08-29
+    - vergeOS Version: 4.12.6

@@ -129,3 +129,9 @@ yb-api --get --user=admin --server=10.0.0.100 '/v4/vm_actions' \
 By using the `yb-api` helper script, developers can simplify interaction with the VergeOS API and manage virtual machines more efficiently. Let us know if you need assistance with further commands or options.
 
 
+
+---
+
+!!! note "Document Information"
+    - Last Updated: 2024-08-29
+    - vergeOS Version: 4.12.6

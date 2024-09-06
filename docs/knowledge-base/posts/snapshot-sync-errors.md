@@ -48,3 +48,8 @@ Occasionally, the system may generate a system alert from a new Message Log entr
 - The sync task was unable to start because the connection timed out. Typically, this error occurs when requesting a snapshot back from the destination side to the original sending side. In most cases, this is caused by a firewall blocking the traffic or missing traffic rules on the destination side. Refer to the [Guide on Sync Configuration](/docs/product-guide/sync-configuration/) for the required traffic rules.
 
 ---
+---
+
+!!! note "Document Information"
+    - Last Updated: 2024-08-29
+    - vergeOS Version: 4.12.6

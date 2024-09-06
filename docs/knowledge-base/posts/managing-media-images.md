@@ -58,3 +58,9 @@ The **Public Link** can be shared with other systems, for general file sharing, 
     - **View and Remove References** to files  
     - **Delete** files."
 
+
+---
+
+!!! note "Document Information"
+    - Last Updated: 2024-08-29
+    - vergeOS Version: 4.12.6

@@ -30,3 +30,8 @@ Most likely you need to Enable insecure guest logins for SMB shares in Windows.
 
 <br>
 [Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }
+---
+
+!!! note "Document Information"
+    - Last Updated: 2024-08-29
+    - vergeOS Version: 4.12.6

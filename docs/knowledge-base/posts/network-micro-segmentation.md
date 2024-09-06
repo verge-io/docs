@@ -116,3 +116,9 @@ Use port mirroring to monitor traffic:
 
 By utilizing these features and following these steps, you can create a highly segmented network architecture on VergeOS, implementing zero trust principles and reducing the potential attack surface.
 
+
+---
+
+!!! note "Document Information"
+    - Last Updated: 2024-08-29
+    - vergeOS Version: 4.12.6

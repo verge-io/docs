@@ -41,3 +41,9 @@ To properly power on a VergeOS environment, perform the following steps:
 1. On the main dashboard, verify that the environment is **Green** and **Online**.
 
 ![main-dash-stoplights.png](/docs/public/main-dash-stoplights.png)
+
+---
+
+!!! note "Document Information"
+    - Last Updated: 2024-08-29
+    - vergeOS Version: 4.12.6

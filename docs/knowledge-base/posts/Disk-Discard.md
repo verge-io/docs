@@ -46,3 +46,9 @@ In rare circumstances, you may need to disable **Discard** to improve performanc
 ---
 
 By keeping **Discard** enabled, you ensure that VergeOS optimizes storage for virtual machines, maintaining high efficiency and minimizing wasted space.
+
+---
+
+!!! note "Document Information"
+    - Last Updated: 2024-08-29
+    - vergeOS Version: 4.12.6
