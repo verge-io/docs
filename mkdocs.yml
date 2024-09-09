@@ -85,14 +85,10 @@ markdown_extensions:
       toc_depth: 2
 #extra:
 #  consent:
-
 #  - material.extensions.preview:
 #      targets:
 #        include:
-#          - glossary.md   
-    analytics:
-        provider: google
-        property: G-KBH6Q02QFH 
+#          - glossary.md
 
 extra:
   social:
