@@ -14,7 +14,7 @@ The home screen of the VergeOS UI is the Main Dashboard for your VergeOS Cloud. 
   *   **Left Navigation menu to access subsections of the application**
   *   **Quick links within the Dashboard section to drill down to subsections**
 
-![](/docs/public/userguide-sshots/maindash.png)
+![](/public/userguide-sshots/maindash.png)
 
 
 ### Dark Mode
@@ -25,7 +25,7 @@ By selecting the User Menu in the upper-right, you can enable Dark Mode. This ma
 
 Breadcrumbs are links at the top of the screen that reflect the recent history of selected sections; each breadcrumb provides quick access back to a recent screen.
 
-![](/docs/public/userguide-sshots/breadcrumb.png)
+![](/public/userguide-sshots/breadcrumb.png)
 
 The first breadcrumb (a home icon, labeled with the system name) will always provide a quick link back to the Main Dashboard.
 
@@ -45,7 +45,7 @@ Dashboards, providing at-a-glance information (and quick-link access to more det
 
    The Networks Dashboard provides overall network statistics, network-related logs, and links to drill down into more detailed information per network, network device, etc.
 
-   ![](/docs/public/userguide-sshots/networksdashboard.png)
+   ![](/public/userguide-sshots/networksdashboard.png)
    
    <br>
    <br>
@@ -55,7 +55,7 @@ Dashboards, providing at-a-glance information (and quick-link access to more det
 
   There is a dashboard available for each individual virtual machine. The dashboard for a VM will show important information for the specific instance. Links on the VM dashboard allow for accessing detailed information regarding its drives, NICS, snapshots, devices, host node, etc.
 
-  ![](/docs/public/userguide-sshots/vmdashboard.png)
+  ![](/public/userguide-sshots/vmdashboard.png)
   
 
 <br>

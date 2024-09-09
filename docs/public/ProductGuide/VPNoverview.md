@@ -17,18 +17,18 @@ VPN provides a secure communications tunnel over a public network for site-to-si
 
 
 ## Site-to-Site VPN (connect multiple VergeOS sites)
-To configure a secure tunnel connection between VergeOS sites, reference the site-to-site instructions on: [**Wireguard**](/docs/product-guide/wireguardconfig).  Example Site-to-Site Wireguard configurations can be viewed at [**Wireguard Configuration Examples**](/docs/product-guide/wireguard-examples).
+To configure a secure tunnel connection between VergeOS sites, reference the site-to-site instructions on: [**Wireguard**](/product-guide/wireguardconfig).  Example Site-to-Site Wireguard configurations can be viewed at [**Wireguard Configuration Examples**](/product-guide/wireguard-examples).
 
 <br>
 
 ## VPN for Secure Remote User Access to VergeOS Site
-To configure a secure tunnel connection for remote users to access a Verge.io system consult the Wireguard Configuration page: [**Wireguard**](/docs/product-guide/wireguardconfig).  See [**Wireguard Configuration Examples**](/docs/product-guide/wireguard-examples) for sample remote access setups.
+To configure a secure tunnel connection for remote users to access a Verge.io system consult the Wireguard Configuration page: [**Wireguard**](/product-guide/wireguardconfig).  See [**Wireguard Configuration Examples**](/product-guide/wireguard-examples) for sample remote access setups.
 
 <br>
 
 ## Site-to-Site VPN (Connecting VergeOS system with 3rd Party IPSec)
 IPSec functionality is provided for scenarios where VergeOS needs to interface with an IPSec device at another site (e.g. Cisco, PFSense, etc.)
-Information regarding creating a IPSec peer for a VPN tunnel to a third-party IPSec peer can be found at:  [**IPSEC Configuration**](/docs/product-guide/IPSEC)
+Information regarding creating a IPSec peer for a VPN tunnel to a third-party IPSec peer can be found at:  [**IPSEC Configuration**](/product-guide/IPSEC)
 
 <br>
 

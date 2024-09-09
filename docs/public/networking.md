@@ -22,9 +22,9 @@ The foundation of the VergeOS networking stack was built with layer 3 in mind. B
 ## Routing
 VergeOS supports the Border Gateway Protocol (BGP) & Open Shortest Path First (OSPF) routing protocols natively within a vnet. Integrating these protocols allows a system to be the "full stack" including being the first point of entry into the data center.
 ## VLANs
-For further flexibility, VLANs are able to be brought into the environment to maintain backwards compatability with existing network infrastructure. They may also be passed into a [tenant](/docs/public/tenants) for consumption by the use of [virtual wires](/docs/knowledge-base /virtual-wires). 
+For further flexibility, VLANs are able to be brought into the environment to maintain backwards compatability with existing network infrastructure. They may also be passed into a [tenant](/public/tenants) for consumption by the use of [virtual wires](/knowledge-base /virtual-wires). 
 ## VPN
-VergeOS includes the ability to create [VPN](/docs/public/vpn) tunnels directly in the interface of your environment at every level of tenancy. With a bit of network planning a virtual appliance can be used in place of the integrated VPN function as well.
+VergeOS includes the ability to create [VPN](/public/vpn) tunnels directly in the interface of your environment at every level of tenancy. With a bit of network planning a virtual appliance can be used in place of the integrated VPN function as well.
 ## VXLANs
 VXLANs are used to control network high availabilty within the VergeOS environment.
 > They cannot be connected up to an existing VXLAN infrastructure outside of the environment.

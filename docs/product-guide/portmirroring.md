@@ -10,7 +10,7 @@ Port mirroring replicates a network's traffic to a VM NIC, allowing packet analy
 
 1.  Enable ***Port Mirroring*** in the network settings.
 
-  ![portmirrordropdown.png](/docs/public/userguide-sshots/portmirrordropdown.png)
+  ![portmirrordropdown.png](/public/userguide-sshots/portmirrordropdown.png)
  - Select ***North/South*** - to copy packets that traverse the network router.
  - Select ***East/West\**** - to copy packets that traverse the router *AND* all intra-network packets.
  
@@ -21,7 +21,7 @@ Port mirroring replicates a network's traffic to a VM NIC, allowing packet analy
 2.  Click **Submit** to save the change.
 3.  Click **Restart** on the left menu to boot the network.
 4.  Create **a VM that will be used for port analysis** (or use an existing VM).
-5.  [**Add a NIC to the VM**](/docs/product-guide/VMNics):
+5.  [**Add a NIC to the VM**](/product-guide/VMNics):
     -   In the ***Network*** field, select: *NETWORKNAME*\_mirror.
     -   Click **Submit** (bottom of page) to save.
 6.  **(Re)boot the VM**.

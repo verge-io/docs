@@ -10,7 +10,7 @@ dateCreated: 2023-06-07T14:22:38.870Z
 
 Welcome to the Product Guide for VergeOS. If you cannot find what you are looking for, please use the **search function at the top of the page**.
 
-You can also find a variety of content located in the [Knowledgebase](/docs/knowledge-base ). 
+You can also find a variety of content located in the [Knowledgebase](/knowledge-base ). 
 
 <br>
 
@@ -19,202 +19,202 @@ You can also find a variety of content located in the [Knowledgebase](/docs/know
 {.links-list}
 ## Getting Started
 
-- [**Glossary of Terms**](/docs/product-guide/GlossaryofTerms)
-- [**User Interface Overview**](/docs/product-guide/UI-Overview)
+- [**Glossary of Terms**](/product-guide/GlossaryofTerms)
+- [**User Interface Overview**](/product-guide/UI-Overview)
 {.links-list}
 
 ## Configuration
 {.links-list}
 ### Authentication
-* [**Authorization Sources**](/docs/product-guide/AuthSources-General)
-* [**Using Azure AD for Authentication**](/docs/product-guide/AzureADAuth)
-* [**Using Google for Authentication**](/docs/product-guide/GoogleAuth)
-* [**Two-Factor Authentication**](/docs/product-guide/2factorEmailAuth)
+* [**Authorization Sources**](/product-guide/AuthSources-General)
+* [**Using Azure AD for Authentication**](/product-guide/AzureADAuth)
+* [**Using Google for Authentication**](/product-guide/GoogleAuth)
+* [**Two-Factor Authentication**](/product-guide/2factorEmailAuth)
 {.links-list}
 
 <br>
 
 
 ### Certificates
-- [**Configuring Server Certificates**](/docs/product-guide/certificates)
+- [**Configuring Server Certificates**](/product-guide/certificates)
 {.links-list}
 
 <br>
 
 ### GPU
-- [**GPU Overview**](/docs/product-guide/GPUOverview)
-- [**GPU Passthru**](/docs/product-guide/GPUPassthrough)
-- [**NVIDIA vGPU**](/docs/product-guide/nvidiavGPU)
-- [**Sharing a GPU to a Tenant**](/docs/product-guide/gpu-sharetenant)
+- [**GPU Overview**](/product-guide/GPUOverview)
+- [**GPU Passthru**](/product-guide/GPUPassthrough)
+- [**NVIDIA vGPU**](/product-guide/nvidiavGPU)
+- [**Sharing a GPU to a Tenant**](/product-guide/gpu-sharetenant)
 {.links-list}
 
 <br>
 
 ### IPMI
-- [**IPMI**](/docs/product-guide/IPMI)
-- [**SEL**](/docs/product-guide/SEL)
+- [**IPMI**](/product-guide/IPMI)
+- [**SEL**](/product-guide/SEL)
 {.links-list}
 
 <br>
 
 ### Tenants
-- [**Creating Tenants**](/docs/product-guide/createtenants)
-- [**Tenants — Adding Resources**](/docs/product-guide/tenantsaddresources)
-- [**Tenants — Reducing Resources**](/docs/product-guide/reducetenantresources)
-- [**Assigning Tenant IPs**](/docs/product-guide/assignIPtotenant)
-- [**Providing Files to Tenants**](/docs/product-guide/providefilestotenant)
-- [**Tenant Snapshots**](/docs/product-guide/tenantsnapshots)
+- [**Creating Tenants**](/product-guide/createtenants)
+- [**Tenants — Adding Resources**](/product-guide/tenantsaddresources)
+- [**Tenants — Reducing Resources**](/product-guide/reducetenantresources)
+- [**Assigning Tenant IPs**](/product-guide/assignIPtotenant)
+- [**Providing Files to Tenants**](/product-guide/providefilestotenant)
+- [**Tenant Snapshots**](/product-guide/tenantsnapshots)
 {.links-list}
 
-<!--- [**Shared Objects**](/docs/product-guide/)-->
+<!--- [**Shared Objects**](/product-guide/)-->
 
 
 ## Users / Groups, <br> and Permissions
-- [**User / Group Overview**](/docs/product-guide/usersgroups)
-- [**Permissions Overview**](/docs/product-guide/permissions)
+- [**User / Group Overview**](/product-guide/usersgroups)
+- [**Permissions Overview**](/product-guide/permissions)
 {.links-list}
 
 
 ## Maintenance <br>and Monitoring
-- [**Drive Replacement**](/docs/product-guide/DriveReplacement)
-- [**Maintenance Mode**](/docs/product-guide/maintenancemode)
+- [**Drive Replacement**](/product-guide/DriveReplacement)
+- [**Maintenance Mode**](/product-guide/maintenancemode)
 {.links-list}
 
 <br>
 
 ### Sites Dashboard
-- [**Sites Dashboard Overview**](/docs/product-guide/sitesoverview)
-- [**Add Sites**](/docs/product-guide/configuringsitesdash-addingsites)
+- [**Sites Dashboard Overview**](/product-guide/sitesoverview)
+- [**Add Sites**](/product-guide/configuringsitesdash-addingsites)
 {.links-list}
 
-<!--- [**Managing Sites**](/docs/product-guide/)-->
+<!--- [**Managing Sites**](/product-guide/)-->
 <br>
 
 ### Subscriptions
-- [**Subscriptions Overview**](/docs/product-guide/subscriptions-overview)
-- [**Subscription Profiles**](/docs/product-guide/subscriptionprofiles)
+- [**Subscriptions Overview**](/product-guide/subscriptions-overview)
+- [**Subscription Profiles**](/product-guide/subscriptionprofiles)
 {.links-list}
 
-<!--- [**Subscription Groups**](/docs/product-guide/)-->
+<!--- [**Subscription Groups**](/product-guide/)-->
 
 <br>
 
 
 ### Task Manager
-- [**Create Automated Tasks**](/docs/product-guide/createtasks)
+- [**Create Automated Tasks**](/product-guide/createtasks)
 {.links-list}
 
-<!--- [**Overview**](/docs/product-guide/)-->
+<!--- [**Overview**](/product-guide/)-->
 
 <br>
 
 ### Updates
-- [**Running Updates**](/docs/product-guide/runningupdates)
-- [**Update Settings**](/docs/product-guide/updatesettings)
+- [**Running Updates**](/product-guide/runningupdates)
+- [**Update Settings**](/product-guide/updatesettings)
 {.links-list}
 
 <br>
 
 
 ## NAS
-- [**Local Volumes**](/docs/product-guide/naslocalvolumes)
-- [**NAS Service**](/docs/product-guide/NASservice)
-- [**Remote Volumes**](/docs/product-guide/nasremotevolumes)
-- [**Shares**](/docs/product-guide/nasshares)
-- [**VM Export Volume**](/docs/product-guide/vmexportvolume)
-- [**Volume Syncs**](/docs/product-guide/volumesyncs)
+- [**Local Volumes**](/product-guide/naslocalvolumes)
+- [**NAS Service**](/product-guide/NASservice)
+- [**Remote Volumes**](/product-guide/nasremotevolumes)
+- [**Shares**](/product-guide/nasshares)
+- [**VM Export Volume**](/product-guide/vmexportvolume)
+- [**Volume Syncs**](/product-guide/volumesyncs)
 {.links-list}
 
 
 ## Networking
-- [**Networking Overview**](/docs/product-guide/networkoverview)
-- [**Quick Start Instructions**](/docs/product-guide/network-quickstart)
-- [**Internal Networks**](/docs/product-guide/internalnetworks)
-- [**Aliases**](/docs/product-guide/aliases)
-- [**Creating External Access**](/docs/product-guide/internalwithextaccess)
-- [**Creating Layer 2**](/docs/product-guide/internal-layer2)
-- [**Creating Layer 3**](/docs/product-guide/internal-layer3)
-- [**Assign External IP**](/docs/product-guide/assignexternalIP)
-- [**Connecting LAN/WAN**](/docs/product-guide/connectLANWAN)
-- [**Rules**](/docs/product-guide/networkrules)
-- [**Tracking Statistics**](/docs/product-guide/trackingnetstats)
-- [**Create Static DHCP**](/docs/product-guide/dhcpstaticlease)
-- [**Configure NAT**](/docs/product-guide/NAT1to1)
-- [**Port Mirroring**](/docs/product-guide/portmirroring)
-- [**Diagnostics Tool**](/docs/product-guide/netdiagnostics)
-- [**Troubleshooting**](/docs/product-guide/net-troubleshooting)
+- [**Networking Overview**](/product-guide/networkoverview)
+- [**Quick Start Instructions**](/product-guide/network-quickstart)
+- [**Internal Networks**](/product-guide/internalnetworks)
+- [**Aliases**](/product-guide/aliases)
+- [**Creating External Access**](/product-guide/internalwithextaccess)
+- [**Creating Layer 2**](/product-guide/internal-layer2)
+- [**Creating Layer 3**](/product-guide/internal-layer3)
+- [**Assign External IP**](/product-guide/assignexternalIP)
+- [**Connecting LAN/WAN**](/product-guide/connectLANWAN)
+- [**Rules**](/product-guide/networkrules)
+- [**Tracking Statistics**](/product-guide/trackingnetstats)
+- [**Create Static DHCP**](/product-guide/dhcpstaticlease)
+- [**Configure NAT**](/product-guide/NAT1to1)
+- [**Port Mirroring**](/product-guide/portmirroring)
+- [**Diagnostics Tool**](/product-guide/netdiagnostics)
+- [**Troubleshooting**](/product-guide/net-troubleshooting)
 {.links-list}
 
-<!--- [**Virtual Wires**](/docs/product-guide/)-->
+<!--- [**Virtual Wires**](/product-guide/)-->
 
 <br>
 
 ### VPN
-- [**VPN Overview**](/docs/product-guide/VPNoverview)
-- [**IPSec**](/docs/product-guide/IPSEC)
-- [**WireGuard**](/docs/product-guide/wireguardconfig)
-- [**WireGuard Examples**](/docs/product-guide/wireguard-examples)
+- [**VPN Overview**](/product-guide/VPNoverview)
+- [**IPSec**](/product-guide/IPSEC)
+- [**WireGuard**](/product-guide/wireguardconfig)
+- [**WireGuard Examples**](/product-guide/wireguard-examples)
 {.links-list}
 
 ## DR/Backup
 
 ### Site Syncs
-- [**Sync Configuration**](/docs/product-guide/sync-configuration)
-- [**Monitoring Syncs**](/docs/product-guide/monitoringsitesyncs)
-- [**Syncing Back**](/docs/product-guide/syncingback)
-- [**Manual Syncs**](/docs/product-guide/manualsitesyncs)
-- [**Repair Server**](/docs/product-guide/repairserver)
+- [**Sync Configuration**](/product-guide/sync-configuration)
+- [**Monitoring Syncs**](/product-guide/monitoringsitesyncs)
+- [**Syncing Back**](/product-guide/syncingback)
+- [**Manual Syncs**](/product-guide/manualsitesyncs)
+- [**Repair Server**](/product-guide/repairserver)
 {.links-list}
 
 <br>
 
 ### Snapshots
-- [**Snapshot Overview**](/docs/product-guide/snapshots-overview)
-- [**Snapshot Profiles**](/docs/product-guide/snapshot-profiles)
-- [**VM Snap/Restore**](/docs/product-guide/VMsnapshotsandrestores)
-- [**Tenant Restore**](/docs/product-guide/tenantsnapshots)
-- [**Cloud Snap/Restore**](/docs/product-guide/cloudsnapshotandrestore)
-- [**NAS Snapshot/Restore**](/docs/product-guide/volumesnapsandrestores)
+- [**Snapshot Overview**](/product-guide/snapshots-overview)
+- [**Snapshot Profiles**](/product-guide/snapshot-profiles)
+- [**VM Snap/Restore**](/product-guide/VMsnapshotsandrestores)
+- [**Tenant Restore**](/product-guide/tenantsnapshots)
+- [**Cloud Snap/Restore**](/product-guide/cloudsnapshotandrestore)
+- [**NAS Snapshot/Restore**](/product-guide/volumesnapsandrestores)
 {.links-list}
 
 <br>
 
 ## Virtual Machines
-- [**VM Best Practices**](/docs/product-guide/VMbestpractices)
-- [**Creating VMs**](/docs/product-guide/creatingvms)
-- [**VM Drives**](/docs/product-guide/VMdrives)
-- [**VM NICs**](/docs/product-guide/VMNics)
-- [**VM Field Descriptions**](/docs/product-guide/VMfielddescriptions)
-- [**VM Guest Agent**](/docs/product-guide/VMguestagent)
+- [**VM Best Practices**](/product-guide/VMbestpractices)
+- [**Creating VMs**](/product-guide/creatingvms)
+- [**VM Drives**](/product-guide/VMdrives)
+- [**VM NICs**](/product-guide/VMNics)
+- [**VM Field Descriptions**](/product-guide/VMfielddescriptions)
+- [**VM Guest Agent**](/product-guide/VMguestagent)
 {.links-list}
 
 <br>
 
 
    #### IMPORTING VMs
-- [**Importing VMs**](/docs/product-guide/importingVMs)
-- [**— From Media Images**](/docs/product-guide/importfromupload)
-- [**— From VMware Backup**](/docs/product-guide/importvmware)
-- [**— From NAS Volume**](/docs/product-guide/importfromNAS)
-- [**Viewing Import Jobs**](/docs/product-guide/viewimportjobs)
+- [**Importing VMs**](/product-guide/importingVMs)
+- [**— From Media Images**](/product-guide/importfromupload)
+- [**— From VMware Backup**](/product-guide/importvmware)
+- [**— From NAS Volume**](/product-guide/importfromNAS)
+- [**Viewing Import Jobs**](/product-guide/viewimportjobs)
 {.links-list}
 
 <br>
 
 
 ### VDI
-- [**VDI Overview**](/docs/product-guide/VDIoverview)
-- [**VDI Admin Instructions**](/docs/product-guide/VDI-Administrator)
-- [**VDI User Instructions**](/docs/product-guide/VDI-User)
-- [**Using the Console**](/docs/product-guide/VM-RemoteConsole)
+- [**VDI Overview**](/product-guide/VDIoverview)
+- [**VDI Admin Instructions**](/product-guide/VDI-Administrator)
+- [**VDI User Instructions**](/product-guide/VDI-User)
+- [**Using the Console**](/product-guide/VM-RemoteConsole)
 {.links-list}
 
 
 ## vSAN
-- [**Storage Tiers**](/docs/product-guide/storagetiers)
-- [**Uploading to the vSAN**](/docs/product-guide/uploadingtovSAN)
-- [**Preferred Tier**](/docs/product-guide/preferredtiers)
-- [**Removing ISO References**](/docs/product-guide/removing-isorefs)
+- [**Storage Tiers**](/product-guide/storagetiers)
+- [**Uploading to the vSAN**](/product-guide/uploadingtovSAN)
+- [**Preferred Tier**](/product-guide/preferredtiers)
+- [**Removing ISO References**](/product-guide/removing-isorefs)
 {.links-list}
 
 # End Tabset {.tabset}

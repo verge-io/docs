@@ -17,7 +17,7 @@ dateCreated: 2022-08-25T17:23:10.582Z
 
 You can confirm that the vSAN has encryption enabled by navigating to **Nodes> Node 1> Drives** and then **double-clicking on the first drive** in the list. There is a checkbox for encryption.  If it is encrypted, it will be checked.
 
-![encryption.png](/docs/public/encryption.png)
+![encryption.png](/public/encryption.png)
 
 - Encryption for the vSAN is configured **during the initial installation only**.
 
@@ -28,7 +28,7 @@ You can confirm that the vSAN has encryption enabled by navigating to **Nodes> N
 
 - Default encryption is set for all snapshot synchronizations through a site-sync.
     
-!!! info "Information about encrypting a Site Synchronization can be found in the [Product Guide](/docs/product-guide/sync-configuration/)"
+!!! info "Information about encrypting a Site Synchronization can be found in the [Product Guide](/product-guide/sync-configuration/)"
 ---
 
 !!! note "Document Information"

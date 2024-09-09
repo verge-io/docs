@@ -58,7 +58,7 @@ In order to allow a tenant to use a GPU device, the device must be added to one 
 
 > The VM must be running on a tenant node that has a GPU device configured. {.is-info}
 
-GPU Guest configuration instructions are covered on [**GPU Passthrough**](/docs/product-guide/GPUPassthrough) and [**NVIDIA vGPU**](/docs/product-guide/nvidiavGPU) pages.
+GPU Guest configuration instructions are covered on [**GPU Passthrough**](/product-guide/GPUPassthrough) and [**NVIDIA vGPU**](/product-guide/nvidiavGPU) pages.
 
 <br>
 

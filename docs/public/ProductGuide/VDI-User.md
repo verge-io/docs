@@ -28,7 +28,7 @@ dateCreated: 2023-04-10T19:54:04.823Z
 <br>
 
 ## Using the Console
-The console gives you keyboard and mouse access to the virtual machine. To access the console, simply click the desired Virtual Machine on your VDI Dashboard. Note: VM must be running; if it is not, a message will appear for you to confirm powering on the VM (permission required); click Yes to confirm. Once the VM shows running, click again to access the Remote Console. See [**Using the Console**](/docs/product-guide/VM-RemoteConsole)  for help with working within the remote console.
+The console gives you keyboard and mouse access to the virtual machine. To access the console, simply click the desired Virtual Machine on your VDI Dashboard. Note: VM must be running; if it is not, a message will appear for you to confirm powering on the VM (permission required); click Yes to confirm. Once the VM shows running, click again to access the Remote Console. See [**Using the Console**](/product-guide/VM-RemoteConsole)  for help with working within the remote console.
 
 <br>
 <br>
@@ -61,7 +61,7 @@ If the Two Factor Authentication option is disabled (unchecked), you will simply
 
 The Message Center icon will indicate if you have any new messages from the administrator.
 
-![vdi-messageicon.png](/docs/public/userguide-sshots/vdi-messageicon.png)
+![vdi-messageicon.png](/public/userguide-sshots/vdi-messageicon.png)
 
 <br>
 

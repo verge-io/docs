@@ -37,7 +37,7 @@ To scale up a vSAN, follow the steps below. However, before proceeding, ensure t
 
 7. **Select the appropriate tier** for the drive(s) and submit.
 
-   ![scaleupvsan5.png](/docs/public/scaleupvsan5.png)
+   ![scaleupvsan5.png](/public/scaleupvsan5.png)
 
 
 !!! warning "Important"

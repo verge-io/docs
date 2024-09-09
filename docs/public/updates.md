@@ -16,10 +16,10 @@ VergeOS targets a quarterly release schedule with new features and enhancements 
 - Completely user interface driven
 - Can be applied automatically on a schedule or manually from the update dashboard
 - Designed to be a **zero downtime** event through a rolling reboot process
-- Uses the [maintenance mode](/docs/public/maintenance) feature to gracefully migrate workloads to and from their original physical node
+- Uses the [maintenance mode](/public/maintenance) feature to gracefully migrate workloads to and from their original physical node
 - A "cloud snapshot" is taken automatically and retained for a default of 12 hours in the event the environment needs to be rolled back after an update
 - After a node reboot a data verification process is run automatically to ensure that data is consistent across the tiers of storage
-> View the release notes [here](/docs/public/release-notes)
+> View the release notes [here](/public/release-notes)
 {.is-info}
 
 <br>

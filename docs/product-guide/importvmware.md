@@ -11,7 +11,7 @@ Typically, for import: a backup operation is run multiple times while VMs are st
 
 ## Import from Backup Job (VMware Service)
 
-> **The following directions cover importing from an existing VMware backup Job**. See the [**VMware-Backup-DR-Guide**](/docs/knowledge-base/vmware-backup-dr-guide) for full instructions to configure the VMware Backup service.{.is-info}
+> **The following directions cover importing from an existing VMware backup Job**. See the [**VMware-Backup-DR-Guide**](/knowledge-base/vmware-backup-dr-guide) for full instructions to configure the VMware Backup service.{.is-info}
 
 1.  From the ***Main Dashboard***, click **Backup/DR** on the left menu.
 2.  Click **VMware** on the left menu.
@@ -21,9 +21,9 @@ Typically, for import: a backup operation is run multiple times while VMs are st
 6.  Click **Import VMs** on the left menu.
 7.  All VMs that were included in the backup job are selected, by default. **Individual VMs can be deselected to exclude from the import, if desired.**
 8.  By default, the ***Preserve MAC Addresses*** option is selected, which will carry over MAC addresses. Typically, this is the preferred setting to avoid necessary network reconfiguration within VM (guest OS will see new MAC addresses as new network devices). This option can be deselected to create new MAC addresses on the imported VMs, if needed.
-9.  Select ***Preferred Tier***, or leave at **\--default--**. This determines the tier first attempted for VM storage. See the [**Preferred Tiers**](/docs/product-guide/preferredtiers) page for more information.
+9.  Select ***Preferred Tier***, or leave at **\--default--**. This determines the tier first attempted for VM storage. See the [**Preferred Tiers**](/product-guide/preferredtiers) page for more information.
 
-See [**Viewing Import Jobs**](/docs/product-guide/viewimportjobs) for instructions on viewing the details of an import job.
+See [**Viewing Import Jobs**](/product-guide/viewimportjobs) for instructions on viewing the details of an import job.
 
 <br>   
 

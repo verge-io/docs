@@ -12,7 +12,7 @@ dateCreated: 2023-03-29T00:09:06.773Z
 
 Local volumes are file systems stored within VergeOS, consuming storage in the VergeOS vSAN. Each local volume can have different sharing, syncing, tiering, and permission settings.
 
-> A NAS Service must be in place before creating volumes. See the [**NAS Service**](/docs/product-guide/NASservice)   page for instructions. {.is-success}
+> A NAS Service must be in place before creating volumes. See the [**NAS Service**](/product-guide/NASservice)   page for instructions. {.is-success}
 
 <br>
 
@@ -44,12 +44,12 @@ Local volumes are file systems stored within VergeOS, consuming storage in the V
 12.  The ***Automatically Mount Snapshots*** option can be selected to make snapshots readily available for browsing/file restores.
 13.  Specify ***Owner*** for the volume directory (optional).
 14.  Specify a ***Group*** for volume directory (optional).
-15.  Select a ***Snapshot Profile*** for the volume (optional). See [**Snapshot Profiles (Snapshot Scheduling)**](/docs/product-guide/snapshot-profiles) for information regarding Snapshot Profiles.
-16.  Select ***Preferred Tier*** for storing this volume. Preferred tier is the tier first attempted. See [**Preferred Tiers**](/docs/product-guide/preferredtiers) for more information.
+15.  Select a ***Snapshot Profile*** for the volume (optional). See [**Snapshot Profiles (Snapshot Scheduling)**](/product-guide/snapshot-profiles) for information regarding Snapshot Profiles.
+16.  Select ***Preferred Tier*** for storing this volume. Preferred tier is the tier first attempted. See [**Preferred Tiers**](/product-guide/preferredtiers) for more information.
 17.  Click **Submit** to save the settings and create the local volume.
 18.  The Dashboard for the new local volume is displayed. It may take a few minutes for the new Volume to come online. If the Volume Status does not become Online, refer to the logs section (bottom of Dashboard) to view error messages for troubleshooting.
 19.  Files in the online volume can be viewed using the **Browse** option from the left menu.
-20.  To expose the local volume, create CIFS and/or NFS [**Share(s)**](/docs/product-guide/nasshares).
+20.  To expose the local volume, create CIFS and/or NFS [**Share(s)**](/product-guide/nasshares).
 
 <br>
 

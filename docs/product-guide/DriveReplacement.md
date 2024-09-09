@@ -10,15 +10,15 @@ This page covers replacing a drive (participating in the vSAN) due to defect or 
 
 The Verge interface will provide warnings or alerts to indicate when there is a problem with a physical drive. When a drive has a warning or error status, an indicator will "bubble up" to the System dashboard Page (To access the System dashboard: from the main dashboard, select System on the left menu.)
 
-![](/docs/public/userguide-sshots/drivecountbox.png)
+![](/public/userguide-sshots/drivecountbox.png)
 
 - Click anywhere within the drive count box to access the full list of drives.
 
 - Double-click a drive with an error/warning to view its dashboard that displays more detail.
 
-![](/docs/public/userguide-sshots/drivelisting-warning.png)
+![](/public/userguide-sshots/drivelisting-warning.png)
 
-![](/docs/public/userguide-sshots/drivedashboard.png)
+![](/public/userguide-sshots/drivedashboard.png)
 
 <br>
 <br>
@@ -29,7 +29,7 @@ The Verge interface will provide warnings or alerts to indicate when there is a 
 -   **Warning** - Reallocated sectors exceeded maximum threshold(s)
 -   **Error** - Drive is unresponsive; read or write error threshold reached
 
-> **It is highly recommended to configure on-demand and scheduled subscriptions (with target type=System Dashboard) to ensure timely awareness of drive issues.** [*Go here for information on setting up subscriptions.*](/docs/product-guide/subscriptions-overview) {.is-warning}
+> **It is highly recommended to configure on-demand and scheduled subscriptions (with target type=System Dashboard) to ensure timely awareness of drive issues.** [*Go here for information on setting up subscriptions.*](/product-guide/subscriptions-overview) {.is-warning}
 
 <br>
 <br>
@@ -41,20 +41,20 @@ The Verge interface will provide warnings or alerts to indicate when there is a 
 
 - If ***LED Status*** indicates **Off**, click **Turn on LED** on the left menu.
 
-    ![ledoff.png](/docs/public/userguide-sshots/ledoff.png)
+    ![ledoff.png](/public/userguide-sshots/ledoff.png)
 
 - If ***LED Status*** field indicates **Unsupported**, click **Locate LED** on the left menu.
 
-   ![ledunsupported.png](/docs/public/userguide-sshots/ledunsupported.png)
+   ![ledunsupported.png](/public/userguide-sshots/ledunsupported.png)
 
 
 The Diagnostics window will appear with settings pre-filled.
 
-  ![diag-ledon.png](/docs/public/userguide-sshots/diag-ledon.png) 
+  ![diag-ledon.png](/public/userguide-sshots/diag-ledon.png) 
 Click **Send ->** to activate the drive LED .
 
 3.  Once the LED is activated, the physical drive can be located by identifying the one with a solid light. After identifying the drive, **deactivate the LED**:
-![](/docs/public/userguide-sshots/diag-ledoff.png)
+![](/public/userguide-sshots/diag-ledoff.png)
 <br>
 <br>
 

@@ -86,7 +86,7 @@ This article guides you through the process of setting up access to the VergeOS 
 
 Here's a visual representation of the rule configuration:
 
-![hairpin.png](/docs/public/hairpin.png)
+![hairpin.png](/public/hairpin.png)
 
 ## Troubleshooting
 
@@ -99,9 +99,9 @@ Here's a visual representation of the rule configuration:
 
 ## Additional Resources
 
-- [Network Overview](/docs/product-guide/networkoverview)
-- [Network Rules](/docs/product-guide/networkrules)
-- [Creating an Internal Network](/docs/product-guide/internalnetworks)
+- [Network Overview](/product-guide/networkoverview)
+- [Network Rules](/product-guide/networkrules)
+- [Creating an Internal Network](/product-guide/internalnetworks)
 
 ## Feedback
 

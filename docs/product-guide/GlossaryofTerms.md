@@ -125,7 +125,7 @@ A snapshot profile defines a schedule for snapshot creation and cleanup.
 <br>
 
 **Storage Tier**
-A Storage Tier is a pool of storage with equivalent underlying physical storage devices. Storage Tiering is a feature built into the VergeOS vSAN, allowing splitting data between different types of physical media based on requirements for performance, accessibility, capacity, and cost. Storage tiering can dramatically reduce costs by taking better advantage of more expensive disks where most needed while using less expensive (e.g. spinning disk) for cold storage, like archives, etc. See [**vSAN Tiers**](/docs/product-guide/storagetiers) for a description of standard Storage Tiers.
+A Storage Tier is a pool of storage with equivalent underlying physical storage devices. Storage Tiering is a feature built into the VergeOS vSAN, allowing splitting data between different types of physical media based on requirements for performance, accessibility, capacity, and cost. Storage tiering can dramatically reduce costs by taking better advantage of more expensive disks where most needed while using less expensive (e.g. spinning disk) for cold storage, like archives, etc. See [**vSAN Tiers**](/product-guide/storagetiers) for a description of standard Storage Tiers.
 
 <br>
 

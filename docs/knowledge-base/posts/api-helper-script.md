@@ -38,7 +38,7 @@ yb-api --help
 
 Connect to the node and execute this command to begin using the API helper.
 
-![yb-api Example](/docs/public/api4.png)
+![yb-api Example](/public/api4.png)
 
 ## Example Commands
 

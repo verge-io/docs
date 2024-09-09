@@ -32,7 +32,7 @@ To power off a cluster (a collection of two or more nodes) follow these steps:
     > **Important:** If an environment contains multiple clusters, _**ALWAYS**_ shut down the cluster containing the controller nodes (Node1 & Node2) _**LAST**_!
     {.is-warning}
 
-![cluster-power-off.png](/docs/public/cluster-power-off.png)
+![cluster-power-off.png](/public/cluster-power-off.png)
 
 ---
 
@@ -45,7 +45,7 @@ To properly power on a VergeOS environment, perform the following steps:
 1. Power on all other nodes, waiting approximately 1 minute between power actions.
 1. On the main dashboard, verify that the environment is **Green** and **Online**.
 
-![main-dash-stoplights.png](/docs/public/main-dash-stoplights.png)
+![main-dash-stoplights.png](/public/main-dash-stoplights.png)
 
 ---
 

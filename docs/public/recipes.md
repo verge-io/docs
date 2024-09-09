@@ -26,7 +26,7 @@ A typical use case for a tenant recipe would be for an administrator that has to
 
 ### Recipe Heirarchy
 
-![recipe-arch.png](/docs/public/recipe-arch.png)
+![recipe-arch.png](/public/recipe-arch.png)
 
 <br>
 <br>

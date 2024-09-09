@@ -58,7 +58,7 @@ Rules are processed from the top of list to the bottom. There are situations whe
     -   **Reject** - do not allow specified traffic and send ICMP destination unreachable back to the source, when permitted
 5.  Select ***Protocol*** from the dropdown list. (**ANY** option will apply this rule to all protocols.)
 6.  Select ***Direction*** from the dropdown list. (Incoming or Outgoing)
-7.  The ***Track Rule Statistics*** checkbox can be selected to amass totals of the traffic that is processed through this rule. See [**Tracking Network Statistics**](/docs/product-guide/trackingnetstats) for more information.
+7.  The ***Track Rule Statistics*** checkbox can be selected to amass totals of the traffic that is processed through this rule. See [**Tracking Network Statistics**](/product-guide/trackingnetstats) for more information.
 8.  Select ***Source*** (where traffic comes from) and ***Destination*** (where traffic is addressed to go) from the dropdown list.
     -   **Alias** \- to select an Alias IP defined on this network.
     -   **Any/None** - any source address; no filter on source address
@@ -93,7 +93,7 @@ Rules are processed from the top of list to the bottom. There are situations whe
     -   **Translate** - to define a rule that maps an address/port outside of this network with an address/port within this network
 5.  Select ***Protocol*** from the dropdown list to apply this rule only to specific protocols. Select **ANY** to apply this rule to all protocols)
 6.  Select ***Direction*** from the dropdown list. Incoming(to this network)/Outgoing(from this network)
-7.  The ***Track Rule Statistics*** checkbox can be selected to amass totals of the traffic that is processed through this rule. See [**Tracking Network Statistics**](/docs/product-guide/trackingnetstats) for more information.
+7.  The ***Track Rule Statistics*** checkbox can be selected to amass totals of the traffic that is processed through this rule. See [**Tracking Network Statistics**](/product-guide/trackingnetstats) for more information.
 8.  Select ***Source*** (where traffic comes from), ***Destination*** (where traffic is addressed to go) , and ***Target (where to actually direct the traffic)***
     -   **Alias** - to select an Alias IP defined on this network.
     -   **Any/None** - any source address; no filter on source address
@@ -149,7 +149,7 @@ Rules are processed from the top of list to the bottom. There are situations whe
     -   An upside-down pin icon indicates the rule is pinned to the bottom.
     
     
-![pinnedrules.png](/docs/public/userguide-sshots/pinnedrules.png)    
+![pinnedrules.png](/public/userguide-sshots/pinnedrules.png)    
     
 
     

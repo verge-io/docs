@@ -39,23 +39,23 @@ Importing via Media Images allows you to import a single VM at a time by uploadi
 !!! note "Hyper-V VMs"
     Hyper-V VMs should be exported to OVA/OVF or VMware formats before upload, or you can use the **Create VM Shell, Import VM Disks** method described below to create the VM first, and then import disks.
 
-1. Upload the configuration and disk image files to the vSAN. For instructions, see [Managing Media Images](/docs/knowledge-base/managing-media-images/).
+1. Upload the configuration and disk image files to the vSAN. For instructions, see [Managing Media Images](/knowledge-base/managing-media-images/).
 2. From the **Main Dashboard**, click **Machines** on the left menu.
 3. Click **New VM** on the left menu.
 4. From the options list, select **--Import from Media Images--**. The files uploaded to the vSAN will appear on the right under **Selections Available**. Click to select the VM configuration file (e.g., \*.vmx, \*.ovf).
-   ![VM Import](/docs/public/2023-01-19_12_01_04-2023-01-19_10_35_31-yottadoc___new_virtual_machine.png_%E2%80%8E-_photos.png)
+   ![VM Import](/public/2023-01-19_12_01_04-2023-01-19_10_35_31-yottadoc___new_virtual_machine.png_%E2%80%8E-_photos.png)
 5. Click **Next** at the bottom of the screen.
    ![Import Job](https://verge-io.github.io/docs/public/2023-01-19_11_08_23-yottadoc__import_job.png)
 6. The **VM Name** will default to the name of the configuration file unless you specify a custom name.
 7. By default, the **Preserve MAC Address** option is selected. If you wish to assign a new MAC address to the VM, deselect this option.
-8. Select the **Preferred Tier**, or leave it at the default. This specifies the storage tier for the VM's disks. See [Preferred Tier Usage](/docs/knowledge-base/preferred-tier-usage) for more details.
+8. Select the **Preferred Tier**, or leave it at the default. This specifies the storage tier for the VM's disks. See [Preferred Tier Usage](/knowledge-base/preferred-tier-usage) for more details.
 9. Click **Submit** to create the VM. The new VM's dashboard will be presented.
 
 ## Create VM Shell, Import VM Disks
 
 If you cannot import the entire configuration, you can create a **VM shell** (a disk-less VM) and then import individual disk files.
 
-1. Upload the disk image files to the vSAN. See [Managing Media Images](/docs/knowledge-base/managing-media-images) for details.
+1. Upload the disk image files to the vSAN. See [Managing Media Images](/knowledge-base/managing-media-images) for details.
 2. Create a new **Custom VM** with appropriate hardware specifications. See the **Creating VMs** section in the VergeOS help guide.
 3. Add a new drive to the VM, ensuring to select **Import Disk** in the Media field.
    ![Import Disk](https://verge-io.github.io/docs/public/2023-01-19_11_20_24-importdiskvm.png)

@@ -30,7 +30,7 @@ Reserve a **static IP** on the **Internal (LAN) network** that the VPN connectio
 
 - In this example, the **IP address 192.168.0.254** is set to **static** on the internal network named **Internal**.
 
-    ![Reserve Static IP](/docs/public/ipsec-1.png)
+    ![Reserve Static IP](/public/ipsec-1.png)
 
     - **Type**: Set to **Static**.
     - **IP Address**: Select an available IP address from the system. If there are no available IPs, add a new IP.
@@ -46,12 +46,12 @@ Reserve a **static IP** on the **Internal (LAN) network** that the VPN connectio
    - **IP Address Type**: Set to **Static**.
    - **Network Router IP**: Enter the IP address reserved in Step 1.
 
-    ![Create VPN Connection](/docs/public/ipsec-2.png)
+    ![Create VPN Connection](/public/ipsec-2.png)
 
 ### Step 3: Edit IPsec Configuration
 1. From the **VPN Dashboard**, click on **Edit IPsec** to modify or add connection-specific details.
 
-    ![Edit IPsec](/docs/public/ipsec-3.png)
+    ![Edit IPsec](/public/ipsec-3.png)
 
 ### Step 4: Create the IPsec Tunnel
 1. Click on **IPsec Tunnels** to start creating the tunnel between VergeOS and the remote site.
@@ -59,7 +59,7 @@ Reserve a **static IP** on the **Internal (LAN) network** that the VPN connectio
    - **Remote Gateway**: Configure according to the connection requirements.
    - **Phase 1 Proposal (Authentication)**: Set the authentication method and Pre-Shared Key.
 
-    ![Phase 1 Setup](/docs/public/ipsec-4.png)
+    ![Phase 1 Setup](/public/ipsec-4.png)
 
 ### Step 5: Configure Phase 2
 After completing Phase 1, you will be prompted to configure Phase 2.
@@ -68,7 +68,7 @@ After completing Phase 1, you will be prompted to configure Phase 2.
 - **Local Network** and **Remote Network**: Configure as required.
 - **Phase 2 Proposal**: Enter the details as needed for the connection.
 
-    ![Phase 2 Setup](/docs/public/ipsec-5.png)
+    ![Phase 2 Setup](/public/ipsec-5.png)
 
 !!! note "This will **automatically create rules** for the VPN network."
 
@@ -82,47 +82,47 @@ Verify the rules that were automatically created during VPN setup.
 - **Allow ESP**: Accept incoming ESP protocol traffic to **My Router IP**.
 - **Allow AH**: Accept incoming AH protocol traffic to **My Router IP**.
 
-    ![Review Rules](/docs/public/ipsec-6.png)
+    ![Review Rules](/public/ipsec-6.png)
 
 ### Step 7: Assign a Virtual IP to the VPN Network
 
 Assign a **new virtual IP** to the **VPN network** from the **External network** (Public side of the VPN tunnel).
 
-![Assign Virtual IP](/docs/public/ipsec-7.png)
+![Assign Virtual IP](/public/ipsec-7.png)
 
 !!! note "This automatically creates an **outgoing route rule** on the VPN network with that virtual IP address. Ensure the rule is applied."
 
 ### Step 8: Create VPN Network Rules
 1. **Create a Default Route** rule for the new VPN network to define the default outbound path for traffic inside this network.
 
-    ![Create Default Route](/docs/public/ipsec-9.png)
+    ![Create Default Route](/public/ipsec-9.png)
 
 2. **Create an sNAT Rule** on the new VPN network to mask external traffic.
 
-    ![Create sNAT Rule](/docs/public/ipsec-10.png)
+    ![Create sNAT Rule](/public/ipsec-10.png)
 
 3. **Create a General sNAT Rule** as a catchall for traffic from this network.
 
-    ![General sNAT Rule](/docs/public/ipsec-11.png)
+    ![General sNAT Rule](/public/ipsec-11.png)
 
 4. **Create a Translate Rule** to allow traffic from the VPN tunnel to access this network.
 
-    ![Translate Rule](/docs/public/ipsec-12.png)
+    ![Translate Rule](/public/ipsec-12.png)
 
 5. **Create Accept Rules**:
     - One rule to allow incoming traffic from the remote network.
     - Another rule to accept traffic within the VPN network.
 
-    ![Create Accept Rules](/docs/public/ipsec-16.png)
+    ![Create Accept Rules](/public/ipsec-16.png)
 
 ### Step 9: Create Internal Network Rules
 1. **Create a Route Rule** on the **Internal network** to send traffic properly through the VPN tunnel.
 
-    ![Internal Route Rule](/docs/public/ipsec-13.png)
+    ![Internal Route Rule](/public/ipsec-13.png)
 
 2. **Create an Accept Rule** on the **Internal network** to allow traffic from the remote network.
 
-    ![Internal Accept Rule](/docs/public/ipsec-15.png)
+    ![Internal Accept Rule](/public/ipsec-15.png)
 
 ## Connecting to IPsec
 
@@ -130,7 +130,7 @@ Assign a **new virtual IP** to the **VPN network** from the **External network**
 2. Scroll down to the **IPsec Connections** section.
 3. Click the plug icon to connect.
 
-    ![Connect IPsec](/docs/public/knowledgebase/2024-02-05_ipsec_connect.png)
+    ![Connect IPsec](/public/knowledgebase/2024-02-05_ipsec_connect.png)
 
 4. Watch for the **IPsec** status to show **connected**.
 
@@ -143,7 +143,7 @@ If the connection fails, proceed to the troubleshooting steps below.
 2. Change the **Query** to **Logs** and click **Send**.
 3. Review the latest logs for errors, such as retransmission attempts.
 
-    ![Check Logs](/docs/public/knowledgebase/2024-02-05_09_49_29-retransmit.png)
+    ![Check Logs](/public/knowledgebase/2024-02-05_09_49_29-retransmit.png)
 
 ### Common Connection Issues
 If you see many retransmit messages, this could indicate connection issues, often caused by incorrect network rules or firewall setups.

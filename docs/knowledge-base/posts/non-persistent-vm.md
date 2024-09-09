@@ -22,21 +22,21 @@ A Non-Persistent VM reverts to its original state after a reboot, discarding any
 
 1. Navigate to the **VM dashboard**.
 2. Shutdown the VM by selecting **Actions > Power Off** or using the **Power button**:
-   ![nonpersistentvm-img1.png](/docs/public/nonpersistentvm-img1.png)
+   ![nonpersistentvm-img1.png](/public/nonpersistentvm-img1.png)
    !!! note
        This ensures the data is in a good state for cloning.
 3. Click the **Copy** button next to the main disk on the VM.
-   ![nonpersistent-2.png](/docs/public/nonpersistent-2.png)
+   ![nonpersistent-2.png](/public/nonpersistent-2.png)
 4. Change the **Media Type** to **Non-Persistent** and click **Submit** at the bottom.
-   ![nonpersistent-3.png](/docs/public/nonpersistent-3.png)
-5. Click the **Edit** icon ![editiconpencil.png](/docs/public/editiconpencil.png) for the original **Disk Media Type**.
-   ![nonpersistent-4.png](/docs/public/nonpersistent-4.png)
+   ![nonpersistent-3.png](/public/nonpersistent-3.png)
+5. Click the **Edit** icon ![editiconpencil.png](/public/editiconpencil.png) for the original **Disk Media Type**.
+   ![nonpersistent-4.png](/public/nonpersistent-4.png)
    !!! note
        The new disk will show a **Media Type** of **Non-Persistent**. Any changes made to this disk will be reverted upon a reboot of the VM.
 6. Uncheck the **Enabled** checkbox.
-   ![nonpersistentvm-img5.png](/docs/public/nonpersistentvm-img5.png)
+   ![nonpersistentvm-img5.png](/public/nonpersistentvm-img5.png)
 7. Start the VM by selecting **Power On** from the left-hand menu or clicking the **Play button**:
-   ![nonpersistent-5.png](/docs/public/nonpersistent-5.png)
+   ![nonpersistent-5.png](/public/nonpersistent-5.png)
 
 This will boot the VM using the non-persistent disk. The disk is fully writable during the session, but all changes will be discarded upon reboot, reverting the VM back to its original state. 
 

@@ -42,7 +42,7 @@ System logs are essential for monitoring and troubleshooting the performance and
 
 The log in the following screenshot shows several specific events as examples of logged activity.
 
-![system_logs.png](/docs/public/system_logs.png)
+![system_logs.png](/public/system_logs.png)
 
 - From the entry time-stamped on March 28th, 2022 at 9:21:35, there is a record of the IP address from where the admin user logged in, along with the date and time of the login.
 - The entry at 9:21:55 shows that the user named 'admin' had the password changed from the root environment.

@@ -42,7 +42,7 @@ This guide walks you through the process of creating a VLAN (Virtual Local Area 
 
 3. Configure Network Settings
    - In the network creation page, enter the following settings:
-     ![new-vlan.png](/docs/public/new-vlan.png)
+     ![new-vlan.png](/public/new-vlan.png)
 
 !!! note "Interface Network Selection"
     For the "Interface Network" option, be sure to select the physical network on the nodes that the VLAN enters the environment on. These are typically appended with the name "Switch" during install. For all other settings, the default options are typically sufficient.
@@ -58,7 +58,7 @@ This guide walks you through the process of creating a VLAN (Virtual Local Area 
    - Workloads can now be attached to the newly created network
 
 !!! note "Adding VLANs to Tenants"
-    See the [Virtual Wires KB](/docs/knowledge-base/virtual-wire-setup-and-use/?h=virtual+wire#adding-vlans-inside-of-the-tenant) article for adding VLANS into Tenants.
+    See the [Virtual Wires KB](/knowledge-base/virtual-wire-setup-and-use/?h=virtual+wire#adding-vlans-inside-of-the-tenant) article for adding VLANS into Tenants.
 
 ## Troubleshooting
 
@@ -77,8 +77,8 @@ This guide walks you through the process of creating a VLAN (Virtual Local Area 
 
 ## Additional Resources
 
-- [Network Troubleshooting](/docs/product-guide/net-troubleshooting/)
-- [Virtual Wire Setup and Use](/docs/knowledge-base/virtual-wire-setup-and-use/?h=virtual+wire#prerequisite-steps)
+- [Network Troubleshooting](/product-guide/net-troubleshooting/)
+- [Virtual Wire Setup and Use](/knowledge-base/virtual-wire-setup-and-use/?h=virtual+wire#prerequisite-steps)
 
 ## Feedback
 
