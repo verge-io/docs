@@ -4,7 +4,9 @@
 
 This method allows for the import of many VMs at once. It does not require uploading any files to the vSAN, but rather, allows for pulling data from an NFS or CIFS share. Note: For production, live, VMware environments, it is best to utilize the VMware Service to [**Import from a VMware Backup Job**](/docs/product-guide/importvmware)
 
-> Import should be performed from VMs that are powered down. {.is-warning}
+!!! warning "Import should be performed from VMs that are powered down."
+
+!!! info "NAS Import is only for VMs, not disks. This process is for VMX or OVF files only. Any other formats will need to [Import from Media Images](/docs/knowledge-base/import-vms-from-media)."
 
 <br>
 

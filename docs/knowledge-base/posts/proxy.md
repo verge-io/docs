@@ -27,8 +27,8 @@ Using a Proxy grants the ability to use 1 IP address for multiple Tenant environ
    - Enable **Proxy**.
    - In most cases, the **Proxy Listen Address** field can be left blank. This will default to `0.0.0.0`, meaning it will listen on all addresses.
 
-!!! warning "Prior to version 4.12.4"
-    Bind DNS will need to be temporarily enabled if it is not already in use on the network. This will expose the **IP Alias** selection in the UI (step 2).
+!!! warning "For VergeOS verions 4.12.6 and older"
+    'Bind DNS' will need to be temporarily enabled if it is not already in use on the network. This will expose the IP Alias selection in the UI (step 2).
 
    - Submit the settings but **_DO NOT RESTART THE NETWORK OR APPLY RULES YET!_**
 
