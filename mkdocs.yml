@@ -95,9 +95,9 @@ markdown_extensions:
 #      targets:
 #        include:
 #          - glossary.md   
-#    analytics:
-#        provider: google
-#        property: G-EXFP0W7LTY   
+    analytics:
+        provider: google
+        property: G-KBH6Q02QFH 
 
 extra:
   social:
@@ -112,6 +112,9 @@ extra:
     - icon: fontawesome/solid/phone
       link: tel:855-855-8300
   generator: false
+  analytics:
+      provider: google
+      property: G-KBH6Q02QFH 
 
 copyright: |
   &copy; 2024 <a href="https://verge.io" target="_blank" rel="noopener"> Verge.io</a> | Need more help? Email <a href="mailto:support@verge.io">support@verge.io</a> or call us at <a href="tel:855-855-8300"> 855-855-8300 </a>
