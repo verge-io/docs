@@ -85,12 +85,7 @@ markdown_extensions:
       toc_depth: 2
 #extra:
 #  consent:
-#    title: Cookie consent
-#    description: >- 
-#      We use cookies to recognize your repeated visits and preferences, as well
-#      as to measure the effectiveness of our documentation and whether users
-#      find what they're searching for. With your consent, you're helping us to
-#      make our documentation better.
+
 #  - material.extensions.preview:
 #      targets:
 #        include:
@@ -114,7 +109,13 @@ extra:
   generator: false
   analytics:
       provider: google
-      property: G-KBH6Q02QFH 
+      property: G-KBH6Q02QFH
+  title: Cookie consent
+  description: >- 
+    We use cookies to recognize your repeated visits and preferences, as well
+    as to measure the effectiveness of our documentation and whether users
+    find what they're searching for. With your consent, you're helping us to
+    make our documentation better.
 
 copyright: |
   &copy; 2024 <a href="https://verge.io" target="_blank" rel="noopener"> Verge.io</a> | Need more help? Email <a href="mailto:support@verge.io">support@verge.io</a> or call us at <a href="tel:855-855-8300"> 855-855-8300 </a>
