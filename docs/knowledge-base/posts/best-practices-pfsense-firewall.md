@@ -36,7 +36,7 @@ In certain environments, pfSense may experience network performance issues like 
     - Within the pfSense UI, navigate to **System** > **Advanced** > **Networking** and disable **Hardware Checksum Offloading**.
     - When enabled, pfSense offloads the processing of checksums to the virtual NIC. However, this feature is better suited for physical NICs, and in virtualized environments, it can cause performance degradation by generating unnecessary processing overhead on the virtual machine.
   
-  ![pfSense NIC Offloading Settings](/docs/public/pfsense-offloading.png)
+  ![pfSense NIC Offloading Settings](/public/pfsense-offloading.png)
 
 ## 3. Assigning Adequate Resources
 

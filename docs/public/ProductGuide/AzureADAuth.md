@@ -13,9 +13,9 @@ dateCreated: 2023-03-22T18:46:18.889Z
 ### To Configure an Azure AD Authorization Source
 
 1.  In Azure services: register a single-tenant web application, setting the ***Redirect URI*** to the URL of the VergeOS system and creating a new client secret. **Azure Active Directory -> App Registrations -> New Registration**
-![azurereg1.png](/docs/public/userguide-sshots/azurereg1.png)
+![azurereg1.png](/public/userguide-sshots/azurereg1.png)
 
-![](/docs/public/userguide-sshots/azurereg2.png)
+![](/public/userguide-sshots/azurereg2.png)
 
 2.  Create a new client secret. **App Registrations -> Client Credentials -> Add a certificate or secret. Click +New client secret.**
     -   Enter a **description and expiration date** for the new client secret.
@@ -31,8 +31,8 @@ dateCreated: 2023-03-22T18:46:18.889Z
     	-   **Client Secret** (<span style="color: orange">**Hint:**</span>  **Azure App Registrations-> Configured Item -> Client Credentials**; use the "VALUE" field.)
     <br>
 
-![](/docs/public/userguide-sshots/azureclientsecretadd.png)
-![](/docs/public/userguide-sshots/azureclientsecret2.png)
+![](/public/userguide-sshots/azureclientsecretadd.png)
+![](/public/userguide-sshots/azureclientsecret2.png)
 
 
 3.  From the VergeOS Main Dashboard click **System** on the left menu.
@@ -40,7 +40,7 @@ dateCreated: 2023-03-22T18:46:18.889Z
 3.  Click **New** on the left menu.
 4.  Enter a ***Name*** for the source (such as "Azure"). This name will appear on the sign-in button of the VergeOS login page.
 
-![](/docs/public/userguide-sshots/azureauthform.png)
+![](/public/userguide-sshots/azureauthform.png)
 
 7.  In the ***Driver*** field (dropdown list), select **Azure AD**.
 6.  Enter the ***Tenant ID*** obtained in the previous step.
@@ -86,7 +86,7 @@ Users can be auto-created upon initial login to VergeOS; this can be selected fo
 19. #### Additional Optional Fields:
 
 
-See  [**Authorization Sources (General)**](/docs/product-guide/AuthSources-General) for information regarding additional optional Fields.
+See  [**Authorization Sources (General)**](/product-guide/AuthSources-General) for information regarding additional optional Fields.
 
 
 <br>
@@ -105,7 +105,7 @@ Interfacing with Azure groups requires a token on the Azure AD app registration 
 3.  Check the appropriate **group types**.
 4.  Set the **ID, Access, and SAML to sAMAccountName**.
 
-![](/docs/public/userguide-sshots/azure-editgroupsclaim.png)
+![](/public/userguide-sshots/azure-editgroupsclaim.png)
 
 <br>
 
@@ -118,9 +118,9 @@ Interfacing with Azure groups requires a token on the Azure AD app registration 
 5.  Copy the coordinating **Object Id** from the Groups/All Groups page in Azure AD to the ***Identifier*** field.
 6.  Click **Submit** (bottom of the page) to save the new group.
 
-![](/docs/public/userguide-sshots/azure-groupspage.png)
+![](/public/userguide-sshots/azure-groupspage.png)
 
-![](/docs/public/userguide-sshots/azure-creategroup.png)
+![](/public/userguide-sshots/azure-creategroup.png)
 
 
 <br>
@@ -143,7 +143,7 @@ When creating the new user, use the following configuration:
 -   ***Display Name:*** (optional) If *Update User Display Name* is enabled on the Azure AD auth source, display name will automatically synchronize from the Azure AD user.
 -   ***Email Address:*** (optional) If *Update User Email Address* is enabled on the Azure AD auth source, Email address will automatically synchronize from the Azure AD user.
 
-![](/docs/public/userguide-sshots/azure-newuser.png)
+![](/public/userguide-sshots/azure-newuser.png)
 
 <br>
 

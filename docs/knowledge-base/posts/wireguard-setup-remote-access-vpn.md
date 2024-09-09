@@ -28,7 +28,7 @@ Here are instructions on how to set up a Remote Access VPN using the built-in Wi
 1. In the Verge OS UI, navigate to **Networks -> Internals** and view or **double-click** on the Internal Network that you want to use.
 2. In the left menu, click on **Wireguard (VPN)**.
 3. Click on **Add New Interface**.
-   ![wireguardvpn-img1.png](/docs/public/wireguardvpn-img1.png)
+   ![wireguardvpn-img1.png](/public/wireguardvpn-img1.png)
 
 4. Enter the following information:
     - Enter a unique **Name** for this interface.
@@ -38,20 +38,20 @@ Here are instructions on how to set up a Remote Access VPN using the built-in Wi
     - Enter the **Listen Port** to be used when connecting to the VPN (**Default: 51820**). This is the port that you will use on your External network to send VPN traffic into your Internal Network.
     - Enter a **Private Key** or leave it blank to auto-generate a key.
     - Enter an **Endpoint IP** or leave it blank, and the system will attempt to auto-detect the IP. We **highly recommend** you enter the IP manually to ensure the correct config. This IP is the external IP of your environment, usually the same IP as your UI. You can find your External IP by going to **Networks -> Externals** and viewing your External network. In the Network Router section, it should be the IP address as shown below:
-    ![wireguardvpn-img3-fixed.png](/docs/public/wireguardvpn-img3-fixed.png)
+    ![wireguardvpn-img3-fixed.png](/public/wireguardvpn-img3-fixed.png)
 
 5. Click **Submit** to add the new interface.
 6. After adding the interface, it will take you to the dashboard where you will see your new interface.
-   ![wireguardvpn-img2.png](/docs/public/wireguardvpn-img2.png)
+   ![wireguardvpn-img2.png](/public/wireguardvpn-img2.png)
 
 7. Click **Apply Rules** on the left menu bar to apply the firewall rules. The rules automatically created will accept inbound UDP traffic on port 51820 to both the Router IP and the DMZ IP of the **Internal Network**.
-   ![wireguardvpn-img-intrules.png](/docs/public/wireguardvpn-img-intrules.png)
+   ![wireguardvpn-img-intrules.png](/public/wireguardvpn-img-intrules.png)
 
 ### External Network PAT Rule
 
 In order for the internal network to be connected, we need an external **PAT** (Port Address Translation) rule to translate the port (**default 51820**) to the **internal network**.
 
-![2023-09-06_11_56_18-training___rules.png](/docs/public/2023-09-06_11_56_18-training___rules.png)
+![2023-09-06_11_56_18-training___rules.png](/public/2023-09-06_11_56_18-training___rules.png)
 
 #### Add External PAT Rule
 
@@ -118,7 +118,7 @@ If you are adding **Wireguard** and are not using the IP address of the **UI**, 
 !!! note "You will set up a **Peer** for each user connecting to the VPN."
 
 1. From the Wireguard Interface screen, click **Add new peer**.
-   ![wireguardvpn-img4.png](/docs/public/wireguardvpn-img4.png)
+   ![wireguardvpn-img4.png](/public/wireguardvpn-img4.png)
 
 2. Assign a **Name** to the peer, such as the remote user's name.
 3. Optionally, enter a **Description**.
@@ -127,14 +127,14 @@ If you are adding **Wireguard** and are not using the IP address of the **UI**, 
 6. For **Allowed IPs**, enter the /32 IP for this peer.
 7. In the **Configure Firewall** dropdown, select **Remote User**.
 8. Click **Submit** to save the peer entry.
-   ![wireguardvpn-img6.png](/docs/public/wireguardvpn-img6.png)
+   ![wireguardvpn-img6.png](/public/wireguardvpn-img6.png)
 
 #### Download the Configuration File:
 
 9. Click the **Download Config** button on the peer record and download the file.
 
-   ![download-link.png](/docs/public/download-link.png)
-   ![configuration-file.png](/docs/public/configuration-file.png)
+   ![download-link.png](/public/download-link.png)
+   ![configuration-file.png](/public/configuration-file.png)
 
 #### Install WireGuard Software on Client:
 
@@ -144,7 +144,7 @@ WireGuard client software can be downloaded from: [https://wireguard.com/install
 2. Click **Add Tunnel**.
 3. Navigate to and select the generated configuration file.
 4. Click the **Activate** button to open the tunnel.
-   ![tunnel-active.png](/docs/public/tunnel-active.png)
+   ![tunnel-active.png](/public/tunnel-active.png)
 
 ---
 

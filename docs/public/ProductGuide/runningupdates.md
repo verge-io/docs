@@ -75,11 +75,11 @@ After the updates have been distributed to all nodes and are ready to apply, the
 #### Schedule
 5.  By default, ***Repeat Every*** is set to **Does Not Repeat**.
 
-![updates-scheduleonetime.png](/docs/public/userguide-sshots/updates-scheduleonetime.png)
+![updates-scheduleonetime.png](/public/userguide-sshots/updates-scheduleonetime.png)
 
 
 **Optionally,** the task can be configured to repeat on a regular basis, (for example each week, every 2 weeks, monthly, etc.).6.  Select desired ***Start Date*** and ***At*** time.
-![updates-schedulerecurring.png](/docs/public/userguide-sshots/updates-schedulerecurring.png)
+![updates-schedulerecurring.png](/public/userguide-sshots/updates-schedulerecurring.png)
 
 7.  When a Task is set to recur, an ***Ends*** date/time can Optionally be selected.
 

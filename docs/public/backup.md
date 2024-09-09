@@ -9,7 +9,7 @@ dateCreated: 2022-03-01T16:59:47.257Z
 ---
 
 ## Native Backup
-VergeOS natively contains the ability to backup (sync) a VergeOS environment to another VergeOS environment. This is accomplished by using the integrated [snapshot](/docs/public/snapshots) and sync engines. A custom sync profile can be configured to send cloud snapshots on desired intervals to another environment and retain them for any desired amount of time.
+VergeOS natively contains the ability to backup (sync) a VergeOS environment to another VergeOS environment. This is accomplished by using the integrated [snapshot](/public/snapshots) and sync engines. A custom sync profile can be configured to send cloud snapshots on desired intervals to another environment and retain them for any desired amount of time.
 
 Some benefits to using the integrated functions are:
 - A snapshot sync occurs at the block level using the same hashing algorithm to ensure data integrity

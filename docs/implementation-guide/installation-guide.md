@@ -4,7 +4,7 @@ The VergeOS installation is a single [bootable ISO image](install-media.md) cont
 
 This document provides general instructions for installing a VergeOS system.   <!-- VergeOS is designed to be flexible for different environments.  --> 
 For production systems, use datacenter-quality hardware and follow our reference architectures located in the implementation guide.
-<!-- would like to have a link to send them to here - perhaps we can add a general landing page for ref arch..[Reference architecture Recommendations](/docs/implementation-guide/concepts).-->
+<!-- would like to have a link to send them to here - perhaps we can add a general landing page for ref arch..[Reference architecture Recommendations](/implementation-guide/concepts).-->
 
 ### Installation Process
 
@@ -116,11 +116,11 @@ The system will display an automatically-selected tier for each drive.  Take not
 If you verified all drive tiers were selected as desired (previous screen), simply press [Enter] to proceed.  Otherwise, select **< Yes >**
  and **[Enter]** to view all drives and optionally change any tier assignments.
      
- <!--change this sshot to one from a physical system.>  ![selectdiskfortierchg.png](/docs/assets/selectdiskfortierchg.png) -->
+ <!--change this sshot to one from a physical system.>  ![selectdiskfortierchg.png](/assets/selectdiskfortierchg.png) -->
 
 <!-- insert a link to tier definitions?  and some verbiage about changing them-->
 
- ![selecttier.png](/docs/assets/selecttier.png)
+ ![selecttier.png](/assets/selecttier.png)
 
  20. Configure **Swap**: There are multiple factors to consider in planning swap including: availability of storage, system use, disk type, etc. Consult with the VergeIO implementation team for further information. <!--Development should discuss this and come up with recommendations/best practices for this -->
 
@@ -136,7 +136,7 @@ When installation selections are finalized, the vSAN will be initialized and pac
 23. When the vSAN is successfully mounted and the system is started, the user menu will appear. Press **[Enter]** to select **User Interface** and enter admin login credentials. 
 The main dashboard for your new system will display.  Status indicators should all be green.  
 
-![initialdashboard.png](/docs/assets/initialdashboard.png)
+![initialdashboard.png](/assets/initialdashboard.png)
 
 ---
 

@@ -45,7 +45,7 @@ This model uses a bonded Layer 2 network for the External, UI and API Management
 
 ### Diagram
 
-![Layer 2 Bonded + Dedicated Core](/docs/assets/layer2bonded-dc.png)
+![Layer 2 Bonded + Dedicated Core](/assets/layer2bonded-dc.png)
 
 ## Layer 3 Dynamic + Dedicated Core Fabric
 
@@ -79,7 +79,7 @@ This model uses dynamically advertised Layer 3 networks for the External, UI and
 
 ### Diagram
 
-![Layer 3 Bonded + Dedicated Core](/docs/assets/layer3dynamic.png)
+![Layer 3 Bonded + Dedicated Core](/assets/layer3dynamic.png)
 
 ## Layer 3 Static + Dedicated Core Fabric
 
@@ -113,7 +113,7 @@ This model uses a bonded Layer 3 network for the External, UI and API Management
 
 ### Diagram
 
-![Layer 3 Bonded + Dedicated Core](/docs/assets/layer3bonded-dc.png)
+![Layer 3 Bonded + Dedicated Core](/assets/layer3bonded-dc.png)
 
 ## Layer 2 Static using 2 NICs
 
@@ -148,6 +148,6 @@ In this model, all networks (Core Fabric, External/Management, Workloads) are co
 
 ### Diagram - 2 NICs
 
-![Layer 2 Bonded](/docs/assets/2nic.png)
+![Layer 2 Bonded](/assets/2nic.png)
 
 By choosing the appropriate network design model based on your specific use case and requirements, you can ensure optimal performance and scalability for your VergeOS deployment.

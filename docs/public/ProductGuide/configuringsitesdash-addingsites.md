@@ -22,7 +22,7 @@ Each site that is added to the Sites Dashboard can be included with options:
 
 1.  From the Main Dashboard, Click **Sites** on the left menu.
 2.  Click **New Site** on the left menu.
-![newsiteform.png](/docs/public/userguide-sshots/newsiteform.png)
+![newsiteform.png](/public/userguide-sshots/newsiteform.png)
 
 3.  Enter a ***Name*** that clearly identifies the system, such as a location description.
 4.  Enter the ***URL*** to reach the system, Ex: https:/[]()/Chicago-verge.abcco.com  (URL must be reachable from this VergeOS system)
@@ -43,7 +43,7 @@ Each site that is added to the Sites Dashboard can be included with options:
     -   **Receive cloud snapshots from this site**\* - auto creates incoming sync on this system and outgoing sync on the other side to allow transferring snapshots from the remote system to this one.
     -   **Send and receive cloud snapshots from this site**\* - auto creates incoming and outgoing syncs on both sides to facilitate snapshot transfer both ways
 
-> **\*** Selecting these options will auto generate the necessary incoming/outgoing syncs, and auto registers with receiving systems. Additional configuration is required on the outgoing system to select the snapshots to synchronize; additionally, the sync can be scheduled to occur within specific time frames (e.g. outside of regular business hours); see [Sync Configuration](/docs/product-guide/sync-configuration) for instructions. {.is-info}    
+> **\*** Selecting these options will auto generate the necessary incoming/outgoing syncs, and auto registers with receiving systems. Additional configuration is required on the outgoing system to select the snapshots to synchronize; additionally, the sync can be scheduled to occur within specific time frames (e.g. outside of regular business hours); see [Sync Configuration](/product-guide/sync-configuration) for instructions. {.is-info}    
     
 9.  ***Sync Statistics***:  - continual status information transfer between sites, for simpler monitoring of multiple  systems: displays high-level status info for each site with the ability to drill down on a specific site for more detailed information
     -   **Disabled** - does not configure statistics transfer between these systems
@@ -66,7 +66,7 @@ Each site that is added to the Sites Dashboard can be included with options:
 
 
 
-11.  ***Repair Server***:  - automatic potential rehabilitation if a system experiences problems extending its redundancy tolerance, such as multiple, simultaneous drive failures across nodes, Typically, a repair server would be a sync destination that contains a relatively recent replication of the given system. More information about repair servers can be found here: [Repair Servers](/docs/product-guide/repairserver)
+11.  ***Repair Server***:  - automatic potential rehabilitation if a system experiences problems extending its redundancy tolerance, such as multiple, simultaneous drive failures across nodes, Typically, a repair server would be a sync destination that contains a relatively recent replication of the given system. More information about repair servers can be found here: [Repair Servers](/product-guide/repairserver)
 
 
    -   **Disabled** - does not configure repair servers between these systems

@@ -67,7 +67,7 @@ A period defines a frequency and retention term. Adding multiple periods allows 
 
 7.  Click the ***+Add Period*** link midway down the page.
 8.  Enter a ***Period Name*** (required) (ex: weekly, 6pm, Mondays, etc).
-9.  Select a ***Max Tier for Storing Snapshot*** (default = Tier 1, which is most expensive Tier). Snapshot data will be stored on the same tier as source data except when the Max Tier defined here is a less expensive tier (less expensive = higher number). See [**Storage Tiers**](/docs/product-guide/storagetiers) for more information about storage tiering.
+9.  Select a ***Max Tier for Storing Snapshot*** (default = Tier 1, which is most expensive Tier). Snapshot data will be stored on the same tier as source data except when the Max Tier defined here is a less expensive tier (less expensive = higher number). See [**Storage Tiers**](/product-guide/storagetiers) for more information about storage tiering.
 10.  Select ***Frequency*** for how often to take the snapshots.
 11.  Select values for ***(Month, Day of Month, Day of Week Hour, Minute)*** to schedule the snapshots (fields will vary depending upon the Frequency selected)
 12.  Select ***Retention*** (value) and ***Units*** to define the length of time for which to keep this period's snapshots.
@@ -78,7 +78,7 @@ A period defines a frequency and retention term. Adding multiple periods allows 
 
 > Snapshots retained indefinitely or for longer periods of time are likely to greatly increase storage usage over time; it is important to consider your data change rate and the amount of storage available for storing long term snapshots. {.is-warning}
 
-13.  The ***Quiesce VM Snapshots*** option can be selected to freeze disk activity while the snapshot is being taken. This provides application-consistent backups for VMs. The [**VM Guest Agent**](/docs/product-guide/VMguestagent) must be installed and registered on VM for quiesced snapshots.
+13.  The ***Quiesce VM Snapshots*** option can be selected to freeze disk activity while the snapshot is being taken. This provides application-consistent backups for VMs. The [**VM Guest Agent**](/product-guide/VMguestagent) must be installed and registered on VM for quiesced snapshots.
 14.  Click **Submit** at the bottom of the page to add the period to the snapshot profile.
 15.  Click the ***\+ Add Period*** link and repeat steps 8-14  if additional periods are desired within this profile.
 

@@ -18,7 +18,7 @@ dateCreated: 2022-09-02T15:54:31.531Z
 
 The VergeOS platform provides a feature known as **Site Syncs** to replicate a copy of a cloud snapshot.
 
-!!! info "For more information on Snapshots and Site Syncs, refer to our [Product Guide on Sync Configuration](/docs/product-guide/sync-configuration/)."
+!!! info "For more information on Snapshots and Site Syncs, refer to our [Product Guide on Sync Configuration](/product-guide/sync-configuration/)."
 
 Occasionally, the system may generate a system alert from a new Message Log entry related to the Site Sync functionality. Below is a list of common errors along with a brief explanation:
 
@@ -32,7 +32,7 @@ Occasionally, the system may generate a system alert from a new Message Log entr
 - The snapshot successfully synchronized, but this error appeared during the sync clean-up process. If this error occurs on multiple snapshot synchronizations, the handshake credentials between the two systems may have stopped working. In that case, consult VergeOS support for assistance.
 
 ### Error - Sync back not found and no registration code supplied
-- This error occurs when requesting a snapshot back from the destination site to the source site. If this message appears, Sync Back is not configured between the two systems. Refer to the [Guide on Sync Back](/docs/product-guide/syncingback/) for instructions on setting up Sync-Back between the systems.
+- This error occurs when requesting a snapshot back from the destination site to the source site. If this message appears, Sync Back is not configured between the two systems. Refer to the [Guide on Sync Back](/product-guide/syncingback/) for instructions on setting up Sync-Back between the systems.
 
 ### Error - Sync Request for 'system name' Error notifying client with 'notify_start' Connection timed out
 - This error occurs when requesting a snapshot back from the destination site to the source site, similar to the previous error. Ensure that Sync Back is configured properly between the two systems.
@@ -47,7 +47,7 @@ Occasionally, the system may generate a system alert from a new Message Log entr
 - This error indicates a possible timing issue with snapshots. Review the **Outgoing Sync** configuration on the sending site for any setting mismatches.
 
 ### Error notifying client with 'notify_start' Connection timed out
-- The sync task was unable to start because the connection timed out. Typically, this error occurs when requesting a snapshot back from the destination side to the original sending side. In most cases, this is caused by a firewall blocking the traffic or missing traffic rules on the destination side. Refer to the [Guide on Sync Configuration](/docs/product-guide/sync-configuration/) for the required traffic rules.
+- The sync task was unable to start because the connection timed out. Typically, this error occurs when requesting a snapshot back from the destination side to the original sending side. In most cases, this is caused by a firewall blocking the traffic or missing traffic rules on the destination side. Refer to the [Guide on Sync Configuration](/product-guide/sync-configuration/) for the required traffic rules.
 
 ---
 ---

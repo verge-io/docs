@@ -36,7 +36,7 @@ The node dashboard will indicate IPMI ***status*** and ***date/time of last time
   - **IPMI Last Connected** - displays the last date/time the VergeOS system successfully connected to IPMI. (If there was never a successful IPMI connection, the field will report "NA".)
   <br>
 
-![nodedash-ipmistatus.png.png](/docs/public/userguide-sshots/nodedash-ipmistatus.png)
+![nodedash-ipmistatus.png.png](/public/userguide-sshots/nodedash-ipmistatus.png)
 
 <br>
 <br>

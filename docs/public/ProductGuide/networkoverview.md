@@ -10,7 +10,7 @@ dateCreated: 2023-03-29T18:36:29.086Z
 
 # Networking Overview
 
-This page provides general information to help get familiar with networking in VergeOS. We recommend reading through this page to get a foundation of the basics. QuickStart Instructions for common network tasks are available on the Quick Start Page: [**Networking - Quick Start Instructions**](/docs/product-guide/network-quickstart)
+This page provides general information to help get familiar with networking in VergeOS. We recommend reading through this page to get a foundation of the basics. QuickStart Instructions for common network tasks are available on the Quick Start Page: [**Networking - Quick Start Instructions**](/product-guide/network-quickstart)
 
 <br>
 <br>
@@ -73,7 +73,7 @@ Rules govern incoming and outgoing traffic to the network:
  
  <br>
  
- More information about working with network rules is available here: [**Network Rules**](/docs/product-guide/networkrules) 
+ More information about working with network rules is available here: [**Network Rules**](/product-guide/networkrules) 
 
 <br>
 

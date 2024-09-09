@@ -57,7 +57,7 @@ Network Rules are necessary to translate incoming sync traffic to the vSAN. **No
     -   ***Type:*** IP/Custom
     -   ***Target IP:*** ui (This is a VergeOS keyword; it must be entered in lower case, exactly as noted)
 
-![rule-core-vsanpat.png](/docs/public/userguide-sshots/rule-core-vsanpat.png)
+![rule-core-vsanpat.png](/public/userguide-sshots/rule-core-vsanpat.png)
 
 8.  Click **Submit** to save the new rule.
 9.  The system will prompt to Apply Rules. Click **Apply Rules** on the left menu to put the rule into effect.
@@ -91,7 +91,7 @@ Network Rules are necessary to translate incoming sync traffic to the vSAN. **No
     -   ***Destination Ports/Ranges:*** 14201
     -   ***Type:*** IP/Custom
     -   ***Target:*** ui (This is a VergeOS keyword; it must be entered in lower case, exactly as noted)
- ![sync-snat.png](/docs/public/userguide-sshots/sync-snat.png)
+ ![sync-snat.png](/public/userguide-sshots/sync-snat.png)
  
 8.  Click **Submit** to save the new rule.
 9.  Click **Apply Rules** on the left menu to put the rule into effect.
@@ -193,7 +193,7 @@ When a specific tier(1-5) is selected here, the sync directs all data to the sel
 
 ## Specifying Snapshots to Auto Sync Along with Remote Retention
 
-> The *Cloud Snapshot Profile* determines the snapshot take and retention schedule for the entire local system (Cloud Snapshots include a complete recovery point of the entire VDC, including: VMs, networks, tenants, vSAN, NAS, etc.) These are the snapshots that can be selected for an automatic site sync. To change the profile used to control local system snapshots: System -> Cloud Snapshots > Select Snapshot Profile.  For more information about Cloud Snapshots: see [**Cloud Snapshots and Restores**](/docs/product-guide/cloudsnapshotandrestore) Snapshots {.is-success}
+> The *Cloud Snapshot Profile* determines the snapshot take and retention schedule for the entire local system (Cloud Snapshots include a complete recovery point of the entire VDC, including: VMs, networks, tenants, vSAN, NAS, etc.) These are the snapshots that can be selected for an automatic site sync. To change the profile used to control local system snapshots: System -> Cloud Snapshots > Select Snapshot Profile.  For more information about Cloud Snapshots: see [**Cloud Snapshots and Restores**](/product-guide/cloudsnapshotandrestore) Snapshots {.is-success}
 
 <br>
 
@@ -209,7 +209,7 @@ The Configuration form will appear.
 
 <br>
 
-![sync-periodretention.png](/docs/public/userguide-sshots/sync-periodretention.png)
+![sync-periodretention.png](/public/userguide-sshots/sync-periodretention.png)
 
 
 5. In the **Sync Snapshots From** dropdown list, select a desired profile period (e.g. "Hourly for 3 hours", "Midnight", "Noon").  The options that appear will depend on the periods defined in the Snapshot Profile assigned for the local system (by default, this will be the *Cloud Snapshots* profile.)
@@ -241,7 +241,7 @@ When no schedule is defined for the sync, Snapshots defined in the Auto Sync Con
 3. Create a **Task** with **Task type = Enable** to set a start time for the sync.
 4. Create an **additional Task** with **Task type = Disable** to set a stop time for the sync.
 
-More information on creating Tasks is available here: [**Create Tasks**](/docs/product-guide/createtasks)
+More information on creating Tasks is available here: [**Create Tasks**](/product-guide/createtasks)
 
 
 <br>
@@ -257,7 +257,7 @@ More information on creating Tasks is available here: [**Create Tasks**](/docs/p
 **-OR-**
 Create **an additional Task** with **Task type = Throttle Sync** configuring a schedule to implement an alternate bandwidth limit for throttle.
 
-More information on creating Tasks is available here: [**Create Tasks**](/docs/product-guide/createtasks)
+More information on creating Tasks is available here: [**Create Tasks**](/product-guide/createtasks)
 
 <br>
 <br>
@@ -267,7 +267,7 @@ More information on creating Tasks is available here: [**Create Tasks**](/docs/p
 
 ## Repair Server
 
-A Repair Server will allow vSAN data blocks to be replicated from the sync destination back to the source when needed; this provides automatic restoration attempts in the event of hardware or power issues that surpass redundancy levels. See the [**Repair Server**](/docs/product-guide/repairserver) page for more information.
+A Repair Server will allow vSAN data blocks to be replicated from the sync destination back to the source when needed; this provides automatic restoration attempts in the event of hardware or power issues that surpass redundancy levels. See the [**Repair Server**](/product-guide/repairserver) page for more information.
 
 
 <br>   

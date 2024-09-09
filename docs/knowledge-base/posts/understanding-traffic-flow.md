@@ -18,17 +18,17 @@ dateCreated: 2023-11-29T16:50:57.491Z
 ---
 
 ## Traffic/Network Flow Diagram
-![VergeOS-traffic-flow_(1).png](/docs/public/knowledgebase/vergeio-traffic-flow_(1).png)
+![VergeOS-traffic-flow_(1).png](/public/knowledgebase/vergeio-traffic-flow_(1).png)
 
 <br>
 
 ## Example of an External Network using VLAN 55 and an Internal Network
-![vnet_wiring.png](/docs/public/knowledgebase/vnet_wiring.png)
+![vnet_wiring.png](/public/knowledgebase/vnet_wiring.png)
 
 <br>
 
 ## Example of the Core Network Configuration
-![core_config.jpg](/docs/public/core_config.jpg)
+![core_config.jpg](/public/core_config.jpg)
 
 <br>
 

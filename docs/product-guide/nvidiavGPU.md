@@ -18,13 +18,13 @@ GRID vGPU drivers can be downloaded from your NVIDIA licensing portal or by regi
 
 2.  Upload the vGPU driver to the VergeOS vSAN. For directions on uploading to the vSAN, see: 
 
-[**Uploading to the vSAN (Media Images)**](/docs/product-guide/uploadingtovSAN)
+[**Uploading to the vSAN (Media Images)**](/product-guide/uploadingtovSAN)
 
 3.  From the Main Dashboard, click **Nodes**.
 4.  The Nodes listing page appears. **Double-click the desired node**.
 5.  Click **Drivers** on the left menu.
 6.  Click **New** on the left menu.
-![](/docs/public/userguide-sshots/newdrivernvidiavgpu.png)
+![](/public/userguide-sshots/newdrivernvidiavgpu.png)
 
 
 7.  From the ***Driver*** dropdown list, select the GPU driver (uploaded to media files in previous step.)
@@ -43,7 +43,7 @@ GRID vGPU drivers can be downloaded from your NVIDIA licensing portal or by regi
 13.  Click **GPUs** on the left menu.
 14.  **Double-click the desired GPU** in the list.
 
-![](/docs/public/userguide-sshots/gpuprofiledropdown.png)
+![](/public/userguide-sshots/gpuprofiledropdown.png)
 Selected GPU appears in the first field (PCI Device).
 
 <br>
@@ -62,7 +62,7 @@ Selected GPU appears in the first field (PCI Device).
 3.  Click **Devices** on the left menu.
 4.  Click **New** on the left menu.
 5.  The Device Entry Form appears.
-![](/docs/public/userguide-sshots/newvmdevicenvidia.png)
+![](/public/userguide-sshots/newvmdevicenvidia.png)
 
 6.  Optionally, a ***Name*** can be entered for the device.
 7.  Select **NVIDIA vGPU** in the ***Type*** dropdown list.

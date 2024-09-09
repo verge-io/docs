@@ -13,7 +13,7 @@ dateCreated: 2023-03-29T21:24:27.278Z
 Internal Networks can be created as Layer2 or Layer3. To create a layer3 Internal network (in which dhcp, DNS, firewall, routing and throttling can be managed within VergeOS) select ***IP Address Type =*** **Static**
 
 .
-![internallayer3.png](/docs/public/userguide-sshots/internallayer3.png)
+![internallayer3.png](/public/userguide-sshots/internallayer3.png)
 
 
 Full internal network instructions can be found at: [**Internal Networks (General Instructions)**](..//product-guide/internalnetworks).

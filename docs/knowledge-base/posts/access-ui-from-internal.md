@@ -46,7 +46,7 @@ This article guides you through the process of setting up access to the vergeOS 
    - Locate the option to create a new rule
    - Use the settings shown in the image below:
    
-   ![ui-access-rule.png](/docs/public/ui-access-rule.png)
+   ![ui-access-rule.png](/public/ui-access-rule.png)
 
 3. Submit the Rule
    - After configuring the rule, submit it
@@ -73,9 +73,9 @@ This article guides you through the process of setting up access to the vergeOS 
 
 ## Additional Resources
 
-- [Network Overview](/docs/product-guide/networkoverview)
-- [Network Rules](/docs/product-guide/networkrules)
-- [Creating an Internal Network](/docs/product-guide/internalnetworks)
+- [Network Overview](/product-guide/networkoverview)
+- [Network Rules](/product-guide/networkrules)
+- [Creating an Internal Network](/product-guide/internalnetworks)
 
 ## Feedback
 

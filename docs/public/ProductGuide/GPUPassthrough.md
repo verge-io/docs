@@ -21,7 +21,7 @@ dateCreated: 2023-03-27T19:53:35.522Z
 2.  Click **Drivers** on the left menu.
 3.  Click **New** on the left menu.
 
-![ledunsupported.png](/docs/public/userguide-sshots/newdriverpassthru.png)
+![ledunsupported.png](/public/userguide-sshots/newdriverpassthru.png)
 
 
 4.  Select ***node*** from the dropdown list.
@@ -41,7 +41,7 @@ dateCreated: 2023-03-27T19:53:35.522Z
 3.  Click **Devices** on the left menu.
 4.  Click **New** on the left menu. The Device Entry Form appears.
 
-![ledunsupported.png](/docs/public/userguide-sshots/gpunewdeviceform.png)
+![ledunsupported.png](/public/userguide-sshots/gpunewdeviceform.png)
 
 5.  Optionally, a ***Name*** and ***Description*** can be entered for the device.
 6.  Select **GPU Passthrough** in the ***Type*** dropdown list.
