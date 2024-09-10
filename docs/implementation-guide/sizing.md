@@ -7,6 +7,7 @@
 
 - Intel or AMD x86 64-bit processor with hardware virtualization support
 - Minimum of 16GB RAM dedicated to VergeOS
+- IPMI, iDrac, iLO, or equivelant technology
 - HBA (preferred) or RAID controller that supports JBOD or IT mode - NO RAID
 - 1 x 1GbE NIC for External Network (Intel, Mellanox, or Broadcom)
 - 1 x 10GbE NIC for Core Fabric Network (Intel, Mellanox, or Broadcom)
@@ -33,7 +34,7 @@
 
 ### GPU (Optional)
 
-- Compatible with any AMD, Intel, or Nvidia GPU
+- Compatible with any AMD, Intel, or Nvidia GPU[^1}]
 - Nvidia vGPU also supported
 
 <!-- ### Additional Network Considerations
@@ -47,6 +48,7 @@
 
 - Intel or AMD x86 64-bit processor with hardware virtualization support
 - Minimum of 16GB RAM dedicated to VergeOS
+- IPMI, iDrac, iLO, or equivelant technology
 - HBA controller
 - Minimum of 16GB RAM dedicated to VergeOS
 - 2 x 25/40/100GbE NICs (Intel, Mellanox, or Broadcom)
@@ -92,5 +94,6 @@ The following table outlines the maximum supported hardware specifications for v
 | Tiers of storage per system     | 5       | tiers         |
 | vSAN Fault domains per system   | 2       | vSAN          |
 
+[^1]: Graphics cards are supported for VM usage and may not function for console access.
 [^2]: vSAN nodes require a minimum 1GB of RAM per 1TB of Storage
 [^3]: Virtio-SCSI Interface required
