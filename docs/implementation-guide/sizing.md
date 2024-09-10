@@ -87,8 +87,8 @@ The following table outlines the maximum supported hardware specifications for v
 | Disks per VM [^3]               | 2000    | vdisk         |
 | Individual physical disk size   | 64      | terabyte      |
 | vDisk size                      | 2000    | terabyte      |
-| RAM per host [^2]                | 5       | terabyte      |
-| Clusters per system             | 1000    | cluster       |
+| RAM per host [^2]               | 5       | terabyte      |
+| Clusters per system             | 100     | cluster       |
 | Tiers of storage per system     | 5       | tiers         |
 | vSAN Fault domains per system   | 2       | vSAN          |
 
