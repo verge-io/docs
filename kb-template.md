@@ -3,14 +3,14 @@ title: [Article Title]
 slug: [url-friendly-title]
 description: [Brief description of the article]
 author: [Authors Name]
-published: [true/false]
-date: [YYYY-MM-DD]
+draft: [true/false]
+date: [YYY-MM-DDTHH:MM:SS.sssZ]
 tags: [tag1, tag2, tag3]
 categories:
   - [Category1]
   - [Category2]
 editor: markdown
-dateCreated: [YYYY-MM-DD]
+dateCreated: [YYY-MM-DDTHH:MM:SS.sssZ]
 ---
 
 # [Article Title]
@@ -44,12 +44,8 @@ dateCreated: [YYYY-MM-DD]
 
 ## Examples
 
-```yaml
-# Example vergeOS configuration
-resource:
-  name: example
-  type: vm
-  # Add more relevant configuration here
+```bash
+sudo dnf install open-vm-tools
 ```
 
 [Provide one or more examples of how to apply the information in this article within the context of vergeOS]
