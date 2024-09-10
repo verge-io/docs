@@ -7,7 +7,7 @@
 
 - Intel or AMD x86 64-bit processor with hardware virtualization support
 - Minimum of 16GB RAM dedicated to VergeOS
-- IPMI, iDrac, iLO, or equivelant technology
+- IPMI, iDrac, iLO, or equivalent technology
 - HBA (preferred) or RAID controller that supports JBOD or IT mode - NO RAID
 - 1 x 1GbE NIC for External Network (Intel, Mellanox, or Broadcom)
 - 1 x 10GbE NIC for Core Fabric Network (Intel, Mellanox, or Broadcom)
@@ -48,7 +48,7 @@
 
 - Intel or AMD x86 64-bit processor with hardware virtualization support
 - Minimum of 16GB RAM dedicated to VergeOS
-- IPMI, iDrac, iLO, or equivelant technology
+- IPMI, iDrac, iLO, or equivalent technology
 - HBA controller
 - Minimum of 16GB RAM dedicated to VergeOS
 - 2 x 25/40/100GbE NICs (Intel, Mellanox, or Broadcom)
