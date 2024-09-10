@@ -2,13 +2,9 @@
 
 # NVIDIA vGPU (Virtual GPU)
 
+!!! info "NVIDIA GRID licensing is required to use NVIDIA vGPU."
 
-<br>
-<br>
-
-> NVIDIA GRID licensing is required to use NVIDIA vGPU. {.is-info}
-
-<br>
+---
 
 ## Host Installation/Configuration
 
