@@ -24,7 +24,7 @@ core component, integrated part of the Cloud operating system - there is no need
 </details>
 
 <details>
-<summary>security?</summary
+<summary>security?</summary>
 </details>
 
 <details>
@@ -32,14 +32,15 @@ core component, integrated part of the Cloud operating system - there is no need
 </details>
 
 <details>
-<summary>MAx size?<summary>
+<summary>MAx size?</summary>
 
-<details>
+</details>
 
 <details>
 <summary>Block Storage?  LUNS?</summary>
 </details>
 
+<details>
 <summary>Can spinning disk be used for the vSAN?</summary>
 Spinning disks are typically used for archive/backup environments or cold data.  They are not recommended for production/hot data.  
 Spinning disks larger than 8TB in size are not recommended as the rebuild time in larger spinning drives can take an extended period of time leaving a single point of failure.
@@ -68,6 +69,9 @@ Spinning disks larger than 8TB in size are not recommended as the rebuild time i
 <summary>Can existing external storage be utilized in a VergeOS environment?</summary>
 While local node storage is preferred, however, existing fiber-channel-attached storage can be integrated as virtual drives. 
 </details>
+
+<br>
+<br>
 
 
 
