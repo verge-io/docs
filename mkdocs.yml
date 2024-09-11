@@ -15,7 +15,7 @@ theme:
   features:
     - navigation.tabs
     - navigation.tabs.sticky
-    - navigation.sections
+    #- navigation.sections
     - navigation.indexes
     #- toc.integrate
     - navigation.top
