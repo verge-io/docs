@@ -100,5 +100,5 @@ This guide walks you through the process of requesting an airgap license for Ver
 ---
 
 !!! note "Document Information"
-    - Last Updated: 2024-08-19T15:41:14.296Z
+    - Last Updated: 2024-09-09T15:41:14.296Z
     - VergeOS Version: 4.12.6
