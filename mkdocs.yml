@@ -55,6 +55,7 @@ plugins:
       - en
   - glightbox
 markdown_extensions:
+  - abbr
   - sane_lists
   - admonition
   - attr_list
@@ -64,6 +65,8 @@ markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.snippets:
+      auto_append:
+        - docs/definitions.md
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.tasklist:
