@@ -5,11 +5,11 @@ description: Guide on how to request and obtain an airgap license for VergeOS Sy
 draft: false
 date: 2024-08-19T15:41:14.296Z
 tags:
-  - [airgap
+  - airgap
   - license
   - verge
   - vergeos
-  - air-gapped]
+  - air-gapped
 categories:
   - Licensing
   - System Administration
@@ -47,8 +47,6 @@ This guide walks you through the process of requesting an airgap license for Ver
    - A popup window titled "Request Generated" will appear
    - This window displays information about the license request file
    
-   ![Request License Popup](/api/placeholder/400/320)
-
 4. Download Request File
    - Click the **Download Request File** button
    - Save the license request file to your local machine
