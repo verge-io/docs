@@ -187,7 +187,6 @@ nav:
       - Updates / Licensing:
         - Applying Updates: product-guide/runningupdates.md
         - Settings: product-guide/updatesettings.md
-        - Air-Gap License: product-guide/airgap-license.md
     - Virtual Machines:
       - Quick Start:
         - Best Practices: product-guide/VMbestpractices.md
