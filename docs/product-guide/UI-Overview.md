@@ -29,17 +29,12 @@ Breadcrumbs are links at the top of the screen that reflect the recent history o
 
 The first breadcrumb (a home icon, labeled with the system name) will always provide a quick link back to the Main Dashboard.
 
->  Clicking the Home breadcrumb will also clear all other breadcrumbs. {.is-success}
-
-### Left Nav Menu
-
-Most screens will include a left navigation menu with action items relating to the currently selected section. The heading on the top of the Left Nav Menu indicates the current section.
+>  Clicking the Home breadcrumb will also clear all other breadcrumbs. 
 
 
 ### More Dashboards
 Dashboards, providing at-a-glance information (and quick-link access to more detailed information), are available throughout the system. Subsections, such as networks, machines, and storage each have one. Specific instances of objects also have their own dashboard as well, such as each individual: VM, network, node, tenant, etc. Every dashboard contains many links that can be used to dive further into more detailed information.
 
-<br>
 
  - ##### **Example 1:**
 

@@ -34,6 +34,7 @@ A group is a collection of users. Groups can also contain other groups.  Adminis
 2.  Select **Users**.
 3.  Select **New**.
 4.  Select an ***Authorization Source*** if appropriate (This field will not display if no third-party authorization sources are configured for the system.). The default selection of "--None--" creates a user that authenticates directly via VergeOS.
+!!! note "If the authorization source has been configured to auto create users, do not create the user here."		
 5.  Enter a ***Username***; this will be the user's login name. The username must be unique within this cloud (Note: each tenant is a separate VergeOS Cloud).
 6.  Select appropriate user ***Type***:
     -   **Normal** - users that will log in to the full UI
