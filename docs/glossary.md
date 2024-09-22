@@ -103,6 +103,9 @@ A mechanism in VergeOS for potential reconstruction of a system that experienced
 ### **Repository**: 
 A site collection of recipe catalogs in VergeOS. Each tenant can create a local repository to store its own recipe catalogs.
 
+### **Rules:
+Rules allow you to define behavior for incoming and outgoing traffic in VergeOS networks. Types include: Accept/Drop/Reject(firewall), Route(static), and Translate(NAT/PAT).
+
 ## S
 
 ### **Scale Out**: 

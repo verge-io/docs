@@ -11,6 +11,8 @@ The [Remote Console](/product-guide/VM-RemoteConsole) provides video/keyboard-mo
 ## Cloning a VM
 The cloning feature allows you to create a new VM instance as a replica of an existing VM (with or without same MAC addresses). This can come in handy for a variety of uses: testing, deployment, data recovery, etc. Cloning a VM in VergeOS is nearly instantaneous and an easy process.
 
+<!--!!! tip "While cloning allows you to make a simple copy of a VM, [Recipes](/product-guide/VM-Recipes) empower you to generate new custom VM instances based on a template VM; recipe questions provide for adjusting details of each instance, as it is created, such as IP address, guest username/passwords, allocated resources, etc. -->   
+
 ### To Clone a VM:
 
 1. When possible, **stop the VM** before cloning it.
