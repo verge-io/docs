@@ -2,10 +2,10 @@
 Network Dashboards provide a wealth of helpful information: data that can assist to monitor, tune, and troubleshoot networks in your system. They provide at-a-glance information and allow many clickable areas for “drilling down” to access more specific information where needed. There is a Networks Dashboard that displays summary information for all your Networks and links to more detailed information, such as the Dashboard for any individual Network.
 
 
-## Networks (Overview) Dashboard 
-The Networks Dashboard contains summary information for all the networks in the system.
+## The All-Networks Dashboard 
+The All-Networks Dashboard contains summary information for all the networks in the system.
 
-**To access the Networks Dashboard:**  
+**To access the All-Networks Dashboard:**  
 Click on **Networks** from the Main Dashboard (quick-link or left menu.)
 
 
