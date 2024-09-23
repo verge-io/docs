@@ -35,6 +35,10 @@ Each Network has its own Dashboard to show configuration and summary information
 **Storage Used/Provisioned/Allocated**
 
 Tenant Storage numbers can be confusing. The Storage section shows you all the Storage Tiers and Usage statistics. Here is an explanation for each:
+**Used/Provisioned** - 
+
+**Allocated/Provisioned** - 
+
 - **Storage Used** - This is the current actually used storage across the entire storage tier. This includes storage used for the entire tenant. This number is the deduplicated amount used. The actual amount used can be much higher if exported outside of VergeOS. 
 - **Storage Provisioned** - Provisioned storage is the amount of storage that was provisioned when creating this tier. You can use more than the provisioned amount as long as the host has enough storage available. Caution should be used as you do not ever want to run out of storage at the host level. 
 - **Storage Allocated** - This is the amount of storage allocated to the tenant and all of its workloads. For example, when creating VMs this is the total size of the drives. This also includes the allocated storage in your snapshots as well. 
@@ -43,6 +47,17 @@ Tenant Storage numbers can be confusing. The Storage section shows you all the S
 
 In general, you should always Provision more storage than Used or even Allocated. -->
 
+### Understanding Storage Used/Provisioned/Allocated
+
+* **Provisioned** - the amount of (post-deduplication **\***) storage that has been specified as available to the tenant.  
+!!! note "A Tenant's provisioned storage is not a hard limit.  However, alerts are triggered based on this threshold, so it is important to monitor the All-Tenants Dashboard for warnings and alerts.  **Subscriptions** (below) provide an easy way to track tenant dashboards, alerts and errors." <!-- check on this - what alerts/errors/warnings trigger for this exactly?  automatic at a certain percentage? -->
+
+* **Used** - reflects the tenant's actual consumed storage, after deduplication **\***. 
+
+* **Allocated** - represents the high-end amount of storage that would be utilized should all the Tenant's disk devices be filled to capacity. The amount of allocated storage can often show a much larger number than used or provisioned because device files are thin provisioned; the amount of storage allocated to a VM drive/NAS volume is not actually consumed by the vSAN until actually used, e.g. a 4TB VM drive that only contains 200GB of data has 4TB allocated, but only consumes 200GB of vSAN space(minus any deduplication)
+
+    **\*** <span style="font-size:.75em">Tenant storage numbers only consider deduplication within the tenant's own stored data. Cross-tenant deduplication is not factored in.</span>
+
 
 **Usage**
 CPU, RAM, and Storage usage for the Tenant is provided in graph form (**5-minute intervals**) as well as statistic listings for the current **5-second “heartbeat”**, with statistics information saved for the **5-minute** intervals (**corresponding to standard 95th percentile standards for billing**). History links allow you to gather usage information for specific periods. 
@@ -50,64 +65,35 @@ CPU, RAM, and Storage usage for the Tenant is provided in graph form (**5-minute
 **To see more granular detail on graphs:** Click and drag a subset of the graph to see more detail for that selected timeframe.
 Double-click to back out to the original detail level.
 
-**Logs**
-The most recent log entries will show on the Dashboard screen. Errors are highlighted in Red for easy recognition. Click the **--View More--** link at the bottom to view further back in the logs. 
+**Logs**  
+
+The most recent log entries will show on the Dashboard screen. Errors are highlighted in red for easy recognition. Click the **--View More--** link at the bottom to view further back in the logs. 
 
 <br>
 
 ## Subscriptions
-Subscriptions can provide you with both regularly scheduled reports and on-demand alerts when errors, warnings, or specified changes occur, or if configured thresholds are reached. Instructions for a few typical Tenant-related subscriptions follow. For more information regarding Subscriptions, consult contact VergeIO Support for assistance.
-
-**All Tenants**
-To Create a Subscription to Receive Alerts for Status Errors or Warnings related to Tenants:
-
-1. From the **Tenants Dashboard**, click **Subscriptions** on the left menu. 
-1. Click **New**.
-1. Select **User Type** (User or Group).
-1. Select **Owner** (specific User/Group).
-1. The **Target Type and Type fields are already populated as needed** since Subscriptions was selected from the Tenants Dashboard. 
-1. Enter a **Name for the Subscription**.  The name you enter will appear in the **email message sent**. 
-1. In the Subscription **Type**, select **On-demand**. 
-1. In the Subscription profile, select **Tenants Dashboard Status Warnings** or **Errors**.
-1. **Reminder while active and Throttle to..** fields can be configured to control the frequency of alerts.
-
-![monit-7.png](/public/monit-7.png)
-
-**To Create a Daily Subscription with a Summary of all Tenants (Tenants Dashboard):**
-
-1. From the **Tenants Dashboard**, click **Subscriptions** on the left menu. 
-1. Click **New**.
-1. Select **User Type** (User or Group).
-1. Select **Owner** (specific User/Group).
-1. The **Target Type and Type fields are already populated as needed** since Subscriptions was selected from the Tenants Dashboard. 
-1. Enter a **Name** for the Subscription.  
-1. In the Subscription **Type**, select **Scheduled**. 
-1. In Subscription profile, select **Tenants Dashboard**. 
-1. In the **Frequency** field, select **Daily**.
-1. Select **Hour and Minute** fields for desired time. 
-1. Click **Submit**. 
-
-The following screenshot shows a Daily Subscription configured to send each day at 7:15 AM. 
-![monit-8.1.png](/public/monit-8.1.png)
-
-**Individual Tenant**
-
-**To Create a Weekly Subscription with a Summary of  an Individual Tenant (individual Tenant Dashboard):**
-
-1. From the **particular Tenant Dashboard**, click **Subscriptions** on the left menu. 
-1. Click **New**.
-1. Select **User Type** (User or Group).
-1. Select **Owner** (specific User/Group).
-1. The **Target Type and Type fields are already populated as needed** since Subscriptions was selected from the desired Tenant Dashboard. 
-1. Enter a **Name** for the Subscription.  
-1. In the Subscription **Type**, select **Scheduled**. 
-1. In the **Subscription** profile, select **Tenants Dashboard**. 
-1. In the **Frequency** field, select **Weekly**.
-1. Select the desired **Day of Week**.
-1. Select **Hour and Minute** fields for desired time. 
-1. Click **Submit**. 
+Subscriptions can provide you with both regularly scheduled reports and on-demand alerts when errors, warnings, or specified changes occur, or if configured thresholds are reached.   
 
 
-The following screenshot shows a **Subscription** configured to receive a weekly Dashboard report for the “**CustomerABC**” Tenant, every **Monday** at **12:00 PM**.  The Subscription is configured to go to the “**SrvAdmin**” Group. 
+The Subscription engine allows you to customize how and when you receive reports and notifications.  The Following examples demonstrat Tenant-related Subscriptions that can help in ongoing monitoring of the health and resource usage of Tenants.  
 
-![monit-9.png](/public/monit-9.png)
+
+**I. Example configuration - receive alerts for any status errors or warnings related to Tenants:**
+
+
+![tenantssubscription-alert](/assets/tenantssubscription-alert.png)
+
+
+**II. Example configuration - 7:15 am daily report of the All-Tenants Dashboard (overview information):**
+
+
+![tenantssubscription-report](/assets/tenantssubscription-report.png)
+
+
+**III. Example configuration - weekly report (to the Administrators Group) showing summary information for a specific Tenant:**
+
+  
+![singletenantsubscription-report](/assets/singletenantsubscription-report.png)
+
+
+There are many options available when creating subscriptions.  See full instructions here: [**Subscriptions-Overview](/product-guide/subscriptions-overview)
