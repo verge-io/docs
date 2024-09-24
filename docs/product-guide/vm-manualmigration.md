@@ -1,6 +1,6 @@
 # Manual VM Migration
 
-Migrating a VM moves it to from running on one host node to run on another, while keeping the VM running. Migration operations are handled automatically during VergeOS updates and when nodes are put into maintenance mode. VMs can also be manually migrated, when needed.
+Migrating a VM moves it from running on one host node to run on another, while keeping the VM running. Migration operations are handled automatically during VergeOS updates and when nodes are put into maintenance mode (provided there are adequate systems resources). VMs can also be manually migrated, when needed.
 
 ## To Migrate a single VM:
 
