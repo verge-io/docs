@@ -1,6 +1,6 @@
 # Monitoring Tenants
 
-This page discusses the use of Dashboards and Subscriptions to oversee Tenants.  Dashboards will provide a lot of helpful information about Tenants. Subscriptions allow for reports and on-demand alerts upon various events.
+This page discusses the use of Dashboards and Subscriptions to oversee Tenants.  Dashboards will provide a lot of helpful information about Tenants. Subscriptions allow for sending reports and on-demand alerts based upon various events.
 
 
 ## The All-Tenants Dashboard (summary info)
@@ -31,22 +31,6 @@ Each Tenant has its own Dashboard to show configuration and summary information 
 
 
 
-<!-- will rework this section because it is not clear. Obviously was put in because there is customer confusion around the issue, but this probably won't help.
-**Storage Used/Provisioned/Allocated**
-
-Tenant Storage numbers can be confusing. The Storage section shows you all the Storage Tiers and Usage statistics. Here is an explanation for each:
-**Used/Provisioned** - 
-
-**Allocated/Provisioned** - 
-
-- **Storage Used** - This is the current actually used storage across the entire storage tier. This includes storage used for the entire tenant. This number is the deduplicated amount used. The actual amount used can be much higher if exported outside of VergeOS. 
-- **Storage Provisioned** - Provisioned storage is the amount of storage that was provisioned when creating this tier. You can use more than the provisioned amount as long as the host has enough storage available. Caution should be used as you do not ever want to run out of storage at the host level. 
-- **Storage Allocated** - This is the amount of storage allocated to the tenant and all of its workloads. For example, when creating VMs this is the total size of the drives. This also includes the allocated storage in your snapshots as well. 
-
-
-
-In general, you should always Provision more storage than Used or even Allocated. -->
-
 ### Understanding Storage Used/Provisioned/Allocated
 
 * **Provisioned** - the amount of (post-deduplication **\***) storage that has been specified as available to the tenant.  
@@ -71,8 +55,8 @@ The most recent log entries will show on the Dashboard screen. Errors are highli
 <br>
 
 ## Subscriptions
-Subscriptions can provide you with both scheduled reports and on-demand alerts when errors, warnings, or specified changes occur, or if configured thresholds are reached.   
-
+Subscriptions can provide both scheduled reports and on-demand alerts when errors, warnings, or specified changes occur, or if configured thresholds are reached.    
+Subscription alerts are sent to the defined email address(es) of the recipient(s).
 
 The Subscription engine allows you to customize how and when you receive reports and notifications.  The Following examples demonstrate Tenant-related Subscriptions that can help in ongoing monitoring of the health and usage of Tenants.  
 
