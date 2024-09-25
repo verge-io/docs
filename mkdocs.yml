@@ -188,6 +188,7 @@ nav:
         - Applying Updates: product-guide/runningupdates.md
         - Settings: product-guide/updatesettings.md
       - Settings:
+        - Overview: product-guide/settingsoverview.md
         - Advanced Settings: product-guide/advancedsystemsettings.md
     - Virtual Machines:
       - Quick Start:
