@@ -34,7 +34,7 @@ These settings can be found under ***System > Settings > Advanced***.
 | ***Default failover cluster for networks*** | Sets the secondary cluster for network failover. | |
 | ***Default failover cluster for tenant nodes*** | Designates the backup cluster for tenant node failover. | |
 | ***Default internal network MTU*** | Changes the default MTU of all Internal Networks created | 9000 |
-| ***Default internal network address*** | Changing default network addressing is typically not recommended.  Work closely with VergeOS Support to implement any network addressing changes. | 192.168.0.0/24 |
+| ***Default internal network address*** | Changes the default network address scheme of all Internal Networks created | 192.168.0.0/24 |
 | ***Default media file tier*** | Sets the default tier of storage used for storage files in Media Images | 4 |
 | ***Default tenant network address*** | Changing default network addressing in typically not recommended.  Work closely with VergeOS Support to implement network addressing changes.| 100.96.255.0/24 |
 | ***Enable IPv6*** | IPV6 traffic in/out of the system is blocked by default.  This setting does not need to be changed to allow internal VM-to-VM ipv6 traffic. | false |
