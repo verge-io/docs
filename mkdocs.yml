@@ -15,7 +15,7 @@ theme:
   features:
     - navigation.tabs
     - navigation.tabs.sticky
-    #- navigation.sections
+    - navigation.sections
     - navigation.indexes
     #- toc.integrate
     - navigation.top
@@ -191,6 +191,8 @@ nav:
         - Applying Updates: product-guide/runningupdates.md
         - Settings: product-guide/updatesettings.md
         - Air-Gap License: product-guide/airgap-license.md
+      - Settings:
+        - Advanced Settings: product-guide/advancedsystemsettings.md
     - Virtual Machines:
       - Quick Start:
         - Best Practices: product-guide/VMbestpractices.md
