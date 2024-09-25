@@ -187,6 +187,8 @@ nav:
       - Updates / Licensing:
         - Applying Updates: product-guide/runningupdates.md
         - Settings: product-guide/updatesettings.md
+      - Settings:
+        - Advanced Settings: product-guide/advancedsystemsettings.md
     - Virtual Machines:
       - Quick Start:
         - Best Practices: product-guide/VMbestpractices.md
