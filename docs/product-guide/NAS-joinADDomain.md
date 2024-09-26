@@ -20,7 +20,7 @@ A NAS service can be joined to an existing Active Directory domain to provide AD
 * **Realm**: (this will be the **long form domain**, such as ‘**CompanyName.local**’)
 * **AD User/Password**: a **valid administrator** account on the domain (with the ability to create objects), and **account password**. The format for inputting the string is **useraccount%password**.  Example: administrator%password123
 
-7. The following fields are **not required** to join and typically **should be left as is**.  Managing the following values within **Active Directory - Users and Computers** inside the Windows environment is **highly recommended**.  
+7. The following fields are **not required** to join and typically **should be left as is**.  **It is highly recommended that you manage the following values within Active Directory - Users and Computers**, inside the Windows environment.**.  
   
     * **Server Type** (leave at **-Default-**)
     * **User Principal Name**
@@ -32,7 +32,7 @@ A NAS service can be joined to an existing Active Directory domain to provide AD
 
 !!! info "Special Configuration Needs: For any specific needs that aren’t addressed with the fields above, configuration options can be added to the Advanced Configuration Options.  Contact VergeIO Support for assistance with advanced configuration." 
 
-8. **Wait** while the NAS VM joins the domain.
+8. **Wait** while the NAS VM joins the domain; it may take a few minutes.
 9. If the NAS service successfully joins the domain, the CIFS settings on the NAS Service dashboard will display an AD Status of ‘**Joined**’.
 
 Windows AD administrators can confirm that the NAS has joined by reviewing Computer objects in their Windows **Active Directory - Users and Computers**.
@@ -73,3 +73,4 @@ If a NAS service does not get a “**Joined**” AD Status:
     * If *DHCP*: verify the network has been configured with correct DNS servers.
 
 * **Verify specified AD user has adequate permissions to join computers to the domain.**  
+auto create

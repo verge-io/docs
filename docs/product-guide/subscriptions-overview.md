@@ -4,36 +4,31 @@
 
 Subscriptions deliver emails for scheduled reporting and triggered alerting.
 
-<br>
-<br>
 
 ## Subscription Types
 
-- **On-Demand**
+**On-Demand**
 
-    Triggered alerts are based on threshold settings, warnings, or errors. These are intended to let administrators as soon as there is a potential issue. Example triggers for On-Demand subscriptions:
+Triggered alerts are based on threshold settings, warnings, or errors. These are intended to let administrators as soon as there is a potential issue. Example triggers for On-Demand subscriptions:
 
-    -   Storage reaches a specified % used
-    -   Update packages available
-    -   Errors/warnings
-    -   Status Changes
+* Storage reaches a specified % used
+* Update packages available
+* Errors/warnings
+* Status Changes
 
 <br>
 
-- **Scheduled**
+**Scheduled**
 
-  Specified information is sent based on configured times/intervals These are intended to provide summaries of current system information. This can assist administrators in everyday supervision of systems, tracking trends, etc. Scheduled subscriptions provide dashboard or listing information to the Administrator.  Examples of scheduled subscriptions includes:
+Specified information is sent based on configured times/intervals These are intended to provide summaries of current system information. This can assist administrators in everyday supervision of systems, tracking trends, etc. Scheduled subscriptions provide dashboard or listing information to the Administrator.  Examples of scheduled subscriptions includes:
   
-     - System dashboard sent daily
-     - vSAN tier Dashboard sent weekly
+* System dashboard sent daily
+* vSAN tier Dashboard sent weekly
      
-<br>
 
-> Efficiently monitoring a VergeOS Cloud will involve creating **multiple ***On-Demand***  and multiple ***Scheduled*** subscriptions** {.is-info}
+!!! tip "Efficiently monitoring a VergeOS Cloud will involve creating **multiple ***On-Demand*** and ***Scheduled*** subscriptions**."
 
-.<br>
-<br>
-
+</br >
 
 ## Create a New Subscription
 
@@ -47,7 +42,8 @@ Subscriptions deliver emails for scheduled reporting and triggered alerting.
 6.  Select ***Target Type*** from the dropdown list. This defines the area of the system to report on.
 7.  Select ***Target*** from the dropdown list. This defines the specific instance, where applicable (for example, a particular storage tier when *Storage Tiers* is selected as Target Type; a single virtual network when *Network* is selected as the Target Type.).
 8.  Enter a ***Name*** for the subscription. This name displays in the subscriptions listing and in the email messages sent by this subscription.
-> The name defined for the subscription typically appears in the subject of the received email; however, when multiple subscriptions are received within a single email message (e.g. when more than one subscription is scheduled to the same owner at the same time,) the subscription Name will not appear in the subject line, but will still appear as a heading within the body of the email.{.is-info}
+ 
+!!! note "The name defined for the subscription typically appears in the subject of the received email; however, when multiple subscriptions are received within a single email message (e.g. when more than one subscription is scheduled to the same owner at the same time) the name will not appear in the subject line, but will still appear as a heading within the body of the email."
 
 9.  Select the desired **Suspend** setting:
     -   **Never** (default) - subscription continues perpetually until deleted or disabled.
@@ -57,15 +53,16 @@ Subscriptions deliver emails for scheduled reporting and triggered alerting.
    -  **On-Demand** - alerts triggered by particular events or specific thresholds; these notifications only occur when specified criteria occurs.
    -   **Scheduled** - reports that send at particular intervals/times (e.g. daily, weekly, monthly) 
    
-> Multiple Scheduled subscriptions (to the same owner) set for the same time will be combined into a single email message. {.is-success}
+!!! note "Multiple Scheduled subscriptions (to the same owner) set for the same time will be combined into a single email message."
    
    
 11.  Select ***Subscription Profile*** from the dropdown list. (The options available will depend on the option selected in the ***Target*** field.) defines the information to receive in the notification. A wide array of subscription profiles exist by default, providing the means to oversee all the different parts of your VergeOS Cloud, such as: physical hardware (host tenant only), storage utilization per tier, import jobs, system warnings and errors, and more. Additional [**Subscription Profiles**](/product-guide/subscriptionprofiles) can be defined if further notification/alert scenarios are needed.  
 
-12. **For On Demand Subscriptions** (alerts): Select a ***Reminder while active*** interval from the dropdown list to define how often reminder alerts should be received until a Resolved state (at which point, a Resolved alert is sent.) This setting pertains to alerts based on error/warning statuses or thresholds. *Applies to **On-Demand subscriptions only.***  
-          <br>
+12. **For On Demand Subscriptions** (alerts): Select a ***Reminder while active*** interval from the dropdown list to define how often reminder alerts should be received until a resolved state (at which point, a resolved alert is sent.) This setting pertains to alerts based on error/warning statuses or thresholds. Applies to ***On-Demand* subscriptions only**.  
           
-       ### Reminder - Example 1:
+       
+<!-- from training guide, may put into another area       
+### Reminder - Example 1:
 
      **Configuration:**
 
@@ -87,7 +84,7 @@ Subscriptions deliver emails for scheduled reporting and triggered alerting.
     
     <br>
 
-    ### Reminder - Example 2:
+### Reminder - Example 2:
      
     **Configuration:**
     -   Target Type/Target: System Dashboard
@@ -104,8 +101,7 @@ Subscriptions deliver emails for scheduled reporting and triggered alerting.
     - Each hour, Reminder alerts are sent.
     - When the error is fixed and no longer shows an Error Status, a Resolved email message is sent and reminder alerts cease.
 
-
-<br>
+-->
     
 
 13. **For On Demand Subscriptions**: specify a ***Throttle*** for the subscription alerts to define a limiting interval (in minutes) for how often this subscription will send alerts. For example: if a subscription is created for Main Dashboard Log Errors, and an error starts continually occurring in the log, the throttle will limit the rate that subscription alerts are sent (rather than sending a new alert for each time the error appears in the log.) *Applies to **On-Demand subscriptions only.***
@@ -118,21 +114,7 @@ Specify ***Frequency*** and **scheduling options**, (such as time, day of week, 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 <br>
-
-
-
 
 
 
