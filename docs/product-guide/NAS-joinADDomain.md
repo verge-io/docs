@@ -2,7 +2,7 @@
 A NAS service can be joined to an existing Active Directory domain to provide AD integration.  
 
 
-## To Join a NAS to a Domain:
+## Join a NAS to a Domain:
 1. From the **Main Dashboard**, navigate to the **NAS** dashboard.
 2. Click **NAS Services** (on the **left menu** or the **count box quick-link**).
 3. **Double-click the NAS service** from the listing. (**Commonly, there is only one NAS service.**)  
