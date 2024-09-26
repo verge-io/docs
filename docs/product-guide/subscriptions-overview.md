@@ -7,7 +7,7 @@ Subscriptions deliver emails for scheduled reporting and triggered alerting.
 <br>
 <br>
 
-### Subscription Types
+## Subscription Types
 
 - **On-Demand**
 
@@ -114,8 +114,26 @@ Subscriptions deliver emails for scheduled reporting and triggered alerting.
 14. **For Scheduled Subscriptions**: 
 Specify ***Frequency*** and **scheduling options**, (such as time, day of week, etc. options will vary based on the frequency selected.)
 
-1.  Click **Submit** to save the subscription.
+15.  Click **Submit** to save the subscription.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <br>
+
+
+
+
+
 
 [Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }
