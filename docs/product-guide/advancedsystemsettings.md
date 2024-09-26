@@ -69,12 +69,12 @@ These settings can be found under ***System > Settings > Advanced***.
 | ***Timeout in seconds before a machine becomes unresponsive***|threshold time for the system to deem a VM unresponsive and attempt starting the VM on an alternate node | 120 |
 | ***Timeout in seconds before an unresponsive node is rebooted via IPMI***|threshold time for the system to consider a physical node unresponsive and auto reboot via IPMI (reboot would required proper IPMI configuration) | 3600 |
 | ***Two-factor authentication*** | Default enabled: default on for new users; default disabled: default off for new users;   | Default off |
-| ***Timeout in seconds before an unresponsive node is rebooted via IPMI*** | Timeout in seconds before an unresponsive node is rebooted via IPMI | 3600 |
-| ***Two-factor authentication*** | Two-factor authentication | Default off |
-| ***Two-factor authentication expiration time for authenticated user devices*** | Two-factor authentication expiration time for authenticated user devices (0 for never expire otherwise seconds) | 7884000 |
-| ***Two-factor authentication expiration time for temporary codes*** | Two-factor authentication expiration time for temporary codes (seconds) | 300 |
-| ***Webserver max API commands*** | Webserver max API commands | 50 |
-| ***Webserver max connections*** | Webserver max connections | 500 |
-| ***Webserver max session API rate limit*** | Webserver max session API rate limit | 50 |
-| ***vSAN host/ip override*** | vSAN host/ip override (used for incoming site syncs) | |
-| ***vSAN max usage percentage*** | vSAN max usage percentage (used for incoming site syncs) | 90 |
+| ***Timeout in seconds before an unresponsive node is rebooted via IPMI*** | Specifies the duration the system waits before automatically rebooting an unresponsive node using IPMI. Requires proper IPMI configuration. | 3600 |
+| ***Two-factor authentication*** | Determines the default two-factor authentication (2FA) setting for new users. Options are "Default on" (enabled by default) or "Default off" (disabled by default). | Default off |
+| ***Two-factor authentication expiration time for authenticated user devices*** | Sets the duration (in seconds) that a device remains authenticated for 2FA. Set to 0 for no expiration. | 7884000 |
+| ***Two-factor authentication expiration time for temporary codes*** | Defines the validity period (in seconds) for temporary 2FA codes. | 300 |
+| ***Webserver max API commands*** | Limits the maximum number of API commands that can be processed simultaneously. | 50 |
+| ***Webserver max connections*** | Sets the maximum number of concurrent connections to the webserver. | 500 |
+| ***Webserver max session API rate limit*** | Restricts the number of API requests a single session can make within a short time frame. | 50 |
+| ***vSAN host/ip override*** | Specifies an alternative host or IP address for vSAN operations, particularly for incoming site synchronizations. | |
+| ***vSAN max usage percentage*** | Sets the maximum allowed usage percentage for vSAN storage during incoming site synchronizations. | 90 |
