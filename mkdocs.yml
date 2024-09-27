@@ -227,7 +227,7 @@ nav:
         - Shares: product-guide/nasshares.md
         - VM Export: product-guide/vmexportvolume.md
         - Volume Syncs: product-guide/volumesyncs.md
-        - Join NAS to AD: NAS-joinADDomain.md
+        - Join NAS to AD: product-guide/NAS-joinADDomain.md
     - Media Images:
       - Overview: product-guide/mediaimages-overview.md
     - Networking:
