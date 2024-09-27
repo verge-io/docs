@@ -188,7 +188,7 @@ nav:
         - Applying Updates: product-guide/runningupdates.md
         - Settings: product-guide/updatesettings.md
     - Virtual Machines:
-      - Quick Start:
+      - Quick Start: 
         - Best Practices: product-guide/VMbestpractices.md
         - Creating Virtual Machines: product-guide/creatingvms.md
         - Virtual Machine Drives: product-guide/VMdrives.md
@@ -200,6 +200,9 @@ nav:
         - From VMware Backup: product-guide/importvmware.md
         - From NAS Volume: product-guide/importfromNAS.md
         - Viewing Import Jobs: product-guide/viewimportjobs.md
+      - VM Operations:
+        - Working With VMs: product-guide/VM-workingwith.md
+        - Manual Migration: product-guide/vm-manualmigration.md
       - VDI:
         - Instructions for the Administrator: product-guide/VDI-Administrator.md
         - Instructions for the User: product-guide/VDI-User.md
@@ -210,7 +213,9 @@ nav:
       - Reducing Resources: product-guide/reducetenantresources.md
       - Assigning External IP Addresses: product-guide/assignIPtotenant.md
       - Sharing Files: product-guide/providefilestotenant.md
+      - Monitoring Tenants: product-guide/tenant-monitoring.md
       - Snapshots: product-guide/tenantsnapshots.md
+      - Modifying Tenants: product-guide/tenant-modifications.md
     - Catalogs:
       - Overview: product-guide/catalogs-overview.md
     - NAS:
@@ -222,6 +227,7 @@ nav:
         - Shares: product-guide/nasshares.md
         - VM Export: product-guide/vmexportvolume.md
         - Volume Syncs: product-guide/volumesyncs.md
+        - Join NAS to AD: NAS-joinADDomain.md
     - Media Images:
       - Overview: product-guide/mediaimages-overview.md
     - Networking:
@@ -239,6 +245,7 @@ nav:
         - Using Aliases: product-guide/aliases.md
         - Network Rules: product-guide/networkrules.md
       - Monitoring:
+        - Network Dashboards: product-guide/network-dashboards.md
         - Tracking Network Statistics: product-guide/trackingnetstats.md
         - Port Mirroring: product-guide/portmirroring.md
         - Network Diagnostics Tool: product-guide/netdiagnostics.md
