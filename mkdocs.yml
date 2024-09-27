@@ -15,7 +15,7 @@ theme:
   features:
     - navigation.tabs
     - navigation.tabs.sticky
-    - navigation.sections
+    #- navigation.sections
     - navigation.indexes
     #- toc.integrate
     - navigation.top
@@ -208,14 +208,15 @@ nav:
         - Instructions for the User: product-guide/VDI-User.md
         - Virtual Machine Remote Console: product-guide/VM-RemoteConsole.md
     - Tenants:
+      - Assigning External IP Addresses: product-guide/assignIPtotenant.md
       - Creating Tenants: product-guide/createtenants.md
       - Increasing Resources: product-guide/tenantsaddresources.md
-      - Reducing Resources: product-guide/reducetenantresources.md
-      - Assigning External IP Addresses: product-guide/assignIPtotenant.md
-      - Sharing Files: product-guide/providefilestotenant.md
-      - Monitoring Tenants: product-guide/tenant-monitoring.md
-      - Snapshots: product-guide/tenantsnapshots.md
       - Modifying Tenants: product-guide/tenant-modifications.md
+      - Monitoring Tenants: product-guide/tenant-monitoring.md
+      - Reducing Resources: product-guide/reducetenantresources.md
+      - Sharing Files: product-guide/providefilestotenant.md
+      - Snapshots: product-guide/tenantsnapshots.md
+      - Usage Reports: product-guide/tenant-usagereports.md
     - Catalogs:
       - Overview: product-guide/catalogs-overview.md
     - NAS:
@@ -230,6 +231,7 @@ nav:
         - Join NAS to AD: product-guide/NAS-joinADDomain.md
     - Media Images:
       - Overview: product-guide/mediaimages-overview.md
+      - Uploading Media Images: product-guide/uploadingtovSAN.md
     - Networking:
       - Quick Start: 
         - Overview: product-guide/networkoverview.md
@@ -271,11 +273,9 @@ nav:
         - Cloud Snapshots and Restore: product-guide/cloudsnapshotandrestore.md
         - NAS Snapshots and Restore: product-guide/volumesnapsandrestores.md
     - vSAN:
-      - Overview:
-        - Storage Tiers: product-guide/storagetiers.md
-        - Uploading to the vSAN: product-guide/uploadingtovSAN.md
-        - Preferred Tier: product-guide/preferredtiers.md
-        - Removing ISO Files with References: product-guide/removing-isorefs.md
+      - Storage Tiers: product-guide/storagetiers.md
+      - Preferred Tier: product-guide/preferredtiers.md
+      - Removing ISO Files with References: product-guide/removing-isorefs.md
     - GPU:
       - Overview: product-guide/GPUoverview.md
       - Passthrough: product-guide/GPUPassthrough.md
