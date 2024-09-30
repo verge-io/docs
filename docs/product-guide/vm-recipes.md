@@ -1,34 +1,173 @@
 # VM Recipes
 
+VM recipes provide a powerful way to quickly deploy instance-specific virtual machines from a standard configuration. This page will walk you through the process of using VM recipes effectively.
+
+## What are VM Recipes?
+VM recipes are customizable templates for launching new virtual machine instances. They can include initial hardware specifications, resource pool assignments, and custom configuration options via an answer file.  For example, a recipe can be configured to prompt for a database username and password, or select a specific set of packages to install. Users can determine options right from the user interface when creating the new VM instance.  Recipes can also be leveraged via the VergeOS API to create rich user experience and further streamline process by integrating with existing systems, e.g. service portals.
+
+Both **Cloud-Init**(Linux) and **Cloudbase-Init**(Windows) can be utilized with Recipes to customize VMs during first boot. 
+
+
+Benefits of Using VM Recipes
+
+* Rapid deployment of new virtual machines
+* Consistency across VM configurations
+* Reduced manual setup time
+* Customizable to meet specific application needs
+
+
+## Included VM Recipes
+A VergeOS system install automatically includes the Service Provider(Marketplace) Repository comprised of standard VM recipes that you can be use straightaway to create new virtual machines.  The list of these available VM Recipes can be viewed by navigating to Machines -> VM Recipes. <!--recipes added/updated here regularly --> Double-click on an individual VM Recipe to view its configuration. 
+
+![marketplaceVMlisting](/product-guide/screenshots/marketplaceVMlisting.png)
+![included-recipe-config](/product-guide/screenshots/included-recipe-config.png)
+
+
+
+
+## Create a New VM Recipe
+
+### Base Configuration
+
+Typically a Recipe is:
+* based on a particular VM that serves as the generic template for new VM instances.
+When using this method, you will create a VM to serve as the base template. The VM should be generalized and suitable for the replication/customization process.
+<!--would like to include some examples of what you would not want in a VM used as a recipe template -->
+**-OR-**
+* configured with a Cloud image URL.
+When using this method, you should locate the image to employ <!--along with list of items that need to be specified? -->  
+
+
+
+2. From the Main Dashboard, navigate to **Machines -> New VM Recipe**.
+
+!!! note 
+Recipes are stored in [Catalogs](/product-guide/recipe-organization#Catalogs). If you do not have a local Catalog created yet, you will be prompted to create a new one first.  
+
+3. **Recipe Fields**
+    **Name:** Using a descriptive name that adequately identifies the Recipe can help users in locating suitable recipes.
+    **Description:** (optional) You can store any additional information about this recipe here.  This is a good place to provide some documentation on the intended purpose and general guidelines of the particular Recipe. 
+    **Icon:** (optional) a Font-Awesome icon can be associated with the Recipe.  Icons can help users to easily identify different Recipes. 
+    **Catalog:** Select a Catalog in which to store the Recipe. Catalogs are helpful to keep Recipes organized.   
+    **Virtual Machine:** Select a template VM or select --None-- if the Recipe will instead utilize a Cloud Image URL. 
+    **Version:** Assign a version number. This field will automatically increment each time the recipe to help track changes.
+
+    !!! example "A version number of 1.0.0 would be incremented to 1.0.0-1 and then 1.0.0-2 and so forth; and you could manually edit the version number to reflect larger version changes, such as changing the version to 2.0.0 after making significant modifications."  
+
+    **Use Asset for Question Names:** When enabled, drive question names are based on the drive asset number rather than ordinal number.
+    !!! tip "When a Recipe is based on a Virtual Machine, drive questions are created automatically (disabled by default) for each of the VM's drives, e.g.  YB_DRIVE_4_SIZE, YB_DRIVE_3_NONPERSISTENT. 
+
+    **Version Dependencies:** (Not applicable for Recipes that will only be used on the local system and its own tenants).  Dependencies can be specified when there are VergeOS features required for the Recipe to work properly (to prevent a remote system from using a Recipe that it can not accommodate).
+
+4. Click **Submit** to save the base configuration.  The Recipe Dashboard will display. 
+
+### Sections
+Sections allow you to group your questions.  You must define at least one section.   
+5. Click **Sections** on the left menu, and click New to create.  Each section will require name and can optionally include a description.
+When finished with sections, use the back button or breadcrumb to return to the VM Recipe Dashboard.
+
+### Questions
+Default, included Questions
+6. Click **Questions** on the left menu, and then **New**.
+7. **Question Fields**
+    **Section:**
+    **Name:**
+    **Type:**
+    **Order ID:**
+    **Display:**
+    **Default Value:**
+    **Regex Validation:**
+    **Placeholder Text:**
+    **Tooltip Text:**
+    **Note Text:**
+    **On Change:**
+
+
+
+
+1. Access the VM Creation Interface
+
+From the Main Dashboard, click Machines on the left menu.
+Click Virtual Machines on the left menu.
+Click New on the left menu.
+
+2. Select a VM Recipe
+
+From the Catalog list at the top left, select the desired catalog containing VM recipes.
+In the Selections Available area on the right, choose the appropriate VM recipe.
+Click Next at the bottom of the screen.
+
+3. Configure the New VM
+
+Fill out the required fields. These may vary depending on the recipe, but typically include:
+
+VM Name
+Number of CPU cores
+RAM allocation
+Storage allocation
+
+
+Answer any custom questions defined in the recipe. These might include:
+
+Network configurations
+Application-specific settings
+OS customization options
+
+
+
+4. Review and Create
+
+Review all the entered information to ensure accuracy.
+Click Submit at the bottom of the page to create the new VM.
+
+5. Post-Creation Steps
+
+The system will create the new VM based on the recipe and your inputs.
+Once creation is complete, you'll be taken to the new VM's dashboard.
+Review the VM settings and make any necessary adjustments.
+Power on the VM by clicking Power On on the left menu.
+
+Advanced Usage
+Cloud-Init Integration
+Many VM recipes in VergeOS are compatible with Cloud-Init, allowing for advanced customization:
+
+During VM creation, look for Cloud-Init specific fields.
+You can input custom Cloud-Init data to further customize the VM on first boot.
+This can include tasks like setting up users, installing packages, or running scripts.
+
+Tips for Using VM Recipes
+
+Before creating a VM, ensure you're familiar with the recipe's requirements and included components.
+Pay attention to any resource requirements specified in the recipe description.
+For frequently used configurations, consider creating your own custom VM recipes.
+
+Troubleshooting
+If you encounter issues while using a VM recipe:
+
+Verify that all input fields are filled out correctly.
+Ensure your VergeOS environment has sufficient resources for the new VM.
+Check the VM's console log for any boot-time errors.
+If problems persist, consult your VergeOS administrator or support team.
+
+By effectively using VM recipes, you can significantly streamline the process of creating and configuring new virtual machines in your VergeOS environment.
+
+***************************************
+****************************************
 
 What is a VM Recipe?
 A VM recipe is a customizable template for launching new virtual machine instances. A VM recipe can include initial hardware specifications (e.g. number of cores, RAM, CPU type, drives, NICs) and resource pool specification. Additionally, custom fields can be added to the recipe to gather input at the time of recipe consumption. This data, input by the recipe consumer, can then be utilized to adjust elements within the new vm guest at first startup. For example, a recipe can be configured to prompt for a database username and password, or select a specific set of packages to install. Due to tight integration with cloud-init, VM recipe questions can be configured using either "NoCloud" or "Config Drive v2" as the data source. The variables from the data source can then be turned into questions in the VM recipe to be answered right from the VergeIO user interface.
 
 
-[**catalogs**](#testout)
 
 Organizing Recipes
 
+Recipes are organized into [**catalogs**](/product-guide/recipe-organization#catalogs).  A [**Repository**](/product-guide/recipe-organization#repositories) is the top level of organization, containing Catalogs of Recipes.
 
-Recipes are organized into [**catalogs**](/product-guide/recipe-organization#catalogs).  A [**Repository**](/product-guide/repositories) can contain many catalogs.
-
-mermaid graph
-
+<!-- mermaid graph -->
 
 
-Repositories
-- top level
-- default repository?
-- remote and local
-- multiple?
-- link to page with more information about repositories
 
 
-Catalogs
-- organize within repository
-- any way that makes sense for you/your organization
-- for ex: different catalogs for windows, linux or for different business units
-- link to page with more info about catalogs
 
 
 Link to page on VM Recipes
@@ -56,5 +195,3 @@ Link to page on VM Recipes
 Link to page on Tenant Recipes
 
 
-## <a name="testout">
-amdlkajdsf;kjsadfkl;sdjf
