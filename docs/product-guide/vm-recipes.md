@@ -74,7 +74,7 @@ Sections allow you to group your questions.  You must define at least one sectio
 When finished with sections, use the back button or breadcrumb to return to the VM Recipe Dashboard.
 
 ### Questions
-When a Recipe is created, some questions are included automatically.  Some of these questions need to be enabled if you wish to use them.
+When a Recipe is created, some questions are included automatically.  Some of these questions are disabled by default and would need to be enabled if you wish to use them.
 
 6. To add additional questions to the Click **Questions** on the left menu, and then **New**, to add new questions. 
 7. **Question Fields**
@@ -90,40 +90,42 @@ When a Recipe is created, some questions are included automatically.  Some of th
     **Note Text:** (optional) user help text displayed directly under the input field
     **On Change:** allows for hiding/showing other questions when this field is changed.  (Example code is shown in this field when creating a new question.)
 
+Republish??
+
+## Simulate a VM Recipe
+You can simulate a VM Recipe to test out the user input form and create the answer files? but doesnt actually create the VM??
+
+When you are finished with modifications/anytime you make mods, republish to make the changes available? what exactly does republish do? are your changes not available even locally until it is republished?
 
 
+## Using a VM Recipe (from the VergeOS UI)
 
-1. Access the VM Creation Interface
-
-From the Main Dashboard, click Machines on the left menu.
-Click Virtual Machines on the left menu.
-Click New on the left menu.
-
-2. Select a VM Recipe
-
-From the Catalog list at the top left, select the desired catalog containing VM recipes.
-In the Selections Available area on the right, choose the appropriate VM recipe.
-Click Next at the bottom of the screen.
-
-3. Configure the New VM
-
-Fill out the required fields. These may vary depending on the recipe, but typically include:
-
-VM Name
-Number of CPU cores
-RAM allocation
-Storage allocation
+1. From the **Main Dashboard, navigate to Machines-> Virtual Machines -> New**.
 
 
-Answer any custom questions defined in the recipe. These might include:
+2. **Select a VM Recipe**  
+From the Catalog list at the top left, select the desired catalog containing VM recipes. In the Selections Available area on the right, choose the appropriate VM recipe. Click Next at the bottom of the screen.
 
-Network configurations
-Application-specific settings
-OS customization options
+3. **Configure the New VM**
+
+Fill out the required fields. Fields will vary depending on the recipe, but typically include:
+
+* VM Name
+* Number of CPU cores
+* RAM allocation
+* Storage allocation
+
+??others, network config custom??
 
 
+Custom questions may include:
 
-4. Review and Create
+* Network configurations
+* Application-specific settings
+* OS customization options
+
+
+4. **Review and Create**
 
 Review all the entered information to ensure accuracy.
 Click Submit at the bottom of the page to create the new VM.
@@ -135,8 +137,8 @@ Once creation is complete, you'll be taken to the new VM's dashboard.
 Review the VM settings and make any necessary adjustments.
 Power on the VM by clicking Power On on the left menu.
 
-Advanced Usage
-Cloud-Init Integration
+## Advanced Usage
+Cloud-Init/Cloudbase-init Integration
 Many VM recipes in VergeOS are compatible with Cloud-Init, allowing for advanced customization:
 
 During VM creation, look for Cloud-Init specific fields.
@@ -159,48 +161,7 @@ If problems persist, consult your VergeOS administrator or support team.
 
 By effectively using VM recipes, you can significantly streamline the process of creating and configuring new virtual machines in your VergeOS environment.
 
-***************************************
-****************************************
 
-What is a VM Recipe?
-A VM recipe is a customizable template for launching new virtual machine instances. A VM recipe can include initial hardware specifications (e.g. number of cores, RAM, CPU type, drives, NICs) and resource pool specification. Additionally, custom fields can be added to the recipe to gather input at the time of recipe consumption. This data, input by the recipe consumer, can then be utilized to adjust elements within the new vm guest at first startup. For example, a recipe can be configured to prompt for a database username and password, or select a specific set of packages to install. Due to tight integration with cloud-init, VM recipe questions can be configured using either "NoCloud" or "Config Drive v2" as the data source. The variables from the data source can then be turned into questions in the VM recipe to be answered right from the VergeIO user interface.
-
-
-
-Organizing Recipes
-
-Recipes are organized into [**catalogs**](/product-guide/recipe-organization#catalogs).  A [**Repository**](/product-guide/recipe-organization#repositories) is the top level of organization, containing Catalogs of Recipes.
-
-<!-- mermaid graph -->
-
-
-
-
-
-
-Link to page on VM Recipes
-
-
-Link to page on Tenant Recipes
-
-
- default repository?
-- remote and local
-- multiple?
-- link to page with more information about repositories
-
-
-Catalogs
-- organize within repository
-- any way that makes sense for you/your organization
-- for ex: different catalogs for windows, linux or for different business units
-- link to page with more info about catalogs
-
-
-Link to page on VM Recipes
-
-
-Link to page on Tenant Recipes
 
 <a name="Types"></a>
 ## Question Types Listing
