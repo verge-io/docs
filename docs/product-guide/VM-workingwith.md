@@ -30,16 +30,17 @@ The cloning feature allows you to create a new VM instance as a replica of an ex
 
 Considerations when deleting a VM:
 
-- The system will not allow a VM to be deleted if it is running.
+- The VM must be powered down before it can be deleted.
+  - The system will not allow a VM to be deleted if it is running.
 - A VM that is currently the basis of a VM Recipe cannot be deleted.
 - Deleting a VM will also delete its VM snapshots; however, the VM will still be included in Cloud Snapshots that were taken while the VM existed.
-- The VM must be powered down before it can be deleted.
 
 ## Power off / Reset / Kill power
 
 It's important to understand the different behaviors of the Power off / Reset / Kill power commands for VMs.
 
-- **Power off** - This issues an ACPI command to the VM and relies on ACPI being enabled and configured within the guest OS. Power off initiates a graceful shutdown of the VM. Before putting a server into production, it is recommended to test a Power Off operation from the VergeOS user interface (while a user is logged into the guest OS as well as when no user is logged in). 
+- **Power off** - This issues an ACPI command to the VM and relies on ACPI being enabled and configured within the guest OS. Power off initiates a graceful shutdown of the VM.
+  - **Before putting a server into production**, it is recommended to test a Power Off operation from the VergeOS user interface both while a user is logged into the guest OS as well as when no user is logged in. 
 
 - **Reset** - Exits the guest operating system, returns to virtual bios, but never powers off the virtual hardware. Unlike Power cycle, reset does not relinquish its virtual resources. Some hardware changes will require a power cycle as opposed to a reset in order to take effect.  
 
