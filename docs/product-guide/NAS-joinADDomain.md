@@ -18,7 +18,8 @@ A NAS service can be joined to an existing Active Directory domain to provide AD
         - Invalid passwords rejected
     - **Workgroup**: (this will be the **short form domain**, such as '**CompanyName**')
     - **Realm**: (this will be the **long form domain**, such as '**CompanyName.local**')
-    - **AD User/Password**: a **valid administrator** account on the domain (with the ability to create objects), and **account password**. The format for inputting the string is **useraccount%password**. Example: administrator%password123
+    - **AD User/Password**: a **valid administrator** account on the domain (with the ability to create objects), and **account password**.
+        - The format for inputting the string is: `useraccount%password`. Example: `administrator%password123`
 
 7. The following fields are **not required** to join and typically **should be left as is**. **It is highly recommended that you manage the following values within Active Directory - Users and Computers**, inside the Windows environment.
 
@@ -42,6 +43,32 @@ Windows AD administrators can confirm that the NAS has joined by reviewing Compu
 
 If a NAS service does not get a "**Joined**" AD Status:
 
+### Verify specified AD user has adequate permissions to join computers to the domain
+
+### Verify that the NAS service has a valid IP configuration
+
+- NAS Service dashboard - check **Static vs. DHCP**
+- If *Static*: verify correct settings for IP address, gateway, and DNS Servers.
+- If *DHCP*: check the network to verify that the NAS VM has received a valid address.
+
+### Verify that the NAS has been placed on the correct network with the correct settings
+
+- If the NAS service cannot reach the AD domain, **it will fail to join**.
+- The NAS dashboard's Networks/VM NICs section will indicate the NIC network and Status.
+- Click **Edit** on the **left menu** of the NAS Service dashboard to select a different network if necessary.
+
+### Verify Workgroup/Realm
+
+- If the Workgroup or Realm is **incorrectly entered**, it will **fail to join**.
+- The Workgroup can typically be found on any domain member server by typing `whoami` at a command prompt. The result returned is **workgroup \ username**.
+- The Realm can typically be found on any domain member server by reviewing the System properties. The value **Domain:** lists the entire Realm.
+- Both properties can also be found using the `systeminfo` command from the command prompt.
+
+### Verify that the NAS service can resolve the Domain/Realm (By name)
+
+- If *Static*: verify correct settings for IP address, gateway, and DNS Servers.
+- If *DHCP*: verify the network has been configured with correct DNS servers.
+
 ### Verify the creation of the Organizational Unit (OU)
 
 - If an Organization Unit (OU) is specified within the VergeOS CIFS settings, that OU **must already exist within AD**. Create the OU within your Active Directory **before** attempting a join.
@@ -52,29 +79,3 @@ If a NAS service does not get a "**Joined**" AD Status:
 - This only applies if the Machine Password field is set. It is **recommended to leave this field blank**.
 - If the password does not match the AD **password complexity requirements, it will fail to join**.
 - Machine password is not a necessary field; it is best to remove the value if you are having problems joining AD.
-
-### Verify Workgroup/Realm
-
-- If the Workgroup or Realm is **incorrectly entered**, it will **fail to join**.
-- The Workgroup can typically be found on any domain member server by typing `whoami` at a command prompt. The result returned is **workgroup \ username**.
-- The Realm can typically be found on any domain member server by reviewing the System properties. The value **Domain:** lists the entire Realm.
-- Both properties can also be found using the `systeminfo` command from the command prompt.
-
-### Verify that the NAS has been placed on the correct network with the correct settings
-
-- If the NAS service cannot reach the AD domain, **it will fail to join**.
-- The NAS dashboard's Networks/VM NICs section will indicate the NIC network and Status.
-- Click **Edit** on the **left menu** of the NAS Service dashboard to select a different network if necessary.
-
-### Verify that the NAS service has a valid IP configuration
-
-- NAS Service dashboard - check **Static vs. DHCP**
-- If *Static*: verify correct settings for IP address, gateway, and DNS Servers.
-- If *DHCP*: check the network to verify that the NAS VM has received a valid address.
-
-### Verify that the NAS service can resolve the Domain/Realm (By name)
-
-- If *Static*: verify correct settings for IP address, gateway, and DNS Servers.
-- If *DHCP*: verify the network has been configured with correct DNS servers.
-
-### Verify specified AD user has adequate permissions to join computers to the domain
