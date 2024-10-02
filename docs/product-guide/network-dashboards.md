@@ -18,12 +18,13 @@ The Counts section shows a quick summary of your different types of networks as 
 * Green - No errors or warnings
 * Yellow - Warnings
 * Red - Errors
+* Grey - Disabled / Turned Off
 
-When red or yellow indicators are present, there are errors or warnings; you can click to drill down and find more information about the issue.
+When red or yellow indicators are present, there are errors or warnings; you can click the tile to drill down and find more information about the issue.
 
 ### Top Stats
 
-The Networks Dashboard also displays real-time statistical information with a current view of top network utilization. This gives a summary of highest transfer/receive rates broken out for: External, Internal, and Tenant Networks and VM NICs.
+The Networks Dashboard also displays real-time statistical information with a current view of top network utilization. This gives a summary of highest transfer/receive rates broken out for: External, Internal, Tenant Networks, and VM NICs.
 
 Each individual Network/NIC list entry:
 
@@ -32,7 +33,7 @@ Each individual Network/NIC list entry:
 
 ### Logs
 
-The Logs section will show the most recent log entries for all your VergeOS Networks. Error entries are highlighted in red. Scroll down to view all the log entries on the first page. To view further back in network logs, click anywhere in the logs section.
+The Logs section will show the most recent log entries for all your VergeOS Networks. Error entries are highlighted in red, Warning entries are highlighted yellow. Scroll down to view all the log entries on the first page. To view further back in network logs, click anywhere in the logs section.
 
 ## Individual Network Dashboards
 
@@ -56,6 +57,6 @@ Double-click to back out to the original detail level.
 
 ### Network Statistics and History
 
-Network Statistics are collected in 5-second "heartbeat" intervals, with sums/averages/maxes processed and stored for each 5-minute interval, corresponding to standard 95th percentile standards.
+Network Statistics are collected in 5-second "heartbeat" intervals, with sums/averages/maxes processed and stored for each 5-minute interval, corresponding to 95th percentile standards.
 
 Click the **History Link** on the left menu to see network traffic statistics going farther back. A specific time period can be selected to view that desired period (week, month, or custom- with from / to specific dates).  
