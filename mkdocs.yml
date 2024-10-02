@@ -191,7 +191,7 @@ nav:
         - Overview: product-guide/settingsoverview.md
         - Advanced Settings: product-guide/advancedsystemsettings.md
     - Virtual Machines:
-      - Quick Start:
+      - Quick Start: 
         - Best Practices: product-guide/VMbestpractices.md
         - Creating Virtual Machines: product-guide/creatingvms.md
         - Virtual Machine Drives: product-guide/VMdrives.md
@@ -203,17 +203,23 @@ nav:
         - From VMware Backup: product-guide/importvmware.md
         - From NAS Volume: product-guide/importfromNAS.md
         - Viewing Import Jobs: product-guide/viewimportjobs.md
+      - VM Operations:
+        - Working With VMs: product-guide/VM-workingwith.md
+        - Manual Migration: product-guide/vm-manualmigration.md
       - VDI:
         - Instructions for the Administrator: product-guide/VDI-Administrator.md
         - Instructions for the User: product-guide/VDI-User.md
         - Virtual Machine Remote Console: product-guide/VM-RemoteConsole.md
     - Tenants:
+      - Assigning External IP Addresses: product-guide/assignIPtotenant.md
       - Creating Tenants: product-guide/createtenants.md
       - Increasing Resources: product-guide/tenantsaddresources.md
+      - Modifying Tenants: product-guide/tenant-modifications.md
+      - Monitoring Tenants: product-guide/tenant-monitoring.md
       - Reducing Resources: product-guide/reducetenantresources.md
-      - Assigning External IP Addresses: product-guide/assignIPtotenant.md
       - Sharing Files: product-guide/providefilestotenant.md
       - Snapshots: product-guide/tenantsnapshots.md
+      - Usage Reports: product-guide/tenant-usagereports.md
     - Catalogs:
       - Overview: product-guide/catalogs-overview.md
     - NAS:
@@ -225,8 +231,10 @@ nav:
         - Shares: product-guide/nasshares.md
         - VM Export: product-guide/vmexportvolume.md
         - Volume Syncs: product-guide/volumesyncs.md
+        - Join NAS to AD: product-guide/NAS-joinADDomain.md
     - Media Images:
       - Overview: product-guide/mediaimages-overview.md
+      - Uploading Media Images: product-guide/uploadingtovSAN.md
     - Networking:
       - Quick Start: 
         - Overview: product-guide/networkoverview.md
@@ -242,6 +250,7 @@ nav:
         - Using Aliases: product-guide/aliases.md
         - Network Rules: product-guide/networkrules.md
       - Monitoring:
+        - Network Dashboards: product-guide/network-dashboards.md
         - Tracking Network Statistics: product-guide/trackingnetstats.md
         - Port Mirroring: product-guide/portmirroring.md
         - Network Diagnostics Tool: product-guide/netdiagnostics.md
@@ -267,11 +276,9 @@ nav:
         - Cloud Snapshots and Restore: product-guide/cloudsnapshotandrestore.md
         - NAS Snapshots and Restore: product-guide/volumesnapsandrestores.md
     - vSAN:
-      - Overview:
-        - Storage Tiers: product-guide/storagetiers.md
-        - Uploading to the vSAN: product-guide/uploadingtovSAN.md
-        - Preferred Tier: product-guide/preferredtiers.md
-        - Removing ISO Files with References: product-guide/removing-isorefs.md
+      - Storage Tiers: product-guide/storagetiers.md
+      - Preferred Tier: product-guide/preferredtiers.md
+      - Removing ISO Files with References: product-guide/removing-isorefs.md
     - GPU:
       - Overview: product-guide/GPUoverview.md
       - Passthrough: product-guide/GPUPassthrough.md
