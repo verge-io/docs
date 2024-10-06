@@ -7,7 +7,7 @@ VM recipes provide a powerful way to quickly deploy instance-specific virtual ma
 VM recipes are customizable templates for launching new virtual machine instances. They can include initial hardware specifications, resource pool assignments, and custom configuration options via a key value store created at VM instantiation.  For example, a recipe can be configured to prompt for a database username and password, or select a specific set of packages to install. Users can determine options right from the user interface when creating the new VM instance.  Recipes can also be leveraged along with the VergeOS API to create rich user experience and further streamline processes by integrating with existing systems, e.g. service portals.  
 
 **Industry Standard Integration**  
-VergeOS supports both **Cloud-Init** (Linux) and **Cloudbase-Init** (Windows) to customize VMs during first boot.
+VergeOS supports both **Cloud-Init** (Linux) and **Cloudbase-Init** (Windows) to customize VMs during first boot.  This can include tasks like setting up users, installing packages, or running scripts.  Recipes can allow you to rapidly deploy cloud-init/Cloudbase-init implementations by providing the user interface to collect input during VM creation.  See [Advanced Usage](#advanced-usage) below for more information.
 
 **Benefits of Using VM Recipes**  
 
@@ -47,7 +47,7 @@ When using this method, create a VM to serve as the base template. The VM should
     * **Version:** Assign a version number. This field will automatically increment each time the recipe to help track changes.
 
     ??? example "Version Numbering"
-        A version number of 1.0.0 would be incremented to 1.0.0-1 and then 1.0.0-2 and so forth; and you could manually edit the version number to reflect larger version changes, such as changing the version to 2.0.0 after making significant modifications.
+        A version number of 1.0.0 would be incremented to 1.0.0-1 and then 1.0.0-2 and so forth. Additionally, you can manually edit the version number to reflect larger version changes, such as changing the version to 2.0.0 after making significant modifications.
 
     * **Use Asset for Question Names:** When enabled, drive and NIC question names are based on the assigned asset number rather than ordinal number.
     !!! tip "When a Recipe is based on a Virtual Machine, drive questions are created automatically for each of the VM's drives, e.g. YB_DRIVE_1_SIZE, YB_DRIVE_3_NONPERSISTENT, YB_DRIVE_2_SERIAL, etc."
@@ -58,128 +58,110 @@ When using this method, create a VM to serve as the base template. The VM should
 
 ### Sections
 
-Sections allow you to group your questions.  You must define at least one section.  
-5. Click **Sections** on the left menu, and click New to create.  Each section will require name and can optionally include a description.
+Sections allow you to group your questions on the input form.  You must define at least one section.
+
+1. Click **Sections** on the left menu, and click **New** to create.  Each section will require name and can optionally include a description.
 When finished with sections, use the back button or breadcrumb to return to the VM Recipe Dashboard.
 
 ### Questions
 
-When a Recipe is created, some questions are included automatically.  Some of these questions are disabled by default and would need to be enabled if you wish to use them.
-6. (Optional) Enable disabled automatically-created question(s): Click Questions (left menu or dashboard card), select the question(s), and click Enable on the left menu.
-7. To add additional questions to the Click **Questions** on the left menu, and then **New**, to add new questions.
-8. **Question Fields**
-    **Section:** each question belongs to one section.
-    **Name:** serves as the variable name that can be referenced in scripts; use a descriptive name to aid in script maintenance and troubleshooting; alpha-numeric characters only (no spaces or special characters)
-    **Type:** determines how the data is collected via user input, interacting with the VergeOS database, downloading cloud images, etc. The [Question Types Listing](#question-types-listing) below, provides descriptions for question types.
-    **Order ID:** used to determine the order questions are displayed (within the selected section)
-    **Display:** text displayed in the VergeOS for the user to answer recipe questions
-    **Default Value:** (optional) defines an initial answer value for the question
-    **Regex Validation:** (optional) regular expression string used to validate input
-    **Placeholder Text:** (optional) greyed text displayed to give the user an example of the expected input
-    **Tooltip Text:** (optional) user help text displayed in a popup when the field is hovered with mouse
-    **Note Text:** (optional) user help text displayed directly under the input field
-    **On Change:** allows for hiding/showing other questions when this field is changed.  (Example code is shown in this field when creating a new question.)
+Recipe Questions are used to determine key values.  When a Recipe is created, some questions are included automatically.  Some of these questions are disabled by default and would need to be enabled if you wish to use them.
 
-Republish??
+1. **(Optional) Enable disabled defaulted question(s):** Click Questions (left menu or dashboard card), select the question(s), and click Enable on the left menu.  
+2. To configure additional questions, Click **Questions** on the left menu, and then **New**.
+
+**Question Fields**:
+
+* **Section:** each question belongs to one section.  
+* **Name:** serves as the variable name that can be referenced in scripts; use a descriptive name to aid in script maintenance and troubleshooting; alpha-numeric characters only (no spaces or special characters)  
+* **Type:** determines how the data is collected: via user input, interacting with the VergeOS database, downloading cloud images, etc. <!--The [Question Types Listing](#question-types-listing) below, provides descriptions for question types. -->  
+
+* **Order ID:** used to determine the order in which questions are displayed (within the selected section)
+* **Display:** text displayed in the VergeOS for the user to answer recipe questions
+* **Default Value:** (optional) defines an initial answer value for the question
+* **Regex Validation:** (optional) regular expression string used to validate input  
+* **Placeholder Text:** (optional) greyed text displayed to give the user an example of the expected input  
+* **Tooltip Text:** (optional) user help text displayed in a popup when the field is hovered with mouse  
+* **Note Text:** (optional) user help text displayed directly under the input field  
+* **On Change:** allows for hiding/showing other questions when this field is changed.  (Example code is shown in this field when creating a new question.)  
+
+    Additional configuration options may be available dependent on the type selected.
+
+ <!-- Following are common additional fields:
+    **Required**
+    **Read-Only**
+    **Don't Store**
+    **Hide NULL**
+    **Normalize**
+    **Minimum**
+    **Maximum**
+    **Post-Processing**
+    **Conditions**
+
+    **VergeOS Database-related**
+    **Database Values**
+    **Database Table**
+    **Database Filters and Fields** (Database Find)
+    **Database Table**
+    **Database Filter**
+    **Database Fields**  -->
 
 ## Simulate a VM Recipe
 
-You can simulate a VM Recipe to test out the user input form and create the answer files? but doesnt actually create the VM??
+You can simulate a VM Recipe to test.  Simulating the Recipe will allow you to view the user input form, test field validation and create sample answer files to verify your configuration.  
 
-When you are finished with modifications/anytime you make mods, republish to make the changes available? what exactly does republish do? are your changes not available even locally until it is republished?
+To simply view the User input form, while at the VM Recipe dashboard, click **Simulate Recipe** from the left menu.
+From the simulated input form, you can test input validation and generate test answer files by clicking the **Simulate** button at the bottom of the form.
+A list of variable/value pairs, along with a printout of simulated result files will display.  To proceed with creating a VM from the inputs, click the Create button.
+
+## Modify a VM Recipe
+
+When any changes are made to a Recipe, it will need to be republished in order to make those changes available.  The top of the Recipe dashboard will display a message indicating that it must be republished for changes to take effect.  You can use the **Republish** link within this message or click Republish on the left menu.
 
 ## Advanced Usage
 
-Cloud-Init/Cloudbase-init Integration
-Many VM recipes in VergeOS are compatible with Cloud-Init, allowing for advanced customization:
+### Cloud-Init and Cloudbase-init Integration
 
-During VM creation, look for Cloud-Init specific fields.
-You can input custom Cloud-Init data to further customize the VM on first boot.
-This can include tasks like setting up users, installing packages, or running scripts.
+**To use with a VM template:**
 
-Tips for Using VM Recipes
+* Set the **Cloud-init Datasource field = *Config Drive v2***.
+* Install Cloud-init and associated scripts within the VM template.
 
-Before creating a VM, ensure you're familiar with the recipe's requirements and included components.
-Pay attention to any resource requirements specified in the recipe description.
-For frequently used configurations, consider creating your own custom VM recipes.
+**To use an Online OS Image:**  
+VergeOS Recipes also allow for taking advantage of the many pre-installed, cloud-init OS images available for download by most Linux and FreeBSD operating systems.  To utilize a downloaded image, you can create a Recipe Question configured with the following:
 
-Troubleshooting
-If you encounter issues while using a VM recipe:
+* **Name=*"OS_DL_URL"***
+* **Type=*Hidden***
+* **Default Value**: the download URL (e.g. `https://cloud-images.ubuntu.com/releases/jammy/release/ubuntu-22.04-server-cloudimg-amd64-disk-kvm.img`, `http://download.rockylinux.org/pub/rocky/8/images/x86_64/Rocky-8-GenericCloud.latest.x86_64.qcow2`)
 
-Verify that all input fields are filled out correctly.
-Ensure your VergeOS environment has sufficient resources for the new VM.
-Check the VM's console log for any boot-time errors.
-If problems persist, consult your VergeOS administrator or support team.
+<!--more info to be added here about the drive automatically created, standard files created to support cloud-init integration; troubleshooting informaiton, best practices, etc. >
+<!-- also need to cover the "NoCloud" option on VMs -->
 
-By effectively using VM recipes, you can significantly streamline the process of creating and configuring new virtual machines in your VergeOS environment.
+**Reference Examples:**  
+[Marketplace Recipes](#included-vm-recipes) provide good examples of using cloud-init/cloudbase-init OS images in a Recipe.  
 
+Integration with Cloud-init/Cloudbase-init allows for many solutions and a variety of potential approaches. Contact VergeOS Support if you need additional assistance.
 
-
-
-## Using a Recipe to Create a New VM
-
-1. From the **Main Dashboard, navigate to Machines-> Virtual Machines -> New**.
-
-
-2. **Select a VM Recipe**  
-From the Catalog list at the top left, select the desired catalog containing VM recipes. In the Selections Available area on the right, choose the appropriate VM recipe. Click Next at the bottom of the screen.
-
-3. **Configure the New VM**
-
-Fill out the required fields. Fields will vary depending on the recipe, but typically include:
-
-* VM Name
-* Number of CPU cores
-* RAM allocation
-* Storage allocation
-
-??others, network config custom??
-
-
-Custom questions may include:
-
-* Network configurations
-* Application-specific settings
-* OS customization options
-
-
-4. **Review and Create**
-
-Review all the entered information to ensure accuracy.
-Click Submit at the bottom of the page to create the new VM.
-
-5. Post-Creation Steps
-
-The system will create the new VM based on the recipe and your inputs.
-Once creation is complete, you'll be taken to the new VM's dashboard.
-Review the VM settings and make any necessary adjustments.
-Power on the VM by clicking Power On on the left menu.
-
-
-
-
-
-
+<!--
 ## Question Types Listing
 
 boolean - standard boolean, displayed as checkbox, code true/false or yes/no?
-Cluster - 
-Database Create - create a new record in the VergeOS database?
-Database Edit - edit a record in the VergeOS database?
-database Field - 
-database Find - 
+Cluster -
 Date/Time - collect standard date/time?  does it default to current?  what parts of it are required, how is it stored?
 Disk Size - size for a VM disk, what units can it be defined in?
 Hidden - does not show on the form.  So just hard-coded?  can it be changed within the script dependent on values of other fields, for ex.?
-List - 
-Network - 
-Number - 
-Password - allows for password entry with confirmation field; entries hidden with placeholder character. 
-RAM - allows for entry 
-Row Selection - 
-Seconds - 
-String - 
-Text Area - 
-Virtual IP Address - 
-
-_
+List - selection of items provided to user in dropdown.
+Network -
+Number -
+Password - allows for password entry with confirmation field; entries hidden with placeholder character.
+RAM - allows for entry
+Row Selection -
+Seconds -
+String -
+Text Area -
+Virtual IP Address -
+Database Create - create a new record in the VergeOS database?
+Database Edit - edit a record in the VergeOS database?
+database Field -
+database Find -
+-->
