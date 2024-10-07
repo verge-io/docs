@@ -161,11 +161,11 @@ nav:
         - Tenant Snapshots: product-guide/tenantsnapshots.md
         - Cloud Snapshots and Restore: product-guide/cloudsnapshotandrestore.md
         - NAS Snapshots and Restore: product-guide/volumesnapsandrestores.md
-      - Clusters:
-        - Overview: product-guide/clustersoverview.md
-        - Adding Clusters: product-guide/addingclusters.md
-        - Removing Clusters: product-guide/removingclusters.md
-        - Cluster Settings: product-guide/clustersettings.md
+      - Clusters: 
+        - Overview: product-guide/system/clusters.md
+        - Configuration Options: product-guide/system/clusters-config-options.md
+        #- Removing Clusters: product-guide/removingclusters.md
+        #- Cluster Settings: product-guide/clustersettings.md
       - Permissions:
         - Users and Groups: product-guide/usersgroups.md
         - Permissions: product-guide/permissions.md
