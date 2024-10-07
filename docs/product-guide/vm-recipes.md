@@ -30,12 +30,7 @@ A VergeOS system automatically includes the **Service Provider(Marketplace) Repo
 
 ### Base Configuration
 
-1. Determine **base VM template/Cloud image URL**.  Typically, configuration will use one or both of the following methods:
-
-    * An existing VM serves as the generic template for new VM instances.
-When using this method, create a VM to serve as the base template. The VM should be generalized and suitable for the replication/customization process.<!--include some examples of what you would not want in a VM used as a recipe template -->
-    * A Cloud image URL is utilized. When using this method, you should locate the image to employ along with associated documentation. <!--along with list of items that need to be specified? -->  
-
+1. Create a VM to serve as the base template for the Recipe.  The VM should be generalized and suitable for the replication/customization process.
 2. From the Main Dashboard, navigate to **Machines -> New VM Recipe**.
 !!! note "Recipes are stored in [Catalogs](/product-guide/recipe-organization#catalogs). If you do not have a local catalog created yet, you will be prompted to create a new one first."  
 3. **Recipe Fields**
@@ -117,7 +112,7 @@ A list of variable/value pairs, along with a printout of simulated result files 
 ## Modify a VM Recipe
 
 When any changes are made to a recipe, it will need to be republished in order to make those changes available.  The top of the recipe dashboard will display a message indicating that it must be republished for changes to take effect.  You can use the **Republish** link within this message or click Republish on the left menu.  
-!!! tip "When you make changes and republish a recipe, remote systems and Tenants are notified that an update is available (notification at the top of the VM recipe dashboard and update available checkbox); they must update the recipe to access the changes.
+!!! tip "When you make changes and republish a recipe, remote systems and tenants are notified that an update is available (notification at the top of the VM recipe dashboard and update available checkbox); they must update the recipe to access the changes.
 
 ## Use a VM Recipe
 
@@ -139,17 +134,17 @@ Click **Instances** on the left menu of a VM recipe dashboard to quickly access 
 * Install Cloud-init and associated scripts within the VM template.
 
 **To use an Online OS Image:**  
-VergeOS recipes also allow for taking advantage of the many pre-installed, cloud-init OS images available for download by most Linux and FreeBSD operating systems.  To utilize a downloaded image, you can create a recipe question configured with the following:
+VergeOS recipes allow for taking advantage of the many pre-installed, cloud-init OS images available for download by most Linux and FreeBSD operating systems.  To utilize a specific downloaded image, you can create a recipe question configured as follows:
 
 * **Name=*"OS_DL_URL"***
 * **Type=*Hidden***
-* **Default Value**: the download URL (e.g. `https://cloud-images.ubuntu.com/releases/jammy/release/ubuntu-22.04-server-cloudimg-amd64-disk-kvm.img`, `http://download.rockylinux.org/pub/rocky/8/images/x86_64/Rocky-8-GenericCloud.latest.x86_64.qcow2`)
+* **Default Value**: the download URL (e.g. `https://cloud-images.example.com/releases/jammy/release/ubuntu-22.04-server-cloudimg-amd64-disk-kvm.img`, `http://download.rockylinux.org/pub/rocky/8/images/x86_64/Rocky-8-GenericCloud.latest.x86_64.qcow2`)
 
-To stream a cloud image for use over the web, create a recipe question configured with the following:
+To stream a cloud image over the web, you could create a recipe question configured as follows:
 
 * **Name=*"OS_URL"***
 * **Type=*Hidden***
-* **Default Value**: the image URL (e.g. `https://cloud-images.ubuntu.com/releases/jammy/release/ubuntu-22.04-server-cloudimg-amd64-disk-kvm.img`, `http://download.rockylinux.org/pub/rocky/8/images/x86_64/Rocky-8-GenericCloud.latest.x86_64.qcow2`)
+* **Default Value**: the image URL (e.g. `https://cloud/debian.org/images/cloud/bullseye/latest/debian-11-generic-amd64.qcow2`)
 
 <!--more info to be added here about the drive automatically created, standard files created to support cloud-init integration; troubleshooting informaiton, best practices, etc. >
 <!-- also need to cover the "NoCloud" option on VMs -->
