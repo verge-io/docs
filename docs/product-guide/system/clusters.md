@@ -14,8 +14,6 @@ To view and manage clusters:
 
 You'll see a list of all clusters in your environment.
 
-[... rest of the content remains unchanged ...]
-
 ## Clusters Overview
 
 The Clusters page displays key information for each cluster, including:
