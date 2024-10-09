@@ -214,9 +214,6 @@ nav:
       - Assigning External IP Addresses: product-guide/assignIPtotenant.md
       - Sharing Files: product-guide/providefilestotenant.md
       - Snapshots: product-guide/tenantsnapshots.md
-    - Recipes:
-      - Recipe Organization: product-guide/recipe-organization.md
-      - VM Recipes: product-guide/vm-recipes.md
     - NAS:
       - Overview:
         - NAS Service: product-guide/NASservice
