@@ -285,9 +285,9 @@ nav:
       - Drive Replacement: product-guide/DriveReplacement.md
       - Maintenance Mode: product-guide/maintenancemode.md
       - Subscriptions:
-        - creating: product-guide/subscriptions-overview.md
-        - Profiles: product-guide/subscriptionprofiles.md
-        - Viewing/Accessing: product-guide/subscriptions-accessing.md
+        - Creating Subscriptions: product-guide/subscriptions-overview.md
+        - Subscription Profiles: product-guide/subscriptionprofiles.md
+        - Accessing Subscriptions: product-guide/subscriptions-accessing.md
   - Release Notes: release-notes.md
   - Glossary: glossary.md
 

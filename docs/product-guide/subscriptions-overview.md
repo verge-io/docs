@@ -15,7 +15,9 @@ Triggered alerts are based on threshold settings, warnings, or errors. These are
 
 ### Scheduled
 
-Specified information is sent based on configured times/intervals. These are intended to provide summaries of current system information. This can assist administrators in everyday supervision of systems, tracking trends, etc. Scheduled subscriptions provide dashboard or listing information to the Administrator. Examples of scheduled subscriptions include:
+Dashboard or listing information is sent based on configured times/intervals. These are intended to provide summaries of current system information and can assist administrators in everyday supervision of systems, tracking trends, etc.  
+
+**Examples of scheduled subscriptions include:**
 
 * System dashboard sent daily
 * vSAN tier Dashboard sent weekly
@@ -57,7 +59,7 @@ Specified information is sent based on configured times/intervals. These are int
 
 ### **Example 1 - vSAN Tier Dashboard**
 
-Receive a weekly summary (dashboard) for a particular vSAN Tier,  including tier status, usage, read / write stats, etc.
+Receive a weekly summary for a particular vSAN Tier, including tier status, usage, read / write stats, etc.
 ![subscription-vsantierdash.png](/product-guide/screenshots/subscription-vsantierdash.png)
 
 ### **Example 2 - Cloud Snapshots Recent**
@@ -69,18 +71,18 @@ Receive a daily report with an inventory of all your Current Cloud Snapshots.
 
 ### **Example 3 - High Usage Alert for a Storage Tier**
 
-Send an alert email to the admin User if Storage Tier 2 usage reaches the High Usage percentage  (**The High Usage Percentage is set to 80% by default**); Send a reminder every 12 hours while the high usage is still in place.  **Throttle alerts to only send 2 per minute**.
-![subscriptions-highusagealert.png](/product-guide/screenshots/subscriptions-highusagealert.png)
+Receive an alert if Storage Tier 2 usage reaches the High Usage percentage  (**The High Usage Percentage is set to 80% by default**); Send a reminder every 12 hours while the high usage is still in place.  **Throttle alerts to only send 2 per minute**.
+![subscription-highusagealert.png](/product-guide/screenshots/subscription-highusagealert.png)
 
-!!! tip "A Separate Subscription can also be created for a Critical High Usage alert when a storage tier hits **90%**.  Typically, **you would have more frequent reminders** for a Critical High Usage alert."
+!!! tip "A Separate Subscription could also be created for a Critical High Usage alert when a storage tier hits **90%**.  Typically, **you would have more frequent reminders** for a Critical High Usage alert."
 
 ### **Example 4 - Main Dashboard Status Warnings or Errors**
 
 Send an alert email to all members of the SrvAdmin Group if any warning or error status changes occur on the Main Dashboard; send a Reminder email every **6 hours** while the Warning/Error condition is still in place; throttle the error messages to send only **1 per minute**.
 
 **Configuration:**
-![subscriptions-maindash-warnserrors.png](/product-guide/screenshots/subscriptions-maindash-warnserrors.png)
+![subscription-maindashwarnserrors.png](/product-guide/screenshots/subscription-maindashwarnserrors.png)
 
- A vSAN tiers warning and a clusters warning would bubble up to the Main Dashboard and trigger the alert.  Full Dashboard Data is sent within the alert email message.
+ A vSAN tiers warning is an example of something that would appear in the Main Dashboard and trigger this subscription alert.  Full Dashboard Data would be sent within the alert email message.
 
 Subscriptions based on Status errors and warnings will also automatically send a Resolved Message when the status error/warning is no longer in place.
