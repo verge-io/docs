@@ -1,4 +1,4 @@
-# Subscriptions
+# Creating Subscriptions
 
 Subscriptions deliver emails for scheduled reporting and triggered alerting.
 
