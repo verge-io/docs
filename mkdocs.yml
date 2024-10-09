@@ -179,9 +179,6 @@ nav:
       - Sites Dashboard:
         - Overview: product-guide/sitesoverview.md
         - Adding Sites: product-guide/configuringsitesdash-addingsites.md
-      - Subscriptions:
-        - Overview: product-guide/subscriptions-overview.md
-        - Profiles: product-guide/subscriptionprofiles.md
       - Tasks / Events:
         - Create Automated Tasks: product-guide/createtasks.md
       - Updates / Licensing:
@@ -287,6 +284,10 @@ nav:
     - Maintenance & Monitoring:
       - Drive Replacement: product-guide/DriveReplacement.md
       - Maintenance Mode: product-guide/maintenancemode.md
+      - Subscriptions:
+        - creating: product-guide/subscriptions-overview.md
+        - Profiles: product-guide/subscriptionprofiles.md
+        - Viewing/Accessing: product-guide/subscriptions-accessing.md
   - Release Notes: release-notes.md
   - Glossary: glossary.md
 
