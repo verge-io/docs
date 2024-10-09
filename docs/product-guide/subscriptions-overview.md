@@ -29,18 +29,18 @@ Specified information is sent based on configured times/intervals. These are int
 2. Select **Subscriptions** from the left menu.
 3. Select **New** from the left menu.
 4. Select ***Owner Type***:
-   - **User** (individual user)
-   - **Group** (group of users)
+   * **User** (individual user)
+   * **Group** (group of users)
 5. Select ***Owner*** from the dropdown list. (Choose from the list of users or list of groups depending on selection in the *Owner Type* field.)
 6. Select ***Target Type*** from the dropdown list. This defines the area of the system to report on.
 7. Select ***Target*** from the dropdown list. This defines the specific instance, where applicable (for example, a particular storage tier when *Storage Tiers* is selected as Target Type; a single virtual network when *Network* is selected as the Target Type.).
 8. Enter a ***Name*** for the subscription. This name displays in the subscriptions listing and in the email messages sent by this subscription.
 9. Select the desired **Suspend** setting:
-   - **Never** (default) - subscription continues perpetually until deleted or disabled.
-   - **Set Date** - subscription does not execute again until the specified date/time.
+   * **Never** (default) - subscription continues perpetually until deleted or disabled.
+   * **Set Date** - subscription does not execute again until the specified date/time.
 10. Select the ***Type*** of notification:
-    - **On-Demand** - alerts triggered by particular events or specific thresholds; these notifications only occur when specified criteria occurs.
-    - **Scheduled** - reports that send at particular intervals/times (e.g. daily, weekly, monthly)
+    * **On-Demand** - alerts triggered by particular events or specific thresholds; these notifications only occur when specified criteria occurs.
+    * **Scheduled** - reports that send at particular intervals/times (e.g. daily, weekly, monthly)
 11. Select ***Subscription Profile*** from the dropdown list. (The options available will depend on the option selected in the ***Target*** field.) This defines the information to receive in the notification. A wide array of subscription profiles exist by default, providing the means to oversee all the different parts of your VergeOS Cloud, such as: physical hardware (host tenant only), storage utilization per tier, import jobs, system warnings and errors, and more. Additional [**Subscription Profiles**](/product-guide/subscriptionprofiles) can be defined if further notification/alert scenarios are needed.
 12. **For On Demand Subscriptions** (alerts): Select a ***Reminder while active*** interval to define how often reminder alerts should be received until a resolved state (at which point, a resolved alert is sent.) This setting pertains to alerts based on error/warning statuses or thresholds. Applies to ***On-Demand* subscriptions only**.
 13. **For On Demand Subscriptions**: specify a ***Throttle*** for the subscription alerts to define a limiting interval (in minutes) for how often this subscription will send alerts. For example: if a subscription is created for Main Dashboard Log Errors, and an error starts continually occurring in the log, the throttle will limit the rate that subscription alerts are sent (rather than sending a new alert for each time the error appears in the log.) *Applies to **On-Demand subscriptions only.***
@@ -72,10 +72,9 @@ Receive a daily report with an inventory of all your Current Cloud Snapshots.
 Send an alert email to the admin User if Storage Tier 2 usage reaches the High Usage percentage  (**The High Usage Percentage is set to 80% by default**); Send a reminder every 12 hours while the high usage is still in place.  **Throttle alerts to only send 2 per minute**.
 ![subscriptions-highusagealert.png](/product-guide/screenshots/subscriptions-highusagealert.png)
 
-> **NOTE:** A Separate Subscription can also be created for a Critical High Usage alert when a storage tier hits **90%**.  Typically, **you would have more frequent reminders** for a Critical High Usage alert.
-{.is-warning}
+!!! tip "A Separate Subscription can also be created for a Critical High Usage alert when a storage tier hits **90%**.  Typically, **you would have more frequent reminders** for a Critical High Usage alert."
 
-### **Example 4 - Main Dashboard Status Warnings or Errors** 
+### **Example 4 - Main Dashboard Status Warnings or Errors**
 
 Send an alert email to all members of the SrvAdmin Group if any warning or error status changes occur on the Main Dashboard; send a Reminder email every **6 hours** while the Warning/Error condition is still in place; throttle the error messages to send only **1 per minute**.
 
