@@ -190,6 +190,7 @@ nav:
     - Virtual Machines:
       - Quick Start: 
         - Best Practices: product-guide/VMbestpractices.md
+        - Uploading Media Images: product-guide/uploadingtovSAN.md
         - Creating Virtual Machines: product-guide/creatingvms.md
         - Virtual Machine Drives: product-guide/VMdrives.md
         - Virtual Machine Network Interfaces: product-guide/VMNics.md
@@ -217,11 +218,10 @@ nav:
       - Sharing Files: product-guide/providefilestotenant.md
       - Snapshots: product-guide/tenantsnapshots.md
       - Usage Reports: product-guide/tenant-usagereports.md
-    - Catalogs:
-      - Overview: product-guide/catalogs-overview.md
+#    - Catalogs:
+#      - Overview: product-guide/catalogs-overview.md
     - NAS:
-      - Overview:
-        - NAS Service: product-guide/NASservice
+      - Overview: product-guide/NASservice.md
       - Configuration:
         - Local Volumes: product-guide/naslocalvolumes.md
         - Remote Volumes: product-guide/nasremotevolumes.md
@@ -229,9 +229,9 @@ nav:
         - VM Export: product-guide/vmexportvolume.md
         - Volume Syncs: product-guide/volumesyncs.md
         - Join NAS to AD: product-guide/NAS-joinADDomain.md
-    - Media Images:
-      - Overview: product-guide/mediaimages-overview.md
-      - Uploading Media Images: product-guide/uploadingtovSAN.md
+#    - Media Images:
+#      - Overview: product-guide/mediaimages-overview.md
+#      - Uploading Media Images: product-guide/uploadingtovSAN.md
     - Networking:
       - Quick Start: 
         - Overview: product-guide/networkoverview.md
@@ -277,7 +277,7 @@ nav:
       - Preferred Tier: product-guide/preferredtiers.md
       - Removing ISO Files with References: product-guide/removing-isorefs.md
     - GPU:
-      - Overview: product-guide/GPUoverview.md
+#      - Overview: product-guide/GPUoverview.md
       - Passthrough: product-guide/GPUPassthrough.md
       - NVIDIA vGPU: product-guide/nvidiavGPU.md
       - Tenant GPU: product-guide/gpu-sharetenant.md
