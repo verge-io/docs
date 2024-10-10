@@ -218,8 +218,9 @@ nav:
       - Sharing Files: product-guide/providefilestotenant.md
       - Snapshots: product-guide/tenantsnapshots.md
       - Usage Reports: product-guide/tenant-usagereports.md
-#    - Catalogs:
-#      - Overview: product-guide/catalogs-overview.md
+    - Recipes:
+      - Organization: product-guide/recipes-organization.md
+      - VM Recipes: product-guide/vm-recipes.md
     - NAS:
       - Overview: product-guide/NASservice.md
       - Configuration:
