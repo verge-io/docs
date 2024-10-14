@@ -32,6 +32,7 @@ jobs:
         with:
           python-version: 3.x
       - run: if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - run: pip install git+https://${GH_TOKEN}@github.com/squidfunk/mkdocs-material-insiders.git
       - run: mkdocs build --site-dir ./_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
@@ -45,3 +46,6 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+env:
+  GH_TOKEN: ${{ secrets.GH_TOKEN }}
