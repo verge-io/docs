@@ -26,6 +26,7 @@ theme:
     - content.code.copy
     - announce.dismiss
     - navigation.footer
+    - navigation.path
   language: en
   palette:
     # Palette toggle for dark mode
