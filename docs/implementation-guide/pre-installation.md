@@ -1,14 +1,13 @@
-## Site Survey
-The **Site Survey** is a doc that is provided by your Sales Rep or Customer Success team. This document is designed to gather information about your hardware and networking setup for the smoothest install possible. 
+# Pre-Installation Checklist
 
-## [Pre-Installation Checklist](pre-install-checklist.md)
+## Prerequisites
 
-<!-- - [ ] Site Survey completed and approved by VergeOS -->
 - [ ] Bootable USB drive with VergeOS ISO using these instructions: [Bootable Media](install-media.md)
 - [ ] Encryption Key USB installed and ready (if enabling at-rest encryption)
 - [ ] Nodes powered up with ISO booted to VergeOS Install screen
 
-### Hardware
+## Hardware
+
 - [ ] Hardware burn-in complete
 - [ ] All Drives setup for JBOD, **NO RAID**
 - [ ] BIOS set to proper boot settings (Legacy / Dual / UEFI) **UEFI required if all drives are NVMe**
@@ -22,7 +21,8 @@ The **Site Survey** is a doc that is provided by your Sales Rep or Customer Succ
 - [ ] Latest IPMI firmware (recommended)
 - [ ] Test IPMI remote console capability (in case of incorrect licensing)
 
-### Network
+## Network
+
 - [ ] All switches online and tested
 - [ ] All cables patched
 - [ ] All VLANs configured (core - required, external - optional)
