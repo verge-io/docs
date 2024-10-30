@@ -143,7 +143,7 @@ nav:
       #- Enterprise Multi-Site: reference-architecture/enterprise-multi-site.md
       - Cloud Providers: reference-architecture/csp.md
       - Life / Data Science: reference-architecture/data-science.md
-      #- VMware Backup: reference-architecture/vmware-backup.md
+      - Homelab: reference-architecture/homelab.md
   - Knowledge Base:
     - knowledge-base/index.md
   - Product Guide:
