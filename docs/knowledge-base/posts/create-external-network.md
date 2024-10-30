@@ -6,6 +6,14 @@ draft: false
 date: 2024-10-20T12:00:00.000Z
 tags:
   - network
+  - VLAN
+  - network setup
+  - external routing
+  - gateway
+  - static IP
+  - routing rules
+  - WAN
+  - network management
 categories:
   - Network
 editor: markdown
