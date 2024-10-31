@@ -127,7 +127,7 @@ In this model, all networks (Core Fabric, External/Management, Workloads) are co
 - Development workloads
 - Bare Metal Cloud Providers
 
-!!! note "Each statically assigned network you route to VergeOS in this system design will be non-redunant"
+!!! note "Each statically assigned network you route to VergeOS in this system design will be non-redundant"
 
 ### Requirements - 2 NICs
 
