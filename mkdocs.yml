@@ -204,7 +204,7 @@ nav:
         - Viewing Import Jobs: product-guide/viewimportjobs.md
       - VM Operations:
         - Working With VMs: product-guide/VM-workingwith.md
-        - Manual Migration: product-guide/vm-manualmigration.md
+        - Live Migrations: product-guide/virtual-machines/live-migrations.md
       - VDI:
         - Instructions for the Administrator: product-guide/VDI-Administrator.md
         - Instructions for the User: product-guide/VDI-User.md
