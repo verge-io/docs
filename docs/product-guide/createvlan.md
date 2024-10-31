@@ -1,48 +1,63 @@
+# Configuring VLANs
 
+## Prerequisites
 
-# VLANs
+!!! info "Host Level Configuration"
+    Before configuring VLANs, ensure that switchports are configured appropriately so that physical VergeOS nodes have access to the desired VLAN(s).
 
-<br>
-<br>
+!!! info "Tenant Configuration"
+    For VLAN configuration within a tenant, [Virtual Wires](/product-guide/virtualwires) must first be configured to provide external layer2 access to the tenant.
 
-> For VLAN configuration **at the host level:** verify switchports are configured appropriately so that physical VergeOS nodes have access to the desired VLAN(s).
-{.is-info}
+## Configuration Steps
 
-> For VLAN configuration within a **tenant:** [**Virtual Wires**](/product-guide/virtualwires) must first be configured to provide external layer2 access to the tenant. {.is-info} 
+### Creating a VLAN Network
 
-<br>
-<br>
+1. Navigate to Networks:
+   - From the **Main Dashboard**, click **Networks** (quick-link or left menu)
+   - Click **New External** on the left menu
 
+2. Configure Basic Settings:
+   - Enter a descriptive **Name** for the network
+     - Use naming that indicates VLAN purpose and/or ID
+   - Select ***vLan*** in the **Layer 2 Type** dropdown
+   - Enter the appropriate **Layer 2 ID**
 
-## Configure a VLAN 
+3. Set Network Interface:
+   - Select the appropriate physical network from **Interface Network** list
 
+    !!! note "Network Selection"
+        **For Host Networks:**
+        - Must select a physical network where the VLAN enters the VergeOS environment
+        - Physical networks typically created during install with "Switch" appended to name
+        - Example: "External1 Switch"
 
-<br>
+        **For Tenants:**
+        - Select "Physical"
 
-1. From the **Main Dashboard** click the **Networks** quick-link or left menu option.
-2. Click **New External** on the left menu.
-3. Enter a **Name** for the network. Use a name that will be helpful for administration, such as 
-a description of the VLAN purpose and/or ID.
-4. In the **Layer 2 Type** dropdown list, select ***vLan***.
-5. Enter the appropriate **Layer 2 ID**. 
-6. Select the appropriate physical network from the **Interface Network** selection list.
-    - ***Host networks:** *the network selected here **must be a physical network where the VLAN enters the VergeOS environment**.  Typically, physical networks are created during install with the word "Switch" appended to the name, for ex: "External1 Switch" 
-    - ***Tenants:*** select **"Physical"**
-    <br>
+4. Configure Additional Settings:
+   - Set **IP Address Type** to ***None***
+   - Leave other fields at default settings unless specific configuration needed
 
-7. In the ***IP Address Type*** field, select ***None***.
+5. Complete Configuration:
+   - Click **Submit** to create the VLAN network
+   - Verify network dashboard appears with **Status: Running**
 
-7. **Typically, all other fields** can be left at their **default settings**.  
-<!--check about MTU -- is this just always default at 1500?  should we mention it should probably be set at the same as the physical network is set, in most cases?-->
+## Using the VLAN Network
 
-8. Click **Submit** (bottom of page) to complete the VLAN configuration.
+!!! success "VM Configuration"
+    The newly created VLAN network can be selected on VM NICs to attach workloads to the associated VLAN(s).
 
-The dashboard for the newly created network should now appear and show  **Status: Running**.
+## Best Practices
 
-> This new network can be selected on VM NICs in order to attach workloads to the associated VLAN(s). {.is-success}
+- Use descriptive names that help identify VLAN purpose
+- Document VLAN IDs and their intended use
+- Verify physical switch configuration matches VergeOS VLAN settings
+- Test connectivity after configuration
 
+## Troubleshooting
 
-
-
-
-
+If the VLAN network does not show as running:
+1. Verify physical switch configuration
+2. Check VLAN ID matches physical network configuration
+3. Confirm Interface Network selection is correct
+4. Review network logs for any error messages
