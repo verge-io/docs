@@ -12,6 +12,10 @@ VergeOS provides multiple methods of device passthrough in order to allow physic
 
 * **SR-IOV VF NICs** -- the Single Root I/O Virtualization (SR-IOV) specification is utilized to create multiple virtual functions (virtualized instances of a network adapter) from one physical network device; these virtualized network adapters are provided to vritual machines. A single PCIe physical Network device is used to create multiple.....
 
+Note: When using multiple physical devices for hardware-assisted virtualization, it is often desirable to place multiple physical pci devices of the same type in a resource pool so that the virtual resources can be allocated dynamically to VMs as needed.  VMs can be configured to 
+
+Resource Pools/Rules allow you to create a pool of like devices to allocate to VMs as needed.
+
 PCI Rule fields
 * **Name**
 * **Slot**
@@ -88,6 +92,13 @@ A resource group provides a pool of same (or highly similar) devices to pass thr
 
 Rules provide filter criteria to specify the devices to include in a resource group. Each rule can filter available devices based on a combination of attributes such as device name, vendor, slot, serial number; available fields will vary depending on the resource type (PCI, USB, SR-IOV NIC or vGPU).
 
+The Resource Rule Dashboard
+
+* **General Configuration**
+* **Node Resources Count**
+* **Node Resources list**
+* **USB Filter - Matches**
+
 
 PCI Rule fields
 * **Name**
@@ -119,16 +130,7 @@ SR-IOV NIC Rule fields
 * **Vendor Device (Hexidecimal)**
 * **Physical slot** 
 
-USB Rule fields
-* **Bus**
-* **Device**
-* **Path**
-* **Vendor ID**
-* **Model ID**
-* **Serial**
-* **USB Version**
-* **Speed**
-* **Interface Drivers**
+
 
 Rule operators:
 

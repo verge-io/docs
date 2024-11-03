@@ -281,8 +281,9 @@ nav:
       - Removing ISO Files with References: product-guide/removing-isorefs.md
     - Device Passthrough:
       - Device Passthrough Overview: product-guide/devpass-overview.md
-      - USB Passthrough: product-guide/usbpassthrough.md
       - NVIDIA vGPU: product-guide/nvidiavGPU.md
+      - SR-IOV NIC: product-guide/sriov.md
+      - USB Passthrough: product-guide/usbpassthrough.md
       - Generic PCI Passthrough: product-guide/generic-pcipass.md
     - GPU:
 #      - Overview: product-guide/GPUoverview.md

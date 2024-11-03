@@ -2,7 +2,7 @@
 
 # NVIDIA vGPU (Virtual GPU)
 
-VergeOS allows you to seamlessly utilize NVIDIA's GRID vGPU platform which allows multiple VMs to access a single physical GPU at the same time. vGPU provides VMs with accelerated graphics as well as high-processing throughput for machine learning, blockchain applications, etc.
+VergeOS allows you to seamlessly utilize NVIDIA's GRID vGPU platform which provides multiple VMs with access to a single physical GPU at the same time. vGPU access delivers accelerated graphics and high-processing throughput for machine learning, blockchain applications, etc.
 
 !!! info "NVIDIA GRID licensing is required to use NVIDIA vGPU."
 
@@ -11,7 +11,7 @@ VergeOS allows you to seamlessly utilize NVIDIA's GRID vGPU platform which allow
 ## Host Installation/Configuration
 
 1. Obtain the appropriate NVIDIA Linux-KVM driver for your GPU hardware. GRID vGPU drivers can be downloaded from your NVIDIA licensing portal or by registering for an NVIDIA free evaluation: [**https://nvidia.com/en-us/data-center/resources/vgpu-evaluation**](https://nvidia.com/en-us/data-center/resources/vgpu-evaluation).
-!!! tip "VergeOS supports NVIDIA bundle drivers.  For a list of currently supported NVIDIA drivers, navigate to Resource Manager -> Groups -> New Group -> set Type="NVIDIA vGPU". Click the button to view compatible 3rd Party drivers.  Typically, you will want to use the most recent driver in this list that is compatible with your NVIDIA hardware."
+!!! tip "VergeOS supports NVIDIA bundle drivers.  For a list of currently supported NVIDIA drivers, navigate to Resource Manager -> Groups -> New Group. Set Type="NVIDIA vGPU" and click the button to view compatible 3rd Party drivers.  Typically, you will want to use the most recent driver in this list that is compatible with your NVIDIA hardware."
 
 2. Upload the NVIDIA bundle driver to the VergeOS vSAN. For directions on uploading to the vSAN, see:
 [**Uploading to the vSAN (Media Images)**](/product-guide/uploadingtovSAN)
@@ -29,7 +29,7 @@ If no vGPU resource groups exist, or you select --New Group--, you are presented
 5. Select the appropriate driver. The **Driver** dropdown list will contain NVIDIA vGPU drivers found in media images.  The appropriate driver will need to be uploaded to the vSAN before it can be selected (Steps 1-2 above.)  
 6. Click **Submit** to save the driver selection.  
 7. If this driver has not been used previously, a reboot of the associated node(s) will be necessary before you can complete the vGPU configuration.  
-!!! caution "Follow proper [**Maintenance Mode**](/product-guide/maintenancemode) procedures when rebooting a node to avoid workload disruptions."
+!!! warning "Follow proper [**Maintenance Mode**](/product-guide/maintenancemode) procedures when rebooting a node to avoid workload disruptions."
 8. After the node(s) are rebooted (if necessary), navigate to the NVIDIA vGPU resource group (Main Dashboard -> Resources -> Groups -> double-click the appropriate group.)
 9. Click **Edit** on the left menu.
 10. Select the desired **NVIDIA vGPU Profile** from the dropdown list.  Consult NVIDIA vGPU documentation for information regarding available profile types.
@@ -41,7 +41,7 @@ If no vGPU resource groups exist, or you select --New Group--, you are presented
 1. Navigate to the dashboard of the desired VM (From the main dashboard click **Machines** on the left menu; **Virtual Machines;** double-click desired VM in the listing)
 2. Click **Devices** on the left menu.
 3. Click **New** on the left menu.
-!!! tip "You can also attach vGPU devices to a VM via Resource Manager; this method allows for adding multiple vGPU devices to the VM at once. From Resource Group dashboard -> double-click the desired vGPU Group -> View Machine Devices -> New; select the VM from the MAchine dropdown list."
+!!! tip "You can also attach devices to a VM via Resource Manager; this method allows for adding multiple devices to the VM at once. From Resource Group dashboard -> double-click the desired vGPU Group -> View Machine Devices -> New; select the VM from the MAchine dropdown list."
 
 4. Device Entry Form fields:
 
@@ -55,7 +55,7 @@ If no vGPU resource groups exist, or you select --New Group--, you are presented
 * **Disable Console VNC**: this option can be used when the vGPU should be used for the primary display, e.g. access solely via RDP.
 **Advanced NVIDIA settings; consult NVIDIA documentation for information on the following options:**
 * **Enable Unified Memory**
-*  **Enable NVIDIA CUDA Toolkit Debuggers**
+* **Enable NVIDIA CUDA Toolkit Debuggers**
 * **Enable NVIDIA CUDA Toolkit Profiles**
   
 5. Click **Submit** to complete adding the new device.

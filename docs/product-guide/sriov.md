@@ -1,9 +1,9 @@
 # SR-IOV NICs
 
-one of the types of passthrough supported
-pass to VMs or tenants
+VergeOS provides support for SR-IOV-capable network cards to allow multiple instances to be shared to tenants and VMs from a single PCIe device.
 
-!!! note "NVFVergeOS provides full network virtualization, including emulated (virtio) NICs. SR-IOV for NVFs is supported (as of version 4.13) for scenarios where hardware-assisted virutalization is desired."
+
+!!! note "VergeOS provides full network virtualization, including emulated (virtio) NICs. SR-IOV NICs are supported (VergeOS version 4.13 and greater) for scenarios where hardware-assisted virtualization is desirable.
 
 ## Host Installation/Configuration
 
@@ -11,11 +11,9 @@ add to an existing resource group
 or create a new resource group
 perhaps link to the page that explains this?
 
-Note: When using multiple physical devices for hardware-assisted virtualization, it is often desirable to place multiple physical pci devices of the same type in a resource pool so that the virtual resources can be allocated dynamically to VMs as needed.  VMs can be configured to 
+Note about nodes need settings enabled in BIOS, these settings are labeled differently among different manufacturers/models
 
-Resource Pools/Rules allow you to create a pool of like devices to allocate to VMs as needed.
 
-Installation/Configuration will need to be completed on each physical node that will house a
 
 
 1. From the Main Dashboard, click **Nodes**.
