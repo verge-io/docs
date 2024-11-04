@@ -23,18 +23,35 @@ The following instructions will configure virtual function passthrough by automa
 **-OR-**
 Navigate to a **specific node dashboard** (Main Dashboard -> Nodes -> double-click desired node in the list.)
 2. Click the **NVIDIA vGPUs** card. (Any existing configured vGPUs will display in the listing.)
-3. Click **NVIDIA PCI Devices** on the left menu.  The listing of compatible physical devices will display. 
+3. Click **NVIDIA PCI Devices** on the left menu.  The listing of compatible physical devices will display.
 4. **Select a vGPU resource group** from the list **-OR-**  **Create a new vGPU resource group** for the device(s).
 If no vGPU resource groups exist, or you select --New Group--, you are presented with the [Resource Group](/product-guide/devpass-overview#resourcegroups) entry form to create a new resource group.
+
+### Creating an NVIDIA vGPU Resource Group
+
+1. **Name**: label used to identify the resource group (i.e. device pool); use a descriptive name so that users are easily able to identify the type of device(s) in this group.
+2. **Type**: should be set to ***USB***.
+3. **Description**: optional field to provide more administrative text about the resource group.
+4. **Class**: select ***vGPU***. This field is only used to apply an associated icon to the resource group, and does not affect functionality.
 5. Select the appropriate driver. The **Driver** dropdown list will contain NVIDIA vGPU drivers found in media images.  The appropriate driver will need to be uploaded to the vSAN before it can be selected (Steps 1-2 above.)  
 6. Click **Submit** to save the driver selection.  
 7. If this driver has not been used previously, a reboot of the associated node(s) will be necessary before you can complete the vGPU configuration.  
 !!! warning "Follow proper [**Maintenance Mode**](/product-guide/maintenancemode) procedures when rebooting a node to avoid workload disruptions."
+
 8. After the node(s) are rebooted (if necessary), navigate to the NVIDIA vGPU resource group (Main Dashboard -> Resources -> Groups -> double-click the appropriate group.)
 9. Click **Edit** on the left menu.
 10. Select the desired **NVIDIA vGPU Profile** from the dropdown list.  Consult NVIDIA vGPU documentation for information regarding available profile types.
 11. The **Make Guest Driver ISO** option can be used to automatically create a guest driver *.ISO file, from the NVIDIA driver bundle selected for the resource group.  If you select this option, leave the Driver ISO field set to --Default--; the system will automatically create the iso file (based on the bundle driver selected), and specifiy it as the Driver ISO for the resource group.
 12. The **Driver ISO** file specifies an ISO file that can be attached to consuming VMs providing a convenient way to access client drivers for installation within the guest operating system.  (Use the ***Attach Guest Drivers*** option when configuring guest device.)
+13. Click **Submit** to save the client driver settings for the resource group.
+
+After the resource group is selected or new one created, a **Success* message should appear indicating resource rules were created for the device(s)
+
+The resource group dashboard appears.  The Rules section will display the created rules. If you wish to examine the configuration of an individual rule, click the Rules card and double-click an individual rule in the list.
+
+You can modify the automatically created rule by clicking Edit on the left menu.
+For example, edit Node to -- -- None -- to include matching devices from all nodes.
+General information about resource rules is available at: [Resource Rules](/product-guide/devpass-overview#resourcerules)
 
 ## VM/Guest Configuration
 
