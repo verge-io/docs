@@ -60,9 +60,9 @@ General information about resource rules is available at: [Resource Rules](/prod
 1. Navigate to the dashboard of the desired VM (From the main dashboard click **Machines** on the left menu; **Virtual Machines;** double-click desired VM in the listing)
 2. Click **Devices** on the left menu.
 3. Click **New** on the left menu.
-!!! tip "You can also attach devices to a VM via Resource Manager; this method allows for adding multiple devices to the VM at once. From Resource Group dashboard -> double-click the desired SR-IOV Group -> View Machine Devices -> New; select the VM from the Machine dropdown list."
+!!! tip "You can also attach devices to a VM via Resource Manager: from Resource Group dashboard -> double-click the desired SR-IOV Group -> View Machine Devices -> New; select the VM from the Machine dropdown list."
 
-4. Device Entry Form fields:
+1. Device Entry Form fields:
 
 * **Name**: provide a name to adequately identify the type of device, e.g. "Intel xl710 sriov", or leave blank to allow the system to auto-generate a device name.
 * **Type**: select ***SR=IOV NIC***;

@@ -2,7 +2,8 @@
 
 VergeOS accommodates multiple types of device passthrough in order to allow physical devices connected to host servers to be used by VMs.  
 
-!!! tip "To enable PCI passthrough (exclusive, SR-IOV NIC, or vGPU), correct virtualization features must be configured in your host server BIOS; Intel hosts will require ***VT-d and Vt-x enabled***, while AMD will require ***IOMMU*** enabled.  The labels of these settings will vary across manufacturers; consult your hardware vendor documentation"
+!!! tip "To enable PCI passthrough (exclusive, SR-IOV NIC, or vGPU), correct passthrough/virtualization features must be configured in your host server BIOS; Intel hosts will require ***VT-d and Vt-x enabled***, while AMD will require ***AMD-vi*** ***IOMMU*** enabled.  The labels of these settings will vary across manufacturers; some common things to look for can include terms similar to ***virtualization***, ***PCI Passthrough***, etc. Consult your hardware vendor documentation if necessary."
+
 
 ## Resource Group
 
@@ -12,7 +13,7 @@ Resource rules associated with a resource group define the devices that will com
 
 ## Resource Rules
 
-Rules provide filter criteria to specify the devices to include in a resource group. Each rule can filter available devices based on a combination of attributes such as device name, vendor, slot, serial number; available fields will vary depending on the particular resource type (PCI, USB, SR-IOV NIC or NVIDIA vGPU).  Generally, it is easiest to allow the system to auto-generate rules by selecting a device for passthrough.  Instructions for auto-generating resource rules (per type) are included in the page links provided below.
+Rules define filter criteria to specify devices to include in a resource group. Each rule can filter available devices based on a combination of attributes such as device name, vendor, slot, serial number; available fields will vary depending on the particular resource type (PCI, USB, SR-IOV NIC or NVIDIA vGPU).  Generally, it is easiest to allow the system to auto-generate rules by selecting a device for passthrough.  Instructions for auto-generating resource rules (per type) are included in the page links provided below.
 
 ## Types of Device Passthrough
 
