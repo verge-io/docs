@@ -58,7 +58,7 @@ Information regarding resource rules is available at: [Resource Rules](/product-
 3. Click **New** on the left menu.
 !!! tip "You can also attach devices to a VM via Resource Manager; this method allows for adding multiple devices to the VM at once. From Resource Group dashboard -> double-click the desired vGPU Group -> View Machine Devices -> New; select the VM from the MAchine dropdown list."
 
-4. Device Entry Form fields:
+### Device Entry Form fields
 
 * **Name**: provide a name to adequately identify the type of vGPU/profile, e.g. A16-4Q.
 * **Type**: select NVIDIA vGPU
@@ -73,11 +73,24 @@ Information regarding resource rules is available at: [Resource Rules](/product-
 * **Enable NVIDIA CUDA Toolkit Debuggers**
 * **Enable NVIDIA CUDA Toolkit Profiles**
   
-5. Click **Submit** to complete adding the new device.
-6. The VM will need a **restart** in order to attach the device. From the VM dashboard, click the *Restart* link on the message that appears at the top of the dashboard, or click **Restart** on the left menu.
-7. Install required **NVIDIA guest driver(s)**; required driver(s) will vary depending on specific GPU model and guest OS version. If the option was selected to attach guest drivers, a CD-ROM drive should be available containing necessary NVIDIA drivers for install.
-8. Consult NVIDIA documentation for client vGPU licensing requirements/instructions.
+4. When fields are completed, click **Submit** to complete adding the new device.
+5. The VM will need a **restart** in order to attach the device. From the VM dashboard, click the *Restart* link on the message that appears at the top of the dashboard, or click **Restart** on the left menu.
+6. Install required **NVIDIA guest driver(s)**; required driver(s) will vary depending on specific GPU model and guest OS version. If the option was selected to attach guest drivers, a CD-ROM drive should be available containing necessary NVIDIA drivers for install.
+7. Consult NVIDIA documentation for client vGPU licensing requirements/instructions.
 
 !!! hint "Client licensing may involve generating a client config token on the NVIDIA licensing server that will need to be downloaded into the VM guest, followed by a VM reboot."
 
 [Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }
+
+## Sharing an NVIDIA vGPU Device to a Tenant
+
+NVIDIA vGPU devices can be passed to a tenant for the tenant to pass to its own VMs.  
+
+1. Navigate to the desired **tenant dashboard** (Main Dashboard -> Tenants -> Tenants -> doube-click the tenant within the list.)
+2. Click **Nodes** on the left menu.
+3. **Double-click one of the tenant nodes**.
+4. Click **Devices** on the left menu.
+5. Click **New** on the left menu.
+6. Reference the [**Device Entry Form Fields**](#device-entry-form-fields) above.
+7. When fields are completed, click **Submit** to complete adding the new device.
+8. The device will now be available to attach to tenant VMs.  Follow [**VM/Guest Configuration**](vm/guest-configuration) instructions above.

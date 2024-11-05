@@ -75,3 +75,16 @@ General information about resource rules is available at: [Resource Rules](/prod
 6. The VM will need a **restart** in order to attach the device. From the VM dashboard, click the *Restart* link on the message that appears at the top of the dashboard, or click **Restart** on the left menu.
 7. Install any required client **NIC drivers**. Required driver(s) will vary depending on specific SR-IOV NIC make/model and guest operating system; consult hardware vendor documentation.
 
+## Sharing SR-IOV Device to a Tenant
+
+NVIDIA vGPU devices can be passed to a tenant for the tenant to pass to its own VMs.  
+
+1. Navigate to the desired **tenant dashboard** (Main Dashboard -> Tenants -> Tenants -> doube-click the tenant within the list.)
+2. Click **Nodes** on the left menu.
+3. **Double-click one of the tenant nodes**.
+4. Click **Devices** on the left menu.
+5. Click **New** on the left menu.
+6. Reference the [**Device Entry Form Fields**](#device-entry-form-fields) above.
+7. When fields are completed, click **Submit** to complete adding the new device.
+8. The device will now be available to attach to tenant VMs.  Follow [**VM/Guest Configuration**](vm/guest-configuration) instructions above.
+
