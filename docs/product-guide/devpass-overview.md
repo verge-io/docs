@@ -13,7 +13,15 @@ Resource rules associated with a resource group define the devices that will com
 
 ## Resource Rules
 
-Rules define filter criteria to specify devices to include in a resource group. Each rule can filter available devices based on a combination of attributes such as device name, vendor, slot, serial number; available fields will vary depending on the particular resource type (PCI, USB, SR-IOV NIC or NVIDIA vGPU).  Generally, it is easiest to allow the system to auto-generate rules by selecting a device for passthrough.  Instructions for auto-generating resource rules (per type) are included in the page links provided below.
+Rules define filter criteria to specify devices to include in a resource group. Each rule can filter available devices based on a combination of attributes such as device name, vendor, slot, serial number; available fields will vary depending on the particular resource type (PCI, USB, SR-IOV NIC or NVIDIA vGPU).  
+
+### Auto Generation
+
+Generally, it is recommended (and easiest) to allow the system to auto-generate resource rules by selecting a device for passthrough.  Instructions for auto-generating resource rules (per type) are included in the page links provided below.
+
+### Manual Creation/Editing
+Information about manually creating and editing resource rules can be found in the KB Article: [Device Passthrough - Advanced Usage](knowledge-base/posts/devpass-advanced). 
+
 
 ## Types of Device Passthrough
 
