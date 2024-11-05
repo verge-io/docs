@@ -280,7 +280,7 @@ nav:
       - Preferred Tier: product-guide/preferredtiers.md
       - Removing ISO Files with References: product-guide/removing-isorefs.md
     - Device Passthrough:
-      - Device Passthrough Overview: product-guide/devpass-overview.md
+      - Overview: product-guide/devpass-overview.md
       - NVIDIA vGPU: product-guide/nvidiavGPU.md
       - SR-IOV NIC: product-guide/sriov.md
       - USB Passthrough: product-guide/usbpassthrough.md

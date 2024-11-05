@@ -16,7 +16,7 @@ VergeOS allows seamless utilization of NVIDIA's GRID vGPU platform to provide mu
 2. Upload the NVIDIA bundle driver to the VergeOS vSAN. For directions on uploading to the vSAN, see:
 [**Uploading to the vSAN (Media Images)**](/product-guide/uploadingtovSAN)
 
-Resource group and rule are required for device passthrough. The following instructions will configure a selected vGPU device for virtual function passthrough, automatically creating a new rule for each selected device and attaching the device(s) to a resource group. For more information about how resource groups and resource rules work, see: [**Device Passthrough - Resource Rules**](/product-guide/devpass-overview#resource-rules).
+Resource group and resource rule are required for device passthrough. The following instructions will configure a selected vGPU device for virtual function passthrough, automatically creating a new rule for each selected device and attaching the device(s) to a resource group. For more information about how resource groups and resource rules work, see: [**Device Passthrough - Resource Rules**](/product-guide/devpass-overview#resource-rules).
 <!-- later possibly add a link to instructions for manually creating a resource group rule. -->
 
 1. Navigate to the **Resource Manager Dashboard** (*Main Dashboard -> Resources*)
