@@ -8,6 +8,8 @@ status: new
 
 VergeOS vSAN implements a sophisticated storage tiering system that balances performance, capacity, and cost. The system supports up to 6 tiers (0-5), each optimized for different workloads and data types. This tiered architecture allows organizations to efficiently manage their storage resources by placing data on the most appropriate tier based on performance requirements and access patterns.
 
+For vSAN sizing recommendations, see the [Node Sizing Guide](/implementation-guide/sizing).
+
 ## Tier Specifications
 
 ### Tier 0: Metadata Tier
@@ -198,9 +200,3 @@ VergeOS vSAN implements a sophisticated storage tiering system that balances per
 - Tier-aware replication
 - Bandwidth optimization
 - Consistent data protection
-
----
-
-!!! note "Document Information"
-    - Last Updated: 2024-11-07
-    - VergeOS Version: 4.13
