@@ -27,6 +27,8 @@ theme:
     - announce.dismiss
     - navigation.footer
     - navigation.path
+    - content.action.edit  # Shows the edit button
+    - content.action.view  # Shows the view source button
   language: en
   palette:
     # Palette toggle for dark mode
