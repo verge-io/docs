@@ -183,7 +183,9 @@ VergeOS vSAN employs a sophisticated block-level architecture that forms the fou
 
 ## Scaling Considerations
 
-### Horizontal Scaling
+### Horizontal Scaling (Scaling Out)
+
+For vSAN scale out process, see the [Scale Out Guide](/implementation-guide/scale-out-nodes) kb article.
 
 - **Node Addition**:
     - Seamless integration
@@ -197,7 +199,9 @@ VergeOS vSAN employs a sophisticated block-level architecture that forms the fou
     - Performance maintenance
     - Balanced distribution
 
-### Vertical Scaling
+### Vertical Scaling (Scaling Up)
+
+For vSAN scale up process, see the [Scaling Up a vSAN](/knowledge-base/scaling-up-a-vsan) kb article.
 
 - **Resource Enhancement**:
     - Storage capacity increase
@@ -249,6 +253,3 @@ This architecture enables:
 
 ![VergeOS vSAN Block Distribution Architecture](/assets/vsan_hash_map.png)
 
-!!! note "Document Information"
-    - Last Updated: 2024-11-07
-    - VergeOS Version: 4.13
