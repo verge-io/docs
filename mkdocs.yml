@@ -2,7 +2,7 @@ site_name: VergeOS Docs
 site_url: https://docs.verge.io
 repo_url: https://github.com/verge-io/docs
 repo_name: verge-io/docs
-edit_uri: edit/develop/docs/
+edit_uri: edit/main/docs/
 
 
 theme:
@@ -27,6 +27,8 @@ theme:
     - announce.dismiss
     - navigation.footer
     - navigation.path
+    - content.action.edit  # Shows the edit button
+    - content.action.view  # Shows the view source button
   language: en
   palette:
     # Palette toggle for dark mode
