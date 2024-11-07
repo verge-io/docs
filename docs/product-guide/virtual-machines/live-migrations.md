@@ -1,3 +1,7 @@
+---
+status: new
+---
+
 # Live Migrations
 
 Migrations in VergeOS allows you to move running VMs between nodes without service interruption. 
