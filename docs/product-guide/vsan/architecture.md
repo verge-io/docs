@@ -8,6 +8,11 @@ status: new
 
 VergeOS vSAN employs a sophisticated block-level architecture that forms the foundation of its distributed storage system. This architecture enables efficient data distribution, high availability, and optimal performance across the entire storage infrastructure.
 
+## Related Documentation
+
+- [Scale Out Guide](/implementation-guide/scale-out-nodes) - Detailed instructions for adding nodes to expand capacity
+- [Scaling Up a vSAN](/knowledge-base/scaling-up-a-vsan) - Guide for increasing resources on existing nodes
+
 ## Block-Level Operations
 
 ### Data Block Management
@@ -41,11 +46,33 @@ VergeOS vSAN employs a sophisticated block-level architecture that forms the fou
     - Considers storage tier requirements
     - Optimizes for performance and capacity
 
+### Primary Storage
+
 - **Access Patterns**:
-    - Primary blocks handle regular read/write operations
-    - Direct access path for optimal performance
-    - Load balancing across available nodes
+    - Reads prioritize single-copy access for efficiency
+    - System defaults to reading from primary copy
+    - Automatically reads from redundant copy if primary is slow/unresponsive
+    - Optimizes by reading from local redundant copy when on same node
+    - Write operations always update both primary and redundant copies
     - Automatic redistribution as needed
+
+### Data Access
+
+- **Read Operations**:
+    - Quick block location lookup via hash
+    - Intelligent source selection:
+        - Prioritizes primary copy
+        - Uses local redundant copy when on same node
+        - Fails over to redundant copy if primary is unresponsive
+    - Optimized for minimal network traffic
+    - Performance optimization through locality awareness
+
+- **Write Operations**:
+    - New block hash generation
+    - Simultaneous update of primary and redundant copies
+    - Guaranteed write consistency across copies
+    - Metadata updates
+    - Consistency maintenance
 
 ### Redundant Storage
 
@@ -77,20 +104,6 @@ VergeOS vSAN employs a sophisticated block-level architecture that forms the fou
     - Optimized for large-scale systems
     - Supports dynamic redistribution
 
-### Data Access
-
-- **Read Operations**:
-    - Quick block location lookup via hash
-    - Optimal path selection
-    - Load balancing across copies
-    - Performance optimization
-
-- **Write Operations**:
-    - New block hash generation
-    - Synchronous redundant copy creation
-    - Metadata updates
-    - Consistency maintenance
-
 ## Cross-Node Distribution
 
 ### Distribution Mechanics
@@ -106,20 +119,6 @@ VergeOS vSAN employs a sophisticated block-level architecture that forms the fou
     - Efficient data transfer
     - Bandwidth optimization
     - Latency management
-
-### Load Balancing
-
-- **Distribution Metrics**:
-    - Storage capacity utilization
-    - I/O performance monitoring
-    - Network bandwidth usage
-    - Resource availability
-
-- **Balance Maintenance**:
-    - Continuous monitoring
-    - Automatic redistribution
-    - Performance optimization
-    - Resource allocation
 
 ## Performance Optimization
 
@@ -185,29 +184,41 @@ VergeOS vSAN employs a sophisticated block-level architecture that forms the fou
 
 ### Horizontal Scaling (Scaling Out)
 
-For vSAN scale out process, see the [Scale Out Guide](/implementation-guide/scale-out-nodes) kb article.
-
 - **Node Addition**:
-    - Seamless integration
+    - Seamless integration of new nodes
+    - Requires minimum of two nodes per cluster for redundancy
+    - New nodes must match existing cluster configuration:
+        - Processor type
+        - Memory configuration
+        - Physical disk drive configuration
+    - Maintains N+1 redundancy for high availability
     - Automatic data redistribution
     - Performance optimization
     - Capacity expansion
 
 - **Cluster Expansion**:
     - Linear scalability
+    - Option to create new clusters if matching nodes unavailable
+    - Each new cluster requires minimum of two matching nodes
     - Resource optimization
     - Performance maintenance
     - Balanced distribution
 
 ### Vertical Scaling (Scaling Up)
 
-For vSAN scale up process, see the [Scaling Up a vSAN](/knowledge-base/scaling-up-a-vsan) kb article.
-
 - **Resource Enhancement**:
-    - Storage capacity increase
+    - Storage capacity increase:
+        - Requires equal drive additions across all cluster nodes
+        - Maintains balanced storage distribution
+    - Memory expansion:
+        - Requires maintenance mode before power off
+        - Ensures graceful workload migration
     - Performance improvement
     - Capability expansion
     - Efficiency optimization
+
+!!! note "Important"
+    Consult with our [support](/support) team to determine the optimal expansion strategy for your specific environment.
 
 ---
 
