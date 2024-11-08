@@ -15,6 +15,8 @@ there may be situations where it may be useful to manually create a resource rul
 8. Leave the default value set to **--None--** in the field labeled *Automatically created based on PCI Device.*
 9. Configure device filters as desired; filter fields will vary depending on the device type selected; see below.  (*Advanced Entry* [^1] option also available)
 
+!!! tip "To find information on installed PCI devices, for use in filters, you can use the PCI devices listing: from the Main Dashboard, navigate to the Resources -> PCI Devices.  To show additional fields, right-click in the heading section to select from the full list of available columns that can be displayed."
+
 ## Edit an Existing Resource Rule
 
 1. Navigate to the Associated **Resource Group dashboard** (Main Dashboard -> Resources -> Groups -> double-click the particular group).
@@ -29,17 +31,17 @@ The *Advanced Entry* section allows you to manually input filter syntax rather t
 
 ### PCI Device Filters
 
-| Field | Example | Notes |
-|-------|---------|-------|
-| **Name** | | |
-| **Slot** | | |
-| **Class** | | |
-| **Class HEX** | | |
-| **device_type** | | |
-| **Vendor** | | |
-| **Device** | | |
-| **Vendor Device (Hexidecimal)** | | |
-| **Driver** | | |
+| Field | Notes |
+|-------|-------|
+| **Name** | |
+| **Slot** | |
+| **Class** | |
+| **Class HEX** | |
+| **device_type** | |
+| **Vendor** | |
+| **Device** | |
+| **Vendor Device (Hexidecimal)** |10de:1eb8|first 4 digits are the Vendor ID, last 4 digits are the Device ID|
+| **Driver** | |
 
 ### NVIDIA Device Filters
 
@@ -94,3 +96,32 @@ The *Advanced Entry* section allows you to manually input filter syntax rather t
 | **Contains (case sensitive)** | |
 | **Contains (case insensitive)** | |
 | **Regex** | |
+
+<!--
+Id	Name	Note
+00	Unclassified device	
+01	Mass storage controller	
+02	Network controller	
+03	Display controller	
+04	Multimedia controller	
+05	Memory controller	
+06	Bridge	
+07	Communication controller	
+08	Generic system peripheral	
+09	Input device controller	
+0a	Docking station	
+0b	Processor	
+0c	Serial bus controller	
+0d	Wireless controller	
+0e	Intelligent controller	
+0f	Satellite communications controller	
+10	Encryption controller	
+11	Signal processing controller	
+12	Processing accelerators	
+13	Non-Essential Instrumentation	
+14		
+15		
+16		
+40	Coprocessor	
+64		
+ff	Unassigned class -->

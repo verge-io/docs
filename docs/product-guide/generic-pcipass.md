@@ -8,15 +8,17 @@ have to unload driver and reboot node?
 
 ## Host Installation/Configuration
 
+!!! danger "Precautions should be taken before configuring direct PCI passthrough as incorrect configuration can result in loss of remote access to the system.  **Verify you have the password for the "admin" user (user ID #1) AND ensure you have an alternative method to reach the nodes: physical console access or IPMI access.**"
+
 The following instructions will configure virtual function passthrough by automatically creating a new rule for each defined set of virtual functions and attaching that rule to the resource group. For more information about how resource groups and resource rules work, see: [**Device Passthrough - Resource Rules**](/product-guide/devpass-overview#resource-rules).
 <!-- later possibly add a link to instructions for manually creating a resource group rule?. -->
 
 1. Navigate to the **Resource Manager Dashboard** (Main Dashboard -> Resources)
 **-OR-**
 Navigate to a **specific node dashboard** (Main Dashboard -> Nodes -> double-click desired node in the list.)
-2. Click **PCI Devices**.
-3. Select the desired device(s) in the list and click **Make Passthrough** on the left menu.
-4. **Select an existing PCI device resource group** from the list **-OR-**  **Create a new SR-IOV resource group** for the device(s).
+1. Click **PCI Devices**.
+2. Select the desired device(s) in the list and click **Make Passthrough** on the left menu.
+3. **Select an existing PCI device resource group** from the list **-OR-**  **Create a new SR-IOV resource group** for the device(s).
 If no PCI devices resource groups exist, or you select --New Group--, you are presented with the [Resource Group](/product-guide/devpass-overview#resourcegroups) entry form to create a new resource group.
 
 ### Creating a PCI Devices Resource Group
