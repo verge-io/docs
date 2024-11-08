@@ -4,7 +4,8 @@ This guide explains how to create a bootable USB to install VergeOS on different
 
 ## Windows
 
-1. **Download the VergeOS installation ISO**. Please [Contact Us](https://verge.io/contact) for the download link. <!--from [https://updates.verge.io/download](https://updates.verge.io/download).-->
+1. **Download the VergeOS installation ISO**. 
+    - Please [Contact Us](/support) for the download link. <!--from [https://updates.verge.io/download](https://updates.verge.io/download).-->
 
 2. **Insert a USB drive** into your computer.
 
