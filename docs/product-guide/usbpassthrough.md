@@ -35,10 +35,31 @@ If no USB resource groups exist, or you select **--New Group--**, you are presen
 * **Allow Guest Resets All**: When checked, VM user is able to reset the USB hub the device is plugged into.
 !!! note "The reset action of a USB device depends on the device driver; some devices support a reset and some do not."
 
-After the resource group is selected or new one created, a **Success* message should appear indicating resource rules were created for the device(s)
+After the resource group is selected or new one created, a **Success* message should appear indicating resource rules were created for the device(s).
 
-The resource group dashboard appears.  The Rules section will display the created rules. If you wish to examine the configuration of an individual rule, click the Rules card and double-click an individual rule in the list.
+7. **A reboot of the associated node(s) may be necessary**; a message will appear at the top of the Resource Manager dashboard.
+!!! warning "Follow proper [**Maintenance Mode**](/product-guide/maintenancemode) procedures when rebooting a node to avoid workload disruptions."
+
+The Resource Group dashboard contains the ***Rules*** section displaying the created rules. If you wish to examine the configuration of an individual rule, click the Rules card and double-click an individual rule in the list.
 
 You can modify the automatically created rule by clicking Edit on the left menu.
 For example, edit Node to -- -- None -- to include matching devices from all nodes.
 General information about resource rules is available at: [Resource Rules](/product-guide/devpass-overview#resourcerules)
+
+## Passthrough a USB Device to a Tenant
+
+USB devices can be passed to a tenant for the tenant to pass to its own VMs.  When you pass through USB devices to the tenant, a new resource group is created within the tenant.  
+
+!!! note "When devices are shared to a tenant, they are thick provisioned (i.e. the tenant then owns the devices, so they cannot be assigned to other VMs or tenants even when not in use.)"
+
+1. Navigate to the desired **tenant dashboard** (Main Dashboard -> Tenants -> Tenants -> double-click the tenant within the list.)
+2. Click **Nodes** on the left menu.
+3. **Double-click one of the tenant nodes**.
+4. Click **Devices** on the left menu.
+5. Click **New** on the left menu.
+6. Enter a **Name** or leave blank to allow the system to auto-create a name; this name will be used for the resource group created in the tenant.
+7. **Type**: set to ***USB***.
+8. **Description**: provides a place to store additional administrative information about the device/device pool.
+9. Set **USB Settings**: see above.
+10. When fields are completed, click **Submit** to finish passing to the tenant.
+11. The device(s) will now be available as a resource group to attach to tenant VMs.  Follow [**VM/Guest Configuration**](vm/guest-configuration) instructions above.  In order to use the passthrough device, the VM must run on the tenant node where the device is attached.

@@ -8,7 +8,7 @@ have to unload driver and reboot node?
 
 ## Host Installation/Configuration
 
-!!! danger "Precautions should be taken before configuring direct PCI passthrough as incorrect configuration can result in loss of remote access to the system.  **Verify you have the password for the "admin" user (user ID #1) AND ensure you have an alternative method to reach the nodes: physical console access or IPMI access.**"
+!!! danger "It is important to read and be familiar with [**PCI Passthrough Risks and Precautions**](/product-guide/devpass-overview#pci-passthrough-risksprecautions) before making passthrough configurations."
 
 The following instructions will configure virtual function passthrough by automatically creating a new rule for each defined set of virtual functions and attaching that rule to the resource group. For more information about how resource groups and resource rules work, see: [**Device Passthrough - Resource Rules**](/product-guide/devpass-overview#resource-rules).
 <!-- later possibly add a link to instructions for manually creating a resource group rule?. -->
@@ -29,9 +29,12 @@ If no PCI devices resource groups exist, or you select --New Group--, you are pr
 4. **Class**: select the most appropriate classification from the dropdown list. This field is only used to apply an associated icon to the resource group, and does not affect functionality.
 5. Click **Submit** to finish creating the new resource group.
 
+6. **A reboot of the associated node(s) may be necessary**; a message will appear at the top of the node dashboard.
+!!! warning "Follow proper [**Maintenance Mode**](/product-guide/maintenancemode) procedures when rebooting a node to avoid workload disruptions."
+
 After the resource group is selected or created, a **Success* message should appear indicating resource rules were created for the device(s).
 
-The resource group dashboard appears.  The Rules section will display the created rules. If you wish to examine the configuration of an individual rule, click the Rules card and double-click an individual rule in the list.
+The resource group dashboard contains a ***Rules*** section displaying the created rules. If you wish to examine the configuration of an individual rule, click the Rules card and double-click an individual rule in the list.
 
 You can modify the automatically created rule by clicking Edit on the left menu.
 For example, edit Node to -- -- None -- to include matching devices from all nodes.
@@ -56,3 +59,21 @@ General information about resource rules is available at: [Resource Rules](/prod
 2. The VM will need a **restart** in order to attach the device. From the VM dashboard, click the *Restart* link on the message that appears at the top of the dashboard, or click **Restart** on the left menu.
 3. Install any required client **NIC drivers**. Required driver(s) will vary depending on specific SR-IOV NIC make/model and guest operating system; consult hardware vendor documentation.
 
+## Passthrough a PCI Device to a Tenant
+
+PCI devices can be passed to a tenant for the tenant to pass to its own VMs.  When you pass through PCI devices to the tenant, a new resource group is created within the tenant.  
+
+!!! note "When devices are shared to a tenant, they are thick provisioned (i.e. the tenant then owns the devices, so they cannot be assigned to other VMs or tenants even when not in use.)"
+
+1. Navigate to the desired **tenant dashboard** (Main Dashboard -> Tenants -> Tenants -> double-click the tenant within the list.)
+2. Click **Nodes** on the left menu.
+3. **Double-click one of the tenant nodes**.
+4. Click **Devices** on the left menu.
+5. Click **New** on the left menu.
+6. Enter a **Name** or leave blank to allow the system to auto-create a name; this name will be used for the resource group created in the tenant.
+7. **Type**: set to ***SR-IOV NIC***.
+8. **Description**: provides a place to store additional administrative information about the device pool.\
+9. **Count**: number of virtual function NICs to pass into the tenant resource group.
+10. A specific **MAC Address** can be entered or leave blank to allow the system to auto-generate a MAC Address (It is recommended to leave this field blank, allowing unique, system-generated MAC addresses to avoid inadvertently introducing duplicate MAC addresses within the same network.)
+11. When fields are completed, click **Submit** to finish passing to the tenant.
+12. The device(s) will now be available as a resource group to attach to tenant VMs.  Follow [**VM/Guest Configuration**](vm/guest-configuration) instructions above.  In order to use the passthrough device, the VM must run on the tenant node where the device is attached.

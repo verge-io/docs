@@ -2,7 +2,25 @@
 
 VergeOS accommodates multiple types of device passthrough in order to allow physical devices connected to host servers to be used by VMs.  
 
-!!! tip "To enable PCI passthrough (exclusive, SR-IOV NIC, or vGPU), correct passthrough/virtualization features must be configured in your host server BIOS; Intel hosts will require ***VT-d and Vt-x enabled***, while AMD will require ***AMD-vi*** ***IOMMU*** enabled.  The labels of these settings will vary across manufacturers; some common things to look for can include terms similar to ***virtualization***, ***PCI Passthrough***, etc. Consult your hardware vendor documentation if uncertain."
+!!! tip "To enable PCI passthrough (exclusive, SR-IOV NIC, or vGPU), correct passthrough/virtualization features must be configured in your host server BIOS; Intel hosts will require ***VT-d and Vt-x*** enabled, while AMD will require ***AMD-vi/AMD-V***, ***IOMMU*** enabled.  Names of settings will vary across BIOS vendors; other common names to look for can include terms similar to ***virtualization***, ***PCI Passthrough***, ***PCIe ****, etc. Consult your hardware vendor documentation if uncertain."
+
+## PCI Passthrough Risks/Precautions
+
+### Critical Host Devices
+
+Never select boot devices, primary system controllers, core fabric network controllers, or any other device needed by the host for passthrough. Passing through a host-critical device will make it unavailable to the host which can render individual nodes or your complete system unstable or unusable.
+
+### Alternative Management Access
+
+Precautions should be taken before configuring PCI or Network controller passthrough, as incorrect configuration can result in loss of remote access to the system.  **Verify you have the password for the "admin" user (user ID #1) AND ensure you have an alternative method to reach the nodes: physical console access or IPMI access.**
+
+###
+
+### IOMMU Grouping Requirements
+
+All PCI devices within the same IOMMU group are passed through together (as a single IOMMU group cannot be split among different guests). Examples of a single IOMMU group containing multiple PCI devices include: GPUs along with their audio controllers; a dual-port NIC (both ports); devices using a PCI riser card that allows multiple devices on the same PCI slot.
+
+When configuring any PCI device for passthrough, it is important to be aware of all the devices within the same IOMMU group to ensure that a host-necessary component is not inadvertently passed through.  If a host-critical component is configured for passthrough, it is unloaded and may result in complete loss of remote access or prevent your system from starting up again after reboot.  You can view IOMMU group membership of PCI devices from Resource Manager: from the main dashboard, click Resources and click on the PCI Devices card.  This will list all detected PCI devices on all nodes.  Click the **IOMMU** column heading to sort the devices in order by IOMMU group number to more easily determine devices within a same group.
 
 ## Resource Group
 
@@ -20,7 +38,7 @@ Generally, it is recommended (and easiest) to allow the system to auto-generate 
 
 ### Manual Creation/Editing
 
-The KB Article: [Device Passthrough - Advanced Usage](/product-guide/devpass-advanced) provides information regarding manually creating and editing resource rules.
+The KB Article: [Device Passthrough - Advanced Configuration](/knowledge-base/posts/devpass-advanced) provides information regarding manually creating and editing resource rules.
 
 ## Types of Device Passthrough
 
