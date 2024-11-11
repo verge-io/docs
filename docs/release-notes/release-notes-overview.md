@@ -10,7 +10,7 @@ Welcome to the VergeOS Release Notes. This section provides information about ea
 
 | Release | Initial Release | Latest Version | Status | End-of-Life |
 |--------|----------------|----------------|---------|-------------|
-| [4.13](release-notes.md) | November 2024 | 4.13.0.1 (November 2024) | Latest | TBD |
+| [4.13](release-notes.md) | November 2024 | 4.13.0 (November 2024) | Latest | TBD |
 | [4.12](4-12-release-notes.md) | February 2024 | 4.12.6 (July 2024) | Supported | TBD |
 | [4.11](4-11-release-notes.md) | February 2023 | 4.11.4.3 (January 2024) | Supported | TBD |
 | [4.10](4-10-release-notes.md) | June 2022 | 4.10.3.1 (January 2023) | Deprecated | November 2024 |
