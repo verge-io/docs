@@ -293,7 +293,13 @@ nav:
         - Creating Subscriptions: product-guide/subscriptions-overview.md
         - Subscription Profiles: product-guide/subscriptionprofiles.md
         - Accessing Subscriptions: product-guide/subscriptions-accessing.md
-  - Release Notes: release-notes.md
+  - Release Notes: 
+    - Overview: release-notes/release-notes-overview.md
+    - 4.13 (latest): release-notes/release-notes.md
+    - 4.12: release-notes/4-12-release-notes.md
+    - 4.11: release-notes/4-11-release-notes.md
+    - "4.10": release-notes/4-10-release-notes.md
+    - 4.9: release-notes/4-9-release-notes.md
   - Glossary: glossary.md
 
 #build
