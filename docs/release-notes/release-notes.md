@@ -39,7 +39,6 @@ status: new
 !!! benchmark "Network Improvements"
     - Enhanced bonding capabilities
     - Split brain detection for external networks
-    - MPTCP support
     - Improved high-speed network utilization
     - Advanced network container features
 
@@ -90,9 +89,8 @@ status: new
     - Added ability to change physical network to bonded after install
 - Improved network management:
     - Added split brain detection for external networks with static IPs
-    - Auto-created disabled Allow Ping rule for new installs
+    - Added a Allow Ping rule on the External network that is created with new system deployments (where you access the UI). This rule is disabled by default.
     - Support for IP aliases in proxy-enabled networks
-    - Added MPTCP support
 
 #### Storage & Backup
 - Enhanced VM Export functionality:
