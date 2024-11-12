@@ -33,6 +33,7 @@ status: new
     - Multipath and multichannel support
     - Volume tier throttling
     - Improved backup integration
+    - Ability to emulate USB storage devices
 
 ### Network Infrastructure
 
