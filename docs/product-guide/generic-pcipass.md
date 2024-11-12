@@ -36,7 +36,7 @@ After the resource group is selected/created, a **Success* message should appear
 4. Device Entry Form fields:
 
 * **Name**: provide a name to adequately identify the type of device(s), or leave blank to allow the system to auto-generate a device name.
-* **Type**: select ***PCI***;
+* **Type**: ***PCI***
 * **Description**(optional): additional text can be entered here for administrative purposes.
 * **Resource Group**: select the appropriate PCI resource group from the dropdown list
 * **Count**: indicate the number of PCI devices to attach to the VM (from this resource group).
