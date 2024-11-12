@@ -44,4 +44,4 @@ The KB Article: [Device Passthrough - Advanced Configuration](/knowledge-base/#d
 
 * [**NVIDIA vGPU**](/product-guide/nvidiavGPU) - a physical NVIDIA GPU installed on the host node is dissected into multiple virtual GPUs; vGPU provides multiple VMs access to a single piece of GPU hardware.
 
-* [**SR-IOV VF NICs**](/product-guide/sriov) -- the Single Root I/O Virtualization (SR-IOV) specification is utilized to create multiple virtual functions (virtualized instances of a network adapter) from one physical, SR-IOV-capable NIC; these virtualized network adapters are then made available for use in VMs.
+* [**SR-IOV VF NICs**](/product-guide/sriov) -- the Single Root I/O Virtualization (SR-IOV) specification is utilized to create multiple virtual functions (virtualized instances of a network adapter) from one physical, SR-IOV-capable, NIC which are then made available for use in VMs.
