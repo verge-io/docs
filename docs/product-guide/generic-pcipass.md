@@ -28,7 +28,7 @@ After the resource group is selected/created, a **Success* message should appear
 
 ## VM/Guest Configuration
 
-1. Navigate to the dashboard of the desired VM (From the main dashboard click **Machines** on the left menu; **Virtual Machines;** double-click desired VM in the listing)
+1. Navigate to the dashboard of the desired VM (Main Dashboard > Machines > Virtual Machines > double-click desired VM in the listing).
 2. Click **Devices** on the left menu.
 3. Click **New** on the left menu.
 !!! tip "You can also attach devices to a VM via Resource Manager; this method allows for adding multiple devices to the VM at once. From Resource Group dashboard > double-click the desired PCI Group > View Machine Devices > New; select the VM from the Machine dropdown list."

@@ -18,7 +18,7 @@ Precautions should be taken before configuring PCI or Network controller passthr
 
 All PCI devices within the same IOMMU group are passed through together (a single IOMMU group cannot be split among different guests). Examples of a single IOMMU group containing multiple PCI devices include: GPUs along with their audio controllers; a dual-port NIC (both ports); devices using a PCI riser card that allows multiple devices on the same PCI slot.
 
-When configuring any PCI device for passthrough, it is important to be aware of all the devices within the same IOMMU group, to ensure that a host-necessary component is not inadvertently passed through.  If a host-critical component is configured for passthrough, it is unloaded and may cause an impaired or crashed system. You can view IOMMU group membership of PCI devices in Resource Manager: from the main dashboard > Resources > PCI Devices.  This will list all detected PCI devices on all nodes.  Click the *IOMMU* column heading to sort the devices in order by IOMMU group number to more easily determine devices within a IOMMU group.
+When configuring any PCI device for passthrough, it is important to be aware of all the devices within the same IOMMU group, to ensure that a host-necessary component is not inadvertently passed through.  If a host-critical component is configured for passthrough, it is unloaded and may cause an impaired or crashed system. You can view IOMMU group membership of PCI devices in Resource Manager: from the main dashboard > Resources > PCI Devices.  This will list all detected PCI devices on all nodes.  Click the *IOMMU* column heading to sort and more easily determine devices within a IOMMU group.
 
 ## Resource Groups
 
@@ -26,11 +26,11 @@ VergeOS Resource Groups are used for all device passthrough; a device must be pa
 
 ## Resource Rules
 
-Resource rules contain filter criteria that determine devices to include in a resource group. Each rule can filter available devices based on a combination of attributes such as device name, vendor, slot, serial number; available fields will vary depending on the particular resource type (PCI, USB, SR-IOV NIC or NVIDIA vGPU).
+Resource rules contain filter criteria that determine devices to include in a resource group. Each rule can filter available devices based on a combination of attributes such as device name, vendor, slot, serial number; available fields will vary depending on the particular type (PCI, USB, SR-IOV NIC or NVIDIA vGPU).
 
 ### Auto-Generation
 
-Generally, it is recommended (and easiest) to allow the system to auto-generate resource rules by selecting a device for passthrough.  Instructions for auto-generating resource rules (per type) are included in the links provided below.
+Generally, it is recommended (and easiest) to allow the system to auto-generate resource rules by selecting a device for passthrough.  Instructions for auto-generating resource rules are included in the links (Types of device passthrough) provided below.
 
 ### Manual Creation/Editing
 
@@ -38,10 +38,10 @@ The KB Article: [Device Passthrough - Advanced Configuration](/knowledge-base/#d
 
 ## Types of Device Passthrough
 
-* [**One-to-One PCI passthrough**](/product-guide/generic-pcipass) - Enables a VM to utilize a PCI device that is physically installed on the host; it provides single device to single VM access (at a time). The PCI device functions as if is physically attached to the guest operating system.  
+* [**One-to-One PCI passthrough**](/product-guide/generic-pcipass) - enables a VM to utilize a PCI device that is physically installed on the host, providing single device to single VM access (at a time). The PCI device functions as if is physically attached to the guest operating system.  
 
 * [**USB Device Passthrough**](/product-guide/usbpassthrough) - allows a VM to access a USB device connected to the host machine. This allows users to access USB devices within a VM as if they were directly connected to the VM. Single device to single VM access (at a time) is provided.
 
-* [**NVIDIA vGPU**](/product-guide/nvidiavGPU) - A physical NVIDIA GPU installed on the host node is dissected into multiple virtual GPUs; vGPU provides multiple VMs access to a single piece of GPU hardware.
+* [**NVIDIA vGPU**](/product-guide/nvidiavGPU) - a physical NVIDIA GPU installed on the host node is dissected into multiple virtual GPUs; vGPU provides multiple VMs access to a single piece of GPU hardware.
 
 * [**SR-IOV VF NICs**](/product-guide/sriov) -- the Single Root I/O Virtualization (SR-IOV) specification is utilized to create multiple virtual functions (virtualized instances of a network adapter) from one physical, SR-IOV-capable NIC; these virtualized network adapters are then made available for use in VMs.

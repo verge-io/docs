@@ -28,6 +28,8 @@ dateCreated: 2024-11-10T16:53:09.094Z
 Although allowing auto-generation of resource rules (i.e. when you select a device and use the *Make Passthrough* menu option) is easiest and usually recommended,
 there may be situations where it may be useful to manually create a resource rule or to modify an auto-generated resource rule.
 
+!!! danger "It is important to read and be familiar with [**PCI Passthrough Risks and Precautions**](/product-guide/devpass-overview#pci-passthrough-risksprecautions) before making passthrough configurations."
+
 ## Manually Create a New Resource Rule
 
 1. From the main dashboard, click Resources.
@@ -52,7 +54,7 @@ there may be situations where it may be useful to manually create a resource rul
 [^1]:
 The *Advanced Entry* section allows you to manually input filter syntax rather than using the filter entry fields.  Generally, it is preferable to allow system-generated syntax based on your filter field selections.
 
-## Filters Per Device Type
+<!--## Filters Per Device Type Detail can be added at a later date.
 
 ### PCI Device Filters
 
@@ -122,7 +124,6 @@ The *Advanced Entry* section allows you to manually input filter syntax rather t
 | **Contains (case insensitive)** | |
 | **Regex** | |
 
-<!--
 Id	Name	Note
 00	Unclassified device	
 01	Mass storage controller	

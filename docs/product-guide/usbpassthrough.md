@@ -1,17 +1,16 @@
 # USB Passthrough
 
-USB devices connected to a host can be passed through to VMs (and tenants to pass to their VMs), allowing a device to appear and behave as if it were directly attached within the VM.  
+USB devices connected to a host can be passed to VMs (and tenants to pass to their VMs), allowing a device to appear and behave as if it were directly attached within the VM.  
 
-Example USB passthrough devices might include:
+Example USB passthrough devices include:
 
-  * drives containing software license keys
-  * security cameras/monitoring equipment
-  * usb keyboard/mouse (supporting use among multiple VMs; often more convenient than dual/multi-boot VM configurations for specialized hardware)
+* drives containing software license keys
+* security cameras/monitoring equipment
+* keyboard/mouse (supporting use among multiple VMs; often more convenient than dual/multi-boot VM configurations for specialized hardware)
 
 ## Host Installation/Configuration
 
 The following instructions will configure device passthrough by automatically creating a new rule for each selected device and attaching the device(s) to the resource group. For more information about how resource groups and resource rules work, see: [**Device Passthrough - Resource Rules**](/product-guide/devpass-overview#resource-rules).
-<!-- later possibly add a link to instructions for manually creating a resource group rule. -->
 
 1. Navigate to the **Resource Manager Dashboard** (*Main Dashboard > Resources*)
 **-OR-**
@@ -60,9 +59,8 @@ The resource group dashboard contains the resource rules that were auto-generate
 * **USB Settings**: see above.
   
 4. Click **Submit** to complete adding the new device.
-5. The VM will need a **restart** in order to attach the device. From the VM dashboard, click the *Restart* link on the message that appears at the top of the dashboard, or click **Restart** on the left menu.
-6. Install any required client drivers; consult device hardware documentation, if needed.
-7. A restart of the VM may be needed to load the device.
+5. Install any required client drivers; consult device hardware documentation, if needed.
+6. The VM will need a **restart** in order to attach the device. From the VM dashboard, click the *Restart* link on the message that appears at the top of the dashboard, or click **Restart** on the left menu.
 
 ## Passthrough a USB Device to a Tenant
 

@@ -65,10 +65,10 @@ The resource group dashboard contains the resource rules that were auto-generate
 * **Count**: indicate the number of SR-IOV vf devices to attach to the VM (from this resource group).
 * **SR-IOV NIC Settings**: options available here will depend on the *User Defined* toggle selections defined in the SR-IOV Settings of the resource group (See **SR-IOV Settings** above.)
   
-1. Click **Submit** to complete adding the new device.
-2. The VM will need a **restart** in order to attach the device. From the VM dashboard, click the *Restart* link on the message that appears at the top of the dashboard, or click **Restart** on the left menu.
-3. Install any required client **NIC drivers**. Required driver(s) will vary depending on specific SR-IOV NIC make/model and guest operating system; consult hardware vendor documentation.
-4. **Restart** the VM.
+4. Click **Submit** to complete adding the new device.
+5. The VM will need a **restart** in order to attach the device. From the VM dashboard, click the *Restart* link on the message that appears at the top of the dashboard, or click **Restart** on the left menu.
+6. Install any required client **NIC drivers**. Required driver(s) will vary depending on specific SR-IOV NIC make/model and guest operating system; consult hardware vendor documentation.
+7. **Restart** the VM.
 
 ## Share SR-IOV Devices to a Tenant
 
