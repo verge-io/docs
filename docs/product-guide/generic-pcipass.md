@@ -58,7 +58,7 @@ PCI devices can be passed to a tenant for the tenant to pass to its own VMs.  Wh
 4. Click **Devices** on the left menu.
 5. Click **New** on the left menu.
 6. Enter a **Name** or leave blank to allow the system to auto-create a name; this name will be used for the resource group created in the tenant.
-7. **Type**: set to ***PCI***.
+7. **Type**: ***PCI***
 8. **Description**: provides a place to store additional administrative information about the device pool.
 9. **Count**: number of devices to pass into the tenant resource group.
 10. When fields are completed, click **Submit** to finish passing to the tenant.
