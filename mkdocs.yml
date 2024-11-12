@@ -279,7 +279,7 @@ nav:
         - NAS Snapshots and Restore: product-guide/volumesnapsandrestores.md
     - vSAN:
        - Architecture: product-guide/vsan/architecture.md  # Added from PR
-       - Storage Tiers: product-guide/storagetiers.md
+       - Storage Tiers: product-guide/vsan/storage-tiers.md
        - Preferred Tier: product-guide/preferredtiers.md
        - Removing ISO Files with References: product-guide/removing-isorefs.md
     - Device Passthrough:
