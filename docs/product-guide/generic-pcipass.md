@@ -29,7 +29,7 @@ If no PCI devices resource groups exist, or you select --New Group--, you are pr
 4. **Class**: select the most appropriate classification from the dropdown list. This field is only used to apply an associated icon to the resource group, and does not affect functionality.
 5. Click **Submit** to finish creating the new resource group.
 
-6. **A reboot of the associated node(s) may be necessary**; a message will appear at the top of the node dashboard.
+6. **A reboot of the associated node(s) may be necessary**; a message will appear at the top of the Resource Manager dashboard.
 !!! warning "Follow proper [**Maintenance Mode**](/product-guide/maintenancemode) procedures when rebooting a node to avoid workload disruptions."
 
 After the resource group is selected or created, a **Success* message should appear indicating resource rules were created for the device(s).
