@@ -77,7 +77,7 @@ To enable live migration for VMs using vGPU devices:
 ## VM Live Migration
 
 !!! note "VMs that cannot be migrated"
-    VMs with attached vGPU/PCI passthrough, USB passthrough, and SR-IOV NICs cannot be live migrated.
+    VMs with attached GPU/PCI passthrough, USB passthrough, and SR-IOV NICs cannot be live migrated.
 
 ### Single VM Migration
 
