@@ -78,14 +78,6 @@ For vSAN sizing recommendations, see the [Node Sizing Guide](/implementation-gui
 - Enhances data availability and fault tolerance
 - Enables efficient resource utilization
 
-### Automatic Data Placement
-
-- vSAN manages data placement across tiers based on:
-    - Specified tier preferences
-    - Available capacity
-    - Performance requirements
-    - Access patterns
-
 ### Performance Optimization
 
 - Inline deduplication operates across all tiers
