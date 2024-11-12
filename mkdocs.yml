@@ -2,7 +2,7 @@ site_name: VergeOS Docs
 site_url: https://docs.verge.io
 repo_url: https://github.com/verge-io/docs
 repo_name: verge-io/docs
-edit_uri: edit/develop/docs/
+edit_uri: edit/main/docs/
 
 
 theme:
@@ -27,6 +27,8 @@ theme:
     - announce.dismiss
     - navigation.footer
     - navigation.path
+    - content.action.edit  # Shows the edit button
+    - content.action.view  # Shows the view source button
   language: en
   palette:
     # Palette toggle for dark mode
@@ -276,15 +278,16 @@ nav:
         - Cloud Snapshots and Restore: product-guide/cloudsnapshotandrestore.md
         - NAS Snapshots and Restore: product-guide/volumesnapsandrestores.md
     - vSAN:
-      - Architecture: product-guide/vsan/architecture.md
-      - Storage Tiers: product-guide/vsan/storage-tiers.md
-      - Preferred Tier: product-guide/vsan/preferredtiers.md
-      - Removing ISO Files with References: product-guide/vsan/removing-isorefs.md
-    - GPU:
-#      - Overview: product-guide/GPUoverview.md
-      - Passthrough: product-guide/GPUPassthrough.md
+       - Architecture: product-guide/vsan/architecture.md  # Added from PR
+       - Storage Tiers: product-guide/storagetiers.md
+       - Preferred Tier: product-guide/preferredtiers.md
+       - Removing ISO Files with References: product-guide/removing-isorefs.md
+    - Device Passthrough:
+      - Overview: product-guide/devpass-overview.md
       - NVIDIA vGPU: product-guide/nvidiavGPU.md
-      - Tenant GPU: product-guide/gpu-sharetenant.md
+      - SR-IOV NIC: product-guide/sriov.md
+      - USB Passthrough: product-guide/usbpassthrough.md
+      - One-to-One PCI Passthrough: product-guide/generic-pcipass.md
     - Maintenance & Monitoring:
       - Drive Replacement: product-guide/DriveReplacement.md
       - Maintenance Mode: product-guide/maintenancemode.md
@@ -292,7 +295,13 @@ nav:
         - Creating Subscriptions: product-guide/subscriptions-overview.md
         - Subscription Profiles: product-guide/subscriptionprofiles.md
         - Accessing Subscriptions: product-guide/subscriptions-accessing.md
-  - Release Notes: release-notes.md
+  - Release Notes: 
+    - Overview: release-notes/release-notes-overview.md
+    - 4.13 (latest): release-notes/release-notes.md
+    - 4.12: release-notes/4-12-release-notes.md
+    - 4.11: release-notes/4-11-release-notes.md
+    - "4.10": release-notes/4-10-release-notes.md
+    - 4.9: release-notes/4-9-release-notes.md
   - Glossary: glossary.md
 
 #build
