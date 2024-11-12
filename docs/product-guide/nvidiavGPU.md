@@ -43,7 +43,8 @@ After the resource group is selected or new one created, a **Success** message s
    * The **Make Guest Driver ISO** option can be used to automatically create a guest driver ISO file from the NVIDIA driver bundle selected above.  
    * The **Driver ISO** file specifies an ISO file that can be attached to consuming VMs, providing a convenient way to access client drivers for installation within the guest operating system.  (Select the ***Attach Guest Drivers*** option when attaching the device to a VM or tenant.)
   
-   !!! note "If you selected *Make Guest Driver ISO* option, leave the Driver ISO field set to *--Default--*; the system will automatically create the ISO file (based on the bundle driver selected), and specify it as the Driver ISO for the resource group."
+!!! note "If you selected *Make Guest Driver ISO* option, leave the Driver ISO field set to *--Default--*; the system will automatically create the ISO file (based on the bundle driver selected), and specify it as the Driver ISO for the resource group."
+
    * Click **Submit** to save the client driver settings for the resource group.
 
 The resource group dashboard contains the resource rules that were auto-generated for your selected NVIDIA devices. You can click an individual rule to view configuration detail. A system-created rule can be modified as needed; for example, the *Node* filter can be changed to *-- None --* to include matching devices from all nodes.  Information regarding resource rules is available at: [**Device Passthrough Overview - Resource Rules**](/product-guide/devpass-overview#resource-rules)
