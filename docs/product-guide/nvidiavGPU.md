@@ -32,9 +32,9 @@ Navigate to a **specific node** where the NVIDIA hardware is installed. (*Main D
    * **Type**: should be set to ***USB***.
    * **Description**: optional field to provide more administrative text about the resource group.
    * **Class**: select ***vGPU***. This field is only used to apply an associated icon to the resource group, and does not affect functionality.
-   * Select the appropriate driver. The **Driver** dropdown list will contain NVIDIA vGPU drivers found in media images.  The appropriate driver will need to be uploaded to the vSAN before it can be selected (Steps 1-2 above.)  
+   * The **Driver** dropdown list will contain NVIDIA vGPU drivers found in media images.  The appropriate driver will need to be uploaded to the vSAN before it can be selected (Steps 1-2 above). Select the appropriate driver. 
    * Click **Submit** to save the resource group.  
-After the resource group is selected or new one created, a **Success* message should appear indicating resource rules were created for the device(s)
+After the resource group is selected or new one created, a **Success** message should appear indicating resource rules were created for the device(s)
    * If this driver has not been used previously or IOMMU is not yet enabled for the system, **a reboot of the associated node(s)** will be necessary before you can complete the vGPU configuration.  
 !!! warning "Follow proper [**Maintenance Mode**](/product-guide/maintenancemode) procedures when rebooting a node to avoid workload disruptions."
    * After the node(s) are rebooted, if necessary, navigate to the NVIDIA vGPU resource group just created (Main Dashboard > Resources > Groups > double-click the group.)
