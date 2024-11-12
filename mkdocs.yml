@@ -110,9 +110,9 @@ extra:
       as to measure the effectiveness of our documentation and whether users
       find what they're searching for. With your consent, you're helping us to
       make our documentation better.
-  #status:
-  #  new: Recently added
-  #  deprecated: Deprecated
+  status:
+    new: Recently added
+    deprecated: Deprecated
 
 extra_javascript:
   - javascripts/extra.js
@@ -278,9 +278,10 @@ nav:
         - Cloud Snapshots and Restore: product-guide/cloudsnapshotandrestore.md
         - NAS Snapshots and Restore: product-guide/volumesnapsandrestores.md
     - vSAN:
-      - Storage Tiers: product-guide/storagetiers.md
-      - Preferred Tier: product-guide/preferredtiers.md
-      - Removing ISO Files with References: product-guide/removing-isorefs.md
+       - Architecture: product-guide/vsan/architecture.md  # Added from PR
+       - Storage Tiers: product-guide/storagetiers.md
+       - Preferred Tier: product-guide/preferredtiers.md
+       - Removing ISO Files with References: product-guide/removing-isorefs.md
     - Device Passthrough:
       - Overview: product-guide/devpass-overview.md
       - NVIDIA vGPU: product-guide/nvidiavGPU.md
