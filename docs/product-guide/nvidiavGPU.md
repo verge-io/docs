@@ -1,6 +1,7 @@
 
-
 # NVIDIA vGPU (Virtual GPU)
+
+VergeOS allows seamless utilization of NVIDIA's GRID vGPU platform to provide multiple VMs access to a single physical GPU at the same time. vGPU access delivers accelerated graphics and high-processing throughput for machine learning, blockchain applications, etc.
 
 !!! info "NVIDIA GRID licensing is required to use NVIDIA vGPU."
 
@@ -8,75 +9,82 @@
 
 ## Host Installation/Configuration
 
-1.  Obtain appropriate NVIDIA Linux-KVM driver for your GPU hardware.
+!!! danger "It is important to read and be familiar with [**PCI Passthrough Risks and Precautions**](/product-guide/devpass-overview#pci-passthrough-risksprecautions) before making passthrough configurations."
 
-GRID vGPU drivers can be downloaded from your NVIDIA licensing portal or by registering for an NVIDIA free evaluation: [**https://nvidia.com/en-us/data-center/resources/vgpu-evaluation**](https://nvidia.com/en-us/data-center/resources/vgpu-evaluation).
+1. Obtain the appropriate NVIDIA Linux-KVM driver for your GPU hardware. GRID vGPU drivers can be downloaded from your NVIDIA licensing portal or by registering for an NVIDIA free evaluation: [**https://nvidia.com/en-us/data-center/resources/vgpu-evaluation**](https://nvidia.com/en-us/data-center/resources/vgpu-evaluation).
+!!! tip "VergeOS supports bundle-version NVIDIA drivers.  For a list of currently supported NVIDIA drivers, navigate to Resource Manager > Groups > New. Set Type=*NVIDIA vGPU* and click the button to view compatible 3rd Party drivers.  Typically, you will want to use the most recent driver in this list that is compatible with your NVIDIA hardware."
 
-2.  Upload the vGPU driver to the VergeOS vSAN. For directions on uploading to the vSAN, see: 
+2. Upload the NVIDIA bundle driver to the VergeOS vSAN. See [**Uploading to the vSAN (Media Images)**](/product-guide/uploadingtovSAN) for directions on uploading to the vSAN.  
+The following instructions configure selected vGPU device(s) for virtual function passthrough by automatically creating necessary resource rules for each selected device and attaching the device(s) to a resource group. For more information about resource groups and resource rules, see: [**Device Passthrough - Overview**](/product-guide/devpass-overview#resource-group).
 
-[**Uploading to the vSAN (Media Images)**](/product-guide/uploadingtovSAN)
+3. Navigate to the **Resource Manager Dashboard** (*Main Dashboard > Resources*)
+**-OR-**
+Navigate to a **specific node** where the NVIDIA hardware is installed. (*Main Dashboard > Nodes* > double-click desired node in the list)
+4. Click the **NVIDIA vGPUs** card. Any existing configured vGPUs will display in the listing.
+5. Click **NVIDIA PCI Devices** on the left menu.  A listing of compatible physical devices will display.
+6. **Select the desired NVIDIA physical device(s).**
+7. Click **Make Passthrough** on the left menu.
+8. **Select an existing vGPU resource group** **-OR-** **select --New Group--** to attach the device.
 
-3.  From the Main Dashboard, click **Nodes**.
-4.  The Nodes listing page appears. **Double-click the desired node**.
-5.  Click **Drivers** on the left menu.
-6.  Click **New** on the left menu.
-![](/public/userguide-sshots/newdrivernvidiavgpu.png)
+9. **Creating a New NVIDIA vGPU Resource Group**:
 
+   * **Name**: label used to identify the resource group (i.e. device pool); use a descriptive name so that users are easily able to identify the type of devices/vgpu profiles that will be available in this group.
+   * **Type**: should be set to ***USB***.
+   * **Description**: optional field to provide more administrative text about the resource group.
+   * **Class**: select ***vGPU***. This field is only used to apply an associated icon to the resource group, and does not affect functionality.
+   * The **Driver** dropdown list will contain NVIDIA vGPU drivers found in media images.  The appropriate driver will need to be uploaded to the vSAN before it can be selected (Steps 1-2 above). Select the appropriate driver. 
+   * Click **Submit** to save the resource group.  
+After the resource group is selected or new one created, a **Success** message should appear indicating resource rules were created for the device(s)
+   * If this driver has not been used previously or IOMMU is not yet enabled for the system, **a reboot of the associated node(s)** will be necessary before you can complete the vGPU configuration.  
+!!! warning "Follow proper [**Maintenance Mode**](/product-guide/maintenancemode) procedures when rebooting a node to avoid workload disruptions."
+   * After the node(s) are rebooted, if necessary, navigate to the NVIDIA vGPU resource group just created (Main Dashboard > Resources > Groups > double-click the group)
+   * Click **Edit** on the left menu.
+   * Select the desired **NVIDIA vGPU Profile** from the dropdown list.  Consult NVIDIA vGPU documentation for information regarding available profile types for your hardware.
+   * The **Make Guest Driver ISO** option can be used to automatically create a guest driver ISO file from the NVIDIA driver bundle selected above.  
+   * The **Driver ISO** file specifies an ISO file that can be attached to consuming VMs, providing a convenient way to access client drivers for installation within the guest operating system.  (Select the ***Attach Guest Drivers*** option when attaching the device to a VM or tenant.)
+  
+   !!! note "If you selected *Make Guest Driver ISO* option, leave the Driver ISO field set to *--Default--*; the system will automatically create the ISO file (based on the bundle driver selected), and specify it as the Driver ISO for the resource group."
+   * Click **Submit** to save the client driver settings for the resource group.
 
-7.  From the ***Driver*** dropdown list, select the GPU driver (uploaded to media files in previous step.)
-8.  In the ***Apply to PCI Devices*** section, check/select the checkbox for vGPU device(s) to which the driver should be assigned.
-9.  Click **Submit** at the bottom of the page.
-10.  Perform a **maintenance mode reboot** of the node. Note: Nodes must be put in maintenance mode/rebooted one at a time.
+The resource group dashboard contains the resource rules that were auto-generated for your selected NVIDIA devices. You can click an individual rule to view configuration detail. A system-created rule can be modified as needed; for example, the *Node* filter can be changed to *-- None --* to include matching devices from all nodes.  Information regarding resource rules is available at: [**Device Passthrough Overview - Resource Rules**](/product-guide/devpass-overview#resource-rules)
 
+## VM/Guest Configuration
 
-<br>
-<br>
+1. Navigate to the VM dashboard (Main Dashboard > Machines > Virtual Machines > double-click desired VM in the listing)
+2. Click **Devices** on the left menu.
+3. Click **New** on the left menu.
+!!! tip "You can also attach devices to a VM via Resource Manager; this method allows for adding multiple devices to the VM at once. From Resource Group dashboard > double-click the desired vGPU Group > View Machine Devices > New; select the VM from the Machine dropdown list."
 
-### Configure vGPU Profile
+### Device Entry Form fields
 
-11.  On the main dashboard click **Nodes**.
-12.  The Nodes listing page appears. **Double-click the desired node**.
-13.  Click **GPUs** on the left menu.
-14.  **Double-click the desired GPU** in the list.
+* **Name**: **provide a name** to identify the type of vGPU/profile **-OR- leave blank to allow the system to auto-generate** a name for the instance.
+* **Type**: select ***NVIDIA vGPU***.
+* **Description**(optional): additional text can be entered here for administrative purposes.
+* **Resource Group**: select the appropriate NVIDIA vGPU resource group from the dropdown list. (The resource group list will display the number of devices in the group that are currently available.)
+* **Count**: indicate the number of vGPU devices to attach to the VM. (This option is only available when device entry is accessed via Resource Manager.)
+* **Attach Guest Drivers**: if a guest driver ISO was specified for the resource group, you can check this option to automatically attach a CD-ROM drive, loaded with NVIDIA guest drivers, to the VM.
+* **Frame Rate Limit**: to set a cap on frames per second.  Recommended refresh rate settings depend on your specific workload. Lower refresh rates reduce unnecessary overhead on the vGPU. If it will purely be used for compute workloads (like ML/inference), and not for any graphics/display purposes, frame rate limit can be set to 0.
+* **Disable Console VNC**: this option can be used when the vGPU should be used for the primary display, e.g. access solely via RDP.
+* **Advanced NVIDIA settings; consult NVIDIA documentation for information on the following options:** **Enable Unified Memory**; **Enable NVIDIA CUDA Toolkit Debuggers**; **Enable NVIDIA CUDA Toolkit Profiles**
+  
+4. When fields are completed, click **Submit** to complete adding the new device.
+5. The VM will need a **restart** in order to attach the device. From the VM dashboard, click the *Restart* link on the message that appears at the top of the dashboard, or click **Restart** on the left menu.
+6. **Install required NVIDIA guest driver(s)**; required drivers will vary depending on specific GPU model and guest OS version. If the option was selected to attach guest drivers, a CD-ROM drive will be available containing necessary NVIDIA drivers for install.
+7. Consult NVIDIA documentation for client vGPU licensing requirements/instructions.
 
-![](/public/userguide-sshots/gpuprofiledropdown.png)
-Selected GPU appears in the first field (PCI Device).
+!!! hint "NVIDIA Client licensing may involve generating a client config token on the NVIDIA licensing server that will need to be downloaded into the VM guest, followed by a VM reboot."
 
-<br>
+## Sharing an NVIDIA vGPU to a Tenant
 
-15.  Select ***vGPu profile*** (for the selected GPU device) from the dropdown list provided; available vGPU profile options will depend upon the specific GPU hardware.
-16.  **For VergeOS nodes containing more than one vGPU device: Repeat** the process for each additional vGPU device within the selected node, designating each physical device in the ***PCI Device*** dropdown list and selecting ***vGPU Profile*** to assign to the selected device.
-17.  When finished selecting Profile(s) for all vGPU devices for the node, click **Submit** at the bottom of the page.
+NVIDIA vGPU devices can be passed to a tenant for the tenant to pass to its own VMs.  When you pass through devices to a tenant, a new resource group is created within the tenant.  
 
-<br>
-<br>
+!!! note "Devices are shared to a tenant are thick provisioned (i.e. the tenant then owns the devices, so they cannot be assigned to other VMs or tenants, even when not in use.)"
 
-### VM/Guest Configuration
-
-1.  **Power down the VM**.
-2.  Navigate to the dashboard of the desired VM (From the main dashboard click **Machines** on the left menu; **Virtual Machines;** double-click desired VM in the listing)
-3.  Click **Devices** on the left menu.
-4.  Click **New** on the left menu.
-5.  The Device Entry Form appears.
-![](/public/userguide-sshots/newvmdevicenvidia.png)
-
-6.  Optionally, a ***Name*** can be entered for the device.
-7.  Select **NVIDIA vGPU** in the ***Type*** dropdown list.
-8.  ***UUID*** is a universally unique identifier and is persistent across reboots. Typically UUID should be left blank allowing the system to automatically assign one; a specific UUID can be entered if necessary (e.g. imported or cloned VM with an existing GPU PCI device).
-9.  ***Profile Type*** - Select an appropriate profile type for the VM; this should be a profile type that has been selected on a host node NVIDIA vGPU.
-    -   Virtual Applications (vApps)
-    -   Virtual Desktops (vPC)
-    -   AI/Machine Learning/Training (vCS or vWS)
-    -   Virtual Workstations (vWS)
-    
->    Selecting "Any available" in *Profile Type* will cause the VM to attempt utilizing any vGPU profile available across all host nodes. This may be problematic if the VM has been configured and connected to one profile type and then later (after a reboot) connects to a different profile type. {.is-info}
-    
-10.  Click **Submit** at the bottom of the page.
-11.  **Power on the VM**.
-12.  **Install appropriate guest driver**.
-
-> Required guest driver(s) will depend on specific GPU hardware and guest OS version. Consult NVIDIA vGPU documentation for guidance. {.is-success}
-
-<br>
-
-[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }
+1. Navigate to the desired **tenant dashboard** (Main Dashboard > Tenants > Tenants > double-click the tenant within the list.)
+2. Click **Nodes** on the left menu.
+3. **Double-click one of the tenant nodes**.
+4. Click **Devices** on the left menu.
+5. Click **New** on the left menu.
+6. Reference the [**Device Entry Form Fields**](#device-entry-form-fields) above.
+7. When fields are completed, click **Submit** to complete adding the new device.
+8. The device will now be available to attach to tenant VMs.  Follow **VM/Guest Configuration** instructions above.

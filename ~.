@@ -1,0 +1,26 @@
+# Device Passthrough - Overview
+
+
+## Generic, fixed PCI Passthrough
+
+VergeOS allows for generic PCI passthrough to provide one-to-one access to a physical PCI device, installed on a host server, by a single VM at a time.
+
+## Mediated PCI Passthrough
+
+VergeOS also supports various mediated PCI passthrough technologies that allow dissection of the physical PCI device into multiple virtual devices to then be accessed by multiple tenants/VMs simultaneously.  The following links can direct you to pages for particular passthrough methods: 
+
+* nVidia vGPU
+* SR-IOV - NICs
+* USB device passthrough
+
+## Resource Groups
+
+## Resource Group Rules (filters)
+
+any bios settings ever needed?
+
+generic/universal sriov?
+
+resource group and rule (filter)
+
+enable resource
