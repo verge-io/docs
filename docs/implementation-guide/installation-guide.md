@@ -50,17 +50,13 @@ Before you proceed with the installation please make sure you've reviewed the fo
 **The following steps are used to define each of the physical networks for the node.**
   <!-- possibly something here about the abstraction put in place for flexibility, ease of configuration...helps accomodate lots of different configuration options based on how many networks you will employ, use of vlans, bonded ports, etc.--> 
 
-9. How many physical networks will you be plugging into?
-
-!!! tip "A bonded network, whether LACP or Active/Backup, equals 1 physical network connection"
-
-10. A list of all detected NICs is displayed.
+9. A list of all detected NICs is displayed.
   **Select a NIC (or multiple NICs, for port-bonded)**, to configure the associated physical network.  
   
 !!! note "Port bonding (LAG) should not be used for Core Fabric networks as it will interfere with the built-in redundancy based on multiple physical Core Fabric networks."
 
+10. **Specify Physical Network Settings:**
 
-11. **Specify Physical Network Settings:**
 !!! tip "**Keyboard Hints:** [Tab] does not move field-to-field, but rather between action items (Finish/Edit/Cancel).  [Enter] toggles edit mode. When edit mode is OFF, an entry field is highlighted in blue, and you can move between fields with the up/down arrow keys.  When edit mode is ON, you can modify the field with the cursor."
 
 * **Name** - This name will be used in the User interface to identify this network. Enter a name that will help to identify where the NIC(s) is plugged in, such as the switch hostname or organizational naming convention. This can be changed after installation.
@@ -73,36 +69,38 @@ Before you proceed with the installation please make sure you've reviewed the fo
 
 * **VLAN** - PVID port is always preferred (0 or blank for none), but a VLAN tag can be accommodated by entering the correct VLAN ID here.
 
-12. **Repeat the above steps to configure all of your physical networks** until every NIC has been assigned.  If there is a NIC that is not plugged in, it should still be configured here during installation; it can be given a name such as "unplugged" or "unused".
+11. **Repeat the above steps to configure all of your physical networks** until every NIC has been assigned.  If there is a NIC that is not plugged in, it should still be configured here during installation; it can be given a name such as "unplugged" or "unused".
+
+!!! node "You can select [Done] when you have finished configuring all of your physical networks."
 
 !!! tip "When configuring an external network MTU: The Internet standard MTU for most Ethernet networks is 1500.  The standard for VPN connections is 1400 bytes (will vary depending on the service)."
 
-13. Select a **physical external network that will provide UI/LAN/WAN access**. (Use [Space bar] to select/deselect).
+12. Select a **physical external network that will provide UI/LAN/WAN access**.
+
+13. Enter appropriate **VLAN ID for the External/UI network** Use PVID ports when possible (0 or blank), otherwise enter the appropriate VLAN ID.  
 
 
-14. Enter appropriate **VLAN ID for the External/UI network** Use PVID ports when possible (0 or blank), otherwise enter the appropriate VLAN ID.  
-
-
-15. Specify a **network address** for the external/UI network:
+14. Specify a **network address** for the external/UI network:
     * **Static:** Enter the address in CIDR format (for example 10.0.0.2/24).  You will also be prompted for the default gateway and DNS server address(es).
 
     **-OR-**
 
     * **DHCP:** An entry of blank or "dhcp" allows the network to receive an external DHCP address.  Using DHCP will limit the network to a single IP address; this is typically only appropriate for test/evaluation systems or storage-only systems. If DHCP is selected, you will also be prompted for the name/domain to be used by this DHCP client.
 
+15. Select the type of license you will be using for this system. This is a configurable in the UI post-install.
 
-16. Enter **license server settings** (username and password).  License server credentials are provided by your VergeOS sales or Implementation representative.  These settings can be left blank during installation and added post-install within the VergeOS UI.  
+16. Enter **license server settings** (username and password).  License server credentials are provided by your VergeOS sales or Implementation representative. These settings can be left blank during installation and added post-install within the VergeOS UI.  
 
-!!! note "Although license key credentials are not needed to complete the installation, they must be in place in order to run workloads or syncs on your installed system."
+!!! note "Although license key credentials are not needed to complete the installation, they must be in place in order to run workloads or syncs on your system."
 
+17. Configure **Encryption settings**. (optional, at-rest encryption).  
 
-17. Configure **Encryption settings**. (optional, at-rest encryption).  Encryption selection is not reversible post-install; changing from encrypted to unencrypted or vice-versa would require a system reinstall.
+!!! warning "Encryption selection is not reversible post-install; changing from encrypted to unencrypted or vice-versa would require a system reinstall."
 
-    * If encryption is selected, you will be prompted for an **AES256 encryption key passphrase**.
-    Passphrase must be between 8 and 64 characters.    
+* If encryption is selected, you will be prompted for an **AES256 encryption key passphrase**.
+Passphrase must be between 8 and 64 characters.
 
-
-    * Optionally, you can **write the generated encryption key to a USB drive/dedicated device**.  Before selecting "Yes" to this option you must make sure the USB drive/dedicated storage device is plugged in.  On the next screen, verify the intended device is selected before hitting < OK >.
+* Optionally, you can **write the generated encryption key to a USB drive/dedicated device**.  Before selecting "Yes" to this option you must make sure the USB drive/dedicated storage device is plugged in.  On the next screen, verify the intended device is selected before hitting < OK >.
 
 <!--Also, include the information about how the key is not needed for maintenance mode, system updates, etc where a single node reboots at a time?-->
 
@@ -116,7 +114,7 @@ The system will display an automatically-selected tier for each drive.  Take not
 If you verified all drive tiers were selected as desired (previous screen), simply press [Enter] to proceed.  Otherwise, select **< Yes >**
  and **[Enter]** to view all drives and optionally change any tier assignments.
      
-20. Configure **Swap**: There are multiple factors to consider in planning swap including: availability of storage, system use, disk type, etc. Consult with the VergeIO implementation team for further information. <!--Development should discuss this and come up with recommendations/best practices for this -->
+20. Configure **Swap**: There are multiple factors to consider in planning swap including: availability of storage, system use, disk type, etc. Consult with the VergeIO implementation team for further information. This is a configurable in the UI post-install.
 
 21. UEFI partitions - if you're asked to register the UEFI partitions please select "Yes".
 
@@ -135,52 +133,53 @@ The main dashboard for your new system will display.  Status indicators should a
 !!! note "The primary controller node needs to be fully installed and booted before installing the secondary controller node."  
 
 
-1. **Boot** the second node with the install ISO.  The full installer will load into memory. The loading progress is indicated on the screen. Loading times will vary depending on the medium used to install.  
+1. **Boot** the second node with the install ISO.  
+
 2. Select **Standard Install** (default).  This is the default selection; the installation process will automatically continue with this selection.  Non-standard install options should only be selected when you are working closely with VergeIO Support.
-3. Select **Controller** (default selection). 
+
+3. Select **Controller** (default selection).
+
 4. Select **No** to indicate this is NOT a new system. (You will be connecting to the system already created above.)  
 
 !!! warning "If you do not select "No" here, the install program will create a new separate system rather than joining the installed primary node controller."
 
-5. You will be prompted to enter the **admin (root) password for the system you are joining.**;  enter the **admin credentials** created on the previous install.  
+5. You will be prompted to enter the **admin (root) password for the system you are joining.**;  enter the **admin credentials** created during the primary controller node install.  
 
 6. Select **Yes** to attempt automatic detection of network configuration.  This is recommended as it will attempt to detect the existing networks and automatically configure the new node accordingly, avoiding manual network misconfigurations.  Network detection may take a few minutes.
 
 7. Upon successful detection of the core network, information for the associated NIC will display.  **Verify** this is the correct NIC to connect to the first core network and click **Yes** to continue automatic network configuration.   
-<!-- Later we should include a link to troubleshooting information when it does not successfully detect the networks, for ex:  double check configuration and physical connections and restart install as needed - either primary controller again or reseat cables and restart secondary controller node install. -->
+<!-- Later we should include a link to troubleshooting information when it does not successfully detect the networks, for ex: double check configuration and physical connections and restart install as needed - either primary controller again or reseat cables and restart secondary controller node install. -->
 
 8. Select **Encryption settings**; these settings must match those entered during the primary controller installation. 
 
 9. Select **drives that will be used in the vSAN** and **(optionally) change Drive Tier assignments**; these selections should be made to coincide with the drive/tier configurations made on the primary controller node install. 
-<!-- include more detailed info here - what other guidance can we provide here about matching the drive assignment?  maybe a link here to explain the need for like-geometry on drives?--> 
+<!-- include more detailed info here - what other guidance can we provide here about matching the drive assignment?  maybe a link here to explain the need for like-geometry on drives?-->
 
 10. The installation program will indicate when it has finished.  Remove the install media and hit [Enter] to reboot.
  
+### After Reboot
 
-### After Reboot 
-11. Wait for the system to load and show the user menu.  Select **User Interface**, and enter admin login credentials.  
+11. Wait for the system to load and show the user menu.  Select **User Interface**, and enter admin login credentials.
+
 12. Verify green status indicators before proceeding with a subsequent node install.  
 
-
-
 ## Install Additional Nodes (as needed)
+
 Additional nodes can be installed as needed. These nodes can be:
 
 * [**Scale-out**](scale-out-nodes.md)
 * [**Compute-only**](compute-nodes.md)
 * [**Storage-only**](storage-nodes.md) 
 
-<!-- add any additional information needed for these install types, either here or link to separate pages. -->
-
 ## Post-Installation Steps
+
 When node installations are complete, see [**Post Installation**](post-installation.md) for next steps.
 
 ---
 
 ## Troubleshooting & Support
 
-
 If issues arise during installation:
 
-- Press `Esc` to cancel and get a command prompt
-- Type `yb-install` to resume or `yb-install --restart` to start over
+* Press `Esc` to cancel and get a command prompt
+* Type `yb-install` to resume or `yb-install --restart` to start over
