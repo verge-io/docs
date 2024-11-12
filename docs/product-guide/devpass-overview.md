@@ -12,15 +12,13 @@ Never select boot devices, primary system controllers, core fabric network contr
 
 ### Alternative Management Access
 
-Precautions should be taken before configuring PCI or Network controller passthrough, as incorrect configuration can result in loss of remote access to the system.  **Verify you have the password for the "admin" user (user ID #1) AND ensure you have an alternative method to reach the nodes: physical console access or IPMI access.**
-
-###
+Precautions should be taken before configuring PCI or Network controller passthrough, as incorrect configuration can result in loss of remote access to the system.  Prior to making changes, **verify you have the password for the "admin" user (user ID #1) AND ensure you have an alternative method to reach the nodes: physical console access or IPMI access.**
 
 ### IOMMU Grouping Requirements
 
 All PCI devices within the same IOMMU group are passed through together (as a single IOMMU group cannot be split among different guests). Examples of a single IOMMU group containing multiple PCI devices include: GPUs along with their audio controllers; a dual-port NIC (both ports); devices using a PCI riser card that allows multiple devices on the same PCI slot.
 
-When configuring any PCI device for passthrough, it is important to be aware of all the devices within the same IOMMU group to ensure that a host-necessary component is not inadvertently passed through.  If a host-critical component is configured for passthrough, it is unloaded and may result in complete loss of remote access or prevent your system from starting up again after reboot.  You can view IOMMU group membership of PCI devices from Resource Manager: from the main dashboard, click Resources and click on the PCI Devices card.  This will list all detected PCI devices on all nodes.  Click the **IOMMU** column heading to sort the devices in order by IOMMU group number to more easily determine devices within a same group.
+When configuring any PCI device for passthrough, it is important to be aware of all the devices within the same IOMMU group, to ensure that a host-necessary component is not inadvertently passed through.  If a host-critical component is configured for passthrough, it is unloaded and may result in complete loss of remote access or prevent your system from starting up again after reboot.  You can view IOMMU group membership of PCI devices in Resource Manager: from the main dashboard > Resources > PCI Devices.  This will list all detected PCI devices on all nodes.  Click the *IOMMU* column heading to sort the devices in order by IOMMU group number to more easily determine devices within a IOMMU group.
 
 ## Resource Group
 
@@ -30,7 +28,7 @@ Resource rules associated with a resource group define the devices that will com
 
 ## Resource Rules
 
-Rules define filter criteria to specify devices to include in a resource group. Each rule can filter available devices based on a combination of attributes such as device name, vendor, slot, serial number; available fields will vary depending on the particular resource type (PCI, USB, SR-IOV NIC or NVIDIA vGPU).
+Resource rules contain filter criteria that determine devices to include in a resource group. Each rule can filter available devices based on a combination of attributes such as device name, vendor, slot, serial number; available fields will vary depending on the particular resource type (PCI, USB, SR-IOV NIC or NVIDIA vGPU).
 
 ### Auto Generation
 
@@ -38,14 +36,14 @@ Generally, it is recommended (and easiest) to allow the system to auto-generate 
 
 ### Manual Creation/Editing
 
-The KB Article: [Device Passthrough - Advanced Configuration](/knowledge-base/posts/devpass-advanced) provides information regarding manually creating and editing resource rules.
+The KB Article: [Device Passthrough - Advanced Configuration](/knowledge-base/#dev-passthrough-advanced) provides information regarding manually creating and editing resource rules.
 
 ## Types of Device Passthrough
 
-* [**Straight PCI device passthrough**](/product-guide/generic-pcipass) - enables access to a PCI hardware device from a virtual machine, providing single device to single VM access (at a time). The PCI device functions as if is physically attached to the guest operating system.  
+* [**One-to-One PCI passthrough**](/product-guide/generic-pcipass) - enables access to a PCI hardware device from a virtual machine, providing single device to single VM access (at a time). The PCI device functions as if is physically attached to the guest operating system.  
 
-* [**USB Device Passthrough**](/product-guide/usbpassthrough) - allows a virtual machine (VM) to access a USB device that's connected to the host machine. This allows users to use USB devices within a VM as if they were directly connected to the VM. Single device to single VM access (at a time) is provided.
+* [**USB Device Passthrough**](/product-guide/usbpassthrough) - allows a virtual machine (VM) to access a USB device that's connected to the host machine. This allows users to access USB devices within a VM as if they were directly connected to the VM. Single device to single VM access (at a time) is provided.
 
-* [**NVIDIA vGPU**](/product-guide/nvidiaGPU) - A physical NVIDIA GPU installed on the host node is dissected into multiple virtual GPUs; vGPU provides access to multiple VMs simultaneously from a single piece of GPU hardware.
+* [**NVIDIA vGPU**](/product-guide/nvidiavGPU) - A physical NVIDIA GPU installed on the host node is dissected into multiple virtual GPUs; vGPU provides access from a single piece of GPU hardware to multiple VMs.
 
-* [**SR-IOV VF NICs**](/kb-template.mdproduct-guide/sriov) -- the Single Root I/O Virtualization (SR-IOV) specification is utilized to create multiple virtual functions (virtualized instances of a network adapter) from one physical PCIe (SR-IOV-capable) NIC; these virtualized network adapters are then made available for virtual machines.
+* [**SR-IOV VF NICs**](/product-guide/sriov) -- the Single Root I/O Virtualization (SR-IOV) specification is utilized to create multiple virtual functions (virtualized instances of a network adapter) from one physical, SR-IOV-capable NIC; these virtualized network adapters are then made available for VMs.

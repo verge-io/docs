@@ -1,6 +1,6 @@
 ---
 title: Device Passthrough Advanced Configuration
-slug: device-passthrough-advanced-config
+slug: dev-passthrough-advanced
 description: Advanced configuration information for device passthrough - manual creation/editing of resource rules
 draft: false
 date: 2024-11-10T16:53:09.094Z
