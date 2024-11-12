@@ -19,8 +19,8 @@ The following instructions configure selected vGPU device(s) for virtual functio
 
 3. Navigate to the **Resource Manager Dashboard** (*Main Dashboard > Resources*)
 **-OR-**
-Navigate to a **specific node** where the NVIDIA hardware is installed. (*Main Dashboard > Nodes* > double-click desired node in the list.)
-4. Click the **NVIDIA vGPUs** card. (Any existing configured vGPUs will display in the listing.)
+Navigate to a **specific node** where the NVIDIA hardware is installed. (*Main Dashboard > Nodes* > double-click desired node in the list)
+4. Click the **NVIDIA vGPUs** card. Any existing configured vGPUs will display in the listing.
 5. Click **NVIDIA PCI Devices** on the left menu.  A listing of compatible physical devices will display.
 6. **Select the desired NVIDIA physical device(s).**
 7. Click **Make Passthrough** on the left menu.
@@ -37,7 +37,7 @@ Navigate to a **specific node** where the NVIDIA hardware is installed. (*Main D
 After the resource group is selected or new one created, a **Success** message should appear indicating resource rules were created for the device(s)
    * If this driver has not been used previously or IOMMU is not yet enabled for the system, **a reboot of the associated node(s)** will be necessary before you can complete the vGPU configuration.  
 !!! warning "Follow proper [**Maintenance Mode**](/product-guide/maintenancemode) procedures when rebooting a node to avoid workload disruptions."
-   * After the node(s) are rebooted, if necessary, navigate to the NVIDIA vGPU resource group just created (Main Dashboard > Resources > Groups > double-click the group.)
+   * After the node(s) are rebooted, if necessary, navigate to the NVIDIA vGPU resource group just created (Main Dashboard > Resources > Groups > double-click the group)
    * Click **Edit** on the left menu.
    * Select the desired **NVIDIA vGPU Profile** from the dropdown list.  Consult NVIDIA vGPU documentation for information regarding available profile types for your hardware.
    * The **Make Guest Driver ISO** option can be used to automatically create a guest driver ISO file from the NVIDIA driver bundle selected above.  
