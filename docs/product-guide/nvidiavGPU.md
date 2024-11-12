@@ -9,17 +9,17 @@ VergeOS allows seamless utilization of NVIDIA's GRID vGPU platform to provide mu
 
 ## Host Installation/Configuration
 
-!!! danger "It is important to read and be familiar with [**PCI Passthrough Risks and Precautions**](/knowledge-base/posts/devpass-overview#pci-passthrough-risksprecautions) before making passthrough configurations."
+!!! danger "It is important to read and be familiar with [**PCI Passthrough Risks and Precautions**](/product-guide/devpass-overview#pci-passthrough-risksprecautions) before making passthrough configurations."
 
 1. Obtain the appropriate NVIDIA Linux-KVM driver for your GPU hardware. GRID vGPU drivers can be downloaded from your NVIDIA licensing portal or by registering for an NVIDIA free evaluation: [**https://nvidia.com/en-us/data-center/resources/vgpu-evaluation**](https://nvidia.com/en-us/data-center/resources/vgpu-evaluation).
-!!! tip "VergeOS supports bundle-version NVIDIA drivers.  For a list of currently supported NVIDIA drivers, navigate to Resource Manager -> Groups -> New. Set Type=*NVIDIA vGPU* and click the button to view compatible 3rd Party drivers.  Typically, you will want to use the most recent driver in this list that is compatible with your NVIDIA hardware."
+!!! tip "VergeOS supports bundle-version NVIDIA drivers.  For a list of currently supported NVIDIA drivers, navigate to Resource Manager > Groups > New. Set Type=*NVIDIA vGPU* and click the button to view compatible 3rd Party drivers.  Typically, you will want to use the most recent driver in this list that is compatible with your NVIDIA hardware."
 
-2. Upload the NVIDIA bundle driver to the VergeOS vSAN. For directions on uploading to the vSAN, see:
-[**Uploading to the vSAN (Media Images)**](/product-guide/uploadingtovSAN)  
-!!! note The following instructions configure selected vGPU device(s) for virtual function passthrough by automatically creating necessary resource rules for each selected device and attaching the device(s) to a resource group. For more information about resource groups and resource rules, see: [**Device Passthrough - Overview**](/product-guide/devpass-overview#resource-groups).
-3. Navigate to the **Resource Manager Dashboard** (*Main Dashboard -> Resources*)
+2. Upload the NVIDIA bundle driver to the VergeOS vSAN. See [**Uploading to the vSAN (Media Images)**](/product-guide/uploadingtovSAN) for directions on uploading to the vSAN.  
+The following instructions configure selected vGPU device(s) for virtual function passthrough by automatically creating necessary resource rules for each selected device and attaching the device(s) to a resource group. For more information about resource groups and resource rules, see: [**Device Passthrough - Overview**](/product-guide/devpass-overview#resource-group).
+
+3. Navigate to the **Resource Manager Dashboard** (*Main Dashboard > Resources*)
 **-OR-**
-Navigate to a **specific node** where the NVIDIA hardware is installed. (*Main Dashboard -> Nodes* -> double-click desired node in the list.)
+Navigate to a **specific node** where the NVIDIA hardware is installed. (*Main Dashboard > Nodes* > double-click desired node in the list.)
 4. Click the **NVIDIA vGPUs** card. (Any existing configured vGPUs will display in the listing.)
 5. Click **NVIDIA PCI Devices** on the left menu.  A listing of compatible physical devices will display.
 6. **Select the desired NVIDIA physical device(s).**
@@ -37,7 +37,7 @@ Navigate to a **specific node** where the NVIDIA hardware is installed. (*Main D
 After the resource group is selected or new one created, a **Success* message should appear indicating resource rules were created for the device(s)
    7. If this driver has not been used previously or IOMMU is not yet enabled for the system, **a reboot of the associated node(s)** will be necessary before you can complete the vGPU configuration.  
 !!! warning "Follow proper [**Maintenance Mode**](/product-guide/maintenancemode) procedures when rebooting a node to avoid workload disruptions."
-   8. After the node(s) are rebooted, if necessary, navigate to the NVIDIA vGPU resource group just created (Main Dashboard -> Resources -> Groups -> double-click the group.)
+   8. After the node(s) are rebooted, if necessary, navigate to the NVIDIA vGPU resource group just created (Main Dashboard > Resources > Groups > double-click the group.)
    9. Click **Edit** on the left menu.
    10. Select the desired **NVIDIA vGPU Profile** from the dropdown list.  Consult NVIDIA vGPU documentation for information regarding available profile types for your hardware.
    11. The **Make Guest Driver ISO** option can be used to automatically create a guest driver ISO file from the NVIDIA driver bundle selected above.  
@@ -45,14 +45,14 @@ After the resource group is selected or new one created, a **Success* message sh
    !!! note "If you selected *Make Guest Driver ISO* option, leave the Driver ISO field set to *--Default--*; the system will automatically create the ISO file (based on the bundle driver selected), and specify it as the Driver ISO for the resource group."
    13. Click **Submit** to save the client driver settings for the resource group.
 
-The resource group dashboard contains the resource rules that were auto-generated for your selected NVIDIA devices can be accessed. You can click an individual rule to view configuration detail. A system-created rule can be modified as needed; for example, the *Node* filter can be changed to *-- None --* to include matching devices from all nodes.  Information regarding resource rules is available at: [Resource Rules](/product-guide/devpass-overview#resourcerules)
+The resource group dashboard contains the resource rules that were auto-generated for your selected NVIDIA devices. You can click an individual rule to view configuration detail. A system-created rule can be modified as needed; for example, the *Node* filter can be changed to *-- None --* to include matching devices from all nodes.  Information regarding resource rules is available at: [**Device Passthrough Overview - Resource Rules**](/product-guide/devpass-overview#resource-rules)
 
 ## VM/Guest Configuration
 
 1. Navigate to the dashboard of the desired VM (From the main dashboard click **Machines** on the left menu; **Virtual Machines;** double-click desired VM in the listing)
 2. Click **Devices** on the left menu.
 3. Click **New** on the left menu.
-!!! tip "You can also attach devices to a VM via Resource Manager; this method allows for adding multiple devices to the VM at once. From Resource Group dashboard -> double-click the desired vGPU Group -> View Machine Devices -> New; select the VM from the Machine dropdown list."
+!!! tip "You can also attach devices to a VM via Resource Manager; this method allows for adding multiple devices to the VM at once. From Resource Group dashboard > double-click the desired vGPU Group > View Machine Devices > New; select the VM from the Machine dropdown list."
 
 ### Device Entry Form fields
 
@@ -76,13 +76,13 @@ The resource group dashboard contains the resource rules that were auto-generate
 
 !!! hint "NVIDIA Client licensing may involve generating a client config token on the NVIDIA licensing server that will need to be downloaded into the VM guest, followed by a VM reboot."
 
-## Sharing an NVIDIA vGPU Device to a Tenant
+## Sharing an NVIDIA vGPU to a Tenant
 
-NVIDIA vGPU devices can be passed to a tenant for the tenant to pass to its own VMs. 
+NVIDIA vGPU devices can be passed to a tenant for the tenant to pass to its own VMs.
 
-!!! note "When devices are shared to a tenant, they are thick provisioned (i.e. the tenant then owns the devices, so they cannot be assigned to other VMs or tenants even when not in use.)"
+!!! note "When devices are shared to a tenant, they are thick provisioned (i.e. the tenant then owns the devices, so they cannot be assigned to other VMs or tenants, even when not in use.)"
 
-1. Navigate to the desired **tenant dashboard** (Main Dashboard -> Tenants -> Tenants -> doube-click the tenant within the list.)
+1. Navigate to the desired **tenant dashboard** (Main Dashboard > Tenants > Tenants > double-click the tenant within the list.)
 2. Click **Nodes** on the left menu.
 3. **Double-click one of the tenant nodes**.
 4. Click **Devices** on the left menu.

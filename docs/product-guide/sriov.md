@@ -10,12 +10,11 @@ VergeOS provides support for SR-IOV-capable network cards, allowing multiple dev
 
 The following instructions will configure virtual function passthrough by automatically creating necessary resource rules for each set of virtual functions and attaching the rules to the selected resource group. For more information about how resource groups and resource rules work, see: [**Device Passthrough - Resource Rules**](/product-guide/devpass-overview#resource-rules).
 
-1. Navigate to the **Resource Manager Dashboard** (Main Dashboard -> Resources) **-OR-** Navigate to a **specific node dashboard** (Main Dashboard -> Nodes -> double-click desired node in the list.)
-2. Click the **SR-IOV NIC Devices** (any existing configured SR-IOV virtual devices will display in the listing that appears).
+1. Navigate to the **Resource Manager Dashboard** (Main Dashboard > Resources) **-OR-** Navigate to a **specific node dashboard** (Main Dashboard > Nodes > double-click desired node in the list.)
+2. Click the **SR-IOV NIC Devices**. Any existing configured SR-IOV virtual devices will display in the listing that appears.
 3. Click **NIC PCI Devices** on the left menu.  The listing of compatible physical devices will display.
 4. **Select the desired device(s)** in the list and click **Make Passthrough** on the left menu.
 5. **Select an SR-IOV resource group** from the list **-OR-** **Create a new SR-IOV resource group**.
-Selecting --New Group--, presents the [Resource Group](/product-guide/devpass-overview#resourcegroups) entry form to create a new resource group.
 
 ### Creating an SR-IOV NIC Resource Group
 
@@ -29,7 +28,7 @@ Selecting --New Group--, presents the [Resource Group](/product-guide/devpass-ov
 * Specify the **number of VF Devices** (per physical device). The total number of VF Devices to create will be the number specified multiplied by the number of physical devices selected.  
 * Check the ***User Defined*** option for fields where a VM user should be allowed to override the specified setting; fields that do not have the User Defined option checked cannot be changed by the user when attaching the device to a VM.  
 * **Native VLAN**: (optional) VLAN tag for the virtual device.
-* **VLAN Protocol**: 802.1Q (default) is the most widely used. 802.1ad provides support for QinQ (nesting of VLAN tags).
+* **VLAN Protocol**: *802.1Q* (default) is the most widely used. *802.1ad* provides support for QinQ (nesting of VLAN tags).
 * **Minimum Transmit Bandwith (Mbps)**: (optional) can be set to ensure transmission at least at specified minimum (per vf).  This can be used to give different resource groups different shares of overall bandwidth. Setting of 0 disables rate limiting. The Minimum Transmit Bandwidth setting must be set to a lower value than the Maximum Transmit Bandwidth.
 * **Virtual Link State**:  
   ***Auto*** - the VF state will simply mirror that of the associated physical device.  
@@ -43,21 +42,19 @@ Selecting --New Group--, presents the [Resource Group](/product-guide/devpass-ov
   
 5. Click **Submit** to finish creating the new resource group.
 
-After the resource group is selected (or created), a **Success** message should appear indicating resource rules were created for the device(s).
+After the resource group is selected/created, a **Success** message should appear indicating resource rules were created for the device(s).
 
-6. **A reboot of the associated node(s) may be necessary** a message will appear at the top of the Resource Manager dashboard.
+6. **A reboot of the associated node(s) may be necessary**; a message will appear at the top of the Resource Manager dashboard.
 !!! warning "Follow proper [**Maintenance Mode**](/product-guide/maintenancemode) procedures when rebooting a node to avoid workload disruptions."
 
-The resource group dashboard (presented after you select or create a group for passthrough) is presented, where the auto-generated resource rules can be accessed. You can click an individual rule to view configuration detail. A system-created rule can be edited as needed; for example, the Node filter can be changed to -- None -- to include matching devices from all nodes. Information regarding resource rules is available at: [Resource Rules](/product-guide/devpass-overview#resourcerules).
-
-
+The resource group dashboard contains the resource rules that were auto-generated for your selected devices. You can click an individual rule to view configuration detail. A system-created rule can be modified as needed; for example, the *Node* filter can be changed to *-- None --* to include matching devices from all nodes.  Information regarding resource rules is available at: [**Device Passthrough Overview - Resource Rules**](/product-guide/devpass-overview#resource-rules)
 
 ## VM/Guest Configuration
 
-1. Navigate to the dashboard of the desired VM (From the main dashboard click **Machines** on the left menu; **Virtual Machines;** double-click desired VM in the listing)
+1. Navigate to the **VM dashboard** (Main Dashboard > Machines > Virtual Machines > double-click desired VM in the listing)
 2. Click **Devices** on the left menu.
 3. Click **New** on the left menu.
-!!! tip "You can also attach devices to a VM via Resource Manager: from the Resource Group dashboard -> double-click the desired SR-IOV Group -> View Machine Devices -> New; select the VM from the Machine dropdown list."
+!!! tip "You can also attach devices to a VM via Resource Manager: from the Resource Group dashboard > double-click the desired SR-IOV Group > View Machine Devices > New; select the VM from the Machine dropdown list."
 
 ### Device Entry Form fields
 
@@ -66,11 +63,12 @@ The resource group dashboard (presented after you select or create a group for p
 * **Description**(optional): additional text can be entered here for administrative purposes.
 * **Resource Group**: select the appropriate SR-IOV resource group from the dropdown list
 * **Count**: indicate the number of SR-IOV vf devices to attach to the VM (from this resource group).
-* **SR-IOV NIC Settings**: options available here will depend on the *User Defined* toggle selections defined in the SR-IOV Settings of the selected resource group (See [SR-IOV Settings](sr-iov-nic-settings) above.)
+* **SR-IOV NIC Settings**: options available here will depend on the *User Defined* toggle selections defined in the SR-IOV Settings of the resource group (See **SR-IOV Settings** above.)
   
-4. Click **Submit** to complete adding the new device.
-5. The VM will need a **restart** in order to attach the device. From the VM dashboard, click the *Restart* link on the message that appears at the top of the dashboard, or click **Restart** on the left menu.
-6. Install any required client **NIC drivers**. Required driver(s) will vary depending on specific SR-IOV NIC make/model and guest operating system; consult hardware vendor documentation.
+1. Click **Submit** to complete adding the new device.
+2. The VM will need a **restart** in order to attach the device. From the VM dashboard, click the *Restart* link on the message that appears at the top of the dashboard, or click **Restart** on the left menu.
+3. Install any required client **NIC drivers**. Required driver(s) will vary depending on specific SR-IOV NIC make/model and guest operating system; consult hardware vendor documentation.
+4. **Restart** the VM.
 
 ## Share SR-IOV Devices to a Tenant
 
@@ -78,15 +76,15 @@ SR-IOV devices can be passed to a tenant for the tenant to pass to its own VMs. 
 
 !!! note "When devices are shared to a tenant, they are thick provisioned (i.e. the tenant then owns the devices, so they cannot be assigned to other VMs or tenants even when not in use.)"
 
-1. Navigate to the desired **tenant dashboard** (Main Dashboard -> Tenants -> Tenants -> double-click the tenant within the list.)
+1. Navigate to the desired **tenant dashboard** (Main Dashboard > Tenants > Tenants > double-click the tenant within the list.)
 2. Click **Nodes** on the left menu.
 3. **Double-click one of the tenant nodes**.
 4. Click **Devices** on the left menu.
 5. Click **New** on the left menu.
 6. Enter a **Name** or leave blank to allow the system to auto-create a name; this name will be used for the resource group created in the tenant.
 7. **Type**: set to ***SR-IOV NIC***.
-8. **Description**: provides a place to store additional administrative information about the device pool.\
+8. **Description**: provides a place to store additional administrative information about the device pool.
 9. **Count**: number of virtual function NICs to pass into the tenant resource group.
 10. A specific **MAC Address** can be entered or leave blank to allow the system to auto-generate a MAC Address (It is recommended to leave this field blank, allowing unique, system-generated MAC addresses to avoid inadvertently introducing duplicate MAC addresses within the same network.)
 11. When fields are completed, click **Submit** to finish passing to the tenant.
-12. The device(s) will now be available as a resource group to attach to tenant VMs.  Follow [**VM/Guest Configuration**](vm/guest-configuration) instructions above.  In order to use the passthrough device, the VM must run on the tenant node where the device is attached.
+12. The device(s) will now be available as a resource group to attach to tenant VMs.  Follow [**VM/Guest Configuration**](#vmguest-configuration) instructions above.  In order to use the passthrough device, the VM must run on the tenant node where the device is attached.
