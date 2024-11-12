@@ -4,7 +4,7 @@ status: new
 
 # Live Migrations
 
-Migrations in VergeOS allows you to move running VMs between nodes without service interruption. 
+Live Migrations in VergeOS allows you to move running VMs between nodes and virtual disks between storage tiers without service interruption.
 
 ## Overview
 
@@ -26,7 +26,7 @@ Migrations in VergeOS allows you to move running VMs between nodes without servi
 These capabilities are integral to VergeOS's infrastructure management, enabling:
 
 - System maintenance without downtime
-- Resource optimization and load balancing
+- Resource optimization
 - High availability operations
 - Storage performance tuning
 
@@ -35,7 +35,9 @@ VergeOS live migration automatically manages resource allocation, network connec
 !!! info "VergeOS automatically handles VM live migrations during"
     - System updates
     - Node maintenance operations (Maintenance Mode)
-    - Resource rebalancing after HA events
+
+!!! note "HA Events"
+    After an HA event, VergeOS will automatically start affected VMs on other available nodes.
 
 ## Prerequisites
 
@@ -79,7 +81,7 @@ To enable live migration for VMs using vGPU devices:
 ## VM Live Migration
 
 !!! note "VMs that cannot be migrated"
-    VMs with attached GPU devices or employing virtualization passthrough (CPU type = host processor), need to be powered down and restarted on another node. Setting a VM's Migration Method = Automatic allows the system to automatically power down a non-migratable VM when a node is put into maintenance; otherwise, the VM will need to be powered down manually.
+    VMs with attached GPU/PCI passthrough, USB passthrough, and SR-IOV NICs cannot be live migrated.
 
 ### Single VM Migration
 
