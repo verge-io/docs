@@ -20,8 +20,8 @@ The following instructions configure selected vGPU device(s) for virtual functio
 3. Navigate to the **Resource Manager Dashboard** (*Main Dashboard > Resources*)
 **-OR-**
 Navigate to a **specific node** where the NVIDIA hardware is installed. (*Main Dashboard > Nodes* > double-click desired node in the list)
-4. Click the **NVIDIA vGPUs** card. Any existing configured vGPUs will display in the listing.
-5. Click **NVIDIA PCI Devices** on the left menu.  A listing of compatible physical devices will display.
+4. Click the **PCI Devices** box / menu item.
+5. In the list view, select the **Type** filter to **Display controller** near the top of the page.
 6. **Select the desired NVIDIA physical device(s).**
 7. Click **Make Passthrough** on the left menu.
 8. **Select an existing vGPU resource group** **-OR-** **select --New Group--** to attach the device.
@@ -29,23 +29,25 @@ Navigate to a **specific node** where the NVIDIA hardware is installed. (*Main D
 9. **Creating a New NVIDIA vGPU Resource Group**:
 
    * **Name**: label used to identify the resource group (i.e. device pool); use a descriptive name so that users are easily able to identify the type of devices/vgpu profiles that will be available in this group.
-   * **Type**: should be set to ***USB***.
+   * **Type**: should be set to ***NVIDIA vGPU***.
    * **Description**: optional field to provide more administrative text about the resource group.
    * **Class**: select ***vGPU***. This field is only used to apply an associated icon to the resource group, and does not affect functionality.
+   * **NVIDIA vGPU Profile**: set this to the vGPU type that you want this resource group to create.
+!!! info "If this list is empty, you will need to come back to this step after the drivers have been installed.  Once the drivers have been installed on at least one node, this list will contain the available profiles provided by NVIDIA and the hardware."  
    * The **Driver** dropdown list will contain NVIDIA vGPU drivers found in media images.  The appropriate driver will need to be uploaded to the vSAN before it can be selected (Steps 1-2 above). Select the appropriate driver. 
    * Click **Submit** to save the resource group.  
 After the resource group is selected or new one created, a **Success** message should appear indicating resource rules were created for the device(s)
    * If this driver has not been used previously or IOMMU is not yet enabled for the system, **a reboot of the associated node(s)** will be necessary before you can complete the vGPU configuration.  
-!!! warning "Follow proper [**Maintenance Mode**](/product-guide/maintenancemode) procedures when rebooting a node to avoid workload disruptions."
+!!! warning "Follow proper [**Maintenance Mode**](/product-guide/maintenancemode) procedures when rebooting a node to avoid workload disruptions.  Also, ensure that IOMMU / VT-d / SR-IOV is enabled in the BIOS."
    * After the node(s) are rebooted, if necessary, navigate to the NVIDIA vGPU resource group just created (Main Dashboard > Resources > Groups > double-click the group)
    * Click **Edit** on the left menu.
    * Select the desired **NVIDIA vGPU Profile** from the dropdown list.  Consult NVIDIA vGPU documentation for information regarding available profile types for your hardware.
-   * The **Make Guest Driver ISO** option can be used to automatically create a guest driver ISO file from the NVIDIA driver bundle selected above.  
+   * The **Make Guest Driver ISO** option can be used to automatically create a guest driver ISO file from the NVIDIA driver bundle selected above.  If you have already created guest drivers, select the ISO in the next step.
    * The **Driver ISO** file specifies an ISO file that can be attached to consuming VMs, providing a convenient way to access client drivers for installation within the guest operating system.  (Select the ***Attach Guest Drivers*** option when attaching the device to a VM or tenant.)
   
-!!! note "If you selected *Make Guest Driver ISO* option, leave the Driver ISO field set to *--Default--*; the system will automatically create the ISO file (based on the bundle driver selected), and specify it as the Driver ISO for the resource group."
-
+!!! note "If you selected *Make Guest Driver ISO* option, leave the Driver ISO field set to *-- None --*; the system will automatically create the ISO file (based on the bundle driver selected), and specify it as the Driver ISO for the resource group."
    * Click **Submit** to save the client driver settings for the resource group.
+!!! note "Once changes have been made, it may be required to put the node into [**Maintenance Mode**](/product-guide/maintenancemode) and click **Reload Drivers**.
 
 The resource group dashboard contains the resource rules that were auto-generated for your selected NVIDIA devices. You can click an individual rule to view configuration detail. A system-created rule can be modified as needed; for example, the *Node* filter can be changed to *-- None --* to include matching devices from all nodes.  Information regarding resource rules is available at: [**Device Passthrough Overview - Resource Rules**](/product-guide/devpass-overview#resource-rules)
 
@@ -58,7 +60,7 @@ The resource group dashboard contains the resource rules that were auto-generate
 
 ### Device Entry Form fields
 
-* **Name**: **provide a name** to identify the type of vGPU/profile **-OR- leave blank to allow the system to auto-generate** a name for the instance.
+* **Name**: **provide a name** to identify the type of vGPU/profile **-OR-** leave blank to allow the system to auto-generate a name for the instance.
 * **Type**: select ***NVIDIA vGPU***.
 * **Description**(optional): additional text can be entered here for administrative purposes.
 * **Resource Group**: select the appropriate NVIDIA vGPU resource group from the dropdown list. (The resource group list will display the number of devices in the group that are currently available.)
