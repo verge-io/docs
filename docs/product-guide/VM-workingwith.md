@@ -40,8 +40,10 @@ Considerations when deleting a VM:
 It's important to understand the different behaviors of the Power off / Reset / Kill power commands for VMs.
 
 - **Power off** - This issues an ACPI command to the VM and relies on ACPI being enabled and configured within the guest OS. Power off initiates a graceful shutdown of the VM.
-  - **Before putting a server into production**, it is recommended to test a Power Off operation from the VergeOS user interface both while a user is logged into the guest OS as well as when no user is logged in. 
+  - **Before putting a server into production**, it is recommended to test a Power Off and Restart operation from the VergeOS user interface both while a user is logged into the guest OS as well as when no user is logged in.
+  
+- **Restart** - Initiates a graceful shutdown and then power on of the VM.  Issues a ACPI command to the VM and relies on ACPI being enabled and configured within the guest OS.
 
-- **Reset** - Exits the guest operating system, returns to virtual bios, but never powers off the virtual hardware. Unlike Power cycle, reset does not relinquish its virtual resources. Some hardware changes will require a power cycle as opposed to a reset in order to take effect.  
+- **Hard Reset** - Exits the guest operating system, returns to virtual bios, but never powers off the virtual hardware. Unlike Power cycle, reset does not relinquish its virtual resources. Some hardware changes will require a power cycle as opposed to a reset in order to take effect.  
 
 - **Kill Power** - This option should only be used when it is not possible to access the guest OS for graceful shutdown (e.g. the guest OS crashed or locked). This would be equivalent to pulling the power plug on a bare metal machine.
