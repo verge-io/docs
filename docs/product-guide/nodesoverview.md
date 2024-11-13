@@ -1,12 +1,67 @@
-A node is an individual server running VergeOS. There are several types of nodes:
+# Nodes Overview
 
-- **Controller Nodes:** Manage the User Interface, Networking, and vSAN functions.
-- **Compute and Storage (HCI) Nodes:** Expands storage, compute, networking within the VergeOS System
-- **Compute-Only Nodes:** Expand compute resources within the VergeOS System
-- **Storage-Only Nodes:** Expand storage resources within the VergeOS System
+A node in VergeOS represents a physical or virtual server that contributes compute, storage, and networking resources to your environment. The Nodes dashboard provides comprehensive monitoring and management capabilities for each node in your system.
 
-Nodes share workload with each other when they are in the same Cluster, and share orchestration with other Nodes inside the System. 
+## Key Components
 
-There is 1 special type of Node called a **Tenant Node** that is only created virtually when creating tenants. This special node acts as a container and 'hypervisor' for the tenant. A tenant can have multiple nodes, just as in a physical data center, allowing redundancy of their virtual nodes across physical nodes.
-  !!!note
-    See [Creating Tenants](https://docs.verge.io/product-guide/createtenants) for more information on Tenant Node configuration.
+### Node Status Information
+- **Status**: Shows the current operational state (Running/Offline)
+- **Maintenance Mode**: Indicates if the node is in maintenance state
+- **IPMI Status**: Displays the status of the Intelligent Platform Management Interface
+- **System Version**: Shows current VergeOS version and kernel information
+
+### Resource Metrics
+- **CPU Usage**: Real-time monitoring of processor utilization
+- **RAM Usage**: Physical and virtual memory allocation and consumption
+- **Temperature**: System temperature monitoring (where supported)
+- **Storage**: Drive status and utilization
+
+### Node Statistics
+The dashboard provides key metrics for:
+- Physical RAM utilization
+- Virtual RAM allocation
+- Core usage
+- Running machines
+- Storage tier status
+
+### Connected Devices
+Tracks and manages:
+- Network Interface Cards (NICs)
+- PCI Devices
+- Storage Drives
+- USB Devices
+- GPU Devices (if applicable)
+
+### Running Machines
+Displays active workloads including:
+- Virtual Machines
+- Containers
+- Network Services
+- Resource consumption per workload
+
+## Key Features
+
+### Management Operations
+- Power control (Power On/Off, Reboot)
+- Maintenance mode control
+- Firmware updates
+- Configuration management
+
+### Monitoring
+- Real-time resource utilization graphs
+- Historical performance data
+- Event logs and alerts
+- Hardware health status
+
+### Maintenance
+- Drive management
+- Network configuration
+- Device control
+
+## Best Practices
+
+- Regularly monitor node health metrics
+- Enable maintenance mode before performing system updates
+- Review logs periodically for potential issues
+- Maintain balanced workload distribution across nodes
+- Keep firmware and system software up to date
