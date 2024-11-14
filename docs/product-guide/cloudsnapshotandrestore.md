@@ -50,21 +50,11 @@ A manual snapshot can be taken at any time.
 8.  The ***Private*** checkbox is selected by default; this option can be deselected to allow tenants access to their own data within this snapshot.
 9.  Click **Submit** at the bottom of the page.
 
-<br>
-<br>
-
-
 ## Restores from a Cloud Snapshot
 
-<br>
-<br>
-
-
 ### Access Cloud Snapshots from Your Provider/Host
-<br>
 
-> The following directions are applicable to systems that are tenants themselves. If provider has allowed it, a tenant can access a snapshot of their own cloud from the provider's cloud snapshots. Once requested from the provider, the snapshot is then available to use for restoring individual VMs or entire cloud.1.  From the main dashboard, Select **System** from the left menu. {.is-info}
-
+> The following directions are applicable to systems that are tenants themselves. If provider has allowed it, a tenant can access a snapshot of their own cloud from the provider's cloud snapshots. Once requested from the provider, the snapshot is then available to use for restoring individual VMs or entire cloud.
 
 1.  From the main dashboard, Select **System** from the left menu.
 2.  Select **Cloud Snapshots** from the left menu.
@@ -110,12 +100,17 @@ A manual snapshot can be taken at any time.
 6.  Click the **Proceed** button to continue/ or **Cancel** to abort.
 7.  Another confirmation message will appear. To continue with the cloud restore, click the **Proceed** button or simply leave alone as <span style="background:yellow">**the restore operation will continue in 60 seconds unless cancelled.**</span> **To Cancel the operation, the Cancel button must be clicked within 60 seconds; otherwise, the restore operation will continue**.
 
+### Restore Select VMs from a Cloud Snapshot (creates new VM clone instances)
 
-<br>
-<br>
+!!! tip "Instructions for restoring an individual VM, to overwrite the current VM or create a cloned instance, can be found at [**VM Snapshots and Restores**](/product-guide/VMsnapshotsandrestores#restore-a-vm-snapshot-to-overwrite-existing-current-version-of-vm)"
 
-
-### Partial Restores From a Cloud Snapshot
+1. Navigate to **Cloud Snapshots** (Main Dashboard > System > Cloud Snapshots).
+2. **Select the desired cloud snapshot** from the list.
+3. Click **View VMs** on the left menu. You will be presented with a listing of all VMs contained in the selected cloud snapshot; this may take a few minutes.
+4. **Select the VMs** to restore.
+5. Click **Recover** on the left menu.
+6. A **Confirmation** dialog will require you to click ***Yes*** to proceed (Click *No* if you wish to cancel the operation).
+7. The Snapshot VM listing will display a checkmark and ***Complete*** message next to each VM that was restored, with a message indicating the name of the clone to which it was restored (ex: "Restored to: Windows2022SQL (0)")
 
 -   See [**VM Snapshots and Restores**](/product-guide/VMsnapshotsandrestores) for instructions on restoring an individual VM from a cloud snapshot.
 -   See [**Tenant Restores**](/product-guide/tenantrestores) for instructions on restoring an individual tenant from a cloud snapshot.

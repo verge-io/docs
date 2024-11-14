@@ -39,24 +39,10 @@ The quiesce option provides an application-consistent snapshot of a running VM i
 
 7.  Click **Submit** at the bottom of the page.
 
-<br>
-<br>
-
-## Restoring Multiple VMs from a Cloud Snapshot (creates new clone instances)
-1. Navigate to Cloud Snapshots (Main Dashboard > System > Cloud Snapshots).
-2. Select the desired cloud snapshot from the list.
-3. Click **View VMs** on the left menu. You will be presented with a listing of all VMs contained in the selected cloud snapshot; this may take a few minutes.
-4. **Select the VMs** to restore.
-5. Click **Recover** on the left menu.
-6. The 
-
-
 ## Restoring an Individual VM from Snapshot
 
 > **To restore an individual VM from a cloud snapshot, it must first be imported** from the cloud snapshot as detailed below. To restore from an individual VM snapshot, skip the import section of instructions and continue to **Restore Overwrite -Or- Restore to a Clone instructions.*** {.is-success}
 
-<br>
-<br>
 
 ### *Import VM Snapshot from a Cloud Snapshot (to make it available for a VM restore)*
 
