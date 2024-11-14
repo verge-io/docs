@@ -2,7 +2,7 @@
 
 # VM Snapshots and Restores
 
-Although cloud snapshots include all VMs and allow for restoring an individual VM, VM-level snapshots allow for customizing schedule and retention rules per individual virtual machine (for example, it may be desirable to capture more frequently or retain snapshots longer for certain VMs). Additionally, VM-level snapshots provide the option for a quiesced snapshot.
+Although cloud snapshots include all VMs and allow for restoring individual VMs, VM-level snapshots allow for customizing schedule and retention rules per individual virtual machine (for example, it may be desirable to capture more frequently or retain snapshots longer for certain VMs). Additionally, VM-level snapshots provide the option for a quiesced snapshot.
 
 <br>
 <br>
@@ -42,7 +42,16 @@ The quiesce option provides an application-consistent snapshot of a running VM i
 <br>
 <br>
 
-## Restoring a VM from Snapshot
+## Restoring Multiple VMs from a Cloud Snapshot (creates new clone instances)
+1. Navigate to Cloud Snapshots (Main Dashboard > System > Cloud Snapshots).
+2. Select the desired cloud snapshot from the list.
+3. Click **View VMs** on the left menu. You will be presented with a listing of all VMs contained in the selected cloud snapshot; this may take a few minutes.
+4. **Select the VMs** to restore.
+5. Click **Recover** on the left menu.
+6. The 
+
+
+## Restoring an Individual VM from Snapshot
 
 > **To restore an individual VM from a cloud snapshot, it must first be imported** from the cloud snapshot as detailed below. To restore from an individual VM snapshot, skip the import section of instructions and continue to **Restore Overwrite -Or- Restore to a Clone instructions.*** {.is-success}
 
