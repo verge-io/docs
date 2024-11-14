@@ -15,7 +15,7 @@ By deploying additional Scale-out nodes, you effectively enlarge your hyper-conv
 
 Ensure the following before starting the installation of a Scale-out node:
 
-* The 2 node cluster from the [Installation Guide](implementation-guide/installation-guide.md) is installed and fully operational.
+* The 2 node cluster from the [Installation Guide](/implementation-guide/installation-guide) is installed and fully operational.
 * All network configurations, including VLANs and physical NIC assignments, have been set up according to the main installation guide.
 
 ---
