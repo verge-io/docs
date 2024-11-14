@@ -35,15 +35,14 @@ Considerations when deleting a VM:
 - A VM that is currently the basis of a VM Recipe cannot be deleted.
 - Deleting a VM will also delete its VM snapshots; however, the VM will still be included in Cloud Snapshots that were taken while the VM existed.
 
-## Power off / Reset / Kill power
+## Power off / Restart / Reset / Kill power
 
-It's important to understand the different behaviors of the Power off / Reset / Kill power commands for VMs.
+It's important to understand the different behaviors of the *Power off / Restart / Hard Reset / Kill power* commands for VMs.
 
-- **Power off** - This issues an ACPI command to the VM and relies on ACPI being enabled and configured within the guest OS. Power off initiates a graceful shutdown of the VM.
-  - **Before putting a server into production**, it is recommended to test a Power Off and Restart operation from the VergeOS user interface both while a user is logged into the guest OS as well as when no user is logged in.
+- **Power off** - issues an ACPI command to the VM, and relies on ACPI being enabled/configured within the guest OS. Power off initiates a graceful shutdown of the VM.
+- **Restart** - initiates a graceful shutdown and then power on of the VM.  An ACPI command is issued to the VM, and relies on ACPI being enabled/configured within the guest OS.
+!!! tip "Before putting a server into production, it is recommended to test a *Power Off* and *Restart* operation from the VergeOS user interface, both while a user is logged into the guest OS and when no user is logged in/screen is locked."
   
-- **Restart** - Initiates a graceful shutdown and then power on of the VM.  Issues a ACPI command to the VM and relies on ACPI being enabled and configured within the guest OS.
-
-- **Hard Reset** - This option should only be used when it is not possible to access the guest OS for a graceful shutdown (e.g. the guest OS crashed or locked). This powers off hardware and powers on again.
+- **Hard Reset** - This option should only be used when it is not possible to access the guest OS for a graceful shutdown (e.g. the guest OS crashed or locked). This powers off hardware, without attempting a graceful shutdown of the guest OS, and powers on again.
 
 - **Kill Power** - This option should only be used when it is not possible to access the guest OS for graceful shutdown (e.g. the guest OS crashed or locked). This would be equivalent to pulling the power plug on a bare metal machine.
