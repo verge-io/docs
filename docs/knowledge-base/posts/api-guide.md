@@ -340,9 +340,6 @@ curl -X 'POST' \
 
 ---
 
-Here's the **Resources** section formatted for the API guide:
-
-
 ## Resources
 
 Below is an example URL used to query a list of machines.
@@ -511,5 +508,5 @@ VergeOS uses standard HTTP status codes to indicate the result of an API request
 ---
 
 !!! note "Document Information"
-    - Last Updated: 2024-08-29
+    - Last Updated: 2024-11-14
     - vergeOS Version: 4.12.6
