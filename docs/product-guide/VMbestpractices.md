@@ -53,7 +53,7 @@ All power-saving features should be disabled within the guest OS as these featur
 
 ## ACPI
 
-Without ACPI support, it will be necessary to enter the guest operating system to carry out a clean shutdown of the VM; this is not optimal, particularly with a larger quantity of machines. ACPI should be enabled and configured within the guest operating system to allow for gracefully powering down a VM from the VergeOS management interface (or via API). It is recommended to test shutting down and rebooting a virtual machine prior to moving it to production, including a power off from the VergeOS dashboard while the machine is at a login prompt/locked screen.
+Without ACPI support, it will be necessary to enter the guest operating system to carry out a clean shutdown of the VM; this is not optimal, particularly with a larger quantity of machines. ACPI should be enabled and configured within the guest operating system to allow for gracefully powering down a VM from the VergeOS management interface (or via API). Before putting a VM into production, it is recommended to test *Restart* and *Power Off* operations from the VergeOS dashboard, while the VM is at a login prompt/locked screen within the guest OS, to verify ACPI is configured correctly.
 
 <br>
 
