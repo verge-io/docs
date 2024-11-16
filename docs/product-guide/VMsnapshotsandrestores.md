@@ -39,10 +39,10 @@ The quiesce option provides an application-consistent snapshot of a running VM i
 
 7.  Click **Submit** at the bottom of the page.
 
-## Restoring an Individual VM from Snapshot
+## Restore an Individual VM from Snapshot
 
-> **To restore an individual VM from a cloud snapshot, it must first be imported** from the cloud snapshot as detailed below. To restore from an individual VM snapshot, skip the import section of instructions and continue to **Restore Overwrite -Or- Restore to a Clone instructions.*** {.is-success}
-
+!!! note "Restoring VMs from a Cloud Snapshot"
+    To restore an individual VM from a cloud snapshot, it must first be imported from the cloud snapshot as detailed below. To restore from an individual VM snapshot, skip the import section of instructions and continue to **Restore Overwrite -Or- Restore to a Clone instructions.** Multiple VMs can be restored from cloud snapshot simultaneously from the [Cloud Snapshots dashboard](/product-guide/cloudsnapshotandrestore#restore-select-vms-from-a-cloud-snapshot-creates-new-vm-clone-instances).
 
 ### *Import VM Snapshot from a Cloud Snapshot (to make it available for a VM restore)*
 
@@ -73,7 +73,6 @@ The quiesce option provides an application-consistent snapshot of a running VM i
 
 ### *Restore a VM Snapshot to a Clone*
 This option allows for using a snapshot to restore to a new VM instance, rather than overwrite the current VM.
-
 
 > When initiating VM clones, care should be taken with consideration to running multiple versions of a VM - as conflicts or problems can arise (e.g. same IP address, hostname, Mac Address, or multiple instances of guest applications.) {.is-warning}
 

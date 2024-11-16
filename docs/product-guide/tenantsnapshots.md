@@ -6,8 +6,8 @@ Snapshots provide a way to obtain quick recovery points. Cloud snapshots allow f
 
  > Tenants also have the ability to manage their own VergeOS snapshots within their system; this can allow a tenant to customize scheduling/retention as they wish. (The tenant will need adequate provisioned storage to retain snapshots.){.is-success}
 
-<br>
-<br>
+To Restore an Individual Tenant
+
 
 ## To Allow Tenant to Browse/Restore from Provider Snapshots:
 
