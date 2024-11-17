@@ -50,7 +50,8 @@ A manual snapshot can be taken at any time.
 8.  The ***Private*** checkbox is selected by default; this option can be deselected to allow tenants access to their own data within this snapshot.
 9.  Click **Submit** at the bottom of the page.
 
-## Restores from a Cloud Snapshot
+
+## Restores from Cloud Snapshots
 
 ### Access Cloud Snapshots from Your Provider/Host
 
@@ -97,7 +98,8 @@ A manual snapshot can be taken at any time.
      Reboot  of all nodes is necessary to complete the cloud restore. 
 
 6.  Click the **Proceed** button to continue/ or **Cancel** to abort.
-7.  Another confirmation message will appear. To continue with the cloud restore, click the **Proceed** button or simply leave alone as <span style="background:yellow">**the restore operation will continue in 60 seconds unless cancelled.**</span> **To Cancel the operation, the Cancel button must be clicked within 60 seconds; otherwise, the restore operation will continue**.
+7.  Another confirmation message will appear. To continue with the cloud restore, click the **Proceed** button or simply leave alone as **the restore operation will continue in 60 seconds unless cancelled.**
+!!! warning "To Cancel the operation, the Cancel button must be clicked within 60 seconds; otherwise, the restore operation will continue."
 
 ### Restore Select Tenants from a Cloud Snapshot
 
@@ -127,7 +129,7 @@ A manual snapshot can be taken at any time.
 -   See [**Tenant Restores**](/product-guide/tenantrestores) for instructions on restoring an individual tenant from a cloud snapshot.
 -   See [**Volume Snapshots and Restores**](/product-guide/volumesnapsandrestores) for instructions on restoring NAS volumes from a cloud snapshot.
 
-
+[test](#restore-select-tenants-from-a-cloud-snapshot)
 
 <br>
 

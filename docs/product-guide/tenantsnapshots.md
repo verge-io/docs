@@ -1,5 +1,4 @@
 
-
 # Tenant Snapshots
 
 Snapshots provide a way to obtain quick recovery points. Cloud snapshots allow for a complete rollback of a system (to the point in time of a snapshot) to protect in the event of major unforeseen issues that may arise. A cloud snapshot includes whole-system snapshots for each tenant as well. A tenant can be allowed (a per-tenant setting) to browse a listing of available provider snapshots and “self-serve” download selected timestamps to restore their entire system or individual VMs.
@@ -19,6 +18,19 @@ To Restore an Individual Tenant
 
 <br>
 
+
+## Restore a Tenant from Snapshot (overwrite existing)
+
+Completing these instructions will overwrite the existing tenant.  A Tenant can be restored to a new instance from the Cloud Dashboard: [Cloud Snapshots and Restores](/product-guide/cloudsnapshotandrestore##restore-select-tenants-from-a-cloud-snapshot).
+
+1. **Power off the tenant offline**; the tenant must be offline before it can be restored.
+2. Navigate to the tenant dashboard (Main Dashboard > Tenants > Tenants > double-click the desired tenant in the list. )
+3. Click **Snapshots** on the left menu.
+4. **Select the desired cloud snapshot** and click **Restore** on the left menu.
+5. A warning/confirmation message will require you to click ***Proceed*** to continue with the restore.  **Before clicking Proceed, be sure that you want to restore over the existing tenant**, otherwise, click ***Cancel***.  
+6. The Changes will not take effect until the tenant is powered on again; if the tenant is running, it is recommended that you 
+
+---
 
 ## Instructions for the Tenant to Access their Data from Provider Snapshots
 
@@ -43,11 +55,8 @@ Once the snapshot displays as "Local" it is now available to use; see restore in
 3.  By default, the option is selected to **take a snapshot of the entire cloud before this restore**. This allows for later reverting the cloud back to the state right before the restore operation, if needed.
 4.  By default, the option to **Reboot all nodes** after the restore is enabled. This will let the system handle the node reboots (Recommended). Reboot is necessary to actually apply the restore.
 5.  Click the **Proceed** button to continue/ or **Cancel to abort**.
-6.  Another confirmation message will appear; to continue with the cloud restore, click the **Proceed** button or leave alone as the restore operation will continue in 60 seconds unless canceled.  
-    **<span style="background:yellow"> To cancel the operation, the *Cancel* button must be clicked within 60 seconds</span>; otherwise, the restore operation will automatically continue!**
-    
-    
-<br>
+6.  Another confirmation message will appear; to continue with the cloud restore, click the **Proceed** button or leave alone as **the restore operation will continue in 60 seconds unless canceled.**  
+!!! warning "To Cancel the operation, the **Cancel** button must be clicked within 60 seconds; otherwise, the restore operation will continue."
 
 ## Instructions for the Tenant to Recover Individual VMs from Provider Snapshot
 
