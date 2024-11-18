@@ -34,7 +34,7 @@ Quiesced volume snapshots freeze file system I/O during the snapshot process. Th
 
 ## Restoring a Volume from Snapshot
 
-> To restore a volume from a cloud snapshot, the volume snapshot must first be imported from the cloud snapshot as detailed below. To restore from an individual volume snapshot, skip the import section of instructions and continue to **Restore to overwrite -Or- Restore to create new instructions**
+> To restore a volume from a cloud snapshot, the volume must first be imported from the cloud snapshot as detailed below. To restore from an individual volume snapshot, skip the import section of instructions and continue to **Restore to overwrite -Or- Restore to create new instructions**
 
 ### *Import Volume Snapshot from a Cloud Snapshot (to make it available for a volume restore).*
 

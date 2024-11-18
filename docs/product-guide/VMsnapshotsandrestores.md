@@ -4,9 +4,9 @@ Although cloud snapshots include all VMs and allow for restoring individual VMs,
 
 ## Quiesced Snapshots
 
-The quiesce option provides an **application-consistent snapshot** of a running VM in which the system freezes the filesystem and flushes write buffers; additionally, VSS writers are invoked in order for VSS-aware applications (Windows VMs) to prepare for the snapshot. The Quiesce option can be selected when taking a manual snapshot and can be enabled within the snapshot profile for automated snapshots.
+The quiesce option provides an **application-consistent snapshot** of a running VM in which the system freezes the filesystem and flushes write buffers; additionally, VSS writers are invoked for VSS-aware applications (Windows VMs) to prepare for the snapshot. The Quiesce option can be selected when taking a manual snapshot and can be enabled within the snapshot profile for automated snapshots.
 
-## Automated, Scheduled VM-level Snapshots
+## Scheduled VM-level Snapshots
 
 !!! tip "By default, VM-level snapshots are not configured (VM Snapshot Profile setting="--None--")."
 
@@ -24,8 +24,8 @@ The quiesce option provides an **application-consistent snapshot** of a running 
 6. In the ***Expires*** field, select/enter date and time for expiration.
 7. Click **Submit** at the bottom of the page.
 
-!!! warning "**Choosing Expiration:**"
-     **Consider vSAN space when selecting snapshot expirations.** Snapshots held for long periods can have a significant effect; initially source and snapshot are the same and thus have no impact on storage utilization; however, as source data diverges more from the snapshot data, there is less deduplication between the two and therefore more vSAN utilization. The *Never Expire* option should not be used unless necessary.
+!!! warning "**Consider vSAN space when selecting snapshot expirations**"
+     Snapshots held for long periods can have a significant effect on vSAN space; initially, source and snapshot are the same and thus have no impact on storage utilization; however, as source data diverges more from the snapshot data, there is less deduplication between the two and therefore more vSAN utilization. The *Never Expire* option should not be used unless necessary.
 
 ## Restore an Individual VM from Snapshot
 
@@ -67,7 +67,7 @@ This option allows for using a snapshot to restore to a new VM instance, rather 
 6. Click the **Submit** button to create the new VM.
 
 !!! Tip "Restoring Data from a VM Drive"
-    To avoid issues with running both clone and source VM simultaneously, cloned VM drives can be mounted to a different VM in order to access restored data without powering on the clone: working on a separate VM, add a new drive, select the Clone Disk option, selecting the *.raw file for the restored VM drive.
+    To avoid issues with running both clone and source VM simultaneously, cloned VM drives can be mounted to a different VM in order to access restored data without powering on the clone: working on a separate VM, add a new drive, select the Clone Disk option and selecting the *.raw file from the restored VM drive.
 
 </br>
 

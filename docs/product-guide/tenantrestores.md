@@ -7,7 +7,7 @@ A provider can restore a tenant from cloud snapshot **\-OR-** can expose a cloud
 
 ## Restore an Existing Tenant from Snapshot
 
-> A tenant Restore will overwrite everything within the existing tenant!{.is-warning}
+!!! warning "A tenant Restore from the tenant dashboard will overwrite everything within the existing tenant!"
 
 1. From the **Main Dashboard**, click **Tenants** on the left menu.
 2. Click **Tenants** again on the left menu.
@@ -40,7 +40,7 @@ The dashboard for the recovered tenant appears. When the status changes from "Pr
 5. Click to **select the desired cloud snapshot** in the list.
 6. Click **Convert** on the left menu.
 7. A dialog appears where ***Name***, ***Description***, ***Expiration*** can be modified, if desired. Click **Submit** to finish the convert (extraction) process.
-The snapshot will now appear with type "Tenant Snapshot" on the provider's system. The tenant will see the converted snapshot in their own cloud snapshots listing (Home -> System -> Cloud Snapshots) with type "Local" and it will be readily accessible for the tenant to use for restores.
+The snapshot will now appear with type "Tenant Snapshot" on the provider's system. The tenant will see the converted snapshot in their own cloud snapshots listing (Home > System > Cloud Snapshots) with type "Local" and it will be readily accessible for the tenant to use for restores.
 
 </br>
 

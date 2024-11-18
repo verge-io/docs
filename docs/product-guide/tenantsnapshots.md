@@ -14,16 +14,16 @@ Snapshots provide a way to obtain quick recovery points. Cloud snapshots allow f
 
 ## Restore a Tenant from Snapshot (overwrite existing)
 
-Completing these instructions will overwrite the existing tenant.  A tenant can be restored to a new instance from the Cloud Dashboard: [Cloud Snapshots and Restores](/product-guide/cloudsnapshotandrestore##restore-select-tenants-from-a-cloud-snapshot).
+Completing these instructions will overwrite the existing tenant.  A tenant can be restored to a new instance from the Cloud Dashboard: [Cloud Snapshots and Restores](/product-guide/cloudsnapshotandrestore#restore-select-tenants-from-a-cloud-snapshot).
 
 1. **Power off the tenant offline**; the tenant must be offline before it can be restored.
 2. Navigate to the tenant dashboard (Main Dashboard > Tenants > Tenants > double-click the desired tenant in the list. )
 3. Click **Snapshots** on the left menu.
 4. **Select the desired cloud snapshot** and click **Restore** on the left menu.
 5. A warning/confirmation message will require you to click ***Proceed*** to continue with the restore.  **Before clicking Proceed, be sure that you want to restore over the existing tenant**, otherwise, click ***Cancel***.  
-6. The Changes will not take effect until the tenant is powered on again; if the tenant is running, it is recommended that you 
+6. The Changes will not take effect until the tenant is powered on again.
 
----
+</br>
 
 ## Instructions for Tenants (accessing provider snapshots)
 
@@ -40,8 +40,8 @@ Completing these instructions will overwrite the existing tenant.  A tenant can 
 4. Click **Request From Provider** on the left menu.
 Once the snapshot displays as "Local" it is now available to use; see restore instructions below.
 
-!!! note "Extending a snapshot expiration"
-    Once the snapshot is local, the snapshot name and expiration can be modified. When setting expirations on snapshots, it is always important to keep storage capacity in mind; the longer the expiration, particularly in situations involving high change rates, the more storage that will be consumed.  
+!!! warning "Extending a snapshot expiration"
+    Once the snapshot is local, the snapshot name and expiration can be modified. When setting expirations on snapshots, it is always important to keep storage capacity in mind; the longer the expiration, when there are significant change rates, the more storage will be consumed.  
 
 ### Instructions for Tenant to Restore their Entire System from the Provider Snapshot
 
