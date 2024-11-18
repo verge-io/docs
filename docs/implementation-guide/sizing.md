@@ -88,7 +88,7 @@ The following table outlines the maximum supported hardware specifications for v
 | Nodes per system                | 200     | node          |
 | Individual physical disk size   | 64      | terabyte      |
 | RAM per host [^2]               | 5       | terabyte      |
-| vDisk size                      | 2000    | terabyte      |
+| vDisk size                      | 256     | terabyte      |
 | Disks per VM [^3]               | 2000    | vdisk         |
 | Clusters per system             | 100     | cluster       |
 | Tiers of storage per system     | 5       | tiers         |

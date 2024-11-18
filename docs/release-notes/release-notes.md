@@ -155,7 +155,8 @@ status: new
     - Better tracking of vSAN connectivity
     - Drives set to initializing during scale-up
     - Changed default timeout for IO from 30 to 7 seconds
-    - Implemented multipath and multichannel communication
+    - Implemented multipath for fiber channel and DAS storage (active/passive)
+    - Implemented multichannel communication between nodes
     - Added volume tier throttling for tenant usage control
 - Storage improvements:
     - Removed offline requirement for VM drive tier changes
