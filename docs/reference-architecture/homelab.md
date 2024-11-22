@@ -13,9 +13,6 @@ Compact devices like Intel NUCs or similar mini PCs are also popular choices, pa
 - **RAID Configuration:** VergeOS requires direct access to disks, so if using a RAID controller, ensure it supports JBOD/IT mode or use an HBA instead.
 - **IPMI Requirements:** While VergeOS recommends IPMI, homelab setups can often skip this. However, some NVIDIA GPUs or GPU passthrough setups may disable console access, so IPMI can be beneficial for managing these configurations.
 
-!!! info "Homelab License Limitation"
-    VergeOS homelab licenses support up to 2 nodes.
-
 ---
 
 ## Scenarios
