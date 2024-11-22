@@ -15,8 +15,8 @@
 ### Controller Nodes (Node 1 and Node 2)
 
 - 1GB of RAM per 1TB of storage for each node
-- **Tier 0**: 1 x NVMe-based SSD for vSAN metadata with 3 Drive Writes Per Day (DWPD)
-- **Tier 0**: 10GB of storage per 1TB of usable capacity for vSAN metadata
+- **Tier 0**: 1 x NVMe-based SSD for vSAN metadata with 3 Drive Writes Per Day (DWPD) or equivalent
+- **Tier 0**: 5GB of storage per 1TB of usable capacity for vSAN metadata
 
 ### Storage Nodes (Nodes that partipate in vSAN storage)
 
@@ -58,7 +58,7 @@
 ### Controller Nodes (Node 1 and Node 2) - Recommended
 
 - 1 x +3.0Ghz CPU
-- **Tier 0**: 2 x NVMe-based SSD for vSAN metadata with 3 Drive Writes Per Day (DWPD)
+- **Tier 0**: 2 x NVMe-based SSD for vSAN metadata with 3 Drive Writes Per Day (DWPD) or equivalent
 - **Tier 0**: 10GB of storage per 1TB of usable capacity for vSAN metadata
 
 ### Storage Nodes (Nodes that partipate in vSAN storage) - Recommended

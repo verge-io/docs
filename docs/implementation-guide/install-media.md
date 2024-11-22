@@ -29,7 +29,8 @@ This guide explains how to create a bootable USB to install VergeOS on different
 
 ## macOS
 
-1. **Download the VergeOS installation ISO** from [https://updates.verge.io/download](https://updates.verge.io/download).
+1. **Download the VergeOS installation ISO**. 
+    - Please [Contact Us](/support) for the download link. <!--from [https://updates.verge.io/download](https://updates.verge.io/download).-->
 
 
 2. **Insert a USB drive** into your computer.
@@ -50,7 +51,8 @@ This guide explains how to create a bootable USB to install VergeOS on different
 
 ## Linux Mint
 
-1. **Download the VergeOS installation ISO** from [https://updates.verge.io/download](https://updates.verge.io/download).
+1. **Download the VergeOS installation ISO**. 
+    - Please [Contact Us](/support) for the download link. <!--from [https://updates.verge.io/download](https://updates.verge.io/download).-->
 
 
 2. **Insert a USB drive** into your computer.
