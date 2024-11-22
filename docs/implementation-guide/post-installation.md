@@ -15,6 +15,8 @@ After installing VergeOS, there are several important configurations and tweaks 
    - Check the maximum RAM allocation for VMs
    - Verify the maximum number of cores allowed
    - Review swap settings
+   - Review Storage Buffer per node
+   - Review Target Max Ram Percent (Default 80% means 20% RAM reserved for Verge)
 
 4. Configure Performance Settings
    - For high-performance environments, consider disabling CPU sleep states
@@ -37,15 +39,31 @@ After installing VergeOS, there are several important configurations and tweaks 
    - For dedicated controller nodes, consider disabling CPU security mitigations for performance
    - Only disable if you trust all workloads in the environment
 
-8. Update Location Settings
+8. Update Location and URL Settings
    - Go to System > Settings
-   - Update the location information if necessary
+   - Update the location information if necessary (The Sites map uses Lat/Long coordinates for the pin location)
+   - Click edit settings and ensure the URL and VSAN hosts are correct. This is important for setting up sites/backups
+
+9. Review STMP setup
+   - Go to System > SMTP
+   - Send a test email to verify you are receiving emails from VergeOS
+   - Consider adding your own SMTP relay, especially if the test email fails
+
+10. Networking Setup/testing
+   - Test what happens when either core/fabric connection is lost
+   - Test what happens when you unplug one of the externals on Node 1
+   - Confirm Core 1 and Core 2 vlans are not visible on any other device/port
+   - Confirm Core networks are not shared with another VergeOS system/site
+   - Check your network firewall rules for any rules you want to enable (Ex. 14201 on External is used for Site Syncs)
+   - Add any extra VLANS needed for your environment: https://docs.verge.io/public/ProductGuide/createvlan/
+
 
 ## Important Considerations
 
 - Changes to swap settings require disk reformatting and are not applied in real-time
 - When adding new nodes, ensure storage capacity matches across all nodes in a tier to maintain redundancy
 - The Target Max RAM Percent setting affects the amount of RAM available for VMs
+- If enabling any network rules, you should source lock the rule to ensure only specific traffic can get to that destination
 
 ## Troubleshooting
 
@@ -54,5 +72,5 @@ If you encounter issues or have questions about these post-installation steps, p
 ---
 
 !!! note "Document Information"
-    - Last Updated: 2024-10-15
-    - VergeOS Version: 4.12.6
+    - Last Updated: 2024-11-22
+    - VergeOS Version: 4.13.1
