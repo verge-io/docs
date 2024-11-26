@@ -36,7 +36,6 @@ Aliases are helpers that centralize management of address sets that will be used
 When creating network rules, select ***Type*** = *Alias* in the Source/Destination field.  This provides a selection list of available aliases.
 
 ___
-___
 
 ### Managing a List Field
 
@@ -58,6 +57,7 @@ The selected entry appears and can be modified. When editing is complete, click 
 Click to select the desired entry.
 Click the delete button. ![icon-trash-delete.png](/public/userguide-sshots/icon-trash-delete.png)
 
+___
 
 <!--  background-color: #d8e7f2;-->
 
