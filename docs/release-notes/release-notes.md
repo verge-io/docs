@@ -9,7 +9,7 @@ status: new
 
 !!! info "Series Information"
     - **Initial Release**: November 2024 (4.13.0)
-    - **Latest Version**: 4.13.0 (November 2024)
+    - **Latest Version**: 4.13.1 (November 2024)
     - **Status**: Latest
     - **End-of-Life**: TBD
 
@@ -52,6 +52,73 @@ status: new
     - Enhanced VMware integration
     - Improved tenant management
     - Comprehensive HA improvements
+
+## 4.13.1 (November 2024)
+
+### Virtual Machine Management
+
+#### UI Improvements
+- Fixed core checkbox persistence on VM dashboard refresh
+- Enhanced core checkbox behavior on statistics graph
+- Improved cluster-based node filtering for VM migration
+- Enhanced vGPU profile sorting by name
+- Updated audit logs for hard reset/restart actions
+
+#### Functionality
+- Added download completion check for Marketplace recipe VMs requiring ISOs
+- Enhanced ISO management:
+    - Fixed renaming attached ISOs when VM is offline
+    - Improved media handling
+
+### System Administration
+
+#### Resource Management
+- Enhanced resource group functionality:
+    - Added resource group specification for machine devices
+    - Fixed resource group deletion with attached devices
+    - Improved device management
+- Added vGPU profile display improvements:
+    - Added framerate information
+    - Added VRAM details
+- Implemented automatic node resource cleanup on startup
+
+#### System Tools
+- Enhanced system diagnostics:
+    - Implemented 256K chunk uploads
+    - Improved performance and reliability
+- Improved scheduled tasks:
+    - Removed legacy 2019 default date
+    - Enhanced scheduling functionality
+
+#### VMware Integration
+- Enhanced backup job management:
+    - Added pause/resume/stop controls to list view
+    - Added backup mode display
+    - Removed kernel warning for container service startup
+
+### Storage & Infrastructure
+
+#### VSAN Improvements
+- Fixed critical scenarios:
+    - Resolved same-tier data movement triggering trans snap
+    - Fixed drive listing with FC card present
+    - Enhanced integrity check for large repair counts (>500 repairs)
+
+#### System Services
+- Enhanced appserver functionality:
+    - Added proxy source IP support from URL
+    - Improved cache settings (private to public) for files
+    - Added general proxy source IP support
+- Updated Samba configuration:
+    - Optimized ACL handling
+    - Removed automatic DFS enabling when AD is not joined
+
+### OS & Installation
+- Upgraded to Kernel 6.6.60
+- Fixed various stability issues
+- Enhanced service configuration
+- Updated system endpoints to vergeos.com
+- Removed unnecessary debug logging
 
 ## 4.13.0 (November 2024)
 
