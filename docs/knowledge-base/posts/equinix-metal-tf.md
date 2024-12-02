@@ -127,6 +127,4 @@ resource "equinix_metal_port_vlan_attachment" "core" {
 
     Review the plan and confirm with `yes` to proceed with the deployment.
 
-## Conclusion
 
-Following this guide will successfully deploy VergeOS on an Equinix Metal server, equipped with the necessary VLAN configurations to facilitate core and external traffic. Ensure that all preliminary networking configurations are in place before running the Terraform script. Should you require additional help, consider consulting Equinix Metal's support resources or community forums. Happy deploying!
