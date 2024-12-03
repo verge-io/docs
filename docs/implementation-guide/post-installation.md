@@ -39,9 +39,11 @@ Before proceeding with post-installation configuration, ensure:
    - Set maximum RAM allocation for VMs
    - Configure maximum CPU core limits
    - Review and adjust swap settings if necessary
+   - Review Storage Buffer per node
+   - Review Target Max RAM Percent (Default 80% means 20% RAM reserved for VergeOS)
 
-!!! warning "Swap Configuration Changes"
-    Changes to swap settings require disk reformatting and system restart. Plan these changes during maintenance windows.
+!!! warning "Resource Allocation Note"
+    Changes to swap settings require disk reformatting and system restart. The Target Max RAM Percent setting directly affects the amount of RAM available for VMs.
 
 ### 3. Performance Optimization
 
@@ -50,73 +52,110 @@ Before proceeding with post-installation configuration, ensure:
      - Consider disabling CPU sleep states
      - Review CPU security mitigations
    
-   - For edge/power-saving deployments:
-     - Enable balanced performance settings
-     - Keep default CPU power management
+   - For dedicated controller nodes:
+     - Consider disabling CPU security mitigations for performance
+     - Only implement this in trusted environments with verified workloads
 
-!!! info "Security Note"
-    Only disable CPU security mitigations in trusted environments where all workloads are verified.
+### 4. Location and URL Configuration
 
-### 4. Storage Configuration
+1. **Update System Settings:**
+   - Navigate to System > Settings
+   - Update location information (The Sites map uses Lat/Long coordinates for pin location)
+   - Click edit settings and verify:
+     * URL settings
+     * vSAN hosts configuration
+   
+!!! note "URL Configuration"
+    Correct URL and vSAN host configuration is crucial for setting up sites and backups properly.
 
-1. **Configure Storage Tiers:**
-   - Review current tier assignments
-   - Assign appropriate drives to tiers based on performance requirements:
-     * Tier 0: Highest performance (NVMe recommended)
-     * Tier 1-3: Mixed workload tiers
-     * Tier 4-5: Archive/backup storage
+### 5. SMTP Configuration
 
-2. **Verify Tier Redundancy:**
-   - Ensure matching storage capacity across nodes within each tier
-   - Verify proper redundancy settings for each tier
+1. **Configure Email Settings:**
+   - Navigate to System > SMTP
+   - Configure SMTP settings
+   - Send a test email to verify system notifications
+   - Consider adding your own SMTP relay if test email fails
 
-!!! tip "Storage Planning"
-    When planning storage tiers, consider both performance requirements and redundancy needs. The system will automatically use the closest available tier if a specified tier isn't available.
+!!! tip "Email Configuration"
+    Setting up a reliable SMTP configuration is essential for receiving system notifications and alerts.
 
-### 5. Network Configuration
+### 6. Centralized Logging Configuration
 
-1. **Review Network Settings:**
-   - Verify MTU settings for all networks
-   - Configure default network schemes for internal networks
-   - Review external network configurations
+1. **Access System Settings:**
+   - Navigate to System > Settings > Advanced Settings
+   - Search for "syslog" in the settings search
 
-2. **Optimize Network Performance:**
-   - Adjust buffer sizes if needed
-   - Configure jumbo frames where appropriate
-   - Review and optimize routing configurations
+2. **Configure Remote Syslog Server:**
+   - Locate "Remote syslog server" setting
+   - Use the appropriate syntax for your protocol:
+     * TCP format: `@@hostname/ip:port`
+     * UDP format: `@hostname/ip:port`
+   
+   Example configurations:
+   ```
+   TCP: @@10.10.10.10:514
+   UDP: @10.10.10.10:514
+   ```
 
-### 6. Security Settings
+3. **Configure Syslog Template:**
+   - Search for "syslog" again
+   - Locate "Template to define for syslog server"
+   - Enter a compatible template format
 
-1. **Access Control:**
-   - Review and configure authentication sources
-   - Set up additional admin accounts if needed
-   - Configure password policies
+   Example template:
+   ```
+   GRAYLOGRFC5424,"<%PRI%>%PROTOCOL-VERSION% %TIMESTAMP:::date-rfc3339% %HOSTNAME%.HOSTNAME_HERE %APP-NAME% %PROCID% %MSGID% %STRUCTURED-DATA% %msg%\n"
+   ```
 
-2. **Network Security:**
-   - Review firewall rules
-   - Configure network isolation as needed
-   - Set up VLANs if required
+!!! note "Log Retention"
+    VergeOS retains logs for 45 days by default. Configure third-party logging to retain logs for longer periods.
+
+!!! tip "Template Configuration"
+    Ensure your template format is compatible with your syslog server. Consult your syslog server's documentation for specific format requirements.
+
+### 7. Network Configuration and Testing
+
+1. **Core Network Testing:**
+   - Test failover scenarios:
+     * Simulate core/fabric connection loss
+     * Test external connection loss on Node 1
+   - Verify Core 1 and Core 2 VLANs:
+     * Confirm they are not visible on other devices/ports
+     * Verify they are not shared with another VergeOS system/site
+
+2. **Firewall Configuration:**
+   - Review network firewall rules
+   - Enable required ports (e.g., 14201 on External for Site Syncs)
+   - Add source locking to rules for enhanced security
+
+3. **VLAN Configuration:**
+   - Add any additional VLANs needed for your environment
+   - Reference documentation at docs.verge.io for VLAN creation
+
+!!! warning "Network Isolation"
+    Proper network isolation is crucial. Ensure Core networks are completely isolated from other systems and properly configured for redundancy.
 
 ---
 
-## Post-Configuration Verification
+## Important Considerations
 
-After completing the configuration steps:
+- Changes to swap settings require disk reformatting and are not applied in real-time
+- When adding new nodes, ensure storage capacity matches across all nodes in a tier to maintain redundancy
+- When enabling network rules, always implement source locking to ensure traffic security
+- Regular testing of network redundancy and failover is recommended
+- Document all configuration changes for future reference
 
-1. **System Health Check:**
-   - Verify all nodes are healthy
-   - Check storage tier status
-   - Review network connectivity
+## Network Security Best Practices
 
-2. **Performance Testing:**
-   - Run basic performance tests
-   - Verify storage tier performance
-   - Test network throughput
+1. **Rule Implementation:**
+   - Always source lock network rules
+   - Limit access to specific traffic sources
+   - Regularly review and audit network rules
 
-3. **Security Verification:**
-   - Test authentication
-   - Verify network isolation
-   - Check access controls
+2. **Monitoring:**
+   - Regularly monitor network traffic patterns
+   - Review logs for unauthorized access attempts
+   - Keep documentation of network changes
 
 ---
 
@@ -125,8 +164,8 @@ After completing the configuration steps:
 If issues arise during post-installation configuration:
 
 - Check the system logs for any errors
-- Review the [Knowledge Base](/knowledge-base) for common solutions
-- Contact [VergeOS Support](/support) for assistance
+- Review the [Knowledge Base](/docs/knowledge-base) for common solutions
+- Contact [VergeOS Support](mailto:support@verge.io) for assistance
 
-!!! tip "Best Practice"
-    Document all configuration changes made during this process for future reference and compliance purposes.
+!!! tip "Documentation"
+    Keep detailed records of all configuration changes and test results for future reference and troubleshooting.
