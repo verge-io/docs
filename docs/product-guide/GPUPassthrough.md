@@ -4,10 +4,11 @@
 
 <br>
 <br>
+!!! warning "This document applies to version 4.12.6 and older only, [if you are running 4.13 or newer you can find documentation in our Product Guide by clicking here](/public/product-guide/devpass-overview/)" 
 
 ## Host Installation/Configuration
 
-> VergeOS includes the driver for generic PCI address passthrough; typically, no additional host drivers are needed for GPU passthrough. {.is-info}
+> VergeOS includes the driver for generic PCI address passthrough; typically, no additional host drivers are needed for GPU passthrough. 
 
 1.  From the Main Dashboard, click **Nodes**.
 2.  Click **Drivers** on the left menu.
