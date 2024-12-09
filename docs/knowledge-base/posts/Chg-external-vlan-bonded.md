@@ -1,11 +1,17 @@
 ---
 title: Change External Network to VLAN Bonded
-slug: chg-ext-vlan-bonded
+slug: change-external-vlan-to-bonded
 description: Instuctions to change an existing external network to a vlan bonded across physical networks
 author: VergeOS Documentation Team
-draft: true
+draft: false
 date: 2024-11-24T18:38:59.908Z
-tags: bonded, network, bonding, redundant, external
+tags: 
+  - bonded
+  - network
+  - bonding
+  - redundant
+  - external
+  - bond
 categories:
   - Network
   - Network Configuration
@@ -65,5 +71,5 @@ This guide outlines the process to create a bonded external network across vlann
 ---
 
 !!! note "Document Information"
-    - Last Updated: [2024-11-26]
-    - vergeOS Version: [4.13.1]
+    - Last Updated: 2024-11-26
+    - vergeOS Version: 4.13.1
