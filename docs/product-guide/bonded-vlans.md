@@ -3,15 +3,17 @@
 
 ## Overview
 
-This page provides general instructions for creating an active-backup bond for a vlanned external or maintenance network. Instructions more specific to bare-metal installations with a limitation of 2 NICs per node can be found in the KB article: [Change External Network to Bonded with tagged VLAN](/knowledge-base/change-external-vlan-to-bonded)
+This page provides general instructions for creating an active-backup bond on a vlanned external or maintenance network. Instructions more specific to bare-metal installations (with a limitation of 2 NICs per node) can be found in the KB article: [Change External Network to Bonded with tagged VLAN](/knowledge-base/change-external-vlan-to-bonded)
 
 ## Prerequisites
 
 !!! warning annotate "Prior to making networking changes:"
     - **Ensure you have an alternative method to reach the nodes: physical console access or IPMI access.**
-    - **Confirm the name/password for the "admin" user (user ID #1 (1)), in case command-line operations become needed.**
+    - **Confirm the name/password for the "admin" user (user ID #1(1)), in case command-line operations become needed.**
 
 1. Hint: "Key=1" parameter is in the URL of the user's dashboard
+
+- Verify associated network switch ports are configured for the VLAN tag.
 
 ## Change the Network to a Bonded Vlan
 
@@ -22,7 +24,7 @@ This page provides general instructions for creating an active-backup bond for a
   
 ## Testing
 
-1. Verify network still has connectivity.  The network diagnostics tool (left menu of the network's dashboard) provides convenient queries for testing.
-2. Test Bond failover: Navigate to the modified network dashboard and select **NICs** to view the network adapters. Physically disconnect one of the associated network cables. The UI should now indicate the NIC is in a "Down" status; verify continued connectivity of the network.
+1. Verify the network still has connectivity.  The [Network Diagnostics Tool](/product-guide/netdiagnostics) provides convenient queries for testing a network.
+2. Test Bond failover: navigate to the modified network dashboard and select **NICs** to view the network adapters. Physically disconnect one of the associated network cables. The UI should now indicate the NIC is in a "Down" status; verify continued connectivity of the network.
 
-!!! warning "Before disconnecting a network cable, verify it is: not a core network OR proper core network redundancy is in place."
+!!! warning "Before disconnecting a network cable, verify it is: not a core network OR that proper core network redundancy is in place."
