@@ -1,5 +1,5 @@
 
-# Create a Bonded Network with Tagged VLAN
+# Create a Bonded VLAN Network
 
 ## Overview
 
@@ -15,16 +15,16 @@ This page provides general instructions for creating an active-backup bond on a 
 
 - Verify associated network switch ports are configured for the VLAN tag.
 
-## Change the Network to a Bonded Vlan
+1. Create/edit an external network.
+!!! tip "For creation instructions, see KB article: [How to Create an External Network](/knowledge-base/create-external-network)."
 
-1. Navigate to the intended **external/maintenance network dashboard** (Main Dashboard > Networks > Externals > double-click intended network) and click **Edit** on the left menu.  
 2. Change **Layer 2 Type** to ***vLAN*** and enter appropriate **Layer 2 ID** (VLAN number).
 3. **Select** the checkbox option for **all appropriate physical networks**.
 4. Click **Submit** to save the change.
   
 ## Testing
 
-1. Verify the network still has connectivity.  The [Network Diagnostics Tool](/product-guide/netdiagnostics) provides convenient queries for testing a network.
+1. Verify the network has connectivity.  The [Network Diagnostics Tool](/product-guide/netdiagnostics) provides convenient queries for testing a network.
 2. Test Bond failover: navigate to the modified network dashboard and select **NICs** to view the network adapters. Physically disconnect one of the associated network cables. The UI should now indicate the NIC is in a "Down" status; verify continued connectivity of the network.
 
 !!! warning "Before disconnecting a network cable, verify it is: not a core network OR that proper core network redundancy is in place."
