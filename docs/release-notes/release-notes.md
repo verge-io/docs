@@ -53,6 +53,63 @@ status: new
     - Improved tenant management
     - Comprehensive HA improvements
 
+## 4.13.2 (December 2024)
+
+### Features & Improvements
+
+#### Virtual Machine Management
+- Enhanced VM recipe functionality:
+    - Added automatic recipe detachment when guest agent connects
+    - Improved provisioning continuity during unexpected reboots
+- Added API support:
+    - PUT support for machine power state
+    - Cloud-init file creation via API
+- Fixed deprecated QEMU log for VMs with console password
+- Improved auto-start capabilities:
+    - Added power-on flagging for networks, VMs, tenant nodes, and VMware services when resources become available
+
+#### VMware Integration
+- Fixed downloading of VMware files:
+    - Improved handling of vmx, nvram, and vmxf files/assets
+
+#### System Administration
+- Enhanced maintenance mode:
+    - Added support for single problematic node maintenance (failed drive scenarios)
+- Improved UI/UX:
+    - Fixed node drive temperature dashboard display
+    - Enhanced vSAN dashboard walk progress display
+    - Changed full walk progress visibility
+    - Improved form dropdowns with default text sorting
+    - Fixed long history graphs display for 0 bytes
+    - Fixed VNET list poweroff popup for online machines
+- Modified backend package installation process
+
+#### Storage & vSAN
+- Enhanced vSAN functionality:
+    - Improved controller votes during startup for better split-brain detection
+    - Fixed dashboard walk progress display during idle state
+- Fixed bonded interface handling for External networks requiring restart
+
+### OS & Installation
+
+#### System Infrastructure
+- Enhanced storage support:
+    - Added NVMe multipath support
+    - Fixed fiberchannel device lists
+    - Improved boot partition flashing with FC cards
+- System improvements:
+    - Changed grub boot title to "VergeOS"
+    - Accelerated boot partition flashing during shutdown
+    - Fixed potential memory issue during vSAN sync
+
+#### System Management
+- Enhanced framework handling:
+    - Improved controller handoff from node2 to node1
+    - Fixed rare lockup during node connection phase
+- Improved physical access:
+    - Fixed login issues
+    - Removed false-positive error logs
+
 ## 4.13.1 (November 2024)
 
 ### Virtual Machine Management
