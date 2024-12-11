@@ -10,7 +10,7 @@ status: deprecated
     - **Initial Release**: June 2022 (4.10.0)
     - **Latest Version**: 4.10.3.1 (January 2023)
     - **Status**: Deprecated (Superseded by 4.11)
-    - **End-of-Life**: November 2024
+    - **End-of-Life**: June 2024
 
 ## Major Features & Themes
 
