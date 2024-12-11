@@ -84,7 +84,7 @@ Click **Send ->** to activate the drive LED .
 
 > ***DURING THE REPAIR PROCESS:*** 
 <br>
-**Do NOT reset or power off any nodes** until the drive shows a status of "Online"; it is **important that all other nodes remain fully operational during the repair process.
+**Do NOT restart, reset or power off any nodes** until the drive shows a status of "Online"; it is **important that all other nodes remain fully operational during the repair process.
 <br>
 **Additional drive replace/repair operations should NOT be initiated until this repair operation has fully completed** unless the additional drive resides: within the same node - OR - on another storage tier. {.is-warning}  
 

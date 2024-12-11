@@ -274,7 +274,7 @@ nav:
         - Overview: product-guide/snapshots-overview.md
         - Profiles: product-guide/snapshot-profiles.md
         - VM Snapshots and Restore: product-guide/VMsnapshotsandrestores.md
-        - Tenant Snapshots: product-guide/tenantsnapshots.md
+        - Tenant Restore: product-guide/tenantsnapshots.md
         - Cloud Snapshots and Restore: product-guide/cloudsnapshotandrestore.md
         - NAS Snapshots and Restore: product-guide/volumesnapsandrestores.md
     - vSAN:

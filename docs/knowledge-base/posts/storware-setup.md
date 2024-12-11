@@ -29,7 +29,7 @@ For more comprehensive information on Storware's capabilities and additional bac
 - Access to a Storware Backup and Recovery instance on version 7 or higher.
 - Credentials for an account with the appropriate permissions to configure both VergeOS and Storware.
 
-## Setup a dedicated Verge NAS Service for Storeware
+## Setup a dedicated Verge NAS Service for Storware
 
 1. **Deploy the NAS Service:**
    
