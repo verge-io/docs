@@ -1,5 +1,5 @@
 
-# Create a Bonded VLAN Network
+# Bonded VLAN-tagged Networks
 
 ## Overview
 
@@ -7,19 +7,20 @@ This page provides general instructions for creating an active-backup bond on a 
 
 ## Prerequisites
 
+Verify associated network switch ports are configured for the VLAN tag.
+
 !!! warning annotate "Prior to making networking changes:"
     - **Ensure you have an alternative method to reach the nodes: physical console access or IPMI access.**
     - **Confirm the name/password for the "admin" user (user ID #1(1)), in case command-line operations become needed.**
 
 1. Hint: "Key=1" parameter is in the URL of the user's dashboard
 
-- Verify associated network switch ports are configured for the VLAN tag.
+## Create a Bonded VLAN-tagged Network  
 
-1. Create/edit an external network.
-!!! tip "For creation instructions, see KB article: [How to Create an External Network](/knowledge-base/create-external-network)."
-
+1. Create/edit the network.
 2. Change **Layer 2 Type** to ***vLAN*** and enter appropriate **Layer 2 ID** (VLAN number).
 3. **Select** the checkbox option for **all appropriate physical networks**.
+See KB article: [How to Create an External Network](/knowledge-base/create-external-network) for information on additional external network options.
 4. Click **Submit** to save the change.
   
 ## Testing
@@ -27,4 +28,4 @@ This page provides general instructions for creating an active-backup bond on a 
 1. Verify the network has connectivity.  The [Network Diagnostics Tool](/product-guide/netdiagnostics) provides convenient queries for testing a network.
 2. Test Bond failover: navigate to the modified network dashboard and select **NICs** to view the network adapters. Physically disconnect one of the associated network cables. The UI should now indicate the NIC is in a "Down" status; verify continued connectivity of the network.
 
-!!! warning "Before disconnecting a network cable, verify it is: not a core network OR that proper core network redundancy is in place."
+!!! warning "Before disconnecting a network cable, verify it is not a core network OR that proper core network redundancy is in place."
