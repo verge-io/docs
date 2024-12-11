@@ -76,4 +76,4 @@ resource:
 
 !!! note "Document Information"
     - Last Updated: [YYYY-MM-DD]
-    - vergeOS Version: [x.x.x]
+    - VergeOS Version: [x.x.x]

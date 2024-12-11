@@ -1,6 +1,7 @@
 ---
 description: Release notes for the 4.11 series of VergeOS
 #icon: material/text-box-outline
+status: deprecated
 ---
 
 # 4.11 Release Notes
