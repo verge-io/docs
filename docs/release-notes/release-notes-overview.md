@@ -4,6 +4,7 @@ Welcome to the VergeOS Release Notes. This section provides information about ea
 
 !!! note "Recommendations"
     - Verge.io recommends always updating to the latest patch and/or hotfix version within your current minor release version
+    - Verge.io recommends always updating to the latest minor release version
     - For access to the latest features and functionality documented in this guide, please ensure you are running the latest version of VergeOS
 
 ## Release Version Overview
@@ -12,8 +13,8 @@ Welcome to the VergeOS Release Notes. This section provides information about ea
 |--------|----------------|----------------|---------|-------------|
 | [4.13](release-notes.md) | November 2024 | 4.13.2 (December 2024) | Latest | TBD |
 | [4.12](4-12-release-notes.md) | February 2024 | 4.12.6 (July 2024) | Supported | TBD |
-| [4.11](4-11-release-notes.md) | February 2023 | 4.11.4.3 (January 2024) | Deprecated | December 2025 |
-| [4.10](4-10-release-notes.md) | June 2022 | 4.10.3.1 (January 2023) | Deprecated | November 2024 |
+| [4.11](4-11-release-notes.md) | February 2023 | 4.11.4.3 (January 2024) | Deprecated | December 2024 |
+| [4.10](4-10-release-notes.md) | June 2022 | 4.10.3.1 (January 2023) | Deprecated | June 2024 |
 | [4.9](4-9-release-notes.md) | October 2021 | 4.9.2 (February 2022) | Deprecated | February 2023 |
 
 ## Version Numbering and Updates
