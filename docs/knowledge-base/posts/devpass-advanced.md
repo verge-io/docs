@@ -28,7 +28,7 @@ dateCreated: 2024-11-10T16:53:09.094Z
 Although allowing auto-generation of resource rules (e.g. when you select a device and use the *Make Passthrough* menu option) is easiest and usually recommended,
 there may be situations where it may be useful to manually create a resource rule or to modify an auto-generated resource rule.
 
-!!! danger "It is important to read and be familiar with [**PCI Passthrough Risks and Precautions**](/product-guide/devpass-overview#pci-passthrough-risksprecautions) before making passthrough configurations."
+!!! danger "It is important to read and be familiar with [**PCI Passthrough Risks and Precautions**](/product-guide/virtual-machines/device-pass-overview#pci-passthrough-risksprecautions) before making passthrough configurations."
 
 ## Manually Create a New Resource Rule
 

@@ -99,9 +99,9 @@ Here's a visual representation of the rule configuration:
 
 ## Additional Resources
 
-- [Network Overview](/product-guide/networkoverview)
-- [Network Rules](/product-guide/networkrules)
-- [Creating an Internal Network](/product-guide/internalnetworks)
+- [Network Overview](/product-guide/networks/network-overview)
+- [Network Rules](/product-guide/networks/network-rules)
+- [Creating an Internal Network](/product-guide/networks/internal-networks)
 
 ## Feedback
 

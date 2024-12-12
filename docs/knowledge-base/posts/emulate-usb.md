@@ -66,17 +66,16 @@ Before creating an emulated USB device, ensure your VM meets these requirements:
    - Select the new USB device from the drive list
    - Click **HotPlug** in the left menu
 
-For additional drive configuration options, see: [VM Drives](/product-guide/VMdrives)
+For additional drive configuration options, see: [VM Drives](/product-guide/virtual-machines/vm-drives)
 
 ## Troubleshooting
 
 !!! warning "Common Issues"
     - **Problem**: Device stays in "hot plugging" status
-      - **Solution**: 
+      - **Solution**:
         1. Check VM dashboard logs for errors
         2. Verify all prerequisites are met
         3. Try restarting the VM if settings were recently changed
-    
     - **Problem**: Device shows as offline
       - **Solution**: Ensure hotplug is enabled and VirtIO drivers are installed
 

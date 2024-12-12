@@ -77,7 +77,7 @@ This guide walks you through the process of creating a VLAN (Virtual Local Area 
 
 ## Additional Resources
 
-- [Network Troubleshooting](/product-guide/net-troubleshooting/)
+- [Network Troubleshooting](/product-guide/networks/net-troubleshooting/)
 - [Virtual Wire Setup and Use](/knowledge-base/virtual-wire-setup-and-use/?h=virtual+wire#prerequisite-steps)
 
 ## Feedback

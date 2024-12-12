@@ -89,8 +89,8 @@ The **Response** should say **Connection successful**. If the connection fails, 
 
 ## Additional Resources
 
-- [Network Overview](/product-guide/networkoverview)
-- [Tenant Management](/product-guide/createtenants/)
+- [Network Overview](/product-guide/networks/network-overview)
+- [Tenant Management](/product-guide/tenants/create-tenants/)
 
 ## Feedback
 

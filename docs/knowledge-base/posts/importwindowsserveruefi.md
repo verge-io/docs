@@ -30,7 +30,7 @@ This guide covers how to migrate a Windows Server VM with UEFI enabled from VMwa
 
 ## Steps to Import the Windows Server VM
 
-1. **Import the VM** from the VMware service. Follow the steps from [this guide](/product-guide/importvmware) to import the VM into VergeOS.
+1. **Import the VM** from the VMware service. Follow the steps from [this guide](/product-guide/virtual-machines/import-from-vmware) to import the VM into VergeOS.
    
 2. Set the primary disk interface to **SATA** for compatibility during initial boot.
    

@@ -83,9 +83,8 @@ This guide provides a step-by-step process to manually update your air-gapped Ve
       - 
 ## Additional Resources
 
-- [VergeOS ISO Downloads](https://updates.verge.io/download)
-- [Sanpshots](/product-guide/snapshots-overview/)
-- [VergeOS Product Guide](/product-guide)
+- [VergeOS ISO Download](https://updates.verge.io/download)
+- [Snapshots](/product-guide/backup-dr/snapshots-overview/)
 
 ## Feedback
 
