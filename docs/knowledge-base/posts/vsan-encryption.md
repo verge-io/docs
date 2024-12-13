@@ -28,7 +28,7 @@ You can confirm that the vSAN has encryption enabled by navigating to **Nodes> N
 
 - Default encryption is set for all snapshot synchronizations through a site-sync.
     
-!!! info "Information about encrypting a Site Synchronization can be found in the [Product Guide](/product-guide/backup-dr/sync-configuration/)"
+!!! info "Information about encrypting a Site Synchronization can be found in the [Product Guide](/product-guide/backup-dr/sync-configuration)"
 ---
 
 !!! note "Document Information"

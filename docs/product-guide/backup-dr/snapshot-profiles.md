@@ -63,7 +63,7 @@ A period defines a frequency and retention term. Adding multiple periods allows 
 
 !!! warning "Snapshots retained indefinitely or for long periods are likely to greatly increase storage usage over time; it is important to consider your data change rate and the amount of storage available for storing long term snapshots."
 
-1. The ***Quiesce VM Snapshots*** option can be selected to freeze disk activity while the snapshot is being taken. This provides application-consistent backups for VMs. The [**VM Guest Agent**](/product-guide/VMguestagent) must be installed and registered on VM for quiesced snapshots.
+1. The ***Quiesce VM Snapshots*** option can be selected to freeze disk activity while the snapshot is being taken. This provides application-consistent backups for VMs. The [**VM Guest Agent**](/product-guide/virtual-machines/vm-guest-agent) must be installed and registered on VM for quiesced snapshots.
 2. Click **Submit** at the bottom of the page to add the period to the snapshot profile.
 3. Click the ***\+ Add Period*** link and repeat steps 8-14  if additional periods are desired within this profile.
 

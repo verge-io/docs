@@ -10,7 +10,7 @@ Example USB passthrough devices include:
 
 ## Host Installation/Configuration
 
-The following instructions will configure device passthrough by automatically creating a new rule for each selected device and attaching the device(s) to the resource group. For more information about how resource groups and resource rules work, see: [**Device Passthrough - Resource Rules**](/product-guide/devpass-overview#resource-rules).
+The following instructions will configure device passthrough by automatically creating a new rule for each selected device and attaching the device(s) to the resource group. For more information about how resource groups and resource rules work, see: [**Device Passthrough - Resource Rules**](product-guide/virtual-machines/device-pass-overview#resource-rules).
 
 1. Navigate to the **Resource Manager Dashboard** (*Main Dashboard > Resources*)
 **-OR-**
@@ -39,9 +39,9 @@ Navigate to a **specific node** where the USB devices are plugged in. (*Main Das
 After the resource group is selected or new one created, a **Success* message should appear indicating resource rules were created for the device(s).
 
 6. **A reboot of the associated node(s) may be necessary**; a message will appear at the top of the Resource Manager dashboard.
-!!! warning "Follow proper [**Maintenance Mode**](/product-guide/maintenancemode) procedures when rebooting a node to avoid workload disruptions."
+!!! warning "Follow proper [**Maintenance Mode**](/product-guide/system/maintenance-mode) procedures when rebooting a node to avoid workload disruptions."
 
-The resource group dashboard contains the resource rules that were auto-generated for your selected devices. You can click an individual rule to view configuration detail. A system-created rule can be modified as needed; for example, the *Node* filter can be changed to *-- None --* to include matching devices from all nodes.  Information regarding resource rules is available at: [**Device Passthrough Overview - Resource Rules**](/product-guide/devpass-overview#resource-rules)
+The resource group dashboard contains the resource rules that were auto-generated for your selected devices. You can click an individual rule to view configuration detail. A system-created rule can be modified as needed; for example, the *Node* filter can be changed to *-- None --* to include matching devices from all nodes.  Information regarding resource rules is available at: [**Device Passthrough Overview - Resource Rules**](product-guide/virtual-machines/device-pass-overview#resource-rules)
 
 ## VM/Guest Configuration
 

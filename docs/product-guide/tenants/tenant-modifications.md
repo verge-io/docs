@@ -2,7 +2,7 @@
 
 This page provides information for **editing the base configuration** of a Tenant.  
 
-See [**Increasing a Tenant's Resources**](/product-guide/tenantsaddresources) or [**Reducing a Tenant's Resources**](/product-guide/reducetenantresources) for instructions regarding modifying resources.
+See [**Increasing a Tenant's Resources**](/product-guide/tenants/add-tenant-resources) or [**Reducing a Tenant's Resources**](/product-guide/tenants/reduce-tenant-resources) for instructions regarding modifying resources.
 
 ## Tenant Properties
 
@@ -28,7 +28,7 @@ To modify any of the following properties of an existing Tenant, navigate to the
   * **blank** - disables Tenant Help links (Help links within the Tenant UI will produce a 404 error page)
   * **custom URL** - URL can be provided to accommodate a custom document store for help content
 
-* **UI Address** - Link for the Tenant to access their own VergeOS UI. This field is **autopopulated** with the [**first External IP**](/product-guide/assignIPtotenant) assigned to the Tenant. If/when additional external IPs are assigned to a Tenant, the **UI address can be changed** to one of the other IP addresses. Rules will **automatically** be updated by the system; Apply Rules to **both** the associated **External** Network and **Tenant** Network if UI Address is modified.
+* **UI Address** - Link for the Tenant to access their own VergeOS UI. This field is **autopopulated** with the [**first External IP**](/product-guide/networks/assign-ip-to-tenant) assigned to the Tenant. If/when additional external IPs are assigned to a Tenant, the **UI address can be changed** to one of the other IP addresses. Rules will **automatically** be updated by the system; Apply Rules to **both** the associated **External** Network and **Tenant** Network if UI Address is modified.
 
 * **UI FQDN** - Only applies when a [**Proxy**](/knowledge-base/configuring-proxy) is being used. Select desired FQDN from the dropdown list.  
 

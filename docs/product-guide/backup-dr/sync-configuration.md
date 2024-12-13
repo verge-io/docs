@@ -8,12 +8,22 @@ Site Sync provides replication of Cloud Snapshots to a separate VergeOS system; 
 
 ## **Setting up a Site Sync Involves:**
 
--   [**Network Configuration**](#network-configuration)
--   [**Creating Incoming Sync (on the receiving system)**](#creating-incoming-sync)
--   [**Creating Outgoing Sync (on the sending system/and registering with the receiving system)**](#creating-outgoing-sync)
--   [**Specifying Snapshots to Sync and Retention on the Receiving System**](#specifying-snapshots-to-auto-sync-along-with-remote-retention)
--   [**Configuring Sync Scheduling (optional)**](#sync-scheduling)
--   [**Creating a Repair Server (recommended)**](#repair-server)
+- [Configuring a Site Sync](#configuring-a-site-sync)
+  - [**Setting up a Site Sync Involves:**](#setting-up-a-site-sync-involves)
+  - [Network Configuration](#network-configuration)
+    - [To Configure 14201 PAT Rule for Sync traffic to the vSAN:](#to-configure-14201-pat-rule-for-sync-traffic-to-the-vsan)
+    - [To Create PAT Rule for Incoming Sync:](#to-create-pat-rule-for-incoming-sync)
+  - [Creating Incoming Sync](#creating-incoming-sync)
+    - [To Configure the Incoming sync (creates authorization key)](#to-configure-the-incoming-sync-creates-authorization-key)
+  - [Creating Outgoing Sync](#creating-outgoing-sync)
+    - [To Configure the Outgoing Sync Job and Register with the Receiving System:](#to-configure-the-outgoing-sync-job-and-register-with-the-receiving-system)
+      - [Adjusting Sync Settings(optional)](#adjusting-sync-settingsoptional)
+  - [Specifying Snapshots to Auto Sync Along with Remote Retention](#specifying-snapshots-to-auto-sync-along-with-remote-retention)
+    - [Select Snapshots and Remote Retentions for Auto Sync](#select-snapshots-and-remote-retentions-for-auto-sync)
+  - [Sync Scheduling](#sync-scheduling)
+    - [To Contain a Sync to a Specific Schedule](#to-contain-a-sync-to-a-specific-schedule)
+    - [To Configure Throttle Scheduling](#to-configure-throttle-scheduling)
+  - [Repair Server](#repair-server)
 
   
 <br>
@@ -193,7 +203,7 @@ When a specific tier(1-5) is selected here, the sync directs all data to the sel
 
 ## Specifying Snapshots to Auto Sync Along with Remote Retention
 
-> The *Cloud Snapshot Profile* determines the snapshot take and retention schedule for the entire local system (Cloud Snapshots include a complete recovery point of the entire VDC, including: VMs, networks, tenants, vSAN, NAS, etc.) These are the snapshots that can be selected for an automatic site sync. To change the profile used to control local system snapshots: System -> Cloud Snapshots > Select Snapshot Profile.  For more information about Cloud Snapshots: see [**Cloud Snapshots and Restores**](/product-guide/cloudsnapshotandrestore) Snapshots {.is-success}
+> The *Cloud Snapshot Profile* determines the snapshot take and retention schedule for the entire local system (Cloud Snapshots include a complete recovery point of the entire VDC, including: VMs, networks, tenants, vSAN, NAS, etc.) These are the snapshots that can be selected for an automatic site sync. To change the profile used to control local system snapshots: System -> Cloud Snapshots > Select Snapshot Profile.  For more information about Cloud Snapshots: see [**Cloud Snapshots and Restores**](/product-guide/backup-dr/cloud-snapshot-restore) Snapshots {.is-success}
 
 <br>
 
@@ -241,7 +251,7 @@ When no schedule is defined for the sync, Snapshots defined in the Auto Sync Con
 3. Create a **Task** with **Task type = Enable** to set a start time for the sync.
 4. Create an **additional Task** with **Task type = Disable** to set a stop time for the sync.
 
-More information on creating Tasks is available here: [**Create Tasks**](/product-guide/createtasks)
+More information on creating Tasks is available here: [**Create Tasks**](/product-guide/automation/create-tasks)
 
 
 <br>
@@ -257,7 +267,7 @@ More information on creating Tasks is available here: [**Create Tasks**](/produc
 **-OR-**
 Create **an additional Task** with **Task type = Throttle Sync** configuring a schedule to implement an alternate bandwidth limit for throttle.
 
-More information on creating Tasks is available here: [**Create Tasks**](/product-guide/createtasks)
+More information on creating Tasks is available here: [**Create Tasks**](/product-guide/automation/create-tasks)
 
 <br>
 <br>
@@ -267,7 +277,7 @@ More information on creating Tasks is available here: [**Create Tasks**](/produc
 
 ## Repair Server
 
-A Repair Server will allow vSAN data blocks to be replicated from the sync destination back to the source when needed; this provides automatic restoration attempts in the event of hardware or power issues that surpass redundancy levels. See the [**Repair Server**](/product-guide/repairserver) page for more information.
+A Repair Server will allow vSAN data blocks to be replicated from the sync destination back to the source when needed; this provides automatic restoration attempts in the event of hardware or power issues that surpass redundancy levels. See the [**Repair Server**](/product-guide/backup-dr/repair-server) page for more information.
 
 
 <br>   

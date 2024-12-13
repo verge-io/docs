@@ -6,7 +6,7 @@ Cloud Snapshots contain a backup of everything in a system, including all tenant
 - Individual NAS volumes
 - Individual VMs\*
 
-!!! tip "VM snapshots contained within a cloud snapshot are crash-consistent. Individual VM snapshots allow a quiesce option (guest agent required). See [**VM Snapshots and Restores**](/product-guide/VMsnapshotsandrestores) for VM-level snapshot instructions."
+!!! tip "VM snapshots contained within a cloud snapshot are crash-consistent. Individual VM snapshots allow a quiesce option (guest agent required). See [**VM Snapshots and Restores**](/product-guide/backup-dr/vm-snapshots-restores) for VM-level snapshot instructions."
 
 ## Automated Cloud Snapshots
 
@@ -17,7 +17,7 @@ By default, cloud snapshots run according to the included **Cloud Snapshots** p
 1. From the main dashboard, Click **System** on the left menu.
 2. Click **Cloud Snapshots** on the left menu.
 3. Click **Select Snapshot Profile** on the left menu.
-4. **Select the desired snapshot profile** from the dropdown list. For instructions regarding modifying or adding new snapshot profiles, see: [**Snapshot Profiles (Snapshot Scheduling)**](/product-guide/snapshot-profiles).
+4. **Select the desired snapshot profile** from the dropdown list. For instructions regarding modifying or adding new snapshot profiles, see: [**Snapshot Profiles (Snapshot Scheduling)**](/product-guide/backup-dr/vm-snapshots-restores).
 5. Click **Submit** at the bottom of the page.
 
 ## Manual Cloud Snapshots
@@ -85,7 +85,7 @@ A manual snapshot can be taken at any time.
 6. A **Confirmation** dialog will require you to click ***Yes*** to proceed (Click *No* if you wish to cancel the operation).
 7. The snapshot tenant listing will display a checkmark and ***Complete*** message next to each tenant that was restored, with a message indicating the name of the new tenant instance created (original tenant name with a copy number appended) ex: "Restored to: tenantExampleCorp (1)".
 
-!!! note "An individual tenant can also be restored from the tenant dashboard, with a restore that overwrites the existing tenant, rather than creating a new tenant instance.Instructions can be found [**here**](/product-guide/tenantsnapshots#restore-a-tenant-from-snapshot-overwrite-existing)."
+!!! note "An individual tenant can also be restored from the tenant dashboard, with a restore that overwrites the existing tenant, rather than creating a new tenant instance.Instructions can be found [**here**](/product-guide/tenants/tenant-snapshots#restore-a-tenant-from-snapshot-overwrite-existing)."
 
 ### Restore Select VMs from a Cloud Snapshot (creates new VM instance(s))
 
@@ -97,11 +97,11 @@ A manual snapshot can be taken at any time.
 6. A **Confirmation** dialog will require you to click ***Yes*** to proceed (Click *No* if you wish to cancel the operation).
 7. The Snapshot VM listing will display a checkmark and ***Complete*** message next to each VM that was restored, with a message indicating the name of the new VM instance created (original VM name with a copy number appended) ex: "Restored to: Windows2022SQL (0)".
 
-!!! note "An individual VM can also be restored from the VM dashboard; restoring from the VM dashboard allows the option to create a new VM instance or overwrite the current. Instructions can be found [**here**](/product-guide/VMsnapshotsandrestores#restore-a-vm-snapshot-to-overwrite-existing-current-version-of-vm)."
+!!! note "An individual VM can also be restored from the VM dashboard; restoring from the VM dashboard allows the option to create a new VM instance or overwrite the current. Instructions can be found [**here**](/product-guide/backup-dr/vm-snapshots-restores#restore-a-vm-snapshot-to-overwrite-existing-current-version-of-vm)."
 
-- See [**VM Snapshots and Restores**](/product-guide/VMsnapshotsandrestores) for instructions on restoring an individual VM from a cloud snapshot.
-- See [**Tenant Restores**](/product-guide/tenantrestores) for instructions on restoring an individual tenant from a cloud snapshot.
-- See [**Volume Snapshots and Restores**](/product-guide/volumesnapsandrestores) for instructions on restoring NAS volumes from a cloud snapshot.
+- See [**VM Snapshots and Restores**](/product-guide/backup-dr/vm-snapshots-restores) for instructions on restoring an individual VM from a cloud snapshot.
+- See [**Tenant Restores**](/product-guide/tenants/tenantrestores) for instructions on restoring an individual tenant from a cloud snapshot.
+- See [**Volume Snapshots and Restores**](/product-guide/nas/volume-snapshots-restores.md) for instructions on restoring NAS volumes from a cloud snapshot.
 
 </br>
 

@@ -6,8 +6,8 @@ VDI functionality allows for hosting virtual desktops and provides an individual
 
 ![vdi.png](/public/userguide-sshots/vdi.png)
 
--   Help for the **VDI User** can be found at: [**Instructions for the VDI User**](/product-guide/VDI-User)
--   Help for the **VDI Admin** can be found at: [**Instructions for the VDI Admin**](/product-guide/VDI-Administrator)
+-   Help for the **VDI User** can be found at: [**Instructions for the VDI User**](/product-guide/system/vdi-user)
+-   Help for the **VDI Admin** can be found at: [**Instructions for the VDI Admin**](/product-guide/system/vdi-administrator)
 
 <br>   
 

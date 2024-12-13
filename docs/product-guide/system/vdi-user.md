@@ -20,7 +20,7 @@
 <br>
 
 ## Using the Console
-The console gives you keyboard and mouse access to the virtual machine. To access the console, simply click the desired Virtual Machine on your VDI Dashboard. Note: VM must be running; if it is not, a message will appear for you to confirm powering on the VM (permission required); click Yes to confirm. Once the VM shows running, click again to access the Remote Console. See [**Using the Console**](/product-guide/VM-RemoteConsole)  for help with working within the remote console.
+The console gives you keyboard and mouse access to the virtual machine. To access the console, simply click the desired Virtual Machine on your VDI Dashboard. Note: VM must be running; if it is not, a message will appear for you to confirm powering on the VM (permission required); click Yes to confirm. Once the VM shows running, click again to access the Remote Console. See [**Using the Console**](/product-guide/virtual-machines/vm-remote-console)  for help with working within the remote console.
 
 <br>
 <br>

@@ -26,4 +26,4 @@ The Task Manager allows initiating automatic operations based on an event or a s
 <br>
 <br>
 
-See [**Create Tasks**](/product-guide/createtasks) for detailed instructions to create a new task.
+See [**Create Tasks**](/product-guide/automation/create-tasks) for detailed instructions to create a new task.

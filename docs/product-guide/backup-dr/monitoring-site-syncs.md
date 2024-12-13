@@ -88,7 +88,7 @@ Statistics shown in sync dashboard listings and log entries. These numbers updat
 
 Subscriptions are available from both the sending system and the receiving system to oversee sync activity.
 
-> Reference the [**Subscriptions**](/product-guide/subscriptions-overview) page for more information about creating and using subscriptions. {.is-info}
+> Reference the [**Subscriptions**](/product-guide/system/subscriptions-overview) page for more information about creating and using subscriptions. {.is-info}
 
 <br>
 

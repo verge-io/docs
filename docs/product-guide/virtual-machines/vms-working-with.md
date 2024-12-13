@@ -2,7 +2,7 @@
 
 ## VM Console Access
 
-The [Remote Console](/product-guide/VM-RemoteConsole) provides video/keyboard-mouse access to your VMs through the VergeOS user interface.
+The [Remote Console](/product-guide/virtual-machines/vm-remote-console) provides video/keyboard-mouse access to your VMs through the VergeOS user interface.
 
 - **Open a single VM Remote Console**: Navigate to the VM dashboard and click Remote Console on the left nav menu.
 - **Open Remote Console for multiple VMs (in separate tabs)**: Select VMs in the Virtual Machines listing, click Remote Console on the left nav menu. (This can be blocked by some pop-up blockers.)
@@ -12,7 +12,7 @@ The [Remote Console](/product-guide/VM-RemoteConsole) provides video/keyboard-mo
 The cloning feature allows you to create a new VM instance as a replica of an existing VM (with or without same MAC addresses). This can come in handy for a variety of uses: testing, deployment, data recovery, etc. Cloning a VM in VergeOS is nearly instantaneous and an easy process.
 
 !!! tip
-    While cloning allows you to make a simple copy of a VM, [Recipes](/product-guide/VM-Recipes) empower you to generate new custom VM instances based on a template VM; recipe questions provide for adjusting details per instance, as it is created, such as IP address, guest username/passwords, allocated resources, etc.
+    While cloning allows you to make a simple copy of a VM, [Recipes](/product-guide/automation/vm-recipes) empower you to generate new custom VM instances based on a template VM; recipe questions provide for adjusting details per instance, as it is created, such as IP address, guest username/passwords, allocated resources, etc.
 
 ### To Clone a VM:
 

@@ -68,7 +68,7 @@ This guide explains how to import VMware virtual machines using VergeOS's VMware
 ## Troubleshooting
 
 !!! warning "Common Issues"
-    - **Import Failure**: 
+    - **Import Failure**:
       - Solution: Verify storage space and network connectivity
 
     - **Slow Transfer**: 
@@ -80,5 +80,5 @@ This guide explains how to import VMware virtual machines using VergeOS's VMware
 ## Additional Resources
 
 - [VMware Backup/DR Guide](/knowledge-base/vmwarebackupdrguide)
-- [Viewing Import Jobs](/product-guide/viewimportjobs)
+- [Viewing Import Jobs](/product-guide/virtual-machines/view-import-jobs)
 - [Preferred Tier Usage](/knowledge-base/preferred-tier-usage)

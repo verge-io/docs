@@ -21,7 +21,7 @@ VergeOS stores usage statistics per Tenant to accommodate 95th percentile billin
    * **Type:** *Scheduled*
    * **Subscription Profile:** *Tenants Usage*
 
-For full instructions on creating Subscriptions, see: [**Subscriptions-Overview**](/product-guide/subscriptions-overview)
+For full instructions on creating Subscriptions, see: [**Subscriptions-Overview**](/product-guide/system/subscriptions-overview)
 
 !!! tip "API Usage"
     The [VergeOS API](/knowledge-base/verge-api-guide) can also be utilized to run Tenant usage reports and send to external systems for processing.
