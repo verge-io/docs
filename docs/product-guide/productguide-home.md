@@ -9,7 +9,7 @@
 ## Getting Started
 
 - [**Glossary of Terms**](/product-guide/GlossaryofTerms)
-- [**UI-Overview**](/product-guide/UI-Overview)
+- [**UI-Overview**](/product-guide/ui-overview)
 
 <br>
 <br>

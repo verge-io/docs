@@ -20,11 +20,11 @@ VergeOS supports both **Cloud-Init** (Linux) and **Cloudbase-Init** (Windows) to
 
 A VergeOS system automatically includes the **Service Provider(Marketplace) Repository** comprised of VM recipes that can be used straightaway to create new virtual machines of many types.  The list of these available VM recipes can be viewed by navigating to **Repositories -> (double-click) MarketPlace repository -> VM Recipes**.
 
-![marketplaceVMlisting](/public/marketplaceVMlisting.png)
+![marketplaceVMlisting](/product-guide/screenshots/marketplaceVMlisting.png)
 
  You can double-click on an individual VM recipe to view its configuration.  
-and a
-![included-recipe-config](/public/included-recipe-config.png)
+
+![included-recipe-config](/product-guide/screenshots/included-recipe-config.png)
 
 ## Create a New VM Recipe
 

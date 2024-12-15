@@ -1,11 +1,7 @@
 
-
 # Creating Tasks
 
 This page includes general directions for creating a schedule-based task and an event-based task,  followed by specific, common-use examples.
-
-<br>
-<br>
 
 ## Create a Schedule-based Task
 
@@ -63,10 +59,6 @@ This type of task can be useful to automatically disable accounts when no longer
 -   *Users*: **specific user account to be disabled**
 -   *Task Type*: **Disable**
 -   *Delete Task After Running*: **checked** (since the task will no longer be needed after it runs).
-![task-disableuser.png](/public/userguide-sshots/task-disableuser.png)
-<br>
-<br>
-
 
 ## Example Task - Send Notification When a System Update Completes
 This task allows for sending applicable personnel a notification when an update process is completely finished across all nodes.
@@ -85,7 +77,7 @@ This task allows for sending applicable personnel a notification when an update 
 -   *BCC List*: **(optional)** list of one or more email addresses to be blind copied on the alert; The semicolon [;] is used to separate multiple addresses.
 -   *Subject*: **email subject line text**
 -   *Body*: **email content text**
-![task-update-notify.png](/public/userguide-sshots/task-update-notify.png)
+
 
 <br>
 <br>
@@ -103,7 +95,7 @@ This task will power on a VM every time the specified user logs into the Verge.i
 -   *Section*: **Virtual Machines**
 -   *Virtual Machines*: **VM to start up**
 -   *Task Type*: **Power On**
-![task-poweron.png](/public/userguide-sshots/task-poweron.png)
+
 
 <br>
 

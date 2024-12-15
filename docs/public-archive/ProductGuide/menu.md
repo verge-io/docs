@@ -20,7 +20,7 @@ You can also find a variety of content located in the [Knowledgebase](/knowledge
 ## Getting Started
 
 - [**Glossary of Terms**](/product-guide/GlossaryofTerms)
-- [**User Interface Overview**](/product-guide/UI-Overview)
+- [**User Interface Overview**](/product-guide/ui-overview)
 {.links-list}
 
 ## Configuration
