@@ -42,7 +42,7 @@ This guide walks you through the process of creating a VLAN (Virtual Local Area 
 
 3. Configure Network Settings
    - In the network creation page, enter the following settings:
-     ![new-vlan.png](/public/new-vlan.png)
+     ![new-vlan.png](/product-guide/screenshots/new-vlan.png)
 
 !!! note "Interface Network Selection"
     For the "Interface Network" option, be sure to select the physical network on the nodes that the VLAN enters the environment on. These are typically appended with the name "Switch" during install. For all other settings, the default options are typically sufficient.

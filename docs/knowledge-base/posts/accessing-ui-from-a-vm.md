@@ -86,7 +86,7 @@ This article guides you through the process of setting up access to the VergeOS 
 
 Here's a visual representation of the rule configuration:
 
-![hairpin.png](/public/hairpin.png)
+![hairpin.png](/product-guide/screenshots/hairpin.png)
 
 ## Troubleshooting
 

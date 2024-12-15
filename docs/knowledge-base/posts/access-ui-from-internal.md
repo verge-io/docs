@@ -46,7 +46,7 @@ This article guides you through the process of setting up access to the vergeOS 
    - Locate the option to create a new rule
    - Use the settings shown in the image below:
    
-   ![ui-access-rule.png](/public/ui-access-rule.png)
+   ![ui-access-rule.png](/product-guide/screenshots/ui-access-rule.png)
 
 3. Submit the Rule
    - After configuring the rule, submit it

@@ -67,7 +67,7 @@ Network Rules are necessary to translate incoming sync traffic to the vSAN. **No
     -   ***Type:*** IP/Custom
     -   ***Target IP:*** ui (This is a VergeOS keyword; it must be entered in lower case, exactly as noted)
 
-![rule-core-vsanpat.png](/public/userguide-sshots/rule-core-vsanpat.png)
+![rule-core-vsanpat.png](/product-guide/screenshots/rule-core-vsanpat.png)
 
 8.  Click **Submit** to save the new rule.
 9.  The system will prompt to Apply Rules. Click **Apply Rules** on the left menu to put the rule into effect.
@@ -101,10 +101,10 @@ Network Rules are necessary to translate incoming sync traffic to the vSAN. **No
     -   ***Destination Ports/Ranges:*** 14201
     -   ***Type:*** IP/Custom
     -   ***Target:*** ui (This is a VergeOS keyword; it must be entered in lower case, exactly as noted)
- ![sync-snat.png](/public/userguide-sshots/sync-snat.png)
+ ![sync-snat.png](/product-guide/screenshots/sync-snat.png)
  
-8.  Click **Submit** to save the new rule.
-9.  Click **Apply Rules** on the left menu to put the rule into effect.
+1.  Click **Submit** to save the new rule.
+2.  Click **Apply Rules** on the left menu to put the rule into effect.
 
 > If the hostname/IP for receiving syncs is different than the vSAN address, there is a system setting to override: on the sync receiving system (host level): **System ->Settings -> Edit** vSAN Host. {.is-success}
 
@@ -219,7 +219,7 @@ The Configuration form will appear.
 
 <br>
 
-![sync-periodretention.png](/public/userguide-sshots/sync-periodretention.png)
+![sync-periodretention.png](/product-guide/screenshots/sync-periodretention.png)
 
 
 5. In the **Sync Snapshots From** dropdown list, select a desired profile period (e.g. "Hourly for 3 hours", "Midnight", "Noon").  The options that appear will depend on the periods defined in the Snapshot Profile assigned for the local system (by default, this will be the *Cloud Snapshots* profile.)

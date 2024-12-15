@@ -10,7 +10,7 @@ Port mirroring replicates a network's traffic to a VM NIC, allowing packet analy
 
 1.  Enable ***Port Mirroring*** in the network settings.
 
-  ![portmirrordropdown.png](/public/userguide-sshots/portmirrordropdown.png)
+  ![portmirrordropdown.png](/product-guide/screenshots/portmirrordropdown.png)
  - Select ***North/South*** - to copy packets that traverse the network router.
  - Select ***East/West\**** - to copy packets that traverse the router *AND* all intra-network packets.
  

@@ -51,7 +51,7 @@ Statistics tracking can be enabled for Accept, Drop, Reject and Translate rules.
 2.  **Right-click on the columns heading** section at the top.
 3.  Check the boxes for ***Packets*** and/or ***Bytes*** to display these columns.
 
-![Show Statistics](/public/userguide-sshots/trackstats-cols.png)
+![Show Statistics](/product-guide/screenshots/trackstats-cols.png)
 
 > Enabling the "Statistics" column will show whether or not statistics tracking is enabled for each rule. {.is-success}
 

@@ -45,10 +45,10 @@ The time required to complete an update varies depending on factors such as:
    
     - A pop-up will prompt Yes or No, select **Yes**.
     - If a banner appears stating "A new minor version is available on a different branch," follow the prompt to change branches by selecting **Change Branch** in the left menu. Confirm with **Yes**.
-   ![VergeOSupgrade-new-img2.png](/public/vergeioupgrade-new-img2.png)
+   ![VergeOSupgrade-new-img2.png](/product-guide/screenshots/vergeioupgrade-new-img2.png)
 
 3. The packages to be downloaded will now be highlighted.
-   ![VergeOSupgrade-new-img3.png](/public/vergeioupgrade-new-img3.png)
+   ![VergeOSupgrade-new-img3.png](/product-guide/screenshots/vergeioupgrade-new-img3.png)
     - Select **Download** in the left menu.
     - A pop-up will prompt Yes or No, select **Yes**.
     - The download process will appear on the dashboard in the **Current Update Server** tile.
@@ -71,7 +71,7 @@ The time required to complete an update varies depending on factors such as:
 ### vSAN Taking a Long Time to Verify
 - The verification process depends on factors like network speed, disk type, and consumed data. HDDs will take longer than NVMe or SSDs. On VergeOS versions 4.9.0 and higher, check the **Full Walk Progress** on the tiers dashboard for an indication of how far along the verification is.
   
-    ![walk-percentage.png](/public/walk-percentage.png)
+    ![walk-percentage.png](/product-guide/screenshots/walk-percentage.png)
 
 !!! danger "WARNING"
     This process must complete before rebooting any additional nodes. Failure to do so can result in a **double failure**, causing workloads to crash.

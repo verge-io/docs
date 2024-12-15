@@ -28,7 +28,7 @@ VergeOS provides time in **UTC**, which has become the industry standard as it c
 
 RTC Base is an individual VM setting that allows VergeOS administrators to set the time provided to the OS as either local or UTC. The value can be found when editing any VM.
 
-![rtcbase-utc-screenshot.png](/public/rtcbase-utc-screenshot.png)
+![rtcbase-utc-screenshot.png](/product-guide/screenshots/rtcbase-utc-screenshot.png)
 
 With this configuration setting, administrators can granularly control every machine, though it is important to understand the expected behavior of each option.
 

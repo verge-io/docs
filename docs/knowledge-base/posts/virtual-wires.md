@@ -39,7 +39,7 @@ A virtual wire provides a tenant the ability to access a VLAN outside the VergeO
 3. Select **Virtual Wires** in the left menu to view all virtual wires in the environment.
 4. Select **New** to create a new virtual wire.
 5. Enter the following settings:
-   ![virtual-wire-create-settings.png](/public/virtual-wire-create-settings.png)
+   ![virtual-wire-create-settings.png](/product-guide/screenshots/virtual-wire-create-settings.png)
 
 !!! info
     - The **Network** dropdown will list all networks inside the environment. Choose the network with the corresponding VLAN to pass into the tenant.
@@ -48,7 +48,7 @@ A virtual wire provides a tenant the ability to access a VLAN outside the VergeO
 6. Submit your changes and return to the virtual wires list view.
 7. Select **New** to create the second half of the virtual wire.
 8. Enter the following settings:
-   ![virtual-wire-create-settings-tenant.png](/public/virtual-wire-create-settings-tenant.png)
+   ![virtual-wire-create-settings-tenant.png](/product-guide/screenshots/virtual-wire-create-settings-tenant.png)
 !!! info
     - In the **Network** dropdown, select the tenant network that the VLAN will be passed to, typically named `tenant_'$TENANTNAME'`.
     - The **Destination Wire** dropdown will automatically select the other half of the virtual wire created earlier.
@@ -74,10 +74,9 @@ A virtual wire provides a tenant the ability to access a VLAN outside the VergeO
        A "Physical Network" typically has "Switch" appended and represents a physical NIC on a node.
 4. Select **Edit** to enter the network configuration page.
 5. In the configuration page, enable **Physical Bridged** to activate Bridge Mode.
-   ![network-bridge-mode.png](/public/network-bridge-mode.png)
 !!! info "The "On Power Loss" setting can remain as **Last State** or **Power On**."
-6. Submit your changes.
-7. Reboot the necessary nodes for Bridge Mode to become active.
+1. Submit your changes.
+2. Reboot the necessary nodes for Bridge Mode to become active.
 
 ### Configuring a Trunk Mode Virtual Wire
 
@@ -85,7 +84,7 @@ A virtual wire provides a tenant the ability to access a VLAN outside the VergeO
 2. From the Main Dashboard, select **Networks** and then **Virtual Wires**.
 3. Select **New** to create the first half of the virtual wire.
 4. Enter the following settings:
-   ![vw-trunk-host.png](/public/vw-trunk-host.png)
+   ![vw-trunk-host.png](/product-guide/screenshots/vw-trunk-host.png)
 
 !!! info
     - Select the corresponding **Physical Network** in the **Network** dropdown.
@@ -95,7 +94,7 @@ A virtual wire provides a tenant the ability to access a VLAN outside the VergeO
 5. Submit your configuration.
 6. Select **New** to create the second half of the virtual wire.
 7. Enter the following settings:
-   ![vw-trunk-tenant.png](/public/vw-trunk-tenant.png)
+   ![vw-trunk-tenant.png](/product-guide/screenshots/vw-trunk-tenant.png)
    
 !!! info
     - Select the tenant network in the **Network** dropdown.
@@ -110,7 +109,7 @@ A virtual wire provides a tenant the ability to access a VLAN outside the VergeO
 1. Navigate to the **tenant UI** and log in.
 2. From the Main Dashboard, navigate to **Networks**, then select **New External**.
 3. Enter the following settings:
-   ![virtual-wire-network-in-tenant.png](/public/virtual-wire-network-in-tenant.png)
+   ![virtual-wire-network-in-tenant.png](/product-guide/screenshots/virtual-wire-network-in-tenant.png)
    
 !!! info "For the interface network, select **Physical**."
 

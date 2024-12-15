@@ -12,11 +12,6 @@ The built-in Diagnostics query engine allows quick and easy access to extended n
 2.  Click **Diagnostics** on the left menu.
 3.  The Query list dropdown provides a comprehensive set of available diagnostic queries. (See the bottom of this page for a list of each query option, along with a brief description.) 
 
-
-![diagnostics-querylistall.png](/public/userguide-sshots/diagnostics-querylistall.png)
-
-<br>
-
 Depending on the query selected, there may be additional fields that can be specified on the right. For example, the screenshot below shows a TCP Dump query selected; there are several values that can be specified for this query.
 
 > Many query fields will auto-populate with default values that are suitable for common queries. {.is-success}

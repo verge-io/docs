@@ -25,10 +25,8 @@ Network blocks in VergeOS are a powerful way to assign multiple IP addresses to 
 2. In the left menu, select **Network Blocks**, then click **New**.
 3. Enter the network block information in **CIDR notation** (e.g., a.b.c.d/n).
 4. To assign the block to a tenant at creation, set the **Owner Type** to **Tenant**, then select the tenant from the **Owner** drop-down.
-   ![new-network-block.png](/public/new-network-block.png)
 5. Submit your work to create the block.
 6. To apply the automatically created rules, select the **External** breadcrumb in the header to return to the network dashboard. Then, select **Apply Rules** from the left menu or click the notification pop-up.
-   ![net-block-rules.png](/public/net-block-rules.png)
 
 ## Creating a Network from a Network Block
 
@@ -37,7 +35,6 @@ Network blocks in VergeOS are a powerful way to assign multiple IP addresses to 
 3. In the left menu, select **Network Blocks**.
 4. Select the network block assigned to the tenant.
 5. Click **New Network** in the left menu.
-   ![new-net-from-block.png](/public/new-net-from-block.png)
 6. Give the new network a **name**. The rest of the details will be pre-filled based on the CIDR information.
 7. Modify any details in the form if necessary, then submit to create the network.
 8. After creation, the system will redirect you to the new network's dashboard. The necessary routes and accept rules will be set up automatically, but note that **inbound traffic will be dropped by default**. Add appropriate firewall rules to allow inbound access.

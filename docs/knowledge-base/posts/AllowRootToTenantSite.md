@@ -56,7 +56,7 @@ This guide provides instructions on how to connect a root system to a tenant sit
      - **Destination**: Any/None.
      - **Target**: My Router IP.
 
-   ![Rule Configuration](/public/2023-09-12_10_28_52-training___edit_rule__allow_tenant_to_root.png)
+   ![Rule Configuration](/product-guide/screenshots/allow-tenant-root-rule.png)
 
 3. **Submit and Apply**
    - Click **Submit**.
@@ -76,8 +76,6 @@ To verify that the rule works, follow these steps:
 6. Set **Host** to the **UI IP/Host** of the tenant system.
 7. Set **Port** to **443**.
 8. Click **Send**.
-
-   ![Diagnostics](/public/2023-09-12_11_12_21-training___diagnostics.png)
 
 The **Response** should say **Connection successful**. If the connection fails, review the rule to ensure accuracy, particularly ensuring that the **Interface** is set to **DMZ** rather than **Auto**.
 

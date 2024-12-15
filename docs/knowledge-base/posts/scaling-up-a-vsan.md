@@ -39,8 +39,6 @@ To scale up a vSAN, follow the steps below. However, before proceeding, ensure t
 
 7. **Select the appropriate tier** for the drive(s) and submit.
 
-   ![scaleupvsan5.png](/public/scaleupvsan5.png)
-
 Upon completion, the screen will refresh and the drives will disappear from the view. Go back to the main page, where you will see the **vSAN tiers** change color to **yellow**, indicating that it is in a repair state. This is expected, and the vSAN will return to a **green/healthy** state after a few minutes, showing the newly added tier or increased space on an existing tier.
 
 Repeat these steps for each node as necessary.

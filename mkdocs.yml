@@ -161,9 +161,9 @@ nav:
         - Overview: product-guide/backup-dr/snapshots-overview.md
         - Profiles: product-guide/backup-dr/snapshot-profiles.md
         - VM Snapshots and Restore: product-guide/backup-dr/vm-snapshots-restores.md
-        - Tenant Snapshots: product-guide/tenant/tenant-snapshots.md
-        - Cloud Snapshots and Restore: product-guide/backup-dr/cloudsnapshot-restore.md
-        - NAS Snapshots and Restore: product-guide/nas/volumesnapshots-restores.md
+        - Tenant Snapshots: product-guide/tenants/tenant-snapshots.md
+        - Cloud Snapshots and Restore: product-guide/backup-dr/cloud-snapshot-restore.md
+        - NAS Snapshots and Restore: product-guide/nas/volume-snapshots-restores.md
       - Clusters: 
         - Overview: product-guide/system/clusters.md
         - Configuration Options: product-guide/system/clusters-config-options.md
@@ -173,9 +173,9 @@ nav:
         - Users and Groups: product-guide/system/users-groups.md
         - Permissions: product-guide/system/permissions.md
       - Nodes:
-        - Overview: product-guide/system/nodesoverview.md
+        - Overview: product-guide/system/nodes-overview.md
         - IPMI: product-guide/system/ipmi.md
-        - System Event Log (SEL): product-guide/system/SEL
+        - System Event Log (SEL): product-guide/system/sel
       - OIDC Applications:
         - Overview: product-guide/OIDCoverview.md
         - Adding Applications: product-guide/OIDCadding.md
@@ -208,18 +208,18 @@ nav:
         - Working With VMs: product-guide/virtual-machines/working-with-vms.md
         - Live Migrations: product-guide/virtual-machines/live-migrations.md
       - VDI:
-        - Instructions for the Administrator: product-guide/virtual-machines/VDI-Administrator.md
-        - Instructions for the User: product-guide/virtual-machines/VDI-User.md
-        - Virtual Machine Remote Console: product-guide/virtual-machines/VM-RemoteConsole.md
+        - VDI Administrator: product-guide/virtual-machines/vdi-administrator.md
+        - VDI User: product-guide/virtual-machines/vdi-user.md
+        - Virtual Machine Remote Console: product-guide/virtual-machines/vm-remote-console.md
     - Tenants:
       - Assigning External IP Addresses: product-guide/tenants/assign-ip-to-tenant.md
       - Creating Tenants: product-guide/tenants/create-tenants.md
-      - Increasing Resources: product-guide/tenants/tenants-add-resources.md
+      - Increasing Resources: product-guide/tenants/add-tenant-resources.md
       - Modifying Tenants: product-guide/tenants/tenant-modifications.md
       - Monitoring Tenants: product-guide/tenants/tenant-monitoring.md
       - Reducing Resources: product-guide/tenants/reduce-tenant-resources.md
       - Sharing Files: product-guide/tenants/provide-files-to-tenant.md
-      - Snapshots: product-guide/tenants/tenant-snapshots.md
+      - Tenant Snapshots: product-guide/tenants/tenant-snapshots.md
       - Usage Reports: product-guide/tenants/tenant-usagereports.md
     - Recipes:
       - Organization: product-guide/automation/recipes-organization.md
@@ -228,8 +228,8 @@ nav:
       - Overview: product-guide/nas/nas-service.md
       - Configuration:
         - Local Volumes: product-guide/nas/nas-local-volumes.md
-        - Remote Volumes: product-guide/nas-remote-volumes.md
-        - Shares: product-guide/nas-shares.md
+        - Remote Volumes: product-guide/nas/nas-remote-volumes.md
+        - Shares: product-guide/nas/nas-shares.md
         - VM Export: product-guide/virtual-machines/vm-export-volume.md
         - Volume Syncs: product-guide/nas/volume-syncs.md
         - Join NAS to AD: product-guide/nas/nas-join-ad-domain.md
@@ -245,7 +245,7 @@ nav:
         - Create a Layer 3 Internal Network: product-guide/networks/internal-layer3.md
         - Create a DHCP Static Entry: product-guide/networks/dhcp-static-lease.md
         - Assign an External IP to an Internal network: product-guide/networks/assign-external-ip.md
-        - Create a 1:1 NAT: product-guide/networks/nat1to1.md
+        - Create a 1:1 NAT: product-guide/networks/nat-1to1.md
       - Configuration:
         - Creating an Internal Network: product-guide/networks/internal-networks.md
         - Using Aliases: product-guide/networks/aliases.md
@@ -274,20 +274,20 @@ nav:
         - Overview: product-guide/backup-dr/snapshots-overview.md
         - Profiles: product-guide/backup-dr/snapshot-profiles.md
         - VM Snapshots and Restore: product-guide/backup-dr/vm-snapshots-restores.md
-        - Tenant Restore: product-guide/tenants/tenant-snapshots.md
+        - Tenant Snapshot and Restore: product-guide/tenants/tenant-snapshots.md
         - Cloud Snapshots and Restore: product-guide/backup-dr/cloud-snapshot-restore.md
-        - NAS Snapshots and Restore: product-guide/nas/volume-snaps-restores.md
+        - NAS Snapshots and Restore: product-guide/nas/volume-snapshots-restores.md
     - vSAN:
        - Architecture: product-guide/vsan/architecture.md  # Added from PR
        - Storage Tiers: product-guide/vsan/storage-tiers.md
        - Preferred Tier: product-guide/vsan/preferred-tiers.md
        - Removing ISO Files with References: product-guide/vsan/removing-iso-refs.md
     - Device Passthrough:
-      - Overview: product-guide/system/devpass-overview.md
+      - Overview: product-guide/system/device-pass-overview.md
       - NVIDIA vGPU: product-guide/system/nvidia-vgpu.md
       - SR-IOV NIC: product-guide/system/sriov.md
       - USB Passthrough: product-guide/system/usb-passthrough.md
-      - One-to-One PCI Passthrough: product-guide/system/generic-pcipass.md
+      - One-to-One PCI Passthrough: product-guide/system/generic-pci-passthrough.md
     - Maintenance & Monitoring:
       - Drive Replacement: product-guide/system/drive-replacement.md
       - Maintenance Mode: product-guide/system/maintenance-mode.md

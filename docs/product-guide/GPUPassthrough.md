@@ -4,7 +4,7 @@
 
 <br>
 <br>
-!!! warning "This document applies to version 4.12.6 and older only, [if you are running 4.13 or newer you can find documentation in our Product Guide by clicking here](/public/product-guide/devpass-overview/)" 
+!!! warning "This document applies to version 4.12.6 and older only, [if you are running 4.13 or newer you can find documentation in our Product Guide by clicking here](/product-guide/system/device-pass-overview)" 
 
 ## Host Installation/Configuration
 
@@ -13,8 +13,6 @@
 1.  From the Main Dashboard, click **Nodes**.
 2.  Click **Drivers** on the left menu.
 3.  Click **New** on the left menu.
-
-![ledunsupported.png](/public/userguide-sshots/newdriverpassthru.png)
 
 
 4.  Select ***node*** from the dropdown list.
@@ -34,7 +32,6 @@
 3.  Click **Devices** on the left menu.
 4.  Click **New** on the left menu. The Device Entry Form appears.
 
-![ledunsupported.png](/public/userguide-sshots/gpunewdeviceform.png)
 
 5.  Optionally, a ***Name*** and ***Description*** can be entered for the device.
 6.  Select **GPU Passthrough** in the ***Type*** dropdown list.
