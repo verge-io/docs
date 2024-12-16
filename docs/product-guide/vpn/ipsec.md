@@ -14,11 +14,19 @@ IPSec compatibility is available to provide a VPN tunnel between a VergeOS netwo
 
 # Basic Steps to Configure VergeOS IPSec VPN:
 
--   [**Creating a VPN Network**](#creating-a-vpn-network)
--   [**Editing IPSec Settings (as needed)**](#editing-ipsec-configuration)
--   [**Editing Phase I (as needed)**](#editing-default-phase-1-configuration)
--   [**Creating Phase 2**](#creating-phase-2)
--   [**Configuring Routing and Firewall Rules**](#configuring-firewall-and-routing-rules)
+- [IPSec Configuration](#ipsec-configuration)
+- [Basic Steps to Configure VergeOS IPSec VPN:](#basic-steps-to-configure-vergeos-ipsec-vpn)
+  - [Creating a VPN Network](#creating-a-vpn-network)
+  - [Editing IPSec Configuration](#editing-ipsec-configuration)
+  - [(if necessary)](#if-necessary)
+  - [Editing Default Phase 1 Configuration](#editing-default-phase-1-configuration)
+  - [(if necessary)](#if-necessary-1)
+      - [Phase 1 (Encryption)](#phase-1-encryption)
+      - [Phase 1 (Authentication)](#phase-1-authentication)
+      - [Advanced Options](#advanced-options)
+  - [Creating Phase 2](#creating-phase-2)
+  - [Configuring Firewall and Routing Rules](#configuring-firewall-and-routing-rules)
+    - [To Start the VPN Network:](#to-start-the-vpn-network)
 
 <br>
   
@@ -29,7 +37,7 @@ IPSec compatibility is available to provide a VPN tunnel between a VergeOS netwo
 1.  From the Cloud Dashboard, click **Networks** from the left menu.
 2.  Click **Networks** again from the left menu.
 3.  Click **New VPN** from the left menu.
-![int-networksetting.png](/public/userguide-sshots/int-networksetting.png)
+![int-networksetting.png](/product-guide/screenshots/int-networksetting.png)
 
 **--None--** to create a separate VPN network, where connections to other VergeOS networks are all handled with layer 3 routing. (Recommended method)
 

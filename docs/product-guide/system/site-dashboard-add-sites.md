@@ -14,8 +14,6 @@ Each site that is added to the Sites Dashboard can be included with options:
 
 1.  From the Main Dashboard, Click **Sites** on the left menu.
 2.  Click **New Site** on the left menu.
-![newsiteform.png](/public/userguide-sshots/newsiteform.png)
-
 3.  Enter a ***Name*** that clearly identifies the system, such as a location description.
 4.  Enter the ***URL*** to reach the system, Ex: https:/[]()/Chicago-verge.abcco.com  (URL must be reachable from this VergeOS system)
 5.  ***Allow Insecure SSL Connection*** will permit site connections without a valid CA-signed certificate (e.g. missing, invalid, expired, or self-signed certs). 

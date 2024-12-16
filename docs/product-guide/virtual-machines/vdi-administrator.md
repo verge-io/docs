@@ -9,12 +9,6 @@ A user of type=VDI accesses only the VDI portion of the user interface. When a V
 
 The following screenshot shows a sample VDI User Dashboard. In this example, the VDI User has access to 5 VMs.
 
-![vdi-myvirtualmachines.png](/public/userguide-sshots/vdi-myvirtualmachines.png)
-
-<br>
-
-
-
 > To create a VDI User, create a new user and select VDI in the user type field. {.is-info}
 
 
@@ -32,7 +26,6 @@ The following screenshot shows a sample VDI User Dashboard. In this example, the
 5.  When desired VM(s) selected, click **Add.**
 You are returned to the VM Console Access page.
 
-![vdi-consoleaccesss-screen.png](/public/userguide-sshots/vdi-consoleaccesss-screen.png)
 
 <br>
 

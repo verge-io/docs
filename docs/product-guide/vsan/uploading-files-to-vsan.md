@@ -47,7 +47,7 @@ The Media Images section allows for uploading files to the VergeOS vSAN allowing
     - **Set Date** to select a specific date/time to cease the download link.
 6. Click **Submit** to save the link.
 
-![Media Images Link Copy](/public/userguide-sshots/mediaimages-link-copy.png)
+![Media Images Link Copy](/product-guide/screenshots/mediaimages-link-copy.png)
 
 The Media Images list appears. Download options appear on the far right of the given file:
 

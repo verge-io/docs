@@ -5,7 +5,7 @@
 The remote console provides direct interaction (mouse/keyboard) with Virtual Machines.
 <br>
 
-![vdi-console.png](/public/userguide-sshots/vdi-console.png)
+![vdi-console.png](/product-guide/screenshots/vdi-console.png)
 
 <br>
 <br>
@@ -15,31 +15,31 @@ All toolbar options, except the *Exit* button,  work as a toggle, switching betw
 
 <br>
 
-#### ![exiticon.png](/public/userguide-sshots/exiticon.png) Exit
+#### ![exiticon.png](/product-guide/screenshots/exiticon.png) Exit
 Exits the console and returns to the previous screen.
 <br>
 
-####  ![expandconsole-icon.png](/public/userguide-sshots/expandconsole-icon.png) Expand console
+####  ![expandconsole-icon.png](/product-guide/screenshots/expandconsole-icon.png) Expand console
 Activates/deactivates the console's full-screen option (expand to entire browser tab)
 <br>
 
-#### ![virtkeyboard-icon.png](/public/userguide-sshots/virtkeyboard-icon.png) Virtual Keyboard
+#### ![virtkeyboard-icon.png](/product-guide/screenshots/virtkeyboard-icon.png) Virtual Keyboard
 Provides a virtual keyboard on devices that do not have a physical keyboard (cellphones, tables, etc.)
 <br>
 
-#### ![dragview-icon.png](/public/userguide-sshots/dragview-icon.png) Drag view port
+#### ![dragview-icon.png](/product-guide/screenshots/dragview-icon.png) Drag view port
 Alows moving the viewable portion of the console when the guest system screen exceeds the viewable area. 
 <br>
 
-#### ![browserfullscreen-icon.png](/public/userguide-sshots/browserfullscreen-icon.png) Toggle Browser Full Screen
+#### ![browserfullscreen-icon.png](/product-guide/screenshots/browserfullscreen-icon.png) Toggle Browser Full Screen
 Activates/deactivates the browser's full-screen option.
 <br>
 
-#### ![eject-icon.png](/public/userguide-sshots/eject-icon.png) Change/Eject CD-ROM
+#### ![eject-icon.png](/product-guide/screenshots/eject-icon.png) Change/Eject CD-ROM
 Toggles the view of the CD-ROM selection form, where an \*.iso file is selected.
 <br> 
 
-#### ![clipboard-icon.png](/public/userguide-sshots/clipboard-icon.png) Clipboard
+#### ![clipboard-icon.png](/product-guide/screenshots/clipboard-icon.png) Clipboard
 Opens the clipboard window where text can be placed to insert into the Virtual Machine.
    - The **Close** button will close the Clipboard window (can also be closed by clicking the Clipboard button again).
    -  The **Clear** button clears current contents from the Clipboard.
@@ -49,7 +49,7 @@ Opens the clipboard window where text can be placed to insert into the Virtual M
 
  <br>   
     
-#### ![power-icon.png](/public/userguide-sshots/power-icon.png) Power
+#### ![power-icon.png](/product-guide/screenshots/power-icon.png) Power
 Opens/closes the power buttons window:
    -   **\[Reset\]** - restarts the VM Operating system; does not power down the virtual hardware.
    -   **\[ACPI\]** - Power down (graceful)
@@ -57,7 +57,7 @@ Opens/closes the power buttons window:
   <br>
   <br>
     
-#### ![extrakeys-icon.png](/public/userguide-sshots/extrakeys-icon.png) Extra Keys
+#### ![extrakeys-icon.png](/product-guide/screenshots/extrakeys-icon.png) Extra Keys
 opens/closes the extra keys window, which allows simulating keyboard operations to the machine, such as:
  -   **\[Ctrl-Alt-Del\]**
  -   **\[Ctrl\]\***
@@ -74,7 +74,7 @@ opens/closes the extra keys window, which allows simulating keyboard operations 
 
 <br> 
 
-#### ![chat-icon.png](/public/userguide-sshots/chat-icon.png) Chat
+#### ![chat-icon.png](/product-guide/screenshots/chat-icon.png) Chat
 opens/closes the chat window where all users that are consoled into the virtual machine can share messages with each other.
 
 <br>   
