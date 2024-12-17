@@ -1,6 +1,6 @@
 # Create an OIDC Application
 
-Creating an OpenID Connect (OIDC) application allows you to establish the VergeOS system as an identity provider for tenants and other VergeOS systems.  Upstream third-party providers (e.g. Google, Azure, Okta, Gitlab) can be configured centrally to be utilized across all the systems and tenants using the VergeOS OIDC application.
+Creating an OpenID Connect (OIDC) application allows you to establish the VergeOS system as an identity provider for other VergeOS systems and tenants.  Upstream third-party providers (e.g. Google, Azure, Okta, Gitlab) can also be configured centrally to be utilized across all the systems and tenants using the VergeOS OIDC application.
 
 ## Configure a New OIDC Application
 
@@ -9,34 +9,20 @@ Creating an OpenID Connect (OIDC) application allows you to establish the VergeO
 3. Click **New** on the left menu.
 4. Enter/configure the following fields:
 
-Basic Settings
+**Name (required)**: Enter a name for the OIDC application
+**Enabled**: must be checked for the application to be activated
+**Description (optional)**: optional additional details about this application can be entered.
 
-Name (required) - Enter a name for the OIDC application
-Enabled - Check this box to activate the application
-Description (optional) - Enter additional details about this application's purpose
+**Redirect URI**: enter the callback URL, to the VergeOS system, where users will be redirected after authentication, e.g. Verge-proda@example.com.  
 
-Redirect URI - Enter the callback URL where users will be redirected after authentication. This can include multiple
-client system urls.
-Wildcards can be used in redirect URLs. This is intended for referencing multiple systems in the same company domain or for subdomains, for ex: https://vergesystem.*.example.com
-ex: https://ABC-Verge*.example.com
-a recommendation here about using wildcards wisely and not too widely.
+!!! tip "Wildcards"
+    Wildcards can be used in redirect URIs. This is intended for referencing multiple systems in the same  domain, e.g. https://ABXcompany*.example.com or to accommodate subdomains with a single entry, e.g. https://vergesystem.*.example.com
 
+!!! "Multiple Redirect URIs can be entered to allow a single OIDC application to service multiple client VergeOS systems.
 
-Multiple Redirect URIs because a single oidc application can be created to service multiple systems. 
+**Force Authorization Source**: Optionally, a third-party Auth source, set up on this local VergeOS system (e.g. Google, Okta, Azure), can be selected to require client systems authenticate through the upstream source.  If an Auth source is not selected here, users will be able to authenticate via local, built-in VergeOS accounts or any third-party auth source that exists on this system.  See [Product Guide Auth Sources](/product-guide/auth/auth-sources-general) for information about regarding Auth Source Configuration.
 
-Multiple oidc applications can be created to allow different configurations for different client systems.
-
-Application Details
-
-
-Force Authorization Source - Select the upstream authentication provider to use. 
-Upstream auth sources set up on this local system
-for instance, if the local system has a google auth source configured, users must use that source (rather than local, built-in verge users or other auth sources that exist on this system)
-
-When it is not forced, users are able to authenticate via  VergeOS users on the source VergeOS system or any third-party auth source that exists on this local system.
-
-
-Map User - Select a user to map all logins to, or leave as "--None--"
+**Map User**: Select a user to map all logins to, or leave as "--None--"
 Mapping a user - This allows any user that is verified to be logged into the client system as a particular user.
 As an example, a typical use for this would be accommodating multiple support team members to log into customer system(s) under a common username on the local system, where each team member will authenticate with their own unique credential. This is more convenient as it is not necessary to create separate user accounts and permissions for each support employee on the client system, yet secure, because it does not require multiple employees to use shared credentials to access customer systems.
 
@@ -54,6 +40,8 @@ Restrict Access - Enable to limit which users/groups can use this application (w
 Allowed Users/Groups - When access is restricted, specify the permitted users/groups.
 
 Click Submit to create the OIDC application.
+
+!!! tip "Multiple OIDC applications can be created on the same system to allow different configurations for different client systems." maybe put in an example here. 
 
 ## Next Steps
 
