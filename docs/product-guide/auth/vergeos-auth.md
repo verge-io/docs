@@ -1,10 +1,9 @@
 
 # Using Verge OIDC application for Authentication/Authorization
 
-This guide will provide instructions to configure a VergeOS system to utilize a VergeOS OIDC identify provider.
+This guide will provide instructions to configure a VergeOS system to utilize a VergeOS OIDC identify provider (A host system or another system with an OIDC application).
 
-1. **Obtain Client ID and Client Secret from the VergeOS OIDC provider system:** Navigate to the OIDC Application dashboard (Main Dashboard > System > OIDC Applications > double-click the intended application in the list.)  Client ID is displayed; client secret is hidden; both can be copied by clicking their respective copy icons. The icons are to the right of the items, copy icon is not available for users with inadequate permissions.
-
+1. [**Obtain Client ID and Client Secret from the VergeOS OIDC provider system**](/product-guide/oidc-create-application#next-steps)
 ## Configure a *Verge.io* Authorization Source
 
 1. From the VergeOS Main Dashboard click **System** on the left menu.
@@ -14,11 +13,11 @@ This guide will provide instructions to configure a VergeOS system to utilize a 
 **Fields:**  
 **Name**: provide a label to identify this authorization source; it will appear on the sign-in button of the VergeOS login page.
 
-**Driver**: **Verge.io**
+**Driver**: **OpenID (Well Known Config)**
 **Base URL:** URL of the VergeOS provider system
 **Redirect URI** URL to this VergeOS client system
-**Token hint parameter for logout session**: default="id_token_hint"  --- value is the actual ID Token that was received earlier from the OIDC provider.
-**Redirect parameter for logout session**: default="post_logout_redirect_uri" other common name="logout_redirect"
+**Token hint parameter for logout session**: default="id_token_hint"  --- value is the actual ID Token that was received earlier from the OIDC provider.  Leave this value at the default unless you have a specifc use case.
+**Redirect parameter for logout session**: default="post_logout_redirect_uri" other common name="logout_redirect"  Leave this value at the default unless you have a specifc use case.
 **Client ID**: Paste the client ID from the VergeOS provider (from step #1).
 **Client Secret**: Paste the Client Secret from the VergeOS provider (from step #1).
 

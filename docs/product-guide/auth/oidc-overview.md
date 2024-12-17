@@ -22,3 +22,21 @@
   * [Create an OIDC application on the VergeOS Provider system](/product-guide/OIDC-Create-app)
   * (If applicable) [Create upstream Auth Source(s), (Google, Azure, Okta, etc.)](/product-guide/AuthSources-General)  on the VergeOS Provider
   * [Create a new *Verge.io* Auth Source](/product-guide/OIDC-VergeAuth) on each Identity consumer system/tenant
+
+
+  Configuring/Using a central VergeOS identity provider involves the following basic steps/activities:
+
+
+On the Source System:
+1. Configure third-party upstream provider(s), (e.g. Google, Okta, Azure) on the system that will act as the source.
+2y. Configure a New OIDC Application at the source system.
+
+multiple oidc applications can be created to accomodate different settings, such as: 
+multiple systems can share the same oidc application
+
+
+On each Client System:
+1. Create a new auth source pointing to the oidc application
+
+
+
