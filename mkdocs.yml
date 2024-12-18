@@ -1,0 +1,304 @@
+site_name: VergeOS Docs
+site_url: https://docs.verge.io
+repo_url: https://github.com/verge-io/docs
+repo_name: verge-io/docs
+edit_uri: edit/main/docs/
+
+
+theme:
+  name: material
+  custom_dir: docs/overrides
+  logo: assets/vergelogomark.svg
+  favicon: assets/vergelogomark.svg
+  icon:
+    repo: fontawesome/brands/github
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    #- navigation.sections
+    - navigation.indexes
+    #- toc.integrate
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+    - announce.dismiss
+    - navigation.footer
+    - navigation.path
+    - content.action.edit  # Shows the edit button
+    - content.action.view  # Shows the view source button
+  language: en
+  palette:
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: black
+      accent: deep orange
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+    # Palette toggle for light mode
+    - scheme: default
+      primary: indigo
+      accent: deep orange
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+plugins:
+  - blog:
+      blog_dir: knowledge-base
+      post_url_format: "{slug}"
+      blog_toc: true
+      archive: false
+      pagination_per_page: 50
+  - search:
+      prebuild_index: true
+      lang:
+      - en
+  - glightbox
+markdown_extensions:
+  - sane_lists
+  - admonition
+  - attr_list
+  - pymdownx.details
+  - pymdownx.superfences
+  - md_in_html
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.snippets:
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.tasklist:
+      clickable_checkbox: true
+  - footnotes
+  - pymdownx.mark
+  - attr_list
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - toc:
+      permalink: "#"
+      toc_depth: 2
+
+extra:
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/VergeIO_Inc
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/verge-io/
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/channel/UCnFu28s0GBVi18j7Ez3MXRg
+    - icon: fontawesome/solid/paper-plane
+      link: mailto:support@verge.io
+    - icon: fontawesome/solid/phone
+      link: tel:855-855-8300
+  generator: false
+  analytics:
+      provider: google
+      property: G-KBH6Q02QFH
+  consent:
+    title: Cookie consent
+    description: >- 
+      We use cookies to recognize your repeated visits and preferences, as well
+      as to measure the effectiveness of our documentation and whether users
+      find what they're searching for. With your consent, you're helping us to
+      make our documentation better.
+  status:
+    new: Recently added
+    deprecated: Deprecated
+
+extra_javascript:
+  - javascripts/extra.js
+
+#extra_css:
+#  - stylesheets/extra.css
+
+copyright: |
+  Copyright &copy; 2024 <a href="https://verge.io" target="_blank" rel="noopener"> Verge.io</a> |
+  <a href="#__consent">Change cookie settings</a>
+
+nav:
+  - Home: index.md
+  - Implementation Guide:
+    - Intro: implementation-guide/intro.md
+    - Core Concepts: implementation-guide/concepts.md
+    - Node Sizing: implementation-guide/sizing.md
+    - Network Design: implementation-guide/network-design.md
+    - Installation:
+      - Pre-Installation: implementation-guide/pre-installation.md
+      - Bootable Media: implementation-guide/install-media.md
+      - Installation: implementation-guide/installation-guide.md
+      - Post-Installation: implementation-guide/post-installation.md
+    - Install Additional Nodes:
+      - Scale Out Nodes: implementation-guide/scale-out-nodes.md
+      - Compute Nodes: implementation-guide/compute-nodes.md
+      - Storage Nodes: implementation-guide/storage-nodes.md
+    - Reference Architecture:
+      - Edge / ROBO: reference-architecture/edge.md
+      #- Enterprise Multi-Site: reference-architecture/enterprise-multi-site.md
+      - Cloud Providers: reference-architecture/csp.md
+      - Life / Data Science: reference-architecture/data-science.md
+      - Homelab: reference-architecture/homelab.md
+  - Knowledge Base:
+    - knowledge-base/index.md
+  - Product Guide:
+    - VergeOS User Interface: product-guide/ui-overview.md
+    - System Configuration:
+      - Authentication:
+        - Authorization Sources: product-guide/auth/auth-sources-general.md
+        - Azure AD: product-guide/auth/azure-auth.md
+        - Google: product-guide/auth/google-auth.md
+        - Multi-Factor Authentication: product-guide/auth/mfa-email.md
+      - Certificates: product-guide/system/certificates.md
+      - Cloud Snapshots:
+        - Overview: product-guide/backup-dr/snapshots-overview.md
+        - Profiles: product-guide/backup-dr/snapshot-profiles.md
+        - VM Snapshots and Restore: product-guide/backup-dr/vm-snapshots-restores.md
+        - Tenant Snapshots: product-guide/tenants/tenant-snapshots.md
+        - Cloud Snapshots and Restore: product-guide/backup-dr/cloud-snapshot-restore.md
+        - NAS Snapshots and Restore: product-guide/nas/volume-snapshots-restores.md
+      - Clusters: 
+        - Overview: product-guide/system/clusters.md
+        - Configuration Options: product-guide/system/clusters-config-options.md
+        #- Removing Clusters: product-guide/removingclusters.md
+        #- Cluster Settings: product-guide/clustersettings.md
+      - Permissions:
+        - Users and Groups: product-guide/system/users-groups.md
+        - Permissions: product-guide/system/permissions.md
+      - Nodes:
+        - Overview: product-guide/system/nodes-overview.md
+        - IPMI: product-guide/system/ipmi.md
+        - System Event Log (SEL): product-guide/system/sel.md
+      - Sites Dashboard:
+        - Overview: product-guide/system/sites-overview.md
+        - Adding Sites: product-guide/system/site-dashboard-add-sites.md
+      - Tasks / Events:
+        - Create Automated Tasks: product-guide/automation/create-tasks.md
+      - Updates / Licensing:
+        - Applying Updates: product-guide/system/running-updates.md
+        - Settings: product-guide/system/update-settings.md
+      - Settings:
+        - Overview: product-guide/system/settings-overview.md
+        - Advanced Settings: product-guide/system/advanced-system-settings.md
+    - Virtual Machines:
+      - Quick Start: 
+        - Best Practices: product-guide/virtual-machines/vm-best-practices.md
+        - Uploading Media Images: product-guide/vsan/uploading-files-to-vsan.md
+        - Creating Virtual Machines: product-guide/virtual-machines/creating-vms.md
+        - Virtual Machine Drives: product-guide/virtual-machines/vm-drives.md
+        - Virtual Machine Network Interfaces: product-guide/virtual-machines/vm-nics.md
+        - Virtual Machine Fields: product-guide/virtual-machines/vm-field-descriptions.md
+        - VM Guest Agent: product-guide/virtual-machines/vm-guest-agent.md
+      - Importing VMs: 
+        - From Media Images: product-guide/virtual-machines/import-from-upload.md
+        - From VMware Backup: product-guide/virtual-machines/import-from-vmware.md
+        - From NAS Volume: product-guide/virtual-machines/import-from-nas.md
+        - Viewing Import Jobs: product-guide/virtual-machines/view-import-jobs.md
+      - VM Operations:
+        - Working With VMs: product-guide/virtual-machines/working-with-vms.md
+        - Live Migrations: product-guide/virtual-machines/live-migrations.md
+      - VDI:
+        - VDI Administrator: product-guide/virtual-machines/vdi-administrator.md
+        - VDI User: product-guide/virtual-machines/vdi-user.md
+        - Virtual Machine Remote Console: product-guide/virtual-machines/vm-remote-console.md
+    - Tenants:
+      - Assigning External IP Addresses: product-guide/tenants/assign-ip-to-tenant.md
+      - Creating Tenants: product-guide/tenants/create-tenants.md
+      - Increasing Resources: product-guide/tenants/add-tenant-resources.md
+      - Modifying Tenants: product-guide/tenants/tenant-modifications.md
+      - Monitoring Tenants: product-guide/tenants/tenant-monitoring.md
+      - Reducing Resources: product-guide/tenants/reduce-tenant-resources.md
+      - Sharing Files: product-guide/tenants/provide-files-to-tenant.md
+      - Tenant Snapshots: product-guide/tenants/tenant-snapshots.md
+      - Usage Reports: product-guide/tenants/tenant-usagereports.md
+    - Recipes:
+      - Organization: product-guide/automation/recipes-organization.md
+      - VM Recipes: product-guide/automation/vm-recipes.md
+    - NAS:
+      - Overview: product-guide/nas/nas-service.md
+      - Configuration:
+        - Local Volumes: product-guide/nas/nas-local-volumes.md
+        - Remote Volumes: product-guide/nas/nas-remote-volumes.md
+        - Shares: product-guide/nas/nas-shares.md
+        - VM Export: product-guide/virtual-machines/vm-export-volume.md
+        - Volume Syncs: product-guide/nas/volume-syncs.md
+        - Join NAS to AD: product-guide/nas/nas-join-ad-domain.md
+#    - Media Images:
+#      - Overview: product-guide/mediaimages-overview.md
+#      - Uploading Media Images: product-guide/uploadingtovSAN.md
+    - Networking:
+      - Quick Start: 
+        - Overview: product-guide/networks/network-overview.md
+        - Connect to an Existing LAN/WAN: product-guide/networks/connect-lan-wan.md
+        - Create an Internal Network with External Access: product-guide/networks/internal-external-access.md
+        - Creating an Internal Layer2 Network: product-guide/networks/internal-layer2.md
+        - Create a Layer 3 Internal Network: product-guide/networks/internal-layer3.md
+        - Create a DHCP Static Entry: product-guide/networks/dhcp-static-lease.md
+        - Assign an External IP to an Internal network: product-guide/networks/assign-external-ip.md
+        - Create a 1:1 NAT: product-guide/networks/nat-1to1.md
+      - Configuration:
+        - Creating an Internal Network: product-guide/networks/internal-networks.md
+        - Using Aliases: product-guide/networks/aliases.md
+        - Network Rules: product-guide/networks/network-rules.md
+        - VLANs: product-guide/networks/create-vlan.md
+      - Monitoring:
+        - Network Dashboards: product-guide/networks/network-dashboards.md
+        - Tracking Network Statistics: product-guide/networks/tracking-net-statistics.md
+        - Port Mirroring: product-guide/networks/port-mirroring.md
+        - Network Diagnostics Tool: product-guide/networks/net-diagnostics.md
+      - VPN:
+        - Overview: product-guide/vpn/vpn-overview.md
+        - IPSec: product-guide/vpn/ipsec.md
+        - WireGuard: product-guide/vpn/wireguard-config.md
+        - WireGuard Examples: product-guide/vpn/wireguard-examples.md
+      - Troubleshooting:
+        - Network Troubleshooting: product-guide/networks/net-troubleshooting.md
+    - Backup & DR:
+      - Site Syncs:
+        - Configuration: product-guide/backup-dr/sync-configuration.md
+        - Monitoring: product-guide/backup-dr/monitoring-site-syncs.md
+        - Sync Back: product-guide/backup-dr/sync-back.md
+        - Manual Sync: product-guide/backup-dr/manual-site-syncs.md
+        - Repair Server: product-guide/backup-dr/repair-server.md
+      - Snapshots:
+        - Overview: product-guide/backup-dr/snapshots-overview.md
+        - Profiles: product-guide/backup-dr/snapshot-profiles.md
+        - VM Snapshots and Restore: product-guide/backup-dr/vm-snapshots-restores.md
+        - Tenant Snapshot and Restore: product-guide/tenants/tenant-snapshots.md
+        - Cloud Snapshots and Restore: product-guide/backup-dr/cloud-snapshot-restore.md
+        - NAS Snapshots and Restore: product-guide/nas/volume-snapshots-restores.md
+    - vSAN:
+       - Architecture: product-guide/vsan/architecture.md  # Added from PR
+       - Storage Tiers: product-guide/vsan/storage-tiers.md
+       - Preferred Tier: product-guide/vsan/preferred-tiers.md
+       - Removing ISO Files with References: product-guide/vsan/removing-iso-refs.md
+    - Device Passthrough:
+      - Overview: product-guide/system/device-pass-overview.md
+      - NVIDIA vGPU: product-guide/system/nvidia-vgpu.md
+      - SR-IOV NIC: product-guide/system/sriov.md
+      - USB Passthrough: product-guide/system/usb-passthrough.md
+      - One-to-One PCI Passthrough: product-guide/system/generic-pci-passthrough.md
+    - Maintenance & Monitoring:
+      - Drive Replacement: product-guide/system/drive-replacement.md
+      - Maintenance Mode: product-guide/system/maintenance-mode.md
+      - Subscriptions/Alerts:
+        - Creating Subscriptions: product-guide/system/subscriptions-overview.md
+        - Subscription Profiles: product-guide/system/subscription-profiles.md
+        - Accessing Subscriptions: product-guide/system/subscriptions-accessing.md
+  - Release Notes: 
+    - Overview: release-notes/release-notes-overview.md
+    - 4.13 (latest): release-notes/release-notes.md
+    - 4.12: release-notes/4-12-release-notes.md
+    - 4.11: release-notes/4-11-release-notes.md
+    - "4.10": release-notes/4-10-release-notes.md
+    - 4.9: release-notes/4-9-release-notes.md
+  - Glossary: glossary.md
+
+#build
