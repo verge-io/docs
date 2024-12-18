@@ -24,7 +24,7 @@ Navigate to a **specific node dashboard** (Main Dashboard > Nodes > double-click
 6. **A reboot of the associated node(s) may be necessary**; a message will appear at the top of the Resource Manager dashboard.
 !!! warning "Follow proper [**Maintenance Mode**](/product-guide/maintenancemode) procedures when rebooting a node to avoid workload disruptions."
 
-After the resource group is selected/created, a **Success* message should appear indicating resource rules were created for the device(s).
+After the resource group is selected/created, a *Success* message should appear indicating resource rules were created for the device(s).
 
 ## VM/Guest Configuration
 
@@ -46,7 +46,7 @@ After the resource group is selected/created, a **Success* message should appear
 7. Install any required client **drivers**. Consult hardware vendor documentation.
 8. **Restart the VM**.
 
-## Passthrough a PCI Device to a Tenant
+## Pass through a PCI Device to a Tenant
 
 PCI devices can be passed to a tenant for the tenant to pass to its own VMs.  When you pass through PCI devices to the tenant, a new resource group is created within the tenant.  
 
