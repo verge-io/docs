@@ -1,42 +1,29 @@
 # OIDC Applications Overview
 
-## OIDC Application Benefits
+VergeOS provides OIDC functionality to allow centralized identity management for providers and enterprises supporting multiple VergeOS systems and or tenants.
 
-*OIDC (OpenID Connect) functionality allows centralized management and streamlined auth across multiple physical VergeOS systems and tenants.
+## VergeOS OIDC Application Benefits
+
 *Ability to establish a VergeOS system as an identity provider (with or without an upstream provider such as Google, Azure, etc.)
-* A vergeOS OIDC application can be selected as an auth source on other verge systems
-* Can provide single sign-on (SSO) capabilities across VergeOS systems 
-* Providers/MSPs can have central login linked back to their environment for all tenants
+* Provides single sign-on (SSO) capabilities across VergeOS systems 
+* MSPs can have central login linked back to their environment for all tenants
 * Same app/token in an upstream auth provider can be used for multiple physical environments and tenants rather than creating a separate one for each.
-* More secure with standardized protocol with wide industry support and built-in security features
-* and less administrative burden for user management across multiple VergeOS systems and tenants
+* OIDC provides a standardized, widely-supported protocol with built-in security features
+* Less administrative burden for user/group management across various VergeOS systems and tenants
 
-## General Flow
-*User attempts to login to a VergeOS system
-*the VergeOs system redirects to the VergeOS provider system
-*When there is a third-party provider configured, the system redirects upstream as needed (ex: Google Auth)
-*Tokens containing user information is sent back to the initial VergeOS system
+## General Operational Flow
+
+* User attempts to log in to a VergeOS system
+* the request is redirected to the VergeOS provider system
+* When there is a third-party provider configured, the system redirects upstream as needed (e.g. Google Auth)
+* Tokens containing user information are sent back to the initial VergeOS system
 * Tokens are verified and a user session is created
 
-## High Level Steps
-  * [Create an OIDC application on the VergeOS Provider system](/product-guide/OIDC-Create-app)
-  * (If applicable) [Create upstream Auth Source(s), (Google, Azure, Okta, etc.)](/product-guide/AuthSources-General)  on the VergeOS Provider
-  * [Create a new *Verge.io* Auth Source](/product-guide/OIDC-VergeAuth) on each Identity consumer system/tenant
+## Configuration
 
+ Configuring a central VergeOS identity provider involves the following activities:
 
-  Configuring/Using a central VergeOS identity provider involves the following basic steps/activities:
-
-
-On the Source System:
-1. Configure third-party upstream provider(s), (e.g. Google, Okta, Azure) on the system that will act as the source.
-2y. Configure a New OIDC Application at the source system.
-
-multiple oidc applications can be created to accomodate different settings, such as: 
-multiple systems can share the same oidc application
-
-
-On each Client System:
-1. Create a new auth source pointing to the oidc application
-
-
-
+* (Optional) [Create upstream Auth Source(s), (Google, Azure, Okta, etc.)](/product-guide/AuthSources-General) on the VergeOS Provider.
+* [Create an OIDC application on the VergeOS Provider system](/product-guide/OIDC-Create-app)
+!!! tip "Multiple OIDC applications can be created on the same system to accommodate different configurations"
+* [Create a new *Verge.io* Auth Source](/product-guide/OIDC-VergeAuth) on each Identity consumer system/tenant
