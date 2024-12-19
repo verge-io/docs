@@ -59,11 +59,11 @@ Before beginning this procedure, ensure:
 For each drive:
 
 1. In vSAN Diagnostics:
-   - Set Query to **Add Drive to vSAN**
-   - Select the appropriate **Node** (node0 or node1)
-   - Enter the correct **Path** for the device
-   - Set **Tier** to **Tier 0**
-   - Configure **Swap** setting
+    - Set Query to **Add Drive to vSAN**
+    - Select the appropriate **Node** (node0 or node1)
+    - Enter the correct **Path** for the device
+    - Set **Tier** to **Tier 0**
+    - Configure **Swap** setting
 
 !!! warning "Swap Configuration"
     - Enable swap on only ONE storage tier
