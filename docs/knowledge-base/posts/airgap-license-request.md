@@ -19,11 +19,13 @@ dateCreated: 2024-08-19T19:08:58.594Z
 
 # Requesting an Airgap License for VergeOS
 
+!!! warning "Air-gap licensing is not common and requires justification. Please see [Licensing and Software Updates](/product-guide/system/licensing-and-updates/) for more information."
+
 ## Overview
 
 !!! info "Key Points"
     - VergeOS requires a valid license for operation
-    - Airgapped environments need a special airgap license
+    - Air-gapped environments need a special airgap license
     - The process involves generating a license request file and emailing it to Verge
 
 This guide walks you through the process of requesting an airgap license for VergeOS systems in environments without outbound Internet access.
