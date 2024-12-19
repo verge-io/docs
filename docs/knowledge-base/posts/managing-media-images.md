@@ -30,15 +30,11 @@ To upload a media image, ensure that the file is in one of the supported formats
 1. From the **Main Dashboard**, select **Media Images** from the left menu and click **Upload**.
 2. You may also choose **Upload from URL** if you are sharing a file from another site or have a URL.
 
-![mediaimages1.png](/public/mediaimages1.png)
-
 Once the file transfer completes, it will be available in the **Media Images** list for use.
 
 ### Creating a Public Link
 
 1. To create a **Public Link**, select a file and click **Add Public Link** from the left menu.
-
-![mediaimages2.png](/public/mediaimages2.png)
 
 2. Choose the format for sharing the file:
 
@@ -52,8 +48,6 @@ Once the file transfer completes, it will be available in the **Media Images** l
 
 - **Never Expire**: The link will remain active indefinitely.
 - **Set Date**: Set a specific expiration date and time for the link.
-
-![pub-link-format.png](/public/pub-link-format.png)
 
 The **Public Link** can be shared with other systems, for general file sharing, or with local tenants to provide access without requiring an internet download. However, sharing via this method uses network bandwidth. For a more efficient way to share files to a tenant, see the [Add Media to Tenants](/knowledge-base/sharing-media-images-to-tenants/) guide.
 

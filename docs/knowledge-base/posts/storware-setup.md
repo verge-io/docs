@@ -33,7 +33,7 @@ For more comprehensive information on Storware's capabilities and additional bac
 
 1. **Deploy the NAS Service:**
    
-   - Access the VergeOS UI and deploy a new NAS service. [Add a NAS Service](https://docs.verge.io/product-guide/NASservice/).
+   - Access the VergeOS UI and deploy a new NAS service. [Add a NAS Service](/product-guide/nas/nas-service).
   
 
 2. **Configure NFS Settings:**

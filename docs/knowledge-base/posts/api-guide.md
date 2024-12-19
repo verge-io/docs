@@ -37,15 +37,12 @@ To access the Swagger documentation in the VergeOS UI:
 3. In the System Dashboard, find the **API Documentation** link at the bottom left and click it.
 4. The Swagger documentation page will open. This page provides detailed examples for each API operation, including the ability to test the API directly.
    
-   ![Swagger Documentation Example](/public/api1.png)
+   ![Swagger Documentation Example](/product-guide/screenshots/api1.png)
    
 5. Select an individual table and choose one of the available **GET/POST/DELETE/PUT** options to view and test API actions.
 
-   ![Swagger Documentation Example](/public/api2.png)
    
 6. Specify the parameters and click the **Execute Button** to run the API command. This will return the response, which includes the response body, header, and a curl example.
-
-   ![Swagger Documentation Example](/public/api3.png)
 
 
 ## API Basics

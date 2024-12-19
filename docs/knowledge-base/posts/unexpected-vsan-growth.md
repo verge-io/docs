@@ -39,7 +39,7 @@ To isolate unexplained growth, it is important to narrow down when the growth in
 - When reviewing by week, check if the total storage consumed at the start of the week is similar to the end. If, for example, the growth is roughly 10%, repeat for the previous week. If the weekly growth percentage is consistent, this represents your average weekly growth rate, which can help plan for hardware expansion.
 - Filter the current month and check for any sudden spikes in storage consumption on the **Storage Usage** graph. Click and drag over the time in question to zoom in on the data, and hover over the graph for specific date/time information.
 
-![vsan_unexpected_growth.png](/public/vsan_unexpected_growth.png)
+![vsan_unexpected_growth.png](/product-guide/screenshots/vsan_unexpected_growth.png)
 
 ## Possible Reasons for Storage Increase
 

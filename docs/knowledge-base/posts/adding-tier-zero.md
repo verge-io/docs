@@ -87,8 +87,8 @@ Monitor the vSAN tier status in the system dashboard. The tier should transition
 
 ## Additional Resources
 
-- [vSAN Architecture Overview](/product-guide/vsanoverview/)
-- [Storage Management](/product-guide/storage/)
+- [vSAN Architecture Overview](/product-guide/vsan/architecture)
+<!--- [Storage Management](/product-guide/storage/) -->
 - [Node Sizing Guide](/implementation-guide/sizing/)
 
 ---

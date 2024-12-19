@@ -80,9 +80,9 @@ This article guides Service Providers through the process of sharing files, spec
 
 ## Additional Resources
 
-- [Understanding vSAN in VergeOS](/product-guide/uploadingtovSAN/)
-- [Managing Tenants](/product-guide/createtenants/)
-- [Media Images](/product-guide/mediaimages-overview)
+- [Understanding vSAN in VergeOS](/product-guide/vsan/architecture)
+- [Managing Tenants](/product-guide/tenants/create-tenants)
+- [Media Images](/product-guide/vsan/uploading-files-to-vsan)
 
 ## Feedback
 

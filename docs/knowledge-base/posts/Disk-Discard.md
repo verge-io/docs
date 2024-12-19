@@ -33,8 +33,6 @@ Here’s what happens when **Discard** is enabled:
 - **vSAN** storage remains optimized, as unused blocks are reclaimed.
 - Disk space usage more accurately reflects the actual data stored on the VM.
 
-![2023-03-30_10_43_52-diskdiscardwindow.png](/public/2023-03-30_10_43_52-diskdiscardwindow.png)
-
 ---
 
 !!! warning "Only disable Discard for performance reasons"

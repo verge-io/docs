@@ -45,8 +45,6 @@ This guide provides steps for creating an external network in VergeOS. The examp
    - **Network Address**: Enter the network address in CIDR format. Example: **192.168.212.0/24**.
    - **Gateway Monitoring**: Enabling this feature is recommended for network reliability.
 
-![Network Configuration](/public/knowledgebase/external-network-settings.png)
-
 4. **Save and Activate the Network:**
    
    - Click **Save** and wait for the network to power on. Once it displays as **Running**, proceed to set up routing rules.
@@ -62,10 +60,6 @@ This guide provides steps for creating an external network in VergeOS. The examp
       - **Type**: Select **IP/Custom**.
       - **Target IP**: Enter the router IP of your gateway. Example: **192.168.212.1**.
    - Click **Save**, then **Apply Rules**.
-
-
-
-![Rule Configuration](/public/knowledgebase/default-gateway-rule.png)
 
 ## Feedback
 

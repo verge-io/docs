@@ -25,7 +25,7 @@ dateCreated: 2023-03-16T15:25:45.176Z
 - Choose your month/year and click **Apply**
 - Scroll down to the bottom.
   
-![consumptionstats-image_(14).png](/public/consumptionstats-image_(14).png)
+![consumptionstats-image_(14).png](/product-guide/screenshots/consumptionstats-image14.png)
 
 **RAM Consumption**: Total RAM Allocated 95th percentile  
 **Storage Consumption**: Tier X (Provisioned) - add up all tiers at the 95th percentile

@@ -46,7 +46,7 @@ This article guides you through the process of setting up access to the vergeOS 
    - Locate the option to create a new rule
    - Use the settings shown in the image below:
    
-   ![ui-access-rule.png](/public/ui-access-rule.png)
+   ![ui-access-rule.png](/product-guide/screenshots/ui-access-rule.png)
 
 3. Submit the Rule
    - After configuring the rule, submit it
@@ -66,16 +66,16 @@ This article guides you through the process of setting up access to the vergeOS 
 
 !!! warning "Common Issues"
     - Problem: Unable to access the UI after creating the rule
-      - Solution: 
+      - Solution:
         1. Verify that the rule is applied correctly
         2. Check if the VM's network interface is on the correct network
         3. Ensure no firewall rules are blocking the connection
 
 ## Additional Resources
 
-- [Network Overview](/product-guide/networkoverview)
-- [Network Rules](/product-guide/networkrules)
-- [Creating an Internal Network](/product-guide/internalnetworks)
+- [Network Overview](/product-guide/networks/network-overview)
+- [Network Rules](/product-guide/networks/network-rules)
+- [Creating an Internal Network](/product-guide/networks/internal-networks)
 
 ## Feedback
 

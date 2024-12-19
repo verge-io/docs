@@ -1,5 +1,7 @@
 # NVIDIA VGPU
 
+!!! warning "This document applies to version 4.12.6 and older only, [if you are running 4.13 or newer you can find documentation in our Product Guide by clicking here](/product-guide/system/device-pass-overview)" 
+
 This page provides instructions for implementing NVIDIA GRID (NVIDIA vGPU solution that allows multiple VMs to share a single physical GPU) in VergeOS.
 
 
@@ -24,7 +26,6 @@ GRID vGPU drivers can be downloaded from your NVIDIA licensing portal or by regi
 4.  The Nodes listing page appears. **Double-click the desired node**.
 5.  Click **Drivers** on the left menu.
 6.  Click **New** on the left menu.
-![](/public/userguide-sshots/newdrivernvidiavgpu.png)
 
 
 7.  From the ***Driver*** dropdown list, select the GPU driver (uploaded to media files in previous step.)
@@ -43,7 +44,6 @@ GRID vGPU drivers can be downloaded from your NVIDIA licensing portal or by regi
 13.  Click **GPUs** on the left menu.
 14.  **Double-click the desired GPU** in the list.
 
-![](/public/userguide-sshots/gpuprofiledropdown.png)
 Selected GPU appears in the first field (PCI Device).
 
 <br>
@@ -62,7 +62,6 @@ Selected GPU appears in the first field (PCI Device).
 3.  Click **Devices** on the left menu.
 4.  Click **New** on the left menu.
 5.  The Device Entry Form appears.
-![](/public/userguide-sshots/newvmdevicenvidia.png)
 
 6.  Optionally, a ***Name*** can be entered for the device.
 7.  Select **NVIDIA vGPU** in the ***Type*** dropdown list.

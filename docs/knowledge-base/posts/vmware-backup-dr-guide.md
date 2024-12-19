@@ -41,8 +41,6 @@ The VMware service establishes a direct agent connection with vSphere; network a
 1.  Click **VMware** on the left menu. (Any existing VMware Services will appear in the list view.)
 1.  Click **New** on the left menu.
 
-![dr1.png](/public/dr1.png)
-
 ### VMware Service Settings:
 
 4.  Enter a **Name** for the VMware service (required).
@@ -63,7 +61,7 @@ The VMware service establishes a direct agent connection with vSphere; network a
 ---
 
 ### vSphere Settings:
-![dr1-1.png](/public/dr1-1.png)
+![dr1-1.png](/product-guide/screenshots/dr1-1.png)
 
 1.  Enter the **vSphere DNS or IP** (required).  The address should be reachable from the network selected for the service. 
 
@@ -129,12 +127,11 @@ When a new VMWare Service is created, a Schedule named “Default” is created 
 1.  Click **Schedules** on the left menu.
 1.  Click **New** on the left menu.
 
-![dr2.png](/public/dr2.png)
 
-4.  Enter a **Name** for the new Schedule.
-1.  **Optionally, a Description** can be entered to record more information.
-1.  Click **Submit**.
-1.  The Schedules list will appear.  **Double-click the new Schedule.**
+2.  Enter a **Name** for the new Schedule.
+3.  **Optionally, a Description** can be entered to record more information.
+4.  Click **Submit**.
+5.  The Schedules list will appear.  **Double-click the new Schedule.**
 
 At this point the Schedule is just an empty container; one or more tasks need to be added to the Schedule.  
 
@@ -149,19 +146,19 @@ At this point the Schedule is just an empty container; one or more tasks need to
 
 ***Ex: Every weekday  at 5:15 PM***
 
-![dr3.png](/public/dr3.png)  
+![dr3.png](/product-guide/screenshots/dr3.png)  
 
 ***Ex: Every 2 hours, from 7 AM - 5 PM, except for Sunday:***
 
-![dr4.png](/public/dr4.png)
+![dr4.png](/product-guide/screenshots/dr4.png)
 
 ***Ex: Monthly, on the last day of the month:***
 
-![dr6.png](/public/dr6.png)
+![dr6.png](/product-guide/screenshots/dr6.png)
 
 ***Ex: One time only, on 2019-04-01 at Noon:***
 
-![dr7.png](/public/dr7.png)
+![dr7.png](/product-guide/screenshots/dr7.png)
 
 10.  By default, a recurring Task is set to run perpetually.  **Optionally,  a Task Expiration** can be defined which will cause the Task to cease on the selected date and time.  To set an expiration for the Task: De-select the Never checkbox and enter desired expiration date and time. 
 
@@ -210,7 +207,7 @@ At this point the Schedule is just an empty container; one or more tasks need to
 
 ## Assigning Schedules
 Once the VMware service is created and successfully connects to the VSphere system, the list of discovered VMware Virtual Machines will appear on the VMware Service Dashboard.   
-![dr8.png](/public/dr8.png)
+![dr8.png](/product-guide/screenshots/dr8.png)
 By default, all VMs have their schedule set to --None--.
 
 ---
