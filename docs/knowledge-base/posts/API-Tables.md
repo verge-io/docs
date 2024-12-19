@@ -22,7 +22,7 @@ dateCreated: 2023-08-15T20:21:58.872Z
 
 # API Tables Description
 
-The following is a brief description of each of the API tables. To find out more details, add **/#swagger** to the end of your VergeUI's URL (or navigate to **System->API Documentation**). Swagger provides detailed information about each table and allows you to test each method with a Get/Post/Put/Delete action. For more instructions on how to integrate with the API, refer to the [API Documentation](/knowledge-base/api) page.
+The following is a brief description of each of the API tables. To find out more details, add **/#swagger** to the end of your VergeUI's URL (or navigate to **System->API Documentation**). Swagger provides detailed information about each table and allows you to test each method with a Get/Post/Put/Delete action. For more instructions on how to integrate with the API, refer to the [API Documentation](/knowledge-base/verge-api-guide) page.
 
 ## API Tables
 

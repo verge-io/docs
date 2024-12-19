@@ -149,152 +149,149 @@ nav:
   - Knowledge Base:
     - knowledge-base/index.md
   - Product Guide:
-    - VergeOS User Interface: product-guide/UI-Overview.md
+    - VergeOS User Interface: product-guide/ui-overview.md
     - System Configuration:
       - Authentication:
-        - Authorization Sources: product-guide/AuthSources-General.md
-        - Azure AD: product-guide/AzureADAuth.md
-        - Google: product-guide/GoogleAuth.md
-        - Multi-Factor Authentication: product-guide/2factorEmailAuth.md
-      - Certificates: product-guide/certificates.md
+        - Authorization Sources: product-guide/auth/auth-sources-general.md
+        - Azure AD: product-guide/auth/azure-auth.md
+        - Google: product-guide/auth/google-auth.md
+        - Multi-Factor Authentication: product-guide/auth/mfa-email.md
+      - Certificates: product-guide/system/certificates.md
       - Cloud Snapshots:
-        - Overview: product-guide/snapshots-overview.md
-        - Profiles: product-guide/snapshot-profiles.md
-        - VM Snapshots and Restore: product-guide/VMsnapshotsandrestores.md
-        - Tenant Snapshots: product-guide/tenantsnapshots.md
-        - Cloud Snapshots and Restore: product-guide/cloudsnapshotandrestore.md
-        - NAS Snapshots and Restore: product-guide/volumesnapsandrestores.md
+        - Overview: product-guide/backup-dr/snapshots-overview.md
+        - Profiles: product-guide/backup-dr/snapshot-profiles.md
+        - VM Snapshots and Restore: product-guide/backup-dr/vm-snapshots-restores.md
+        - Tenant Snapshots: product-guide/tenants/tenant-snapshots.md
+        - Cloud Snapshots and Restore: product-guide/backup-dr/cloud-snapshot-restore.md
+        - NAS Snapshots and Restore: product-guide/nas/volume-snapshots-restores.md
       - Clusters: 
         - Overview: product-guide/system/clusters.md
         - Configuration Options: product-guide/system/clusters-config-options.md
         #- Removing Clusters: product-guide/removingclusters.md
         #- Cluster Settings: product-guide/clustersettings.md
       - Permissions:
-        - Users and Groups: product-guide/usersgroups.md
-        - Permissions: product-guide/permissions.md
+        - Users and Groups: product-guide/system/users-groups.md
+        - Permissions: product-guide/system/permissions.md
       - Nodes:
-        - Overview: product-guide/nodesoverview.md
-        - IPMI: product-guide/IPMI.md
-        - System Event Log (SEL): product-guide/SEL
-      - OIDC Applications:
-        - Overview: product-guide/OIDCoverview.md
-        - Adding Applications: product-guide/OIDCadding.md
+        - Overview: product-guide/system/nodes-overview.md
+        - IPMI: product-guide/system/ipmi.md
+        - System Event Log (SEL): product-guide/system/sel.md
       - Sites Dashboard:
-        - Overview: product-guide/sitesoverview.md
-        - Adding Sites: product-guide/configuringsitesdash-addingsites.md
+        - Overview: product-guide/system/sites-overview.md
+        - Adding Sites: product-guide/system/site-dashboard-add-sites.md
       - Tasks / Events:
-        - Create Automated Tasks: product-guide/createtasks.md
+        - Create Automated Tasks: product-guide/automation/create-tasks.md
       - Updates / Licensing:
-        - Applying Updates: product-guide/runningupdates.md
-        - Settings: product-guide/updatesettings.md
-      - Settings:
-        - Overview: product-guide/settingsoverview.md
-        - Advanced Settings: product-guide/advancedsystemsettings.md
+        - Settings: product-guide/system/update-settings.md
+        - Applying Updates: product-guide/system/running-updates.md
+      - System Settings:
+        - Overview: product-guide/system/settings-overview.md
+        - Advanced Settings: product-guide/system/advanced-system-settings.md
     - Virtual Machines:
       - Quick Start: 
-        - Best Practices: product-guide/VMbestpractices.md
-        - Uploading Media Images: product-guide/uploadingtovSAN.md
-        - Creating Virtual Machines: product-guide/creatingvms.md
-        - Virtual Machine Drives: product-guide/VMdrives.md
-        - Virtual Machine Network Interfaces: product-guide/VMNics.md
-        - Virtual Machine Fields: product-guide/VMfielddescriptions.md
-        - VM Guest Agent: product-guide/VMguestagent.md
+        - Best Practices: product-guide/virtual-machines/vm-best-practices.md
+        - Uploading Media Images: product-guide/vsan/uploading-files-to-vsan.md
+        - Creating Virtual Machines: product-guide/virtual-machines/creating-vms.md
+        - Virtual Machine Drives: product-guide/virtual-machines/vm-drives.md
+        - Virtual Machine Network Interfaces: product-guide/virtual-machines/vm-nics.md
+        - Virtual Machine Fields: product-guide/virtual-machines/vm-field-descriptions.md
+        - VM Guest Agent: product-guide/virtual-machines/vm-guest-agent.md
       - Importing VMs: 
-        - From Media Images: product-guide/importfromupload.md
-        - From VMware Backup: product-guide/importvmware.md
-        - From NAS Volume: product-guide/importfromNAS.md
-        - Viewing Import Jobs: product-guide/viewimportjobs.md
+        - From Media Images: product-guide/virtual-machines/import-from-upload.md
+        - From VMware Backup: product-guide/virtual-machines/import-from-vmware.md
+        - From NAS Volume: product-guide/virtual-machines/import-from-nas.md
+        - Viewing Import Jobs: product-guide/virtual-machines/view-import-jobs.md
       - VM Operations:
-        - Working With VMs: product-guide/VM-workingwith.md
+        - Working With VMs: product-guide/virtual-machines/working-with-vms.md
         - Live Migrations: product-guide/virtual-machines/live-migrations.md
       - VDI:
-        - Instructions for the Administrator: product-guide/VDI-Administrator.md
-        - Instructions for the User: product-guide/VDI-User.md
-        - Virtual Machine Remote Console: product-guide/VM-RemoteConsole.md
+        - VDI Administrator: product-guide/virtual-machines/vdi-administrator.md
+        - VDI User: product-guide/virtual-machines/vdi-user.md
+        - Virtual Machine Remote Console: product-guide/virtual-machines/vm-remote-console.md
     - Tenants:
-      - Assigning External IP Addresses: product-guide/assignIPtotenant.md
-      - Creating Tenants: product-guide/createtenants.md
-      - Increasing Resources: product-guide/tenantsaddresources.md
-      - Modifying Tenants: product-guide/tenant-modifications.md
-      - Monitoring Tenants: product-guide/tenant-monitoring.md
-      - Reducing Resources: product-guide/reducetenantresources.md
-      - Sharing Files: product-guide/providefilestotenant.md
-      - Snapshots: product-guide/tenantsnapshots.md
-      - Usage Reports: product-guide/tenant-usagereports.md
+      - Assigning External IP Addresses: product-guide/tenants/assign-ip-to-tenant.md
+      - Creating Tenants: product-guide/tenants/create-tenants.md
+      - Increasing Resources: product-guide/tenants/add-tenant-resources.md
+      - Modifying Tenants: product-guide/tenants/tenant-modifications.md
+      - Monitoring Tenants: product-guide/tenants/tenant-monitoring.md
+      - Reducing Resources: product-guide/tenants/reduce-tenant-resources.md
+      - Sharing Files: product-guide/tenants/provide-files-to-tenant.md
+      - Tenant Snapshots: product-guide/tenants/tenant-snapshots.md
+      - Usage Reports: product-guide/tenants/tenant-usagereports.md
     - Recipes:
-      - Organization: product-guide/recipes-organization.md
-      - VM Recipes: product-guide/vm-recipes.md
+      - Organization: product-guide/automation/recipes-organization.md
+      - VM Recipes: product-guide/automation/vm-recipes.md
     - NAS:
-      - Overview: product-guide/NASservice.md
+      - Overview: product-guide/nas/nas-service.md
       - Configuration:
-        - Local Volumes: product-guide/naslocalvolumes.md
-        - Remote Volumes: product-guide/nasremotevolumes.md
-        - Shares: product-guide/nasshares.md
-        - VM Export: product-guide/vmexportvolume.md
-        - Volume Syncs: product-guide/volumesyncs.md
-        - Join NAS to AD: product-guide/NAS-joinADDomain.md
+        - Local Volumes: product-guide/nas/nas-local-volumes.md
+        - Remote Volumes: product-guide/nas/nas-remote-volumes.md
+        - Shares: product-guide/nas/nas-shares.md
+        - VM Export: product-guide/virtual-machines/vm-export-volume.md
+        - Volume Syncs: product-guide/nas/volume-syncs.md
+        - Join NAS to AD: product-guide/nas/nas-join-ad-domain.md
 #    - Media Images:
 #      - Overview: product-guide/mediaimages-overview.md
 #      - Uploading Media Images: product-guide/uploadingtovSAN.md
     - Networking:
       - Quick Start: 
-        - Overview: product-guide/networkoverview.md
-        - Connect to an Existing LAN/WAN: product-guide/connectLANWAN.md
-        - Create an Internal Network with External Access: product-guide/internalwithextaccess.md
-        - Creating an Internal Layer2 Network: product-guide/internal-layer2.md
-        - Create a Layer 3 Internal Network: product-guide/internal-layer3.md
-        - Create a DHCP Static Entry: product-guide/dhcpstaticlease.md
-        - Assign an External IP to an Internal network: product-guide/assignexternalIP.md
-        - Create a 1:1 NAT: product-guide/NAT1to1.md
+        - Overview: product-guide/networks/network-overview.md
+        - Connect to an Existing LAN/WAN: product-guide/networks/connect-lan-wan.md
+        - Create an Internal Network with External Access: product-guide/networks/internal-external-access.md
+        - Creating an Internal Layer2 Network: product-guide/networks/internal-layer2.md
+        - Create a Layer 3 Internal Network: product-guide/networks/internal-layer3.md
+        - Create a DHCP Static Entry: product-guide/networks/dhcp-static-lease.md
+        - Assign an External IP to an Internal network: product-guide/networks/assign-external-ip.md
+        - Create a 1:1 NAT: product-guide/networks/nat-1to1.md
       - Configuration:
-        - Creating an Internal Network: product-guide/internalnetworks.md
-        - Using Aliases: product-guide/aliases.md
-        - Network Rules: product-guide/networkrules.md
-        - VLANs: product-guide/createvlan.md
+        - Creating an Internal Network: product-guide/networks/internal-networks.md
+        - Using Aliases: product-guide/networks/aliases.md
+        - Network Rules: product-guide/networks/network-rules.md
+        - VLANs: product-guide/networks/create-vlan.md
       - Monitoring:
-        - Network Dashboards: product-guide/network-dashboards.md
-        - Tracking Network Statistics: product-guide/trackingnetstats.md
-        - Port Mirroring: product-guide/portmirroring.md
-        - Network Diagnostics Tool: product-guide/netdiagnostics.md
+        - Network Dashboards: product-guide/networks/network-dashboards.md
+        - Tracking Network Statistics: product-guide/networks/tracking-net-statistics.md
+        - Port Mirroring: product-guide/networks/port-mirroring.md
+        - Network Diagnostics Tool: product-guide/networks/net-diagnostics.md
       - VPN:
-        - Overview: product-guide/VPNoverview.md
-        - IPSec: product-guide/IPSEC.md
-        - WireGuard: product-guide/wireguardconfig.md
-        - WireGuard Examples: product-guide/wireguard-examples.md
+        - Overview: product-guide/vpn/vpn-overview.md
+        - IPSec: product-guide/vpn/ipsec.md
+        - WireGuard: product-guide/vpn/wireguard-config.md
+        - WireGuard Examples: product-guide/vpn/wireguard-examples.md
       - Troubleshooting:
-        - Network Troubleshooting: product-guide/net-troubleshooting.md
+        - Network Troubleshooting: product-guide/networks/net-troubleshooting.md
     - Backup & DR:
       - Site Syncs:
-        - Configuration: product-guide/sync-configuration.md
-        - Monitoring: product-guide/monitoringsitesyncs.md
-        - Sync Back: product-guide/syncingback.md
-        - Manual Sync: product-guide/manualsitesyncs.md
-        - Repair Server: product-guide/repairserver.md
+        - Configuration: product-guide/backup-dr/sync-configuration.md
+        - Monitoring: product-guide/backup-dr/monitoring-site-syncs.md
+        - Sync Back: product-guide/backup-dr/sync-back.md
+        - Manual Sync: product-guide/backup-dr/manual-site-syncs.md
+        - Repair Server: product-guide/backup-dr/repair-server.md
       - Snapshots:
-        - Overview: product-guide/snapshots-overview.md
-        - Profiles: product-guide/snapshot-profiles.md
-        - VM Snapshots and Restore: product-guide/VMsnapshotsandrestores.md
-        - Tenant Restore: product-guide/tenantsnapshots.md
-        - Cloud Snapshots and Restore: product-guide/cloudsnapshotandrestore.md
-        - NAS Snapshots and Restore: product-guide/volumesnapsandrestores.md
+        - Overview: product-guide/backup-dr/snapshots-overview.md
+        - Profiles: product-guide/backup-dr/snapshot-profiles.md
+        - VM Snapshots and Restore: product-guide/backup-dr/vm-snapshots-restores.md
+        - Tenant Snapshot and Restore: product-guide/tenants/tenant-snapshots.md
+        - Cloud Snapshots and Restore: product-guide/backup-dr/cloud-snapshot-restore.md
+        - NAS Snapshots and Restore: product-guide/nas/volume-snapshots-restores.md
     - vSAN:
        - Architecture: product-guide/vsan/architecture.md  # Added from PR
        - Storage Tiers: product-guide/vsan/storage-tiers.md
-       - Preferred Tier: product-guide/preferredtiers.md
-       - Removing ISO Files with References: product-guide/removing-isorefs.md
+       - Preferred Tier: product-guide/vsan/preferred-tiers.md
+       - Removing ISO Files with References: product-guide/vsan/removing-iso-refs.md
     - Device Passthrough:
-      - Overview: product-guide/devpass-overview.md
-      - NVIDIA vGPU: product-guide/nvidiavGPU.md
-      - SR-IOV NIC: product-guide/sriov.md
-      - USB Passthrough: product-guide/usbpassthrough.md
-      - One-to-One PCI Passthrough: product-guide/generic-pcipass.md
+      - Overview: product-guide/system/device-pass-overview.md
+      - NVIDIA vGPU: product-guide/system/nvidia-vgpu.md
+      - SR-IOV NIC: product-guide/system/sriov-nics.md
+      - USB Passthrough: product-guide/system/usb-passthrough.md
+      - One-to-One PCI Passthrough: product-guide/system/generic-pci-passthrough.md
     - Maintenance & Monitoring:
-      - Drive Replacement: product-guide/DriveReplacement.md
-      - Maintenance Mode: product-guide/maintenancemode.md
+      - Drive Replacement: product-guide/system/drive-replacement.md
+      - Maintenance Mode: product-guide/system/maintenance-mode.md
       - Subscriptions/Alerts:
-        - Creating Subscriptions: product-guide/subscriptions-overview.md
-        - Subscription Profiles: product-guide/subscriptionprofiles.md
-        - Accessing Subscriptions: product-guide/subscriptions-accessing.md
+        - Creating Subscriptions: product-guide/system/subscriptions-overview.md
+        - Subscription Profiles: product-guide/system/subscription-profiles.md
+        - Accessing Subscriptions: product-guide/system/subscriptions-accessing.md
   - Release Notes: 
     - Overview: release-notes/release-notes-overview.md
     - 4.13 (latest): release-notes/release-notes.md

@@ -23,7 +23,6 @@ The **Max RAM per machine** setting determines the maximum amount of RAM that a 
 At the time of installation, the default maximum RAM setting is **64GB**. To run a virtual machine requiring more than 64GB, this setting must be adjusted. Fortunately, changes can be made at runtime, so **a node reboot is not required** to apply the updated setting.
 
 If a VM attempts to use more RAM than allowed by the cluster, an error message, **"Machine exceeds the max amount of RAM allowed on this cluster"**, will be logged. To resolve this, adjust the setting to accommodate the workload.
-![vm_max_ram_exceeded.png](/public/vm_max_ram_exceeded.png)
 
 ## Adjusting the Max RAM per machine setting
 
@@ -33,12 +32,10 @@ Follow these steps to adjust the setting:
 2. In the **Cluster list view**, select the cluster where the virtual machine is set to run.
 3. Select **Edit** in the left-hand menu.
 4. Adjust the **Max RAM per machine** setting to accommodate the virtual machine's requirements.
-   ![max_ram_per_machine.png](/public/max_ram_per_machine.png)
 5. Submit the changes by clicking **Submit** at the bottom of the page.
 6. Start the virtual machine to confirm the changes.
 
 By increasing the Max RAM per machine setting, larger VMs can be successfully launched on the cluster.
-
 
 ---
 
