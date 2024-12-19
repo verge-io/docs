@@ -4,7 +4,7 @@ Snapshots provide quick, point-in-time backups, allowing for roll back to a prev
 
 ## Automated Snapshots
 
-Snapshots can be automated to take at regularly-scheduled intervals using snapshot profiles. A snapshot profile consists of one or more profile periods. Each period determines a frequency for taking a snapshot as well as a retention time. More information about snapshot profiles is available here: [**Snapshot Profiles (Snapshot Scheduling)**](/product-guide/snapshot-profiles)
+Snapshots can be automated to take at regularly-scheduled intervals using snapshot profiles. A snapshot profile consists of one or more profile periods. Each period determines a frequency for taking a snapshot as well as a retention time. More information about snapshot profiles is available here: [**Snapshot Profiles (Snapshot Scheduling)**](/product-guide/backup-dr/snapshot-profiles)
 
 ## Manual Snapshots
 
@@ -22,21 +22,21 @@ A cloud snapshot can be used to restore:
 - Individual VMs (unquiesced)
 - Individual tenants
 
-For information regarding cloud snapshots, see: [**Cloud Snapshots and Restores**](/product-guide/cloudsnapshotandrestore)
+For information regarding cloud snapshots, see: [**Cloud Snapshots and Restores**](/product-guide/backup-dr/cloud-snapshot-restore)
 
 ## VM Snapshot/Restore
 
-VM-level snapshots allow for quiesced snapshotting (requires guest agent) and schedule/retention customizable per individual VM. For related instructions, see: [**VM Snapshots and Restores**](/product-guide/VMsnapshotsandrestores).
+VM-level snapshots allow for quiesced snapshotting (requires guest agent) and schedule/retention customizable per individual VM. For related instructions, see: [**VM Snapshots and Restores**](/product-guide/backup-dr/vm-snapshots-restores).
 
 ## Tenant Snapshot/Restore
 
-Individual tenants can be restored from the parent's cloud snapshot. For related instructions, see: [**Tenant Restores**](/product-guide/tenantrestores)
+Individual tenants can be restored from the parent's cloud snapshot. For related instructions, see: [**Tenant Restores**](/product-guide/tenants/tenant-restores)
 
-Additionally, each tenant can utilize [**Cloud Snapshots**](/product-guide/cloudsnapshotandrestore), independently within their environments to backup their own complete systems.
+Additionally, each tenant can utilize [**Cloud Snapshots**](/product-guide/backup-dr/cloud-snapshot-restore), independently within their environments to backup their own complete systems.
 
 ## NAS Snapshot/Restore
 
-Volume snapshots provide quiesced backup/restore of individual NAS volumes. For related instructions, see: [**NAS Volume Snapshots and Restores**](/product-guide/volumesnapsandrestores)
+Volume snapshots provide quiesced backup/restore of individual NAS volumes. For related instructions, see: [**NAS Volume Snapshots and Restores**](/product-guide/nas/volume-snapshots-restores)
 
 </br>
 

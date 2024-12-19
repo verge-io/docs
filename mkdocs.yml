@@ -182,9 +182,9 @@ nav:
       - Tasks / Events:
         - Create Automated Tasks: product-guide/automation/create-tasks.md
       - Updates / Licensing:
-        - Applying Updates: product-guide/system/running-updates.md
         - Settings: product-guide/system/update-settings.md
-      - Settings:
+        - Applying Updates: product-guide/system/running-updates.md
+      - System Settings:
         - Overview: product-guide/system/settings-overview.md
         - Advanced Settings: product-guide/system/advanced-system-settings.md
     - Virtual Machines:
@@ -282,7 +282,7 @@ nav:
     - Device Passthrough:
       - Overview: product-guide/system/device-pass-overview.md
       - NVIDIA vGPU: product-guide/system/nvidia-vgpu.md
-      - SR-IOV NIC: product-guide/system/sriov.md
+      - SR-IOV NIC: product-guide/system/sriov-nics.md
       - USB Passthrough: product-guide/system/usb-passthrough.md
       - One-to-One PCI Passthrough: product-guide/system/generic-pci-passthrough.md
     - Maintenance & Monitoring:

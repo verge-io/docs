@@ -100,8 +100,8 @@ A manual snapshot can be taken at any time.
 !!! note "An individual VM can also be restored from the VM dashboard; restoring from the VM dashboard allows the option to create a new VM instance or overwrite the current. Instructions can be found [**here**](/product-guide/backup-dr/vm-snapshots-restores#restore-a-vm-snapshot-to-overwrite-existing-current-version-of-vm)."
 
 - See [**VM Snapshots and Restores**](/product-guide/backup-dr/vm-snapshots-restores) for instructions on restoring an individual VM from a cloud snapshot.
-- See [**Tenant Restores**](/product-guide/tenants/tenantrestores) for instructions on restoring an individual tenant from a cloud snapshot.
-- See [**Volume Snapshots and Restores**](/product-guide/nas/volume-snapshots-restores.md) for instructions on restoring NAS volumes from a cloud snapshot.
+- See [**Tenant Restores**](/product-guide/tenants/tenant-restores) for instructions on restoring an individual tenant from a cloud snapshot.
+- See [**Volume Snapshots and Restores**](/product-guide/nas/volume-snapshots-restores) for instructions on restoring NAS volumes from a cloud snapshot.
 
 </br>
 

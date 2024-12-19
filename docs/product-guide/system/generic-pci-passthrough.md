@@ -4,7 +4,7 @@ One-to-One PCI passthrough involves giving a single VM at a time, access to a PC
 
 ## Host Installation/Configuration
 
-!!! danger "It is important to read and be familiar with [**PCI Passthrough Risks and Precautions**](/product-guide/devpass-overview#pci-passthrough-risksprecautions) before making passthrough configurations."
+!!! danger "It is important to read and be familiar with [**PCI Passthrough Risks and Precautions**](/product-guide/system/device-pass-overview#pci-passthrough-risksprecautions) before making passthrough configurations."
 
 1. Navigate to the **Resource Manager Dashboard** (Main Dashboard > Resources)
 **-OR-**
@@ -22,7 +22,7 @@ Navigate to a **specific node dashboard** (Main Dashboard > Nodes > double-click
 5. Click **Submit** to finish creating the new resource group.
 
 6. **A reboot of the associated node(s) may be necessary**; a message will appear at the top of the Resource Manager dashboard.
-!!! warning "Follow proper [**Maintenance Mode**](/product-guide/maintenancemode) procedures when rebooting a node to avoid workload disruptions."
+!!! warning "Follow proper [**Maintenance Mode**](/product-guide/system/maintenance-mode) procedures when rebooting a node to avoid workload disruptions."
 
 After the resource group is selected/created, a *Success* message should appear indicating resource rules were created for the device(s).
 

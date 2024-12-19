@@ -11,7 +11,7 @@ The quiesce option provides an **application-consistent snapshot** of a running 
 !!! tip "By default, VM-level snapshots are not configured (VM Snapshot Profile setting="--None--")."
 
 1. From the **VM dashboard**, click **Edit** on the left menu.
-2. In the ***Snapshot profile*** field, select the desired profile from the dropdown list. Instructions for configuring snapshot profiles can be found here: [**Snapshot Profiles (Snapshot Scheduling)**](/product-guide/snapshot-profiles).
+2. In the ***Snapshot profile*** field, select the desired profile from the dropdown list. Instructions for configuring snapshot profiles can be found here: [**Snapshot Profiles (Snapshot Scheduling)**](/product-guide/backup-dr/snapshot-profiles).
 3. Click **Submit** at the bottom of the page.
 
 ## Take a Manual Snapshot of a VM
@@ -20,7 +20,7 @@ The quiesce option provides an **application-consistent snapshot** of a running 
 2. Click **Take Snapshot** on the left menu.
 3. Enter a ***Name*** for the snapshot (required).
 4. Enter a ***Description*** (optional).
-5. The ***Quiesce*** option can be selected to freeze disk activity while the snapshot is being taken. This provides application-consistent backups for VMs. The [**VM Guest Agent**](/product-guide/VMguestagent) must be installed and registered on VM for quiesced snapshots.
+5. The ***Quiesce*** option can be selected to freeze disk activity while the snapshot is being taken. This provides application-consistent backups for VMs. The [**VM Guest Agent**](/product-guide/virtual-machines/vm-guest-agent) must be installed and registered on VM for quiesced snapshots.
 6. In the ***Expires*** field, select/enter date and time for expiration.
 7. Click **Submit** at the bottom of the page.
 
@@ -30,7 +30,7 @@ The quiesce option provides an **application-consistent snapshot** of a running 
 ## Restore an Individual VM from Snapshot
 
 !!! note "Restoring VMs from a Cloud Snapshot"
-    **To restore an individual VM from a cloud snapshot, it must first be imported from the cloud snapshot as detailed below.** To restore from an individual VM snapshot, skip the import section of instructions and continue to **Restore Overwrite -OR- Restore to a Clone instructions.** Multiple VMs can be restored from cloud snapshot simultaneously from the [Cloud Snapshots Dashboard](/product-guide/cloudsnapshotandrestore#restore-select-vms-from-a-cloud-snapshot-creates-new-vm-instances).
+    **To restore an individual VM from a cloud snapshot, it must first be imported from the cloud snapshot as detailed below.** To restore from an individual VM snapshot, skip the import section of instructions and continue to **Restore Overwrite -OR- Restore to a Clone instructions.** Multiple VMs can be restored from cloud snapshot simultaneously from the [Cloud Snapshots Dashboard](/product-guide/backup-dr/cloud-snapshot-restore#restore-select-vms-from-a-cloud-snapshot-creates-new-vm-instances).
 
 ### *Import VM Snapshot from a Cloud Snapshot (to make it available for a VM restore)*
 

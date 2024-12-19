@@ -6,9 +6,9 @@ VergeOS provides support for SR-IOV-capable network cards, allowing multiple dev
 
 ## Host Installation/Configuration
 
-!!! danger "It is important to read and be familiar with [**PCI Passthrough Risks and Precautions**](/product-guide/virtual-machines/device-pass-overview#pci-passthrough-risksprecautions) before making passthrough configurations."
+!!! danger "It is important to read and be familiar with [**PCI Passthrough Risks and Precautions**](/product-guide/system/device-pass-overview#pci-passthrough-risksprecautions) before making passthrough configurations."
 
-The following instructions will configure virtual function passthrough by automatically creating necessary resource rules for each set of virtual functions and attaching the rules to the selected resource group. For more information about how resource groups and resource rules work, see: [**Device Passthrough - Resource Rules**](product-guide/virtual-machines/device-pass-overview#resource-rules).
+The following instructions will configure virtual function passthrough by automatically creating necessary resource rules for each set of virtual functions and attaching the rules to the selected resource group. For more information about how resource groups and resource rules work, see: [**Device Passthrough - Resource Rules**](/product-guide/system/device-pass-overview#resource-rules).
 
 1. Navigate to the **Resource Manager Dashboard** (Main Dashboard > Resources) **-OR-** Navigate to a **specific node dashboard** (Main Dashboard > Nodes > double-click desired node in the list.)
 2. Click the **SR-IOV NIC Devices**. Any existing configured SR-IOV virtual devices will display in the listing that appears.
@@ -47,7 +47,7 @@ After the resource group is selected/created, a **Success** message should appea
 6. **A reboot of the associated node(s) may be necessary**; a message will appear at the top of the Resource Manager dashboard.
 !!! warning "Follow proper [**Maintenance Mode**](/product-guide/system/maintenance-mode) procedures when rebooting a node to avoid workload disruptions."
 
-The resource group dashboard contains the resource rules that were auto-generated for your selected devices. You can click an individual rule to view configuration detail. A system-created rule can be modified as needed; for example, the *Node* filter can be changed to *-- None --* to include matching devices from all nodes.  Information regarding resource rules is available at: [**Device Passthrough Overview - Resource Rules**](product-guide/virtual-machines/device-pass-overview#resource-rules)
+The resource group dashboard contains the resource rules that were auto-generated for your selected devices. You can click an individual rule to view configuration detail. A system-created rule can be modified as needed; for example, the *Node* filter can be changed to *-- None --* to include matching devices from all nodes.  Information regarding resource rules is available at: [**Device Passthrough Overview - Resource Rules**](/product-guide/system/device-pass-overview#resource-rules)
 
 ## VM/Guest Configuration
 

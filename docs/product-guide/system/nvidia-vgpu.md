@@ -9,13 +9,13 @@ VergeOS allows seamless utilization of NVIDIA's GRID vGPU platform to provide mu
 
 ## Host Installation/Configuration
 
-!!! danger "It is important to read and be familiar with [**PCI Passthrough Risks and Precautions**](/product-guide/devpass-overview#pci-passthrough-risksprecautions) before making passthrough configurations."
+!!! danger "It is important to read and be familiar with [**PCI Passthrough Risks and Precautions**](/product-guide/system/device-pass-overview#pci-passthrough-risksprecautions) before making passthrough configurations."
 
 1. Obtain the appropriate NVIDIA Linux-KVM driver for your GPU hardware. GRID vGPU drivers can be downloaded from your NVIDIA licensing portal or by registering for an NVIDIA free evaluation: [**https://nvidia.com/en-us/data-center/resources/vgpu-evaluation**](https://nvidia.com/en-us/data-center/resources/vgpu-evaluation).
 !!! tip "VergeOS supports bundle-version NVIDIA drivers.  For a list of currently supported NVIDIA drivers, navigate to Resource Manager > Groups > New. Set Type=*NVIDIA vGPU* and click the button to view compatible 3rd Party drivers.  Typically, you will want to use the most recent driver in this list that is compatible with your NVIDIA hardware."
 
 2. Upload the NVIDIA bundle driver to the VergeOS vSAN. See [**Uploading to the vSAN (Media Images)**](/product-guide/vsan/uploading-files-to-vsan) for directions on uploading to the vSAN.  
-The following instructions configure selected vGPU device(s) for virtual function passthrough by automatically creating necessary resource rules for each selected device and attaching the device(s) to a resource group. For more information about resource groups and resource rules, see: [**Device Passthrough - Overview**](/product-guide/virtual-machines/device-pass-overview#resource-group).
+The following instructions configure selected vGPU device(s) for virtual function passthrough by automatically creating necessary resource rules for each selected device and attaching the device(s) to a resource group. For more information about resource groups and resource rules, see: [**Device Passthrough - Overview**](/product-guide/system/device-pass-overview#resource-group).
 
 3. Navigate to the **Resource Manager Dashboard** (*Main Dashboard > Resources*)
 **-OR-**
@@ -43,13 +43,14 @@ After the resource group is selected or new one created, a **Success** message s
    * Click **Edit** on the left menu.
    * Select the desired **NVIDIA vGPU Profile** from the dropdown list.  Consult NVIDIA vGPU documentation for information regarding available profile types for your hardware.
    * The **Make Guest Driver ISO** option can be used to automatically create a guest driver ISO file from the NVIDIA driver bundle selected above.  If you have already created guest drivers, select the ISO in the next step.
-   * The **Driver ISO** file specifies an ISO file that can be attached to consuming VMs, providing a convenient way to access client drivers for installation within the guest operating system.  (Select the ***Attach Guest Drivers*** option when attaching the device to a VM or tenant.)
-  
+   * The **Driver ISO** file specifies an ISO file that can be attached to consuming VMs, providing a convenient way to access client drivers for installation within the guest operating system.  (Select the ***Attach Guest Drivers*** option when attaching the device to a VM or tenant.)  
 !!! note "If you selected *Make Guest Driver ISO* option, leave the Driver ISO field set to *-- None --*; the system will automatically create the ISO file (based on the bundle driver selected), and specify it as the Driver ISO for the resource group."
-   * Click **Submit** to save the client driver settings for the resource group.
-!!! note "Once changes have been made, it may be required to put the node into [**Maintenance Mode**](/product-guide/maintenancemode) and click **Reload Drivers**.
 
-The resource group dashboard contains the resource rules that were auto-generated for your selected NVIDIA devices. You can click an individual rule to view configuration detail. A system-created rule can be modified as needed; for example, the *Node* filter can be changed to *-- None --* to include matching devices from all nodes.  Information regarding resource rules is available at: [**Device Passthrough Overview - Resource Rules**](/product-guide/virtual-machines/device-pass-overview#resource-rules)
+* Click **Submit** to save the client driver settings for the resource group.  
+
+!!! tip "Once changes have been made, it may be required to put the node into [**Maintenance Mode**](/product-guide/system/maintenance-mode) and click **Reload Drivers**."
+
+The resource group dashboard contains the resource rules that were auto-generated for your selected NVIDIA devices. You can click an individual rule to view configuration detail. A system-created rule can be modified as needed; for example, the *Node* filter can be changed to *-- None --* to include matching devices from all nodes.  Information regarding resource rules is available at: [**Device Passthrough Overview - Resource Rules**](/product-guide/system/device-pass-overview#resource-rules)
 
 ## VM/Guest Configuration
 

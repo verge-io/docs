@@ -34,14 +34,14 @@ Generally, it is recommended (and easiest) to allow the system to auto-generate 
 
 ### Manual Creation/Editing
 
-The KB Article: [Device Passthrough - Advanced Configuration](/knowledge-base/#dev-passthrough-advanced) provides information regarding manually creating and editing resource rules.
+The KB Article: [Device Passthrough - Advanced Configuration](/knowledge-base/dev-passthrough-advanced) provides information regarding manually creating and editing resource rules.
 
 ## Types of Device Passthrough
 
-* [**One-to-One PCI passthrough**](/product-guide/virtual-machines/generic-pci-pass) - enables a VM to utilize a PCI device that is physically installed on the host, providing single device to single VM access (at a time). The PCI device functions as if is physically attached to the guest operating system.  
+* [**One-to-One PCI passthrough**](/product-guide/system/generic-pci-passthrough) - enables a VM to utilize a PCI device that is physically installed on the host, providing single device to single VM access (at a time). The PCI device functions as if is physically attached to the guest operating system.  
 
-* [**USB Device Passthrough**](/product-guide/virtual-machines/usb-passthrough) - allows a VM to access a USB device connected to the host machine. This allows users to access USB devices within a VM as if they were directly connected to the VM. Single device to single VM access (at a time) is provided.
+* [**USB Device Passthrough**](/product-guide/system/usb-passthrough) - allows a VM to access a USB device connected to the host machine. This allows users to access USB devices within a VM as if they were directly connected to the VM. Single device to single VM access (at a time) is provided.
 
-* [**NVIDIA vGPU**](/product-guide/virtual-machines/nvidia-vgpu) - a physical NVIDIA GPU installed on the host node is dissected into multiple virtual GPUs; vGPU provides multiple VMs access to a single piece of GPU hardware.
+* [**NVIDIA vGPU**](/product-guide/system/nvidia-vgpu) - a physical NVIDIA GPU installed on the host node is dissected into multiple virtual GPUs; vGPU provides multiple VMs access to a single piece of GPU hardware.
 
-* [**SR-IOV VF NICs**](/product-guide/virtual-machines/sriov) -- the Single Root I/O Virtualization (SR-IOV) specification is utilized to create multiple virtual functions (virtualized instances of a network adapter) from one physical, SR-IOV-capable, NIC which are then made available for use in VMs.
+* [**SR-IOV VF NICs**](/product-guide/system/sriov-nics) -- the Single Root I/O Virtualization (SR-IOV) specification is utilized to create multiple virtual functions (virtualized instances of a network adapter) from one physical, SR-IOV-capable, NIC which are then made available for use in VMs.

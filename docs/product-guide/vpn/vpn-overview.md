@@ -20,7 +20,7 @@ To configure a secure tunnel connection for remote users to access a Verge.io sy
 
 ## Site-to-Site VPN (Connecting VergeOS system with 3rd Party IPSec)
 IPSec functionality is provided for scenarios where VergeOS needs to interface with an IPSec device at another site (e.g. Cisco, PFSense, etc.)
-Information regarding creating a IPSec peer for a VPN tunnel to a third-party IPSec peer can be found at:  [**IPSEC Configuration**](/product-guide/vpn/ipsec.md)
+Information regarding creating a IPSec peer for a VPN tunnel to a third-party IPSec peer can be found at:  [**IPSEC Configuration**](/product-guide/vpn/ipsec)
 
 <br>
 

@@ -36,7 +36,7 @@
 
 11. #### Additional Optional Fields:
 
-See  [**Authorization Sources (General)**](/product-guide/auth/azure-auth) for information regarding additional optional Fields.
+See [**Authorization Sources (General)**](/product-guide/auth/auth-sources-general) for information regarding additional optional Fields.
 
 <br>
 <br>

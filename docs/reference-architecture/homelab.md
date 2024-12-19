@@ -85,8 +85,8 @@ For step-by-step instructions on configuring and deploying the NAS service, see 
 
 For users who need enhanced graphics capabilities, VergeOS supports both GPU Passthrough and NVIDIA vGPU. These options allow virtual machines to utilize either dedicated or shared GPU resources:
 
-   - **GPU Passthrough:** Provides a direct GPU connection to a VM for high-performance applications. See the [GPU Passthrough Product Guide](/product-guide/virtual-machines/generic-pci-pass).
-   - **NVIDIA vGPU:** Allows shared GPU access for multiple VMs, enabling efficient use of GPU resources for less-intensive tasks. Refer to the [NVIDIA vGPU Product Guide](/product-guide/virtual-machines/nvidia-vgpu).
+   - **GPU Passthrough:** Provides a direct GPU connection to a VM for high-performance applications. See the [PCI Passthrough Product Guide](/product-guide/system/generic-pci-passthrough).
+   - **NVIDIA vGPU:** Allows shared GPU access for multiple VMs, enabling efficient use of GPU resources for less-intensive tasks. Refer to the [NVIDIA vGPU Product Guide](/product-guide/system/nvidia-vgpu).
 
 **Use Cases:**
 
