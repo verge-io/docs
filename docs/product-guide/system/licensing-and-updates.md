@@ -150,14 +150,14 @@ For environments without outbound internet access, VergeOS supports air-gap lice
 3. Receiving and applying an air-gap license file
 
 !!! note "Air-Gap Updates"
-    Systems with air-gap licensing can be updated using ISO files. See [Updating a VergeOS System with Airgap License](/knowledge-base/updating-vergeos-system-with-airgap-license) for detailed instructions.
+    Systems with air-gap licensing can be updated using ISO files. See [Updating a VergeOS System with Airgap License](/knowledge-base/updating-vergeos-system-with-airgap-license/) for detailed instructions.
 
 ## Additional Resources
 
-- [Requesting an Airgap License](/knowledge-base/requesting-an-airgap-license)
-- [Updating a VergeOS System with Airgap License](/knowledge-base/updating-vergeos-system-with-airgap-license)
-- [Cloud Snapshots and Restores](/product-guide/backup-dr/cloud-snapshot-restore)
-- [Running Updates](/product-guide/system/running-updates)
+- [Updating the VergeOS System](/knowledge-base/updating-vergeos-system/)
+- [Requesting an Airgap License](/knowledge-base/requesting-an-airgap-license/)
+- [Updating a VergeOS System with Airgap License](/knowledge-base/updating-vergeos-system-with-airgap-license/)
+- [Cloud Snapshots and Restores](/product-guide/backup-dr/cloud-snapshot-restore/)
 
 !!! tip
     Regular monitoring of the Update Status Dashboard helps ensure system health and security.
