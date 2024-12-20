@@ -24,6 +24,7 @@ dateCreated: 2024-08-19T16:30:00.000Z
 ## Overview
 
 !!! info "Key Points"
+    - System updates should be performed during a maintenance window
     - This guide details the process of manually updating a VergeOS system using an air-gap license.
     - The update is performed using an ISO file, ensuring that systems without internet access can be kept up-to-date.
     - Ensure you have a valid air-gap license and the latest ISO file before starting.
