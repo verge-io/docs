@@ -156,6 +156,10 @@ nav:
         - Azure AD: product-guide/AzureADAuth.md
         - Google: product-guide/GoogleAuth.md
         - Multi-Factor Authentication: product-guide/2factorEmailAuth.md
+        - OIDC Applications:
+          - Overview: product-guide/auth/oidc-overview.md
+          - Adding Applications : product-guide/auth/oidc-create-application.md
+          - VergeOS OIDC Clients: product-guide/auth/oidc-vergeos-relying-party.md
       - Certificates: product-guide/certificates.md
       - Cloud Snapshots:
         - Overview: product-guide/snapshots-overview.md
@@ -176,9 +180,6 @@ nav:
         - Overview: product-guide/nodesoverview.md
         - IPMI: product-guide/IPMI.md
         - System Event Log (SEL): product-guide/SEL
-      - OIDC Applications:
-        - Overview: product-guide/OIDCoverview.md
-        - Adding Applications: product-guide/OIDCadding.md
       - Sites Dashboard:
         - Overview: product-guide/sitesoverview.md
         - Adding Sites: product-guide/configuringsitesdash-addingsites.md
