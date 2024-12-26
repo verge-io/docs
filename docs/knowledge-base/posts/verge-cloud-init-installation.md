@@ -74,7 +74,7 @@ YC_X86_ENERGY_PERF_POLICY=performance    # Energy performance policy options: ba
 ```bash
 YC_USER_EMAIL="email@example.com"    # Admin email
 YC_USER_NAME="admin"                 # Admin username
-YC_USER_PASSWORD="yottabyte"         # Admin password
+YC_USER_PASSWORD="supersecret"       # Admin password
 ```
 
 ### Network Configuration
