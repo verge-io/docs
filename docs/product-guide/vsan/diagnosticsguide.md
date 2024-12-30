@@ -27,18 +27,18 @@ This guide provides comprehensive information about the vSAN diagnostic options 
 
 To use these diagnostic tools, you must have:
 
-- Root-level access to your VergeIO cluster
+- Root-level access to your VergeIO System
 - Note: Tenants do not have a vSAN.
 
 ## Accessing vSAN Diagnostics
 
-1. Navigate to vSAN Diagnostics using either method:
-    - From the home screen: Select the vSAN Tiers count box → vSAN Diagnostics (left menu)
-    - Alternative path: Home screen → System (left menu) → vSAN Diagnostics
+1. Navigate to vSAN Diagnostics using either option from the Home screen:
+    - Select the vSAN Tiers count tile → vSAN Diagnostics (left menu)
+    - System (left menu) → vSAN Diagnostics (left menu)
 
 2. Command execution:
     - Select desired command from the dropdown menu
-    - Configure available options if applicable
+    - Configure available options, if applicable
     - Click SEND→ to execute
 
 !!! tip "Command Visibility"
@@ -51,13 +51,12 @@ To use these diagnostic tools, you must have:
 
 ### Add Drive to vSAN
 
-Running this command allows you to manually add a drive via the UI. 
-Drives are normally added either during the installation, or via the Nodes > Nodes Drives page.
-However adding them in that way does not allow for the addition of drives to Tier0.
+Running this command allows you to manually add a drive via the CLI with the UI. 
+While Tiers 1+ can be provisioned in the Nodes > Node Drives page (the preferred method), this command is the only way to add Tier0 Drives.
 
 **Prerequisites:**
-- Drive must be physically present in the system
-- Drive must be visible from Nodes > Nodes Drives page
+- Drive(s) must be physically present in the system
+- Drive(s) must be visible from Nodes > Node Drives page
 
 **Usage Parameters:**
 
