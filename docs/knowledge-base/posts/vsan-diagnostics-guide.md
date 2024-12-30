@@ -1,6 +1,6 @@
 ---
 title: vSAN Diagnostics Guide
-slug: vsandiagnosticsguide
+slug: vsan-diagnostics-guide
 description: A guide of vSAN diagnostic options available in the UI
 author: VergeOS Documentation Team
 draft: false
