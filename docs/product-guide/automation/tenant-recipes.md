@@ -65,6 +65,9 @@ Some question types allow you to lookup database information or create/edit data
 
 The *Database Context* field allows you to choose to interact with the local database (the parent system) or the database of the newly-created tenant.  This applies to question types: *Database Create, Database Edit, and Database Find*.
 
+!!! tip "**Reference Example**"
+    The "***30-Day Trial (POC)***", shared to your tenant recipes by default, provides an example of some of the things that can be done with a tenant recipe. Although it cannot be directly edited, you can clone this recipe to view the question configuration as a reference.
+
 ## Modify a Recipe
 
 When any changes are made to a recipe, it will need to be republished in order to make those changes available.  The top of the recipe dashboard will display a message indicating that it must be republished for changes to take effect.  You can use the **Republish** link within this message or click Republish on the left menu.
@@ -86,8 +89,5 @@ When any changes are made to a recipe, it will need to be republished in order t
 An instance refers to a specific tenant that is associated with a tenant recipe.  When a tenant is created from a recipe it is considered an instance of the recipe until it is deleted or detached from the recipe.
 
 Click **Instances** on the left menu of a tenant recipe dashboard to quickly access a listing of associated tenants. A recipe cannot be deleted when there are any associated instances.
-
-!!! tip "**Reference Example**"
-    The "***30-Day Trial (POC)***", shared by default to your tenant recipes, provides an example of some of the things that can be done with a tenant recipe. Although it cannot be directly edited, you can clone this recipe to view the question configuration as a reference.
 
 Recipes allow for a wide variety of potential solutions. Contact VergeOS Support for additional assistance in automating your tenant deployments using recipes.
