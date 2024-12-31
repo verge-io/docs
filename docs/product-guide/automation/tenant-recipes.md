@@ -87,8 +87,7 @@ An instance refers to a specific tenant that is associated with a tenant recipe.
 
 Click **Instances** on the left menu of a tenant recipe dashboard to quickly access a listing of associated tenants. A recipe cannot be deleted when there are any associated instances.
 
-**Reference Example:**
-
-The "***30-Day Trial (POC)***", shared by default to your tenant recipes, provides an example of some of the things that can be done with a tenant recipe. Although it cannot be directly edited, you can clone this recipe to view the question configuration as a reference.
+!!! tip "**Reference Example**"
+    The "***30-Day Trial (POC)***", shared by default to your tenant recipes, provides an example of some of the things that can be done with a tenant recipe. Although it cannot be directly edited, you can clone this recipe to view the question configuration as a reference.
 
 Recipes allow for a wide variety of potential solutions. Contact VergeOS Support for additional assistance in automating your tenant deployments using recipes.
