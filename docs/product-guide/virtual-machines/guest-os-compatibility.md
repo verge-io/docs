@@ -5,7 +5,7 @@ VergeOS is compatible with x86-64 guest operating systems and therefore successf
 !!! info "**Only Common Versions Listed**"
     The following are not comprehensive lists of all compatible OS versions, but rather provide examples of the more commonly-used guest operating systems.  Typically, any x86-64-compatible operating system will readily work on VergeOS, without issue. If you are interested in running an OS version that is not specifically listed here, feel free to [reach out to us](/support) for assistance.
 
-| **Microsoft Windows - Commonly-Used Guest Versions** ||
+| **Microsoft Windows Commonly-Used Guest Versions** ||
 |------------------------|-----------------------------|
 | Windows 10 | Windows Server 2008 |
 | Windows 11 | Windows Server 2012 |
@@ -17,7 +17,7 @@ VergeOS is compatible with x86-64 guest operating systems and therefore successf
 
 ---
 
-| **Linux - Commonly-Used Distributions** | |
+| **Linux Commonly-Used Distributions** ||
 |------------------------|----------------|
 | AlmaLinux 8 | RancherOS v1.5 |
 | AlmaLinux 9 | Red Hat Enterprise Linux 7 |
@@ -39,7 +39,7 @@ VergeOS is compatible with x86-64 guest operating systems and therefore successf
 
 ---
 
-| **FreeBSD - Commonly-Used Versions** | |
+| **FreeBSD Commonly-Used Versions** ||
 |------------------------|-----------------|
 | FreeBSD 9 |  FreeBSD 12 |
 | FreeBSD 10 | FreeBSD 13 |
