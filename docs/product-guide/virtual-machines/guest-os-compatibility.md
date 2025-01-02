@@ -3,8 +3,7 @@
 VergeOS is compatible with x86-64 guest operating systems and therefore successfully works with most: Windows versions, Linux distributions, and various versions of FreeBSD.  
 
 !!! info "**Only Common Versions Listed**"
-    The following are NOT intended to supply comprehensive lists of all compatible OS versions, but rather to provide examples of the more commonly-used guest operating systems.  Typically, any x86-64-compatible operating system will readily work on VergeOS, without issue. If you are interested in running an OS version that is not specifically listed here, feel free to reach out to us for assistance:
-    [VergeOS Support](/support).
+    The following are not comprehensive lists of all compatible OS versions, but rather provide examples of the more commonly-used guest operating systems.  Typically, any x86-64-compatible operating system will readily work on VergeOS, without issue. If you are interested in running an OS version that is not specifically listed here, feel free to [reach out to us](/support) for assistance.
 
 | **Microsoft Windows - Commonly-Used Guest Versions** ||
 |------------------------|-----------------------------|
@@ -46,7 +45,6 @@ VergeOS is compatible with x86-64 guest operating systems and therefore successf
 | FreeBSD 10 | FreeBSD 13 |
 | FreeBSD 11 ||
 
----
 ---
 
 !!! note "Additional Considerations"
