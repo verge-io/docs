@@ -1,53 +1,66 @@
 # VergeOS Guest OS Compatibility
 
-VergeOS is compatible with x86-64 guest operating systems and therefore successfully works with most: Windows versions, Linux distributions, and various versions of FreeBSD.  
+VergeOS provides comprehensive support for x86-64 guest operating systems, encompassing most Windows versions, Linux distributions, and FreeBSD releases. While any x86-64-compatible operating system should work without issues, this guide outlines the most commonly used and tested guest operating systems.
 
-!!! info "**Only Common Versions Listed**"
-    The following are not comprehensive lists of all compatible OS versions, but rather provide examples of the more commonly-used guest operating systems.  Typically, any x86-64-compatible operating system will readily work on VergeOS, without issue. If you are interested in running an OS version that is not specifically listed here, feel free to [reach out to us](/support) for assistance.
+!!! note "This guide covers commonly used versions. If your desired operating system isn't listed, it may still be compatible. Contact support for verification and assistance."
 
-| **Microsoft Windows Commonly-Used Guest Versions** ||
-|------------------------|-----------------------------|
-| Windows 10 | Windows Server 2008 |
-| Windows 11 | Windows Server 2012 |
-| Windows 7 | Windows Server 2016 |
-| Windows 8 | Windows Server 2019 |
-| Windows Server 2003 | Windows Server 2022 |
+## Microsoft Windows Support
 
-!!! note "Additional VirtIO drivers may need to be installed for optimal performance"
+### Desktop Versions
+- Windows 11
+- Windows 10
+- Windows 8
+- Windows 7
 
----
+### Server Versions
+- Windows Server 2022
+- Windows Server 2019
+- Windows Server 2016
+- Windows Server 2012
+- Windows Server 2008
+- Windows Server 2003
 
-| **Linux Commonly-Used Distributions** ||
-|------------------------|----------------|
-| AlmaLinux 8 | RancherOS v1.5 |
-| AlmaLinux 9 | Red Hat Enterprise Linux 7 |
-| CentOS 7 | Red Hat Enterprise Linux 8 |
-| CentOS 8 | Red Hat Enterprise Linux 9 |
-| CentOS Stream 8| RockyLinux 8 |
-| CentOS Stream | RockyLinux 9 |
-| Debian 10 | SUSE Linux Enterprise 11 |
-| Debian 11 | SUSE Linux Enterprise 12 |
-| Debian 11.5 | SUSE Linux Enterprise 15 |
-| Debian 12 | Ubuntu 12.04 |
-| Debian 8 | Ubuntu 14.04 |
-| Debian 9 | Ubuntu 16.04 |
-| Fedora CoreOS 32 | Ubuntu 18.04 |
-| Oracle Linux 6 | Ubuntu 19.04 |
-| Oracle Linux 7 | Ubuntu 20.04 |
-| Oracle Linux 8 | Ubuntu 22.04 |
-| Oracle Linux 9 | Ubuntu 24.04 |
+!!! note "VirtIO drivers may need to be installed for optimal performance."
 
----
+## Linux Distribution Support
 
-| **FreeBSD Commonly-Used Versions** ||
-|------------------------|-----------------|
-| FreeBSD 9 |  FreeBSD 12 |
-| FreeBSD 10 | FreeBSD 13 |
-| FreeBSD 11 ||
+### Enterprise Linux
+- Red Hat Enterprise Linux (RHEL) 7, 8, 9
+- SUSE Linux Enterprise 11, 12, 15
+- Oracle Linux 6, 7, 8, 9
 
----
+### Community Enterprise Linux
+- AlmaLinux 8, 9
+- Rocky Linux 8, 9
+- CentOS 7, 8
+- CentOS Stream 8
 
-!!! note "Additional Considerations"
-    - Only 64-bit OS versions are officially supported. However, 32-bit versions may run using a PAE kernel.
-    - Older operating systems may require use of the SATA/IDE disk interface (when VirtIO is not supported).
-    - Operating systems with unique hardware compatibility requirements may also need specialized node hardware. Consult the operating system's documentation for guidance.  
+### Debian-based Distributions
+- Debian 8, 9, 10, 11, 11.5, 12
+- Ubuntu 12.04, 14.04, 16.04, 18.04, 19.04, 20.04, 22.04, 24.04
+
+### Other Linux Distributions
+- Fedora CoreOS 32
+- RancherOS v1.5
+
+## FreeBSD Support
+- FreeBSD 13
+- FreeBSD 12
+- FreeBSD 11
+- FreeBSD 10
+- FreeBSD 9
+
+## Technical Considerations
+
+### System Architecture
+- Official support is limited to 64-bit operating systems
+- 32-bit versions may function with PAE kernel support, but are not officially supported
+
+### Hardware Compatibility
+- Legacy operating systems may require SATA/IDE disk interface when VirtIO is not supported
+- Some operating systems may need specialized node hardware based on their specific requirements. Consult the operating system's documentation for detailed hardware compatibility guidelines
+
+### Performance Optimization
+- Installation of VirtIO drivers is recommended for optimal performance
+- Newer operating systems generally provide better hardware virtualization support
+- Consider using supported versions for production environments. VergeOS is compatible with x86-64 guest operating systems and therefore successfully works with most: Windows versions, Linux distributions, and various versions of FreeBSD.  
