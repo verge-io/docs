@@ -1,8 +1,6 @@
-# Share a VM Snapshot between Provider/Tenant
+# Share a VM Snapshot between Provider and Tenant
 
 The *Shared Objects* feature provides convenient, snapshot-based VM sharing between provider and tenant. The provider or tenant can make a specific VM snapshot available to the other to create a new VM within their own system.
-
-> Future development may provide for sharing additional object types between providers and tenants.
 
 ## On the Sending System
 
