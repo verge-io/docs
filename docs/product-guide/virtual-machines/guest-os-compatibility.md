@@ -1,73 +1,91 @@
 # VergeOS Guest OS Compatibility
 
-VergeOS provides comprehensive support for x86-64 guest operating systems, encompassing most Windows versions, Linux distributions, and FreeBSD releases. While any x86-64-compatible operating system should work without issues, this guide outlines the most commonly used and tested guest operating systems.
+VergeOS, built on Linux KVM technology, provides extensive compatibility for x86_64 guest operating systems. This includes Windows, Linux distributions, FreeBSD, and virtual appliances designed for KVM environments. While any x86_64-compatible operating system should work without issues, this guide outlines commonly tested configurations.
 
-!!! tip "This guide covers commonly used versions. If your desired operating system isn't listed, it may still be compatible. Contact support for verification and assistance."
+!!! tip "Virtual Appliances"
+    Virtual appliances packaged for KVM environments are fully compatible with VergeOS. This includes OVA/OVF formats from vendors who support KVM-based deployments.
 
 ## Microsoft Windows Support
 
-### Desktop Versions
+### Windows Desktop Versions
 
-- Windows 11
-- Windows 10
-- Windows 8
-- Windows 7
+| Version | Recommended Interface | Minimum RAM | Notes |
+|---------|---------------------|-------------|--------|
+| Windows 11 | VirtIO | 4 GB | Best performance with latest VirtIO drivers |
+| Windows 10 | VirtIO | 2 GB | Supports all editions (Home, Pro, Enterprise) |
+| Windows 8.1 | VirtIO/IDE | 2 GB | May require legacy hardware support |
+| Windows 7 | IDE/SATA | 2 GB | Legacy OS - Limited driver support |
 
-### Server Versions
+### Windows Server Versions
 
-- Windows Server 2022
-- Windows Server 2019
-- Windows Server 2016
-- Windows Server 2012
-- Windows Server 2008
-- Windows Server 2003
+| Version | Recommended Interface | Minimum RAM | Notes |
+|---------|---------------------|-------------|--------|
+| Server 2022 | VirtIO | 2 GB | Optimal performance with latest drivers |
+| Server 2019 | VirtIO | 2 GB | Supports all roles and features |
+| Server 2016 | VirtIO | 2 GB | Recommended for production use |
+| Server 2012 R2 | VirtIO/IDE | 2 GB | Extended support ends 2023 |
+| Server 2008 R2 | IDE/SATA | 2 GB | Legacy support only |
 
-!!! note "VirtIO drivers may need to be installed for optimal performance."
+## Linux Support
 
-## Linux Distribution Support
+### Enterprise Linux Distributions
 
-### Enterprise Linux
-
-- Red Hat Enterprise Linux (RHEL) 7, 8, 9
-- SUSE Linux Enterprise 11, 12, 15
-- Oracle Linux 6, 7, 8, 9
+| Distribution | Versions | Recommended Interface | Minimum RAM | Notes |
+|-------------|----------|---------------------|-------------|--------|
+| RHEL | 7, 8, 9 | VirtIO | 2 GB | Native VirtIO support |
+| SUSE Enterprise | 11, 12, 15 | VirtIO | 2 GB | Built-in driver support |
+| Oracle Linux | 6, 7, 8, 9 | VirtIO | 2 GB | UEK kernel recommended |
 
 ### Community Enterprise Linux
 
-- AlmaLinux 8, 9
-- Rocky Linux 8, 9
-- CentOS 7, 8
-- CentOS Stream 8
+| Distribution | Versions | Recommended Interface | Minimum RAM | Notes |
+|-------------|----------|---------------------|-------------|--------|
+| AlmaLinux | 8, 9 | VirtIO | 2 GB | RHEL binary compatible |
+| Rocky Linux | 8, 9 | VirtIO | 2 GB | Native driver support |
+| CentOS | 7, 8 | VirtIO | 2 GB | Built-in VirtIO support |
+| CentOS Stream | 8 | VirtIO | 2 GB | Rolling release model |
 
 ### Debian-based Distributions
 
-- Debian 8, 9, 10, 11, 11.5, 12
-- Ubuntu 12.04, 14.04, 16.04, 18.04, 19.04, 20.04, 22.04, 24.04
+| Distribution | Versions | Recommended Interface | Minimum RAM | Notes |
+|-------------|----------|---------------------|-------------|--------|
+| Debian | 8, 9, 10, 11, 12 | VirtIO | 1 GB | Native driver support |
+| Ubuntu LTS | 20.04, 22.04, 24.04 | VirtIO | 2 GB | Recommended for production |
+| Ubuntu | 12.04 - 19.04 | VirtIO | 1 GB | Older releases - limited support |
 
-### Other Linux Distributions
+### FreeBSD Support
 
-- Fedora CoreOS 32
-- RancherOS v1.5
+| Version | Support Status | Recommended Interface | Minimum RAM | Notes |
+|---------|---------------|---------------------|-------------|--------|
+| FreeBSD 13 | Full | VirtIO | 1 GB | Best performance with VirtIO |
+| FreeBSD 12 | Full | VirtIO | 1 GB | Production ready |
+| FreeBSD 11 | Limited | VirtIO/SATA | 1 GB | Legacy support |
+| FreeBSD 10 | Limited | SATA | 1 GB | Basic compatibility |
 
-## FreeBSD Support
+!!! note "Driver Support"
+    For optimal performance, VirtIO drivers are recommended where supported. Windows guests may require additional driver installation, while most modern Linux distributions include native VirtIO support.
 
-- FreeBSD 13
-- FreeBSD 12
-- FreeBSD 11
-- FreeBSD 10
-- FreeBSD 9
+!!! info "Additional OS Support"
+    While this list represents commonly tested configurations, VergeOS's KVM foundation enables support for virtually any x86_64 operating system or KVM-compatible virtual appliance. Contact support for guidance on specific operating systems or virtual appliances not listed here.
 
 ## Technical Considerations
 
-!!! note "System Architecture"
-    - Official support is limited to 64-bit operating systems.
-    - 32-bit versions may function with PAE kernel support, but are not officially supported.
+!!! note "System Requirements"
+    - RAM requirements vary by operating system and workload
+    - Always consult vendor documentation for production sizing
+    - Consider additional overhead for virtualization
 
-!!! note "Hardware Compatibility"
-    - Legacy operating systems may require a SATA/IDE disk interface when VirtIO is not supported.
-    - Some operating systems may need specialized node hardware based on their specific requirements. Consult the operating system's documentation for detailed hardware compatibility guidelines.
+!!! tip "Storage Interface Options"
+    - VirtIO: Modern interface offering best performance (recommended)
+    - SATA: Compatible with most operating systems, requires Q35 machine type
+    - IDE: Available for legacy operating system support, requires i440FX machine type
 
-!!! note "Performance Optimization"
-    - VirtIO drivers are typically recommended for optimal performance.
-    - Newer operating systems generally provide better hardware virtualization support.
-    - Consider using supported versions for production environments. VergeOS is compatible with x86-64 guest operating systems and therefore successfully works with most: Windows versions, Linux distributions, and FreeBSD releases.
+!!! warning "Architecture Support"
+    - VergeOS supports 64-bit (x86_64) operating systems
+    - 32-bit operating systems are not officially supported
+
+!!! info "Performance Optimization"
+    - Install and configure VirtIO drivers where supported
+    - Windows guests require additional VirtIO driver installation
+    - Most modern Linux distributions include VirtIO support
+    - Keep guest operating systems and drivers updated
