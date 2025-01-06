@@ -214,6 +214,7 @@ nav:
       - Monitoring Tenants: product-guide/tenants/tenant-monitoring.md
       - Reducing Resources: product-guide/tenants/reduce-tenant-resources.md
       - Sharing Files: product-guide/tenants/provide-files-to-tenant.md
+      - Sharing VMs: product-guide/tenants/share-vm-snapshot.md
       - Tenant Snapshots: product-guide/tenants/tenant-snapshots.md
       - Usage Reports: product-guide/tenants/tenant-usagereports.md
     - NAS:
