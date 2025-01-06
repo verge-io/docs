@@ -216,9 +216,6 @@ nav:
       - Sharing Files: product-guide/tenants/provide-files-to-tenant.md
       - Tenant Snapshots: product-guide/tenants/tenant-snapshots.md
       - Usage Reports: product-guide/tenants/tenant-usagereports.md
-    - Recipes:
-      - Organization: product-guide/automation/recipes-organization.md
-      - VM Recipes: product-guide/automation/vm-recipes.md
     - NAS:
       - Overview: product-guide/nas/nas-service.md
       - Configuration:
@@ -278,6 +275,11 @@ nav:
        - Storage Tiers: product-guide/vsan/storage-tiers.md
        - Preferred Tier: product-guide/vsan/preferred-tiers.md
        - Removing ISO Files with References: product-guide/vsan/removing-iso-refs.md
+    - Automation:
+      - Recipes:
+        - Organization: product-guide/automation/recipes-organization.md
+        - VM Recipes: product-guide/automation/vm-recipes.md
+        - Tenant Recipes: product-guide/automation/tenant-recipes.md 
     - Device Passthrough:
       - Overview: product-guide/system/device-pass-overview.md
       - NVIDIA vGPU: product-guide/system/nvidia-vgpu.md

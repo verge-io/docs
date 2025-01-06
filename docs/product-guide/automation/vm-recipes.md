@@ -51,13 +51,6 @@ A VergeOS system automatically includes the **Service Provider(Marketplace) Repo
 
 4. Click **Submit** to save the base configuration.  The VM Recipe Dashboard will display where you can configure your sections and questions.  
 
-### Sections
-
-Sections allow you to group your questions on the input form.  You must define at least one section.
-
-1. Click **Sections** on the left menu, and click **New** to create.  Each section will require name and can optionally include a description.
-When finished with sections, use the back button or breadcrumb to return to the VM Recipe Dashboard.
-
 ### Questions
 
 Recipe questions are used to determine key values.  When a recipe is created, some questions are included automatically.  Some of these questions are disabled by default and would need to be enabled if you wish to use them.
@@ -67,7 +60,7 @@ Recipe questions are used to determine key values.  When a recipe is created, so
 
 **Question Fields**:
 
-* **Section:** each question belongs to one section.  
+* **Section:** each question belongs to one section. Sections allow you to group your questions on the input form.  Some sections are created automatically.  You can optionally create new sections for your questions.
 * **Name:** serves as the variable name that can be referenced in scripts; use a descriptive name to aid in script maintenance and troubleshooting; alpha-numeric characters only (no spaces or special characters)  
 * **Type:** determines how the data is collected: via user input, interacting with the VergeOS database, downloading cloud images, etc. <!--The [Question Types Listing](#question-types-listing) below, provides descriptions for question types. -->  
 
