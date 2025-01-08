@@ -2,10 +2,10 @@
 
 ## Introduction
 
-The VergeOS installation is a single [bootable ISO image](install-media.md) containing all packages needed for the complete System.
+The VergeOS installation is a single [bootable ISO image](install-media.md) containing all packages needed for the complete system.
 
 This document provides general instructions for installing a VergeOS system.
-For production systems, use datacenter-quality hardware and follow our reference architectures located in the implementation guide.
+For production systems, use datacenter-quality hardware and follow our reference architectures located in the [Implementation Guide](/implementation-guide/intro).
 
 ### Installation Process
 
@@ -22,8 +22,8 @@ graph LR
 
 Before you proceed with the installation please make sure you've reviewed the following documents:
   
-* [Pre-Install Checklist](pre-installation.md)
-* [Bootable Media](install-media.md)
+* [Pre-Install Checklist](/implementation-guide/pre-installation)
+* [Bootable Media](/implementation-guide/install-media)
   
 ---
 
@@ -36,10 +36,10 @@ Before you proceed with the installation please make sure you've reviewed the fo
 
 3. Select **Controller** (default selection). The first two nodes of the system will be controller nodes.
 4. Select **Yes** to indicate this is a **New Install**.
-5. Select time zone and NTP server settings**.  
+5. Select **time zone and NTP server settings**.  
 !!! tip "Time zone selection is generally based on the geographical location of the servers, but can alternately be configured based on administration preference.  Windows VMs will, by default, inherit the system time zone; a registry change is required to configure a Windows VM to UTC time."
 
-6. Select appropriate **date/time.
+6. Select appropriate **date/time**.
 !!! info "Correct date/time are very important for vSAN operation.  Be sure that during installation, date is set correctly and time is set reasonably close to the accurate time, to avoid potential problems."
 
 7. Enter a **System Name**. This is also known as your Cloud name and will identify your system in: your dashboard, alerts/reports coming from this system, and site syncs. This name can be changed post-install, within System Settings.
@@ -71,7 +71,7 @@ Before you proceed with the installation please make sure you've reviewed the fo
 * **VLAN** - PVID port is always preferred (0 or blank for none), but a VLAN tag can be accommodated by entering the correct VLAN ID here.
 
 12. **Repeat the above steps to configure all of your physical networks** until every NIC has been assigned.  If there is a NIC that is not plugged in, it should still be configured here during installation; it can be given a name such as "unplugged" or "unused".
-!!! node "You can select [Done] when you have finished configuring all of your physical networks."
+!!! note "You can select [Done] when you have finished configuring all of your physical networks."
 
 13. Select a **physical external network that will provide UI/LAN/WAN access**.
 
@@ -108,19 +108,19 @@ The system will display an automatically-selected tier for each drive.  Take not
 If you verified all drive tiers were selected as desired (previous screen), simply press [Enter] to proceed.  Otherwise, select **< Yes >**
  and **[Enter]** to view all drives and optionally change any tier assignments.  When finished manually selecting tier assignments, select "Done" and [Enter].
 
-21. Configure **Swap**: There are multiple factors to consider in planning swap including: availability of storage, system use, disk type, etc. Consult with the VergeIO implementation team for further information. This is also configurable in the UI post-install.
+21. Configure **Swap**: There are multiple factors to consider in planning swap, including: availability of storage, system use, disk type, etc. Consult with the VergeIO implementation team for further information. Swap is configurable in the UI, post-install, for new drives only.
 
-22. Select **drives to format for boot**. 
+22. Select **drives to format for boot**.  This prompt will only appear if any drives were not selected to be included in the vSAN.  Older hardware (e.g. legacy Chassis, BOSS card) may require you to specify drives to format for boot.  In most cases, you can press [Enter] to continue with the installation without selecting boot drives.
 
-22. **UEFI partitions** - Some UEFI systems do not auto-detect EFI partitions.  If prompted to register UEFI boot options, it is recommended to select "yes".
+23. **UEFI partitions** - Some UEFI systems do not auto-detect EFI partitions.  If prompted to register UEFI boot options, it is recommended to select "yes".
 
 When installation selections are finalized, the vSAN will be initialized and packages installed.  Each selected drive is formatted one by one (large drives may take several minutes to format) and added to the vSAN.
 
-23. The install will indicate when it is complete.  **Remove the install media and hit [Enter] to reboot.**
+24. The install will indicate when it is complete.  **Remove the install media and hit [Enter] to reboot.**
 
 ### After Reboot
 
-24. When the vSAN is successfully mounted and the system is started, the user menu will appear. Press **[Enter]** to select **User Interface** and enter admin login credentials.
+25. When the vSAN is successfully mounted and the system is started, the user menu will appear. Press **[Enter]** to select **User Interface** and enter admin login credentials.
 The main dashboard for your new system will display.  Status indicators should all be green.  
 
 ---
@@ -138,11 +138,11 @@ The main dashboard for your new system will display.  Status indicators should a
 4. Select **No** to indicate this is NOT a new system. (You will be connecting to the system already created above.)  
 !!! warning "If you do not select "No" here, the install program will create a new separate system rather than joining the installed primary node controller."
 
-5. You will be prompted to enter the **admin (root) password for the system you are joining.**;  enter the **admin credentials** created during the primary controller node install.  
+5. You will be prompted to enter the **admin (root) password for the system you are joining.** Enter the **admin credentials** created during the primary controller node install.  
 
-6. Select **Yes** to attempt automatic detection of network configuration.  This is recommended as it will attempt to detect the existing networks and automatically configure the new node accordingly, avoiding manual network misconfigurations.  Network detection may take a few minutes.
+6. Select **Yes** to attempt **automatic detection of network** configuration.  This is recommended as it will try to detect the existing networks and automatically configure the new node accordingly, avoiding manual network misconfigurations.  Network detection may take a few minutes.
 
-7. Upon successful detection of the core network, information for the associated NIC will display.  **Verify** this is the correct NIC to connect to the first core network and click **Yes** to continue automatic network configuration.
+7. Both core networks should be detected. Upon successful detection of each one, **verify** the NIC/network information displayed and hit [Enter] to continue.
 
 8. Select **Encryption settings**; these settings must match those entered during the primary controller installation.
 
@@ -160,13 +160,13 @@ The main dashboard for your new system will display.  Status indicators should a
 
 Additional nodes can be installed as needed. These nodes can be:
 
-* [**Scale-out**](scale-out-nodes.md)
-* [**Compute-only**](compute-nodes.md)
-* [**Storage-only**](storage-nodes.md)
+* [**Scale-out**](/implementation-guide/scale-out-nodes)
+* [**Compute-only**](/implementation-guide/compute-nodes)
+* [**Storage-only**](/implementation-guide/storage-nodes)
 
 ## Post-Installation Steps
 
-When node installations are complete, see [**Post Installation**](post-installation.md) for next steps.
+When node installations are complete, see [**Post Installation**](/implementation-guide/post-installation) for next steps.
 
 ---
 
