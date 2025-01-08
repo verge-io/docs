@@ -142,7 +142,7 @@ The main dashboard for your new system will display.  Status indicators should a
 
 6. Select **Yes** to attempt **automatic detection of network** configuration.  This is recommended as it will try to detect the existing networks and automatically configure the new node accordingly, avoiding manual network misconfigurations.  Network detection may take a few minutes.
 
-7. Both core networks should be detected. Upon successful detection of each one, **verify** the NIC/network information displayed and hit [Enter] to continue.
+7. Both core networks should be detected. Upon successful detection of each network, **verify** the information displayed and hit [Enter] to continue.
 
 8. Select **Encryption settings**; these settings must match those entered during the primary controller installation.
 
