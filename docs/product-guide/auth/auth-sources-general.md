@@ -1,5 +1,3 @@
-
-
 # Authorization Sources - General Information
 
 Authorization Sources allow utilizing third party Oauth2 identity management systems (such as: Okta, GitLab, Azure AD, Google) for user authentication in VergeOS.
