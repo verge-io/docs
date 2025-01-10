@@ -53,7 +53,7 @@ VergeOS, built on Linux KVM technology, provides extensive compatibility for x86
 | Ubuntu LTS | 20.04, 22.04, 24.04 | VirtIO | 2 GB | Recommended for production |
 | Ubuntu | 12.04 - 19.04 | VirtIO | 1 GB | Older releases - limited support |
 
-### FreeBSD Support
+## FreeBSD Support
 
 | Version | Support Status | Recommended Interface | Minimum RAM | Notes |
 |---------|---------------|---------------------|-------------|--------|
