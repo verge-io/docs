@@ -1,11 +1,11 @@
 # Uploading to the vSAN (Media Images)
 
-The Media Images section allows for uploading files to the VergeOS vSAN allowing *.iso files, drive images, VM definition files, etc. to be easily accessible for creating/installing/importing VMs.  
+The *Media Images* section provides for uploading files to the VergeOS vSAN, allowing *.iso files, drive images, VM definition files, etc. to be easily accessible for creating/installing/importing VMs.  
 
 !!! note
     Optionally, files that are uploaded to vSAN media images can be shared via a public link.
 
-## To Upload a File from the Local computer
+## Upload a File from the Local Computer
 
 1. From the Main Dashboard, select **Media Images**.
 2. Select **Upload**.
@@ -19,7 +19,7 @@ The Media Images section allows for uploading files to the VergeOS vSAN allowing
 !!! warning
     Reloading the browser window will interfere with the file upload.
 
-## To Upload a File from a web link (URL)
+## Upload a File from a Web Link (URL)
 
 1. From the Main Dashboard, select **Media Images**.
 2. Select **Upload from URL**
@@ -30,7 +30,7 @@ The Media Images section allows for uploading files to the VergeOS vSAN allowing
 7. Click the **Submit** button
 8. The file will appear in the Media Images listing.
 
-## To Create a Download Link for a Media Images File
+## Create a Download Link for a Media Images File
 
 1. From the Main Dashboard, click **Media Images** on the left menu.
 2. Click **Add Public Link** on the left menu.
