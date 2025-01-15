@@ -5,19 +5,23 @@ A node in VergeOS represents a physical or virtual server that contributes compu
 ## Key Components
 
 ### Node Status Information
+
 - **Status**: Shows the current operational state (Running/Offline)
 - **Maintenance Mode**: Indicates if the node is in maintenance state
 - **IPMI Status**: Displays the status of the Intelligent Platform Management Interface
 - **System Version**: Shows current VergeOS version and kernel information
 
 ### Resource Metrics
+
 - **CPU Usage**: Real-time monitoring of processor utilization
 - **RAM Usage**: Physical and virtual memory allocation and consumption
 - **Temperature**: System temperature monitoring (where supported)
 - **Storage**: Drive status and utilization
 
 ### Node Statistics
+
 The dashboard provides key metrics for:
+
 - Physical RAM utilization
 - Virtual RAM allocation
 - Core usage
@@ -25,7 +29,9 @@ The dashboard provides key metrics for:
 - Storage tier status
 
 ### Connected Devices
+
 Tracks and manages:
+
 - Network Interface Cards (NICs)
 - PCI Devices
 - Storage Drives
@@ -33,7 +39,9 @@ Tracks and manages:
 - GPU Devices (if applicable)
 
 ### Running Machines
+
 Displays active workloads including:
+
 - Virtual Machines
 - Containers
 - Network Services
@@ -42,18 +50,21 @@ Displays active workloads including:
 ## Key Features
 
 ### Management Operations
+
 - Power control (Power On/Off, Reboot)
 - Maintenance mode control
 - Firmware updates
 - Configuration management
 
 ### Monitoring
+
 - Real-time resource utilization graphs
 - Historical performance data
 - Event logs and alerts
 - Hardware health status
 
 ### Maintenance
+
 - Drive management
 - Network configuration
 - Device control
