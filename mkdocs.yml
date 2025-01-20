@@ -282,6 +282,9 @@ nav:
         - Organization: product-guide/automation/recipes-organization.md
         - VM Recipes: product-guide/automation/vm-recipes.md
         - Tenant Recipes: product-guide/automation/tenant-recipes.md 
+      - Task Manager:
+        - Overview: product-guide/automation/task-manager.md
+        - Create Tasks: product-guide/automation/create-tasks.md
     - Device Passthrough:
       - Overview: product-guide/system/device-pass-overview.md
       - NVIDIA vGPU: product-guide/system/nvidia-vgpu.md

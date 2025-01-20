@@ -1,17 +1,8 @@
 
+# Creating an Internal Layer 2 Network
 
-Creating an Internal Layer 2 Network
-Internal Networks can be created as Layer2 (with layer 3 functions to be handled by third party software). To create a layer2 Internal network select **IP Address Type: ***None***.**
+Internal networks can be created as Layer2 (with layer 3 functions to be handled by third party software). To create a layer2 internal network, select ***None*** in the **IP Address Type** field.
 
 ![internal-layer2.png](/product-guide/screenshots/internal-layer2.png)
 
-
-
-
-<br>
-
-Full Internal Network Instructions can be found here: [**Internal Networks**](/product-guide/networks/internal-networks)
-
-<br>
-
-[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }
+Full instructions for creating an internal network can be found at: [**Internal Networks**](/product-guide/networks/internal-networks)

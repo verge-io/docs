@@ -19,7 +19,7 @@ Cloud snapshots provide backup of the entire VergeOS system, including all tenan
 A cloud snapshot can be used to restore:
 
 - Entire VergeOS system
-- Individual VMs (unquiesced)
+- Individual VMs (un-quiesced)
 - Individual tenants
 
 For information regarding cloud snapshots, see: [**Cloud Snapshots and Restores**](/product-guide/backup-dr/cloud-snapshot-restore)
@@ -38,6 +38,3 @@ Additionally, each tenant can utilize [**Cloud Snapshots**](/product-guide/back
 
 Volume snapshots provide quiesced backup/restore of individual NAS volumes. For related instructions, see: [**NAS Volume Snapshots and Restores**](/product-guide/nas/volume-snapshots-restores)
 
-</br>
-
-[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

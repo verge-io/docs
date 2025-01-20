@@ -2,7 +2,7 @@
 
 Aliases centralize the management of IP address sets that will be used across multiple network rules. This helps streamline administration by allowing you to maintain address lists in one place rather than updating individual rules.
 
-## Creating a New Alias
+## Create a New Alias
 
 1. From the Main Dashboard, click **Networks** on the left menu or dashboard quick-link
 2. Click **Aliases** on the left menu
@@ -10,7 +10,7 @@ Aliases centralize the management of IP address sets that will be used across mu
 4. Complete the alias configuration:
 
     - **Name** - Enter a descriptive name that will be helpful for administration
-    - **Description** (optional) - Provide additional details about the alias's purpose 
+    - **Description** (optional) - Provide additional details about the alias's purpose
     - **Address Set** - Define the IP addresses using one of these methods:
         - Enter a pipe-delimited list (e.g., `10.10.10.10|10.200.10.0/32|10.200.1.1`)
         - Add individual entries using the list management tools
@@ -20,7 +20,7 @@ Aliases centralize the management of IP address sets that will be used across mu
 
 5. Click **Submit** to create the alias
 
-## Modifying an Alias 
+## Modify an Alias
 
 1. Navigate to **Networks > Aliases**
 2. Double-click the alias you want to modify
@@ -30,11 +30,11 @@ Aliases centralize the management of IP address sets that will be used across mu
 4. Click **Submit** to save changes
 5. On each network using this alias in its rules, click **Apply Rules** to implement the changes
 
-## Using Aliases in Network Rules
+## Use Aliases in Network Rules
 
 When creating network rules, set **Type** to **Alias** in the Source/Destination field to select from available aliases.
 
-## Managing List Entries
+## Manage List Entries
 
 The list management interface provides these functions:
 
@@ -43,5 +43,4 @@ The list management interface provides these functions:
 - **Delete Entry** - Select an entry and click the trash icon
 - **Select Multiple** - Click entries to toggle selection for bulk operations
 
-!!! tip "Remember to Apply Rules"
-    When modifying aliases used in existing rules, remember to apply the rules on affected networks for changes to take effect.
+!!! tip "When modifying aliases used in existing rules, remember to apply the rules on affected networks for changes to take effect."

@@ -1,36 +1,20 @@
-
-
 # Viewing Import Jobs
-
-<br>
-<br>
 
 ## View All Import Jobs
 
-1.  From the Main Dashboard, select **Machines** from the menu or click the Machines quick-link on the dashboard.
-2.  Select **Virtual Machines** from the menu or click the Virtual Machines quick-link on the dashboard.
-3.  Select **Import Jobs** from the left menu.
-4.  A listing of all submitted import jobs is displayed; double-click a particular job in the list to access the import job's Dashboard with detailed information about the Job, such as individual child import jobs, logs, etc.
-
-<br>
+1. From the Main Dashboard, select **Machines** from the menu or dashboard quick-link.
+2. Select **Virtual Machines** from the menu or dashboard quick-link.
+3. Select **Import Jobs** from the left menu.
+4. A listing of all submitted import jobs is displayed; double-click a particular job in the list to access the import job's dashboard with detailed information, such as individual child import jobs, logs, etc.
 
 ## See a Listing of the VMs Imported via an Import Job
 
-1.  From the Cloud Dashboard, select **Machines** from the left menu.
-2.  Click **Virtual Machines** from the menu or click the Virtual Machines quick-link on the dashboard.
-3.  Click **Import Jobs** from the left menu.
-4.  All import jobs appear in the listing; **Double-click the desired import job**.
-5.  Child import Jobs are displayed on the Import Job Dashboard that appears. The VM column will display the names of the imported VMs.  
-> Hint: A -View More-- link is available at the bottom of the Child Import Jobs section to view additional child jobs when all do not fit on a single page. {.is-success}
+1. From the Main Dashboard, select **Machines** from the menu or dashboard quick-link.
+2. Select **Virtual Machines** from the menu or dashboard quick-link.
+3. Click **Import Jobs** from the left menu.
+4. All import jobs appear in the listing; **Double-click the desired import job**.
+5. Child import jobs are displayed on the import job dashboard that appears. The VM column will display the names of the imported VMs.  
 
-> A UUID (rather than the VM name) displayed in the VM field indicates that a VM with that unique identifier already existed in the VergeOS system (e.g. previously imported). If a UUID is displayed, the VM was imported as a snapshot to avoid inadvertently overwriting an existing VergeOS VM. See the Snapshots section for more information regarding using snapshots. {.is-info}
+!!! success "A *--View More--* link is available at the bottom of the *Child Import Jobs* section to view additional child jobs when all do not fit on a single page."
 
-<br>   
-
-   > If you would like to request a KB based on a specific subject, please email our support team at <a href="mailto:support@verge.io?subject=KB Request" target="_blank" rel="noopener noreferrer">support@verge.io.</a>{.is-info}
-
-
-
-<br>
-
-[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }
+!!! info "A UUID (rather than the VM name) displayed in the VM field indicates that a VM with that unique identifier already existed in the VergeOS system (e.g. previously imported). If a UUID is displayed, the VM was imported as a [snapshot](/product-guide/backup-dr/snapshots-overview) to avoid inadvertently overwriting an existing VergeOS VM."

@@ -56,8 +56,9 @@
 
 ## Troubleshooting
 
-If the VLAN network does not show as running:
-1. Verify physical switch configuration
-2. Check VLAN ID matches physical network configuration
-3. Confirm Interface Network selection is correct
-4. Review network logs for any error messages
+If the VLAN network does not show as running:  
+
+1. Verify physical switch configuration  
+2. Check VLAN ID matches physical network configuration  
+3. Confirm Interface Network selection is correct  
+4. Review network logs for any error messages  
