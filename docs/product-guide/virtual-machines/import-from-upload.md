@@ -1,4 +1,3 @@
-
 # Importing VMs from Uploaded Media Images
 
 Importing via Media Images is a convenient way to import a single VM at a time. VM Data files, such as VMX, VMDK, OVF, VHD(X) are uploaded to the vSAN and then selected for import.

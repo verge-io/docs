@@ -12,10 +12,10 @@ A NAS service can be joined to an existing Active Directory domain to provide AD
 6. Complete the following fields:
 
     - **Guest User Mapping**: Select desired behavior for invalid users/passwords used in access attempts:
-        - Invalid Users treated as a guest
-        - Invalid passwords treated as a guest
-        - Invalid Linux users treated as a guest
-        - Invalid passwords rejected
+        - **Invalid Users treated as a guest**
+        - **Invalid passwords treated as a guest***
+        - **Invalid Linux users treated as a guest**
+        - **Invalid passwords rejected**
     - **Workgroup**: (this will be the **short form domain**, such as '**CompanyName**')
     - **Realm**: (this will be the **long form domain**, such as '**CompanyName.local**')
     - **AD Username**: a **valid administrator** account on the AD domain with the ability to create objects.
