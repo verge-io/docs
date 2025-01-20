@@ -1,4 +1,4 @@
-# Configuring NAT 1-to-1 translation
+# Configuring NAT 1-to-1 Translation
 
 Before creating the translate rule to NAT an external IP to an internal IP:
 
