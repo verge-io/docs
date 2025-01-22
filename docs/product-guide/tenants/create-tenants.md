@@ -2,7 +2,7 @@
 
 ## Tenant Creation Methods
 
-There are 3 methods available for creating a new tenant.
+VergeOS provides multiple methods for creating new tenants:
 
 - Using the [**Tenant Wizard**](#tenant-wizard)
 - [**Cloning**](#tenant-cloning) an Existing tenant
@@ -16,10 +16,10 @@ The *Tenant Wizard* steps through multiple input forms to create a new custom te
 
 1. Click **Tenants** from the Main Dashboard (quick-link card or left menu).
 2. Click **New Tenant** on the left menu.
-3. From the **Catalog list** (top left), select ***\--Custom--.***
+3. From the **Catalog list** (top left), select ***\--Custom--***
 4. Click **Next** (bottom of the screen). The ***Tenant Settings* form is presented.**
 5. Enter a ***Name*** for the tenant.
-6. ***URL*** is simply a helper field to provide a link to the tenant's UI from the **Connect to UI** menu link in the service provider's VergeOS user interface. This field can be left blank as it will automatically be populated when the first External IP is assigned to the tenant.
+6. ***URL*** is simply a helper field to provide a link to the tenant's UI from the **Connect to UI** menu link in the service provider's VergeOS user interface. This field can be left blank as it will automatically be populated when the first external IP is assigned to the tenant.
 7. Enter an ***Admin User Password*** and again in the ***Confirm Admin User Password*** field (required). This sets the password for the tenant’s “admin” root user that will be auto-created.
 8. **Optionally**, the **Require Password Change** option can be selected to force a password change when the tenant admin initially logs in.
 9. **Optionally**, a **Description** can be entered to record more information about the tenant.
@@ -47,7 +47,7 @@ The *Tenant Wizard* steps through multiple input forms to create a new custom te
 
 ### New Tenant Storage Form
 
-1. You can optionally assign one External IP to the tenant. External IPs can be assigned to a tenant after creation as well. By default, the first External IP assigned to a tenant is configured to be the tenant's UI address.  
+1. You can optionally assign one external IP to the tenant. External IPs can be assigned to a tenant after creation as well. By default, the first one assigned to a tenant is configured to be the tenant's UI address.  
 2. Select from the **Assign External IP*** dropdown. (This list will include all unassigned Virtual IPs defined in the parent).  
 3. If the desired IP is not already configured as a Virtual IP in the parent system, click ***Create a new External IP*** to create the address:
     - **Network** - select appropriate network from the dropdown list.
@@ -60,7 +60,7 @@ The *Tenant Wizard* steps through multiple input forms to create a new custom te
 4. Click **Submit** to finish. You should see a message saying the tenant was created successfully and the new tenant dashboard is presented.
 
 !!! success "Apply Rules"
-    If External IP(s) were assigned to the tenant, rules will need to be applied to the selected external network. Click the orange-highlighted message "Needs Apply Rules" on the tenant dashboard to apply the necessary rules.
+    If external IP(s) were assigned to the tenant, rules will need to be applied to the selected external network. Click the orange-highlighted message "Needs Apply Rules" on the tenant dashboard to apply the necessary rules.
 
 **To Start the New Tenant:**  
 Upon creating a tenant, the UI will land at the tenant dashboard page. From this dashboard page, the tenant can be started by clicking ***Power On*** on the left menu.

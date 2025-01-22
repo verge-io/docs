@@ -26,7 +26,7 @@ The cloning feature allows you to create a new VM instance as a replica of an ex
 !!! warning
     The Preserve MAC address setting should be used with caution to avoid duplicate addresses running on the same network, which will cause problems.
 
-## Deleting a VM
+## Delete a VM
 
 Considerations when deleting a VM:
 

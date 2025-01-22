@@ -2,7 +2,7 @@
 
 External IP addresses can be assigned to tenants. When an external IP is assigned, appropriate routing rules are created automatically.
 
-## To Assign an External IP to a Tenant:
+## Assign an External IP to a Tenant
 
 1. Navigate to the appropriate host **external network dashboard**; this should be the external network where the tenant has external access. In most cases this will be the network named "External".
 2. Click **IP Addresses** on the left menu.

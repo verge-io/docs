@@ -6,7 +6,7 @@ IPMI is a universal standard, supported by almost all hardware, for managing and
 !!! info
     Because IPMI deals with physical hardware, it only applies to host level nodes (not tenant nodes).
 
-## To Test IPMI Connectivity
+## Test IPMI Connectivity
 
 1. From the Main Dashboard, click on the **Nodes** count box.
 2. **Double-click the desired node** to access the node dashboard.
@@ -20,7 +20,7 @@ The node dashboard will indicate IPMI ***status*** and ***date/time of last time
 
 - **IPMI Last Connected** - displays the last date/time the VergeOS system successfully connected to IPMI. (If there was never a successful IPMI connection, the field will report "NA".)
 
-## To Change Stored IPMI login credentials
+## Change Stored IPMI login credentials
 
 !!! tip
     The following instructions provide for changing the IPMI credentials a node will use to interface with IPMI. Changing these fields does not perform IPMI user administration; connect to your IPMI web interface to add or change IPMI users.
@@ -30,7 +30,7 @@ The node dashboard will indicate IPMI ***status*** and ***date/time of last time
 3. Enter ***IPMI Password***.
 4. Click **Submit** to save the changes to the node.
 
-## To Access the IPMI Web Interface
+## Access the IPMI Web Interface
 
 !!! info
     Successfully connecting to the IPMI web interface through the VergeOS user interface requires valid IPMI username/password is stored and appropriate networking configuration is in place for the system to interact with the node's IPMI.
