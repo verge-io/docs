@@ -7,7 +7,7 @@ A separate user account should be created for each individual that will utilize 
 !!! success "Authorization Source"
     When using an Authorization Source, there is an option to auto-create users from the source.
 
-### User Types:
+### User Types
 
 - **Normal** - intended for full UI access
 - **API** - intended for service accounts only; e.g. running scripts, syncs, etc.
@@ -17,13 +17,12 @@ A separate user account should be created for each individual that will utilize 
 
 A group is a collection of users. Groups can also contain other groups. Administration of permissions and subscriptions can often be simplified by the use of groups.
 
-## To Create a New User:
+## Create a New User
 
 1. From the Main Dashboard, select **System**.
 2. Select **Users**.
 3. Select **New**.
 4. Select an ***Authorization Source*** if appropriate (This field will not display if no third-party authorization sources are configured for the system). The default selection of "--None--" creates a user that authenticates directly via VergeOS.
-
 !!! note
     If the authorization source has been configured to auto create users, do not create the user here.
 
@@ -39,13 +38,12 @@ A group is a collection of users. Groups can also contain other groups. Administ
 11. When enabled, ***Two Factor Authentication*** requires use of a security code (received via user email) in addition to username/password for login to the VergeOS system.
 12. ***Email Address*** is used when sending subscription reports and alerts assigned to the user and for Two-Factor Authentication, if applicable.
 13. The ***Physical Access*** option can be checked to allow the user direct console access to nodes. 
-
 !!! warning
     **CAUTION:** Enabling the *Physical Access* option allows the account to log in at the command-line via physical access (e.g. crashcart, ipmi remote control) and SSH. **This should only be granted to users entrusted with low-level VergeOS server administration.**
 
 - **SSH Keys** can be added to provide key-based authentication for SSH; multiple keys can be defined to allow the user to authenticate by ssh key from various computers. Note: SSH Keys are optional; a user granted physical access can log into an SSH session with username/password in the absence of an associated SSH key.
 
-    **To Add a new SSH Key entry:**
+    **Add a new SSH Key entry:**
   - An initial blank line will appear where an SSH key can be typed in.
   - Additional keys can be added, as needed, by clicking the plus [ ] button which will insert a new blank line where an SSH key can be typed in.
 
@@ -66,7 +64,7 @@ A group is a collection of users. Groups can also contain other groups. Administ
 14. Optionally, under ***Member of Groups***, groups can be selected in which to add the user. Hint: Multiple groups can be selected by holding down the Shift or Ctrl key.
 15. Click **Submit** to save the new user.
 
-## To Create a New Group
+## Create a New Group
 
 1. From the **Main Dashboard**, select **Groups** from the top quick-links.
 2. Select **New** on the left menu.
@@ -75,7 +73,7 @@ A group is a collection of users. Groups can also contain other groups. Administ
 5. Optionally, an ***Email Address*** can be specified to receive subscription alerts and reports assigned to the group.
 6. Click **Submit** to save the new group.
 
-## To Add Members (users and/or groups) to a Group
+## Add Members (users and/or groups) to a Group
 
 1. From the **Main Dashboard**, select **Groups** from the top quick-links.
 2. **Double-click the desired group** in the list to display the group dashboard.

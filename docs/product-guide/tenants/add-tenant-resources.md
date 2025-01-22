@@ -38,3 +38,19 @@ For additional guidance in planning tenant node resources, contact Support. Inst
     - **Power On** - tenant will be powered on when power is restored (regardless of its state at the time of power loss).
 10. Click **Submit**.
 
+## Provision Additional Storage to a Tenant
+
+### Provision a New Tier of Storage to a Tenant
+
+1. Navigate to the **tenant dashboard**.
+2. Click **Add Storage** on the left menu.
+3. Select the desired **Tier** from the dropdown list.
+4. **Enter the desired amount of storage in the Provisioned field** and select the desired unit of measure (B, KB, MB, GB, TB)
+5. Click **Submit** to add the provisioned storage.
+
+### Add More Storage on a Tier that is Already Provisioned to the Tenant
+
+1. Navigate to the **tenant dashboard**.
+2. Scroll down to the ***Storage*** **section**.
+3. Click the **Edit** button (far right) for the desired tier.
+4. **Change the Provisioned field to the total amount to be provisioned** to the tenant. (For example, if the current amount is 50GB and you want to add 25GB, enter the new desired total: 75GB).

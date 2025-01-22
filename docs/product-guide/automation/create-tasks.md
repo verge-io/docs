@@ -65,9 +65,9 @@ This task allows for sending applicable personnel a notification when an update 
 - *SMTP* field is **automatically set to the from address configured in SMTP global settings**.
 - *From Address:* from address for the email; **can be left blank** to default to the From Address defined in SMTP global settings.
 - *From Name:* from display name for the email; **can be left blank** to default to the From Name defined in SMTP global settings.
-- *To List:* **list of one or more email addresses to receive the alert; The semicolon [;] is used to separate multiple addresses.**
-- *CC List:* **(optional)** list of one or more email addresses to be copied on the alert; The semicolon [;] is used to separate multiple addresses.
-- *BCC List:* **(optional)** list of one or more email addresses to be blind copied on the alert; The semicolon [;] is used to separate multiple addresses.
+- *To List:* **list of one or more email addresses to receive the alert;** A semicolon (;) is used to separate multiple addresses.
+- *CC List:* **(optional)** list of one or more email addresses to be copied on the alert; A semicolon (;) is used to separate multiple addresses.
+- *BCC List:* **(optional)** list of one or more email addresses to be blind copied on the alert; A semicolon (;) is used to separate multiple addresses.
 - *Subject:* **email subject line text**
 - *Body:* **email content text**
 

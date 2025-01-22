@@ -24,7 +24,7 @@ The VergeOS interface will provide warnings or alerts to indicate when there is 
 !!! warning "Important"
     **It is highly recommended to configure on-demand and scheduled subscriptions (with *target type=system Dashboard*) to ensure timely awareness of drive issues.** The [Creating Subscriptions Guide](/product-guide/system/subscriptions-overview) provides information about setting up subscriptions.
 
-### Determining the Correct Physical Drive for Replacement
+## Determine Correct Physical Drive for Replacement
 
 1. Navigate to the **node dashboard**.
 2. **Activate** the drive **LED**
@@ -44,7 +44,7 @@ The VergeOS interface will provide warnings or alerts to indicate when there is 
 
 ![diag-ledoff.png](/product-guide/screenshots/diag-ledoff.png)
 
-### To Replace the Drive
+## Replace a Drive
 
 !!! danger "**CAUTION: Before** initiating a drive repair operation, **verify**:"
     1. All nodes are operational (none are powered off or in maintenance mode)

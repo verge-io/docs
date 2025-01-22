@@ -69,6 +69,3 @@ This option allows for using a snapshot to restore to a new VM instance, rather 
 !!! Tip "Restoring Data from a VM Drive"
     To avoid issues with running both clone and source VM simultaneously, cloned VM drives can be mounted to a different VM in order to access restored data without powering on the clone: working on a separate VM, add a new drive, select the Clone Disk option and selecting the *.raw file from the restored VM drive.
 
-</br>
-
-[Get vergeOS license keys](https://www.verge.io/test-drive){ target="_blank" .md-button }

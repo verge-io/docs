@@ -89,7 +89,7 @@ Interfacing with Azure groups requires a token on the Azure AD app registration 
 
 After the Azure auth source is created, users can be manually created in VergeOS to utilize the authorization source for login authentication. Manually creating users is only necessary when users are not configured to be auto-created.
 
-### To Add VergeOS Users that will use the Azure AD Auth
+### Add VergeOS Users that will use the Azure AD Auth
 
 When creating the new user, use the following configuration:
 

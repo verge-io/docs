@@ -10,7 +10,7 @@ A physical network is a representation of each isolated layer 2 network. Note: P
 
 ### Core Network
 
-A virtual network (created automatically during the VergeOS installation/tenant creation) to handle all internode communication. Every VergeOS cloud has one core network (There is a core network at the physical host level; additionally, each tenant has one core network.)  	
+A virtual network (created automatically during the VergeOS installation/tenant creation) to handle all vSAN and internode communication. Core traffic is run across multiple (typically two) physical networks to provide redundancy.
 
 ### DMZ Networks
 

@@ -1,7 +1,7 @@
 
 # Task Manager
 
-The task manager allows initiating automatic operations based on an event or a specific date/time schedule with optional recurrence.
+The *Task Manager* allows initiating automatic operations based on an event or a specific date/time schedule with optional recurrence.
 
 ## Examples of Event-based Tasks
 

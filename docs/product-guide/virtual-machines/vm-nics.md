@@ -37,7 +37,7 @@
 3. Select **Edit** from the left menu.
 4. All fields can be modified. However, there are considerations for editing some fields. See below.
     - ***Name*** - can be modified as desired; must not be the same name as another NIC attached to the same VM.
-    - ***Order ID*** - This field controls the order in which the guest OS loads multiple NICS at boot time. Changing the order ID after a machine has already been booted with the given NICs may then also require configuration changes within the guest OS.  Order ID is only relevant when there is more than one (enabled) NIC attached to the VM.   
+    - ***Order ID*** - This field controls the order in which the guest OS loads multiple NICS at boot time. Changing the order ID after a machine has already been booted with the given NICs may then also require configuration changes within the guest OS.  Order ID is only relevant when there is more than one (enabled) NIC attached to the VM.
     - ***Interface*** - can be changed. It is important to make sure proper drivers are installed within the guest OS in order for the NIC to function properly.
     - ***Network*** - changing the network to which this NIC is attached will most likely result in a new IP assignment. Additionally, if there were any special routes and rules pertaining to this NIC, they may need to be re-created or reconfigured once changed to a new network.
     - ***MAC Address*** - it is typically recommended to use the system-assigned (unique) MAC address, changing the MAC address after the NIC has already been in use will likely also require configuration changes within the guest OS.
@@ -45,7 +45,7 @@
     - ***Asset*** - is a freeform field, where any combination of alphanumeric characters can be used to define a unique identifier in order to distinguish this NIC from other NICs within the same VM, for use in recipes.
 5. Click **Submit** to save changes.
 
-## Disabling a NIC
+## Disable a NIC
 
 1. From the VM Dashboard, Select **NICS** on the left menu.
 2. Select the NIC to be modified.

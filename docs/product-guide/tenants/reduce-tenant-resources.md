@@ -1,20 +1,21 @@
 
 # Reducing a Tenant's Resources
 
-Tenant compute resources can be reduced on-the-fly, by deleting a tenant node or reducing the cores/RAM assigned to tenant nodes.
+Tenant compute resources can be reduced on-the-fly, by:
 
-## Reducing cores/RAM provisioned to a Tenant Node
+- deleting a tenant node, or
+- reducing the cores/RAM assigned to tenant nodes.
+
+## Reduce cores/RAM provisioned to a Tenant Node
 
 The tenant node does not need to be powered off to reduce resource settings; however, if those resources are currently in use by tenant workloads, they will not actually be reclaimed until VMs are shut down. Example: if you reduce a tenant node's RAM resources to 28GB while 32GB is in use by its VMs; the change can be made, but it does not automatically shut down or reclaim any RAM from running VMs.
 
-## Deleting a Tenant Node
+## Delete a Tenant Node
 
-In order to delete a tenant node, it must first be powered off. 
+In order to delete a tenant node, it must first be powered off.
 
 !!! warning
     **Do not delete the original tenant node; each tenant needs at least one node.**
-
-### Delete a Tenant Node
 
 1. Navigate to the **tenant dashboard**.
 2. Click **Nodes** on the left menu.
