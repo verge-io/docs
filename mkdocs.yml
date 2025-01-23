@@ -152,10 +152,11 @@ nav:
     - VergeOS User Interface: product-guide/ui-overview.md
     - System Configuration:
       - Authentication:
-        - Authorization Sources: product-guide/auth/auth-sources-general.md
-        - Azure AD: product-guide/auth/azure-auth.md
+        - Overview: product-guide/auth/auth-sources-overview.md
+        - Entra ID / Azure AD: product-guide/auth/azure-auth.md
         - Google: product-guide/auth/google-auth.md
         - Multi-Factor Authentication: product-guide/auth/mfa-email.md
+        - OIDC Applications Overview: product-guide/auth/oidc-apps-overview.md
       - Certificates: product-guide/system/certificates.md
       - Cloud Snapshots:
         - Overview: product-guide/backup-dr/snapshots-overview.md
