@@ -1,3 +1,4 @@
+---
 title: Remote Syslog Ingestion in VergeOS
 slug: remote-syslog-ingestion-vergeos
 description: Guide on configuring remote syslog ingestion in VergeOS and other logging tools like Graylog, Splunk, ELK Stack, and Fluentd.
@@ -11,7 +12,6 @@ categories:
 - Monitoring
   editor: markdown
   dateCreated: 2025-01-23
-
 ---
 
 # Remote Syslog Ingestion in VergeOS
