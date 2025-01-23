@@ -7,11 +7,10 @@ published: true
 date: 2025-01-23
 tags: [syslog, VergeOS, Graylog, Splunk, ELK, Fluentd]
 categories:
-
-- Logging
-- Monitoring
-  editor: markdown
-  dateCreated: 2025-01-23
+  - Logging
+  - Monitoring
+editor: markdown
+dateCreated: 2025-01-23
 ---
 
 # Remote Syslog Ingestion in VergeOS
