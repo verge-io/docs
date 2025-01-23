@@ -2,7 +2,7 @@
 
 A service provider can provide files, that are uploaded to the vSAN, to a tenant. For help in the initial upload of files to the parent vSAN, see: [**Media Images**](/product-guide/vsan/uploading-files-to-vsan)
 
-## To Provide a File to a Tenant:
+## Provide a File to a Tenant
 
 1. From the Main Dashboard, Click **Tenants** on the left menu.
 2. Click **Tenants** to view a listing of all tenants on this system.

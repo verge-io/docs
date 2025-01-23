@@ -2,7 +2,7 @@
 
 Maintenance Mode prepares a node to be taken offline. **Maintenance Mode should be used prior to any operation that will include a reboot / powercycle or will otherwise render the node unavailable.**
 
-## Putting a Node into Maintenance Mode
+## Put a Node into Maintenance Mode
 
 When a node is put into Maintenance Mode, the system attempts to gracefully migrate all workloads (including virtual machines, tenant nodes, vNet containers) to different nodes within the cluster.
 
@@ -43,7 +43,7 @@ When a node is put into Maintenance Mode, the system attempts to gracefully migr
 
 7. **After all service is completed** and the node is ready to be utilized again, **take the node out of Maintenance Mode** so it can service workloads again.
 
-## Taking a Node out of Maintenance Mode
+## Take a Node out of Maintenance Mode
 
 !!! success
     Take a node out of maintenance **when all powercycle/reboot operations are complete** and it is ready to come back into service.

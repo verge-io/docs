@@ -24,9 +24,10 @@ To modify any of the following properties of an existing tenant, navigate to the
     If *Custom Branding* is disabled after tenant has already implemented custom branding, the **branding changes will be lost**.
 
 * **Custom help URL** - Address for the Help link within the tenant UI
-    * **"default"** - link to standard VergeOS help content
-    * **blank** - disables tenant Help links (Help links within the tenant UI will produce a 404 error page)
-    * **custom URL** - URL can be provided to accommodate a custom document store for help content
+
+  * **"default"** - link to standard VergeOS help content
+  * **blank** - disables tenant Help links (Help links within the tenant UI will produce a 404 error page)
+  * **custom URL** - URL can be provided to accommodate a custom document store for help content
 
 * **UI Address** - Link for the tenant to access their own VergeOS UI. This field is **autopopulated** with the [**first External IP**](/product-guide/tenants/assign-ip-to-tenant) assigned to the tenant. If/when additional external IPs are assigned to a tenant, the **UI address can be changed** to one of the other IP addresses. Rules will **automatically** be updated by the system; *Apply Rules* to **both** the associated **External** network and **tenant** network if *UI Address* is modified.
 

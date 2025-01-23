@@ -78,7 +78,7 @@ The resource group dashboard contains the resource rules that were auto-generate
 
 !!! hint "NVIDIA Client licensing may involve generating a client config token on the NVIDIA licensing server that will need to be downloaded into the VM guest, followed by a VM reboot."
 
-## Sharing an NVIDIA vGPU to a Tenant
+## Share an NVIDIA vGPU to a Tenant
 
 NVIDIA vGPU devices can be passed to a tenant for the tenant to pass to its own VMs.  When you pass through devices to a tenant, a new resource group is created within the tenant.  
 

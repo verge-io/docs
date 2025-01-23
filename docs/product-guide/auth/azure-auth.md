@@ -13,9 +13,9 @@ VergeOS can be configured to allow users to authenticate using their corporate A
 2. Create a new client secret. **App Registrations > Client Credentials > Add a certificate or secret. Click +New client secret.**
    - Enter a **description and expiration date** for the new client secret.
    - **Obtain the following from Azure** to be used in configuration of the authorization source within VergeOS:
-       - **Tenant ID** **Hint: *All services > Azure Active Directory > Overview.* The Tenant ID is listed under Basic Information.**
-       - **Client ID** **Hint: *Azure App Registrations > Configured Item > Client Credentials***
-       - **Client Secret** **Hint: *Azure App Registrations > Configured Item > Client Credentials* Use the "VALUE" field.**
+       - **Tenant ID** - **hint: *All services > Azure Active Directory > Overview.* The Tenant ID is listed under Basic Information.**
+       - **Client ID** - **hint: *Azure App Registrations > Configured Item > Client Credentials***
+       - **Client Secret** - **hint: *Azure App Registrations > Configured Item > Client Credentials* Use the "VALUE" field.**
 
     ![azureclientsecretadd.png](/product-guide/screenshots/azureclientsecretadd.png)
     ![azureclientsecret2.png](/product-guide/screenshots/azureclientsecret2.png)
@@ -59,7 +59,7 @@ VergeOS can be configured to allow users to authenticate using their corporate A
 
 19. **Additional Optional Fields:**  See [**Authorization Sources (General)**](/product-guide/auth/auth-sources-general) for information regarding additional optional Fields.
 
-## Adding Azure Groups to VergeOS
+## Add Azure Groups to VergeOS
 
 Interfacing with Azure groups requires a token on the Azure AD app registration and creation of groups in VergeOS:
 
@@ -72,7 +72,7 @@ Interfacing with Azure groups requires a token on the Azure AD app registration 
 
 ![azure-editgroupsclaim.pn](/product-guide/screenshots/azure-editgroupsclaim.png)
 
-### Add Azure Groups to VergeOS
+### Steps to Add Azure Groups
 
 1. Navigate to **System > Groups.**
 2. Click **New** on the left menu.
@@ -85,7 +85,7 @@ Interfacing with Azure groups requires a token on the Azure AD app registration 
 
 ![azure-creategroup.png](/product-guide/screenshots/azure-creategroup.png)
 
-## Manually Adding Users from Azure
+## Manually Add Users from Azure
 
 After the Azure auth source is created, users can be manually created in VergeOS to utilize the authorization source for login authentication. Manually creating users is only necessary when users are not configured to be auto-created.
 

@@ -70,14 +70,10 @@ A **drive must be offline before it can be deleted**; a drive can be taken offli
 
 ## Modify a VM Drive
 
-!!! info
-    Once a drive is created, the *Media* field (Disk/Non-Persistent/CD-ROM) cannot be modified.
-
-!!! info
-    Drives cannot be reduced in size.
-
-!!! info
-    Modifications involving drive size or drive interface type will likely require corresponding modifications within the guest OS; specific guest OS changes will be dependent on the particular OS in use.
+!!! info "Considerations"
+    - Once a drive is created, the *Media* field (Disk/Non-Persistent/CD-ROM) cannot be modified.
+    - Drives cannot be reduced in size.
+    - Modifications involving drive size or drive interface type will likely require corresponding modifications within the guest OS; specific guest OS changes will be dependent on the particular OS in use.
 
 1. From the **VM dashboard**, click **Drives** from the left menu.
 2. **Select the drive** to be modified.

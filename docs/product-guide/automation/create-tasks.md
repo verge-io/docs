@@ -38,7 +38,7 @@ This page includes general directions for creating a schedule-based task and an 
 13. Optionally, the **Delete Task After Running** option can be selected to delete the task after it has completed once.
 14. Click **Submit** to create the new task.
 
-## Example Task - Disable a User on a Specific Date
+## Example - Disable a User on a Specific Date
 
 This type of task can be useful to automatically disable accounts when no longer needed (e.g. temporary projects, contract workers, etc.)
 
@@ -52,7 +52,7 @@ This type of task can be useful to automatically disable accounts when no longer
 - *Task Type:* **Disable**
 - *Delete Task After Running:* **checked** (since the task will no longer be needed after it runs).
 
-## Example Task - Send Notification When a System Update Completes
+## Example - Send Notification When a System Update Completes
 
 This task allows for sending applicable personnel a notification when an update process is completely finished across all nodes.
 
@@ -71,7 +71,7 @@ This task allows for sending applicable personnel a notification when an update 
 - *Subject:* **email subject line text**
 - *Body:* **email content text**
 
-## Example Task - Power on a VM When a Specific User Logs in
+## Example - Power on a VM When a Specific User Logs in
 
 This task will power on a VM every time the specified user logs into the VergeOS system. A task can also be created to power down the VM each time the user logs off. Using the two automatic tasks can reserve resources by running the VM only when needed.
 
