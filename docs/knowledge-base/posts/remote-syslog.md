@@ -13,7 +13,7 @@ editor: markdown
 dateCreated: 2025-01-23
 ---
 
-# Remote Syslog Ingestion in VergeOS
+# Remote Syslog
 
 ## Overview
 
