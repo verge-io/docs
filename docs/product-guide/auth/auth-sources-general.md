@@ -4,6 +4,7 @@ Authorization sources allow utilizing third party OAuth2 identity management sys
 
 !!! info  "While OAuth2 is a standard specification, different implementations will vary. This page provides **generalized instructions** for configuring a third-party OAuth source to be used for VergeOS authentication; specific fields and settings will differ depending on the selected driver (Google, Azure, OpenID, GitLab, etc.). Consult specific OAuth source documentation for information on particular options."
 
+
 ## General Instructions for Creating an Authorization Source
 
 1. Obtain **Client ID** and **Client Secret** from the third-party system; these credentials must be created **based on the URL of the VergeOS system**. These values will be needed in a later step.
