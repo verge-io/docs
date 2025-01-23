@@ -1,16 +1,19 @@
 ---
-title: Remote Syslog
-slug: remote-syslog
-description: Configuring remote syslog in VergeOS and other logging tools like Graylog, Splunk, ELK Stack, and Fluentd.
+
+title: Remote Syslog Ingestion in VergeOS
+slug: remote-syslog-ingestion-vergeos
+description: Guide on configuring remote syslog ingestion in VergeOS and other logging tools like Graylog, Splunk, ELK Stack, and Fluentd.
 author: Larry
 published: true
 date: 2025-01-23
 tags: [syslog, VergeOS, Graylog, Splunk, ELK, Fluentd]
 categories:
-  - Logging
-  - Monitoring
-editor: markdown
-dateCreated: 2025-01-23
+
+- Logging
+- Monitoring
+  editor: markdown
+  dateCreated: 2025-01-23
+
 ---
 
 # Remote Syslog Ingestion in VergeOS
@@ -18,9 +21,9 @@ dateCreated: 2025-01-23
 ## Overview
 
 !!! info "Key Points"
-    - Configure remote syslog in VergeOS.
-    - Use rsyslog templates for custom log formatting.
-    - Example configurations for Graylog, Splunk, ELK Stack, and Fluentd.
+\- Configure remote syslog in VergeOS.
+\- Use rsyslog templates for custom log formatting.
+\- Example configurations for Graylog, Splunk, ELK Stack, and Fluentd.
 
 This article provides instructions for setting up remote syslog logging in VergeOS, using rsyslog templates for log formatting, and integrating with logging tools like Graylog, Splunk, ELK Stack, and Fluentd.
 
@@ -36,39 +39,45 @@ This article provides instructions for setting up remote syslog logging in Verge
 ### Steps
 
 1. **Access System Settings**
+
    - Navigate to **System > Settings > Advanced Settings** in the VergeOS UI.
 
 2. **Set the Remote Syslog Server**
+
    - Enter the remote syslog server details in the following format:
      - **TCP**: `@@name_or_ip:port`
      - **UDP**: `@name_or_ip:port`
-
-     Example:
+       Example:
      ```
-     @@192.168.1.100:514
+     @192.168.100.10:5142;GRAYLOGRFC5424
      ```
 
 3. **Define Syslog Templates**
+
    - Under **Template to define for syslog server**, configure the rsyslog format template.
    - Example rsyslog template:
      ```
-     template(name="VergeSyslog" type="string" string="%TIMESTAMP% %HOSTNAME% %syslogtag%%msg%\n")
+     GRAYLOGRFC5424,"<%PRI%>%PROTOCOL-VERSION% %TIMESTAMP:::date-rfc3339% %HOSTNAME%.cloud.io %APP-NAME% %PROCID% %MSGID% %STRUCTURED-DATA% %msg%\n"
      ```
    - Refer to the [rsyslog documentation](https://www.rsyslog.com/doc/) for advanced template configurations.
 
 4. **Save Settings**
+
    - Click **Save** to apply the changes.
 
 !!! tip "Pro Tip"
-    Test the configuration by generating syslog messages in VergeOS and verifying them on the remote syslog server.
+Test the configuration by generating syslog messages in VergeOS and verifying them on the remote syslog server.
 
 ## Examples
 
 ### Sample Logs from VergeOS
+
 #### Log 1:
+
 ```
 2024-12-07T10:00:01.282985-05:00 node1 appserver[14019]: (node1) [Tenant 'HYPGMS-01'] Discovered snapshot 'Hourly for 3 hours_20241207_10'
 ```
+
 - **Timestamp**: `2024-12-07T10:00:01.282985-05:00`
 - **Hostname**: `node1`
 - **Application**: `appserver`
@@ -76,9 +85,11 @@ This article provides instructions for setting up remote syslog logging in Verge
 - **Message**: `Discovered snapshot 'Hourly for 3 hours_20241207_10'`
 
 #### Log 2:
+
 ```
 2024-12-01T10:05:29.885009+00:00 node1 appserver[13793]: (node1) [Node 'node4'] Status is now 'Unresponsive'
 ```
+
 - **Timestamp**: `2024-12-01T10:05:29.885009+00:00`
 - **Hostname**: `node1`
 - **Application**: `appserver`
@@ -92,32 +103,42 @@ This article provides instructions for setting up remote syslog logging in Verge
 ### Graylog
 
 1. **Create a Syslog Input**
+
    - Navigate to **System > Inputs** in Graylog.
    - Select **Syslog UDP** or **Syslog TCP** and configure the input with the desired port and bind address.
    - Start the input.
 
 2. **Parse Logs**
+
    - Configure extractors or pipelines to parse fields such as hostname, application name, and message.
-   - Example extractor regex:
+   - Updated extractor regex to accommodate the VergeOS rsyslog template:
      ```regex
-     ^.*?\s(?P<application>\S+)\[(?P<pid>\d+)\]:\s(?P<message>.*)$
+     ^<(?P<pri>\d+)>(?P<protocol_version>\d+) (?P<timestamp>\S+) (?P<hostname>\S+) (?P<app_name>\S+) (?P<proc_id>\S+) (?P<msg_id>\S+) (?P<structured_data>\[.*?\]) (?P<message>.*)$
      ```
+   - This extracts:
+     - `PROTOCOL-VERSION` as `protocol_version`
+     - `MSGID` as `msg_id`
+     - `STRUCTURED-DATA` as `structured_data`
+     - `message` for the main log content.
 
 ### Splunk
 
 1. **Set Up a Data Input**
+
    - Navigate to **Settings > Data Inputs** in Splunk.
    - Select **UDP** or **TCP**, configure the port, and set the source type to `syslog`.
 
 2. **Search and Parse Logs**
-   - Use Splunk SPL for parsing VergeOS logs:
+
+   - Use Splunk SPL for parsing VergeOS logs with the updated rsyslog template:
      ```spl
-     index=syslog | rex field=_raw "\[(?<tenant>Tenant '\w+')\]"
+     rex field=_raw "<(?<pri>\d+)>(?<protocol_version>\d+) (?<timestamp>\S+) (?<hostname>\S+) (?<app_name>\S+) (?<proc_id>\S+) (?<msg_id>\S+) (?<structured_data>\[.*?\]) (?<message>.*)"
      ```
 
 ### ELK Stack
 
 1. **Configure Logstash**
+
    - Add the syslog input configuration:
      ```
      input {
@@ -129,16 +150,18 @@ This article provides instructions for setting up remote syslog logging in Verge
      ```
 
 2. **Add Grok Filters**
-   - Parse logs with Grok:
+
+   - Parse logs with Grok to match the VergeOS rsyslog template:
      ```
      filter {
          grok {
-             match => { "message" => "\[%{WORD:tenant}\] %{GREEDYDATA:log_message}" }
+             match => { "message" => "<%{INT:pri}>%{INT:protocol_version} %{TIMESTAMP_ISO8601:timestamp} %{DATA:hostname} %{DATA:app_name} %{DATA:proc_id} %{DATA:msg_id} %{DATA:structured_data} %{GREEDYDATA:log_message}" }
          }
      }
      ```
 
 3. **Output Logs to Elasticsearch**
+
    ```
    output {
        elasticsearch {
@@ -150,6 +173,7 @@ This article provides instructions for setting up remote syslog logging in Verge
 ### Fluentd
 
 1. **Configure Syslog Input Plugin**
+
    - Add the syslog source configuration:
      ```
      <source>
@@ -159,7 +183,22 @@ This article provides instructions for setting up remote syslog logging in Verge
      </source>
      ```
 
-2. **Define Output to Elasticsearch**
+2. **Transform Records**
+
+   - Use the record transformer to extract the VergeOS-specific fields:
+     ```xml
+     <filter **>
+       @type record_transformer
+       <record>
+         pri ${record["message"].scan(/<\d+>/)[0]}
+         protocol_version ${record["message"].scan(/>(\d+) /)[0]}
+         structured_data ${record["message"].scan(/\[(.*?)\]/)[0]}
+       </record>
+     </filter>
+     ```
+
+3. **Define Output to Elasticsearch**
+
    ```
    <match **>
      @type elasticsearch
@@ -170,15 +209,15 @@ This article provides instructions for setting up remote syslog logging in Verge
    ```
 
 !!! tip "Pro Tip"
-    Use test logs to validate configurations before deploying in production.
+Use test logs to validate configurations before deploying in production.
 
 ---
 
 ## Troubleshooting
 
 !!! warning "Common Issues"
-    - **Logs Not Appearing**: Verify the VergeOS syslog server configuration and network connectivity.
-    - **Parsing Issues**: Ensure rsyslog templates are correctly defined and match the expected format on the remote server.
+\- **Logs Not Appearing**: Verify the VergeOS syslog server configuration and network connectivity.
+\- **Parsing Issues**: Ensure rsyslog templates are correctly defined and match the expected format on the remote server.
 
 ## Additional Resources
 
@@ -198,4 +237,3 @@ This article provides instructions for setting up remote syslog logging in Verge
 !!! note "Document Information"
     - Last Updated: 2025-01-23
     - VergeOS Version: 1.0.0
-
