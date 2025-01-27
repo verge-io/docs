@@ -1,5 +1,3 @@
-Ah, I see! Let me revise the overview with just those two specific knowledge base article links:
-
 # VergeOS OIDC Applications Overview
 
 VergeOS provides OIDC functionality to allow centralized identity management for multiple VergeOS systems and or tenants.
