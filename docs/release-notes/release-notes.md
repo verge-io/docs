@@ -9,7 +9,7 @@ status: new
 
 !!! info "Series Information"
     - **Initial Release**: November 2024 (4.13.0)
-    - **Latest Version**: 4.13.1 (November 2024)
+    - **Latest Version**: 4.13.3 (January 2025)
     - **Status**: Latest
     - **End-of-Life**: TBD
 
@@ -52,6 +52,88 @@ status: new
     - Enhanced VMware integration
     - Improved tenant management
     - Comprehensive HA improvements
+
+## 4.13.3 (January 2025)
+
+### Features & Improvements
+
+#### Virtual Machine Management
+- Enhanced VM configuration capabilities:
+    - Added ability to specify VM smbios data using advanced options (e.g. smbios.type1.serial=XXXYYY)
+    - Added support for advanced CPU parameters (e.g. cpu.split-lock-detect=off)
+    - Added VM advanced options support for machine, smp, and rtc parameters
+    - Fixed CD-ROM "Optimize For" setting adherence
+    - Added UTF-8 support for VM paste mapping configurations
+    - Improved VM console focus after ctrl-alt-del
+    - Fixed best CPU flag detection for nested virtualization
+    - Fixed issue where editing a VM could reset paste keymap or RTC settings
+- Enhanced cloud-init handling:
+    - Improved file cleanup when VM is stopped
+    - Added cloud-init support for installation
+
+#### Authentication & Security
+- Enhanced Two-Factor Authentication:
+    - Added audit logging for failed 2FA code attempts
+    - Improved TOTP code validation (15-second time offset tolerance)
+- Improved authentication source management:
+    - Fixed group membership updates with auth sources
+    - Added auto-cleanup of groups when deleting auth source
+    - Added automatic debug mode timeout (1 hour)
+    - Enhanced OIDC application support for group management
+
+#### System Administration
+- Enhanced maintenance mode:
+    - Improved handling of tenant reserve nodes during shutdown
+    - Added forced maintenance mode option without redundancy
+    - Fixed maintenance mode issues with tenant node reserves
+- Improved tenant management:
+    - Added queue system for tenant provisioning operations
+    - Enhanced tenant node statistics tracking
+    - Improved cleanup of temporary tenant node directories
+    - Added system password requirement enforcement for tenants
+    - Fixed virtual IP ownership display in tenants
+
+#### Storage & Infrastructure
+- Enhanced vSAN functionality:
+    - Improved integrity check monitoring in diagnostics
+    - Enhanced vSAN shutdown logging
+    - Improved connection handling during network instability
+- Upload improvements:
+    - Added system-wide preferred tier inheritance for URL uploads
+    - Improved upload transfer rate accuracy
+
+#### VMware Integration
+- Enhanced backup functionality:
+    - Added fix for differential backups of non-4k aligned disks
+    - Improved error handling for portgroup lookups
+    - Enhanced disk size display precision (3 decimal places)
+    - Improved import option consistency
+
+### System Updates
+- Core system improvements:
+    - Upgraded to kernel 6.6.66
+    - Upgraded QEMU to 9.0.4
+    - Enhanced wireguard TCP performance with GSO
+    - Added power-save CPU frequency governor
+    - Improved core network DNS and gateway configuration
+    - Updated documentation links to docs.verge.io
+- Installation enhancements:
+    - Added automated node shutdown option post-installation
+    - Improved network auto-detection
+    - Enhanced drive selection process
+    - Added more detailed console output during boot/shutdown
+    - Fixed advanced installer network configuration issues
+
+### Bug Fixes
+- Fixed various issues with:
+    - NAS recipe status during drive formatting
+    - Cloud snapshot timing conflicts
+    - SSL certificate Common Name parsing
+    - Virtual wire configuration
+    - VMware backup and import processes
+    - Network connection maintenance during migrations
+    - vGPU profile placement IDs
+    - Recipe field type display
 
 ## 4.13.2 (December 2024)
 
