@@ -73,7 +73,7 @@ This guide explains how to force power off a non-responsive virtual machine (VM)
 2. Click the blue **GET /machine_stats/{id}**
 3. In the parameters:
    - Set `id` to `status_number` (using the status value from step 3)
-   - Set 1fields` to `most`
+   - Set `fields` to `most`
 4. Click **Execute**
 5. Verify this is the correct VM by checking:
    - Number of cores
