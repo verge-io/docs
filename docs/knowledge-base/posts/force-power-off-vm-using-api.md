@@ -117,7 +117,12 @@ This guide explains how to force power off a non-responsive virtual machine (VM)
 - Monitor the VM after forcing power off to ensure it starts properly when needed
 
 ---
+## Feedback
 
+!!! question "Need Help?"
+    If you do not feel confortable with this process, please reach out to our support team for assistance.
+
+---
 !!! note "Document Information"
     - Last Updated: 2024-01-28
     - VergeOS Version: All
