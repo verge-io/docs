@@ -53,38 +53,38 @@ This guide explains how to force power off a non-responsive virtual machine (VM)
 1. In the API interface, locate and expand the **VMs** table
 2. Click the blue **GET** button
 3. In the parameters section:
-   - Set `fields` to `most`
-   - Optional: Use filter `name eq your_vm_name` to find a specific VM
+   - Use filter `name eq your_vm_name` to find a specific VM
 4. Click **Execute**
 5. Note the `Machine` number from the response
 
 ### 3. Get Machine Status ID
 
 1. Navigate to the **machines** table
-2. Click **GET**
+2. Click the blue **GEt /machines/{id}**
 3. In the parameters:
-   - Set `fields` to `most`
-   - Set filter to `$key eq machine_number` (using the number from step 2)
-4. Click **Execute**
-5. From the response, note the `status` value
+   - Set `id` to the `Machine number from the previous response`
+   - Set `fields` to `status`
+5. Click **Execute**
+6. From the response, note the `status` value
 
 ### 4. Verify Machine Status
 
 1. Go to the **machine_status** table
-2. Click **GET**
+2. Click the blue **GET /machine_stats/{id}**
 3. In the parameters:
-   - Set `fields` to `most`
-   - Set filter to `$key eq status_number` (using the status value from step 3)
+   - Set `id` to `status_number` (using the status value from step 3)
+   - Set 1fields` to `most`
 4. Click **Execute**
 5. Verify this is the correct VM by checking:
    - Number of cores
    - RAM allocation
    - Status information
+   - Machine number
 
 ### 5. Force Power Off
 
 1. In the **machine_status** table, click **PUT**
-2. Enter the status number as the `id` or `resource id`
+2. Enter the status number as the `id` **resource id**
 3. In the request body, enter the following JSON:
 
 ```json
