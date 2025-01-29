@@ -1,6 +1,6 @@
 # System Settings
 
-The System Settings page provides access to various configuration options for your VergeOS environment. This guide will walk you through the different sections and their functionalities.
+The *System Settings* page provides access to various configuration options for your VergeOS environment. This guide will walk you through the different sections and their functionalities.
 
 ## Accessing System Settings
 
@@ -9,11 +9,11 @@ The System Settings page provides access to various configuration options for yo
 
 ## General Settings
 
-The General section displays basic information about your VergeOS System:
+The *General* section displays basic information about your VergeOS system:
 
-- **Cloud Name**: The name of your VergeOS System.
-- **Description**: A brief description of the Systemd (if provided).
-- **ID**: A unique identifier for your VergeOS System instance.
+- **Cloud Name**: The name of your VergeOS system.
+- **Description**: A brief description of the system (if provided).
+- **ID**: A unique identifier for your VergeOS system instance.
 - **Tenant**: Indicates whether this is a tenant environment.
 
 ### Advanced Settings
@@ -79,7 +79,7 @@ To customize the look and feel of your VergeOS interface:
 To change system-wide settings:
 
 1. Click **Edit** on the left menu under the Settings section.
-2. Update the necessary fields in the System and Location sections.
+2. Update the necessary fields in the system and Location sections.
 3. Click **Submit** to save your changes.
 
 ## Requesting or Modifying Licenses

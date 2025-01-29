@@ -18,7 +18,7 @@ VergeOS supports both **Cloud-Init** (Linux) and **Cloudbase-Init** (Windows) to
 
 ## Included VM Recipes
 
-A VergeOS system automatically includes the **Service Provider(Marketplace) Repository** comprised of VM recipes that can be used straightaway to create new virtual machines of many types.  The list of these available VM recipes can be viewed by navigating to **Repositories -> (double-click) MarketPlace repository -> VM Recipes**.
+A VergeOS system automatically includes the **Service Provider(Marketplace) Repository** comprised of VM recipes that can be used straightaway to create new virtual machines of many types.  The list of these available VM recipes can be viewed by navigating to **Repositories > (double-click) MarketPlace repository > VM Recipes**.
 
 ![marketplaceVMlisting](/product-guide/screenshots/marketplaceVMlisting.png)
 
@@ -30,8 +30,8 @@ A VergeOS system automatically includes the **Service Provider(Marketplace) Repo
 
 ### Base Configuration
 
-1. **Create a VM** to serve as the **base template** for the Recipe.  The VM should be generalized and suitable for the replication/customization process.
-2. From the Main Dashboard, navigate to **Machines -> New VM Recipe**.
+1. **Create a VM** to serve as the **base template** for the recipe.  The VM should be generalized and suitable for the replication/customization process.
+2. From the Main Dashboard, navigate to **Machines > New VM Recipe**.
 !!! note "Recipes are stored in [Catalogs](/product-guide/automation/recipes-organization#catalogs). If you do not have a local catalog created yet, you will be prompted to create a new one first."  
 3. **Recipe Fields**
     * **Name:** Use a descriptive name that adequately identifies the recipe and can help users in locating suitable recipes.
@@ -49,7 +49,7 @@ A VergeOS system automatically includes the **Service Provider(Marketplace) Repo
 
     * **Version Dependencies:** (Not applicable for recipes that will only be used on the local system and its own tenants).  Dependencies can be specified when there are VergeOS features required for the recipe to work properly (to prevent a remote system from using a recipe that it can not accommodate).
 
-4. Click **Submit** to save the base configuration.  The VM Recipe Dashboard will display where you can configure your sections and questions.  
+4. Click **Submit** to save the base configuration.  The VM recipe dashboard will display where you can configure your sections and questions.  
 
 ### Questions
 
@@ -107,7 +107,7 @@ A list of variable/value pairs, along with a printout of simulated result files 
 
 When any changes are made to a recipe, it will need to be republished in order to make those changes available.  The top of the recipe dashboard will display a message indicating that it must be republished for changes to take effect.  You can use the **Republish** link within this message or click Republish on the left menu.
 
-!!! tip "When you make changes and republish a recipe, remote systems and tenants are notified that an update is available (notification at the top of the VM recipe dashboard and update available checkbox); they must update the recipe to access the changes.
+!!! tip "When you make changes and republish a recipe, remote systems and tenants are notified that an update is available (notification at the top of the VM recipe dashboard and update available checkbox); they must update the recipe to access the changes."
 
 ## Use a VM Recipe
 
@@ -117,7 +117,7 @@ VM recipes are available for use when creating a new Virtual Machine. All access
 
 An Instance refers to a virtual machine that is associated with a VM recipe.  When a virtual machine is created with a recipe it is considered an instance of the recipe until it is deleted or detached from the recipe.
 
-Click **Instances** on the left menu of a VM recipe dashboard to quickly access a listing of associated VMs. A VM recipe cannot be deleted when there are any associated VM Instances.
+Click **Instances** on the left menu of a VM recipe dashboard to quickly access a listing of associated VMs. A VM recipe cannot be deleted when there are any associated VM instances.
 
 ## Advanced Usage
 

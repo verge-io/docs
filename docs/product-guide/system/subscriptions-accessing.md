@@ -18,6 +18,6 @@
 2. Click **Subscriptions** on the left menu.
 This will normally list all subscriptions owned by all users. From this page, **subscriptions can be selected for edit/delete** (with proper permissions), and new **subscriptions can be added.**
 
-!!! note "By default, all users can **view all** subscriptions but **cannot modify subscriptions other than their own**. **Administrators can adjust User permissions** to suit their organization."
+!!! note "By default, all users can **view all** subscriptions but **cannot modify subscriptions other than their own**. **Administrators can adjust user permissions** to suit their organization."
 
 !!! tip "Throughout the VergeOS UI, the *Sort* and *Filter* Options at the top of columns can be helpful for working with longer lists."

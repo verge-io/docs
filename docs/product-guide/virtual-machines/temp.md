@@ -2,21 +2,15 @@
 
 IPSec compatibility is available to provide a VPN tunnel between a VergeOS network and a third-party IPSec Peer.
 
-!!! note "Using IPSec"
-    IPSec functionality is provided for situations where there is a specific IPSec requirement. Because of the inherent complexity of the IPSec protocol, it is recommended to alternately use Wireguard when possible, as it is generally an easier protocol to work with.
+***Notes:***
 
-!!! info "Configuration"
-    - These instructions focus on the preferred IPSec configuration in which a public IP address is employed for the tunnel. Utilizing a public IP for the VPN is recommended as it will allow for the simplest deployment.
-    - Consult appropriate third-party IPSec documentation for configuration of the non-VergeOS peer and meticulously match specific settings at both ends.
+- *IPSec functionality is provided for situations where there is a specific IPSec requirement; because of the inherent complexity of the IPSec protocol, it is recommended to alternately use Wireguard when possible, as it is generally an easier protocol to work with.*
+- *These instructions focus on the preferred IPSec configuration in which a public IP address is employed for the tunnel. Utilizing a public IP for the VPN is recommended as it will allow for the simplest deployment.*
+- *Consult appropriate third-party IPSec documentation for configuration of the non-VergeOS peer and meticulously match specific settings at both ends.*
 
-!!! success "Basic Steps to Configure a VergeOS IPSec VPN"  
-    - **Create a VPN network and edit the IPSec Configuration, if necessary**
-    - **Edit the default Phase I configuration, if needed.**
-    - **Create a Phase 2**
-    - **Configure firewall and routing rules**
+# Basic Steps to Configure VergeOS IPSec VPN:
 
-
-## Create a VPN Network
+## Creating a VPN Network
 
 1. From the Cloud Dashboard, click **Networks** from the left menu.
 2. Click **Networks** again from the left menu.
@@ -32,7 +26,8 @@ IPSec compatibility is available to provide a VPN tunnel between a VergeOS netwo
 !!! info
     Note: if an existing network is selected for the Interface network and VPN connectivity is needed to additional VergeOS networks, further routing rules will be needed and additional unnecessary network hops will be introduced; therefore, if the VPN will need to connect to multiple networks and will be utilizing a public IP address (recommended), it is best to select --None-- for interface network and handle connections to all networks via layer 3 routing.
 
-## Edit IPSec Configuration (If necessary)
+## Editing IPSec Configuration 
+## (if necessary)
 
 **Common general IPSec settings are set by default; these settings can be modified if needed:** From the **VPN Network Dashboard**, click **Edit IPSec** from the left menu.  
 
@@ -51,7 +46,8 @@ default = normal normal - typically used, includes common IPSec configuration fi
 ***Strict CRL Policy (default=No)***  
 ***Make Before Break (default disabled)***  
 
-## Edit Default Phase 1 Configuration (if necessary)
+## Editing Default Phase 1 Configuration 
+## (if necessary)
 
 **An initial phase 1 is automatically created (named "phase-I") with default settings; if necessary, these settings can be modified:**  
 
@@ -109,9 +105,9 @@ Auto-expiration setting for SAs: ***Lifetime/Units***. (Default: 3 Hours)
 ***DPD Failures*** - defines the maximum number of failures in which to automatically delete peer connections after inactivity (This setting does not apply to IKEv2.)
 
 !!! info
-    If necessary, additional Phase I definitions can be added. From the VPN Network Dashboard, click **IPSec Tunnels** on the left menu; click **New** on the left menu.
+    If necessary, additional Phase I definitions can be added, if needed: From the VPN Network Dashboard, click **IPSec Tunnels** on the left menu; click **New** on the left menu.
 
-## Create Phase 2
+## Creating Phase 2
 
 !!! info
     A Phase 2 must be created in order to create a working IPSec connection.
@@ -132,7 +128,7 @@ Auto-expiration setting for SAs: ***Lifetime/Units***. (Default: 3 Hours)
 10. Select ***Key Length, Hash, and DH Group*** settings (options will vary depending upon Algorithm selected).
 11. Click **Submit** to save the Phase 2 Configuration.
 
-## Configure Firewall and Routing Rules
+## Configuring Firewall and Routing Rules
 
 Networking configuration will be necessary for IPSec traffic. The following network rules are auto-created for a new VPN Network:
 
@@ -143,6 +139,6 @@ Networking configuration will be necessary for IPSec traffic. The following netw
 
 Additional network configuration (e.g. firewall rules, routing) may be required depending upon specific network and IPSec design. The configuration will be significantly more complex if NAT is involved. Consult Support if further networking assistance is required.
 
-### To Start the VPN Network
+### To Start the VPN Network:
 
 From the **VPN Network Dashboard**, click **Power On** on the left menu.

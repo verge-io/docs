@@ -12,14 +12,15 @@ A NAS service can be joined to an existing Active Directory domain to provide AD
 6. Complete the following fields:
 
     - **Guest User Mapping**: Select desired behavior for invalid users/passwords used in access attempts:
-        - Invalid Users treated as a guest
-        - Invalid passwords treated as a guest
-        - Invalid Linux users treated as a guest
-        - Invalid passwords rejected
+        - *Invalid Users treated as a guest*
+        - *Invalid passwords treated as a guest*
+        - *Invalid Linux users treated as a guest*
+        - *Invalid passwords rejected*
     - **Workgroup**: (this will be the **short form domain**, such as '**CompanyName**')
     - **Realm**: (this will be the **long form domain**, such as '**CompanyName.local**')
-    - **AD User/Password**: a **valid administrator** account on the domain (with the ability to create objects), and **account password**.
-        - The format for inputting the string is: `useraccount%password`. Example: `administrator%password123`
+    - **AD Username**: a **valid administrator** account on the AD domain with the ability to create objects.
+    - **AD Password**: Active Directory password for the entered Username.  
+    - **Confirm AD Password**: Repeat the Active Directory password above.
 
 7. The following fields are **not required** to join and typically **should be left as is**. **It is highly recommended that you manage the following values within Active Directory - Users and Computers**, inside the Windows environment.
 
@@ -30,14 +31,13 @@ A NAS service can be joined to an existing Active Directory domain to provide AD
     - **Operating System**
     - **Operating System Version**
     - **Extended ACL Support** (leave checked)
+    - **Minimum Protocol Version** - default value "- None -" will not impose a minimum.
+    - **Advanced Configuration Options** - allows for manually entering advanced usage parameters that may not be provided by input fields.  Consult Microsoft Active Directory documentation for specific parameters available in joining a server to AD.
 
 8. **Wait** while the NAS VM joins the domain; it may take a few minutes.
 9. If the NAS service successfully joins the domain, the CIFS settings on the NAS Service dashboard will display an AD Status of '**Joined**'.
 
-!!! info "Special Configuration Needs"
-    For any specific needs that aren't addressed with the fields above, configuration options can be added to the Advanced Configuration Options. Contact VergeIO Support for assistance with advanced configuration.
-
-Windows AD administrators can confirm that the NAS has joined by reviewing Computer objects in their Windows **Active Directory - Users and Computers**.
+!!! success "Windows AD administrators can confirm the NAS has joined by reviewing *Computer objects* in their Windows *Active Directory - Users and Computers*."
 
 ## Troubleshooting Joining AD Issues
 

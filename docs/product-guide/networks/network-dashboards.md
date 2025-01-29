@@ -11,7 +11,7 @@ Click on **Networks** from the Main Dashboard (quick-link or left menu.)
 
 ### Counts / Quick-Links
 
-The Counts section shows a quick summary of your different types of networks as well as all Machine NICs. Each box shows the count/status for the associated list and provides a quick-link to access the corresponding list, where a specific network/NIC can be selected to view more detailed information.
+The *Counts* section shows a quick summary of your different types of networks as well as all Machine NICs. Each box shows the count/status for the associated list and provides a quick-link to access the corresponding list, where a specific network/NIC can be selected to view more detailed information.
 
 ### Status Indicators
 
@@ -20,7 +20,7 @@ The Counts section shows a quick summary of your different types of networks as 
 * Red - Errors
 * Grey - Disabled / Turned Off
 
-When red or yellow indicators are present, there are errors or warnings; you can click the tile to drill down and find more information about the issue.
+When red or yellow indicators are present, there are errors or warnings; you can click the card to drill down and find more information about the issue.
 
 ### Top Stats
 

@@ -70,11 +70,9 @@ This guide explains how to import VMware virtual machines using VergeOS's VMware
 !!! warning "Common Issues"
     - **Import Failure**:
       - Solution: Verify storage space and network connectivity
-
-    - **Slow Transfer**: 
+    - **Slow Transfer**:
       - Solution: Check network bandwidth and consider using incremental backups
-    
-    - **VM Won't Start**: 
+    - **VM Won't Start**:
       - Solution: Ensure VMware tools are installed and verify hardware compatibility
 
 ## Additional Resources
