@@ -17,6 +17,9 @@ editor: markdown
 dateCreated: 2022-06-29T19:58:59.133Z
 ---
 
+!!! warning "Virtual Wire Host Placement"
+    When using a virtual wire, both networks participating in that virtual wire **must be on the same host**. Failure to meet this requirement can lead to network connectivity issues.
+
 # Virtual Wire Setup and Use
 
 A virtual wire provides a tenant the ability to access a VLAN outside the VergeOS environment without going through routing steps.
