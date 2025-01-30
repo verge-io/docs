@@ -2,9 +2,6 @@
 
 ## Add a NIC to a VM
 
-!!! success
-    When a new Virtual Machine is created, you are taken to the VM dashboard.
-
 1. From the VM Dashboard, select **NICs** from the left menu.
 2. Select **New** from the left menu.
 3. By default, the NIC is enabled. De-select the Enabled checkbox if it should be disabled for now.
@@ -23,7 +20,10 @@
 10. Click **Submit.**
 11. Repeat the process to add more network devices to the VM, as needed.
 
-## Remove a NIC from a VM
+## Delete a NIC attached to a VM
+
+!!! note
+    You must hotplug a NIC or power off the VM to delete a NIC.
 
 1. From the VM Dashboard, select **NICs** from the left menu. The VM NIC listing will appear on the right.
 2. **Click to select the NIC** to be deleted.
@@ -54,5 +54,5 @@
 5. Click **Submit.**
 6. If the VM is currently running, the NIC will not be disabled until reboot.
 
-!!! success
+!!! info
     You can also modify a NIC's *Network* field to ***--None--*** **to "unplug"** it from the network while the VM is running (does not require a reset/reboot.)
