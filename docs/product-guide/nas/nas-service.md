@@ -12,7 +12,7 @@ The NAS feature provides file-level storage/access within a VergeOS system. NAS 
     !!! info
         The New NAS Service will be a VM; therefore it cannot have a name that is in use by another VM in the same VergeOS Cloud.
 
-5. The default setting for ***Cores*** is 4; this setting is suitable for typical, general-purpose NAS workloads. Heavy antivirus operations and/or frequent sync activity may affect core needs. 
+5. The default setting for ***Cores*** is 4; this setting is suitable for typical, general-purpose NAS workloads. Heavy antivirus operations and/or frequent sync activity may affect core needs.
 
     !!! tip
         There can be many factors involved in NAS Service resource needs; consult VergeOS Implementation Services or VergeOS Support if guidance is needed.
@@ -30,7 +30,10 @@ The NAS feature provides file-level storage/access within a VergeOS system. NAS 
     - When **Static** is selected, ***IP Address***, ***Gateway***, and ***DNS Server list*** should also be specified.
 
 10. Define a ***Hostname*** for the NAS Service VM. (Hostname defaults to "nas")
-11. Enter a ***domain (optional).*** (CIFS/Samba functionality will require a domain. If the Domain field is left blank, the system will default the domain to "workgroup". If the NAS Service will be used to serve out CIFS shares, the AD Domain in use should be specified.
+!!! tip "Hostname tips:"
+    - Typically, it is best to use the same value for *Hostname* and *Name* to avoid confusion in future administration.
+    - When a NAS service is joined to a Windows AD Domain, the computer object will appear with its hostname (rather than NAS name) in AD Computers and Users.
+11. Enter a ***domain (optional).*** CIFS/Samba functionality will require a domain. If the Domain field is left blank, the system will default the domain to "workgroup". If the NAS Service will be used to serve out CIFS shares, the AD Domain in use should be specified.
 12. ***Timezone*** will default to the default time zone for the VergeOS Cloud. If needed, a different timezone can be defined for the NAS Service.
 13. Generally, the **default** ***NTP Servers*** setting is recommended. This defines the Network Time Protocol(NTP) servers list (used for keeping the NAS service time synchronized.) If needed, the default NTP server list can be overridden, in order to explicitly define the NTP server list to be used.
 14. (Optional) Enter the address of a ***Remote Syslog server.***
@@ -43,7 +46,7 @@ The NAS feature provides file-level storage/access within a VergeOS system. NAS 
 
 ## Volumes
 
-A NAS service will consist of one or more Volumes. Each Volume is a separate directory structure with its own settings for security, snapshots, storage tier, max size, antivirus, and sharing.
+A NAS service will consist of one or more volumes. Each volume is a separate directory structure with its own settings for security, snapshots, storage tier, max size, antivirus, and sharing.
 
 - **Local Volumes** are file systems stored within VergeOS and consume storage in the VergeOS vSAN.
 

@@ -15,16 +15,16 @@ A NAS service can be joined to an existing Active Directory domain to provide AD
         - *Invalid Users treated as a guest*
         - *Invalid passwords treated as a guest*
         - *Invalid Linux users treated as a guest*
-        - *Invalid passwords rejected*
+        - *Invalid passwords rejected* (most secure option)
     - **Workgroup**: (this will be the **short form domain**, such as '**CompanyName**')
     - **Realm**: (this will be the **long form domain**, such as '**CompanyName.local**')
+    - **Server Type**: ***Member***
     - **AD Username**: a **valid administrator** account on the AD domain with the ability to create objects.
     - **AD Password**: Active Directory password for the entered Username.  
     - **Confirm AD Password**: Repeat the Active Directory password above.
 
 7. The following fields are **not required** to join and typically **should be left as is**. **It is highly recommended that you manage the following values within Active Directory - Users and Computers**, inside the Windows environment.
 
-    - **Server Type** (leave at **-Default-**)
     - **User Principal Name**
     - **Organizational Unit** - If entered, the Organizational Unit (OU) must already exist in the Active Directory domain, and the administrator account used in **step 6** must have **rights to add objects** to this OU.
     - **Machine Password** - if entered, the password **must** meet the required password complexity requirements of the Active Directory domain.
@@ -37,11 +37,15 @@ A NAS service can be joined to an existing Active Directory domain to provide AD
 8. **Wait** while the NAS VM joins the domain; it may take a few minutes.
 9. If the NAS service successfully joins the domain, the CIFS settings on the NAS Service dashboard will display an AD Status of '**Joined**'.
 
-!!! success "Windows AD administrators can confirm the NAS has joined by reviewing *Computer objects* in their Windows *Active Directory - Users and Computers*."
+!!! success "Windows AD administrators can confirm the NAS has joined by reviewing *Computer objects* in their Windows *Active Directory - Users and Computers*.  Note: The computer object will have the NAS hostname rather than the NAS VM Name."
 
 ## Troubleshooting Joining AD Issues
 
 If a NAS service does not get a "**Joined**" AD Status:
+
+### Check Error Messages
+
+Check *Logs* at the bottom of the NAS Service dashboard page for error messages that may provide information about why the service failed to joined.  
 
 ### Verify specified AD user has adequate permissions to join computers to the domain
 
@@ -50,6 +54,7 @@ If a NAS service does not get a "**Joined**" AD Status:
 - NAS Service dashboard - check **Static vs. DHCP**
 - If *Static*: verify correct settings for IP address, gateway, and DNS Servers.
 - If *DHCP*: check the network to verify that the NAS VM has received a valid address.
+!!! "Static or reserved DHCP IP address is recommended for a NAS service."
 
 ### Verify that the NAS has been placed on the correct network with the correct settings
 
@@ -78,4 +83,4 @@ If a NAS service does not get a "**Joined**" AD Status:
 
 - This only applies if the Machine Password field is set. It is **recommended to leave this field blank**.
 - If the password does not match the AD **password complexity requirements, it will fail to join**.
-- Machine password is not a necessary field; it is best to remove the value if you are having problems joining AD.
+- Machine password is not a necessary field; it is best to remove the value if you are having problems joining AD
