@@ -22,7 +22,7 @@ To scale up a vSAN, follow the steps below. However, before proceeding, ensure t
     - Ensure that your vSAN has at least 10% free capacity unless you are doubling the capacity. If the free space is less than 10% and you are not doubling the drive count, consider scaling out by adding a node.
     - Scaling up must be performed **one node at a time**.
     - Prior to **VergeOS 4.13**, scaling up was only possible if at least **50% of free space** was available.
-    - Before performing any vSAN changes, it is highly recommended to use [**snapshot replication to a remote site**](product-guide/backup-dr/sync-configuration/) to ensure a backup is available. This replication can be temporary but provides a solid recovery option if needed.
+    - Before performing any vSAN changes, it is highly recommended to use [**snapshot replication to a remote site**](/product-guide/backup-dr/sync-configuration/) to ensure a backup is available. This replication can be temporary but provides a solid recovery option if needed.
 
 ## Steps to Scale Up
 
