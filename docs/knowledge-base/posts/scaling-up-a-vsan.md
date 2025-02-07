@@ -20,6 +20,9 @@ To scale up a vSAN, follow the steps below. However, before proceeding, ensure t
 !!! warning "Important"
     - All drives in a tier must be alike. If a drive of an incorrect size is added to an existing tier, the tier will only be able to use the space of the smallest drive.
     - Ensure that your vSAN has at least 10% free capacity unless you are doubling the capacity. If the free space is less than 10% and you are not doubling the drive count, consider scaling out by adding a node.
+    - Scaling up must be performed **one node at a time**.
+    - Prior to **VergeOS 4.13**, scaling up was only possible if at least **50% of free space** was available.
+    - Before performing any vSAN changes, it is highly recommended to use [**snapshot replication to a remote site**](product-guide/backup-dr/sync-configuration/) to ensure a backup is available. This replication can be temporary but provides a solid recovery option if needed.
 
 ## Steps to Scale Up
 
@@ -48,3 +51,4 @@ Repeat these steps for each node as necessary.
 !!! note "Document Information"
     - Last Updated: 2024-08-29
     - VergeOS Version: 4.13
+
