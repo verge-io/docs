@@ -24,7 +24,7 @@ dateCreated: 2024-06-24T13:49:31.305Z
 
 Each time a VM is powered on or migrated, the system decides where to run the VM based on balancing workloads across available nodes and user-specified VM options.  
 
-**The following VM options are used in deciding node selection for a VM:**
+**The following VM options are used in deciding node selection for running a VM:**
 
 * **HA Group (Node Affinity):** The HA Group value must start with a "+" character, e.g. "+Webapp". The system attempts to run VMs with the same HA Group value on the same node. This is used to coalesce application-related workloads to a single physical node for performance optimization.
 * **HA Group (Node Anti-affinity):** VMs with the same value are run on separate nodes to provide high availability of applications or services.  (For Anti-affinity groups, HA Group value cannot start with "+" character)
