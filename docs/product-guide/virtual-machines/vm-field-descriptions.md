@@ -23,8 +23,11 @@ Provides further documentation area for the VM; intended for additional informat
 **Snapshot Profile \[dropdown\]**
 Defines the snapshot schedule for the individual VM. Typically, this field is left blank because VM restores can easily be extracted from cloud snapshots. However, defining a snapshot profile here provides a way to perform additional, more frequent snapshots, and/or longer snapshot retention, and/or quiesced snapshots of the VM. The selection list includes all [Snapshot Profiles](/product-guide/backup-dr/snapshot-profiles) available in the system.
 
-**HA Group**
-Defines a collection of VMs to provide high availability of an application or service. HA groups are created by simply entering the same name in the HA Group for all the desired Virtual Machines. When multiple VMs are assigned the same HA group, the system attempts to run the VMs across different physical nodes in order to increase availability.
+**HA Group** (optional)
+HA Group value is used to define node affinity.
+
+* **Affinity Group** - (starts with a "+", e.g. "+webapp1") The system attempts to run VMS within the same HA Group on the same node.
+* **Anti-Affinity Group** The system will attempt to run VMs assigned the same HA group value across separate nodes.  This is typically used to provide high availability of an application or service.  Anti-affinity HA group name must not start with a "+".
 
 **Cluster \[dropdown\]**
 Defines the primary-choice cluster (at the time of VM Power On) to be used for the VM compute resources. Options include all clusters to which the user has permissions
