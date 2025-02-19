@@ -6,9 +6,9 @@ date: 2025-02-16T22:25:43.163Z
 tags:
   - virtual machine
   - vms
-  - nodes
+  - node affinity
   - VM-host affinity
-  - node anti-affinity
+  - VM-host anti-affinity
   - host separation
   - node separation
   - clusters

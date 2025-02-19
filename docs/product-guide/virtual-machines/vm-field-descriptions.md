@@ -26,8 +26,8 @@ Defines the snapshot schedule for the individual VM. Typically, this field is le
 **HA Group** (optional)
 HA Group value is used to define node affinity.
 
-* **Affinity Group** - (starts with a "+", e.g. "+webapp1") The system attempts to run VMS within the same HA Group on the same node.
-* **Anti-Affinity Group** The system will attempt to run VMs assigned the same HA group value across separate nodes.  This is typically used to provide high availability of an application or service.  Anti-affinity HA group name must not start with a "+".
+* **Affinity Group** - (starts with a "+", e.g. "+webapp1") The system attempts to run VMS with the same HA Group on the same node.
+* **Anti-Affinity Group** The system attempts to run VMs with the same HA group value across separate nodes.  This is typically used to provide high availability of an application or service.  Anti-affinity HA group name must not start with a "+".
 
 **Cluster \[dropdown\]**
 Defines the primary-choice cluster (at the time of VM Power On) to be used for the VM compute resources. Options include all clusters to which the user has permissions
