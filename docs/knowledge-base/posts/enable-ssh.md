@@ -18,27 +18,27 @@ dateCreated: 2022-07-11T18:16:54.516Z
 # Enabling System SSH Access
 
 !!! info "Key Points"
-    - SSH access to a VergeOS system is generally not needed as full access is provided from the UI.
+    - SSH access to a VergeOS system is generally not needed because full access is provided from the UI.
     - SSH should only be enabled for specific hardware diagnostics or other special circumstances.
-    - Although VergeOS does employ safety protections, opening SSH on any system can introduce vulnerability.
+    - Although VergeOS employs many safety protections, opening SSH on any system can introduce vulnerability.
 
 !!! danger "Important SSH Security Procedures"
     - Always use source-controlled external rules to strictly limit ssh access to trusted addresses.
-    - Enable SSH access on a temporary basis: disable rules again when done with the session.
+    - Enable SSH access on a temporary basis; disable rules again when done with the session.
 
 ## Steps to Enable SSH access
 
-Network rules to allow SSH are auto-created (but disabled) during system installation.
+SSH Access rules are auto-created, and disabled, during system installation.
 
-1. **Enable the core network rule:** Navigate to the Core network dashboard, modify the ***SSH Access*** rule, select the **Enabled** option checkbox and **Submit** to save the change.
-**Example Core Network Rule:**
+1. **Enable the core network rule:** Navigate to the Core network dashboard, modify the ***"SSH Access"*** rule, select the **Enabled** option and **Submit** to save the change.
 ![ssh-rule-core.png](/product-guide/screenshots/ssh-rule-core.png)
 
-2. **Enable the external UI network rule and add source control criteria:** Navigate to the external network dashboard, modify the **"SSH Access"*** rule, and specify specific source IP address(es) and/or address range(s) to tightly control the devices/networks allowed SSH access.
-**Example External Network Rule:**
+2. **Add source control to the external network rule:** Navigate to the external network dashboard, modify the ***"SSH Access"*** rule to **configure specific source IP address(es) and/or address range(s) to tightly control access**.
+3. **Enable the external network rule:** select the **Enabled** option and **Submit** to save the change.  
+**Ex. External Network Rule:**
 ![ssh-rule-external.png](/product-guide/screenshots/ssh-rule-external.png)
 
-3. **Apply Rules** to both networks.
+4. **Apply Rules** to both networks.
 
 ## Warning
 
