@@ -22,13 +22,10 @@ dateCreated: 2022-10-28T14:00:42.477Z
 
 ---
 
-!!! warning "**This only applies to Versions of Verge.io previous to 4.11 (Atria).**"
-
+!!! warning "**This only applies to versions of VergeOS previous to 4.11 (Atria).**"
 
 If you have the Windows 11 install disk or ISO, you can bypass the Windows TPM and RAM requirements by making registry changes during the install.  
-> **Note:** This method only works on a clean install and does not allow you to bypass the requirement for at least a dual-core CPU. 
-{.is-info}
-
+!!! info "This method only works on a clean install and does not allow you to bypass the requirement for at least a dual-core CPU."
 
 1. **Boot** off of your Windows 11 install disk. [If you don't have one, one can be downloaded from here.](https://www.microsoft.com/en-us/software-download/windows11) The first screen should ask you to choose the language of your install (which should be correct).
 ![tpm-1.png](/product-guide/screenshots/tpm-1.png)

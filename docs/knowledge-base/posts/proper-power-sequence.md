@@ -22,16 +22,16 @@ dateCreated: 2024-06-24T13:49:31.305Z
 To power off a cluster (a collection of two or more nodes) follow these steps:
 
 1. Check any running workloads on each node of the cluster. Navigate to the node dashboard for each node and review the **Running Machines** section.
-1. If there are tenants running on any of the nodes, log into those tenant environments and gracefully shut down all running workloads.
-1. Power off all running workloads on each node, including VMs, tenant nodes, VMware backup services, and NAS services (if applicable).
-    > **Note:** There’s no need to manually stop any running vNet Containers; they will be gracefully stopped automatically in the subsequent steps.
-    {.is-info}
-1. After stopping all running workloads, navigate to the **Cluster dashboard** for the cluster you wish to power off.
-1. Select **Power Off** from the left-hand menu to begin shutting down each node in the cluster.
-1. Finally, navigate to **System -> Clusters** and select **Power Off** in the left menu to power off the entire cluster.
-    > **Important:** If an environment contains multiple clusters, _**ALWAYS**_ shut down the cluster containing the controller nodes (Node1 & Node2) _**LAST**_!
-    {.is-warning}
+2. If there are tenants running on any of the nodes, log into those tenant environments and gracefully shut down all running workloads.
+3. Power off all running workloads on each node, including VMs, tenant nodes, VMware backup services, and NAS services (if applicable).  
+!!! info "vNet Containers"
+    There is no need to manually stop any running vNet containers; they will be gracefully stopped automatically in the subsequent steps.
 
+4. After stopping all running workloads, navigate to the **Cluster dashboard** for the cluster you wish to power off.
+5. Select **Power Off** from the left-hand menu to begin shutting down each node in the cluster.
+6. Finally, navigate to **System -> Clusters** and select **Power Off** in the left menu to power off the entire cluster.
+!!! warning "IMPORTANT"
+    If an environment contains multiple clusters, _**ALWAYS**_ shut down the cluster containing the controller nodes (Node1 & Node2) **LAST**.
 
 ---
 
