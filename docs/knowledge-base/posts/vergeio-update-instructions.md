@@ -24,7 +24,7 @@ dateCreated: 2022-06-28T13:29:03.267Z
 
 The VergeOS platform supports 'zero downtime' updating. This means that during a routine update process, guest workloads (VMs and tenant environments) can remain on and running as normal.
 
-> For more information on the update process, please refer to our [Product Guide](/product-guide/system/running-updates).
+> For more information on the update process, please refer to our [Product Guide](/product-guide/system/licensing-and-updates).
 
 The time required to complete an update varies depending on factors such as:
 - Number of nodes in the system
