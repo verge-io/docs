@@ -92,7 +92,7 @@ vcmd newdevice --path=PATH [OPTIONS]
 
 ### Cancel Integrity Check
 
-Terminates any active integrity check operations. See [Integrity Check](/product-guide/vsan/diagnosticsguide/#integrity-check) for additional information.
+Terminates any active integrity check operations. See [Integrity Check](/knowledge-base/vsan-diagnostics-guide/?h=diag#integrity-check) for additional information.
 
 **CLI Syntax:**
 
