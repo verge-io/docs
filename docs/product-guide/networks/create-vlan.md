@@ -6,7 +6,7 @@
     Before configuring VLANs, ensure that switchports are configured appropriately so that physical VergeOS nodes have access to the desired VLAN(s).
 
 !!! info "Tenant Configuration"
-    For VLAN configuration within a tenant, [Virtual Wires](/knowledge-base/virtual-wire-setup-and-use) must first be configured to provide external layer2 access to the tenant.
+    For VLAN configuration within a tenant, [Virtual Wires](/knowledge-base/provide-layer2-to-tenant) must first be configured to provide external layer 2 access to the tenant.
 
 ## Configuration Steps
 
