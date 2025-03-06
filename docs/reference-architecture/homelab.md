@@ -104,6 +104,6 @@ For users who need enhanced graphics capabilities, VergeOS supports both GPU Pas
 - [vSAN Preferred Tiers](/product-guide/vsan/preferred-tiers)
 - [VPN](/product-guide/vpn/vpn-overview)
 - [Network Overview](/product-guide/networks/network-overview)
-- [Licensing](/product-guide/system/update-settings)
+- [Licensing](/product-guide/system/licensing-and-updates)
 
 Each of these configurations is adaptable to specific homelab needs, allowing flexibility based on available hardware and individual use cases.
