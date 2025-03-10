@@ -13,7 +13,7 @@ CloudHoster, a mid-sized Cloud Provider, will be used throughout this document t
 ## What is a tenant?
 
 
-A tenant represents a Virtual Data Center (VDC) within a larger data center infrastructure. It is essentially a “data center within a data center,” providing an isolated environment for different users or organizations. Each tenant operates independently, ensuring that resources, data, and applications within one tenant are completely segregated from those in other tenants. This isolation is crucial for maintaining security, performance, and compliance.
+A tenant represents a Virtual Data Center (VDC) within a larger data center infrastructure. It is essentially a "data center within a data center," providing an isolated environment for different users or organizations. Each tenant operates independently, ensuring that resources, data, and applications within one tenant are completely segregated from those in other tenants. This isolation is crucial for maintaining security, performance, and compliance.
 
 
 ## A Tenant within VergeOS
@@ -58,10 +58,10 @@ VergeOS offers a highly adaptable solution for CSPs looking to deploy and manage
 Below we will detail several deployment scenarios that represent a growing CSP:
 
 
-* [Scenario 1](#scenario-1): Deploy 2 primary sites utilizing site sync for DR
-* [Scenario 2](#scenario-2): Deploy edge clusters to gain presence in new regions
-* [Scenario 3](#scenario-3): Scale out edge cluster to meet demand
-* [Scenario 4](#scenario-4): Cloudhoster launches a new S3 compatible storage offering
+* [Scenario 1: 2 sites with DR](#scenario-1-2-sites-with-dr): Deploy 2 primary sites utilizing site sync for DR
+* [Scenario 2: Edge clusters](#scenario-2-edge-clusters): Deploy edge clusters to gain presence in new regions
+* [Scenario 3: Scale out](#scenario-3-scale-out): Scale out edge cluster to meet demand
+* [Scenario 4: Storage Clusters](#scenario-4-storage-clusters): Cloudhoster launches a new S3 compatible storage offering
 
 
 ---
