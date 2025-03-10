@@ -3,7 +3,7 @@ title: Welcome to the VergeOS Knowledge Base
 slug: welcome-to-vergeos-knowledge-base
 description: Learn how to efficiently navigate and use the VergeOS Knowledge Base to find solutions, troubleshoot issues, and optimize your VergeOS environment.
 author: VergeOS Documentation Team
-ping: true
+pin: true
 draft: false
 date: 2025-03-10T12:00:00.000Z
 tags:
