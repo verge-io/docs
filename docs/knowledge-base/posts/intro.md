@@ -47,7 +47,7 @@ Articles are organized into logical categories to help you browse related conten
 
 - **Getting Started**: Introductory guides and basic concepts
 - **Installation**: Guides for installing and setting up VergeOS
-- **VM Management**: Everything related to virtual machines
+- **Virtual Machines**: Everything related to virtual machines
 - **Networking**: Network configuration and troubleshooting
 - **Storage & vSAN**: Storage management and optimization
 - **Tenants**: Multi-tenancy setup and management
