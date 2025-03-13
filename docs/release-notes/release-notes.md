@@ -53,6 +53,99 @@ status: new
     - Improved tenant management
     - Comprehensive HA improvements
 
+# 4.13.4 (March 2025)
+
+## Features & Improvements
+
+### Virtual Machine Management
+* Enhanced VM operation:
+    * Implemented new VM console connection method
+    * Added recipe question math operations supporting basic arithmetic (`+`, `-`, `/`, `*`)
+    * Example: `${$math:VARIABLE,+,3}` adds 3 to VARIABLE
+    * Optimized cloud snapshot browsing for VMs or Tenants
+* Improved tenant capabilities:
+    * Added friendlier timeouts when stopping tenant nodes
+    * Automatic inheritance of parent database flush interval
+    * Improved tenant node power cycling behavior
+    * Enhanced tenant NIC statistics tracking inside tenants
+    * Fixed issue where resetting a tenant's password could cause recurring resets
+
+### Hardware Support
+* Added support for NVIDIA GRID drivers:
+    * 16.8, 16.9
+    * 17.5
+    * 18.0
+
+### Storage & Infrastructure
+* Enhanced vSAN operations:
+    * Changed tier change detection from reference to trigger-based
+    * Improved journal reads across all meta tier drives
+    * Added transaction snapshot pruning
+    * Overhauled transaction decision making
+    * Added undelete option for initdevice
+    * Added capability to cancel tier deletion
+    * Fixed potential issues with single node tiers scaling out during high usage
+    * Fixed drive deletion to properly disable device headers
+* Optimized system performance:
+    * Improved drive action response time (immediate execution)
+    * Modified fiber channel handling during drive refresh
+    * Enhanced media image upload handling from URLs
+    * Optimized multiple table views for better performance
+
+### Authentication & Security
+* Enhanced OIDC application functionality:
+    * Fixed HTTP header handling
+    * Improved token endpoint JSON response
+    * Removed mandatory scope requirement
+* Fixed issue where site syncs might not be properly configured upon creation
+
+### System Administration
+* Improved interface elements:
+    * Enhanced node kill mode warning
+    * Standardized maintenance mode warnings
+    * Added note about swap settings for newly formatted disks
+    * Fixed tenant dashboard device creation
+    * Corrected recipe question section popup button
+    * Fixed issue where help didn't properly link to correct documentation
+* Fixed issues with:
+    * Auto-creating repair servers for sites 
+    * IPSec Phase 1/2 deletion wording
+    * CIFS share refresh in the NAS
+    * NAS domain membership share mounting
+
+## System Updates
+
+### Installation Improvements
+* Enhanced vSAN device management:
+    * Journal paused for 15 minutes when adding devices
+    * Increased timeout for add-vsan-device to 15 minutes
+    * Immediate drive addition during scale-out
+    * Fixed progress bar display when formatting boot disks
+    * Show proper error when attempting to install a node exceeding license limits
+    * Fixed display issue with reboot dialog
+    * Added support for specifying default vSAN config file
+    * Improved MTU change handling (waits up to 10 seconds for link if previously up)
+
+### Core System Enhancements
+* Upgraded to kernel 6.6.79
+* Enhanced system configuration:
+    * Increased ARP cache for large networks
+    * Added NVMe controller multipath workaround
+    * Improved boot process (5 seconds faster)
+    * Added cloud-init hooks for unattended bare metal/virtualized installs
+    * Changed copy method when partitioning devices to bypass caches
+    * Fixed browser security policy issues
+    * Added automatic VM power-on after single node system restart
+    * Added additional test and service scripts
+    * Enhanced diagnostics capabilities
+
+### Bug Fixes
+* Fixed various issues with:
+    * vSAN hash map rebuilding
+    * Potential deadlocks when meta drive is out of space
+    * Race conditions affecting stability
+    * Integrity check functionality with repair options
+
 ## 4.13.3 (January 2025)
 
 ### Features & Improvements
