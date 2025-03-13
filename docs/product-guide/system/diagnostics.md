@@ -19,10 +19,12 @@ You may also consider running system diagnostics to provide a baseline for compa
 
 1. Navigate to **System** > **System Diagnostics**
 2. Click **Build** on the left menu.
-3. Provide a name and description for the diagnostic build.  When a name is not entered, the system will auto-generate a name for the format with format:
+3. Provide a name and description for the diagnostic build.  When a name is not entered, the system will auto-generate a name with format:
 SYSTEMNAME_diags_yyyymmdd_hhmmss.  
-!!! tip "While they are optional fields, it is best to enter name and description to help easily distinguish between different diagnostic instances later on.
-Name and Description can also be edited after the system diagnostics is done generating."
+!!! tip "Name/Description"
+      - Always enter a explanatory name/description before sending directly to VergeIO Support
+      - An identifying name and description will help to help easily distinguish between different diagnostic instances.
+      - These fields can also be edited after the system diagnostics is done generating.
 
 4. If working with Support and the system has internet connectivity, you can select the option to "Send diagnostic information to Verge.io support"
 This option is also available after the file is done generating, using the *Edit* option.
@@ -36,7 +38,7 @@ Information is retrieved from all online nodes in your system.  Depending on the
 
 For an air-gapped system or one otherwise unable to reach the internet: after the file has completed generating, select the diagnostic file and click *Download*.  
 
-!!! warning "While System Diagnostics files never contain user data, items such as IP addressing, network details, tenant and VM Names are included.
+!!! warning "While System Diagnostics files never contain user data, potentially sensitive items such as IP addressing, network details, tenant and VM Names are included.
   Use care in downloading and transporting a system diagnostic file to ensure that only authorized personnel have access."
 
 ## Additional Resources

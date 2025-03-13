@@ -16,6 +16,9 @@ editor: markdown
 dateCreated: 2024-09-09T14:38:43.388Z
 ---
 
+- test node in maint
+
+
 
 # Using a System Diagnostics File
 
@@ -23,6 +26,7 @@ dateCreated: 2024-09-09T14:38:43.388Z
       - [Product Guide - System Diagnostics](/product-guide/system/diagnostics) provides fundamental information and instructions for generating a System Diagnostics file.
       - Sending this file to VergeOS Support can often help them efficiently troubleshoot an issue.
       - This guide is provided for customers that may also choose to inspect their own System Diagnostic files to gather information.
+      - Most of the information available in a System Diagnostics is available within the VergeOS UI in a more filtered fashion.
 
 ## Basic Information/Key Information Locations
 
@@ -64,11 +68,13 @@ Purpose: To monitor the health and reliability of individual physical drives. Th
 
 ### Kernel Logs
 
-Kernel logs can be crucial for serious issues.  Kernel logs are typically empty, but should be the first place to check when troubleshooting a crash.
+Kernel logs can be crucial for serious issues.  Kernel logs are typically empty, but should be the first place to check when troubleshooting a system crash.  Kernel log entries are also available within system logs
 
-### Tenant-related
+### Tenants
 
-node 1 - Tenant_Logs - all tenants, by ID/db/_eachnode/syslog.xz/syslog -- why separate folder, and then log file? just startup logs?
+- The Current Controller node (typically node1), contains Tenant_Logs folder that lists all tenants by ID with a subfolder for each tenant node, containing its system log. 
+
+- Tenant node logs are also available in /container_logs/*tenant_*TENANTID*_*TENANTNODENUMBER*, on the physical node where it was running e.g. node3/container_logs/
 
 - Search for tenant name to find the tenant_ID that can be used to locate applicable log folder within *container_logs*
  /CONTROLLERNODE/Tenant_Logs
