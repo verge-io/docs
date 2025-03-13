@@ -53,11 +53,11 @@ status: new
     - Improved tenant management
     - Comprehensive HA improvements
 
-# 4.13.4 (March 2025)
+## 4.13.4 (March 2025)
 
-## Features & Improvements
+### Features & Improvements
 
-### Virtual Machine Management
+#### Virtual Machine Management
 * Enhanced VM operation:
     * Implemented new VM console connection method
     * Added recipe question math operations supporting basic arithmetic (`+`, `-`, `/`, `*`)
@@ -70,13 +70,13 @@ status: new
     * Enhanced tenant NIC statistics tracking inside tenants
     * Fixed issue where resetting a tenant's password could cause recurring resets
 
-### Hardware Support
+#### Hardware Support
 * Added support for NVIDIA GRID drivers:
     * 16.8, 16.9
     * 17.5
     * 18.0
 
-### Storage & Infrastructure
+#### Storage & Infrastructure
 * Enhanced vSAN operations:
     * Changed tier change detection from reference to trigger-based
     * Improved journal reads across all meta tier drives
@@ -92,14 +92,14 @@ status: new
     * Enhanced media image upload handling from URLs
     * Optimized multiple table views for better performance
 
-### Authentication & Security
+#### Authentication & Security
 * Enhanced OIDC application functionality:
     * Fixed HTTP header handling
     * Improved token endpoint JSON response
     * Removed mandatory scope requirement
 * Fixed issue where site syncs might not be properly configured upon creation
 
-### System Administration
+#### System Administration
 * Improved interface elements:
     * Enhanced node kill mode warning
     * Standardized maintenance mode warnings
@@ -113,9 +113,9 @@ status: new
     * CIFS share refresh in the NAS
     * NAS domain membership share mounting
 
-## System Updates
+### System Updates
 
-### Installation Improvements
+#### Installation Improvements
 * Enhanced vSAN device management:
     * Journal paused for 15 minutes when adding devices
     * Increased timeout for add-vsan-device to 15 minutes
@@ -126,7 +126,7 @@ status: new
     * Added support for specifying default vSAN config file
     * Improved MTU change handling (waits up to 10 seconds for link if previously up)
 
-### Core System Enhancements
+#### Core System Enhancements
 * Upgraded to kernel 6.6.79
 * Enhanced system configuration:
     * Increased ARP cache for large networks
@@ -139,7 +139,7 @@ status: new
     * Added additional test and service scripts
     * Enhanced diagnostics capabilities
 
-### Bug Fixes
+#### Bug Fixes
 * Fixed various issues with:
     * vSAN hash map rebuilding
     * Potential deadlocks when meta drive is out of space
