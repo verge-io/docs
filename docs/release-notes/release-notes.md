@@ -9,7 +9,7 @@ status: new
 
 !!! info "Series Information"
     - **Initial Release**: November 2024 (4.13.0)
-    - **Latest Version**: 4.13.3 (January 2025)
+    - **Latest Version**: 4.13.4 (March 2025)
     - **Status**: Latest
     - **End-of-Life**: TBD
 
