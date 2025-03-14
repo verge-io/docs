@@ -24,9 +24,9 @@ dateCreated: 2024-09-09T14:38:43.388Z
 
 !!! info "Key Points"
       - [Product Guide - System Diagnostics](/product-guide/system/diagnostics) provides fundamental information and instructions for generating a System Diagnostics file.
-      - Sending this file to VergeOS Support can often help them efficiently troubleshoot an issue.
+      - This feature was developed for easily sending comprehensive system information to VergeOS Support to allow them to efficiently troubleshoot an issue.
       - This guide is provided for customers that may also choose to inspect their own System Diagnostic files to gather information.
-      - Most of the information available in a System Diagnostics is available within the VergeOS UI in a more filtered fashion.
+      - Information available in a System Diagnostics is typically easier to gather from within the VergeOS UI. 
 
 ## Basic Information/Key Information Locations
 
@@ -40,9 +40,7 @@ Each node contains node-specific information:
     - network utility results
     - lsblk - storage information - applicable  when run inside of tenant?
   - lsblk - list block devices gather structural and descriptive info abut block devices. at the os level, logical view of storage. 
-SMART - drive-level, physical, focusing on health, reliability, and potential failure of drives - such as reallocated sectors, temperature, power_on hours, etc. 
-Brainstorm: Disk health, errors, failures, temperature, lifespan, wear leveling, drive internals.
-Purpose: To monitor the health and reliability of individual physical drives. Think of it like a health check-up for your drives at a hardware/physical level.
+
     - vsan - results of vsan tools/commands/utilities
         these results seem to be the same on every node (other than the controller)?
         reason to have them on each node?  could they be different per?
@@ -64,58 +62,86 @@ Purpose: To monitor the health and reliability of individual physical drives. Th
 - yottabyte-boot.log
 - Aaa84AD45
 
-## Basic Diagnostic Tips
+## Troubleshooting Tips
+
+## Appserver/vSAN
+
+- "Out to lunch" indicates appserver unresponsiveness (typically 6+ seconds)
+
 
 ### Kernel Logs
 
-Kernel logs can be crucial for serious issues.  Kernel logs are typically empty, but should be the first place to check when troubleshooting a system crash.  Kernel log entries are also available within system logs
+Kernel logs can be crucial for serious issues.  Kernel logs are typically empty, but should be the first place to check when troubleshooting a system or node crash.  Kernel log entries are also available within system logs
+
+Memory constraints can cause crashes if running above watermark.
+
 
 ### Tenants
 
-- The Current Controller node (typically node1), contains Tenant_Logs folder that lists all tenants by ID with a subfolder for each tenant node, containing its system log. 
+Gather information about specific tenants, such as where (i.e. which host node) a tenant node is running, events, errors, etc.
 
-- Tenant node logs are also available in /container_logs/*tenant_*TENANTID*_*TENANTNODENUMBER*, on the physical node where it was running e.g. node3/container_logs/
+- Tenant node logs are located in container_logs for the physical node where running (/[PHYSICAL_NODE]/*container_logs*/*tenant_*[TENANTID]*_[TENANTNODENUMBER]) for example: 
+folder: /node4/tenant_8_2 contains the tenant name and system log for tenant id 8 node 2 running on physical node 4.
 
-- Search for tenant name to find the tenant_ID that can be used to locate applicable log folder within *container_logs*
- /CONTROLLERNODE/Tenant_Logs
- - each tenant has a subfolder (tenant id#)
- - 
-- container_logs:
-  Tenants are commonly comprised of multiple tenant nodes running across multiple physical nodes. The last digit of the tenant log folder denotes the node number, for example: "tenant_17_1" would be the logs for tenant node 1 of tenant ID 17.
-
+- The Current Controller node (typically node1) also includes the *Tenant_Logs* folder containing tenant node logs.  
+Examples:
+/node1/Tenant_Logs/19/db/_node1 : logs for the first node of tenant id 19
+/node1/Tenant_Logs/8/db/_node3 : logs for the third node of tenant id 8
 
 
-Storage Physical drives
-SMART info
+## Physical Drives
 
-### Virtual Wire Configuration
+- the */smart* subfolders contain a report for each detected physical drive device reporting health, reliability, and potential failure.  Reported metrics include reallocated sectors, temperature, power_on hours, wear-leveling, etc.
+
+S.M.A.R.T query reports can also be run for individual drives, from within the UI: navigating to tier dashboard, click Drives
+- Reallocated_Sector_Ct: Indicates the number of bad sectors that have been replaced with spare sectors. A high value here is a red flag.
+
+Reserve_Block_Count: Shows the number of spare blocks remaining. A low value suggests the SSD is running out of spare blocks.
+
+Wear_Leveling_Count: Reflects the wear on the SSD's memory cells. A value of 0 means the drive is at the end of its lifespan.
+
+This is just an example, and actual SMART reports may vary depending on the tool or software used. If you’re analyzing a real SMART report, focus on attributes marked as "Pre-fail" or "FAILING_NOW" to assess the drive's health.
+
+Yes, it’s possible for a SMART report to fail in recognizing issues with a drive. While SMART is a useful tool for monitoring drive health, it has limitations:
+
+Undetected Failures: Not all types of failures are monitored by SMART. For instance, sudden electronic failures or firmware issues might not generate any SMART warnings beforehand.
+
+Threshold-Based Alerts: SMART attributes rely on predefined thresholds. Some failures may occur before the threshold is crossed, meaning the drive appears "healthy" in the report.
+
+Non-Comprehensive Data: A SMART report depends on the drive's built-in sensors and firmware. If these components are faulty or not well-implemented, issues may go unnoticed.
+
+Intermittent Failures: Drives can sometimes exhibit symptoms like slow performance or occasional errors that don’t trigger SMART warnings but still indicate underlying problems.
+
+Tool/Software Limitations: Some tools used to generate SMART reports may not fully interpret the data provided by the drive, leading to incomplete or misleading results.
+
+For this reason, it's important to combine SMART data with other diagnostics, such as:
+
+Running manufacturer-specific diagnostic tools.
 
 
-### GPUs
+### GPUs/Device Passthrough
+
+- Direct GPU passthrough and vGPU require the same BIOS settings. Further information about Configuring GPU passthrough can be found in the [Device Passthrough section of the Product Guide](/docs/product-guide/system/device-pass-overview.md). 
+- The VFIO driver needs to load before the NVIDIA driver is loaded. 
+- check lspci.txt in corresponding node folder to verify correct driver (VFIO-PCI) is loaded. 
+- Oversubscription of GPU resources can occur when multiple teams involved, particularly if manual API overrides used to bypass resource protection.  Manual API overrides can bypass resource protection 
+- Search ***"Module VFIO PCI"*** to locate system log entries pertaining to GPUs/passthrough
+- Search ***"GPU requested"*** for vGPU/GPU troubleshooting 
 
 
-### Resource Issue
+### Networking
+
+The *container_logs* folder shows DMZ, core network and external network logs (vnet folders)
+network diagnostics
+
+#### Virtual Wire Configuration
+Virtual wires, used to bring layer 2 access into a tenant, rely on the external network and tenant network to be running on the same physical node.  Problems can sometimes arise during updates or other maintenance windows when networks are migrated. 
 
 
 
 ## General Best Practices/Warnings/Tips/considerations etc
-run during low usage times or otherwise when necessary - can impact system peformance
-
-instructions for finding/viewing a tenant - search for tenant name first - across all files/folders. Then you get the tenant id, for example "tenant_17_1"  -- why are there 2 numbers for tenant id?
-
-
-Maybe all the information is already available but building the file just grabs everything and puts it into a tar.gz?
-
-Allows for compiling all these logs to download and/or send to VergeIO for analysis
-
-
-When building is done successfully, will show complete in the status  Nodes reporting and compressing archive and adding archive to system
-
-the file can be directly sent to VergeOS support (with Internet connected systems)
--or-
-downloaded and sent via alternative methods for airgap systems.
-
-Troubleshooting
+run during low usage times when possible - can impact system peformance
+hardware problems could be exaserbated?
 
 
 
@@ -183,16 +209,8 @@ Contents
             synclist.txt
             tierdevmaps.txt
 
+ 
 
-download and save to an alternate location when possible?  
 
-Security of the file (sensitive information?)
 
-you can change name and description and choose to send to support on edit
-
-files are read-only, of course
-
-status info will indicate when a report was sent to support
-
-is the name/description sent to support too?
 
