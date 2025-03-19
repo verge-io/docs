@@ -1,10 +1,10 @@
 # System Diagnostics
 
-The *System Diagnostics* feature allows quickly and easily gathering extensive system information into a single compressed file, capturing a point-in-time collection of system details, including: unfiltered logs, configuration information, network and state data, and other metrics useful for analyzing and troubleshooting.  While these information points can generally be easier to obtain from within the VergeOS UI, generating the System Diagnostics file can be a convenient way to collect all the informaiton and send directly to VergeIO Support for professional analysis.
+The *System Diagnostics* feature allows quickly and easily gathering extensive system information into a single compressed file, capturing a point-in-time collection of system details, including: unfiltered logs, configuration information, network and state data, and other metrics useful for analyzing and troubleshooting.  While these information points can generally be easier to obtain from within the VergeOS UI, generating the System Diagnostics file can be a convenient way to collect all the information and send directly to VergeIO Support for professional analysis.
 
 ## When to Run System Diagnostics
 
-While working with Support on an issue, you may be asked to run System Diagnostics in order to easily gather comprehensive information to assist in troubleshooting.  A system diagnostics file can also be requested as a baseline when implementing a significant system change, with another triggered after the modification for comparison.
+While working with Support on an issue, you may be asked to run System Diagnostics in order to easily gather comprehensive information to assist in troubleshooting.  A system diagnostics file can also be used as a baseline before implementing a significant system change; another file can be triggered after the modification for comparison.
 
 !!! warning "Impact Considerations"
     - Triggering System Diagnostics can affect performance as it probes hardware and gathers extensive information from each node.
@@ -17,7 +17,7 @@ While working with Support on an issue, you may be asked to run System Diagnosti
 3. Provide a **Name** and **Description** for the diagnostic build.  If Name is left blank, the system will auto-generate a name with format:
 [SYSTEMNAME]\_*diags*\_[yyyymmdd_hhmmss], e.g. Verge-Det_diags_20241113_121503 
 !!! tip "Name/Description"
-      - Always enter a explanatory name/description before sending directly to VergeIO Support.
+      - Always enter an explanatory name/description before sending directly to VergeIO Support.
       - An identifying name and description will help to easily distinguish between different diagnostic instances on the same system.
       - These fields can also be edited after the system diagnostics is done generating.
 
@@ -39,7 +39,7 @@ For an air-gapped system or one otherwise unable to reach the internet: after th
 
 ### Layout 
 
-- The top level of the file is arranaged by host node.  
+- The top level of the file is arranged by host node.  
 - The controller node (typically node 1) folder contains more expanded information than other node folders.
 
 ### Contents

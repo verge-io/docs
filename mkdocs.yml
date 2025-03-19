@@ -299,6 +299,7 @@ nav:
         - Creating Subscriptions: product-guide/system/subscriptions-overview.md
         - Subscription Profiles: product-guide/system/subscription-profiles.md
         - Accessing Subscriptions: product-guide/system/subscriptions-accessing.md
+      - System Diagnostics: product-guide/system/diagnostics.md
   - Release Notes: 
     - Overview: release-notes/release-notes-overview.md
     - 4.13 (latest): release-notes/release-notes.md
