@@ -295,6 +295,8 @@ nav:
     - Maintenance & Monitoring:
       - Drive Replacement: product-guide/system/drive-replacement.md
       - Maintenance Mode: product-guide/system/maintenance-mode.md
+      - SOPs: 
+        - Scale-Up: product-guide/management/vsan-scale-up-sop.md
       - Subscriptions/Alerts:
         - Creating Subscriptions: product-guide/system/subscriptions-overview.md
         - Subscription Profiles: product-guide/system/subscription-profiles.md
