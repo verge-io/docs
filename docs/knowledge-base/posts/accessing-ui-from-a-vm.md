@@ -112,4 +112,4 @@ Here's a visual representation of the rule configuration:
 
 !!! note "Document Information"
     - Last Updated: 2024-08-29
-    - VergeOS Version: 4.12.6
+    - VergeOS Version: 4.13.3
