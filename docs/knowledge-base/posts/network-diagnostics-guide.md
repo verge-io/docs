@@ -22,14 +22,16 @@ dateCreated: 2025-01-01T00:00:00.000Z
 ## Overview
 
 This guide provides comprehensive information about the network diagnostic options available in the user interface. These diagnostic tools enable system administrators to monitor, troubleshoot, and maintain Verge deployments effectively.
-
+	
 !!! danger "Critical Warning"
-    The diagnostic commands detailed in this guide are powerful administrative tools. Improper usage can result in:
+
+    <b>The diagnostic commands detailed in this guide are powerful administrative tools. Improper usage can result in:</b>
+	
     - System outages
     - Service interruptions
     - Potential data loss
-
-    Exercise extreme caution and ensure proper understanding before execution.
+	
+	<b>Exercise extreme caution and ensure proper understanding before execution.</b>
 
 ## Prerequisites
 
@@ -38,7 +40,7 @@ To use these diagnostic tools, you must have:
 - UI access to your VergeIO cluster
 - Note: Tenants will have their own networking, and therefore their own Network Diagnostics page.
 
-## Accessing Network Diagnostics
+## Accessing Network Diagnostics / Issuing Diagnostic Commands
 
 1. Navigate to Network Diagnostics using either method:
 
@@ -52,65 +54,70 @@ To use these diagnostic tools, you must have:
 
 !!! tip "Command Visibility"
     Enable the "Show Command" option to view the exact command being executed. This can be valuable for:
+	
     - SSH execution
     - BASH script integration
     - Advanced command automation
 
-## Diagnostic Commands
 
-### ARP Scan
+## ARP Scan
 
 **Purpose**:
 Scans the local network using ARP (Address Resolution Protocol) packets to discover active devices.
 
-**Details**: 
-- Sends ARP requests to all possible addresses in the specified network
-- Displays MAC and IP addresses of responding devices
-- Used for network discovery and inventory
+**Details**:
+
+   - Sends ARP requests to all possible addresses in the specified network
+   - Displays MAC and IP addresses of responding devices
+   - Used for network discovery and inventory
 
 **CLI Syntax:**
 ```bash
 lxc-attach -n vnet3 -- arp-scan -l -I [interface]
 ```
+---
 
-### ARP Table
+## ARP Table
 
 **Purpose**:
 Displays the current ARP cache with IP addresses instead of hostnames.
 
 **Details**:
-- Shows the ARP table maintained by the kernel
-- The `-n` flag prevents DNS lookups (displays numeric IP addresses)
-- Lists MAC addresses associated with IP addresses the system has communicated with
+
+   - Shows the ARP table maintained by the kernel
+   - The `-n` flag prevents DNS lookups (displays numeric IP addresses)
+   - Lists MAC addresses associated with IP addresses the system has communicated with
 
 **CLI Syntax:**
 ```bash
 lxc-attach -n vnet3 -- arp -n
 ```
+---
 
-### DHCP Release/Renew
+## DHCP Release/Renew
 **Purpose**:
 Releases the DHCP address for the selected interface, then attempts to renew it.
 
 **Details**:
-- This command sequence effectively performs a "release and renew" operation for DHCP-assigned IP addresses:
-- Release the current IP address (USR2 signal)
-- Waits for 2 seconds (sleep 2)
-- Request a new IP address (USR1 signal)
 
+   - This command sequence effectively performs a "release and renew" operation for DHCP-assigned IP addresses:
+   - Release the current IP address (USR2 signal)
+   - Waits for 2 seconds (sleep 2)
+   - Request a new IP address (USR1 signal)
 
 **CLI Syntax:**
-
 ```bash
 lxc-attach -n vnet3 -- busybox sh -c killall -USR2 udhcpc ; sleep 2 ; killall -USR1 udhcpc
 ```
+---
 
-### DNS Lookup
+## DNS Lookup
 
 **Purpose**:
 Performs DNS lookups for specified query types.
 
 **Details**:
+
 - Used for troubleshooting DNS issues and domain information gathering
 - Common query types:
   - A: IPv4 address records
@@ -124,8 +131,10 @@ Performs DNS lookups for specified query types.
 ```bash
 lxc-attach -n vnet3 -- host -t Query_Type DNS_Name
 ```
+---
 
-### FRRouting / BGP/OSPF
+
+## FRRouting / BGP/OSPF
 **Purpose**:
 Allows the configuration of FRRouting. 
 
@@ -136,17 +145,19 @@ For more information on other values and variables, refer to [FRR documentation]
 ```bash
 lxc-attach -n vnet3 -- vtysh -c command_goes_here
 ```
+---
 
-### IP Commands
+## IP Commands
 **Purpose**:
 Allows for the configuration of IP and it's subsequent related items.
 
-#### Address
+### Address
 
 **Purpose**:
 Displays and configures network interface addresses.
 
 **Details**:
+
 - Shows IP addresses, subnet masks, and interface states
 - Displays both IPv4 and IPv6 addresses
 
@@ -155,12 +166,12 @@ Displays and configures network interface addresses.
 lxc-attach -n vnet3 -- /sbin/ip address
 ```
 
-#### Connection Tracking
+### Connection Tracking
 
 **Purpose**:
 Displays the contents of Netfilter's Connection Tracking file which contains information about network connections.
 
-** Details**:
+**Details**:
 This file displays the current state of all tracked network connections on the system.
 Each line in the file represents a single tracked connection. 
 The contents typically include entries with fields such as:
@@ -177,7 +188,7 @@ The contents typically include entries with fields such as:
 lxc-attach -n vnet3 -- dd bs=262144 count=1 if=/proc/net/nf_conntrack
 ```
 
-#### Link
+### Link
 
 **Purpose**:
 Displays network interfaces at layer 2 (data link layer).
@@ -190,7 +201,7 @@ Displays network interfaces at layer 2 (data link layer).
 lxc-attach -n vnet3 -- /sbin/ip link
 ```
 
-#### Multicast Address
+### Multicast Address
 
 **Purpose**:
 Displays multicast addresses assigned to interfaces.
@@ -205,7 +216,7 @@ Displays multicast addresses assigned to interfaces.
 lxc-attach -n vnet3 -- /sbin/ip maddress
 ```
 
-#### Multicast Routing Cache
+### Multicast Routing Cache
 
 **Purpose**:
 Displays multicast routing table.
@@ -221,7 +232,7 @@ Displays multicast routing table.
 lxc-attach -n vnet3 -- /sbin/ip mroute
 ```
 
-#### Neighbor
+### Neighbor
 
 **Purpose**:
 Displays neighbors (ARP table) of the current device.
@@ -236,7 +247,7 @@ Displays neighbors (ARP table) of the current device.
 lxc-attach -n vnet3 -- /sbin/ip neighbor
 ```
 
-#### Routing Table
+### Routing Table
 
 **Purpose**:
 Displays the IP routing table.
@@ -250,7 +261,7 @@ Displays the IP routing table.
 ip route show table all
 ```
 
-#### Rule
+### Rule
 
 **Purpose**:
 Displays and manipulates the routing policy database.
@@ -266,7 +277,7 @@ Displays and manipulates the routing policy database.
 lxc-attach -n vnet3 -- /sbin/ip rule
 ```
 
-#### Transform (xfrm) - Policy
+### Transform (xfrm) - Policy
 
 **Purpose**:
 Displays IPSec policies.
@@ -280,7 +291,7 @@ Displays IPSec policies.
 lxc-attach -n vnet3 -- /sbin/ip xfrm policy
 ```
 
-#### Transform (xfrm) - State
+### Transform (xfrm) - State
 
 **Purpose**:
 Displays IPSec security associations.
@@ -294,12 +305,13 @@ Displays IPSec security associations.
 ```bash
 lxc-attach -n vnet3 -- /sbin/ip xfrm state
 ```
+---
 
-### IPsec
+## IPsec
 **Purpose**:
 Allows for the configuration of IPsec and it's subsequent related items.
 
-#### List Cryptographic Algorithms
+### List Cryptographic Algorithms
 
 **Purpose**:
 Lists all algorithms supported by the IPSec stack.
@@ -313,7 +325,7 @@ Lists all algorithms supported by the IPSec stack.
 lxc-attach -n vnet3 -- ipsec listalgs
 ```
 
-#### List IKE Counters
+### List IKE Counters
 
 **Purpose**:
 Displays statistics and counters for IPSec connections.
@@ -326,7 +338,7 @@ Displays statistics and counters for IPSec connections.
 ```bash
 lxc-attach -n vnet3 -- ipsec listcounters
 ```
-#### IPsec Show Config
+### IPsec Show Config
 
 **Purpose**:
 Displays the contents of StrongSwan's VPN Configuration file which contains information about network VPN connections.
@@ -347,7 +359,7 @@ This file contains settings for your VPN tunnels including:
 lxc-attach -n vnet3 -- dd bs=262144 count=1 if=/tmp/vpn/ipsec.conf status=none
 ```
 
-#### Status
+### Status
 
 **Purpose**:
 Displays the status of IPSec connections.
@@ -377,8 +389,9 @@ Displays detailed status of all IPSec connections.
 ```bash
 lxc-attach -n vnet3 -- ipsec statusall
 ```
+---
 
-### NMAP
+## NMAP
 
 **Purpose**:
 Network exploration and security auditing tool.
@@ -394,8 +407,9 @@ Network exploration and security auditing tool.
 ```bash
 lxc-attach -n vnet3 -- nmap 192.168.0.1 -p22-100
 ```
+---
 
-### Ping
+## Ping
 
 **Purpose**:
 Tests connectivity to a target host.
@@ -411,8 +425,9 @@ Tests connectivity to a target host.
 ```bash
 lxc-attach -n vnet3 -- busybox ping -c 1 -W 5 8.8.8.8
 ```
+---
 
-### Show Firewall Rules
+## Show Firewall Rules
 
 **Purpose**:
 Displays the current nftables firewall ruleset.
@@ -427,8 +442,9 @@ Displays the current nftables firewall ruleset.
 ```bash
 lxc-attach -n vnet3 -- nft list ruleset
 ```
+---
 
-### TCP Connection Test
+## TCP Connection Test
 
 **Purpose**:
 Uses netcat to connect to checkip.dyndns.org to determine your public IP address.
@@ -441,8 +457,9 @@ Uses netcat to connect to checkip.dyndns.org to determine your public IP address
 ```bash
 lxc-attach -n vnet3 -- busybox nc -w5 checkip.dyndns.org 80
 ```
+---
 
-### TCP Dump
+## TCP Dump
 
 **Purpose**:
 Captures and displays network packets on a specific interface.
@@ -462,8 +479,9 @@ Captures and displays network packets on a specific interface.
 ```bash
 lxc-attach -n vnet3 -- busybox timeout 15 tcpdump -lni eth0 -c 100
 ```
+---
 
-### Top CPU Usage
+## Top CPU Usage
 
 **Purpose**:
 Displays system process information in batch mode for a single iteration.
@@ -476,8 +494,9 @@ Displays system process information in batch mode for a single iteration.
 ```bash
 lxc-attach -n vnet3 -- /usr/bin/top -b -n 1
 ```
+---
 
-### Top Network Usage
+## Top Network Usage
 
 **Purpose**:
 Displays bandwidth usage on a network interface by host.
@@ -490,8 +509,9 @@ Displays bandwidth usage on a network interface by host.
 ```bash 
 lxc-attach -n vnet3 -- busybox timeout 10 /usr/sbin/iftop -tNi eth0 -n
 ```
+---
 
-### Trace Route
+## Trace Route
 
 **Purpose**:
 Traces the route packets take to a destination.
@@ -505,8 +525,9 @@ Traces the route packets take to a destination.
 ```bash
 traceroute -n -w 3 google.com
 ```
+---
 
-### Trace/Debug Firewall Rules
+## Trace/Debug Firewall Rules
 
 **Purpose**:
 Monitors and traces packets as they traverse nftables rules.
@@ -520,8 +541,9 @@ Monitors and traces packets as they traverse nftables rules.
 ```bash
 lxc-attach -n vnet3 -- busybox timeout 3 nft -nnn monitor trace
 ```
+---
 
-### What's My IP
+## What's My IP
 
 **Purpose**:
 Queries OpenDNS to determine your public IP address.
@@ -534,6 +556,7 @@ Queries OpenDNS to determine your public IP address.
 ```bash
 lxc-attach -n vnet3 -- dig +short myip.opendns.com @208.67.222.222
 ```
+---
 
 ## Additional Resources
 
