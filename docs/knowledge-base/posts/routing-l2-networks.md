@@ -24,7 +24,7 @@ dateCreated: 2025-03-21T11:15:31.354Z
 This article will walk through an efficient method of routing layer 3 IP traffic for layer 2 physical networks with the powerful VergeOS networking system. There are multiple ways to achieve this, however the objective of this article is to provide clear and concise guidance on a specific common scenario. This article should be particularly of use and interest to engineers and administrators of Edge deployments in  in which physical devices like phones, cctv cameras, or network equipment require communication with workloads in VergeOS that may be running on different IP subnets. Using this method, an operator can achieve direct local communication between those physical devices outside of VergeOS and the internal VergeOS managed networks.
     
 ### Steps Overview
-1. [Create Layer2 external Network](/knowledge-base/posts/network-blocks/)
+1. [Create Layer2 external Network](/knowledge-base/network-blocks/)
 	- It is important that this network is created with no IP information. If the IP block is already assigned to this interface, it cannot be added to the default route in the next step.
 2. [Create IP block on the external network](/knowledge-base/network-blocks/?h=block#creating-a-network-block) that will route the traffic (Likely default External)
 	- By adding the IP block here, we're telling VergeOS to expect this IP traffic to come in via this interface, and in our next step we will tell Verge networking where to send it.
@@ -34,8 +34,8 @@ This article will walk through an efficient method of routing layer 3 IP traffic
     - Depending on your upstream configuration, you may need to set additional routes outside of Verge to route traffic destined for this subnet via the Verge External IP.
 
 !!! info "Helpful Related Documents"
-	Introduction to Network Blocks : [Network Blocks Overview](/knowledge-base/posts/network-blocks/) <br>
-	Routing Basics : [Routing Internal Networks](/knowledge-base/posts/routing-internal-networks/) <br>
+	Introduction to Network Blocks : [Network Blocks Overview](/knowledge-base/network-blocks/) <br>
+	Routing Basics : [Routing Internal Networks](/knowledge-base/routing-internal-networks/) <br>
     Network Rules : [VergeOS Product Guide - Network Rules](/product-guide/networks/network-rules/) <br>
     Network Troubleshooting : [VergeOS Product Guide - Network Troubleshooting](/product-guide/networks/net-troubleshooting/)
 
