@@ -11,7 +11,6 @@ tags:
   - diagnostics
 categories:
   - Network
-  - Storage
   - Maintenance
   - System Administration
 editor: markdown
