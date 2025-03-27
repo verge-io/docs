@@ -35,7 +35,7 @@ Here’s what happens when **Discard** is enabled:
 
 ---
 
-!!! warning "Only disable Discard for performance reasons"
+!!! warning "Only disable Discard for performance reasons."
     Disabling **Discard** can lead to storage inefficiencies and should only be done for specific performance-related reasons. Always consult with **VergeOS Support** before disabling this feature.
 
 ## Why Use Disk Discard?
