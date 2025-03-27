@@ -25,7 +25,7 @@ To scale up a vSAN, follow the steps below. However, before proceeding, ensure t
 
 1. **Physically add the drives or Fiber Channel LUNs** on the node you want to scale up.
 
-2. **Log in to the host system's UI** and select the appropriate cluster you want to scale out from the **top compute cluster** section on the home page.
+2. **Log in to the host system's UI** and select the appropriate cluster you want to scale up from the **top compute cluster** section on the home page.
 
 3. **Select the node** that you are scaling up.
 
