@@ -1,18 +1,18 @@
 # IPSec Configuration
 
-IPSec compatibility is available to provide a VPN tunnel between a VergeOS network and a third-party IPSec Peer.
+IPSec compatibility is available to provide a VPN tunnel between a VergeOS network and a third-party IPSec Peer.  
+
 
 !!! note "Using IPSec"
-    IPSec functionality is provided for situations where there is a specific IPSec requirement. Because of the inherent complexity of the IPSec protocol, it is recommended to alternately use Wireguard when possible, as it is generally an easier protocol to work with.
+    IPSec functionality is provided for situations where there is a specific IPSec requirement. Consider using Wireguard, rather than IPsec, when possible.  Wireguard provides a smaller, more modern codebase that has been formally verified in cryptographic analysis, providing higher security, better performance and easier configuration. 
 
 !!! info "Configuration"
-    - These instructions focus on the preferred IPSec configuration in which a public IP address is employed for the tunnel. Utilizing a public IP for the VPN is recommended as it will allow for the simplest deployment.
     - Consult appropriate third-party IPSec documentation for configuration of the non-VergeOS peer and meticulously match specific settings at both ends.
 
 !!! success "Basic Steps to Configure a VergeOS IPSec VPN"  
-    - **Create a VPN network and edit the IPSec Configuration, if necessary**
-    - **Edit the default Phase I configuration, if needed.**
-    - **Create a Phase 2**
+    - **Create a VPN network and edit the default Configuration, if necessary**
+    - **Create the Phase 1 configuration**
+    - **Create a Phase 2 configuration**
     - **Configure firewall and routing rules**
 
 
@@ -21,26 +21,42 @@ IPSec compatibility is available to provide a VPN tunnel between a VergeOS netwo
 1. From the Cloud Dashboard, click **Networks** from the left menu.
 2. Click **Networks** again from the left menu.
 3. Click **New VPN** from the left menu.
-![int-networksetting.png](/product-guide/screenshots/int-networksetting.png)
+4. **Configure Settings:**  
 
-**--None--** to create a separate VPN network, where connections to other VergeOS networks are all handled with layer 3 routing. (Recommended method)
+* **Layer 2 Type:** select ***none***
 
-**-OR-**
+* **MTU size** set correct MTU size based on ......
 
-**Select an existing network** to attach the VPN network directly to that network via layer 2.
+* **Interface Network**
+    * ***--None--*** to create a floating VPN network, where connections to other VergeOS networks are all handled with layer 3 routing. (Recommended method)
+    **-OR-**
 
-!!! info
-    Note: if an existing network is selected for the Interface network and VPN connectivity is needed to additional VergeOS networks, further routing rules will be needed and additional unnecessary network hops will be introduced; therefore, if the VPN will need to connect to multiple networks and will be utilizing a public IP address (recommended), it is best to select --None-- for interface network and handle connections to all networks via layer 3 routing.
+    * **Select an existing network** to bridge the VPN network directly to the network via layer 2.  This option should only be selected if there is a specific need for layer 2 connectivity.  
 
-## Edit IPSec Configuration (If necessary)
+!!! warning "Bridging to an existing network"
+    - Layer 2 means that you are sending broadcast network across the VPN tunnel which will affect performance
+    - Additionally, there can be security implications to connecting layer 2 across the VPN
+    - if the VPN will need to connect to multiple VergeOS networks and will be utilizing a public IP address (recommended), it is best to select --None-- for interface network and create layer 3 routing rules to connect the necessary networks. 
 
-**Common general IPSec settings are set by default; these settings can be modified if needed:** From the **VPN Network Dashboard**, click **Edit IPSec** from the left menu.  
+* **VPN Network Addressing**
+    Assign a static **IP Address** and **Network** for the VPN Network Router. 
+    public ip address directly assigned to the network and used for the network ex: 68.169.42.204/32
+    public ip address pnat and routed into the vpn network?
+    private ip assigned to the network, but a different private ip used for address of the network (additional complexity in network rules)
+    point to kb articles with examples
+
+## Edit IPsec Configuration (If necessary)
+
+**Common general IPsec settings are set by default.  These settings can be modified if needed (e.g. to be compatible with the remote IPsec peer):** From the **VPN Network Dashboard**, click **Edit IPSec** from the left menu. 
+ 
 
 ***Configuration Mode***
-default = normal normal - typically used, includes common IPSec configuration fields advanced - allows for advanced/extensive/out-of-the-ordinary IPSec configuration contained within conf files - contact Support for assistance.
+default = normal 
+- normal - typically used, includes common IPSec configuration fields 
+- advanced - allows for extensive and/or out-of-the-ordinary IPSec configuration using conf files; typically requiring a higher degree of ipsec configuration knowledge/expertise
 
 ***Unique IDs***
-- Yes (default) - keep particular participant IDs unique. (Same as Replace option)
+- Yes (default) - keep particular participant IDs unique. This corresponds to the *Replace* option. 
 - Never - will ignore INITIAL_CONTACT notify, still not replacing old IKE_SAs
 - No - will replace IKE_SAs only upon INITIAL_CONTACT notify.
 
@@ -51,16 +67,17 @@ default = normal normal - typically used, includes common IPSec configuration fi
 ***Strict CRL Policy (default=No)***  
 ***Make Before Break (default disabled)***  
 
-## Edit Default Phase 1 Configuration (if necessary)
+## Create Phase 1 Configuration
 
-**An initial phase 1 is automatically created (named "phase-I") with default settings; if necessary, these settings can be modified:**  
+From the **VPN Network Dashboard**, click **IPSec Tunnels** on the left menu; click to select phase-I in the listing; Click **New** on the left menu.
 
-From the **VPN Network Dashboard**, click **IPSec Tunnels** on the left menu; click to select phase-I in the listing; Click **Edit** on the left menu.
+**Name**: required If multiple phase 1s will be used, be sure to provide an identifying name to distinguish between different phase 1 configurations.
 
 ***Key Exchange Version***
-- Auto (uses version that remote peer initiates(IKEv1 or IKEv2)
+- Auto - uses version that remote peer initiates(IKEv1 or IKEv2); when initiating itself, will use IKEv2
 - IKEv1
 - IKEv2
+!!! warning "IKEv1 is not recommended because it is inherently less secure than IKEv2."
 
 ***Remote Gateway address*** (required); the WAN address at the other IPSec peer.  
 
@@ -70,20 +87,23 @@ From the **VPN Network Dashboard**, click **IPSec Tunnels** on the left menu; cl
 
 ***Key Length, Hash, and DH Group settings*** (options will vary depending upon Algorithm selected).
 
-!!! info
-    *Note: Some algorithms do not provide strong security and are therefore not recommended, such as Blowfish, 3DES, CAST128, MD5, SHA1, DH groups 1,2,22,23,24*
+!!! danger "Some algorithms do not provide strong security and are therefore NOT recommended, such as Blowfish, 3DES, CAST128, MD5, SHA1, DH groups 1,2,22,23,24*"
 
 Auto-expiration setting for SAs: ***Lifetime/Units***. (Default: 3 Hours)
 
-### Phase 1 (Authentication)
+### Phase 1 Proprosal (Authentication)
 
-***Pre-Shared Key*** - can be manually entered or the Generate button can be used to create a random, secure value for a pre-shared key.  
+***Pre-Shared Key*** - can be manually entered or the *Generate* button can be used to create a random, secure value for a pre-shared key.  
+!!! warning  **"Important"**
+    Use a long, random, and complex value with a mix of uppercase, lowercase, numbers and symbols. A weak pre-shared key is highly vulnerable and poses significant security risks.
+
 ***Negotiation Mode***
 
 - Main - default, recommended mode
-- Aggressive - less secure than Main mode but provides more flexibility
+- Aggressive - less secure but provides more flexibility
 
-***Identifier*** address (leave blank to use current IP).  
+***Identifier*** address (leave blank to use current VPN network IP). Identifier can be IP Address or FQDN. 
+!!! tip "If the VPN network is assigned a private address,  you will typically need to enter the public IP address or FQDN used by this peer as the *Identifier*."
 ***Peer Identifier*** (can be left blank to use the address currently specified as the VPN Remote Gateway).  
 
 ### Advanced Options
