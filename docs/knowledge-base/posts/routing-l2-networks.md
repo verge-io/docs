@@ -95,7 +95,7 @@ At this point you have created everything you should need, but it's still pendin
   - Accept the offer to apply firewall rules on restart and click "yes" to confirm.
 - Apply FW Rules on External by selecting it and clicking "Apply Rules".
   - Click "yes" to confirm
-- OUTSIDE OF VERGE: Set a route on 10.1.1.1 to send 192.168.2.0/24 via 10.1.1.2 and set any other required policies for traffic on that device.
+- OUTSIDE OF VERGE (In the upstream router): Set a route on 10.1.1.1 to send 192.168.2.0/24 via 10.1.1.2 and set any other required policies for traffic on that device.
 
 ### Tenant Variation
 When applying the above process to a Tenant there are two generally common implementations. 
