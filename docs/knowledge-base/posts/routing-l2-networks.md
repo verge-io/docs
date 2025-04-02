@@ -20,7 +20,7 @@ editor: markdown
 dateCreated: 2025-03-21T11:15:31.354Z
 ---
 ## Routing IP Traffic to L2 physical networks
-This article will walk through an efficient method of routing layer 3 IP traffic for layer 2 physical networks with the powerful VergeOS networking system. There are multiple ways to achieve this, however the objective of this article is to provide clear and concise guidance on a specific common scenario. This article should be particularly of use and interest to engineers and administrators of Edge deployments in  in which physical devices like phones, cctv cameras, or network equipment require communication with workloads in VergeOS that may be running on different IP subnets. Using this method, an operator can achieve direct local communication between those physical devices outside of VergeOS and the internal VergeOS managed networks.
+This article will walk through an efficient method of routing layer 3 IP traffic for layer 2 physical networks with the powerful VergeOS networking system. There are multiple ways to achieve this, however the objective of this article is to provide clear and concise guidance on a specific common scenario. This article should be particularly of use and interest to engineers and administrators of Edge deployments in which physical devices like phones, cctv cameras, or network equipment require communication with workloads in VergeOS that may be running on different IP subnets. Using this method, an operator can achieve direct local communication between those physical devices outside of VergeOS and the internal VergeOS managed networks.
     
 ### Steps Overview
 1. [Create Layer2 external Network](/knowledge-base/network-blocks/)
