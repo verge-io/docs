@@ -2,19 +2,23 @@
 
 IPSec compatibility is available to provide a VPN tunnel between a VergeOS network and a third-party IPSec Peer.  
 
+!!! note "IPSec for VPN Tunnel"
+    IPSec functionality is provided for situations where there is a definite IPSec requirement. Wireguard is the preferred method for creating VPN tunnels.
+    - Wireguard provides a smaller, more modern codebase that has been formally verified in cryptographic analysis.
+    - Wireguard provides a much simpler configuration which greatly reduces the possibility of configuration errors that can lead to vulnerabilities.
+    - Wireguard delivers better performance than ipsec
 
-!!! note "Using IPSec"
-    IPSec functionality is provided for situations where there is a specific IPSec requirement. Consider using Wireguard, rather than IPsec, when possible.  Wireguard provides a smaller, more modern codebase that has been formally verified in cryptographic analysis, providing higher security, better performance and easier configuration. 
-
-!!! info "Configuration"
+!!! info "IPsec Configuration Options"
     - Consult appropriate third-party IPSec documentation for configuration of the non-VergeOS peer and meticulously match specific settings at both ends.
+  
+## Basic Steps to Configure a VergeOS IPSec VPN
 
-!!! success "Basic Steps to Configure a VergeOS IPSec VPN"  
     - **Create a VPN network and edit the default Configuration, if necessary**
     - **Create the Phase 1 configuration**
     - **Create a Phase 2 configuration**
     - **Configure firewall and routing rules**
 
+ **KB articles with specific VPN configuration examples are linked at the bottom of this page.**
 
 ## Create a VPN Network
 
@@ -33,59 +37,54 @@ IPSec compatibility is available to provide a VPN tunnel between a VergeOS netwo
 
     * **Select an existing network** to bridge the VPN network directly to the network via layer 2.  This option should only be selected if there is a specific need for layer 2 connectivity.  
 
-!!! warning "Bridging to an existing network"
-    - Layer 2 means that you are sending broadcast network across the VPN tunnel which will affect performance
-    - Additionally, there can be security implications to connecting layer 2 across the VPN
-    - if the VPN will need to connect to multiple VergeOS networks and will be utilizing a public IP address (recommended), it is best to select --None-- for interface network and create layer 3 routing rules to connect the necessary networks. 
+!!! tip "Bridging to an existing network"
+    - if the VPN will need to connect to multiple VergeOS networks, it is best to select --None-- for interface network and create layer 3 routing rules to connect the necessary networks.
 
 * **VPN Network Addressing**
-    Assign a static **IP Address** and **Network** for the VPN Network Router. 
-    public ip address directly assigned to the network and used for the network ex: 68.169.42.204/32
-    public ip address pnat and routed into the vpn network?
-    private ip assigned to the network, but a different private ip used for address of the network (additional complexity in network rules)
-    point to kb articles with examples
+    Assign a static **IP Address** and **Network** for the VPN Network Router.
+    When bridging to an existing network that is employing DHCP, [Reserve a Static IP](/product-guide/networks/dhcp-static-lease) for the VPN network router.
+    See sample VPN configurations linked below for specific examples that include VPN addressing.
 
 ## Edit IPsec Configuration (If necessary)
 
-**Common general IPsec settings are set by default.  These settings can be modified if needed (e.g. to be compatible with the remote IPsec peer):** From the **VPN Network Dashboard**, click **Edit IPSec** from the left menu. 
- 
+**Common general IPsec settings are set by default.  These settings can be modified, if needed, to be compatible with the remote IPsec peer:** From the **VPN Network Dashboard**, click **Edit IPSec** from the left menu.
 
-***Configuration Mode***
-default = normal 
-- normal - typically used, includes common IPSec configuration fields 
-- advanced - allows for extensive and/or out-of-the-ordinary IPSec configuration using conf files; typically requiring a higher degree of ipsec configuration knowledge/expertise
+**Configuration Mode**
+default = normal
+    - normal - typically used, includes common IPSec configuration fields 
+    - advanced - allows for extensive and/or out-of-the-ordinary IPSec configuration using conf files; typically requiring a higher degree of ipsec configuration knowledge/expertise
 
-***Unique IDs***
-- Yes (default) - keep particular participant IDs unique. This corresponds to the *Replace* option. 
-- Never - will ignore INITIAL_CONTACT notify, still not replacing old IKE_SAs
-- No - will replace IKE_SAs only upon INITIAL_CONTACT notify.
+**Unique IDs**
+    - Yes (default) - keep particular participant IDs unique. This corresponds to the *Replace* option.
+    - Never - will ignore INITIAL_CONTACT notify, still not replacing old IKE_SAs
+    - No - will replace IKE_SAs only upon INITIAL_CONTACT notify.
 
-***Propose IPComp Compression (default disabled)***  
-***Exclude My Network***  
-***Cisco Extensions*** ***Unencrypted ID and HASH payloads in IKEv1 Main Mode (default=disabled)***  
-***MSS Clamp (default=0/disabled)***  
-***Strict CRL Policy (default=No)***  
-***Make Before Break (default disabled)***  
+**Propose IPComp Compression (default disabled)**  
+**Exclude My Network**  
+**Cisco Extensions**
+**Unencrypted ID and HASH payloads in IKEv1 Main Mode (default=disabled)**  
+**MSS Clamp (default=0/disabled)**  
+**Strict CRL Policy (default=No)**  
+**Make Before Break (default disabled)**  
 
 ## Create Phase 1 Configuration
 
 From the **VPN Network Dashboard**, click **IPSec Tunnels** on the left menu; click to select phase-I in the listing; Click **New** on the left menu.
 
-**Name**: required If multiple phase 1s will be used, be sure to provide an identifying name to distinguish between different phase 1 configurations.
-
-***Key Exchange Version***
-- Auto - uses version that remote peer initiates(IKEv1 or IKEv2); when initiating itself, will use IKEv2
-- IKEv1
-- IKEv2
+**Name**: required
+**Key Exchange Version**
+    - Auto - uses version that remote peer initiates(IKEv1 or IKEv2); when initiating itself, will use IKEv2
+    - IKEv1
+    - IKEv2
 !!! warning "IKEv1 is not recommended because it is inherently less secure than IKEv2."
 
-***Remote Gateway address*** (required); the WAN address at the other IPSec peer.  
+**Remote Gateway address** (required); the WAN address at the other IPSec peer.  
 
 ### Phase 1 (Encryption)
 
 (Encryption) ***Algorithm***.(default AES)
 
-***Key Length, Hash, and DH Group settings*** (options will vary depending upon Algorithm selected).
+**Key Length, Hash, and DH Group settings** options will vary depending upon Algorithm selected.
 
 !!! danger "Some algorithms do not provide strong security and are therefore NOT recommended, such as Blowfish, 3DES, CAST128, MD5, SHA1, DH groups 1,2,22,23,24*"
 
