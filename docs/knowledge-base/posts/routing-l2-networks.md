@@ -30,7 +30,7 @@ This article will walk through an efficient method of routing layer 3 IP traffic
 	- Assign IP block to step 1 external network (or tenant)
 	- Upon saving, VergeOS will automatically create route(s) to send inbound traffic with matching destination IPs to our Layer2 network which may also have VMs attached, allowing all clients to communicate across networks within Verge (with appropriate firewall rules) and to networks outside of Verge via the default route.
 3. Return to the Layer2 External to Assign IPs and other L3 options
-    - Depending on your upstream configuration, you may need to set additional routes outside of Verge to route traffic destined for this subnet via the Verge External IP.
+    - Depending on your upstream configuration, you may need to set additional routes outside of Verge in upstream routers to route traffic destined for this subnet (192.168.2.0/24 in our example) via the Verge External IP.
 
 !!! info "Helpful Related Documents"
 	Introduction to Network Blocks : [Network Blocks Overview](/knowledge-base/network-blocks/) <br>
