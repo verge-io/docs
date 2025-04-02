@@ -12,11 +12,10 @@ tags:
   - virtual wire
   - vwire
   - layer2
-  - layer 2
-  - L2
   - l2
 categories:
   - Network
+	- System Administration
 editor: markdown
 dateCreated: 2025-03-21T11:15:31.354Z
 ---
