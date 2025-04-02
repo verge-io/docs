@@ -1,7 +1,7 @@
 # Standard Operating Procedure: VergeOS vSAN Scale Up
 
 ## Purpose
-This document provides standardized procedures and best practices for VergeOS Engineers and Administrators performing a vSAN Scale Up operation. Use this guide as a foundation for creating your own customized procedures tailored to your specific environment.
+This document provides standardized procedures and best practices for VergeOS Engineers and Administrators performing a vSAN Scale Up operation; adding additional storage to an existing storage tier. Use this guide as a foundation for creating your own customized procedures tailored to your specific environment.
 
 !!! note
     This document covers checks and procedures that may not be applicable to your specific systems and scenarios. Please ensure your own Scale Up plan and SOP are appropriate to your needs and environment.
