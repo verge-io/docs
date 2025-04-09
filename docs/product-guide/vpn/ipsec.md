@@ -165,3 +165,9 @@ Additional network configuration (e.g. firewall rules, routing) may be required 
 ### To Start the VPN Network
 
 From the **VPN Network Dashboard**, click **Power On** on the left menu.
+
+## Troubleshooting
+
+vpn network - diagnostics - logs
+
+vpn network, external network,  bridged/routed network, go to dashboards, diagnostics and trace traffic at each step.  hints: port 500, icmp (if troubleshooting with ping), host ip addresses, can enable MAC address information too
