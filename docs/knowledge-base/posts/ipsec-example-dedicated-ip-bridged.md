@@ -16,7 +16,7 @@ dateCreated: 2025-01-31T14:48:12.332Z
 
 # IPSec Example -  Dedicated Public IP 
 
-!!! note "IPsec is a complex framework that supports a vast array of configuration combinations and many ways to achieve the same goal, making it impossible to provide precise, one-size-fits-all instructions.  Sample Configurations are given for reference and should be tailored to meet the particular environment and requirements."
+!!! note "IPsec is a complex framework that supports a vast array of configuration combinations and many ways to achieve the same goal, making it impossible to provide precise, one-size-fits-all instructions.  Sample configurations are given for reference and should be tailored to meet the particular environment and requirements."
 
 !!! info "Consult the [IPSec Product Guide Page](/product-guide/ipsec) for step-by-step general instructions on creating an IPSec tunnel."
 
