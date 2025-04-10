@@ -1,5 +1,5 @@
 ---
-title: IPsec Configuration Example 2
+title: IPsec Configuration Example - Tenant/NAT
 slug: ipsec-example1
 description: IPsec Tunnel - Configuration Example - Tenant/Nat Translated Public IP Address
 author: VergeOS Documentation Team
@@ -14,16 +14,16 @@ editor: markdown
 dateCreated: 2025-01-31T14:48:12.332Z
 ---
 
-# IPSec Example 2 - Tenant/NAT UI Address
+# IPSec Example - Tenant/NAT UI Address
 
-!!! note "IPsec is a complex framework that supports a vast array of configuration options,  combinations and ways to achieve the same goal, making it impossible to provide precise, one-size-fits-all instructions.  Sample Configurations are given for reference and should be tailored to meet your particular environment and requirements."
+!!! note "IPsec is a complex framework that supports a vast array of configuration combinations with many ways to achieve the same goal, making it impossible to provide precise, one-size-fits-all instructions.  Sample configurations are given for reference and should be tailored to meet the particular environment and requirements."
 
 !!! info "Consult the [IPSec Product Guide Page](/product-guide/ipsec) for step-by-step general instructions on creating an IPSec tunnel."
 
-The following configuration enables an ipsec tunnel to a VergeOS tenant. NAT Translation rules allow us to use the same UI public IP address of the tenant, directing ipsec traffic to the VPN network.  This example works with the tenant's UI address that is used for accessing the tenant's VergeOS user interface.  
+The following configuration enables an IPsec tunnel to a VergeOS tenant. The same public address that is used to access the tenant UI is used for the tunnel, using NAT rules to directing VPN traffic appropriately.    
 
 ## Host Configuration
-Assigning the UI address to a tenant automatically creates appropriate rules **on the host system** external network and tenant network to route and channel traffic appropriately. No further configuration should be needed on the host. Configuration outlined below will all be done within the tenant system.
+Assigning the UI address to a tenant automatically creates appropriate rules **on the host system** external network and tenant network to route and channel traffic appropriately. No further configuration should be needed on the host. Configuration outlined below is all within the tenant system.
 
 
 ## VPN network Configuration
@@ -67,7 +67,7 @@ These are created automatically on VPN Network to allow VPN traffic
 ![VPN Nat Rule](/product-guide/screenshots/tenant-ipsec-vpn-rule-outgoing-snat.png)
 
 
-## Connecting Networks to the VPN 
+## Connecting Ohter Networks to the VPN 
 Routing can be configured between the VPN network and other internal networks to provide tunnel access to those networks.  See the KB article [ How to Configure Routing Between Networks](/knowledge-base/routing-between-internal-vergeio-networks).  
 
 !!! tip "Rules must be applied to the external, VPN and internal networks to put them into effect."
