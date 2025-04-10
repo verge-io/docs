@@ -41,6 +41,7 @@ Assigning the UI address to a tenant automatically creates appropriate rules **o
 
 
 ## VPN Network Rules
+**VPN network created within the tenant system**
 
 **Default Firewall Rules:
 These are created automatically on VPN Network to allow VPN traffic
@@ -67,8 +68,17 @@ These are created automatically on VPN Network to allow VPN traffic
 ![VPN Nat Rule](/product-guide/screenshots/tenant-ipsec-vpn-rule-outgoing-snat.png)
 
 
-## Connecting Ohter Networks to the VPN 
-Routing can be configured between the VPN network and other internal networks to provide tunnel access to those networks.  See the KB article [ How to Configure Routing Between Networks](/knowledge-base/routing-between-internal-vergeio-networks).  
+## External Network Rules
+
+We need the following translate rules on the tenant's external network 
+
+![VPN Nat Rule](/product-guide/screenshots/tenant-ipsec-external-udp-rule.png)
+![VPN Nat Rule](/product-guide/screenshots/tenant-ipsec-external-ESP-rule.png)
+![VPN Nat Rule](/product-guide/screenshots/tenant-ipsec-external-AH-rule.png)
+
+
+## Connecting Other Networks to the VPN 
+Routing can be configured between the VPN network and other internal networks to provide tunnel access to those networks; see KB article [ How to Configure Routing Between Networks](/knowledge-base/routing-between-internal-vergeio-networks).  
 
 !!! tip "Rules must be applied to the external, VPN and internal networks to put them into effect."
 
