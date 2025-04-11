@@ -1,6 +1,6 @@
 ---
 title: IPsec Configuration Example - Dedicated IP/bridged internal network
-slug: ipsec-example1
+slug: ipsec-example-dedicated-ip
 description: IPsec Tunnel - Configuration Example - Dedicated IP Address, bridged network for workloads
 author: VergeOS Documentation Team
 draft: false
@@ -14,24 +14,24 @@ editor: markdown
 dateCreated: 2025-01-31T14:48:12.332Z
 ---
 
-# IPSec Example -  Dedicated Public IP 
+# IPsec Example - Dedicated Public IP 
 
-!!! note "IPsec is a complex framework that supports a vast array of configuration combinations and many ways to achieve the same goal, making it impossible to provide  one-size-fits-all instructions.  Sample configurations are given for reference and should be tailored to meet the particular environment and requirements."
+!!! note "IPsec is a complex framework that supports a vast array of configuration combinations and many ways to achieve the same goal, making it impossible to provide one-size-fits-all instructions.  Sample configurations are given for reference and should be tailored to meet the particular environment and requirements."
 
-!!! info "Consult the [IPSec Product Guide Page](/product-guide/ipsec) for step-by-step general instructions on creating an IPSec tunnel."
+!!! info "Consult the [IPsec Product Guide Page](/product-guide/vpn/ipsec) for step-by-step general instructions on creating an IPsec tunnel."
 
 
 The following example utilizes a dedicated public IP address for a VPN tunnel.  The VPN router is bridged to an existing internal network to provide Layer 2-connectivity to that network.
 
-* **VPN Network:** *vpn-ipsec*  
+* **VPN Network Name:** *vpn-ipsec*  
 * **VPN Router address:** *192.168.0.254*  
 * **Local VPN network:** *192.168.0.0/24*  
 * **Remote VPN network:** *10.10.0.0/16*  
-* **Bridged Internal Network:** *Internal-xyz*
-
+* **Bridged Internal Network Name:** *Internal-xyz*
+* **External Network Name:** *External*
 
 ## Static Lease
-We reserve the VPN router address on the network we will bridge to (Internal-xyz), to avoid another device taking this IP address.  
+We reserve the VPN router address on *Internal-xyz* to avoid another device taking this IP address.  
 ![VPN Static Lease](../assets/ipsec-dedicated-bridged-staticlease.png)
 
 ## VPN Network Configuration
@@ -48,7 +48,7 @@ We reserve the VPN router address on the network we will bridge to (Internal-xyz
 
 
 ## Assign Public IP Address
-The public address must be [Assigned from the external network](/product-guide/networks/assign-external-ip) to the VPN network.
+The public address must be [Assigned from the External network](/product-guide/networks/assign-external-ip) to the VPN network.
 
 ![Assign Public IP](../assets/ipsec-dedicated-bridged-provide-public.png)
 
@@ -65,17 +65,16 @@ The following **default firewall rules** are **created automatically** on VPN Ne
 
 ![Review Rules](../assets/ipsec-defaultrules.png)
 
+!!! tip "These rules can be modified to restrict to specific source addresses, where appropriate."
 
 ## Additional VPN Network Rules
 
 The following additional rules need to be created on our new VPN network:
 
-!!! tip "These rules can be modified to restrict to specific source addresses, where appropriate."
+**Translate Rule:**
+![VPN Translate to Router](../assets/ipsec-dedicated-bridged-vpn-translate.png)
 
-**NAT Rule:**
-![VPN Nat Rule](../assets/ipsec-dedicated-bridged-vpn-nat-rule.png)
-
-!!! note "The incoming NAT rule must be moved to the top, before the *Accept* Rules."
+!!! note "The translate rule must be moved to the top of the rules list, before the *Accept* Rules.  Instructions for changing the order of rules can be found in the Product Guide: [Network Rules - Change the Order of Rules](/product-guide/networks/network-rules/#change-the-order-of-rules)"
 
 **Default Route Rule:**
 ![VPN Default Route Rule](../assets/ipsec-dedicated-bridged-vpn-defroute.png)
@@ -83,12 +82,12 @@ The following additional rules need to be created on our new VPN network:
 
 ## Internal Network Rule
 
-A routing rule is needed on Internal-xyz to route VPN traffic to the VPN network.
+A routing rule is needed on *Internal-xyz* to route its VPN traffic to the VPN network.
 
 ![VPN Default Route Rule](../assets/ipsec-dedicated-bridged-internal-route.png)
 
 
-!!! success "Rules must be applied on each network to put them into effect."
+!!! tip "Rules must be applied on each network to put them into effect."
 
 
 

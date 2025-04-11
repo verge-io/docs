@@ -1,6 +1,6 @@
 ---
 title: IPsec Configuration Example - Tenant/NAT
-slug: ipsec-example1
+slug: ipsec-example-tenant-nat-ui-ip
 description: IPsec Tunnel - Configuration Example - Tenant/Nat Translated Public IP Address
 author: VergeOS Documentation Team
 draft: false
@@ -14,16 +14,19 @@ editor: markdown
 dateCreated: 2025-01-31T14:48:12.332Z
 ---
 
-# IPSec Example - Tenant/NAT UI Address
+# IPsec Example - Tenant/NAT UI Address
 
 !!! note "IPsec is a complex framework that supports a vast array of configuration combinations with many ways to achieve the same goal, making it impossible to provide one-size-fits-all instructions.  Sample configurations are given for reference and should be tailored to meet the particular environment and requirements."
 
-!!! info "Consult the [IPSec Product Guide Page](/product-guide/ipsec) for step-by-step general instructions on creating an IPSec tunnel."
+!!! tip "Consult the [IPsec Product Guide Page](/product-guide/vpn/ipsec) for step-by-step general instructions on creating an IPsec tunnel."
 
-The following configuration enables an IPsec tunnel to a VergeOS tenant. The same public address that is used to access the tenant UI is used for the tunnel, using NAT rules to directing VPN traffic appropriately.    
+The following configuration enables an IPsec tunnel to a VergeOS tenant. The IPsec tunnel utilizes the same address used for accessing the tenant UI, with NAT rules in place to direct tunnel traffic appropriately.    
 
 ## Host Configuration
-Assigning the UI address to a tenant automatically creates appropriate rules **on the host system** external network and tenant network to route and channel traffic appropriately. No further configuration should be needed on the host. Configuration outlined below is all within the tenant system.
+Assigning the UI address to a tenant automatically creates rules on the host system (external and tenant networks) to channel traffic appropriately. No further configuration should be needed on the host. 
+
+
+!!! note "**All configuration outlined below is done within the tenant system.**"
 
 
 ## VPN network Configuration
@@ -40,50 +43,47 @@ Assigning the UI address to a tenant automatically creates appropriate rules **o
 ![Phase 2 Configuration](../assets/tenant-ipsec-phase2.png)
 
 
-## VPN Network Rules
-**VPN network created within the tenant system**
+## Default VPN Network Rules
 
-**Default Firewall Rules:
+**Default Firewall Rules:**
 These are created automatically on VPN Network to allow VPN traffic
 
-- **Allow IKE**: Accept incoming UDP traffic on port 500 to **My Router IP**.
-- **Allow IPsec NAT-Traversal**: Accept incoming UDP traffic on port 4500 to **My Router IP**.
-- **Allow ESP**: Accept incoming ESP protocol traffic to **My Router IP**.
-- **Allow AH**: Accept incoming AH protocol traffic to **My Router IP**.
+* **Allow IKE**: Accept incoming UDP traffic on port 500 to **My Router IP**.
+* **Allow IPsec NAT-Traversal**: Accept incoming UDP traffic on port 4500 to **My Router IP**.
+* **Allow ESP**: Accept incoming ESP protocol traffic to **My Router IP**.
+* **Allow AH**: Accept incoming AH protocol traffic to **My Router IP**.
 
 ![Review Rules](../assets/ipsec-defaultrules.png)
 
 !!! tip "These rules can be modified to restrict to specific source addresses, where appropriate."
 
+
+## Additional VPN Network Rules
+
+The following additional rules need to be created on our new VPN network:
+
 **NAT Rule:**
-![VPN Nat Rule](../assets/tenant-ipsec-vpn-rule-translate.png)
+![VPN NAT Rule](../assets/tenant-ipsec-vpn-rule-translate.png)
 
-!!! tip "The incoming NAT rule must be moved to the top, before the automatically-created *Accept* Rules."
-
+!!! tip "The incoming NAT rule must be moved to the top, before the *Accept* Rule. Instructions for changing the order of rules can be found in the Product Guide: [Network Rules - Change the Order of Rules](/product-guide/networks/network-rules/#change-the-order-of-rules)"
 **Default Route Rule:**
 ![VPN Default Route Rule](../assets/tenant-ipsec-vpn-rule-default-route.png)
 
 
-**sNAT Rule:**
+**SNAT Rule:**
 ![VPN Nat Rule](../assets/tenant-ipsec-vpn-rule-outgoing-snat.png)
 
 
 ## External Network Rules
 
-We need the following translate rules on the tenant's external network 
+Translate rules are necessary on the tenant's external network: 
 
 ![VPN Nat Rule](../assets/tenant-ipsec-external-udp-rule.png)
 ![VPN Nat Rule](../assets/tenant-ipsec-external-ESP-rule.png)
 ![VPN Nat Rule](../assets/tenant-ipsec-external-AH-rule.png)
 
 
-## Connecting Other Networks to the VPN 
-Routing can be configured between the VPN network and other internal networks to provide tunnel access to those networks; see KB article [ How to Configure Routing Between Networks](/knowledge-base/routing-between-internal-vergeio-networks).  
+## Connecting Internal Networks to the VPN 
+Routing can be configured between the VPN network and other internal networks to provide tunnel access to those networks; see [How to Configure Routing Between Networks](/knowledge-base/routing-between-internal-vergeio-networks).  
 
-!!! tip "Rules must be applied to each network to put them into effect."
-
-
-
-
-
-
+!!! tip "After creating new rules, they must be applied to each network to put them into effect."
