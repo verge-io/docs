@@ -3,7 +3,7 @@ title: Routing Layer 2 Networks with VergeOS
 slug: routing-l2-networks
 description: Describes an overview and specific scenario in which physical devices are routed via Layer 3 Verge networks.
 draft: false
-date: 2025-03-21T18:42:31.354Z
+date: 2025-04-09T18:42:31.354Z
 tags:
   - network
   - networking
@@ -15,10 +15,10 @@ tags:
   - l2
 categories:
   - Network
-	- System Administration
 editor: markdown
-dateCreated: 2025-03-21T11:15:31.354Z
+dateCreated: 2025-04-09T11:15:31.354Z
 ---
+
 ## Routing IP Traffic to L2 physical networks
 This article will walk through an efficient method of routing layer 3 IP traffic for layer 2 physical networks with the powerful VergeOS networking system. There are multiple ways to achieve this, however the objective of this article is to provide clear and concise guidance on a specific common scenario. This article should be particularly of use and interest to engineers and administrators of Edge deployments in which physical devices like phones, cctv cameras, or network equipment require communication with workloads in VergeOS that may be running on different IP subnets. Using this method, an operator can achieve direct local communication between those physical devices outside of VergeOS and the internal VergeOS managed networks.
     
@@ -34,7 +34,7 @@ This article will walk through an efficient method of routing layer 3 IP traffic
 
 !!! info "Helpful Related Documents"
 	Introduction to Network Blocks : [Network Blocks Overview](/knowledge-base/network-blocks/) <br>
-	Routing Basics : [Routing Internal Networks](/knowledge-base/routing-internal-networks/) <br>
+	Routing Basics : [Routing Internal Networks](/knowledge-base/routing-between-internal-vergeio-networks/) <br>
     Network Rules : [VergeOS Product Guide - Network Rules](/product-guide/networks/network-rules/) <br>
     Network Troubleshooting : [VergeOS Product Guide - Network Troubleshooting](/product-guide/networks/net-troubleshooting/)
 
@@ -111,6 +111,3 @@ When applying the above process to a Tenant there are two generally common imple
 
 ---
 
-!!! note "Document Information"
-    - Last Updated: 2025-03-21
-    - vergeOS Version: 4.13.4

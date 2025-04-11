@@ -1,5 +1,5 @@
 ---
-title: Routing Between Internal Verge.io Networks
+title: Routing Between Internal VergeOS Networks
 slug: routing-between-internal-vergeio-networks
 description: 
 draft: false
