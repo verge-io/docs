@@ -81,7 +81,7 @@ In some situations, MSS clamping can improve performance in IPsec tunnels. Howev
 
 3. Enter **Remote Gateway address:** (required) the WAN address at the other IPsec peer.  
 
-3. Configure **Phase 1 Encryption settings**
+4. Configure **Phase 1 Encryption settings**
 
     - **Algorithm**(default AES)   
     - **Key Length, Hash, and DH Group settings** (options will vary depending upon Algorithm selected).
@@ -91,7 +91,7 @@ In some situations, MSS clamping can improve performance in IPsec tunnels. Howev
     *Note: Some algorithms do not provide strong security and are therefore not recommended, such as Blowfish, 3DES, CAST128, MD5, SHA1, DH groups 1,2,22,23,24*
 
 
-4. Configure **Phase 1 Proposal (Authentication) settings**
+5. Configure **Phase 1 Proposal (Authentication) settings**
 
 * **Pre-Shared Key:** can be manually entered or the Generate button can be used to create a random, secure value for a pre-shared key.  
 **Negotiation Mode:**
@@ -101,7 +101,7 @@ In some situations, MSS clamping can improve performance in IPsec tunnels. Howev
 * **Identifier:** the identify presented by the local peer during IKE negotiation. When left blank, the current IP is used.  Typically, the WAN address of this IPsec peer should be entered because this is the source address identified when accessing the remote peer.   
 * **Peer Identifier:** the identity to expect from the remote peer; typically can be left blank to use the address currently specified as the VPN Remote Gateway.  
 
-5. Configure **Phase 1 Advanced Options**
+6. Configure **Phase 1 Advanced Options**
 
 * **Connection Behavior** defines the behavior to occur at IPsec startup:
 
@@ -148,7 +148,7 @@ In some situations, MSS clamping can improve performance in IPsec tunnels. Howev
 7. Specify **Lifetime** in Units (Seconds, Minutes, Hours, Days, Years) or *Forever*
 for duration of the SA established during the Phase 2.
 8. Select the encryption **Algorithm** and **Key Length, Hash, and DH Group** settings.
-10. Click **Submit** to save the Phase 2 Configuration.
+9. Click **Submit** to save the Phase 2 Configuration.
 
 ## Configure Firewall and Routing Rules
 
