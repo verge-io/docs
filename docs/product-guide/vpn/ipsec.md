@@ -1,11 +1,11 @@
 # IPsec Configuration
 
-IPsec compatibility is available to provide a VPN tunnel between a VergeOS network and a third-party IPsec Peer.
+VergeOS includes IPsec compatibility to allow for configuration of a VPN tunnel between a VergeOS network and a third-party IPsec Peer.
 
 !!! note "Using IPsec"
     IPsec functionality is provided for situations where there is a specific IPsec requirement. It is recommended to alternately use WireGuard when possible.  WireGuard provides better performance than IPsec and because of its simpler configuration, it can be less vulnerable to inadvertent security misconfigurations.
 
-This document provides general step-by-step instructions for configuring VergeOS as an IPsec peer. Specific example IPsec configurations are linked at the bottom of this page.  
+This document provides general step-by-step instructions for configuring VergeOS as an IPsec peer. Specific example configurations are linked at the bottom of this page.  
 
 ## High-Level Steps 
 - Create a **VPN Network** and edit the IPsec Configuration, if necessary
@@ -20,12 +20,11 @@ This document provides general step-by-step instructions for configuring VergeOS
 2. Click **Networks** again from the left menu.
 3. Click **New VPN** from the left menu.
 4. Configure Network fields.  
-**Key Fields:**
 
 * **Layer 2 Type:** None
 * **IP Address Type:** static
 * **IP Address:** VPN router address
-* **Network Address:** typically local network of the VPN network.  
+* **Network Address:** local network range for this peer  
 * **Interface Network:**
     - ***--None--*** to create a separate VPN network, where connections to other VergeOS networks are all handled with layer 3 routing. (Recommended method) 
     - **Select an existing network** to attach the VPN network directly to that network via layer 2.
@@ -36,18 +35,18 @@ Information about other network fields can be found at: [Internal Networks Gener
 
 ## Edit IPsec Configuration (If necessary)
 
-General IPsec settings are set to common defaults.  These settings can be modified if needed: From the **VPN Network Dashboard**, click **Edit IPsec** from the left menu.    
+General IPsec settings are set to common defaults.  These settings can be modified if needed: from the **VPN Network Dashboard**, click **Edit IPsec** from the left menu.    
 
 !!! note 
     Consult your third-party IPsec provider documentation and/or universal documentation resources, such as those provided by NIST, for guidance on individual IPsec settings, potential trade-offs of various selections, and security best practices.  
 
 
 * **Configuration Mode** 
-    - **normal (default)** typically used, includes common IPsec configuration fields   
-    - *advanced* - allows for advanced/extensive/out-of-the-ordinary IPsec configuration through the use of configuration files
+    - *normal (default)* - this option is typically used and includes common IPsec fields   
+    - *advanced* - allows for extensive or out-of-the-ordinary IPsec configuration through the use of configuration(conf) files
 
 * **Unique IDs**
-    - *Yes (default)* - keep particular participant IDs unique. (Same as Replace option)
+    - *Yes (default)* - keep particular participant IDs unique. (Also known as the *Replace* option)
     - *Never* - will ignore INITIAL_CONTACT notify, still not replacing old IKE_SAs
     - *No* - will replace IKE_SAs only upon INITIAL_CONTACT notify.
 
@@ -71,7 +70,8 @@ In some situations, MSS clamping can improve performance in IPsec tunnels. Howev
 ## Create a Phase 1 Configuration
 
 1. From the **VPN Network Dashboard**, click **IPsec Tunnels** > **New**.
-2. Configure **Key Exchange Version** 
+2. Enter a **Name** and optional **Description** for the phase 1.
+3. Configure **Key Exchange Version** 
 
 - *Auto* - uses version that remote peer initiates(IKEv1 or IKEv2)    
 - *IKEv1*  
@@ -79,9 +79,9 @@ In some situations, MSS clamping can improve performance in IPsec tunnels. Howev
 
 !!! tip "IKEv2 is highly recommended for security purposes." 
 
-3. Enter **Remote Gateway address:** (required) the WAN address at the other IPsec peer.  
+4. Enter **Remote Gateway address:** (required) the WAN address at the other IPsec peer.  
 
-4. Configure **Phase 1 Encryption settings**
+5. Configure **Phase 1 Encryption settings**
 
     - **Algorithm**(default AES)   
     - **Key Length, Hash, and DH Group settings** (options will vary depending upon Algorithm selected).
@@ -91,17 +91,17 @@ In some situations, MSS clamping can improve performance in IPsec tunnels. Howev
     *Note: Some algorithms do not provide strong security and are therefore not recommended, such as Blowfish, 3DES, CAST128, MD5, SHA1, DH groups 1,2,22,23,24*
 
 
-5. Configure **Phase 1 Proposal (Authentication) settings**
+6. Configure **Phase 1 Proposal (Authentication) settings**
 
-* **Pre-Shared Key:** can be manually entered or the Generate button can be used to create a random, secure value for a pre-shared key.  
-**Negotiation Mode:**
+* **Pre-Shared Key:** can be manually entered or the Generate button can be used to create a random, secure value for a pre-shared key.   
+* **Negotiation Mode:**
     - *Main* - default, recommended mode
     - *Aggressive* - less secure than Main mode but provides more flexibility
 
-* **Identifier:** the identify presented by the local peer during IKE negotiation. When left blank, the current IP is used.  Typically, the WAN address of this IPsec peer should be entered because this is the source address identified when accessing the remote peer.   
+* **Identifier:** the identity presented to the remote peer during IKE negotiation. When left blank, the current IP is used.  Typically, the WAN address of this IPsec peer should be entered because this is the source address identified when accessing the remote peer.   
 * **Peer Identifier:** the identity to expect from the remote peer; typically can be left blank to use the address currently specified as the VPN Remote Gateway.  
 
-6. Configure **Phase 1 Advanced Options**
+7. Configure **Phase 1 Advanced Options**
 
 * **Connection Behavior** defines the behavior to occur at IPsec startup:
 
@@ -128,9 +128,9 @@ In some situations, MSS clamping can improve performance in IPsec tunnels. Howev
 * **DPD Failures:** defines the maximum number of failures in which to automatically delete peer connections after inactivity (This setting does not apply to IKEv2.)
 
 !!! info
-    If necessary, additional Phase I definitions can be added. From the VPN Network Dashboard: **IPsec Tunnels** > **New**
+    If necessary, additional Phase 1 definitions can be added. From the VPN Network Dashboard: **IPsec Tunnels** > **New**
 
-## Create Phase 2
+## Create a Phase 2 Configuration
 
 !!! info
     A Phase 2 configuration must be created in order to create a working IPsec connection.
@@ -161,9 +161,15 @@ Networking configuration will be necessary for IPsec traffic. The following netw
 
 Additional network configuration (e.g. firewall rules, routing) will be required dependent upon specific network and IPsec design.  See links below to specific IPsec examples that include network rule configuration.
 
-### To Initiate the VPN Network from the VergeOS side
+### To Initiate the VPN Tunnel from the VergeOS Side
 
-From the **VPN Network Dashboard**, click **Power On** from the left menu.
+1. From the **VPN Network Dashboard**, click **Power On** from the left menu.
+2. Click the Plug icon under **IPsec Connections**.  
+
+![IPsec Connect button](/product-guide/screenshots/ipsec-connect.png) 
+
+3. Watch for the IPsec status to show connected.
+
 
 
 ## IPsec Example Configurations
@@ -178,13 +184,13 @@ Example IPsec configurations are available for reference:
 
 ### Verify mutual/compatible settings across peers
 
-IPsec can be sensitive to configuration mismatches. Most settings require precise alignment between peers of the connection.  Consult appropriate third-party IPsec documentation for the non-VergeOS peer and ensure all parameters are meticulously matched on both ends.   
+IPsec is very sensitive to configuration mismatches. Most settings require precise alignment between peers of the connection.  Consult the documentation for your non-VergeOS IPsec peer and ensure all parameters are meticulously matched on both ends.   
 
 ### VPN Network Container Logs
 
-Network Container Logs can be accessed in Network Diagnostics from the VPN network dashboard: **Diagnostics > Diagnostics Query:** ***Logs***
+Network container logs can be accessed from the VPN network dashboard: **Diagnostics > Diagnostics Query:** ***Logs***
 These logs often contain helpful troubleshooting information, such as IPsec error messages, source and destination addresses, etc. 
 
 ### Trace Network Traffic
 
-Tracing the traffic on the VPN network and associated external and internal networks can often assist troubleshooting efforts by identify if tunnel traffic is reaching a network, source and destination addresses, etc. **Diagnostics > Diagnostics Query:** ***TCP Dump***.  [KB - Network Diagnostics Guide](/knowledge-base/network-diagnostics-guide) provides a reference for using the Network Diagnostics tool.
+Tracing the traffic on the VPN network and associated external and internal networks can often assist troubleshooting efforts by identifying if tunnel traffic is reaching a network, identifying source and destination addresses of packets, etc. **Diagnostics > Diagnostics Query:** ***TCP Dump***.  The [KB - Network Diagnostics Guide](/knowledge-base/network-diagnostics-guide) provides a reference for using the Network Diagnostics tool.

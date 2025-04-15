@@ -11,4 +11,4 @@ To configure a secure tunnel for remote users to access a VergeOS system, consul
 ## IPsec Site-to-Site with Third-party (for specific IPsec requirement)
 
 IPsec functionality is provided for scenarios where VergeOS needs to interface with an IPsec device at another site (e.g. Cisco, pfSense, etc.)
-Information regarding creating an IPsec peer for a VPN tunnel to a third-party IPsec peer can be found at: [**IPsec Configuration**](/product-guide/vpn/ipsec)
+Information on creating a VPN tunnel to a third-party IPsec peer can be found at: [**IPsec Configuration**](/product-guide/vpn/ipsec)
