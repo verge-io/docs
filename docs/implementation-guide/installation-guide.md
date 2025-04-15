@@ -108,9 +108,13 @@ The system will display an automatically-selected tier for each drive.  Take not
 If you verified all drive tiers were selected as desired (previous screen), simply press [Enter] to proceed.  Otherwise, select **< Yes >**
  and **[Enter]** to view all drives and optionally change any tier assignments.  When finished manually selecting tier assignments, select "Done" and [Enter].
 
-21. Configure **Swap**: Generally, each node should be given no more than 16G of swap, with the exception of systems where there is a plan to utilize virtual RAM for workloads.  
-
-!!! warning "The decision to establish a higher amount of swap for virtual RAM should be considered carefully while understanding the limitations and potential advantages vs. disadvantages of this approach. The KB article [Virtual RAM - Considerations](/knowledge-base/virtual-ram-considerations) provides more information."
+21. Configure **Swap**:
+    * Select storage **tier** to use for swap; fastest-drive tier should be selected.
+    * Enter the amount of swap to be established **per drive (in MB)**; e.g. if there are 8 drives in the selected tier, you can enter 2048 to give you 16,384MB (16GB) of swap.
+    !!! warning
+        - HDD storage is not suitable for swap
+        - Generally, no more than 16GB of swap should be configured per node.  
+        - Larger amounts of swap can degrade performance!
 
 22. Select **drives to format for boot**.  This prompt will only appear if any drives were not selected to be included in the vSAN.  Older hardware (e.g. legacy Chassis, BOSS card) may require you to specify drives to format for boot.  In most cases, you can press [Enter] to continue with the installation without selecting boot drives.
 
