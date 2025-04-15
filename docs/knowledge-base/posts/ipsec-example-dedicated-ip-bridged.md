@@ -16,12 +16,12 @@ dateCreated: 2025-01-31T14:48:12.332Z
 
 # IPsec Example - Dedicated Public IP 
 
-!!! note "IPsec is a complex framework that supports a vast array of configuration combinations and many ways to achieve the same goal, making it impossible to provide one-size-fits-all instructions.  Sample configurations are given for reference and should be tailored to meet the particular environment and requirements."
+The following IPsec example utilizes a dedicated public IP address for a VPN tunnel.  The VPN router is bridged to an existing internal network to provide Layer 2-connectivity to that network.
+
+!!! note "IPsec is a complex framework that supports a vast array of configuration combinations with many ways to achieve the same goal, making it impossible to provide one-size-fits-all instructions.  Sample configurations are given for reference and should be tailored to meet the particular environment and requirements."
 
 !!! info "Consult the [IPsec Product Guide Page](/product-guide/vpn/ipsec) for step-by-step general instructions on creating an IPsec tunnel."
 
-
-The following example utilizes a dedicated public IP address for a VPN tunnel.  The VPN router is bridged to an existing internal network to provide Layer 2-connectivity to that network.
 
 * **VPN Network Name:** *vpn-ipsec*  
 * **VPN Router address:** *192.168.0.254*  
@@ -31,10 +31,12 @@ The following example utilizes a dedicated public IP address for a VPN tunnel.  
 * **External Network Name:** *External*
 
 ## Static Lease
-We reserve the VPN router address on *Internal-xyz* to avoid another device taking this IP address.  
+The VPN router address is reserved on *Internal-xyz* to avoid another device taking this IP address. Instructions for creating a static lease can be found here: [Create a DHCP Static Lease](/product-guide/networks/dhcp-static-lease).
+
 ![VPN Static Lease](../assets/ipsec-dedicated-bridged-staticlease.png)
 
 ## VPN Network Configuration
+ 
 ![VPN Network Config](../assets/ipsec-dedicated-bridged-vpn-network.png)
 
 
@@ -47,21 +49,21 @@ We reserve the VPN router address on *Internal-xyz* to avoid another device taki
 ![Phase 2 Configuration](../assets/ipsec-dedicated-bridged-phase2.png)
 
 
-## Assign Public IP Address
+## Assigned Public IP Address
 The public address must be [Assigned from the External network](/product-guide/networks/assign-external-ip) to the VPN network.
 
 ![Assign Public IP](../assets/ipsec-dedicated-bridged-provide-public.png)
 
-<!-- maybe show the rule that is automatically created on the external to route this ip address to the network, and under the hood fw rule too? -->
 
 ## Default VPN Network Rules
 
-The following **default firewall rules** are **created automatically** on VPN Network to allow VPN traffic:
+**Default Firewall Rules** - 
+The following necessary firewall rules are **created automatically** when a VPN network is created:
 
-* **Allow IKE**: Accept incoming UDP traffic on port 500 to **My Router IP**.
-* **Allow IPsec NAT-Traversal**: Accept incoming UDP traffic on port 4500 to **My Router IP**.
-* **Allow ESP**: Accept incoming ESP protocol traffic to **My Router IP**.
-* **Allow AH**: Accept incoming AH protocol traffic to **My Router IP**.
+* **Allow IKE**: Accept incoming UDP traffic on port 500 to **My Router IP**
+* **Allow IPsec NAT-Traversal**: Accept incoming UDP traffic on port 4500 to **My Router IP**
+* **Allow ESP**: Accept incoming ESP protocol traffic to **My Router IP**
+* **Allow AH**: Accept incoming AH protocol traffic to **My Router IP**
 
 ![Review Rules](../assets/ipsec-defaultrules.png)
 
@@ -69,7 +71,7 @@ The following **default firewall rules** are **created automatically** on VPN Ne
 
 ## Additional VPN Network Rules
 
-The following additional rules need to be created on our new VPN network:
+Additional rules need to be created on our new VPN network:
 
 **Translate Rule:**
 ![VPN Translate to Router](../assets/ipsec-dedicated-bridged-vpn-translate.png)
@@ -87,7 +89,7 @@ A routing rule is needed on *Internal-xyz* to route its VPN traffic to the VPN n
 ![VPN Default Route Rule](../assets/ipsec-dedicated-bridged-internal-route.png)
 
 
-!!! tip "Rules must be applied on each network to put them into effect."
+!!! tip "New rules must be applied on each network to put them into effect."
 
 
 
