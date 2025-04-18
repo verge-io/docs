@@ -300,6 +300,8 @@ nav:
         - Subscription Profiles: product-guide/system/subscription-profiles.md
         - Accessing Subscriptions: product-guide/system/subscriptions-accessing.md
       - System Diagnostics: product-guide/system/diagnostics.md
+    - Tools and Integrations:
+      - VergeOS Prometheus Exporter: product-guide/automation/prometheus-exporter.md
   - Release Notes: 
     - Overview: release-notes/release-notes-overview.md
     - 4.13 (latest): release-notes/release-notes.md
