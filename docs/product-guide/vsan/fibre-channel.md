@@ -2,112 +2,102 @@
 
 ## Overview
 
-VergeOS vSAN can utilize Fibre Channel (FC) LUNs as storage devices within its tiered architecture. This feature allows you to leverage existing FC storage infrastructure while maintaining vSAN's built-in redundancy and performance benefits.
+VergeOS vSAN supports the use of Fibre Channel (FC) LUNs as storage devices within its tiered architecture. This enables seamless integration with your existing SAN infrastructure while benefiting from vSAN’s native performance, redundancy, and efficiency.
+
+!!! info "VergeOS Path Optimization"
+    VergeOS automatically selects the best path for each LUN based on internal algorithms. It’s normal to see multiple disks with identical serial numbers in the UI—this does **not** indicate a problem.
+
+!!! warning "Unique LUNs Per Node"
+    Unlike traditional shared-storage clustering, VergeOS vSAN expects **each node to be presented with its own unique LUN(s)**. Do **not** present the same LUNs to multiple nodes.
 
 ## Path Management
 
 ### Multipath Configuration
 
-The system automatically manages multiple paths to FC LUNs in an active/passive configuration:
+VergeOS manages multiple paths to each LUN in an active/passive configuration:
 
-- **Primary Path**: Designated as the main I/O channel
-- **Secondary Paths**: Available for automatic failover
-- **Failover Timeout**: 7-second delay before path switching
-- **Path Recovery**: System maintains alternate path until manually restored
+- **Primary Path** – Used for I/O  
+- **Secondary Paths** – Automatically activated on failure  
+- **Failover Timeout** – 7-second delay before switching  
+- **Path Recovery** – Alternate path remains active until manually overridden
 
-### Path States
-
-* **Active**: Currently handling I/O operations
-* **Passive**: Available for failover
-* **Failed**: Detected as non-functional
-* **Disabled**: Manually taken offline
-
-!!! note "Default Configuration"
-    Multipathing is enabled by default in VergeOS 4.13 and later versions.
+!!! note "Default Behavior"
+    Multipathing is automatically enabled in VergeOS 4.13 and later.
 
 ## Implementation Requirements
 
-### Hardware Prerequisites
+### Hardware
 
-- FC Host Bus Adapters (HBAs) installed in minimum 2 cluster nodes
-- Compatible FC switches (8/16/32 Gb)
-- FC storage array with available LUNs
-- Redundant FC fabric recommended
+- FC Host Bus Adapters (HBAs) in at least two cluster nodes  
+- Compatible FC switches (8/16/32 Gb)  
+- FC storage array with available LUNs  
+- Redundant FC fabric highly recommended  
 
-### Network Requirements 
+### Fabric Configuration
 
-- Properly zoned FC fabric
-- Consistent LUN presentation across nodes
-- Redundant physical paths recommended
+- WWPN-based zoning configured  
+- Each node is assigned **dedicated** LUNs  
+- Redundant physical paths per node  
+
+!!! tip "One LUN Per Physical Disk"
+    For maximum efficiency and to avoid duplicate redundancy, we recommend **mapping each FC LUN to a dedicated physical disk**.
+
+!!! warning "Turn Off Storage Redundancy"
+    VergeOS vSAN handles data redundancy and deduplication natively. You should **disable RAID, deduplication, or tiering features** on the SAN for LUNs used by VergeOS.
 
 ## Configuration Steps
 
-1. **Prepare FC Environment**:
-    - Configure FC switch zoning using WWPN-based zoning
-    - Map LUNs consistently across nodes
-    - Verify multipath configuration on each node
+1. **Prepare the FC Environment**:
+   - Set up WWPN zoning on the FC switch  
+   - Present unique LUNs to each node  
+   - Confirm multipath availability per node  
 
 2. **Add Storage to vSAN**:
-    - Navigate to Storage Tiers configuration
-    - Select desired tier for FC LUNs
-    - Apply changes to implement in vSAN
-    - Verify storage appears in selected tier
+   - Open the **Storage Tiers** section in the VergeOS UI  
+   - Select the tier where FC LUNs will be added  
+   - Apply the configuration  
+   - Confirm that drives appear in the desired tier  
 
 ## Best Practices
 
-- **Path Management**:
-    - Configure redundant physical paths
-    - Test failover functionality regularly 
-    - Keep HBA firmware updated
-    - Monitor path status proactively
+### Path Management
 
-- **Performance Optimization**:
-    - Balance LUNs across available paths
-    - Monitor I/O patterns
-    - Adjust queue depths if needed
-    - Consider MPIO settings for workload
+- Use redundant physical connections per node  
+- Test failover functionality regularly  
+- Keep HBA firmware updated  
+- Monitor path health proactively  
 
-!!! warning "Configuration Changes"
-    Always use [**Maintenance Mode**](/product-guide/system/maintenance-mode) when modifying storage configuration to prevent workload disruption.
+### Performance Optimization
+
+- Distribute LUNs evenly across paths  
+- Monitor queue depth and I/O throughput  
+- Adjust HBA settings if needed  
+- Avoid oversubscribing a single LUN with multiple VMs  
+
+!!! warning "Use Maintenance Mode"
+    Always enter [**Maintenance Mode**](/product-guide/system/maintenance-mode) before modifying storage configurations.
 
 ## Monitoring and Maintenance
 
-### Key Metrics to Monitor
-
-- Path status and health
-- I/O latency and throughput
-- Error rates
-- Queue depth utilization
-
-### Recommended Maintenance Tasks
-
-- Regular path failover testing
-- HBA firmware updates
-- FC switch firmware maintenance 
-- Performance baseline monitoring
-
-!!! tip "Proactive Monitoring"
-    Configure [**Subscriptions**](/product-guide/system/subscriptions-overview) to receive alerts for path failures, performance issues or error conditions.
-
 ## Troubleshooting
 
-Common issues and solutions:
+### Path Failures
 
-1. **Path Failures**:
-    - Check physical connections
-    - Verify switch zoning
-    - Review HBA status
-    - Check storage array health
+- Check physical connections  
+- Confirm FC switch zoning  
+- Review HBA logs and driver status  
+- Validate storage array health  
 
-2. **Performance Issues**:
-    - Monitor queue depths
-    - Review multipath settings
-    - Check for bottlenecks
-    - Analyze I/O patterns
+### Performance Bottlenecks
+
+- Check queue depths and path load  
+- Confirm proper multipath usage  
+- Identify oversubscription of specific LUNs  
 
 ## Related Documentation
 
-- [Storage Tiers](/product-guide/vsan/storage-tiers)
-- [vSAN Architecture](/product-guide/vsan/architecture)
-- [Maintenance Mode](/product-guide/system/maintenance-mode)
+- [Storage Tiers](/product-guide/vsan/storage-tiers)  
+- [vSAN Architecture](/product-guide/vsan/architecture)  
+- [Maintenance Mode](/product-guide/system/maintenance-mode)  
 - [System Monitoring](/product-guide/system/subscriptions-overview)
+
