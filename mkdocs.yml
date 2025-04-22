@@ -277,6 +277,7 @@ nav:
        - Architecture: product-guide/vsan/architecture.md  # Added from PR
        - Storage Tiers: product-guide/vsan/storage-tiers.md
        - Preferred Tier: product-guide/vsan/preferred-tiers.md
+       - Fiber Channel: product-guide/vsan/fibre-channel.md
        - Removing ISO Files with References: product-guide/vsan/removing-iso-refs.md
     - Automation:
       - Recipes:
