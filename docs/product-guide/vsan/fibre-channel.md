@@ -75,9 +75,9 @@ VergeOS manages multiple paths to each LUN in an active/passive configuration:
 - Avoid oversubscribing a single LUN with multiple VMs  
 
 !!! info "Core Network Bandwidth Consideration"
-VergeOS vSAN uses the core network when reading/writing data. This means that during a write operation, the system sends the data to two nodes simultaneously over the network.
-If your Fibre Channel SAN supports 32 Gb speeds but your core network is 25 Gb, the maximum write throughput will be constrained by the core network, not the SAN.
-To maximize performance, ensure the core network is greater than the FC SAN bandwidth, especially for write-intensive workloads.
+    VergeOS vSAN uses the core network when reading/writing data. This means that during a write operation, the system sends the data to two nodes simultaneously over the core network.
+    If your Fibre Channel SAN supports 32 Gb speeds but your core network is 25 Gb, the maximum write throughput will be constrained by the core network, not the SAN.
+    To maximize performance, ensure the core network is greater than the FC SAN bandwidth, especially for write-intensive workloads.
 
 !!! warning "Use Maintenance Mode"
     Always enter [**Maintenance Mode**](/product-guide/system/maintenance-mode) before modifying storage configurations.
