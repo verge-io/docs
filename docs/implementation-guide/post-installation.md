@@ -68,17 +68,8 @@ Before proceeding with post-installation configuration, ensure:
 !!! note "URL Configuration"
     Correct URL and vSAN host configuration is crucial for setting up sites and backups properly.
 
-### 5. SMTP Configuration
 
-1. **Configure Email Settings:**
-      - Navigate to System > SMTP
-      - Configure SMTP settings with your approved email provider
-      - Send a test email to verify system notifications
-
-!!! tip "Email Configuration"
-    Setting up a reliable SMTP configuration is essential for receiving system notifications and alerts.
-
-### 6. Centralized Logging Configuration
+### 5. Centralized Logging Configuration
 
 1. **Access System Settings:**
       - Navigate to System > Settings > Advanced Settings
@@ -112,7 +103,7 @@ Before proceeding with post-installation configuration, ensure:
 !!! tip "Template Configuration"
     Ensure your template format is compatible with your syslog server. Consult your syslog server's documentation for specific format requirements.
 
-### 7. Network Configuration and Testing
+### 6. Network Configuration and Testing
 
 1. **Core Network Testing:**
    - Test failover scenarios:
