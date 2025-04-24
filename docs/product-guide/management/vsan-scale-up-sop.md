@@ -1,61 +1,85 @@
-# Standard Operating Procedure: VergeOS vSAN Scale Up
+# VergeOS vSAN Scale Up Guide
 
-## Purpose
-This document provides standardized procedures and best practices for VergeOS Engineers and Administrators performing a vSAN Scale Up operation; adding additional storage to an existing storage tier. Use this guide as a foundation for creating your own customized procedures tailored to your specific environment.
+This guide provides best practices for safely scaling up storage capacity in a VergeOS system by adding drives to existing nodes. It focuses on data security and system resilience through a methodical approach.
 
-!!! note
-    This document covers checks and procedures that may not be applicable to your specific systems and scenarios. Please ensure your own Scale Up plan and SOP are appropriate to your needs and environment.
+!!! abstract "Overview"
+    Scaling up a vSAN requires careful planning and execution to ensure minimal disruption to your services. This guide breaks down the process into main phases:
+    
+    1. **Preparation** - Steps to take before your scheduled maintenance window
+    2. **Pre-Upgrade Verification** - Final checks immediately before beginning the scale up
+    3. **Scale Up Execution** - The process of adding and configuring new storage
+    4. **Post-Scale Up Verification** - Ensuring the scale up was successful
 
-## Objective
-Safely performing a vSAN Scale Up on a VergeOS System, adding storage capacity to the existing nodes. Prioritizing data security and resilience. Slow is smooth. Smooth is fast.
+!!! info "Environment-Specific Requirements"
+    This guide covers general best practices. You may need to adapt these steps for your specific environment and requirements.
 
-## Preparation Steps
-*Leading up to scheduled maintenance*
+## Preparation Phase
 
-- [ ] Ensure System Snapshot retention is sufficient in the event a rollback is required
-- [ ] Set success and verification criteria for your workloads
-  - [ ] Identify cohorts of guests, services, etc. required for your clients that must be tested to confirm functionality
+Complete these steps well before your scheduled maintenance window:
+
+### System Readiness
+- [ ] Ensure system snapshot retention is sufficient for potential rollback
+- [ ] Set specific success and verification criteria for your workloads
+- [ ] Identify cohorts of VMs, services, etc. required for your particular use case
+
 !!! example
     VDI may have several distinct images or resource pools. VPS may focus more on network functionality and connectivity.
-  - [ ] Identify temporal system and guest events that must function (What scheduled events need to be validated as functional?)
-- [ ] Ensure platform documentation is up-to-date
-  - [ ] Ports, IPs, Names, VLANs, etc. Know what you know.
-- [ ] Check Cluster Resource Utilization
-  - [ ] Ensure your system is currently running with enough spare resources to lose your largest node
-- [ ] Confirm Network paths among hosts
-  - [ ] Each node can ping each other by name in the Core Network
-  - [ ] If networking redundancy has not been tested in some time, schedule a redundancy test prior to scaling.
-- [ ] Confirm IPMI access to all hosts
-  - [ ] Via a method that may allow console access in an emergency or outage scenario
+
+- [ ] Map any time-sensitive system and guest events that must continue functioning
+
+### Hardware Preparation
 - [ ] Disks pre-tested in non-production host(s)
 - [ ] New disks are "like" to existing disks in the tier
 
-## Pre-Upgrade Steps
-*Day of scheduled maintenance, prior to outside meetings*
+### Documentation and Planning
+- [ ] Update platform documentation (ports, IPs, VLANs, etc.)
 
+### Resource Verification
+- [ ] Check cluster resource utilization
+    - Ensure your system has enough spare resources to lose your largest node
+- [ ] Confirm network paths among hosts
+    - From Node1: Node Diagnostics -> 'Fabric Configuration' reports Core1 and Core2 paths 'confirmed:true' for all existing nodes
+- [ ] Confirm IPMI access to all hosts via a method that allows console access in emergencies
+
+## Pre-Upgrade Verification
+
+Perform these checks on the day of scheduled maintenance, before beginning the scale up:
+
+### Current State Verification
 - [ ] Resource availability - System is N+1
-  - [ ] Verify RAM usage is enough to run workloads with a node offline
-  - [ ] Verify vSAN tier being scaled <90% full
+    - Verify RAM usage is enough to run workloads with a node offline
+    - Verify vSAN tier being scaled is <90% full
 - [ ] Cloud Snapshots are recent and available
-  - [ ] Set the most recent Snapshot to expire several days in the future for extra retention.
-- [ ] Multi-Site Syncing is functional and up to date
-- [ ] All vSAN Tiers in a healthy state
-- [ ] No Nodes are pending a reboot
+    - Set the most recent Snapshot to expire several days in the future for extra retention
+- [ ] Confirm multi-site syncing is functional and up to date
+- [ ] Verify all vSAN tiers are in a healthy state
+- [ ] Confirm no nodes are pending a reboot
+- [ ] Verify Node1 'Fabric Configuration' diagnostic reports Core1 and Core2 paths 'confirmed:true' for all existing Nodes
 
-## Scale Up
-*The Main Event - See [Scaling Up a vSAN](/knowledge-base/scaling-up-a-vsan)*
+## Scale Up Execution
 
-## Post Scale-Up
-*Post Maintenance Confirmations*
+For detailed step-by-step instructions on performing the vSAN scale up, please refer to the knowledge base article:
 
-- [ ] Test/Confirm Guest Systems as required
-- [ ] Check Logs for any new or divergent events
-- [ ] Test Success Criteria outlined in Preparation Steps
+[Scaling Up a vSAN](/knowledge-base/scaling-up-a-vsan)
 
-## Rollback
-If unexpected issues arise during the Scale Up process, the recommended approach is to pause operations, thoroughly investigate the problem, and develop a clear resolution plan before proceeding. Always prioritize system integrity over maintenance window deadlines. While maintenance windows typically include buffer time, it's better to reschedule than to risk system instability by rushing through unresolved issues.
+!!! warning
+    During the scale up process, the vSAN Tier will show a yellow status during the rebuild stage. It is essential to wait for the vSAN tier to return to a "green" healthy status before continuing to the next node.
+
+## Post-Scale Up Verification
+
+After the scale up completes, verify the system is operating correctly:
+
+### System Health Checks
+- [ ] Test/confirm guest systems as required
+- [ ] Check logs for any new or unexpected events
+- [ ] Verify all success criteria outlined in your preparation steps
+
+## Rollback Procedure
+
+!!! warning "Rollback Considerations"
+    If issues occur, the safest approach is to pause, investigate the unexpected behavior, and then proceed again with a clear understanding of the problem.
 
 !!! danger "Emergency Support"
-    Should you have any issues with your VergeOS vSAN Scale-Up, please contact [support](/support) immediately, or call 855-855-8300 if you need immediate on-call emergency assistance. Please have your SOP ready when calling.
+    Should you have any issues with your VergeOS vSAN scale up, please contact [our support team](/support) for assistance.
 
 ---
