@@ -1,7 +1,7 @@
 ---
 name: Documentation request
-about: Suggest new or improved documentation for VergeOS Exporter
-title: '[DOCS] '
+about: Suggest new VergeOS documentation
+title: '[NEW DOC]'
 labels: documentation
 assignees: ''
 

@@ -1,6 +1,6 @@
 ---
 name: Update existing documentation
-about: Request improvements or corrections to existing VergeOS Exporter documentation
+about: Request improvements or corrections to existing VergeOS documentation
 title: '[DOCS UPDATE] '
 labels: documentation
 assignees: ''
