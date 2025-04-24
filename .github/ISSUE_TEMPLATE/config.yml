@@ -5,3 +5,7 @@ contact_links:
     about: >
       Have a question or need help? Connect with our community on the
       discussion board
+  - name: Support
+    url: https://docs.verge.io/support
+    about: >
+      Open a support ticket with our team
