@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Ask a question
+    url: https://github.com/verge-io/docs/discussions
+    about: >
+      Have a question or need help? Connect with our community on the
+      discussion board
+  - name: Support
+    url: https://docs.verge.io/support
+    about: >
+      Open a support ticket with our team
