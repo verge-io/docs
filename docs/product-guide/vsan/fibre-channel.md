@@ -2,61 +2,68 @@
 
 ## Overview
 
-VergeOS vSAN supports the use of Fibre Channel (FC) LUNs as storage devices within its tiered architecture. This enables seamless integration with your existing SAN infrastructure while benefiting from vSAN’s native performance, redundancy, and efficiency.
+VergeOS vSAN supports the use of Fibre Channel (FC) LUNs as storage devices within its tiered architecture. This enables seamless integration with your existing SAN infrastructure while benefiting from vSAN's native performance, redundancy, and efficiency.
 
-!!! info "VergeOS Path Optimization"
-    VergeOS automatically selects the best path for each LUN based on internal algorithms. It’s normal to see multiple disks with identical serial numbers in the UI—this does **not** indicate a problem.
+## Implementation Requirements
 
-!!! warning "Unique LUNs Per Node"
-    Unlike traditional shared-storage clustering, VergeOS vSAN expects **each node to be presented with its own unique LUN(s)**. Do **not** present the same LUNs to multiple nodes.
+### Hardware
+
+- Physical disks in VergeOS Systems vSAN [**Tier 0**](/product-guide/vsan/storage-tiers/#tier-0-metadata-tier)
+- FC Host Bus Adapters (HBAs) in at least two cluster nodes  
+- Compatible FC switches (8/16/32 Gb)  
+- Redundant FC fabric highly recommended
+- FC storage array with available LUNs
+
+    !!! warning "Unique LUNs Per Node"
+        Unlike traditional shared-storage clustering, VergeOS vSAN expects **each node to be presented with its own unique LUN(s)**. Do **NOT** present the same LUNs to multiple nodes. **VergeOS treats Fibre Channel LUNs no different than physical disks.**
+
+### Fabric Configuration
+
+- WWPN-based zoning configured  
+- Each node is assigned **dedicated** LUNs (They are treated like they are physical disks)
+- Redundant physical paths per node  
+
+!!! tip "One LUN Per Physical Disk"
+    For maximum efficiency and to avoid duplicate redundancy, we recommend **mapping each FC LUN to a dedicated physical disk**.
+
+!!! tip "Deduplication"
+    VergeOS vSAN handles data deduplication natively at the block level. When using external storage with vSAN, you should disable deduplication on your SAN if it does not support cross-LUN deduplication. If your SAN supports global deduplication, we recommend leaving it enabled to reduce overall storage consumption. For redundancy, VergeOS will always store two copies of your data on the FC LUNs being used as a tier of vSAN storage.
+
+!!! warning "Turn Off Storage Redundancy"
+    VergeOS vSAN handles data redundancy natively. You should **disable RAID and automatic tiering features** on the SAN for LUNs used by VergeOS.
 
 ## Path Management
 
 ### Multipath Configuration
 
-VergeOS manages multiple paths to each LUN in an active/passive configuration:
+By default, VergeOS manages multiple paths to each LUN in an active/passive configuration:
 
 - **Primary Path** – Used for I/O  
 - **Secondary Paths** – Automatically activated on failure  
 - **Failover Timeout** – 7-second delay before switching  
 - **Path Recovery** – Alternate path remains active until manually overridden
 
-!!! note "Default Behavior"
-    Multipathing is automatically enabled in VergeOS 4.13 and later.
-
-## Implementation Requirements
-
-### Hardware
-
-- FC Host Bus Adapters (HBAs) in at least two cluster nodes  
-- Compatible FC switches (8/16/32 Gb)  
-- FC storage array with available LUNs  
-- Redundant FC fabric highly recommended  
-
-### Fabric Configuration
-
-- WWPN-based zoning configured  
-- Each node is assigned **dedicated** LUNs  
-- Redundant physical paths per node  
-
-!!! tip "One LUN Per Physical Disk"
-    For maximum efficiency and to avoid duplicate redundancy, we recommend **mapping each FC LUN to a dedicated physical disk**.
-
-!!! warning "Turn Off Storage Redundancy"
-    VergeOS vSAN handles data redundancy and deduplication natively. You should **disable RAID, deduplication, or tiering features** on the SAN for LUNs used by VergeOS.
+!!! info "VergeOS Path Optimization"
+    VergeOS automatically selects the best path for each LUN based on internal algorithms. It's normal to see multiple disks with identical serial numbers in the UI—this does **not** indicate a problem.
 
 ## Configuration Steps
 
 1. **Prepare the FC Environment**:
    - Set up WWPN zoning on the FC switch  
-   - Present unique LUNs to each node  
+   - Present unique LUNs to each node - **Reminder, they are treated like they are physical disks**
    - Confirm multipath availability per node  
 
 2. **Add Storage to vSAN**:
    - Open the **Storage Tiers** section in the VergeOS UI  
    - Select the tier where FC LUNs will be added  
    - Apply the configuration  
-   - Confirm that drives appear in the desired tier  
+   - Confirm that drives appear in the desired tier
+
+!!! warning "Always Scale-Up"
+    We recommend adding all Fibre Channel LUNs via [**Scaling Up a vSAN**](/knowledge-base/scaling-up-a-vsan) procedure.
+
+!!! warning "Use Maintenance Mode"
+    Always enter [**Maintenance Mode**](/product-guide/system/maintenance-mode) before modifying storage configurations.
 
 ## Best Practices
 
@@ -78,9 +85,6 @@ VergeOS manages multiple paths to each LUN in an active/passive configuration:
     VergeOS vSAN uses the core network when reading/writing data. This means that during a write operation, the system sends the data to two nodes simultaneously over the core network.
     If your Fibre Channel SAN supports 32 Gb speeds but your core network is 25 Gb, the maximum write throughput will be constrained by the core network, not the SAN.
     To maximize performance, ensure the core network is greater than the FC SAN bandwidth, especially for write-intensive workloads.
-
-!!! warning "Use Maintenance Mode"
-    Always enter [**Maintenance Mode**](/product-guide/system/maintenance-mode) before modifying storage configurations.
 
 ## Monitoring and Maintenance
 
@@ -105,4 +109,3 @@ VergeOS manages multiple paths to each LUN in an active/passive configuration:
 - [vSAN Architecture](/product-guide/vsan/architecture)  
 - [Maintenance Mode](/product-guide/system/maintenance-mode)  
 - [System Monitoring](/product-guide/system/subscriptions-overview)
-

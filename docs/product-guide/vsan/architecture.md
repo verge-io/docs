@@ -1,7 +1,3 @@
----
-status: new
----
-
 # VergeOS vSAN Block-Level Architecture and Data Distribution
 
 ## Overview

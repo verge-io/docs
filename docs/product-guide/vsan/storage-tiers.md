@@ -1,7 +1,3 @@
----
-status: new
----
-
 # Storage Tiers in VergeOS vSAN
 
 ## Overview
