@@ -2,33 +2,33 @@
 
 
 ## Overview
-VergeOS is a comprehensive, full-featured, platform operating system, allowing you to quickly deploy and easily manage portable virtual data centers. All common components of the data center are virtualized into a single-software solution to provide paramount efficiency, simplicity, flexibility, and cost savings.  
+VergeOS is a full-featured, platform operating system, allowing quick deployment and simplified management of portable virtual data centers. All common components of the data center are virtualized into a single-software solution to provide efficiency, simplicity, flexibility, and cost savings.  
 
 
 ## What VergeOS is NOT
 
-* VergeOS is **Not** a hosting service.  However, many of our customers are managed service providers using VergeOS to securely and cost-effectively host secure virtual data centers for their customers. 
+* VergeOS is **Not** a hosting service.  However, many customers are managed service providers using VergeOS to cost-effectively host secure virtual data centers for their customers. 
 * VergeOS is **Not** a management plane stitching together segmented solutions.
 
 **But Rather...**  
 
-VergeOS **is** complete software that was architected and tailored specifically to **optimize deployment and management of VDCs (Virtual Data Centers).** 
+VergeOS **is** a holistic product, specifically architected from the ground up for **optimizing deployment and management of VDCs (Virtual Data Centers).** 
 
 
 
 ## VergeOS Architecture 
 
 ### Custom Operating System based on Linux
-A customized Linux kernel offers the rock-solid foundation of Linux combined with maximized performance for running VDCs. By tailoring the kernel to our specific purpose, we eliminate any unnecessary features and overhead to increase efficiency and bolster security by minimizing the attack surface, all while utilizing Linux’s extensive hardware compatibility ensures flexibility. 
+A customized Linux kernel offers the rock-solid foundation of Linux combined with maximized VDC performance. By tailoring the kernel to our specific purpose, we eliminate unnecessary features and overhead to amplify efficiency and security, all while utilizing Linux’s extensive hardware compatibility to ensure flexibility. 
 
 ### Leverages the KVM Kernel
-VergeOS leverages the stability and maturity of KVM (kernel-based Virtual Machine) for performance, security and broad guest OS support. 
+VergeOS leverages the stability and maturity of KVM (kernel-based Virtual Machine) for performance, security, and broad guest OS support. 
 
 ### Native Components
-Custom-coded integral components such as the built-in web server, unique distributed file system, and specialized application framework are meticulously designed to deliver maximum power and usability out of the hardware components that you choose. 
+Custom-coded integral components such as the built-in web server, unique distributed file system, and specialized application framework are meticulously designed to deliver the utmost power and usability out of the hardware components that you choose. 
 
-### Many Embedded Features
-VergeOS provides out-of-the-box functionality, including everything from SDN to NAS and backups to task schedulers to bring together the **Complete Virtual Data Center** with a sole solution to eliminate the need for any extraneous applications or appliance VMs.  
+### Comprehensive Set of Built-in Features
+VergeOS provides out-of-the-box functionality, including all the components to bring together the **Complete Virtual Data Center**. The built-in features include everything from SDN, NAS, backups, task schedulers, recipes, sync engine, and more to provide a sole solution without the need for extraneous applications or appliance VMs.  
 
 
 

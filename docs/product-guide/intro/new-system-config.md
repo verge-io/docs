@@ -7,7 +7,7 @@ This page provides a guide for typical configuration tasks necessary in a new Ve
  Before proceeding with these tasks, **verify system status** (all green status indicators) and **ensure correct networking configuration**. Refer to [Implementation Guide - Post-Installation](/implementation-guide/post-installation) - ***Networking Configuration and Testing*** section for guidance.
 
 
-## Configuration Task List
+## New System Configuration Task List
 
 - [ ] [Licensing/Updates](#licensingupdates) 
 - [ ] [Configure SMTP](#configure-smtp)
@@ -54,18 +54,16 @@ By default, your VergeOS system is installed with a self-signed certificate. For
 
 ## Review/Adjust Cluster Settings
 
-Review and adjust [cluster settings](/product-guide/system/cluster-settings) as necessary.  
+Review and adjust [Cluster settings](/product-guide/system/clusters-config-options) as necessary.  
 
 ## Set up Alerting and Reporting
 
-It will be important to keep track of your system and 
-to know hardware issues, low storage space, or errors
-
-Subscriptions are used to provide trigger-based alerting and scheduled reporting. 
+It is important to configure [Subscriptions](/product-guide/system/subscriptions-overview), which provide alerting and reporting to effectively monitor your system. 
 
 ## Verify Cloud Snapshot Settings
  
-By default, a VergeOS system is configured to take regular cloud snapshots to protect your entire system. Adjust frequency and retention of your cloud snapshots if needed. 
+[Cloud Snapshots](/product-guide/backup-dr/cloud-snapshot-restore) provide a point-in-time backup of your entire system. Adjust the default frequency/retention of cloud snapshots if needed. 
+
 
 !!! tip "After creating tenants, VMs and NAS volumes, you can also create individualized snapshot frequency and retention for these items where needed."  
 

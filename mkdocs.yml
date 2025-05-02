@@ -156,39 +156,40 @@ nav:
         - User Interface: product-guide/ui-overview.md
         - New System Configuration: product-guide/intro/new-system-config.md
         - Basic Tasks: product-guide/intro/first-tasks.md
-    - System Configuration:  
+    - System Configuration: 
+      - SMTP: product-guide/system/smtp.md
       - Authentication:
         - Overview: product-guide/auth/auth-sources-overview.md
         - Entra ID / Azure AD: product-guide/auth/azure-auth.md
         - Google: product-guide/auth/google-auth.md
         - Multi-Factor Authentication: product-guide/auth/multifactor-auth.md
         - OIDC Applications Overview: product-guide/auth/oidc-apps-overview.md
-    - Certificates: product-guide/system/certificates.md
-    - Cloud Snapshots:
+      - Certificates: product-guide/system/certificates.md
+      - Cloud Snapshots:
         - Overview: product-guide/backup-dr/snapshots-overview.md
         - Profiles: product-guide/backup-dr/snapshot-profiles.md
         - VM Snapshots and Restore: product-guide/backup-dr/vm-snapshots-restores.md
         - Tenant Snapshots: product-guide/tenants/tenant-snapshots.md
         - Cloud Snapshots and Restore: product-guide/backup-dr/cloud-snapshot-restore.md
         - NAS Snapshots and Restore: product-guide/nas/volume-snapshots-restores.md
-    - Clusters: 
+      - Clusters: 
         - Overview: product-guide/system/clusters.md
         - Configuration Options: product-guide/system/clusters-config-options.md
         #- Removing Clusters: product-guide/removingclusters.md
         #- Cluster Settings: product-guide/clustersettings.md
-    - Permissions:
+      - Permissions:
         - Users and Groups: product-guide/system/users-groups.md
         - Permissions: product-guide/system/permissions.md
-    - Nodes:
+      - Nodes:
         - Overview: product-guide/system/nodes-overview.md
         - IPMI: product-guide/system/ipmi.md
         - System Event Log (SEL): product-guide/system/sel.md
-    - Sites Dashboard:
+      - Sites Dashboard:
         - Overview: product-guide/system/sites-overview.md
         - Adding Sites: product-guide/system/site-dashboard-add-sites.md
-    - Tasks / Events:
+      - Tasks / Events:
         - Create Automated Tasks: product-guide/automation/create-tasks.md
-    - System Settings:
+      - System Settings:
         - Overview: product-guide/system/settings-overview.md
         - Licensing and Updates: product-guide/system/licensing-and-updates.md
         - Advanced Settings: product-guide/system/advanced-system-settings.md
