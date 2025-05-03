@@ -13,7 +13,7 @@ This page provides instructions for configuration and administration of SMTP in 
 1. Start at the **SMTP Dashboard (Home > System > SMTP)**.
 2. Click **Edit Settings** on the left menu.
 3. Configure **settings:**
-    * **Use TLS:** enables/disables TLS encryption; must be set to correspond with target system requirements when using an email relay host
+    * **Use TLS:** enables/disables TLS encryption; must be set to correspond with target system requirements when using an email relay host. When it is supported, always use TLS. 
     * **Hostname:** When using the built-in SMTP server, be sure to use a valid FQDN that clearly identifies its purpose, ensure the hostname resolves to the correct IP using DNS, and verify proper SPF, DMARC, and reverse DNS records are in place for the hostname. Specific hostname may also be important when using a relay, depending on requirements and policies of the relaying server. 
     * **From Name:** the display from name to appear in email messages
     * **From Address:** the source email address to appear in email messages
