@@ -31,7 +31,7 @@ The following IPsec example utilizes a dedicated public IP address for a VPN tun
 * **External Network Name:** *External*
 
 ## Static Lease
-The VPN router address is reserved on *Internal-xyz* to avoid another device taking this IP address. Instructions for creating a static lease can be found here: [Create a DHCP Static Lease](/product-guide/networks/dhcp-static-lease).
+We navigate to ***Internal-xyz** > IP Addresses > New** to reserve a static address for the VPN router on this internal network in order avoiding another entity from taking the same IP address. Full instructions for creating a static lease can be found here: [Create a DHCP Static Lease](/product-guide/networks/dhcp-static-lease).
 
 ![VPN Static Lease](../assets/ipsec-dedicated-bridged-staticlease.png)
 

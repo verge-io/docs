@@ -1,6 +1,6 @@
 # VPN
 
-VPN provides a secure communications tunnel over a public network for remote user access and site-to-site connections (e.g. branch offices that need to collaborate and share resources) VergeOS software provides WireGuard and IPsec functionality for VPN functionality.
+VPN provides a secure communications tunnel over a public network for remote user access and site-to-site connections (e.g. branch offices that need to collaborate and share resources) VergeOS software provides WireGuard and IPsec functionality for VPN connectivity.
 
 ## VergeOS Site-to-Site VPN 
 A secure tunnel connection can be established between VergeOS sites or from a VergeOS site to a third-party WireGuard peer; reference the site-to-site instructions on: [**WireGuard**](/product-guide/vpn/wireguard-config). Example Site-to-Site WireGuard configurations can be viewed at [**WireGuard Configuration Examples**](/product-guide/vpn/wireguard-examples).

@@ -16,7 +16,8 @@ dateCreated: 2025-01-31T14:48:12.332Z
 
 # IPsec Example - Tenant/NAT UI Address
 
-The following example configures an IPsec peer within a VergeOS tenant. The address used for accessing the tenant UI is also used for the IPsec tunnel, with NAT rules in place to direct tunnel traffic appropriately. 
+The following example configures an IPsec peer within a VergeOS tenant. In this example, the dedicated IP address used for accessing the tenant UI is also used for the IPsec tunnel, with NAT rules in place to direct tunnel traffic appropriately.
+!!! note "This example pertains to a tenant using a dedicated IP address; tenants using a shared address (via proxy/PAT rules) will require different configuration." 
 
 !!! note "IPsec is a complex framework that supports a vast array of configuration combinations with many ways to achieve the same goal, making it impossible to provide one-size-fits-all instructions.  Sample configurations are given for reference and should be tailored to meet the particular environment and requirements."
 
