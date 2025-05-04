@@ -12,23 +12,23 @@ VergeOS is a full-featured, platform operating system, allowing quick deployment
 
 **But Rather...**  
 
-VergeOS **is** a holistic product, specifically architected from the ground up for **optimizing deployment and management of VDCs (Virtual Data Centers).** 
+VergeOS **is** a holistic product, fundamentally architected for **optimizing deployment and management of VDCs (Virtual Data Centers).** 
 
 
 
 ## VergeOS Architecture 
 
 ### Custom Operating System based on Linux
-A customized Linux kernel offers the rock-solid foundation of Linux combined with maximized VDC performance. By tailoring the kernel to our specific purpose, we eliminate unnecessary features and overhead to amplify efficiency and security, all while utilizing Linux’s extensive hardware compatibility to ensure flexibility. 
+A customized Debian kernel offers the rock-solid foundation of Linux combined with maximized VDC performance. By tailoring the kernel to our specific purpose, we eliminate unnecessary features and overhead to prioritize efficiency and security, all while utilizing Linux’s extensive hardware compatibility to ensure flexibility. 
 
-### Leverages the KVM Kernel
+### Leveraging the KVM Kernel
 VergeOS leverages the stability and maturity of KVM (kernel-based Virtual Machine) for performance, security, and broad guest OS support. 
 
-### Native Components
-Custom-coded integral components such as the built-in web server, unique distributed file system, and specialized application framework are meticulously designed to deliver the utmost power and usability out of the hardware components that you choose. 
+### Built on Custom-designed Components
+Central components of the product were meticulously designed by Verge.io to deliver the utmost power and usability out of the hardware that you choose, including the built-in web server, the distributed file system, and the application framework. 
 
-### Comprehensive Set of Built-in Features
-VergeOS provides out-of-the-box functionality, including all the components to bring together the **Complete Virtual Data Center**. The built-in features include everything from SDN, NAS, backups, task schedulers, recipes, sync engine, and more to provide a sole solution without the need for extraneous applications or appliance VMs.  
+### Complete set of Tools
+VergeOS provides out-of-the-box functionality, including all the tools needed for the **Complete Virtual Data Center**, with built-in specialized features including everything from SDN, NAS, backups, task schedulers, recipes, sync engine, and more to provide a sole solution without extraneous applications or appliance VMs.  
 
 
 
