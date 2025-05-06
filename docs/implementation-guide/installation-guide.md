@@ -118,13 +118,18 @@ If you verified all drive tiers were selected as desired (previous screen), simp
 
 There are multiple factors to consider in planning swap, including: availability of storage, system use, disk type, etc. Consult with the VergeIO implementation team for further information. Swap is configurable in the UI, post-install, for new and reformatted drives.
 
-* Select storage **tier** to use for swap; fastest-drive tier should be selected.
+* Select storage **tier** to use for swap. 
+
+    !!! note "Selecting Swap Tier"
+        - Typically, tier 0 drives are not preferred; select the next fastest-drive tier, when possible.
+        - Do not select HDD drives for swap unless the node only contains this type of storage.
+    
 * Enter the amount of swap to be established **per drive (in MB)**; e.g. if there are 8 drives in the selected tier, you can enter 2048 to give you 16,384MB (16GB) of swap.
 
     !!! warning
-        - HDD storage is not suitable for swap
         - Generally, no more than 16GB of swap should be configured per node.  
-        - Larger amounts of swap will degrade performance.
+        - Large amounts of swap can degrade performance.
+         
 
 22. Select **drives to format for boot**.  This prompt will only appear if any drives were not selected to be included in the vSAN.  Older hardware (e.g. legacy Chassis, BOSS card) may require you to specify drives to format for boot.  In most cases, you can press [Enter] to continue with the installation without selecting boot drives.
 
