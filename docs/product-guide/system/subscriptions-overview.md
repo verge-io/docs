@@ -2,6 +2,8 @@
 
 Subscriptions deliver emails for scheduled reporting and triggered alerting.
 
+!!! info "Effective SMTP configuration must be in place for delivery of subscriptions.  The [SMTP Product Guide](/product-guide/system/smtp) provides instructions for configuring and managing SMTP."
+
 ## Subscription Types
 
 ### On-Demand

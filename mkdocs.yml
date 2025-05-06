@@ -151,6 +151,7 @@ nav:
   - Product Guide:
     - VergeOS User Interface: product-guide/ui-overview.md
     - System Configuration:
+      - SMTP: product-guide/system/smtp.md
       - Authentication:
         - Overview: product-guide/auth/auth-sources-overview.md
         - Entra ID / Azure AD: product-guide/auth/azure-auth.md
