@@ -36,7 +36,8 @@ Valid licensing configuration must be in place to run workloads and NAS services
 
 ### Verify Installed Version is Latest
 
-Running the most up-to-date version of VergeOS will ensure you have the all the latest features and improvements. See [Product Guide - Licensing and Updates](/product-guide/system/licensing-and-updates#update-process) for instructions on downloading and installing VergeOS updates. 
+Running the most up-to-date version of VergeOS will ensure you have the all the latest features and improvements. See [Product Guide - Licensing and Updates](/product-guide/system/licensing-and-updates#update-process) for instructions on downloading and installing VergeOS updates.
+
 !!! tip "The [VergeOS Release Notes Page](/release-notes/release-notes-overview) provides information about the current latest version."
 
 
@@ -69,13 +70,19 @@ It is important to configure [Subscriptions](/product-guide/system/subscriptions
 
 ## Configure Authentication/Authorization
 
-### Multifactor Authentication
-
-It is strongly advised that you [Configure Multifactor authentication](/product-guide/auth/multifactor-auth) to provide a higher level of security to your system.
-
 ### Third-party Authorization Sources
 
 Configure [Authorization Sources](/product-guide/auth/auth-sources-overview) if an external identity service (such as Google SSO or Microsoft Entra ID) will be utilized. 
+
+
+### Multifactor Authentication (MFA)
+
+Multifactor authentication (MFA) adds a critical security layer to your user accounts, ensuring that even if a password is compromised, unauthorized access is nearly impossible. With cyber threats on the rise, enabling MFA helps protect your systems and data.  It is strongly advised that you require multifactor authentication for all user logins.
+
+  
+  - [Configure Multifactor authentication](/product-guide/auth/multifactor-auth), for direct VergeOS logins. 
+  - When using external authorization sources (Google, Entra, etc.), consult the provider's related documentation for instructions on configuring MFA requirements in those systems.
+
 
 
 ### Password Complexity
