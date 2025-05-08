@@ -5,10 +5,10 @@
 
 ### [vSAN (VergeFS)](/product-guide/vsan/architecture)
 
- High-availability, resilient storage integrated directly into your virtualization environment with aggregated internal node storage. 
-
 ??? "Key Benefits"
-
+    - High-availability, resilient storage
+    - integrated directly into your virtualization environment
+    - aggregated internal node storage
     - Repair Server
     - Deduplication
     - Automatic Bit-Rot detection/repair
@@ -19,6 +19,7 @@ File-level storage and access within your VergeOS system
 
 ??? "Key Benefits"
 
+    - File-level
     - Deduplication for optimized storage
     - Volume-level management for granular access control, snapshot, syncs, etc.
     - Remote volume mounting for migration and backup
@@ -28,31 +29,36 @@ File-level storage and access within your VergeOS system
 
 ## [Data Backup/DR/Business Continuity](/product-guide/backup-dr/overview)
 
-### [Snapshots](/product-guide/backup-dr/snapshots-overview) - recovery points at the tenant, VM, NAS, volume level, and entire system level.
-### [Site Syncs](/product-guide/backup-dr/sync-configuration) - simple replication of complete systems off-site for DR and business continuity
+* [Snapshots](/product-guide/backup-dr/snapshots-overview) - recovery points at the tenant, VM, NAS, volume level, and entire system level.
+* [Site Syncs](/product-guide/backup-dr/sync-configuration) - simple replication of complete systems off-site for DR and business continuity
 
 
 ---
 
 ## [Compute](/product-guide/compute-overview)
 
-### Built-in KVM-based Hypervisor for tight integration with your networking and storage
-### Full Web-based [Remote Console](/product-guide/virtual-machines/vm-remote-console) for controlling VMs through a browser
+### Hypervisor 
+* Built-in KVM-based hypervisor for tight integration with your networking and storage
+* [Remote Console](/product-guide/virtual-machines/vm-remote-console) - full Web-based to control your Virtual machines through a browser
+
 ### Orchestration
-resource allocation
-task scheduling
-fault tolerance
-auto-scaling 
-security policies, access controls
-monitoring and reporting
-live migration
+complete automation of management and coordination of virtual machines to ensure workloads are efficiently deployed, scaled, and maintained - including resource allocation, task scheduling, fault tolerance, auto-scaling, monitoring/reporting, security policies and access controls, live migration.
 
-### Virtualized resource assignment - gpu, pci devices, usb
+### Virtualized Resource Assignment (PCI/USB/GPU/vGPU)
+Efficiently leverage hardware resources of all types within your workloads: 
+
+* Seamless utilization of [NVIDIA's GRID **vGPU** platform](/product-guide/system/nvigia-vgpu) and direct allocation of [GPU devices](/product-guide/system/generic-pci-passthrough)
+* [Direct PCI Passthrough](/product-guide/system/generic-pci-passthrough) - harness all types of physical PCI devices within your VMs 
+* [SR-IOV NICs](/product-guide/system/sriov-nics) 
+* [USB Passthrough](/product-guide/system/usb-passthrough) - provide devices such as drives, security cameras, keyboard/mouse, etc. to your VMs
 
 
-* Workload deployment automation - VM Recipes and Cloning
+### Recipes 
+VM Recipes provide automation to allow rapid and streamlined workload deployment 
 non-persistent disks?
-* import/export all standard formats VMware integration, VM import volumes
+
+
+### Import/Export all standard formats VMware integration, VM import volumes
 
 ---
 
