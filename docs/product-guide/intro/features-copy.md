@@ -17,10 +17,10 @@
 * [Virtual Machine Management](/product-guide/virtual-machines) - with the **Built-in KVM-based hypervisor** for tight integration with your networking and storage
 * [Remote Console](/product-guide/virtual-machines/vm-remote-console) - full Web-based to control your Virtual machines through a browser
 <!-- live migration?? -->
-* **Virtualized Resource Assignment (PCI/USB/GPU/vGPU)** - efficiently leverage hardware within your workloads, using: [NVIDIA's GRID vGPU](/product-guide/system/nvigia-vgpu),  [Direct PCI Passthrough](/product-guide/system/generic-pci-passthrough), and [USB Passthrough](/product-guide/system/usb-passthrough)
+* **Virtualized Resource Assignment (PCI/USB/GPU/vGPU)** - efficient leveraging of hardware within your workloads, using: [NVIDIA's GRID vGPU](/product-guide/system/nvigia-vgpu),  [Direct PCI Passthrough](/product-guide/system/generic-pci-passthrough), and [USB Passthrough](/product-guide/system/usb-passthrough)
 * [VM Recipes](/product-guide/automation/vm-recipes) - templates and automation for rapid, streamlined workload deployment
-* [VMware VM Import](/product-guide/virtual-machines/import-from-vmware)
-non-persistent disks?
+* [VMware VM Imports](/product-guide/virtual-machines/import-from-vmware) - streamlined batch imports from VMware environments
+* **Universal VM Imports** :easily import single VMs from individual files [Import from Media Images](/product-guide/virtual-machines/import-from-upload) -OR- bring in larger groups of VMs at once using [NAS VM Imports](/product-guide/virtual-machines/import-from-nas) 
 
 
 ### Import/Export all standard formats VMware integration, VM import volumes
