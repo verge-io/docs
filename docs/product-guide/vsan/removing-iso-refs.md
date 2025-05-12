@@ -1,6 +1,8 @@
 # Removing ISO Files with References
 
-ISO files that are currently referenced (loaded on a VM's CD-ROM drive) cannot be deleted until those references are removed.
+ISO files that are currently referenced (loaded on a VM's CD-ROM drive) cannot be deleted until those references are removed.  
+
+The error: **Media Image: field 'references' must be empty to delete.** will appear when a file delete operation fails because there are current references to that file. 
 
 ## View Existing References of an ISO File
 

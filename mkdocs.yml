@@ -149,7 +149,14 @@ nav:
   - Knowledge Base:
     - knowledge-base/index.md
   - Product Guide:
-    - VergeOS User Interface: product-guide/ui-overview.md
+    - Getting Started:
+      - VergeOS User Interface: product-guide/ui-overview.md
+    - Storage:
+      - Storage Overview: product-guide/storage/overview.md
+      - vSAN Architecture: product-guide/vsan/architecture.md
+      - Storage Tiers: product-guide/vsan/storage-tiers.md
+      - Preferred Tier: product-guide/vsan/preferred-tiers.md
+      - Fiber Channel: product-guide/vsan/fibre-channel.md
     - System Configuration:
       - SMTP: product-guide/system/smtp.md
       - Authentication:
@@ -220,9 +227,9 @@ nav:
       - Sharing VMs: product-guide/tenants/share-vm-snapshot.md
       - Tenant Snapshots: product-guide/tenants/tenant-snapshots.md
       - Usage Reports: product-guide/tenants/tenant-usagereports.md
-    - NAS:
-      - Overview: product-guide/nas/nas-service.md
-      - Configuration:
+    - Services:
+      - NAS:
+        - Overview: product-guide/nas/nas-service.md
         - Local Volumes: product-guide/nas/nas-local-volumes.md
         - Remote Volumes: product-guide/nas/nas-remote-volumes.md
         - Shares: product-guide/nas/nas-shares.md
@@ -274,12 +281,6 @@ nav:
         - Tenant Snapshot and Restore: product-guide/tenants/tenant-snapshots.md
         - Cloud Snapshots and Restore: product-guide/backup-dr/cloud-snapshot-restore.md
         - NAS Snapshots and Restore: product-guide/nas/volume-snapshots-restores.md
-    - vSAN:
-       - Architecture: product-guide/vsan/architecture.md  # Added from PR
-       - Storage Tiers: product-guide/vsan/storage-tiers.md
-       - Preferred Tier: product-guide/vsan/preferred-tiers.md
-       - Fiber Channel: product-guide/vsan/fibre-channel.md
-       - Removing ISO Files with References: product-guide/vsan/removing-iso-refs.md
     - Automation:
       - Recipes:
         - Organization: product-guide/automation/recipes-organization.md
