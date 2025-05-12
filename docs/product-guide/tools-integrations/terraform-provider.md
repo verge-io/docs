@@ -97,7 +97,8 @@ resource "vergeio_network" "example" {
 
 For complete documentation, including all supported resources, data sources, and detailed usage examples, please visit the official provider documentation:
 
-- [Terraform Registry Documentation](https://registry.terraform.io/providers/verge-io/vergeio/latest/docs)
+- [Terraform Registry Documentation](https://registry.terraform.io/providers/verge-io/vergeio/latest/docs){target="_blank"}
+- [OpenTofu Registry Documentation](https://search.opentofu.org/provider/verge-io/vergeio/latest){target="_blank"}
 - [GitHub Repository](https://github.com/verge-io/terraform-provider-vergeio)
 
 ## Support
@@ -108,6 +109,6 @@ If you encounter issues or have feature requests, please open an issue on the Gi
 
 ## Additional Resources
 
-- [Terraform Documentation](https://developer.hashicorp.com/terraform/docs)
-- [OpenTofu Documentation](https://opentofu.org/docs/)
-- [Infrastructure as Code Best Practices](https://www.hashicorp.com/resources/what-is-infrastructure-as-code)
+- [Terraform Documentation](https://developer.hashicorp.com/terraform/docs){target="_blank"}
+- [OpenTofu Documentation](https://opentofu.org/docs/){target="_blank"}
+- [Infrastructure as Code Best Practices](https://www.hashicorp.com/resources/what-is-infrastructure-as-code){target="_blank"}
