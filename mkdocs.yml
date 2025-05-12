@@ -303,7 +303,8 @@ nav:
         - Accessing Subscriptions: product-guide/system/subscriptions-accessing.md
       - System Diagnostics: product-guide/system/diagnostics.md
     - Tools and Integrations:
-      - VergeOS Prometheus Exporter: product-guide/automation/prometheus-exporter.md
+      - Prometheus Exporter: product-guide/tools-integrations/prometheus-exporter.md
+      - Terraform Provider: product-guide/tools-integrations/terraform-provider.md
   - Release Notes: 
     - Overview: release-notes/release-notes-overview.md
     - 4.13 (latest): release-notes/release-notes.md
