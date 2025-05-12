@@ -54,11 +54,21 @@ A manual snapshot can be taken at any time.
 
 !!! warning "After a snapshot is requested from provider, and displays as *type=Local*, the snapshot can be edited to modify description and expiration. When changing expiration to a longer period it is important to consider effects on storage; long-term snapshots can substantially increase storage usage as data divergence between snapshot and live data increases over time."
 
-### Restore Entire Cloud from Snapshot
+### Restore Entire System from Snapshot
 
-!!! note "Restoring an entire cloud requires rebooting of all nodes; rebooting nodes can be done without system outages provided there are adequate system resources."
+!!! note "System Requirements"
+    Full system restoration is only supported on the local System where the snapshot was taken. This operation cannot be used to restore one site over another (for example, you cannot restore Site A over Site B). This operation requires a complete reboot of all nodes in the system.
 
-!!! warning "Restoring an entire cloud reverts everything within the system, including all VMs, tenants, NAS data, and settings."
+!!! warning "Critical Impact"
+    A full system restoration will revert all system components to the snapshot state, including:
+
+    - Virtual Machines
+    - Tenant configurations
+    - NAS data
+    - System settings
+    - All other system components
+
+    This is a comprehensive restoration that cannot be selectively applied to specific components.
 
 1. From the main dashboard, select **System** from the left menu.
 2. Select **Cloud Snapshots** from the left menu.
