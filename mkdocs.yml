@@ -153,10 +153,9 @@ nav:
       - VergeOS User Interface: product-guide/ui-overview.md
     - Storage:
       - Storage Overview: product-guide/storage/overview.md
-      - vSAN Architecture: product-guide/vsan/architecture.md
-      - Storage Tiers: product-guide/vsan/storage-tiers.md
-      - Preferred Tier: product-guide/vsan/preferred-tiers.md
-      - Fiber Channel: product-guide/vsan/fibre-channel.md
+      - vSAN Architecture: product-guide/storage/vsan-architecture.md
+      - Storage Tiers: product-guide/storage/storage-tiers.md
+      - Preferred Tier: product-guide/storage/preferred-tiers.md
     - System Configuration:
       - SMTP: product-guide/system/smtp.md
       - Authentication:
@@ -197,7 +196,7 @@ nav:
     - Virtual Machines:
       - Quick Start: 
         - Best Practices: product-guide/virtual-machines/vm-best-practices.md
-        - Uploading Media Images: product-guide/vsan/uploading-files-to-vsan.md
+        - Uploading Media Images: product-guide/storage/uploading-files-to-vsan.md
         - Creating Virtual Machines: product-guide/virtual-machines/creating-vms.md
         - Virtual Machine Drives: product-guide/virtual-machines/vm-drives.md
         - Virtual Machine Network Interfaces: product-guide/virtual-machines/vm-nics.md
@@ -236,9 +235,6 @@ nav:
         - VM Export: product-guide/virtual-machines/vm-export-volume.md
         - Volume Syncs: product-guide/nas/volume-syncs.md
         - Join NAS to AD: product-guide/nas/nas-join-ad-domain.md
-#    - Media Images:
-#      - Overview: product-guide/mediaimages-overview.md
-#      - Uploading Media Images: product-guide/uploadingtovSAN.md
     - Networking:
       - Quick Start: 
         - Overview: product-guide/networks/network-overview.md

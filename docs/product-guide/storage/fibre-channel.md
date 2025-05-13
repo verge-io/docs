@@ -8,7 +8,7 @@ VergeOS vSAN supports the use of Fibre Channel (FC) LUNs as storage devices with
 
 ### Hardware
 
-- Physical disks in VergeOS Systems vSAN [**Tier 0**](/product-guide/vsan/storage-tiers/#tier-0-metadata-tier)
+- Physical disks in VergeOS Systems vSAN [**Tier 0**](/product-guide/storage/storage-tiers/#tier-0-metadata-tier)
 - FC Host Bus Adapters (HBAs) in at least two cluster nodes  
 - Compatible FC switches (8/16/32 Gb)  
 - Redundant FC fabric highly recommended
@@ -105,7 +105,7 @@ By default, VergeOS manages multiple paths to each LUN in an active/passive conf
 
 ## Related Documentation
 
-- [Storage Tiers](/product-guide/vsan/storage-tiers)  
-- [vSAN Architecture](/product-guide/vsan/architecture)  
+- [Storage Tiers](/product-guide/storage/storage-tiers)  
+- [vSAN Architecture](/product-guide/storage/vsan-architecture)  
 - [Maintenance Mode](/product-guide/system/maintenance-mode)  
 - [System Monitoring](/product-guide/system/subscriptions-overview)
