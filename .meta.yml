@@ -11,6 +11,8 @@ authors:
 
 # Global tags
 tags:
+  - software-defined-infrastructure
+  - software-defined-datacenter
   - documentation
   - virtualization
   - cloud
@@ -19,17 +21,21 @@ tags:
   - vergeos
   - vergeio
   - verge-io
-  - software-defined-datacenter
   - vdi
   - virtualization
-  - cloud
-  - infrastructure
   - vmware-alternatives
-  - software-defined-infrastructure
-  - software-defined-datacenter
   - software-defined-storage
   - software-defined-networking
   - software-defined-security
+  - hyperconverged-infrastructure
+  - hci
+  - kvm
+  - qemu
+  - vdi
+  - vm-management
+  - virtual-machine-management
+  - private-cloud
+  - on-prem-cloud
 
 # Social/SEO optimization (if you're using the social cards plugin)
 social:
