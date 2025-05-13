@@ -1,5 +1,7 @@
 site_name: VergeOS Docs
 site_url: https://docs.verge.io
+site_author: VergeIO
+site_description: Comprehensive documentation for VergeOS virtualization platform
 repo_url: https://github.com/verge-io/docs
 repo_name: verge-io/docs
 edit_uri: edit/develop/docs/
@@ -54,6 +56,13 @@ plugins:
       lang:
       - en
   - glightbox
+  - meta
+  - social:
+      cards_dir: social
+      cards_color:
+        fill: "#0a2240"
+        text: "#ffffff"
+      cards_image: assets/images/social-card.svg
 markdown_extensions:
   - sane_lists
   - admonition
@@ -108,8 +117,8 @@ extra:
       find what they're searching for. With your consent, you're helping us to
       make our documentation better.
   #status:
-  #  new: Recently added
-  #  deprecated: Deprecated
+    #  new: Recently added
+    #  deprecated: Deprecated
 
 extra_javascript:
   - javascripts/extra.js
@@ -118,7 +127,7 @@ extra_javascript:
 #  - stylesheets/extra.css
 
 copyright: |
-  Copyright &copy; 2024 <a href="https://verge.io" target="_blank" rel="noopener"> Verge.io</a> |
+  Copyright &copy; 2025 <a href="https://verge.io" target="_blank" rel="noopener"> Verge.io</a> |
   <a href="#__consent">Change cookie settings</a>
 
 nav:

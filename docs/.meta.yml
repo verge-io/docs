@@ -1,0 +1,29 @@
+# Root .meta.yml for entire documentation site
+# Place this in the docs/ root directory
+
+# Basic information
+title: "VergeOS Documentation"
+description: "Comprehensive documentation for VergeOS virtualization platform"
+
+# Authorship
+authors:
+  - VergeOS Documentation Team
+
+# Global tags
+tags:
+  - documentation
+  - virtualization
+  - cloud
+  - infrastructure
+  - vmware-alternative
+
+# Social/SEO optimization (if you're using the social cards plugin)
+social:
+  image: assets/images/social-card.svg
+  cards_layout_options:
+    background_color: "#0a2240"  # Adjust to match VergeOS branding
+    color: "#ffffff"
+
+# Search engine optimization
+search:
+  boost: 1.0  # Default boost value for all pages
