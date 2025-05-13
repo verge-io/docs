@@ -58,12 +58,6 @@ plugins:
       - en
   - glightbox
   - meta
-  - social:
-      cards_dir: social
-      cards_color:
-        fill: "#0a2240"
-        text: "#ffffff"
-      cards_image: assets/images/social-card.svg
 markdown_extensions:
   - sane_lists
   - admonition
