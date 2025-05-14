@@ -152,10 +152,9 @@ nav:
     #- VergeOS User Interface: product-guide/ui-overview.md
     - Getting Started:
         - What is VergeOS?: product-guide/intro/what-is-verge.md
-        - Concepts: product-guide/intro/concepts.md
         - User Interface: product-guide/ui-overview.md
-        - New System Configuration: product-guide/intro/new-system-config.md
-        - Basic Tasks: product-guide/intro/first-tasks.md
+        - System Configuration: product-guide/intro/new-system-config.md
+        - Beginner Basics: product-guide/intro/first-tasks.md
     - System Configuration: 
       - SMTP: product-guide/system/smtp.md
       - Authentication:

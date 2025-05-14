@@ -2,7 +2,7 @@
 
 
 ## Overview
-VergeOS is a full-featured, platform operating system, allowing quick deployment and simplified management of portable virtual data centers. All common components of the data center are virtualized into a single-software solution to provide efficiency, simplicity, flexibility, and cost savings.  
+VergeOS is a full-featured, cloud operating system, allowing quick deployment and simplified management of portable virtual data centers. All common components of the data center are virtualized into a single-software solution to provide efficiency, simplicity, flexibility, and cost savings.  
 
 
 ## What VergeOS is NOT

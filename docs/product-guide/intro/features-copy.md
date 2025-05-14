@@ -1,12 +1,12 @@
-# VergeOS Product Feature List
+# VergeOS Product Features
 
 ## Storage
 
-* [vSAN (VergeFS)](/product-guide/vsan/architecture) Integrated, resilient, distributed storage
+* [vSAN (VergeFS)](/product-guide/storage/vsan-architecture) Integrated, resilient, distributed storage
 * [NAS (Network Attached Storage) Service](/product-guide/nas/nas-service) - File-level storage access
 
 
-## Data Backup/DR/Business Continuity
+## Data Backup DR and Business Continuity
 
 * [Snapshots](/product-guide/backup-dr/snapshots-overview) - recovery points at the tenant, VM, NAS, volume level, and entire system level.
 * [Site Syncs](/product-guide/backup-dr/sync-configuration) - easy replication of complete systems off-site for DR and business continuity
@@ -21,26 +21,28 @@
 * [VM Recipes](/product-guide/automation/vm-recipes) - templates and automation for rapid, streamlined workload deployment
 * [VMware VM Imports](/product-guide/virtual-machines/import-from-vmware) - streamlined batch imports from VMware environments
 * **Universal VM Imports:** easily import single VMs from individual files [Import from Media Images](/product-guide/virtual-machines/import-from-upload) -OR- bring in larger groups of VMs at once using [NAS VM Imports](/product-guide/virtual-machines/import-from-nas) 
-* **VDI:** Golden Image for non-persistent disks, VDI desktop, VDI inegration 
+* **VDI:** Golden Image for non-persistent disks, VDI desktop, VDI integration 
 
 ## [Tenancy](product-guide/tenants/overview)
 
-Multi-Tenancy provides for allocating a system's resources into isolated, complete, autonomous virtual data centers (VDCs)
-Nested Tenancy allows for layers of tenancy where a tenant can allocate portions of their own resources to their child tenants.
-Automated tenancy deployment via tenant recipes
-Tenant-level reporting for billing
+* **Multi-Tenancy** allows you to allocate system resources into isolated, complete, autonomous virtual data centers (VDCs) called [Tenants](/product-guide/tenants/overview)
+* **Nested Tenancy** provides for layers of tenancy where a tenant can allocate portions of their own resources to their child tenants.
+* **Automated Tenancy Deployment** [Tenant Recipes](/product-guide/automation/te) can refine and simplify tenant creation down to just a few clicks.
+* **Tenant-level reporting for billing** allows you to track and bill individual customers, business groups, or projects running in individual tenant systems 
 
 ## Network (VergeFabric)
-software-defined networking (SDN) provides streamlined and straightforward network management integrated directly in with your other virtualization components. closely no extra licensing costs, greatly simplifies and streamlines networking management, replaces external appliances and the complexity of integration with those appliances, closely integrated networking allows for straightforward, innate, failover capabilities no SDN licensing fees, network segmentation at the VM, VDC, tenant level
+
+* Software-defined networking (SDN) provides streamlined and straightforward network management integrated directly in with your compute and storage.
+* Micro Segmentation
 * BGP switch
-* firewalls
-* routers
-* switches
-* Integrated network diagnostic tools
-* tracing/tracking/rate limiting tools
+* Firewalls
+* Routers
+* Switches
+* Integrated Network Diagnostics
+* Tracing/Rate limiting
 * DHCP
 * DNS
-* Proxy?
+* Proxy
 * VPN
 * load balancing?
 
