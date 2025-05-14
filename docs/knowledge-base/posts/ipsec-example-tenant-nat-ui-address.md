@@ -34,16 +34,16 @@ Assigning the UI address to a tenant automatically creates rules on the host sys
 
 ## VPN Network Configuration
 
-![VPN Network Configuration](../assets/tenant-ipsec-networkconfig.png)
+![VPN Network Configuration](/assets/tenant-ipsec-networkconfig.png)
 
 
 ## Phase 1
 
-![Phase 1 Configuration](../assets/tenant-ipsec-phase1.png)
+![Phase 1 Configuration](/assets/tenant-ipsec-phase1.png)
 
 ## Phase 2 
 
-![Phase 2 Configuration](../assets/tenant-ipsec-phase2.png)
+![Phase 2 Configuration](/assets/tenant-ipsec-phase2.png)
 
 
 ## Default VPN Network Rules
@@ -56,7 +56,7 @@ The following necessary firewall rules are **created automatically** when a VPN 
 * **Allow ESP**: Accept incoming ESP protocol traffic to **My Router IP**
 * **Allow AH**: Accept incoming AH protocol traffic to **My Router IP**
 
-![Review Rules](../assets/ipsec-defaultrules.png)
+![Review Rules](/assets/ipsec-defaultrules.png)
 
 !!! tip "These rules can be modified to restrict to specific source addresses, where appropriate."
 
@@ -66,15 +66,15 @@ The following necessary firewall rules are **created automatically** when a VPN 
 Additional rules need to be created on our new VPN network:
 
 **VPN NAT Rule:**
-![VPN NAT Rule](../assets/tenant-ipsec-vpn-rule-translate.png)
+![VPN NAT Rule](/assets/tenant-ipsec-vpn-rule-translate.png)
 
 !!! tip "The incoming NAT rule must be moved to the top, before the *Accept* Rules. Instructions for changing the order of rules can be found in the Product Guide: [Network Rules - Change the Order of Rules](/product-guide/networks/network-rules/#change-the-order-of-rules)"
 **Default Route Rule:**
-![VPN Default Route Rule](../assets/tenant-ipsec-vpn-rule-default-route.png)
+![VPN Default Route Rule](/assets/tenant-ipsec-vpn-rule-default-route.png)
 
 
 **VPN SNAT Rule:**
-![VPN Nat Rule](../assets/tenant-ipsec-vpn-rule-outgoing-snat.png)
+![VPN Nat Rule](/assets/tenant-ipsec-vpn-rule-outgoing-snat.png)
 
 
 ## External Network Rules
@@ -82,13 +82,13 @@ Additional rules need to be created on our new VPN network:
 Translate rules are necessary on the tenant's external network, to send IPsec traffic to the VPN network: 
 
 **External UDP NAT Rule:**
-![VPN Nat Rule](../assets/tenant-ipsec-external-udp-rule.png)
+![VPN Nat Rule](/assets/tenant-ipsec-external-udp-rule.png)
 
 **External ESP NAT Rule:**
-![VPN Nat Rule](../assets/tenant-ipsec-external-ESP-rule.png)
+![VPN Nat Rule](/assets/tenant-ipsec-external-ESP-rule.png)
 
 **External AH NAT Rule:**
-![VPN Nat Rule](../assets/tenant-ipsec-external-AH-rule.png)
+![VPN Nat Rule](/assets/tenant-ipsec-external-AH-rule.png)
 
 
 ## Connecting Internal Networks to the VPN 
