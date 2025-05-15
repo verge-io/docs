@@ -53,7 +53,6 @@ plugins:
       archive: false
       pagination_per_page: 50
   - search:
-      prebuild_index: true
       lang:
       - en
   - glightbox
