@@ -33,26 +33,26 @@ The following IPsec example utilizes a dedicated public IP address for a VPN tun
 ## Static Lease
 We navigate to ***Internal-xyz** > IP Addresses > New** to reserve a static address for the VPN router on this internal network in order avoiding another entity from taking the same IP address. Full instructions for creating a static lease can be found here: [Create a DHCP Static Lease](/product-guide/networks/dhcp-static-lease).
 
-![VPN Static Lease](../assets/ipsec-dedicated-bridged-staticlease.png)
+![VPN Static Lease](/assets/ipsec-dedicated-bridged-staticlease.png)
 
 ## VPN Network Configuration
  
-![VPN Network Config](../assets/ipsec-dedicated-bridged-vpn-network.png)
+![VPN Network Config](/assets/ipsec-dedicated-bridged-vpn-network.png)
 
 
 ## Phase 1
 
-![Phase 1 Configuration](../assets/ipsec-dedicated-bridged-phase1.png)
+![Phase 1 Configuration](/assets/ipsec-dedicated-bridged-phase1.png)
 
 ## Phase 2
 
-![Phase 2 Configuration](../assets/ipsec-dedicated-bridged-phase2.png)
+![Phase 2 Configuration](/assets/ipsec-dedicated-bridged-phase2.png)
 
 
 ## Assigned Public IP Address
 The public address must be [Assigned from the External network](/product-guide/networks/assign-external-ip) to the VPN network.
 
-![Assign Public IP](../assets/ipsec-dedicated-bridged-provide-public.png)
+![Assign Public IP](/assets/ipsec-dedicated-bridged-provide-public.png)
 
 
 ## Default VPN Network Rules
@@ -65,7 +65,7 @@ The following necessary firewall rules are **created automatically** when a VPN 
 * **Allow ESP**: Accept incoming ESP protocol traffic to **My Router IP**
 * **Allow AH**: Accept incoming AH protocol traffic to **My Router IP**
 
-![Review Rules](../assets/ipsec-defaultrules.png)
+![Review Rules](/assets/ipsec-defaultrules.png)
 
 !!! tip "These rules can be modified to restrict to specific source addresses, where appropriate."
 
@@ -74,19 +74,19 @@ The following necessary firewall rules are **created automatically** when a VPN 
 Additional rules need to be created on our new VPN network:
 
 **Translate Rule:**
-![VPN Translate to Router](../assets/ipsec-dedicated-bridged-vpn-translate.png)
+![VPN Translate to Router](/assets/ipsec-dedicated-bridged-vpn-translate.png)
 
 !!! note "The translate rule must be moved to the top of the rules list, before the *Accept* Rules.  Instructions for changing the order of rules can be found in the Product Guide: [Network Rules - Change the Order of Rules](/product-guide/networks/network-rules/#change-the-order-of-rules)"
 
 **Default Route Rule:**
-![VPN Default Route Rule](../assets/ipsec-dedicated-bridged-vpn-defroute.png)
+![VPN Default Route Rule](/assets/ipsec-dedicated-bridged-vpn-defroute.png)
 
 
 ## Internal Network Rule
 
 A routing rule is needed on *Internal-xyz* to route its VPN traffic to the VPN network.
 
-![VPN Default Route Rule](../assets/ipsec-dedicated-bridged-internal-route.png)
+![VPN Default Route Rule](/assets/ipsec-dedicated-bridged-internal-route.png)
 
 
 !!! tip "New rules must be applied on each network to put them into effect."
