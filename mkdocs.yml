@@ -57,6 +57,7 @@ plugins:
       lang:
       - en
   - glightbox
+  - meta
 markdown_extensions:
   - sane_lists
   - admonition
