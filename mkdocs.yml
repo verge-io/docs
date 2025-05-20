@@ -13,6 +13,7 @@ theme:
   icon:
     repo: fontawesome/brands/github
   features:
+    - content.tooltips
     - navigation.tabs
     - navigation.tabs.sticky
     #- navigation.sections
@@ -58,6 +59,7 @@ plugins:
   - glightbox
   - meta
 markdown_extensions:
+  - abbr
   - sane_lists
   - admonition
   - attr_list
@@ -73,7 +75,6 @@ markdown_extensions:
       clickable_checkbox: true
   - footnotes
   - pymdownx.mark
-  - attr_list
   - md_in_html
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
@@ -190,7 +191,7 @@ nav:
     - Virtual Machines:
       - Quick Start: 
         - Best Practices: product-guide/virtual-machines/vm-best-practices.md
-        - Uploading Media Images: product-guide/vsan/uploading-files-to-vsan.md
+        - Uploading Media Images: product-guide/storage/uploading-files-to-vsan.md
         - Creating Virtual Machines: product-guide/virtual-machines/creating-vms.md
         - Virtual Machine Drives: product-guide/virtual-machines/vm-drives.md
         - Virtual Machine Network Interfaces: product-guide/virtual-machines/vm-nics.md
@@ -221,7 +222,8 @@ nav:
       - Tenant Snapshots: product-guide/tenants/tenant-snapshots.md
       - Usage Reports: product-guide/tenants/tenant-usagereports.md
     - NAS:
-      - Overview: product-guide/nas/nas-service.md
+      - Overview: product-guide/nas/overview.md
+      - Add a NAS Service: product-guide/nas/nas-service.md
       - Configuration:
         - Local Volumes: product-guide/nas/nas-local-volumes.md
         - Remote Volumes: product-guide/nas/nas-remote-volumes.md
@@ -274,12 +276,11 @@ nav:
         - Tenant Snapshot and Restore: product-guide/tenants/tenant-snapshots.md
         - Cloud Snapshots and Restore: product-guide/backup-dr/cloud-snapshot-restore.md
         - NAS Snapshots and Restore: product-guide/nas/volume-snapshots-restores.md
-    - vSAN:
-       - Architecture: product-guide/vsan/architecture.md  # Added from PR
-       - Storage Tiers: product-guide/vsan/storage-tiers.md
-       - Preferred Tier: product-guide/vsan/preferred-tiers.md
-       - Fiber Channel: product-guide/vsan/fibre-channel.md
-       - Removing ISO Files with References: product-guide/vsan/removing-iso-refs.md
+    - Storage:
+       - Overview: product-guide/storage/overview.md
+       - Architecture: product-guide/storage/architecture.md  # Added from PR
+       - Storage Tiers: product-guide/storage/storage-tiers.md
+       - Preferred Tier: product-guide/storage/preferred-tiers.md
     - Automation:
       - Recipes:
         - Organization: product-guide/automation/recipes-organization.md

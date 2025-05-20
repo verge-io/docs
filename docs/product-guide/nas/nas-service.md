@@ -1,8 +1,8 @@
-# NAS
+# Add a NAS Service
 
 The NAS feature provides file-level storage/access within a VergeOS system. NAS functionality can be added by downloading and implementing an instance of the standard NAS VM Recipe.
 
-## Add a NAS Service (Implement an instance of the NAS VM Recipe)
+## Implement an instance of the NAS VM Recipe
 
 1. From the Cloud Dashboard, select **NAS** from the left menu.
 2. Select **New NAS Service** from the left menu.
