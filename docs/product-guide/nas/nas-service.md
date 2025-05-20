@@ -23,7 +23,7 @@ The NAS feature provides file-level storage/access within a VergeOS system. NAS 
     - Options will include Internal and External networks defined in this VergeOS Cloud.
 
 9. Select ***IP Address Type*** for the NAS Service. Options include **DHCP** and **Static**
-    - If the NAS service is hosted on a VergeOS Internal network, it is generally recommended to select DHCP and define a static IP address for the NAS VM within the network's IP settings.
+    - If the NAS service is hosted on a VergeOS Internal network, it is generally recommended that you select DHCP and define a static IP address for the NAS VM within the network's IP settings.
     - For networks controlled externally, Static vs DHCP would be selected, depending upon factors of the particular network.
     - When utilizing DHCP, it is recommended to configure a static reservation so that the IP address will remain constant.
     - When utilizing a Static address, care should be used to avoid conflicting with other static IP addresses or DHCP lease scope

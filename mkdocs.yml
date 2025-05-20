@@ -151,6 +151,11 @@ nav:
     - knowledge-base/index.md
   - Product Guide:
     - VergeOS User Interface: product-guide/ui-overview.md
+    - Storage:
+       - Overview: product-guide/storage/overview.md
+       - Architecture: product-guide/storage/architecture.md  # Added from PR
+       - Storage Tiers: product-guide/storage/storage-tiers.md
+       - Preferred Tier: product-guide/storage/preferred-tiers.md
     - System Configuration:
       - SMTP: product-guide/system/smtp.md
       - Authentication:
@@ -276,11 +281,6 @@ nav:
         - Tenant Snapshot and Restore: product-guide/tenants/tenant-snapshots.md
         - Cloud Snapshots and Restore: product-guide/backup-dr/cloud-snapshot-restore.md
         - NAS Snapshots and Restore: product-guide/nas/volume-snapshots-restores.md
-    - Storage:
-       - Overview: product-guide/storage/overview.md
-       - Architecture: product-guide/storage/architecture.md  # Added from PR
-       - Storage Tiers: product-guide/storage/storage-tiers.md
-       - Preferred Tier: product-guide/storage/preferred-tiers.md
     - Automation:
       - Recipes:
         - Organization: product-guide/automation/recipes-organization.md
