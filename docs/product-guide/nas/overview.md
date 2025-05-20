@@ -1,15 +1,15 @@
 # NAS Overview
 
-The NAS feature provides file-level storage/access within a VergeOS system, allowing you to create volumes of files on top of your distributed storage and mount external
+The NAS feature provides file-level storage/access within a VergeOS system, allowing you to create volumes of files to store on your distributed storage and mount external
 file systems.  
 
 ## Benefits of the NAS Feature
 
-* Manage and backup file-level storage within your VergeOS storage
+* Manage and backup file-level storage within your VergeOS system
 * Take advantage of VergeOS storage efficiencies, such as deduplication, for file-level storage
 * Mount external file systems to access within your VergeOS environment
-* Easily import data to your VergeOS system for absorbing existing workloads, performing backups, etc. 
-* Easily export data and/or workloads from VergeOS for third-party backup, compliance, etc.
+* Import data into your VergeOS system for absorbing external workloads, performing backups, etc. 
+* Export data and/or workloads from VergeOS for third-party backup, compliance, etc.
 
 ## NAS Setup Steps 
 

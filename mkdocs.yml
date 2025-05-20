@@ -153,7 +153,7 @@ nav:
     - VergeOS User Interface: product-guide/ui-overview.md
     - Storage:
        - Overview: product-guide/storage/overview.md
-       - Architecture: product-guide/storage/architecture.md  # Added from PR
+       - vSAN Architecture: product-guide/storage/architecture.md  # Added from PR
        - Storage Tiers: product-guide/storage/storage-tiers.md
        - Preferred Tier: product-guide/storage/preferred-tiers.md
     - System Configuration:
