@@ -5,21 +5,23 @@
 
 ### Generic Requirements (All Node Types)
 
-- Intel or AMD x86 64-bit processor with hardware virtualization support
+- AMD or Intel x86 64-bit processor with hardware virtualization support
 - Minimum of 16GB RAM dedicated to VergeOS
 - IPMI, iDrac, iLO, or equivalent technology
-- HBA (preferred) or RAID controller that supports JBOD or IT mode - NO RAID
+- NVMe direct-attached (preferred), HBA or RAID controller that supports JBOD or IT mode - NO RAID
 - 1 x 1GbE NIC for External Network (Intel, Mellanox, or Broadcom)
 - 1 x 10GbE NIC for Core Fabric Network (Intel, Mellanox, or Broadcom)
 
 ### Controller Nodes (Node 1 and Node 2)
 
+- 1 x +2.7Ghz CPU
 - 1GB of RAM per 1TB of storage for each node
-- **Tier 0**: 1 x NVMe-based SSD for vSAN metadata with 3 Drive Writes Per Day (DWPD) or equivalent
+- **Tier 0**: 1 x NVMe direct-attached SSD for vSAN metadata with 3 Drive Writes Per Day (DWPD) or equivalent
 - **Tier 0**: 5GB of storage per 1TB of usable capacity for vSAN metadata
 
 ### Storage Nodes (Nodes that partipate in vSAN storage)
 
+- +2.7Ghz CPU
 - 1GB of RAM per 1TB of RAW storage for each node
 - Minimum of one NVMe or SATA/SAS SSD per node for workload storage
 - HDDs can be used for snapshot, archive, or file based service storage
@@ -32,24 +34,14 @@
 - Only the [generic requirements](#generic-requirements-all-node-types) apply to Compute-only nodes
 - CPU and Memory should be architected for workloads running on these nodes
 
-### GPU (Optional)
-
-- Compatible with any AMD, Intel, or Nvidia GPU[^1]
-- Nvidia vGPU also supported
-
-<!-- ### Additional Network Considerations
-
-- For environments with more than two servers switches are required for Core Fabric Networks
-- Core Fabric Networks require jumbo frames of 9216 MTU or greater -->
-
 ## Recommended Requirements
 
 ### Generic Requirements (All Node Types) - Recommended
 
-- Intel or AMD x86 64-bit processor with hardware virtualization support
+- AMD or Intel x86 64-bit processor with hardware virtualization support
 - Minimum of 16GB RAM dedicated to VergeOS
 - IPMI, iDrac, iLO, or equivalent technology
-- HBA controller
+- NVMe direct-attached (preferred) or HBA
 - Minimum of 16GB RAM dedicated to VergeOS
 - 2 x 25/40/100GbE NICs (Intel, Mellanox, or Broadcom)
 - 2 x 10/25/40/100GbE NICs (Intel, Mellanox, or Broadcom)
@@ -58,12 +50,12 @@
 ### Controller Nodes (Node 1 and Node 2) - Recommended
 
 - 1 x +3.0Ghz CPU
-- **Tier 0**: 2 x NVMe-based SSD for vSAN metadata with 3 Drive Writes Per Day (DWPD) or equivalent
+- **Tier 0**: 2 x NVMe direct-attached SSD for vSAN metadata with 3 Drive Writes Per Day (DWPD) or equivalent
 - **Tier 0**: 10GB of storage per 1TB of usable capacity for vSAN metadata
 
 ### Storage Nodes (Nodes that partipate in vSAN storage) - Recommended
 
-- 2 x +3.0Ghz CPU
+- +3.0Ghz CPU
 - 1 CPU core per disk
 - 1.5GB of RAM per 1TB of storage for each node
 - 2 x NVMe or SATA/SAS SSD per node for guest usage; more SSDs recommended for enhanced performance

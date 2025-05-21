@@ -40,9 +40,13 @@ This guide outlines the process to create a bonded external network across vlann
 
 ## Steps
 
-1. Navigate to the **external network dashboard** (Main Dashboard > Networks > Externals > double-click external network) and click **Edit** on the left menu.  
+1. Navigate to the **External Network dashboard** (
+    - Main Dashboard > Networks > Externals
+    - Double-click External Network
+    - Click **Edit** on the left menu 
 2. Change **Layer 2 Type** to ***vLAN*** and enter appropriate **Layer 2 ID** (VLAN number).
-3. **Select** the checkbox option for **both physical networks**.
+3. **Select** the option to **Enable Bonding**.
+3. **Select** the **Physical Networks** you want to participate in the bonding.
 4. Click **Submit** to save the change.
   
 ## Post Configuration
@@ -63,13 +67,4 @@ This guide outlines the process to create a bonded external network across vlann
 
 - [Network Design Models](/implementation-guide/network-design)
 
-## Feedback
-
-!!! question "Need Help?"
-    If you need further assistance or have any questions about this article, please don't hesitate to reach out to our support team.
-
 ---
-
-!!! note "Document Information"
-    - Last Updated: 2024-11-26
-    - vergeOS Version: 4.13.1
