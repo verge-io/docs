@@ -1,4 +1,4 @@
-# Uploading to the vSAN (Media Images)
+# Uploading Files to the vSAN (Media Images)
 
 The *Media Images* section provides for uploading files to the VergeOS vSAN, allowing *.iso files, drive images, VM definition files, etc. to be easily accessible for creating/installing/importing VMs.  
 

@@ -21,7 +21,7 @@ A new VM instance is launched as a copy of an existing VM. A clone, by default, 
 ## Create a new Custom VM
 
 !!! success
-    Creating a new Custom VM will require an *.iso file or a startup USB image file (e.g. created from a hybrid image) for booting/installing the guest OS. See [**Uploading to the vSAN(Media Images)**](/product-guide/vsan/uploading-files-to-vsan) for instructions on uploading these files to the vSAN.
+    Creating a new Custom VM will require an *.iso file or a startup USB image file (e.g. created from a hybrid image) for booting/installing the guest OS. See [**Uploading to the vSAN(Media Images)**](/product-guide/storage/uploading-files-to-vsan) for instructions on uploading these files to the vSAN.
 
 1. From the Cloud Dashboard, click **Machines** on the left menu.
 2. Click **Virtual Machines** from the menu or click the Virtual Machines quick-link on the dashboard.

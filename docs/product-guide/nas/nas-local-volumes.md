@@ -27,7 +27,7 @@ Local volumes are file systems stored within VergeOS, consuming storage in the V
 14. Specify **Owner** for the volume directory (optional).
 15. Specify a **Group** for volume directory (optional).
 16. Select a **Snapshot Profile** for the volume (optional). See [**Snapshot Profiles**](/product-guide/backup-dr/snapshot-profiles) for information regarding snapshot profiles.
-17. Select **Preferred Tier** for storing this volume. Preferred tier is the tier first attempted. See [**Preferred Tiers**](/product-guide/vsan/preferred-tiers) for more information.
+17. Select **Preferred Tier** for storing this volume. Preferred tier is the tier first attempted. See [**Preferred Tiers**](/product-guide/storage/preferred-tiers) for more information.
 18. Click **Submit** to save the settings and create the local volume.
 19. The dashboard for the new local volume is displayed. It may take a few minutes for the new volume to come online. If the volume status does not become online, refer to the logs section (bottom of dashboard) to view error messages for troubleshooting.
 20. Files in the online volume can be viewed using the **Browse** option from the left menu.

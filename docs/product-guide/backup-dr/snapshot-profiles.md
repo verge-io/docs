@@ -45,7 +45,7 @@ The following are default snapshot profiles automatically created at system inst
       * A period defines a frequency and retention term. Adding multiple periods allows incorporating various frequencies and retentions within the same profile.
       * Click the ***+Add Period*** link midway down the page.
       * Enter a ***Period Name*** (required) (ex: weekly, 6pm, Mondays, etc).
-      * Select a ***Max Tier for Storing Snapshot*** (default = Tier 1, which is most expensive Tier). Snapshot data will be stored on the same tier as source data except when the max tier defined here is a less expensive tier (less expensive = higher number). See [**Storage Tiers**](/product-guide/vsan/storage-tiers) for more information about storage tiering.
+      * Select a ***Max Tier for Storing Snapshot*** (default = Tier 1, which is most expensive Tier). Snapshot data will be stored on the same tier as source data except when the max tier defined here is a less expensive tier (less expensive = higher number). See [**Storage Tiers**](/product-guide/storage/storage-tiers) for more information about storage tiering.
       * Select ***Frequency*** for how often to take the snapshots.
       * Select values for ***(Month, Day of Month, Day of Week Hour, Minute)*** to schedule the snapshots (fields will vary depending upon the frequency selected)
       * Select ***Retention*** (value) and ***Units*** to define the length of time for which to keep this period's snapshots. *Days* (default), *Hours*, *Years*, *Forever* (retained indefinitely)

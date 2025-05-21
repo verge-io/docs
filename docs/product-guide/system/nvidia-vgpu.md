@@ -14,7 +14,7 @@ VergeOS allows seamless utilization of NVIDIA's GRID vGPU platform to provide mu
 1. Obtain the appropriate NVIDIA Linux-KVM driver for your GPU hardware. GRID vGPU drivers can be downloaded from your NVIDIA licensing portal or by registering for an NVIDIA free evaluation: [**https://nvidia.com/en-us/data-center/resources/vgpu-evaluation**](https://nvidia.com/en-us/data-center/resources/vgpu-evaluation).
 !!! tip "VergeOS supports bundle-version NVIDIA drivers.  For a list of currently supported NVIDIA drivers, navigate to Resource Manager > Groups > New. Set Type=*NVIDIA vGPU* and click the button to view compatible 3rd Party drivers.  Typically, you will want to use the most recent driver in this list that is compatible with your NVIDIA hardware."
 
-2. Upload the NVIDIA bundle driver to the VergeOS vSAN. See [**Uploading to the vSAN (Media Images)**](/product-guide/vsan/uploading-files-to-vsan) for directions on uploading to the vSAN.  
+2. Upload the NVIDIA bundle driver to the VergeOS vSAN. See [**Uploading to the vSAN (Media Images)**](/product-guide/storage/uploading-files-to-vsan) for directions on uploading to the vSAN.  
 The following instructions configure selected vGPU device(s) for virtual function passthrough by automatically creating necessary resource rules for each selected device and attaching the device(s) to a resource group. For more information about resource groups and resource rules, see: [**Device Passthrough - Overview**](/product-guide/system/device-pass-overview#resource-group).
 
 3. Navigate to the **Resource Manager Dashboard** (*Main Dashboard > Resources*)
