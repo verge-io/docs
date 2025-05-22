@@ -19,7 +19,7 @@ Before proceeding with post-installation configuration, ensure:
 
 2. **Verify System Status:**
    - Check the dashboard for any warnings or alerts <--more detail needed here?  check main dashboard only? or other pages as well>
-   - Ensure all nodes are showing as online and healthy ( provide information about what indicates the node is "healthy")
+   - Ensure all nodes are showing as online and healthy (provide information about what indicates the node is "healthy")
 
 ### 2. Cluster Configuration
 
