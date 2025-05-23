@@ -66,13 +66,13 @@ To customize the look and feel of your VergeOS interface:
 1. Click **Edit UI Branding** on the left menu.
 2. In the Custom Branding section, check the **Enabled** box.
 3. Customize the following elements:
-   - Header: Background color, logos (large and small), and favicon.
-   - Left Navigation: Colors for background, text, and hover states.
-   - Pop Up Menus: Colors for background and text.
-   - Buttons: Colors for background, text, and hover states.
-   - Misc.: Additional color settings for various UI elements.
-4. Use the **Preview** button to see your changes before applying them.
-5. Click **Submit** to save your customizations.
+   - **Header**: Background color, logos (large and small), and favicon.
+   - **Left Navigation**: Colors for background, text, and hover states.
+   - **Pop Up Menus**: Colors for background and text.
+   - **Buttons**: Colors for background, text, and hover states.
+   - **Misc.**: Additional color settings for various UI elements.
+5. Use the **Preview** button to see your changes before applying them.
+6. Click **Submit** to save your customizations.
 
 ## Modifying System Settings
 
