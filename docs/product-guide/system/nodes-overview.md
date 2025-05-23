@@ -14,8 +14,6 @@ A node in VergeOS represents a physical or virtual server that contributes compu
 ### Resource Metrics
 
 - **CPU Usage**: Real-time monitoring of processor utilization
-- **RAM Usage**: Physical and virtual memory allocation and consumption
-- **Temperature**: System temperature monitoring (where supported)
 - **Storage**: Drive status and utilization
 
 ### Node Statistics
@@ -24,9 +22,10 @@ The dashboard provides key metrics for:
 
 - Physical RAM utilization
 - Virtual RAM allocation
+- Temperature
+- Running Machines
 - Core usage
-- Running machines
-- Storage tier status
+- Machine RAM Usage
 
 ### Connected Devices
 
