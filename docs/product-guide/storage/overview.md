@@ -35,7 +35,7 @@ More information about VergeFS architecture can be found at: [VergeOS vSAN Block
 
 * [**Media Images**](/product-guide/storage/uploading-files-to-vsan) - easily upload and manage individual ISO images, VM disk images, logos and other files to use in your system and share among sites and tenants. 
 
-* [**Network Attached Storage (NAS)**](/product-guide/nas/nas-service) - embedded NAS services allow you to create volumes for file-level access on your VergeOS distributed storage, in order to: share across workloads, easily import/export data for backups or migration, mount external file systems, and more.  
+* [**Network Attached Storage (NAS)**](/product-guide/nas/overview) - embedded NAS services allow you to create volumes for file-level access on your VergeOS distributed storage, in order to: share across workloads, easily import/export data for backups or migration, mount external file systems, and more.  
 
 
 
