@@ -36,7 +36,7 @@ These settings can be found under ***System > Settings > Advanced***.
 | ***Default internal network MTU*** | Changes the default MTU of all Internal Networks created | 9000 |
 | ***Default internal network address*** | Changes the default network address scheme of all Internal Networks created | 192.168.0.0/24 |
 | ***Default media file tier*** | Sets the default tier of storage used for storage files in Media Images | 4 |
-| ***Default tenant network address*** | Changing default network addressing in typically not recommended.  Work closely with VergeOS Support to implement network addressing changes.| 100.96.255.0/24 |
+| ***Default tenant network address*** | Changing default network addressing is typically not recommended.  Work closely with VergeOS Support to implement network addressing changes.| 100.96.255.0/24 |
 | ***Enable IPv6*** | IPV6 traffic in/out of the system is blocked by default.  This setting does not need to be changed to allow internal VM-to-VM ipv6 traffic. | false |
 | ***Failed login attempts before an account is locked (0 disables lockout)*** | Specifies the number of consecutive failed login attempts allowed before an account is temporarily locked. Setting this to 0 disables the lockout feature. Note: VergeOS has built-in protection against brute-force attacks. Enable with caution, as aggressive lockouts can potentially lead to denial-of-service situations. | 0 |
 | ***Flush the application framework database every X ms*** | **Do not modify this setting unless expressly directed by VergeIO support** | 5000 |
@@ -67,8 +67,6 @@ These settings can be found under ***System > Settings > Advanced***.
 | ***System ID***|WARNING: changing your system ID will affect your VergeOS license, which can stop the system from running workloads. | *will vary* |
 | ***Template to define for syslog server (See rsyslog for format)***|Consult *rsyslog* documentation for proper input syntax. | |
 | ***Timeout in seconds before a machine becomes unresponsive***|threshold time for the system to deem a VM unresponsive and attempt starting the VM on an alternate node | 120 |
-| ***Timeout in seconds before an unresponsive node is rebooted via IPMI***|threshold time for the system to consider a physical node unresponsive and auto reboot via IPMI (reboot would required proper IPMI configuration) | 3600 |
-| ***Two-factor authentication*** | Default enabled: default on for new users; default disabled: default off for new users;   | Default off |
 | ***Timeout in seconds before an unresponsive node is rebooted via IPMI*** | Specifies the duration the system waits before automatically rebooting an unresponsive node using IPMI. Requires proper IPMI configuration. | 3600 |
 | ***Two-factor authentication*** | Determines the default two-factor authentication (2FA) setting for new users. Options are "Default on" (enabled by default) or "Default off" (disabled by default). | Default off |
 | ***Two-factor authentication expiration time for authenticated user devices*** | Sets the duration (in seconds) that a device remains authenticated for 2FA. Set to 0 for no expiration. | 7884000 |
