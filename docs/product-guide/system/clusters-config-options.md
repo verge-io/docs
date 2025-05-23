@@ -27,7 +27,6 @@ This page provides a detailed explanation of all configuration options available
 - **Storage**: Toggle to enable or disable storage functionality for the cluster.
 - **Storage buffer per node**: Set the storage buffer size per node (in GB).
 - **Allocate hugepages for storage**: Toggle to enable or disable hugepages for storage.
-- **Storage cache size**: Set the cache size for storage (in GB).
 - **Tier used for swap**: Specify the storage tier to be used for swap space (-1 to disable).
 - **Swap per drive**: Set the amount of swap space per drive (in MB).
 
@@ -66,6 +65,8 @@ This page provides a detailed explanation of all configuration options available
         This allows you to run a virtual machine (VM) inside another VM while still using hardware acceleration from the host.
 
 - **Allow Nested Virtualization Live Migration**: Toggle to allow live migration of VMs with nested virtualization enabled.
+  
+- **Allow vGPU Live Migration**: Toggle to allow live migration of VMs with vGPU devices.
 
 ## Performance Settings
 
@@ -81,11 +82,6 @@ This page provides a detailed explanation of all configuration options available
 ## Logging
 
 - **System Log Filter**: Specify the system log filter string to control logging verbosity.
-
-## Advanced Settings
-
-- **Cost per Unit**: Set the cost per unit for the cluster (if applicable).
-- **Price per Unit**: Set the price per unit for the cluster (if applicable).
 
 !!! tip "Configuration Best Practices"
     When creating or editing a cluster, refer to these configuration options to customize the cluster according to your specific requirements. Each option plays a crucial role in determining the behavior, performance, and capabilities of your VergeOS cluster.
