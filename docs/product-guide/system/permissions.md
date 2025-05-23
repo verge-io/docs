@@ -37,9 +37,9 @@ The effective permissions of a user is cumulative of all permissions assigned to
 ### Example 1
 
 - JSmith is assigned list/read permissions to the cloud.
-- JSmith is a member of the "machine-operators" group; the "machine-operators" group is assigned full (list/read/create/modify/ delete) permissions to virtual machines.
+- JSmith is a member of the "machine-operators" group; the "machine-operators" group is assigned full (list/read/create/modify/delete) permissions to virtual machines.
 - JSmith is a member of the "assistants" group; the "assistants" group is assigned only list/read/modify permissions to several particular virtual machines.
-- Effective permissions for JSmith for all virtual machines: list/read/create/modify.
+- Effective permissions for JSmith for all virtual machines: list/read/create/modify/delete.
    ***Since permissions are cumulative, JSmith would have list/read/create/modify/delete permissions to all virtual machines, even if more restrictive permissions were defined on a particular virtual machine instance.***
 
 ### Example 2
