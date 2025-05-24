@@ -156,6 +156,22 @@ nav:
        - vSAN Architecture: product-guide/storage/architecture.md  # Added from PR
        - Storage Tiers: product-guide/storage/storage-tiers.md
        - Preferred Tier: product-guide/storage/preferred-tiers.md
+    - Backup & DR:
+      - Overview: product-guide/backup-dr/overview.md
+      - Snapshots:
+        - Overview: product-guide/backup-dr/snapshots-overview.md
+        - Profiles: product-guide/backup-dr/snapshot-profiles.md
+        - VM Snapshots and Restore: product-guide/backup-dr/vm-snapshots-restores.md
+        - Tenant Snapshots: product-guide/tenants/tenant-snapshots.md
+        - Cloud Snapshots and Restore: product-guide/backup-dr/cloud-snapshot-restore.md
+        - NAS Snapshots and Restore: product-guide/nas/volume-snapshots-restores.md
+      - Site Syncs:
+        - Overview: product-guide/backup-dr/syncs-overview.md
+        - Configuration: product-guide/backup-dr/sync-configuration.md
+        - Monitoring: product-guide/backup-dr/monitoring-site-syncs.md
+        - Sync Back: product-guide/backup-dr/sync-back.md
+        - Manual Sync: product-guide/backup-dr/manual-site-syncs.md
+        - Repair Server: product-guide/backup-dr/repair-server.md
     - System Configuration:
       - SMTP: product-guide/system/smtp.md
       - Authentication:
@@ -165,13 +181,6 @@ nav:
         - Multi-Factor Authentication: product-guide/auth/mfa-email.md
         - OIDC Applications Overview: product-guide/auth/oidc-apps-overview.md
       - Certificates: product-guide/system/certificates.md
-      - Cloud Snapshots:
-        - Overview: product-guide/backup-dr/snapshots-overview.md
-        - Profiles: product-guide/backup-dr/snapshot-profiles.md
-        - VM Snapshots and Restore: product-guide/backup-dr/vm-snapshots-restores.md
-        - Tenant Snapshots: product-guide/tenants/tenant-snapshots.md
-        - Cloud Snapshots and Restore: product-guide/backup-dr/cloud-snapshot-restore.md
-        - NAS Snapshots and Restore: product-guide/nas/volume-snapshots-restores.md
       - Clusters: 
         - Overview: product-guide/system/clusters.md
         - Configuration Options: product-guide/system/clusters-config-options.md
@@ -267,13 +276,6 @@ nav:
         - WireGuard Examples: product-guide/vpn/wireguard-examples.md
       - Troubleshooting:
         - Network Troubleshooting: product-guide/networks/net-troubleshooting.md
-    - Backup & DR:
-      - Site Syncs:
-        - Configuration: product-guide/backup-dr/sync-configuration.md
-        - Monitoring: product-guide/backup-dr/monitoring-site-syncs.md
-        - Sync Back: product-guide/backup-dr/sync-back.md
-        - Manual Sync: product-guide/backup-dr/manual-site-syncs.md
-        - Repair Server: product-guide/backup-dr/repair-server.md
       - Snapshots:
         - Overview: product-guide/backup-dr/snapshots-overview.md
         - Profiles: product-guide/backup-dr/snapshot-profiles.md
