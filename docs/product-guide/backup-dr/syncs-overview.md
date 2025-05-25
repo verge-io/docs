@@ -2,7 +2,7 @@
 
 Site Syncs replicate complete encapsulations of your system (cloud snapshots) to another VergeOS system, simplifying and streamlining:   
 
-* **Offsite Backup and Archival** - recover data in a granular level at the remote site or on the source after syncing back 
+* **Offsite Backup and Archival** - recover data in a granular level at the remote site or on the source system after syncing back 
 * **Emergency Preparedness** - ensure your entire system can be ready for quick and complete recovery at a remote site to minimize downtime and ensure operational continuity  
 * **Migrations** - easily move and spin up a complete system, individual tenants, or select workloads at a new location 
 
