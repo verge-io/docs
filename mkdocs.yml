@@ -160,10 +160,10 @@ nav:
       - Overview: product-guide/backup-dr/overview.md
       - Snapshots:
         - Overview: product-guide/backup-dr/snapshots-overview.md
+        - Cloud Snapshots and Restore: product-guide/backup-dr/cloud-snapshot-restore.md
         - Profiles: product-guide/backup-dr/snapshot-profiles.md
         - VM Snapshots and Restore: product-guide/backup-dr/vm-snapshots-restores.md
         - Tenant Snapshots: product-guide/tenants/tenant-snapshots.md
-        - Cloud Snapshots and Restore: product-guide/backup-dr/cloud-snapshot-restore.md
         - NAS Snapshots and Restore: product-guide/nas/volume-snapshots-restores.md
       - Site Syncs:
         - Overview: product-guide/backup-dr/syncs-overview.md
@@ -276,13 +276,6 @@ nav:
         - WireGuard Examples: product-guide/vpn/wireguard-examples.md
       - Troubleshooting:
         - Network Troubleshooting: product-guide/networks/net-troubleshooting.md
-      - Snapshots:
-        - Overview: product-guide/backup-dr/snapshots-overview.md
-        - Profiles: product-guide/backup-dr/snapshot-profiles.md
-        - VM Snapshots and Restore: product-guide/backup-dr/vm-snapshots-restores.md
-        - Tenant Snapshot and Restore: product-guide/tenants/tenant-snapshots.md
-        - Cloud Snapshots and Restore: product-guide/backup-dr/cloud-snapshot-restore.md
-        - NAS Snapshots and Restore: product-guide/nas/volume-snapshots-restores.md
     - Automation:
       - Recipes:
         - Organization: product-guide/automation/recipes-organization.md

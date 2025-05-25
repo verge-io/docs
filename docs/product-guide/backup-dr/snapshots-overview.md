@@ -1,6 +1,6 @@
 # Snapshots
 
-Snapshots provide quick, point-in-time backups, allowing for roll back to a previous instance in the event of a hardware failure, faulty application upgrade, VM bluescreens, etc. Snapshot captures and restores can be done at various levels: cloud (entire system), tenant, individual virtual machine, NAS volume.
+Snapshots provide nearly-instant, non-disruptive, point-in-time backups that allow for rollback to a previous instance in the event of a hardware failure, faulty application upgrade, VM bluescreen, etc. Snapshot captures and restores can be done at various levels: cloud (entire system), tenant, individual virtual machine, NAS volume.
 
 ## Key Features
 
@@ -8,7 +8,7 @@ Snapshots provide quick, point-in-time backups, allowing for roll back to a prev
 - **Minimal Storage Impact** – They are branched against initial data blocks, reducing additional storage consumption.
 - **Application-Consistent Snapshots** – VergeOS supports quiesced snapshots, ensuring data integrity by freezing disk activity during capture.
 - **Business Continuity & Disaster Recovery (BC/DR)** – Cloud snapshots can be synchronized to another VergeOS system for offsite protection.
-- **Flexible Restore Options** – Users can recover individual VMs, clone copies for testing, or revert entire environments.
+- **Flexible Restore Options** – Users can recover individual VMs and tenants, clone copies for testing, or revert entire environments.
 
 ## Automated Snapshots
 
