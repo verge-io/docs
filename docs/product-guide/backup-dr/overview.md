@@ -2,7 +2,7 @@
 
 Intrinsic VergeOS features help you safeguard your data and critical operations from threats such as cyberattacks, ransomware, hardware failures, accidental deletions, natural disasters and extended outages. 
 
-   * [**Snapshots**](/product-guide/backup-dr/snapshots-overview) capture point-in-time copies to provide quick recovery of complete systems as well as individual VMs, NAS volumes, and tenants  
+   * [**Snapshots**](/product-guide/backup-dr/snapshots-overview) capture point-in-time copies to provide quick recovery of complete systems, and granular restores of  individual VMs, NAS volumes, and tenants  
 
    * [**Site Syncs**](/product-guide/backup-dr/syncs-overview) allow easy replication of your systems and data offsite as part of a comprehensive backup and BC/DR strategy
 
