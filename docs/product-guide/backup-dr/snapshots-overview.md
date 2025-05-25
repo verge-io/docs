@@ -1,6 +1,14 @@
 # Snapshots
 
-Snapshots provide quick, point-in-time backups, allowing for roll back to a previous instance in the event of a hardware failure, faulty application upgrade, VM bluescreens, etc. Snapshots/restores can be done at various levels: cloud (entire system), tenant, individual virtual machine, NAS volume.
+Snapshots provide nearly-instant, non-disruptive, point-in-time backups that allow for rollback to a previous instance in the event of a hardware failure, faulty application upgrade, VM bluescreen, etc. Snapshot captures and restores can be done at various levels: cloud (entire system), tenant, individual virtual machine, NAS volume.
+
+## Key Features
+
+- **Instant Recovery** – Snapshots can be restored rapidly, minimizing downtime.
+- **Minimal Storage Impact** – They are branched against initial data blocks, reducing additional storage consumption.
+- **Application-Consistent Snapshots** – VergeOS supports quiescent snapshots, ensuring data integrity by freezing disk activity during capture.
+- **Business Continuity & Disaster Recovery (BC/DR)** – Cloud snapshots can be synchronized to another VergeOS system for offsite protection.
+- **Flexible Restore Options** – Users can recover individual VMs and tenants, clone copies for testing, or revert entire environments.
 
 ## Automated Snapshots
 
@@ -26,13 +34,13 @@ For information regarding cloud snapshots, see: [**Cloud Snapshots and Restores
 
 ## VM Snapshot/Restore
 
-VM-level snapshots allow for quiesced snapshotting (requires guest agent) and schedule/retention customizable per individual VM. For related instructions, see: [**VM Snapshots and Restores**](/product-guide/backup-dr/vm-snapshots-restores).
+VM-level snapshots allow for quiesced capture (requires guest agent) and schedule/retention customizable per individual VM. For related instructions, see: [**VM Snapshots and Restores**](/product-guide/backup-dr/vm-snapshots-restores).
 
 ## Tenant Snapshot/Restore
 
 Individual tenants can be restored from the parent's cloud snapshot. For related instructions, see: [**Tenant Restores**](/product-guide/tenants/tenant-restores)
 
-Additionally, each tenant can utilize [**Cloud Snapshots**](/product-guide/backup-dr/cloud-snapshot-restore), independently within their environments to backup their own complete systems.
+Additionally, each tenant can utilize [**Cloud Snapshots**](/product-guide/backup-dr/cloud-snapshot-restore), independently within their environments, to back up their own complete systems.
 
 ## NAS Snapshot/Restore
 
