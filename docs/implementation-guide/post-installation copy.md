@@ -6,8 +6,6 @@ To ensure the stability, security, and peak performance of your new system, it's
 
 !!! "Before Proceeding"
     - 
-
-
 Before proceeding with post-installation configuration, ensure:
 
 * A successful VergeOS installation is completed <!--(what defines a successful installation?) -->
@@ -26,9 +24,13 @@ Verify health of system/system status
    - **Main Dashboard** (home page): All status indicators should be green; ensure there are no yellow/red (warning/error) status icons.  Check the Logs section at the bottom of the page for any warnings or errors.
    - **System Dashboard** (click System on the left menu.): Review this page to verify all tiles show green statuses.  
 
+   maybe a tip about red indicator on snapshot time to expiration is not an issue
+
 !!! tip "Click on a section that display yellow/red (warning/error) to access more detailed information about the issue."  
 
 BIOS settings Performance Optimization
+
+BIOS settings for virtualization??
 
 1. **CPU Power Management:**
    - For high-performance environments:
@@ -60,6 +62,9 @@ Core
       - how can we effectively test this across the board?
       - very important that the core networks are isolated from any other VergeOS systems -- elaborate -- have we seen this problem when a customer is using same switch for multiple verge systems and they are both running cores as native??
 
+      - what is the isolation needed between core1 and core2??
+
+tips on verifying isolation and best ways to simulate failure by one of the physical core networks
 
 - Reminder that when you make network changes - they should be reviewed and periodically check your core network redundancy
 - extra caution about changing a switch configuration and the change does not actually take effect until a reboot??
@@ -76,13 +81,18 @@ Core
      * Confirm they are not visible on other devices/ports
      * Verify they are not shared with another VergeOS system/site
 
+     description of exactly how that works with 2 core networks but only 1 core network shows in UI -- 2 physical and 1 logical?
+
 2. **Firewall Configuration:**
-      - Review network firewall rules
-      - Enable required ports (e.g., 14201 on External for Site Syncs)
-      - Add source locking to rules for enhanced security
+      - Review network firewall rules ( what network firewall rules?  the ones in the verge system or external networks??)
+      - Enable required ports (e.g., 14201 on External for Site Syncs)  -cover this on syncs?  or perhaps just mention here too, that will need to be open for syncs
+      what other ports need to be enabled??
+      - Add source locking to rules for enhanced security - firewall rules in a new system --- what are the default ones? 
+
+      default translate sync rules on external and core 
 
 3. **VLAN Configuration:**
-      - Add any additional VLANs needed for your environment
+      - Add any additional VLANs needed for your environment  --- why does this need to be covered here?  
       - Reference documentation at docs.verge.io for VLAN creation
 
 !!! warning "Network Isolation"
@@ -105,7 +115,7 @@ Core
       - Limit access to specific traffic sources
       - Regularly review and audit network rules
 
-2. **Monitoring:**
+2. **Monitoring:**  - this should be covered in a different page and perhaps referenced here.  
       - Regularly monitor network traffic patterns
       - Review logs for unauthorized access attempts
       - Keep documentation of network changes
