@@ -38,7 +38,23 @@ By default, your VergeOS system is installed with a self-signed certificate. For
 
 ## Cluster Settings
 
-Review and adjust [Cluster settings](/product-guide/system/clusters-config-options) as necessary.  
+Cluster Configuration
+
+1. **Navigate to Cluster Settings:**
+      - Go to System > Cluster
+      - Review the current configuration
+
+2. **Adjust Resource Allocations:**
+      - Set maximum RAM allocation for VMs
+      - Configure maximum CPU core limits
+      - Review and adjust swap settings if necessary
+      - Review Storage Buffer per node
+      - Review Target Max RAM Percent (Default 80% means 20% RAM reserved for VergeOS)
+
+!!! warning "Resource Allocation Note"
+    Changes to swap settings require disk reformatting and system restart. The Target Max RAM Percent setting directly affects the amount of RAM available for VMs.
+
+See the [Cluster settings Product Guide](/product-guide/system/clusters-config-options) for additional information about configuring cluster settings
 
 ## Alerting and Reporting
 
