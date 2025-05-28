@@ -216,6 +216,7 @@ nav:
         - Virtual Machine Remote Console: product-guide/virtual-machines/vm-remote-console.md
       - Guest OS Compatibility: product-guide/virtual-machines/guest-os-compatibility.md
     - Tenants:
+      - Overview: product-guide/tenants/overview.md
       - Assigning External IP Addresses: product-guide/tenants/assign-ip-to-tenant.md
       - Creating Tenants: product-guide/tenants/create-tenants.md
       - Increasing Resources: product-guide/tenants/add-tenant-resources.md
