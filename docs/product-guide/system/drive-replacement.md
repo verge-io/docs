@@ -22,7 +22,7 @@ The VergeOS interface will provide warnings or alerts to indicate when there is 
 - **Error** - Drive is unresponsive; read or write error threshold reached
 
 !!! warning "Important"
-    **It is highly recommended to configure on-demand and scheduled subscriptions (with *target type=system Dashboard*) to ensure timely awareness of drive issues.** The [Creating Subscriptions Guide](/product-guide/system/subscriptions-overview) provides information about setting up subscriptions.
+    **It is highly recommended that you configure on-demand and scheduled subscriptions (with *target type=system Dashboard*) to ensure timely awareness of drive issues.** The [Creating Subscriptions Guide](/product-guide/system/subscriptions-overview) provides information about setting up subscriptions.
 
 ## Determine Correct Physical Drive for Replacement
 
@@ -47,24 +47,26 @@ The VergeOS interface will provide warnings or alerts to indicate when there is 
 ## Replace a Drive
 
 !!! danger "**CAUTION: Before** initiating a drive repair operation, **verify**:"
-    1. All nodes are operational (none are powered off or in maintenance mode)
+    1. The node that the drive to be replaced resides should be placed in maintenance mode. All other nodes should be online and fully operational (i.e. not in maintenance mode or offline).
     2. Other drive repairs are not in process on a different node for the same storage tier (Drive repairs running on the same physical node pose no problem.)
     3. The correct physical drive is confidently identified before removal (See directions above.)
 
-1. From the node dashboard, click **Drives**.
-2. Click to **select the particular drive** (Selected drive shows a check mark on the left.)
-3. Click **Close/Take Offline** on the left menu.
-4. When the drive status appears as **Offline:** physically remove the drive, **being extremely careful to remove the correct drive.**
-5. **Verify** the UI reflects the drive is missing to verify that the proper drive was removed.
-6. **Insert the replacement drive**.
-7. **Wait** for the drive to be detected; the dashboard will show the new drive as **Offline**.
-8. Click **Format** on the left menu.
-9. **Wait** until the dashboard no longer indicates the disk is formatting.
-10. Click **Initialize** on the left menu.
+1. Place node (with the drive to be replaced) into [**Maintenance Mode**](/product-guide/system/maintenance-mode). 
+!!! note "It is strongly recommended that you put the node in maintenance mode before attempting a drive replacement, to allow workloads to gracefully migrate to other nodes and avoid disruptions.  If you do not put the node into maintenance mode, warning confirmation messages will appear throughout the process in which you will need to confirm that you understand the risks."
+2. From the node dashboard, click **Drives**.
+3. Click to **select the particular drive** (Selected drive shows a check mark on the left.)
+4. Click **Close/Take Offline** on the left menu.  A confirmation message will appear.
+5. When the drive status appears as **Offline:** physically remove the drive, **being extremely careful to remove the correct drive.**
+6. **Verify** the UI reflects the drive is missing to verify that the proper drive was removed.
+7. **Insert the replacement drive**.
+8. **Wait** for the drive to be detected; the dashboard will show the new drive as **Offline**.
+9. Click **Format** on the left menu.
+10. **Wait** until the dashboard no longer indicates the disk is formatting.
+11. Click **Initialize** on the left menu.
 
 !!! success
     After the vSAN has completed a full walk, the repair process will begin, and the drive status will change to "Repairing"; at this point the drive dashboard will indicate an **Estimated Repair Completion date and time.**
 
 !!! warning "**DURING THE REPAIR PROCESS:**"  
     - **Do NOT restart, reset or power off any nodes** until the drive shows a status of "Online"; it is important that all other nodes remain fully operational during the repair process.
-    - **Additional drive replace/repair operations should NOT be initiated until this repair operation has fully completed** unless the additional drive resides: within the same node - OR - on another storage tier.
+    - **Additional drive replace/repair operations should NOT be initiated until this repair operation has fully completed** unless the additional drive resides: within the same node - OR - on a different storage tier.
