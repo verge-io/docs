@@ -7,7 +7,7 @@ This guide provides a foundational introduction to VergeOS networking, helping b
 
 ### Physical Network
 
-A physical network is a representation of each isolated layer 2 network. Note: Physical networks are configured during VergeOS install. The system automatically appends " Switch" to the end of the user-supplied name during install, for ex: for name "PXE", the system will give the physical network the name "PXE Switch"
+A physical network is a representation of each isolated layer 2 connection. Note: Physical networks are configured during VergeOS install. The system automatically appends " Switch" to the end of the user-supplied name during install, for ex: for name "PXE", the system will give the physical network the name "PXE Switch"
 
 ### Core Network
 
@@ -38,6 +38,10 @@ something about easy to assign external ip to the tenant, and maybe something ab
 Where needed, layer-2 external access can also be configured for a tenant (e.g. tenant has its own dedicated WAN connection or a dedicated VLAN on the external) 
 cover how statistics and monitoring per tenant?
 
+
+## Traffic Flow
+
+The KB article: [Understanding Traffic Flow ](/knowledge-base/understanding-traffic-flow) provides diagrams to show network traffic moves through a VergeOS system. 
 
 ## Default Secure
 

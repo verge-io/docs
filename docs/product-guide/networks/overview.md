@@ -29,11 +29,11 @@ VergeFabric provides directly integrated, software-defined networking (SDN) for 
 
 ## Take a Deeper Look
 
-* [**Networking Concepts**](/product-guide/networks/network-concepts) provides a guide to VergeOS networking basics
-* [**Networking Quick Start**](/product-guide/networks/network-quickstart) provides links to instructions for common networking tasks
-
+* Review [**Networking Concepts**](/product-guide/networks/network-concepts) to learn VergeOS networking basics
+* Find a directory of instructions for common networking tasks in the [**Networking Quick Start**](/product-guide/networks/network-quickstart) 
 
 ## Additional Resources
+
 * The [**VergeOS Knowledge Base**](/knowledge-base) contains many articles for specific network-related objectives.  
  
 
