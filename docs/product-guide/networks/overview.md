@@ -1,6 +1,6 @@
 # Networking (VergeFabric)
 
-*VergeFabric* provides directly-integrated, software-defined networking (SDN) to your VergeOS environment, enabling the creation of logical networks independent of physical infrastructure. With VergeFabric, you can create and manage virtual networks on demand and deploy networks instantly, without complicated configurations or reliance on networking specialists.  
+*VergeFabric* provides integrated, software-defined networking (SDN) to your VergeOS environment, enabling the creation of logical networks independent of physical infrastructure. With VergeFabric, you can create and manage virtual networks on demand and deploy networks instantly, without complicated configurations or reliance on networking specialists.  
 
 ## Key Features
 
