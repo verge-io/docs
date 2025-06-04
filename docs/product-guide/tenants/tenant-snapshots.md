@@ -57,6 +57,8 @@ Once the snapshot displays as "Local" it is now available to use; see restore in
 
 ### Instructions for Tenant to Recover Individual VMs from Provider Snapshot
 
+**Tenant must follow the above instructions first to request the desired snapshot from the provider. A snapshot that has been requested from the provider will appear as type "Local".**
+
 1. **Select the snapshot**.
 2. Click **View VMs** on the left menu.
 3. A **listing of the individual VMs** included in the snapshot appears. **Select a VM** to restore.
