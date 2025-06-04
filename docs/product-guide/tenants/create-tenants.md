@@ -49,7 +49,7 @@ The *Tenant Wizard* steps through multiple input forms to create a new custom te
 
 1. Select which **Tier** to use for tenant storage from the **Tier** dropdown menu.  
 2. Select the amount of storage capacity to be provisioned for the tenant.
-3. Click the **Submit** button (bottom of page) to proceed. Continue with the ***UI Management* form**.
+3. Click the **Submit** button to proceed. Continue with the **UI Management** form.
 
 ### UI Management Form
 
