@@ -283,7 +283,8 @@ nav:
         - NAS Snapshots and Restore: product-guide/nas/volume-snapshots-restores.md
     - Automation:
       - Recipes:
-        - Organization: product-guide/automation/recipes-organization.md
+        - Overview: product-guide/automation/recipes-overview.md
+        - Organizing Recipes: product-guide/automation/recipes-organization.md
         - VM Recipes: product-guide/automation/vm-recipes.md
         - Tenant Recipes: product-guide/automation/tenant-recipes.md 
       - Task Manager:
