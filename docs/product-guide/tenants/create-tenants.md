@@ -47,6 +47,12 @@ The *Tenant Wizard* steps through multiple input forms to create a new custom te
 
 ### New Tenant Storage Form
 
+1. Select which **Tier** to use for tenant storage from the **Tier** dropdown menu.  
+2. Select the amount of storage capacity to be provisioned for the tenant.
+3. Click the **Submit** button to proceed. Continue with the **UI Management** form.
+
+### UI Management Form
+
 1. You can optionally assign one external IP to the tenant. External IPs can be assigned to a tenant after creation as well. By default, the first one assigned to a tenant is configured to be the tenant's UI address.  
 2. Select from the **Assign External IP*** dropdown. (This list will include all unassigned Virtual IPs defined in the parent).  
 3. If the desired IP is not already configured as a Virtual IP in the parent system, click ***Create a new External IP*** to create the address:
