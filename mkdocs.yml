@@ -162,7 +162,7 @@ nav:
         - Overview: product-guide/auth/auth-sources-overview.md
         - Entra ID / Azure AD: product-guide/auth/azure-auth.md
         - Google: product-guide/auth/google-auth.md
-        - Multi-Factor Authentication: product-guide/auth/multifactor-auth.md
+        - Multi-Factor: product-guide/auth/multifactor-auth.md
         - OIDC Applications Overview: product-guide/auth/oidc-apps-overview.md
       - Certificates: product-guide/system/certificates.md
       - Cloud Snapshots:
