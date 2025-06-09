@@ -1,17 +1,3 @@
----
-title: Transitioning from VMware to VergeOS
-slug: vmware-to-vergeos-migration
-description: A guide for VMware users to understand VergeOS differences and migrate effectively
-author: VergeOS Team
-draft: false
-date: 2025-03-05T09:00:00.000Z
-tags: [vmware, migration, vergeos, virtualization]
-categories:
-  - Knowledge Base
-editor: markdown
-dateCreated: 2025-03-05T09:00:00.000Z
----
-
 # Transitioning from VMware to VergeOS
 
 ## Overview

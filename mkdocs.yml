@@ -13,6 +13,7 @@ theme:
   icon:
     repo: fontawesome/brands/github
   features:
+    - content.tooltips
     - navigation.tabs
     - navigation.tabs.sticky
     #- navigation.sections
@@ -53,11 +54,12 @@ plugins:
       archive: false
       pagination_per_page: 50
   - search:
-      prebuild_index: true
       lang:
       - en
   - glightbox
+  #- meta
 markdown_extensions:
+  - abbr
   - sane_lists
   - admonition
   - attr_list
@@ -73,7 +75,6 @@ markdown_extensions:
       clickable_checkbox: true
   - footnotes
   - pymdownx.mark
-  - attr_list
   - md_in_html
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
@@ -150,21 +151,38 @@ nav:
     - knowledge-base/index.md
   - Product Guide:
     - VergeOS User Interface: product-guide/ui-overview.md
+    - Transitioning from VMware: product-guide/transition-from-vmware.md
+    - Storage:
+       - Overview: product-guide/storage/overview.md
+       - vSAN Architecture: product-guide/storage/vsan-architecture.md  # Added from PR
+       - Storage Tiers: product-guide/storage/storage-tiers.md
+       - Preferred Tier: product-guide/storage/preferred-tiers.md
+       - Fibre Channel: product-guide/storage/fibre-channel.md
+    - Backup & DR:
+      - Overview: product-guide/backup-dr/overview.md
+      - Snapshots:
+        - Overview: product-guide/backup-dr/snapshots-overview.md
+        - Cloud Snapshots and Restore: product-guide/backup-dr/cloud-snapshot-restore.md
+        - Profiles: product-guide/backup-dr/snapshot-profiles.md
+        - VM Snapshots and Restore: product-guide/backup-dr/vm-snapshots-restores.md
+        - Tenant Snapshots: product-guide/tenants/tenant-snapshots.md
+        - NAS Snapshots and Restore: product-guide/nas/volume-snapshots-restores.md
+      - Site Syncs:
+        - Overview: product-guide/backup-dr/syncs-overview.md
+        - Configuration: product-guide/backup-dr/sync-configuration.md
+        - Monitoring: product-guide/backup-dr/monitoring-site-syncs.md
+        - Sync Back: product-guide/backup-dr/sync-back.md
+        - Manual Sync: product-guide/backup-dr/manual-site-syncs.md
+        - Repair Server: product-guide/backup-dr/repair-server.md
     - System Configuration:
+      - SMTP: product-guide/system/smtp.md
       - Authentication:
         - Overview: product-guide/auth/auth-sources-overview.md
         - Entra ID / Azure AD: product-guide/auth/azure-auth.md
         - Google: product-guide/auth/google-auth.md
-        - Multi-Factor Authentication: product-guide/auth/mfa-email.md
+        - Multi-Factor Authentication: product-guide/auth/multifactor-auth.md
         - OIDC Applications Overview: product-guide/auth/oidc-apps-overview.md
       - Certificates: product-guide/system/certificates.md
-      - Cloud Snapshots:
-        - Overview: product-guide/backup-dr/snapshots-overview.md
-        - Profiles: product-guide/backup-dr/snapshot-profiles.md
-        - VM Snapshots and Restore: product-guide/backup-dr/vm-snapshots-restores.md
-        - Tenant Snapshots: product-guide/tenants/tenant-snapshots.md
-        - Cloud Snapshots and Restore: product-guide/backup-dr/cloud-snapshot-restore.md
-        - NAS Snapshots and Restore: product-guide/nas/volume-snapshots-restores.md
       - Clusters: 
         - Overview: product-guide/system/clusters.md
         - Configuration Options: product-guide/system/clusters-config-options.md
@@ -189,7 +207,7 @@ nav:
     - Virtual Machines:
       - Quick Start: 
         - Best Practices: product-guide/virtual-machines/vm-best-practices.md
-        - Uploading Media Images: product-guide/vsan/uploading-files-to-vsan.md
+        - Uploading Media Images: product-guide/storage/uploading-files-to-vsan.md
         - Creating Virtual Machines: product-guide/virtual-machines/creating-vms.md
         - Virtual Machine Drives: product-guide/virtual-machines/vm-drives.md
         - Virtual Machine Network Interfaces: product-guide/virtual-machines/vm-nics.md
@@ -209,8 +227,9 @@ nav:
         - Virtual Machine Remote Console: product-guide/virtual-machines/vm-remote-console.md
       - Guest OS Compatibility: product-guide/virtual-machines/guest-os-compatibility.md
     - Tenants:
-      - Assigning External IP Addresses: product-guide/tenants/assign-ip-to-tenant.md
+      - Overview: product-guide/tenants/overview.md
       - Creating Tenants: product-guide/tenants/create-tenants.md
+      - Assigning External IP Addresses: product-guide/tenants/assign-ip-to-tenant.md
       - Increasing Resources: product-guide/tenants/add-tenant-resources.md
       - Modifying Tenants: product-guide/tenants/tenant-modifications.md
       - Monitoring Tenants: product-guide/tenants/tenant-monitoring.md
@@ -218,9 +237,11 @@ nav:
       - Sharing Files: product-guide/tenants/provide-files-to-tenant.md
       - Sharing VMs: product-guide/tenants/share-vm-snapshot.md
       - Tenant Snapshots: product-guide/tenants/tenant-snapshots.md
+      - Tenant Restores: product-guide/tenants/tenant-restores.md
       - Usage Reports: product-guide/tenants/tenant-usagereports.md
     - NAS:
-      - Overview: product-guide/nas/nas-service.md
+      - Overview: product-guide/nas/overview.md
+      - Add a NAS Service: product-guide/nas/nas-service.md
       - Configuration:
         - Local Volumes: product-guide/nas/nas-local-volumes.md
         - Remote Volumes: product-guide/nas/nas-remote-volumes.md
@@ -232,8 +253,9 @@ nav:
 #      - Overview: product-guide/mediaimages-overview.md
 #      - Uploading Media Images: product-guide/uploadingtovSAN.md
     - Networking:
-      - Quick Start: 
-        - Overview: product-guide/networks/network-overview.md
+      - Overview: product-guide/networks/overview.md
+      - Concepts: product-guide/networks/network-concepts.md
+      - Quick-Start Tasks: 
         - Connect to an Existing LAN/WAN: product-guide/networks/connect-lan-wan.md
         - Create an Internal Network with External Access: product-guide/networks/internal-external-access.md
         - Creating an Internal Layer2 Network: product-guide/networks/internal-layer2.md
@@ -259,28 +281,10 @@ nav:
         - WireGuard Examples: product-guide/vpn/wireguard-examples.md
       - Troubleshooting:
         - Network Troubleshooting: product-guide/networks/net-troubleshooting.md
-    - Backup & DR:
-      - Site Syncs:
-        - Configuration: product-guide/backup-dr/sync-configuration.md
-        - Monitoring: product-guide/backup-dr/monitoring-site-syncs.md
-        - Sync Back: product-guide/backup-dr/sync-back.md
-        - Manual Sync: product-guide/backup-dr/manual-site-syncs.md
-        - Repair Server: product-guide/backup-dr/repair-server.md
-      - Snapshots:
-        - Overview: product-guide/backup-dr/snapshots-overview.md
-        - Profiles: product-guide/backup-dr/snapshot-profiles.md
-        - VM Snapshots and Restore: product-guide/backup-dr/vm-snapshots-restores.md
-        - Tenant Snapshot and Restore: product-guide/tenants/tenant-snapshots.md
-        - Cloud Snapshots and Restore: product-guide/backup-dr/cloud-snapshot-restore.md
-        - NAS Snapshots and Restore: product-guide/nas/volume-snapshots-restores.md
-    - vSAN:
-       - Architecture: product-guide/vsan/architecture.md  # Added from PR
-       - Storage Tiers: product-guide/vsan/storage-tiers.md
-       - Preferred Tier: product-guide/vsan/preferred-tiers.md
-       - Removing ISO Files with References: product-guide/vsan/removing-iso-refs.md
     - Automation:
       - Recipes:
-        - Organization: product-guide/automation/recipes-organization.md
+        - Overview: product-guide/automation/recipes-overview.md
+        - Organizing Recipes: product-guide/automation/recipes-organization.md
         - VM Recipes: product-guide/automation/vm-recipes.md
         - Tenant Recipes: product-guide/automation/tenant-recipes.md 
       - Task Manager:
@@ -299,6 +303,12 @@ nav:
         - Creating Subscriptions: product-guide/system/subscriptions-overview.md
         - Subscription Profiles: product-guide/system/subscription-profiles.md
         - Accessing Subscriptions: product-guide/system/subscriptions-accessing.md
+      - System Diagnostics: product-guide/system/diagnostics.md
+    - Tools and Integrations:
+      - Prometheus Exporter: product-guide/tools-integrations/prometheus-exporter.md
+      - Terraform Provider: product-guide/tools-integrations/terraform-provider.md
+      - Storware Backup and Recovery: product-guide/tools-integrations/storware-backup-recovery.md
+      - Inuvika Virtual Apps and Desktops: product-guide/tools-integrations/inuvika.md
   - Release Notes: 
     - Overview: release-notes/release-notes-overview.md
     - 4.13 (latest): release-notes/release-notes.md
