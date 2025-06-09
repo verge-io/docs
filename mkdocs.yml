@@ -151,7 +151,6 @@ nav:
     - knowledge-base/index.md
   - Product Guide:
     - VergeOS User Interface: product-guide/ui-overview.md
-    - Transitioning from VMware: product-guide/transition-from-vmware.md
     - Storage:
        - Overview: product-guide/storage/overview.md
        - vSAN Architecture: product-guide/storage/vsan-architecture.md  # Added from PR
