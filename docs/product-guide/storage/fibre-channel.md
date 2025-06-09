@@ -4,6 +4,16 @@
 
 VergeOS vSAN supports the use of Fibre Channel (FC) LUNs as storage devices within its tiered architecture. This enables seamless integration with your existing SAN infrastructure while benefiting from vSAN's native performance, redundancy, and efficiency.
 
+!!! note "Physical Disks vs. Fibre Channel LUNs"
+    While VergeOS vSAN supports Fibre Channel LUNs, **Verge.io recommends using physical disks directly attached to nodes** for optimal performance and simplicity. Physical disks provide:
+    
+    - **Simpler configuration** - No FC zoning, HBA management, or SAN coordination required
+    - **Better performance** - Direct access without SAN overhead and network bottlenecks  
+    - **Lower complexity** - Fewer failure points and easier troubleshooting
+    - **Cost efficiency** - No need for FC infrastructure, HBAs, or SAN licensing
+    
+    Consider FC LUNs primarily when you have existing SAN investments or specific compliance requirements. 
+
 ## Implementation Requirements
 
 ### Hardware
