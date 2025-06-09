@@ -64,7 +64,10 @@ The *Tenant Wizard* steps through multiple input forms to create a new custom te
 !!! tip "Remember that an external IP is one that is external to the VergeOS system; it may or may not be a public Internet address. An external IP can be a private address on your external LAN/WAN, for example: 10.10.10.100"
 
 4. Click **Submit** to finish. You should see a message saying the tenant was created successfully and the new tenant dashboard is presented.
+5. If a Proxy is being used for tenants, there is an option to **Create a new FQDN** for the tenant
 
+- See [**Create a New Tenant with Proxy**](/knowledge-base/configuring-proxy/#creating-a-new-tenant-with-proxy) for instructions on creating a new tenant with a proxy and assigning an FQDN to it.
+  
 !!! success "Apply Rules"
     If external IP(s) were assigned to the tenant, rules will need to be applied to the selected external network. Click the orange-highlighted message "Needs Apply Rules" on the tenant dashboard to apply the necessary rules.
 
