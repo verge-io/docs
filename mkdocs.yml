@@ -147,6 +147,7 @@ nav:
       - Cloud Providers: reference-architecture/csp.md
       - Life / Data Science: reference-architecture/data-science.md
       - Homelab: reference-architecture/homelab.md
+    - Transitioning from VMware: implementation-guide/transition-from-vmware.md
   - Knowledge Base:
     - knowledge-base/index.md
   - Product Guide:
