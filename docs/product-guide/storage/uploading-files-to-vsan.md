@@ -33,19 +33,19 @@ The *Media Images* section provides for uploading files to the VergeOS vSAN, all
 ## Create a Download Link for a Media Images File
 
 1. From the Main Dashboard, click **Media Images** on the left menu.
-2. Click **Add Public Link** on the left menu.
-3. Select the desired **File** in the dropdown list (the list includes all the files in Media Images).
-4. Select a **Link Format**
+3. Select the desired **File** from the list (the list includes all the files in Media Images).
+4. Click **Add Public Link** on the left menu.
+5. Select a **Link Format**
     - **Anonymous(uuid)** - creates a public download link using a GUID(128-bit number)
       *ex: `https://verge.example.com/273b5d6a--b205-1e1b-6ae6-01cfa7ed1233`*
     - **Custom** - creates a public download link using the name entered
       *ex: `https://verge.example.com/customname`*
     - **Use File Name (recommended)** - creates a public download link using the original filename
       *ex: `https://verge.example.com/virtio-win-1.9.6.iso`*
-5. Select **Expiration Type**
+6. Select **Expiration Type**
     - **Never Expire (default)** to make the download link perpetual. (Public Link can be manually edited or deleted later if needed.)
     - **Set Date** to select a specific date/time to cease the download link.
-6. Click **Submit** to save the link.
+7. Click **Submit** to save the link.
 
 ![Media Images Link Copy](/product-guide/screenshots/mediaimages-link-copy.png)
 
