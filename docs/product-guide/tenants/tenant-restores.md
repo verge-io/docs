@@ -31,3 +31,5 @@ A provider can restore a tenant from cloud snapshot **\-OR-** can expose a cloud
 7. ***Tenant Name*** will default to the original name but can be changed for the restore, if desired.
 8. Click **Submit**
 The dashboard for the recovered tenant appears. When the status changes from "Provisioning" to **"Offline"** the **tenant can be powered on**.
+
+Once a deleted tenant is restored, an IP address can be reassigned to it. For more information see: [**Assigning External IP Addresses to a Tenant**](/product-guide/tenants/assigning-external-ip-addresses-to-a-tenant)

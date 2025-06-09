@@ -236,6 +236,7 @@ nav:
       - Sharing Files: product-guide/tenants/provide-files-to-tenant.md
       - Sharing VMs: product-guide/tenants/share-vm-snapshot.md
       - Tenant Snapshots: product-guide/tenants/tenant-snapshots.md
+      - Tenant Restores: product-guide/tenants/tenant-restores.md
       - Usage Reports: product-guide/tenants/tenant-usagereports.md
     - NAS:
       - Overview: product-guide/nas/overview.md
