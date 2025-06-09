@@ -26,9 +26,11 @@ The *Media Images* section provides for uploading files to the VergeOS vSAN, all
 3. Enter a valid URL (for example: `https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso`)
 4. Enter desired **Name** for the file.
 5. Optionally, a **File Description** can be entered to provide additional information.
-6. The **Allow insecure SSL links to be used** option will permit the file download from a site without a valid CA-signed certificate (e.g. missing, invalid, expired, or self-signed certs).
-7. Click the **Submit** button
-8. The file will appear in the Media Images listing.
+6. Select a **Preferred Tier** or leave the setting at Default.
+7. The **Allow insecure SSL links to be used** option will permit the file download from a site without a valid CA-signed certificate (e.g. missing, invalid, expired, or self-signed certs).
+8. The **Skip header check** option bypasses standard header security validation policies which may improve upload time but may potentially increase data integrity and security risk.  Use with caution.   
+9. Click the **Submit** button
+10. The file will appear in the Media Images listing.
 
 ## Create a Download Link for a Media Images File
 
