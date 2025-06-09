@@ -1,17 +1,3 @@
----
-title: Transitioning from VMware to VergeOS
-slug: vmware-to-vergeos-migration
-description: A guide for VMware users to understand VergeOS differences and migrate effectively
-author: VergeOS Team
-draft: false
-date: 2025-03-05T09:00:00.000Z
-tags: [vmware, migration, vergeos, virtualization]
-categories:
-  - Knowledge Base
-editor: markdown
-dateCreated: 2025-03-05T09:00:00.000Z
----
-
 # Transitioning from VMware to VergeOS
 
 ## Overview
@@ -21,7 +7,9 @@ dateCreated: 2025-03-05T09:00:00.000Z
     - Unlike VMware’s modular ecosystem, VergeOS operates as a single OS with built-in multi-tenancy.
     - This guide maps VMware concepts to VergeOS equivalents to ease your migration.
 
-If you’re a VMware user considering a shift to VergeOS, this guide will help you understand the differences in architecture, terminology, and workflows. VMware’s vSphere and ESXi provide a robust virtualization platform, often paired with vSAN, NSX, or vCenter for storage, networking, and management. VergeOS, however, integrates these capabilities into a single, software-defined data center operating system. This document outlines the key distinctions and offers practical steps to migrate your VMware workloads to VergeOS.
+If you’re a VMware user considering a shift to VergeOS, this guide will help you understand the differences in architecture, terminology, and workflows. VMware’s vSphere and ESXi provide a robust virtualization platform, often paired with vSAN, NSX, or vCenter for storage, networking, and management. VergeOS, however, integrates these capabilities into a single, software-defined data center operating system. This document outlines the key distinctions and offers practical steps to migrate your VMware workloads to VergeOS. 
+
+**Note from a former VMware Admin with over 15 years of experience**: Migrating to a new platform can _seem_ scary. Especially after investing so much of your time and career into a technology and platform that's been so beneficial for you.  The good news is that moving to VergeOS is *really really easy*. I would say that 80% of the way you did things in vSphere can be done in VergeOS.  You can take that invested knowledge you have of virtualized environments and continue to use it.  A lot of us here at Verge.io are former admins ourselves of various virtualization platforms (including vSphere). There's a number of aspects in VergeOS that we believe are quality-of-life improvements to what you're used to in vSphere. 
 
 ---
 
@@ -29,7 +17,7 @@ If you’re a VMware user considering a shift to VergeOS, this guide will help y
 
 - Familiarity with VMware vSphere, ESXi, and optionally vSAN or NSX.
 - Access to a VergeOS system or trial environment (see [Bootable Media](/implementation-guide/install-media.md)).
-- A backup of your VMware VMs and configurations before migration.
+- A backup of your VMware VMs and configurations before migration. (see [VMware Backup/DR Guide](/knowledge-base/vmwarebackupdrguide.md)).
 
 ---
 
@@ -58,9 +46,10 @@ Understanding VergeOS terms in VMware context is crucial for a smooth transition
 | **vCenter**           | **VergeOS UI**                               | The web-based UI runs on Controller Nodes (Node 1 or 2) for system-wide management. |
 | **Cluster**           | **Cluster**                                  | Groups of nodes with similar hardware, but VergeOS clusters share a single vSAN instance. |
 | **vSAN**              | **vSAN**                                     | VergeOS’s vSAN is integral, pooling storage across all nodes automatically. |
-| **Datastore**         | **Storage Tiers**                            | VergeOS organizes storage into tiers (e.g., SSD, HDD) within the vSAN. |
-| **Virtual Switch**    | **Internal Network / Virtual Wire**          | VergeOS uses layer 3 Internal Networks or Virtual Wires for layer 2 connectivity. |
+| **Datastore**         | **VSAN Storage Tiers**                       | VergeOS organizes storage into tiers (e.g., SSD, HDD) within the vSAN. |
+| **Virtual Switch**    | **VergeFabric Physical Network**             | VergeOS can present the physical network uplinks across multiple nodes into a logical switch that is referred to as a "Physical Network" in VergeOS. |
 | **VM**                | **VM**                                       | Virtual machines are similar, but VergeOS supports larger specs (e.g., 256TB disks). |
+| **dvPortGroup**       | **VergeFabric External Network**             | Virtual Networks that can represent a Layer 2 Network (e.g. a VLAN) that a VM can have it's virtual NIC on. Can also do Layer 3 services (routing, DNS, DHCP, BGP/OSPF, VPN)|
 | **Resource Pool**     | **Tenant**                                   | Tenants are isolated virtual data centers with their own resources and management. |
 
 **Takeaway**: While some terms overlap (e.g., VM, vSAN), VergeOS’s concepts like “Tenants” and “Internal Networks” offer more integrated and flexible options than VMware equivalents.
