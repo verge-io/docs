@@ -153,25 +153,35 @@ nav:
     - VergeOS User Interface: product-guide/ui-overview.md
     - Storage:
        - Overview: product-guide/storage/overview.md
-       - vSAN Architecture: product-guide/storage/architecture.md  # Added from PR
+       - vSAN Architecture: product-guide/storage/vsan-architecture.md  # Added from PR
        - Storage Tiers: product-guide/storage/storage-tiers.md
        - Preferred Tier: product-guide/storage/preferred-tiers.md
+       - Fibre Channel: product-guide/storage/fibre-channel.md
+    - Backup & DR:
+      - Overview: product-guide/backup-dr/overview.md
+      - Snapshots:
+        - Overview: product-guide/backup-dr/snapshots-overview.md
+        - Cloud Snapshots and Restore: product-guide/backup-dr/cloud-snapshot-restore.md
+        - Profiles: product-guide/backup-dr/snapshot-profiles.md
+        - VM Snapshots and Restore: product-guide/backup-dr/vm-snapshots-restores.md
+        - Tenant Snapshots: product-guide/tenants/tenant-snapshots.md
+        - NAS Snapshots and Restore: product-guide/nas/volume-snapshots-restores.md
+      - Site Syncs:
+        - Overview: product-guide/backup-dr/syncs-overview.md
+        - Configuration: product-guide/backup-dr/sync-configuration.md
+        - Monitoring: product-guide/backup-dr/monitoring-site-syncs.md
+        - Sync Back: product-guide/backup-dr/sync-back.md
+        - Manual Sync: product-guide/backup-dr/manual-site-syncs.md
+        - Repair Server: product-guide/backup-dr/repair-server.md
     - System Configuration:
       - SMTP: product-guide/system/smtp.md
       - Authentication:
         - Overview: product-guide/auth/auth-sources-overview.md
         - Entra ID / Azure AD: product-guide/auth/azure-auth.md
         - Google: product-guide/auth/google-auth.md
-        - Multi-Factor Authentication: product-guide/auth/mfa-email.md
+        - Multi-Factor Authentication: product-guide/auth/multifactor-auth.md
         - OIDC Applications Overview: product-guide/auth/oidc-apps-overview.md
       - Certificates: product-guide/system/certificates.md
-      - Cloud Snapshots:
-        - Overview: product-guide/backup-dr/snapshots-overview.md
-        - Profiles: product-guide/backup-dr/snapshot-profiles.md
-        - VM Snapshots and Restore: product-guide/backup-dr/vm-snapshots-restores.md
-        - Tenant Snapshots: product-guide/tenants/tenant-snapshots.md
-        - Cloud Snapshots and Restore: product-guide/backup-dr/cloud-snapshot-restore.md
-        - NAS Snapshots and Restore: product-guide/nas/volume-snapshots-restores.md
       - Clusters: 
         - Overview: product-guide/system/clusters.md
         - Configuration Options: product-guide/system/clusters-config-options.md
@@ -216,8 +226,9 @@ nav:
         - Virtual Machine Remote Console: product-guide/virtual-machines/vm-remote-console.md
       - Guest OS Compatibility: product-guide/virtual-machines/guest-os-compatibility.md
     - Tenants:
-      - Assigning External IP Addresses: product-guide/tenants/assign-ip-to-tenant.md
+      - Overview: product-guide/tenants/overview.md
       - Creating Tenants: product-guide/tenants/create-tenants.md
+      - Assigning External IP Addresses: product-guide/tenants/assign-ip-to-tenant.md
       - Increasing Resources: product-guide/tenants/add-tenant-resources.md
       - Modifying Tenants: product-guide/tenants/tenant-modifications.md
       - Monitoring Tenants: product-guide/tenants/tenant-monitoring.md
@@ -225,6 +236,7 @@ nav:
       - Sharing Files: product-guide/tenants/provide-files-to-tenant.md
       - Sharing VMs: product-guide/tenants/share-vm-snapshot.md
       - Tenant Snapshots: product-guide/tenants/tenant-snapshots.md
+      - Tenant Restores: product-guide/tenants/tenant-restores.md
       - Usage Reports: product-guide/tenants/tenant-usagereports.md
     - NAS:
       - Overview: product-guide/nas/overview.md
@@ -267,23 +279,10 @@ nav:
         - WireGuard Examples: product-guide/vpn/wireguard-examples.md
       - Troubleshooting:
         - Network Troubleshooting: product-guide/networks/net-troubleshooting.md
-    - Backup & DR:
-      - Site Syncs:
-        - Configuration: product-guide/backup-dr/sync-configuration.md
-        - Monitoring: product-guide/backup-dr/monitoring-site-syncs.md
-        - Sync Back: product-guide/backup-dr/sync-back.md
-        - Manual Sync: product-guide/backup-dr/manual-site-syncs.md
-        - Repair Server: product-guide/backup-dr/repair-server.md
-      - Snapshots:
-        - Overview: product-guide/backup-dr/snapshots-overview.md
-        - Profiles: product-guide/backup-dr/snapshot-profiles.md
-        - VM Snapshots and Restore: product-guide/backup-dr/vm-snapshots-restores.md
-        - Tenant Snapshot and Restore: product-guide/tenants/tenant-snapshots.md
-        - Cloud Snapshots and Restore: product-guide/backup-dr/cloud-snapshot-restore.md
-        - NAS Snapshots and Restore: product-guide/nas/volume-snapshots-restores.md
     - Automation:
       - Recipes:
-        - Organization: product-guide/automation/recipes-organization.md
+        - Overview: product-guide/automation/recipes-overview.md
+        - Organizing Recipes: product-guide/automation/recipes-organization.md
         - VM Recipes: product-guide/automation/vm-recipes.md
         - Tenant Recipes: product-guide/automation/tenant-recipes.md 
       - Task Manager:
