@@ -8,20 +8,30 @@ Within the VergeOS volume configuration, there is an option to create a volume t
 2. Create the **NAS**.
 3. Start the **NAS**.
 4. Create a **NAS user**.
+    - Click **NAS Users** in the left sidebar of the newly started NAS Service
+    - Click **New**
+    - Fill in the credentials and optional fields on the **NAS User** page
+    - Click **Submit**
 
 !!! info
-    Additional Information about configuration of the NAS and NAS user configuration can be found at [NAS Service Overview](/product-guide/nas/nas-service)
+    Additional Information about configuration of the NAS can be found at [NAS Service Overview](/product-guide/nas/nas-service)
 
-1. **Create a new volume**. Set the Filesystem type to **VergeOS VM Export**
-2. Under "**Export VMs**", select **Start** to start the VM export.
-3. Answer **Yes** at the Confirmation screen. The VM export volume has now been created.
+1. **Create a new volume**. Set the Filesystem type to **Verge.io VM Export**
+2. Under **VM Export Settings**
+    - Choose whether to put VMs in a quiesced state
+    - Select number of exports to store
+    - Choose whether to enable the creation of a "current" folder to contain most recent exports
+3. Click **Submit**
+4. Under "**Export VMs**" in the new volume's dashboard, select **Start** to start the VM export.
+5. Answer **Yes** at the Confirmation screen. The VM export volume has now been created.
 
 ## Share Export Volume Data
 
 1. [**Create a CIFS share**](/product-guide/nas/nas-shares#create-a-cifs-share) to the volume.
 2. **Add** the user we created above to the allowable users.
-3. **Browse** to **\\\IPorDNSnameoftheNAS\CIFSShareName**
-4. When prompted for credentials, **use the user we created above**. You can also enable Guest mode, but Windows users will need to edit the GPO or the Registry to connect using the Guest account.
+3. Click **Submit**
+4. **Copy** the Mount Path **\\\IPorDNSnameoftheNAS\CIFSShareName** in the CIFS share dashboard and **Browse** to it.
+5. When prompted for credentials, **use the user we created above**. You can also enable Guest mode, but Windows users will need to edit the GPO or the Registry to connect using the Guest account.
 
 ## Automate the VM Export
 
