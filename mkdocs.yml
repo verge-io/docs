@@ -305,10 +305,11 @@ nav:
         - Accessing Subscriptions: product-guide/system/subscriptions-accessing.md
       - System Diagnostics: product-guide/system/diagnostics.md
     - Tools and Integrations:
-      - Prometheus Exporter: product-guide/tools-integrations/prometheus-exporter.md
-      - Terraform Provider: product-guide/tools-integrations/terraform-provider.md
-      - Storware Backup and Recovery: product-guide/tools-integrations/storware-backup-recovery.md
+      - Cirrus Data Migration: product-guide/tools-integrations/cirrus-data.md
       - Inuvika Virtual Apps and Desktops: product-guide/tools-integrations/inuvika.md
+      - Prometheus Exporter: product-guide/tools-integrations/prometheus-exporter.md
+      - Storware Backup and Recovery: product-guide/tools-integrations/storware-backup-recovery.md
+      - Terraform Provider: product-guide/tools-integrations/terraform-provider.md
   - Release Notes: 
     - Overview: release-notes/release-notes-overview.md
     - 4.13 (latest): release-notes/release-notes.md
