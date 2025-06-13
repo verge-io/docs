@@ -6,26 +6,21 @@ The Cirrus Data integration with VergeOS provides advanced data mobility solutio
 
 ## Key Features
 
-- Non-disruptive data migration between storage platforms
-- Real-time data mobility with zero downtime
-- Cross-platform virtualization migration capabilities
-- Automated storage refresh and optimization
-- Cloud migration and hybrid cloud data management
-- Application-aware data mobility
+- Non-disruptive workload migration between hypervisor and public cloud platforms
+- Zero footprint deployment with no physical or virtual appliances required
+- Single-line installation command that can be automated at scale
+- Zero-downtime end-to-end migration including final I/O cutover
+- Intelligent Quality of Service (iQoS) that dynamically manages bandwidth impact
+- Automated storage integration with plug-ins for major storage platforms
+- Encryption and data reduction delivering up to 8x bandwidth savings
+- Cloud-based portal for centralized management of thousands of migration sessions
 
 ## Integration Benefits
 
 - **Zero Downtime Migrations**: Move data and workloads without service interruption
-- **Storage Independence**: Migrate between different storage vendors and technologies
-- **Accelerated Modernization**: Streamline infrastructure upgrades and cloud adoption
-- **Reduced Complexity**: Simplify data center consolidation and migration projects
-- **Cost Optimization**: Optimize storage utilization and reduce migration costs
-- **Risk Mitigation**: Minimize risks associated with data center relocations and upgrades
-
-## Use Cases
-
-- **Cloud Migration**: Move workloads from to public cloud to on-premises VergeOS
-- **Virtualization Platform Migration**: Migrate from other hypervisors like VMware and Nutanix to VergeOS
+- **Cloud Migration**: Move workloads from public cloud to on-premises VergeOS deployments
+- **Virtualization Platform Migration**: Migrate from other hypervisors like VMware, Microsoft Hyper-V and Nutanix to VergeOS
+- **Simplified Database Migrations**: Migrate enterprise databases like Oracle and SQL Server with zero downtime and automated processes
 
 ## Supported Migration Scenarios
 
