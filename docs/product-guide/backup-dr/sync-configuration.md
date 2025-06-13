@@ -6,7 +6,7 @@ Site sync provides replication of cloud snapshots to a separate VergeOS system; 
 
 1. [Network Configuration](#network-configuration)
 2. [Create Incoming Sync](#create-incoming-sync)
-3. [Create Outgoing Sync](#creating-outgoing-sync)
+3. [Create Outgoing Sync](#create-outgoing-sync)
 4. [Specify Snapshots to Auto Sync and Remote Retention](#specifying-snapshots-to-auto-sync-along-with-remote-retention)
 5. [Sync Scheduling](#sync-scheduling)
 6. [Configure a Repair Server](#repair-server)
