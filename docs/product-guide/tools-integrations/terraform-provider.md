@@ -99,13 +99,13 @@ For complete documentation, including all supported resources, data sources, and
 
 - [Terraform Registry Documentation](https://registry.terraform.io/providers/verge-io/vergeio/latest/docs){target="_blank"}
 - [OpenTofu Registry Documentation](https://search.opentofu.org/provider/verge-io/vergeio/latest){target="_blank"}
-- [GitHub Repository](https://github.com/verge-io/terraform-provider-vergeio)
+- [GitHub Repository](https://github.com/verge-io/terraform-provider-vergeio){target="_blank"}
 
 ## Support
 
 If you encounter issues or have feature requests, please open an issue on the GitHub repository:
 
-[https://github.com/verge-io/terraform-provider-vergeio/issues](https://github.com/verge-io/terraform-provider-vergeio/issues)
+[https://github.com/verge-io/terraform-provider-vergeio/issues](https://github.com/verge-io/terraform-provider-vergeio/issues){target="_blank"}
 
 ## Additional Resources
 
