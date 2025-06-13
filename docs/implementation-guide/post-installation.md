@@ -36,11 +36,11 @@ Before proceeding with post-installation configuration, ensure:
       - Review the current configuration
 
 2. **Adjust Resource Allocations:**
+      - Review Storage Buffer per node
       - Set maximum RAM allocation for VMs
       - Configure maximum CPU core limits
-      - Review and adjust swap settings if necessary
-      - Review Storage Buffer per node
       - Review Target Max RAM Percent (Default 80% means 20% RAM reserved for VergeOS)
+      - Review and adjust swap settings if necessary
 
 !!! warning "Resource Allocation Note"
     Changes to swap settings require disk reformatting and system restart. The Target Max RAM Percent setting directly affects the amount of RAM available for VMs.
@@ -49,8 +49,8 @@ Before proceeding with post-installation configuration, ensure:
 
 1. **CPU Power Management:**
    - For high-performance environments:
-     - Consider disabling CPU sleep states
      - Review CPU security mitigations
+     - Consider disabling CPU sleep states
    
    - For dedicated controller nodes:
      - Consider disabling CPU security mitigations for performance
