@@ -24,12 +24,8 @@ The Cirrus Data integration with VergeOS provides advanced data mobility solutio
 
 ## Use Cases
 
-- **Storage Refresh**: Upgrade to new storage systems without downtime
-- **Cloud Migration**: Move workloads from on-premises VergeOS to public cloud
-- **Data Center Consolidation**: Consolidate multiple sites into centralized VergeOS infrastructure
-- **Disaster Recovery**: Establish seamless DR capabilities between VergeOS environments
-- **Virtualization Platform Migration**: Migrate from other hypervisors to VergeOS
-- **Hybrid Cloud Implementation**: Create seamless hybrid cloud architectures
+- **Cloud Migration**: Move workloads from to public cloud to on-premises VergeOS
+- **Virtualization Platform Migration**: Migrate from other hypervisors like VMware and Nutanix to VergeOS
 
 ## Supported Migration Scenarios
 
@@ -44,7 +40,7 @@ Cirrus Data solutions support migration to and from VergeOS environments includi
 
 For detailed implementation instructions and configuration guidance, please refer to:
 
-- [Cirrus Data Solutions Overview](https://cirrusdata.com/data-mobility-solutions){target="_blank"} - Complete overview of Cirrus Data mobility solutions
+- [Cirrus Data MigrateOps Overview](https://cirrusdata.com/migrateops){target="_blank"} - Complete overview of Cirrus Data MigrateOps solution
 - [Request a Demo](https://action.cirrusdata.com/data-migration-demo){target="_blank"} - Get a demonstration of Cirrus Data mobility solutions
 - [Cirrus Data Cloud](https://cloud.cirrusdata.com){target="_blank"} - Sign up for cloud-based data mobility services
 
