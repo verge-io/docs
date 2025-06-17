@@ -1,21 +1,15 @@
 # Virtual Machine Management (VergeHV)
 
-The VergeHV hypervisor is a central component of the VergeOS unified environment, providing ease and flexibility for workload administration. By converging hyphypervisor functionalities storage and networking, VergeOS provides simplified administration, and improved resource utilization, eliminating the need for separate managment interfaces and dedicated storage networks, leading to reduced operational complexity and potentially lower costs.
-improved agility and automation
+The VergeHV hypervisor is a central component of the VergeOS unified environment. VergeOS converges complete hypervisor functionalities with storage and networking to provide simplified administration, improved resource utilization, and cost efficiencies, by eliminating the need for separate management interfaces and dedicated storage networks.
 
-Combining hypervisor and network management, often seen in the context of Software-Defined Networking (SDN) and Hyperconverged Infrastructure (HCI), offers several compelling advantages:
-
-Simplified Management: Instead of managing network infrastructure and virtual machines separately, a unified interface allows administrators to provision, monitor, and troubleshoot both from a single console. This reduces complexity and the potential for configuration errors.
-Improved Agility and Automation: With network functions virtualized and controlled by software, it becomes much easier to automate network provisioning for new VMs, dynamically adjust network policies, and adapt to changing workload demands. This allows for faster deployment of applications and services.
-Enhanced Resource Utilization: By treating network resources as a pool, just like compute and storage, the integrated solution can dynamically allocate bandwidth and network services to VMs based on their real-time needs, leading to more efficient use of network infrastructure.
-Greater Flexibility and Scalability: Decoupling network services from physical hardware allows for greater flexibility in network design and makes it easier to scale network capacity up or down as needed, without being constrained by physical limitations.
 
 ## Key Features
 
-* **Near bare metal efficiency**: VergeOS leverages KVM to operate as a Type-1 hypervisor, running directly on hardware for high performance. minimized overhead
-Low Overhead: Efficient design that consumes minimal host resources itself, leaving more resources available for VMs.
+* **Near bare metal efficiency**: VergeHV leverages KVM to operate as a Type-1 hypervisor, running directly on hardware for high performance. 
 
-* **Optimized Resource Utilization**: bility to efficiently pool and dynamically allocate CPU, memory, storage, and network resources to multiple virtual machines (VMs). This includes features like memory overcommit and shared dedicated capacity to maximize hardware utilization.
+* **Minimized System Overhead**: VergeOS operated with low ovverhead with an efficient design that consumes minimal host resources itself, leaving more resources available for VMs.
+
+* **Optimized Resource Utilization**: VergeHV delivers the ability to efficiently pool and dynamically allocate CPU, memory, storage, and network resources to multiple virtual machines (VMs). This includes features like memory overcommit and shared dedicated capacity to maximize hardware utilization.
 
 * **Simplified Management**: 
 
@@ -39,13 +33,23 @@ low overhead
 
 * **Wide Guest OS Support**: VergeOS supports a wide range of guest Operating systems. See [Guest OS Compatibility](/product-guide/virtual-machines/guest-os-compatibility) for more information.
 
+Combining hypervisor and network management, often seen in the context of Software-Defined Networking (SDN) and Hyperconverged Infrastructure (HCI), offers several compelling advantages:
+
+Simplified Management: Instead of managing network infrastructure and virtual machines separately, a unified interface allows administrators to provision, monitor, and troubleshoot both from a single console. This reduces complexity and the potential for configuration errors.
+Improved Agility and Automation: With network functions virtualized and controlled by software, it becomes much easier to automate network provisioning for new VMs, dynamically adjust network policies, and adapt to changing workload demands. This allows for faster deployment of applications and services.
+Enhanced Resource Utilization: By treating network resources as a pool, just like compute and storage, the integrated solution can dynamically allocate bandwidth and network services to VMs based on their real-time needs, leading to more efficient use of network infrastructure.
+Greater Flexibility and Scalability: Decoupling network services from physical hardware allows for greater flexibility in network design and makes it easier to scale network capacity up or down as needed, without being constrained by physical limitations.
+
 ## Getting Started
 
 New to VergeOS VM Management? Follow this path:
 
 1. **[VM Best Practices](/product-guide/virtual-machines/vm-best-practices)** - Guidelines for configuring new and imported virtual machines
 2. **[Create VMs](/product-guide/backup-dr/sync-configuration)** - Create new virtual machines from import, clone, recipe or from scratch
-3. **[Import VMs](/product-guide/virtual-machines/import-vms)** - 
+3. **[Import VMs](/product-guide/virtual-machines/import-vms)** - Easily migrate your existing workloads into VergeOS 
+
+
+
 
 ## Management and Monitoring
 
