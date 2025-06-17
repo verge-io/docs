@@ -19,7 +19,7 @@ This page provides a detailed explanation of all configuration options available
 - **Max RAM per machine**: Set the maximum amount of RAM allowed per machine in the cluster (in GB).
 - **Max cores per machine**: Set the maximum number of CPU cores allowed per machine in the cluster.
 - **Target max ram pct**: Set the target maximum RAM percentage for the cluster.
-- **% of reserve RAM for machines**: Specify the percentage of RAM to reserve for machines in the cluster.
+- **% of reserve RAM for machines**: Typically this field should be set to 0. Define the amount of swap to use for workload virtual RAM.  This allows you to run workloads beyond your maximum ram pct? warning about risks of going beyond...can degrade performance because generally dont want a node to consistently or often use 80% or more of its physical RAM.  what would be a % that would not be good here?
 - **Compute**: Toggle to enable or disable compute functionality for the cluster.
 
 ## Storage Settings
@@ -30,6 +30,7 @@ This page provides a detailed explanation of all configuration options available
 - **Storage cache size**: Set the cache size for storage (in GB).
 - **Tier used for swap**: Specify the storage tier to be used for swap space (-1 to disable).
 - **Swap per drive**: Set the amount of swap space per drive (in MB).
+!!! info "Swap is typically configured during node installation.  Changing the amount of swap per drive only applies to new/reformatted drives."
 
 ## CPU Settings
 
