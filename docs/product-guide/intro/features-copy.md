@@ -2,25 +2,35 @@
 
 ## Storage
 
-[Flexible and Reliable Storage Solutions](/product-guide/storage/overview) - to optimize operations 
+**[Overview](/product-guide/storage/overview)** - Get familiar with VergeOS storage features
 
-* [vSAN (VergeFS)](/product-guide/storage/vsan-architecture) - Integrated, resilient, distributed storage
-* [Media Images](/product-guide/storage/uploading-files-to-vsan) - convenient upload and management of individual ISOs, disk images, etc
-* [NAS (Network Attached Storage) Service](/product-guide/nas/nas-service) - File-level storage and access
-
-
-## Data Backup and Business Continuity
-
-* [Snapshots](/product-guide/backup-dr/snapshots-overview) - data protection with recovery points for the entire system and individual tenants/VMs/NAS volumes
-* [Site Syncs](/product-guide/backup-dr/sync-configuration) - efficient replication of complete systems off-site for DR and business continuity
+* [vSAN (VergeFS)](/product-guide/storage/vsan-architecture) - Utilize integrated, resilient, distributed storage
+* [Media Images](/product-guide/storage/uploading-files-to-vsan) - Easily upload and manage your individual ISOs, disk images, logos, and more
+* [NAS (Network Attached Storage) Service](/product-guide/nas/nas-service) - Establish file-level storage and access on your VergeFS distributed storage
 
 
-## Compute
+## Backup and Disaster Recovery (BC/DR)
 
-* [Virtual Machine Management](/product) embedded **KVM-based hypervisor** - optimized workload management seamlessly integrated with networking and storage
-* [Remote Console](/product-guide/virtual-machines/vm-remote-console) - real-time, in-guest access directly from the unified user interface
-* [Live VM Migrations](/product-guide/virtual-machines/live-migrations/#vm-live-migration) - running VMs moved between host nodes without service interruption.  The system automatically handles VM migrations during maintenance, updates, and after hardware failures (given sufficient resources on alternate nodes). [Manual VM Migrations](/product-guide/virtual-machines/vm-manual-migration) can also be performed on demand.
-* [Virtualized Resource Assignment (Device Passthrough)](/product-guide/system/device-pass-overview) - efficient workload leveraging of hardware via: [NVIDIA's GRID vGPU](/product-guide/system/nvidia-vgpu), [Direct PCI Passthrough](/product-guide/system/generic-pci-passthrough), [SRIOV NICs](/product-guide/system/sriov-nics) and [USB Passthrough](/product-guide/system/usb-passthrough)
+[Overview](/product-guide/backup-dr/overview) - Learn about VergeOS Backup and Recovery features
+
+* [Snapshots](/product-guide/backup-dr/snapshots-overview) - Protect your data and operations with recovery points for the entire system and individual tenants/VMs/NAS volumes
+* [Site Syncs](/product-guide/backup-dr/sync-configuration) - Replicate recovery points of your complete system off-site for BC/DR and 
+
+
+## Compute (VergeHV)
+
+[Virtual Machine Management](product-guide/virtual-machines/vm-management) - Explore how the VergeHV hypervisor can simplify your workload deployments and day-to-day operations
+
+* [Remote Console](/product-guide/virtual-machines/vm-remote-console) - Obtain real-time, in-guest access to your workloads directly from the VergeOS unified user interface
+* [Live VM Migrations](/product-guide/virtual-machines/live-migrations/#vm-live-migration) - Realize VergeOS resiliency that automatically handles VM migrations during maintenance, updates, and after hardware failures (sufficient resources required). 
+* [Manual VM Migrations](/product-guide/virtual-machines/vm-manual-migration) - Manually move workloads when needed
+* [Virtualized Resource Assignment (Device Passthrough)](/product-guide/system/device-pass-overview) - Efficiently leverage special hardware within your virtual machines:
+
+    - [NVIDIA's GRID vGPU](/product-guide/system/nvidia-vgpu)
+    - [Direct PCI Passthrough](/product-guide/system/generic-pci-passthrough)
+    - [SRIOV NICs](/product-guide/system/sriov-nics)
+    - [USB Passthrough](/product-guide/system/usb-passthrough)
+    
 * [VM Recipes](/product-guide/automation/vm-recipes) - templates and automation for rapid, streamlined workload deployment
 * [Embedded VDI Desktop](/product-guide/virtual-machines/vdi-overview) and [ Enterprise-level VDI Integration (Inuvika)](/product-guide/tools-integrations/inuvika)
 * [Golden VM Images (Non-persistent VM Drives)](/knowledge-base/making-a-nonpersistent-vm) to utilize a "master copy" of pre-configured, VM drives that can be used for compliancy, security and management optimization
