@@ -11,3 +11,7 @@ Data is accessed using the **VMware agent** for direct connection (independent o
 
 - [**From a NAS Volume**](/product-guide/virtual-machines/import-from-nas)
 Data is pulled from **CIFS or NFS share** accessing existing VM data storage.
+
+
+!!! tip "New"
+    **[Cirrus Data integration with VergeOS](/product-guide/tools-integrations/cirrus-data)** provides advanced solutions to simplify and accelerate migrations from existing hypervisors, storage systems, and cloud platforms.

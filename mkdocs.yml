@@ -205,7 +205,8 @@ nav:
         - Licensing and Updates: product-guide/system/licensing-and-updates.md
         - Advanced Settings: product-guide/system/advanced-system-settings.md
     - Virtual Machines:
-      - Quick Start: 
+      - Overview: product-guide/virtual-machines/vm-management.md 
+      - Quick Start:
         - Best Practices: product-guide/virtual-machines/vm-best-practices.md
         - Uploading Media Images: product-guide/storage/uploading-files-to-vsan.md
         - Creating Virtual Machines: product-guide/virtual-machines/creating-vms.md
