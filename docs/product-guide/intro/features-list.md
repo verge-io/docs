@@ -79,7 +79,7 @@ VergeFabric, delivers software defined networking (SDN), for simplified and flex
 
 ## Monitoring and Alerting
 
-* [Comprehensive Dashboard System](product-guide/intro/ui-overview) - Gain operational oversight of your entire system from VergeOS's intuitive, overview-to-detail dashboard navigation model
+* [Comprehensive Dashboard System](product-guide/ui-overview) - Gain operational oversight of your entire system from VergeOS's intuitive, overview-to-detail dashboard navigation model
 * [Subscriptions](/product-guide/system/subscriptions-overview) Create customized, automated alerts and reports to be delivered to appropriate personnel and/or external monitoring systems
 * [Third-Party Log Support](/knowledge-base/system-logs/#enabling-3rd-party-logging) - Automatically forward VergeOS log data, in your preferred format, to external log management solutions, such as Graylog
 
