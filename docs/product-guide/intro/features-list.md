@@ -31,19 +31,24 @@
     
 * [VM Recipes](/product-guide/automation/vm-recipes) - Automate and streamline your workload deployments
 
+* [Golden VM Images (Non-persistent VM Drives)](/knowledge-base/making-a-nonpersistent-vm) - Standardize VM deployments using a "master copy" of pre-configured VM drives to use for compliance, security, and management optimization
+
 * [Embedded VDI Desktop](/product-guide/virtual-machines/vdi-overview) - Use built-in VDI functionality to provide virtual desktops
 
-* [Enterprise-level VDI Integration (Inuvika)](/product-guide/tools-integrations/inuvika) - Leverage Inuvika-VergeOS integration for additional, advanced VDI functionality
+!!! tip "VDI Integration"
+    [Inuvika Integration with VergeOS](/product-guide/tools-integrations/inuvika) provides complimentary, advanced VDI functionality in conjunction with VergeOS's efficient virtualization.
 
-* [Golden VM Images (Non-persistent VM Drives)](/knowledge-base/making-a-nonpersistent-vm) - Standardize VM deployments using a "master copy" of pre-configured VM drives to use for compliance, security, and management optimization
+
 
 ## VM Imports
 
 * [VMware VM Imports](/product-guide/virtual-machines/import-from-vmware) - Import entire VMware workload environments non-disruptively
 * [VergeOS Clone Utility](/knowledge-base/importing-a-physicalvirtual-machine-into-vergeio) - Conveniently Import individual physical or virtual machines with this highly-compatible bootable utility
-* [Import from Media Images](/product-guide/virtual-machines/import-from-upload) - Upload individual VM disk and configuration files (e.g. vmdk/vhd/vhdx, ovf/ova, qcow/qcow2, raw) to VergeFS for importing workloads
+* [Import from Media Images](/product-guide/virtual-machines/import-from-upload) - Upload individual VM disk and configuration files (e.g. vmdk/vhd/vhdx, ovf/ova, qcow/qcow2, vmx, raw) to VergeFS for importing workloads
 * [NAS Volume Imports](/product-guide/virtual-machines/import-from-nas) - Perform individual or batch VM imports directly from source storage
-* [Cirrus Data Integration with VergeOS](/product-guide/tools-integrations/cirrus-data) - Utilize Cirrus-VergeIO integration for external tools to automate and accelerate large-scale transitions from any cloud or on-premises platform
+
+!!! tip "Enterprise Integration"
+    [Cirrus Data Integration with VergeOS](/product-guide/tools-integrations/cirrus-data) - Cirrus-VergeIO integration provides auxiliary tools that automate and accelerate large-scale imports to VergeOS from any cloud or on-premises platform.
 
 ## Tenancy
 
@@ -62,9 +67,9 @@ VergeFabric, delivers software defined networking (SDN), for simplified and flex
 
 [Get familiar with VergeFabric →](/product-guide/networks/overview) 
 
-* [Virtual Networks](/product-guide/networks/internal-networks) - Create up to thousands of virtual networks with the option to use embedded IP management for DHCP, DNS, firewall, routing, NAT/PAT
+* [Virtual Networks](/product-guide/networks/internal-networks) - Create up to thousands of virtual networks and optionally use embedded IP management for DHCP, DNS, firewall, routing, NAT/PAT
 * [Micro Segmentation](/knowledge-base/how-to-achieve-network-micro-segmentation-on-vergeos) - Segment and isolate workloads at the VDC(tenant) level, by groups or at the individual workload(VM)
-* [Fine-tuned Network Control (Rules)](/product-guide/networks/network-rules) - Use network rules for very precise control of traffic at each virtual network **[static routes, translations(NAT/PAT), and security policies (accept/reject/drop)]**
+* [Fine-tuned Network Control (Rules)](/product-guide/networks/network-rules) - Use network rules for very precise control of traffic at each virtual network (routes, translations(NAT/PAT), and security policies)**
 * [Granular Traffic Monitoring](/product-guide/networks/tracking-net-statistics) - Measure and analyze network traffic per network rule
 * [VPN](/product-guide/vpn/vpn-overview) - Establish secure-tunnel remote access and site-to-site connections using WireGuard and IPsec
 * [Integrated Network Diagnostics](/product-guide/networks/net-diagnostics) - Utilize convenient and comprehensive network troubleshooting tools for each network, directly from the VergeOS dashboard
@@ -96,5 +101,5 @@ VergeFabric, delivers software defined networking (SDN), for simplified and flex
 * [Inuvika](/product-guide/tools-integrations/inuvika) - Leverage the advantages of VergeOS combined with Inuvika's advanced virtual desktop infrastructure (VDI) 
 * [Storware](/product-guide/tools-integrations/storware-backup-recovery) - Utilize Storware integration to layer additional enterprise backup functionality and/or comply with mandatory third-party backup requirements
 * [Terraform Provider](/product-guide/tools-integrations/terraform-provider) - Manage VergeOS as part of your infrastructure-as-code (IaC) workflows
-* [Export Volumes](/knowledge-base/exporting-a-virtual-machine) - Easily extract VergeOS VMs for third-party backup, compliance, etc.
+* [Export Volumes](/knowledge-base/configuring-a-vm-export-volume) - Easily extract VergeOS VMs for third-party backup, compliance, etc.
 * [VergeOS API](/knowledge-base/verge-api-guide) - Integrate with external systems, such as ticketing, billing, alerting, to streamline workflows with Verge's dev-ready, complete-access API.
