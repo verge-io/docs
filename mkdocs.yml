@@ -213,7 +213,8 @@ nav:
         - Virtual Machine Network Interfaces: product-guide/virtual-machines/vm-nics.md
         - Virtual Machine Fields: product-guide/virtual-machines/vm-field-descriptions.md
         - VM Guest Agent: product-guide/virtual-machines/vm-guest-agent.md
-      - Importing VMs: 
+      - Importing VMs:
+        - Overview: product-guide/virtual-machines/imports-overview.md 
         - From Media Images: product-guide/virtual-machines/import-from-upload.md
         - From VMware Backup: product-guide/virtual-machines/import-from-vmware.md
         - From NAS Volume: product-guide/virtual-machines/import-from-nas.md
