@@ -287,6 +287,7 @@ nav:
         - Organizing Recipes: product-guide/automation/recipes-organization.md
         - VM Recipes: product-guide/automation/vm-recipes.md
         - Tenant Recipes: product-guide/automation/tenant-recipes.md 
+        - Marketplace VM Recipes: product-guide/automation/marketplace-vm-recipes.md
       - Task Manager:
         - Overview: product-guide/automation/task-manager.md
         - Create Tasks: product-guide/automation/create-tasks.md
