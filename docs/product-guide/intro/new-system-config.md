@@ -16,7 +16,7 @@ This page provides a guide for configuring a new VergeOS system.
 - [ ] [Establish Alerting/Reporting](#alerting-and-reporting)  
 - [ ] [Verify Cloud Snapshot Settings](#cloud-snapshot-settings)  
 - [ ] [Configure Authorization/Authentication Settings](#authenticationauthorization-settings)
-- [ ] [Optional - Enable Third-party Logging](/knowledge-base/Enabling-thirdparty-log-aggregation)
+- [ ] [Optional - Enable Third-party Logging](/knowledge-base/enabling-external-log-collection)
 
 ## Licensing/Updates
 
