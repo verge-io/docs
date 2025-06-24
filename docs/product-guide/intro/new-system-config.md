@@ -1,7 +1,7 @@
 # Initial System Configuration
 
 
-This page provides a guide for typical configuration necessary in a new VergeOS system. 
+This page provides a guide for configuring a new VergeOS system. 
 
 
  Before proceeding with these tasks, **verify system status** (all green status indicators) and **ensure correct networking configuration**. Refer to [Implementation Guide - Post-Installation](/implementation-guide/post-installation) (***Networking Configuration and Testing*** section) for guidance.
@@ -15,7 +15,8 @@ This page provides a guide for typical configuration necessary in a new VergeOS 
 - [ ] [Review/Adjust Cluster Settings](#cluster-settings)  
 - [ ] [Establish Alerting/Reporting](#alerting-and-reporting)  
 - [ ] [Verify Cloud Snapshot Settings](#cloud-snapshot-settings)  
-- [ ] [Configure Authorization/Authentication Settings](#authenticationauthorization-settings)  
+- [ ] [Configure Authorization/Authentication Settings](#authenticationauthorization-settings)
+- [ ] [Optional - Enable Third-party Logging](/knowledge-base/Enabling-thirdparty-log-aggregation)
 
 ## Licensing/Updates
 
@@ -58,7 +59,7 @@ See the [Cluster settings Product Guide](/product-guide/system/clusters-config-o
 
 ## Alerting and Reporting
 
-Configure [Subscriptions](/product-guide/system/subscriptions-overview) for alerting and reporting to effectively monitor your system. 
+Configure [Subscriptions](/product-guide/system/subscriptions-overview) for alerting and reporting to effectively monitor your system. Alerts are essential because they ensure you're immediately notified when specific events happen (e.g. high storage usage percentage, drive warnings, system log errors, etc.), allowing for rapid response. Reports will allow you to receive summarized information for selected areas of the system on a specified schedule.
 
 ## Cloud Snapshot Settings
  
