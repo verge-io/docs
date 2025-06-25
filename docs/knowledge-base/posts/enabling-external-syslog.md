@@ -19,7 +19,7 @@ dateCreated: 2022-08-23T19:19:56.461Z
 
 VergeOS can be configured to forward logs to a remote Syslog server, an important capability for organizations leveraging log aggregation for centralized management, log archival, and compliance. 
 
-!!! tip "Logged activity is typically available within the VergeOS user interface for a maximum of **45 days**."  
+!!! tip "Logged activity is typically available within the VergeOS user interface for a maximum of **45 days**.  Configure third-party log collection to retain logs for longer periods. "  
 
 
 To configure log forwarding to a third-party Syslog server:

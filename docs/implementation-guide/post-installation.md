@@ -114,6 +114,7 @@ Before proceeding with post-installation configuration, ensure:
 
 ### 7. Network Configuration and Testing
 
+
 1. **Core Network Testing:**
    - Test failover scenarios:
      * Simulate core/fabric connection loss

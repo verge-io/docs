@@ -153,7 +153,8 @@ nav:
   - Product Guide:
     - VergeOS User Interface: product-guide/ui-overview.md
     - Intro:
-       - VergeOS Features: product-guide/features-list.md
+       - VergeOS Features: product-guide/intro/features-list.md
+       - Initial Configuration: product-guide/intro/new-system-config.md
     - Storage:
        - Overview: product-guide/storage/overview.md
        - vSAN Architecture: product-guide/storage/vsan-architecture.md  # Added from PR
