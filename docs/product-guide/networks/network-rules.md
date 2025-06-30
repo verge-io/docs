@@ -20,7 +20,7 @@ Allows controlling traffic paths from the network. A common use would be to prov
 
 Rules are processed from the top of list to the bottom. There are situations where the order in which rules are processed can change behavior For example: a NAT/PAT rule to translate incoming traffic to a different port, while another rule that blocks traffic based on port; there could be different results depending upon which rule runs before the other. Therefore, it may be important to consider the order of your network rules. See the instructions below to *Change the Order of Rules*.
 
-!!! success "Rules are accessed from the particular network dashboard: From the Main Dashboard, click **Networks**, click the **All Networks** card in the top count area, double-click the desired network in the list."
+!!! success "Rules are accessed from the particular Networks dashboard: From the Main Dashboard, click **Networks**, click the **All Networks** card in the top count area, double-click the desired network in the list."
 
 ## View Existing Rules for a Network
 
@@ -64,7 +64,7 @@ For long rule lists, it may be helpful to filter the list (e.g. display Incoming
     - ***Other Network Address:*** helper option, to select a different network and use that network's address (entire segment)
     - ***Other Router IP:*** helper option, to select a different network and use that network's IP address (single IP address)
     - ***Other Network DMZ IP:*** helper option, to select the DMZ IP address of another network
-!!! info "Any specific IP address or network can be entered by using the ***Custom*** option; however, it is typically best to use one of the above helper options to select a variable setting that automatically handles inputting the correct address information. Using a helper option rather than specifying static addresses will allow the rule to continue working even when specific addresses are modified within VergeOS networks and allows for efficient cloning and recipe templates that include these network rules."
+!!! info "Any specific IP address or network can be entered by using the ***Custom*** option; however, it is typically best to use one of the above helper options to select a variable setting that automatically handles inputting the correct address information. Using a helper option rather than specifying static addresses will allow the rule to continue working even when specific addresses are modified within VergeOS Networks and allows for efficient cloning and recipe templates that include these network rules."
 
 15. Click **Submit** to save the new rule.
 
@@ -95,7 +95,7 @@ For long rule lists, it may be helpful to filter the list (e.g. display Incoming
     - ***Other Network Address:*** to select a different network and use that network's address (entire segment)
     - ***Other Router IP:*** to select a different network and use that network's IP address (single IP address)
     - ***Other Network DMZ IP:*** to select the DMZ IP address of another network
-!!! info "Any specific IP address or network can be entered by using the ***Custom*** option; however, it is typically best to use one of the above helper options to select a variable setting that automatically handles inputting the correct address information. Using a helper option rather than specifying static addresses will allow the rule to continue working even when specific addresses are modified within VergeOS networks and allows for efficient cloning and recipe templates that include these network rules."
+!!! info "Any specific IP address or network can be entered by using the ***Custom*** option; however, it is typically best to use one of the above helper options to select a variable setting that automatically handles inputting the correct address information. Using a helper option rather than specifying static addresses will allow the rule to continue working even when specific addresses are modified within VergeOS Networks and allows for efficient cloning and recipe templates that include these network rules."
 
 11. Specify ports/ranges in **Source/Destination/Target Ports/Ranges** (only applies to TCP/UDP protocols). Ports can be individual ports (with multiple individual ports separated by commas ex: 8080,8088) and port ranges ex: 1000-1005
 12. Click **Submit** to save the new rule.
