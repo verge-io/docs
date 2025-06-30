@@ -27,7 +27,7 @@ This model uses a bonded Layer 2 network for the External, UI and API Management
 
 ### Requirements
 
-- 4 x 10/25/40/100GbE NICs
+- 4 x 10/25/40/100GbE network ports per node
 - Switching infrastructure that supports stacking (MLAG) - For External Network
 
 ### Network Configuration
@@ -59,7 +59,7 @@ This model uses dynamically advertised Layer 3 networks for the External, UI and
 
 ### Requirements
 
-- 4 x 10/25/40/100Gb network adapters
+- 4 x 10/25/40/100Gb network adapter ports per controller node
 - A layer 3 network External to the System that VergeOS can peer with
 - BGP, OSPF, or EIGRP capabilities
 - Using VergeOS Internal Networks for workloads
@@ -93,7 +93,7 @@ This model uses a bonded Layer 3 network for the External, UI and API Management
 
 ### Requirements
 
-- 4 x 10/25/40/100Gb network adapters
+- 4 x 10/25/40/100Gb network adapter ports per controller node
 - Switching infrastructure that supports stacking (MLAG) - For External Network
 - Layer 3 capable switching infrastructure for the External network
 - Using VergeOS Internal Networks for workloads
@@ -115,11 +115,11 @@ This model uses a bonded Layer 3 network for the External, UI and API Management
 
 ![Layer 3 Bonded + Dedicated Core](/assets/layer3bonded-dc.png)
 
-## Layer 2 Static using 2 NICs
+## Layer 2 Static using 2 network ports
 
 In this model, all networks (Core Fabric, External/Management, Workloads) are combined into a single bonded network VergeOS Physical Network.
 
-### Use Cases - 2 NICs
+### Use Cases - 2 network ports
 
 - Proof of concepts
 - Small Edge deployments
@@ -129,12 +129,12 @@ In this model, all networks (Core Fabric, External/Management, Workloads) are co
 
 !!! note "Each statically assigned network you route to VergeOS in this system design will be non-redundant"
 
-### Requirements - 2 NICs
+### Requirements - 2 network ports
 
-- 2 x 10/25/40/100GbE network adapters
+- 2 x 10/25/40/100GbE network adapter ports per node
 - Ability to trunk VLANs and set a native VLAN on switch
 
-### Network Configuration - 2 NICs
+### Network Configuration - 2 network ports
 
 - 2 Physical Networks
 
@@ -146,7 +146,7 @@ In this model, all networks (Core Fabric, External/Management, Workloads) are co
 - A single VLAN for UI/API Management (Either Core Fabric Network)
 - Any other VLANs required for your workloads (Either Core Fabric Network)
 
-### Diagram - 2 NICs
+### Diagram - 2 network ports
 
 ![Layer 2 Bonded](/assets/2nic.png)
 
