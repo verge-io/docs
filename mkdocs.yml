@@ -158,6 +158,7 @@ nav:
        - Storage Tiers: product-guide/storage/storage-tiers.md
        - Preferred Tier: product-guide/storage/preferred-tiers.md
        - Fibre Channel: product-guide/storage/fibre-channel.md
+       - vSAN Deletion Process: product-guide/storage/vsan-deletion-process.md
     - Backup & DR:
       - Overview: product-guide/backup-dr/overview.md
       - Snapshots:
@@ -205,8 +206,8 @@ nav:
         - Licensing and Updates: product-guide/system/licensing-and-updates.md
         - Advanced Settings: product-guide/system/advanced-system-settings.md
     - Virtual Machines:
-      - Overview: product-guide/virtual-machines/vm-management.md 
-      - Quick Start:
+      - Overview: product-guide/virtual-machines/overview.md
+      - Quick Start: 
         - Best Practices: product-guide/virtual-machines/vm-best-practices.md
         - Uploading Media Images: product-guide/storage/uploading-files-to-vsan.md
         - Creating Virtual Machines: product-guide/virtual-machines/creating-vms.md
@@ -214,7 +215,8 @@ nav:
         - Virtual Machine Network Interfaces: product-guide/virtual-machines/vm-nics.md
         - Virtual Machine Fields: product-guide/virtual-machines/vm-field-descriptions.md
         - VM Guest Agent: product-guide/virtual-machines/vm-guest-agent.md
-      - Importing VMs: 
+      - Migrating VMs to VergeOS:
+        - Overview: product-guide/virtual-machines/vm-migration-overview.md
         - From Media Images: product-guide/virtual-machines/import-from-upload.md
         - From VMware Backup: product-guide/virtual-machines/import-from-vmware.md
         - From NAS Volume: product-guide/virtual-machines/import-from-nas.md
@@ -288,6 +290,7 @@ nav:
         - Organizing Recipes: product-guide/automation/recipes-organization.md
         - VM Recipes: product-guide/automation/vm-recipes.md
         - Tenant Recipes: product-guide/automation/tenant-recipes.md 
+        - Marketplace VM Recipes: product-guide/automation/marketplace-vm-recipes.md
       - Task Manager:
         - Overview: product-guide/automation/task-manager.md
         - Create Tasks: product-guide/automation/create-tasks.md
