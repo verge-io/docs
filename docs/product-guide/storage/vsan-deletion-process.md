@@ -116,6 +116,14 @@ When deleting VMs or drives inside a tenant:
 - **Media images provided to tenants** create additional block references
 - Consider shared objects when estimating storage reclamation
 
+!!! info "Network Resource Cleanup"
+    When a tenant is deleted, all associated network resources are automatically cleaned up:
+    
+    - **IP addresses** assigned to tenant VMs and networks are released back to the pool
+    - **Network blocks** (subnets) allocated to the tenant are unassigned and returned to available inventory
+    - **Network interfaces** and routing configurations are automatically removed
+    - **DNS entries** and network policies associated with the tenant are cleaned up
+    
 ### **Tenant Storage Isolation**
 
 - Each tenant has **dedicated storage volumes** with encryption support within their LXC container
@@ -153,7 +161,7 @@ For tenants that host their own sub-tenants:
 
 ### **Tenant Deletion Prerequisites**
 
-- **Tenants must be powered off** before deletion
+- **Tenants and their corresponding Tenant Networks must be powered off** before deletion
 - All tenant nodes must be offline
 - **Cannot delete the original tenant node** while tenant container is active
 - System validates no active references before allowing container deletion
