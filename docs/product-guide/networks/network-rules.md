@@ -20,29 +20,39 @@ Allows controlling traffic paths from the network. A common use would be to prov
 
 Rules are processed from the top of list to the bottom. There are situations where the order in which rules are processed can change behavior For example: a NAT/PAT rule to translate incoming traffic to a different port, while another rule that blocks traffic based on port; there could be different results depending upon which rule runs before the other. Therefore, it may be important to consider the order of your network rules. See the instructions below to *Change the Order of Rules*.
 
-!!! success "Rules are accessed from the particular network dashboard: From the Main Dashboard, click **Networks**, click the **All Networks** card in the top count area, double-click the desired network in the list."
+!!! success "Rules are accessed from the particular Networks dashboard: From the Main Dashboard, click **Networks**, click the **All Networks** card in the top count area, double-click the desired network in the list."
 
 ## View Existing Rules for a Network
 
-From the Network Dashboard, click **Rules**. All existing rules for the network are listed.  
+A network's rules can be accessed by:
+1. Clicking **Networks** from the Main Dashboard.
+2. Click **Networks** from the left sidebar, or **All Networks** quick-link within the dashboard.
+3. Double-click on the target network.
+4. From the network's dashboard, click **Rules**. All existing rules for the network are listed.  
 
 For long rule lists, it may be helpful to filter the list (e.g. display Incoming only; only Reject rules, etc) or search on specific criteria such as Name, assigned IP, etc.
 
 ## Create a New Firewall Rule (to explicitly allow or deny particular traffic)
 
-1. From the Network Dashboard, click **Rules**.
+1. From the network's dashboard, click **Rules**.
 2. Click **New** on the left menu.
 !!! info "These instructions detail how to create a new rule from scratch; new rules can also be created by making a copy of an existing rule, and changing any settings necessary; see instructions below to *Create a new Rule based on an existing Rule*"
 
 3. Enter a **Name** for the new rule. (Name should be something helpful for future administration.)
-4. Select ***Accept/Drop/Reject*** from the **Action** dropdown list.
+4. Optionally enter a **Description** for the rule.
+5. Select ***Accept/Drop/Reject*** from the **Action** dropdown list.
     - ***Accept:*** allow packets through that meet the defined criteria
     - ***Drop:*** do not allow packets that meet the defined criteria
     - ***Reject:*** do not allow specified traffic and send ICMP destination unreachable back to the source, when permitted
-5. Select ***Protocol*** from the **Protocol** dropdown list. (***ANY*** option will apply this rule to all protocols.)
-6. Select ***Incoming*** or ***Outgoing*** from the **Direction** dropdown list.
-7. The **Track Rule Statistics** checkbox can be selected to amass totals of the traffic that is processed through this rule. See [**Tracking Network Statistics**](/product-guide/networks/tracking-net-statistics) for more information.
-8. Select **Source** (where traffic comes from) and **Destination** (where traffic is addressed to go) from the dropdown list:  
+6. Optionally specify the ***Connection Tracking State***
+7. Select ***Protocol*** from the **Protocol** dropdown list. (***ANY*** option will apply this rule to all protocols.)
+8. Select ***Incoming*** or ***Outgoing*** from the **Direction** dropdown list.
+9. Select a specific ***Interface*** or ***Any*** from the **Interface** dropdown menu.
+10. Optionally pin the rule to the ***Top*** or ***Bottom*** of the rules list.
+11. Select **Enable Throttle** to set a traffic rate limit.
+12. The **Track Rule Statistics** checkbox can be selected to amass totals of the traffic that is processed through this rule. See [**Tracking Network Statistics**](/product-guide/networks/tracking-net-statistics) for more information.
+13. Select **Trace/Debug Rule** to be able to trace packets for diagnostic purposes.
+14. Select **Source** (where traffic comes from) and **Destination** (where traffic is addressed to go) and **Target** (target IP for ***Route*** and ***Translate*** **Actions**) from the dropdown list: 
     - ***Alias:*** to select an Alias IP defined on this network
     - ***Any/None:*** any source address; no filter on source address
     - ***Custom:*** provides a text input field where a specific filter can be entered. Custom entries can include individual IP address(ex: 192.168.1.200), CIDR network(ex: 10.10.4.0/28), or IP range(ex: 192.168.1.50-192.168.1.100)
@@ -54,13 +64,13 @@ For long rule lists, it may be helpful to filter the list (e.g. display Incoming
     - ***Other Network Address:*** helper option, to select a different network and use that network's address (entire segment)
     - ***Other Router IP:*** helper option, to select a different network and use that network's IP address (single IP address)
     - ***Other Network DMZ IP:*** helper option, to select the DMZ IP address of another network
-!!! info "Any specific IP address or network can be entered by using the ***Custom*** option; however, it is typically best to use one of the above helper options to select a variable setting that automatically handles inputting the correct address information. Using a helper option rather than specifying static addresses will allow the rule to continue working even when specific addresses are modified within VergeOS networks and allows for efficient cloning and recipe templates that include these network rules."
+!!! info "Any specific IP address or network can be entered by using the ***Custom*** option; however, it is typically best to use one of the above helper options to select a variable setting that automatically handles inputting the correct address information. Using a helper option rather than specifying static addresses will allow the rule to continue working even when specific addresses are modified within VergeOS Networks and allows for efficient cloning and recipe templates that include these network rules."
 
-9. Click **Submit** to save the new rule.
+15. Click **Submit** to save the new rule.
 
-## Create a Route or Translate(NAT/PAT) Rule
+## Create a Route or Translate (NAT/PAT) Rule
 
-1. From the Network Dashboard, click **Rules** on the left menu.
+1. From the network's dashboard, click **Rules** on the left menu.
 2. Click **New** on the left menu.
 !!! info "These instructions detail how to create a new rule from scratch; new rules can also be created by making a copy of an existing rule, and changing any settings necessary; see instructions below to Create a new Rule based on an existing Rule"
 
@@ -70,8 +80,10 @@ For long rule lists, it may be helpful to filter the list (e.g. display Incoming
     - ***Translate:*** to define a rule that maps an address/port outside this network with an address/port within this network
 5. Select ***Protocol*** from the **Protocol** dropdown list to apply this rule only to specific protocols. Select ***ANY*** to apply this rule to all protocols
 6. Select ***Direction*** from the **Direction** dropdown list (***Incoming*** or ***Outgoing***)
-7. The **Track Rule Statistics** checkbox can be selected to amass totals of the traffic that is processed through this rule. See [**Tracking Network Statistics**](/product-guide/networks/tracking-net-statistics) for more information.
-8. Select **Source** (where traffic comes from), **Destination** (where traffic is addressed to go), and **Target** (where to actually direct the traffic):  
+7. Optionally pin the rule to the ***Top*** or ***Bottom*** of the rules list.
+8. The **Track Rule Statistics** checkbox can be selected to amass totals of the traffic that is processed through this rule. See [**Tracking Network Statistics**](/product-guide/networks/tracking-net-statistics) for more information.
+9. Select **Trace/Debug Rule** to be able to trace packets for diagnostic purposes.
+10. Select **Source** (where traffic comes from), **Destination** (where traffic is addressed to go), and **Target** (where to actually direct the traffic):  
     - ***Alias:*** to select an Alias IP defined on this network
     - ***Any/None:*** any source address; no filter on source address
     - ***Custom:*** provides a text input field where a specific filter can be entered (individual IP address; CIDR network, IP range) ex: 192.168.0.55; 10.10.10.0/24; 192.168.0.20-192.168.0.30
@@ -83,14 +95,14 @@ For long rule lists, it may be helpful to filter the list (e.g. display Incoming
     - ***Other Network Address:*** to select a different network and use that network's address (entire segment)
     - ***Other Router IP:*** to select a different network and use that network's IP address (single IP address)
     - ***Other Network DMZ IP:*** to select the DMZ IP address of another network
-!!! info "Any specific IP address or network can be entered by using the ***Custom*** option; however, it is typically best to use one of the above helper options to select a variable setting that automatically handles inputting the correct address information. Using a helper option rather than specifying static addresses will allow the rule to continue working even when specific addresses are modified within VergeOS networks and allows for efficient cloning and recipe templates that include these network rules."
+!!! info "Any specific IP address or network can be entered by using the ***Custom*** option; however, it is typically best to use one of the above helper options to select a variable setting that automatically handles inputting the correct address information. Using a helper option rather than specifying static addresses will allow the rule to continue working even when specific addresses are modified within VergeOS Networks and allows for efficient cloning and recipe templates that include these network rules."
 
-9. Specify ports/ranges in **Source/Destination/Target Ports/Ranges** (only applies to TCP/UDP protocols). Ports can be individual ports (with multiple individual ports separated by commas ex: 8080,8088) and port ranges ex: 1000-1005
-10. Click **Submit** to save the new rule.
+11. Specify ports/ranges in **Source/Destination/Target Ports/Ranges** (only applies to TCP/UDP protocols). Ports can be individual ports (with multiple individual ports separated by commas ex: 8080,8088) and port ranges ex: 1000-1005
+12. Click **Submit** to save the new rule.
 
 ## Create a New Rule Based on an Existing Rule
 
-1. From the Network Dashboard, click **Rules**.
+1. From the network's dashboard, click **Rules**.
 2. Select the rule from the list and click the copy icon on the far right of the selected line.
 3. The new rule **Name** will default to the name of the source rule with "(copy)" appended to the end. Change the name to something helpful for future administration.
 4. Fields are pre-populated with the values of the source rule, alter as needed for the new rule.
@@ -98,7 +110,7 @@ For long rule lists, it may be helpful to filter the list (e.g. display Incoming
 
 ## Modify Existing Network Rule
 
-1. From the Network Dashboard, click **Rules**.
+1. From the network's dashboard, click **Rules**.
 2. Select the rule from the list and click **Edit** on the left menu.
 3. Make changes and click **Submit**.
 4. Click **Apply Rules** on the left menu to put the change into effect.
@@ -107,10 +119,10 @@ For long rule lists, it may be helpful to filter the list (e.g. display Incoming
 
 !!! success "Rule processing order is from top to bottom"
 
-1. From the Network Dashboard, click **Rules**.
+1. From the network's dashboard, click **Rules**.
 2. Select the rule to pin.
 3. Click **Edit** on the left.
-4. In the **Pin** field, select ***Top*** (to pin to the very beginning of the list) or ***Bottom*** (to pin to the very end of the list)
+4. In the **Pin** field, select ***Top*** (to pin to the top of the un-pinned list) or ***Bottom*** (to pin to the very end of the list)
 5. Click **Submit** to save the change.
    - A right-side-up pin icon indicates the rule is pinned to the top
    - An upside-down pin icon indicates the rule is pinned to the bottom
@@ -120,7 +132,7 @@ For long rule lists, it may be helpful to filter the list (e.g. display Incoming
 
 !!! success "Rule processing order is from top to bottom"
 
-1. From the Network Dashboard, click **Rules**.
+1. From the network's dashboard, click **Rules**.
 2. **Select the rule(s) to move up in the list.** (Make sure the desired rules are checked on the left.)
 3. Determine the rule the selected ones should be moved above (meaning the selected rules should execute before this one) and click the move icon on that line. The selected rules are moved up the list.
 4. Continue this process until all are in the desired sequence.

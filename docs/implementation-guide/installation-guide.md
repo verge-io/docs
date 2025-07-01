@@ -37,10 +37,11 @@ Before you proceed with the installation please make sure you've reviewed the fo
 3. Select **Controller** (default selection). The first two nodes of the system will be controller nodes.
 4. Select **Yes** to indicate this is a **New Install**.
 5. Select **time zone and NTP server settings**.  
-!!! tip "Time zone selection is generally based on the geographical location of the servers, but can alternately be configured based on administration preference.  Windows VMs will, by default, inherit the system time zone; a registry change is required to configure a Windows VM to UTC time."
+
+    !!! tip "Time zone selection is generally based on the geographical location of the servers, but can alternately be configured based on administration preference.  Windows VMs will, by default, inherit the system time zone; a registry change is required to configure a Windows VM to UTC time."
 
 6. Select appropriate **date/time**.
-!!! info "Correct date/time are very important for vSAN operation.  Be sure that during installation, date is set correctly and time is set reasonably close to the accurate time, to avoid potential problems."
+    !!! warning "Correct date/time are very important for vSAN operation.  Be sure that during installation, date is set correctly and time is set reasonably close to the accurate time, to avoid potential problems."
 
 7. Enter a **System Name**. This is also known as your Cloud name and will identify your system in: your dashboard, alerts/reports coming from this system, and site syncs. This name can be changed post-install, within System Settings.
 
@@ -54,24 +55,28 @@ Before you proceed with the installation please make sure you've reviewed the fo
 
 10. A list of all detected NICs is displayed.
   **Select a NIC (or multiple NICs, for port-bonded)**, to configure the associated physical network.  
-!!! note "Port bonding (LAG) should not be used for Core Fabric networks as it will interfere with the built-in redundancy based on multiple physical Core Fabric networks."
+  
+    !!! note "Port bonding (LAG) should not be used for Core Fabric networks as it will interfere with the built-in redundancy based on multiple physical Core Fabric networks."
 
 11. **Specify Physical Network Settings:**
-!!! tip "**Keyboard Hints:** [Tab] does not move field-to-field, but rather between action items (Finish/Edit/Cancel).  [Enter] toggles edit mode. When edit mode is OFF, an entry field is highlighted in blue, and you can move between fields with the up/down arrow keys.  When edit mode is ON, you can modify the field with the cursor."
+
+    !!! tip "**Keyboard Hints:** [Tab] does not move field-to-field, but rather between action items (Finish/Edit/Cancel).  [Enter] toggles edit mode. When edit mode is OFF, an entry field is highlighted in blue, and you can move between fields with the up/down arrow keys.  When edit mode is ON, you can modify the field with the cursor."
 
 * **Name** - This name will be used in the User interface to identify this network. Enter a name that will help to identify where the NIC(s) is plugged in, such as the switch hostname or organizational naming convention. This can be changed after installation.
 
 * **Description** (optional) - Text can be entered here to provide any additional administrative information.
 
 * **MTU** - The MTU setting must always be a value supported by the physical switching hardware.  For Core Fabric networks, the MTU should be large enough to support the levels of tenancy that will be provided; the default is 9192.
-!!! tip "When configuring an external network MTU: The Internet standard MTU for most Ethernet networks is 1500.  The standard for VPN connections is 1400 bytes (will vary depending on the service)."
+
+    !!! tip "When configuring an external network MTU: The Internet standard MTU for most Ethernet networks is 1500.  The standard for VPN connections is 1400 bytes (will vary depending on the service)."
 
 * **Core-Network:** -If a core network will reside here, the value needs to be "yes".  Otherwise, change the value to blank or "no".
 
 * **VLAN** - PVID port is always preferred (0 or blank for none), but a VLAN tag can be accommodated by entering the correct VLAN ID here.
 
 12. **Repeat the above steps to configure all of your physical networks** until every NIC has been assigned.  If there is a NIC that is not plugged in, it should still be configured here during installation; it can be given a name such as "unplugged" or "unused".
-!!! note "You can select [Done] when you have finished configuring all of your physical networks."
+
+    !!! note "You can select [Done] when you have finished configuring all of your physical networks."
 
 13. Select a **physical external network that will provide UI/LAN/WAN access**.
 
@@ -88,27 +93,43 @@ Before you proceed with the installation please make sure you've reviewed the fo
 
 17. Enter **license server settings** (username and password).  License server credentials are provided by your VergeOS sales or Implementation representative. These settings can be left blank during installation and added post-install within the VergeOS UI.  
 
-!!! note "Although license key credentials are not needed to complete the installation, they must be in place in order to run workloads or syncs on your system."
+    !!! note "Although license key credentials are not needed to complete the installation, they must be in place in order to run workloads or syncs on your system."
 
 18. Configure **Encryption settings**. (optional, at-rest encryption).  
-
-!!! warning "Encryption selection is not reversible post-install; changing from encrypted to unencrypted or vice-versa would require a system reinstall."
 
 * If encryption is selected, you will be prompted for an **AES256 encryption key passphrase**.
 Passphrase must be between 8 and 64 characters.
 
 * Optionally, you can **write the generated encryption key to a USB drive/dedicated device**.  Before selecting "Yes" to this option you must make sure the USB drive/dedicated storage device is plugged in.  On the next screen, verify the intended device is selected before hitting < OK >.
 
+    !!! warning "Encryption selection is not reversible post-install; changing from encrypted to unencrypted or vice-versa would require a system reinstall."
+
 19. **Select drives that will be used in the vSAN**.  All detected drives are displayed and selected by default. **Deselect any drives that should be excluded.  Make sure to deselect any removable devices or any drives that will be used to store an optional encryption key.**
 The system will display an automatically-selected tier for each drive.  Take notice of these tier assignments; they can be modified in a subsequent dialog, if needed.
 
-!!! warning "Selected drives display an asterisk; make sure any drives that you want to deselect do not have the asterisk on the far left before hitting < OK >. "
+    !!! warning "Selected drives display an asterisk; make sure any drives that you want to deselect do not have the asterisk on the far left before hitting < OK >. "
 
-20. **Manually Set Drive Tier Assignments (optional)**
+20. **Manually Set Drive Tier Assignments (optional)**:
+
 If you verified all drive tiers were selected as desired (previous screen), simply press [Enter] to proceed.  Otherwise, select **< Yes >**
  and **[Enter]** to view all drives and optionally change any tier assignments.  When finished manually selecting tier assignments, select "Done" and [Enter].
 
-21. Configure **Swap**: There are multiple factors to consider in planning swap, including: availability of storage, system use, disk type, etc. Consult with the VergeIO implementation team for further information. Swap is configurable in the UI, post-install, for new drives only.
+21. Configure Linux **Swap** (optional):
+
+There are multiple factors to consider in planning swap, including: availability of storage, system use, disk type, etc. Consult with the VergeIO implementation team for further information. Swap is configurable in the UI, post-install, for new and reformatted drives.
+
+* Select storage **tier** to use for swap. 
+
+    !!! note "Selecting Swap Tier"
+        - Typically, tier 0 drives are not preferred; select the next fastest-drive tier, when possible.
+        - Do not select HDD drives for swap unless the node only contains this type of storage.
+    
+* Enter the amount of swap to be established **per drive (in MB)**; e.g. if there are 8 drives in the selected tier, you can enter 2048 to give you 16,384MB (16GB) of swap.
+
+    !!! warning
+        - Generally, no more than 16GB of swap should be configured per node.  
+        - Large amounts of swap can degrade performance.
+         
 
 22. Select **drives to format for boot**.  This prompt will only appear if any drives were not selected to be included in the vSAN.  Older hardware (e.g. legacy Chassis, BOSS card) may require you to specify drives to format for boot.  In most cases, you can press [Enter] to continue with the installation without selecting boot drives.
 

@@ -8,16 +8,17 @@ Shares can be created to provide NFS and/or CIFS access to a NAS volume.
 
 1. From the Cloud Dashboard, select **NAS** from the left menu.
 2. Select **Volumes** from the left menu.
-3. Select **NFS Shares** from the left menu.
-4. Select **New** from the left menu.
-5. Enter a ***Name*** for the new NFS share (required).
-6. Enter a ***Share Path*** (or leave blank to share the entire volume).
-7. Enter a ***Description*** for the share (optional).
-8. The ***Allow Everyone*** checkbox can be selected to allow all hosts
-9. Specify one or more ***Allowed Hosts*** to grant access only from particular machines. Hosts can be specified by IP address or FQDN; wildcards can be used to allow entire domains, example: *.companyabc.com.
-10. Optionally, a ***Filesystem ID*** can be specified.
-11. Select desired ***Data Access*** from the dropdown list (Read Only or Read and Write).
-12. Select ***User/Group Squashing*** option
+3. Double-click the desired **Volume** in the list to display the volume dashboard.
+4. Select **NFS Shares** from the left menu.
+5. Select **New** from the left menu.
+6. Enter a ***Name*** for the new NFS share (required).
+7. Enter a ***Share Path*** (or leave blank to share the entire volume).
+8. Enter a ***Description*** for the share (optional).
+9. The ***Allow Everyone*** checkbox can be selected to allow all hosts
+10. Specify one or more ***Allowed Hosts*** to grant access only from particular machines. Hosts can be specified by IP address or FQDN; wildcards can be used to allow entire domains, example: *.companyabc.com.
+11. Optionally, a ***Filesystem ID*** can be specified.
+12. Select desired ***Data Access*** from the dropdown list (Read Only or Read and Write).
+13. Select ***User/Group Squashing*** option
     - ***No Squashing (default)***
     - ***Squash Root***
     - ***Squash All***

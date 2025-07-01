@@ -101,7 +101,7 @@ For users who need enhanced graphics capabilities, VergeOS supports both GPU Pas
 
 - [VM Recipes](/product-guide/automation/vm-recipes)
 - [Cloud Snapshots](/product-guide/backup-dr/cloud-snapshot-restore)
-- [vSAN Preferred Tiers](/product-guide/vsan/preferred-tiers)
+- [vSAN Preferred Tiers](/product-guide/storage/preferred-tiers)
 - [VPN](/product-guide/vpn/vpn-overview)
 - [Network Overview](/product-guide/networks/network-overview)
 - [Licensing](/product-guide/system/licensing-and-updates)

@@ -66,7 +66,7 @@ A group is a collection of users. Groups can also contain other groups. Administ
 
 ## Create a New Group
 
-1. From the **Main Dashboard**, select **Groups** from the top quick-links.
+1. From the **System Dashboard**, select **Groups** from the left side-bar.
 2. Select **New** on the left menu.
 3. Enter a ***Name*** for the group (required).
 4. Optionally, a ***Description*** can be specified for the group.
@@ -75,9 +75,9 @@ A group is a collection of users. Groups can also contain other groups. Administ
 
 ## Add Members (users and/or groups) to a Group
 
-1. From the **Main Dashboard**, select **Groups** from the top quick-links.
+1. From the **System Dashboard**, select **Groups** from the left side-bar.
 2. **Double-click the desired group** in the list to display the group dashboard.
 3. Click **Members**.
 4. Click **Add Users** or **Add Groups** on the left menu.
 5. Select users/groups from the displayed list. Hint: Multiple groups can be selected by holding down the Shift or Ctrl key.
-6. Click **Submit** to apply the changes.
+6. Click **Add to the Group** to apply the changes.

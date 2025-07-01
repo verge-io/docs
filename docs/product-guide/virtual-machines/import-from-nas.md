@@ -18,7 +18,7 @@ This method allows for the import of many VMs at once. It does not require uploa
 8. Click **Next** (bottom of the screen).
 9. The import job is given a default name of "Import Volume" + *NameofVolume*. **Import job Name can be changed** as desired.
 10. By default, ***MAC Addresses*** will be preserved (MAC addresses will stay the same as the source VMs from which they are imported); this is typically recommended to avoid necessary reconfiguration with the guest OS. If this option is unselected, the system will generate new, unique MAC addresses for all NICs.
-11. ***Preferred Tier*** can be selected or left at **--default--**. This determines the tier first attempted for VM storage. The [**Preferred Tiers**](/product-guide/vsan/preferred-tiers) page provides a detailed explanation of Preferred Tier.
+11. ***Preferred Tier*** can be selected or left at **--default--**. This determines the tier first attempted for VM storage. The [**Preferred Tiers**](/product-guide/storage/preferred-tiers) page provides a detailed explanation of Preferred Tier.
 12. When fields are entered as desired, click **Submit**.
 13. The import is initiated and the **Import Job Dashboard** will display. The following information (as well as additional data) is provided:
     - ***Status*** (Initializing/Importing/Complete)

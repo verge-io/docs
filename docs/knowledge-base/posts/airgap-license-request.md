@@ -39,28 +39,34 @@ This guide walks you through the process of requesting an airgap license for Ver
 ## Steps
 
 1. Navigate to System Settings
-   - From the Cloud Dashboard, click **System** on the left menu
-   - Click **Settings** on the left menu
 
-2. Initiate License Request
-   - In the **License** section, click the **Request License** button
+     - From the System Dashboard, click **System** on the left menu
+     - Click **Settings** on the left menu
 
-3. Generate License Request File
-   - A popup window titled "Request Generated" will appear
-   - This window displays information about the license request file
+3. Initiate License Request
    
-4. Download Request File
-   - Click the **Download Request File** button
-   - Save the license request file to your local machine
+     - In the **License** section, click the **Request License** button
 
-5. Prepare Email to Verge
-   - Click the **Email license@Verge.io** button
-   - This opens your default email client with a pre-addressed email
+5. Generate License Request File
+   
+     - A popup window titled "Request Generated" will appear
+     - This window displays information about the license request file
+   
+7. Download Request File
+   
+     - Click the **Download Request File** button
+     - Save the license request file to your local machine
 
-6. Send License Request
-   - Attach the downloaded license request file to the email
-   - Provide additional information in the email body (e.g., company name, purpose of license)
-   - Send the email to Verge's licensing team
+9. Prepare Email to Verge
+    
+     - Click the **Email license@Verge.io** button
+     - This opens your default email client with a pre-addressed email
+
+11. Send License Request
+    
+     - Attach the downloaded license request file to the email
+     - Provide additional information in the email body (e.g., company name, purpose of license)
+     - Send the email to Verge's licensing team
 
 ## What Happens Next
 
@@ -86,12 +92,6 @@ This guide walks you through the process of requesting an airgap license for Ver
     - Problem: Email client doesn't open automatically
       - Solution: Manually compose an email to license@Verge.io and attach the downloaded request file
 
-## Additional Resources
-
-- [Understanding VergeOS Licensing]
-- [Uploading an Airgap License to VergeOS]
-- [VergeOS System Requirements]
-
 ## Feedback
 
 !!! question "Need Help?"
@@ -99,6 +99,3 @@ This guide walks you through the process of requesting an airgap license for Ver
 
 ---
 
-!!! note "Document Information"
-    - Last Updated: 2024-09-09T15:41:14.296Z
-    - VergeOS Version: 4.12.6

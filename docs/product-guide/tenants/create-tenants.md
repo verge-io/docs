@@ -47,6 +47,12 @@ The *Tenant Wizard* steps through multiple input forms to create a new custom te
 
 ### New Tenant Storage Form
 
+1. Select which **Tier** to use for tenant storage from the **Tier** dropdown menu.  
+2. Select the amount of storage capacity to be provisioned for the tenant.
+3. Click the **Submit** button to proceed. Continue with the **UI Management** form.
+
+### UI Management Form
+
 1. You can optionally assign one external IP to the tenant. External IPs can be assigned to a tenant after creation as well. By default, the first one assigned to a tenant is configured to be the tenant's UI address.  
 2. Select from the **Assign External IP*** dropdown. (This list will include all unassigned Virtual IPs defined in the parent).  
 3. If the desired IP is not already configured as a Virtual IP in the parent system, click ***Create a new External IP*** to create the address:
@@ -58,7 +64,10 @@ The *Tenant Wizard* steps through multiple input forms to create a new custom te
 !!! tip "Remember that an external IP is one that is external to the VergeOS system; it may or may not be a public Internet address. An external IP can be a private address on your external LAN/WAN, for example: 10.10.10.100"
 
 4. Click **Submit** to finish. You should see a message saying the tenant was created successfully and the new tenant dashboard is presented.
+5. If a Proxy is being used for tenants, there is an option to **Create a new FQDN** for the tenant
 
+- See [**Create a New Tenant with Proxy**](/knowledge-base/configuring-proxy/#creating-a-new-tenant-with-proxy) for instructions on creating a new tenant with a proxy and assigning an FQDN to it.
+  
 !!! success "Apply Rules"
     If external IP(s) were assigned to the tenant, rules will need to be applied to the selected external network. Click the orange-highlighted message "Needs Apply Rules" on the tenant dashboard to apply the necessary rules.
 
