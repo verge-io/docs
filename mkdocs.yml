@@ -158,6 +158,7 @@ nav:
        - Storage Tiers: product-guide/storage/storage-tiers.md
        - Preferred Tier: product-guide/storage/preferred-tiers.md
        - Fibre Channel: product-guide/storage/fibre-channel.md
+       - vSAN Deletion Process: product-guide/storage/vsan-deletion-process.md
     - Backup & DR:
       - Overview: product-guide/backup-dr/overview.md
       - Snapshots:
