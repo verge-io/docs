@@ -301,13 +301,21 @@ nav:
       - USB Passthrough: product-guide/system/usb-passthrough.md
       - One-to-One PCI Passthrough: product-guide/system/generic-pci-passthrough.md
     - Maintenance & Monitoring:
-      - Drive Replacement: product-guide/system/drive-replacement.md
-      - Maintenance Mode: product-guide/system/maintenance-mode.md
       - Subscriptions/Alerts:
         - Creating Subscriptions: product-guide/system/subscriptions-overview.md
         - Subscription Profiles: product-guide/system/subscription-profiles.md
         - Accessing Subscriptions: product-guide/system/subscriptions-accessing.md
       - System Diagnostics: product-guide/system/diagnostics.md
+      - Prometheus Exporter: product-guide/tools-integrations/prometheus-exporter.md
+    - Operations:
+      - Drive Replacement: product-guide/operations/drive-replacement.md
+      - Maintenance Mode: product-guide/operations/maintenance-mode.md
+      - Standard Operating Procedures:
+        - Overview: product-guide/operations/sop-overview.md
+        - Scale Out Nodes: product-guide/operations/sop-scale-out.md
+        - System Updates: product-guide/operations/sop-update.md
+        - Installation Procedures: product-guide/operations/sop-verge-install.md
+        - vSAN Scale Up: product-guide/operations/vsan-scale-up-sop.md
     - Tools and Integrations:
       - Cirrus Data Migration: product-guide/tools-integrations/cirrus-data.md
       - Inuvika Virtual Apps and Desktops: product-guide/tools-integrations/inuvika.md
