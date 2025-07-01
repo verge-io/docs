@@ -4,7 +4,7 @@ This guide provides standardized procedures and best practices for VergeOS Engin
 
 !!! abstract "Overview"
     Installing your VergeOS system requires careful planning and execution to ensure a successful deployment. This guide breaks down the process into main phases:
-    
+
     1. **Preparation** - Steps to take before scheduling installation
     2. **Pre-Installation** - Final checks within 24 hours of installation
     3. **Installation** - The process of installing and configuring the system
@@ -12,6 +12,14 @@ This guide provides standardized procedures and best practices for VergeOS Engin
 
 !!! info "Environment-Specific Requirements"
     This guide covers general best practices. You may need to adapt these steps for your specific environment and requirements. Add space to accommodate node counts, networking configurations, and other needs.
+
+## Prerequisites
+
+- Physical access to hardware nodes for installation
+- Network infrastructure configured and ready
+- IPMI/remote management access to all nodes
+- VergeOS license credentials
+- **Estimated time:** 4-8 hours depending on configuration complexity
 
 ## Objective
 
@@ -25,8 +33,8 @@ Complete these steps prior to scheduling installation:
 
 - [ ] Confirm hardware meets minimum requirements
 
-!!! note
-    Refer to [VergeOS sizing documentation](https://docs.verge.io/implementation-guide/sizing/) for current and detailed requirements.
+!!! note "Hardware Documentation"
+    Refer to [VergeOS sizing documentation](/implementation-guide/sizing/) for current and detailed requirements.
 
   - [ ] **CPU Requirements:**
     - [ ] 64bit CPU with hardware virtualization support
@@ -57,13 +65,13 @@ Complete these steps prior to scheduling installation:
 
 ### Installation Media and Documentation
 
-- [ ] Create install media per [VergeOS documentation](https://docs.verge.io/implementation-guide/install-media/)
+- [ ] Create install media per [VergeOS documentation](/implementation-guide/install-media/)
   - [ ] Test boot media to verify functionality
 
 - [ ] Document and Create all network requirements
 
-!!! note
-    Refer to [VergeOS network design documentation](https://docs.verge.io/implementation-guide/network-design/) for current and detailed network requirements.
+!!! note "Network Documentation"
+    Refer to [VergeOS network design documentation](/implementation-guide/network-design/) for current and detailed network requirements.
 
   - [ ] **Core Network Configuration:**
     - [ ] Core Network VLAN1 Created and Documented
@@ -81,7 +89,6 @@ Complete these steps prior to scheduling installation:
     - [ ] Network Layer 2 Design Document/Drawing Created
     - [ ] Network Layer 3 Design Document/Drawing Created
 
-
 ### System Access and Configuration
 
 - [ ] Verify IPMI access to all nodes
@@ -94,9 +101,10 @@ Complete these steps prior to scheduling installation:
 
 ### Planning Decisions
 
-- [ ] Review the entire Proceedure described here
+- [ ] Review the entire procedure described here
 - [ ] Prepare information required to complete the entire process
 - [ ] Decide RAM reservation preference: More *Usable Memory* __OR__ More *enforcement of N+1 HA*
+- [ ] Plan installation timeline and communication to stakeholders
 
 ## Pre-Installation Phase
 
@@ -128,11 +136,11 @@ Perform these checks within 24 hours prior to scheduled installation:
 - [ ] No conflicting DHCP servers (if using DHCP)
 - [ ] Documentation available for troubleshooting
 
-## Installation Execution
-
-The actual installation process following the installer order:
+## Execution Phase
 
 ### Primary Controller Installation
+
+The actual installation process following the installer order:
 
 - [ ] Boot from USB installer
 - [ ] Select "Standard Install"
@@ -206,26 +214,26 @@ The actual installation process following the installer order:
 ### Primary Node Verification
 
 - [ ] System boots to 'blue' screen at console
-- [ ] UI accessible
+- [ ] UI accessible at configured IP address
 - [ ] All status indicators green in UI
 - [ ] vSAN mounted and healthy
 
 ## Secondary Controller Installation
 
-- [ ] Boot from USB installer
+- [ ] Boot secondary node from USB installer
 - [ ] Select "Controller"
 - [ ] Select "No" for new install
-- [ ] Enter admin credentials from primary
+- [ ] Enter admin credentials from primary controller
 - [ ] Confirm network auto-detection (STOP if any detected IP or Interface is not as-expected!)
-- [ ] Match encryption settings
-- [ ] Match drive Tier assignments
+- [ ] Match encryption settings from primary
+- [ ] Match drive Tier assignments from primary
 
 ### Secondary Node Verification
 
 - [ ] System boots to 'blue' screen at console
-- [ ] Node2 visible in UI
+- [ ] Node2 visible in primary UI
 - [ ] All status indicators green
-- [ ] vSAN status green
+- [ ] vSAN status green across both nodes
 
 ## Post-Installation Verification
 
@@ -241,15 +249,61 @@ After the installation completes, verify the system is operating correctly:
 - [ ] vSAN health green across all Tiers
 - [ ] Core fabric connectivity verified
 - [ ] External network connectivity verified
+
+### System Configuration Validation
+
 - [ ] Default VM Storage Tier Set
 - [ ] Cluster Target Max RAM percentage configured
 - [ ] Site Syncs configured (if required)
 - [ ] System Activated and up to date
 - [ ] SMTP Server setup (highly recommended)
+- [ ] Admin user email notifications configured
 
-### Communication Verification
+### Final Testing
+
+- [ ] Test VM creation and basic operations
+- [ ] Verify network connectivity from test VM
+- [ ] Confirm snapshot functionality
+- [ ] Test system backup/restore if applicable
+
+## Troubleshooting
+
+### Common Issues
+
+**Boot Issues:**
+
+- Verify BIOS boot settings match installation media type
+- Check USB media functionality on known working system
+- Confirm hardware compatibility with VergeOS
+
+**Network Configuration Issues:**
+
+- Verify VLAN configurations match network design
+- Check physical cable connections and switch configurations
+- Confirm IP addressing doesn't conflict with existing infrastructure
+
+**Storage Configuration Issues:**
+
+- Verify disk controller is in JBOD/IT mode
+- Check disk visibility in BIOS
+- Confirm storage tier assignments match planning documentation
+
+**Secondary Node Join Issues:**
+
+- Verify network connectivity between nodes
+- Check admin credentials are correct
+- Confirm primary node is fully operational before adding secondary
+
+## Next Steps
+
+After successful installation completion:
+
+- [ ] Schedule initial system backup
+- [ ] Configure monitoring and alerting
+- [ ] Update network documentation with final configuration
+- [ ] Plan tenant creation and resource allocation
+- [ ] Schedule administrator training if needed
+- [ ] Document final system configuration for operations team
 
 !!! danger "Emergency Support"
-    Should you have any issues with your VergeOS installation, please contact [support@verge.io](mailto:support@verge.io) immediately, or call 855-855-8300 if you need immediate on-call emergency assistance. Please have your SOP ready when calling.
-
----
+    Should you have any issues with your VergeOS installation, please contact [our support team](/support) for immediate assistance.
