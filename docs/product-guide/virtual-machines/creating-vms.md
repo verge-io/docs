@@ -8,8 +8,8 @@ A blank custom VM is created without drives or NICs. (Drives and NICs can be add
 - [**Create a VM from a Recipe**](#create-a-vm-from-a-recipe)
 The VM is created using a predefined recipe; recipes are VM image templates that allow quick launching of new VMs with a preloaded operating systems, applications, configuration info., etc. Recipes allow for very quick and convenient launching of new instances of machines with various preloaded software and configurations. Recipes can contain questions to be asked at the time of creation to customize each instance (such as drive sizes or RAM amount). Some service-VM recipes are included in your installation; your service provider may also provide recipes. Every VergeOS cloud can create and use their own local recipes as well.
 
-- [**Import**](/product-guide/virtual-machines/import-vms)
-VM is created from a standard format configuration file (e.g. OVF, VMX, XML, etc) with associated drives created from disk image files, such as \*.VMDK. See: [**VM Import Methods**](/product-guide/virtual-machines/import-vms)
+- [**Import**](/product-guide/virtual-machines/vm-migration-overview)
+VM is created from a standard format configuration file (e.g. OVF, VMX, XML, etc) with associated drives created from disk image files, such as \*.VMDK. See: [**VM Migration Methods**](/product-guide/virtual-machines/vm-migration-overview)
 
 - [**Create a VM from a Clone**](#create-a-vm-from-a-clone)
 A new VM instance is launched as a copy of an existing VM. A clone, by default, will be given different MAC address(es) than the original VM allowing the clone to run in the same network as the original VM without causing an IP conflict; optionally, MAC addresses can be preserved when needed.

@@ -206,6 +206,7 @@ nav:
         - Licensing and Updates: product-guide/system/licensing-and-updates.md
         - Advanced Settings: product-guide/system/advanced-system-settings.md
     - Virtual Machines:
+      - Overview: product-guide/virtual-machines/overview.md
       - Quick Start: 
         - Best Practices: product-guide/virtual-machines/vm-best-practices.md
         - Uploading Media Images: product-guide/storage/uploading-files-to-vsan.md
@@ -214,7 +215,8 @@ nav:
         - Virtual Machine Network Interfaces: product-guide/virtual-machines/vm-nics.md
         - Virtual Machine Fields: product-guide/virtual-machines/vm-field-descriptions.md
         - VM Guest Agent: product-guide/virtual-machines/vm-guest-agent.md
-      - Importing VMs: 
+      - Migrating VMs to VergeOS:
+        - Overview: product-guide/virtual-machines/vm-migration-overview.md
         - From Media Images: product-guide/virtual-machines/import-from-upload.md
         - From VMware Backup: product-guide/virtual-machines/import-from-vmware.md
         - From NAS Volume: product-guide/virtual-machines/import-from-nas.md

@@ -102,7 +102,7 @@ This guide explains how to import Redhat/CentOS based virtual machines from othe
 
 ## Additional Resources
 
-- [Importing VMs](/product-guide/virtual-machines/import-vms)
+- [Migrating VMs](/product-guide/virtual-machines/vm-migration-overview)
 - [VM Best Practices](/product-guide/virtual-machines/vm-best-practices)
 - [Dracut Wiki](https://github.com/dracutdevs/dracut/wiki/)
 
