@@ -1,4 +1,4 @@
-# VergeOS vSAN Deletion Process - Comprehensive Guide
+# VergeOS vSAN Deletion Process
 
 ## Block-Level Architecture Foundation
 
