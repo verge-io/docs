@@ -13,7 +13,11 @@ Site sync provides replication of cloud snapshots to a separate VergeOS system; 
 
 ## Network Configuration
 
+!!! success "**Quick Setup for VergeOS 4.13.x and Later**: Starting with VergeOS version 4.13.x, the necessary site sync PAT rules are pre-created on both the Core and initial External Network during system installation. For most users, you can simply enable the existing "Sync Rule" on **both** the Core Network **and** the External Network (look for the network that has your management UI IP assigned to it), then apply the rules for both networks. After enabling these pre-created rules, you can skip directly to the [Create Incoming Sync](#create-incoming-sync) section below."
+
 Network rules are necessary to translate incoming sync traffic to the vSAN. These rules are created at the **host level, not within a tenant**.
+
+!!! info "**When to Create Rules Manually**: The manual rule creation steps below are still valuable for scenarios such as: systems running VergeOS versions prior to 4.13.x, customizing rules for specific source IP filtering, or setting up sync traffic on additional/separate External Networks beyond the default management network."
 
 ### Configure 14201 PAT Rule for Sync traffic to the vSAN
 
