@@ -153,7 +153,7 @@ For tenants that host their own sub-tenants:
 
 ### **Tenant Deletion Prerequisites**
 
-- **Tenant LXC container must be powered off** before deletion
+- **Tenants must be powered off** before deletion
 - All tenant nodes must be offline
 - **Cannot delete the original tenant node** while tenant container is active
 - System validates no active references before allowing container deletion
