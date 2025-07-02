@@ -319,6 +319,7 @@ nav:
     - Tools and Integrations:
       - Cirrus Data Migration: product-guide/tools-integrations/cirrus-data.md
       - Inuvika Virtual Apps and Desktops: product-guide/tools-integrations/inuvika.md
+      - NVIDIA vGPU: product-guide/tools-integrations/nvidia-vgpu.md
       - Prometheus Exporter: product-guide/tools-integrations/prometheus-exporter.md
       - Storware Backup and Recovery: product-guide/tools-integrations/storware-backup-recovery.md
       - Terraform Provider: product-guide/tools-integrations/terraform-provider.md

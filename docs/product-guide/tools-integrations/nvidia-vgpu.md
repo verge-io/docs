@@ -122,15 +122,13 @@ The NVIDIA integration consists of three main layers:
 
 ### Getting Started
 
-- [NVIDIA vGPU Implementation Guide] - Detailed setup and configuration instructions
 - [Device Passthrough Overview](/product-guide/system/device-pass-overview) - Foundation concepts for hardware passthrough
 - [NVIDIA vGPU Configuration](/product-guide/system/nvidia-vgpu) - Basic vGPU setup procedures
 
 ### Advanced Configuration
 
 - [VM Best Practices](/product-guide/virtual-machines/vm-best-practices) - Performance optimization guidelines
-- [Maintenance Mode](/product-guide/system/maintenance-mode) - System maintenance procedures
-- [Resource Management] - Advanced resource allocation strategies
+- [Maintenance Mode](/product-guide/operations/maintenance-mode) - System maintenance procedures
 
 ### External Documentation
 
