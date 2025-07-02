@@ -2,7 +2,7 @@
 
 ## Storage
 
-**[Get familiar with VergeOS storage solutions →](/product-guide/storage/overview)**
+**[Get an overview of VergeOS storage solutions →](/product-guide/storage/overview)**
 
 * [vSAN (VergeFS)](/product-guide/storage/vsan-architecture) - Utilize integrated, resilient, distributed storage
 * [Media Images](/product-guide/storage/uploading-files-to-vsan) - Easily upload and manage your individual ISOs, disk images, logos, and other files
@@ -36,11 +36,13 @@
 * [Embedded VDI Desktop](/product-guide/virtual-machines/vdi-overview) - Use built-in VDI functionality to provide virtual desktops
 
 !!! tip "VDI Integration"
-    [Inuvika Integration with VergeOS](/product-guide/tools-integrations/inuvika) provides complimentary, advanced VDI functionality in conjunction with VergeOS's efficient virtualization.
+    [Inuvika Integration with VergeOS](/product-guide/tools-integrations/inuvika) provides complimentary, advanced VDI functionality in conjunction with VergeOS efficient virtualization.
 
 
 
-## VM Imports
+## Importing Existing Workloads into VergeOS
+
+**[Determine your best method for migrating workloads from other platforms →](/product-guide/virtual-machines/)**
 
 * [VMware VM Imports](/product-guide/virtual-machines/import-from-vmware) - Import entire VMware workload environments non-disruptively
 * [VergeOS Clone Utility](/knowledge-base/importing-a-physicalvirtual-machine-into-vergeio) - Conveniently Import individual physical or virtual machines with this highly-compatible bootable utility
@@ -54,7 +56,7 @@
 
 Tenants allow you to segregate system resources into secure enclaves for different customers, business groups, and projects  
 
-[Explore How to Use Tenants →](/product-guide/tenants/overview)
+**[Explore How to Use Tenants →](/product-guide/tenants/overview)**
 
 * [Tenant Recipes](/product-guide/automation/tenant-recipes) - Accelerate and standardize tenant deployment for efficiency, compliance and self-serve systems
 * [Tenant-level Reporting for Billing](/product-guide/tenants/tenant-usagereports) - Track resource usage per tenant to facilitate billing, auditing, and/or planning purposes
@@ -65,7 +67,7 @@ Tenants allow you to segregate system resources into secure enclaves for differe
 VergeFabric, delivers software defined networking (SDN), for simplified and flexible network management
 
 
-[Get familiar with VergeFabric →](/product-guide/networks/overview) 
+**[Get Familiar with VergeFabric Basics →](/product-guide/networks/overview) **
 
 * [Virtual Networks](/product-guide/networks/internal-networks) - Create up to thousands of virtual networks and optionally use embedded IP management for DHCP, DNS, firewall, routing, NAT/PAT
 * [Micro Segmentation](/knowledge-base/how-to-achieve-network-micro-segmentation-on-vergeos) - Segment and isolate workloads at the VDC(tenant) level, by groups or at the individual workload(VM)
