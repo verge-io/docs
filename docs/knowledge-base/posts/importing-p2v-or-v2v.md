@@ -1,5 +1,5 @@
 ---
-title: Importing Physical Machines and individual VMs into VergeOS
+title: Importing Physical Machines and Individual VMs into VergeOS
 slug: importing-a-physicalvirtual-machine-into-vergeio
 description: Learn how to use the VergeOS Clone Utility to import physical or virtual machines into the VergeOS environment.
 draft: false
