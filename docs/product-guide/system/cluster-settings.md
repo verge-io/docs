@@ -65,11 +65,10 @@ You'll usually find this setting under:
 
 You'll need to reboot your system and enter the BIOS/UEFI setup (usually by pressing a key like Delete, F2, F10, or F12 during startup) to find and change this setting.
 
-
-
 * **Disable sleep states for CPUs:**
-    * **Checkbox:** Select to disable CPU sleep states.
-    * *Note:* "Disabling this will increase temperatures and power usage."
+    * **Checkbox:** Select to disable CPU sleep states. not selected by default
+When selected, VergeOS will disable the most agressive sleep state(s)
+    * *Note:* "Selecting this option can increase temperatures and power usage."
 * **Enable Split Lock Detection:**
     * **Checkbox:** Enable this feature to detect split locks.
     * *Note:* "Enabling this can have a performance impact on Virtual Machines that trigger a split lock."
@@ -107,8 +106,8 @@ This section configures the compute resources within your cluster.
     * **Checkbox:** Allow nested virtualization, enabling you to run a virtual machine inside another virtual machine using hardware acceleration from the host.
 * **Allow Nested Virtualization Live Migration:**
     * **Checkbox:** Allow virtual machines with nested virtualization to be live migrated.
-* **Allow KSPU Live Migration:**
-    * **Checkbox:** Allow virtual machines with KSPU devices to be live migrated (experimental).
+* **Allow VGPU Live Migration:**
+    * **Checkbox:** Allow virtual machines with vGPU devices to be live migrated (experimental).
     * *Note:* "If not enough vGPU devices are available, workloads may be temporarily powered off during maintenance."
 
 ## Storage
@@ -138,11 +137,6 @@ This section allows you to set temperature thresholds for the cluster nodes.
         * *Example options:* "Disable"
 
 ---
-
-**Actions:**
-
-* **Cancel Button:** Discard any changes made and return to the previous page.
-* **Submit Button:** Save the configured settings and apply them to the cluster.
 
 * **CPU Power Management:**
 

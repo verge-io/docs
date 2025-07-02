@@ -39,22 +39,8 @@ To maintain data integrity and prevent inter-system interference:
 - Regular testing of network redundancy and failover is recommended
 - Document all configuration changes for future reference
 
-### 3. BIOS/Firmware Settings
 
-* **CPU Power Management:**
-
-It’s generally recommended to configure VergeOS nodes in **High Performance mode**, rather than power-saving settings that throttle CPU speed or enable sleep states to reduce energy use and noise. VergeOS typically enforces high-performance settings automatically, though some BIOS platforms may require manual adjustment if overrides aren’t supported.  Disabling CPU power-saving features can be especially beneficial on newly deployed systems, where workloads are gradually added. In these cases, idle nodes must quickly respond as demand increases, something High Performance mode is designed to handle.
-
-!!! tip "Different BIOS vendors often use slightly different terminology for what essentially amounts to High Performance mode. Several examples you might encounter across systems, include: - *Performance/High Performance/Max Performance, Optimized Defaults, CPU Performance Mode, Turbo Mode, Disable C-States, Disable CPU Power Saving*.
-The exact label and location vary by manufacturer and BIOS version. Consult the motherboard manual or UEFI help text if unsure."
- 
-* **Security Mitigations**
-
-BIOS-level security mitigations are hardware and firmware protections, such as: Secure Boot, TPM, and SMM Security Mitigation, that help defend against low-level attacks before the operating system loads. In environments where workloads are known and trusted, administrators may choose to disable some of these settings to optimize performance. However, this approach is strongly discouraged in service provider or third-party tenant environments, where guest workloads may be untrusted or vulnerable to exploitation. In such cases, it is important to keep mitigations enabled to protect system integrity and security boundaries.
-
-!!! warning "Only consider disabling of security mitigations when all workloads are known and trusted."
-
-4. System Configuration
+3. System Configuration
 
 Refer to the [Initial System Configuration Checklist](/product-guide/intro/new-system-configuration) in the VergeOS Product Guide to finish preparing your system for production. 
 
