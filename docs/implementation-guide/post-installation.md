@@ -2,162 +2,61 @@
 
 ## Introduction
 
-Welcome to the Post-Installation Configuration Guide for VergeOS. This guide provides step-by-step instructions for optimizing your newly installed VergeOS environment. Following these configuration steps will ensure your system is properly tuned for your specific use case and ready for production workloads.
-
----
-
-## Prerequisites
-
-Before proceeding with post-installation configuration, ensure:
-
-* A successful VergeOS installation is completed
-* You have admin access to the VergeOS web UI
-* You have reviewed your organization's performance and security requirements
-* You have documented your intended storage tier strategy
-
----
-
-## Configuration Steps
+After completing your VergeOS installation, there are a few essential steps to promote optimum functionality, performance, and reliability.  This page will guide you through key post-installation tasks, such as verifying system status, confirming core network configuration, and establishing necessary system settings.
+<!-- something about this is after a "successful" install of all initial nodes -->
 
 ### 1. Initial System Access
 
-1. **Access the Web UI:**
+* **Access the Web UI:**
    - Open a web browser and navigate to your VergeOS system's IP address
    - Log in using your admin credentials created during installation
 
-2. **Verify System Status:**
+* **Verify System Status:**
    - Check the dashboard for any warnings or alerts
-   - Ensure all nodes are showing as online and healthy
+   - Ensure all nodes are showing as online and healthy. (The Node tile on the Main Dashboard should display all cloud nodes online with a green status.)  
 
-### 2. Cluster Configuration
+### 2. Verify Network Configuration
 
-1. **Navigate to Cluster Settings:**
-      - Go to System > Cluster
-      - Review the current configuration
+The Core Fabric at the heart of VergeOS is designed with redundancy and resiliency in mind. For this architecture to function as intended, administrators must verify two key attributes: redundancy and isolation of the core networks.  Proper verification at this stage helps to ensure expected fault tolerance and performance as you move into production. 
 
-2. **Adjust Resource Allocations:**
-      - Review Storage Buffer per node
-      - Set maximum RAM allocation for VMs
-      - Configure maximum CPU core limits
-      - Review Target Max RAM Percent (Default 80% means 20% RAM reserved for VergeOS)
-      - Review and adjust swap settings if necessary
+* **Test Core Network Redundancy**
+To ensure the system can tolerate hardware or link failures without impacting workloads:
+- Physically disconnect cables or power down one of the core switches to simulate a failure.
+- Within the VergeOS UI, navigate to Nodes.  Wait several minutes to verify that all nodes appear as "Running"/green status. 
+- After restoring the failed link or switch. Repeat the test on the other physical core network.
 
-!!! warning "Resource Allocation Note"
-    Changes to swap settings require disk reformatting and system restart. The Target Max RAM Percent setting directly affects the amount of RAM available for VMs.
+* **Verify Isolation of Core Networks**
+To maintain data integrity and prevent inter-system interference:
+- Each physical core network should operate on its own isolated switch or, at minimum, a dedicated VLAN.
+- Also ensure that no other VergeOS systems share these networks. For example, if running multiple VergeOS host systems within shared infrastructure, each system would need two unique and exclusive VLAN IDs.
 
-### 3. Performance Optimization
+<!-- mention vlan ids that should not/cannot be used for core networks??>
 
-1. **CPU Power Management:**
-   - For high-performance environments:
-     - Review CPU security mitigations
-     - Consider disabling CPU sleep states
-   
-   - For dedicated controller nodes:
-     - Consider disabling CPU security mitigations for performance
-     - Only implement this in trusted environments with verified workloads
+<!-- simulate external loss to node 1? -->
 
-### 4. Location and URL Configuration
+### Important Considerations
 
-1. **Update System Settings:**
-      - Navigate to System > Settings
-      - Update location information (The Sites map uses Lat/Long coordinates for pin location)
-      - Click edit settings and verify:
-         * URL settings
-         * vSAN hosts configuration
-   
-!!! note "URL Configuration"
-    Correct URL and vSAN host configuration is crucial for setting up sites and backups properly.
-
-### 5. SMTP Configuration
-
-1. **Configure Email Settings:**
-      - Navigate to System > SMTP
-      - Configure SMTP settings with your approved email provider
-      - Send a test email to verify system notifications
-
-!!! tip "Email Configuration"
-    Setting up a reliable SMTP configuration is essential for receiving system notifications and alerts.
-
-### 6. Centralized Logging Configuration
-
-1. **Access System Settings:**
-      - Navigate to System > Settings > Advanced Settings
-      - Search for "syslog" in the settings search
-
-2. **Configure Remote Syslog Server:**
-      - Locate "Remote syslog server" setting
-      - Use the appropriate syntax for your protocol:
-         * TCP format: `@@hostname/ip:port`
-         * UDP format: `@hostname/ip:port`
-   
-   Example configurations:
-   ```
-   TCP: @@10.10.10.10:514
-   UDP: @10.10.10.10:514
-   ```
-
-3. **Configure Syslog Template:**
-      - Search for "syslog" again
-      - Locate "Template to define for syslog server"
-      - Enter a compatible template format
-
-   Example template:
-   ```
-   GRAYLOGRFC5424,"<%PRI%>%PROTOCOL-VERSION% %TIMESTAMP:::date-rfc3339% %HOSTNAME%.HOSTNAME_HERE %APP-NAME% %PROCID% %MSGID% %STRUCTURED-DATA% %msg%\n"
-   ```
-
-!!! note "Log Retention"
-    VergeOS retains logs for 45 days by default. Configure third-party logging to retain logs for longer periods.
-
-!!! tip "Template Configuration"
-    Ensure your template format is compatible with your syslog server. Consult your syslog server's documentation for specific format requirements.
-
-### 7. Network Configuration and Testing
-
-
-1. **Core Network Testing:**
-   - Test failover scenarios:
-     * Simulate core/fabric connection loss
-     * Test external connection loss on Node 1
-   - Verify Core 1 and Core 2 VLANs:
-     * Confirm they are not visible on other devices/ports
-     * Verify they are not shared with another VergeOS system/site
-
-2. **Firewall Configuration:**
-      - Review network firewall rules
-      - Enable required ports (e.g., 14201 on External for Site Syncs)
-      - Add source locking to rules for enhanced security
-
-3. **VLAN Configuration:**
-      - Add any additional VLANs needed for your environment
-      - Reference documentation at docs.verge.io for VLAN creation
-
-!!! warning "Network Isolation"
-    Proper network isolation is crucial. Ensure Core networks are completely isolated from other systems and properly configured for redundancy.
-
----
-
-## Important Considerations
-
-- Changes to swap settings require disk reformatting and are not applied in real-time
-- When adding new nodes, ensure storage capacity matches across all nodes in a tier to maintain redundancy
-- When enabling network rules, always implement source locking to ensure traffic security
 - Regular testing of network redundancy and failover is recommended
 - Document all configuration changes for future reference
 
-## Network Security Best Practices
+### 3. BIOS/Firmware Settings
 
-1. **Rule Implementation:**
-      - Always source lock network rules
-      - Limit access to specific traffic sources
-      - Regularly review and audit network rules
+* **CPU Power Management:**
 
-2. **Monitoring:**
-      - Regularly monitor network traffic patterns
-      - Review logs for unauthorized access attempts
-      - Keep documentation of network changes
+It’s generally recommended to configure VergeOS nodes in **High Performance mode**, rather than power-saving settings that throttle CPU speed or enable sleep states to reduce energy use and noise. VergeOS typically enforces high-performance settings automatically, though some BIOS platforms may require manual adjustment if overrides aren’t supported.  Disabling CPU power-saving features can be especially beneficial on newly deployed systems, where workloads are gradually added. In these cases, idle nodes must quickly respond as demand increases, something High Performance mode is designed to handle.
 
----
+!!! tip "Different BIOS vendors often use slightly different terminology for what essentially amounts to High Performance mode. Several examples you might encounter across systems, include: - *Performance/High Performance/Max Performance, Optimized Defaults, CPU Performance Mode, Turbo Mode, Disable C-States, Disable CPU Power Saving*.
+The exact label and location vary by manufacturer and BIOS version. Consult the motherboard manual or UEFI help text if unsure."
+ 
+* **Security Mitigations**
+
+BIOS-level security mitigations are hardware and firmware protections, such as: Secure Boot, TPM, and SMM Security Mitigation, that help defend against low-level attacks before the operating system loads. In environments where workloads are known and trusted, administrators may choose to disable some of these settings to optimize performance. However, this approach is strongly discouraged in service provider or third-party tenant environments, where guest workloads may be untrusted or vulnerable to exploitation. In such cases, it is important to keep mitigations enabled to protect system integrity and security boundaries.
+
+!!! warning "Only consider disabling of security mitigations when all workloads are known and trusted."
+
+4. System Configuration
+
+Refer to the [Initial System Configuration Checklist](/product-guide/intro/new-system-configuration) in the VergeOS Product Guide to finish preparing your system for production. 
 
 ## Troubleshooting & Support
 
@@ -167,5 +66,3 @@ If issues arise during post-installation configuration:
 - Review the [Knowledge Base](/knowledge-base) for common solutions
 - Contact [VergeOS Support](/support) for assistance
 
-!!! tip "Documentation"
-    Keep detailed records of all configuration changes and test results for future reference and troubleshooting.

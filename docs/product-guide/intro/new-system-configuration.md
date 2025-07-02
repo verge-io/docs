@@ -55,6 +55,9 @@ Cluster Configuration
 !!! warning "Resource Allocation Note"
     Changes to swap settings require disk reformatting and system restart. The Target Max RAM Percent setting directly affects the amount of RAM available for VMs.
 
+
+- Changes to swap settings require disk reformatting and are not applied in real-time
+
 See the [Cluster settings Product Guide](/product-guide/system/clusters-config-options) for additional information about configuring cluster settings
 
 ## Alerting and Reporting
