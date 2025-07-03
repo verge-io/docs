@@ -87,7 +87,9 @@ The NVIDIA integration consists of three main layers:
 - RTX 4080, 4090 - High-end workloads (select models)
 
 !!! info "Hardware Requirements"
-    NVIDIA GRID licensing is required for vGPU functionality. Not all NVIDIA GPUs support vGPU technology - verify compatibility in the [NVIDIA vGPU Support Matrix](https://docs.nvidia.com/grid/latest/grid-vgpu-release-notes-generic-linux-kvm/index.html#supported-gpus){target="_blank"}.
+    - NVIDIA vGPU functionality requires a valid **NVIDIA vGPU software license**, such as Virtual PC, Virtual Apps, or Virtual Workstation. These licenses must match the selected vGPU profile and workload type.
+    - Only select data center and professional GPUs support vGPU. Verify hardware and driver compatibility in the [NVIDIA vGPU Support Matrix](https://docs.nvidia.com/grid/latest/grid-vgpu-release-notes-generic-linux-kvm/index.html#supported-gpus){target="_blank"}.
+    - For an overview of licensing options, refer to the [NVIDIA Licensing Guide](https://www.nvidia.com/en-us/data-center/virtual-solutions/){target="_blank"}.
 
 ## Software Ecosystem Integration
 
