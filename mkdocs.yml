@@ -152,8 +152,9 @@ nav:
     - knowledge-base/index.md
   - Product Guide:
     - Introduction:
-       - User Interface Overview: product-guide/ui-overview.md
-       - VergeOS Features: product-guide/intro/features-list.md
+      - What is VergeOS?: product-guide/intro/what-is-vergeos.md
+      - VergeOS Features: product-guide/intro/features-list.md
+      - VergeOS UI Overview: product-guide/intro/ui-overview.md
     - Storage:
        - Overview: product-guide/storage/overview.md
        - vSAN Architecture: product-guide/storage/vsan-architecture.md  # Added from PR
@@ -321,6 +322,7 @@ nav:
     - Tools and Integrations:
       - Cirrus Data Migration: product-guide/tools-integrations/cirrus-data.md
       - Inuvika Virtual Apps and Desktops: product-guide/tools-integrations/inuvika.md
+      - NVIDIA vGPU: product-guide/tools-integrations/nvidia-vgpu.md
       - Prometheus Exporter: product-guide/tools-integrations/prometheus-exporter.md
       - Storware Backup and Recovery: product-guide/tools-integrations/storware-backup-recovery.md
       - Terraform Provider: product-guide/tools-integrations/terraform-provider.md
