@@ -122,7 +122,7 @@ extra_javascript:
 #  - stylesheets/extra.css
 
 copyright: |
-  Copyright &copy; 2024 <a href="https://verge.io" target="_blank" rel="noopener"> Verge.io</a> |
+  Copyright &copy; 2025 <a href="https://verge.io" target="_blank" rel="noopener"> Verge.io</a> |
   <a href="#__consent">Change cookie settings</a>
 
 nav:
@@ -162,6 +162,7 @@ nav:
        - Preferred Tier: product-guide/storage/preferred-tiers.md
        - Fibre Channel: product-guide/storage/fibre-channel.md
        - vSAN Deletion Process: product-guide/storage/vsan-deletion-process.md
+       - vSAN Diagnostics: product-guide/storage/vsan-diagnostics.md
     - Backup & DR:
       - Overview: product-guide/backup-dr/overview.md
       - Snapshots:
@@ -199,6 +200,7 @@ nav:
         - Overview: product-guide/system/nodes-overview.md
         - IPMI: product-guide/system/ipmi.md
         - System Event Log (SEL): product-guide/system/sel.md
+        - Node Diagnostics: product-guide/system/node-diagnostics.md
       - Sites Dashboard:
         - Overview: product-guide/system/sites-overview.md
         - Adding Sites: product-guide/system/site-dashboard-add-sites.md
@@ -248,6 +250,7 @@ nav:
     - NAS:
       - Overview: product-guide/nas/overview.md
       - Add a NAS Service: product-guide/nas/nas-service.md
+      - NAS Diagnostics: product-guide/nas/nas-diagnostics.md
       - Configuration:
         - Local Volumes: product-guide/nas/nas-local-volumes.md
         - Remote Volumes: product-guide/nas/nas-remote-volumes.md
@@ -255,9 +258,6 @@ nav:
         - VM Export: product-guide/virtual-machines/vm-export-volume.md
         - Volume Syncs: product-guide/nas/volume-syncs.md
         - Join NAS to AD: product-guide/nas/nas-join-ad-domain.md
-#    - Media Images:
-#      - Overview: product-guide/mediaimages-overview.md
-#      - Uploading Media Images: product-guide/uploadingtovSAN.md
     - Networking:
       - Overview: product-guide/networks/overview.md
       - Concepts: product-guide/networks/network-concepts.md
@@ -279,7 +279,7 @@ nav:
         - Network Dashboards: product-guide/networks/network-dashboards.md
         - Tracking Network Statistics: product-guide/networks/tracking-net-statistics.md
         - Port Mirroring: product-guide/networks/port-mirroring.md
-        - Network Diagnostics Tool: product-guide/networks/net-diagnostics.md
+        - Network Diagnostics: product-guide/networks/network-diagnostics.md
       - VPN:
         - Overview: product-guide/vpn/vpn-overview.md
         - IPSec: product-guide/vpn/ipsec.md
@@ -304,6 +304,7 @@ nav:
       - USB Passthrough: product-guide/system/usb-passthrough.md
       - One-to-One PCI Passthrough: product-guide/system/generic-pci-passthrough.md
     - Maintenance & Monitoring:
+      - Diagnostics Overview: product-guide/maintenance-monitoring/diagnostics-overview.md
       - Subscriptions/Alerts:
         - Creating Subscriptions: product-guide/system/subscriptions-overview.md
         - Subscription Profiles: product-guide/system/subscription-profiles.md
