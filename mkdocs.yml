@@ -147,14 +147,14 @@ nav:
       - Cloud Providers: reference-architecture/csp.md
       - Life / Data Science: reference-architecture/data-science.md
       - Homelab: reference-architecture/homelab.md
-    - Transitioning from VMware: implementation-guide/transition-from-vmware.md
   - Knowledge Base:
     - knowledge-base/index.md
   - Product Guide:
     - Introduction:
       - What is VergeOS?: product-guide/intro/what-is-vergeos.md
-      - VergeOS Features: product-guide/intro/features-list.md
-      - VergeOS UI Overview: product-guide/intro/ui-overview.md
+      - Platform Capabilities: product-guide/intro/platform-capabilities.md
+      - Transitioning from VMware: product-guide/intro/transition-from-vmware.md
+      - UI Overview: product-guide/intro/ui-overview.md
     - Storage:
        - Overview: product-guide/storage/overview.md
        - vSAN Architecture: product-guide/storage/vsan-architecture.md  # Added from PR

@@ -407,10 +407,10 @@ The platform's unique combination of enterprise-grade features, simplified manag
 Ready to explore VergeOS further? Consider these next steps:
 
 - **[Installation Guide](/implementation-guide/installation-guide)** - Get started with your first VergeOS deployment
-- **[VMware Transition Guide](/implementation-guide/transition-from-vmware)** - Migrate from existing VMware infrastructure
+- **[VMware Transition Guide](/product-guide/intro/transition-from-vmware)** - Migrate from existing VMware infrastructure
 - **[Virtual Machine Management](/product-guide/virtual-machines/overview)** - Learn about VergeHV virtualization capabilities
 - **[Tenant Management](/product-guide/tenants/overview)** - Explore multi-tenancy features
-- **[Reference Architectures](/reference-architecture/)** - Review deployment examples for different use cases
+<!-- - **[Reference Architectures](/reference-architecture/)** - Review deployment examples for different use cases -->
 
 ## Ready to Explore?
 
