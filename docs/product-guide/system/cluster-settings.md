@@ -1,6 +1,6 @@
 # Cluster Setting Field Descriptions
 
-!!! warning "Most cluster setting changes require a reboot of each cluster node."
+!!! tip "Most cluster setting changes will require a reboot of each cluster node.  Select the *Need Restart* option (left menu or in the reboot/restart message at the top of the cluster dashboard) to manage the node reboots." 
 
 # Cluster Settings
 
@@ -10,36 +10,36 @@ The Cluster Settings form allows you to configure various parameters for your cl
 
 This section defines the fundamental properties of your cluster.
 
-* **Enabled:**
-    * **Checkbox:** Select this to enable the cluster; default enabled
-* **Name:**
-    * **Text Field:** Enter a unique name for your cluster (e.g., `testverge`).
-* **Description:**
-    * **Text Area:** Provide a brief description of the cluster's purpose or characteristics.
-* **Default CPU Type:**
-    * **Dropdown:** CPU type is detected and automatically selected during installation.  Typically, this setting should not be changed. 
+* **Enabled:** by default, the cluster will be enabled.  There is typically no reason to disable a cluster but it can be disabled if needed for reconfiguring a misconfigured setup, etc.
+* **Name:** Named during installation, name can be changed?
+* **Description:** optional text area to provide a brief description of the cluster's purpose or characteristics.
+* **Default CPU Type:** - CPU type is detected and automatically selected during installation.  Typically, this setting should not be changed.  Review the setting to verify accurate cpu type was detected correctly.  
+- may possibly want to change this to accommodate portability to a different cluster or a DR system in which the CPU type is older/lower spec.? 
     !!! warning "All nodes within a cluster should contain the same CPU hardware; mixed CPU types within the same  cluster can cause performance and workload migration issues."
 * **Storage buffer per node:**
-    * **Numeric Field with Unit (GB/MB):** Specify the amount of storage buffer to allocate per node in gigabytes.
-        * *Default Example:* `2` GB
+    * **Numeric Field with Unit (GB/MB):** Additional RAM to allocate per node for vSAN performance caching.  This can provide higher I/O performance.  The default setting is 2GB. consider increasing this if 1) you have an abundance of physical RAM, definitely if this is a storage only cluster, benefit can be read/write performance and less internode storage traffic with a larger local vSAN cache
+        * *Default Example:* `2` GB - this default does allow for a decent amount of storage cache, but consider increase in some situations ---- 
 
 ### Cluster Security/Performance Mitigations
 
 This subsection allows you to enable or disable various security and performance-related features and mitigations for all nodes in the cluster.
 
 * **Allocate Hugepages for Storage:**
-    * **Checkbox:** Enable this option to allocate hugepages for storage operations, which can improve performance.
+    * **Checkbox:** generally, always recommended. Extremely limited situations where it would be advantageous to disable hugepages -- extremely tiny vms or incompatible, antiquated guest operating systems. 
 * **Disable CPU Security Mitigations:**
-    * **Checkbox:** If selected, disables all CPU security mitigations for that cluster.
-    * *Note:* "Only disable if you trust all of the guests running in this cluster."
+    * **Checkbox:** If selected, disables all CPU security mitigations controlled at the kernel level for that cluster.
+    * IMPORTANT - Only disable when you completely trust all of the guests running in this cluster - know the workloads and have no external vulnerabilities (e.g. airgapped systems)
 * **Disable Speculative Store Bypass:**
     * **Checkbox:** Disables Speculative Store Bypass mitigation.
     * *Note:* "Disabling this will have a performance impact (risky for full mitigation you need to disable SMT)."
 * **Disable SMT:**
-    * **Checkbox:** Disables Simultaneous Multi-threading (SMT).
+    * **Checkbox:** Disables Simultaneous Multi-threading (SMT). will almost always cut your cores in half
+    disable at runtime. (note: The recommended way to disable SMT is in the BIOS) 
+    theoretical risks, highly-sensitive environments
+
     * *Note:* "This will disable hyper-threading (note: The recommended way to disable SMT is in the BIOS)."
 For highly sensitive environments (e.g., cloud providers running untrusted virtual machines, financial institutions), disabling SMT has been a recommended mitigation to completely eliminate this cross-thread data leakage risk, even if it comes at a performance cost.
-
+provides extreme isolation against potential 
 While software patches and microcode updates have been released to mitigate many of these vulnerabilities, disabling SMT offers the strongest isolation against certain types of SMT-based side-channel attacks.
 
 
@@ -67,7 +67,7 @@ You'll need to reboot your system and enter the BIOS/UEFI setup (usually by pres
 
 * **Disable sleep states for CPUs:**
     * **Checkbox:** Select to disable CPU sleep states. not selected by default
-When selected, VergeOS will disable the most agressive sleep state(s)
+When selected, VergeOS will disable c1 state? to avoid popping in and out of a sleep condition, which would really kill performance without providing much benefit  --- short idle bursts -- can we always do this? or does the bios sometimes keep us from successfully disabling??
     * *Note:* "Selecting this option can increase temperatures and power usage."
 * **Enable Split Lock Detection:**
     * **Checkbox:** Enable this feature to detect split locks.
@@ -127,14 +127,19 @@ This section focuses on storage configurations.
 This section allows you to set temperature thresholds for the cluster nodes.
 
 * **Maximum Core Temperature (Celsius):**
-    * **Dropdown:** Set the maximum allowable core temperature in Celsius before a warning or action is triggered.
-        * *Example options:* "Disable"
+
+top maximum
+typically query from cpu chip hardware - recommended for most real server hardware 
+    if not real server hardware may not support
+some processors have protection to shutdown automatically or hard lock 
+can disable this but not recommended, can be appropriate in some situations - e.g. bare metal where its not your responsibility to monitor hardware or maybe if this is running as virtual system
+this is really just to show in UI
 * **Maximum Core Temperature Warning Threshold %:**
-    * **Dropdown:** Set the percentage threshold relative to the maximum core temperature at which a warning should be issued.
-        * *Example options:* "Disable"
+    * **Dropdown:** Set the percentage threshold relative to the maximum core temperature at which a warning should be issued. - to show warnings in the vergeos UI, also can trigger alerts based on this with subscriptions
+        turns the status guage to yellow and produces a warning in the system log
 * **Critical Core Temperature (Celsius):**
     * **Dropdown:** Set the critical core temperature in Celsius, beyond which the system may take emergency actions.
-        * *Example options:* "Disable"
+        turns the status guage to red and produces a critical warning/error in the system log.
 
 ---
 

@@ -9,14 +9,26 @@ This page provides a guide for configuring a new VergeOS system.
 
 ## New System Task List
 
+- [ ] [Review/Adjust Cluster Settings](#cluster-settings) 
 - [ ] [Confirm Licensing/Updates](#licensingupdates) 
 - [ ] [Configure SMTP](#smtp)
 - [ ] [Register a Server Certificate](#server-certificate)  
-- [ ] [Review/Adjust Cluster Settings](#cluster-settings)  
 - [ ] [Establish Alerting/Reporting](#alerting-and-reporting)  
 - [ ] [Verify Cloud Snapshot Settings](#cloud-snapshot-settings)  
 - [ ] [Configure Authorization/Authentication Settings](#authenticationauthorization-settings)
 - [ ] [Optional - Enable Third-party Logging](/knowledge-base/enabling-external-log-collection)
+
+
+## Cluster Settings
+
+Every system has at least one cluster
+Cluster(s) were created during installation
+Default settings should be reviewed and modified as needed. 
+Good to make these modifications upon initial configuration because 1) cluster changes require node reboots 2) some settings may be important to establish before putting into production.
+
+**Learn about VergeOS Clusters: [Clusters Overview](/product-guide/system/clusters-overiew)**
+**Explore Configuration Options: [Cluster Settings](/product-guide/system/cluster-settings)**
+
 
 ## Licensing/Updates
 
@@ -36,29 +48,6 @@ By default, your VergeOS system is installed with a self-signed certificate. For
 
 !!! tip "A CA-issued certificate may be less important for home labs, or other non-critical systems that are used solely within a private infrastructure."  
 
-
-## Cluster Settings
-
-Cluster Configuration
-
-1. **Navigate to Cluster Settings:**
-      - Go to System > Cluster
-      - Review the current configuration
-
-2. **Adjust Resource Allocations:**
-      - Set maximum RAM allocation for VMs
-      - Configure maximum CPU core limits
-      - Review and adjust swap settings if necessary
-      - Review Storage Buffer per node
-      - Review Target Max RAM Percent (Default 80% means 20% RAM reserved for VergeOS)
-
-!!! warning "Resource Allocation Note"
-    Changes to swap settings require disk reformatting and system restart. The Target Max RAM Percent setting directly affects the amount of RAM available for VMs.
-
-
-- Changes to swap settings require disk reformatting and are not applied in real-time
-
-See the [Cluster settings Product Guide](/product-guide/system/clusters-config-options) for additional information about configuring cluster settings
 
 ## Alerting and Reporting
 
