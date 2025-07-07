@@ -204,3 +204,8 @@ If your VM fails to start after adding advanced options:
 
 !!! note "Version Compatibility"
     Some advanced options may not be available on all VergeOS versions. Options are processed dynamically, so unsupported options are typically ignored rather than causing errors.
+
+
+!!! note "Document Information"
+    - Last Updated: 2025-07-07
+    - VergeOS Version: 4.13.4
