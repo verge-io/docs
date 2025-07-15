@@ -259,7 +259,7 @@ nav:
 #      - Overview: product-guide/mediaimages-overview.md
 #      - Uploading Media Images: product-guide/uploadingtovSAN.md
     - Networking:
-      - Overview: product-guide/networks/overview.md
+      - Overview: product-guide/networks/network-overview.md
       - Concepts: product-guide/networks/network-concepts.md
       - Quick-Start Tasks: 
         - Connect to an Existing LAN/WAN: product-guide/networks/connect-lan-wan.md
