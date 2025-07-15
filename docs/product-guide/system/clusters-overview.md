@@ -3,7 +3,9 @@ VergeOS Clusters Overview
 
 ## What is a Cluster?
 
-A cluster is a group of nodes with the same hardware characteristics that forms a logical resource pool presented as usable assets in the VergeOS user interface.  Clusters enable efficient management, scaling, and high availability for virtualized workloads.
+   - A group of nodes with the same hardware characteristics
+   - Forms a logical resource pool presented as usable assets in the VergeOS user interface
+   - Enable efficient management, scaling, and high availability for virtualized workloads.
 
 ## Purpose of Clusters
 
@@ -21,13 +23,14 @@ Different workloads have varying performance requirements, and clusters allow yo
 
 Workloads (VMs, tenants, NAS services, etc.) are assigned to specific clusters and optionally configured with failover clusters. This assignment ensures that workloads run on the appropriate hardware infrastructure that matches their performance and availability requirements.
 
+
 ## Cluster Types
 
 VergeOS supports three distinct cluster types that can be mixed and matched within a single system:
 
-* **Combined Compute and Storage (HCI) Clusters** - Nodes provide processing power and memory for workloads and participate in the 
+* **Combined Compute and Storage (HCI) Clusters** - Nodes provide processing power and memory for workloads and participate in the virtual storage area network (vSAN)
 * **Storage-Only Clusters** - Nodes participate in the virtual storage area network (vSAN); dedicated exclusively to storage services
-* **Compute-Only Clusters** - Nodes dedicated exclusively to compute resources and do not participate in vSAN
+* **Compute-Only Clusters** - Nodes dedicated exclusively to compute resources (No participation in vSAN storage).
 Compute clusters contain boot-only storage or can be configured to PXE boot.
 
 ## System Flexibility
@@ -43,18 +46,20 @@ A single VergeOS system can contain multiple clusters in any combination of the 
 
 * **Minimum Node Count**: Each cluster requires **at least two nodes** to maintain system redundancy and ensure high availability during maintenance or hardware failures.
 
-* **Controller Nodes (Tier 0 Storage)**: The **first cluster** in a VergeOS system must include at least nodes with a storage tier dedicated to VergeOS metadata (Tier 0). These controller nodes are essential for system management and operations.
+* **Controller Nodes (Tier 0 Storage)**: The **first cluster** in a VergeOS system must include at least two nodes with a storage tier dedicated to VergeOS metadata (Tier 0). These controller nodes are essential for system management and operations.
 
 ### Scalability Design
-Clusters are designed with scalability in mind:
-- **Scale-out capability**: Additional nodes can be added to existing clusters as requirements grow
-- **Dynamic expansion**: Clusters can be expanded without system downtime
-- **Flexible growth**: Organizations can scale compute and storage independently based on actual needs
+
+Clusters are designed with scalability in mind:  
+
+  - **Scale-out capability**: Additional nodes can be added to existing clusters as requirements grow  
+  - **Dynamic expansion**: Clusters can be expanded without system downtime  
+  - **Flexible growth**: Organizations can scale compute and storage independently based on actual needs  
 
 ## Cluster Management
 
 ### Initial Configuration
-Clusters are created during the VergeOS installation process with default settings appropriate for the detected hardware configuration.
+Clusters are created during the VergeOS installation process with default settings, including Default CPU type based on detected CPU hardware. 
 
 ### Customization and Optimization
 After installation, cluster settings can be adjusted through the VergeOS user interface to tune performance, security and operational settings.  See [Cluster Settings](/product-guide/system/cluster-settings) for detailed information about available cluster settings.
@@ -62,19 +67,20 @@ After installation, cluster settings can be adjusted through the VergeOS user in
 
 ## Best Practices
 
-* **Planning Cluster Architecture**
+**Hardware Standardization:**  
+Use consistent hardware specifications within each cluster; using different node hardware within the same cluster can cause performance and reliability issues.
+
+**Planning Cluster Architecture:** 
+
   - Assess workload requirements before designing cluster configurations
   - Plan for future growth when determining initial cluster sizing
   - Consider network topology and connectivity requirements
   - Evaluate data locality and performance implications
 
-* **Hardware Standardization**
-  - Use consistent hardware specifications within each cluster
+**Performance Optimization:**  
 
-* **Performance Optimization**
-  - Match cluster specifications to workload characteristics
-  - Monitor utilization patterns and adjust configurations as needed
-  - Regular performance assessment and capacity planning
+  - Match cluster specifications to workload characteristics  
+  - Monitor utilization patterns and adjust configurations as needed  
 
 ---
 

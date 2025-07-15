@@ -1,157 +1,148 @@
-# Cluster Setting Field Descriptions
-
-!!! tip "Most cluster setting changes will require a reboot of each cluster node.  Select the *Need Restart* option (left menu or in the reboot/restart message at the top of the cluster dashboard) to manage the node reboots." 
-
 # Cluster Settings
 
-The Cluster Settings form allows you to configure various parameters for your cluster, relating to compute resources, swap, and node hardware.
+The *Cluster Settings* form enables you to configure key parameters relating to performance, security, allocation, thermal monitoring, and swap. While the majority of default settings are appropriate for most environments, it's recommended to review them when creating a new cluster and periodically thereafter to ensure alignment with your organization's policies and operational requirements.
+
+!!! tip "Most cluster setting changes will require a reboot of each cluster node.  A message will appear at the top of the cluster dashboard when a reboot is necessary.  Select the *Need Restart* option (within the reboot/restart message at the top of the cluster dashboard or left menu option) to manage the reboots of the cluster nodes.  Always follow proper [Maintenance Mode procedures](/product-guide/system/maintenance-mode) when rebooting nodes to avoid workload disruptions." 
+
 
 ## Cluster
 
 This section defines the fundamental properties of your cluster.
 
-* **Enabled:** by default, the cluster will be enabled.  There is typically no reason to disable a cluster but it can be disabled if needed for reconfiguring a misconfigured setup, etc.
-* **Name:** Named during installation, name can be changed?
-* **Description:** optional text area to provide a brief description of the cluster's purpose or characteristics.
-* **Default CPU Type:** - CPU type is detected and automatically selected during installation.  Typically, this setting should not be changed.  Review the setting to verify accurate cpu type was detected correctly.  
-- may possibly want to change this to accommodate portability to a different cluster or a DR system in which the CPU type is older/lower spec.? 
-    !!! warning "All nodes within a cluster should contain the same CPU hardware; mixed CPU types within the same  cluster can cause performance and workload migration issues."
-* **Storage buffer per node:**
-    * **Numeric Field with Unit (GB/MB):** Additional RAM to allocate per node for vSAN performance caching.  This can provide higher I/O performance.  The default setting is 2GB. consider increasing this if 1) you have an abundance of physical RAM, definitely if this is a storage only cluster, benefit can be read/write performance and less internode storage traffic with a larger local vSAN cache
-        * *Default Example:* `2` GB - this default does allow for a decent amount of storage cache, but consider increase in some situations ---- 
+1. **Enabled:** By default, the cluster will be enabled.  Typically, there is no reason to disable it; however, doing so may be useful in certain situations, such as during a cluster reconfiguration.
+2. **Name:** A cluster is typically named during installation but can be renamed without issue. 
+3. **Description:** Optional text area to provide a brief description of the cluster's purpose or characteristics.
+4. **Default CPU Type:** Defines the default/recommended CPU type for virtual machines with this cluster designated.  This setting is automatically selected during cluster installation, based on detected CPU hardware. Review the setting to verify accurate CPU type was detected.  
 
-### Cluster Security/Performance Mitigations
+!!! tip "To accommodate migration/failover of virtual machines to another cluster using a lower class of CPU chip, *Default CPU type* can be changed to the lower class type to allow virtual machines to be ported to the older chip hardware without issue."
 
-This subsection allows you to enable or disable various security and performance-related features and mitigations for all nodes in the cluster.
-
-* **Allocate Hugepages for Storage:**
-    * **Checkbox:** generally, always recommended. Extremely limited situations where it would be advantageous to disable hugepages -- extremely tiny vms or incompatible, antiquated guest operating systems. 
-* **Disable CPU Security Mitigations:**
-    * **Checkbox:** If selected, disables all CPU security mitigations controlled at the kernel level for that cluster.
-    * IMPORTANT - Only disable when you completely trust all of the guests running in this cluster - know the workloads and have no external vulnerabilities (e.g. airgapped systems)
-* **Disable Speculative Store Bypass:**
-    * **Checkbox:** Disables Speculative Store Bypass mitigation.
-    * *Note:* "Disabling this will have a performance impact (risky for full mitigation you need to disable SMT)."
-* **Disable SMT:**
-    * **Checkbox:** Disables Simultaneous Multi-threading (SMT). will almost always cut your cores in half
-    disable at runtime. (note: The recommended way to disable SMT is in the BIOS) 
-    theoretical risks, highly-sensitive environments
-
-    * *Note:* "This will disable hyper-threading (note: The recommended way to disable SMT is in the BIOS)."
-For highly sensitive environments (e.g., cloud providers running untrusted virtual machines, financial institutions), disabling SMT has been a recommended mitigation to completely eliminate this cross-thread data leakage risk, even if it comes at a performance cost.
-provides extreme isolation against potential 
-While software patches and microcode updates have been released to mitigate many of these vulnerabilities, disabling SMT offers the strongest isolation against certain types of SMT-based side-channel attacks.
+!!! warning "All nodes within a cluster should contain the same CPU hardware; mixed CPU types within the same cluster can cause performance and workload migration issues."
 
 
-Disabling SMT is typically done in the BIOS/UEFI settings of your computer. The exact name of the setting can vary by motherboard manufacturer and CPU type, but common names include:
+5. **Storage buffer per node (default 2 GB):** The amount of additional RAM to allocate per node for vSAN performance caching.     
+!!! note "Considerations"
+    - When there is available RAM, beyond system and virtual workload needs, consider increasing this setting
+    - Increasing the *Storage buffer per node* can significantly improve read/write performance
+    - As a general rule of thumb, aim for no more than 80% RAM utilization during normal operation  
 
-"Intel Hyper-Threading Technology" (for Intel CPUs)
 
-"Hyper-Threading"
+### Cluster Security/Performance
 
-"SMT Mode" (for AMD Ryzen CPUs)
+This subsection allows you to enable/disable various performance and security-related features and mitigations for all nodes in the cluster.
 
-"Simultaneous Multithreading"
+1. **Allocate Hugepages for Storage (default enabled):** Enabling hugepages is strongly recommended in most cases, as it enhances memory storage performance for workloads. Disabling this setting is generally discouraged, except in rare scenarios, such as when running only very small virtual machines or legacy guest operating systems with limited hugepage support.
 
-You'll usually find this setting under:
+2. **Disable CPU Security Mitigations:** If selected, kernel-level CPU security mitigations are disabled for the cluster.  
+!!! warning "IMPORTANT: Although disabling CPU security mitigations can improve performance, this can be risky. Only select this option when you completely trust all guests running in this cluster and can be sure the workloads have no external vulnerabilities (e.g. airgapped systems)."
 
-"CPU Configuration"
+3. **Disable Speculative Store Bypass:** If selected, disables speculative store bypass at runtime. Disabling SSB can result in a modest to moderate performance drop, depending on system workloads. 
+   
+4. **Disable SMT:** If selected, disables simultaneous multi-threading (SMT) at runtime.  
 
-"Advanced CPU Settings"
+!!! Notes
+    - Disabling SMT will significantly impair performance as it disables all hyper-threading 
+    - While modern software and microcode updates mitigate many of the vulnerabilities involved with SMT, some highly-sensitive environments may choose to disable it, even if it comes at a performance cost 
+    - The recommended way to disable SMT is in the BIOS.  The exact name of the setting can vary by manufacturer; consult your hardware documentation if unsure 
 
-"Performance"
+5. **Disable sleep states for CPUs:** Automatically disables low level sleep state(s). This can eliminate unnecessary sleep state transitions due to short idle bursts that would otherwise cause a notable drop in performance with minimal benefit in power efficiency. 
 
-"Security" (sometimes, as it's a security mitigation)
+!!! Considerations
+    - Disabling CPU sleep states can be especially beneficial on newly deployed systems, where workloads are gradually added. In these cases, idle nodes must quickly respond as demand increases
+    - Selecting this option can lead to higher temperatures and power usage, depending on system workloads
 
-You'll need to reboot your system and enter the BIOS/UEFI setup (usually by pressing a key like Delete, F2, F10, or F12 during startup) to find and change this setting.
+6. **Enable Split Lock Detection:** Detects split lock events within workloads and reports them in the system log. Enabling this option can have a performance impact on virtual machines that trigger a split lock.
+    
+7. **Energy-Performance Policy (default=*Performance*):** Policy setting that guides the processor’s internal logic to balance performance vs. power efficiency. This setting is typically best left at its default, allowing the system to dynamically optimize for performance at runtime. Alternative energy-versus-performance options are available to support non-enterprise environments such as consumer-grade systems, home labs, or proof-of-concept (POC) deployments.
 
-* **Disable sleep states for CPUs:**
-    * **Checkbox:** Select to disable CPU sleep states. not selected by default
-When selected, VergeOS will disable c1 state? to avoid popping in and out of a sleep condition, which would really kill performance without providing much benefit  --- short idle bursts -- can we always do this? or does the bios sometimes keep us from successfully disabling??
-    * *Note:* "Selecting this option can increase temperatures and power usage."
-* **Enable Split Lock Detection:**
-    * **Checkbox:** Enable this feature to detect split locks.
-    * *Note:* "Enabling this can have a performance impact on Virtual Machines that trigger a split lock."
-* **Energy-Performance Policy:**
-    * **Dropdown:** Select the energy-performance policy for the cluster.
-        * *Example Options:* "Performance"
-* **CPU Scaling Governor:**
-    * **Dropdown:** Choose the CPU scaling governor.
-        * *Example Options:* "Performance"
+8. **CPU Scaling Governor (default=*Performance*):** Policy for kernel-level, dynamic CPU frequency adjustment based on system load. This setting is typically best left at its default, allowing the system to dynamically optimize for performance at runtime. Alternative energy-versus-performance options are available to support non-enterprise environments such as consumer-grade systems, home labs, or proof-of-concept (POC) deployments.
+  
 
 ### System Log Filter
 
-* **System Log Filter:**
-    * **Text Area:** Define a comma-delimited list of examples (regular expressions) for log entries to be excluded or filtered.
-    * *Example:* `.*/vmisvc/v3/raiddaemon.html,^postfix`
-    * *Note:* "Filter syslog with comma delimited list (Example which would include all warning priority logs of 4 or less, except postfix and scsi/md: `.*,^postfix,^scsi/md`)."
+1. **System Log Filter (default `*:3,ipmievd:5,rasdaemon,!ntpd,!postfix`):** A comma-separated list of filters in rsyslog syntax that determines log entries to display in the user interface.  Entries matching these filters are shown; all others are excluded from the UI view. This syntax supports facility and priority filters, as well as program-specific inclusions or exclusions.  
+!!! tip "Unfiltered logs remain accessible via *Node Diagnostics* (Navigate to Nodes > double-click the desired node > select Diagnostics from the left menu.)"
+
 
 ## Compute
 
-This section configures the compute resources within your cluster.
+This section configures compute resource policies for your cluster.
 
-* **Max RAM per machine:**
-    * **Numeric Field with Unit (GB):** Set the maximum amount of RAM (in GB) that can be allocated to a single virtual machine.
-        * *Default Example:* `64` GB
-* **Max cores per machine:**
-    * **Numeric Field:** Set the maximum number of CPU cores that can be allocated to a single virtual machine.
-        * *Default Example:* `16`
-* **Target max ram pct:**
-    * **Numeric Field (%):** Specify the target maximum percentage of RAM to be utilized across the cluster.
-        * *Default Example:* `80`
-* **% of reserve ram to use for machines:**
-    * **Numeric Field (%):** Define the percentage of RAM to reserve specifically for virtual machines.
-        * *Default Example:* `0`
-* **Nested Virtualization:**
-    * **Checkbox:** Allow nested virtualization, enabling you to run a virtual machine inside another virtual machine using hardware acceleration from the host.
-* **Allow Nested Virtualization Live Migration:**
-    * **Checkbox:** Allow virtual machines with nested virtualization to be live migrated.
-* **Allow VGPU Live Migration:**
-    * **Checkbox:** Allow virtual machines with vGPU devices to be live migrated (experimental).
-    * *Note:* "If not enough vGPU devices are available, workloads may be temporarily powered off during maintenance."
+1. **Max RAM per machine:** Specifies the maximum amount of RAM that can be allocated to a single workload (such as a virtual machine, tenant node, or NAS service). 
+!!! tip "Considerations"
+    - If any running workloads (e.g. VMs) are using more RAM than this limit, they will be unable to migrate after the setting is lowered.
+    - The limit affects workload startup and migration (i.e., starting on a new node). It does not prohibit you from creating a workload with more RAM, but only prevents it from starting if the limit is exceeded. 
+    - As a general rule, choose the lowest RAM value that still meets the needs of your largest expected workload. Lower RAM allocations to individual workloads will maximize flexibility for migrations, failovers, and workload portability and enable faster failover times. 
+     - **This value should never exceed the total physical RAM available on a single node**. 
+    
+2. **Max cores per machine:** Specifies the maximum number of CPU cores that can be allocated to a single workload (such as a virtual machine, tenant node, or NAS service)
+!!! tip "Considerations"
+     - If any running workloads (e.g. VMs) are using more cores than this limit, they will be unable to migrate after the setting is lowered.
+    - In nearly all cases, this value **should not exceed** the number of cores available within a **single CPU socket**.
+    - **This value should never exceed the total number of physical cores in a single node**
 
-## Storage
+3. **Target max ram pct (default 80):** Specifies the maximum percentage of physical RAM that a cluster node should use under normal conditions.  This threshold helps prevent over-allocation from new workloads. However, it may be exceeded in special circumstances such as failover or workload migration to maintain service continuity. 
 
-This section focuses on storage configurations.
+??? example "Example of *Target max ram pct*"
+    - A cluster node has **252GB physical RAM available** (256GB with 252GB after BIOS/video card overhead)
+    - ***Target max ram pct*** is set to the default of **80**
+    - 252G * 80% = **approximately 200G** usable under normal conditions
+    - **System/vSAN RAM overhead 16G** (note: vSAN overhead will vary, depending on the amount of cluster storage)
+    - **Available for new workloads:** 184GB (usable minus overhead), staying within the 80% usage target
+    - **During failover or migration:** Workload RAM usage **may temporarily exceed 184GB** to support relocated workloads
 
-* **Tier used for swap:**
-    * **Dropdown:** Select the storage tier to be used for swap space.
-        * *Note:* "Disabled when value is 0. Changing this only applies to newly formatted disks."
-* **Swap per drive:**
-    * **Numeric Field with Unit (GB):** Define the amount of swap space to allocate per drive in gigabytes.
-        * *Default Example:* `4` GB
-        * *Note:* "Changing this only applies to newly formatted disks."
+4. **% of reserve ram to use for machines:** defines a portion (in percentage) of swap reserved specifically to simulate additional workload RAM when physical RAM is exhausted.  This virtual RAM can be configured as a fallback for RAM overprovisioning.   
+!!! warning "RAM Overprovisioning Cautions"
+    - Using this reserve RAM feature is typically only intended as a fallback for RAM overprovisioning
+    - Avoid overprovisioning on clusters with high workload memory utilization or critical workloads
+    - Consider rightsizing VMs by reducing RAM allocations where usage is consistently low
+    - If too many VMs demand their full memory allocation simultaneously, workload performance may be degraded as virtual RAM is orders of magnitude slower than physical RAM (milliseconds vs. nanoseconds)
+     
 
-## Node Temperature
+5. **Nested Virtualization:** Enables using a virtual machine inside another virtual machine using hardware acceleration from the host.
+!!! note "Nested virtualization can involve security implications and issues with fair queuing/metering."  
 
-This section allows you to set temperature thresholds for the cluster nodes.
+6. **Allow Nested Virtualization Live Migration*:** Allows live migration of virtual machines with nested virtualization. 
 
-* **Maximum Core Temperature (Celsius):**
+7. **Allow VGPU Live Migration*:** Allows virtual machines with vGPU devices to be live migrated (experimental). Although not fully verified in testing, live migration of vGPU workloads has been seen to generally work reliably when the latest NVIDIA drivers are used on both host and guest.  
 
-top maximum
-typically query from cpu chip hardware - recommended for most real server hardware 
-    if not real server hardware may not support
-some processors have protection to shutdown automatically or hard lock 
-can disable this but not recommended, can be appropriate in some situations - e.g. bare metal where its not your responsibility to monitor hardware or maybe if this is running as virtual system
-this is really just to show in UI
-* **Maximum Core Temperature Warning Threshold %:**
-    * **Dropdown:** Set the percentage threshold relative to the maximum core temperature at which a warning should be issued. - to show warnings in the vergeos UI, also can trigger alerts based on this with subscriptions
-        turns the status guage to yellow and produces a warning in the system log
-* **Critical Core Temperature (Celsius):**
-    * **Dropdown:** Set the critical core temperature in Celsius, beyond which the system may take emergency actions.
-        turns the status guage to red and produces a critical warning/error in the system log.
+!!! info "If not enough vGPU devices are available, workloads may be temporarily powered off during maintenance." 
 
----
+!!! tip "*Live Migrations"
+    The virtual machine setting: *Migration Method* allows defining migration behavior per VM (e.g. require manual shutdown, attempt live migration) 
 
-* **CPU Power Management:**
+## Storage (Swap)
 
-It’s generally recommended to configure VergeOS nodes in **High Performance mode**, rather than power-saving settings that throttle CPU speed or enable sleep states to reduce energy use and noise. VergeOS typically enforces high-performance settings automatically, though some BIOS platforms may require manual adjustment if overrides aren’t supported.  Disabling CPU power-saving features can be especially beneficial on newly deployed systems, where workloads are gradually added. In these cases, idle nodes must quickly respond as demand increases, something High Performance mode is designed to handle.
+!!! warning "Swap settings are specified during cluster installation. Swap setting changes will only apply to newly formatted disks."
 
-!!! tip "Different BIOS vendors often use slightly different terminology for what essentially amounts to High Performance mode. Several examples you might encounter across systems, include: - *Performance/High Performance/Max Performance, Optimized Defaults, CPU Performance Mode, Turbo Mode, Disable C-States, Disable CPU Power Saving*.
-The exact label and location vary by manufacturer and BIOS version. Consult the motherboard manual or UEFI help text if unsure."
- 
-* **Security Mitigations**
+1. **Tier used for swap:** Storage tier to be used for swap space. Swap is disabled when value is 0
+  
+2. **Swap per drive:** Amount of swap space to allocate per drive 
 
-BIOS-level security mitigations are hardware and firmware protections, such as: Secure Boot, TPM, and SMM Security Mitigation, that help defend against low-level attacks before the operating system loads. In environments where workloads are known and trusted, administrators may choose to disable some of these settings to optimize performance. However, this approach is strongly discouraged in service provider or third-party tenant environments, where guest workloads may be untrusted or vulnerable to exploitation. In such cases, it is important to keep mitigations enabled to protect system integrity and security boundaries.
 
-!!! warning "Only consider disabling of security mitigations when all workloads are known and trusted."
+## Node Temperature (Thermal Temperature)
+
+This section allows you to define settings for VergeOS alerting behavior related to higher CPU thermal readings on cluster nodes.  Timely notification, in advance of reaching CPU max temperatures, can allow taking actions to avoid outages and harm to physical equipment; allowing CPU hardware to reach its maximum temperature limits can cause: the CPU to automatically shut itself down or hard lock, and potential hardware damage.  
+
+1. **Maximum Core Temperature (Celsius)** Establishes a peak temperature to use for VergeOS temperature monitoring (used in combination with the next setting: *Maximum Core Temperature Warning Threshold %*).
+    - ***query from hardware* (default)** - retrieves the hardware-defined maximum temperature from the CPU  
+    !!! info "Non-server hardware and some legacy servers may not support this query; in such cases, the *custom* setting can be selected to establish a max temperature in which to base VergeOS warnings." 
+    - ***custom*** - allows for selecting a specific peak temperature. Refer to your hardware documentation to verify your CPU max temperature.
+    - ***disable*** - this selection can be used when you do not wish to monitor temperature within VergeOS (when you are not responsible for monitoring the hardware, e.g. bare metal provider, or VergeOS running within a virtual environment)
+
+2. **Maximum Core Temperature Warning Threshold %** Sets a percentage boundary relative to the maximum core temperature (above) at which to trigger a warning state. A warning state will cause a yellow node status and system log warning entry will be created.  Typically, a threshold of at least 10% or higher is recommended to allow time to take proper measures in reaction to a thermal issue.
+
+!!! example "Example"
+    If *Maximum Core Temperature (Celsius)* is set to 80 degrees and *Maximum Core Temperature Warning Threshold %* is set to 10, warning status will trigger when CPU hardware reports 72 degrees.
+
+3. **Critical Core Temperature (Celsius):** Defines temperature at which to trigger an error state in VergeOS.  
+When reported hardware temperatures reach this temperature, the node status will turn to red and an error entry will appear in the system log. 
+ - ***query from hardware* (default)** - retrieves the hardware-defined critical temperature from the CPU  
+    !!! info "Non-server hardware and some legacy servers may not support this query; in such cases, the *custom* setting can be selected to establish a critical temperature setting.
+    - ***custom*** - allows for selecting a specific peak temperature. Refer to your hardware documentation to verify your CPU max temperature.
+    - ***disable*** - this selection can be used when you do not wish to monitor temperature within VergeOS (when you are not responsible for monitoring the hardware, e.g. bare metal provider, or VergeOS running within a virtual environment) 
+
+
+
+
+
+
