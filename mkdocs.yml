@@ -122,7 +122,7 @@ extra_javascript:
 #  - stylesheets/extra.css
 
 copyright: |
-  Copyright &copy; 2024 <a href="https://verge.io" target="_blank" rel="noopener"> Verge.io</a> |
+  Copyright &copy; 2025 <a href="https://verge.io" target="_blank" rel="noopener"> Verge.io</a> |
   <a href="#__consent">Change cookie settings</a>
 
 nav:
@@ -154,7 +154,7 @@ nav:
       - What is VergeOS?: product-guide/intro/what-is-vergeos.md
       - Platform Capabilities: product-guide/intro/platform-capabilities.md
       - Transitioning from VMware: product-guide/intro/transition-from-vmware.md
-      - UI Overview: product-guide/intro/ui-overview.md
+      - UI Overview: product-guide/ui-overview.md
     - Storage:
        - Overview: product-guide/storage/overview.md
        - vSAN Architecture: product-guide/storage/vsan-architecture.md  # Added from PR
