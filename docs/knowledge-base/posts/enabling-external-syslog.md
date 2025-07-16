@@ -45,8 +45,8 @@ To configure log forwarding to a third-party Syslog server:
        ```plaintext
        GRAYLOGRFC5424,"<%PRI%>%PROTOCOL-VERSION% %TIMESTAMP:::date-rfc3339% %HOSTNAME%.HOSTNAME_HERE %APP-NAME% %PROCID% %MSGID% %STRUCTURED-DATA% %msg%\n"
       ```
-       - For more information on syslog templates, visit the [Rsyslog Website](https://www.rsyslog.com/doc/master/
-     configuration/examples.html).  
+       - For more information on syslog templates, visit the [Rsyslog Website](https://www.rsyslog.com/doc/master/configuration/examples.html).
+        
    - Click **Submit** at the bottom of the page to save the format.
      
 

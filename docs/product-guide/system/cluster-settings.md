@@ -39,13 +39,13 @@ This subsection allows you to enable/disable various performance and security-re
 2. **Disable CPU Security Mitigations:** If selected, kernel-level CPU security mitigations are disabled for the cluster.  
 !!! warning "IMPORTANT: Although disabling CPU security mitigations can improve performance, this can be risky. Only select this option when you completely trust all guests running in this cluster and can be sure the workloads have no external vulnerabilities (e.g. airgapped systems)."
 
-3. **Disable Speculative Store Bypass:** If selected, disables Speculative Store Bypass(SSB) at runtime. Disabling SSB can result in a modest to moderate performance drop, depending on system workloads. 
+3. **Disable Speculative Store Bypass:** If selected, disables Speculative Store Bypass (SSB) at runtime. Disabling SSB can result in a modest to moderate performance drop, depending on system workloads. 
    
 4. **Disable SMT:** If selected, disables simultaneous multi-threading (SMT) at runtime.  
 
 !!! Notes
-    - Disabling SMT will significantly impair performance as it disables all hyper-threading 
-    - While modern software and microcode updates generally mitigate the vulnerabilities involved with SMT, some highly-sensitive environments may choose to disable it, even if it comes at a performance cost 
+    - Disabling SMT will significantly impair performance as it disables hyper-threading 
+    - While modern software and microcode updates generally mitigate many of the vulnerabilities involved with SMT, some highly-sensitive environments may choose to disable it, even if it comes at a performance cost 
     - The recommended way to disable SMT is in the BIOS.  The exact name of the setting can vary by manufacturer; consult your hardware documentation if unsure 
 
 5. **Disable sleep states for CPUs:** If selected, VergeOS automatically disables low level sleep state(s). This can eliminate unnecessary sleep state transitions due to short idle bursts that would otherwise cause a notable drop in performance with minimal benefit in power efficiency. 
@@ -63,7 +63,7 @@ This subsection allows you to enable/disable various performance and security-re
 
 ### System Log Filter
 
-1. **System Log Filter (default `*:3,ipmievd:5,rasdaemon,!ntpd,!postfix`):** A comma-separated list of filters in rsyslog syntax that determines log entries to display in the user interface.  Entries matching these filters are shown; all others are excluded from the UI view. This syntax supports facility and priority filters, as well as program-specific inclusions or exclusions.  
+1. **System Log Filter (default `*:3,ipmievd:5,rasdaemon,!ntpd,!postfix`):** A comma-separated list of filters in rsyslog syntax that determines which log entries to display in the user interface.  Entries matching these filters are shown; all others are excluded from the UI view. This syntax supports facility and priority filters, as well as program-specific inclusions or exclusions.  
 !!! tip "Unfiltered logs remain accessible via *Node Diagnostics* (Navigate to *Nodes* > double-click the desired node > select *Diagnostics* from the left menu.)"
 
 
@@ -114,7 +114,7 @@ This section configures compute resource policies for your cluster.  These setti
 !!! tip "*Live Migrations"
     The virtual machine setting: *Migration Method* allows defining migration behavior per VM (e.g. require manual shutdown, attempt live migration) 
 
-## Storage (Swap)
+## Storage (Swap Settings)
 
 !!! warning "Swap settings are specified during cluster installation. Swap setting changes will only apply to newly formatted disks."
 
@@ -125,7 +125,7 @@ This section configures compute resource policies for your cluster.  These setti
 
 ## Node Temperature
 
-This section allows you to define settings for VergeOS alerting behavior related to higher CPU thermal readings on cluster nodes.  Timely notification, in advance of reaching CPU max temperatures, can allow taking actions to avoid outages and harm to physical equipment; allowing CPU hardware to reach its maximum temperature limits can cause the CPU to automatically shut itself down or hard lock, and potential hardware damage.  
+This section allows you to define settings for VergeOS alerting behavior related to higher CPU thermal readings on cluster nodes.  Timely notification, in advance of reaching CPU max temperatures, can allow taking actions to avoid outages and harm to physical equipment; allowing CPU hardware to reach its maximum temperature limits can cause the CPU to automatically shut itself down or cause hard locks, and potential hardware damage.  
 
 1. **Maximum Core Temperature (Celsius)** Establishes a peak temperature to use for VergeOS temperature monitoring (used in combination with the next setting: *Maximum Core Temperature Warning Threshold %*).
     - ***query from hardware* (default)** - retrieves the hardware-defined maximum temperature from the CPU  

@@ -5,7 +5,7 @@ VergeOS Clusters Overview
 
    - A group of nodes with the same hardware characteristics
    - Forms a logical resource pool presented as usable assets in the VergeOS user interface
-   - Enable efficient management, scaling, and high availability for virtualized workloads.
+   - This enables efficient management, scaling, and high availability for virtualized workloads.
 
 ## Purpose of Clusters
 
@@ -29,9 +29,9 @@ Workloads (VMs, tenants, NAS services, etc.) are assigned to specific clusters a
 VergeOS supports three distinct cluster types that can be mixed and matched within a single system:
 
 * **Combined Compute and Storage (HCI) Clusters** - Nodes provide processing power and memory for workloads and participate in the virtual storage area network (vSAN)
-* **Storage-Only Clusters** - Nodes participate in the virtual storage area network (vSAN); dedicated exclusively to storage services
-* **Compute-Only Clusters** - Nodes dedicated exclusively to compute resources (No participation in vSAN storage).
-Compute clusters contain boot-only storage or can be configured to PXE boot.
+* **Storage-Only Clusters** - Dedicated exclusively to storage services; nodes contribute to the virtual storage area network (vSAN)
+* **Compute-Only Clusters** - Nodes dedicated exclusively to compute resources (no participation in vSAN storage).
+Compute clusters contain boot-only storage or can be configured for PXE boot.
 
 ## System Flexibility
 
@@ -44,7 +44,7 @@ A single VergeOS system can contain multiple clusters in any combination of the 
 
 ## Cluster Requirements
 
-* **Minimum Node Count**: Each cluster requires **at least two nodes** to maintain system redundancy and ensure high availability during maintenance or hardware failures.
+* **Minimum Node Count**: Each cluster requires **at least two nodes** to maintain system redundancy and ensure high availability during maintenance operations or hardware failures.
 
 * **Controller Nodes (Tier 0 Storage)**: The **first cluster** in a VergeOS system must include at least two nodes with a storage tier dedicated to VergeOS metadata (Tier 0). These controller nodes are essential for system management and operations.
 
@@ -68,7 +68,7 @@ After installation, cluster settings can be adjusted through the VergeOS user in
 ## Best Practices
 
 **Hardware Standardization:**  
-Use consistent hardware specifications within each cluster; using different node hardware within the same cluster can cause performance and reliability issues.
+Use consistent hardware specifications within each cluster. Using different node hardware within the same cluster can cause performance and reliability issues.
 
 **Planning Cluster Architecture:** 
 

@@ -1,14 +1,15 @@
 # New System Configuration
 
 
-This page will guide you through preparing your installed VergeOS system for production, including configuration steps to ensure optimum performance, security, and reliability.  For instructions on planning and completing an installation, refer to the [VergeOS Implementation Guide](/implementation-guide/intro).
+This page will guide you through preparing your installed VergeOS system for production; including configuration steps to ensure optimum performance, security, and reliability.  For instructions on planning and completing an installation, refer to the [VergeOS Implementation Guide](/implementation-guide/intro).
 
 
 ## System and Network Verification
 !!! note "Before proceeding:" 
     - **Verify system status** (all green status indicators) 
-    - **Ensure correct networking configuration**   
-    Refer to **[Implementation Guide - Post-Installation](/implementation-guide/post-installation)** for instructions.   
+    - **Ensure correct networking configuration** 
+
+    Refer to **[Implementation Guide - Post-Installation](/implementation-guide/post-installation)** for instructions on verifying system status and networking.   
 
 
 ## New System Task List
