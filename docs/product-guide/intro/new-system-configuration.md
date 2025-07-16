@@ -68,12 +68,12 @@ Cloud Snapshots provide a point-in-time backup of your entire system.  By defaul
 
 ## Authentication/Authorization Settings
 
-   - **Third-party Authorization Sources:** **[Configure an Authorization Source](/product-guide/auth/auth-sources-overview)** for any external identity service (such as Google SSO or Microsoft Entra ID) you wish to utilize for VergeOS logins. 
+   1. **Third-party Authorization Sources:** **[Configure an Authorization Source](/product-guide/auth/auth-sources-overview)** for any external identity service (such as Google SSO or Microsoft Entra ID) you wish to utilize for VergeOS logins. 
 
-   - **Multifactor Authentication (MFA):** MFA adds a critical security layer to your user accounts, ensuring that even if a password is compromised, unauthorized access is nearly impossible. With cyber threats on the rise, enabling MFA helps protect your systems and data.  It is strongly advised that you require multifactor authentication for all user logins.  **[Configure Multifactor Authentication for direct VergeOS logins](/product-guide/auth/multi-factor-auth)**.  
+   2. **Multifactor Authentication (MFA):** MFA adds a critical security layer to your user accounts, ensuring that even if a password is compromised, unauthorized access is nearly impossible. With cyber threats on the rise, enabling MFA helps protect your systems and data.  It is strongly advised that you require multifactor authentication for all user logins.  **[Configure Multifactor Authentication for direct VergeOS logins](/product-guide/auth/multi-factor-auth)**.  
 !!! info "When using external authorization sources (Google, Entra, etc.) for VergeOS, multifactor authentication should also be configured within those systems to ensure secure logins; consult the provider's related documentation for instructions."  
 
-   - **Password Complexity:** The default password complexity requirement is a minimum length of 8 characters. Additional requirements (e.g.lowercase letters, uppercase letters, numbers, symbols) can also be added in **[Advanced Settings](/product-guide/system/advanced-system-settings)** - ***Password Complexity Requirement***
+   3. **Password Complexity:** The default password complexity requirement is a minimum length of 8 characters. Additional requirements (e.g.lowercase letters, uppercase letters, numbers, symbols) can also be added in **[Advanced Settings](/product-guide/system/advanced-system-settings)** - ***Password Complexity Requirement***
 
 
 !!! warning "User Security"
