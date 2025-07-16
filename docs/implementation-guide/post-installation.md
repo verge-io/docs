@@ -2,36 +2,36 @@
 
 ## Introduction
 
-After completing your VergeOS installation, there are a few essential steps to verify and optimize your system.  This page will guide you through key post-installation steps to be completed after installing all of your initial VergeOS nodes. 
+After completing your VergeOS installation, there are a few essential steps to verify and optimize your system.  This page will guide you through key post-installation steps to be completed after installing initial VergeOS nodes. 
 
 ---
 
-## Verify System Status
+## 1. Verify System Status
 
-1. **Access the Web UI:**  
+* **Access the Web UI:**  
 
     * Open a web browser and navigate to your VergeOS system's IP address.  
     * Log in using your admin credentials created during installation.
 
-2. **Confirm System Health:**  
+* **Confirm System Health:**  
 
-    * Check the dashboard for any warnings or alerts, including scrolling to the bottom of the home page to view the system logs section.   
+    * Check the Main Dashboard (home screen) for any warnings or alerts, including scrolling to the bottom of the page to view the system logs section.   
     * Ensure all nodes are showing as online and healthy. The *Nodes* tile on the Main Dashboard should display all nodes online with a green status. 
 
 ---
 
-## Verify Network Configuration
+## 2. Verify Network Configuration
 
 The Core Fabric at the heart of VergeOS is designed with redundancy and resiliency in mind. For this architecture to function as intended, administrators must verify two key attributes: redundancy and isolation of the core networks.  Proper verification at this stage helps to ensure expected fault tolerance and performance as you move into production. 
 
-1. **Test Core Network Redundancy**  
-To ensure the system can tolerate hardware or link failures without impacting workloads:
+* **Test Core Network Redundancy**  
+To ensure the system can tolerate hardware or link failures without impacting workloads or data integrity:
 
     * Physically disconnect cables or power down one of the core switches to simulate a failure.
     * Within the VergeOS UI, navigate to Nodes.  Wait several minutes to verify that all nodes appear as "Running"/green status. 
     * After restoring the failed link or switch. Repeat the test on the other physical core network.
 
-2. **Verify Isolation of Core Networks**  
+* **Verify Isolation of Core Networks**  
 To maintain data integrity and prevent inter-system interference:  
 
     * Verify each physical core network operates on its own isolated switch or, at minimum, a dedicated VLAN.
@@ -39,22 +39,24 @@ To maintain data integrity and prevent inter-system interference:
 
 !!! warning "Avoid using VLANs 1 and 100-102 which are reserved for VergeOS internal system traffic."
 
-3. **Verify External Connection Redundancy**
-To ensure external redundancy for remote connectivity: 
+* **Verify External Connection Redundancy**  
+Ensure external redundancy for remote connectivity: 
 
-    * Simulate external connection loss to node 1
+    * Simulate external connection loss to node 1 (disconnecting network cable, etc.)
     * Confirm you still have remote access to the VergeOS user interface 
 
 ### Important Considerations
 
-- Regular testing of network redundancy and failover is recommended
-- Document all configuration changes for future reference
+- Regular testing of network redundancy and failover is recommended.
+- Document all configuration changes for future reference.
 
 ---
 
-## System Configuration
+## 3. System Configuration
 
-Refer to the **[Initial System Configuration Checklist](/product-guide/intro/new-system-configuration)** in the VergeOS Product Guide to finish preparing your system for production. 
+Finish preparing your system for production, by following the **[New System Configuration Checklist](/product-guide/intro/new-system-configuration)** in the VergeOS Product Guide.
+
+---
 
 ## Troubleshooting & Support
 

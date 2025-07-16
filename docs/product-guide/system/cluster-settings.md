@@ -2,17 +2,21 @@
 
 The *Cluster Settings* form enables you to configure key parameters relating to performance, security, allocation, thermal monitoring, and swap. While the majority of default settings are appropriate for most environments, it's recommended to review them when creating a new cluster and periodically thereafter to ensure alignment with your organization's policies and operational requirements.
 
-!!! tip "Most cluster setting changes will require a reboot of each cluster node.  A message will appear at the top of the cluster dashboard when a reboot is necessary.  Select the *Need Restart* option (within the reboot/restart message at the top of the cluster dashboard or left menu option) to manage the reboots of the cluster nodes.  Always follow proper [Maintenance Mode procedures](/product-guide/system/maintenance-mode) when rebooting nodes to avoid workload disruptions." 
+!!! tip "Most cluster setting changes will require a reboot of each cluster node.  A message will appear at the top of the cluster dashboard when a reboot is necessary.  Select the *Need Restart* option (within the reboot/restart message at the top of the cluster dashboard or left menu option) to manage reboots of the cluster nodes.  Always follow proper [Maintenance Mode procedures](/product-guide/system/maintenance-mode) when rebooting nodes to avoid workload disruptions." 
+
+## Accessing Cluster Settings
+
+From the **Main Dashboard**, click **Clusters**, **double-click the desired cluster**, click **Edit** on the left menu. 
 
 
 ## Cluster
 
 This section defines the fundamental properties of your cluster.
 
-1. **Enabled:** By default, the cluster will be enabled.  Typically, there is no reason to disable it; however, doing so may be useful in certain situations, such as during a cluster reconfiguration.
+1. **Enabled:** By default, the cluster will be enabled.  Typically, there is no reason to disable it; however, doing so may be useful in certain situations, such as during a complete cluster reconfiguration.
 2. **Name:** A cluster is typically named during installation but can be renamed without issue. 
 3. **Description:** Optional text area to provide a brief description of the cluster's purpose or characteristics.
-4. **Default CPU Type:** Defines the default/recommended CPU type for virtual machines with this cluster designated.  This setting is automatically selected during cluster installation, based on detected CPU hardware. Review the setting to verify accurate CPU type was detected.  
+4. **Default CPU Type:** Defines the default/recommended CPU type for virtual machines with this cluster designated.  This setting is automatically selected during cluster installation, based on detected CPU hardware. During initial configuration, review the setting to verify accurate CPU type was detected.  
 
 !!! tip "To accommodate migration/failover of virtual machines to another cluster using a lower class of CPU chip, *Default CPU type* can be changed to the lower class type to allow virtual machines to be ported to the older chip hardware without issue."
 
@@ -35,16 +39,16 @@ This subsection allows you to enable/disable various performance and security-re
 2. **Disable CPU Security Mitigations:** If selected, kernel-level CPU security mitigations are disabled for the cluster.  
 !!! warning "IMPORTANT: Although disabling CPU security mitigations can improve performance, this can be risky. Only select this option when you completely trust all guests running in this cluster and can be sure the workloads have no external vulnerabilities (e.g. airgapped systems)."
 
-3. **Disable Speculative Store Bypass:** If selected, disables speculative store bypass at runtime. Disabling SSB can result in a modest to moderate performance drop, depending on system workloads. 
+3. **Disable Speculative Store Bypass:** If selected, disables Speculative Store Bypass(SSB) at runtime. Disabling SSB can result in a modest to moderate performance drop, depending on system workloads. 
    
 4. **Disable SMT:** If selected, disables simultaneous multi-threading (SMT) at runtime.  
 
 !!! Notes
     - Disabling SMT will significantly impair performance as it disables all hyper-threading 
-    - While modern software and microcode updates mitigate many of the vulnerabilities involved with SMT, some highly-sensitive environments may choose to disable it, even if it comes at a performance cost 
+    - While modern software and microcode updates generally mitigate the vulnerabilities involved with SMT, some highly-sensitive environments may choose to disable it, even if it comes at a performance cost 
     - The recommended way to disable SMT is in the BIOS.  The exact name of the setting can vary by manufacturer; consult your hardware documentation if unsure 
 
-5. **Disable sleep states for CPUs:** Automatically disables low level sleep state(s). This can eliminate unnecessary sleep state transitions due to short idle bursts that would otherwise cause a notable drop in performance with minimal benefit in power efficiency. 
+5. **Disable sleep states for CPUs:** If selected, VergeOS automatically disables low level sleep state(s). This can eliminate unnecessary sleep state transitions due to short idle bursts that would otherwise cause a notable drop in performance with minimal benefit in power efficiency. 
 
 !!! Considerations
     - Disabling CPU sleep states can be especially beneficial on newly deployed systems, where workloads are gradually added. In these cases, idle nodes must quickly respond as demand increases
@@ -60,12 +64,12 @@ This subsection allows you to enable/disable various performance and security-re
 ### System Log Filter
 
 1. **System Log Filter (default `*:3,ipmievd:5,rasdaemon,!ntpd,!postfix`):** A comma-separated list of filters in rsyslog syntax that determines log entries to display in the user interface.  Entries matching these filters are shown; all others are excluded from the UI view. This syntax supports facility and priority filters, as well as program-specific inclusions or exclusions.  
-!!! tip "Unfiltered logs remain accessible via *Node Diagnostics* (Navigate to Nodes > double-click the desired node > select Diagnostics from the left menu.)"
+!!! tip "Unfiltered logs remain accessible via *Node Diagnostics* (Navigate to *Nodes* > double-click the desired node > select *Diagnostics* from the left menu.)"
 
 
 ## Compute
 
-This section configures compute resource policies for your cluster.
+This section configures compute resource policies for your cluster.  These settings will not apply for storage-only clusters.
 
 1. **Max RAM per machine:** Specifies the maximum amount of RAM that can be allocated to a single workload (such as a virtual machine, tenant node, or NAS service). 
 !!! tip "Considerations"
@@ -119,15 +123,15 @@ This section configures compute resource policies for your cluster.
 2. **Swap per drive:** Amount of swap space to allocate per drive 
 
 
-## Node Temperature (Thermal Temperature)
+## Node Temperature
 
-This section allows you to define settings for VergeOS alerting behavior related to higher CPU thermal readings on cluster nodes.  Timely notification, in advance of reaching CPU max temperatures, can allow taking actions to avoid outages and harm to physical equipment; allowing CPU hardware to reach its maximum temperature limits can cause: the CPU to automatically shut itself down or hard lock, and potential hardware damage.  
+This section allows you to define settings for VergeOS alerting behavior related to higher CPU thermal readings on cluster nodes.  Timely notification, in advance of reaching CPU max temperatures, can allow taking actions to avoid outages and harm to physical equipment; allowing CPU hardware to reach its maximum temperature limits can cause the CPU to automatically shut itself down or hard lock, and potential hardware damage.  
 
 1. **Maximum Core Temperature (Celsius)** Establishes a peak temperature to use for VergeOS temperature monitoring (used in combination with the next setting: *Maximum Core Temperature Warning Threshold %*).
     - ***query from hardware* (default)** - retrieves the hardware-defined maximum temperature from the CPU  
     !!! info "Non-server hardware and some legacy servers may not support this query; in such cases, the *custom* setting can be selected to establish a max temperature in which to base VergeOS warnings." 
-    - ***custom*** - allows for selecting a specific peak temperature. Refer to your hardware documentation to verify your CPU max temperature.
-    - ***disable*** - this selection can be used when you do not wish to monitor temperature within VergeOS (when you are not responsible for monitoring the hardware, e.g. bare metal provider, or VergeOS running within a virtual environment)
+    - ***custom*** - allows for manually defining a specific peak temperature. Refer to your hardware documentation to verify your CPU max temperature.
+    - ***disable*** - this selection can be used when you do not wish to monitor temperature within VergeOS (when you are not responsible for monitoring the hardware, e.g. bare metal provider, or VergeOS is running within a virtual environment)
 
 2. **Maximum Core Temperature Warning Threshold %** Sets a percentage boundary relative to the maximum core temperature (above) at which to trigger a warning state. A warning state will cause a yellow node status and system log warning entry will be created.  Typically, a threshold of at least 10% or higher is recommended to allow time to take proper measures in reaction to a thermal issue.
 
@@ -136,10 +140,10 @@ This section allows you to define settings for VergeOS alerting behavior related
 
 3. **Critical Core Temperature (Celsius):** Defines temperature at which to trigger an error state in VergeOS.  
 When reported hardware temperatures reach this temperature, the node status will turn to red and an error entry will appear in the system log. 
- - ***query from hardware* (default)** - retrieves the hardware-defined critical temperature from the CPU  
-    !!! info "Non-server hardware and some legacy servers may not support this query; in such cases, the *custom* setting can be selected to establish a critical temperature setting.
-    - ***custom*** - allows for selecting a specific peak temperature. Refer to your hardware documentation to verify your CPU max temperature.
-    - ***disable*** - this selection can be used when you do not wish to monitor temperature within VergeOS (when you are not responsible for monitoring the hardware, e.g. bare metal provider, or VergeOS running within a virtual environment) 
+    - ***query from hardware* (default)** - retrieves the hardware-defined critical temperature from the CPU    
+    !!! info "Non-server hardware and some legacy servers may not support this query; in such cases, the *custom* setting can be selected to establish a critical temperature setting."
+    - ***custom*** - allows for manually defining a critical temperature. Refer to your hardware documentation to verify your CPU max temperature.
+    - ***disable*** - this selection can be used when you do not wish to monitor temperature within VergeOS (when you are not responsible for monitoring the hardware, e.g. bare metal provider, or VergeOS is running within a virtual environment) 
 
 
 

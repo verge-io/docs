@@ -1,4 +1,4 @@
-# Verify Licensing/Update Configuration
+# Verify Licensing and Update Server Configuration
 
 Valid licensing configuration is required to run workloads and NAS services and to perform system updates.  Normal licensing and updates will require connection and authentication to a VergeOS Update Server. 
 
@@ -6,17 +6,14 @@ Valid licensing configuration is required to run workloads and NAS services and 
 
 ## Verify Connection to a VergeOS Update Server
 
-1. From the main dashboard, navigate to **System > Updates**.  This will bring you to the Updates Dashboard.  
+1. From the Main Dashboard, navigate to **System > Updates**.  This will bring you to the Updates Dashboard.  
 2. Click **Check For Updates** on the left menu.
 3. Verify a green indicator in the ***Status*** field.  A failed connection will be indicated with a red status and an error message in the status field.  
 4. If the status is not green:  
-  * click **Edit Settings** on the left menu.  
-  * Verify **correct licensing User/Password**.  (If you are unsure of your licensing username/password contact your VergeOS sales or support representative.)   
-  * Verify **Update Source**. (***Verge.io Trial/NFR*** for home labs and POC (Not-for-resale) installations ***Verge.io Updates*** for normal production) licenses
-  * Verify Internet connection from the VergeOS system.
+    * click **Edit Settings** on the left menu.  
+    * Verify **correct licensing User/Password**.  If you are unsure of your licensing credentials contact your VergeOS sales or support representative.  
+    * Verify **Update Source** 
+        - for home labs and POC (Not-for-resale) installations: ***Verge.io Trial/NFR***  
+        - for normal production licenses: ***Verge.io Updates*** 
+    * Verify **Internet connection** from the VergeOS system.
 
-## Verify Installed Version is Latest
-
-Running the most up-to-date version of VergeOS will ensure you have the all the latest features and improvements. See [Product Guide - Licensing and Updates](/product-guide/system/licensing-and-updates#update-process) for instructions on downloading and installing VergeOS updates.
-
-!!! tip "The [VergeOS Release Notes Page](/release-notes/release-notes-overview) provides information about the current latest version."
