@@ -2,37 +2,42 @@
 
 ## Introduction
 
-After completing your VergeOS installation, there are a few essential steps to promote optimum functionality, performance, and reliability.  This page will guide you through key post-installation tasks, such as verifying system status, confirming core network configuration, and establishing necessary system settings.
-<!-- something about this is after a "successful" install of all initial nodes -->
+After completing your VergeOS installation, there are a few essential steps to verify and optimize your system.  This page will guide you through key post-installation steps to be completed after installing all of your initial VergeOS nodes. 
 
-### 1. Initial System Access
 
-* **Access the Web UI:**
+## Verify Your System Status
+
+1. **Access the Web UI:**
    - Open a web browser and navigate to your VergeOS system's IP address
    - Log in using your admin credentials created during installation
 
-* **Verify System Status:**
-   - Check the dashboard for any warnings or alerts
-   - Ensure all nodes are showing as online and healthy. (The Node tile on the Main Dashboard should display all cloud nodes online with a green status.)  
+2. **Confirm System Health:**
+   - Check the dashboard for any warnings or alerts, including scrolling to the bottom of the home page to view the system logs section. 
+   - Ensure all nodes are showing as online and healthy. (The *Nodes* tile on the Main Dashboard should display all nodes online with a green status.) 
 
-### 2. Verify Network Configuration
+## Verify Network Configuration
 
 The Core Fabric at the heart of VergeOS is designed with redundancy and resiliency in mind. For this architecture to function as intended, administrators must verify two key attributes: redundancy and isolation of the core networks.  Proper verification at this stage helps to ensure expected fault tolerance and performance as you move into production. 
 
-* **Test Core Network Redundancy**
+1. **Test Core Network Redundancy**  
 To ensure the system can tolerate hardware or link failures without impacting workloads:
-- Physically disconnect cables or power down one of the core switches to simulate a failure.
-- Within the VergeOS UI, navigate to Nodes.  Wait several minutes to verify that all nodes appear as "Running"/green status. 
-- After restoring the failed link or switch. Repeat the test on the other physical core network.
 
-* **Verify Isolation of Core Networks**
-To maintain data integrity and prevent inter-system interference:
-- Each physical core network should operate on its own isolated switch or, at minimum, a dedicated VLAN.
-- Also ensure that no other VergeOS systems share these networks. For example, if running multiple VergeOS host systems within shared infrastructure, each system would need two unique and exclusive VLAN IDs.
+    * Physically disconnect cables or power down one of the core switches to simulate a failure.
+    * Within the VergeOS UI, navigate to Nodes.  Wait several minutes to verify that all nodes appear as "Running"/green status. 
+    * After restoring the failed link or switch. Repeat the test on the other physical core network.
 
-<!-- mention vlan ids that should not/cannot be used for core networks??>
+2. **Verify Isolation of Core Networks**  
+To maintain data integrity and prevent inter-system interference:  
 
-<!-- simulate external loss to node 1? -->
+    * Verify each physical core network operates on its own isolated switch or, at minimum, a dedicated VLAN.
+    * Ensure that no other VergeOS systems share these networks. For example, if running multiple VergeOS host systems within shared infrastructure, each system would need two unique and exclusive VLAN IDs. 
+
+!!! warning "Avoid using VLANs 1 and 100-102 which are reserved for VergeOS internal system traffic."
+
+3. **Verify External Connection Redundancy**:
+To ensure external redundancy for remote connectivity: 
+* Simulate external connection loss to node 1
+* Confirm you still have remote access to the VergeOS user interface 
 
 ### Important Considerations
 

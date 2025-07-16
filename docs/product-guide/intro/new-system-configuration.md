@@ -1,10 +1,12 @@
 # Initial System Configuration
 
 
-This page provides a guide for configuring a new VergeOS system. 
+This page provides a guide to prepare your installed VergeOS system for production, that includes steps to ensure optimum performance, security, and reliability.  Refer to the [Implementation Guide](/implementation-guide/intro) for thorough instructions on planning and completing a VergeOS installation. 
 
 
- Before proceeding with these tasks, **verify system status** (all green status indicators) and **ensure correct networking configuration**. Refer to [Implementation Guide - Post-Installation](/implementation-guide/post-installation) (***Networking Configuration and Testing*** section) for guidance.
+!!! note "Before proceeding with these tasks"  
+    - **Verify system status** (all green status indicators) 
+    - **Ensure correct networking configuration**. Refer to [Implementation Guide - Post-Installation](/implementation-guide/post-installation) (***Networking Configuration and Testing*** section)
 
 
 ## New System Task List
@@ -21,53 +23,53 @@ This page provides a guide for configuring a new VergeOS system.
 
 ## Cluster Settings
 
-Every system has at least one cluster
-Cluster(s) were created during installation
-Default settings should be reviewed and modified as needed. 
-Good to make these modifications upon initial configuration because 1) cluster changes require node reboots 2) some settings may be important to establish before putting into production.
+For each cluster, it's advisable to review and **[fine-tune cluster settings](/product-guide/system/cluster-settings)** during initial configuration because: 
 
-**Learn about VergeOS Clusters: [Clusters Overview](/product-guide/system/clusters-overiew)**
-**Explore Configuration Options: [Cluster Settings](/product-guide/system/cluster-settings)**
+   * Most cluster changes require node reboots  
+   * Some cluster settings will be important to establish before putting your system into production
+
+!!! tip "See the [Clusters Overview Guide](/product-guide/system/clusters-overview) to learn the basics of VergeOS clusters."
 
 
 ## Licensing/Updates
+   
+1. **[Verify Your VergeOS Licensing](/product-guide/system/verify-update-server-connection)**: This will ensure your system will be able to run VMs, start NAS services, and run updates.
 
-   - **Verify Licensing:** Without proper licensing, your system will be unable to run VMs, start NAS services, or run updates.  See: [Verifying Your VergeOS Licensing](/product-guide/system/verify-update-server-connection)
+2. **[Update your System](/knowledge-base/updating-vergeos-system)**: Perform an update if your system is not running the most up-to-date version. Running the newest version of VergeOS will guarantee you have all the latest features and improvements.  
 
-   - **Verify the Latest Version is Installed:** Running the most up-to-date version of VergeOS will ensure you have all the latest features and improvements.  [VergeOS Release Notes](/release-notes/release-notes-overview) provides information about the current latest version.  
-   Step-by-step instructions for downloading and installing VergeOS updates can be found in the following KB article: [Updating the VergeOS System](/knowledge-base/updating-vergeos-system) 
+!!! tip "**[VergeOS Release Notes](/release-notes/release-notes-overview)** provides information about the current latest version."  
 
 
 ## SMTP
-Proper SMTP configuration is necessary for receiving email-based reports and alerts. See the [SMTP Product Guide ](/product-guide/system/smtp) for instructions.
+Proper SMTP configuration is necessary for receiving email-based reports and alerts. See the **[SMTP Product Guide ](/product-guide/system/smtp)** for instructions.
 
 
 ## Server Certificate
 
-By default, your VergeOS system is installed with a self-signed certificate. For public-facing and production systems it is important to install a trusted, CA-issued certificate to provide security and validate your system to browsers and other systems. See [Server Certificates](/product-guide/system/certificates) for related instructions. 
+By default, your VergeOS system is installed with a self-signed certificate. For public-facing and production systems it is important to install a trusted, CA-issued certificate to provide security and ensure trust between your system, browsers, and external platforms. See **[Server Certificates](/product-guide/system/certificates)** for related instructions. 
 
 !!! tip "A CA-issued certificate may be less important for home labs, or other non-critical systems that are used solely within a private infrastructure."  
 
 
 ## Alerting and Reporting
 
-Configure [Subscriptions](/product-guide/system/subscriptions-overview) for alerting and reporting to effectively monitor your system. Alerts are essential because they ensure you're immediately notified when specific events happen (e.g. high storage usage percentage, drive warnings, system log errors, etc.), allowing for rapid response. Reports will allow you to receive summarized information for selected areas of the system on a specified schedule.
+Configure **[Subscriptions](/product-guide/system/subscriptions-overview)** will allow you to receive alerts and reports to effectively monitor your system. Alerts are essential for immediate notification when specific events occur (e.g. high storage usage percentage, drive warnings, system log errors, etc.), allowing for rapid response. Reports enable you to receive summarized information for selected areas of the system on a specified schedule.
 
 ## Cloud Snapshot Settings
  
-Cloud Snapshots provide a point-in-time backup of your entire system. See [Cloud Snapshots and Restores](/product-guide/backup-dr/cloud-snapshot-restore#automated-cloud-snapshots) for instructions on adjusting the default frequency and retention of cloud snapshots, if needed.   
+Cloud Snapshots provide a point-in-time backup of your entire system.  By default, your VergeOS system is configured to perform regular cloud snapshots.  You can customize this schedule to align with your organizational needs. See **[Cloud Snapshots and Restores](/product-guide/backup-dr/cloud-snapshot-restore#automated-cloud-snapshots)** for instructions on adjusting the default frequency and retention of cloud snapshots.   
 
 
 !!! tip "After creating tenants, VMs and NAS volumes, you can also create individualized snapshot frequency and retention for these items where needed."  
 
 ## Authentication/Authorization Settings
 
-   - **Third-party Authorization Sources:** Configure an [Authorization Source](/product-guide/auth/auth-sources-overview) for any external identity service (such as Google SSO or Microsoft Entra ID) to be utilized. 
+   - **Third-party Authorization Sources:** Configure an **[Authorization Source](/product-guide/auth/auth-sources-overview)** for any external identity service (such as Google SSO or Microsoft Entra ID) you wish to utilize for VergeOS logins. 
 
-   - **Multifactor Authentication (MFA):** Multifactor authentication (MFA) adds a critical security layer to your user accounts, ensuring that even if a password is compromised, unauthorized access is nearly impossible. With cyber threats on the rise, enabling MFA helps protect your systems and data.  It is strongly advised that you require multifactor authentication for all user logins.  [Configure Multifactor authentication](/product-guide/auth/multi-factor-auth), for direct VergeOS logins.  
-!!! info "When using external authorization sources (Google, Entra, etc.), multifactor authentication should also be configured within those systems; consult the provider's related documentation for instructions."  
+   - **Multifactor Authentication (MFA):** MFA adds a critical security layer to your user accounts, ensuring that even if a password is compromised, unauthorized access is nearly impossible. With cyber threats on the rise, enabling MFA helps protect your systems and data.  It is strongly advised that you require multifactor authentication for all user logins.  **[Configure Multifactor Authentication](/product-guide/auth/multi-factor-auth)**, for direct VergeOS logins.  
+!!! info "When using external authorization sources (Google, Entra, etc.) for VergeOS, multifactor authentication should also be configured within those systems to ensure secure logins; consult the provider's related documentation for instructions."  
 
-   - **Password Complexity:** The default password complexity requirement is a minimum length of 8 characters. Additional requirements (demand for lower case, upper case, number, symbol) can also be added in [Advanced Settings](/product-guide/system/advanced-system-settings) - ***Password Complexity Requirement***
+   - **Password Complexity:** The default password complexity requirement is a minimum length of 8 characters. Additional requirements (e.g.lowercase letters, uppercase letters, numbers, symbols) can also be added in **[Advanced Settings](/product-guide/system/advanced-system-settings)** - ***Password Complexity Requirement***
 
 
 !!! warning "User Security"
