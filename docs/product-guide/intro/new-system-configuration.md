@@ -1,12 +1,14 @@
 # Initial System Configuration
 
 
-This page provides a guide to prepare your installed VergeOS system for production, that includes steps to ensure optimum performance, security, and reliability.  Refer to the [Implementation Guide](/implementation-guide/intro) for thorough instructions on planning and completing a VergeOS installation. 
+This page will guide you through preparing your installed VergeOS system for production, including steps to ensure optimum performance, security, and reliability.  For instructions on planning and completing a VergeOS installation refer to the [Implementation Guide](/implementation-guide/intro).
 
 
-!!! note "Before proceeding with these tasks"  
+## System and Network Verification
+!!! note "Before proceeding:" 
     - **Verify system status** (all green status indicators) 
-    - **Ensure correct networking configuration**. Refer to [Implementation Guide - Post-Installation](/implementation-guide/post-installation) (***Networking Configuration and Testing*** section)
+    - **Ensure correct networking configuration**   
+    Refer to **[Implementation Guide - Post-Installation](/implementation-guide/post-installation)** for instructions.   
 
 
 ## New System Task List
@@ -23,12 +25,14 @@ This page provides a guide to prepare your installed VergeOS system for producti
 
 ## Cluster Settings
 
-For each cluster, it's advisable to review and **[fine-tune cluster settings](/product-guide/system/cluster-settings)** during initial configuration because: 
+For each cluster, it's advisable to review and fine-tune settings during initial configuration because: 
 
    * Most cluster changes require node reboots  
    * Some cluster settings will be important to establish before putting your system into production
 
-!!! tip "See the [Clusters Overview Guide](/product-guide/system/clusters-overview) to learn the basics of VergeOS clusters."
+ **[Review and Adjust Cluster Settings ](/product-guide/system/cluster-settings)**
+
+!!! tip "Learn about **VergeOS Cluster Basics** here: [Clusters Overview Guide](/product-guide/system/clusters-overview)."
 
 
 ## Licensing/Updates
@@ -53,7 +57,7 @@ By default, your VergeOS system is installed with a self-signed certificate. For
 
 ## Alerting and Reporting
 
-Configure **[Subscriptions](/product-guide/system/subscriptions-overview)** will allow you to receive alerts and reports to effectively monitor your system. Alerts are essential for immediate notification when specific events occur (e.g. high storage usage percentage, drive warnings, system log errors, etc.), allowing for rapid response. Reports enable you to receive summarized information for selected areas of the system on a specified schedule.
+Configuring **[Subscriptions](/product-guide/system/subscriptions-overview)** allows you to receive alerts and reports to effectively monitor your system. Alerts (on-demand subscriptions) are essential for immediate notification when specific events occur (e.g. high storage usage percentage, drive warnings, system log errors, etc.), allowing for rapid response. Reports (scheduled subscriptions) enable you to receive summarized information on a specified schedule.
 
 ## Cloud Snapshot Settings
  

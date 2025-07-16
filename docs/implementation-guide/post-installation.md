@@ -4,16 +4,21 @@
 
 After completing your VergeOS installation, there are a few essential steps to verify and optimize your system.  This page will guide you through key post-installation steps to be completed after installing all of your initial VergeOS nodes. 
 
+---
 
-## Verify Your System Status
+## Verify System Status
 
-1. **Access the Web UI:**
-   - Open a web browser and navigate to your VergeOS system's IP address
-   - Log in using your admin credentials created during installation
+1. **Access the Web UI:**  
 
-2. **Confirm System Health:**
-   - Check the dashboard for any warnings or alerts, including scrolling to the bottom of the home page to view the system logs section. 
-   - Ensure all nodes are showing as online and healthy. (The *Nodes* tile on the Main Dashboard should display all nodes online with a green status.) 
+    * Open a web browser and navigate to your VergeOS system's IP address.  
+    * Log in using your admin credentials created during installation.
+
+2. **Confirm System Health:**  
+
+    * Check the dashboard for any warnings or alerts, including scrolling to the bottom of the home page to view the system logs section.   
+    * Ensure all nodes are showing as online and healthy. The *Nodes* tile on the Main Dashboard should display all nodes online with a green status. 
+
+---
 
 ## Verify Network Configuration
 
@@ -34,20 +39,22 @@ To maintain data integrity and prevent inter-system interference:
 
 !!! warning "Avoid using VLANs 1 and 100-102 which are reserved for VergeOS internal system traffic."
 
-3. **Verify External Connection Redundancy**:
+3. **Verify External Connection Redundancy**
 To ensure external redundancy for remote connectivity: 
-* Simulate external connection loss to node 1
-* Confirm you still have remote access to the VergeOS user interface 
+
+    * Simulate external connection loss to node 1
+    * Confirm you still have remote access to the VergeOS user interface 
 
 ### Important Considerations
 
 - Regular testing of network redundancy and failover is recommended
 - Document all configuration changes for future reference
 
+---
 
-3. System Configuration
+## System Configuration
 
-Refer to the [Initial System Configuration Checklist](/product-guide/intro/new-system-configuration) in the VergeOS Product Guide to finish preparing your system for production. 
+Refer to the **[Initial System Configuration Checklist](/product-guide/intro/new-system-configuration)** in the VergeOS Product Guide to finish preparing your system for production. 
 
 ## Troubleshooting & Support
 
