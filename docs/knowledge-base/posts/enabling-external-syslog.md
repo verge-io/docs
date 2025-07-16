@@ -26,22 +26,26 @@ To configure log forwarding to a third-party Syslog server:
 
 1. From the Main Dashboard, navigate to **System > Settings > Advanced Settings**.
 
-2. **Search and Configure Syslog**:
-   - Under the "Setting" column heading, type "**syslog***" and enter to search. 
-   - Select and edit **Remote syslog server (tcp: @@name/ip:port, udp: @name/ip:port)**.
+2. **Configure the External Location**:
+
+   - Under the "Setting" column heading, type "**syslog***" and enter to search.   
+   - Select and edit ***Remote syslog server (tcp: @@name/ip:port, udp: @name/ip:port)***.  
    - Configure this setting according to the syntax expected on the remote server:
      - **Examples:** 
-       - For TCP: `@@10.10.10.10:514`
-       - For UDP: `@10.10.10.10:514`
-   - Click **Submit** at the bottom of the page.
-   - Search "syslog" again.
-   - Select and edit **Template to define for syslog server (See rsyslog for format)**.
+        - For TCP: `@@10.10.10.10:514`
+         - For UDP: `@10.10.10.10:514`
+   - Click **Submit** at the bottom of the page to save.
+
+3. **Configure the Format Template:**
+
+  - Search "syslog" again.  
+   - Select and edit ***Template to define for syslog server (See rsyslog for format)***.
    - Enter a syslog template format that is compatible with the remote syslog server.
-     - **Example:**
+       - **Example:**
        ```plaintext
        GRAYLOGRFC5424,"<%PRI%>%PROTOCOL-VERSION% %TIMESTAMP:::date-rfc3339% %HOSTNAME%.HOSTNAME_HERE %APP-NAME% %PROCID% %MSGID% %STRUCTURED-DATA% %msg%\n"
       ```
-     - For more information on syslog templates, visit the [Rsyslog Website](https://www.rsyslog.com/doc/master/
+       - For more information on syslog templates, visit the [Rsyslog Website](https://www.rsyslog.com/doc/master/
      configuration/examples.html).  
    - Click **Submit** at the bottom of the page to save the format.
      
