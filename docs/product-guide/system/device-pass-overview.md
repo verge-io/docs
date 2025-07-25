@@ -1,8 +1,8 @@
 # Device Passthrough Overview
 
-VergeOS accommodates multiple types of device passthrough in order to allow physical devices connected to host servers to be used by VMs.  
+VergeOS supports various types of device passthrough, allowing virtual machines to access physical devices connected to their host servers 
 
-!!! tip "To enable PCI passthrough (exclusive, SR-IOV NIC, or vGPU), correct passthrough/virtualization features must be configured in your server BIOS; Intel hosts will require ***VT-d and VT-x*** enabled, while AMD will require ***AMD-vi/AMD-V***, ***IOMMU*** enabled.  Names of settings will vary across BIOS vendors; other common names to look for can include terms similar to ***virtualization***, ***PCI Passthrough***, ***PCIe ****, etc. Consult your hardware vendor documentation if uncertain."
+!!! tip "To enable PCI passthrough (exclusive, SR-IOV NIC, or vGPU), correct passthrough/virtualization features must be configured in your server BIOS; Intel hosts will require ***VT-d and VT-x*** enabled, while AMD will require ***AMD-vi/AMD-V***, ***IOMMU*** enabled.  Names of settings will vary across BIOS vendors; other common names to look for include terms similar to ***virtualization***, ***PCI Passthrough***, ***PCIe ****, etc. Consult your hardware vendor documentation if uncertain."
 
 ## PCI Passthrough Risks/Precautions
 
@@ -38,7 +38,7 @@ The KB Article: [Device Passthrough - Advanced Configuration](/knowledge-base/de
 
 ## Types of Device Passthrough
 
-* [**One-to-One PCI passthrough**](/product-guide/system/generic-pci-passthrough) - enables a VM to utilize a PCI device that is physically installed on the host, providing single device to single VM access (at a time). The PCI device functions as if is physically attached to the guest operating system.  
+* [**One-to-One PCI passthrough**](/product-guide/system/generic-pci-passthrough) - enables a VM to utilize a PCI device that is physically installed on the host, providing single device to single VM access (at a time). The PCI device functions as if physically attached to the guest operating system.  
 
 * [**USB Device Passthrough**](/product-guide/system/usb-passthrough) - allows a VM to access a USB device connected to the host machine. This allows users to access USB devices within a VM as if they were directly connected to the VM. Single device to single VM access (at a time) is provided.
 
