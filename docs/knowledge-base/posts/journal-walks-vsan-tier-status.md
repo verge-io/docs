@@ -1,9 +1,29 @@
-# VergeOS vSAN Tier Status Detail 
-# (Journal Walks)
+---
+title: Understanding vSAN Tier Status/Journal Walks
+slug: understanding-journal-walks-and-vsan-tier-status
+description: Understanding status metrics provided on the vSAN Tier Dashboard
+author: VergeOS Documentation Team
+draft: false
+date: 2025-07-01T14:20:54.833Z
+tags:
+  - storage
+  - vSAN
+  - tiers
+categories:
+  - Storage
+  - Software Updates
+  - vSAN
+editor: markdown
+dateCreated: 2025-06-1T15:10:21.365Z
+---
+
+
+
+# vSAN Tier Status (Journal Walks)
 
 ## Overview
 
-This page is designed to help you understand VergeFS status metrics provided on the vSAN Tier Dashboard. These metrics provide insight related to ***Journal Walks***, the processes that continually monitor and support vSAN data integrity. 
+This page is designed to help you understand VergeFS status metrics provided on the *vSAN Tier Dashboard*. These metrics provide insight related to ***Journal Walks***, the processes that continually monitor and support vSAN data integrity. 
 
 !!! note "Monitoring vSAN tier status information covered on this page is typically unnecessary during normal operation (general vSAN health and activity are reported on the Main Dashboard).  These details are intended for troubleshooting or for users interested in viewing Journal Walk activity specifics. This dashboard is most useful when investigating an issue or tracking the progress of a Journal Walk, such as during an update process."
 
@@ -24,7 +44,7 @@ Journal Walks operate as a background process; system operations proceed normall
 
 ## Accessing vSAN Tier Status Information
 
-From the **Main Dashboard**, navigate to **vSAN Tiers** and **double-click the desired tier**. This displays the dashboard for the selected vSAN tier. Refer to the Status tile on the page. 
+Navigate to: **Main Dashboard** > **vSAN Tiers** > **double-click the desired tier**. This displays the dashboard for the selected vSAN tier. Refer to the Status tile on this page. 
 
 ## Status Data 
 
