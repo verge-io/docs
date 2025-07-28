@@ -56,7 +56,7 @@ This guide walks you through the process of configuring VergeOS as an identity p
    - Format: `https://your-system-name.example.com`
    - Multiple URIs can be added for different client systems
    
-   !!! tip "Using Wildcards"
+!!! tip "Using Wildcards"
        You can use wildcards in redirect URIs:
        - For multiple systems: `https://examplecorp-site*.example.com`
        - For multiple subdomains: `https://vergesystem.*.example.com`
