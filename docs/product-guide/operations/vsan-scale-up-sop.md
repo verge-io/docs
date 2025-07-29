@@ -33,7 +33,7 @@ Complete these steps well before your scheduled maintenance window:
 
 - [ ] Disks pre-tested in non-production hardware
 - [ ] New disks are as large or larger than existing disks
-  - [ ] And of similar performance
+    -  And of same performance
 - [ ] Verify drive compatibility with existing hardware
 - [ ] Ensure you have enough new drives for each member node of the storage tier
 
@@ -47,11 +47,11 @@ Complete these steps well before your scheduled maintenance window:
 ### Resource Verification
 
 - [ ] Check cluster resource utilization
-    - For HCI Systems, ensure you have sufficient free memory to reboot 1 node
-    - For UCI Systems, ensure no workloads are running on your storage cluster
-- [ ] Confirm network paths among node
+    - For HCI Systems (combined storage+compute nodes), ensure you have sufficient free memory to reboot 1 node
+    - For UCI Systems (dedicated storage nodes) ensure no workloads are running on your storage cluster
+- [ ] Confirm network paths among nodes
     - From Node1: Node Diagnostics -> 'Fabric Configuration' reports Core1 and Core2 paths 'confirmed:true' for all nodes
-    - From Node2, verify the same.
+    - From Node2, verify the same
 - [ ] Confirm IPMI access to all nodes via a method that allows console access in emergencies
 
 ## Pre-Scale Up Verification
@@ -62,7 +62,7 @@ Perform these checks on the day of scheduled maintenance, before beginning the s
 
 - [ ] Ensure no large storage operations are in progress (VMWare Backups, Imports, NAS file copies, Site Syncs)
 - [ ] Resource availability - System is N+1
-    - Verify RAM usage is enough to run workloads with a node offline
+    - Verify RAM usage is enough to run workloads with a node offline (HCI Systems)
     - Verify vSAN tier being scaled is <70% full
 - [ ] Cloud Snapshots are recent and available
     - Set the most recent Snapshot to expire several days in the future for extra retention
@@ -96,7 +96,7 @@ For detailed step-by-step instructions on performing the vSAN scale up, please r
 !!! tip "Monitoring Progress"
     Monitor vSAN repair progress in the VergeOS UI under System -> vSAN. The process will show completion status and available capacity updates.
 
-6. **Repeat for additional nodes** as planned
+7. **Repeat for each storage node** until complete
 
 ## Post-Scale Up Verification
 
@@ -119,9 +119,10 @@ After the scale up completes, verify the system is operating correctly:
 **vSAN tier remains yellow after extended time**
 
 - Verify all new drives are properly seated and detected
-- Check for drive errors in system logs
+- Check for drive errors in logs
 - Ensure sufficient network bandwidth for repairs
 - Contact support if repairs stall
+- vSAN repairs may take hours, days, or more, depending on many factors like total data stored and drive speed
 
 **New drives not detected**
 
