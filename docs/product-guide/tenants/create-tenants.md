@@ -31,8 +31,10 @@ The *Tenant Wizard* steps through multiple input forms to create a new custom te
 
 ### New Tenant Node Form
 
-!!! info "Tenant Node Creation"
-    Settings defined here will apply to the single tenant node created with the wizard. Additional tenant nodes, if needed, can be created upon completion of the wizard.
+**Tenant Node Creation:**
+Settings defined here will apply to the single tenant node created with the wizard. Additional tenant nodes, if needed, can be created upon completion of the wizard.
+
+!!! tip "KB Article: *Tenant Node Architecture Planning Guide* walks through the considerations involved in deciding the number of tenant nodes to employ and RAM/Cores to assign to those tenant nodes."
 
 1. Select the number of ***Cores*** and amount of ***RAM*** to provision to the tenant node.  
 2. **Optionally**, a ***Cluster*** can be selected to run the tenant, or it can be left at --Default -- (specified by *System >Settings > Default cluster for tenant nodes*)  
