@@ -139,9 +139,8 @@ After the scale up completes, verify the system is operating correctly:
 
 ## Rollback Procedure
 
-!!! warning "Rollback Considerations"
-    If issues occur, the safest approach is to pause, investigate the unexpected behavior, and then proceed again with a clear understanding of the problem. Removing drives after data has been written may require data migration. Contact Verge Support in the event of any issues with this process.
-
+!!! danger "Emergency Support"
+    Should you have any issues with your VergeOS vSAN scale up, please contact [our support team](/support) for immediate assistance.
 
 ## Next Steps
 
@@ -153,5 +152,4 @@ After successful scale up completion:
 - [ ] Plan for future scaling needs based on growth projections
 - [ ] Schedule follow-up performance monitoring
 
-!!! danger "Emergency Support"
-    Should you have any issues with your VergeOS vSAN scale up, please contact [our support team](/support) for immediate assistance.
+
