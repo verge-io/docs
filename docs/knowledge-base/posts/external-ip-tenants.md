@@ -75,7 +75,7 @@ Virtual Wires are another common method to consume root-level IP space by tenant
       -This requires the External network and Tenant Node1 use a High Availability (HA) Grouping to maintain their grouping, which may impact HA event expectations.<br>
     Con - May make troubleshooting and diagnostic more difficult by removing VergeOS WebUI and native routing visibility.   
 
-For instructions on creating a Virtual Wire, see [Creating a Virtual Wire](https://docs.verge.io/knowledge-base/virtual-wire-setup-and-use/?h=virtual#creating-a-11-virtual-wire).
+For instructions on creating a Virtual Wire, see [Creating a Virtual Wire](https://docs.verge.io/knowledge-base/provide-layer2-to-tenant/).
 
 Once your Virtual Wire is in place, virtual machines and other workloads with NICs connected to the Internal network the vwire is attached to will have a Layer 2 connection out of VergeOS and will function similarly to a VLAN in a traditional switch with regards to addressing and routing.
 
