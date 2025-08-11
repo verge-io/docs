@@ -155,6 +155,7 @@ nav:
       - Platform Capabilities: product-guide/intro/platform-capabilities.md
       - Transitioning from VMware: product-guide/intro/transition-from-vmware.md
       - UI Overview: product-guide/ui-overview.md
+      - New System Configuration: product-guide/intro/new-system-configuration.md
     - Storage:
        - Overview: product-guide/storage/overview.md
        - vSAN Architecture: product-guide/storage/vsan-architecture.md  # Added from PR
@@ -188,8 +189,8 @@ nav:
         - OIDC Applications Overview: product-guide/auth/oidc-apps-overview.md
       - Certificates: product-guide/system/certificates.md
       - Clusters: 
-        - Overview: product-guide/system/clusters.md
-        - Configuration Options: product-guide/system/clusters-config-options.md
+        - Overview: product-guide/system/clusters-overview.md
+        - Configuration Options: product-guide/system/cluster-settings.md
         #- Removing Clusters: product-guide/removingclusters.md
         #- Cluster Settings: product-guide/clustersettings.md
       - Permissions:
