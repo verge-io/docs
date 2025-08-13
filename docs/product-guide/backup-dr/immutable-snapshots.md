@@ -48,6 +48,23 @@ VergeOS implements immutable snapshots differently from many other solutions to 
 4. Click **Submit** at the bottom of the page to save the change.
 5. You are returned to the System Snapshots Listing. The snapshot will display a lock icon to indicate immutable protection is active.
 
+
+### Automating Immutable Protection
+
+To automatically enable immutable protection:
+You can configure the profile used for taking system snapshots to automatically enable the immutable flag as snapshots are created.
+
+1. Start at the snapshot profile's dashboard page: navigate to System > Snapshot Profiles > double-click the appropriate profile
+
+
+!!! tip "System Snapshots is the name of the default snapshot profile used to take system-wide snapshots. If this default profile was renamed or a different profile has been selected for taking system snapshots, modify the selected snapshot profile. To confirm the profile being used for taking system snapshots: Navigate to System > Settings > Advanced Settings and search for 'System snapshot'."
+
+2. Click Profile Periods on the left menu
+3. Double-click a period, toggle the Immutable option to enabled (the button will move to the right), and click Submit at the bottom of the page to save changes
+4. The modified profile period will now display a checkmark in the Immutable column and snapshots created with this profile period will automatically be marked immutable
+5. Repeat this process for each profile period where automatic immutable snapshots are desired
+
+
 ### Disabling Immutable Protection ("Unlock" a Snapshot)
 
 **To disable immutable protection:**
@@ -59,6 +76,7 @@ VergeOS implements immutable snapshots differently from many other solutions to 
 5. Return to the System Snapshots listing — the snapshot will display *Unlocking* status and the scheduled unlock date.
 
 The snapshot remains protected and undeletable until the displayed date (seven days from the unlock request or the snapshot's natural expiration date, whichever comes first).
+
 
 ## Best Practices and Recommendations
 
