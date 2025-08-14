@@ -2,7 +2,7 @@
 
 ## Overview
 
-An immutable snapshot is a powerful data safeguard feature designed to prevent tampering or deletion of saved data, even by administrators or automated processes. The immutable option provides a safety net against accidental or malicious erasure, ensuring that a snapshot remains available when needed for data recovery.
+An immutable snapshot is a powerful safeguard feature designed to prevent tampering or deletion of saved data, even by administrators or automated processes. The immutable option provides a safety net against accidental or malicious erasure, ensuring that a snapshot remains available when needed for data recovery.
 
 When a snapshot is marked as immutable, deletion is blocked for all users, including administrators and root users. This effectively locks the snapshot until it expires, or the immutable flag is removed with a mandatory waiting period.
 
@@ -54,8 +54,7 @@ VergeOS implements immutable snapshots differently from many other solutions to 
 To automatically enable immutable protection:
 You can configure the profile used for taking system snapshots to automatically enable the immutable flag as snapshots are created.
 
-1. Start at the snapshot profile's dashboard page: navigate to System > Snapshot Profiles > double-click the appropriate profile
-
+1. Start at the snapshot profile's dashboard page: navigate to System > Snapshot Profiles > double-click the appropriate profile.
 
 !!! tip "System Snapshots is the name of the default snapshot profile used to take system-wide snapshots. If this default profile was renamed or a different profile has been selected for taking system snapshots, modify the selected snapshot profile. To confirm the profile being used for taking system snapshots: Navigate to System > Settings > Advanced Settings and search for 'System snapshot'."
 
