@@ -24,7 +24,7 @@ This guide outlines key considerations for determining an optimal number of tena
 
 ## Prerequisites
 
-Before using this guide, you should have a general foundational understanding of tenant concepts; refer to the [Tenants Overview](/product-guide/tenants/overview) page if you are new to VergeOS tenants.
+Before using this guide, you should have a general foundational understanding of tenant concepts; refer to the [Tenants Overview](/product-guide/tenants/overview) if you are new to VergeOS tenants.
 
 ## Purpose and Scope
 
