@@ -1,6 +1,9 @@
 
 # Tagging System
 
+!!! info "**New Feature**"
+    This page documents functionality added in **VergeOS v25.2**. 
+
 ## Introduction
 
 The VergeOS tagging system is a flexible labeling engine that enables administrators to categorize system objects using customized tags. These tags, organized into user-defined categories, allow for efficient indexing, identification, and selection of assets during management activities.
