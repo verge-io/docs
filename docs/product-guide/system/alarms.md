@@ -1,83 +1,179 @@
-# Alarms
+# VergeOS Alarms System
 
-Intro
+!!! info "**New Feature**"  
+    This page documents functionality added in **VergeOS v25.2**
 
-!!! note ""
-    :fontawesome-solid-bullhorn: Alarms are new in 25.2
+## Overview
 
-The VergeOS alarm system is designed to alert administrators of problems, concerns, vulnerabilities
-alarms are system-generated notifications to make users aware of conditions that may demand attention, e.g. missing settings, potentially vulnerable configurations, missing or failed drives, etc.
+The VergeOS alarm system provides proactive monitoring and alerting capabilities designed to notify administrators of problems, concerns, and vulnerabilities within the system. Alarms are automatically generated notifications that make users aware of conditions requiring attention, such as:
 
+- Missing or incorrect configuration settings
+- Potentially vulnerable system configurations
+- Hardware failures (missing or failed drives)
+- Security concerns requiring immediate action
+- System maintenance requirements
 
 ## Alarm Notifications
 
-When you have alarms, a number will display with the alarm icon (a bell) on the right-hand side of the top bar, indicating the number of current active alarms 
+### Top Bar Indicator
 
+When active alarms are present in your system, a notification badge will appear next to the alarm icon (bell) on the right side of the top navigation bar. This badge displays the total number of current, active (non-snoozed) alarms requiring attention.
+
+### Main Dashboard Alert Tile
+
+The Main Dashboard includes a dedicated **Alarms** tile that provides:  
+
+* **Active alarm count**: Total number of unresolved system alarms
+* **Visual status indicator**: Color-coded status showing overall system health
+* **Quick access**: Direct link to the detailed alarms view
+
+!!! info "Snoozed alarms are not included in the active alarm count displayed on the dashboard tile."
+
+### Contextual Dashboard Alerts
+
+Many alarms also appear as contextual messages at the top of relevant dashboard pages. For example:  
+
+* SMTP configuration alarms display on the SMTP settings dashboard
+* Network-related alarms appear on applicable network configuration pages
+* Storage alarms show on relevant storage management dashboards
 
 ## Viewing Alarm Details
 
-To see a detailed list of all alarms:
+### Accessing the Alarms List
 
-Click the alarms icon in the top bar
+To view a comprehensive list of all active alarms, use either method:
 
--OR- 
+**Option 1**: Click the **alarm icon** in the top navigation bar
 
-Navigate to **System** > **Alarms** 
+**Option 2**: Navigate to **System** → **Alarms**
+
+### Understanding Alarm Severity Levels
+
+VergeOS categorizes alarms by severity to help administrators prioritize their response:
+
+| Severity Level | Description | Response Priority |
+|----------------|-------------|-------------------|
+| **Critical** | Serious conditions requiring immediate attention | Highest - Address immediately |
+| **Error** | Functionality issues that don't cause system-wide failure | High - Address promptly |
+| **Warning** | Potential issues that may not be immediately harmful | Medium - Plan resolution |
+| **Audit** | Access, changes, or compliance tracking events | Low - Review as needed |
+| **Debug** | Diagnostic information for troubleshooting | Low - Technical reference |
+| **Message** | General informational notifications | Low - Informational only |
+| **Summary** | Aggregate reports of multiple related events | Variable - Review contents |
+
+### Alarm Ownership Types
+
+**System Alarms**
+
+* Deal with core system functionality and security
+* Affect overall system operation and stability
+* Typically require administrative privileges to resolve
+
+**User Alarms**  
+
+* Specific to individual VergeOS user accounts
+* Examples: Missing two-factor authentication configuration, personal settings issues
+* Can often be resolved by the individual user
+
+### Alarm Expiration
+
+Most alarms display "Never" in the **Expires** field because they require specific resolution actions rather than automatic expiration. Alarms remain active until the underlying condition is addressed or the alarm is manually snoozed.
+
+## Resolving Alarms
+
+Different alarm types require different resolution approaches:
+
+1. **Configuration Issues**: Navigate to the relevant settings page to correct misconfigurations
+2. **Hardware Problems**: Replace or repair faulty hardware components
+3. **Security Concerns**: Update settings, apply patches, or implement security measures
+4. **Maintenance Tasks**: Complete required system maintenance or updates
+
+**To access resolution options:**
+- Double-click any alarm in the list to navigate directly to the associated dashboard or configuration page
+- Review detailed information and access necessary tools from the target page
+
+### Auto-Resolvable Alarms
+
+Some alarms include built-in resolution actions that can be triggered directly from the alarm notification, streamlining the resolution process.
+Examples of auto-resolvable alarms include: 
+
+**Virtual Machine Restart Required**
+- **Issue**: A VM requires reboot/restart to complete configuration changes
+- **Resolution**: Click the **Restart** button directly from the alarm notification
+
+**Firewall Rules Pending Application**
+- **Issue**: Network firewall rules have been configured but not yet applied
+- **Resolution**: Click the **Apply Rules** button to activate pending rule changes
 
 
-### Alarm Levels
- * Audit
- * Critical
- * Debug
- * Error
- * Message
- * Summary
- * Warning
+## Snoozing Alarms
 
-### Alarm Owner 
+### When to Snooze Alarms
 
-  * System
-  * User  
+Snoozing allows you to temporarily suppress alarm notifications when:
 
-* Owner
-    username
+* Waiting for replacement hardware to arrive
+* Planning maintenance during scheduled downtime
+* Coordinating with other team members before taking action
+* Deferring non-critical issues to a more appropriate time
 
-### Alarm Expiration   
+!!! warning "Always understand the alarm's purpose and implications before snoozing. Delaying resolution of critical issues can impact system stability and security."
 
-Alarms with an expiration ....
+### How to Snooze Alarms
 
-Alarms that indicate 'Never' in the Expires field do not expire automatically; these alarms are perpetual until resolved. 
+1. **Access alarms**: Click the alarm icon in the top bar or navigate to **System** → **Alarms**
+2. **Select alarms**: Choose the desired alarm(s) from the list
+3. **Initiate snooze**: Click **Snooze** in the left menu
+4. **Set duration**: Select the appropriate snooze duration from the dropdown menu
+5. **Confirm**: Click **Snooze** to apply the setting
 
-## Snoozing an Alarm
+### Managing Snoozed Alarms
 
-What snooze does/what it's for
+**Visual Indicators:**
+- **Snooze icon**: "Z" symbols appear at the far left of snoozed alarms
+- **Snoozed field**: Shows "Yes" for currently snoozed items
+- **Snoozed Until**: Displays when the alarm will become active again
+- **Modified**: Shows the date/time when snooze was implemented
 
-Cautions when snoozing a more serious alarm
+**Modifying Snooze Duration:**
+To adjust an existing snooze period, follow the standard snooze process with the new desired duration. The system will update the snooze period accordingly.
 
-What displays in the list after snoozing an alarm: snooze icon (z's) at the far left, Yes in the "Snoozed" field, the "Snoozed Until" field shows when the snooze ends, the "Modified" field displays the date/time that the change was made.
-
-Modifying snooze duration (for example you originally set a snooze duration of 30 days and then decide that you want the snooze time to be shorter): follow the snooze instructions again and simply select a different snooze interval.  
-
-
-## Resolving an Alarm 
-
-Different types of alarms call for different types of action: in some cases configuration may be necessary to resolve the alarm (e.g. improper SMTP configuration) while other alarms call for replacing hardware (e.g a failed drive)
-
-Double-click an alarm to access the associated dashboard or entry form to view more information and/or access necessary configuration.  
-
-
-### Auto Resolvable Alarms
-
-Alarms that are auto resolvable.... 
-
-how to auto resolve an auto resolvable
-
-Resolution field will show what?
-
+## Best Practices
 
 ## Best Practices
 
 * Check Regularly for Alarms
-* Before Snoozing an Alarm: understand the importance of the alarm, and document the change for other VergeOS administrators
+* Before snoozing an Alarm: understand the importance of the alarm, and alert other VergeOS administrators
+* Note the type of alarm, e.g. Critical/Error/Warning to better understand importance and urgency level
+* Typically, it is not recommended that you snooze alarms marked as "Critical"; if you find it necessary to snooze a Critical alarm, select a short snooze duration and verify other VergeOS administrators are aware of the alarm.
 
+
+### Regular Monitoring
+- **Daily checks**: Review active alarms at the start of each day
+- **Priority focus**: Address critical and error-level alarms first
+
+### Snooze Management
+- **Understand before snoozing**: Always review alarm details and implications before deferring
+- **Team communication**: Notify other administrators when snoozing shared system alarms
+- **Critical alarm caution**: Avoid snoozing critical alarms unless absolutely necessary
+- **Short durations for critical issues**: If you must snooze critical alarms, use minimal durations
+
+### Resolution Strategy
+- **Severity-based prioritization**: Use alarm severity levels to guide response timing
+- **Documentation**: Keep records of alarm resolutions for future reference
+- **Proactive approach**: Address warning-level alarms before they escalate
+- **Team coordination**: Ensure multiple administrators are aware of ongoing alarm situations
+
+
+## Troubleshooting
+
+**Alarms not appearing:**
+- Refresh the browser page
+- Verify user permissions for alarm viewing
+- Check if alarms are snoozed and hidden from active view
+
+**Cannot resolve alarms:**
+- Ensure you have appropriate administrative privileges
+- Verify the underlying issue has been properly addressed
+- Contact system administrators for assistance with system-level alarms
 
