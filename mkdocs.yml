@@ -311,6 +311,7 @@ nav:
       - System Diagnostics: product-guide/system/diagnostics.md
       - Prometheus Exporter: product-guide/tools-integrations/prometheus-exporter.md
     - Operations:
+      - Alarms: product-guide/operations/alarms.md
       - Drive Replacement: product-guide/operations/drive-replacement.md
       - Maintenance Mode: product-guide/operations/maintenance-mode.md
       - Standard Operating Procedures:

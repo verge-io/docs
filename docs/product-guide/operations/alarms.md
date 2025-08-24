@@ -1,4 +1,4 @@
-# VergeOS Alarms System
+# VergeOS Alarms
 
 !!! info "**New Feature**"  
     This page documents functionality added in **VergeOS v25.2**
