@@ -1,33 +1,49 @@
-# VergeAI Overview
+# On-Premises AI (VergeIQ)
 
 !!! note "The VergeAI feature is available starting in VergeOS version 25.2.0"
 
-VergeAI is a dynamic, leading-edge component providing integrated artificial intelligence capabilities directly within your VergeOS environments.  This feature allows you to deploy and manage AI models and assistants locally, providing secure, private AI functionality without relying on external cloud services.
+!!! bullhorn "Try it out"
+
+   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et
+    euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo
+    purus auctor massa, nec semper lorem quam in massa. 
+
+VergeIQ is a dynamic, leading-edge component providing integrated artificial intelligence capabilities directly within your VergeOS environments.  This feature allows you to instantly deploy and manage AI models and assistants locally, providing secure, private AI functionality without relying on external cloud services.
 
 
 ### Key Features
 
-**Privacy and Security**: 
+**Privacy and Data Sovereignty**: 
 
 - Keep your AI processing and data completely within your private environment
-- Avoid cloud-leaks and other vulnerabilities to your proprietary data
-- Particularly useful for field deployments and air-gapped systems
+- Avoid cloud-leaks and other vulnerabilities to your proprietary information
+- Particularly useful for edge deployments and air-gapped systems
+- Easier compliance alignment without relying on third-party assurances
 
-**Performance Consistency**:
+**Rapid Deployment**: 
+
+- Leverage VergeIQ immediately as part of VergeOS - no additional licensing or components required
+- Easily deploy multiple, secure, generative AI environments without complex configurations
+
+**Performance Optimization and Consistency**:
 
 - Eliminate network variability (latency, packet loss concerns, and reliance on internet bandwidth), 
-especially for real-time applications
 - Avoid slowdowns due to congestion, outages, or routing issues
 - Crucial for time-sensitive use cases
 - Offline Availability ensures uninterrupted service in remote or secure locations
+- Leverage GPUs and other specialized hardware without cloud abstraction layers
 
-- **AI Assistant Management**: Configure custom AI assistants to leverage local AI models
-- **Resource Management**: Flexible allocation of CPU, GPU, and memory resources for AI workloads
-- **Security & Privacy**: Keep your AI processing and data completely within your private environment
-- **Integration**: Seamlessly integrate AI capabilities with your existing VergeOS workloads
-cost savings, sovereignty, control, full data control, flexibility and 
+**Customization and Integration**: 
 
-contrast with today's typical implementations
+- Fine-tune models to match your hardware and use cases
+- Easily integrate models with your local data stores and workloads
+
+**Cost Control**:
+
+- No expensive per-token or subscription fees
+- CapEx vs. OpEx: If you already own the hardware, local hosting can be more economical over time, especially for high-volume workloads.
+- Avoid unpredictable and often complex cloud-service model pricing
+
 
 ## Example Use Cases - Practical Applications
 
@@ -39,62 +55,30 @@ contrast with today's typical implementations
 
 * **[Cost-Predictable Enterprise AI](): A Fortune 500 manufacturing company utilizes AI power to automate and streamline cross-functional operations while maintaining lower and more predictable costs by eliminating the need for cloud AI services.
 
-- organization working with highly-sensitive data, compliance reasons to keep on-prem
-- organizations that want to create an AI domain expert with their own proprietary data, without security vulnerability of public cloud
-- Large volume AI users that want to control costs and secure cost predictability
-- High-performance needs - avoid latency concerns and provide consistent performance
-- 
-
-
-Regulatory Compliance & Sovereignty
-- Meet strict data residency requirements by keeping everything local.
-- Easier to audit and enforce security policies.
-- Useful for government, legal, or enterprise environments with tight controls.
-
-Bonus: Intellectual Property Protection
-- Keep model weights, training data, and fine-tuning logic private.
-- Avoid vendor lock-in or exposure to cloud-based model leaks.
-
-Predictable Long-Term Costs
-- Avoid variable cloud fees (e.g., GPU hourly rates, data egress charges).
-- Capital expenditure (CAPEX) model allows amortization and tax benefits.
-- Especially cost-effective for sustained workloads or large-scale inference.
-
-Performance Consistency
-- No noisy neighbors or shared resource bottlenecks.
-- Real-time inference benefits from low network latency and dedicated compute.
-- Ideal for edge AI, industrial automation, or high-frequency decision systems.
-
-Full Data Control & Privacy
-- Keep sensitive or proprietary data entirely within your infrastructure.
-- Avoid sharing data with third-party cloud providers — critical for compliance with HIPAA, GDPR, or internal governance.
-- Ideal for industries like finance, healthcare, and defense.
-
-Customization & Optimization
-- Tailor hardware and software to your specific workloads (e.g., hugepages, NUMA-aware scheduling, GPU affinity).
-- Optimize for low-latency inference or high-throughput training without cloud-imposed constraints.
-- Build native RAG pipelines with custom embeddings and retrieval logic.
-
 
 
 ## VergeAI Terminology
 
-* Models
+* **Model**: provides the underlying intelligence for your AI assistants and applications. The system supports various model types including language models, conversational AI, and specialized task models. 
 
-* Assistants
+* **Assistant**: is a configured AI model that provides specific capabilities and interfaces for interacting with your AI functionality. They can be customized with specific prompts, settings, and behaviors.
 
-* Workers
+* **Worker**: a dedicated process that loads an AI model and handles incoming requests for inference. 
+Multiple workers can be spun up to:
+- Handle concurrent requests
+- Isolate workloads
+- Improve fault tolerance
+- Example: In a xxx application, each worker might serve a different version of a model or run on a separate GPU.
 
-* Chat Sessions
+* **Chat Session**: a continuous flow of exchanged messages between user or application and the AI model.
 
-## VergeIQ
+* **Workspace**: 
+
 
 
 [Configure and Use VergeAI in Your Environment →](/product-guide/ai/ai-configuration)
 
 ## AI Settings Configuration
-
-   * 
 
 ### Accessing AI Settings
 
@@ -130,9 +114,19 @@ The AI Settings page allows you to configure system-wide defaults for AI compone
 
 ## AI Model Management
 
+AI models in VergeOS provide the underlying intelligence for your AI assistants and applications. The system supports various model types including language models, conversational AI, and specialized task models.
+
+
+
+## Create an Assistant
+
+
+
+## AI Model Management
+
 ### Overview
 
-AI models in VergeOS provide the underlying intelligence for your AI assistants and applications. The system supports various model types including language models, conversational AI, and specialized task models.
+
 
 ### Available Models
 
@@ -477,5 +471,4 @@ Keep your AI infrastructure current:
 
 This guide covers the AI features available in VergeOS version 25.2.0.dev-161-gfb00558 and later. Features and functionality may vary in different versions.
 
-For the most current information and updates, please refer to the official VergeOS documentation and support resources.
 
