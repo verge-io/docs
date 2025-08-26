@@ -86,36 +86,9 @@ The log in the following screenshot shows several specific events as examples of
 
 ---
 
-## Enabling 3rd Party Logging
+## Third-party Log Collection
 
-VergeOS logs user-initiated and automated activity and displays it in the system log. System logs are accessible from the **Main Dashboard** at the bottom of the page or by selecting the **Logs** button in the left navigation menu. VergeOS keeps logged activity for a maximum of **45 days**. To retain logs beyond this period, configure a third-party log collection service.
-
-To configure a third-party system logger:
-
-1. **Select System**:
-   - In the left navigation menu from the main dashboard, select **System**.
-
-2. **Access Settings**:
-   - Inside the **System** menu, select **Settings** from the left navigation menu.
-   
-3. **Enter Advanced Settings**:
-   - Select **Advanced Settings** on the left.
-
-4. **Search and Configure Syslog**:
-   - Search for "syslog".
-   - Select and edit **Remote syslog server (tcp: @@name/ip:port, udp: @name/ip:port)**.
-   - Configure this setting according to the required syntax:
-     - **Examples:** 
-       - For TCP: `@@10.10.10.10:514`
-       - For UDP: `@10.10.10.10:514`
-   - Search "syslog" again.
-   - Select and edit **Template to define for syslog server (See rsyslog for format)**.
-   - Enter a syslog template format that is compatible with the syslog server.
-     - **Example:**
-       ```plaintext
-       GRAYLOGRFC5424,"<%PRI%>%PROTOCOL-VERSION% %TIMESTAMP:::date-rfc3339% %HOSTNAME%.HOSTNAME_HERE %APP-NAME% %PROCID% %MSGID% %STRUCTURED-DATA% %msg%\n"
-       ```
-     - For more information on syslog templates, visit the [Rsyslog Website](https://www.rsyslog.com/doc/master/configuration/examples.html).
+VergeOS records user-initiated and automated activity in *System logs*, accessible at the bottom of the Main Dashboard page or by selecting *Logs* in the left navigation menu. Logged activity is typically available within the VergeOS user interface for a maximum of 45 days. To retain logs beyond this period, configure a third-party Syslog collection service.  Instructions for configuring VergeOS log forwarding to an external service are available at: **[KB Enabling Third-party Log Collection](/knowledge-base/enabling-external-log-collection)**
 
 ---
 
