@@ -1,12 +1,7 @@
 # On-Premises AI (VergeIQ)
 
-!!! note "The VergeAI feature is available starting in VergeOS version 25.2.0"
-
-!!! bullhorn "Try it out"
-
-   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et
-    euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo
-    purus auctor massa, nec semper lorem quam in massa. 
+!!! info "**New Feature**"  
+    This page documents functionality added in **VergeOS v25.2**
 
 VergeIQ is a dynamic, leading-edge component providing integrated artificial intelligence capabilities directly within your VergeOS environments.  This feature allows you to instantly deploy and manage AI models and assistants locally, providing secure, private AI functionality without relying on external cloud services.
 

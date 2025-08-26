@@ -178,7 +178,7 @@ nav:
         - Sync Back: product-guide/backup-dr/sync-back.md
         - Manual Sync: product-guide/backup-dr/manual-site-syncs.md
         - Repair Server: product-guide/backup-dr/repair-server.md
-    - 🆕 AI: 
+    - AI 🆕: 
       - Overview: product-guide/ai/ai-overview.md
       - Configuration: product-guide/ai/ai-configuration.md
       - Best Practices: product-guide/ai/ai-best-practices.md
