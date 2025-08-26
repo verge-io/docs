@@ -52,7 +52,7 @@ VergeIQ is a dynamic, leading-edge component providing integrated artificial int
 
 
 
-## VergeAI Terminology
+## VergeAI Components
 
 * **Model**: provides the underlying intelligence for your AI assistants and applications. The system supports various model types including language models, conversational AI, and specialized task models. 
 
