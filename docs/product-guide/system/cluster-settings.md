@@ -72,11 +72,16 @@ This subsection allows you to enable/disable various performance and security-re
 This section configures compute resource policies for your cluster.  These settings will not apply for storage-only clusters.
 
 1. **Max RAM per machine:** Specifies the maximum amount of RAM that can be allocated to a single workload (such as a virtual machine, tenant node, or NAS service). 
+
 !!! tip "Considerations"
     - If any running workloads (e.g. VMs) are using more RAM than this limit, they will be unable to migrate after the setting is lowered.
     - The limit affects workload startup and migration (i.e., starting on a new node). It does not prohibit you from creating a workload with more RAM, but only prevents it from starting if the limit is exceeded. 
-    - As a general rule, choose the lowest RAM value that still meets the needs of your largest expected workload. Lower RAM allocations to individual workloads will maximize flexibility for migrations, failovers, and workload portability and enable faster failover times. 
-     - **This value should never exceed the total physical RAM available on a single node**. 
+    - As a general rule, choose the lowest RAM value that still meets the needs of your largest expected workload. Lower RAM allocations to individual workloads will maximize flexibility for migrations, failovers, and workload portability and enable faster failover times.
+    - **Be cautious when setting this limit close to a node's physical RAM capacity**. If you set this limit to match a node's total RAM (e.g., 128GB) and then create a VM using that full amount, the VM will be unable to start or migrate because:
+        - VergeOS reserves RAM for system operations and vSAN functionality
+        - During maintenance or failover, workloads must migrate to other available nodes
+        - A VM consuming nearly all available RAM cannot successfully migrate to another node
+    - **Recommended approach:** Set this limit to no more than 70-80% of your smallest node's physical RAM, ensuring VMs can always migrate during maintenance or failover scenarios.
     
 2. **Max cores per machine:** Specifies the maximum number of CPU cores that can be allocated to a single workload (such as a virtual machine, tenant node, or NAS service)
 !!! tip "Considerations"
