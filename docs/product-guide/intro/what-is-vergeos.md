@@ -283,20 +283,20 @@ HCI combines compute, storage, and networking resources in the same physical nod
 
 **Characteristics**:
 
-  - Growing server CPU, memory, and storage at the same time
-  - Each node contains compute resources (CPU/RAM) and contributes storage to the shared vSAN
-  - Resources are tightly coupled - adding a node increases both compute and storage capacity
-  - Not as flexible but easier to deploy and manage
-  - More common for small to medium size environments
-  - Ideal for organizations with predictable, balanced growth requirements
+- Growing server CPU, memory, and storage at the same time
+- Each node contains compute resources (CPU/RAM) and contributes storage to the shared vSAN
+- Resources are tightly coupled - adding a node increases both compute and storage capacity
+- Not as flexible but easier to deploy and manage
+- More common for small to medium size environments
+- Ideal for organizations with predictable, balanced growth requirements
 
 **Best Use Cases**:
 
-  - Organizations where compute and storage needs grow proportionally
-  - Smaller deployments (2-12 nodes typically)
-  - Environments prioritizing simplicity over maximum flexibility
-  - Branch offices or remote sites with limited IT staff
-  - Workloads with balanced compute-to-storage ratios
+- Organizations where compute and storage needs grow proportionally
+- Smaller deployments (2-12 nodes typically)
+- Environments prioritizing simplicity over maximum flexibility
+- Branch offices or remote sites with limited IT staff
+- Workloads with balanced compute-to-storage ratios
 
 ### Ultra Converged Infrastructure (UCI)
 
@@ -304,22 +304,22 @@ UCI extends beyond traditional HCI by allowing independent scaling of compute an
 
 **Characteristics**:
 
-  - Growing compute (CPU and memory) separate from storage
-  - More flexible for larger environments where storage and compute don't always align 1-to-1
-  - Supports dedicated controllers, compute-only nodes, storage-only nodes, or mixed configurations
-  - Easier to support different types of CPU and GPU compute clusters
-  - Enables shared vSAN storage across multiple different compute clusters
-  - Supports mixed hardware types (Intel or AMD, Blade vs Rack, GPU vs Non-GPU)
-  - **Delivers superior performance through specialized, purpose-built nodes**
+- Growing compute (CPU and memory) separate from storage
+- More flexible for larger environments where storage and compute don't always align 1-to-1
+- Supports dedicated controllers, compute-only nodes, storage-only nodes, or mixed configurations
+- Easier to support different types of CPU and GPU compute clusters
+- Enables shared vSAN storage across multiple different compute clusters
+- Supports mixed hardware types (Intel or AMD, Blade vs Rack, GPU vs Non-GPU)
+- **Delivers superior performance through specialized, purpose-built nodes**
 
 **Best Use Cases**:
 
-  - Large-scale deployments requiring independent resource scaling
-  - Organizations with varying compute vs storage growth patterns
-  - Environments needing specialized compute resources (GPU clusters, high-memory nodes)
-  - Multi-tenant service providers requiring flexible resource allocation
-  - Workloads with unbalanced compute-to-storage requirements
-  - **High-performance applications requiring optimized compute or storage nodes**
+- Large-scale deployments requiring independent resource scaling
+- Organizations with varying compute vs storage growth patterns
+- Environments needing specialized compute resources (GPU clusters, high-memory nodes)
+- Multi-tenant service providers requiring flexible resource allocation
+- Workloads with unbalanced compute-to-storage requirements
+- **High-performance applications requiring optimized compute or storage nodes**
 
 ### Key Differences Summary
 
