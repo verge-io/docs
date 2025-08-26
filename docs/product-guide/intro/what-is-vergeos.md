@@ -273,24 +273,79 @@ Organizations with demanding compute requirements use VergeOS for:
 
 ## Deployment Flexibility
 
-### Architectural Options: HCI vs UCI
+## Architectural Options: HCI vs UCI
 
-VergeOS supports two primary architectural approaches to meet different organizational needs:
+VergeOS supports two primary architectural approaches to meet different organizational needs and growth patterns:
 
-**Hyperconverged Infrastructure (HCI):**
+### Hyperconverged Infrastructure (HCI)
 
+**Definition**: HCI combines compute, storage, and networking resources in the same physical nodes, with all resources scaling together as a unified system.
+
+**Characteristics**:
 - Growing server CPU, memory, and storage at the same time
+- Each node contains compute resources (CPU/RAM) and contributes storage to the shared vSAN
+- Resources are tightly coupled - adding a node increases both compute and storage capacity
 - Not as flexible but easier to deploy and manage
 - More common for small to medium size environments
 - Ideal for organizations with predictable, balanced growth requirements
 
-**Ultra Converged Infrastructure (UCI):**
+**Best Use Cases**:
+- Organizations where compute and storage needs grow proportionally
+- Smaller deployments (2-12 nodes typically)
+- Environments prioritizing simplicity over maximum flexibility
+- Branch offices or remote sites with limited IT staff
+- Workloads with balanced compute-to-storage ratios
 
+### Ultra Converged Infrastructure (UCI)
+
+**Definition**: UCI extends beyond traditional HCI by allowing independent scaling of compute and storage resources, with specialized node types optimized for specific functions.
+
+**Characteristics**:
 - Growing compute (CPU and memory) separate from storage
 - More flexible for larger environments where storage and compute don't always align 1-to-1
+- Supports dedicated controllers, compute-only nodes, storage-only nodes, or mixed configurations
 - Easier to support different types of CPU and GPU compute clusters
 - Enables shared vSAN storage across multiple different compute clusters
 - Supports mixed hardware types (Intel or AMD, Blade vs Rack, GPU vs Non-GPU)
+- **Delivers superior performance through specialized, purpose-built nodes**
+
+**Best Use Cases**:
+- Large-scale deployments requiring independent resource scaling
+- Organizations with varying compute vs storage growth patterns
+- Environments needing specialized compute resources (GPU clusters, high-memory nodes)
+- Multi-tenant service providers requiring flexible resource allocation
+- Workloads with unbalanced compute-to-storage requirements
+- **High-performance applications requiring optimized compute or storage nodes**
+
+### Key Differences Summary
+
+| Aspect | HCI | UCI |
+|--------|-----|-----|
+| **Scaling** | Compute and storage scale together | Independent scaling of resources |
+| **Complexity** | Simpler to design and manage | More complex but more flexible |
+| **Node Types** | Uniform nodes with compute + storage | Mixed node types (compute-only, storage-only, hybrid) |
+| **Resource Utilization** | May have underutilized resources | Optimized resource allocation |
+| **Performance** | Balanced performance across functions | **Optimized performance per function** |
+| **Hardware Standardization** | Requires similar hardware across nodes | Supports diverse hardware configurations |
+| **Deployment Size** | Typically smaller deployments | Scales to very large deployments |
+
+### Performance Advantages of UCI
+
+UCI delivers superior performance through several key mechanisms:
+
+- **Purpose-Built Nodes**: Compute-only nodes can be optimized with high-core-count CPUs and maximum RAM without storage overhead
+- **Storage-Optimized Nodes**: Dedicated storage nodes can maximize drive density and storage performance without competing for CPU/memory resources
+- **Reduced Resource Contention**: Separation of compute and storage workloads eliminates competition for node resources
+- **Specialized Hardware**: Support for GPU nodes, high-memory systems, or ultra-fast storage configurations
+- **Network Optimization**: Dedicated storage networks can be optimized independently from compute traffic
+
+!!! info "Choosing Your Architecture"
+    The choice between HCI and UCI depends on your organization's specific requirements:
+    
+    - **Choose HCI** if you want simplicity, have balanced workloads, and expect proportional growth
+    - **Choose UCI** if you need maximum flexibility, have specialized workload requirements, plan large-scale deployments, or require optimized performance for specific functions
+
+Both architectures leverage VergeOS's unified operating system approach, providing the same management interface, API access, and feature set regardless of the underlying physical deployment model.
 
 ### Scale-Out Architecture
 
