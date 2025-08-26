@@ -279,9 +279,10 @@ VergeOS supports two primary architectural approaches to meet different organiza
 
 ### Hyperconverged Infrastructure (HCI)
 
-**Definition**: HCI combines compute, storage, and networking resources in the same physical nodes, with all resources scaling together as a unified system.
+HCI combines compute, storage, and networking resources in the same physical nodes, with all resources scaling together as a unified system.
 
 **Characteristics**:
+
 - Growing server CPU, memory, and storage at the same time
 - Each node contains compute resources (CPU/RAM) and contributes storage to the shared vSAN
 - Resources are tightly coupled - adding a node increases both compute and storage capacity
@@ -290,6 +291,7 @@ VergeOS supports two primary architectural approaches to meet different organiza
 - Ideal for organizations with predictable, balanced growth requirements
 
 **Best Use Cases**:
+
 - Organizations where compute and storage needs grow proportionally
 - Smaller deployments (2-12 nodes typically)
 - Environments prioritizing simplicity over maximum flexibility
@@ -298,9 +300,10 @@ VergeOS supports two primary architectural approaches to meet different organiza
 
 ### Ultra Converged Infrastructure (UCI)
 
-**Definition**: UCI extends beyond traditional HCI by allowing independent scaling of compute and storage resources, with specialized node types optimized for specific functions.
+UCI extends beyond traditional HCI by allowing independent scaling of compute and storage resources, with specialized node types optimized for specific functions.
 
 **Characteristics**:
+
 - Growing compute (CPU and memory) separate from storage
 - More flexible for larger environments where storage and compute don't always align 1-to-1
 - Supports dedicated controllers, compute-only nodes, storage-only nodes, or mixed configurations
@@ -310,6 +313,7 @@ VergeOS supports two primary architectural approaches to meet different organiza
 - **Delivers superior performance through specialized, purpose-built nodes**
 
 **Best Use Cases**:
+
 - Large-scale deployments requiring independent resource scaling
 - Organizations with varying compute vs storage growth patterns
 - Environments needing specialized compute resources (GPU clusters, high-memory nodes)
