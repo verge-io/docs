@@ -85,7 +85,9 @@ Outgoing SMTP connections are commonly blocked by default.  Make sure port 25, 5
 
 **Confirm Relay settings**
 
-* Some email servers require explicit relay permissions.  Ensure the email server allows your VergeOS system to relay messages, typically by enabling authentication or whitelisting IP addresses. 
+* Some email servers require explicit relay permissions.  Ensure the email server allows your VergeOS system to relay messages, typically by enabling authentication or whitelisting IP addresses.
+  
+* You may need to configure the “From Address” field to use the same domain you are sending emails to. Typically, your relay host has the correct SPF/DMARC/reverse DNS records for your domain but is not authorized to send emails from the default system@cloud.verge.io address.
 
 * Confirm the correct server address and port are configured for the relay server. Verify you are using the name/address expected by the relaying mail system.
 

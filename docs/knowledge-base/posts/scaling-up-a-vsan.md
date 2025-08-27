@@ -3,7 +3,7 @@ title: Scaling Up a vSAN
 slug: scaling-up-a-vsan
 description: 
 draft: false
-date: 2024-11-07T19:15:40.203Z
+date: 2025-07-27T19:15:40.203Z
 tags:
   - scale up
   - vsan
@@ -15,11 +15,17 @@ editor: markdown
 dateCreated: 2022-08-17T15:48:21.549Z
 ---
 
-To scale up a vSAN, follow the steps below. However, before proceeding, ensure that your current vSAN has at least **10% free capacity**.
+!!! warning "Standard Operating Procedure Required"
+    Please review the complete [vSAN Scale Up SOP](/product-guide/operations/vsan-scale-up-sop/) for comprehensive preparation, execution, and verification procedures.
+
+To scale up a vSAN, follow the steps below. However, before proceeding, ensure that your current vSAN has at least **30% free capacity**.
 
 !!! warning "Important"
     - All drives in a tier must be alike. If a drive of an incorrect size is added to an existing tier, the tier will only be able to use the space of the smallest drive.
-    - Ensure that your vSAN has at least 10% free capacity unless you are doubling the capacity. If the free space is less than 10% and you are not doubling the drive count, consider scaling out by adding a node.
+    - Ensure that your vSAN has at least 30% free capacity unless you are doubling the capacity. If the free space is less than 30% and you are not doubling the drive count, consider scaling out by adding a node or opening up a support ticket for assistance.
+
+!!! note "Related Documentation"
+    **Required Reading:** The [vSAN Scale Up Standard Operating Procedure](/product-guide/operations/vsan-scale-up-sop/) contains essential preparation, verification, and troubleshooting steps that must be completed before and after this scale up process.
 
 ## Steps to Scale Up
 
@@ -46,5 +52,5 @@ Repeat these steps for each node as necessary.
 ---
 
 !!! note "Document Information"
-    - Last Updated: 2024-08-29
+    - Last Updated: 2025-07-27
     - VergeOS Version: 4.13

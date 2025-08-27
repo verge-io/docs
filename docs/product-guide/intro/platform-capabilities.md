@@ -68,7 +68,7 @@ Tenants allow you to segregate system resources into secure enclaves for differe
 
 VergeFabric delivers software-defined networking (SDN) for simplified and flexible network management
 
-**[Get Familiar with VergeFabric Basics →](/product-guide/networks/overview)**
+**[Get Familiar with VergeFabric Basics →](/product-guide/networks/network-overview)**
 
 * **[Virtual Networks](/product-guide/networks/internal-networks)** - Create up to thousands of virtual networks and optionally use embedded IP management for DHCP, DNS, firewall, routing, NAT/PAT
 * **[Micro Segmentation](/knowledge-base/how-to-achieve-network-micro-segmentation-on-vergeos)** - Segment and isolate workloads at the VDC (tenant) level, by groups or at the individual workload (VM) level

@@ -9,7 +9,7 @@ status: new
 
 !!! info "Series Information"
     - **Initial Release**: November 2024 (4.13.0)
-    - **Latest Version**: 4.13.4 (March 2025)
+    - **Latest Version**: 4.13.4.2 (August 2025)
     - **Status**: Latest
     - **End-of-Life**: TBD
 
@@ -52,6 +52,24 @@ status: new
     - Enhanced VMware integration
     - Improved tenant management
     - Comprehensive HA improvements
+
+## 4.13.4.2 (August 2025)
+
+!!! info "Hotfix Release"
+    No reboot required (if System is currently on 4.13.x). 
+
+#### Bug Fixes
+* Fixed two-factor authentication issues affecting Email authentication methods
+
+## 4.13.4.1 (August 2025)
+
+!!! info "Hotfix Release"
+    No reboot required (if System is currently on 4.13.x). Required update for our upcoming major release where we're moving to a different versioning system. Future updates will start with the last two digits of the year, followed by the quarter the development work started in on that release. i.e. 25.2
+
+#### Bug Fixes
+* Fixed two-factor authentication issues affecting TOTP authentication methods
+* Enhanced UI version handling in preparation for the 25.2 release
+* Various system stability improvements
 
 ## 4.13.4 (March 2025)
 
