@@ -21,7 +21,7 @@ This page will guide you through preparing your installed VergeOS system for pro
 - [ ] [Establish Alerting/Reporting](#alerting-and-reporting)  
 - [ ] [Verify Cloud Snapshot Settings](#cloud-snapshot-settings)  
 - [ ] [Configure Authorization/Authentication Settings](#authenticationauthorization-settings)
-- [ ] [Optional - Enable Third-party Logging](/knowledge-base/enabling-external-log-collection)
+- [ ] [Optional - Enable Third-party Logging](/knowledge-base/configuring-remote-log-forwarding)
 
 
 ## Cluster Settings

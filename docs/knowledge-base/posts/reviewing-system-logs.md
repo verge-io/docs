@@ -88,7 +88,7 @@ The log in the following screenshot shows several specific events as examples of
 
 ## Third-party Log Collection
 
-VergeOS records user-initiated and automated activity in *System logs*, accessible at the bottom of the Main Dashboard page or by selecting *Logs* in the left navigation menu. Logged activity is typically available within the VergeOS user interface for a maximum of 45 days. To retain logs beyond this period, configure a third-party Syslog collection service.  Instructions for configuring VergeOS log forwarding to an external service are available at: **[KB Enabling Third-party Log Collection](/knowledge-base/enabling-external-log-collection)**
+VergeOS records user-initiated and automated activity in *System logs*, accessible at the bottom of the Main Dashboard page or by selecting *Logs* in the left navigation menu. Logged activity is typically available within the VergeOS user interface for a maximum of 45 days. To retain logs beyond this period, configure a third-party Syslog collection service.  Instructions for configuring VergeOS log forwarding to an external service are available at: **[KB Enabling Third-party Log Collection](/knowledge-base/configuring-remote-log-forwarding)**
 
 ---
 
