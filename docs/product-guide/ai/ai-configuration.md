@@ -5,19 +5,14 @@
 
 ## AI Settings Configuration
 
-### Accessing AI Settings
+### Accessing General AI Settings
 
-1. From the Main Dashboard, navigate to **AI** in the left menu
-2. Click **Settings** to configure default AI parameters
+1. From the Main Dashboard, navigate to **AI** on the top menu
+2. Click **AI Settings** to configure default AI parameters
 
 ### Default Settings Configuration
 
 The AI Settings page allows you to configure system-wide defaults for AI components:
-
-#### Default AI Assistant
-- **Purpose**: Sets the default assistant for new AI operations
-- **Configuration**: Select from available AI assistants (e.g., VergelQ)
-- **Usage**: This assistant will be used unless specifically overridden
 
 #### Default AI Cluster
 - **Purpose**: Specifies the default compute cluster for AI workloads
@@ -26,31 +21,14 @@ The AI Settings page allows you to configure system-wide defaults for AI compone
 
 #### Default AI Network
 - **Purpose**: Sets the default network configuration for AI services
-- **Configuration**: Select from available networks (e.g., "ai")
+- **Configuration**: Select from available networks 
 - **Usage**: AI components will use this network unless overridden
-
-### Saving Configuration Changes
-
-1. Configure the desired default settings
-2. Click **Submit** to save changes
-3. Click **Cancel** to discard changes
 
 ---
 
 ## AI Model Management
 
 AI models in VergeOS provide the underlying intelligence for your AI assistants and applications. The system supports various model types including language models, conversational AI, and specialized task models.
-
-
-
-## Create an Assistant
-
-
-
-## AI Model Management
-
-### Overview
-
 
 
 ### Available Models
@@ -96,12 +74,16 @@ The system includes several pre-configured AI models:
 - **Capabilities**: English, Transformers, Text Generation, Math, Code, Conversational
 - **Use Case**: Code generation and mathematical reasoning
 
-### Installing AI Models
+
+
+### Install a pre-configured AI Model
+
+pre-configured models to automatically download, default settings for this particular model, 
 
 1. Navigate to **AI** > **Models** in the left menu
 2. Browse the available models
 3. Click **Click to Install** on the desired model
-4. The system will download and configure the model
+4. The *New Model* form will allow you to make configuration changes. Click Submit to automatically download and configure the model as specified.
 5. Monitor the installation progress in the system dashboard
 
 ### Model Resource Requirements
