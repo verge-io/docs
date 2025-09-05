@@ -116,10 +116,10 @@ Clone VMs, create snapshots, delete virtual machines, and troubleshoot issues us
 
 ## API Getting Started Guide
 
-1. **Create VMs**: [`VM-Creation-API.md`](VM-Creation-API.md) - REST API calls to create virtual machines
-2. **Power Control**: [`VM-Power-Management.md`](VM-Power-Management.md) - API endpoints to start, stop, and manage VMs  
-3. **Configure VMs**: [`VM-Configuration.md`](VM-Configuration.md) - API methods to modify VM settings and hardware
-4. **Advanced Operations**: [`VM-Advanced-Operations.md`](VM-Advanced-Operations.md) - API calls for cloning, backup, and troubleshooting
+1. [`Create VMs`](api-vm-creation.md) - REST API calls to create virtual machines
+2. [`Power Control`](api-vm-power-management.md) - API endpoints to start, stop, and manage VMs  
+3. [`Configure VMs`](api-vm-configuration.md) - API methods to modify VM settings and hardware
+4. [`Advanced Operations`](api-vm-advanced-operations.md) - API calls for cloning, backup, and troubleshooting
 
 ## Common API Use Cases
 
