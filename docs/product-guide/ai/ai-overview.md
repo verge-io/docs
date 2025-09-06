@@ -9,7 +9,7 @@ VergeIQ introduces integrated artificial intelligence capabilities directly with
 
 * **Data Privacy & Sovereignty:** Keep all AI processing and data entirely within your private environment. This is crucial for complying with data regulations (like HIPAA) and avoiding proprietary information leaks, especially for edge or air-gapped systems.
 
-* **Rapid & Simple Deployment:** VergeIQ is a native component of VergeOS, so there are no extra purchases or complex installations. You can deploy multiple, secure generative AI environments in minutes, not months.
+* **Rapid & Simple Deployment:** VergeIQ is a native component of VergeOS, so there are no extra purchases or complex installations. You can deploy multiple, serverless Inference providers in minutes. 
 
 * **Optimized Performance & Consistency:** By running AI locally, you eliminate network variability like latency and packet loss. This ensures consistently fast, predictable performance, which is vital for time-sensitive applications. Offline availability also guarantees uninterrupted service in remote or secure locations.
 
@@ -29,9 +29,9 @@ VergeIQ's on-premises approach to AI is ideal for organizations handling sensiti
 
   * **Cost-Predictable Enterprise AI:** A Fortune 500 manufacturing company can automate and streamline cross-functional operations while maintaining predictable costs by eliminating the need for expensive, uncertain cloud AI services.
 
-## VergeIQ Concepts
+## AI Elements
 
-* **Models:** The core intelligence behind your AI assistants and applications. VergeIQ includes several common free models and supports a vast array of publicly available open-source models that you can download and implement within your VergeOS environment.
+* **Models:** The core intelligence behind your AI assistants and applications. VergeIQ includes several common models and supports a vast array of publicly available open-source models that you can download and implement within your VergeOS environment.
 
 * **Assistants:** Configured AI models with specific capabilities and "personalities". You can create multiple assistants, each with its own prompts, settings, and behaviors, to handle different tasks in your environment.
 

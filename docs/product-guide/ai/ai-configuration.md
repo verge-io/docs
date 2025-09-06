@@ -26,14 +26,23 @@ The AI Settings page allows you to configure system-wide defaults for AI compone
 
 ---
 
+## Using AI - general steps
+
+1. Configure an Model (included curated or any .gguf)
+2. Create an Assistant based on the model- creating a "personality" and tailored settings
+3. Engage with the Assistant:
+  * interactive communication with the assistant by starting a chat session in the VergeOS UI (helpful for testing)
+  * programmatically connect to the assistant via the VergeOS API
+  * programmatically connect to the assistant via the OpenAI router
+
 ## AI Model Management
 
-AI models in VergeOS provide the underlying intelligence for your AI assistants and applications. The system supports various model types including language models, conversational AI, and specialized task models.
+AI models provide the underlying intelligence for your AI assistants and applications.  VergeOS supports a wide range of publicly available AI models in gguf format, allowing users to download and run any compatible file. Several curated models are also included with default settings and can be readily installed from within the app.
 
 
-### Available Models
+### Curated Models
 
-The system includes several pre-configured AI models:
+The system includes several pre-configured AI models with adjustable settings: 
 
 #### VergelQ
 - **Type**: Custom VergeOS AI model
@@ -76,142 +85,139 @@ The system includes several pre-configured AI models:
 
 
 
-### Install a pre-configured AI Model
+### Install an AI Model
 
 pre-configured models to automatically download, default settings for this particular model, 
 
-1. Navigate to **AI** > **Models** in the left menu
+1. Navigate to **AI** > **Models**. 
 2. Browse the available models
-3. Click **Click to Install** on the desired model
-4. The *New Model* form will allow you to make configuration changes. Click Submit to automatically download and configure the model as specified.
-5. Monitor the installation progress in the system dashboard
+3. To install one of the available curated models, Click **Click to Install** on the desired model; to install a different model, click *New Model* on the left menu. 
+4. Configure all desired settings: 
+* **Model (General)**
 
-### Model Resource Requirements
+  * **Model**: Choose from available base models (e.g., Llama-3.2, Phi-4-Instruct)
+  * **Variant**: Select model size variant (e.g., Small 1GB). Available size selections will vary depending on model selected. 
+  * **Name**: Enter a descriptive name for your model.
+  * **Description** (optional): Additional details can be entered to describe the model's configuration, purpose, etc.
 
-Each model has specific resource requirements:
+* **Resources Configuration**
 
-- **CPU Cores**: Processing power needed for inference
-- **RAM**: Memory required to load and run the model
-- **Storage**: Disk space needed for model files
-- **GPU**: Optional hardware acceleration (if available)
+* **Cores**: number of cores to allocate to the model (default: 8). When GPU devices used, the number of cores allocated can be 1, not really important.
+Otherwise number of cores can affect how fast the responses will be?  
+* **RAM**: memory to allocate to the model (default: 2GB), will depend on the model selected.  Getting the right amount of RAM for a model can involve some trial and error.  As a general rule of thumb, most models will work if you can allocate a small amount more RAM than the size of the model (for ex: a tiny 2GB model may need 3GB; a 12GB model would need 15GB RAM). However, there is not a one-size-fits-all rule for model RAM allocation; requirements can differ significantly across various models.  A good strategy may be to start with a high RAM setting, then start the model and check its dashboard to see how much RAM is used.  The amount of RAM used is simply for running the model, a larger amount of RAM does not make it run faster. 
+* **Cluster**: select the VergeOS cluster in which to run the model (default is the cluster defined in overall AI settings)
+* **GPU Resource Group Allocation**: Select a GPU resource group (select ***--CPU Only--*** if CPUs will be used for ..... If you select a gpu resource group will it use cpu cores at all?  link to the resource group explanation on passthrough page. 
+* **Allow CPU Fallback if GPU resources are unavailable**: If you are using a gpu resource group and it is not available, it will use the cpus you assign?  If this is the case, would you want to assign extra cpus to use when/if gpu resource group is not available?? how much slower is cpu than gpu for this?
+* **Enable Memory Mapping**
+review this content from copilot and clarify how it can reduce the latency of memory paging and file i/o?
+Memory mapping in AI—especially for large language models and inference engines—is a clever technique that lets you load massive model files without stuffing them entirely into RAM. Instead of copying the whole file into memory, memory mapping (mmap) creates a virtual link between the file on disk and the process’s address space. This means only the parts of the model that are actively used get loaded into RAM, on demand.
 
----
+🧠 Why Memory Mapping Matters in AI
+- Efficiency: A 7B parameter model might require 14GB if fully loaded. With memory mapping, only ~20–30% of that might be actively used at any moment.
+- Speed: Reduces latency by avoiding unnecessary memory paging and file I/O.
+- Scalability: Enables running large models on machines with limited RAM—especially useful for .gguf models in apps like Ollama or llama.cpp.
 
-## Creating AI Models
+⚙️ How It Works
+- The OS maps the model file into virtual memory.
+- When the AI model accesses a specific part (e.g. weights for a token), only that portion is loaded into physical RAM.
+- This avoids loading unused layers or parameters, which is ideal for quantized models or sparse inference.
+evaluate the tip in the UI: Enabling this will allow the model to dynamically load the model into RAM which may consume less memory; however, idle models may take longer to load queries... why would it matter about being idle?
 
-### Overview
+* **Settings Configuration**
 
-You can create custom AI models tailored to your specific requirements. This process involves configuring model parameters, resource allocation, and deployment settings.
+* **Preferred Tier**: where to store the model? how big are these models?  considerations for selecting tier...is it less important for a model that will be fully loaded into memory and always running?
+* **Context Size**: maximum number of tokens the model can process in a single input.  A token might be a word, subword, or even a character depending on the tokenizer. Think of it as the model's attention span: how much information it can "see" and reason over at once.  For example:
+- A model with a 4K token context window can handle roughly 8 pages of text.
+- A model with 128K tokens can process entire books, transcripts, or codebases in one go.
+- Coherence: Longer context allows the model to maintain continuity across long conversations or documents.
+- Accuracy: With more context, the model can make better decisions by referencing earlier parts of the input.
+- Use Cases: Summarizing legal contracts, analyzing full code repositories, or handling multi-turn customer support all benefit from large context windows.
 
-### Creating a New Model
+⚙️ Trade-Offs and Constraints
+- Memory & Compute: Larger context windows require more VRAM and compute power. Processing 32K tokens is exponentially more demanding than 2K.
+- Latency: Bigger context can slow down inference unless optimized (e.g., with sliding windows or sparse attention).
+- Model Design: Some architectures (like transformers) struggle to scale context size efficiently, though newer models like Claude 4, GPT-4o, and Llama 3.1 are pushing boundaries
 
-1. Navigate to **AI** > **Models** in the left menu
-2. Click **New Model** tab
-3. Configure the following sections:
+context size defines how many tokens the model can "see" at once. Bigger windows allow richer reasoning, but they're computationaly expensive.
+Attention scales quadratically with token count
+transformers usually struggle with long contexts
+"lost in the middle"
 
-#### Model Configuration
 
-**Model Selection**
-- **Model**: Choose from available base models (e.g., Llama-3.2)
-- **Variant**: Select model size variant (e.g., Small 1GB)
-- **Name**: Enter a descriptive name for your custom model
+- will depend on what you are using the model for?
+- if you have a larger context size, longer to get answers? will some models not do well with small or large context sizes? 
 
-**Description**
-- Provide details about the model's purpose and configuration
 
-#### Resource Configuration
+Typical context sizes for GGUF models:
+- 4K tokens: Common for older LLaMA and Alpaca variants.
+- 8K–32K tokens: Supported by newer models like LLaMA 3.1 and Mistral.
+- 128K+ tokens: Emerging in long-context models like Claude or GPT-4o, though GGUF support varies.
 
-**Compute Resources**
-- **Cores**: Number of CPU cores to allocate (default: 8)
-- **RAM**: Memory allocation in GB (default: 2GB)
-- **Cluster**: Select deployment cluster (default: AI Settings Default)
 
-**GPU Resources**
-- **GPU Resource Group Allocation**: Choose GPU configuration (default: CPU Only)
-- **Allow CPU fallback**: Enable CPU processing if GPU unavailable
-- **Enable Memory Mapping**: Allow dynamic memory allocation
+* **Parallel**: sessions?  how different from workers? an example of different paralallel sessions in comparison to different workers?
+* **Min Workers**: different containers? will show as a different workload/machine on the node? spawn instances of model to handle load - do you have control within your api calls to tell it which worker to hit? are the different workers separated to keep tasks separate at all?  or will they bounce around just based on load balancing? does the min workers determine how many are started up automatically when you start a model?
+* **Max Workers**: do these actually work yet?  min/max workers?  
+* **Insert Think Tag**: how to tell if you need to insert a think tag? will the model specify. Why would a model suppor tthinking but not provide the tag to start the thinking process?
+---- put in an issue for grammar mistake on the tooltip for this (enable instead of check and missing the word "to")
+* **Strip Think Tag From History**: how do i know if this is the case?  some way to know right off the bat?  and/or a way to tell i need to do this based on results I am getting?
 
-#### Settings Configuration
-
-**Performance Settings**
-- **Preferred Tier**: Select storage tier (default: Tier 3)
-- **Context Size**: Set context window size (default: 8192)
-- **Parallel**: Configure parallel processing (default: 4)
-
-**Worker Configuration**
-- **Min Workers**: Minimum number of worker processes (default: 0)
-- **Max Workers**: Maximum number of worker processes (default: 1)
-
-**Advanced Options**
-- **Insert Think Tag**: Enable structured thinking process
-- **Strip Think Tag From History**: Remove think tags from conversation history
-
-### Submitting Model Configuration
-
-1. Review all configuration settings
-2. Click **Submit** to create the model
-3. Click **Cancel** to discard changes
-4. Monitor model deployment in the system dashboard
-
----
+5. Click **Submit** to download and configure the specified model. 
+After saving the new model, the *New Assistant* form is presented where you can create an assistant based on the new model configuration.  AI assistant configuration is detailed below.
 
 ## AI Assistant Management
 
 ### Overview
 
-AI assistants are configured AI models that provide specific capabilities and interfaces for interacting with your AI functionality. They can be customized with specific prompts, settings, and behaviors.
+AI assistants are configured AI models that provide specific capabilities and behavior with your AI functionality. They can be customized with specific prompts and settings to tailor performance and types of responses.
 
-### Viewing AI Assistants
 
-1. Navigate to **AI** > **Assistants** in the left menu
-2. View available assistants and their status
-3. Each assistant displays:
-   - Name and description
-   - Resource allocation (CPU cores, RAM)
-   - Current status (Online/Offline)
+!!! Upon creation of a new model, the *New Assistant* is automatically created and the configuration form is presented.  A new assistant can also be created by navigating to AI > New Assistant. 
 
-### Creating a New Assistant
+* **Assistant (General)**
 
-1. Click **New Assistant** tab
-2. Configure the assistant settings:
+ 
+  * **Name**: Enter a descriptive name for your model.
+  !!! tip "When a new assistant is created automatically because you just created a model, the name will default to the same name as the model."
 
-#### Assistant Configuration
+  * **Description** (optional): Additional details can be entered to describe the model's configuration, purpose, etc.
+  * **Model**: Choose from available base models (e.g., Llama-3.2, Phi-4-Instruct). 
+  !!! tip "When an assistant was auto-created along with a new model creation, this field is automatically set to the assocatied model and cannot be edited."
 
-**Basic Settings**
-- **Name**: Enter a descriptive name for the assistant
-- **Description**: Provide details about the assistant's purpose
-- **Model**: Select the underlying AI model (e.g., VergelQ)
 
-#### Assistant Settings
+* **Settings Configuration**
 
-**Chat Configuration**
-- **Chat History**: Configure conversation retention (default: Always On)
-- **Disable Think**: Toggle structured thinking processes
+* **Chat History**: Configure conversation retention (interactive chat sessions only)
+  * ***Default On*** - chat history is automatically enabled at the start of a session, but can be disabled
+  * ***Default Off** - chat history is automatically disabled at the start of a session, but can be enabled
+  * ***Always On*** - chat history is always enabled; cannot be disabled
+  * ***Always Off** - chat history is always disabled; cannot be enabled
+
+!!! tip "Chat History can be deleted
+
+- **Disable Think**: some models support think, some do not; whether to disable this will often be use case dependent; the think process has been shown to improve accuracy of results; tradeoff is that it will use more resources and make results take longer 
 
 **System Prompt**
 - **System Prompt**: Define the assistant's personality, capabilities, and behavior guidelines
 - **Note**: This instruction is given to the model for every chat interaction
+- tradeoffs on system prompt length: the longer this prompt, the more focused/accurate/better results are possible, but longer prompts will eat up more resources (memory, consumption of context window, etc.)
 
-**Performance Settings**
-- **Temperature**: Control response creativity (0.0 = deterministic, 1.0 = creative)
+- **Temperature**: Controls response creativity and randomness of generated responses. (0.0 = deterministic, 1.0 = creative)
+General Guidance: 
+  * Low temperatures (e.g., 0.0–0.3) - deterministic, focused, and repeatable answers; ideal for uses such as technical documentation compliance guidance, customer support
+  * High Temperatures (e.g., 0.7–1.0) - creative, exploratory, less predictable responses; ideal for brainstorming, design ideation, audience-specific phrasing
+  * Medium temperatures (e.g., 0.4–0.6) - responses balance structure with some variation, less formal and robotic than lower temperatures; great for scenario planning, UI/UX analysis, or infrastructure trade-offs
+
 - **Max Tokens**: Set maximum response length (0 = no limit)
 
-#### Advanced Options
+* **Advanced**: Field reserved for future enhanced configuration options.  Contact support if you need additional AI settings beyond those provided within the UI.
 
-Access advanced configuration options by clicking the **Advanced** dropdown:
 
-**Advanced Options**
-- Additional configuration parameters for fine-tuning assistant behavior
-- Custom integration settings
-- Advanced prompt engineering options
-
-### Submitting Assistant Configuration
-
-1. Configure all desired settings
-2. Click **Submit** to create the assistant
+2. Click **Submit** to create/save the assistant configuration.
 3. Click **Cancel** to discard changes
 4. The assistant will be deployed and become available for use
 
+
+upload/manage context files to provide a knowledge base to the assistant ("Workspace Files")
 ---
 
 ## Resource Management
@@ -291,6 +297,8 @@ Control access to AI features through VergeOS's built-in security:
 - **Rate Limiting**: Implement usage controls and quotas
 
 ---
+
+
 
 ## Best Practices
 
