@@ -268,7 +268,6 @@ Limit zone transfers to:
 
 Authoritative DNS integrates seamlessly with other VergeOS network services:
 - **DHCP Integration**: Automatic A record creation for DHCP clients when configured
-- **Load Balancer Integration**: DNS records can point to VergeOS load balancer VIPs
 - **Firewall Coordination**: DNS queries respect network firewall rules
 
 ### High Availability
