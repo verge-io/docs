@@ -3,91 +3,44 @@
 !!! info "**New Feature**"  
     This page documents functionality added in **VergeOS v25.2**
 
+## Using AI - general steps
+
+1. [Define a Model] (included curated or any .gguf). Common mod
+2. [Configure an Assistant](#ai-assistant-management) (based on the defined model), tailoring settings for the particular use case or task.
+3. Engage with the Assistant:
+  * programmatically connect to the assistant via the OpenAI router (most typical)
+  * interactive communication with the assistant by starting a chat session in the VergeOS UI (helpful for testing)
+  * programmatically connect to the assistant via the VergeOS API
+  
+
+
 ## AI Settings Configuration
 
-### Accessing General AI Settings
+### General AI Settings
 
 1. From the Main Dashboard, navigate to **AI** on the top menu
 2. Click **AI Settings** to configure default AI parameters
 
-### Default Settings Configuration
-
 The AI Settings page allows you to configure system-wide defaults for AI components:
 
-#### Default AI Cluster
-- **Purpose**: Specifies the default compute cluster for AI workloads
-- **Configuration**: Select from available clusters (e.g., "compute")
-- **Usage**: AI models and assistants will deploy to this cluster by default
+* **Default AI Cluster**: specifies the default compute cluster for AI workloads. New AI models will deploy to this cluster by default. 
 
-#### Default AI Network
-- **Purpose**: Sets the default network configuration for AI services
-- **Configuration**: Select from available networks 
-- **Usage**: AI components will use this network unless overridden
+* **Default AI Network**: sets the default network for AI services. New AI models will use this network unless selection is overridden.
 
 ---
 
-## Using AI - general steps
 
-1. Configure an Model (included curated or any .gguf)
-2. Create an Assistant based on the model- creating a "personality" and tailored settings
-3. Engage with the Assistant:
-  * interactive communication with the assistant by starting a chat session in the VergeOS UI (helpful for testing)
-  * programmatically connect to the assistant via the VergeOS API
-  * programmatically connect to the assistant via the OpenAI router
 
 ## AI Model Management
 
-AI models provide the underlying intelligence for your AI assistants and applications.  VergeOS supports a wide range of publicly available AI models in gguf format, allowing users to download and run any compatible file. Several curated models are also included with default settings and can be readily installed from within the app.
-
-
-### Curated Models
-
-The system includes several pre-configured AI models with adjustable settings: 
-
-#### VergelQ
-- **Type**: Custom VergeOS AI model
-- **Resources**: 1.48GB size, 4 CPU cores, 8GB RAM
-- **Status**: Available for installation
-- **Use Case**: General-purpose AI assistant optimized for VergeOS environments
-
-#### Llama-3.2
-- **Type**: Meta's language model
-- **Resources**: 1GB-3GB size, 8 CPU cores, 2GB-5GB RAM
-- **Capabilities**: Meta, Text Generation, Conversational
-- **Languages**: 8 languages supported
-- **Use Case**: Advanced language understanding and generation
-
-#### Llama-3.1
-- **Type**: Meta's language model
-- **Resources**: 5GB-8GB size, 8 CPU cores, 7GB-10GB RAM
-- **Capabilities**: Meta, Text Generation, Conversational
-- **Languages**: 8 languages supported
-- **Use Case**: High-performance language processing
-
-#### Llama-4-Scout
-- **Type**: Advanced language model
-- **Resources**: 58GB-103GB size, 8 CPU cores, 73GB-129GB RAM
-- **Capabilities**: Transformers, Image Text To Text, Meta, Conversational
-- **Languages**: 12 languages supported
-- **Use Case**: Premium AI capabilities with multimodal support
-
-#### Gemma-3
-- **Type**: Google's language model
-- **Resources**: 2GB-30GB size, 8 CPU cores, 3GB-38GB RAM
-- **Capabilities**: English, Transformers, Image Text To Text, Google, Conversational
-- **Use Case**: Google-optimized AI processing
-
-#### Phi-4
-- **Type**: Microsoft's language model
-- **Resources**: 2GB-17GB size, 8 CPU cores, 3GB-21GB RAM
-- **Capabilities**: English, Transformers, Text Generation, Math, Code, Conversational
-- **Use Case**: Code generation and mathematical reasoning
-
+AI models provide the underlying intelligence for your AI assistants and applications.  VergeOS supports a wide range of publicly-available AI models in *.gguf format, allowing users to download and run any compatible file. Several curated models are presented, along with default settings, that can be readily installed from the AI Dashboard.
 
 
 ### Install an AI Model
 
-pre-configured models to automatically download, default settings for this particular model, 
+!!! tip "Curated Models"
+    pre-configured models to automatically download, default settings for this particular model
+    The system includes several pre-configured AI models for various use cases with adjustable settings. 
 
 1. Navigate to **AI** > **Models**. 
 2. Browse the available models
@@ -95,8 +48,8 @@ pre-configured models to automatically download, default settings for this parti
 4. Configure all desired settings: 
 * **Model (General)**
 
-  * **Model**: Choose from available base models (e.g., Llama-3.2, Phi-4-Instruct)
-  * **Variant**: Select model size variant (e.g., Small 1GB). Available size selections will vary depending on model selected. 
+  * **Make the Model Selection** - **Model**: Choose from the list of curated base models (e.g., Llama-3.2, Phi-4-Instruct) and select a **Variant**: Select model size variant (e.g., Small 1GB). Available size selections will vary depending on model selected. **-OR-** Select **Model**: --Custom-- and enter a URL to download the appropriate *.gguf model file.
+
   * **Name**: Enter a descriptive name for your model.
   * **Description** (optional): Additional details can be entered to describe the model's configuration, purpose, etc.
 
@@ -138,29 +91,28 @@ evaluate the tip in the UI: Enabling this will allow the model to dynamically lo
 - Latency: Bigger context can slow down inference unless optimized (e.g., with sliding windows or sparse attention).
 - Model Design: Some architectures (like transformers) struggle to scale context size efficiently, though newer models like Claude 4, GPT-4o, and Llama 3.1 are pushing boundaries
 
-context size defines how many tokens the model can "see" at once. Bigger windows allow richer reasoning, but they're computationaly expensive.
+context length defines how many tokens the model can process at once(including the user prompt, the system prompt, the response) Bigger windows allow richer reasoning, but they're computationaly expensive.
 Attention scales quadratically with token count
 transformers usually struggle with long contexts
 "lost in the middle"
 
 
 - will depend on what you are using the model for?
-- if you have a larger context size, longer to get answers? will some models not do well with small or large context sizes? 
-
+- if you have a larger context size, longer to get answers? will some models not do well with large context sizes? 
+- every model has a maximum context size, separate from our max constraints. 
 
 Typical context sizes for GGUF models:
 - 4K tokens: Common for older LLaMA and Alpaca variants.
 - 8K–32K tokens: Supported by newer models like LLaMA 3.1 and Mistral.
 - 128K+ tokens: Emerging in long-context models like Claude or GPT-4o, though GGUF support varies.
-
-
+most support 64-128, we default to 8 because expensive
+ 
 * **Parallel**: sessions?  how different from workers? an example of different paralallel sessions in comparison to different workers?
 * **Min Workers**: different containers? will show as a different workload/machine on the node? spawn instances of model to handle load - do you have control within your api calls to tell it which worker to hit? are the different workers separated to keep tasks separate at all?  or will they bounce around just based on load balancing? does the min workers determine how many are started up automatically when you start a model?
 * **Max Workers**: do these actually work yet?  min/max workers?  
-* **Insert Think Tag**: how to tell if you need to insert a think tag? will the model specify. Why would a model suppor tthinking but not provide the tag to start the thinking process?
+* **Insert Think Tag**: Some recent models treat the think tag as a non-output token, or suppress the tag to optimize latency.  Use this option to include an alternative think tag in order to distinguish chain-of-thought reasoning from the final answer.
 ---- put in an issue for grammar mistake on the tooltip for this (enable instead of check and missing the word "to")
-* **Strip Think Tag From History**: how do i know if this is the case?  some way to know right off the bat?  and/or a way to tell i need to do this based on results I am getting?
-
+* **Strip Think Tag From History**: Enable this option when using a model's think feature but you wish to exclude the chain-of-thought content from the response, so that only the final answer is returned. 
 5. Click **Submit** to download and configure the specified model. 
 After saving the new model, the *New Assistant* form is presented where you can create an assistant based on the new model configuration.  AI assistant configuration is detailed below.
 
@@ -171,7 +123,7 @@ After saving the new model, the *New Assistant* form is presented where you can 
 AI assistants are configured AI models that provide specific capabilities and behavior with your AI functionality. They can be customized with specific prompts and settings to tailor performance and types of responses.
 
 
-!!! Upon creation of a new model, the *New Assistant* is automatically created and the configuration form is presented.  A new assistant can also be created by navigating to AI > New Assistant. 
+!!! Upon creation of a new model, the new assistant is automatically created with default settings, or those selected on the *Assistant* tab. A new assistant can also be created by navigating to AI > New Assistant. 
 
 * **Assistant (General)**
 
@@ -192,14 +144,19 @@ AI assistants are configured AI models that provide specific capabilities and be
   * ***Always On*** - chat history is always enabled; cannot be disabled
   * ***Always Off** - chat history is always disabled; cannot be enabled
 
-!!! tip "Chat History can be deleted
+!!! tip "You can select to disable chat history per session upon starting a new chat session."
+
 
 - **Disable Think**: some models support think, some do not; whether to disable this will often be use case dependent; the think process has been shown to improve accuracy of results; tradeoff is that it will use more resources and make results take longer 
+multi-step reasoning, can be useful for complex math or logic problems, debugging code, strategy planning
+can disable this option to get quicker responses, use less resources
+the ai model "shows its work"
 
 **System Prompt**
-- **System Prompt**: Define the assistant's personality, capabilities, and behavior guidelines
+- **System Prompt**: allows you to define the assistant's personality, capabilities, and behavior guidelines
 - **Note**: This instruction is given to the model for every chat interaction
 - tradeoffs on system prompt length: the longer this prompt, the more focused/accurate/better results are possible, but longer prompts will eat up more resources (memory, consumption of context window, etc.)
+remember that the entire system prompt is submitted and processed with each query; so it does consume part of the context size (maximum number of tokens model can process in a single input sequence)
 
 - **Temperature**: Controls response creativity and randomness of generated responses. (0.0 = deterministic, 1.0 = creative)
 General Guidance: 
@@ -207,7 +164,12 @@ General Guidance:
   * High Temperatures (e.g., 0.7–1.0) - creative, exploratory, less predictable responses; ideal for brainstorming, design ideation, audience-specific phrasing
   * Medium temperatures (e.g., 0.4–0.6) - responses balance structure with some variation, less formal and robotic than lower temperatures; great for scenario planning, UI/UX analysis, or infrastructure trade-offs
 
-- **Max Tokens**: Set maximum response length (0 = no limit)
+ex: 0.2 tight, consistent phrasing
+0.7 metaphor, humor, unexpected angles
+
+
+- **Max Tokens**: Set maximum response length (0 = no limit) tokens are chunks of text - like words, sub-words, or characters that the model understands. 
+Tokens vary across different ai models, but in general a token equates to .7 words.
 
 * **Advanced**: Field reserved for future enhanced configuration options.  Contact support if you need additional AI settings beyond those provided within the UI.
 

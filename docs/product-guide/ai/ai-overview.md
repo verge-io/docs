@@ -33,9 +33,9 @@ VergeIQ's on-premises approach to AI is ideal for organizations handling sensiti
 
 * **Models:** The core intelligence behind your AI assistants and applications. VergeIQ includes several common models and supports a vast array of publicly available open-source models that you can download and implement within your VergeOS environment.
 
-* **Assistants:** Configured AI models with specific capabilities and "personalities". You can create multiple assistants, each with its own prompts, settings, and behaviors, to handle different tasks in your environment.
+* **Assistants:** Configured AI models with specific capabilities and personas. You can create multiple assistants, each with its own prompts, settings, and behaviors, to handle different tasks in your environment.
 
-* **Worker:** A dedicated process that loads an AI model and handles incoming requests for inference. You can spin up multiple workers to handle concurrent requests, isolate workloads, and improve fault tolerance.
+* **Worker:** A dedicated process that loads an AI model and handles incoming requests for inference. Multiple workers can be spun up to handle concurrent requests and provide fault tolerance.
 
 * **Chat Session:** A continuous flow of exchanged messages between a user/application and an AI model. A chat session maintains a defined context, typically with a start and end, and can be driven through the VergeOS UI or via an API for seamless integration with other applications.
 
