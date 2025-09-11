@@ -27,7 +27,7 @@ This guide covers the core concepts and capabilities of VergeOS Authoritative DN
 
 ## Requirements
 
-**VergeOS Platform**: Version 4.0 or later  
+**VergeOS Platform**: Version 4.12 or later  
 **Access Level**: Cluster Admin or Tenant Admin permissions  
 **Network Prerequisites**: Properly configured external network connectivity for public DNS services  
 **Domain Management**: Access to domain registrar settings if hosting public-facing domains  
@@ -37,10 +37,11 @@ This guide covers the core concepts and capabilities of VergeOS Authoritative DN
 - Basic network administration concepts
 - Familiarity with VergeOS network configuration
 
-## Time Estimate
+## Related Documentation
 
-**Reading Time**: 10-15 minutes  
-**Implementation Planning**: 30-45 minutes (depending on complexity)
+For step-by-step configuration instructions and detailed implementation guidance, see:
+
+- **[Configure Authoritative DNS in VergeOS](/knowledge-base/configure-authoritative-dns-vergeos)** - Complete configuration guide with detailed steps for enabling BIND DNS, creating DNS views, configuring zones, adding records, and setting up firewall rules
 
 ## DNS Service Architecture in VergeOS
 

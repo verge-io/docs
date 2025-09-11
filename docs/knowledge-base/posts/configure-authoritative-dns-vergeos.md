@@ -1,37 +1,24 @@
 ---
-# Series navigation helpers
-parent_guide: "VergeOS DNS Services"
-workflow_stage: "configuration"
-related_docs:
-  - { slug: "vergeos-authoritative-dns-product-guide", title: "VergeOS Authoritative DNS - Product Guide" }
-  - { slug: "network-troubleshooting", title: "Network Troubleshooting Guide" }
-
-# Environment & access details for THIS guide
-requirements:
-  vergeos_version: "v4.0 or later"
-  access_levels: ["Cluster Admin", "Tenant Admin"]
-  background_knowledge: ["DNS fundamentals", "VergeOS network administration"]
-  hardware: ["Network connectivity for DNS services"]
-
-key_concepts:
-  - "DNS network configuration"
-  - "DNS views setup" 
-  - "DNS zone creation"
-  - "DNS record management"
-  - "Firewall rule configuration"
-
-semantic_keywords:
-  - "configure VergeOS DNS server"
-  - "setup BIND authoritative DNS"
-  - "DNS zone configuration steps"
-  - "DNS views VergeOS setup"
-  - "authoritative DNS network configuration"
-
-use_cases:
-  - "Setup authoritative DNS for company domains"
-  - "Configure split-horizon DNS"
-  - "Create redundant DNS infrastructure"
-  - "Setup internal DNS services"
+title: Configure Authoritative DNS in VergeOS
+slug: configure-authoritative-dns-vergeos
+description: Complete guide to setting up authoritative DNS services in VergeOS using BIND, including DNS views, zones, records, and firewall configuration
+draft: false
+date: 2025-09-10T14:10:54.764Z
+tags:
+  - dns
+  - bind
+  - authoritative
+  - zones
+  - records
+  - network
+  - configuration
+  - firewall
+  - views
+  - split-horizon
+categories:
+  - Network Services
+editor: markdown
+dateCreated: 2025-09-10T14:10:54.764Z
 ---
 
 # Configure Authoritative DNS in VergeOS
