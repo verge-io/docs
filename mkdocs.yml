@@ -286,6 +286,7 @@ nav:
         - IPSec: product-guide/vpn/ipsec.md
         - WireGuard: product-guide/vpn/wireguard-config.md
         - WireGuard Examples: product-guide/vpn/wireguard-examples.md
+      - Authoritative DNS: product-guide/networks/authoritative-dns.md
       - Troubleshooting:
         - Network Troubleshooting: product-guide/networks/net-troubleshooting.md
     - Automation:
