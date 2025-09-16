@@ -5,25 +5,26 @@
 
 ## Using AI - general steps
 
-1. [Define a Model] (included curated or any .gguf). Common mod
-2. [Configure an Assistant](#ai-assistant-management) (based on the defined model), tailoring settings for the particular use case or task.
-3. Engage with the Assistant:
-  * programmatically connect to the assistant via the OpenAI router (most typical)
-  * interactive communication with the assistant by starting a chat session in the VergeOS UI (helpful for testing)
+1. [Define a Model](#ai-model-management) - by selecting from the included curated selection or uploading a supported .gguf format model
+2. [Configure an Assistant](#ai-assistant-management) - based on the defined model, with tailored settings for the particular use case or task
+3. [Upload Content to the Workspace](#upload-files-to-workspace) - upload files to provide the assistant with relevant content
+4. Engage with the Assistant:
+
+  * programmatically connect to the assistant via the built-in **OpenAI router** (typical method)
+  * interactively communicate with the assistant by starting a [**New Chat Session**](product-guide/ai/chat-sessions) within the VergeOS UI (helpful for testing)
   * programmatically connect to the assistant via the VergeOS API
   
 
 
-## AI Settings Configuration
 
-### General AI Settings
+## General AI Settings
 
 1. From the Main Dashboard, navigate to **AI** on the top menu
 2. Click **AI Settings** to configure default AI parameters
 
 The AI Settings page allows you to configure system-wide defaults for AI components:
 
-* **Default AI Cluster**: specifies the default compute cluster for AI workloads. New AI models will deploy to this cluster by default. 
+* **Default AI Cluster**: Specifies the default compute cluster for AI workloads. New AI models will deploy to this cluster by default. 
 
 * **Default AI Network**: sets the default network for AI services. New AI models will use this network unless selection is overridden.
 
@@ -39,82 +40,83 @@ AI models provide the underlying intelligence for your AI assistants and applica
 ### Install an AI Model
 
 !!! tip "Curated Models"
-    pre-configured models to automatically download, default settings for this particular model
-    The system includes several pre-configured AI models for various use cases with adjustable settings. 
+    - The system includes several pre-configured models, with default settings are available to automatically download
 
 1. Navigate to **AI** > **Models**. 
-2. Browse the available models
-3. To install one of the available curated models, Click **Click to Install** on the desired model; to install a different model, click *New Model* on the left menu. 
+2. To install one of the available curated models, Click **Click to Install** on the desired model.  Alternatively, click *New Model* on the left menu. 
 4. Configure all desired settings: 
-* **Model (General)**
 
-  * **Make the Model Selection** - **Model**: Choose from the list of curated base models (e.g., Llama-3.2, Phi-4-Instruct) and select a **Variant**: Select model size variant (e.g., Small 1GB). Available size selections will vary depending on model selected. **-OR-** Select **Model**: --Custom-- and enter a URL to download the appropriate *.gguf model file.
+* **Model Selection**: Choose from a curated list of base models (e.g., Llama-3.2, Phi-4-Instruct) and select a size **Variant** (e.g., Small – 1GB).
+Alternatively, select --Custom-- and provide a **URL** to download a .gguf model file
 
-  * **Name**: Enter a descriptive name for your model.
-  * **Description** (optional): Additional details can be entered to describe the model's configuration, purpose, etc.
+* **Name**: Enter a descriptive name for your model.
 
-* **Resources Configuration**
+* **Description** (optional): Add details about the model’s purpose, configuration, or intended use. 
 
-* **Cores**: number of cores to allocate to the model (default: 8). When GPU devices used, the number of cores allocated can be 1, not really important.
-Otherwise number of cores can affect how fast the responses will be?  
-* **RAM**: memory to allocate to the model (default: 2GB), will depend on the model selected.  Getting the right amount of RAM for a model can involve some trial and error.  As a general rule of thumb, most models will work if you can allocate a small amount more RAM than the size of the model (for ex: a tiny 2GB model may need 3GB; a 12GB model would need 15GB RAM). However, there is not a one-size-fits-all rule for model RAM allocation; requirements can differ significantly across various models.  A good strategy may be to start with a high RAM setting, then start the model and check its dashboard to see how much RAM is used.  The amount of RAM used is simply for running the model, a larger amount of RAM does not make it run faster. 
-* **Cluster**: select the VergeOS cluster in which to run the model (default is the cluster defined in overall AI settings)
-* **GPU Resource Group Allocation**: Select a GPU resource group (select ***--CPU Only--*** if CPUs will be used for ..... If you select a gpu resource group will it use cpu cores at all?  link to the resource group explanation on passthrough page. 
-* **Allow CPU Fallback if GPU resources are unavailable**: If you are using a gpu resource group and it is not available, it will use the cpus you assign?  If this is the case, would you want to assign extra cpus to use when/if gpu resource group is not available?? how much slower is cpu than gpu for this?
+* **Cores**(default: 8): max number of cores to allocate to each model instance. 
+
+  * GPU-enabled models: Core allocation has minimal impact.
+  * CPU-only or fallback mode: Core allocation is critical for startup and performance.
+  * Over-provisioning cores does not improve performance; unused cores remain idle.
+
+
+* **RAM** (default: 2GB): Memory allocated per model instance
+  
+    * A baseline amount of RAM is required to load and run the model. Actual requirements vary by model type and size. 
+    * A general guideline for the foundational amount of RAM needed : allocate slightly more RAM than the model’s file size (e.g., a 2GB model may need 3GB RAM).
+    * Additional RAM may be needed to support concurrent requests (i.e. parallel setting) and larger context windows. 
+    * Start with a generous allocation, then monitor actual usage via the model dashboard.  If observed consumption is significantly lower than the allocated amount, scale back to optimize resource efficiency.
+
+
+* **Cluster**: Select the VergeOS cluster where the model will run. Defaults to the cluster defined in global AI settings.
+
+* **GPU Resource Group Allocation**: - Choose a GPU resource group to assign GPU devices, or select --CPU Only-- to run exclusively on CPUs.
+
+ !!! info "GPU devices are distributed from pools called [Resource Groups](/product-guide/system/device-pass-overview#resource-groups)."
+
+* **Allow CPU Fallback if GPU resources are unavailable**: Enable this option to use CPU resources if GPU devices are unavailable. Ensure sufficient CPU cores are allocated for fallback scenarios.
+
 * **Enable Memory Mapping**
-review this content from copilot and clarify how it can reduce the latency of memory paging and file i/o?
-Memory mapping in AI—especially for large language models and inference engines—is a clever technique that lets you load massive model files without stuffing them entirely into RAM. Instead of copying the whole file into memory, memory mapping (mmap) creates a virtual link between the file on disk and the process’s address space. This means only the parts of the model that are actively used get loaded into RAM, on demand.
+  * Recommended for GPU-based models to conserve RAM (model loads into GPU memory)
+  * Typically, not recommended when using CPU only, as it will be much slower
+  * Sufficient RAM is still required to load the model initially
 
-🧠 Why Memory Mapping Matters in AI
-- Efficiency: A 7B parameter model might require 14GB if fully loaded. With memory mapping, only ~20–30% of that might be actively used at any moment.
-- Speed: Reduces latency by avoiding unnecessary memory paging and file I/O.
-- Scalability: Enables running large models on machines with limited RAM—especially useful for .gguf models in apps like Ollama or llama.cpp.
-
-⚙️ How It Works
-- The OS maps the model file into virtual memory.
-- When the AI model accesses a specific part (e.g. weights for a token), only that portion is loaded into physical RAM.
-- This avoids loading unused layers or parameters, which is ideal for quantized models or sparse inference.
-evaluate the tip in the UI: Enabling this will allow the model to dynamically load the model into RAM which may consume less memory; however, idle models may take longer to load queries... why would it matter about being idle?
 
 * **Settings Configuration**
 
-* **Preferred Tier**: where to store the model? how big are these models?  considerations for selecting tier...is it less important for a model that will be fully loaded into memory and always running?
-* **Context Size**: maximum number of tokens the model can process in a single input.  A token might be a word, subword, or even a character depending on the tokenizer. Think of it as the model's attention span: how much information it can "see" and reason over at once.  For example:
-- A model with a 4K token context window can handle roughly 8 pages of text.
-- A model with 128K tokens can process entire books, transcripts, or codebases in one go.
-- Coherence: Longer context allows the model to maintain continuity across long conversations or documents.
-- Accuracy: With more context, the model can make better decisions by referencing earlier parts of the input.
-- Use Cases: Summarizing legal contracts, analyzing full code repositories, or handling multi-turn customer support all benefit from large context windows.
-
-⚙️ Trade-Offs and Constraints
-- Memory & Compute: Larger context windows require more VRAM and compute power. Processing 32K tokens is exponentially more demanding than 2K.
-- Latency: Bigger context can slow down inference unless optimized (e.g., with sliding windows or sparse attention).
-- Model Design: Some architectures (like transformers) struggle to scale context size efficiently, though newer models like Claude 4, GPT-4o, and Llama 3.1 are pushing boundaries
-
-context length defines how many tokens the model can process at once(including the user prompt, the system prompt, the response) Bigger windows allow richer reasoning, but they're computationaly expensive.
-Attention scales quadratically with token count
-transformers usually struggle with long contexts
-"lost in the middle"
+* **Preferred Tier**: Select the storage tier for hosting the model.
+* **Context Size** (default 8192): - Maximum number of tokens the model can process in an active session. This includes:
+  * User input
+  * AI output
+  * System prompt
+  * Conversation history
+  
+- !!! tip "Tokens"
+- 1 token ≈ 4 characters (average for English)
+- 1 word ≈ 1.33 tokens
+- 8192 tokens ≈ 2,000–4,000 words or ~12–20 pages of text
 
 
-- will depend on what you are using the model for?
-- if you have a larger context size, longer to get answers? will some models not do well with large context sizes? 
-- every model has a maximum context size, separate from our max constraints. 
+!!! note "Context Size Considerations"
+   * Coherence: Longer context improves continuity across conversations or documents
+   * Accuracy: More context enables better decision-making
+   * Performance: Larger context sizes require more RAM and compute resources
 
-Typical context sizes for GGUF models:
-- 4K tokens: Common for older LLaMA and Alpaca variants.
-- 8K–32K tokens: Supported by newer models like LLaMA 3.1 and Mistral.
-- 128K+ tokens: Emerging in long-context models like Claude or GPT-4o, though GGUF support varies.
-most support 64-128, we default to 8 because expensive
  
-* **Parallel**: sessions?  how different from workers? an example of different paralallel sessions in comparison to different workers?
-* **Min Workers**: different containers? will show as a different workload/machine on the node? spawn instances of model to handle load - do you have control within your api calls to tell it which worker to hit? are the different workers separated to keep tasks separate at all?  or will they bounce around just based on load balancing? does the min workers determine how many are started up automatically when you start a model?
-* **Max Workers**: do these actually work yet?  min/max workers?  
-* **Insert Think Tag**: Some recent models treat the think tag as a non-output token, or suppress the tag to optimize latency.  Use this option to include an alternative think tag in order to distinguish chain-of-thought reasoning from the final answer.
----- put in an issue for grammar mistake on the tooltip for this (enable instead of check and missing the word "to")
-* **Strip Think Tag From History**: Enable this option when using a model's think feature but you wish to exclude the chain-of-thought content from the response, so that only the final answer is returned. 
+* **Parallel**: Number of concurrent requests each model instance can handle
+* **Min Workers**: Minimum number of model instances launched when the model starts. 
+* **Max Workers**: Maximum number of model instances that can be launched to meet demand.
+
+!!! "The number of running model instances (workers) for a model will be reflected on the model dashboard, with each instance represented as a running worker."
+
+* **Insert Think Tag**:- Adds a custom tag to distinguish chain-of-thought reasoning from final output. Some models suppress or treat this tag as non-output to reduce latency.
+
+* **Strip Think Tag From History**: Enable this to exclude chain-of-thought content from the response history, returning only the final answer.   
+
 5. Click **Submit** to download and configure the specified model. 
-After saving the new model, the *New Assistant* form is presented where you can create an assistant based on the new model configuration.  AI assistant configuration is detailed below.
+
+!!! tip "New Assistant"
+When you create a new model, a new assistant is also created by default. The *New Assistant* form will appear allowing customization of the new assistant's default settings.
 
 ## AI Assistant Management
 
@@ -123,12 +125,12 @@ After saving the new model, the *New Assistant* form is presented where you can 
 AI assistants are configured AI models that provide specific capabilities and behavior with your AI functionality. They can be customized with specific prompts and settings to tailor performance and types of responses.
 
 
-!!! Upon creation of a new model, the new assistant is automatically created with default settings, or those selected on the *Assistant* tab. A new assistant can also be created by navigating to AI > New Assistant. 
+!!! note "Upon creation of a new model, a new assistant is automatically created with default settings, or those selected on the *Assistant* tab. A new assistant can also be created by navigating to AI > New Assistant."
 
 * **Assistant (General)**
 
  
-  * **Name**: Enter a descriptive name for your model.
+  * **Name**: Enter a descriptive name for the assistant. 
   !!! tip "When a new assistant is created automatically because you just created a model, the name will default to the same name as the model."
 
   * **Description** (optional): Additional details can be entered to describe the model's configuration, purpose, etc.
@@ -167,9 +169,16 @@ General Guidance:
 ex: 0.2 tight, consistent phrasing
 0.7 metaphor, humor, unexpected angles
 
+- **Context Score**: (default 65) sliding scale of how the model will evaluate how relevant, useful or salient a piece of information is within a given context window.  It helps to decide what to focus on, what to ignore or compress, what to retain across turns, etc. a "mental highlighter"
+- optimum context score will depend on 1) model used 2) context information (e.g. documents uploaded to the assistant workspace) 3) use case
 
-- **Max Tokens**: Set maximum response length (0 = no limit) tokens are chunks of text - like words, sub-words, or characters that the model understands. 
+
+
+- **Max Tokens**: Set maximum response length (default: 0 = no limit) tokens are chunks of text - like words, sub-words, or characters that the model understands. 
 Tokens vary across different ai models, but in general a token equates to .7 words.
+- when setting a max token, it should be set to less than model's context size
+- for many use cases, it is preferrable to set a max token to limit the response
+- models vary in their standard or default responses with some models tending to give very long-winded responses and others tend to give more short and succinct answers by default.
 
 * **Advanced**: Field reserved for future enhanced configuration options.  Contact support if you need additional AI settings beyond those provided within the UI.
 
@@ -178,135 +187,39 @@ Tokens vary across different ai models, but in general a token equates to .7 wor
 3. Click **Cancel** to discard changes
 4. The assistant will be deployed and become available for use
 
-
-upload/manage context files to provide a knowledge base to the assistant ("Workspace Files")
 ---
 
-## Resource Management
+## Manage AI File Content 
+The Assistant Workspace allows you to upload and manage files to provide a proprietary context knowledge base to the assistant.  
 
-### CPU and Memory Allocation
+**To access Workspace files**:
 
-AI workloads require careful resource management to ensure optimal performance:
+* Navigate to the assistant dashboard.
+* Click **View workspace** on the left menu.
 
-#### CPU Allocation
-- **Cores**: Allocate sufficient CPU cores based on model requirements
-- **Performance**: More cores enable faster inference and parallel processing
-- **Scalability**: Consider future scaling when allocating resources
+## Add Files to the Workspace
 
-#### Memory Allocation
-- **RAM**: Ensure adequate memory for model loading and inference
-- **Requirements**: Larger models require more memory
-- **Efficiency**: Proper memory allocation prevents performance bottlenecks
+* Click **Upload** on the left menu and click the "Choose Files" button.
+* **Navigate and select** the desired file(s).
+* Click **Open** to add the selected files to the upload queue.  
+* Optionally, a description and Preferred Tier can be configured per file.
+* Click **Start** to begin the upload process.
+!!! note " Do NOT reload or close the browser window"
+    A popup message will display the upload queue, file sizes and upload progress per individual file.  Refrain from reloading or closing the browser page until the uploads have all completed to ensure full transfer of the files. 
 
-### GPU Configuration
 
-For enhanced AI performance, GPU resources can be allocated:
+## Modify Workspace Files
 
-#### GPU Resource Groups
-- **CPU Only**: Use CPU-only processing (default)
-- **GPU Acceleration**: Utilize GPU hardware for faster inference
-- **Hybrid**: Allow CPU fallback when GPU resources are unavailable
+Select a file in the list and click **Edit** on the left menu to modify name, description or preferred tier.
 
-#### GPU Settings
-- **Memory Mapping**: Enable dynamic GPU memory allocation
-- **Fallback Options**: Configure CPU fallback behavior
-- **Resource Sharing**: Manage GPU resource sharing between workloads
+### Remove Workspace Files
 
-### Storage Considerations
+* Select the desired file(s) and click **Delete** on the left menu. 
+* Click **Yes** to confirm the delete operation.
 
-AI models require storage for:
-
-#### Model Files
-- **Storage Tiers**: Select appropriate storage tier based on performance needs
-- **Capacity**: Ensure sufficient space for model files
-- **Performance**: Faster storage improves model loading times
-
-#### Context and History
-- **Chat History**: Configure conversation history retention
-- **Context Size**: Set appropriate context window size for model capabilities
-- **Persistence**: Determine data persistence requirements
 
 ---
 
-## Security and Privacy
-
-### Local Processing
-
-The VergeOS AI feature provides complete data privacy by processing all AI operations locally:
-
-#### Data Security
-- **Local Processing**: All AI inference occurs within your VergeOS environment
-- **No External Calls**: No data sent to external AI services
-- **Privacy Protection**: Sensitive data remains within your control
-
-#### Network Isolation
-- **Private Networks**: AI services can operate on isolated networks
-- **Access Control**: Implement network-level access controls
-- **Compliance**: Maintain compliance with data protection regulations
-
-### Access Management
-
-Control access to AI features through VergeOS's built-in security:
-
-#### User Permissions
-- **Role-Based Access**: Control who can create and manage AI components
-- **Resource Limits**: Set resource allocation limits per user or group
-- **Audit Trails**: Monitor AI resource usage and access
-
-#### API Security
-- **Authentication**: Secure API access to AI services
-- **Authorization**: Control API endpoint access
-- **Rate Limiting**: Implement usage controls and quotas
-
----
-
-
-
-## Best Practices
-
-### Model Selection
-
-Choose appropriate models based on your requirements:
-
-#### Performance Considerations
-- **Resource Availability**: Select models that fit your hardware constraints
-- **Response Time**: Balance model capability with inference speed
-- **Concurrent Users**: Consider multi-user access patterns
-
-#### Use Case Matching
-- **General Purpose**: Use Llama models for broad language tasks
-- **Code Generation**: Use Phi-4 for programming and mathematical tasks
-- **Specialized Tasks**: Select models optimized for specific domains
-
-### Resource Optimization
-
-Optimize resource allocation for efficiency:
-
-#### Scaling Strategy
-- **Start Small**: Begin with minimal resources and scale as needed
-- **Monitor Usage**: Track resource utilization and adjust accordingly
-- **Peak Planning**: Plan for peak usage scenarios
-
-#### Cost Management
-- **Right-Sizing**: Allocate appropriate resources without over-provisioning
-- **Scheduling**: Consider workload scheduling for resource optimization
-- **Monitoring**: Implement resource monitoring and alerting
-
-### Maintenance and Updates
-
-Keep your AI infrastructure current:
-
-#### Model Updates
-- **Version Management**: Track model versions and updates
-- **Testing**: Test model updates in development environments
-- **Rollback Plans**: Maintain rollback capabilities for model updates
-
-#### Performance Monitoring
-- **Response Times**: Monitor AI response performance
-- **Resource Usage**: Track CPU, memory, and GPU utilization
-- **Error Rates**: Monitor for AI service errors and failures
-
----
 
 ## Troubleshooting
 
@@ -344,8 +257,5 @@ Keep your AI infrastructure current:
 
 ---
 
-## Version Information
-
-This guide covers the AI features available in VergeOS version 25.2.0.dev-161-gfb00558 and later. Features and functionality may vary in different versions.
 
 

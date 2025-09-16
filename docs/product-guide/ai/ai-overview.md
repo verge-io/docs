@@ -1,6 +1,6 @@
 # Sovereign AI (VergeIQ)
 
-!!! info "New Feature"  
+!!! info "New Feature"
     This page documents functionality added in VergeOS v25.2.
 
 VergeIQ introduces integrated artificial intelligence capabilities directly within your VergeOS environment, enabling organizations to instantly deploy and manage AI models and assistants locally. By eliminating reliance on external cloud services, VergeIQ provides secure, private AI functionality, making sovereign AI implementations accessible from a price, simplicity, and scalability standpoint.
