@@ -140,11 +140,8 @@ VergeOS vSAN employs a sophisticated block-level architecture that forms the fou
     - Space efficiency
     - Performance impact management
 
-- **Compression**:
-    - Inline compression
-    - Algorithm optimization
-    - Resource efficiency
-    - Space savings
+!!! note "Compression"
+    VergeOS vSAN does not perform inline compression on stored data. Compression is only applied when syncing data between sites over the network to optimize bandwidth usage.
 
 ## System Resilience
 
