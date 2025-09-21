@@ -9,8 +9,8 @@
 - Minimum of 16GB RAM dedicated to VergeOS
 - IPMI, iDrac, iLO, or equivalent technology
 - NVMe direct-attached (preferred), HBA or RAID controller that supports JBOD or IT mode - NO RAID
-- 1 x 1GbE NIC for External Network (Intel, Mellanox, or Broadcom)
-- 1 x 10GbE NIC for Core Fabric Network (Intel, Mellanox, or Broadcom)
+- 1 x 1GbE NIC for External Network (Intel, NVIDIA Mellanox, or Broadcom)
+- 1 x 10GbE NIC for Core Fabric Network (Intel, NVIDIA Mellanox, or Broadcom)
 
 ### Controller Nodes (Node 1 and Node 2)
 
@@ -28,7 +28,7 @@
 - At least 2 nodes with the same disk configuration for data redundancy (required for vSAN)
 
 !!! warning "Consumer-Grade Disks"
-    VergeOS does not officially support consumer-grade disks. Only enterprise-grade storage devices should be used in production (and backup of production) environments. Consumer-grade disks may be acceptable for test, development, or proof-of-concept environments where data loss is acceptable. 
+    VergeOS does not officially support consumer-grade disks. Only enterprise-grade storage devices should be used in production (and backup of production) environments. Consumer-grade disks may be acceptable for test, development, or proof-of-concept environments where data loss is acceptable.
 
 !!! warning "Large HDD Considerations"
     HDDs larger than 8TB are not recommended in non-archive-specific environments due to extended drive rebuild times, which can impact system performance and availability.
@@ -46,8 +46,8 @@
 - Minimum of 16GB RAM dedicated to VergeOS
 - IPMI, iDrac, iLO, or equivalent technology
 - NVMe direct-attached (preferred) or HBA
-- 2 x 25/40/100GbE NICs (Intel, Mellanox, or Broadcom)
-- 2 x 10/25/40/100GbE NICs (Intel, Mellanox, or Broadcom)
+- 2 x 25/40/100GbE NICs (Intel, NVIDIA Mellanox, or Broadcom)
+- 2 x 10/25/40/100GbE NICs (Intel, NVIDIA Mellanox, or Broadcom)
 - **Dedicated Controller Nodes** (recommended for production environments)
 
 ### Controller Nodes (Node 1 and Node 2) - Recommended
