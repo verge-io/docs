@@ -152,8 +152,6 @@ If your environment and risk tolerance support using consumer drives, follow the
 
 ### Redundancy and Protection Strategies
 
-**Enhanced vSAN Redundancy:** Implement robust vSAN fault tolerance using RAID-Z2 equivalent configurations or mirror setups that can tolerate multiple simultaneous drive failures.
-
 **Comprehensive Backup Strategy:** Establish rigorous backup procedures that extend beyond vSAN's built-in redundancy, including off-site backup capabilities for critical data.
 
 **Proactive Replacement Planning:** Develop drive replacement procedures and maintain spare drives to minimize downtime when consumer drives reach end-of-life.
