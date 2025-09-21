@@ -27,7 +27,7 @@ dateCreated: 2024-09-20T16:30:00.000Z
 
 ## Overview
 
-While VergeOS is designed to work optimally with enterprise-grade storage hardware, many organizations and homelab enthusiasts consider consumer drives as a cost-effective alternative. This guide examines the key differences between consumer and enterprise drives, explains the specific risks when using consumer drives with VergeOS's vSAN technology, and provides practical strategies for making informed decisions about storage hardware.
+While **VergeOS is designed to work optimally with enterprise-grade storage hardware**, many organizations and homelab enthusiasts consider consumer drives as a cost-effective alternative. This guide examines the key differences between consumer and enterprise drives, explains the specific risks when using consumer drives with VergeOS's vSAN technology, and provides practical strategies for making informed decisions about storage hardware.
 
 Consumer drives can work with VergeOS, but they require careful consideration of performance limitations, durability concerns, and operational risks that may impact system reliability and data integrity in production environments.
 
