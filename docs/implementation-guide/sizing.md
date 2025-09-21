@@ -1,5 +1,5 @@
 !!! note "Workload Resources"
-    The resources listed below are the requirements for VergeOS. Additional resources will be required to support your specific workloads. When planning your deployment, ensure you account for the resources needed by your virtual machines, applications, and other workloads running on the system.
+    The resources listed below are the **minimum requirements for VergeOS**. Additional resources will be required to support your specific workloads. When planning your deployment, ensure you account for the resources needed by your virtual machines, applications, and other workloads running on the system.
 
 ## Minimum Requirements
 
@@ -14,20 +14,24 @@
 
 ### Controller Nodes (Node 1 and Node 2)
 
-- 1 x +2.7Ghz CPU
-- 1GB of RAM per 1TB of storage for each node
-- **Tier 0**: 1 x NVMe direct-attached SSD for vSAN metadata with 3 Drive Writes Per Day (DWPD) or equivalent
-- **Tier 0**: 5GB of storage per 1TB of usable capacity for vSAN metadata
+- 1 x +2.7GHz CPU
+- 1GB of RAM per 1TB of storage for each node (minimum requirement)
+- **Tier 0**: 1 x Enterprise-grade NVMe direct-attached SSD for vSAN metadata with 3 Drive Writes Per Day (DWPD) or equivalent
+- **Tier 0**: 5GB of storage per 1TB of usable capacity for vSAN metadata (dedicated metadata storage)
 
-### Storage Nodes (Nodes that partipate in vSAN storage)
+### Storage Nodes (Nodes that participate in vSAN storage)
 
-- +2.7Ghz CPU
-- 1GB of RAM per 1TB of RAW storage for each node
-- Minimum of one NVMe or SATA/SAS SSD per node for workload storage
-- HDDs can be used for snapshot, archive, or file based service storage
-- At least 2 nodes with the same disk configuration for data redundancy
+- +2.7GHz CPU
+- 1GB of RAM per 1TB of RAW storage for each node (minimum requirement)
+- Minimum of one Enterprise-grade NVMe or Enterprise-grade SATA/SAS SSD per node for workload storage (primary storage tier)
+- Enterprise-grade HDDs can be used for snapshot, archive, or file-based service storage (secondary storage tier)
+- At least 2 nodes with the same disk configuration for data redundancy (required for vSAN)
 
-!!! warning "HDDs larger than 8TB are not recommended in non-archive-specific environments due to extended drive rebuild times."
+!!! warning "Consumer-Grade Disks"
+    VergeOS does not officially support consumer-grade disks. Only enterprise-grade storage devices should be used in production (and backup of production) environments. Consumer-grade disks may be acceptable for test, development, or proof-of-concept environments where data loss is acceptable. 
+
+!!! warning "Large HDD Considerations"
+    HDDs larger than 8TB are not recommended in non-archive-specific environments due to extended drive rebuild times, which can impact system performance and availability.
 
 ### Compute-only Nodes
 
@@ -42,24 +46,23 @@
 - Minimum of 16GB RAM dedicated to VergeOS
 - IPMI, iDrac, iLO, or equivalent technology
 - NVMe direct-attached (preferred) or HBA
-- Minimum of 16GB RAM dedicated to VergeOS
 - 2 x 25/40/100GbE NICs (Intel, Mellanox, or Broadcom)
 - 2 x 10/25/40/100GbE NICs (Intel, Mellanox, or Broadcom)
-- **Dedicated Controller Nodes**
+- **Dedicated Controller Nodes** (recommended for production environments)
 
 ### Controller Nodes (Node 1 and Node 2) - Recommended
 
-- 1 x +3.0Ghz CPU
-- **Tier 0**: 2 x NVMe direct-attached SSD for vSAN metadata with 3 Drive Writes Per Day (DWPD) or equivalent
-- **Tier 0**: 10GB of storage per 1TB of usable capacity for vSAN metadata
+- 1 x +3.0GHz CPU
+- **Tier 0**: 2 x NVMe direct-attached SSD for vSAN metadata with 3 Drive Writes Per Day (DWPD) or equivalent (redundant configuration)
+- **Tier 0**: 10GB of storage per 1TB of usable capacity for vSAN metadata (dedicated metadata storage)
 
-### Storage Nodes (Nodes that partipate in vSAN storage) - Recommended
+### Storage Nodes (Nodes that participate in vSAN storage) - Recommended
 
-- +3.0Ghz CPU
+- +3.0GHz CPU
 - 1 CPU core per disk
-- 1.5GB of RAM per 1TB of storage for each node
+- 1.5GB of RAM per 1TB of storage for each node (recommended for better performance)
 - 2 x NVMe or SATA/SAS SSD per node for guest usage; more SSDs recommended for enhanced performance
-- At least 2 nodes with the same disk configuration for data redundancy
+- At least 2 nodes with the same disk configuration for data redundancy (required for vSAN)
 
 ### Compute-only Nodes - Recommended
 
@@ -67,7 +70,7 @@
 - CPU and Memory should be architected for workloads running on these nodes
 
 !!! note "Additional Resources for Workloads"
-    Remember to account for additional resources needed by your specific workloads, virtual machines, and applications when planning your deployment.
+    Remember to account for additional resources needed by your specific workloads, virtual machines, and applications when planning your deployment. Consider peak usage scenarios and growth requirements.
 
 ---
 
