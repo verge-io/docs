@@ -22,6 +22,9 @@ dateCreated: 2024-09-20T16:30:00.000Z
 
 # Consumer Drives in VergeOS: Understanding Risks and Best Practices
 
+!!! note "Compatibility Notice"
+    While most consumer drives are compatible with VergeOS, some consumer-grade storage devices may not function properly due to firmware limitations, non-standard command implementations, or compatibility issues with VergeOS.  
+
 ## Overview
 
 While VergeOS is designed to work optimally with enterprise-grade storage hardware, many organizations and homelab enthusiasts consider consumer drives as a cost-effective alternative. This guide examines the key differences between consumer and enterprise drives, explains the specific risks when using consumer drives with VergeOS's vSAN technology, and provides practical strategies for making informed decisions about storage hardware.
