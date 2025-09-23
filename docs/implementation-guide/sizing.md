@@ -28,7 +28,7 @@
 - At least 2 nodes with the same disk configuration for data redundancy (required for vSAN)
 
 !!! warning "Consumer-Grade Disks"
-    VergeOS does not officially support consumer-grade disks. Only enterprise-grade storage devices should be used in production (and backup of production) environments. Consumer-grade disks may be acceptable for test, development, or proof-of-concept environments where data loss is acceptable. For more information see the [Using Consumer Drives](/knowledge-base/consumer-drives-vergeos-risks-best-practices/) kb article.
+    VergeOS does not officially support consumer-grade disks. Only enterprise-grade storage devices should be used in production (and backup of production) environments. Consumer-grade disks may be acceptable for test, development, or proof-of-concept environments where data loss is acceptable. Some consumer-grade storage devices may not function properly due to firmware limitations, non-standard command implementations, or compatibility issues with VergeOS.
 
 !!! warning "Large HDD Considerations"
     HDDs larger than 8TB are not recommended in non-archive-specific environments due to extended drive rebuild times, which can impact system performance and availability.
