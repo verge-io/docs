@@ -91,10 +91,10 @@ Alternatively, select --Custom-- and provide a **URL** to download a .gguf model
   * System prompt
   * Conversation history
   
-- !!! tip "Tokens"
-- 1 token ≈ 4 characters (average for English)
-- 1 word ≈ 1.33 tokens
-- 8192 tokens ≈ 2,000–4,000 words or ~12–20 pages of text
+!!! tip "Tokens"
+    * 1 token ≈ 4 characters (average for English)
+    * 1 word ≈ 1.33 tokens
+    * 8192 tokens ≈ 2,000–4,000 words or ~12–20 pages of text
 
 
 !!! note "Context Size Considerations"
@@ -125,56 +125,54 @@ When you create a new model, a new assistant is also created by default. The *Ne
 AI assistants are configured AI models that provide specific capabilities and behavior with your AI functionality. They can be customized with specific prompts and settings to tailor performance and types of responses.
 
 
-!!! note "Upon creation of a new model, a new assistant is automatically created with default settings, or those selected on the *Assistant* tab. A new assistant can also be created by navigating to AI > New Assistant."
+### Create an Assistant
 
-* **Assistant (General)**
+1. **Initiate a new assistant:** Upon creation of a new model, a new assistant is automatically created with default settings, or those selected on the *Assistant* tab. A new assistant can also be created by navigating to AI > New Assistant.
 
- 
-  * **Name**: Enter a descriptive name for the assistant. 
+
+* **Name**: Enter a descriptive name for the assistant. 
   !!! tip "When a new assistant is created automatically because you just created a model, the name will default to the same name as the model."
 
-  * **Description** (optional): Additional details can be entered to describe the model's configuration, purpose, etc.
-  * **Model**: Choose from available base models (e.g., Llama-3.2, Phi-4-Instruct). 
-  !!! tip "When an assistant was auto-created along with a new model creation, this field is automatically set to the assocatied model and cannot be edited."
+* **Description** (optional): Additional details can be entered to describe the model's configuration, purpose, etc.
+* **Model**: Choose from available base models (e.g., Llama-3.2, Phi-4-Instruct). 
+  !!! tip "When an assistant was auto-created along with a new model creation, this field is automatically set to the associated model and cannot be edited."
 
 
 * **Settings Configuration**
 
 * **Chat History**: Configure conversation retention (interactive chat sessions only)
   * ***Default On*** - chat history is automatically enabled at the start of a session, but can be disabled
-  * ***Default Off** - chat history is automatically disabled at the start of a session, but can be enabled
+  * ***Default Off*** - chat history is automatically disabled at the start of a session, but can be enabled
   * ***Always On*** - chat history is always enabled; cannot be disabled
   * ***Always Off** - chat history is always disabled; cannot be enabled
 
-!!! tip "You can select to disable chat history per session upon starting a new chat session."
+!!! tip "You can select to delete chat history per session upon starting a new chat session."
 
 
-- **Disable Think**: some models support think, some do not; whether to disable this will often be use case dependent; the think process has been shown to improve accuracy of results; tradeoff is that it will use more resources and make results take longer 
-multi-step reasoning, can be useful for complex math or logic problems, debugging code, strategy planning
-can disable this option to get quicker responses, use less resources
-the ai model "shows its work"
+* **Disable Think**: Enables or disables multistep reasoning. When active, the AI “shows its work” to improve accuracy; this is especially useful for complex logic, math, debugging, or strategic planning. Disabling think yields faster responses and lower resource usage, but may reduce precision. 
 
-**System Prompt**
-- **System Prompt**: allows you to define the assistant's personality, capabilities, and behavior guidelines
-- **Note**: This instruction is given to the model for every chat interaction
-- tradeoffs on system prompt length: the longer this prompt, the more focused/accurate/better results are possible, but longer prompts will eat up more resources (memory, consumption of context window, etc.)
-remember that the entire system prompt is submitted and processed with each query; so it does consume part of the context size (maximum number of tokens model can process in a single input sequence)
+!!! note "Availability of the *Think* feature depends on model support."
 
-- **Temperature**: Controls response creativity and randomness of generated responses. (0.0 = deterministic, 1.0 = creative)
+* **System Prompt**: Sets foundational instructions for the AI’s behavior, tone, and task orientation. This prompt influences how the model interprets context and generates responses. Precision matters; ambiguous or overloaded prompts can degrade output quality. The system prompt instruction is given to the model for every chat interaction. 
+
+!!! note "System Prompt Considerations"
+    * Longer prompts can improve response accuracy and task alignment, but they also increase resource usage.
+    * The full system prompt is reprocessed with every query and contributes to the model’s total input token count (context length), which may limit available space for user input and prior conversation.
+
+* **Temperature**: Controls response creativity and randomness of generated responses. (0.0 = deterministic, 1.0 = creative), ex: 0.2 tight, consistent phrasing; 0.75 metaphor, humor, unexpected angles
 General Guidance: 
   * Low temperatures (e.g., 0.0–0.3) - deterministic, focused, and repeatable answers; ideal for uses such as technical documentation compliance guidance, customer support
   * High Temperatures (e.g., 0.7–1.0) - creative, exploratory, less predictable responses; ideal for brainstorming, design ideation, audience-specific phrasing
   * Medium temperatures (e.g., 0.4–0.6) - responses balance structure with some variation, less formal and robotic than lower temperatures; great for scenario planning, UI/UX analysis, or infrastructure trade-offs
 
-ex: 0.2 tight, consistent phrasing
-0.7 metaphor, humor, unexpected angles
 
-- **Context Score**: (default 65) sliding scale of how the model will evaluate how relevant, useful or salient a piece of information is within a given context window.  It helps to decide what to focus on, what to ignore or compress, what to retain across turns, etc. a "mental highlighter"
+* **Context Score**: (default 65) Level to determine how the model will evaluate how relevant, useful or salient a piece of information is within a given context window.  This value sets the minimum score required for a given piece of context (token?) to be considered applicable.  It helps to decide what to focus on, what to ignore or compress, what to retain across turns, etc. s
 - optimum context score will depend on 1) model used 2) context information (e.g. documents uploaded to the assistant workspace) 3) use case
+0 will match anything, 100 means it must match perfectly. 
+????- deals with text within the conversation (prompts/answers), info within the text db, info in workspace documents?
 
 
-
-- **Max Tokens**: Set maximum response length (default: 0 = no limit) tokens are chunks of text - like words, sub-words, or characters that the model understands. 
+* **Max Tokens**: (default: 0 = no limit) Set maximum system response length in tokens 
 Tokens vary across different ai models, but in general a token equates to .7 words.
 - when setting a max token, it should be set to less than model's context size
 - for many use cases, it is preferrable to set a max token to limit the response
