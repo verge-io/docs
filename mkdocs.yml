@@ -304,7 +304,7 @@ nav:
       - USB Passthrough: product-guide/system/usb-passthrough.md
       - One-to-One PCI Passthrough: product-guide/system/generic-pci-passthrough.md
     - Maintenance & Monitoring:
-      - Alarms: product-guide/operations/alarms.md
+      - Alarms 🆕: product-guide/operations/alarms.md
       - Subscriptions/Alerts:
         - Creating Subscriptions: product-guide/system/subscriptions-overview.md
         - Subscription Profiles: product-guide/system/subscription-profiles.md
