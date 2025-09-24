@@ -24,8 +24,8 @@ When active alarms are present in your system, a notification badge will appear 
 The Main Dashboard includes a dedicated **Alarms** tile that provides:  
 
 * **Active alarm count**: Total number of unresolved system alarms
-* **Visual status indicator**: Color-coded status showing overall system health
-* **Quick access**: Direct link to the detailed alarms view
+* **Visual status indicator**: Color-coded status (yellow: warnings only, red: ??error?alert??critical??) 
+* **Quick access**: Direct link to the Alarms Dashboard, providing a detailed alarms view
 
 !!! info "Snoozed alarms are not included in the active alarm count displayed on the dashboard tile."
 
@@ -43,9 +43,9 @@ Many alarms also appear as contextual messages at the top of relevant dashboard 
 
 To view a comprehensive list of all active alarms, use either method:
 
-**Option 1**: Click the **alarm icon** in the top navigation bar
+**1**: Click the **alarm icon** in the top navigation bar
 
-**Option 2**: Navigate to **System** → **Alarms**
+**2**: Navigate to **System** → **Alarms**
 
 ### Understanding Alarm Severity Levels
 
@@ -88,22 +88,25 @@ Different alarm types require different resolution approaches:
 3. **Security Concerns**: Update settings, apply patches, or implement security measures
 4. **Maintenance Tasks**: Complete required system maintenance or updates
 
-**To access resolution options:**
-- Double-click any alarm in the list to navigate directly to the associated dashboard or configuration page
-- Review detailed information and access necessary tools from the target page
+**To access resolution options:**  
+
+  * Double-click any alarm in the list to navigate directly to the associated dashboard or configuration page
+  * Review detailed information and access necessary tools from the target page
 
 ### Auto-Resolvable Alarms
 
-Some alarms include built-in resolution actions that can be triggered directly from the alarm notification, streamlining the resolution process.
-Examples of auto-resolvable alarms include: 
+Some alarms include built-in resolution actions that can be triggered directly from the alarm notification, streamlining the resolution process.  The following scenarios show examples of auto-resolvable alarms:
 
-**Virtual Machine Restart Required**
-- **Issue**: A VM requires reboot/restart to complete configuration changes
-- **Resolution**: Click the **Restart** button directly from the alarm notification
 
-**Firewall Rules Pending Application**
-- **Issue**: Network firewall rules have been configured but not yet applied
-- **Resolution**: Click the **Apply Rules** button to activate pending rule changes
+#### Example 1: Virtual Machine Restart Required 
+
+   * **Issue**: A VM requires reboot/restart to complete configuration changes  
+   * **Resolution**: Click the **Restart** button directly from the alarm notification
+
+#### Example 2: Firewall Rules Pending Application
+
+   * **Issue**: Network firewall rules have been configured but not yet applied
+   * **Resolution**: Click the **Apply Rules** button to activate pending rule changes
 
 
 ## Snoozing Alarms
@@ -138,7 +141,6 @@ Snoozing allows you to temporarily suppress alarm notifications when:
 **Modifying Snooze Duration:**
 To adjust an existing snooze period, follow the standard snooze process with the new desired duration. The system will update the snooze period accordingly.
 
-## Best Practices
 
 ## Best Practices
 
@@ -167,13 +169,15 @@ To adjust an existing snooze period, follow the standard snooze process with the
 
 ## Troubleshooting
 
-**Alarms not appearing:**
-- Refresh the browser page
-- Verify user permissions for alarm viewing
-- Check if alarms are snoozed and hidden from active view
+**Alarms not appearing**  
 
-**Cannot resolve alarms:**
-- Ensure you have appropriate administrative privileges
-- Verify the underlying issue has been properly addressed
-- Contact system administrators for assistance with system-level alarms
+* Refresh the browser page  
+* Verify user permissions for alarm viewing  
+* Check if alarms are snoozed and hidden from active view
+
+**Cannot resolve alarms** 
+ 
+* Ensure you have appropriate administrative privileges  
+* Verify the underlying issue has been properly addressed  
+* Contact system administrators for assistance with system-level alarms  
 
