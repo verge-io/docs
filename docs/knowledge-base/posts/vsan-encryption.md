@@ -19,6 +19,8 @@ You can confirm that the vSAN has encryption enabled by navigating to **Nodes> N
 
 - Encryption for the vSAN is configured **during the initial installation only**.
 
+- Data is encrypted using AES256
+
 - System startup on an encrypted system can be configured two different ways:
 
    1.  The most common method is by having encryption keys written to a USB drive during the initial installation. In this scenario, these drives are typically plugged into the first two nodes of an encrypted system to boot normally. All other nodes do not require them, as Node 1 and Node 2 are the controller nodes. The USB drive does not require much storage at all, less than 1GB.
