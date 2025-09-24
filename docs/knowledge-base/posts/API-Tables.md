@@ -189,7 +189,7 @@ The file_actions table sends file actions.
   - **overwrite** : Overwrite the file.
   - **add_link** : Add a file link.
   - **delete_link** : Delete a file link.
-  - **delete_references** : Delete file references.
+  - **delete_reference** : Delete file references.
 
 - **Example:**
 
