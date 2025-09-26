@@ -190,8 +190,8 @@ For memory-related performance problems:
 To deepen your understanding of VergeOS memory management:
 
 - **[Node Resource Monitoring](/product-guide/system/nodes-overview)**: Learn to monitor physical node resources
-- **[VM Performance Optimization](/knowledge-base/posts/db-vm-best-practices)**: Discover techniques for optimizing VM performance
-- **[Capacity Planning Guide](/knowledge-base/posts/understanding-vsan-growth)**: Understand resource planning across compute and storage
+- **[VM Performance Optimization](/product-guide/virtual-machines/vm-best-practices)**: Discover techniques for optimizing VM performance
+<!--- **[Capacity Planning Guide](/knowledge-base/posts/understanding-vsan-growth)**: Understand resource planning across compute and storage -->
 
 !!! info "Additional Resources"
     For specific questions about memory allocation in your environment, consult the VergeOS support team at support@verge.io or review the performance monitoring sections in the product documentation.

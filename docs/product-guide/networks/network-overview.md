@@ -6,7 +6,7 @@
 
 New to VergeOS networking? Start here:
 
-1. **[Learn networking concepts](product-guide/networks/network-concepts/)** - Understand VergeOS network fundamentals
+1. **[Learn networking concepts](/product-guide/networks/network-concepts)** - Understand VergeOS network fundamentals
 2. **[Follow quick start tasks](/product-guide/networks/network-quickstart)** - Complete common networking configurations
 3. **[Connect to existing infrastructure](/product-guide/networks/connect-lan-wan)** - Integrate with your current network
 
@@ -129,7 +129,7 @@ Establish secure tunnels for remote access and site-to-site connectivity.
 
 ### Getting Started
 
-- [Networking Overview](/product-guide/networks/overview/)
+- [Network Concepts](/product-guide/networks/network-concepts)
 - [Quick Start Guide](/product-guide/networks/network-quickstart)
 - [Connect to Existing Networks](/product-guide/networks/connect-lan-wan)
 

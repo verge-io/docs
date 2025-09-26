@@ -36,16 +36,16 @@ Before implementing these procedures:
 
 ## Available Procedures
 
-### [Installation Procedures](installation-procedures/)
+### [Installation Procedures](/product-guide/operations/sop-verge-install)
 Complete initial system deployment including hardware preparation, network configuration, and multi-node setup.
 
-### [Scale Out Nodes](scale-out-nodes/)  
+### [Scale Out Nodes](/product-guide/operations/sop-scale-out)  
 Add new nodes to expand compute and storage capacity while maintaining system availability and data integrity.
 
-### [System Updates](system-updates/)
+### [System Updates](/product-guide/operations/sop-update)
 Apply VergeOS version updates safely with proper verification and rollback planning.
 
-### [vSAN Scale Up](vsan-scale-up/)
+### [vSAN Scale Up](/product-guide/operations/vsan-scale-up-sop)
 Expand storage capacity by adding drives to existing nodes with proper data rebalancing procedures.
 
 ## Support and Assistance

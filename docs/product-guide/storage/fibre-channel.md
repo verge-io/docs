@@ -117,5 +117,5 @@ By default, VergeOS manages multiple paths to each LUN in an active/passive conf
 
 - [Storage Tiers](/product-guide/storage/storage-tiers)  
 - [vSAN Architecture](/product-guide/storage/vsan-architecture)  
-- [Maintenance Mode](/product-guide/system/maintenance-mode)  
+- [Maintenance Mode](/product-guide/operations/maintenance-mode)  
 - [System Monitoring](/product-guide/system/subscriptions-overview)

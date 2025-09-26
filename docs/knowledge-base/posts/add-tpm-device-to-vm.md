@@ -187,7 +187,7 @@ With TPM enabled, your VM can support:
 ## Additional Resources
 
 - [Virtual Machine Best Practices](/product-guide/virtual-machines/vm-best-practices)
-- [UEFI Configuration Guide](/knowledge-base/posts/uefi-tweaks-for-imported-vms)
+- [UEFI Import Guide](/knowledge-base/importing-windows-server-with-uefi-into-vergeos)
 - [Device Passthrough Overview](/product-guide/system/device-pass-overview)
 
 ---

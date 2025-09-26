@@ -193,4 +193,4 @@ These logs often contain helpful troubleshooting information, such as IPsec erro
 
 ### Trace Network Traffic
 
-Tracing the traffic on the VPN network and associated external and internal networks can often assist troubleshooting efforts by identifying if tunnel traffic is reaching a network, identifying source and destination addresses of packets, etc. **Diagnostics > Diagnostics Query:** ***TCP Dump***.  The [KB - Network Diagnostics Guide](/knowledge-base/network-diagnostics-guide) provides a reference for using the Network Diagnostics tool.
+Tracing the traffic on the VPN network and associated external and internal networks can often assist troubleshooting efforts by identifying if tunnel traffic is reaching a network, identifying source and destination addresses of packets, etc. **Diagnostics > Diagnostics Query:** ***TCP Dump***.  The [Network Diagnostics Guide](/product-guide/networks/network-diagnostics) provides a reference for using the Network Diagnostics tool.
