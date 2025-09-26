@@ -8,11 +8,11 @@ date: 2025-08-24T01:23:17Z
 parent_guide: "VM Lifecycle Management"
 workflow_stage: "configuration"
 prerequisites:
-  - "VM must be created first (see VM-Creation-API.md)"
+  - "VM must be created first (see api-vm-creation.md)"
   - "Valid VergeOS API credentials with VM management permissions"
 next_steps:
-  - "Power Management: VM-Power-Management.md"
-  - "Advanced Operations: VM-Advanced-Operations.md"
+  - "Power Management: api-vm-power-management.md"
+  - "Advanced Operations: api-vm-advanced-operations.md"
 key_concepts:
   - "vm_key_vs_machine_key"
   - "hotplug_capabilities"
@@ -59,10 +59,10 @@ This guide covers modifying virtual machine configurations in VergeOS after crea
 **Stage**: VM Configuration (3 of 4)
 **Input**: VM key (42) + Machine key (54), configuration changes
 **Output**: Updated VM settings, modified hardware
-**Previous**: VM powered on → [`VM-Power-Management.md`](VM-Power-Management.md)
+**Previous**: VM powered on → [`VM Power Management`](api-vm-power-management.md)
 **Common Next Steps**:
-- Advanced operations → [`VM-Advanced-Operations.md`](VM-Advanced-Operations.md)
-- Power cycle for changes → [`VM-Power-Management.md`](VM-Power-Management.md)
+- Advanced operations → [`VM Advanced Operations`](api-vm-advanced-operations.md)
+- Power cycle for changes → [`VM Power Management`](api-vm-power-management.md)
 <!-- END CONTEXT -->
 
 ## This Document Helps With
@@ -96,7 +96,7 @@ This guide covers modifying virtual machine configurations in VergeOS after crea
 ```
 
 ### Prerequisites
-VM must be created first → See [`VM-Creation-API.md`](VM-Creation-API.md)
+VM must be created first → See [`VM Creation`](api-vm-creation.md)
 
 ## API Quick Reference
 | Operation | Method | Endpoint | Key Type | Purpose |
@@ -524,9 +524,9 @@ curl "https://your-vergeos.example.com/api/v4/vms/42?fields=allow_hotplug" \
 **Solution**: Choose different storage tier or reduce disk size.
 
 !!! note "Related Operations"
-    - **VM Creation**: See [`VM-Creation-API.md`](VM-Creation-API.md) for initial VM setup
-    - **Power Management**: See [`VM-Power-Management.md`](VM-Power-Management.md) for start/stop operations
-    - **Advanced Operations**: See [`VM-Advanced-Operations.md`](VM-Advanced-Operations.md) for cloning and snapshots
+    - **VM Creation**: See [`VM Creation`](api-vm-creation.md) for initial VM setup
+    - **Power Management**: See [`VM Power Management`](api-vm-power-management.md) for start/stop operations
+    - **Advanced Operations**: See [`VM Advanced Operations`](api-vm-advanced-operations.md) for cloning and snapshots
 
 !!! question "Need Help?"
     For additional support with VM configuration:

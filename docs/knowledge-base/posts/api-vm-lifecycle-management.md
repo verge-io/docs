@@ -62,19 +62,19 @@ dateCreated: 2025-08-24T01:35:27Z
 
 ### 1. VM Creation API
 Create virtual machines programmatically with drives, devices, and network interfaces using REST API calls.
-**→ See:** [`VM-Creation-API.md`](VM-Creation-API.md)
+**→ See:** [`VM Creation`](api-vm-creation.md)
 
 ### 2. VM Power Management API
 Start, stop, reboot, and monitor VM power states through API endpoints.
-**→ See:** [`VM-Power-Management.md`](VM-Power-Management.md)
+**→ See:** [`VM Power Management`](api-vm-power-management.md)
 
 ### 3. VM Configuration API
 Modify CPU, RAM, storage drives, and network settings via API calls.
-**→ See:** [`VM-Configuration.md`](VM-Configuration.md)
+**→ See:** [`VM Configuration`](api-vm-configuration.md)
 
 ### 4. Advanced VM Operations API
 Clone VMs, create snapshots, delete virtual machines, and troubleshoot issues using API methods.
-**→ See:** [`VM-Advanced-Operations.md`](VM-Advanced-Operations.md)
+**→ See:** [`VM Advanced Operations`](api-vm-advanced-operations.md)
 
 ## Key API Concepts
 
@@ -101,10 +101,10 @@ Clone VMs, create snapshots, delete virtual machines, and troubleshoot issues us
 ## API Quick Reference by Stage
 | Stage | Primary Operations | Key Endpoints | Documentation |
 |-------|-------------------|---------------|---------------|
-| **Creation** | Create VM, Add drives, Add NICs, Add devices | `POST /api/v4/vms`, `POST /api/v4/machine_*` | [`VM-Creation-API.md`](VM-Creation-API.md) |
-| **Power** | Start, Stop, Reboot, Monitor | `POST /api/v4/vm_actions`, `GET /api/v4/machine_status` | [`VM-Power-Management.md`](VM-Power-Management.md) |
-| **Config** | Update CPU/RAM, Manage drives, Manage NICs | `PUT /api/v4/vms`, `POST/PUT/DELETE /api/v4/machine_*` | [`VM-Configuration.md`](VM-Configuration.md) |
-| **Advanced** | Clone, Snapshot, Delete, Troubleshoot | `POST /api/v4/vm_actions`, `DELETE /api/v4/vms` | [`VM-Advanced-Operations.md`](VM-Advanced-Operations.md) |
+| **Creation** | Create VM, Add drives, Add NICs, Add devices | `POST /api/v4/vms`, `POST /api/v4/machine_*` | [`VM Creation`](api-vm-creation.md) |
+| **Power** | Start, Stop, Reboot, Monitor | `POST /api/v4/vm_actions`, `GET /api/v4/machine_status` | [`VM Power Management`](api-vm-power-management.md) |
+| **Config** | Update CPU/RAM, Manage drives, Manage NICs | `PUT /api/v4/vms`, `POST/PUT/DELETE /api/v4/machine_*` | [`VM Configuration`](api-vm-configuration.md) |
+| **Advanced** | Clone, Snapshot, Delete, Troubleshoot | `POST /api/v4/vm_actions`, `DELETE /api/v4/vms` | [`VM Advanced Operations`](api-vm-advanced-operations.md) |
 
 ## Common API Error Scenarios
 - **Authentication Issues**: Invalid API key, expired tokens, insufficient permissions

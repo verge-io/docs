@@ -8,13 +8,13 @@ date: 2025-08-24T01:24:43Z
 parent_guide: "VM Lifecycle Management"
 workflow_stage: "advanced_operations"
 prerequisites:
-  - "VM must be created first (see VM-Creation-API.md)"
+  - "VM must be created first (see api-vm-creation.md)"
   - "Valid VergeOS API credentials with VM management permissions"
   - "Understanding of VM lifecycle stages"
 related_docs:
-  - "Creation: VM-Creation-API.md"
-  - "Power Management: VM-Power-Management.md"
-  - "Configuration: VM-Configuration.md"
+  - "Creation: api-vm-creation.md"
+  - "Power Management: api-vm-power-management.md"
+  - "Configuration: api-vm-configuration.md"
 key_concepts:
   - "vm_cloning"
   - "snapshot_management"
@@ -62,7 +62,7 @@ This guide covers advanced virtual machine operations in VergeOS, including clon
 **Stage**: VM Advanced Operations (4 of 4)
 **Input**: VM key (42), operation type, parameters
 **Output**: Cloned VMs, snapshots, cleanup confirmation
-**Previous**: VM configured → [`VM-Configuration.md`](VM-Configuration.md)
+**Previous**: VM configured → [`VM Configuration`](api-vm-configuration.md)
 **Common Operations**:
 - Clone for templates → New VM creation cycle
 - Snapshot for backup → Recovery workflows
@@ -99,7 +99,7 @@ This guide covers advanced virtual machine operations in VergeOS, including clon
 ```
 
 ### Prerequisites
-VM must exist → See [`VM-Creation-API.md`](VM-Creation-API.md)
+VM must exist → See [`VM Creation`](api-vm-creation.md)
 
 ## API Quick Reference
 | Operation | Method | Endpoint | Key Type | Purpose |
@@ -588,9 +588,9 @@ curl "https://your-vergeos.example.com/api/v4/storage_tiers" \
 7. **Document operational procedures** for your team
 
 !!! note "Related Operations"
-    - **VM Creation**: See [`VM-Creation-API.md`](VM-Creation-API.md) for initial VM setup
-    - **Power Management**: See [`VM-Power-Management.md`](VM-Power-Management.md) for start/stop operations
-    - **Configuration**: See [`VM-Configuration.md`](VM-Configuration.md) for CPU/RAM changes
+    - **VM Creation**: See [`VM Creation`](api-vm-creation.md) for initial VM setup
+    - **Power Management**: See [`VM Power Management`](api-vm-power-management.md) for start/stop operations
+    - **Configuration**: See [`VM Configuration`](api-vm-configuration.md) for CPU/RAM changes
 
 !!! question "Need Help?"
     For additional support with VM advanced operations:
