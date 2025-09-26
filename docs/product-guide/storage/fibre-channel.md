@@ -73,7 +73,7 @@ By default, VergeOS manages multiple paths to each LUN in an active/passive conf
     We recommend adding all Fibre Channel LUNs via [**Scaling Up a vSAN**](/knowledge-base/scaling-up-a-vsan) procedure.
 
 !!! warning "Use Maintenance Mode"
-    Always enter [**Maintenance Mode**](/product-guide/system/maintenance-mode) before modifying storage configurations.
+    Always enter [**Maintenance Mode**](/product-guide/operations/maintenance-mode) before modifying storage configurations.
 
 ## Best Practices
 
