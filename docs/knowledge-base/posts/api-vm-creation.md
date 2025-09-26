@@ -11,9 +11,9 @@ prerequisites:
   - "Valid VergeOS API credentials with VM management permissions"
   - "Understanding of clusters, vnets, and resource groups"
 next_steps:
-  - "Power Management: VM-Power-Management.md"
-  - "Configuration: VM-Configuration.md"
-  - "Advanced Operations: VM-Advanced-Operations.md"
+  - "Power Management: api-vm-power-management.md"
+  - "Configuration: api-vm-configuration.md"
+  - "Advanced Operations: api-vm-advanced-operations.md"
 key_concepts:
   - "vm_key_vs_machine_key"
   - "storage_tiers"
@@ -62,9 +62,9 @@ This guide covers creating virtual machines in VergeOS, from basic VM creation t
 **Output**: VM key (42) + Machine key (54)
 **Next**: Use keys for power management
 **Common Next Steps**:
-- Power on VM → [`VM-Power-Management.md`](VM-Power-Management.md)
-- Configure settings → [`VM-Configuration.md`](VM-Configuration.md)
-- Advanced operations → [`VM-Advanced-Operations.md`](VM-Advanced-Operations.md)
+- Power on VM → [`VM Power Management`](api-vm-power-management.md)
+- Configure settings → [`VM Configuration`](api-vm-configuration.md)
+- Advanced operations → [`VM Advanced Operations`](api-vm-advanced-operations.md)
 <!-- END CONTEXT -->
 
 ## This Document Helps With
@@ -99,7 +99,7 @@ This guide covers creating virtual machines in VergeOS, from basic VM creation t
 ```
 
 ### Next Steps
-After VM creation → Power Management ([`VM-Power-Management.md`](VM-Power-Management.md))
+After VM creation → Power Management ([`VM Power Management`](api-vm-power-management.md))
 
 ## API Quick Reference
 | Operation | Method | Endpoint | Key Type | Purpose |
@@ -466,9 +466,9 @@ curl -X POST "https://your-vergeos.example.com/api/v4/machine_devices" \
 ```
 
 !!! note "Related Operations"
-    - **Power Management**: See [`VM-Power-Management.md`](VM-Power-Management.md) for starting/stopping VMs
-    - **Configuration**: See [`VM-Configuration.md`](VM-Configuration.md) for CPU/RAM changes  
-    - **Advanced Operations**: See [`VM-Advanced-Operations.md`](VM-Advanced-Operations.md) for cloning and snapshots
+    - **Power Management**: See [`VM Power Management`](api-vm-power-management.md) for starting/stopping VMs
+    - **Configuration**: See [`VM Configuration`](api-vm-configuration.md) for CPU/RAM changes  
+    - **Advanced Operations**: See [`VM Advanced Operations`](api-vm-advanced-operations.md) for cloning and snapshots
 
 !!! question "Need Help?"
     For additional support with VM creation:
