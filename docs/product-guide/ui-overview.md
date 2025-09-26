@@ -64,16 +64,26 @@ There is a dashboard available for each individual virtual machine. The dashboar
 
 ## Menus
 
-Top menu - static menu with all options
-Left menu - items related to current location (current location is noted near top screen, alongside the left menu.)
-
-### User Menu
+* **Top menu:** a static menu that always provides access to all application options
+* **Left menu:** provides a selection of actions relevant to the current location with the application. The current location is noted near top screen, alongside the left menu
+* **User Menu:** in the top right corner, provides user-specific options, such as modifying display name, changing your password, adding ssh keys, etc.
 
 
 ## Themes
 
-### Light Mode/Dark Mode1
+Themes control the look and feel for the user interface, including colors, fonts, icons.  They allow users to customize the visual experience without changing any underlying functionality.  VergeOS includes a **default Light Mode** and a **default Dark Mode** theme.  Customers can also create custom themes, such as a branded theme to match a company's identity.  
+
+To select a different theme: use the drop-down menu in the top right ?? quick links/
+
 
 ## Auto-Refresh 
 
 ## Product Documentation
+
+Context-sensitive help documentation can be accessed from the user interface:
+  * Link at the bottom of the page   
+  * Select the ? icon in the utility bar and select *Product Guide*
+
+
+## Object Tagging
+The [Tagging System](/product-guide/system/tagging) allows you to create user-defined tags and categories to customize identification and organization of objects within your system.
