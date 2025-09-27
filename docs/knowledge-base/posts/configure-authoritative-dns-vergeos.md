@@ -387,19 +387,22 @@ Provide different answers to internal vs external clients:
 After successfully configuring authoritative DNS, consider these additional implementations:
 
 **Monitoring and Maintenance**:
+
 - Set up DNS query logging and monitoring
 - Implement automated DNS record management
 - Plan for DNS server updates and maintenance
 
 **Advanced Features**:
+
 - Explore DNSSEC implementation for enhanced security
 - Consider DNS load balancing for high availability
 - Investigate integration with dynamic DNS services
 
 **Related Documentation**:
-- [VergeOS Network Troubleshooting](/knowledge-base/network-troubleshooting)
-- [VergeOS Firewall Rules Configuration](/knowledge-base/firewall-rules)
-- [VergeOS Network Monitoring](/knowledge-base/network-monitoring)
+
+* [VergeOS Network Troubleshooting](/product-guide/networks/net-troubleshooting)
+* [VergeOS Firewall Rules Configuration](/product-guide/networks/network-rules)
+* [VergeOS Network Dashboards](/product-guide/networks/network-dashboards)
 
 For additional support with DNS configuration, contact VergeOS Support with specific details about your implementation requirements and any error messages encountered.
 

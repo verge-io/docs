@@ -75,7 +75,7 @@ VergeFabric delivers software-defined networking (SDN) for simplified and flexib
 * **[Fine-tuned Network Control (Rules)](/product-guide/networks/network-rules)** - Use network rules for very precise control of traffic at each virtual network (routes, translations (NAT/PAT), and security policies)
 * **[Granular Traffic Monitoring](/product-guide/networks/tracking-net-statistics)** - Measure and analyze network traffic per network rule for performance optimization
 * **[VPN](/product-guide/vpn/vpn-overview)** - Establish secure-tunnel remote access and site-to-site connections using WireGuard and IPsec
-* **[Integrated Network Diagnostics](/product-guide/networks/net-diagnostics)** - Utilize convenient and comprehensive network troubleshooting tools for each network, directly from the VergeOS dashboard
+* **[Integrated Network Diagnostics](/product-guide/networks/network-diagnostics)** - Utilize convenient and comprehensive network troubleshooting tools for each network, directly from the VergeOS dashboard
 * **[Port Mirroring Option](/product-guide/networks/port-mirroring)** - Duplicate all of a network's traffic to a VM for in-depth monitoring or analysis with your tool of choice
 
 ## User Management

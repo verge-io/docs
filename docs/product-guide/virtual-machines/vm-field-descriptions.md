@@ -109,7 +109,7 @@ Sets the time clock for the VM
   
 !!! tip
     - Linux typically expects time in UTC format
-    - Windows typically expects time in local time; hence, this setting should be set to Local Time -OR- appropriate registry change can be made within Windows to use UTC.  The following KB article provides additional information: [Windows Time Shift](/knowledge-base/windows--time-shift).
+    - Windows typically expects time in local time; hence, this setting should be set to Local Time -OR- appropriate registry change can be made within Windows to use UTC.  The following KB article provides additional information: [Windows Time Shift](/knowledge-base/windows-time-shift).
 
 **UEFI (deselected by default)**
 Selection needed will typically depend on the guest OS to be used on the VM. (selected=UEFI, unselected=BIOS) Modifying this option on an existing VM requires a power cycle of the VM.

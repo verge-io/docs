@@ -57,7 +57,7 @@ VergeOS can be configured to allow users to authenticate using their corporate A
 - ***Update User Display Name:*** - Update VergeOS user display name to match display name within Azure.
 - ***Update Group Membership:*** - Update the groups that a VergeOS user is a member of. (A Group Scope is required for this to function.)
 
-19. **Additional Optional Fields:**  See [**Authorization Sources (General)**](product-guide/auth/auth-sources-overview) for information regarding additional optional Fields.
+19. **Additional Optional Fields:**  See [**Authorization Sources (General)**](/product-guide/auth/auth-sources-overview) for information regarding additional optional Fields.
 
 ## Add Azure Groups to VergeOS
 
