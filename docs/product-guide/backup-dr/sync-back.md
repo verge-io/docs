@@ -13,13 +13,14 @@ Now a name is listed in the sync-back field (i.e. Sync-back for NAMEofSYNC). Thi
 
 ## Initiate a Sync Back
 
-1. On the sending system, navigate to the outgoing sync dashboard
-2. Click **Remote Snaps** on the left menu.
-3. Click to select desired snapshot(s) to sync back (selected snapshots have check mark on the left).
-4. Click **Request** on the left menu.
+1. On the sending system, ensure that it can receive system snapshots from the receiving system by navigating to the **Site** of the receiving system.  See [**Add Sites**](/product-guide/system/site-dashboard-add-sites), step 8: Cloud Snapshots.
+2. Navigate to the outgoing sync dashboard.
+3. Click **Remote Snaps** on the left menu.
+4. Click to select desired snapshot(s) to sync back (selected snapshots have check mark on the left).
+5. Click **Request** on the left menu.
     - **Retention** for the retrieved snapshot will default to 3 Days; can be changed as desired. (Changing retention setting here does not affect the retention in place for the snapshot on the remote system.)
     - **Priority** (0-9) can be specified, with lower number to sync before higher number; only relevant when multiple sync backs will be initiated.
     - Optionally, a **Prefix** can be added to the snapshot name in order to clearly distinguish it from other snapshots; text entered in this field is appended to the beginning of the existing snapshot name for the retrieved copy.
-5. After options are configured as desired, click **Submit** to initiate the sync-back.
+6. After options are configured as desired, click **Submit** to initiate the sync-back.
 
 The dashboard for the configured sync-back (Incoming Sync) appears. A log entry will indicate a started sync. When the sync-back retrieval is completed, another log entry is generated showing statistics. The retrieved snapshot can be accessed by clicking the **Received snapshots** count-box on this page. Select the snapshot in the list to access menu options that allow for restoring the entire local system or individual VMs contained within the snapshot.
