@@ -143,7 +143,7 @@ Establish secure tunnels for remote access and site-to-site connectivity.
 ### Monitoring & Management
 
 - [Network Dashboards](/product-guide/networks/network-dashboards)
-- [Network Diagnostics](/product-guide/networks/net-diagnostics)
+- [Network Diagnostics](/product-guide/networks/network-diagnostics)
 - [Troubleshooting](/product-guide/networks/net-troubleshooting)
 
 ### Advanced Topics

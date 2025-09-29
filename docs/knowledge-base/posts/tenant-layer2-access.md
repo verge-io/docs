@@ -76,7 +76,7 @@ dateCreated: 2025-02-10T19:58:59.133Z
 5. In the configuration page, enable **Physical Bridged** to activate Bridge Mode. It is best to set the **On Power Loss** setting to ***Power On*** so that the network starts up automatically after a system power loss.
 6. **Submit** your changes.
 7. **Reboot** the necessary nodes for Bridge Mode to become active.
-!!! warning "Follow proper [**Maintenance Mode**](/product-guide/system/maintenance-mode) procedures when rebooting a node to avoid workload disruptions."
+!!! warning "Follow proper [**Maintenance Mode**](/product-guide/operations/maintenance-mode) procedures when rebooting a node to avoid workload disruptions."
 
 ### Configuring a Trunk Mode Virtual Wire
 
