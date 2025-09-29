@@ -75,7 +75,7 @@ VergeOS provides several tools for monitoring and analyzing network traffic:
 * [**Network Dashboards:**](/product-guide/networks/network-dashboards) Observe real-time and historical network activity within the VergeOS user interface
 * [**Port Mirroring:**](/product-guide/networks/port-mirroring) Replicate a network's traffic to a VM NIC for comprehensive examination and analysis
 * [**Track Network Statistics:**](/product-guide/networks/tracking-net-statistics) Obtain granular traffic analysis per individual network rule
-* [**Network Diagnostics Tool:**](/product-guide/networks/net-diagnostics) Use built-in, user-friendly interface on each network for convenient troubleshooting   
+* [**Network Diagnostics Tool:**](/product-guide/networks/network-diagnostics) Use built-in, user-friendly interface on each network for convenient troubleshooting   
 *  [**Subscriptions:**](/product-guide/system/subscriptions-overview) Select Network-type subscriptions to create alerts and reports for your networks
 
 

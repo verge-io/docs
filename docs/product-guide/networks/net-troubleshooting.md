@@ -53,7 +53,7 @@ If a VM is still unable to reach its network router after the NIC interface/driv
 
 ## Common Network Diagnostics
 
-Some common network diagnostic queries are explained within this section; see [**Network - Diagnostics**](/product-guide/networks/net-diagnostics) for additional information regarding the built-in diagnostics tool.
+Some common network diagnostic queries are explained within this section; see [**Network - Diagnostics**](/product-guide/networks/network-diagnostics) for additional information regarding the built-in diagnostics tool.
 
 ### Check that a Network has Internet Connectivity
 

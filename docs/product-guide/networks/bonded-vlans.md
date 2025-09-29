@@ -40,7 +40,7 @@ See KB article: [How to Create an External Network](/knowledge-base/create-exter
 
 ### Basic Connectivity Test
 
-1. Verify the network has connectivity using the [Network Diagnostics Tool](/product-guide/networks/net-diagnostics)
+1. Verify the network has connectivity using the [Network Diagnostics Tool](/product-guide/networks/network-diagnostics)
 2. Common diagnostic tests include:
     - Ping test to verify basic connectivity
     - DNS lookup to verify name resolution
@@ -75,4 +75,4 @@ If you encounter issues:
 
 - [How to Create an External Network](/knowledge-base/create-external-network)
 - [Change External Network to Bonded with tagged VLAN](/knowledge-base/change-external-vlan-to-bonded)
-- [Network Diagnostics Tool](/product-guide/networks/net-diagnostics)
+- [Network Diagnostics Tool](/product-guide/networks/network-diagnostics)
