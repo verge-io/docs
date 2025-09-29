@@ -38,7 +38,7 @@ Navigate to a **specific node** where the NVIDIA hardware is installed. (*Main D
    * Click **Submit** to save the resource group.  
 After the resource group is selected or new one created, a **Success** message should appear indicating resource rules were created for the device(s)
    * If this driver has not been used previously or IOMMU is not yet enabled for the system, **a reboot of the associated node(s)** will be necessary before you can complete the vGPU configuration.  
-!!! warning "Follow proper [**Maintenance Mode**](/product-guide/system/maintenance-mode) procedures when rebooting a node to avoid workload disruptions.  Also, ensure that IOMMU / VT-d / SR-IOV is enabled in the BIOS."
+!!! warning "Follow proper [**Maintenance Mode**](/product-guide/operations/maintenance-mode) procedures when rebooting a node to avoid workload disruptions.  Also, ensure that IOMMU / VT-d / SR-IOV is enabled in the BIOS."
    * After the node(s) are rebooted, if necessary, navigate to the NVIDIA vGPU resource group just created (Main Dashboard > Resources > Groups > double-click the group)
    * Click **Edit** on the left menu.
    * Select the desired **NVIDIA vGPU Profile** from the dropdown list.  Consult NVIDIA vGPU documentation for information regarding available profile types for your hardware.
@@ -48,7 +48,7 @@ After the resource group is selected or new one created, a **Success** message s
 
 * Click **Submit** to save the client driver settings for the resource group.  
 
-!!! tip "Once changes have been made, it may be required to put the node into [**Maintenance Mode**](/product-guide/system/maintenance-mode) and click **Reload Drivers**."
+!!! tip "Once changes have been made, it may be required to put the node into [**Maintenance Mode**](/product-guide/operations/maintenance-mode) and click **Reload Drivers**."
 
 The resource group dashboard contains the resource rules that were auto-generated for your selected NVIDIA devices. You can click an individual rule to view configuration detail. A system-created rule can be modified as needed; for example, the *Node* filter can be changed to *-- None --* to include matching devices from all nodes.  Information regarding resource rules is available at: [**Device Passthrough Overview - Resource Rules**](/product-guide/system/device-pass-overview#resource-rules)
 
