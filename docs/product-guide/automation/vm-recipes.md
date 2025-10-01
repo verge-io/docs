@@ -96,7 +96,7 @@ Recipe questions are used to determine key values.  When a recipe is created, so
 
 ## Simulate a VM recipe
 
-You can simulate a VM recipe to test it.  Simulating the recipe will allow you to view the user input form, test field validation and create sample answer files to verify your configuration.  
+You can simulate a VM recipe to test it.  Simulating the recipe will allow you to view the user input form, test field validation and create sample answer files to verify your configuration. You may only simulate a VM recipe that is published to your local catalog. You may reference and clone Marketplace recipes to local catalog if desired. 
 
 * To simply view the User input form: while at the VM recipe dashboard, click **Simulate Recipe** from the left menu.  
 * From the simulated input form, you can test field validation and generate test answer files by clicking the **Simulate** button at the bottom of the form.
