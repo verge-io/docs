@@ -142,6 +142,10 @@ nav:
       - Compute Nodes: implementation-guide/compute-nodes.md
       - Storage Nodes: implementation-guide/storage-nodes.md
     - Reference Architecture:
+      - Overview: reference-architecture/reference-architecture-overview.md
+      - HCI (2-6 Nodes): reference-architecture/hci.md
+      - UCI Hybrid (6-10 Nodes): reference-architecture/uci-hybrid.md
+      - UCI (10+ Nodes): reference-architecture/uci.md
       - Edge / ROBO: reference-architecture/edge.md
       #- Enterprise Multi-Site: reference-architecture/enterprise-multi-site.md
       - Cloud Providers: reference-architecture/csp.md
