@@ -3,16 +3,15 @@
 !!! info "**New Feature**"  
     This page documents functionality added in **VergeOS v25.2**
 
-## Using AI - general steps
+## Using VergeIQ - General Steps
 
-1. [Define a Model](#ai-model-management) - by selecting from the included curated selection or uploading a supported .gguf format model
-2. [Configure an Assistant](#ai-assistant-management) - based on the defined model, with tailored settings for the particular use case or task
-3. [Upload Content to the Workspace](#upload-files-to-workspace) - upload files to provide the assistant with relevant content
-4. Engage with the Assistant:
-
-  * programmatically connect to the assistant via the built-in **OpenAI router** (typical method)
-  * interactively communicate with the assistant by starting a [**New Chat Session**](product-guide/ai/chat-sessions) within the VergeOS UI (helpful for testing)
-  * programmatically connect to the assistant via the VergeOS API
+1. [Define a Model](#ai-model-management) by selecting from the included curated selection or uploading a supported .gguf format model
+2. [Configure an Assistant](#ai-assistant-management) based on the defined model, with tailored settings for the particular use case or task
+3. [Upload Content to the Workspace](#upload-files-to-workspace) providing files to the assistant with relevant content
+4. Engage:  
+    * [OpenAI Router (common method)](product-guide/ai/open-ai-router): programmatically connect to the assistant via the built-in engine
+    * [Interactive Chat Session](product-guide/ai/chat-sessions): communicate with the assistant within the VergeOS UI (helpful for testing)
+    * **VergeOS API**: access the assistant using standard VergeOS API commands 
   
 
 
@@ -26,7 +25,7 @@ The AI Settings page allows you to configure system-wide defaults for AI compone
 
 * **Default AI Cluster**: Specifies the default compute cluster for AI workloads. New AI models will deploy to this cluster by default. 
 
-* **Default AI Network**: sets the default network for AI services. New AI models will use this network unless selection is overridden.
+* **Default AI Network**: Sets the default network for AI services. New AI models will use this network unless selection is overridden.
 
 ---
 
@@ -34,13 +33,13 @@ The AI Settings page allows you to configure system-wide defaults for AI compone
 
 ## AI Model Management
 
-AI models provide the underlying intelligence for your AI assistants and applications.  VergeOS supports a wide range of publicly-available AI models in *.gguf format, allowing users to download and run any compatible file. Several curated models are presented, along with default settings, that can be readily installed from the AI Dashboard.
+AI models provide the underlying intelligence for your AI assistants and applications.  VergeOS supports a wide range of AI models, by supporting the standard *.gguf format, allowing users to download and run any compatible file. Several curated models are presented, along with default settings, that can be readily installed from the AI Dashboard.
 
 
 ### Install an AI Model
 
 !!! tip "Curated Models"
-    - The system includes several pre-configured models, with default settings are available to automatically download
+    - The system includes several pre-configured models, configured with default settings, available to automatically download
 
 1. Navigate to **AI** > **Models**. 
 2. To install one of the available curated models, Click **Click to Install** on the desired model.  Alternatively, click *New Model* on the left menu. 
@@ -54,14 +53,12 @@ Alternatively, select --Custom-- and provide a **URL** to download a .gguf model
 * **Description** (optional): Add details about the model’s purpose, configuration, or intended use. 
 
 * **Cores**(default: 8): max number of cores to allocate to each model instance. 
+    * GPU-enabled models: Core allocation has minimal impact.
+    * CPU-only or fallback mode: Core allocation is critical for startup and performance.
+    * Over-provisioning cores does not improve performance; unused cores remain idle.
 
-  * GPU-enabled models: Core allocation has minimal impact.
-  * CPU-only or fallback mode: Core allocation is critical for startup and performance.
-  * Over-provisioning cores does not improve performance; unused cores remain idle.
 
-
-* **RAM** (default: 2GB): Memory allocated per model instance
-  
+* **RAM** (default: 2GB): Memory allocated per model instance:
     * A baseline amount of RAM is required to load and run the model. Actual requirements vary by model type and size. 
     * A general guideline for the foundational amount of RAM needed : allocate slightly more RAM than the model’s file size (e.g., a 2GB model may need 3GB RAM).
     * Additional RAM may be needed to support concurrent requests (i.e. parallel setting) and larger context windows. 
@@ -70,44 +67,41 @@ Alternatively, select --Custom-- and provide a **URL** to download a .gguf model
 
 * **Cluster**: Select the VergeOS cluster where the model will run. Defaults to the cluster defined in global AI settings.
 
-* **GPU Resource Group Allocation**: - Choose a GPU resource group to assign GPU devices, or select --CPU Only-- to run exclusively on CPUs.
+* **GPU Resource Group Allocation**: - Choose a GPU resource group to assign GPU devices, or select *--CPU Only--* to run exclusively on CPUs.
 
- !!! info "GPU devices are distributed from pools called [Resource Groups](/product-guide/system/device-pass-overview#resource-groups)."
+!!! info "GPU devices are distributed from pools called [Resource Groups](/product-guide/system/device-pass-overview#resource-groups)."
 
-* **Allow CPU Fallback if GPU resources are unavailable**: Enable this option to use CPU resources if GPU devices are unavailable. Ensure sufficient CPU cores are allocated for fallback scenarios.
+* **Allow CPU fallback if GPU resources are unavailable**: Enable this option to use CPU resources if GPU devices are unavailable. When using this option, ensure sufficient CPU cores are allocated for fallback scenarios.
 
 * **Enable Memory Mapping**
-  * Recommended for GPU-based models to conserve RAM (model loads into GPU memory)
-  * Typically, not recommended when using CPU only, as it will be much slower
-  * Sufficient RAM is still required to load the model initially
-
-
-* **Settings Configuration**
+    * Recommended for GPU-based models to conserve RAM (model loads into GPU memory)
+    * Typically, not recommended when using CPU only, as it will be much slower
+    * Sufficient RAM is still required to load the model initially
 
 * **Preferred Tier**: Select the storage tier for hosting the model.
 * **Context Size** (default 8192): - Maximum number of tokens the model can process in an active session. This includes:
-  * User input
-  * AI output
-  * System prompt
-  * Conversation history
+    * User input
+    * AI output
+    * System prompt
+    * Conversation history
   
-!!! tip "Tokens"
+??? tip "Tokens"
     * 1 token ≈ 4 characters (average for English)
     * 1 word ≈ 1.33 tokens
     * 8192 tokens ≈ 2,000–4,000 words or ~12–20 pages of text
 
 
-!!! note "Context Size Considerations"
-   * Coherence: Longer context improves continuity across conversations or documents
-   * Accuracy: More context enables better decision-making
-   * Performance: Larger context sizes require more RAM and compute resources
+??? note "Context Size Considerations"
+    * Coherence: Longer context improves continuity across conversations or documents
+    * Accuracy: More context enables better decision-making
+    * Performance: Larger context sizes require more RAM and compute resources
 
  
 * **Parallel**: Number of concurrent requests each model instance can handle
 * **Min Workers**: Minimum number of model instances launched when the model starts. 
 * **Max Workers**: Maximum number of model instances that can be launched to meet demand.
 
-!!! "The number of running model instances (workers) for a model will be reflected on the model dashboard, with each instance represented as a running worker."
+!!! tip "The number of running model instances (workers) for a model will be reflected on the model dashboard, with each instance represented as a running worker."
 
 * **Insert Think Tag**:- Adds a custom tag to distinguish chain-of-thought reasoning from final output. Some models suppress or treat this tag as non-output to reduce latency.
 
@@ -115,8 +109,10 @@ Alternatively, select --Custom-- and provide a **URL** to download a .gguf model
 
 5. Click **Submit** to download and configure the specified model. 
 
+!!! tip "The model may take several minutes or more to download.  The model dashboard (Click *Models* on the left menu and double-click the model) will indicate a "Downloading" status and progress while the model is actively transferring.  *Status* will change to "Online" when the model is fully downloaded, initialized and ready for use." 
+
 !!! tip "New Assistant"
-When you create a new model, a new assistant is also created by default. The *New Assistant* form will appear allowing customization of the new assistant's default settings.
+    When you create a new model, a new assistant is also created by default. The *New Assistant* form will appear allowing customization of the new assistant's default settings.
 
 ## AI Assistant Management
 
@@ -131,11 +127,10 @@ AI assistants are configured AI models that provide specific capabilities and be
 
 
 * **Name**: Enter a descriptive name for the assistant. 
-  !!! tip "When a new assistant is created automatically because you just created a model, the name will default to the same name as the model."
+!!! tip "When a new assistant is created automatically because you just created a model, the name will default to the same name as the model."
 
 * **Description** (optional): Additional details can be entered to describe the model's configuration, purpose, etc.
-* **Model**: Choose from available base models (e.g., Llama-3.2, Phi-4-Instruct). 
-  !!! tip "When an assistant was auto-created along with a new model creation, this field is automatically set to the associated model and cannot be edited."
+* **Model**: Choose from available base models (e.g., Llama-3.2, Phi-4-Instruct). When an assistant was auto-created along with a new model creation, this field is automatically set to the associated model and cannot be edited.
 
 
 * **Settings Configuration**
@@ -166,7 +161,7 @@ General Guidance:
   * Medium temperatures (e.g., 0.4–0.6) - responses balance structure with some variation, less formal and robotic than lower temperatures; great for scenario planning, UI/UX analysis, or infrastructure trade-offs
 
 
-* **Context Score**: (default 65) Level to determine how the model will evaluate how relevant, useful or salient a piece of information is within a given context window.  This value sets the minimum score required for a given piece of context (token?) to be considered applicable.  It helps to decide what to focus on, what to ignore or compress, what to retain across turns, etc. s
+* **Context Score**: (default 65) Level to determine how the model will evaluate how relevant, useful or salient a piece of information is within a given context window.  This value sets the minimum score required for a given piece of context to be considered applicable.  It helps to decide what to focus on, what to ignore or compress, what to retain across turns, etc. s
 - optimum context score will depend on 1) model used 2) context information (e.g. documents uploaded to the assistant workspace) 3) use case
 0 will match anything, 100 means it must match perfectly. 
 ????- deals with text within the conversation (prompts/answers), info within the text db, info in workspace documents?
@@ -175,7 +170,7 @@ General Guidance:
 * **Max Tokens**: (default: 0 = no limit) Set maximum system response length in tokens 
 Tokens vary across different ai models, but in general a token equates to .7 words.
 - when setting a max token, it should be set to less than model's context size
-- for many use cases, it is preferrable to set a max token to limit the response
+- for many use cases, it is preferrable to set a max token to limit the response (and keep from being too verbose)
 - models vary in their standard or default responses with some models tending to give very long-winded responses and others tend to give more short and succinct answers by default.
 
 * **Advanced**: Field reserved for future enhanced configuration options.  Contact support if you need additional AI settings beyond those provided within the UI.
@@ -222,6 +217,17 @@ Select a file in the list and click **Edit** on the left menu to modify name, de
 ## Troubleshooting
 
 ### Common Issues
+
+chat session error: "Error creating chat session"
+* make sure the model has been successfully downloaded and ?loaded into memory?initialized?
+* the model dashboard should show a status of "Online"
+
+chat session: takes a while for answer, blinking blue dot indicates "starting"
+* the model is loading for the first time and may take a few minutes or more, depending on the model size 
+
+chat session: not responding to last prompt, no blinking blue dot
+
+try to resubmit the prompt.
 
 #### Model Installation Failures
 - **Insufficient Resources**: Ensure adequate CPU, RAM, and storage

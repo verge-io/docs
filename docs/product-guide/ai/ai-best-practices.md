@@ -1,5 +1,14 @@
 ## Best Practices
 
+
+- trial and error
+- dont overprovision memory?
+- make sure model fits the task?
+- protect sensitive data
+- Implement robust access controls and audit trail - utilize verge granular permissions to control access
+- Use pilot projects to validate infrastructure and workflows before scaling
+- ongoing tracking of performance and usage
+
 ### Access Management
 
 Control access to AI features through VergeOS's built-in security:
