@@ -5,7 +5,7 @@
 
 ## Overview
 
-The VergeOS alarm system provides proactive monitoring and alerting to notify administrators of problems, concerns, and vulnerabilities within the system. Alarms are automatically generated notifications that make users aware of conditions requiring attention, such as:
+The VergeOS alarm system provides proactive monitoring and alerting to notify of problems, concerns, and vulnerabilities within the system. Alarms are automatically generated notifications that make users aware of conditions requiring attention, such as:
 
 - Missing or incorrect configuration settings
 - Potentially vulnerable system configurations
@@ -19,15 +19,15 @@ The VergeOS alarm system provides proactive monitoring and alerting to notify ad
 
 When active alarms are present in your system, a notification badge will appear next to the alarm icon <i class="bi bi-bell"></i> (bell) on the right side of the top navigation bar. This badge displays the total number of current, active, **non-snoozed** alarms requiring attention.
 
-### Main Dashboard Alert Tile
+### Main Dashboard Card
 
-The Main Dashboard includes a dedicated **Alarms** tile that provides:  
+The Main Dashboard includes a dedicated ***Alarms* card** that provides:  
 
 * **Active alarm count**: Total number of unresolved system alarms
-* **Visual status indicator**: Color-coded status (green: no alarms raised; yellow: warnings; red: error and/or critical) 
+* **Visual status indicator**: Color-coded status (green: no alarms raised; yellow: warnings; red: error and/or critical alarms) 
 * **Quick access**: Direct link to the Alarms Dashboard, providing a detailed view of current alarms
 
-!!! info "Snoozed alarms are not included in the active alarm count displayed on the dashboard tile."
+!!! info "Snoozed alarms are not included in the active alarm count displayed on the dashboard card."
 
 ### Contextual Dashboard Alerts
 
@@ -120,13 +120,15 @@ Snoozing allows you to temporarily suppress alarm notifications when:
 
 ### Managing Snoozed Alarms
 
-**Visual Indicators:**
-- **Snooze icon**: "Z" symbols appear at the far left of snoozed alarms
+**Visual Indicators:**  
+
+- **Snooze icon**: "Z" symbols ![zzz.png](/product-guide/screenshots/zzz.png) appear at the far left of snoozed alarms
 - **Snoozed field**: Shows "Yes" for currently snoozed items
-- **Snoozed Until**: Displays when the alarm will become active again
+- **Snoozed Until**: Indicates when the alarm will become active again
 - **Modified**: Shows the date/time when snooze was implemented
 
-**Modifying Snooze Duration:**
+**Modifying Snooze Duration:**  
+
 To adjust an existing snooze period, follow the standard snooze process with the new desired duration. The system will update the snooze period accordingly.
 
 
@@ -135,7 +137,7 @@ To adjust an existing snooze period, follow the standard snooze process with the
 * Check Regularly for Alarms
 * Before snoozing an Alarm: understand the importance of the alarm, and alert other VergeOS administrators
 * Note the type of alarm, e.g. Critical/Error/Warning to better understand importance and urgency level
-* Typically, it is not recommended that you snooze alarms marked as "Critical"; if you find it necessary to snooze a Critical alarm, **select a short snooze duration and verify other VergeOS administrators are aware of the alarm**.
+* Typically, it is not recommended that you snooze alarms marked as "Critical"; if you find it necessary to snooze a Critical alarm, **select a short snooze duration and verify other VergeOS administrators are aware of the alarm**
 
 
 ### Regular Monitoring
