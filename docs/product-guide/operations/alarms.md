@@ -5,7 +5,7 @@
 
 ## Overview
 
-The VergeOS alarm system provides proactive monitoring and alerting capabilities designed to notify administrators of problems, concerns, and vulnerabilities within the system. Alarms are automatically generated notifications that make users aware of conditions requiring attention, such as:
+The VergeOS alarm system provides proactive monitoring and alerting to notify administrators of problems, concerns, and vulnerabilities within the system. Alarms are automatically generated notifications that make users aware of conditions requiring attention, such as:
 
 - Missing or incorrect configuration settings
 - Potentially vulnerable system configurations
@@ -17,15 +17,15 @@ The VergeOS alarm system provides proactive monitoring and alerting capabilities
 
 ### Top Bar Indicator
 
-When active alarms are present in your system, a notification badge will appear next to the alarm icon (bell) on the right side of the top navigation bar. This badge displays the total number of current, active (non-snoozed) alarms requiring attention.
+When active alarms are present in your system, a notification badge will appear next to the alarm icon <i class="bi bi-bell"></i> (bell) on the right side of the top navigation bar. This badge displays the total number of current, active, **non-snoozed** alarms requiring attention.
 
 ### Main Dashboard Alert Tile
 
 The Main Dashboard includes a dedicated **Alarms** tile that provides:  
 
 * **Active alarm count**: Total number of unresolved system alarms
-* **Visual status indicator**: Color-coded status (yellow: warnings only, red: ??error?alert??critical??) 
-* **Quick access**: Direct link to the Alarms Dashboard, providing a detailed alarms view
+* **Visual status indicator**: Color-coded status (green: no alarms raised; yellow: warnings; red: error and/or critical) 
+* **Quick access**: Direct link to the Alarms Dashboard, providing a detailed view of current alarms
 
 !!! info "Snoozed alarms are not included in the active alarm count displayed on the dashboard tile."
 
@@ -43,23 +43,10 @@ Many alarms also appear as contextual messages at the top of relevant dashboard 
 
 To view a comprehensive list of all active alarms, use either method:
 
-**1**: Click the **alarm icon** in the top navigation bar
+**1**: Click the **alarm icon** <i class="bi bi-bell"></i> (bell) in the top navigation bar
 
 **2**: Navigate to **System** → **Alarms**
 
-### Understanding Alarm Severity Levels
-
-VergeOS categorizes alarms by severity to help administrators prioritize their response:
-
-| Severity Level | Description | Response Priority |
-|----------------|-------------|-------------------|
-| **Critical** | Serious conditions requiring immediate attention | Highest - Address immediately |
-| **Error** | Functionality issues that don't cause system-wide failure | High - Address promptly |
-| **Warning** | Potential issues that may not be immediately harmful | Medium - Plan resolution |
-| **Audit** | Access, changes, or compliance tracking events | Low - Review as needed |
-| **Debug** | Diagnostic information for troubleshooting | Low - Technical reference |
-| **Message** | General informational notifications | Low - Informational only |
-| **Summary** | Aggregate reports of multiple related events | Variable - Review contents |
 
 ### Alarm Ownership Types
 
@@ -77,7 +64,8 @@ VergeOS categorizes alarms by severity to help administrators prioritize their r
 
 ### Alarm Expiration
 
-Most alarms display "Never" in the **Expires** field because they require specific resolution actions rather than automatic expiration. Alarms remain active until the underlying condition is addressed or the alarm is manually snoozed.
+Most alarms display "Never" in the **Expires** field because they require specific resolution actions rather than automatic expiration. Alarms remain active until the underlying condition is addressed, or the alarm is manually snoozed.
+
 
 ## Resolving Alarms
 
@@ -118,9 +106,9 @@ Snoozing allows you to temporarily suppress alarm notifications when:
 * Waiting for replacement hardware to arrive
 * Planning maintenance during scheduled downtime
 * Coordinating with other team members before taking action
-* Deferring non-critical issues to a more appropriate time
+* Deferring non-critical (warning) issues to a more appropriate time
 
-!!! warning "Always understand the alarm's purpose and implications before snoozing. Delaying resolution of critical issues can impact system stability and security."
+!!! warning "Always understand the alarm's purpose and implications before snoozing. Delaying resolution of more urgent issues (e.g. Error or Critical Level) can impact system stability and security."
 
 ### How to Snooze Alarms
 
@@ -147,7 +135,7 @@ To adjust an existing snooze period, follow the standard snooze process with the
 * Check Regularly for Alarms
 * Before snoozing an Alarm: understand the importance of the alarm, and alert other VergeOS administrators
 * Note the type of alarm, e.g. Critical/Error/Warning to better understand importance and urgency level
-* Typically, it is not recommended that you snooze alarms marked as "Critical"; if you find it necessary to snooze a Critical alarm, select a short snooze duration and verify other VergeOS administrators are aware of the alarm.
+* Typically, it is not recommended that you snooze alarms marked as "Critical"; if you find it necessary to snooze a Critical alarm, **select a short snooze duration and verify other VergeOS administrators are aware of the alarm**.
 
 
 ### Regular Monitoring
@@ -157,14 +145,14 @@ To adjust an existing snooze period, follow the standard snooze process with the
 ### Snooze Management
 - **Understand before snoozing**: Always review alarm details and implications before deferring
 - **Team communication**: Notify other administrators when snoozing shared system alarms
-- **Critical alarm caution**: Avoid snoozing critical alarms unless absolutely necessary
-- **Short durations for critical issues**: If you must snooze critical alarms, use minimal durations
+- **Critical alarm caution**: Avoid snoozing Critical alarms
+- **Short durations for critical issues**: If you must snooze critical- or error-level alarms, use minimal durations
 
 ### Resolution Strategy
 - **Severity-based prioritization**: Use alarm severity levels to guide response timing
 - **Documentation**: Keep records of alarm resolutions for future reference
 - **Proactive approach**: Address warning-level alarms before they escalate
-- **Team coordination**: Ensure multiple administrators are aware of ongoing alarm situations
+- **Team coordination**: Ensure multiple administrators are aware of ongoing system alarm situations
 
 
 ## Troubleshooting
