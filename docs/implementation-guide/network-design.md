@@ -14,7 +14,7 @@ Please review the [core concepts](concepts.md) first to learn more about VergeOS
 
 - Core Fabric Networks 1 and 2 on their **own** dedicated layer 2 networks
 - The Core Fabric Networks for VergeOS Systems located in the same site need to be completely isolated from eachother
-- Core fabric networks in all nodes are connected to the same switching fabric (no switch hops between nodes)
+- Network latency between nodes on Core Fabric Networks should be <0.05ms (no switch hops)
 
 !!! warning "Core Fabric Network - No Switch Hops Between Nodes"
     All nodes must be connected to the same switching fabric with **zero switch hops** between them. Adding switch hops in the core fabric path will introduce latency that can significantly impact cluster performance and stability. This requirement applies to all Core Fabric Networks.
