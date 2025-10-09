@@ -6,14 +6,18 @@ Please review the [core concepts](concepts.md) first to learn more about VergeOS
 
 ## Generic Requirements (All network design models)
 
-- For environments with more than 2 nodes, switches are required for Core Fabric Networks
+- For environments with more than 2 nodes, switches are required for [Core Fabric Networks](../glossary.md#core-fabric-network)
 - Jumbo Frames configured on all Core Fabric Network switchports
 
     * Minimum MTU size 9000
-    * Recommended MTU size of **9192** and above
+    * Recommended MTU size of **9216** and above
 
 - Core Fabric Networks 1 and 2 on their **own** dedicated layer 2 networks
-- VergeOS Systems located in the same site need to be completely isolated from eachother
+- The Core Fabric Networks for VergeOS Systems located in the same site need to be completely isolated from eachother
+- Core fabric networks in all nodes are connected to the same switching fabric (no switch hops between nodes)
+
+!!! warning "Core Fabric Network - No Switch Hops Between Nodes"
+    All nodes must be connected to the same switching fabric with **zero switch hops** between them. Adding switch hops in the core fabric path will introduce latency that can significantly impact cluster performance and stability. This requirement applies to all Core Fabric Networks.
 
 ## Layer 2 Static + Dedicated Core Fabric
 
