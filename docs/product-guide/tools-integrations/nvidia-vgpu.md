@@ -70,22 +70,6 @@ The NVIDIA integration consists of three main layers:
 
 ## Supported Hardware
 
-**Tesla Series (Data Center):**
-
-- Tesla T4, T10, T20 - Optimized for AI inference and VDI
-- Tesla V100, A100, H100 - High-performance training and HPC
-- Tesla P4, P40, P100 - General-purpose GPU acceleration
-
-**Quadro Series (Professional Graphics):**
-
-- Quadro RTX 4000, 5000, 6000, 8000 - Professional workstation graphics
-- Quadro P4000, P5000, P6000 - CAD and engineering applications
-
-**RTX Series (Mixed Workloads):**
-
-- RTX A4000, A5000, A6000 - Professional content creation
-- RTX 4080, 4090 - High-end workloads (select models)
-
 !!! info "Hardware Requirements"
     - NVIDIA vGPU functionality requires a valid **NVIDIA vGPU software license**, such as Virtual PC, Virtual Apps, or Virtual Workstation. These licenses must match the selected vGPU profile and workload type.
     - Only select data center and professional GPUs support vGPU. Verify hardware and driver compatibility in the [NVIDIA vGPU Support Matrix](https://docs.nvidia.com/grid/latest/grid-vgpu-release-notes-generic-linux-kvm/index.html#supported-gpus){target="_blank"}.
