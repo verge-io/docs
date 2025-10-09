@@ -7,10 +7,10 @@ The NVIDIA integration with VergeOS enables GPU acceleration for virtual machine
 ## Key Features
 
 - **Shared GPU Resources**: Multiple VMs can access a single physical GPU with guaranteed isolation and performance
-- **Flexible vGPU Profiles**: Choose from workload-optimized configurations (A-series for VDI, B-series for AI/ML, Q-series for professional graphics)
-- **Live Migration Support**: Move GPU-accelerated VMs between nodes without downtime (experimental in 4.13+)
+- **Flexible vGPU Profiles**: Choose from workload-optimized configurations across NVIDIA's line of vGPU supported products
+- **Live Migration Support**: Move GPU-accelerated VMs between nodes without downtime
 - **Enterprise Management**: Centralized GPU resource allocation and monitoring through VergeOS interface
-- **Hardware Virtualization**: Support for Tesla, Quadro, and RTX series GPUs with vGPU capability
+- **Hardware Virtualization**: Support for all NVIDIA GPUs with vGPU capability
 
 ## Integration Benefits
 
@@ -52,7 +52,7 @@ The NVIDIA integration consists of three main layers:
 
 **Physical Layer:**
 
-- NVIDIA GPU hardware (Tesla, Quadro, RTX series with vGPU support)
+- NVIDIA GPU hardware
 - NVIDIA GRID host drivers installed on VergeOS nodes
 - IOMMU/SR-IOV hardware virtualization support
 
@@ -65,8 +65,8 @@ The NVIDIA integration consists of three main layers:
 **Application Layer:**
 
 - NVIDIA guest drivers installed in virtual machines
-- CUDA runtime and development libraries
-- Integration with AI frameworks and professional applications
+- CUDA runtime and development libraries in virtual machines
+- Integration with AI frameworks and professional applications in virtual machines
 
 ## Supported Hardware
 
@@ -74,26 +74,6 @@ The NVIDIA integration consists of three main layers:
     - NVIDIA vGPU functionality requires a valid **NVIDIA vGPU software license**, such as Virtual PC, Virtual Apps, or Virtual Workstation. These licenses must match the selected vGPU profile and workload type.
     - Only select data center and professional GPUs support vGPU. Verify hardware and driver compatibility in the [NVIDIA vGPU Support Matrix](https://docs.nvidia.com/grid/latest/grid-vgpu-release-notes-generic-linux-kvm/index.html#supported-gpus){target="_blank"}.
     - For an overview of licensing options, refer to the [NVIDIA Licensing Guide](https://www.nvidia.com/en-us/data-center/virtual-solutions/){target="_blank"}.
-
-## Software Ecosystem Integration
-
-**NVIDIA AI Platform:**
-
-- NVIDIA NGC container catalog with pre-optimized AI frameworks
-- CUDA development environment and cuDNN deep learning libraries
-- TensorRT inference optimization and RAPIDS data science acceleration
-
-**Development and Monitoring:**
-
-- Docker and Kubernetes GPU orchestration support
-- Integration with popular ML frameworks (TensorFlow, PyTorch, Jupyter)
-- GPU monitoring through NVIDIA Management Library (NVML)
-
-**Professional Applications:**
-
-- ISV-certified drivers for CAD and engineering software
-- NVIDIA Omniverse for collaborative 3D content creation
-- Professional visualization and VR/AR development tools
 
 ## vGPU Profile Types
 
@@ -126,10 +106,8 @@ The NVIDIA integration consists of three main layers:
 
 For assistance with NVIDIA integration:
 
-- **Implementation Support**: Detailed setup instructions available in the [NVIDIA vGPU Implementation Guide]
 - **VergeOS Support**: [Contact VergeOS support](/support) for platform-specific integration issues
 - **NVIDIA Support**: Access NVIDIA enterprise support for GPU hardware and driver questions
-- **Community Resources**: VergeOS and NVIDIA community forums for best practices and troubleshooting
 
 !!! success "GPU Acceleration Ready"
     NVIDIA integration with VergeOS delivers enterprise-grade GPU acceleration while maintaining the flexibility and efficiency of virtualized infrastructure. Start with the implementation guide to deploy GPU-accelerated workloads in your environment.
