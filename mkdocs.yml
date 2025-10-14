@@ -171,7 +171,6 @@ nav:
         - VM Snapshots and Restore: product-guide/backup-dr/vm-snapshots-restores.md
         - Tenant Snapshots: product-guide/tenants/tenant-snapshots.md
         - NAS Snapshots and Restore: product-guide/nas/volume-snapshots-restores.md
-        - Immutable Snapshots 🆕: product-guide/backup-dr/immutable-snapshots.md
       - Site Syncs:
         - Overview: product-guide/backup-dr/syncs-overview.md
         - Configuration: product-guide/backup-dr/sync-configuration.md
