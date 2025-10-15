@@ -66,6 +66,8 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.superfences
   - md_in_html
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.snippets:
