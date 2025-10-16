@@ -70,6 +70,13 @@ Using a Webhook in VergeOS involves the following steps:
     * **Message**: Define the webhook payload to be sent to the external system.
 
 !!! tip "The default message includes a simple key-value pair defining a string value of "Webhook" - delete or modify the default message as necessary to create desired payload."
+
+!!! "Message Variables"
+    Variables can be used within the message payload:
+    - ${DATE} - current date/time in full-string format (e.g. "Thu, 16 Oct 2025 11:38:07 EDT")
+    - ${TIMESTAMP} - current date/time in numeric value; epoch time (e.g. "1760629087") 
+    - ${RANDOM} - randomly-generated integer
+    - ${NAME} - VergeOS object name
   
 4. Click **Submit** to save the task.
 
