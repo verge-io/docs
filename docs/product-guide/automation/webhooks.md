@@ -1,113 +1,98 @@
 # Webhooks
 
-Webhooks provide the ability to automatically send push-based alerts to another system when a specific event occurs, or on a specified schedule.  A webhook sends an HTTP request (typically a POST) to a predefined URL, on-demand, when the defined trigger occurs.  This "push" mechanism is highly efficient for both notifications and workflow automation, as the receiving system doesn't have to constantly ask (poll) for updates.
+!!! info "**New Feature**"  
+    This page documents functionality added in **VergeOS v25.2**
+
+Webhooks provide the ability to automatically send push-based messages to another system when a specific event occurs.  A webhook sends an HTTP request (typically a POST) to a predefined URL, on-demand, when the defined trigger occurs.  This push mechanism is highly efficient for both notifications and workflow automation, as the receiving system doesn't have to constantly poll for updates.
 
 ## Webhook Usage Examples
 
-* Deliver a notification to a specific Slack channel when a sync operation produces an error - to alert administrators immediately.
+VergeOS Webhooks allow high configurability for event-driven communication to third-party systems, providing a wide array of streamlining opportunities. 
+These are a few basic examples displaying possible alert and workflow automation using webhooks: 
 
-* Send a post to a billing system when a particular tenant storage threshold is met?
+* Deliver a notification to an administrator Slack channel, if a sync operation produces an error, for immediate alerting 
 
-These are just a couple very basic examples of automating alerts and workflow.  WEbhooks provide a wide array of opportunities for streamlining processes.
+* Upon bringing a tenant online, send a post to an accounting system to trigger an automatic charge posted to the customer's account
 
-## Webhook Configuration
+* When a particular VM is powered on, send a webhook to a Zapier system that kicks off a complete workflow process across various systems (e.g. creating real-time reports, delivering emails, sending notifications to applications, etc.) 
 
-Using a Webhook in VergeOS involves the following basic steps:
 
-* **Create a webhook**: this defines the URL for the targeted external system, along with authorization settings and headers
-* **Create a task**: the task defines the trigger and the payload to send to the target system
+## Configuration Steps
 
-### Create a Webhook
+Using a Webhook in VergeOS involves the following steps:
+
+* [**Create a Webhook**](#create-a-webhook): specifying the URL, authorization settings, and any custom headers to send to the target external system
+* [**Create a Task**](#create-a-task): defining the payload to deliver
+* [**Create an Event**](#create-an-event): designating an occurrence that will activate the task
+
+!!! tip "Modular Design"
+    The *VergeOS Task Engine* enables flexible orchestration of webhooks, tasks, and events. You can assign multiple tasks or events to a single webhook, and a single task can be triggered by multiple distinct events. This mix-and-match architecture supports scalable, reusable workflows tailored to your system’s needs.
+
+## Create a Webhook
 
 1. Navigate to **System** > **Tasks**.
-2. Click **New** on the left menu.
-3. Configure Webhook fields:
+2. Click **New Webhook** on the left menu.
+3. Configure Webhook:  
 
-* **Name**
-* **URL**
-* **Authorization Type**
-automatically creates the token as appropriate
-  * Bearer Token - enter the full bearer token
-  * API Key - enter the full API key
-  * Basic - enter username and password
-  * None
-* **Header**: By default, a header is included to specify a payload content-type: *application/json*. This header can be removed or edited as necessary. Additional headers can be configured as required on the target system for athentication event routing, rate limiting, etc.
-* **Allow Insecure Certificates**
-* **Timeout** and **Retries**
+  * **Name**: Provide a descriptive name for the webhook.
+  * **URL**: Enter the API endpoint exposed by the subject system to accepts HTTP POST requests.
+!!! tip "Typically, you will need to grant your VergeOS system explicit access to this endpoint on the target system" 
+
+  * **Authorization Type**
+      - *Bearer Token* - Enter just the bearer token string (Do not include the word "Bearer")
+      - *API Key* - Enter just the raw API key string. (Do not include any prefix or keyword)
+      - *Basic* - Enter username and password.
+      - *None*
+
+  * **Headers**: 
+      - By default, a header is included to specify a payload content-type: *application/json*. This header can be removed or edited as necessary, and additional headers can be configured as required or accommodated on the target system (e.g. for event routing, rate limiting, priority, etc.)
+      - To change the order of custom headers: select the checkbox of desired header(s), and use the Up/Down arrow buttons
+      - Use the Plus button to add additional headers
+      - The pencil button toggles between content header/value pair entry and fully manual definition of all header syntax
+  * **Allow Insecure Certificates**: This option is intended to accommodate self-signed certificates for test/development environments.  Utilizing insecure certificates for production systems and data (particularly public URLs) is risky and not recommended.  
+
+  * **Timeout**: defines the maximum number of seconds the webhook will wait for a response from the target system (must be 3 or greater)
+  * **Retries**: number of reattempts the webhook will make
 
 4. Click **Submit** to save the webhook.
 
-### Create a Task (to trigger the webhook)
+## Create a Task 
 
 1. Navigate to **System** > **Tasks**.
-2. Click **New** on the left menu.
-3. Configure Task fields:
-   * **Name**: Provide a descriptive name for the task.
-   * **Description**: (optional) additional information can be stored for the task, e.g. its purpose, expected outcome, etc.  
-   * **Object Type**: select *Webhooks*
-   * **Message**: enter the webhook payload
+2. Click **New Task** on the left menu.
+3. Configure Task:
+    * **Name**: Provide a descriptive name for the task.
+    * **Description(optional)**: Additional information can be stored for the task, e.g. its purpose, expected outcome, etc.  
+    * **Delete Task After Running**: Enable this option for a one-time activation; the system will delete the task after it has run. 
+    * **Object Type**: *Webhook*
+    * **Object:** Select the Webhook created above.
+    * **Action**: *Send*
+    * **Message**: Define the webhook payload to be sent to the external system.
+
+!!! tip "The default message includes a simple key-value pair defining a string value of "Webhook" - delete or modify the default message as necessary to create desired payload."
+  
+4. Click **Submit** to save the task.
 
 
-!!! example "Payload Examples"
+## Create an Event
 
-    === "Unordered List"
+1. Navigate to **System** > **Tasks**.
+2. Click **New Event** on the left menu.
+3. Configure Event:
+    * **Type**: Select the area of the VergeOS system. 
+    * **Event**: The event list will change depending on the type selected above.  Select the desired event that will serve as the trigger.
+    * **Select a specific Instance or Tag** to trigger the event:  
+        - Select a specific instance of the object type by selecting from the dropdown list (For example, if "Users" is the selected type, you select a particular user from the *User* dropdown list; when "Virtual Machines" is the selected type, you choose a particular VM from the *Virtual Machines* dropdown list.)  
+        
+        **OR**
 
-        ``` markdown
-        * Sed sagittis eleifend rutrum
-        * Donec vitae suscipit est
-        * Nulla tempor lobortis orci
-        ```
+        - Enable the **Use Tag** option and select an available tag from the dropdown list to base the event on objects with that corresponding tag.  (For example, if "Virtual Machines" is the selected type, and "production" is selected in the *Tag* dropdown list, the event trigger corresponds to any VMs assigned with the "production" tag.)    
+        
+!!! tip "Some selected Types, such as *Alarms*, will not provide options for tags or specific objects."
 
-    === "Ordered List"
-
-        ``` markdown
-        1. Sed sagittis eleifend rutrum
-        2. Donec vitae suscipit est
-        3. Nulla tempor lobortis orci
-        ```   
-
-??? example "Payload Examples"
-
-    **Simple notification sent to a Slack Channel (Json)**  
-    {
-    "text": "Sync Job Error"
-    }
-
-    **Notification push to an external alerting system (Json)**  
-    {
-    "event": "new_notification",
-    "data": {
-    "message_id": "MSG-987654",
-    "recipient": "admins-SQL",
-    "message_body": "Server ABC is reporting high CPU utilization. Please investigate immediately.",
-    "priority": "high",
-    "timestamp": "2025-10-10T11:30:00Z"
-    }
-}
-
-4. Click **Submit** to save the new task.
-
-## Example Payload
+    * **Task**: Select the task created above.
+  
+4. Click **Submit** to save the task. 
 
 
-=== "C"
 
-    ``` c
-    #include <stdio.h>
-
-    int main(void) {
-      printf("Hello world!\n");
-      return 0;
-    }
-    ```
-
-=== "C++"
-
-    ``` c++
-    #include <iostream>
-
-    int main(void) {
-      std::cout << "Hello world!" << std::endl;
-      return 0;
-    }
-    ```
