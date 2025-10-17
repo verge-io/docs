@@ -11,6 +11,8 @@ Please review the [core concepts](concepts.md) first to learn more about VergeOS
 
     * Minimum MTU size 9000
     * Recommended MTU size of **9216** and above
+    * Broadcast traffic allowed between nodes
+    * ~0.05ms of latency between nodes
 
 - Core Fabric Networks 1 and 2 on their **own** dedicated layer 2 networks
 - The Core Fabric Networks for VergeOS Systems located in the same site need to be completely isolated from eachother
