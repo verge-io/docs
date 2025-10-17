@@ -45,10 +45,10 @@ Using a Webhook in VergeOS involves the following steps:
       - *None*
 
   * **Headers**: 
-      - By default, a header is included to specify a payload content-type: *application/json*. This header can be removed or edited as necessary, and additional headers can be configured as required or accommodated on the target system (e.g. for event routing, rate limiting, priority, etc.)
+      - By default, a header is included to specify a payload content-type: *application/json*. This header can be removed or edited as necessary, and additional headers can be configured as required or accommodated on the target system (e.g. change content type, event routing, rate limiting, priority, etc.)
       - To change the order of custom headers: select the checkbox of desired header(s), and use the Up/Down arrow buttons
       - Use the Plus button to add additional headers
-      - The pencil button toggles between content header/value pair entry and fully manual definition of all header syntax
+      - The pencil button toggles between header key/value pair entry and fully manual entry of full header syntax
   * **Allow Insecure Certificates**: This option is intended to accommodate self-signed certificates for test/development environments.  Utilizing insecure certificates for production systems and data (particularly public URLs) is risky and not recommended.  
 
   * **Timeout**: defines the maximum number of seconds the webhook will wait for a response from the target system (must be 3 or greater)
@@ -70,8 +70,8 @@ Using a Webhook in VergeOS involves the following steps:
     * **Message**: Define the webhook payload to be sent to the external system.  The default message includes a simple key-value pair defining a string value of "Webhook" - delete or modify the default message as necessary to create desired payload.
 
 !!! tip "Variables can be used within the message payload:"
-    - ${DATE} - current date/time in full-string format (e.g. "Thu, 16 Oct 2025 11:38:07 EDT")
-    - ${TIMESTAMP} - current date/time in numeric value; epoch time (e.g. "1760629087") 
+    - ${DATE} - current date/time in full-string format, e.g. *Thu, 16 Oct 2025 11:38:07 EDT*
+    - ${TIMESTAMP} - current date/time in numeric value (epoch time), e.g. *1760629087* 
     - ${RANDOM} - randomly-generated integer
     - ${NAME} - VergeOS object name
   
