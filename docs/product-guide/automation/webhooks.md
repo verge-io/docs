@@ -52,7 +52,7 @@ Using a Webhook in VergeOS involves the following steps:
   * **Allow Insecure Certificates**: This option is intended to accommodate self-signed certificates for test/development environments.  Utilizing insecure certificates for production systems and data (particularly public URLs) is risky and not recommended.  
 
   * **Timeout**: defines the maximum number of seconds the webhook will wait for a response from the target system (must be 3 or greater)
-  * **Retries**: number of reattempts the webhook will make
+  * **Retries**: number of reattempts the webhook will make when no response or errors returned from target system
 
 4. Click **Submit** to save the webhook.
 
