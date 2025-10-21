@@ -1,5 +1,8 @@
 # AI Interactive Chat Sessions
 
+!!! info "**New Feature**"  
+    This page documents functionality added in **VergeOS v26**
+
 This page provides a guide for using the VergeOS UI to conduct interactive chat sessions with an AI assistant.
 
 !!! tip "A VergeIQ chat session requires a configured model and assistant; see the [AI Configuration Guide](/product-guide/ai/ai-configuration) for setup instructions."
