@@ -8,9 +8,9 @@ Webhooks provide the ability to automatically send push-based messages to anothe
 ## Webhook Usage Examples
 
 VergeOS Webhooks allow high configurability for event-driven communication to third-party systems, providing a wide array of streamlining opportunities. 
-These are a few basic examples displaying possible alert and workflow automation using webhooks: 
+These are basic examples displaying possible alert and workflow automation using webhooks: 
 
-* Deliver a notification to an administrator Slack channel, if a sync operation produces an error, for immediate alerting 
+* Deliver a notification to an administrator Slack channel, when any errors are produced from a sync job, for immediate alerting 
 
 * Upon bringing a tenant online, send a post to an accounting system to trigger an automatic charge posted to the customer's account
 
@@ -70,10 +70,10 @@ Using a Webhook in VergeOS involves the following steps:
     * **Message**: Define the webhook payload to be sent to the external system.  The default message includes a simple key-value pair defining a string value of "Webhook" - delete or modify the default message as necessary to create desired payload.
 
 !!! tip "Variables can be used within the message payload:"
-    - ${DATE} - current date/time in full-string format, e.g. *Thu, 16 Oct 2025 11:38:07 EDT*
-    - ${TIMESTAMP} - current date/time in numeric value (epoch time), e.g. *1760629087* 
-    - ${RANDOM} - randomly-generated integer
-    - ${NAME} - VergeOS object name
+    - **${DATE}** - current date/time in full-string format, e.g. *Thu, 16 Oct 2025 11:38:07 EDT*
+    - **${TIMESTAMP}** - current date/time in numeric value (epoch time), e.g. *1760629087* 
+    - **${RANDOM}** - randomly-generated integer
+    - **${NAME}** - VergeOS object name
   
 4. Click **Submit** to save the task.
 
@@ -85,8 +85,8 @@ Using a Webhook in VergeOS involves the following steps:
 3. Configure Event:
     * **Type**: Select the area of the VergeOS system. 
     * **Event**: The event list will change depending on the type selected above.  Select the desired event that will serve as the trigger.
-    * **Select a specific Instance or Tag** to trigger the event: (Some selected Types, such as *Alarms*, will not provide options for tags or specific objects.)
-        - Select a specific instance of the object type by selecting from the dropdown list (For example, if "Users" is the selected type, you select a particular user from the *User* dropdown list; when "Virtual Machines" is the selected type, you choose a particular VM from the *Virtual Machines* dropdown list.)  
+    * **Select a Specific Object Instance or Tag** to trigger the event: (Some selected Types, such as *Alarms*, will not provide options for tags or specific objects.)
+        - Select a specific instance of the object type by selecting from the dropdown list (For example, "Users" is selected type, choose a particular user from the *User* dropdown list; "Virtual Machines" is the selected type, choose a particular VM from the *Virtual Machines* dropdown list.)  
         
         **OR**
 
