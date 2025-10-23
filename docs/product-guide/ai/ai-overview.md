@@ -1,7 +1,7 @@
-# Sovereign AI (VergeIQ)
+# VergeIQ - Sovereign AI
 
 !!! info "New Feature"
-    This page documents functionality added in VergeOS v25.2.
+    This page documents functionality added in VergeOS v26.
 
 VergeIQ introduces integrated artificial intelligence capabilities directly within your VergeOS environment, enabling organizations to **instantly deploy and manage AI models and assistants locally.**   
 

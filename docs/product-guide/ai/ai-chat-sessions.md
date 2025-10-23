@@ -3,71 +3,65 @@
 !!! info "**New Feature**"  
     This page documents functionality added in **VergeOS v26**
 
-This page provides a guide for using the VergeOS UI to conduct interactive chat sessions with an AI assistant.
+This page provides a guide for conducting interactive chat sessions with an AI assistant in the VergeOS UI.
 
 !!! tip "A VergeIQ chat session requires a configured model and assistant; see the [AI Configuration Guide](/product-guide/ai/ai-configuration) for setup instructions."
 
-# Accessing a new chat session
-* Navigate to the assistant (AI > Assistants > select desired assistant)
-* Click **New Chat Session** on the left menu **-OR-**click the quick action (plus sign).
-* Click **Yes** to confirm starting a new chat. 
+## Accessing a New Chat Session
 
+* Navigate to the assistant: **AI > click to select the desired assistant**.
+* Click **New Chat Session** on the left menu **-OR-** click the  **'+ New'** button. 
+* A Confirmation dialog is presented. 
+    * (Optional) *Delete current session* can be selected to remove chat history for the present session, if there is one.
+    * Select **Yes** to confirm starting a new chat session. 
+* **send prompts**, using the message entry box, to interact with the session.
 
-## Attaching files to a prompt
+## Attaching Files to a Prompt
 
 !!! note "Attached file contents are merged into the prompt and affect total context size."
 
-One or more files can be attached, to provide additional context for your prompt. To attach file(s) to add context to the current prompt:
-* Click the paperclip icon to the left of the prompt entry field
-* Browse and select the desired file(s) and click the **Open** button. 
+* One or more files can be attached, to provide additional context for your prompt. 
+* **To attach file(s):** click the **paperclip icon** to the left of the prompt entry field, **browse and select** the desired file(s), click the **Open** button. 
 * The number of attached files is indicated directly to the right of the paperclip button. You can click on this number to view/modify a list the attached files.
+* Attached files remain for each subsequent session prompt; remove files that are no longer relevant to avoid unnecessary usage of context size. 
 
-
-
-<!-- ## thumbs up/thumbs down -->
-
-
-## Resubmitting a prompt
 
 ## Interaction Metrics
-per individual response or for the entire session?
+
+Token usage metrics can be accessed per prompt/response iteration: simply hover over the information icon :material-information-variant: below a response. 
 
 
+## Chat History
 
-## Chat history
+### Saving Chat History
 
-### assistant settings -can be configured to always be off or on.
-Can also be configured with a off/on default that can be changed per session
+Assistant settings allow controlling chat history default settings across sessions. See [AI Assistant Management](/product-guide/ai/ai-configuration/ai-assistant-management).  Additionally, an option for deleting a session history is presented upon initiation of a new session. 
 
-### To change the history setting for the current session: 
+ 
 
-### accessing history from a previous session
+### Accessing History from a Previous Session
+
+To view history of a previous chat session: click the *History* button near the top left of the chat window and select the desired session.  (A chat session is named based on the first prompt text from the session.)
 
 ---
 
 ## Troubleshooting Chat Sessions
 
 * **AI does not seem to be responding to a prompt**
-
-- may take a while
-- especially if cpus used rather than gpus (especially if there are are not many cores allocated)
-- blue(?) blinking dot indicates it is currently working on a response
-
-
+    - A blue blinking dot indicates that the assistant is currently working on a response. 
+    - An assistant with suboptimal processing units allocated, may take several minutes or more to respond; this is especially likely in the case of CPU vs GPU usage.  Allow several more minutes for the response and consider allotting more processing resources cores to the used model.  
+    
 * **Message:** ***Error Sending Query***
-
-- try to start a new chat session?
-- may need to stop/start the model?
+    - Start a new chat session.
+    - If the error still appears in a new chat session, stop/start the model.
 
 * **Long response Times**
+    - Slow response turnaround is often due to inadequate processing resources. Consider allocating additional cores or more GPU capacity (e.g. higher capacity vGPU, additional GPUs, etc.)
 
 * **Incomplete Results**
-  * for example, the answer seems to be clipped/cut off mid-sentence
+    - Responses that appear to be truncated, for example, an answer that seems to cut off mid-sentence
+    - The configured *Max Tokens* ([AI Configuration: Assistant settings](/product-guide/ai/ai-configuration)) may be too low to allow for full response.  
 
-* **Cannot submit my prompt** (nothing seems to happen when I type my prompt and hit** ***Send***)
-  * the assistant is currently working on the previous prompt, the previous query/prompt displays a blinking blue dot and the question does not display a response. 
+* **Cannot submit a prompt** (nothing seems to happen when I type my prompt and hit *Send*)
+    - The assistant is likely still processing the previous prompt. A blue blinking dot indicates that the assistant is currently working on a response; a new prompt cannot be submitted until the previous has completed. Wait for the previous response to complete before submitting the new prompt.  See previous sections to address long response times.  
 
-?s
-<!-- when you delete an assistant, is the chat history deleted too? is there any way to save it? -->
-what is the delete current session option supposed to do? 
-when do you want to start a new session as opposed to continue an existing one?
