@@ -118,8 +118,8 @@ extra:
 extra_javascript:
   - javascripts/extra.js
 
-extra_css:
-  - stylesheets/extra.css
+#extra_css:
+#  - stylesheets/extra.css
 
 copyright: |
   Copyright &copy; 2025 <a href="https://verge.io" target="_blank" rel="noopener"> Verge.io</a> |
@@ -178,11 +178,6 @@ nav:
         - Sync Back: product-guide/backup-dr/sync-back.md
         - Manual Sync: product-guide/backup-dr/manual-site-syncs.md
         - Repair Server: product-guide/backup-dr/repair-server.md
-    - AI (VergeIQ) 🆕: 
-      - Overview: product-guide/ai/ai-overview.md
-      - Configuration: product-guide/ai/ai-configuration.md
-      - Best Practices: product-guide/ai/ai-best-practices.md
-      - Troubleshooting: product-guide/ai/ai-troubleshooting.md
     - System Configuration:
       - SMTP: product-guide/system/smtp.md
       - Authentication:
