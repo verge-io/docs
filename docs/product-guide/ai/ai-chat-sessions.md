@@ -1,4 +1,4 @@
-# AI Interactive Chat Sessions
+# VergeIQ Interactive Chat Sessions
 
 !!! info "**New Feature**"  
     This page documents functionality added in **VergeOS v26**
