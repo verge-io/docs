@@ -1,8 +1,5 @@
 # Immutable Snapshots
 
-!!! info "**New Feature**"
-    This page documents functionality added in **VergeOS v25.2**. 
-
 ## Overview
 
 An immutable snapshot is a powerful safeguard feature designed to prevent tampering or deletion of saved data, even by administrators or automated processes. The immutable option provides a safety net against accidental or malicious erasure, ensuring that a snapshot remains available when needed for data recovery.
