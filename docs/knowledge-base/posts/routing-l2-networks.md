@@ -9,7 +9,7 @@ tags:
   - networking
   - network blocks
   - subnet
-  - virtual wire
+  - Virtual Switch Port
   - vwire
   - layer2
   - l2
@@ -101,7 +101,7 @@ At this point you have created everything you should need, but it's still pendin
 When applying the above process to a Tenant there are two generally common implementations. 
 
 - Ideally, a tenant VM that needs to access a physical layer 2 network would do so via routes, creating appropriate routes and rules to allow traffic from an internal tenant network to a layer 2 network; e.g. our previous "l2demo" network via the 192.168.2.1 gateway. 
-- If Native layer 2 access is required inside tenant networks, see [Provide Layer 2 Access to a Tenant](/knowledge-base/provide-layer2-to-tenant/) to create a Virtual Wire connecting the tenant network to the Layer 2 External interface outside of the tenant. 
+- If Native layer 2 access is required inside tenant networks, see [Provide Layer 2 Access to a Tenant](/knowledge-base/provide-layer2-to-tenant/) to create a Virtual Switch Port connecting the tenant network to the Layer 2 External interface outside of the tenant. 
   
 !!! warning
 	If devices cannot reach the internet, double-check:
