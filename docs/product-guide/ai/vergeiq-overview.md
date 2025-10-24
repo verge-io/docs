@@ -39,7 +39,7 @@ VergeIQ's on-premises approach to AI is ideal for organizations handling sensiti
 
 **Worker** - A dedicated process that loads an AI model and handles incoming requests for inference. Multiple workers can be spun up to handle concurrent requests and provide fault tolerance.
 
-**Chat Session** - A continuous flow of exchanged messages between a user/application and an AI model. A chat session maintains a defined context and can be driven through the VergeOS UI or via an API for seamless integration with other applications.
+**Chat Session** - A continuous flow of exchanged messages between a user/application and an AI model. A chat session maintains a defined context and can be driven through the VergeOS UI or via the built-in OpenAI Router, for seamless integration with other applications.
 
 [Configure and Use VergeIQ in Your Environment →](/product-guide/ai/ai-configuration)
 

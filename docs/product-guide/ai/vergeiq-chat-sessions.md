@@ -35,7 +35,7 @@ Token usage metrics can be accessed per prompt/response iteration: simply hover 
 
 ### Saving Chat History
 
-Assistant settings allow controlling chat history default settings across sessions. See [AI Assistant Management](/product-guide/ai/ai-configuration/ai-assistant-management).  Additionally, an option for deleting a session history is presented upon initiation of a new session. 
+Assistant settings allow controlling chat history default settings across sessions. See [AI Assistant Management](/product-guide/ai/vergeiq-configuration/ai-assistant-management).  Additionally, an option for deleting a session history is presented upon initiation of a new session. 
 
  
 
@@ -56,11 +56,11 @@ To view history of a previous chat session: click the *History* button near the 
     - If the error still appears in a new chat session, stop/start the model.
 
 * **Long response Times**
-    - Slow response turnaround is often due to inadequate processing resources. Consider allocating additional cores or more GPU capacity (e.g. higher capacity vGPU, additional GPUs, etc.)
+    - Slow response turnaround is often due to inadequate processing resources. Consider allocating additional cores or more GPU capacity (e.g. higher vGPU profile, additional GPUs, etc.)
 
 * **Incomplete Results**
     - Responses that appear to be truncated, for example, an answer that seems to cut off mid-sentence
-    - The configured *Max Tokens* ([AI Configuration: Assistant settings](/product-guide/ai/ai-configuration)) may be too low to allow for full response.  
+    - The configured *Max Tokens* ([AI Configuration: Assistant settings](/product-guide/ai/vergeiq-configuration)) may be too low to allow for full response.  
 
 * **Cannot submit a prompt** (nothing seems to happen when I type my prompt and hit *Send*)
     - The assistant is likely still processing the previous prompt. A blue blinking dot indicates that the assistant is currently working on a response; a new prompt cannot be submitted until the previous has completed. Wait for the previous response to complete before submitting the new prompt.  See previous sections to address long response times.  

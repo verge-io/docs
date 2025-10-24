@@ -10,7 +10,7 @@
 3. [Upload Content to the Workspace](#upload-files-to-workspace) providing files to the assistant with relevant content
 4. Engage:  
     * [OpenAI Router (common method)](product-guide/ai/open-ai-router): programmatically connect to the assistant via the built-in engine
-    * [Interactive Chat Session](product-guide/ai/chat-sessions): communicate with the assistant within the VergeOS UI (helpful for testing)
+    * [Interactive Chat Session](product-guide/ai/vergeiq-chat-sessions): communicate with the assistant within the VergeOS UI (helpful for testing)
     * **VergeOS API**: access the assistant using standard VergeOS API commands 
   
 
