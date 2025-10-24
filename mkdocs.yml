@@ -301,6 +301,7 @@ nav:
       - Task Manager:
         - Overview: product-guide/automation/task-manager.md
         - Create Tasks: product-guide/automation/create-tasks.md
+      - Webhooks: product-guide/automation/webhooks.md
     - Device Passthrough:
       - Overview: product-guide/system/device-pass-overview.md
       - NVIDIA vGPU: product-guide/system/nvidia-vgpu.md
