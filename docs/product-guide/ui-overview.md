@@ -135,7 +135,7 @@ VergeOS provides context-sensitive help directly within the UI:
 
 ## Object Tagging
 
-The [Tagging System](/product-guide/system/tagging) allows you to define custom tags and categories for organizing objects within VergeOS. Tags support flexible filtering, grouping, and identification across modules.
+The [Tagging System](/product-guide/system/tags) allows you to define custom tags and categories for organizing objects within VergeOS. Tags support flexible filtering, grouping, and identification across modules.
 
 ---
 
