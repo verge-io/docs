@@ -22,7 +22,7 @@ This guide introduces the VergeOS User Interface (UI), highlighting primary conc
     Navigation elements have been regrouped for improved logical flow.
 
     - **Session History Navigation**  
-    The browser’s back button now functions reliably for navigating backward through your session history, reducing reliance on breadcrumbs.
+    The browser’s back button functions reliably for navigating backward through your session history, eliminating the need for breadcrumbs that were used in previous versions.
 
     **Additional Enhancements**
 
