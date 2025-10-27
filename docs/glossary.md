@@ -31,7 +31,7 @@ A node that expands only the compute resources in a VergeOS system.
 ### **Controller Node**: 
 The first two nodes in a VergeOS system, responsible for handling the User Interface, Networking, and vSAN functions.
 
-### **Core Network**: 
+### **Core Fabric Network**: 
 A virtual network used by VergeOS for vSAN traffic, Node to Node communication, VM migrations, and other system-level communications.
 
 ## D
@@ -162,7 +162,7 @@ A collection of nodes used to deploy workloads across a single vSAN instance in 
 ### **vGPU**: 
 A physical GPU installed on a host node that is dissected into multiple virtual GPUs, providing access to multiple VMs simultaneously.
 
-### **Virtual Wire**: 
+### **Virtual Switch Port**: 
 The equivalent of an uplink between two virtual switches (networks) in VergeOS, used to provide Layer 2 connectivity.
 
 ### **Volume**: 

@@ -6,14 +6,38 @@ Please review the [core concepts](concepts.md) first to learn more about VergeOS
 
 ## Generic Requirements (All network design models)
 
-- For environments with more than 2 nodes, switches are required for Core Fabric Networks
+!!! note "For environments with more than 2 nodes, switches are required for [Core Fabric Networks](../glossary.md#core-fabric-network)"
+
+### Core Fabric Network Requirements
+
 - Jumbo Frames configured on all Core Fabric Network switchports
 
     * Minimum MTU size 9000
-    * Recommended MTU size of **9192** and above
+    * Recommended MTU size of **9216** and above
 
+- Broadcast traffic allowed between nodes
 - Core Fabric Networks 1 and 2 on their **own** dedicated layer 2 networks
-- VergeOS Systems located in the same site need to be completely isolated from eachother
+- The Core Fabric Networks for VergeOS Systems located in the same site need to be completely isolated from eachother
+- Network latency between nodes on Core Fabric Networks should be <0.05ms (no switch hops)
+
+!!! warning "Core Fabric Network - No Switch Hops Between Nodes"
+    All nodes must be connected to the same switching fabric with **zero switch hops** between them. Adding switch hops in the core fabric path will introduce latency that can significantly impact cluster performance and stability. This requirement applies to all Core Fabric Networks.
+
+### External Networks Requirements
+
+- Standard MTU (1500) configured on all External Network switchports
+
+    * Jumbo frames (9000-9216) optional if required by workloads
+
+- External Networks configured as VLAN trunks (802.1Q tagged)
+- Multiple VLANs allowed on trunk ports for workload/tenant separation
+- LACP (802.3ad) bonding recommended for redundancy and bandwidth aggregation
+
+    * Active-backup bonding supported as alternative
+
+- Network latency <1ms acceptable for most workloads
+- Routable to upstream networks (gateways, internet, other infrastructure)
+- Spanning tree protocol allowed (standard Layer 2 operation)
 
 ## Layer 2 Static + Dedicated Core Fabric
 
