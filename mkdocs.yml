@@ -66,8 +66,6 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.superfences
   - md_in_html
-  - pymdownx.tabbed:
-      alternate_style: true
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.snippets:
@@ -301,7 +299,6 @@ nav:
       - Task Manager:
         - Overview: product-guide/automation/task-manager.md
         - Create Tasks: product-guide/automation/create-tasks.md
-      - Webhooks: product-guide/automation/webhooks.md
     - Device Passthrough:
       - Overview: product-guide/system/device-pass-overview.md
       - NVIDIA vGPU: product-guide/system/nvidia-vgpu.md
