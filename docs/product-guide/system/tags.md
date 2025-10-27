@@ -1,10 +1,32 @@
+---
+requirements:
+  vergeos_version: "26.0 or later"
+  access_levels: ["Cluster Admin", "Tenant Admin"]
+  background_knowledge: ["VergeOS UI navigation"]
 
-# Tagging System
+key_concepts:
+  - "Tag Categories"
+  - "Tag Assignment"
+  - "Object Labeling"
+  - "Asset Organization"
 
-!!! info "**New Feature**"
-    This page documents functionality added in **VergeOS v25.2**. 
+semantic_keywords:
+  - "VergeOS tags"
+  - "tagging system configuration"
+  - "how to create tags in VergeOS"
+  - "assign tags to virtual machines"
+  - "organize VergeOS objects"
+  - "tag categories setup"
 
-## Introduction
+use_cases:
+  - "Categorizing VMs by operating system or application"
+  - "Organizing tenants by support level or time zone"
+  - "Filtering and reporting on tagged assets"
+---
+
+# Tags
+
+## Overview
 
 The VergeOS tagging system is a flexible labeling engine that enables administrators to categorize system objects using customized tags. These tags, organized into user-defined categories, allow for efficient indexing, identification, and selection of assets during management activities.
 
@@ -94,6 +116,3 @@ To administer tags from an object’s dashboard:
 - Use **descriptive names** for both categories and tags to ensure clarity and consistency.
 - Align tag structures with operational workflows and reporting needs.
 - Review tag usage periodically to maintain relevance and avoid clutter.
-
-
-
