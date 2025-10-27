@@ -10,239 +10,656 @@
         display: none;
     }
     #custom-home {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Lato', 'Helvetica', 'Arial', sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
         min-height: 100vh;
-        display: flex;
-        flex-direction: column;
+        background: #0a0f1a;
+        color: #e2e8f0;
     }
-    .header {
-        background-image: url('assets/home-banner.jpg');
-        background-size: cover;
-        background-position: center;
-        padding: 80px 20px;
-        text-align: center;
-        position: relative;
+    
+    /* Hero Section */
+    .hero {
+        padding: 80px 20px 60px;
+        background: linear-gradient(180deg, #0f1729 0%, #0a0f1a 100%);
+        border-bottom: 1px solid #1e293b;
     }
-    .header::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(10, 10, 26, 0.7);
-    }
-    .header-content {
-        position: relative;
-        z-index: 1;
-    }
-    .header h1 {
-        font-size: 3.5em;
-        margin-bottom: 20px;
-    }
-    .subtitle {
-        font-size: 1.5em;
-        margin-bottom: 30px;
-        max-width: 800px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .download-btn {
-        background-color: #DD6B20;
-        color: #ffffff;
-        padding: 15px 30px;
-        text-decoration: none;
-        border-radius: 5px;
-        font-weight: bold;
-        font-size: 1.2em;
-        display: inline-block;
-        transition: background-color 0.3s;
-    }
-    .download-btn:hover {
-        background-color: rgba(221, 107, 32, 0.8); /* #DD6B20 with 80% opacity */
-    }
-    .features {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        padding: 60px 20px;
-        max-width: 1400px;
+    .hero-content {
+        max-width: 1200px;
         margin: 0 auto;
     }
-    .feature-card {
-        border-radius: 10px;
-        padding: 30px;
-        margin: 15px;
-        width: calc(33.333% - 30px);
-        box-sizing: border-box;
-        transition: transform 0.3s, background-color 0.3s;
-        text-decoration: none;
-        display: block;
+    .hero-icon {
+        font-size: 2.3em;
+        margin-bottom: 16px;
+        color: #10b981;
     }
-    .feature-card:hover {
-        transform: translateY(-5px);
+    .hero h1 {
+        font-size: 3.5em;
+        margin-bottom: 16px;
+        font-weight: 700;
+        color: #10b981;
+        letter-spacing: -0.02em;
     }
-    .feature-card h2 {
-        font-size: 1.8em;
-        margin-bottom: 15px;
-    }
-    .feature-card p {
-        font-size: 1.1em;
-    }
-    .subtitle a {
-        text-decoration: none;
-        transition: color 0.3s, text-decoration 0.3s;
+    .hero-subtitle {
+        font-size: 1.35em;
+        color: #94a3b8;
+        line-height: 1.6;
+        max-width: 600px;
     }
 
-    .subtitle a:hover {
+    /* Tip Banner */
+    .tip-banner {
+        max-width: 1200px;
+        margin: -30px auto 0;
+        padding: 0 20px;
+        position: relative;
+        z-index: 10;
+    }
+    .tip-content {
+        background: linear-gradient(135deg, #854d0e 0%, #92400e 100%);
+        border: 1px solid #b45309;
+        border-radius: 8px;
+        padding: 16px 20px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+    .tip-icon {
+        color: #fbbf24;
+        font-size: 1.4em;
+    }
+    .tip-text {
+        color: #fef3c7;
+        font-size: 1.1em;
+    }
+    .tip-text code {
+        background: rgba(0, 0, 0, 0.3);
+        padding: 2px 6px;
+        border-radius: 3px;
+        font-family: 'Monaco', 'Courier New', monospace;
+        color: #fde68a;
+    }
+
+    /* Main Cards Section */
+    .main-cards-section {
+        padding: 80px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .main-cards-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+    .main-card {
+        background: #0f1729;
+        border: 1px solid #1e293b;
+        border-radius: 8px;
+        padding: 32px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        min-height: 280px;
+    }
+    .main-card:hover {
+        border-color: #334155;
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+    .main-card-header {
+        margin-bottom: 24px;
+    }
+    .main-card-title {
+        font-size: 1.6em;
+        font-weight: 600;
+        color: #f1f5f9;
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .main-card-title::after {
+        content: '›';
+        color: #64748b;
+        font-size: 1.4em;
+    }
+    .main-card-description {
+        font-size: 1.1em;
+        color: #94a3b8;
+        line-height: 1.6;
+    }
+    .main-card-visual {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    .card-code-block {
+        background: #020617;
+        border: 1px solid #1e293b;
+        border-radius: 6px;
+        padding: 16px;
+        font-family: 'Monaco', 'Courier New', monospace;
+        font-size: 1em;
+        color: #10b981;
+        width: 100%;
+    }
+    .card-diagram {
+        width: 100%;
+        max-width: 200px;
+    }
+
+    /* Secondary Section */
+    .secondary-section {
+        padding: 60px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        border-top: 1px solid #1e293b;
+    }
+    .secondary-header {
+        margin-bottom: 32px;
+    }
+    .secondary-header h2 {
+        font-size: 2.1em;
+        font-weight: 600;
+        color: #f1f5f9;
+        margin-bottom: 12px;
+    }
+    .secondary-header p {
+        font-size: 1.15em;
+        color: #94a3b8;
+    }
+    .secondary-header-actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 32px;
+    }
+    .view-all-link {
+        color: #10b981;
+        text-decoration: none;
+        font-size: 1.1em;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+    .view-all-link:hover {
+        color: #34d399;
+    }
+    .secondary-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+    .secondary-card {
+        background: #0f1729;
+        border: 1px solid #1e293b;
+        border-radius: 6px;
+        padding: 20px 24px;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        transition: all 0.2s ease;
+    }
+    .secondary-card:hover {
+        border-color: #334155;
+        background: #1a2332;
+    }
+    .secondary-card-icon {
+        width: 40px;
+        height: 40px;
+        background: #1e293b;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.4em;
+        flex-shrink: 0;
+    }
+    .secondary-card-content h3 {
+        font-size: 1.2em;
+        font-weight: 600;
+        color: #f1f5f9;
+        margin-bottom: 4px;
+    }
+    .secondary-card-content p {
+        font-size: 1.05em;
+        color: #94a3b8;
+        margin: 0;
+    }
+
+    /* Get Started Section */
+    .get-started-section {
+        padding: 60px 20px 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+        border-top: 1px solid #1e293b;
+    }
+    .get-started-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 32px;
+    }
+    .get-started-header h2 {
+        font-size: 2.1em;
+        font-weight: 600;
+        color: #f1f5f9;
+    }
+    .get-started-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+    .get-started-card {
+        background: #0f1729;
+        border: 1px solid #1e293b;
+        border-radius: 8px;
+        padding: 28px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+    .get-started-card:hover {
+        border-color: #334155;
+        transform: translateY(-2px);
+    }
+    .get-started-icon {
+        width: 48px;
+        height: 48px;
+        background: linear-gradient(135deg, #854d0e 0%, #92400e 100%);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    }
+    .get-started-card h3 {
+        font-size: 1.4em;
+        font-weight: 600;
+        color: #f1f5f9;
+        margin-bottom: 12px;
+    }
+    .get-started-card p {
+        font-size: 1.1em;
+        color: #94a3b8;
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    /* Footer Links Section */
+    .footer-links-section {
+        padding: 40px 20px 60px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .footer-link {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 0;
+        text-decoration: none;
+        color: #94a3b8;
+        font-size: 1.1em;
+        transition: color 0.2s ease;
+    }
+    .footer-link:hover {
+        color: #10b981;
+    }
+    .footer-link-icon {
+        font-size: 1.4em;
+        width: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .footer-link a {
+        color: #10b981;
+        text-decoration: none;
+    }
+    .footer-link a:hover {
+        color: #34d399;
         text-decoration: underline;
     }
-    @media (max-width: 1200px) {
-        .feature-card {
-            width: calc(50% - 30px);
+
+    /* Chatbot Button */
+    .chatbot-button {
+        position: fixed;
+        bottom: 32px;
+        right: 32px;
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        border-radius: 50%;
+        box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        z-index: 1000;
+        border: none;
+    }
+    .chatbot-button:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5);
+    }
+    .chatbot-icon {
+        font-size: 32px;
+        color: #ffffff;
+    }
+
+    /* Light Mode Styles */
+    [data-md-color-scheme="default"] #custom-home {
+        background: #ffffff;
+        color: #1e293b;
+    }
+    [data-md-color-scheme="default"] .hero {
+        background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+        border-bottom: 1px solid #e2e8f0;
+    }
+    [data-md-color-scheme="default"] .hero h1 {
+        color: #059669;
+    }
+    [data-md-color-scheme="default"] .hero-subtitle {
+        color: #64748b;
+    }
+    [data-md-color-scheme="default"] .tip-content {
+        background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+        border: 1px solid #fbbf24;
+    }
+    [data-md-color-scheme="default"] .tip-icon {
+        color: #d97706;
+    }
+    [data-md-color-scheme="default"] .tip-text {
+        color: #78350f;
+    }
+    [data-md-color-scheme="default"] .tip-text code {
+        background: rgba(255, 255, 255, 0.5);
+        color: #92400e;
+    }
+    [data-md-color-scheme="default"] .main-card {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+    }
+    [data-md-color-scheme="default"] .main-card:hover {
+        border-color: #cbd5e1;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+    [data-md-color-scheme="default"] .main-card-title {
+        color: #0f172a;
+    }
+    [data-md-color-scheme="default"] .main-card-title::after {
+        color: #94a3b8;
+    }
+    [data-md-color-scheme="default"] .main-card-description {
+        color: #64748b;
+    }
+    [data-md-color-scheme="default"] .card-code-block {
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        color: #059669;
+    }
+    [data-md-color-scheme="default"] .secondary-section {
+        border-top: 1px solid #e2e8f0;
+    }
+    [data-md-color-scheme="default"] .secondary-header h2,
+    [data-md-color-scheme="default"] .get-started-header h2 {
+        color: #0f172a;
+    }
+    [data-md-color-scheme="default"] .secondary-header p {
+        color: #64748b;
+    }
+    [data-md-color-scheme="default"] .view-all-link {
+        color: #059669;
+    }
+    [data-md-color-scheme="default"] .view-all-link:hover {
+        color: #047857;
+    }
+    [data-md-color-scheme="default"] .secondary-card {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+    }
+    [data-md-color-scheme="default"] .secondary-card:hover {
+        border-color: #cbd5e1;
+        background: #f8fafc;
+    }
+    [data-md-color-scheme="default"] .secondary-card-icon {
+        background: #f1f5f9;
+    }
+    [data-md-color-scheme="default"] .secondary-card-content h3 {
+        color: #0f172a;
+    }
+    [data-md-color-scheme="default"] .secondary-card-content p {
+        color: #64748b;
+    }
+    [data-md-color-scheme="default"] .get-started-section {
+        border-top: 1px solid #e2e8f0;
+    }
+    [data-md-color-scheme="default"] .get-started-card {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+    }
+    [data-md-color-scheme="default"] .get-started-card:hover {
+        border-color: #cbd5e1;
+    }
+    [data-md-color-scheme="default"] .get-started-icon {
+        background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    }
+    [data-md-color-scheme="default"] .get-started-card h3 {
+        color: #0f172a;
+    }
+    [data-md-color-scheme="default"] .get-started-card p {
+        color: #64748b;
+    }
+
+    /* Light mode footer links */
+    [data-md-color-scheme="default"] .footer-link {
+        color: #64748b;
+    }
+    [data-md-color-scheme="default"] .footer-link:hover {
+        color: #059669;
+    }
+    [data-md-color-scheme="default"] .footer-link a {
+        color: #059669;
+    }
+    [data-md-color-scheme="default"] .footer-link a:hover {
+        color: #047857;
+    }
+
+    /* Light mode chatbot button */
+    [data-md-color-scheme="default"] .chatbot-button {
+        background: linear-gradient(135deg, #059669 0%, #047857 100%);
+        box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+    }
+    [data-md-color-scheme="default"] .chatbot-button:hover {
+        box-shadow: 0 6px 20px rgba(5, 150, 105, 0.4);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 968px) {
+        .main-cards-grid,
+        .get-started-grid {
+            grid-template-columns: 1fr;
+        }
+        .secondary-grid {
+            grid-template-columns: 1fr;
         }
     }
     @media (max-width: 768px) {
-        .feature-card {
-            width: 100%;
+        .hero {
+            padding: 60px 20px 40px;
         }
-    }
-
-    /* Dark mode styles */
-    [data-md-color-scheme="slate"] #custom-home {
-        color: #ffffff;
-        background-color: #0a0a1a;
-    }
-    [data-md-color-scheme="slate"] .subtitle {
-        color: #a0a0a0;
-    }
-    [data-md-color-scheme="slate"] .feature-card {
-        background-color: rgba(255, 255, 255, 0.05);
-        color: inherit;
-    }
-    [data-md-color-scheme="slate"] .feature-card:hover {
-        background-color: rgba(255, 255, 255, 0.1);
-    }
-    [data-md-color-scheme="slate"] .feature-card h2 {
-        color: #ffffff;
-    }
-    [data-md-color-scheme="slate"] .feature-card p {
-        color: #a0a0a0;
-    }
-    [data-md-color-scheme="slate"] .subtitle a {
-        color: #4a90e2;
-    }
-    [data-md-color-scheme="slate"] .subtitle a:hover {
-        color: #64a8ff;
-    }
-
-    /* Light mode styles */
-    [data-md-color-scheme="default"] #custom-home {
-        color: #333333;
-        background-color: #ffffff;
-    }
-    [data-md-color-scheme="default"] .subtitle {
-        color: #666666;
-    }
-    [data-md-color-scheme="default"] .feature-card {
-        background-color: #f5f5f5;
-        color: inherit;
-    }
-    [data-md-color-scheme="default"] .feature-card:hover {
-        background-color: #e8e8e8;
-    }
-    [data-md-color-scheme="default"] .feature-card h2 {
-        color: #333333;
-    }
-    [data-md-color-scheme="default"] .feature-card p {
-        color: #666666;
-    }
-    [data-md-color-scheme="default"] .subtitle a {
-        color: #2979ff;
-    }
-    [data-md-color-scheme="default"] .subtitle a:hover {
-        color: #4d94ff;
-    }
-    /* Light mode styles */
-    [data-md-color-scheme="default"] #custom-home {
-        color: #333333;
-        background-color: #ffffff;
-    }
-    [data-md-color-scheme="default"] .subtitle {
-        color: #666666;
-    }
-    [data-md-color-scheme="default"] .feature-card {
-        background-color: #f5f5f5;
-        color: inherit;
-    }
-    [data-md-color-scheme="default"] .feature-card:hover {
-        background-color: #e8e8e8;
-    }
-    [data-md-color-scheme="default"] .feature-card h2 {
-        color: #333333;
-    }
-    [data-md-color-scheme="default"] .feature-card p {
-        color: #666666;
-    }
-    [data-md-color-scheme="default"] .subtitle a {
-        color: #2979ff;
-    }
-    [data-md-color-scheme="default"] .subtitle a:hover {
-        color: #4d94ff;
-    }
-
-    /* New styles for light mode header content */
-    [data-md-color-scheme="default"] .header-content {
-        color: #ffffff; /* Keep text white for better contrast against the background image */
-    }
-    [data-md-color-scheme="default"] .header-content h1 {
-        color: #ffffff;
-    }
-    [data-md-color-scheme="default"] .header-content .subtitle {
-        color: #f0f0f0; /* Slightly off-white for subtitle in light mode */
-    }
-    [data-md-color-scheme="default"] .header-content .subtitle a {
-        color: #4a90e2; /* Blue color for links in the header, similar to dark mode */
-    }
-    [data-md-color-scheme="default"] .header-content .subtitle a:hover {
-        color: #64a8ff;
+        .hero h1 {
+            font-size: 2.5em;
+        }
+        .tip-banner {
+            margin-top: -20px;
+        }
+        .main-cards-section {
+            padding: 60px 20px;
+        }
     }
 </style>
 
 <section id="custom-home">
-    <div class="header">
-        <div class="header-content">
-            <h1>VergeOS Documentation</h1>
-            <p class="subtitle">Comprehensive tutorials, references, product guides, and more for VergeOS, by <a href="https://verge.io" target="_blank" rel="noopener noreferrer">Verge.io</a></p>
-            <a href="/implementation-guide/intro" class="download-btn">Deploy VergeOS</a>
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-content">
+            <h1>VergeOS 26.0 Docs</h1>
+            <p class="hero-subtitle">Learn how to get up and running with VergeOS through tutorials, APIs and other resources.</p>
         </div>
     </div>
-    <div class="features">
-        <a href="/implementation-guide/intro" class="feature-card">
-            <h2>Implementation Guide</h2>
-            <p>Explore our implementation guide and reference architectures to seamlessly deploy and optimize VergeOS</p>
-        </a>
-        <a href="/knowledge-base" class="feature-card">
-            <h2>Knowledge Base</h2>
-            <p>A collection of how-to documents, providing guidance on configuring, managing, and troubleshooting</p>
-        </a>
-        <a href="/product-guide/intro/what-is-vergeos/" class="feature-card">
-            <h2>Product Guide</h2>
-            <p>User manuals and best practices to master every aspect all the functionality of VergeOS</p>
-        </a>
-        <a href="/support" class="feature-card">
-            <h2>Support</h2>
-            <p>Connect directly with our expert support team for your VergeOS inquiries and technical challenges</p>
-        </a>
-        <a href="/knowledge-base/category/api-reference/" class="feature-card">
-            <h2>API Reference</h2>
-            <p>Comprehensive API documentation and examples for automating and integrating with VergeOS</p>
-        </a>
-        <a href="/release-notes/release-notes-overview/" class="feature-card">
-            <h2>Release Notes</h2>
-            <p>Stay up to date with the latest features, improvements, and bug fixes in VergeOS releases</p>
-        </a>
+
+    <!-- Tip Banner -->
+    <div class="tip-banner">
+        <div class="tip-content">
+            <span class="tip-icon">💡</span>
+            <span class="tip-text">Tip: Search by pressing <code>F</code> or press <code>S</code> or use the chatbot in the bottom right corner</span>
+        </div>
     </div>
+
+    <!-- Main Cards Section -->
+    <div class="main-cards-section">
+        <div class="main-cards-grid">
+            <a href="/knowledge-base/category/api-reference/" class="main-card">
+                <div class="main-card-header">
+                    <h2 class="main-card-title">API</h2>
+                    <p class="main-card-description">Set of REST APIs that interacts with the VergeOS control plane</p>
+                </div>
+                <div class="main-card-visual">
+                    <div class="card-code-block">
+GET /PROJECT/{PROJECTID}<br><br>
+{API}<br>
+↓
+                    </div>
+                </div>
+            </a>
+
+            <a href="/product-guide/ui-overview/" class="main-card">
+                <div class="main-card-header">
+                    <h2 class="main-card-title">UI</h2>
+                    <p class="main-card-description">Web interface to the VergeOS platform for use in the browser</p>
+                </div>
+                <div class="main-card-visual">
+                    <div class="card-code-block">
+-> VERGEOS LOGIN<br>
+[USER:DEMO]<br>
+[PWD:****]<br>
+>> █
+                    </div>
+                </div>
+            </a>
+
+            <a href="/product-guide/intro/what-is-vergeos/" class="main-card">
+                <div class="main-card-header">
+                    <h2 class="main-card-title">Guides</h2>
+                    <p class="main-card-description">Collection of articles and tutorials for using and operating VergeOS</p>
+                </div>
+                <div class="main-card-visual">
+                    <svg class="card-diagram" viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="10" y="10" width="180" height="30" rx="4" fill="#1e293b" stroke="#fbbf24"/>
+                        <text x="100" y="30" text-anchor="middle" fill="#fbbf24" font-size="12" font-family="monospace">[NETWORKING]</text>
+                        <rect x="10" y="50" width="180" height="30" rx="4" fill="#1e293b" stroke="#fbbf24"/>
+                        <text x="100" y="70" text-anchor="middle" fill="#fbbf24" font-size="12" font-family="monospace">[KEY CONCEPTS]</text>
+                        <line x1="190" y1="25" x2="205" y2="25" stroke="#fbbf24" stroke-width="2"/>
+                        <line x1="205" y1="25" x2="200" y2="20" stroke="#fbbf24" stroke-width="2"/>
+                        <line x1="205" y1="25" x2="200" y2="30" stroke="#fbbf24" stroke-width="2"/>
+                        <line x1="190" y1="65" x2="205" y2="65" stroke="#fbbf24" stroke-width="2"/>
+                        <line x1="205" y1="65" x2="200" y2="60" stroke="#fbbf24" stroke-width="2"/>
+                        <line x1="205" y1="65" x2="200" y2="70" stroke="#fbbf24" stroke-width="2"/>
+                    </svg>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- SDKs / Features Section -->
+    <div class="secondary-section">
+        <div class="secondary-header-actions">
+            <div class="secondary-header">
+                <h2>Features</h2>
+                <p>Explore our infrastructure capabilities and platform features</p>
+            </div>
+            <a href="/product-guide/intro/what-is-vergeos/" class="view-all-link">View all features ›</a>
+        </div>
+        
+        <div class="secondary-grid">
+            <a href="/product-guide/virtual-machines/overview" class="secondary-card">
+                <div class="secondary-card-icon">🖥️</div>
+                <div class="secondary-card-content">
+                    <h3>Virtualization</h3>
+                    <p>Complete virtual machine management and orchestration</p>
+                </div>
+            </a>
+            <a href="/product-guide/storage/overview" class="secondary-card">
+                <div class="secondary-card-icon">💾</div>
+                <div class="secondary-card-content">
+                    <h3>Storage</h3>
+                    <p>Software-defined storage with global deduplication</p>
+                </div>
+            </a>
+            <a href="/product-guide/networks/network-overview" class="secondary-card">
+                <div class="secondary-card-icon">🌐</div>
+                <div class="secondary-card-content">
+                    <h3>Networking</h3>
+                    <p>Advanced network virtualization and security</p>
+                </div>
+            </a>
+            <a href="/product-guide/backup-dr/overview" class="secondary-card">
+                <div class="secondary-card-icon">🔄</div>
+                <div class="secondary-card-content">
+                    <h3>Disaster Recovery</h3>
+                    <p>Built-in backup and recovery capabilities</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Get Started Section -->
+    <div class="get-started-section">
+        <div class="get-started-header">
+            <h2>Get started</h2>
+            <a href="/implementation-guide/intro" class="view-all-link">View more guides ›</a>
+        </div>
+        
+        <div class="get-started-grid">
+            <a href="/product-guide/intro/what-is-vergeos/" class="get-started-card">
+                <div class="get-started-icon">📖</div>
+                <h3>Introduction to VergeOS</h3>
+                <p>Overview of the platform, its major components, and key features</p>
+            </a>
+            <a href="/implementation-guide/intro" class="get-started-card">
+                <div class="get-started-icon">🚀</div>
+                <h3>Quickstart</h3>
+                <p>Deploy your first cluster and get running within minutes</p>
+            </a>
+            <a href="/implementation-guide/concepts" class="get-started-card">
+                <div class="get-started-icon">💡</div>
+                <h3>Key Concepts</h3>
+                <p>Explore the fundamental elements of the VergeOS platform</p>
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer Links Section -->
+    <div class="footer-links-section">
+        <div class="footer-link">
+            <span class="footer-link-icon">📦</span>
+            <span>Latest product updates. <a href="/release-notes/release-notes-overview/">View release notes</a></span>
+        </div>
+        <div class="footer-link">
+            <span class="footer-link-icon">💬</span>
+            <span>Need help? <a href="/support">Contact support</a></span>
+        </div>
+    </div>
+
+    <!-- Chatbot Button -->
+    <button class="chatbot-button" onclick="alert('Chatbot integration coming soon!')" aria-label="Open chatbot">
+        <span class="chatbot-icon">💬</span>
+    </button>
+
 </section>
 
 {% endblock %}
