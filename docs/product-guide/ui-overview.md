@@ -1,89 +1,141 @@
-# Getting Started with the VergeOS UI (Version 25.2)
-
-The following guide provides an overview of the 25.2 VergeOS User Interface (UI), covering the most basic, essential UI concepts to help you get oriented quickly.
+# Getting Started with the VergeOS UI
 
 
-!!! tip Upgrading from 4.13
-    If you are already familiar with a previous version of VergeOS, [Transitioning from version 4.13 to 25.2](/product-guide/ui-update252) can give you the basics for shifting to the updated user interface.
 
-While VergeOS 25.2 introduces a refreshed look and several usability enhancements, the core structure remains comfortably familiar. The interface still follows the **overview-to-detail dashboard model**, with a **menu-driven navigation system** that echoes the layout of version 4.13. Users will find the same general flow, with minor organizational updates that improve clarity and accessibility.
+This guide introduces the VergeOS User Interface (UI), highlighting primary concepts to help you get oriented quickly.
 
-Key improvements include:
-- Enhanced visual cues to help you **understand where you are** in the interface and **see all available options** at a glance.
-- A **modernized look and feel**, offering a more polished and intuitive experience.
-- Continued focus on delivering a **robust, convenient interface** that supports both new and experienced users.
+??? tip "Transitioning from Version 4.13 to Version 26"
 
-## What’s New in 25.2
+    If you're familiar with VergeOS v4.13, this section outlines key updates in v26 to ease your transition.
 
-While the UI retains much of its familiar structure, a few notable changes enhance usability:
+    While VergeOS v26 introduces a refreshed look and several usability enhancements, the core structure remains comfortably familiar. The interface continues to follow the **overview-to-detail dashboard model**, preserving the general flow while improving clarity and accessibility.
 
-- **Persistent top navigation bar**: The main menu now remains visible at all times, making it easier to switch contexts without losing your place.
-- **Status indicators redesigned**: Tiles and cards now display **status bars** instead of circular indicators, offering clearer visual feedback.
-- **Minor menu reorganization**: Some navigation elements have been regrouped for better logical flow.
-- **Breadcrumb behavior**: Breadcrumbs may behave slightly differently — we’ll highlight any changes in the detailed navigation section.
+    **What’s New in v26**
+
+    - **Persistent Top Navigation Bar**  
+    The main menu now remains visible at all times, allowing seamless context switching.
+
+    - **Redesigned Status Indicators**  
+    Tiles and cards now use horizontal status bars instead of circular indicators for clearer visual feedback.
+
+    - **Menu Reorganization**  
+    Navigation elements have been regrouped for improved logical flow.
+
+    - **Session History Navigation**  
+    The browser’s back button now functions reliably for navigating backward through your session history, reducing reliance on breadcrumbs.
+
+    **Additional Enhancements**
+
+    - Improved visual cues to help you understand your current location and available options.
+    - A modernized look and feel for a more intuitive experience.
+    - Continued focus on a robust, user-friendly interface for both new and experienced users.
 
 ---
 
-## The Main Dashboard
+## Navigation Model: Overview to Detail
 
-## *Overview-to-Detail* Navigation Model
+VergeOS uses an **overview-to-detail** navigation model that allows you to start with high-level summaries and drill down into specific assets as needed.
 
-* convenient, quick way to get the information you need
-* starting at the top level summary information and drill down to individual assets and more and more detail as needed
-* counts, status indicators, summaries, alarms at the high levels
-* Click on these items to view more granular information about the summary or asset, etc.
+- Top-level views include counts, status indicators, summaries, and alarms.
+- Clicking on any item reveals more granular information about that object or category.
+- This model supports fast, intuitive access to both broad system insights and detailed diagnostics.
 
+---
 
 ## Dashboards
 
-Starting at the home screen - the Main Dashboard for your VergeOS Cloud. It provides overall system information, including:
+The VergeOS UI is built around dashboards that provide at-a-glance information and quick access to deeper insights.
 
-- Top-level, statistical information for the VergeOS Cloud
+### Main Dashboard
+
+The home screen displays the Main Dashboard for your VergeOS Cloud, including:
+
+- System-wide statistics
 - Main system logs
-- Left Navigation menu to access subsections of the application
-- Quick links within the Dashboard section to drill down to subsections
+- Left navigation menu for accessing application subsections
+- Quick links to drill down into specific areas
 
-From there, you can click on different general areas of the system, such as networking, virtual machines, Users to see information more specific to those sections.  Within those sections, you can select specific instances - such as a particular network, or an individual VM, to investigate the particular object. 
+From here, you can explore modules like **Networking**, **Virtual Machines**, and **Users**, and then select individual instances (e.g., a specific VM or network) for detailed investigation.
 
 ### Dashboard Examples
 
-Dashboards, providing at-a-glance information (and quick-link access to more detailed information), are available throughout the system. Subsections, such as networks, machines, and storage each have one. Specific instances of objects also have their own dashboard as well, such as each individual: VM, network, node, tenant, etc. Every dashboard contains many links that can be used to dive further into more detailed information.
+Dashboards are available across the system:
 
-#### Example 1: Networks Dashboard
+- **Module Dashboards**: Networks, Virtual Machines, Storage, etc.
+- **Object Dashboards**: Each VM, network, node, tenant, etc. has its own dashboard.
 
-The Networks Dashboard provides overall network statistics, network-related logs, and links to drill down into more detailed information per network, network device, etc.
+Each dashboard includes links to deeper views and related components.
 
-![Networks Dashboard](/product-guide/screenshots/networksdashboard.png)
+#### Module Dashboard Example: Networks Dashboard
 
-#### Example 2: VM Dashboard
+Provides overall network statistics, logs, and links to individual network devices.
 
-There is a dashboard available for each individual virtual machine. The dashboard for a VM will show important information for the specific instance. Links on the VM dashboard allow for accessing detailed information regarding its drives, NICS, snapshots, devices, host node, etc.product-guide/
+  ![Light mode image](/product-guide/screenshots/networks-dashboard-light.png#only-light)
+  ![Dark mode image](/product-guide/screenshots/networks-dashboard-dark.png#only-dark)
 
-![VM Dashboard](/product-guide/screenshots/vmdashboard.png)
 
+
+#### Object Dashboard Example: VM Dashboard
+
+Displays key information for a specific virtual machine, with links to its drives, NICs, snapshots, devices, and host node.
+
+![Light mode image](/product-guide/screenshots/vm-dashboard-light.png#only-light)
+![Dark mode image](/product-guide/screenshots/vm-dashboard-dark.png#only-dark)
+
+---
 
 ## Menus
 
-* **Top menu:** a static menu that always provides access to all application options
-* **Left menu:** provides a selection of actions relevant to the current location with the application. The current location is noted near top screen, alongside the left menu
-* **User Menu:** in the top right corner, provides user-specific options, such as modifying display name, changing your password, adding ssh keys, etc.
+VergeOS includes three primary menu areas:
+
+- **Top Navigation**  
+  A persistent menu bar offering access to all major application modules, regardless of your current location.
+
+- **Left Menu**  
+  Displays context-sensitive actions based on your current view. Your current module location is indicated near the top of the screen, adjacent to this menu.
+
+- **User Menu**  
+  Located in the top-right corner, this menu provides user-specific settings such as:
+      * Updating your display name
+      * Changing your password
+      * Managing SSH keys
 
 
 ## Themes
 
-Themes control the look and feel for the user interface, including colors, fonts, icons.  They allow users to customize the visual experience without changing any underlying functionality.  VergeOS includes a **default Light Mode** and a **default Dark Mode** theme.  Customers can also create custom themes, such as a branded theme to match a company's identity.  
+Themes control the visual styling of the VergeOS UI, including colors and icons. VergeOS includes:
 
-To select a different theme: use the drop-down menu in the top right ?? quick links/
+- **Default Light Mode** <i class="bi bi-sun-fill"></i>
+- **Default Dark Mode** <i class="bi bi-moon-stars-fill"></i>
+- **Custom Themes**: Create branded themes to match your organization’s identity. (Themes must be added by an administrator; once added, a custom theme can be utilized by all users)
+
+To change your selected theme, click the theme icon in the utility bar (top right).
 
 
-## Auto-Refresh 
+## Auto-Refresh
 
-## Product Documentation
+The auto-refresh toggle is located in the utility bar (top right). It controls whether the UI automatically updates data in real time.
 
-Context-sensitive help documentation can be accessed from the user interface:
-  * Link at the bottom of the page   
-  * Select the ? icon in the utility bar and select *Product Guide*
+- **Orange icon** <i class="bi bi-arrow-clockwise" style="color:orange;"></i> = Auto-refresh enabled (default)
 
+- **Black/White icon** <i class="bi bi-arrow-clockwise"></i> = Auto-refresh disabled
+
+Disabling auto-refresh may be useful during troubleshooting or when reviewing static data snapshots.
+
+---
+
+## Product Documentation & Help
+
+VergeOS provides context-sensitive help directly within the UI:
+
+- Click the **Product Guide** link at the bottom of any page
+- Or click the *question icon* <i class="bi bi-question-square"></i> in the utility bar (top right) and select *Product Guide*
+
+---
 
 ## Object Tagging
-The [Tagging System](/product-guide/system/tagging) allows you to create user-defined tags and categories to customize identification and organization of objects within your system.
+
+The [Tagging System](/product-guide/system/tagging) allows you to define custom tags and categories for organizing objects within VergeOS. Tags support flexible filtering, grouping, and identification across modules.
+
+---
+
