@@ -1,9 +1,6 @@
 # Webhooks
 
-!!! info "**New Feature**"  
-    This page documents functionality added in **VergeOS v26**
-
-Webhooks provide for delivering push-based messages to another system when a specific event occurs.  A webhook sends an HTTP request (typically a POST) to a predefined URL when the defined trigger occurs.  This push mechanism is highly efficient for both notifications and workflow automation, as the receiving system doesn't have to constantly poll for updates.
+Webhooks enable push-based messaging to external systems when specific events occur. When a trigger event takes place, a webhook sends an HTTP request (typically a POST) to a predefined URL. This push mechanism is more efficient than polling for both notifications and workflow automation, as the receiving system doesn't need to periodically check for updates.
 
 ## Webhook Usage Examples
 
@@ -13,8 +10,6 @@ The following basic examples demonstrate possible alert and workflow automation 
 - Send a Slack notification to an admin channel when a sync job produces an error
 - Post to an accounting system when a VergeOS tenant comes online, triggering an automatic charge
 - Trigger a Zapier workflow when a specific VM powers on, initiating cross-application actions (e.g., reporting, email, notifications, etc.)
-
-
 
 ## Configuration Steps
 
@@ -76,7 +71,6 @@ By default, a header is included to specify a payload *content-type: application
   
 4. Click **Submit** to save the task.
 
-
 ## Create an Event
 
 1. Navigate to **System** > **Tasks**.
@@ -95,5 +89,6 @@ By default, a header is included to specify a payload *content-type: application
   
 4. Click **Submit** to save the event. 
 
+---
 
-
+**Version Compatibility**: This functionality is available in VergeOS 26.0 and later.
