@@ -1,21 +1,15 @@
-# VergeIQ Configuration
+# AI Configuration
 
-!!! info "**New Feature**"  
-    This page documents functionality added in **VergeOS v26**
+## Using AI - General Steps
 
-## Using AI - Basic Steps
-
-1. [Install a Model](#ai-model-management): by selecting from the included curated selection or uploading a supported .gguf format model
-2. [Configure an Assistant](#ai-assistant-management): based on the defined model, with tailored settings for the particular use case or task
-3. [Upload Files to the Workspace](#manage-ai-file-content): providing the assistant with relevant content
-4. **Engage**:  
-    * [OpenAI Router (common method)](/product-guide/ai/open-ai-router): programmatically connect to the assistant via the built-in engine
-    * [Interactive Chat Session](/product-guide/ai/vergeiq-chat-sessions): communicate with the assistant within the VergeOS UI (helpful for testing)
-
+1. [Define a Model](#ai-model-management) by selecting from the included curated selection or uploading a supported .gguf format model
+2. [Configure an Assistant](#ai-assistant-management) based on the defined model, with tailored settings for the particular use case or task
+3. [Upload Content to the Workspace](#add-files-to-the-workspace) providing files to the assistant with relevant content
+4. Engage:  
+    * [OpenAI Router (common method)](open-ai-router.md): programmatically connect to the assistant via the built-in engine
+    * [Interactive Chat Session](chat-sessions.md): communicate with the assistant within the VergeOS UI (helpful for testing)
+    * **VergeOS API**: access the assistant using standard VergeOS API commands 
   
-
-
-
 ## General AI Settings
 
 From the Main Dashboard, navigate to **AI** on the top menu, and click **AI Settings** to configure default AI parameters.
@@ -28,17 +22,14 @@ The AI Settings page allows you to configure system-wide defaults for AI compone
 
 ---
 
-
-
 ## AI Model Management
 
 AI models provide the underlying intelligence for your AI assistants and applications.  VergeOS accommodates a wide range of AI models, by supporting the standard *.gguf format, allowing users to download and run any compatible file. Several curated models are presented directly in the VergeOS UI for quick deployment.
 
-
 ### Install an AI Model
 
 !!! tip "Curated Models"
-    The system includes several pre-configured models, with default settings, available to automatically download
+    The system includes several pre-configured models, configured with default settings, available to automatically download
 
 1. Navigate to **AI** > **Models**. 
 2. Select **Click to Install** on a desired model, to install one of the available curated models.
@@ -69,7 +60,7 @@ AI models provide the underlying intelligence for your AI assistants and applica
 
 * **GPU Resource Group Allocation**: - Choose a GPU resource group to assign GPU devices, or select *--CPU Only--* to run exclusively on CPUs.
 
-!!! info "GPU devices are distributed from pools called [Resource Groups](/product-guide/system/device-pass-overview#resource-groups)."
+!!! info "GPU devices are distributed from pools called [Resource Groups](../system/device-pass-overview.md#resource-groups)."
 
 * **Allow CPU fallback if GPU resources are unavailable**: Enable this option to use CPU resources if GPU devices are unavailable. When using this option, ensure sufficient CPU cores are allocated for fallback scenarios.
 
@@ -194,7 +185,6 @@ The Assistant Workspace allows you to upload and manage files to provide a propr
 !!! note " Do NOT reload or close the browser window"
     A popup message will display the upload queue, file sizes and upload progress per individual file.  Refrain from reloading or closing the browser page until the uploads have all completed to ensure full transfer of the files. 
 
-
 ## Modify Workspace Files
 
 Select a file in the list and click **Edit** on the left menu to modify name, description and/or preferred tier.
@@ -203,8 +193,8 @@ Select a file in the list and click **Edit** on the left menu to modify name, de
 
 * Select the desired file(s) and click **Delete** on the left menu. 
 * Click **Yes** to confirm the delete operation.
----
 
+---
 
 ## Troubleshooting
 
@@ -230,5 +220,4 @@ Select a file in the list and click **Edit** on the left menu to modify name, de
 
 ---
 
-
-
+**Version Compatibility**: This functionality is available in VergeOS 26.0 and later.
