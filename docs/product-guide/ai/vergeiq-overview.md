@@ -41,5 +41,5 @@ VergeIQ's on-premises approach to AI is ideal for organizations handling sensiti
 
 **Chat Session** - A continuous flow of exchanged messages between a user/application and an AI model. A chat session maintains a defined context and can be driven through the VergeOS UI or via the built-in OpenAI Router, for seamless integration with other applications.
 
-[Configure and Use VergeIQ in Your Environment →](/product-guide/ai/ai-configuration)
+[Configure and Use VergeIQ in Your Environment →](/product-guide/ai/vergeiq-configuration)
 
