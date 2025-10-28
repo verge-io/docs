@@ -5,9 +5,9 @@
 
 ## Using AI - Basic Steps
 
-1. [Define a Model](#ai-model-management): by selecting from the included curated selection or uploading a supported .gguf format model
+1. [Install a Model](#ai-model-management): by selecting from the included curated selection or uploading a supported .gguf format model
 2. [Configure an Assistant](#ai-assistant-management): based on the defined model, with tailored settings for the particular use case or task
-3. [Upload Content to the Workspace](#manage-ai-file-content): providing files to the assistant with relevant content
+3. [Upload Files to the Workspace](#manage-ai-file-content): providing the assistant with relevant content
 4. **Engage**:  
     * [OpenAI Router (common method)](/product-guide/ai/open-ai-router): programmatically connect to the assistant via the built-in engine
     * [Interactive Chat Session](/product-guide/ai/vergeiq-chat-sessions): communicate with the assistant within the VergeOS UI (helpful for testing)
@@ -18,8 +18,7 @@
 
 ## General AI Settings
 
-1. From the Main Dashboard, navigate to **AI** on the top menu
-2. Click **AI Settings** to configure default AI parameters
+From the Main Dashboard, navigate to **AI** on the top menu, and click **AI Settings** to configure default AI parameters.
 
 The AI Settings page allows you to configure system-wide defaults for AI components:
 
@@ -39,14 +38,15 @@ AI models provide the underlying intelligence for your AI assistants and applica
 ### Install an AI Model
 
 !!! tip "Curated Models"
-    The system includes several pre-configured models, configured with default settings, available to automatically download
+    The system includes several pre-configured models, with default settings, available to automatically download
 
 1. Navigate to **AI** > **Models**. 
-2. To install one of the available curated models, select **Click to Install** on the desired model.  Alternatively, click *New Model* on the left menu. 
+2. Select **Click to Install** on a desired model, to install one of the available curated models.
+  **-OR-** click ***New Model*** on the left menu. 
 4. Configure all desired settings: 
 
 * **Model Selection**: Choose from a curated list of base models (e.g., Llama-3.2, Phi-4-Instruct) and select a size **Variant** (e.g., Small – 1GB).
-Alternatively, select --Custom-- and provide a **URL** to download a .gguf model file
+**-OR-** select --Custom-- and provide a **URL** to download a .gguf model file
 
 * **Name**: Enter a descriptive name for your model.
 
@@ -122,7 +122,7 @@ AI assistants are configured AI models that provide specific capabilities and be
 
 
 * **Name**: Enter a descriptive name for the assistant. 
-!!! tip "When a new assistant is created automatically, because you just created a model, the name will default to the same name as the model."
+!!! tip "When a new assistant is created automatically (along with creation of a new model), the name will default to the same name as the model."
 
 * **Description** (optional): Additional details can be entered to describe the model's configuration, purpose, etc.
 * **Model**: Choose from available base models (e.g., Llama-3.2, Phi-4-Instruct). When an assistant was auto-created along with a new model creation, this field is automatically set to the associated model and cannot be edited.
@@ -131,10 +131,10 @@ AI assistants are configured AI models that provide specific capabilities and be
 * **Settings Configuration**
 
 * **Chat History**: Configure conversation retention (interactive chat sessions only)
-  * ***Default On*** - chat history is automatically enabled at the start of a session, but can be disabled
-  * ***Default Off*** - chat history is automatically disabled at the start of a session, but can be enabled
-  * ***Always On*** - chat history is always enabled; cannot be disabled
-  * ***Always Off** - chat history is always disabled; cannot be enabled
+    * ***Default On*** - chat history is automatically enabled at the start of a session, but can be disabled
+    * ***Default Off*** - chat history is automatically disabled at the start of a session, but can be enabled
+    * ***Always On*** - chat history is always enabled; cannot be disabled
+    * ***Always Off** - chat history is always disabled; cannot be enabled
 
 !!! tip "There is also an option to delete chat history for the previous session each time you are starting a new chat session."
 
@@ -143,7 +143,7 @@ AI assistants are configured AI models that provide specific capabilities and be
 
 !!! note "Availability of the *Think* feature depends on model support."
 
-* **System Prompt**: Sets foundational instructions for the AI’s behavior, tone, and task orientation. This prompt influences how the model interprets context and generates responses. Precision matters; ambiguous or overloaded prompts can degrade output quality. The system prompt instruction is given to the model for every chat interaction. 
+* **System Prompt**: Sets foundational instructions for the AI’s behavior, tone, and task orientation. This prompt influences how the model interprets context and generates responses. Precision matters; ambiguous or overloaded prompts can degrade output quality. The system prompt instruction is **given to the model for every chat interaction**. 
 
 !!! note "System Prompt Considerations"
     * Longer prompts can improve response accuracy and task alignment, but they also increase resource usage.
@@ -156,22 +156,23 @@ General Guidance:
     * Medium temperatures (e.g., 0.4–0.6) - responses balance structure with some variation, less formal and robotic than lower temperatures; great for scenario planning, UI/UX analysis, or infrastructure trade-offs
 
 
-* **Context Score**: (default 65) Level to determine how the model will evaluate how relevant, useful or salient a piece of information is within a given context window.  This value sets the minimum score required for a given piece of context to be considered applicable.  It helps to decide what to focus on, what to ignore or compress, what to retain across turns, etc.  
-    - 0 will consider anything a match, while 100 will require a perfect match
+* **Context Score**: (default 65) Level to determine how the model will evaluate how relevant, useful, or salient a piece of information is within a given context window.  This value sets the minimum score required for a given piece of context to be considered applicable.  It helps to decide what to focus on, what to ignore or compress, what to retain across turns, etc.  
+    - 0 will consider anything a match, while 100 will require a strict perfect match
     - Optimum context score will depend on the model used, context information (e.g. documents uploaded to the assistant workspace), and use case.
+    - The default context score (65) provides a moderate level of relevance that is neither highly precise nor entirely off-topic.  If unsure of best setting for your use case, start with the default setting, run test scenarios to evaluate outputs, then adjust context score if needed. 
 
 
 * **Max Tokens**: (default: 0 = no limit) Set maximum system response length in tokens
-Tokens vary across different ai models, but in general a token equates to .7 words.
+Tokens vary across different AI models, but in general a token equates to .7 words.
     - When setting a max token, it should be set to less than model's context size
     - For many use cases, it is preferrable to set a max token to limit the response (and keep from being too verbose)
-    - Models vary in their standard or default responses with some models tending to give very long-winded responses and others tend to give more short and succinct answers by default.
+    - Models vary in their standard or default responses with some models tending to give very long-winded responses and others providing more short and succinct answers by default.
 
 * **Advanced**: Field reserved for future enhanced configuration options.  Contact support if you need additional AI settings beyond those provided within the UI.
 
 
 2. Click **Submit** to create/save the assistant configuration.
-The assistant will be deployed and become available for use
+The assistant will be deployed and become available for use.
 
 ---
 
