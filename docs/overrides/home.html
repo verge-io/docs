@@ -38,13 +38,13 @@
     .hero-icon {
         font-size: 2.3em;
         margin-bottom: 16px;
-        color: #10b981;
+        color: #D9693B;
     }
     .hero h1 {
         font-size: 3.5em;
         margin-bottom: 16px;
         font-weight: 700;
-        color: #10b981;
+        color: #D9693B;
         letter-spacing: -0.02em;
     }
     .hero-subtitle {
@@ -149,7 +149,7 @@
         padding: 16px;
         font-family: 'Monaco', 'Courier New', monospace;
         font-size: 1em;
-        color: #10b981;
+        color: #D9693B;
         width: 100%;
     }
     .card-diagram {
@@ -184,7 +184,7 @@
         margin-bottom: 32px;
     }
     .view-all-link {
-        color: #10b981;
+        color: #D9693B;
         text-decoration: none;
         font-size: 1.1em;
         display: flex;
@@ -192,7 +192,7 @@
         gap: 6px;
     }
     .view-all-link:hover {
-        color: #34d399;
+        color: #D9693B;
     }
     .secondary-grid {
         display: grid;
@@ -313,7 +313,7 @@
         transition: color 0.2s ease;
     }
     .footer-link:hover {
-        color: #10b981;
+        color: #D9693B;
     }
     .footer-link-icon {
         font-size: 1.4em;
@@ -323,11 +323,11 @@
         justify-content: center;
     }
     .footer-link a {
-        color: #10b981;
+        color: #D9693B;
         text-decoration: none;
     }
     .footer-link a:hover {
-        color: #34d399;
+        color: #D9693B;
         text-decoration: underline;
     }
 
@@ -338,9 +338,9 @@
         right: 32px;
         width: 60px;
         height: 60px;
-        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        background: linear-gradient(135deg, #D9693B 0%, #B85229 100%);
         border-radius: 50%;
-        box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+        box-shadow: 0 4px 12px rgba(217, 105, 59, 0.4);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -351,7 +351,7 @@
     }
     .chatbot-button:hover {
         transform: scale(1.1);
-        box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5);
+        box-shadow: 0 6px 20px rgba(217, 105, 59, 0.5);
     }
     .chatbot-icon {
         font-size: 32px;
@@ -368,7 +368,7 @@
         border-bottom: 1px solid #e2e8f0;
     }
     [data-md-color-scheme="default"] .hero h1 {
-        color: #059669;
+        color: #C4502D;
     }
     [data-md-color-scheme="default"] .hero-subtitle {
         color: #64748b;
@@ -407,7 +407,7 @@
     [data-md-color-scheme="default"] .card-code-block {
         background: #f8fafc;
         border: 1px solid #e2e8f0;
-        color: #059669;
+        color: #C4502D;
     }
     [data-md-color-scheme="default"] .secondary-section {
         border-top: 1px solid #e2e8f0;
@@ -420,10 +420,10 @@
         color: #64748b;
     }
     [data-md-color-scheme="default"] .view-all-link {
-        color: #059669;
+        color: #C4502D;
     }
     [data-md-color-scheme="default"] .view-all-link:hover {
-        color: #047857;
+        color: #A7422B;
     }
     [data-md-color-scheme="default"] .secondary-card {
         background: #ffffff;
@@ -467,22 +467,22 @@
         color: #64748b;
     }
     [data-md-color-scheme="default"] .footer-link:hover {
-        color: #059669;
+        color: #C4502D;
     }
     [data-md-color-scheme="default"] .footer-link a {
-        color: #059669;
+        color: #C4502D;
     }
     [data-md-color-scheme="default"] .footer-link a:hover {
-        color: #047857;
+        color: #A7422B;
     }
 
     /* Light mode chatbot button */
     [data-md-color-scheme="default"] .chatbot-button {
-        background: linear-gradient(135deg, #059669 0%, #047857 100%);
-        box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+        background: linear-gradient(135deg, #C4502D 0%, #A7422B 100%);
+        box-shadow: 0 4px 12px rgba(196, 80, 45, 0.3);
     }
     [data-md-color-scheme="default"] .chatbot-button:hover {
-        box-shadow: 0 6px 20px rgba(5, 150, 105, 0.4);
+        box-shadow: 0 6px 20px rgba(196, 80, 45, 0.4);
     }
 
     /* Responsive Design */
@@ -538,33 +538,34 @@
             </div>
             <div class="main-card-visual">
                 <svg class="card-diagram" viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Four separate boxes converging -->
-                    <!-- Left: Compute -->
-                    <rect x="5" y="10" width="42" height="28" rx="3" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
-                    <text x="26" y="27" text-anchor="middle" fill="#fbbf24" font-size="8" font-family="monospace" font-weight="bold">Compute</text>
+                    <!-- Draw convergence lines FIRST (so they appear behind) -->
+                    <line x1="39" y1="29" x2="100" y2="67" stroke="#fbbf24" stroke-width="1.8"/>
+                    <line x1="100" y1="29" x2="100" y2="67" stroke="#fbbf24" stroke-width="1.8"/>
+                    <line x1="161" y1="29" x2="100" y2="67" stroke="#fbbf24" stroke-width="1.8"/>
+                    <line x1="69" y1="59" x2="100" y2="67" stroke="#fbbf24" stroke-width="1.8"/>
+                    <line x1="131" y1="59" x2="100" y2="67" stroke="#fbbf24" stroke-width="1.8"/>
                     
-                    <!-- Center-Left: Storage -->
-                    <rect x="53" y="10" width="42" height="28" rx="3" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
-                    <text x="74" y="27" text-anchor="middle" fill="#fbbf24" font-size="8" font-family="monospace" font-weight="bold">Storage</text>
+                    <!-- Row 1: Three boxes (drawn AFTER lines so they appear on top) -->
+                    <rect x="20" y="5" width="38" height="24" rx="3" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
+                    <text x="39" y="20" text-anchor="middle" fill="#fbbf24" font-size="7.5" font-family="monospace" font-weight="bold">Compute</text>
                     
-                    <!-- Center-Right: Network -->
-                    <rect x="101" y="10" width="42" height="28" rx="3" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
-                    <text x="122" y="27" text-anchor="middle" fill="#fbbf24" font-size="8" font-family="monospace" font-weight="bold">AI</text>
+                    <rect x="81" y="5" width="38" height="24" rx="3" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
+                    <text x="100" y="20" text-anchor="middle" fill="#fbbf24" font-size="7.5" font-family="monospace" font-weight="bold">Storage</text>
                     
-                    <!-- Right: AI -->
-                    <rect x="149" y="10" width="42" height="28" rx="3" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
-                    <text x="170" y="27" text-anchor="middle" fill="#fbbf24" font-size="8" font-family="monospace" font-weight="bold">Network</text>
+                    <rect x="142" y="5" width="38" height="24" rx="3" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
+                    <text x="161" y="20" text-anchor="middle" fill="#fbbf24" font-size="7.5" font-family="monospace" font-weight="bold">Network</text>
                     
-                    <!-- Convergence lines pointing down -->
-                    <line x1="26" y1="38" x2="100" y2="62" stroke="#fbbf24" stroke-width="2"/>
-                    <line x1="74" y1="38" x2="100" y2="62" stroke="#fbbf24" stroke-width="2"/>
-                    <line x1="122" y1="38" x2="100" y2="62" stroke="#fbbf24" stroke-width="2"/>
-                    <line x1="170" y1="38" x2="100" y2="62" stroke="#fbbf24" stroke-width="2"/>
+                    <!-- Row 2: Two boxes centered -->
+                    <rect x="50" y="35" width="38" height="24" rx="3" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
+                    <text x="69" y="50" text-anchor="middle" fill="#fbbf24" font-size="7.5" font-family="monospace" font-weight="bold">AI</text>
+                    
+                    <rect x="112" y="35" width="38" height="24" rx="3" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
+                    <text x="131" y="50" text-anchor="middle" fill="#fbbf24" font-size="7.5" font-family="monospace" font-weight="bold">DR</text>
                     
                     <!-- Unified platform box -->
-                    <rect x="30" y="67" width="140" height="38" rx="4" fill="#1e293b" stroke="#fbbf24" stroke-width="2.5"/>
-                    <text x="100" y="84" text-anchor="middle" fill="#fbbf24" font-size="12" font-family="monospace" font-weight="bold">VergeOS</text>
-                    <text x="100" y="98" text-anchor="middle" fill="#fbbf24" font-size="8" font-family="monospace">Unified Infrastructure OS</text>
+                    <rect x="30" y="70" width="140" height="36" rx="4" fill="#1e293b" stroke="#fbbf24" stroke-width="2.5"/>
+                    <text x="100" y="87" text-anchor="middle" fill="#fbbf24" font-size="12" font-family="monospace" font-weight="bold">VergeOS</text>
+                    <text x="100" y="100" text-anchor="middle" fill="#fbbf24" font-size="8" font-family="monospace">Unified Infrastructure OS</text>
                     
                     <!-- "1 UI • 1 API • 1 Update" tagline -->
                     <text x="100" y="117" text-anchor="middle" fill="#fbbf24" font-size="6" font-family="monospace" opacity="0.8">1 UI • 1 API • 1 Update</text>
