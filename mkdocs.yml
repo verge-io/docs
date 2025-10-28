@@ -8,7 +8,7 @@ edit_uri: edit/main/docs/
 theme:
   name: material
   custom_dir: docs/overrides
-  logo: assets/vergelogomark.svg
+  logo: assets/vergeosfulllogowhite.svg
   favicon: assets/vergelogomark.svg
   icon:
     repo: fontawesome/brands/github
@@ -34,15 +34,15 @@ theme:
   palette:
     # Palette toggle for dark mode
     - scheme: slate
-      primary: black
-      accent: deep orange
+      primary: custom
+      accent: blue
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
     # Palette toggle for light mode
     - scheme: default
-      primary: indigo
-      accent: deep orange
+      primary: custom
+      accent: blue
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
@@ -118,8 +118,8 @@ extra:
 extra_javascript:
   - javascripts/extra.js
 
-#extra_css:
-#  - stylesheets/extra.css
+extra_css:
+  - stylesheets/extra.css
 
 copyright: |
   Copyright &copy; 2025 <a href="https://verge.io" target="_blank" rel="noopener"> Verge.io</a> |
