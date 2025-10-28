@@ -1,25 +1,39 @@
 # Retrieving a Snapshot back (Sync Back)
 
-This page provides instructions for retrieving a copy of a snapshot from the sync destination back to the source system. This would allow for performing a local restore from the retrieved snapshot. Before a remote snapshot can be recovered to the source system, the sync-back must be configured; once sync-back is configured it is then available for all subsequent sync back requests.
+This page provides instructions for retrieving a copy of a snapshot from the sync destination back to the source system. This allows you to perform a local restore from the retrieved snapshot. Before a remote snapshot can be recovered to the source system, sync-back must be configured once; it then remains available for all subsequent sync back requests.
+
+## Prerequisites
+
+Before configuring sync-back, ensure:
+
+* **Send and Receive Snapshots** is enabled in site settings (**System → Sites → [Site] → Settings**)
+* **Network rules** are configured for sync in both Core and External networks ([see documentation](#))
+* You have an active **outgoing sync** to the remote site
 
 ## Configure Sync-back
 
-1. On the sending system, navigate to the **Outgoing Sync Dashboard**.
-2. Under the **Remote** section, click **- Click here to Setup -** link next to the **Sync-back** field.
-!!! success "A sync-back field link labeled with a sync-back name rather than 'Click here to Setup' indicates that the sync-back has already been configured and should be ready for initiating sync back of specific snapshot(s)."
+1. From the home screen, click **Sites → Outgoing syncs**
+2. Double-click the outgoing sync you want to configure (or check it and click **View**)
+3. In the **Remote** section, click **"Click here to Setup"** next to the **Sync-back** field
+   - If a sync-back name appears instead, sync-back is already configured
+4. Click **Yes** to confirm setup
 
-3. Click **Yes** to confirm setup of the sync-back.
-Now a name is listed in the sync-back field (i.e. Sync-back for NAMEofSYNC). This automatically sets up an incoming sync for syncing snapshots back from the remote system.
+The Sync-back field now shows a name (e.g., "Sync-back for NAMEofSYNC"), indicating an incoming sync has been automatically created for syncing snapshots back from the remote system.
 
 ## Initiate a Sync Back
 
-1. On the sending system, navigate to the outgoing sync dashboard
-2. Click **Remote Snaps** on the left menu.
-3. Click to select desired snapshot(s) to sync back (selected snapshots have check mark on the left).
-4. Click **Request** on the left menu.
-    - **Retention** for the retrieved snapshot will default to 3 Days; can be changed as desired. (Changing retention setting here does not affect the retention in place for the snapshot on the remote system.)
-    - **Priority** (0-9) can be specified, with lower number to sync before higher number; only relevant when multiple sync backs will be initiated.
-    - Optionally, a **Prefix** can be added to the snapshot name in order to clearly distinguish it from other snapshots; text entered in this field is appended to the beginning of the existing snapshot name for the retrieved copy.
-5. After options are configured as desired, click **Submit** to initiate the sync-back.
+1. Navigate to the **Outgoing Sync Dashboard**:
+   - From the home screen: **Sites → Outgoing syncs** → double-click the desired sync
+2. Click **Remote Snaps** in the left menu
+3. Select the desired snapshot(s) to sync back (checked snapshots show a checkmark)
+4. Click **Request** in the left menu and configure options:
+   - **Retention**: Defaults to 3 days (does not affect remote retention)
+   - **Priority (0-9)**: Lower numbers sync first (only relevant for multiple sync backs)
+   - **Prefix**: Highly recommended to distinguish retrieved snapshots from originals
+     - Recommended: `Sync-back` (system automatically adds underscore)
+     - Example: `Snapshot_20251027` becomes `Sync-back_Snapshot_20251027`
+5. Click **Submit** to initiate the sync-back
 
-The dashboard for the configured sync-back (Incoming Sync) appears. A log entry will indicate a started sync. When the sync-back retrieval is completed, another log entry is generated showing statistics. The retrieved snapshot can be accessed by clicking the **Received snapshots** count-box on this page. Select the snapshot in the list to access menu options that allow for restoring the entire local system or individual VMs contained within the snapshot.
+The Incoming Sync Dashboard appears showing sync progress. When complete, access the retrieved snapshot by clicking the **Received snapshots** count-box. The snapshot can also be found at **System → Cloud Snapshots** with the **Remote** checkbox checked.
+
+---
