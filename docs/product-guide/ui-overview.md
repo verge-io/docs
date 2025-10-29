@@ -54,7 +54,7 @@ This document will help you understand how to navigate the VergeOS interface, in
 
     **What's New in 26**
 
-    - **Terminology Updates**: Virtual Wires are now called **Virtual Switch Ports**, and Cloud Snapshots are now called **System Snapshots**
+    - **Terminology Updates**: Virtual Wires are now called **Virtual Switch Ports**, and Cloud Snapshots are now called **System Snapshots**, and Media Images is now called **Files**
     - **Persistent Top Navigation Bar**: The main menu now remains visible at all times, allowing seamless context switching without losing your place
     - **Redesigned Status Indicators**: Tiles and cards now use horizontal status bars instead of circular indicators for clearer visual feedback
     - **Menu Reorganization**: Navigation elements have been regrouped for improved logical flow and faster access to related functions
