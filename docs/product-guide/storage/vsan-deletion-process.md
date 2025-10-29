@@ -113,7 +113,7 @@ When deleting VMs or drives inside a tenant:
 
 - **Files shared between parent and tenant** may maintain references
 - Shared VM snapshots can prevent complete storage cleanup
-- **Media images provided to tenants** create additional block references
+- **Files provided to tenants** create additional block references
 - Consider shared objects when estimating storage reclamation
 
 !!! info "Network Resource Cleanup"

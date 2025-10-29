@@ -1,6 +1,6 @@
 # Providing Files to a Tenant
 
-A service provider can provide files, that are uploaded to the vSAN, to a tenant. For help in the initial upload of files to the parent vSAN, see: [**Media Images**](/product-guide/storage/uploading-files-to-vsan)
+A service provider can provide files, that are uploaded to the vSAN, to a tenant. For help in the initial upload of files to the parent vSAN, see: [**Uploading Files to the vSAN**](/product-guide/storage/uploading-files-to-vsan)
 
 ## Provide a File to a Tenant
 
@@ -12,4 +12,4 @@ A service provider can provide files, that are uploaded to the vSAN, to a tenant
 6. **Select a file** from the dropdown list.
 7. Click **Submit** (bottom of page).
 
-The process is near-instant as it is done with a branch command. The file is now available to the tenant within their own [**Media Images**](/product-guide/storage/uploading-files-to-vsan) section.
+The process is near-instant as it is done with a branch command. The file is now available to the tenant within their own [**Files**](/product-guide/storage/uploading-files-to-vsan) section.
