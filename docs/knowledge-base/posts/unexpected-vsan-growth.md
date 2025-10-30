@@ -27,7 +27,7 @@ There are several reasons for the vSAN to start growing at a rate faster than an
 
 To isolate unexplained growth, it is important to narrow down when the growth increased exponentially. Using the steps below, administrators can review storage growth and visualize normal growth from daily operations versus spikes in growth, which are typically unexpected.
 
-1. Navigate to the **vSAN Tiers** from the Main Dashboard. If vSAN Tiers is not present, then this environment is a tenant of a parent system, and the vSAN tier needs to be examined at the parent system.
+1. Navigate to the **Infrastructure** > **vSAN Tiers** from the top menu. If vSAN Tiers is not present, then this environment is a tenant of a parent system, and the vSAN tier needs to be examined at the parent system.
 2. Open the vSAN Tier with unexpected growth (for example, vSAN Tier 0).
 3. On the left navigation menu, click on **History**.
 4. A new menu will appear showing history in various graphs. Modify the filter period to isolate any growth on this tier.

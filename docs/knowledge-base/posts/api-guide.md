@@ -33,8 +33,8 @@ This document outlines the usage of the API. Detailed information for the API ca
 To access the Swagger documentation in the VergeOS UI:
 
 1. **Login** to the VergeOS system with valid credentials.
-2. From the Main Dashboard, click **System** in the left menu.
-3. In the System Dashboard, find the **API Documentation** link at the bottom left and click it.
+2. Select **System** from the top menu.
+3. Select **API Documentation**.
 4. The Swagger documentation page will open. This page provides detailed examples for each API operation, including the ability to test the API directly.
    
    ![Swagger Documentation Example](/product-guide/screenshots/api1.png)

@@ -79,7 +79,7 @@ VergeOS implements immutable snapshots differently from many other solutions to 
 
 ### Enabling Immutable Protection ("Lock" a Snapshot)
 
-1. From the Main Dashboard, navigate to **System** > **System Snapshots**.
+1. Navigate to **System** > **System Snapshots**.
 2. **Double-click** the **desired snapshot** from the listing.
 3. Toggle the **Immutable** option to enabled (the button will move to the right).
 4. Click **Submit** at the bottom of the page to save the change.
@@ -102,7 +102,7 @@ You can configure the profile used for taking system snapshots to automatically 
 
 **To disable immutable protection:**
 
-1. From the Main Dashboard, navigate to **System** > **System Snapshots**.
+1. Navigate to **System** > **System Snapshots**.
 2. Double-click the desired snapshot from the listing.
 3. Toggle the **Immutable** option to disabled (the button will move to the left). 
 4. Click **Submit** at the bottom of the page to save changes.

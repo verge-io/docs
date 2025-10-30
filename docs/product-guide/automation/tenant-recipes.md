@@ -78,7 +78,7 @@ When any changes are made to a recipe, it will need to be republished in order t
 
 ### Create a Tenant from Recipe
 
-1. From the Main Dashboard, click **Tenants > New**.
+1. From the top menu, Navigate to **Tenants** > **New Tenant**.
 2. Click the desired **catalog** from the catalogs section on the left.
 3. The individual tenant recipes available in the selected catalog will appear on the right side.  **Select the desired recipe** and click **Next** at the bottom of the screen.
 4. Input fields are presented as defined by the recipe's questions.

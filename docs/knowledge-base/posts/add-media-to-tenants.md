@@ -38,10 +38,10 @@ This article guides Service Providers through the process of sharing files, such
 ## Steps
 
 1. Navigate to the Tenants Dashboard
-   - From the Main Dashboard, select "Tenants" on the left menu
+   - Select "Tenants" on the top menu 
 
 2. Access Tenant List
-   - Select "Tenants" to view a listing of all your Tenants
+   - Select "List" to view a listing of all your Tenants
 
 3. Select the Desired Tenant
    - Double click on the Tenant you want to share files with
