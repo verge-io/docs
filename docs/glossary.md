@@ -162,7 +162,7 @@ A collection of nodes used to deploy workloads across a single vSAN instance in 
 ### **vGPU**: 
 A physical GPU installed on a host node that is dissected into multiple virtual GPUs, providing access to multiple VMs simultaneously.
 
-### **Virtual Wire**: 
+### **Virtual Switch Port**: 
 The equivalent of an uplink between two virtual switches (networks) in VergeOS, used to provide Layer 2 connectivity.
 
 ### **Volume**: 

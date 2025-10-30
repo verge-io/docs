@@ -48,9 +48,9 @@ This guide provides a step-by-step process to manually update your air-gapped Ve
        Ensure that the ISO file corresponds to your current VergeOS version to avoid compatibility issues.
 
 2. **Upload the ISO to VergeOS**
-   - Log in to your VergeOS Cloud Dashboard.
-   - Navigate to **Media Images** in the left-hand menu.
-   - Upload the downloaded ISO file to the **Media Images** section.
+   - Log in to your VergeOS environment.
+   - Navigate to **Files**
+   - Upload the downloaded ISO file to the **Files** section.
 
    !!! note
        The upload process may take a few minutes depending on your network speed.
@@ -58,7 +58,7 @@ This guide provides a step-by-step process to manually update your air-gapped Ve
 3. **Configure Update Settings**
    - Go to **System** > **Updates** > **Edit Settings**.
    - In the **Update Source** dropdown menu, select `-- Update ISO --`.
-   - Choose the ISO file you just uploaded from the **Media Images**.
+   - Choose the ISO file you just uploaded from the ***Files***.
    - Click **Submit** to save the settings.
 
 4. **Perform the Update**

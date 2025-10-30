@@ -156,7 +156,7 @@ status: deprecated
 
 #### Network Improvements
 - Enhanced network migration performance (25% faster)
-- Improved virtual wire connectivity
+- Improved Virtual Switch Port connectivity
 - Added network migration queuing during maintenance
 
 #### Cloud & Storage

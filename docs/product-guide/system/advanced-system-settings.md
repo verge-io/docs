@@ -35,7 +35,7 @@ These settings can be found under ***System > Settings > Advanced***.
 | ***Default failover cluster for tenant nodes*** | Designates the backup cluster for tenant node failover. | |
 | ***Default internal network MTU*** | Changes the default MTU of all Internal Networks created | 9000 |
 | ***Default internal network address*** | Changes the default network address scheme of all Internal Networks created | 192.168.0.0/24 |
-| ***Default media file tier*** | Sets the default tier of storage used for storage files in Media Images | 4 |
+| ***Default media file tier*** | Sets the default tier of storage used for storage of uploaded files | 4 |
 | ***Default tenant network address*** | Changing default network addressing is typically not recommended.  Work closely with VergeOS Support to implement network addressing changes.| 100.96.255.0/24 |
 | ***Enable IPv6*** | IPV6 traffic in/out of the system is blocked by default.  This setting does not need to be changed to allow internal VM-to-VM ipv6 traffic. | false |
 | ***Failed login attempts before an account is locked (0 disables lockout)*** | Specifies the number of consecutive failed login attempts allowed before an account is temporarily locked. Setting this to 0 disables the lockout feature. Note: VergeOS has built-in protection against brute-force attacks. Enable with caution, as aggressive lockouts can potentially lead to denial-of-service situations. | 0 |
@@ -43,10 +43,14 @@ These settings can be found under ***System > Settings > Advanced***.
 | ***Historical long term stats expire every X second(s)***|Defaults for historical stat expiration settings are optimized for 95th-percentile calculations/reporting. The default for long term stat expiration allows more than 30 days to ensure that monthly data will be available.   | 3888000 |
 | ***Historical short term stats expire every X second(s)***|Defaults for historical stat expiration settings are optimized for 95th-percentile calculations| 300 |
 | ***List of NTP servers to synchronize time with (space delimited)*** | time.nist.gov 0.pool.ntp.org 1.pool.ntp.org 2.pool.ntp.org 3.pool.ntp.org |
+| ***Logon banner header*** | Sets the header text displayed on the login page banner. Can be used to display organizational or security notices. | |
+| ***Logon banner text*** | Defines the main text content displayed on the login page banner. Typically used for legal disclaimers, usage policies, or system-specific notices. | |
 | ***MAC address prefix for machine NICs*** | Default is the Verge.io(aka Yottabyte) OUI IEEE registered Prefix. VergeOS uses this OUI plus a system ID to ensure unique MAC addressing. | F0:DB:30 |
 | ***MSS (Maximal Segment Size) of the core network's default route (set to 1460 for an MTU of 1500)*** | **Do not modify this setting unless expressly directed by VergeIO support** | 1460 |
 | ***Machine migration power-cycle timeout*** | Specifies the maximum time (in seconds) the system waits for a non-responsive VM during migration before initiating a power cycle. This helps prevent migration processes from hanging indefinitely. | 1800 |
 | ***Machine migration speed throttle (bytes/sec)*** | Sets the maximum data transfer rate for VM migrations. This helps balance migration speed with network performance for other operations. The default allows for roughly 1 GB/s. | 1048576000 |
+| ***Maximum concurrent machine migrations*** | Limits the number of VM migrations that can occur simultaneously across the cluster. This helps manage resource utilization during migration operations. | 1 |
+| ***Maximum concurrent network migrations*** | Sets the maximum number of network migrations that can run concurrently. This helps control resource usage during network failover or rebalancing operations. | 10 |
 | ***Maximum estimated snapshots per profile (0 to disable warning)*** | Defines the threshold for the number of snapshots in a profile before triggering a warning. This helps manage storage usage and snapshot proliferation. Setting to 0 disables the warning. | 200 |
 | ***Maximum number of VXLAN FDB entries (changing this anything other than 0 can result in dropped packets)*** | Limits the number of entries in the VXLAN Forwarding Database. Changing from 0 (unlimited) may impact network performance and should only be done with caution. | 0 |
 | ***Minutes an account is locked for*** | Specifies the duration (in minutes) that a user account remains locked after exceeding the failed login attempt limit. This helps protect against brute-force attacks. | 15 |
@@ -65,6 +69,8 @@ These settings can be found under ***System > Settings > Advanced***.
 | ***Session expiration (seconds)*** | length of time before a user is automatically logged out and required to sign in again. | 259200 |
 | ***Session inactivity timeout (seconds)*** | length of time (that user is inactive) before being automatically logged out | 86400 |
 | ***System ID***|WARNING: changing your system ID will affect your VergeOS license, which can stop the system from running workloads. | *will vary* |
+| ***System snapshot profile*** | Specifies the Snapshot Profile to use for system-level snapshots. The "System Snapshots" profile is automatically created during installation. You can modify this included profile or select a different profile here. | System Snapshots |
+| ***TCP MTU Probing (0: Disabled, 1: Disabled, but enabled if detected, 2: Enabled)*** | Controls TCP Maximum Transmission Unit (MTU) Path Discovery. When enabled (2), the system actively probes to discover the optimal MTU size for TCP connections, helping to prevent packet fragmentation. Setting 1 disables probing but enables it if ICMP blackholes are detected. | 2 |
 | ***Template to define for syslog server (See rsyslog for format)***|Consult *rsyslog* documentation for proper input syntax. | |
 | ***Timeout in seconds before a machine becomes unresponsive***|threshold time for the system to deem a VM unresponsive and attempt starting the VM on an alternate node | 120 |
 | ***Timeout in seconds before an unresponsive node is rebooted via IPMI*** | Specifies the duration the system waits before automatically rebooting an unresponsive node using IPMI. Requires proper IPMI configuration. | 3600 |

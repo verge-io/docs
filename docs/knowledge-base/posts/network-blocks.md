@@ -17,7 +17,7 @@ dateCreated: 2024-01-03T17:19:47.187Z
 
 ## Network Blocks Overview
 
-Network blocks in VergeOS are a powerful way to assign multiple IP addresses to tenants or networks for workloads. This method is preferred over virtual wires since VergeOS focuses on Layer 3 connectivity, avoiding the common issues associated with Layer 2 connections (like virtual wires). Network blocks also allow the direct assignment of public IP addresses to VMs inside an internal network or a tenant.
+Network blocks in VergeOS are a powerful way to assign multiple IP addresses to tenants or networks for workloads. This method is preferred over Virtual Switch Ports since VergeOS focuses on Layer 3 connectivity, avoiding the common issues associated with Layer 2 connections (like Virtual Switch Ports). Network blocks also allow the direct assignment of public IP addresses to VMs inside an internal network or a tenant.
 
 ## Creating a Network Block
 
@@ -41,9 +41,5 @@ Network blocks in VergeOS are a powerful way to assign multiple IP addresses to 
 9. **Power on** the network using the option in the left menu.
 10. Assign any desired virtual machines to the network and **test connectivity**.
 
-
 ---
 
-!!! note "Document Information"
-    - Last Updated: 2024-08-29
-    - vergeOS Version: 4.12.6

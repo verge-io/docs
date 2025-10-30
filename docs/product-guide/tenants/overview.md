@@ -21,7 +21,7 @@ New to VergeOS tenants? Start here:
 - **Individualized backup/DR:** DR protocols can be customized per tenant
 - **Portability:** Each tenant is a portable, self-contained system that can be moved to a different location as one unit
 - **Automated Deployment:** [Tenant Recipes](/product-guide/automation/tenant-recipes) allow for rapid deployment, compliance, self-service applications, etc.
-- **Custom Branding:** Parent systems can permit a tenant to "brand" its user interface with its own company logos, color schemes and font selections (can be allowed/disallowed on a per-tenant basis)
+- **Custom Branding:** Parent systems can permit a tenant to "brand" its user interface with its own company logos, color schemes and font selections, using [**Themes**](/product-guide/system/themes) (can be allowed/disallowed on a per-tenant basis) 
 
 ## Security & Isolation
 

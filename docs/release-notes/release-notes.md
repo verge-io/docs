@@ -240,7 +240,7 @@ status: new
     - NAS recipe status during drive formatting
     - Cloud snapshot timing conflicts
     - SSL certificate Common Name parsing
-    - Virtual wire configuration
+    - Virtual Switch Port configuration
     - VMware backup and import processes
     - Network connection maintenance during migrations
     - vGPU profile placement IDs
@@ -494,7 +494,7 @@ status: new
 
 #### Network & Connectivity
 - Improved network operations:
-    - Virtual wire connection delayed until migration completion
+    - Virtual Switch Port connection delayed until migration completion
     - Enhanced wireguard peer creation
     - Better IP address ownership visibility
     - Improved bonded network configuration
