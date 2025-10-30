@@ -13,7 +13,7 @@ Whether you're evaluating VergeOS for your organization or planning your impleme
 **[Get an overview of VergeOS storage solutions →](/product-guide/storage/overview)**
 
 * **[vSAN (VergeFS)](/product-guide/storage/vsan-architecture)** - Utilize integrated, resilient, distributed storage with global deduplication and automatic tiering
-* **[Media Images](/product-guide/storage/uploading-files-to-vsan)** - Easily upload and manage your individual ISOs, disk images, logos, and other files
+* **[Files](/product-guide/storage/uploading-files-to-vsan)** - Easily upload and manage your individual ISOs, disk images, logos, and other files
 * **[NAS (Network Attached Storage) Service](/product-guide/nas/overview)** - Establish file-level storage and access on your VergeFS distributed storage
 
 ## Backup and Disaster Recovery (BC/DR)

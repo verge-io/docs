@@ -63,21 +63,21 @@ In the Tenant interface:
 
 Attach a VM NIC to the network with DHCP enabled to have the IP assigned to the NIC automatically. Alternatively, set the IP address(es) within your guest OS manually.
 
-## Creating a Virtual Wire
+## Creating a Virtual Switch Port
 
-Virtual Wires are another common method to consume root-level IP space by tenant workloads. These are roughly analogous to physical wires in that they allow Layer 2 network traffic to "skip" routed network segments, in this case allowing a Tenant Internal network to communicate directly with a network outside of VergeOS. This may be a "WAN" network directly, or other network configured outside of VergeOS that has address space usable and is routable out to the internet.
+Virtual Switch Ports are another common method to consume root-level IP space by tenant workloads. These are roughly analogous to physical wires in that they allow Layer 2 network traffic to "skip" routed network segments, in this case allowing a Tenant Internal network to communicate directly with a network outside of VergeOS. This may be a "WAN" network directly, or other network configured outside of VergeOS that has address space usable and is routable out to the internet.
 
 !!! note "Pro/Cons"
     Pro - Simple configuration within VergeOS, bypassing internal Layer 3 routing configuration.<br>
     Pro - Allows direct usage of External IPs on edge devices by consumers.<br>
     Pro - Minimal address space overhead; only the IP addresses used by clients.<br>
-    Con - Virtual Wires only function when both networks they connect are running on the same node. <br>
+    Con - Virtual Switch Ports only function when both networks they connect are running on the same node. <br>
       -This requires the External network and Tenant Node1 use a High Availability (HA) Grouping to maintain their grouping, which may impact HA event expectations.<br>
     Con - May make troubleshooting and diagnostic more difficult by removing VergeOS WebUI and native routing visibility.   
 
-For instructions on creating a Virtual Wire, see [Creating a Virtual Wire](https://docs.verge.io/knowledge-base/provide-layer2-to-tenant/).
+For instructions on creating a Virtual Switch Port, see [Creating a Virtual Switch Port](https://docs.verge.io/knowledge-base/provide-layer2-to-tenant/).
 
-Once your Virtual Wire is in place, virtual machines and other workloads with NICs connected to the Internal network the vwire is attached to will have a Layer 2 connection out of VergeOS and will function similarly to a VLAN in a traditional switch with regards to addressing and routing.
+Once your Virtual Switch Port is in place, virtual machines and other workloads with NICs connected to the Internal network the vwire is attached to will have a Layer 2 connection out of VergeOS and will function similarly to a VLAN in a traditional switch with regards to addressing and routing.
 
 ## Address Translation
 

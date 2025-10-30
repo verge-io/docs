@@ -1,5 +1,218 @@
+/* ========================================
+   Material for MkDocs Header Customization
+   Match header to home page background (#0a0f1a)
+   ======================================== */
+
+/* Header positioning */
 .md-header {
-    position: sticky;
-    top: 0;
-    z-index: 100;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Dark Mode (Slate) - Header colors matching home page */
+[data-md-color-scheme="slate"] {
+  /* Primary colors - matching home page background #0a0f1a */
+  --md-primary-fg-color: #0a0f1a;
+  --md-primary-fg-color--light: #0f1729;
+  --md-primary-fg-color--dark: #050811;
+  --md-primary-bg-color: #f8fafc;
+  
+  /* Default background colors */
+  --md-default-bg-color: #0f172a;
+  --md-default-fg-color: #e2e8f0;
+  --md-default-fg-color--light: #94a3b8;
+  --md-default-fg-color--lighter: #64748b;
+  --md-default-fg-color--lightest: #475569;
+  
+  /* Accent color - emerald green */
+  --md-accent-fg-color: #D9693B;
+  --md-accent-fg-color--transparent: rgba(217, 105, 59, 0.1);
+  --md-accent-bg-color: #f1f5f9;
+  
+  /* Link colors */
+  --md-typeset-a-color: #D9693B;
+  
+  /* Code colors */
+  --md-code-bg-color: #1e293b;
+  --md-code-fg-color: #e2e8f0;
+}
+
+/* Force header elements to use dark background */
+[data-md-color-scheme="slate"] .md-header,
+[data-md-color-scheme="slate"] .md-header__inner,
+[data-md-color-scheme="slate"] .md-tabs {
+  background-color: #0a0f1a !important;
+  border-bottom: 1px solid #1e293b;
+}
+
+/* Header title and links */
+[data-md-color-scheme="slate"] .md-header__title,
+[data-md-color-scheme="slate"] .md-header__button,
+[data-md-color-scheme="slate"] .md-nav__link {
+  color: #e2e8f0 !important;
+}
+
+/* Search box in header */
+[data-md-color-scheme="slate"] .md-search__input {
+  background-color: #1e293b;
+  color: #e2e8f0;
+  border: 1px solid #334155;
+}
+
+[data-md-color-scheme="slate"] .md-search__input::placeholder {
+  color: #64748b;
+}
+
+/* Navigation tabs */
+[data-md-color-scheme="slate"] .md-tabs__link {
+  color: #94a3b8 !important;
+}
+
+[data-md-color-scheme="slate"] .md-tabs__link--active,
+[data-md-color-scheme="slate"] .md-tabs__link:hover {
+  color: #D9693B !important;
+}
+
+/* Sidebar navigation title */
+[data-md-color-scheme="slate"] .md-nav__title {
+  background-color: #0a0f1a !important;
+  color: #e2e8f0;
+}
+
+/* Light Mode (Default) - Cleaner header */
+[data-md-color-scheme="default"] {
+  /* Primary colors */
+  --md-primary-fg-color: #ffffff;
+  --md-primary-fg-color--light: #f8fafc;
+  --md-primary-fg-color--dark: #f1f5f9;
+  --md-primary-bg-color: #0a0f1a;
+  
+  /* Default colors */
+  --md-default-bg-color: #ffffff;
+  --md-default-fg-color: #1e293b;
+  --md-default-fg-color--light: #475569;
+  --md-default-fg-color--lighter: #64748b;
+  --md-default-fg-color--lightest: #94a3b8;
+  
+  /* Accent color */
+  --md-accent-fg-color: #C4502D;
+  --md-accent-fg-color--transparent: rgba(196, 80, 45, 0.1);
+  --md-accent-bg-color: #0f172a;
+  
+  /* Link colors */
+  --md-typeset-a-color: #C4502D;
+  
+  /* Code colors */
+  --md-code-bg-color: #f1f5f9;
+  --md-code-fg-color: #1e293b;
+}
+
+/* Light mode header - clean white */
+[data-md-color-scheme="default"] .md-header,
+[data-md-color-scheme="default"] .md-header__inner,
+[data-md-color-scheme="default"] .md-tabs {
+  background-color: #ffffff !important;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* Light mode header text */
+[data-md-color-scheme="default"] .md-header__title,
+[data-md-color-scheme="default"] .md-header__button,
+[data-md-color-scheme="default"] .md-nav__link {
+  color: #1e293b !important;
+}
+
+/* Light mode search */
+[data-md-color-scheme="default"] .md-search__input {
+  background-color: #f8fafc;
+  color: #1e293b;
+  border: 1px solid #e2e8f0;
+}
+
+[data-md-color-scheme="default"] .md-search__input::placeholder {
+  color: #94a3b8;
+}
+
+/* Light mode navigation tabs */
+[data-md-color-scheme="default"] .md-tabs__link {
+  color: #64748b !important;
+}
+
+[data-md-color-scheme="default"] .md-tabs__link--active,
+[data-md-color-scheme="default"] .md-tabs__link:hover {
+  color: #C4502D !important;
+}
+
+/* Light mode sidebar */
+[data-md-color-scheme="default"] .md-nav__title {
+  background-color: #ffffff !important;
+  color: #1e293b;
+}
+
+/* ========================================
+ Additional refinements
+ ======================================== */
+
+/* Remove any gradient backgrounds */
+.md-header::before,
+.md-tabs::before {
+  display: none;
+}
+
+/* Ensure proper contrast for icons */
+.md-header__button.md-icon,
+.md-nav__button.md-icon {
+  color: inherit;
+}
+
+/* Footer adjustments to match theme */
+[data-md-color-scheme="slate"] .md-footer {
+  background-color: #0a0f1a;
+  border-top: 1px solid #1e293b;
+}
+
+[data-md-color-scheme="default"] .md-footer {
+  background-color: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+}
+
+/* ========================================
+   Mobile Navigation Fixes
+   ======================================== */
+
+/* Push mobile navigation below header */
+@media screen and (max-width: 76.1875em) {
+  .md-nav--primary .md-nav__title {
+      padding-top: calc(var(--md-header-height, 3rem) + 0.6rem);
   }
+  
+  /* Alternative: add padding to entire primary nav */
+  .md-nav--primary {
+      padding-top: var(--md-header-height, 3rem);
+  }
+}
+
+/* Logo switching for light/dark mode - preserves sizing */
+
+/* Dark mode - show logo with white text */
+[data-md-color-scheme="slate"] .md-header__button.md-logo img {
+  content: url('../assets/vergeosfulllogowhite.svg');
+}
+
+/* Light mode - show logo with black text */
+[data-md-color-scheme="default"] .md-header__button.md-logo img {
+  content: url('../assets/vergeosfulllogoblack.svg');
+}
+
+[data-md-color-scheme="default"] .card-diagram rect {
+  fill: #f8fafc;
+}
+[data-md-color-scheme="default"] .card-diagram text {
+  fill: #C4502D;
+}
+[data-md-color-scheme="default"] .card-diagram line,
+[data-md-color-scheme="default"] .card-diagram path,
+[data-md-color-scheme="default"] .card-diagram circle {
+  stroke: #C4502D;
+}

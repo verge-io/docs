@@ -36,7 +36,6 @@ The License section displays information about your VergeOS license:
 - **Description**: Any additional description provided for the license.
 - **Valid From/Until**: The validity period of the license.
 - **Issued On/Added On**: Dates related to license issuance and addition.
-- **Branding**: Indicates if custom branding is enabled.
 - **Auto-Renewal**: Shows if the license is set to auto-renew.
 
 To view or copy the license key, click the **Copy** button next to the "Key" field.
@@ -59,20 +58,6 @@ The Connection section provides network information:
 - **vSAN Host**: The IP address or hostname of the vSAN.
 - **vSAN Port**: The port number used for vSAN communication.
 
-## Customizing UI Branding
-
-To customize the look and feel of your VergeOS interface:
-
-1. Click **Edit UI Branding** on the left menu.
-2. In the Custom Branding section, check the **Enabled** box.
-3. Customize the following elements:
-      - **Header** - Background color, logos (large and small), and favicon.
-      - **Left Navigation** - Colors for background, text, and hover states.
-      - **Pop Up Menus** - Colors for background and text.
-      - **Buttons** - Colors for background, text, and hover states.
-      - **Misc.** - Additional color settings for various UI elements.
-5. Use the **Preview** button to see your changes before applying them.
-6. Click **Submit** to save your customizations.
 
 ## Modifying System Settings
 

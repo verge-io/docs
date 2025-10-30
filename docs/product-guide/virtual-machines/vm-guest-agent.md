@@ -38,7 +38,7 @@ The following instructions provide for placing the win-virtio.iso file (containi
 1. Click the link below to access the VirtIO ISO.
 2. The Upload from URL link appears, with all fields auto-populated; typically no changes need to be made; however, optionally, File Name, File Description, and/or Preferred Tier fields can be changed, if desired.
 3. Click Submit to download the VirtIO iso file to the vSAN.
-4. When the progress shows 100% complete (progress bar top right corner) the file is available, appearing in the Media Images list and an option for selection on any CD drive.
+4. When the progress shows 100% complete (progress bar top right corner) the file is available, appearing in the Files list and an option for selection on any CD drive.
 See the directions below for installing the guest agent software from the downloaded VirtIO iso.
 
 ### To Install Guest Agent (Windows) from the VirtIO ISO

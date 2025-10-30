@@ -1,13 +1,13 @@
-# Uploading Files to the vSAN (Media Images)
+# Uploading Files to the vSAN 
 
-The *Media Images* section provides for uploading files to the VergeOS vSAN, allowing *.iso files, drive images, VM definition files, etc. to be easily accessible for creating/installing/importing VMs.  
+The *Files* section provides for uploading files to the VergeOS vSAN, allowing *.iso files, drive images, VM definition files, etc. to be easily accessible for creating/installing/importing VMs.  
 
 !!! note
-    Optionally, files that are uploaded to vSAN media images can be shared via a public link.
+    Optionally, files that are uploaded can be shared via a public link.
 
 ## Upload a File from the Local Computer
 
-1. From the Main Dashboard, select **Media Images**.
+1. Select **Files** from the top menu.
 2. Select **Upload**.
 3. Click the **Choose Files** button
 4. The File Browser Dialog appears. Browse to the desired folder and select the desired file(s). Holding down the ctrl or shift key allows for multi-selection.
@@ -21,7 +21,7 @@ The *Media Images* section provides for uploading files to the VergeOS vSAN, all
 
 ## Upload a File from a Web Link (URL)
 
-1. From the Main Dashboard, select **Media Images**.
+1. Select **Files** from the top menu.
 2. Select **Upload from URL**
 3. Enter a valid URL (for example: `https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso`)
 4. Enter desired **Name** for the file.
@@ -30,12 +30,12 @@ The *Media Images* section provides for uploading files to the VergeOS vSAN, all
 7. The **Allow insecure SSL links to be used** option will permit the file download from a site without a valid CA-signed certificate (e.g. missing, invalid, expired, or self-signed certs).
 8. The **Skip header check** option bypasses standard header security validation policies which may improve upload time but may potentially increase data integrity and security risk.  Use with caution.   
 9. Click the **Submit** button
-10. The file will appear in the Media Images listing.
+10. The file will appear in the Files listing.
 
-## Create a Download Link for a Media Images File
+## Create a Download Link for a File
 
-1. From the Main Dashboard, click **Media Images** on the left menu.
-3. Select the desired **File** from the list (the list includes all the files in Media Images).
+1. Select **Files** from the top menu.
+3. Select the desired **File** from the list.
 4. Click **Add Public Link** on the left menu.
 5. Select a **Link Format**
     - **Anonymous(uuid)** - creates a public download link using a GUID(128-bit number)
@@ -51,7 +51,7 @@ The *Media Images* section provides for uploading files to the VergeOS vSAN, all
 
 ![Media Images Link Copy](/product-guide/screenshots/mediaimages-link-copy.png)
 
-The Media Images list appears. Download options appear on the far right of the given file:
+The Files list appears. Download options appear on the far right of the given file:
 
 - Click **Link** to directly download the file from the page.
 - Click the **copy icon** to copy the download address to the clipboard.

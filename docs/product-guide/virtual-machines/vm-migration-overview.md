@@ -34,7 +34,7 @@ A full backup of source virtual machines into VergeOS is performed using the VMw
 
 - [Importing VMs from VMware Service Backup Jobs](/product-guide/virtual-machines/import-from-vmware)
 
-#### [**Upload from Media Images**](/product-guide/virtual-machines/import-from-upload)
+#### [**Import from Uploaded File**](/product-guide/virtual-machines/import-from-upload)
 
 **Recommended for:** Individual VMs and mixed virtualization environments
 

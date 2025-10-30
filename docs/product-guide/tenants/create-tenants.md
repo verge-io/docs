@@ -24,7 +24,11 @@ The *Tenant Wizard* steps through multiple input forms to create a new custom te
 8. **Optionally**, the **Require Password Change** option can be selected to force a password change when the tenant admin initially logs in.
 9. **Optionally**, a **Description** can be entered to record more information about the tenant.
 10. By default, the **Expose Cloud Snapshots** option (checkbox) is selected. When selected, the tenant is able to browse the cloud snapshots of the parent and “self-serve” download their own tenant snapshot from the provider's snapshot timestamps.
-11. **Optionally**, the **Allow Custom Branding** option (checkbox) can be selected to enable the tenant to customize their own VergeOS dashboard with different colors and logo.
+11. Configure **Theme access**: 
+    * ***Cannot create new themes, read-only access to all host themes***
+    * ***Cannot create new themes, read-only access specified host themes***
+    * ***Can create new themes, no access to host themes***
+    * ***Can create new themes, read-only access to host themes***
 12. **Optionally**, the **Custom help URL** allows for providing a location for alternate help content for the tenant. Tenant users are directed to this URL when they click help links in the VergeOS UI.
 13. **OIDC Application** allows for defining an authorization source for the tenant.  The selection list will include OIDC applications defined on the parent.  When *--None--* is selected, the local tenant user database is used for authentication.
 14. Click **Submit** (bottom of page) to proceed. Continue with the ***New Tenant Node* form**.

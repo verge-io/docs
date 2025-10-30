@@ -59,9 +59,9 @@ Several areas in the VergeOS platform may contribute to unexpected storage growt
   - Navigate to **Backup/DR > VMware Services** and review each VMware Service instance for Backup Job history.
   - On the left menu, click **Backup Jobs** to review each specific instance. Check the **Expires** column for each backup and review if it can be removed.
 
-- **Media Images**:
-  - Navigate to **Media Images** and sort by **Modified**. Check if any upload dates/times match the unexplained growth period.
-  - Review whether media images, especially other hypervisor formats (e.g., .ova or .vhdx), can be removed.
+- **Files**:
+  - Navigate to **Files** and sort by **Modified**. Check if any upload dates/times match the unexplained growth period.
+  - Review whether any files, especially other hypervisor formats (e.g., .ova or .vhdx), can be removed.
 
 - **Incoming Site Syncs**:
   - Navigate to **Backup/DR > Incoming Syncs**. Open each Incoming Sync dashboard and check the **Received Snapshots** count. Investigate the source (origin) site for increased storage matching the timeframe.

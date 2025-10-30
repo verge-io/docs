@@ -73,7 +73,7 @@ status: deprecated
 #### Networking
 - Implemented East/West port mirroring
 - Enhanced network management
-- Improved virtual wire handling
+- Improved Virtual Switch Port handling
 - Advanced NAS networking
 
 #### Virtual Machine Management
