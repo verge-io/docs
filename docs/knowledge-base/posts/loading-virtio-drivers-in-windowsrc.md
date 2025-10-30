@@ -28,7 +28,7 @@ If a guest VM running any version of Windows OS with the Virtio-SCSI disk driver
 Before starting with recovery work on a guest OS, ensure that the administrator has:
 
 1. Access to the VM, including **tested/known working credentials**.
-2. The **Virtio drivers ISO** loaded and available in the VergeOS environment under **Media Images**.
+2. The **Virtio drivers ISO** loaded and available in the VergeOS environment under **Files**.
 3. The **Windows OS installation ISO** available in the VergeOS environment.
 
 ## Requirements

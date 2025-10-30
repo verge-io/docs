@@ -30,7 +30,7 @@
     - For **Import Disk:** Select disk image file* from the dropdown list. Supported file types: (*.raw,*.qcow,*.qcow2,*.vhd, *.vhdx,*.vmdk)
     - For **Non-Persistent Disk:** Select *.raw file from the dropdown list displaying all existing VergeOS drives in this cloud.
 !!! success
-    See [**Media Images**](/product-guide/storage/uploading-files-to-vsan) for instructions on uploading iso and disk image files to the vSAN
+    See [**Uploading Files to the vSAN**](/product-guide/storage/uploading-files-to-vsan) for instructions on uploading iso and disk image files to the vSAN
 
 8. Select ***Preferred Tier***. This option only applies to Media types: **Disk/EFI Disk**.
     - Options include all storage tiers to which you have access.

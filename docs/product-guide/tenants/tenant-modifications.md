@@ -18,10 +18,14 @@ To modify any of the following properties of an existing tenant, navigate to the
 
 * **Expose Cloud Snapshots** - Can be **enabled / disabled** at any time. When enabled, the tenant will see the list of your (provider's) available snapshots and can download to restore their own system or individual VMs.
 
-* **Allow Custom Branding** - When enabled, the tenant can change colors and logos for their VergeOS UI.  
+* **Theme access**: 
+    * ***Cannot create new themes, read-only access to all host themes***
+    * ***Cannot create new themes, read-only access specified host themes***
+    * ***Can create new themes, no access to host themes***
+    * ***Can create new themes, read-only access to host themes***
 
-!!! warning "Disabling Custom Branding"
-    If *Custom Branding* is disabled after tenant has already implemented custom branding, the **branding changes will be lost**.
+!!! warning "Changing Theme Access"
+    Restricting a tenant's theme access after they have created custom themes may cause problems
 
 * **Custom help URL** - Address for the Help link within the tenant UI
 

@@ -1,15 +1,16 @@
 ---
-title: Sharing Media Images to Tenants
-slug: sharing-media-images-to-tenants
-description: Learn how to share media images from a Service Provider to Tenants in the VergeOS system.
+title: Sharing Files to Tenants
+slug: sharing-files-to-tenants
+description: Learn how to share files from a Service Provider to Tenants in the VergeOS system.
 author: vergeOS Documentation Team
 draft: false
 date: 2023-01-24T19:20:42.724Z
 tags:
-  - [media
+  - media
   - tenant
   - media images
-  - tenants]
+  - files
+  - tenants
 categories:
   - Tenant
   - Media Images
@@ -17,16 +18,16 @@ editor: markdown
 dateCreated: 2022-08-01T20:59:20.590Z
 ---
 
-# Sharing Media Images to Tenants
+# Sharing Files to Tenants
 
 ## Overview
 
 !!! info "Key Points"
     - Service Providers can share files with Tenants
-    - Files must already be uploaded to Media Images
+    - Files must already be uploaded to the vSAN
     - Process is quick and uses a branch command
 
-This article guides Service Providers through the process of sharing files, specifically media images, with their Tenants in the VergeOS system. This feature allows Tenants to access specific files within their own Media Images section.
+This article guides Service Providers through the process of sharing files, such as media images, with their Tenants in the VergeOS system. This feature allows Tenants to access specific files within their own *Files* section.
 
 ## Prerequisites
 
@@ -62,32 +63,32 @@ This article guides Service Providers through the process of sharing files, spec
 
 8. Confirmation
    - The process is near-instant as it is done with a branch command
-   - The file is now available to the Tenant within their own Media Images section
+   - The file is now available to the Tenant within their own *Files* section
 
 ## Troubleshooting
 
 !!! warning "Common Issues"
-    - Problem: File not appearing in Tenant's Media Images section
+    - Problem: File not appearing in Tenant's *Files* section
       - Solution: 
-        1. Verify that the file was successfully uploaded to Media Images
+        1. Verify that the file was successfully uploaded
         2. Check if the correct file type was selected
         3. Ensure that the changes were submitted properly
 
     - Problem: Unable to select a specific file
       - Solution: 
-        1. Confirm that the file exists in Media Images
+        1. Confirm that the file exists in the *Files* section
         2. Try selecting "ALL" in the File Type dropdown to see if the file appears
 
 ## Additional Resources
 
 - [Understanding vSAN in VergeOS](/product-guide/storage/vsan-architecture)
 - [Managing Tenants](/product-guide/tenants/create-tenants)
-- [Media Images](/product-guide/storage/uploading-files-to-vsan)
+- [Uploading Files](/product-guide/storage/uploading-files-to-vsan)
 
 ## Feedback
 
 !!! question "Need Help?"
-    If you encounter any issues while sharing media images or have questions about this process, please don't hesitate to contact our support team.
+    If you encounter any issues while sharing files to tenants or have questions about this process, please don't hesitate to contact our support team.
 
 ---
 
