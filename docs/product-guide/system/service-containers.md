@@ -6,5 +6,6 @@ While this section is not typically relevant for day-to-day administration, it i
 
 This section exists primarily to support internal operations and future extensibility. No configuration or management actions are expected from administrators at this time
 
+---
 
- 
+**Version Compatibility**: This functionality is available in VergeOS 26.0 and later.
