@@ -173,6 +173,7 @@ nav:
         - Overview: product-guide/backup-dr/snapshots-overview.md
         - Cloud Snapshots and Restore: product-guide/backup-dr/cloud-snapshot-restore.md
         - Profiles: product-guide/backup-dr/snapshot-profiles.md
+        - Immutable Snapshots: product-guide/backup-dr/immutable-snapshots.md
         - VM Snapshots and Restore: product-guide/backup-dr/vm-snapshots-restores.md
         - Tenant Snapshots: product-guide/tenants/tenant-snapshots.md
         - NAS Snapshots and Restore: product-guide/nas/volume-snapshots-restores.md
@@ -195,11 +196,10 @@ nav:
       - Clusters: 
         - Overview: product-guide/system/clusters-overview.md
         - Configuration Options: product-guide/system/cluster-settings.md
-        #- Removing Clusters: product-guide/removingclusters.md
-        #- Cluster Settings: product-guide/clustersettings.md
-      - Permissions:
+      - Access Control:
         - Users and Groups: product-guide/system/users-groups.md
         - Permissions: product-guide/system/permissions.md
+        - API Keys: product-guide/system/api-keys.md
       - Nodes:
         - Overview: product-guide/system/nodes-overview.md
         - IPMI: product-guide/system/ipmi.md
@@ -210,10 +210,13 @@ nav:
         - Adding Sites: product-guide/system/site-dashboard-add-sites.md
       - Tasks / Events:
         - Create Automated Tasks: product-guide/automation/create-tasks.md
+      - Service Containers: product-guide/system/service-containers.md
       - System Settings:
         - Overview: product-guide/system/settings-overview.md
         - Licensing and Updates: product-guide/system/licensing-and-updates.md
         - Advanced Settings: product-guide/system/advanced-system-settings.md
+      - Tags: product-guide/system/tags.md
+      - Themes: product-guide/system/themes.md
     - Virtual Machines:
       - Overview: product-guide/virtual-machines/overview.md
       - Quick Start: 
@@ -241,6 +244,7 @@ nav:
     - Tenants:
       - Overview: product-guide/tenants/overview.md
       - Creating Tenants: product-guide/tenants/create-tenants.md
+      - Layer 2 Networks: product-guide/tenants/layer-2-networks.md
       - Assigning External IP Addresses: product-guide/tenants/assign-ip-to-tenant.md
       - Increasing Resources: product-guide/tenants/add-tenant-resources.md
       - Modifying Tenants: product-guide/tenants/tenant-modifications.md
@@ -292,7 +296,14 @@ nav:
       - Authoritative DNS: product-guide/networks/authoritative-dns.md
       - Troubleshooting:
         - Network Troubleshooting: product-guide/networks/net-troubleshooting.md
+    - Private AI:
+      - Overview: product-guide/private-ai/overview.md
+      - Configuration: product-guide/private-ai/configuration.md
+      - Open AI Router: product-guide/private-ai/open-ai-router.md
+      - Chat Sessions: product-guide/private-ai/chat-sessions.md
     - Automation:
+      - Scripts: product-guide/automation/scripts.md
+      - Webhooks: product-guide/automation/webhooks.md
       - Recipes:
         - Overview: product-guide/automation/recipes-overview.md
         - Organizing Recipes: product-guide/automation/recipes-organization.md
@@ -315,6 +326,7 @@ nav:
         - Subscription Profiles: product-guide/system/subscription-profiles.md
         - Accessing Subscriptions: product-guide/system/subscriptions-accessing.md
       - System Diagnostics: product-guide/system/diagnostics.md
+      - Alarms: product-guide/operations/alarms.md
       - Prometheus Exporter: product-guide/tools-integrations/prometheus-exporter.md
     - Operations:
       - Drive Replacement: product-guide/operations/drive-replacement.md
