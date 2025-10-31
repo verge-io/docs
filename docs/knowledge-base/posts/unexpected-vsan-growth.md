@@ -27,7 +27,7 @@ There are several reasons for the vSAN to start growing at a rate faster than an
 
 To isolate unexplained growth, it is important to narrow down when the growth increased exponentially. Using the steps below, administrators can review storage growth and visualize normal growth from daily operations versus spikes in growth, which are typically unexpected.
 
-1. Navigate to the **Infrastructure** > **vSAN Tiers** from the top menu. If vSAN Tiers is not present, then this environment is a tenant of a parent system, and the vSAN tier needs to be examined at the parent system.
+1. Navigate to **Infrastructure** > **vSAN Tiers** from the top menu. If vSAN Tiers is not present, then this environment is a tenant of a parent system, and the vSAN tier needs to be examined at the parent system.
 2. Open the vSAN Tier with unexpected growth (for example, vSAN Tier 0).
 3. On the left navigation menu, click on **History**.
 4. A new menu will appear showing history in various graphs. Modify the filter period to isolate any growth on this tier.
@@ -53,7 +53,7 @@ Several areas in the VergeOS platform may contribute to unexpected storage growt
   
 - **Virtual Machines (VMs) Snapshots**:
   - Navigate to the **Machines Dashboard**. The **Snapshots** count box shows the number of machine-level snapshots present. Click this box to list all VM snapshots and their creation date/time. Review if any can be removed.
-  - Navigate to **Machines > Virtual Machines**. Sort by the **Snapshot Profile** column to identify VMs with machine-level snapshots. These are included in the recurring cloud snapshots, so review whether individual snapshots are necessary or if they can be removed.
+  - Navigate to **Virtual Machines > List**. Sort by the **Snapshot Profile** column to identify VMs with machine-level snapshots. These are included in the recurring cloud snapshots, so review whether individual snapshots are necessary or if they can be removed.
 
 - **VMWare Backup Jobs**:
   - Navigate to **Backup/DR > VMware Services** and review each VMware Service instance for Backup Job history.

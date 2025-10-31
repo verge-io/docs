@@ -9,7 +9,7 @@ Volume syncs allow for synchronizing data between two volumes. A volume sync can
 
 ## Create a Volume Sync
 
-1. Navigate to **NAS** > **Volume Syncs** on the left menu.
+1. Navigate to **NAS** > **Volume Syncs**.
 2. Click **New** on the left menu.
 3. Select the ***NAS Service*** (the NAS service hosting the volumes to be synchronized)
 4. Specify a ***Name*** for the new volume sync. Note: no spaces allowed.

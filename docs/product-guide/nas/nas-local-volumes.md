@@ -6,7 +6,7 @@ Local volumes are file systems stored within VergeOS, consuming storage in the V
 
 ## Create a Local Volume
 
-1. Navigate to **NAS** > **Volumes** from the left menu.
+1. Navigate to **NAS** > **Volumes**.
 2. Select **New** from the left menu.
 3. Select the appropriate **NAS Service** from the dropdown list.
 4. Enter a **Name** for the volume (required). Note: spaces are not permitted.

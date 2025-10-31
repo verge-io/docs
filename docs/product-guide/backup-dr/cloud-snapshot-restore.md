@@ -1,4 +1,4 @@
-ud# System Snapshots and Restores
+# System Snapshots and Restores
 
 System snapshots contain a backup of everything in a system, including all tenants, VMs, NAS volumes, networks, and settings. A system snapshot can be used to restore an entire system. Additionally, the following can be imported and restored from a system snapshot:
 

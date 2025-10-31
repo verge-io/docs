@@ -105,7 +105,7 @@ dateCreated: 2025-02-10T19:58:59.133Z
 ## Add VLANs Inside the Tenant
 
 1. Navigate to the **tenant UI** and log in.
-2. Select **Networks** > **New External** from the top menu.
+2. Select **Networks** > **+ New External** from the top menu.
 3. Configure settings:
     * **Name**: a label to identify the network (name, vlan ids, purpose, etc.)
     * **Layer 2 Type:** *VLAN*

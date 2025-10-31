@@ -47,4 +47,4 @@ select ***Manual*** in the **Credentialling** dropdown list.
 - **Password** and **Confirm Password** for the specified VergeOS user
 - **Encryption**
 
-6. Click **Submit** to complete the creation.
+5. Click **Submit** to complete the creation.

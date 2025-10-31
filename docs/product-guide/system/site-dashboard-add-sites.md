@@ -21,13 +21,13 @@ A site that is added to the *Sites Dashboard* can be included with the following
 6. Enter the **Password** for the user entered above.
 **Configuration**  
 
-7. ***Cloud Snapshots*** - system-to-system transfer of cloud snapshots to facilitate data archiving, DR, etc.; also referred to as **site sync**.
+7. ***System Snapshots*** - system-to-system transfer of cloud snapshots to facilitate data archiving, DR, etc.; also referred to as **site sync**.
     - ***Disabled*** - does not configure snapshot sync between these systems
     - ***Send cloud snapshots to this site*** - auto creates outgoing sync on this system and incoming sync on the other side to allow transferring snapshots from this system to the remote one
     - ***Receive cloud snapshots from this site*** - auto creates incoming sync on this system and outgoing sync on the other side to allow transferring snapshots from the remote system to this one.
     - ***Send and receive cloud snapshots from this site*** - auto creates incoming and outgoing syncs on both sides to facilitate snapshot transfer both ways
 !!! info
-    Selecting a *Cloud Snapshots* option, other than "Disabled", will auto generate the necessary incoming/outgoing syncs, and auto registers with receiving systems. Additional configuration is required on the outgoing system to select the snapshots to synchronize and optionally schedule to occur within specific time frames (e.g. outside of regular business hours); see [Sync Configuration](/product-guide/backup-dr/sync-configuration) for instructions.
+    Selecting a *System Snapshots* option, other than "Disabled", will auto generate the necessary incoming/outgoing syncs, and auto registers with receiving systems. Additional configuration is required on the outgoing system to select the snapshots to synchronize and optionally schedule to occur within specific time frames (e.g. outside of regular business hours); see [Sync Configuration](/product-guide/backup-dr/sync-configuration) for instructions.
 8. **Sync Statistics** - continual status information transfer between sites, for simpler monitoring of multiple systems: displays high-level status info for each site with the ability to drill down on a specific site for more detailed information
     - ***Disabled*** - does not configure statistics transfer between these systems
     - ***Send statistics to this site*** - will send statistics from this system to the remote one

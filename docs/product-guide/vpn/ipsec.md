@@ -16,7 +16,7 @@ This document provides general step-by-step instructions for configuring VergeOS
 
 ## Create a VPN Network
 
-1. Navigate to **Networks** > **New VPN**.
+1. Navigate to **Networks** > **+ New VPN**.
 2. Configure Network fields.  
     * **Layer 2 Type:** None
     * **IP Address Type:** static

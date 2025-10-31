@@ -30,7 +30,7 @@ The following are default snapshot profiles automatically created at system inst
 * Daily (at midnight) snapshots retained for 3 days
 * Daily (at noon) snapshots retained for 1 day
 
-!!! note "The **Cloud Snapshots** profile is assigned to any new VergeOS installation to provide snapshots of the entire system according to this schedule. The schedule for cloud snapshots can be modified by altering this default profile or assigning a different profile (System -> Cloud Snapshots -> Select desired profile from the dropdown list)."
+!!! note "The **System Snapshots** profile is assigned to any new VergeOS installation to provide snapshots of the entire system according to this schedule. The schedule for system snapshots can be modified by altering this default profile.
 
 ## Create a New Snapshot Profile
 
