@@ -89,16 +89,13 @@
     - Machine devices can be marked as optional (allows VM/Tenant to boot without device)
     - On startup, tenants clean up devices which are recreated on refresh
 - When VM is sent kill action while stopped, all devices are forced offline
-- Fixed issue where setting VM to "pc" or "q35" now pins latest value instead of changing with new machine types
+- Fixed issue where setting VM to "pc" or "q35" pins latest value instead of changing with new machine types
 - Enhanced SR-IOV NIC handling:
     - Fixed cloning issues
     - Fixed snapshot issues
     - Proper class assignment
 - Added multiqueue support to virtio network cards (enabled on new VMs, disabled on existing)
 - NIC hotplug now limited to once every 3 seconds for stability
-- Fixed hotplug issues:
-    - Disabled NIC hotplugging
-    - False error when changing network of disabled NIC on running machine
 - Fixed VMware restore issue for null controllerkey
 - Enhanced VMware refresh for improper guest tool installations
 - Advanced CPU parameters now supported (e.g., cpu.split-lock-detect=off)
@@ -175,23 +172,22 @@
 #### NAS & Storage Services
 - Enhanced NFS support:
     - NFSv4 mount options display for both versions
-    - Fixed issue where NAS used wrong NFS version in tenants (affecting backup application block difference queries)
+    - Fixed issue where NAS used wrong NFS version in tenants (affecting backup application change block tracking / extended attributes)
 
 #### GPU & Hardware Support
 - Added support for NVIDIA vGPU drivers 16.1 through 19.2
-- Added vGPU and AI support for NVIDIA RTX Pro 6000 Server Edition
+- Added vGPU and AI support for NVIDIA Blackwell GPUs
 - Added new resource group type "Host GPU" for AI acceleration (NVIDIA, AMD, Intel)
 - Fixed issue where tenants wouldn't receive vGPU/GPU devices
 - Hid false error logs when NVIDIA drivers installed
 
 #### Package & Update Management
-- Added ability to remove packages
-- Added support for missing and optional packages on updates page
-- Fixed issue preventing easy downgrade after changing update branch
+- Added support for optional packages on updates page
+- Fixed issue preventing downgrade after changing update branch
 - Clone ISO hosted on update server with build options removed from UI (API intact)
 
 #### Permissions & Access
-- Added missing permission types
+- Added additional permission types
 - Enhanced permissions handling throughout system
 
 #### Recovery & Backup
@@ -211,7 +207,7 @@
 - Fixed offline license compatibility with themes
 - Only generate audit logs for manually deleted system snapshots
 - Added hostname and domain fields to all L3 network types
-- Removed obsolete v3 import tables and phrases
+- Removed obsolete v3 import tables
 
 ### OS / Install
 
@@ -220,8 +216,8 @@
 - Upgraded QEMU to 10.0.5
 - Enhanced appserver functionality:
     - Fixed two potential deadlocks during controller handover
-    - Fixed scheduler issues with DST and minutely schedules
-    - Fixed stack smash when network buffers fill during progress updates
+    - Fixed scheduler issues with DST and minute schedules
+    - Fixed stack-based buffer overflow when network buffers fill during progress updates
     - Fixed integrity check startup check
     - Implemented lastlogin_ip update for credentials
     - Added IP allow/deny list support for credentials
@@ -233,9 +229,8 @@
     - Fixed crash on shutdown with open SSL connections
     - Added fields and perm_check options to actions
     - Overhaul of permissions cache
-    - Fix to security cache
     - Added HTTP response for exceeded connections
-    - Added vector database support
+    - Added vector support to internal database
 
 #### Storage & vSAN
 - Enhanced vSAN functionality:
