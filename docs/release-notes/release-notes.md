@@ -41,6 +41,15 @@
     - Enhanced alarm system with email notifications
     - Improved audit logging capabilities
 
+## 26.0.1.1 (October 2025)
+
+!!! info "Hotfix Release"
+    No reboot required (if System is currently on 26.0.1).
+
+### Bug Fixes
+* Fixed issue where "no reboot" option was not working correctly when upgrading from 4.13.4.x version
+* Fixed VNC console password authentication issues introduced in 26.0.1
+
 ## 26.0.1 (October 2025)
 
 ### Features / Fixes
