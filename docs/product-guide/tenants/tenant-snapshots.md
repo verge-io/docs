@@ -7,7 +7,7 @@ Snapshots provide a way to obtain quick recovery points. Cloud snapshots allow f
 
 ## Allow Tenant to Browse/Restore from Provider Snapshots
 
-1. From the Main Dashboard, click **Tenants**.
+1. Navigate to **Tenants** > **Dashboard** from the top menu.
 2. The **Tenants Listing** will appear. **Double-click the desired tenant**.
 3. Click **Edit** on the left menu.
 4. Enable the ***Expose Cloud Snapshots*** (check box) option.
@@ -18,7 +18,7 @@ Snapshots provide a way to obtain quick recovery points. Cloud snapshots allow f
 Completing these instructions will overwrite the existing tenant. A tenant can be restored to a new instance from the Cloud Dashboard: [Cloud Snapshots and Restores](/product-guide/backup-dr/cloud-snapshot-restore#restore-select-tenants-from-a-cloud-snapshot).
 
 1. **Power off the tenant offline**; the tenant must be offline before it can be restored.
-2. Navigate to the tenant dashboard (Main Dashboard > Tenants > Tenants > double-click the desired tenant in the list.)
+2. Navigate to the tenant dashboard (Tenants > Dashboard > double-click the desired tenant in the list.)
 3. Click **Snapshots** on the left menu.
 4. **Select the desired cloud snapshot** and click **Restore** on the left menu.
 5. A warning/confirmation message will require you to click ***Proceed*** to continue with the restore. **Before clicking Proceed, be sure that you want to restore over the existing tenant**, otherwise, click ***Cancel***.  
@@ -30,13 +30,12 @@ Completing these instructions will overwrite the existing tenant. A tenant can b
 
 ### Instructions for Tenant to Access their Data from Provider Snapshots
 
-1. From the Main Dashboard, click **system** on the left menu.
-2. Click **Cloud Snapshots** on the left menu.
-3. **Select the desired provider snapshot from the list of available timestamps.**
+1. Navigate to **System** > **System Snapshots**.
+2. **Select the desired provider snapshot from the list of available timestamps.**
     - Snapshots from the service provider will have a type = "Provider".
     - Snapshots taken by the tenant will show a type of "Local".
     - Notice the Created Date/Time column to aid in selecting the correct snapshot.
-4. Click **Request From Provider** on the left menu.
+3. Click **Request From Provider** on the left menu.
 Once the snapshot displays as "Local" it is now available to use; see restore instructions below.
 
 !!! warning "Extending a snapshot expiration"

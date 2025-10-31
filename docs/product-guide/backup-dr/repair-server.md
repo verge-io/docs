@@ -22,11 +22,10 @@ A repair server is created using the outgoing sync configuration details, includ
 
 In instances where there is no current outgoing sync from which to configure the repair server (e.g. a three-way sync configuration or a previous sync destination that is no longer in use), the following instructions can be used:
 
-1. From the Main Dashboard, select **Backup/DR** from the left menu.
-2. Click **Repair Servers** on the left menu.
-3. Click **New** on the left menu.
-4. Enter a **Name** for the repair server. Use a name that will be helpful for future administration, for example a name that includes that of the remote system.
-5. Optionally, a **Description** can be entered to store additional information.
+1. Navigate to **Backup/DR** > **Repair Servers**.
+2. Click **New** on the left menu.
+3. Enter a **Name** for the repair server. Use a name that will be helpful for future administration, for example a name that includes that of the remote system.
+4. Optionally, a **Description** can be entered to store additional information.
 
 ### Automatic (Copy) Credentialling
 

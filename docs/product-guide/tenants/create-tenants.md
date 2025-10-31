@@ -14,10 +14,10 @@ The *Tenant Wizard* steps through multiple input forms to create a new custom te
 
 ### Create a New Tenant Using the Tenant Wizard
 
-1. Click **Tenants** from the Main Dashboard (quick-link card or left menu).
-2. Click **New Tenant** on the left menu.
-3. From the **Catalog list** (top left), select ***\--Custom--***
-4. Click **Next** (bottom of the screen). The ***Tenant Settings* form is presented.**
+1. Click **Tenants** from the top menu.
+2. Select **+ New Tenant**.
+3. At the top left, select *From Wizard*. 
+4. Click **Next**. The ***Tenant Settings* form is presented.**
 5. Enter a ***Name*** for the tenant.
 6. ***URL*** is simply a helper field to provide a link to the tenant's UI from the **Connect to UI** menu link in the service provider's VergeOS user interface. This field can be left blank as it will automatically be populated when the first external IP is assigned to the tenant.
 7. Enter an ***Admin User Password*** and again in the ***Confirm Admin User Password*** field (required). This sets the password for the tenant’s “admin” root user that will be auto-created.
@@ -88,10 +88,10 @@ Cloning a tenant will make a duplicate of an existing tenant. This can be very u
 
 ### Create a New Tenant from a Clone
 
-1. Click **Tenants** from the Main Dashboard (quick-link or left menu.)
-2. Click **New Tenant** from the left menu.
-3. From the ***Catalog list (top left)***, select ***\--Clone Existing--***.
-4. All VMs will be listed under the ***Selection*** area on the right. **Select the desired VM.** Click **Next** (bottom of page).  The ***Name* input form appears**.
+1. Click **Tenants** on the top menu. 
+2. Select **+ New Tenant**.
+3. In the top left, select the *Clone Existing* option.
+4. All VMs will be listed under the ***Selections Available*** area on the right. **Select the desired VM.** Click **Next** (bottom of page).  The ***Name* input form appears**.
 5. The ***Name*** for the tenant clone can be changed as desired. (The Name will default to the *NameofSourceVM* +”clone”, for example: when cloning a tenant named “Tenant2”, the Name will default to “Tenant2 clone”.)
 6. Optionally, the ***Clone as New Tenant*** option can be selected to create the new tenant instance without accompanying history statistics, logs, and snapshots with expiration. This is the recommended option when these items are not needed.
 7. Click **Submit** (bottom of page).

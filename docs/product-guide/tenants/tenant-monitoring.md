@@ -8,7 +8,7 @@ The *All-Tenants Dashboard* provides an overview of tenants with links to drill 
 
 **To access the *All-Tenants Dashboard*:**
 
-Click on **Tenants** from the Main Dashboard (**Quick-link card or left menu**).
+Click **Tenants** on the top menu and select **Dashboard** **-OR-** click the Tenants card on the Main Dashboard Page.
 
 ### Counts/Status Indicators
 

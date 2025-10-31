@@ -14,8 +14,7 @@
 
 ## Access All Subscriptions
 
-1. From the Main Dashboard, click **System** on the left menu.
-2. Click **Subscriptions** on the left menu.
+1. From the top menu, navigate to **System** > **Subscriptions**.
 This will normally list all subscriptions owned by all users. From this page, **subscriptions can be selected for edit/delete** (with proper permissions), and new **subscriptions can be added.**
 
 !!! note "By default, all users can **view all** subscriptions but **cannot modify subscriptions other than their own**. **Administrators can adjust user permissions** to suit their organization."

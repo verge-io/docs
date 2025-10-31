@@ -5,7 +5,7 @@ The *Shared Objects* feature provides convenient, snapshot-based VM sharing betw
 ## On the Sending System
 
 1. **Establish desired VM snapshot**: [Take a manual snapshot of the VM](/product-guide/backup-dr/vm-snapshots-restores#take-a-manual-snapshot-of-a-vm) or determine an existing VM snapshot you wish to use.
-2. From the Main Dashboard, navigate to **System > Shared Objects**.
+2. Navigate to **System > Shared Objects**.
 3. Click **New** on the left menu.
 4. Provide a **Name** for the shared object; this will be used to name the imported VM on the receiving system.
 5. (Optional) **Description** can be used to store additional information about the shared object.
@@ -16,7 +16,7 @@ The *Shared Objects* feature provides convenient, snapshot-based VM sharing betw
 
 ## On the Receiving System
 
-1. From the Main Dashboard, navigate to **System > Shared Objects**.
+1. Navigate to **System > Shared Objects**.
 2. A listing of available shared objects is displayed.  Objects shared from other systems will display as "Inbound".
 3. Select desired VM objects and click **Import** on the left menu.
 4. (Optional) Uncheck the **Preserve MAC Addresses** checkbox if new, unique MAC addresses should be created. Consider unchecking this option if:  

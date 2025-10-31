@@ -4,7 +4,7 @@ This page covers replacing a drive (participating in the vSAN) due to defect or 
 
 ## When Does a Drive Need to be Replaced?
 
-The VergeOS interface will provide warnings or alerts to indicate when there is a problem with a physical drive. When a drive has a warning or error status, an indicator will "bubble up" to the System Dashboard page (To access the System Dashboard: from the Main Dashboard, select System on the left menu.)
+The VergeOS interface will provide warnings or alerts to indicate when there is a problem with a physical drive. When a drive has a warning or error status, an indicator will "bubble up" to the System Dashboard page (Navigate to **System** > **Dashboard** from the top menu.)
 
 ![Drive Count Box](/product-guide/screenshots/drivecountbox.png)
 

@@ -4,9 +4,8 @@ This guide explains how to manage software updates and licensing in VergeOS.
 
 ## Accessing System Updates
 
-1. From the Main Dashboard, click **System** on the left menu.
-2. Click **Updates** on the left menu.
-   
+1. From the top menu, navigate to **System** > **Updates**.
+
 ## Update Server Dashboard
 
 The Update Server dashboard provides information about:
@@ -41,7 +40,7 @@ The Packages section shows:
 
 The update process consists of three main steps:
 
-1. **Download**: 
+1. **Download**:
    - After checking for updates, newly available packages can be downloaded
    - Progress can be monitored in the Updates dashboard
 

@@ -1,6 +1,6 @@
 # Configuring a Site Sync
 
-Site sync provides replication of cloud snapshots to a separate VergeOS system; this allows off-site data backup, facilitating disaster recovery and business continuity.
+Site sync provides replication of system snapshots to a separate VergeOS system; this allows off-site data backup, facilitating disaster recovery and business continuity.
 
 ## Site Sync Configuration Steps
 
@@ -85,15 +85,14 @@ Network rules are necessary to translate incoming sync traffic to the vSAN. Thes
 
 ## Create Incoming Sync
 
-!!! success "Note: Incoming syncs may be auto-generated via cloud snapshot send/receive options when adding a site to the *Sites Dashboard*; when incoming/outgoing syncs are auto-created through adding sites, proceed to the *Specifying Snapshots to Sync and Retention on the Receiving System* section to complete the site sync configuration."
+!!! success "Note: Incoming syncs may be auto-generated via system snapshot send/receive options when adding a site to the *Sites Dashboard*; when incoming/outgoing syncs are auto-created through adding sites, proceed to the *Specifying Snapshots to Sync and Retention on the Receiving System* section to complete the site sync configuration."
 
 ### Configure the Incoming sync (creates authorization key)
 
 1. **Login** to the **receiving tenant** system.
-2. From the main dashboard, click **Backup / DR** on the left menu.
-3. Click **Incoming Syncs** on the left menu.
-4. Click **New** on the left menu.
-5. Complete the Configuration for the Incoming Sync:
+2. Navigate to **Backup / DR** > **Incoming Syncs**.
+3. Click **New** on the left menu.
+4. Complete the Configuration for the Incoming Sync:
     - **Name** (required): Provide a name that is helpful for administration, for example, the name of the site the sync will come from.
     - **Description**: Optionally, more administrative information can be stored for this incoming sync.
     - **Force Tier**: This can be defined to select a tier to which this sync will be directed, regardless of the originating tier or any outgoing sync settings. (If the selected tier does not exist, the next appropriate tier will be used.) Leave this field set to ***-- None --*** to allow the sync tier to be determined from the sending system.
@@ -101,31 +100,30 @@ Network rules are necessary to translate incoming sync traffic to the vSAN. Thes
     - **vSAN Host**: URL for the vSAN Host. This will default to the URL of the current (receiving) system.
     - **vSAN Port** (Default 14201): This is the port used in the PAT rule that was created above.
     - **Minimum Snapshots** (Default 1): This is the minimum number of snapshots that the system will retain regardless of retention periods defined. This helps prevent having all snapshots expire in the event of a prolonged outage or incorrect retention setup.
-6. Click **Submit** to save the incoming sync.
-7. The *Incoming Syncs* list appears. Double-click the sync just created. The dashboard for the incoming sync appears, along with a Registration Code (It may take a minute or two for the Registration Code to generate.).
-8. When the Registration key appears, click the **Copy** button to copy the key to the clipboard. A message will appear to indicate: "Text copied to the Clipboard". **This key will be needed when creating the coordinating outgoing sync on the sending system.**
+5. Click **Submit** to save the incoming sync.
+6. The *Incoming Syncs* list appears. Double-click the sync just created. The dashboard for the incoming sync appears, along with a Registration Code (It may take a minute or two for the Registration Code to generate.).
+7. When the Registration key appears, click the **Copy** button to copy the key to the clipboard. A message will appear to indicate: "Text copied to the Clipboard". **This key will be needed when creating the coordinating outgoing sync on the sending system.**
 
 ## Create Outgoing Sync
 
-!!! success "Outgoing syncs may be auto-generated via cloud snapshot send/receive options when adding a site to the Sites Dashboard; if incoming/outgoing syncs were auto-created through adding sites, proceed to the [Specifying Snapshots to Sync and Retention on the Receiving System](#specify-snapshots-to-auto-sync-and-remote-retention) section to complete the site sync configuration."
+!!! success "Outgoing syncs may be auto-generated via system snapshot send/receive options when adding a site to the Sites Dashboard; if incoming/outgoing syncs were auto-created through adding sites, proceed to the [Specifying Snapshots to Sync and Retention on the Receiving System](#specify-snapshots-to-auto-sync-and-remote-retention) section to complete the site sync configuration."
 
 ### Configure the Outgoing Sync Job and Register with the Receiving System
 
 1. **Login** to the **Sending system**. (This can be at HOST level or at tenant level depending on which system should be synchronized.)
-2. From the main dashboard, click **Backup / DR**.
-3. Click **Outgoing Syncs** on the left menu.
-4. Click **New** on the left menu.
-5. **Paste the Registration Code** copied above into the form and click **Verify**.
+2. Navigate to **Backup / DR** > **Outgoing Syncs** on the left menu.
+3. Click **New** on the left menu.
+4. **Paste the Registration Code** copied above into the form and click **Verify**.
 If successful, a green Key Verified message will appear briefly.
-6. Complete the **Sync Settings** form:
+5. Complete the **Sync Settings** form:
     - **Name** (required): This should be a name that is helpful for future administration.
     - **Description**: Optionally, more administrative information can be stored for this outgoing sync.
     - **Remote URL**: This field is auto-populated with the IP address/domain to the receiving system (extracted from the registration key); typically, this setting can be left at the auto-set value.
-7. Click the **Connect and Register** button.
+6. Click the **Connect and Register** button.
 If registration was successful, the *Outgoing Syncs* list appears with the new sync in the listing.
 !!! success "At this point, on the receiving system (incoming sync dashboard), the key will indicate '--Used--' with a Registered date and time."
 
-8. Double-click the outgoing sync in the list to access its dashboard.
+7. Double-click the outgoing sync in the list to access its dashboard.
 
 ### Adjusting Sync Settings (optional)
 
@@ -157,7 +155,7 @@ When a specific tier(1-5) is selected here, the sync directs all data to the sel
 
 ## Specify Snapshots to Auto Sync and Remote Retention
 
-!!! success "The cloud snapshot profile determines the snapshot take and retention schedule for the entire local system (cloud snapshots include a complete recovery point of the entire VDC, including: VMs, networks, tenants, vSAN, NAS, etc.) These are the snapshots that can be selected for an automatic site sync. To change the profile used to control local system snapshots: System > Cloud Snapshots > Select Snapshot Profile. For more information about cloud snapshots: see [**Cloud Snapshots and Restores**](/product-guide/backup-dr/cloud-snapshot-restore)"
+!!! success "The system snapshot profile determines the snapshot take and retention schedule for the entire local system (system snapshots include a complete recovery point of the entire VDC, including: VMs, networks, tenants, vSAN, NAS, etc.) These are the snapshots that can be selected for an automatic site sync. To change the profile used to control local system snapshots: System > System Snapshots > Select Snapshot Profile. For more information about system snapshots: see [**System Snapshots and Restores**](/product-guide/backup-dr/cloud-snapshot-restore)"
 
 ### Select Snapshots and Remote Retentions for Auto Sync
 
@@ -168,7 +166,7 @@ When a specific tier(1-5) is selected here, the sync directs all data to the sel
 The Configuration form will appear.
 ![sync-periodretention.png](/product-guide/screenshots/sync-periodretention.png)
 
-5. In the **Sync Snapshots From** dropdown list, select a desired profile period (e.g. ***"Hourly for 3 hours"***, ***"Midnight"***, ***"Noon"***). The options that appear will depend on the periods defined in the snapshot profile assigned for the local system (by default, this will be the *Cloud Snapshots* profile.)
+5. In the **Sync Snapshots From** dropdown list, select a desired profile period (e.g. ***"Hourly for 3 hours"***, ***"Midnight"***, ***"Noon"***). The options that appear will depend on the periods defined in the snapshot profile assigned for the local system (by default, this will be the *System Snapshots* profile.)
 6. **Remote Retention** will default to the local retention of the selected period; change if a different retention setting is desired for the remote copy. (Changing the Remote Retention does not affect the local retention.)
 7. **Priority** (0-9) can be specified to arrange different periods into sequence by priority, with lower number taking precedence over a higher number; for example: a period set to priority 1 will sync before a different period set to priority 2.
 8. **Do not expire snapshot** option can be selected to ensure a snapshot will not expire locally before it syncs; this can be important for snapshots configured with a short retention period locally, but a longer retention on the remote system.

@@ -20,15 +20,14 @@ Allows controlling traffic paths from the network. A common use would be to prov
 
 Rules are processed from the top of list to the bottom. There are situations where the order in which rules are processed can change behavior For example: a NAT/PAT rule to translate incoming traffic to a different port, while another rule that blocks traffic based on port; there could be different results depending upon which rule runs before the other. Therefore, it may be important to consider the order of your network rules. See the instructions below to *Change the Order of Rules*.
 
-!!! success "Rules are accessed from the particular Networks dashboard: From the Main Dashboard, click **Networks**, click the **All Networks** card in the top count area, double-click the desired network in the list."
-
 ## View Existing Rules for a Network
 
 A network's rules can be accessed by:
-1. Clicking **Networks** from the Main Dashboard.
-2. Click **Networks** from the left sidebar, or **All Networks** quick-link within the dashboard.
-3. Double-click on the target network.
-4. From the network's dashboard, click **Rules**. All existing rules for the network are listed.  
+
+From the network's dashboard, click **Rules**. All existing rules for the network are listed.
+
+
+!!! success "To access a particular network's dashboard: Navigate to **Networks** > **List**-OR- Navigate to **Networks** > **Dashboard**, **click on the network-type card (Externals/Internals/Tenants/VPN)** , locate and double-click the target network in the list.
 
 For long rule lists, it may be helpful to filter the list (e.g. display Incoming only; only Reject rules, etc) or search on specific criteria such as Name, assigned IP, etc.
 

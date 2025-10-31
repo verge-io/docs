@@ -40,9 +40,7 @@ You'll understand:
 The Theme system is located within the VergeOS system settings, accessible through the administrative interface.
 
 1. **Access System Settings**:
-
-   - From the Main Dashboard, click **System** in the left navigation menu
-   - Click **Settings** to access the system configuration area
+Navigate to **System** > **Settings** to access the system configuration area
 
 2. **Theme Management Location**:
 

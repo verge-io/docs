@@ -4,10 +4,9 @@ Aliases centralize the management of IP address sets that will be used across mu
 
 ## Create a New Alias
 
-1. From the Main Dashboard, click **Networks** on the left menu or dashboard quick-link
-2. Click **Aliases** on the left menu
-3. Click **New** on the left menu
-4. Complete the alias configuration:
+1. Navigate to **Networks** > **Aliases**.
+2. Click **New** on the left menu
+3. Complete the alias configuration:
 
     - **Name** - Enter a descriptive name that will be helpful for administration
     - **Description** (optional) - Provide additional details about the alias's purpose
@@ -18,7 +17,7 @@ Aliases centralize the management of IP address sets that will be used across mu
         - **Private** - Available only within this cloud
         - **Global** - Available to this cloud and its tenants
 
-5. Click **Submit** to create the alias
+4. Click **Submit** to create the alias
 
 ## Modify an Alias
 

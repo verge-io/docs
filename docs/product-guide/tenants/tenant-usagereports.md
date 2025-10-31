@@ -13,7 +13,7 @@ VergeOS stores usage statistics per tenant to accommodate 95th percentile billin
 
 ## Receive Subscription Report (Email) of Tenant Usage
 
-1. From the Main Dashboard, navigate to **System > Subscriptions > New**.
+1. Navigate to **System > Subscriptions > New**.
 2. Configure fields as follows:  
 
    * **Target Type:** *Tenants Dashboard*

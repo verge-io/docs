@@ -4,12 +4,11 @@ A service provider can provide files, that are uploaded to the vSAN, to a tenant
 
 ## Provide a File to a Tenant
 
-1. From the Main Dashboard, Click **Tenants** on the left menu.
-2. Click **Tenants** to view a listing of all tenants on this system.
-3. **Double-click** on the desired **tenant**.
-4. Click **Add File** on the left menu.
-5. Select ***File Type*** from the dropdown list (HINT: you can select --ALL-- to get a listing of all files available, regardless of type; this will include \*.raw files(VM disk images) from the parent VDC.)
-6. **Select a file** from the dropdown list.
-7. Click **Submit** (bottom of page).
+1. Navigate to **Tenants** > **List**.
+2. **Double-click** on the desired **tenant**.
+3. Click **Add File** on the left menu.
+4. Select ***File Type*** from the dropdown list (HINT: you can select --ALL-- to get a listing of all files available, regardless of type; this will include \*.raw files(VM disk images) from the parent VDC.)
+5. **Select a file** from the dropdown list.
+6. Click **Submit** (bottom of page).
 
 The process is near-instant as it is done with a branch command. The file is now available to the tenant within their own [**Files**](/product-guide/storage/uploading-files-to-vsan) section.

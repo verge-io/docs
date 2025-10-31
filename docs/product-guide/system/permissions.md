@@ -93,12 +93,11 @@ The effective permissions of a user is cumulative of all permissions assigned to
 
 ## View all Permissions
 
-This will display all permissions defined for the VergeOS cloud.
+This will display all permissions defined for the VergeOS system.
 
-1. From the Main Dashboard, click **system**.
-2. Click **Permissions**.
-3. All permissions for the entire cloud are displayed. Hint: List can be sorted or filtered to focus on certain permissions.
-4. Permissions can be selected from the list to edit/delete.
+1. Navigate to **System** > **Permissions**.
+2. All permissions for the entire cloud are displayed. Hint: List can be sorted or filtered to focus on certain permissions.
+3. Permissions can be selected from the list to edit/delete.
 
 ## View Permissions for a Particular Section
 

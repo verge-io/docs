@@ -61,8 +61,7 @@ Administrators can create any number of categories to suit their organizational 
 
 ## Create a New Tag Category
 
-
-1. From the Main Dashboard, navigate to **System** > **Tags**.
+1. Navigate to **System** > **Tags**.
 2. Click **New** on the left menu.
 3. Enter a descriptive **Name** for the category.
 4. Optionally, add a **Description**.
@@ -71,12 +70,11 @@ Administrators can create any number of categories to suit their organizational 
 !!! tip  "All types are disabled by default. Click to toggle between disabled/enabled (enabled = button to the right)."
 7. Click **Submit** to save the category.
 
-
 ## Create a New Tag
 
 !!! tip "Tags must belong to an existing category."
 
-1. From the Main Dashboard, navigate to **System** > **Tags**.
+1. Navigate to **System** > **Tags**.
 2. **Double-click the desired category** from the list.
 3. Click **New** on the left menu.
 4. Enter a descriptive **Name** for the tag.

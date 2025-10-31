@@ -9,17 +9,16 @@ Volume syncs allow for synchronizing data between two volumes. A volume sync can
 
 ## Create a Volume Sync
 
-1. From the Main Dashboard, select **NAS** from the left menu.
-2. Click **Volume Syncs** on the left menu.
-3. Click **New** on the left menu.
-4. Select the ***NAS Service*** (the NAS service hosting the volumes to be synchronized)
-5. Specify a ***Name*** for the new volume sync. Note: no spaces allowed.
-6. Select ***Volume Sync*** in the ***Type*** dropdown list.
-7. Enter a ***Description*** for the volume sync (optional).
-8. Specify ***Max Run Time*** by entering an integer and selecting ***Units*** (Hours/Days) from the dropdown list, **-or-** select **'Forever'** in the Units field to set an unlimited run time.
-9. The ***Max Errors*** setting will default to 1000. This will determine at what number of errors the sync job will automatically abort.
-10. Verge.io sync is the default sync ***Method***. While this method may provide better performance, alternately, the **rsync** method can be selected to include synchronization of CIFS file permissions.
-11. Select ***Destination Delete*** setting from the dropdown list. This setting specifies how files are handled that exist at the destination, but (no longer) exist at the source.
+1. Navigate to **NAS** > **Volume Syncs** on the left menu.
+2. Click **New** on the left menu.
+3. Select the ***NAS Service*** (the NAS service hosting the volumes to be synchronized)
+4. Specify a ***Name*** for the new volume sync. Note: no spaces allowed.
+5. Select ***Volume Sync*** in the ***Type*** dropdown list.
+6. Enter a ***Description*** for the volume sync (optional).
+7. Specify ***Max Run Time*** by entering an integer and selecting ***Units*** (Hours/Days) from the dropdown list, **-or-** select **'Forever'** in the Units field to set an unlimited run time.
+8. The ***Max Errors*** setting will default to 1000. This will determine at what number of errors the sync job will automatically abort.
+9. Verge.io sync is the default sync ***Method***. While this method may provide better performance, alternately, the **rsync** method can be selected to include synchronization of CIFS file permissions.
+10. Select ***Destination Delete*** setting from the dropdown list. This setting specifies how files are handled that exist at the destination, but (no longer) exist at the source.
 
     - **Delete after transfer** - Files are deleted from the destination after all data is transferred; the delete part of the sync operation will entail an additional walk of the filesystem.
     - **Never delete (default)** - Files are not deleted (even when they no longer exist on the source).
@@ -28,18 +27,18 @@ Volume syncs allow for synchronizing data between two volumes. A volume sync can
     - **Delete during transfer** - Files are deleted as they are encountered during the transfer process.
     - **Delete files from Destination** - Files are deleted in a manner automatically determined by the particular system.
 
-12. Select ***Source Volume*** from the dropdown list. Source volume can be either a local volume or a remote volume.
-13. Specify a ***Source Start Directory*** (or leave blank to sync the entire volume from the root). A trailing slash will copy only the contents of the directory; no trailing slash will copy the directory by name. For example: /data/ will copy everything under the data folder, not creating the data folder on the destination; /data will copy the data folder and all its contents.
-14. Specify ***Include Files/Directories*** (optional), to only synchronize particular files, directories, and/or file patterns. Example pattern: /foldername/
-15. Specify ***Exclude Files/Directories*** (optional), to skip particular files, directories, and/or file patterns. Note: the snapshots, lost+found, and quarantine folders are excluded by default.
+11. Select ***Source Volume*** from the dropdown list. Source volume can be either a local volume or a remote volume.
+12. Specify a ***Source Start Directory*** (or leave blank to sync the entire volume from the root). A trailing slash will copy only the contents of the directory; no trailing slash will copy the directory by name. For example: /data/ will copy everything under the data folder, not creating the data folder on the destination; /data will copy the data folder and all its contents.
+13. Specify ***Include Files/Directories*** (optional), to only synchronize particular files, directories, and/or file patterns. Example pattern: /foldername/
+14. Specify ***Exclude Files/Directories*** (optional), to skip particular files, directories, and/or file patterns. Note: the snapshots, lost+found, and quarantine folders are excluded by default.
 !!! info "Paths used in ***Source Start Directory*** and ***Include/Exclude*** entries always use forward slash ('/'), not backslash. This includes paths involving remote CIFS volumes."
 
-16. Select ***Destination Volume*** from the dropdown list. (can be either a local volume or remote volume.)
-17. Specify a ***Destination Start Directory*** (or leave blank to sync to the root of the volume).
-18. ***Start Profile*** option should be enabled to provide a recurring, regularly-scheduled sync; disable Start Profile for a one-time sync or a sync that can only be started manually. Select a ***Start Time Profile*** from the dropdown list **-or-** leave the **-- Default -** setting to utilize the start time of the built-in **"NAS Volume Syncs"** Profile. The ***Start Time Profile*** determines when the recurring sync will start. [Snapshot Profiles](/product-guide/backup-dr/snapshot-profiles) are used to control volume sync Start Profiles.
+15. Select ***Destination Volume*** from the dropdown list. (can be either a local volume or remote volume.)
+16. Specify a ***Destination Start Directory*** (or leave blank to sync to the root of the volume).
+17. ***Start Profile*** option should be enabled to provide a recurring, regularly-scheduled sync; disable Start Profile for a one-time sync or a sync that can only be started manually. Select a ***Start Time Profile*** from the dropdown list **-or-** leave the **-- Default -** setting to utilize the start time of the built-in **"NAS Volume Syncs"** Profile. The ***Start Time Profile*** determines when the recurring sync will start. [Snapshot Profiles](/product-guide/backup-dr/snapshot-profiles) are used to control volume sync Start Profiles.
 !!! warning "The *Start Time Profile* setting determines the start time of the sync only; it does not control snapshots for the volume!"
 
-19. **Advanced Options**
+18. **Advanced Options**
 
 - Specify a ***Run As User*** (optional). By default, the sync operation is run as "root"
 - ***Freeze Filesystem*** (default - disabled) - Applies only when source volume is a local VergeOS volume; temporarily blocks write operations while buffers are flushed, the filesystem is branched and a clean-state snapshot is taken for the sync operation. Although not as instantaneous as a crash-consistent snapshot operation, a filesystem freeze can be a relatively quick operation.
@@ -58,7 +57,7 @@ Volume syncs allow for synchronizing data between two volumes. A volume sync can
 - ***Extended properties*** - Extended properties can be specified to provide additional features/constraints for this sync; contact VergeOS Support for assistance with extended properties.
 - ***Number of simultaneous workers*** (default - 4) - Specifies the number of threads to be used for the sync operation. Increasing this number can improve sync completion times, particularly where syncs are performed over high-latency connections.
 
-Click **Submit** to save the settings and create the new volume sync.
+19. Click **Submit** to save the settings and create the new volume sync.
 
 The dashboard for the new volume sync will appear. The sync job will be offline until either run manually or automatically started per the specified start profile.
 
