@@ -216,7 +216,7 @@
 ### OS / Install
 
 #### Core System
-- Kernel 6.6.115
+- Upgraded Kernel to 6.6.115
 - Upgraded QEMU to 10.0.5
 - Enhanced appserver functionality:
     - Fixed two potential deadlocks during controller handover
