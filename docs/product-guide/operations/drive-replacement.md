@@ -47,9 +47,9 @@ The VergeOS interface will provide warnings or alerts to indicate when there is 
 ## Replace a Drive
 
 !!! danger "**CAUTION: Before** initiating a drive repair operation, **verify**:"
-    1. All nodes are operational (none are powered off or in maintenance mode)
-    2. Other drive repairs are not in process on a different node for the same storage tier (Drive repairs running on the same physical node pose no problem.)
-    3. The correct physical drive is confidently identified before removal (See directions above.)
+    1. All cluster nodes are operational (no nodes powered off or in maintenance mode)
+    2. No other drive repairs are running on different nodes within the same storage tier *(Drive repairs on the same physical node are acceptable)*
+    3. You have positively identified the correct physical drive using the LED activation process above
 
 1. From the node dashboard, click **Drives**.
 2. Click to **select the particular drive** (Selected drive shows a check mark on the left.)
