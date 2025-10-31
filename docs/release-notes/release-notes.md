@@ -218,7 +218,7 @@
 - Added hostname and domain fields to all L3 network types
 - Removed obsolete v3 import tables
 
-### OS / Install
+### OS
 
 #### Core System
 - Upgraded Kernel to 6.6.115
@@ -259,26 +259,6 @@
     - Fixed abort procedure when committing deleted file
     - Fixed shutdown hang when settier called with no change
     - Added immutable snapshot type
-
-#### Installation
-- Installer must be on same OS version as system
-- Installer no longer allows third controller node installation
-- Removed update server questions from basic install
-- Added version restriction code when adding nodes
-- Fixed minor issue with external IPs during automated install
-- Fixed issue where restarting installer didn't reset hostname
-- Network auto-detection shows "None" for VLAN instead of 0
-- Changed default boot order for EFI
-- Fixed quick install 10-second link wait
-- Added ability to bypass auto-detect for automated installs
-- Added ability to skip compute swap question
-- Changed network configuration text for better clarity
-- When adding vSAN devices, journal paused for 15 minutes
-- Increased timeout for add-vsan-device to 15 minutes
-- Scale-out now adds all drives to vSAN immediately (no reboot required)
-- Enhanced unattended install support:
-    - vSAN encryption support
-    - Time synchronization improvements
 
 #### Networking & Drivers
 - Added kernel drivers for additional serial devices
