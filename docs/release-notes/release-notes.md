@@ -47,7 +47,7 @@
     No reboot required (if System is currently on 26.0.1).
 
 ### Bug Fixes
-* Fixed issue where "no reboot" option was not working correctly when upgrading from 4.13.4.x version
+* Fixed issue where "Reboot" option was not available when upgrading from 4.13.4.x version
 * Fixed VNC console password authentication issues introduced in 26.0.1
 
 ## 26.0.1 (October 2025)
