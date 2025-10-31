@@ -1,581 +1,326 @@
----
-title: 4.13 Release Notes
-description: Release notes for the 4.13 series of VergeOS
-#icon: material/text-box-outline
-status: new
----
+# 26.0 Release Notes
 
-# 4.13 Release Notes
-
-!!! info "Series Information"
-    - **Initial Release**: November 2024 (4.13.0)
-    - **Latest Version**: 4.13.4.2 (August 2025)
-    - **Status**: Latest
+!!! info "Release Information"
+    - **Release Date**: October 2025
+    - **Latest Version**: 26.0.1 (October 2025)
+    - **Status**: Latest Production Release
     - **End-of-Life**: TBD
 
 ## Major Features & Themes
 
-### Hardware Virtualization & Resource Management
+### AI Services Integration
 
-!!! success "Resource Management"
-    - Comprehensive hardware passthrough capabilities (USB/PCI/SRIOV)
-    - Experimental vGPU live migration support
-    - Enhanced GPU support with latest NVIDIA GRID drivers
-    - Increased resource limits (1024 CPUs, 256TB disks)
-    - Advanced SRIOV and device management
+!!! success "AI Platform Capabilities"
+    - Native AI model hosting in GGUF format
+    - Built-in UI integration for model management
+    - OpenAI-compatible API endpoint
+    - Support for pre-defined and custom models
 
-### Storage & Data Management
+### Enhanced User Experience
 
-!!! tip "Storage Enhancements"
-    - Improved VM Export functionality
-    - Enhanced cloud snapshot capabilities
-    - Advanced vSAN management features
-    - Multipath and multichannel support
-    - Volume tier throttling
-    - Improved backup integration
-    - Ability to emulate USB storage devices
+!!! tip "UI & Customization"
+    - Complete theme engine replacing basic branding
+    - Comprehensive UI appearance customization
+    - Enhanced task automation with reusable schedules
+    - System-wide tagging support
+    - Improved API documentation interface
 
-### Network Infrastructure
+### Storage & Data Protection
 
-!!! benchmark "Network Improvements"
-    - Enhanced bonding capabilities
-    - Split brain detection for external networks
-    - Improved high-speed network utilization
-    - Advanced network container features
+!!! benchmark "Storage Improvements"
+    - Immutable snapshot support
+    - Enhanced vSAN tier management
+    - System snapshot improvements (renamed from Cloud Snapshots)
+    - Better storage diagnostics and management
 
-### System Administration
+### Security & Authentication
 
-!!! security "Management Features"
-    - Enhanced two-factor authentication
-    - Improved update process with parallel updates
-    - Advanced maintenance mode capabilities
-    - Enhanced VMware integration
-    - Improved tenant management
-    - Comprehensive HA improvements
+!!! security "Security Features"
+    - API key authentication for users
+    - Multiple SSL certificate management
+    - Enhanced alarm system with email notifications
+    - Improved audit logging capabilities
 
-## 4.13.4.2 (August 2025)
+## 26.0.1 (October 2025)
 
-!!! info "Hotfix Release"
-    No reboot required (if System is currently on 4.13.x). 
+### Features / Fixes
 
-#### Bug Fixes
-* Fixed two-factor authentication issues affecting Email authentication methods
+#### AI Services
+- Added AI support for running pre-defined or custom models in GGUF format
+- Built-in UI integration for AI model management
+- OpenAI-compatible API endpoint for AI services
 
-## 4.13.4.1 (August 2025)
+#### User Interface & Theming
+- Revamped user interface with new theme engine
+- Changed custom branding into full-fledged theme engine with comprehensive customization
+- VM console now opens in popout window instead of inline
+- Enhanced paste functionality in VM console
+- Fixed styling issues with JSON field types on forms
+- Enhanced API documentation with improved interface
 
-!!! info "Hotfix Release"
-    No reboot required (if System is currently on 4.13.x). Required update for our upcoming major release where we're moving to a different versioning system. Future updates will start with the last two digits of the year, followed by the quarter the development work started in on that release. i.e. 25.2
+#### Task Automation & Scheduling
+- Deprecated schedule_tasks feature
+- Implemented powerful new task engine with reusable schedules
+- Added event-driven automation capabilities
+- New events available:
+    - New VM Created
+    - Tenant Online/Offline/Error states
+    - Alarm Raised/Lowered
+    - Before/After Let's Encrypt renewal
+- Added webhook support to task engine
+- Added new task/action for automated node maintenance (maintenance mode → reboot → exit maintenance)
+- Added tagging support with task engine integration
 
-#### Bug Fixes
-* Fixed two-factor authentication issues affecting TOTP authentication methods
-* Enhanced UI version handling in preparation for the 25.2 release
-* Various system stability improvements
-
-## 4.13.4 (March 2025)
-
-### Features & Improvements
-
-#### Virtual Machine Management
-* Enhanced VM operation:
-    * Implemented new VM console connection method
-    * Added recipe question math operations supporting basic arithmetic (`+`, `-`, `/`, `*`)
-    * Example: `${$math:VARIABLE,+,3}` adds 3 to VARIABLE
-    * Optimized cloud snapshot browsing for VMs or Tenants
-* Improved tenant capabilities:
-    * Added friendlier timeouts when stopping tenant nodes
-    * Automatic inheritance of parent database flush interval
-    * Improved tenant node power cycling behavior
-    * Enhanced tenant NIC statistics tracking inside tenants
-    * Fixed issue where resetting a tenant's password could cause recurring resets
-
-#### Hardware Support
-* Added support for NVIDIA GRID drivers:
-    * 16.8, 16.9
-    * 17.5
-    * 18.0
-
-#### Storage & Infrastructure
-* Enhanced vSAN operations:
-    * Changed tier change detection from reference to trigger-based
-    * Improved journal reads across all meta tier drives
-    * Added transaction snapshot pruning
-    * Overhauled transaction decision making
-    * Added undelete option for initdevice
-    * Added capability to cancel tier deletion
-    * Fixed potential issues with single node tiers scaling out during high usage
-    * Fixed drive deletion to properly disable device headers
-* Optimized system performance:
-    * Improved drive action response time (immediate execution)
-    * Modified fiber channel handling during drive refresh
-    * Enhanced media image upload handling from URLs
-    * Optimized multiple table views for better performance
-
-#### Authentication & Security
-* Enhanced OIDC application functionality:
-    * Fixed HTTP header handling
-    * Improved token endpoint JSON response
-    * Removed mandatory scope requirement
-* Fixed issue where site syncs might not be properly configured upon creation
-
-#### System Administration
-* Improved interface elements:
-    * Enhanced node kill mode warning
-    * Standardized maintenance mode warnings
-    * Added note about swap settings for newly formatted disks
-    * Fixed tenant dashboard device creation
-    * Corrected recipe question section popup button
-    * Fixed issue where help didn't properly link to correct documentation
-* Fixed issues with:
-    * Auto-creating repair servers for sites 
-    * IPSec Phase 1/2 deletion wording
-    * CIFS share refresh in the NAS
-    * NAS domain membership share mounting
-
-### System Updates
-
-#### Installation Improvements
-* Enhanced vSAN device management:
-    * Journal paused for 15 minutes when adding devices
-    * Increased timeout for add-vsan-device to 15 minutes
-    * Immediate drive addition during scale-out
-    * Fixed progress bar display when formatting boot disks
-    * Show proper error when attempting to install a node exceeding license limits
-    * Fixed display issue with reboot dialog
-    * Added support for specifying default vSAN config file
-    * Improved MTU change handling (waits up to 10 seconds for link if previously up)
-
-#### Core System Enhancements
-* Upgraded to kernel 6.6.79
-* Enhanced system configuration:
-    * Increased ARP cache for large networks
-    * Added NVMe controller multipath workaround
-    * Improved boot process (5 seconds faster)
-    * Added cloud-init hooks for unattended bare metal/virtualized installs
-    * Changed copy method when partitioning devices to bypass caches
-    * Fixed browser security policy issues
-    * Added automatic VM power-on after single node system restart
-    * Added additional test and service scripts
-    * Enhanced diagnostics capabilities
-
-#### Bug Fixes
-* Fixed various issues with:
-    * vSAN hash map rebuilding
-    * Potential deadlocks when meta drive is out of space
-    * Race conditions affecting stability
-    * Integrity check functionality with repair options
-
-## 4.13.3 (January 2025)
-
-### Features & Improvements
+#### Storage & Snapshots
+- Implemented immutable snapshots for enhanced data protection
+- Renamed Cloud Snapshots to System Snapshots
+- System snapshots now support cloning
+- Cluster shutdown now takes 24-hour system snapshot by default
+- Fixed issue where generated diagnostics file could end up on wrong vSAN tier
+- Fixed bug preventing preferred tier retention when using Overwrite during file upload
+- Increased machine limits (tenants >1TB RAM now visible in system snapshots)
 
 #### Virtual Machine Management
-- Enhanced VM configuration capabilities:
-    - Added ability to specify VM smbios data using advanced options (e.g. smbios.type1.serial=XXXYYY)
-    - Added support for advanced CPU parameters (e.g. cpu.split-lock-detect=off)
-    - Added VM advanced options support for machine, smp, and rtc parameters
-    - Fixed CD-ROM "Optimize For" setting adherence
-    - Added UTF-8 support for VM paste mapping configurations
-    - Improved VM console focus after ctrl-alt-del
-    - Fixed best CPU flag detection for nested virtualization
-    - Fixed issue where editing a VM could reset paste keymap or RTC settings
-- Enhanced cloud-init handling:
-    - Improved file cleanup when VM is stopped
-    - Added cloud-init support for installation
+- Added virtual IOMMU support for guest VMs
+- Fixed VM migration issue where VMs could migrate indefinitely during cluster changes with node maintenance cycling
+- If VM gets out-of-space error, it no longer continuously attempts to boot
+- Added warning when CPU type differs from cluster recommendation on VM dashboard
+- Enhanced device management:
+    - Machine devices can be marked as optional (allows VM/Tenant to boot without device)
+    - On startup, tenants clean up devices which are recreated on refresh
+- When VM is sent kill action while stopped, all devices are forced offline
+- Fixed issue where setting VM to "pc" or "q35" now pins latest value instead of changing with new machine types
+- Enhanced SR-IOV NIC handling:
+    - Fixed cloning issues
+    - Fixed snapshot issues
+    - Proper class assignment
+- Added multiqueue support to virtio network cards (enabled on new VMs, disabled on existing)
+- NIC hotplug now limited to once every 3 seconds for stability
+- Fixed hotplug issues:
+    - Disabled NIC hotplugging
+    - False error when changing network of disabled NIC on running machine
+- Fixed VMware restore issue for null controllerkey
+- Enhanced VMware refresh for improper guest tool installations
+- Advanced CPU parameters now supported (e.g., cpu.split-lock-detect=off)
 
-#### Authentication & Security
-- Enhanced Two-Factor Authentication:
-    - Added audit logging for failed 2FA code attempts
-    - Improved TOTP code validation (15-second time offset tolerance)
-- Improved authentication source management:
-    - Fixed group membership updates with auth sources
-    - Added auto-cleanup of groups when deleting auth source
-    - Added automatic debug mode timeout (1 hour)
-    - Enhanced OIDC application support for group management
-
-#### System Administration
-- Enhanced maintenance mode:
-    - Improved handling of tenant reserve nodes during shutdown
-    - Added forced maintenance mode option without redundancy
-    - Fixed maintenance mode issues with tenant node reserves
-- Improved tenant management:
-    - Added queue system for tenant provisioning operations
-    - Enhanced tenant node statistics tracking
-    - Improved cleanup of temporary tenant node directories
-    - Added system password requirement enforcement for tenants
-    - Fixed virtual IP ownership display in tenants
-
-#### Storage & Infrastructure
-- Enhanced vSAN functionality:
-    - Improved integrity check monitoring in diagnostics
-    - Enhanced vSAN shutdown logging
-    - Improved connection handling during network instability
-- Upload improvements:
-    - Added system-wide preferred tier inheritance for URL uploads
-    - Improved upload transfer rate accuracy
-
-#### VMware Integration
-- Enhanced backup functionality:
-    - Added fix for differential backups of non-4k aligned disks
-    - Improved error handling for portgroup lookups
-    - Enhanced disk size display precision (3 decimal places)
-    - Improved import option consistency
-
-### System Updates
-- Core system improvements:
-    - Upgraded to kernel 6.6.66
-    - Upgraded QEMU to 9.0.4
-    - Enhanced wireguard TCP performance with GSO
-    - Added power-save CPU frequency governor
-    - Improved core network DNS and gateway configuration
-    - Updated documentation links to docs.verge.io
-- Installation enhancements:
-    - Added automated node shutdown option post-installation
-    - Improved network auto-detection
-    - Enhanced drive selection process
-    - Added more detailed console output during boot/shutdown
-    - Fixed advanced installer network configuration issues
-
-### Bug Fixes
-- Fixed various issues with:
-    - NAS recipe status during drive formatting
-    - Cloud snapshot timing conflicts
-    - SSL certificate Common Name parsing
-    - Virtual Switch Port configuration
-    - VMware backup and import processes
-    - Network connection maintenance during migrations
-    - vGPU profile placement IDs
-    - Recipe field type display
-
-## 4.13.2 (December 2024)
-
-### Features & Improvements
-
-#### Virtual Machine Management
-- Enhanced VM recipe functionality:
-    - Added automatic recipe detachment when guest agent connects
-    - Improved provisioning continuity during unexpected reboots
-- Added API support:
-    - PUT support for machine power state
-    - Cloud-init file creation via API
-- Fixed deprecated QEMU log for VMs with console password
-- Improved auto-start capabilities:
-    - Added power-on flagging for networks, VMs, tenant nodes, and VMware services when resources become available
-
-#### VMware Integration
-- Fixed downloading of VMware files:
-    - Improved handling of vmx, nvram, and vmxf files/assets
-
-#### System Administration
-- Enhanced maintenance mode:
-    - Added support for single problematic node maintenance (failed drive scenarios)
-- Improved UI/UX:
-    - Fixed node drive temperature dashboard display
-    - Enhanced vSAN dashboard walk progress display
-    - Changed full walk progress visibility
-    - Improved form dropdowns with default text sorting
-    - Fixed long history graphs display for 0 bytes
-    - Fixed VNET list poweroff popup for online machines
-- Modified backend package installation process
-
-#### Storage & vSAN
-- Enhanced vSAN functionality:
-    - Improved controller votes during startup for better split-brain detection
-    - Fixed dashboard walk progress display during idle state
-- Fixed bonded interface handling for External networks requiring restart
-
-### OS & Installation
-
-#### System Infrastructure
-- Enhanced storage support:
-    - Added NVMe multipath support
-    - Fixed fiberchannel device lists
-    - Improved boot partition flashing with FC cards
-- System improvements:
-    - Changed grub boot title to "VergeOS"
-    - Accelerated boot partition flashing during shutdown
-    - Fixed potential memory issue during vSAN sync
-
-#### System Management
-- Enhanced framework handling:
-    - Improved controller handoff from node2 to node1
-    - Fixed rare lockup during node connection phase
-- Improved physical access:
-    - Fixed login issues
-    - Removed false-positive error logs
-
-## 4.13.1 (November 2024)
-
-### Virtual Machine Management
-
-#### UI Improvements
-- Fixed core checkbox persistence on VM dashboard refresh
-- Enhanced core checkbox behavior on statistics graph
-- Improved cluster-based node filtering for VM migration
-- Enhanced vGPU profile sorting by name
-- Updated audit logs for hard reset/restart actions
-
-#### Functionality
-- Added download completion check for Marketplace recipe VMs requiring ISOs
-- Enhanced ISO management:
-    - Fixed renaming attached ISOs when VM is offline
-    - Improved media handling
-
-### System Administration
-
-#### Resource Management
-- Enhanced resource group functionality:
-    - Added resource group specification for machine devices
-    - Fixed resource group deletion with attached devices
-    - Improved device management
-- Added vGPU profile display improvements:
-    - Added framerate information
-    - Added VRAM details
-- Implemented automatic node resource cleanup on startup
-
-#### System Tools
-- Enhanced system diagnostics:
-    - Implemented 256K chunk uploads
-    - Improved performance and reliability
-- Improved scheduled tasks:
-    - Removed legacy 2019 default date
-    - Enhanced scheduling functionality
-
-#### VMware Integration
-- Enhanced backup job management:
-    - Added pause/resume/stop controls to list view
-    - Added backup mode display
-    - Removed kernel warning for container service startup
-
-### Storage & Infrastructure
-
-#### VSAN Improvements
-- Fixed critical scenarios:
-    - Resolved same-tier data movement triggering trans snap
-    - Fixed drive listing with FC card present
-    - Enhanced integrity check for large repair counts (>500 repairs)
-
-#### System Services
-- Enhanced appserver functionality:
-    - Added proxy source IP support from URL
-    - Improved cache settings (private to public) for files
-    - Added general proxy source IP support
-- Updated Samba configuration:
-    - Optimized ACL handling
-    - Removed automatic DFS enabling when AD is not joined
-
-### OS & Installation
-- Upgraded to Kernel 6.6.60
-- Fixed various stability issues
-- Enhanced service configuration
-- Updated system endpoints to vergeos.com
-- Removed unnecessary debug logging
-
-## 4.13.0 (November 2024)
-
-### Major Features & Themes
-
-#### Hardware & Resource Management
-- Added resource passthrough capabilities:
-    - Support for USB, PCI, and SRIOV NICs passthrough to VMs and tenant nodes
-    - New dashboard for system resource visibility
-    - Added SRIOV eswitch support for mlx5
-- Implemented experimental vGPU live migration (cluster setting)
-- Added support for NVIDIA GRID versions:
-    - 16.6, 16.7, 16.8
-    - 17.2, 17.3, 17.4
-- Removed NVIDIA GRID driver support prior to 16.6 (kernel incompatibility)
-
-#### Virtual Machine Enhancements
-- Increased capabilities:
-    - Maximum file size for virtual disks now 256TB
-    - Increased max CPU per tenant node to 1024
-    - All machine types using 9.0 or newer automatically include USB controller
-- Added SMBIOS improvements:
-    - Product vendor and serial number provided to VMs
-- Enhanced VM Management:
-    - New graceful reboot option (most reliable with guest agent)
-    - Changed Reset to "Hard Reset" and Reboot to "Restart"
-    - Hot-pluggable virtual USB controller for drive interfaces
-    - Optimized VM drive quiescing
-    - New machine types for QEMU 9.0
-
-#### Networking & Infrastructure
-- Enhanced bonding capabilities:
-    - Support for multiple core physical interfaces into VLAN
-    - Changed default bond settings to prevent misconfiguration
-    - Support for bonded core physical NICs with tagged VLAN
-    - Added ability to change physical network to bonded after install
-- Improved network management:
-    - Added split brain detection for external networks with static IPs
-    - Added a Allow Ping rule on the External network that is created with new system deployments (where you access the UI). This rule is disabled by default.
-    - Support for IP aliases in proxy-enabled networks
-
-#### Storage & Backup
-- Enhanced VM Export functionality:
-    - Increased max Volume VM Exports to 100 (from 20)
-    - Added NFSv4 and extended attribute support
-    - Added read-write support for backup vendors
-    - Faster VM importing (no disk copy/conversion needed)
-    - API support for name override and VM list
-- Improved cloud snapshot capabilities:
-    - Increased maximum from 1000 to 2048
-    - Now includes node and tier directories from sys directory
-    - Added vSAN config copying
-    - Support for multiple selections in tenant/VM recovery
-
-### Functionality Improvements
-
-#### VMware Integration
-- Enhanced backup functionality:
-    - Removed 50 VM limit on pre-import list
-    - Fixed handling of VMs with <256M RAM
-    - Added setting for backup jobs without full refresh
-    - Fixed CPU usage reporting for VMware Backup Service
-- Improved VM import:
-    - Support for interface overrides (drives and NICs)
-    - Option to ignore optical drives
-
-#### Authentication & Security
-- Enhanced two factor authentication:
-    - Added verification requirement before enabling
-    - Added type to user dashboard, list, and profile
-    - Fixed OpenSSL Cipher URL
-- Fixed issues with:
-    - Administrator permission management
-    - Invalid auth source icon handling
-    - OIDC login with long usernames
-
-#### System & Cluster Management
-- Enhanced update process:
-    - Added new settings:
-        - Warm Reboot: Faster node reboot during updates (bypasses BIOS/EFI)
-        - Multi-Cluster Update: Simultaneous updates across clusters
-    - Process improvements:
-        - Updates pause if users manually reboot servers
-        - Status/logs only update after successful maintenance mode
-        - Removed redundant storage redundancy requirement
-        - Parallel updates possible (one node per cluster after node1)
-        - Enhanced status logging during controller failover
-- Improved maintenance mode:
-    - Support for multiple simultaneous nodes (respecting vSAN redundancy)
-    - API support for forced maintenance mode
-    - Enhanced VM migration during maintenance:
-        - 4 VMs for >40Gbps networks
-        - 2 VMs for >10Gbps networks
-        - Configurable via Advanced Settings
-
-#### Storage & vSAN
-- Enhanced vSAN management:
-    - Improved cluster tier dashboard with comprehensive node listing
-    - Added manual drive addition via vSAN Diagnostics
-    - Added Get Tier Status to diagnostics
-    - Better tracking of vSAN connectivity
-    - Drives set to initializing during scale-up
-    - Changed default timeout for IO from 30 to 7 seconds
-    - Implemented multipath for fiber channel and DAS storage (active/passive)
-    - Implemented multichannel communication between nodes
-    - Added volume tier throttling for tenant usage control
-- Storage improvements:
-    - Removed offline requirement for VM drive tier changes
-    - Fixed volume sync deletion issues
-    - Enhanced snapshot management in backup clusters
+#### Networking
+- Renamed Virtual Wires to Virtual Switch Ports
+- Fixed issue where stale core NIC could cause vxlan devices to get 1500 MTU
+- Enhanced network creation with proper sorting when adding Layer 2 networks to tenants
+- Added note to VLAN bonding indicating Active-Backup mode (not LACP compatible)
+- Generated WireGuard configs now include static routes in CIDR format
+- Fixed issue where non-/32 WireGuard IPs generated incorrect configs
+- Added TCP MTU Probing advanced option (enabled by default)
+- Changed default bonded network mode to LACP
 
 #### Tenant Management
-- Enhanced tenant features:
-    - Support for all media image types (not just ISOs)
-    - Added machine device counts to dashboards
-    - Automatic sites and syncs disable on clone
-    - Fixed certificate visibility in cloned tenants
-    - Better handling of tenant default routes
-    - Improved device offline status during cloning
-- Added HA Group improvements:
-    - New '+' prefix feature for co-location preferences
-    - Enhanced VM placement optimization
+- Added events for tenant state changes (online, offline, error)
+- Fixed issue where tenants didn't receive devices from service provider recipe catalogs (TPM, vGPU, PCI)
+- Fixed issue where tenant network creation errors showed incorrect tenant name error
+- Fixed issue with proxy FQDN support
+- Added Proxy FQDN field to tenant dashboard
+- Proxy FQDNs now filter out tenant snapshots
+- Fixed tenant inheritance of parent database flush settings
+- Fixed issue with invalid characters in tenant rename
+- Tenant nodes now report running version
+- Tenant nodes log internal container reboots
+- Added CPU/RAM tracking to vnet containers
+- Fixed devices list display on tenant node dashboard
 
-#### Network & Connectivity
-- Improved network operations:
-    - Virtual Switch Port connection delayed until migration completion
-    - Enhanced wireguard peer creation
-    - Better IP address ownership visibility
-    - Improved bonded network configuration
-- Added "My DMZ" back in network rules for Route/Translate
-- Fixed Layer2 type change issues with physical interfaces
+#### Security & Authentication
+- Added API key authentication for users
+- Enhanced audit logging:
+    - Auth source user login failures
+    - All failed login attempts bubble up to main dashboard logs
+    - Manual system snapshot deletions (not expired)
+- Improved SSL certificate management:
+    - Systems can manage multiple SSL certificates
+    - Let's Encrypt cache wiped when certificate forced to renew
+    - Support for multiple domains in single Let's Encrypt certificate using subjectAltName (comma-delimited list)
+    - Enhanced error handling for OIDC applications with default/wildcard certificates
+- Added UI for registering Root CAs with system
+- Added advanced setting for system logon banner
 
-### System Administration
+#### System Administration & Monitoring
+- Added comprehensive alarm system:
+    - Proactive notification for problems and issues
+    - Default email notifications to admin user/group for error alarms
+    - Events for alarms raised/lowered
+    - Fabric communication issue alarms
+    - License expiration warnings (7 days)
+- Enhanced node management:
+    - Version restrictions when adding new nodes
+    - Unlicensed nodes attempt license revalidation every minute
+    - Fixed maintenance mode for unlicensed nodes with running networks
+    - When node exits maintenance mode, workloads forced back even if HA group restricts
+    - If node flagged as needing restart, treated as needing update
+- Added CSV downloading capability to list views
+- Enhanced diagnostics file handling
+- Improved HA Group descriptions
+- Added better upload URL handling with size check bypass option
+- Fixed issue where non-admin users couldn't favorite VMs
 
-#### Configuration & Management
-- SMTP improvements:
-    - Changed NTP restart behavior
-    - Removed default From Address in fresh installs
-    - Added warning for missing From Address
-    - Enhanced mail file handling
-- UI/UX updates:
-    - Changed "Refresh PCI Devices" to "Refresh Devices"
-    - Added preferred tier space check notification
-    - Enhanced license management and marketplace interaction
-    - Improved share status visibility for CIFS/NFS
+#### Media & Files
+- Renamed Media Images to Files
+- Fixed URL parsing on upload form
+- Renamed Make Passthrough to Make Resource
 
-#### File Management & Upload
-- Enhanced file upload capabilities:
-    - Added on-the-fly decompression for xz/gz formats via API
-    - Improved upload status monitoring
-    - Enhanced public link handling
-- Added ISO generation capabilities:
-    - Support for zip files and other ISOs via API
-    - Automatic guest driver ISO creation for vGPU setups
+#### Recipe Management
+- Added support for proxy FQDNs with tenant recipes
+- Added new recipe question type: "hostname"
+- Added retries when cleaning up after NAS recipe build
+- Removed 30-day POC tenant recipe (no longer maintained)
+- Fixed issue where tenants didn't get recipe catalog devices
 
-### OS & Installation
+#### NAS & Storage Services
+- Enhanced NFS support:
+    - NFSv4 mount options display for both versions
+    - Fixed issue where NAS used wrong NFS version in tenants (affecting backup application block difference queries)
 
-#### Installation Process
-- Enhanced network configuration:
-    - Improved core network NIC scanning for conflict detection
-    - Better MTU problem detection and messaging
-    - Removed physical switch configuration prompt
-    - Enhanced auto-network detection
-    - Support for single node without physical core network
-- Added system classification prompt (POC/Trial/Homelab or Production)
-- Improved drive management:
-    - Better multipath drive handling
-    - Enhanced vSAN device selection
-    - Option for remaining disk boot partition flashing
-    - Improved drive formatting during scale-out/node replacement
+#### GPU & Hardware Support
+- Added support for NVIDIA vGPU drivers 16.1 through 19.2
+- Added vGPU and AI support for NVIDIA RTX Pro 6000 Server Edition
+- Added new resource group type "Host GPU" for AI acceleration (NVIDIA, AMD, Intel)
+- Fixed issue where tenants wouldn't receive vGPU/GPU devices
+- Hid false error logs when NVIDIA drivers installed
 
-#### System Infrastructure
-- Kernel and Core Updates:
-    - Upgraded to kernel 6.6.56
-    - Upgraded base QEMU to 9.0.3
-    - Added RPKI package for frr
-    - Enhanced TCP and network buffer settings
-- Hardware Support:
-    - Added Xilinx and USB Network drivers
-    - Disabled hardware offloading for certain Broadcom NICs
-    - Added code for buggy NVMe drive handling
-    - Enhanced mlx5 driver support
-    - Added ability to relax RMRR with IOMMU
+#### Package & Update Management
+- Added ability to remove packages
+- Added support for missing and optional packages on updates page
+- Fixed issue preventing easy downgrade after changing update branch
+- Clone ISO hosted on update server with build options removed from UI (API intact)
 
-#### Boot & System Management
-- Enhanced boot process:
-    - Added quick reboot using kexec
-    - Improved EFI handling
-    - Better bonded NIC detection after PCI slot changes
-    - Faster boot with unlinked NICs
-- Security improvements:
-    - Added SSH password disable option
-    - Enhanced physical access login tracking
-    - Improved login brute-force handling
-    - Better multiple SSH session management
+#### Permissions & Access
+- Added missing permission types
+- Enhanced permissions handling throughout system
 
-### Bug Fixes
-- Fixed various issues with:
-    - Cloud snapshot recovery scenarios
-    - Guest agent functionality after VM reset
-    - Volume export share FSID stability
-    - Tenant snapshot timing scenarios
-    - Database question handling in tenant recipes
-    - Node CPU usage reporting
-    - IPSec Phase1 pre-shared-key visibility
-    - Site sync statistics display
-    - VM export quiescing
-    - Boot partition updates via API
-    - NTP leap second handling
-    - Syslog regex filter reloading
+#### Recovery & Backup
+- Fixed issue where recovered tenant from system snapshot with password reset showed wrong status
+- Fixed timing issue when tenant creates system snapshot simultaneously with provider using same name
+
+#### vSAN Management
+- Modified vSAN tier field to read-only
+- Added ability to disable network integrity checks for syncs
+- Enhanced vSAN diagnostics capabilities
+- Added guard-rails to integrity check with fix option (verification and alert banner)
+- Fixed issue where manual vSAN drive addition via diagnostics was possible
+
+#### Miscellaneous
+- Added table schema and deprecation info to swapper/API Docs
+- Enhanced catalog refresh throttling in tenants (single job)
+- Fixed offline license compatibility with themes
+- Only generate audit logs for manually deleted system snapshots
+- Added hostname and domain fields to all L3 network types
+- Removed obsolete v3 import tables and phrases
+
+### OS / Install
+
+#### Core System
+- Kernel 6.6.115
+- Upgraded QEMU to 10.0.5
+- Enhanced appserver functionality:
+    - Fixed two potential deadlocks during controller handover
+    - Fixed scheduler issues with DST and minutely schedules
+    - Fixed stack smash when network buffers fill during progress updates
+    - Fixed integrity check startup check
+    - Implemented lastlogin_ip update for credentials
+    - Added IP allow/deny list support for credentials
+    - Added authorization bearer support with API keys
+    - Fixed audit event handling for failed sys token logins
+    - Added cookies to login handling
+    - Added reverse proxy support
+    - Fixed timeout issue for scripts during shutdown
+    - Fixed crash on shutdown with open SSL connections
+    - Added fields and perm_check options to actions
+    - Overhaul of permissions cache
+    - Fix to security cache
+    - Added HTTP response for exceeded connections
+    - Added vector database support
+
+#### Storage & vSAN
+- Enhanced vSAN functionality:
+    - Added out-of-space handling to return errors to client
+    - Added redundant device maps
+    - Changed balancing to match node balancing
+    - Fixed error codes for syncs
+    - Out-of-space no longer overflows to tier 0
+    - deletenode now requires storage removal first
+    - Hash map changes check for required available storage
+    - Changed default fuse_minworkers to 4 (from CPU core count)
+    - Added /sys snapshots support
+    - Added changeencpassword capability
+    - Fixed fuse IO queue lockup
+    - Rewrote IO queues to fix performance drop at depth limits
+    - Added sequential readahead
+    - Fixed abort procedure when committing deleted file
+    - Fixed shutdown hang when settier called with no change
+    - Added immutable snapshot type
+
+#### Installation
+- Installer must be on same OS version as system
+- Installer no longer allows third controller node installation
+- Removed update server questions from basic install
+- Added version restriction code when adding nodes
+- Fixed minor issue with external IPs during automated install
+- Fixed issue where restarting installer didn't reset hostname
+- Network auto-detection shows "None" for VLAN instead of 0
+- Changed default boot order for EFI
+- Fixed quick install 10-second link wait
+- Added ability to bypass auto-detect for automated installs
+- Added ability to skip compute swap question
+- Changed network configuration text for better clarity
+- When adding vSAN devices, journal paused for 15 minutes
+- Increased timeout for add-vsan-device to 15 minutes
+- Scale-out now adds all drives to vSAN immediately (no reboot required)
+- Enhanced unattended install support:
+    - vSAN encryption support
+    - Time synchronization improvements
+
+#### Networking & Drivers
+- Added kernel drivers for additional serial devices
+- Added workaround for Intel E810 NICs using RDMA (prevents network reset during high activity)
+- Added USB network device support
+- Time synchronized by fabric instead of NTP during boot
+- Fixed NVMe boot partition flashing with multichannel enabled
+- Added workaround for NVMe controllers supporting multipath
+
+#### Security & Access
+- Fixed caching issue for PAM when API down
+- Fixed issue where restarting fabric from SSH could cause fabric process exit
+- Added ability to start OS without appserver running
+- Enhanced PAM handling
+
+#### System Services
+- Added GCS with SSE commands for help
+- Added script for checking device map balance
+- Appserver unexpected shutdown only reboots node if vSAN can enter maintenance mode
+- Made several utility scripts executable
+- Added webserver JSON socket and json-api helper
+- When powering off node, running VMs gracefully powered off (with timeout) and flagged for restart on power-up
+
+---
+
+## Upgrade Notes
+
+!!! warning "Important Upgrade Information"
+    - **Reboot Required**: Yes - all nodes will require restart
+    - **Theme Migration**: Custom branding settings automatically migrated to new theme engine
+    - **Task Migration**: Existing schedule_tasks automatically converted to new task engine
+    - **Terminology Changes**: Cloud Snapshots → System Snapshots, Virtual Wires → Virtual Switch Ports, Media Images → Files
+    - **Network Defaults**: New bonded networks default to LACP instead of Active-Backup
+    - **VM NIC Changes**: New VMs have multiqueue enabled; existing VMs retain disabled state
+
+!!! info "Post-Upgrade Actions"
+    - Review and test new alarm notifications
+    - Configure API keys for programmatic access if needed
+    - Review converted task automation schedules
+    - Consider implementing immutable snapshots for critical data
+    - Update any external integrations referencing renamed features
+
+## Known Issues
+
+!!! note "Current Limitations"
+    - Some NVMe drives have known issues with power management; cluster setting available to disable if needed
+    - VLAN bonding uses Active-Backup mode only (not compatible with LACP)
+
+---

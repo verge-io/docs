@@ -346,7 +346,8 @@ nav:
       - Terraform Provider: product-guide/tools-integrations/terraform-provider.md
   - Release Notes: 
     - Overview: release-notes/release-notes-overview.md
-    - 4.13 (latest): release-notes/release-notes.md
+    - 26.0 (latest): release-notes/release-notes.md
+    - 4.13: release-notes/4-13-release-notes.md
     - 4.12: release-notes/4-12-release-notes.md
     - 4.11: release-notes/4-11-release-notes.md
     - "4.10": release-notes/4-10-release-notes.md
