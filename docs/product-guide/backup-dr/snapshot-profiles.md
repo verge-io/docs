@@ -34,7 +34,7 @@ The following are default snapshot profiles automatically created at system inst
 
 ## Create a New Snapshot Profile
 
-1. Navigate to dashboard, select **System* > **Snapshot Profiles**.
+1. Navigate **System* > **Snapshot Profiles**.
 2. Select **New** from the left menu.
 3. Enter a ***Name*** for the new profile (required). It is recommended to use a name that is descriptive of the frequency/retention (e.g. houly3hrs-daily-4days) or descriptive of the elements to which it will be assigned (e.g. WebServers)
 4. Optionally, a ***Description*** can be entered.
