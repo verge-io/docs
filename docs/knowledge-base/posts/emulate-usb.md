@@ -48,7 +48,7 @@ Before creating an emulated USB device, ensure your VM meets these requirements:
 ## Steps to Create USB Device
 
 1. **Access VM Settings**
-   - Navigate to the VM dashboard (Virtual Machines > Dashboad  > Double-click your target VM )
+   - Navigate to the VM dashboard (Virtual Machines > List  > Double-click your target VM )
    
 
 2. **Create New Drive**
