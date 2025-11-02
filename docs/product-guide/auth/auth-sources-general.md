@@ -14,8 +14,8 @@ The following links provide source-specific instructions:
 ## Creating an Authorization Source - General Instructions
 
 1. Obtain **Client ID** and **Client Secret** from the third-party system; these credentials must be created **based on the URL of the VergeOS system**.  These values will be needed in a later step.
-2. Select **System** on top menu.
-3. Click **Auth Sources** on the left menu.
+2. Click **System** on top menu.
+3. Select **Auth Sources**.
 4. Click **New** on the left menu.
 5. **Name:** a name to identify this authorization source; this name will appear on the sign on button on the VergeOS login page.
 6. **Driver:**  
