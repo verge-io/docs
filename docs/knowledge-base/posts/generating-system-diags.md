@@ -22,7 +22,7 @@ Here are the steps to create and download a System Diagnostics file.
 1. **Log in** to the **parent/root** environment.  The diagnostics file needs to be generated at the **Parent environment**, rather than a **Tenant**.
 1. From the top menu, select **System > **Dashboard**
 1. On the **System dashboard**, in the left navigation menu, **click System Diagnostics**
-1. From the **System Diagnostics**, in the left navigation menu, **click Build**
+1. From the **System Diagnostics**, in the left navigation menu, **click New Report**
 
 1. Once inside the **New System Diagnostic Report**, complete the **Name**, **Description**, and **check the "Send diagnostic information to VergeOS support**, then click **Submit** at the bottom. This will generate a compressed file of system logs.
 1. Wait while the compressed log file is built. The status column will show the status as **'Building"** then on to **'Sending to Support'**.
