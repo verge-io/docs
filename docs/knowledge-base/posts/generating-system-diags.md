@@ -20,7 +20,7 @@ VergeOS support may request that a system administrator generate a system diagno
 
 Here are the steps to create and download a System Diagnostics file.
 1. **Log in** to the **parent/root** environment.  The diagnostics file needs to be generated at the **Parent environment**, rather than a **Tenant**.
-1. From the **Main dashboard**, in the left navigation menu, **click System**
+1. From the top menu, select **System > **Dashboard**
 1. On the **System dashboard**, in the left navigation menu, **click System Diagnostics**
 1. From the **System Diagnostics**, in the left navigation menu, **click Build**
 

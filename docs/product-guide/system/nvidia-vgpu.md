@@ -17,9 +17,9 @@ VergeOS allows seamless utilization of NVIDIA's GRID vGPU platform to provide mu
 2. Upload the NVIDIA bundle driver to the VergeOS vSAN. See [**Uploading to the vSAN (Files)**](/product-guide/storage/uploading-files-to-vsan) for directions on uploading to the vSAN.  
 The following instructions configure selected vGPU device(s) for virtual function passthrough by automatically creating necessary resource rules for each selected device and attaching the device(s) to a resource group. For more information about resource groups and resource rules, see: [**Device Passthrough - Overview**](/product-guide/system/device-pass-overview#resource-group).
 
-3. Navigate to the **Resource Manager Dashboard** (*Main Dashboard > Resources*)
+3. Navigate to the **Resource Manager Dashboard** (**Infrastructure** > **Resources** from the top menu)   
 **-OR-**
-Navigate to a **specific node** where the NVIDIA hardware is installed. (*Main Dashboard > Nodes* > double-click desired node in the list)
+Navigate to a **specific node** where the NVIDIA hardware is installed.
 4. Click the **PCI Devices** box / menu item.
 5. In the list view, select the **Type** filter to **Display controller** near the top of the page.
 6. **Select the desired NVIDIA physical device(s).**
@@ -39,7 +39,7 @@ Navigate to a **specific node** where the NVIDIA hardware is installed. (*Main D
 After the resource group is selected or new one created, a **Success** message should appear indicating resource rules were created for the device(s)
    * If this driver has not been used previously or IOMMU is not yet enabled for the system, **a reboot of the associated node(s)** will be necessary before you can complete the vGPU configuration.  
 !!! warning "Follow proper [**Maintenance Mode**](/product-guide/operations/maintenance-mode) procedures when rebooting a node to avoid workload disruptions.  Also, ensure that IOMMU / VT-d / SR-IOV is enabled in the BIOS."
-   * After the node(s) are rebooted, if necessary, navigate to the NVIDIA vGPU resource group just created (Main Dashboard > Resources > Groups > double-click the group)
+   * After the node(s) are rebooted, if necessary, navigate to the NVIDIA vGPU resource group just created (Infrastructure > Resources > Groups > double-click the group)
    * Click **Edit** on the left menu.
    * Select the desired **NVIDIA vGPU Profile** from the dropdown list.  Consult NVIDIA vGPU documentation for information regarding available profile types for your hardware.
    * The **Make Guest Driver ISO** option can be used to automatically create a guest driver ISO file from the NVIDIA driver bundle selected above.  If you have already created guest drivers, select the ISO in the next step.
@@ -54,7 +54,7 @@ The resource group dashboard contains the resource rules that were auto-generate
 
 ## VM/Guest Configuration
 
-1. Navigate to the VM dashboard (Main Dashboard > Machines > Virtual Machines > double-click desired VM in the listing)
+1. Navigate to the VM dashboard (from the top menu: Virtual Machines > List > double-click desired VM in the listing)
 2. Click **Devices** on the left menu.
 3. Click **New** on the left menu.
 !!! tip "You can also attach devices to a VM via Resource Manager; this method allows for adding multiple devices to the VM at once. From Resource Group dashboard > double-click the desired vGPU Group > View Machine Devices > New; select the VM from the Machine dropdown list."
@@ -84,7 +84,7 @@ NVIDIA vGPU devices can be passed to a tenant for the tenant to pass to its own 
 
 !!! note "Devices are shared to a tenant are thick provisioned (i.e. the tenant then owns the devices, so they cannot be assigned to other VMs or tenants, even when not in use.)"
 
-1. Navigate to the desired **tenant dashboard** (Main Dashboard > Tenants > Tenants > double-click the tenant within the list.)
+1. Navigate to the desired **tenant dashboard** (from the top menu: Tenants > List > double-click the tenant within the list.)
 2. Click **Nodes** on the left menu.
 3. **Double-click one of the tenant nodes**.
 4. Click **Devices** on the left menu.

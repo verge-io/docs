@@ -6,9 +6,9 @@ One-to-One PCI passthrough involves giving a single VM at a time, access to a PC
 
 !!! danger "It is important to read and be familiar with [**PCI Passthrough Risks and Precautions**](/product-guide/system/device-pass-overview#pci-passthrough-risksprecautions) before making passthrough configurations."
 
-1. Navigate to the **Resource Manager Dashboard** (Main Dashboard > Resources)
-**-OR-**
-Navigate to a **specific node dashboard** (Main Dashboard > Nodes > double-click desired node in the list.)
+1. Navigate to the **Resource Manager Dashboard** (**Infrastructure** > **Resources** from the top menu **-OR-** Main Dashboard > Resources)
+
+Navigate to a **specific node dashboard** (**Infrastructure** > **Nodes** from the top menu *-OR-**Main Dashboard > Nodes**, then double-click desired node in the list.)
 2. Click **PCI Devices**.
 3. Select the desired device(s) in the list and click **Make Passthrough** on the left menu.
 4. **Select an existing PCI device resource group** from the list **-OR-** **Create a new PCI resource group**.
@@ -28,7 +28,7 @@ After the resource group is selected/created, a *Success* message should appear 
 
 ## VM/Guest Configuration
 
-1. Navigate to the dashboard of the desired VM (Main Dashboard > Machines > Virtual Machines > double-click desired VM in the listing).
+1. Navigate to the dashboard of the desired VM (Virtual Machines > List > double-click desired VM in the listing).
 2. Click **Devices** on the left menu.
 3. Click **New** on the left menu.
 !!! tip "You can also attach devices to a VM via Resource Manager; this method allows for adding multiple devices to the VM at once. From Resource Group dashboard > double-click the desired PCI Group > View Machine Devices > New; select the VM from the Machine dropdown list."
@@ -52,7 +52,7 @@ PCI devices can be passed to a tenant for the tenant to pass to its own VMs.  Wh
 
 !!! note "When devices are shared to a tenant, they are thick provisioned (i.e. the tenant then owns the devices, so they cannot be assigned to other VMs or tenants even when not in use.)"
 
-1. Navigate to the desired **tenant dashboard** (Main Dashboard > Tenants > Tenants > double-click the tenant within the list.)
+1. Navigate to the desired **tenant dashboard** (from the top menu: Tenants > List > double-click the tenant within the list.)
 2. Click **Nodes** on the left menu.
 3. **Double-click one of the tenant nodes**.
 4. Click **Devices** on the left menu.

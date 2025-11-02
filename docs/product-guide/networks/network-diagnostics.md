@@ -22,7 +22,7 @@ The Network Diagnostics tool provides comprehensive network troubleshooting capa
 ## Accessing Network Diagnostics
 
 1. **Navigate to Network Diagnostics:**
-   - From the **Main Dashboard**, click **Networks** in the left menu
+   - Navigate to **Networks** > **List**
    - Select the desired **network** from the list
    - Click **Diagnostics** in the left menu
 

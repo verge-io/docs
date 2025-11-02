@@ -51,10 +51,11 @@ The **VergeOS Clone Utility (VergeOS-clone.iso)** can be used to import external
 
 ## Obtaining the VergeOS Clone Utility
 
-1. From the **Main Dashboard**, click **Backup/DR** on the left menu.
-2. Click **Add Clone ISO** in the Clone ISO section.
-3. Select the desired public download option for the ISO file. 
-4. After the build process completes, download the ISO via the provided link or from the VergeOS UI.
+1. Select **Import/Export** > **Dashboard** from the top menu.
+2. Click **Download Clone ISO** from the left menu to download the most recent version of the file.  
+3. A pop-up message will display indicating download progress.  When the transfer has completed the message will briefly indicate "Download Complete" before the pop-up disappears.
+4. Locate the ISO file on your local machine (e.g. the Downloads folder)   
+
 
 !!! note "You can make a bootable USB using the [Creating Bootable Installation Media](/knowledge-base/creating-bootable-installation-media/) guide, substituting the Clone ISO."
 
@@ -91,13 +92,6 @@ If using static IP:
 
 If a clone import fails or is interrupted, boot the source machine from the VergeOS Clone ISO again and resume by selecting the previously used VM name.
 
-## Rebuilding the Clone ISO
-
-1. To rebuild the Clone ISO after updates, go to **Backup/DR** on the Main Dashboard.
-2. Click **Edit Clone ISO** and check **Force Rebuild**.
-3. The rebuild may take a few minutes.
-
-To automate rebuilds after system updates, schedule a task under **System > Tasks/Events**.
 
 ## Direct vSAN Network Configuration
 

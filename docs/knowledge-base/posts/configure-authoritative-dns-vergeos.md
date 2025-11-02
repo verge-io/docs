@@ -85,7 +85,7 @@ After completing this guide, you will be able to:
 The first step is enabling BIND DNS services on the network that will provide authoritative DNS. You can enable DNS on any existing network (internal or external), though external networks are typically used for public-facing DNS services.
 
 1. **Navigate to your target network**:
-   - From the **Main Dashboard**, click **Networks**
+   - **Networks** > **List**
    - Select the network where you want to enable DNS services
    - Click **Edit** from the left menu
 

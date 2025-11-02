@@ -6,7 +6,7 @@ The *Cluster Settings* form enables you to configure key parameters relating to 
 
 ## Accessing Cluster Settings
 
-From the **Main Dashboard** > **Clusters** > **double-click the desired cluster** > click **Edit** on the left menu. 
+From the **Infrastructure** > **Clusters** > **double-click the desired cluster** > click **Edit** on the left menu. 
 
 
 ## Cluster

@@ -37,9 +37,8 @@ The VMware service establishes a direct agent connection with vSphere; network a
 ---
 
 ### To Create a New VMware Service:
-1.  From the **Main Dashboard**, click **Backup/DR.**
-1.  Click **VMware** on the left menu. (Any existing VMware Services will appear in the list view.)
-1.  Click **New** on the left menu.
+1.  Navigate to **Import/Export** > **VMware Services** from the top menu. 
+1.  Click **New Service** on the left menu.
 
 ### VMware Service Settings:
 
@@ -123,9 +122,9 @@ When a new VMWare Service is created, a Schedule named “Default” is created 
 ---
 
 ### To Create a New Schedule:
-1.  From the **VMware Service Dashboard** (Main Dashboard -> Backup/DR → VMware -> double click VMware service in the list.)  
-1.  Click **Schedules** on the left menu.
-1.  Click **New** on the left menu.
+1.  From the **VMware Service Dashboard** (Import/Export > VMware services > double-click the target service from the list.)  
+2.  Click **Schedules** on the left menu.
+3.  Click **New** on the left menu.
 
 
 2.  Enter a **Name** for the new Schedule.

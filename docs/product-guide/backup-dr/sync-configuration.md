@@ -180,7 +180,7 @@ When no schedule is defined for the sync, snapshots defined in the auto sync con
 
 ### To Contain a Sync to a Specific Schedule
 
-1. Navigate to the outgoing sync dashboard (Main Dashboard > Backup /DR > Outgoing Syncs > double-click on the sync in the listing).
+1. Navigate to the outgoing sync dashboard (Backup /DR > Outgoing Syncs > double-click on the sync in the listing).
 2. Under **Sync Schedule Configuration**, click the **Add Item** link.
 3. Create a task with **Task type** = ***Enable*** to set a start time for the sync.
 4. Create an additional task with **Task type** = ***Disable*** to set a stop time for the sync.
@@ -189,7 +189,7 @@ More information on creating automated tasks is available here: [**Create Tasks*
 
 ### Configure Throttle Scheduling
 
-1. Navigate to the outgoing sync dashboard (Main Dashboard > Backup /DR > Outgoing Syncs > double-click on the sync in the listing).
+1. Navigate to the outgoing sync dashboard (Backup /DR > Outgoing Syncs > double-click on the sync in the listing).
 2. Under **Sync Schedule Configuration**, click the **Add Item** link.
 3. Create a task with **Task type** = ***Throttle Sync***, configure the schedule and select desired bandwidth limit in the Send throttle field.
 4. Create an additional task with **Task type** = ***Disable Throttle Sync*** configuring a schedule for the throttle to be turned off

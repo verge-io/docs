@@ -40,8 +40,8 @@ This guide outlines the process to create a bonded external network across vlann
 
 ## Steps
 
-1. Navigate to the **External Network dashboard** (
-    - Main Dashboard > Networks > Externals
+1. Navigate to the **External Network dashboard** 
+    - Networks > Dashboard > Externals
     - Double-click External Network
     - Click **Edit** on the left menu 
 2. Change **Layer 2 Type** to ***vLAN*** and enter appropriate **Layer 2 ID** (VLAN number).

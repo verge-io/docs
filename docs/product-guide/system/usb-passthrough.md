@@ -12,9 +12,9 @@ Example USB passthrough devices include:
 
 The following instructions will configure device passthrough by automatically creating a new rule for each selected device and attaching the device(s) to the resource group. For more information about how resource groups and resource rules work, see: [**Device Passthrough - Resource Rules**](/product-guide/system/device-pass-overview#resource-rules).
 
-1. Navigate to the **Resource Manager Dashboard** (*Main Dashboard > Resources*)
+1. Navigate to the **Resource Manager Dashboard** (*Infrastructure > Resources*)
 **-OR-**
-Navigate to a **specific node** where the USB devices are plugged in. (*Main Dashboard > Nodes* > double-click desired node in the list.)
+Navigate to a **specific node** where the USB devices are plugged in. (*Infrastructure > Nodes* > double-click desired node in the list.)
 2. Click **USB Devices**. The listing of detected USB devices will display.
 !!! tip "A USB device showing a value in the *Resource Group* and *Resource Rules* columns is already configured for passthrough."
 3. **Select** the appropriate **USB device(s)** from the list.
@@ -45,7 +45,7 @@ The resource group dashboard contains the resource rules that were auto-generate
 
 ## VM/Guest Configuration
 
-1. Navigate to the **VM dashboard** (Main Dashboard > Machines > Virtual Machines > double-click desired VM in the listing)
+1. Navigate to the **VM dashboard** (from the top menu: Virtual Machines > List > double-click desired VM in the listing)
 2. Click **Devices** on the left menu.
 3. Click **New** on the left menu.
 !!! tip "You can also attach devices to a VM via Resource Manager: from the Resource Group dashboard > double-click the desired SR-IOV Group > View Machine Devices > New; select the VM from the Machine dropdown list."
@@ -68,7 +68,7 @@ USB devices can be passed to a tenant for the tenant to pass to its own VMs.  Wh
 
 !!! note "When devices are shared to a tenant, they are thick provisioned (i.e. the tenant then owns the devices, so they cannot be assigned to other VMs or tenants even when not in use.)"
 
-1. Navigate to the desired **tenant dashboard** (Main Dashboard > Tenants > Tenants > double-click the tenant within the list.)
+1. Navigate to the desired **tenant dashboard** (from the top menu: Tenants > List > double-click the tenant within the list.)
 2. Click **Nodes** on the left menu.
 3. **Double-click one of the tenant nodes**.
 4. Click **Devices** on the left menu.

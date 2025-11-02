@@ -22,8 +22,8 @@ The NAS (Network Attached Storage) Diagnostics tool provides comprehensive file 
 ## Accessing NAS Diagnostics
 
 1. **Navigate to NAS Diagnostics:**
-   - From the **Main Dashboard**, click **Services** in the left menu
-   - Select the desired **NAS service** from the list
+   - Select **NAS** > **List**. 
+   - Double-click the desired **NAS service** from the list
    - Click **Diagnostics** in the left menu
 
 2. **Using Diagnostic Commands:**

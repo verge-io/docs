@@ -42,7 +42,7 @@ The system executes **three types of Journal Walks**:
 
 ## Accessing vSAN Tier Status Information
 
-Navigate to: **Main Dashboard** > **vSAN Tiers** > **double-click the desired tier**. This displays the dashboard for the selected vSAN tier. Refer to the Status tile on this page. 
+Navigate to: **Infrastructure** > **vSAN Tiers** > **double-click the desired tier**. This displays the dashboard for the selected vSAN tier. Refer to the Status tile on this page. 
 
 ## Status Data 
 
@@ -70,7 +70,7 @@ Navigate to: **Main Dashboard** > **vSAN Tiers** > **double-click the desired ti
 
 !!! tip "If missing data blocks have already been detected and a repair server isn’t yet configured, it’s not too late. [Setting up a repair server](/product-guide/backup-dr/repair-server) now allows VergeFS to automatically attempt recovery of those blocks during subsequent Journal Walks."
 
-* **Bad Drives:** Indicates the number of drives missing since the current Journal Walk began. It’s common to see a non-zero value here after node reboots, maintenance, or updates; this doesn’t automatically signal a drive failure. Missing drives are typically related to offline nodes or detection delays at walk start. If no nodes are offline and this field shows a count, review drive and node status via the Main Dashboard for further insight.
+* **Bad Drives:** Indicates the number of drives missing since the current Journal Walk began. It’s common to see a non-zero value here after node reboots, maintenance, or updates; this doesn’t automatically signal a drive failure. Missing drives are typically related to offline nodes or detection delays at walk start. If no nodes are offline and this field shows a count, review drive and node status via the System Dashboard for further insight.
 
 ## Journal Walk Duration
 

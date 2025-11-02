@@ -10,8 +10,8 @@ A provider can restore a tenant from cloud snapshot **\-OR-** can expose a cloud
 !!! warning
     A tenant Restore from the tenant dashboard will overwrite everything within the existing tenant!
 
-1. From the **Main Dashboard**, click **Tenants** on the left menu.
-2. Click **Tenants** again on the left menu.
+1. From the top menu click **Tenants** on the top menu.
+2. Select **List**.
 3. **Double-click the desired tenant** from the list.
 4. If the tenant is online, it will need to be powered down before it can be restored from snapshot. Click **Power Off** on the left menu.
 5. Wait for the ***Tenant Status*** to indicate *Offline*.
@@ -22,8 +22,8 @@ A provider can restore a tenant from cloud snapshot **\-OR-** can expose a cloud
 
 ## Restore a Deleted Tenant from Snapshot
 
-1. From the **Main Dashboard**, click **system** on the left menu.
-2. Click **Cloud Snapshots** on the left menu.
+1. From the top menu, click **System**.
+2. Select **System Snapshots**.
 3. Click to **Select the desired snapshot** within the list. (Tenants that existed within the selected snapshot appear in the listing. A tenant that does not appear in the list was deleted prior to this time; check a previous snapshot.)
 4. Click **View Tenants** on the left menu.
 5. Click to **select the desired tenant** within the list.

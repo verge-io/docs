@@ -16,5 +16,5 @@ External IP addresses can be assigned to tenants. When an external IP is assigne
 10. Click **Submit** at the bottom of the page.
 11. From the **external network dashboard**, click **Apply Rules** on the left menu (to apply to the host external network). 
 !!! tip  "To return to the external network dashboard you can click the appropriate breadcrumb at the top or use the browser back button."
-12. Navigate to the **tenant network Dashboard** (Main Dashboard > Networks > Tenant Networks > double-click the intended tenant network).
+12. Navigate to the **tenant network Dashboard** (Networks > Dashboard > Tenants > double-click the intended tenant network).
 13. Click **Apply Rules** (to apply to the tenant network).

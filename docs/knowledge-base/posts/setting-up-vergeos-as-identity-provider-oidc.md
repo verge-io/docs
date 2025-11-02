@@ -41,8 +41,7 @@ This guide walks you through the process of configuring VergeOS as an identity p
 ## Steps to Create an OIDC Application
 
 1. **Access OIDC Settings**
-   - Navigate to the **Main Dashboard**
-   - Click **System** in the left menu
+   - Navigate to **System** > **Auth Sources** from the top menu
    - Select **OIDC Applications**
    - Click **New**
 
