@@ -53,7 +53,7 @@ Several areas in the VergeOS platform may contribute to unexpected storage growt
   
 - **Virtual Machines (VMs) Snapshots**:
   - Navigate to the **Machines Dashboard**. The **Snapshots** count box shows the number of machine-level snapshots present. Click this box to list all VM snapshots and their creation date/time. Review if any can be removed.
-  - Navigate to **Virtual Machines > List**. Sort by the **Snapshot Profile** column to identify VMs with machine-level snapshots. These are included in the recurring cloud snapshots, so review whether individual snapshots are necessary or if they can be removed.
+  - Navigate to **Virtual Machines > List**. Sort by the **Snapshot Profile** column to identify VMs with machine-level snapshots. Virtual Machines can be restored from system snapshots, so review whether individual snapshots are necessary or if they can be removed.
 
 - **VMWare Backup Jobs**:
   - Navigate to **Backup/DR > VMware Services** and review each VMware Service instance for Backup Job history.
