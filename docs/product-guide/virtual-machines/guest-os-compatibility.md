@@ -20,6 +20,7 @@ VergeOS, built on Linux KVM technology, provides extensive compatibility for x86
 
 | Version | Recommended Interface | Minimum RAM | Notes |
 |---------|---------------------|-------------|--------|
+| Server 2025 | VirtIO | 2 GB | Optimal performance with latest drivers |
 | Server 2022 | VirtIO | 2 GB | Optimal performance with latest drivers |
 | Server 2019 | VirtIO | 2 GB | Supports all roles and features |
 | Server 2016 | VirtIO | 2 GB | Recommended for production use |
