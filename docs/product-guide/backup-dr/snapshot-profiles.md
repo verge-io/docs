@@ -67,11 +67,12 @@ The following are default snapshot profiles automatically created at system inst
 
 The profile set here determines the schedule used for creating snapshots of the entire system. At install, a new VergeOS system is assigned the built-in "System Snapshots" profile.
 
-1. Navigate **System* > **Settings** **System Snapshots**.
+1. Navigate **System** > **Settings**
 2. Click **Advanced Settings** on the left menu.
 3. Locate and select the **System snapshot profile** setting. (Use the search bar at the top to easily locate the setting.)
 4. Click **Edit** on the left menu.
-5. Click **Submit** at the bottom of the page.
+5. Select desired profile. 
+6. Click **Submit** to save the change.
 
 ## Assign a Snapshot Profile to a VM
 
