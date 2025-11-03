@@ -56,7 +56,7 @@ The following are default snapshot profiles automatically created at system inst
 
 ## Modify the Scheduling of an Existing Snapshot Profile
 
-1. Navigate to dashboard, select **System* > **Snapshot Profiles**.
+1. Navigate **System* > **Snapshot Profiles**.
 2. **Double-click the desired profile** in the list.
 3. The dashboard for the selected profile will appear; add, modify or remove periods to alter the existing schedule as desired. (Reference above instructions for configuring periods.)
     * To add periods to the profile: click the ***+Add Period*** link. (A snapshot profile can contain multiple periods.)
