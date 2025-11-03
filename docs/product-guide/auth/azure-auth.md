@@ -39,7 +39,7 @@ VergeOS can be configured to allow users to authenticate using their corporate A
 15. ***Remote User Fields*** defines the list of fields used to initially find the Azure user; this field is auto-populated with (sub,preferred_username,email nickname), a default list that can typically work for most implementations. **Note: For security reasons, it is not recommended to locate remote users based on fields that are changeable by the end user on the remote system.**
 16. To carry over group membership from Azure to VergeOS, check the ***Update Group Membership*** checkbox. Groups must be created in VergeOS using instructions below.
 17. **User Auto-Creation Features (optional)**: Users can be auto-created upon initial login to VergeOS; this can be selected for all Azure AD users -OR- limited to users in specified Azure AD groups.
-    - ***Auto-Create Users*** - If all users should be auto-created, enter **\*** here.
+    - ***Auto-Create Users*** - If all users should be auto-created, enter ".*" here.
     - ***Auto Create Users in Group*** - To only auto-create users that are members of specified Azure AD groups, enter the Azure group object ID(s) in regular expression (regex) form.
 !!! info "Auto Creating Users in Groups"
       - The **Group Scope** must be defined. (Group Scope field defined above)
