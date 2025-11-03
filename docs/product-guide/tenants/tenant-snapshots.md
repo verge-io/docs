@@ -7,7 +7,7 @@ Snapshots provide a way to obtain quick recovery points. Cloud snapshots allow f
 
 ## Allow Tenant to Browse/Restore from Provider Snapshots
 
-1. Navigate to **Tenants** > **Dashboard** from the top menu.
+1. Navigate to **Tenants** > **List** from the top menu.
 2. The **Tenants Listing** will appear. **Double-click the desired tenant**.
 3. Click **Edit** on the left menu.
 4. Enable the ***Expose Cloud Snapshots*** (check box) option.
@@ -18,7 +18,7 @@ Snapshots provide a way to obtain quick recovery points. Cloud snapshots allow f
 Completing these instructions will overwrite the existing tenant. A tenant can be restored to a new instance from the Cloud Dashboard: [Cloud Snapshots and Restores](/product-guide/backup-dr/cloud-snapshot-restore#restore-select-tenants-from-a-cloud-snapshot).
 
 1. **Power off the tenant offline**; the tenant must be offline before it can be restored.
-2. Navigate to the tenant dashboard (Tenants > Dashboard > double-click the desired tenant in the list.)
+2. Navigate to the tenant dashboard (from the top menu: Tenants > Dashboard > double-click the desired tenant in the list.)
 3. Click **Snapshots** on the left menu.
 4. **Select the desired cloud snapshot** and click **Restore** on the left menu.
 5. A warning/confirmation message will require you to click ***Proceed*** to continue with the restore. **Before clicking Proceed, be sure that you want to restore over the existing tenant**, otherwise, click ***Cancel***.  
