@@ -16,7 +16,7 @@ dateCreated: 2022-09-02T15:54:31.531Z
 
 # Common Snapshot Synchronization Error Messages Explained
 
-The VergeOS platform provides a feature known as **Site Syncs** to replicate a copy of a cloud snapshot.
+The VergeOS platform provides a feature known as **Site Syncs** to replicate a copy of a system snapshot.
 
 !!! info "For more information on Snapshots and Site Syncs, refer to our [Product Guide on Sync Configuration](/product-guide/backup-dr/sync-configuration)."
 
@@ -43,7 +43,7 @@ Occasionally, the system may generate a system alert from a new Message Log entr
 ### Error- Unable to create tenant snapshot 'snapshotinterval_yyyymmdd': This name already exists
 - The local snapshot schedule is naming snapshots the same as the inbound snapshots from the site sync. A simple fix is to rename the origin (sending) side snapshot by editing the auto-sync configuration. Use the field **Prefix the snapshot name with this on the destination** and add something unique, such as **remote-**.
 
-### Unable to update cloud snapshot: No such file or directory
+### Unable to update system snapshot: No such file or directory
 - This error indicates a possible timing issue with snapshots. Review the **Outgoing Sync** configuration on the sending site for any setting mismatches.
 
 ### Error notifying client with 'notify_start' Connection timed out

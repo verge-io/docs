@@ -21,7 +21,7 @@ Select the OS type that will be installed/run on this virtual machine. Virtualiz
 Provides further documentation area for the VM; intended for additional information about the guest OS (ex: "RC1", "SP2", "Dev Edition", "Enterprise" etc.)
 
 **Snapshot Profile \[dropdown\]**
-Defines the snapshot schedule for the individual VM. Typically, this field is left blank because VM restores can easily be extracted from cloud snapshots. However, defining a snapshot profile here provides a way to perform additional, more frequent snapshots, and/or longer snapshot retention, and/or quiesced snapshots of the VM. The selection list includes all [Snapshot Profiles](/product-guide/backup-dr/snapshot-profiles) available in the system.
+Defines the snapshot schedule for the individual VM. Typically, this field is left blank because VM restores can easily be extracted from system snapshots. However, defining a snapshot profile here provides a way to perform additional, more frequent snapshots, and/or longer snapshot retention, and/or quiesced snapshots of the VM. The selection list includes all [Snapshot Profiles](/product-guide/backup-dr/snapshot-profiles) available in the system.
 
 **HA Group** (optional)
 HA Group value is used to define node affinity:

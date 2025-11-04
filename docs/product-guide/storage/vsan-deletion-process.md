@@ -58,7 +58,7 @@ When you delete a VM or drive:
 #### **Snapshots and Deletion**
 
 1. Deleting a VM also deletes its VM snapshots
-2. However, the VM remains in cloud snapshots taken while it existed
+2. However, the VM remains in system snapshots taken while it existed
 
 ## Tenant Deletion Scenarios
 
@@ -105,9 +105,9 @@ When deleting VMs or drives inside a tenant:
 ### **Snapshots and Tenant Deletion**
 
 - Deleting a tenant also deletes its local VM snapshots
-- **Tenant remains in parent cloud snapshots** taken while it existed
-- **Cloud snapshots can prevent immediate storage reclamation**
-- Tenant can be restored from cloud snapshots even after deletion
+- **Tenant remains in parent system snapshots** taken while it existed
+- **System snapshots can prevent immediate storage reclamation**
+- Tenant can be restored from system snapshots even after deletion
 
 ### **Shared Objects and File Sharing**
 
@@ -145,7 +145,7 @@ For tenants that host their own sub-tenants:
 
 ### **Tenant Restore Impact on Deletion**
 
-- **Restoring deleted tenants from cloud snapshots** recreates references
+- **Restoring deleted tenants from system snapshots** recreates references
 - Previously "deleted" blocks may become active again
 - **Storage usage may increase** when restoring tenants
 - Background cleanup processes adapt to restored references
@@ -190,7 +190,7 @@ You can monitor the process through:
 
 ### **Troubleshooting Slow Reclamation**
 
-- Check for **remaining cloud snapshots** containing tenant data
+- Check for **remaining system snapshots** containing tenant data
 - Verify **shared objects** are properly cleaned up
 - Review **system logs** for vSAN operation errors
 - Use **vSAN diagnostics** to monitor cleanup progress

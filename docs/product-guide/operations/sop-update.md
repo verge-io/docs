@@ -72,7 +72,7 @@ Perform these checks on the day of scheduled maintenance, before beginning the u
     - Cancel if critical errors are found
 - [ ] Verify resource availability meets N+1 requirements
     - Confirm RAM usage allows workloads to run with a node offline
-- [ ] Verify cloud snapshots are recent and available
+- [ ] Verify system snapshots are recent and available
     - Set the most recent snapshot to expire several days in the future for extra retention
 - [ ] Confirm multi-site syncing is functional and up to date
 - [ ] Verify all vSAN tiers are in a healthy state (green status)

@@ -16,7 +16,7 @@ To modify any of the following properties of an existing tenant, navigate to the
 
 * **Require Password Change** - This option can be enabled anytime to require the tenant to set a new admin password at next login. This can be helpful to ensure that credentials remain secure after resetting a forgotten tenant admin password.
 
-* **Expose Cloud Snapshots** - Can be **enabled / disabled** at any time. When enabled, the tenant will see the list of your (provider's) available snapshots and can download to restore their own system or individual VMs.
+* **Expose System Snapshots** - Can be **enabled / disabled** at any time. When enabled, the tenant will see the list of your (provider's) available snapshots and can download to restore their own system or individual VMs.
 
 * **Theme access**: 
     * ***Cannot create new themes, read-only access to all host themes***

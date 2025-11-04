@@ -106,7 +106,7 @@ The deployment will leverage the following VergeOS features:
 * **Multi-Tenancy**: Secure isolation of customer environments
 * **Self-Service Management**: Web-based UI and API for customer resource management
 * **High Availability**: Automated fail-over and data protection mechanisms
-* **Site Sync**: Cloud Snapshot replication
+* **Site Sync**: System Snapshot replication
 * **Repair Server (ioGuardian)**: Automatically retrieve missing blocks from remote site
 * **Global Inline Deduplication**: Reduces storage consumption by eliminating duplicate data across replicated snapshots
 * **Catalog Repositories**: Centralized management of VM recipes
@@ -151,7 +151,7 @@ The deployment will leverage the following VergeOS features:
 * **High Availability**: Automated fail-over and data protection mechanisms
 * **Global Inline Deduplication**: Reduces storage consumption by eliminating duplicate data across replicated snapshots
 * **Catalog Repositories**: Centralized management of VM recipes
-* **Cloud Snapshots**: Local snapshots for quick recovery of a site
+* **System Snapshots**: Local snapshots for quick recovery of a site
 
 
 
@@ -200,7 +200,7 @@ The deployment will leverage the following VergeOS features:
 * **Multi-Tenancy**: Secure isolation of customer environments
 * **Self-Service Management**: Web-based UI and API for customer resource management
 * **High Availability**: Automated fail-over and data protection mechanisms
-* **Site Sync**: Cloud Snapshot replication
+* **Site Sync**: System Snapshot replication
 * **Repair Server (ioGuardian)**: Automatically retrieve missing blocks from remote site
 * **Global Inline Deduplication**: Reduces storage consumption by eliminating duplicate data across replicated snapshots
 * **Catalog Repositories**: Centralized management of VM recipes

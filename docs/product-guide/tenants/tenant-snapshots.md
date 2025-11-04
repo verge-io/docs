@@ -1,26 +1,26 @@
 # Tenant Snapshots
 
-Snapshots provide a way to obtain quick recovery points. Cloud snapshots allow for a complete rollback of a system (to the point in time of a snapshot) to protect in the event of major unforeseen issues that may arise. A cloud snapshot includes whole-system snapshots for each tenant as well. A tenant can be allowed (a per-tenant setting) to browse a listing of available provider snapshots and "self-serve" download selected timestamps to restore their entire system or individual VMs.
+Snapshots provide a way to obtain quick recovery points. System snapshots allow for a complete rollback of a system (to the point in time of a snapshot) to protect in the event of major unforeseen issues that may arise. A system snapshot includes whole-system snapshots for each tenant as well. A tenant can be allowed (a per-tenant setting) to browse a listing of available provider snapshots and "self-serve" download selected timestamps to restore their entire system or individual VMs.
 
 !!! tip
-    Tenants also have the ability to manage their own VergeOS snapshots within their system using cloud snapshots. This can allow a tenant to customize scheduling/retention as they wish. Additional vSAN storage will be consumed for the tenant to retain their own snapshots.
+    Tenants also have the ability to manage their own VergeOS snapshots within their system using system snapshots. This can allow a tenant to customize scheduling/retention as they wish. Additional vSAN storage will be consumed for the tenant to retain their own snapshots.
 
 ## Allow Tenant to Browse/Restore from Provider Snapshots
 
 1. Navigate to **Tenants** > **List** from the top menu.
 2. The **Tenants Listing** will appear. **Double-click the desired tenant**.
 3. Click **Edit** on the left menu.
-4. Enable the ***Expose Cloud Snapshots*** (check box) option.
+4. Enable the ***Expose System Snapshots*** (check box) option.
 5. Click **Submit**.
 
 ## Restore a Tenant from Snapshot (overwrite existing)
 
-Completing these instructions will overwrite the existing tenant. A tenant can be restored to a new instance from the Cloud Dashboard: [Cloud Snapshots and Restores](/product-guide/backup-dr/cloud-snapshot-restore#restore-select-tenants-from-a-cloud-snapshot).
+Completing these instructions will overwrite the existing tenant. A tenant can be restored to a new instance from the Cloud Dashboard: [System Snapshots and Restores](/product-guide/backup-dr/cloud-snapshot-restore#restore-select-tenants-from-a-cloud-snapshot).
 
 1. **Power off the tenant offline**; the tenant must be offline before it can be restored.
 2. Navigate to the tenant dashboard (from the top menu: Tenants > Dashboard > double-click the desired tenant in the list.)
 3. Click **Snapshots** on the left menu.
-4. **Select the desired cloud snapshot** and click **Restore** on the left menu.
+4. **Select the desired system snapshot** and click **Restore** on the left menu.
 5. A warning/confirmation message will require you to click ***Proceed*** to continue with the restore. **Before clicking Proceed, be sure that you want to restore over the existing tenant**, otherwise, click ***Cancel***.  
 6. The Changes will not take effect until the tenant is powered on again.
 

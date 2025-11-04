@@ -1,6 +1,6 @@
 # VM Snapshots and Restores
 
-Although cloud snapshots include all VMs and allow for restoring individual VMs, VM-level snapshots allow for customizing schedule and retention rules per individual virtual machine (for example, it may be desirable to capture more frequently or retain snapshots longer for certain VMs). Additionally, VM-level snapshots provide the option for a quiesced snapshot.
+Although system snapshots include all VMs and allow for restoring individual VMs, VM-level snapshots allow for customizing schedule and retention rules per individual virtual machine (for example, it may be desirable to capture more frequently or retain snapshots longer for certain VMs). Additionally, VM-level snapshots provide the option for a quiesced snapshot.
 
 ## Quiesced Snapshots
 
@@ -29,16 +29,16 @@ The quiesce option provides an **application-consistent snapshot** of a running 
 
 ## Restore an Individual VM from Snapshot
 
-!!! note "Restoring VMs from a Cloud Snapshot"
-    **To restore an individual VM from a cloud snapshot, it must first be imported from the cloud snapshot as detailed below.** To restore from an individual VM snapshot, skip the import section of instructions and continue to **Restore Overwrite -OR- Restore to a Clone instructions.** Multiple VMs can be restored from cloud snapshot simultaneously from the [Cloud Snapshots Dashboard](/product-guide/backup-dr/cloud-snapshot-restore#restore-select-vms-from-a-cloud-snapshot-creates-new-vm-instances).
+!!! note "Restoring VMs from a System Snapshot"
+    **To restore an individual VM from a system snapshot, it must first be imported from the system snapshot as detailed below.** To restore from an individual VM snapshot, skip the import section of instructions and continue to **Restore Overwrite -OR- Restore to a Clone instructions.** Multiple VMs can be restored from system snapshot simultaneously from the [System Snapshots Dashboard](/product-guide/backup-dr/cloud-snapshot-restore#restore-select-vms-from-a-cloud-snapshot-creates-new-vm-instances).
 
-### *Import VM Snapshot from a Cloud Snapshot (to make it available for a VM restore)*
+### *Import VM Snapshot from a System Snapshot (to make it available for a VM restore)*
 
 1. From the **VM dashboard** select **Snapshots** from the left menu.
-2. Click **Cloud Snapshots** on the left menu.
-3. Click to **select desired cloud snapshot**.
+2. Click **System Snapshots** on the left menu.
+3. Click to **select desired system snapshot**.
 4. Click **Import VM Snapshot** on the left menu.
-5. ***Name, Description, and Expiration fields** will default to the values from the cloud snapshot; if desired, change values for this import of the VM snapshot. Changes made will only apply to the VM snapshot import and will not affect the underlying cloud snapshot.
+5. ***Name, Description, and Expiration fields** will default to the values from the system snapshot; if desired, change values for this import of the VM snapshot. Changes made will only apply to the VM snapshot import and will not affect the underlying system snapshot.
 6. Click **Submit** to continue.
 7. A message should appear stating the import process has begun. Click the **Ok** button to acknowledge.
 8. When the imported VM snapshot appears in the list, it can be selected to use for restore.

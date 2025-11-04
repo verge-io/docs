@@ -33,7 +33,7 @@ Considerations when deleting a VM:
 - The VM must be powered down before it can be deleted.
   - The system will not allow a VM to be deleted if it is running.
 - A VM that is currently the basis of a VM Recipe cannot be deleted.
-- Deleting a VM will also delete its VM snapshots; however, the VM will still be included in Cloud Snapshots that were taken while the VM existed.
+- Deleting a VM will also delete its VM snapshots; however, the VM will still be included in System Snapshots that were taken while the VM existed.
 
 ## Power off / Restart / Reset / Kill power
 

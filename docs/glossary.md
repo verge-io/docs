@@ -16,7 +16,7 @@ A group of related recipes in VergeOS. Catalogs can contain various VM or tenant
 ### **Cloud (VergeIO Cloud)**: 
 Refers to each autonomous Virtual Data Center (VDC) created within a VergeIO system, including the base level VDC and each subsequent tenant and subtenant.
 
-### **Cloud Snapshots**: 
+### **System Snapshots**: 
 Point-in-time captures of an entire VergeOS cloud, tenant, individual virtual machine, or NAS volume. Used for recovery, development, and testing purposes.
 
 ### **Cluster**: 

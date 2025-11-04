@@ -23,7 +23,7 @@ The *Tenant Wizard* steps through multiple input forms to create a new custom te
 7. Enter an ***Admin User Password*** and again in the ***Confirm Admin User Password*** field (required). This sets the password for the tenant’s “admin” root user that will be auto-created.
 8. **Optionally**, the **Require Password Change** option can be selected to force a password change when the tenant admin initially logs in.
 9. **Optionally**, a **Description** can be entered to record more information about the tenant.
-10. By default, the **Expose Cloud Snapshots** option (checkbox) is selected. When selected, the tenant is able to browse the cloud snapshots of the parent and “self-serve” download their own tenant snapshot from the provider's snapshot timestamps.
+10. By default, the **Expose System Snapshots** option (checkbox) is selected. When selected, the tenant is able to browse the system snapshots of the parent and "self-serve" download their own tenant snapshot from the provider's snapshot timestamps.
 11. Configure **Theme access**: 
     * ***Cannot create new themes, read-only access to all host themes***
     * ***Cannot create new themes, read-only access specified host themes***

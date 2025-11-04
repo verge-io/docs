@@ -86,7 +86,7 @@ Use legacy network drivers when necessary, but consider upgrading your operating
 
 A wise data-protection plan will include use of both snapshots and syncs.
 
-- **Cloud Snapshots** provide rollback points for an entire system, allowing restoration of that entire VergeOS cloud to a particular point in time. Typically it is best to configure your snapshots at the cloud level; this will include everything within that Cloud and allows for restoration of the entire system, including individual VMs and Tenants. There is generally no need to configure additional snapshots at the VM level unless there are particular VMs that should be captured on a more frequent basis or retained longer.
+- **System Snapshots** provide rollback points for an entire system, allowing restoration of that entire VergeOS cloud to a particular point in time. Typically it is best to configure your snapshots at the cloud level; this will include everything within that Cloud and allows for restoration of the entire system, including individual VMs and Tenants. There is generally no need to configure additional snapshots at the VM level unless there are particular VMs that should be captured on a more frequent basis or retained longer.
 
 - **Manual VM Snapshots** can be taken immediately prior to making changes, such as a guest OS/Application update or advanced configuration change; snapshots can then be saved until VM changes are verified.
 

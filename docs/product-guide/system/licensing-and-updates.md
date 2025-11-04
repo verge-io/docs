@@ -117,12 +117,12 @@ The update process consists of three main steps:
 
 ### Snapshot Settings
 
-- **Take Cloud Snapshot on Update**:
+- **Take System Snapshot on Update**:
     - Enabled by default
     - Creates system snapshot before updates
     - Allows rollback if needed
 
-- **Cloud Snapshot Expiration**:
+- **System Snapshot Expiration**:
     - Default: 6 hours
     - Configurable retention period
     - Units can be selected (e.g., Hours)
@@ -161,7 +161,7 @@ For environments without outbound internet access, VergeOS supports air-gap lice
 - [Updating the VergeOS System](/knowledge-base/updating-vergeos-system/)
 - [Requesting an Airgap License](/knowledge-base/requesting-an-airgap-license/)
 - [Updating a VergeOS System with Airgap License](/knowledge-base/updating-vergeos-system-with-airgap-license/)
-- [Cloud Snapshots and Restores](/product-guide/backup-dr/cloud-snapshot-restore/)
+- [System Snapshots and Restores](/product-guide/backup-dr/cloud-snapshot-restore/)
 
 !!! tip
     Regular monitoring of the Update Status Dashboard helps ensure system health and security.
