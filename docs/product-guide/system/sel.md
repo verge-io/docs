@@ -4,7 +4,7 @@ The System Event Log (SEL) contains events from the hardware IPMI interface. Sin
 
 ## Clear a Node's SEL
 
-1. From the Main Dashboard, select **Nodes**.
+1. From the top menu, navigate to **Infrastructure** > **Nodes**.
 2. **Double-click the desired Node** to access the **Node dashboard**.
 3. Click **Clear SEL** on the left menu.
 4. Click **Yes** to confirm.

@@ -45,7 +45,7 @@ Before beginning this procedure, ensure:
 
 ### 1. Identify Device Paths
 
-1. Navigate to **System > vSAN Diagnostics** from the Main Dashboard
+1. Navigate to **System > vSAN Diagnostics**.
 2. Select **Get Node Device List** from the Query dropdown
 3. Click **Send**
 4. Identify unused devices (marked as "vsan = false")

@@ -34,9 +34,9 @@ This guide explains how to import VMware virtual machines using VergeOS's VMware
 
 ### 2. Import VMs from Backup
 
-1. Navigate to **Backup/DR**:
-   - From Main Dashboard, select **Backup/DR**
-   - Click **VMware** in left menu
+1. Navigate to the VMware Service:
+   - From the top menu, select **Import/Export**
+   - Select **VMware Services**
    - Double-click appropriate VMware service
 
 2. Access Backup Jobs:

@@ -50,7 +50,7 @@ Before adding a TPM device to your VM, ensure the following requirements are met
 ### 1. Access VM Configuration
 
 1. Navigate to the **VM Dashboard**
-   - Go to **Main Dashboard** > **Machines** > **Virtual Machines**
+   - Go to **Virtual Machines** > **List**
    - Double-click your target VM from the list
 
 2. **Power off the VM** if it's currently running

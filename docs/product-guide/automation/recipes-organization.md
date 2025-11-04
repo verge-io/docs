@@ -84,7 +84,7 @@ When a recipe displays a status of *Online* it is available for use.
 
 **Connect to a Remote Catalog (receiving side):**  
 
-1. From the Main Dashboard, navigate to **Repositories -> New**.
+1. Navigate to **Repositories** > **+ New Repository**.
 2. Complete **fields** for the new repository:
 
    * **Name**: a descriptive name that helps distinguish this repository.

@@ -22,9 +22,8 @@ The vSAN Diagnostics tool provides comprehensive storage system analysis and tro
 ## Accessing vSAN Diagnostics
 
 1. **Navigate to vSAN Diagnostics:**
-   - From the **Main Dashboard**, click **System** in the left menu
-   - Click **vSAN Diagnostics** in the left menu
-   - Or alternatively: Click the **vSAN Tiers** count box → **vSAN Diagnostics**
+   - Select **System** → **vSAN Diagnostics** from the top menu.
+   - Or alternatively: From the Main Dashboard, click the **vSAN Tiers** count box → **vSAN Diagnostics** from the left menu.
 
 2. **Using Diagnostic Commands:**
    - Select desired command from the **Query** dropdown menu

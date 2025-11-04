@@ -79,7 +79,7 @@ The log in the following screenshot shows several specific events as examples of
 
 2. **Clear SEL**:
    - If the SEL is nearing full capacity, clear it by following these steps:
-     1. From the **Main Dashboard**, select **Nodes**.
+     1. Navigate to **Infrastructure** > **Nodes**.
      2. Double-click the desired node to access the **Node dashboard**.
      3. Click **Clear SEL** on the left menu.
      4. Click **Yes** to confirm.
@@ -88,7 +88,7 @@ The log in the following screenshot shows several specific events as examples of
 
 ## Third-party Log Collection
 
-VergeOS records user-initiated and automated activity in *System logs*, accessible at the bottom of the Main Dashboard page or by selecting *Logs* in the left navigation menu. Logged activity is typically available within the VergeOS user interface for a maximum of 45 days. To retain logs beyond this period, configure a third-party Syslog collection service.  Instructions for configuring VergeOS log forwarding to an external service are available at: **[KB Enabling Third-party Log Collection](/knowledge-base/configuring-remote-log-forwarding)**
+VergeOS records user-initiated and automated activity in *System logs*, accessible at the bottom of the Main Dashboard page or by selecting *Logs* from the top menu. Logged activity is typically available within the VergeOS user interface for a maximum of 45 days. To retain logs beyond this period, configure a third-party Syslog collection service.  Instructions for configuring VergeOS log forwarding to an external service are available at: **[KB Enabling Third-party Log Collection](/knowledge-base/configuring-remote-log-forwarding)**
 
 ---
 

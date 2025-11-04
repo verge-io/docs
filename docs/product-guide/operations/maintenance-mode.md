@@ -12,7 +12,7 @@ When a node is put into Maintenance Mode, the system attempts to gracefully migr
 !!! warning
     Before starting any maintenance, verify node servers can be reached via a backup method, i.e. physical console or ipmi access.
 
-1. From the main dashboard, click **Nodes**.
+1. Navigate to **System** > **Nodes**.
 2. **Double-click the desired node** in the list.
 3. Click **Enable Maintenance** on the left menu.
 4. A Confirmation message will appear. Click **Yes** to continue with placing the node into Maintenance Mode.

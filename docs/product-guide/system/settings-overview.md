@@ -4,8 +4,7 @@ The *System Settings* page provides access to various configuration options for 
 
 ## Accessing System Settings
 
-1. From the Main Dashboard, click **System** on the left menu.
-2. Click **Settings** on the left menu.
+From the top menu, navigate to **System** > **Settings**.
 
 ## General Settings
 

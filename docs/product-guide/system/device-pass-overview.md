@@ -18,7 +18,7 @@ Precautions should be taken before configuring PCI or Network controller passthr
 
 All PCI devices within the same IOMMU group are passed through together (a single IOMMU group cannot be split among different guests). Examples of a single IOMMU group containing multiple PCI devices include: GPUs along with their audio controllers; a dual-port NIC (both ports); devices using a PCI riser card that allows multiple devices on the same PCI slot.
 
-When configuring any PCI device for passthrough, it is important to be aware of all the devices within the same IOMMU group, to ensure that a host-necessary component is not inadvertently passed through.  If a host-critical component is configured for passthrough, it is unloaded and may cause an impaired or crashed system. You can view IOMMU group membership of PCI devices in Resource Manager: from the main dashboard > Resources > PCI Devices.  This will list all detected PCI devices on all nodes.  Click the *IOMMU* column heading to sort and more easily determine devices within a IOMMU group.
+When configuring any PCI device for passthrough, it is important to be aware of all the devices within the same IOMMU group, to ensure that a host-necessary component is not inadvertently passed through.  If a host-critical component is configured for passthrough, it is unloaded and may cause an impaired or crashed system. You can view IOMMU group membership of PCI devices in Resource Manager: Infrastructure > Resources > PCI Devices.  This will list all detected PCI devices on all nodes.  Click the *IOMMU* column heading to sort and more easily determine devices within a IOMMU group.
 
 ## Resource Groups
 

@@ -8,8 +8,8 @@ VergeOS can be configured to allow users to authenticate using their corporate G
 !!! tip
     Client ID and Secret can typically be generated at: [***https://console.developers.google.com***](https://console.developers.google.com/)
 
-2. From the VergeOS Main Dashboard, click **System** on the left menu.
-3. Click **Authorization Sources** on the left menu.
+2. Click **System** on the top menu.
+3. Select **Auth Sources**. 
 4. Click **New** on the left menu.
 5. Enter a ***Name*** for the source (such as "Google"). This name will appear on the sign-in button of the VergeOS login page.
 6. In the ***Driver*** field (dropdown list), select **Google**.

@@ -42,9 +42,8 @@ This guide explains how to configure a VergeOS system or tenant to authenticate 
 ## Steps
 
 ### 1. Access Authorization Settings
-- Navigate to the **Main Dashboard**
-- Click **System** in the left menu
-- Select **Authorization Sources**
+- Click **System** in the top menu
+- Select **Auth Sources**
 - Click **New**
 
 ### 2. Configure Basic Settings

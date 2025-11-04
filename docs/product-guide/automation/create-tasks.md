@@ -4,8 +4,8 @@ This page includes general directions for creating a schedule-based task and an 
 
 ## Create a Schedule-based Task
 
-1. From the main dashboard click **System** on the left menu.
-2. Click **Tasks/Events** on the left menu.
+1. Select **System** on the top menu.
+2. Select **Tasks**.
 3. Click **New** on the left menu.
 4. In **Task Triggered by:** select ***Schedule***.
 5. By default, a scheduled task is configured to run one time. Optionally, the ***Repeat Every*** setting can be configured to create a recurring task, run at a frequency based on: **day(s), hour(s), minute(s), month(s), week(s), year(s)**.
@@ -23,8 +23,8 @@ This page includes general directions for creating a schedule-based task and an 
 
 ## Create an Event-based Task
 
-1. From the main dashboard click **System** on the left menu.
-2. Click **Tasks/Events** on the left menu.
+1. Select **System** on the top menu.
+2. Select **Tasks**.
 3. Click **New** on the left menu.
 4. In **Task Triggered by:** select **Event**.
 5. In the first dialog area, select the **Section** and **Event** that will be used to trigger the task. The ***Event*** dropdown list will vary depending on the **Section** selected. For example, for *Section="User"*, Event options will include: *Logged In* and *Logged Out*.

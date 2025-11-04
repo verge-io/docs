@@ -12,7 +12,7 @@
   
 ## General AI Settings
 
-From the Main Dashboard, navigate to **AI** on the top menu, and click **AI Settings** to configure default AI parameters.
+Navigate to **AI** on the top menu, and click **AI Settings** to configure default AI parameters.
 
 The AI Settings page allows you to configure system-wide defaults for AI components:
 
@@ -43,7 +43,7 @@ AI models provide the underlying intelligence for your AI assistants and applica
 
 * **Description** (optional): Add details about the model’s purpose, configuration, or intended use. 
 
-* **Cores**: max number of cores to allocate to each model instance. 
+* **Cores**: max number of cores to allocate to each model instance.
     * GPU-enabled models: Core allocation has minimal impact.
     * CPU-only or fallback mode: Core allocation is critical for startup and performance.
     * Over-provisioning cores does not improve performance; unused cores remain idle.

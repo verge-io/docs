@@ -17,7 +17,7 @@ The first time a user initiates login from a new device, a security code is emai
 
 ## System Settings for Two-Factor Authentication
 
-To access these settings, navigate to **System > Settings > Advanced Settings** from the Main Dashboard.
+To access these settings, navigate to **System > Settings > Advanced Settings**.
 
 1. **Two-factor authentication:**
     - ***Default Disabled (off)*** - new users are created with two-factor authentication disabled; optionally it can be enabled per user.
@@ -35,7 +35,7 @@ To access these settings, navigate to **System > Settings > Advanced Settings** 
 !!! tip
     If the system setting: *Two-factor authentication* is set to *Required*, all users automatically have two-factor authentication enabled and the option does not appear in the user edit form.
 
-1. From the Main Dashboard, click the **Users** quick link.
+1. From the top menu, navigate to **System** > **Users**.
 2. Click to **Select the desired User**.
 3. Click **Edit** on the left menu.
 4. Select the checkbox option **Two Factor Authentication**.

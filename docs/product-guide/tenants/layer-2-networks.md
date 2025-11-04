@@ -126,7 +126,7 @@ This section walks you through creating a Tenant Layer 2 Network to pass a VLAN 
 
 First, access the tenant's network configuration area where you'll create the Layer 2 network pass-through.
 
-1. From the **Main Dashboard**, click **Tenants** in the top navigation menu or left sidebar
+1. From the top menu, navigate to **Tenants** > **List**
 2. Locate your target tenant in the tenant list
 3. Click on the **tenant name** to open the tenant dashboard
 4. In the left navigation menu, click **Networks**

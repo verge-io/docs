@@ -7,7 +7,7 @@ Network Dashboards provide a wealth of helpful information: data that can assist
 The Networks Dashboard contains summary information for all the networks in the system.
 
 **To access the Networks Dashboard:**  
-Click on **Networks** from the Main Dashboard (quick-link or left menu.)
+Select **Networks** > **Dashboard** from the top menu.
 
 ### Counts / Quick-Links
 

@@ -40,8 +40,8 @@ Importing via Media Images allows you to import a single VM at a time by uploadi
     Hyper-V VMs should be exported to OVA/OVF or VMware formats before upload, or you can use the **Create VM Shell, Import VM Disks** method described below to create the VM first, and then import disks.
 
 1. Upload the configuration and disk image files to the vSAN. For instructions, see [Managing Media Images](/knowledge-base/managing-media-images/).
-2. From the **Main Dashboard**, click **Machines** on the left menu.
-3. Click **New VM** on the left menu.
+2. Click **Virtual Machines** on the top menu. 
+3. Select **+ New VM**.
 4. From the options list, select **--Import from Media Images--**. The files uploaded to the vSAN will appear on the right under **Selections Available**. Click to select the VM configuration file (e.g., \*.vmx, \*.ovf).
 5. Click **Next** at the bottom of the screen.
 6. The **VM Name** will default to the name of the configuration file unless you specify a custom name.

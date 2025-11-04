@@ -22,7 +22,7 @@ The Node Diagnostics tool provides comprehensive hardware and system-level troub
 ## Accessing Node Diagnostics
 
 1. **Navigate to Node Diagnostics:**
-   - From the **Main Dashboard**, click **Nodes** in the left menu
+   - Select **Infrastructure** > **Nodes** from the top menu.
    - Select the desired **node** from the list
    - Click **Diagnostics** in the left menu
 

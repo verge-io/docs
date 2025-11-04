@@ -32,7 +32,7 @@ there may be situations where it may be useful to manually create a resource rul
 
 ## Manually Create a New Resource Rule
 
-1. From the main dashboard, click Resources.
+1. Navigate to Infrastructure > Resources.
 2. Click **Rules** (ui card or on the left menu).
 3. Click **New** on the left menu.
 4. Provide a **Name** for the Rule; it is recommended to use a descriptive name can be helpful in future administration.
@@ -42,11 +42,11 @@ there may be situations where it may be useful to manually create a resource rul
 8. Leave the default value set to **--None--** in the field labeled *Automatically created based on PCI Device.*
 9. Configure device filters as desired; filter fields will vary depending on the device type selected; see below.  (*Advanced Entry* [^1] option also available)
 
-!!! tip "Information on installed PCI devices, for use in filters, you can use the PCI devices listing: from the Main Dashboard, navigate to the Resources -> PCI Devices.  To show additional fields, right-click in the heading section to select from the full list of available columns that can be displayed."
+!!! tip "Information on installed PCI devices, for use in filters, you can use the PCI devices listing: navigate to Infrastructure > Resources > PCI Devices.  To show additional fields, right-click in the heading section to select from the full list of available columns that can be displayed."
 
 ## Edit an Existing Resource Rule
 
-1. Navigate to the Associated **Resource Group dashboard** (Main Dashboard > Resources > Groups > double-click the particular group).
+1. Navigate to the Associated **Resource Group dashboard** (Infrastructure > Resources > Groups > double-click the particular group).
 2. In the ***Rules*** section, locate and **click the desired resource rule**.
 3. Click **Edit** on the left menu.
 4. Node selection and PCI Filters can be modified as needed. (*Advanced Entry* [^1] option also available)  

@@ -12,9 +12,7 @@
 
 ### Creating a VLAN Network
 
-1. Navigate to Networks:
-   - From the **Main Dashboard**, click **Networks** (quick-link or left menu)
-   - Click **New External** on the left menu
+1. Select **Networks** > **+ New External** from the top menu
 
 2. Configure Basic Settings:
    - Enter a descriptive **Name** for the network

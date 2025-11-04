@@ -28,7 +28,7 @@ This is easily achieved for systems that are successfully configured to send a c
 
 ## Recover a Copy of the VM on the Backup Side
 
-1. On the destination side (where the snapshots are sent), review all of the received remote snapshots and locate the desired snapshot that closely matches the date/time. This is accomplished from the **Main Dashboard > System > Cloud Snapshots**.
+1. On the destination side (where the snapshots are sent), review all of the received remote snapshots and locate the desired snapshot that closely matches the date/time. This is accomplished from the **System > System Snapshots**.
 2. Once the snapshot is located, select (check) the Cloud Snapshot in the list of available snapshots, and on the left navigation menu, select **View VMs**.
 3. Wait while the list of available VMs loads. This can take a few minutes.
 4. Once the list of virtual machines contained within the cloud snapshot loads, select (check) the desired VM to recover and then select **Recover** on the left navigation menu.
@@ -39,7 +39,7 @@ This is easily achieved for systems that are successfully configured to send a c
 
 ## Create a New Cloud Snapshot on the Backup Side
 
-1. On the destination side (where snapshots are sent), create a new cloud snapshot that will contain the newly recovered VM from the steps above. This is done from **Main Dashboard > System > Cloud Snapshots**.
+1. On the destination side (where snapshots are sent), create a new cloud snapshot that will contain the newly recovered VM from the steps above. This is done from **System > System Snapshots**.
 2. On the Cloud Snapshots page, select **New** on the left navigation menu.
 3. The New Cloud Snapshot creation page will load. Name the snapshot. It is recommended to name it something that is easily referenced in future steps, such as *Recoveryon09012022*.
 4. Set the expiration date to something logical. It should not exist forever but should be far enough into the future to allow time for the transfer back to the original system.
@@ -49,7 +49,7 @@ This is easily achieved for systems that are successfully configured to send a c
 
 ## Request a Sync-Back on the Original/Source Side
 
-1. On the origin (sending) side, navigate to the configured outgoing site sync. This is done from **Main Dashboard > Backup/DR > Outgoing Syncs**, and then double-clicking into the configured outgoing sync.
+1. On the origin (sending) side, navigate to the configured outgoing site sync. This is done from **Backup/DR > Outgoing Syncs**, and then double-clicking into the configured outgoing sync.
 2. From the outgoing sync dashboard, click **Refresh Remote Snaps** on the left navigation menu. This will query the remote side for any new snapshots and list them. It should detect the snapshot created in the steps above.
 3. Once the newly created snapshot is detected, it will be listed under the **Remote Snapshots** section. Find the snapshot and click on the **Request to Download** icon to the far right of the listed snapshot.
 

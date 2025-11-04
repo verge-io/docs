@@ -4,7 +4,7 @@ Internal networks are VNets originated within VergeOS; an internal network can b
 
 ## Create an Internal Network
 
-1. From the Main Dashboard, select **Networks** from the left menu.
+1. Navigate to **Networks** > **Dashboard** from the top menu.
 2. Click the **Internals** quick-link.
 3. Click **New Internal** from the left menu.
 4. Enter a **Name** for the network (required). Note: spaces are not permitted.
@@ -37,7 +37,7 @@ Internal networks are VNets originated within VergeOS; an internal network can b
     - **Select Multiple** - Click entries to toggle selection for bulk operations
 
 14. Select an existing VergeOS network from the dropdown list as the **Default Gateway** -OR- leave set to ***-- None --*** to not select a gateway.
-!!! success "To give an internal network access outside of this VergeOS cloud (e.g. the Internet, external corporate network), select the proper external network as the default gateway; an appropriate routing rule will be created automatically. If no default gateway is selected while creating the network, appropriate rules will need to be created manually to route through an external network."
+!!! success "To give an internal network access outside of this VergeOS system (e.g. the Internet, external corporate network), select the proper external network as the default gateway; an appropriate routing rule will be created automatically. If no default gateway is selected while creating the network, appropriate rules will need to be created manually to route through an external network."
 
 15. The **DHCP** option is checked by default. This sets up a DHCP server and displays associated configuration options.
 

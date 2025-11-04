@@ -28,7 +28,7 @@ If a VM attempts to use more RAM than allowed by the cluster, an error message, 
 
 Follow these steps to adjust the setting:
 
-1. From the **Main Dashboard**, navigate to **System** and then **Clusters** in the left-hand menu, or select the **Clusters count box** in the top row.
+1. Navigate to **Infrastructure** > **Clusters**. 
 2. In the **Cluster list view**, select the cluster where the virtual machine is set to run.
 3. Select **Edit** in the left-hand menu.
 4. Adjust the **Max RAM per machine** setting to accommodate the virtual machine's requirements.

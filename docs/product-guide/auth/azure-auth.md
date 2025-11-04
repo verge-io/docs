@@ -20,8 +20,8 @@ VergeOS can be configured to allow users to authenticate using their corporate A
     ![azureclientsecretadd.png](/product-guide/screenshots/azureclientsecretadd.png)
     ![azureclientsecret2.png](/product-guide/screenshots/azureclientsecret2.png)
 
-3. From the VergeOS Main Dashboard click **System** on the left menu.
-4. Click **Authorization Sources** on the left menu.
+3. Click **System** on the top menu.
+4. Select **Auth Sources**.
 5. Click **New** on the left menu.
 6. Enter a ***Name*** for the source (such as "Azure"). This name will appear on the sign-in button of the VergeOS login page.
     ![azureauthform.png](/product-guide/screenshots/azureauthform.png)

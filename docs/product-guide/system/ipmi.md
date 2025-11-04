@@ -8,7 +8,7 @@ IPMI is a universal standard, supported by almost all hardware, for managing and
 
 ## Test IPMI Connectivity
 
-1. From the Main Dashboard, click on the **Nodes** count box.
+1. Navigate to **Infrastructure** > **Nodes** from the top menu.
 2. **Double-click the desired node** to access the node dashboard.
 3. Under the **IPMI** submenu, click **Test** on the left menu.
 
@@ -35,7 +35,7 @@ The node dashboard will indicate IPMI ***status*** and ***date/time of last time
 !!! info
     Successfully connecting to the IPMI web interface through the VergeOS user interface requires valid IPMI username/password is stored and appropriate networking configuration is in place for the system to interact with the node's IPMI.
 
-1. From the main dashboard, click **Nodes**.
+1. Navigate to **Infrastructure** > **Nodes** from the top menu.
 2. **Double-click the desired node** to access the node dashboard.
 3. Under the **IPMI** submenu on the left menu, click **Connect**.
 4. A new browser tab is opened to the IPMI web interface login page.

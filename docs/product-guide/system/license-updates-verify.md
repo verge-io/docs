@@ -6,7 +6,7 @@ Valid licensing configuration is required to run workloads and NAS services and 
 
 ## Verify Connection to a VergeOS Update Server
 
-1. From the Main Dashboard, navigate to **System > Updates**.  This will bring you to the Updates Dashboard.  
+1. From the top menu, navigate to **System > Updates**.  This will bring you to the Updates Dashboard.  
 2. Click **Check For Updates** on the left menu.
 3. Verify a green indicator in the ***Status*** field.  A failed connection will be indicated with a red status and an error message in the status field.  
 4. If the status is not green:  

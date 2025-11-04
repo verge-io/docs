@@ -33,7 +33,7 @@ To configure log forwarding to a remote syslog server:
 
 ### 1. Navigate to Advanced Settings
 
-From the Main Dashboard, navigate to **System > Settings > Advanced Settings**.
+Navigate to **System > Settings > Advanced Settings**.
 
 ### 2. Configure the Remote Syslog Server
 
