@@ -111,22 +111,22 @@ Actions for the Clone ISO feature.
 Stores information when a Cloud Restore is performed.
 
 ### cloud_snapshot_actions
-Actions for the Cloud Snapshot feature.
+Actions for the System Snapshot feature.
 
 ### cloud_snapshot_tenant_actions
-Actions for the Cloud Snapshot feature for a Tenant.
+Actions for the System Snapshot feature for a Tenant.
 
 ### cloud_snapshot_tenants
-Cloud Snapshots for a Tenant.
+System Snapshots for a Tenant.
 
 ### cloud_snapshot_vm_actions
-Actions for a VM and Cloud Snapshots.
+Actions for a VM and System Snapshots.
 
 ### cloud_snapshot_vms
-Used to store information when a Cloud Snapshot is downloaded to a VM.
+Used to store information when a System Snapshot is downloaded to a VM.
 
 ### cloud_snapshots
-The Cloud Snapshots table includes information about the Cloud Snapshot, as well as a list of VMs, Tenants, and Sync Queues. This can be used to see what VMs are included in a Cloud Snapshot.
+The System Snapshots table includes information about the System Snapshot, as well as a list of VMs, Tenants, and Sync Queues. This can be used to see what VMs are included in a System Snapshot.
 
 ### cloudinit_files
 Operations for the Cloudinit Files feature.

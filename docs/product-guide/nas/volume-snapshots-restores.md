@@ -1,6 +1,6 @@
 # NAS Volume Snapshots and Restores
 
-Volume-level snapshots allow for customizing snapshot schedule and retention rules per individual NAS volume and provide the option for a quiesced snapshot. (Non-quiesced NAS volumes can be imported from cloud snapshots to be used for restore.)
+Volume-level snapshots allow for customizing snapshot schedule and retention rules per individual NAS volume and provide the option for a quiesced snapshot. (Non-quiesced NAS volumes can be imported from system snapshots to be used for restore.)
 
 ## Quiesced Snapshots
 
@@ -36,14 +36,14 @@ Quiesced volume snapshots freeze file system I/O during the snapshot process. Th
 
 ## Restore a Volume from Snapshot
 
-!!! note "To restore a volume from a cloud snapshot, the volume must first be imported from the cloud snapshot as detailed below. To restore from an individual volume snapshot, skip the import section of instructions and continue to Restore to overwrite -OR- Restore to create new instructions"
+!!! note "To restore a volume from a system snapshot, the volume must first be imported from the system snapshot as detailed below. To restore from an individual volume snapshot, skip the import section of instructions and continue to Restore to overwrite -OR- Restore to create new instructions"
 
-### *Import Volume Snapshot from a Cloud Snapshot (to make it available for a volume restore)*
+### *Import Volume Snapshot from a System Snapshot (to make it available for a volume restore)*
 
-1. From the **volume dashboard**, click **Cloud Snapshots** on the left menu.
-2. Click to **select desired cloud snapshot**.
+1. From the **volume dashboard**, click **System Snapshots** on the left menu.
+2. Click to **select desired system snapshot**.
 3. Click **Import Snapshot** on the left menu.
-4. ***Name, Description and Expiration fields** will default to the values from the cloud snapshot; make changes if desired; changes made will only apply to the import and will not affect the underlying cloud snapshot.
+4. ***Name, Description and Expiration fields** will default to the values from the system snapshot; make changes if desired; changes made will only apply to the import and will not affect the underlying system snapshot.
 5. Click **Submit** to continue.
 6. (If the process was continued) a message should appear stating the import process has begun. Click the **Ok** button to acknowledge.
 7. When the import is complete, the snapshot will be available for restore using instructions below.

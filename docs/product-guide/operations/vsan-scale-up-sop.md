@@ -64,7 +64,7 @@ Perform these checks on the day of scheduled maintenance, before beginning the s
 - [ ] Resource availability - System is N+1
     - Verify RAM usage is enough to run workloads with a node offline (HCI Systems)
     - Verify vSAN tier being scaled is <70% full
-- [ ] Cloud Snapshots are recent and available
+- [ ] System Snapshots are recent and available
     - Set the most recent Snapshot to expire several days in the future for extra retention
 - [ ] Confirm Outbound Syncs (if configured) are current
     -  Set the most recent remote Snapshot to expire several days in the future for extra retention

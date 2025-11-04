@@ -23,4 +23,4 @@ file systems.
     * [**Remote Volumes**](/product-guide/nas/nas-remote-volumes) are external file systems that are mounted to the VergeOS system and presented as if local.
 
 4. [**Create Shares**](/product-guide/nas/nas-shares) to provide NFS and/or CIFS access to NAS volumes.
-5. **Optional - **[**Configure Volume Snapshots**](/product-guide/nas/volume-snapshots-restores) for customized volume retention and/or quiesced snapshots (Non-quiesced NAS volumes can be restored from cloud snapshots to be used for restore.)
+5. **Optional - **[**Configure Volume Snapshots**](/product-guide/nas/volume-snapshots-restores) for customized volume retention and/or quiesced snapshots (Non-quiesced NAS volumes can be restored from system snapshots to be used for restore.)

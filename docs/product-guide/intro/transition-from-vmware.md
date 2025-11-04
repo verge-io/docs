@@ -117,7 +117,7 @@ Understanding VergeOS terms in VMware context is crucial for a smooth transition
 ### 4. Optimize Post-Migration
 
 1. **Leverage Tenants**: Assign VMs to tenants for multi-tenancy or isolation (see [Creating Tenants](/product-guide/tenants/create-tenants)).
-2. **Set Up Snapshots**: Configure cloud snapshots for backup and DR (see [Snapshots Overview](/product-guide/backup-dr/snapshots-overview)).
+2. **Set Up Snapshots**: Configure system snapshots for backup and DR (see [Snapshots Overview](/product-guide/backup-dr/snapshots-overview)).
 3. **Monitor Performance**: Use the VergeOS UI to track node and VM metrics (see [Nodes Overview](/product-guide/system/nodes-overview)).
 
 ---

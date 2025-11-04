@@ -119,7 +119,7 @@ The deployment will leverage the following VergeOS features:
 * **Global Inline Deduplication**: Reduces storage consumption by eliminating duplicate data
 * **GPU Virtualization**: Efficient handling of intensive compute tasks
 * **Catalog Repositories**: Centralized management of VM recipes
-* **Cloud Snapshots**: Local snapshots for quick recovery of a site
+* **System Snapshots**: Local snapshots for quick recovery of a site
 * **Security**: Robust security measures, including data encryption
 
 

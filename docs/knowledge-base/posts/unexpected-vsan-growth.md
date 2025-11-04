@@ -45,8 +45,8 @@ To isolate unexplained growth, it is important to narrow down when the growth in
 
 Several areas in the VergeOS platform may contribute to unexpected storage growth. Common areas to check include:
 
-- **Cloud Snapshots**:
-  - Navigate to **System > Cloud Snapshots**.
+- **System Snapshots**:
+  - Navigate to **System > System Snapshots**.
   - Are any being held past their expected expiration time?
   - Are there snapshots without a Snapshot Profile? These may have been taken manually. Investigate when and why they were taken.
   - Are any snapshots set to "Never Expire"? This can lead to large data consumption over time.

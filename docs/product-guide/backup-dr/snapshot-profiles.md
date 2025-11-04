@@ -24,7 +24,7 @@ The following are default snapshot profiles automatically created at system inst
 
 * Daily (at 6pm) snapshots retained for 3 days
 
-### *Cloud Snapshots (Default Profile for entire-system snapshots)
+### *System Snapshots (Default Profile for entire-system snapshots)
 
 * Hourly for 3 hours
 * Daily (at midnight) snapshots retained for 3 days

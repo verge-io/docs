@@ -19,7 +19,7 @@ This page will guide you through preparing your installed VergeOS system for pro
 - [ ] [Configure SMTP](#smtp)
 - [ ] [Register a Server Certificate](#server-certificate)  
 - [ ] [Establish Alerting/Reporting](#alerting-and-reporting)  
-- [ ] [Verify Cloud Snapshot Settings](#cloud-snapshot-settings)  
+- [ ] [Verify System Snapshot Settings](#system-snapshot-settings)  
 - [ ] [Configure Authorization/Authentication Settings](#authenticationauthorization-settings)
 - [ ] [Optional - Enable Third-party Logging](/knowledge-base/configuring-remote-log-forwarding)
 
@@ -60,9 +60,9 @@ By default, your VergeOS system is installed with a self-signed certificate. For
 
 Configuring **[Subscriptions](/product-guide/system/subscriptions-overview)** allows you to receive alerts and reports for effective system monitoring. Alerts (on-demand subscriptions) are essential for immediate notification when specific events occur (e.g. high storage usage percentage, drive warnings, system log errors, etc.), allowing for rapid response. Reports (scheduled subscriptions) enable you to receive summarized information on a specified schedule.
 
-## Cloud Snapshot Settings
+## System Snapshot Settings
  
-Cloud Snapshots provide a point-in-time backup of your entire system.  By default, your VergeOS system is configured to perform regular cloud snapshots.  You can customize this schedule to align with your organizational needs. See **[Cloud Snapshots and Restores](/product-guide/backup-dr/cloud-snapshot-restore)** for instructions on adjusting the default frequency and retention of cloud snapshots.   
+System Snapshots provide a point-in-time backup of your entire system.  By default, your VergeOS system is configured to perform regular system snapshots.  You can customize this schedule to align with your organizational needs. See **[System Snapshots and Restores](/product-guide/backup-dr/cloud-snapshot-restore)** for instructions on adjusting the default frequency and retention of system snapshots.   
 
 
 !!! tip "After creating tenants, VMs and NAS volumes, you can also create individualized snapshot frequency and retention for these items where needed."  

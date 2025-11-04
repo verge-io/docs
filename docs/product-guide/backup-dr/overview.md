@@ -18,7 +18,7 @@ Capture comprehensive point-in-time copies of your entire infrastructure or indi
 
 **What you can protect:**
 
-- **Complete systems** (Cloud Snapshots) - Everything in your VergeOS environment
+- **Complete systems** (System Snapshots) - Everything in your VergeOS environment
 - **Individual virtual machines** - Specific workloads with customizable schedules
 - **NAS volumes** - File-level data with granular recovery options
 - **Tenant environments** - Isolated customer or departmental systems
@@ -113,7 +113,7 @@ Intelligent data recovery system that automatically attempts to repair corrupted
 
 ### Implementation Recommendations
 
-- Start with cloud snapshots for comprehensive system protection
+- Start with system snapshots for comprehensive system protection
 - Add VM-level snapshots for critical workloads requiring frequent backups
 - Configure site syncs to geographically diverse locations
 - Establish repair servers from your primary sync destinations

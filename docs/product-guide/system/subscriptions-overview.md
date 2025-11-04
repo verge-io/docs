@@ -64,9 +64,9 @@ Dashboard or listing information is sent based on configured times/intervals. Th
 Receive a weekly summary for a particular vSAN Tier, including tier status, usage, read / write stats, etc.
 ![subscription-vsantierdash.png](/product-guide/screenshots/subscription-vsantierdash.png)
 
-### **Example 2 - Cloud Snapshots Recent**
+### **Example 2 - System Snapshots Recent**
 
-Receive a daily report with an inventory of all your Current Cloud Snapshots.
+Receive a daily report with an inventory of all your Current System Snapshots.
 ![subscription-cloudsnaps-recent.png](/product-guide/screenshots/subscription-cloudsnaps-recent.png)
 
 ## **Examples - On-demand Subscriptions**

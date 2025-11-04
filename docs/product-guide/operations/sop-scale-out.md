@@ -70,7 +70,7 @@ Perform these checks on the day of scheduled maintenance, before beginning the s
 
 - [ ] Resource availability - System is N+1
     - Verify RAM usage is enough to run workloads with a node offline
-- [ ] Cloud Snapshots are recent and available
+- [ ] System Snapshots are recent and available
     - Set the most recent Snapshot to expire several days in the future for extra retention
 - [ ] Confirm multi-site syncing is functional and up to date
 - [ ] Verify all vSAN tiers are in a healthy state

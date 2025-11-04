@@ -62,7 +62,7 @@ Tenants allow you to segregate system resources into secure enclaves for differe
 
 * **[Tenant Recipes](/product-guide/automation/tenant-recipes)** - Accelerate and standardize tenant deployment for efficiency, compliance, and self-serve systems
 * **[Tenant-level Reporting for Billing](/product-guide/tenants/tenant-usagereports)** - Track resource usage per tenant to facilitate billing, auditing, and/or planning purposes
-* **[Tenant Snapshots](/product-guide/tenants/tenant-snapshots)** - Restore any tenant from your complete-system cloud snapshot; while each tenant can also have the ability to control their own individual snapshot and retention schedule
+* **[Tenant Snapshots](/product-guide/tenants/tenant-snapshots)** - Restore any tenant from your complete-system system snapshot; while each tenant can also have the ability to control their own individual snapshot and retention schedule
 
 ## Software-Defined Networking (VergeFabric)
 

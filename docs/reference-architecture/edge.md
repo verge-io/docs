@@ -92,7 +92,7 @@ The deployment will leverage the following VergeOS features:
 
 
 * **Catalog Repositories**: Centralized management of VM recipes
-* **Cloud Snapshots**: Local snapshots for quick recovery of a site
+* **System Snapshots**: Local snapshots for quick recovery of a site
 * **Sites**: Centralized dashboard for managing all sites, viewing recent logs, and stats
 * **OpenID Authentication**: Use existing authentication source
 
@@ -154,11 +154,11 @@ For their UCI cluster, the following hardware is recommended:
 The deployment will leverage the following VergeOS features:
 
 
-* **Site Sync**: Cloud Snapshot replication
+* **Site Sync**: System Snapshot replication
 * **Repair Server (ioGuardian)**: Automatically retrieve missing blocks from remote site
 * **Global Inline Deduplication**: Reduces storage consumption by eliminating duplicate data across replicated snapshots
 * **Catalog Repositories**: Centralized management of VM recipes
-* **Cloud Snapshots**: Local snapshots for quick recovery of a site
+* **System Snapshots**: Local snapshots for quick recovery of a site
 * **Sites**: Centralized dashboard for managing all sites, viewing recent logs, and stats
 * **OpenID Authentication**: Use existing authentication source
 
@@ -236,11 +236,11 @@ For their Archive UCI cluster, the following hardware is recommended:
 The deployment will leverage the following VergeOS features:
 
 
-* **Site Sync**: Cloud Snapshot replication
+* **Site Sync**: System Snapshot replication
 * **Repair Server (ioGuardian)**: Automatically retrieve missing blocks from remote site
 * **Global Inline Deduplication**: Reduces storage consumption by eliminating duplicate data across replicated snapshots
 * **Catalog Repositories**: Centralized management of VM recipes
-* **Cloud Snapshots**: Local snapshots for quick recovery of a site
+* **System Snapshots**: Local snapshots for quick recovery of a site
 * **Sites**: Centralized dashboard for managing all sites, viewing recent logs, and stats
 * **OpenID Authentication**: Use existing authentication source
 

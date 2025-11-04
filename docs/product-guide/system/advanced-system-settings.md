@@ -20,7 +20,7 @@ These settings can be found under ***System > Settings > Advanced***.
 | Setting | Description | Default Value |
 |---------|-------------|---------------|
 | ***Auto check for catalog updates*** | Interval (in hours) at which to automatically scan recipe catalogs for changes. | 24 |
-| ***Cloud snapshot profile*** | Snapshot Profile to use for Cloud snapshots. The "Cloud Snapshots" profile is automatically created during installation.  You can modify this included profile or select a different profile here. | Cloud Snapshots |
+| ***System snapshot profile*** | Snapshot Profile to use for System snapshots. The "System Snapshots" profile is automatically created during installation.  You can modify this included profile or select a different profile here. | System Snapshots |
 | ***Contact email for processing offline/air-gap license files*** | Email address used for processing license files in offline or air-gapped environments. | license@verge.io |
 | ***Day of the month to generate billing report*** | Specifies the day each month when the system generates billing reports. | 1 |
 | ***Default VM drive tier*** | Sets the default storage tier for new VM drives. Higher tiers typically offer better performance. | 4 |
