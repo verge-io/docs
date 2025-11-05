@@ -2,7 +2,7 @@
 
 !!! info "Release Information"
     - **Release Date**: October 2025
-    - **Latest Version**: 26.0.1.1 (October 2025)
+    - **Latest Version**: 26.0.1.2 (October 2025)
     - **Status**: Latest Production Release
     - **End-of-Life**: TBD
 
@@ -40,6 +40,14 @@
     - Multiple SSL certificate management
     - Enhanced alarm system with email notifications
     - Improved audit logging capabilities
+
+## 26.0.1.2 (October 2025)
+
+!!! info "Hotfix Release"
+    No reboot required (if System is currently on 26.0.1 or 26.0.1.1).
+
+### Bug Fixes
+* Fixed issue where LACP settings could get reconfigured when updating from 4.13.4.x version
 
 ## 26.0.1.1 (October 2025)
 
