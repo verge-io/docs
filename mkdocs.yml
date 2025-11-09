@@ -1,4 +1,8 @@
 site_name: VergeOS Docs
+site_description: >-
+  Comprehensive technical documentation for VergeOS hyperconverged infrastructure (HCI) platform.
+  Learn to deploy, configure, and manage software-defined data centers with guides covering
+  virtualization, storage, networking, backup & DR, tenants, AI, and automation.
 site_url: https://docs.verge.io
 repo_url: https://github.com/verge-io/docs
 repo_name: verge-io/docs
