@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://docs.verge.io/sitemap.xml
+
+# Disallow search results and dynamic pages
+Disallow: /search/
+Disallow: /*?*
+
+# Allow crawling of knowledge base
+Allow: /knowledge-base/
+
+# Allow crawling of all product guide sections
+Allow: /product-guide/
+Allow: /implementation-guide/
+Allow: /reference-architecture/
+Allow: /release-notes/
