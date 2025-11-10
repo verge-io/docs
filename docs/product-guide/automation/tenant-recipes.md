@@ -19,7 +19,7 @@ Tenant recipes allow automating tenant deployment. A tenant recipe can include e
 4. Configure tenant recipe **fields:**
     * **Name:** Use a name that adequately identifies the recipe to help users in locating suitable recipes.
     * **Description:** (optional) You can store any additional information about the recipe here. This can be a good place to provide basic documentation on the intended purpose and any general guidelines.
-    * **Icon:** (optional) a Font-Awesome icon can be associated with the recipe. Icons can help users to easily identify different recipes/recipe types. A listing of available icons is available [here](https://fontawesome.com/v4/icons/){:target="_blank"}.
+    * **Icon:** (optional) a Font-Awesome icon can be associated with the recipe. Icons can help users to easily identify different recipes/recipe types. A listing of available icons is available at [FontAwesome](https://fontawesome.com/v4/icons/){:target="_blank"}.
     * **Catalog:** Select a catalog in which to store the recipe. Catalogs are helpful to keep recipes organized.  See [Recipe Organization](/product-guide/automation/recipes-organization) for more information about catalogs.
     * **Tenant:** Select the tenant that will serve as the base of the recipe.
     * **Version:** This field will automatically increment each time the recipe is modified, to help track changes. The default is 1.0.0, but can be changed if you would like to start the versioning with a different number.

@@ -9,7 +9,7 @@ The following guide outlines various options available for importing existing wo
 ### Enterprise Migration Platform
 
 !!! tip "Cirrus Data Integration with VergeOS"
-    **Cirrus Data** - a leader in enterprise data migration - has included VergeOS integration in their *Compute Migration* and *MigrateOps* products, enabling **zero downtime import** of physical or virtual machines into VergeOS from any platform. Ideal for complex enterprise migrations requiring minimal business disruption. [Learn More…](/product-guide/tools-integrations/cirrus-data)
+    **Cirrus Data** - a leader in enterprise data migration - has included VergeOS integration in their *Compute Migration* and *MigrateOps* products, enabling **zero downtime import** of physical or virtual machines into VergeOS from any platform. Ideal for complex enterprise migrations requiring minimal business disruption. [Learn More about Cirrus Data](/product-guide/tools-integrations/cirrus-data)
 
 ---
 
