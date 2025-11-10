@@ -70,5 +70,5 @@ Login styling defines the appearance of the sign-in button on the VergeOS login 
 
 * **Sign-in Button Background Color:** background color for the sign-in button.
 * **Sign-in Button Text Color:** text color of the sign-in button.
-* **Sign-in Button Font Awesome Icon:** specifies an alternate icon for the sign-in button; a listing of available Font Awesome Icons can be found: [here](https://fontawesome.com/v4.7.0/cheatsheet/).
+* **Sign-in Button Font Awesome Icon:** specifies an alternate icon for the sign-in button; a listing of available Font Awesome Icons can be found at [FontAwesome](https://fontawesome.com/v4.7.0/cheatsheet/).
 * **Sign-in Button Font Awesome Icon Color:** specifies an alternate color for the sign-in button; use standard HEX code, ex: #FF5733.
