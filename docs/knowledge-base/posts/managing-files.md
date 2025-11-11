@@ -3,7 +3,7 @@ title: Managing Files
 slug: managing-files 
 description:  
 draft: false  
-date: 2023-01-23T22:25:11.107Z  
+date: 2025-11-11T22:25:11.107Z  
 tags:
   - files
   - media
@@ -50,7 +50,7 @@ Once the file transfer completes, it will be available in the **Files** list for
 - **Never Expire**: The link will remain active indefinitely.
 - **Set Date**: Set a specific expiration date and time for the link.
 
-The **Public Link** can be shared with other systems, for general file sharing, or with local tenants to provide access without requiring an internet download. However, sharing via this method uses network bandwidth. For a more efficient way to share files to a tenant, see the [Add Media to Tenants](/knowledge-base/sharing-media-images-to-tenants/) guide.
+The **Public Link** can be shared with other systems, for general file sharing, or with local tenants to provide access without requiring an internet download. However, sharing via this method uses network bandwidth. For a more efficient way to share files to a tenant, see the [Sharing Files to Tenants](/knowledge-base/sharing-files-to-tenants/) guide.
 
 !!! info "In the **Files** section, you can also:"  
     - Manipulate **Public Links**  

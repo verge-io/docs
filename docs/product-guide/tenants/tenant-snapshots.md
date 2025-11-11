@@ -3,7 +3,7 @@
 Snapshots provide a way to obtain quick recovery points. System snapshots allow for a complete rollback of a system (to the point in time of a snapshot) to protect in the event of major unforeseen issues that may arise. A system snapshot includes whole-system snapshots for each tenant as well. A tenant can be allowed (a per-tenant setting) to browse a listing of available provider snapshots and "self-serve" download selected timestamps to restore their entire system or individual VMs.
 
 !!! tip
-    Tenants also have the ability to manage their own VergeOS snapshots within their system using system snapshots. This can allow a tenant to customize scheduling/retention as they wish. Additional vSAN storage will be consumed for the tenant to retain their own snapshots.
+    Tenants also have the ability to manage their own Snapshots within their system using system snapshots. This can allow a tenant to customize scheduling/retention as they wish. Additional vSAN storage will be consumed for the tenant to retain their own snapshots.
 
 ## Allow Tenant to Browse/Restore from Provider Snapshots
 
