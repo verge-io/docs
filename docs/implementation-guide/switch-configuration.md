@@ -18,7 +18,7 @@ This guide covers switch port configuration for VergeOS deployments. You'll conf
 - What switch configuration does VergeOS require?
 - How do I configure jumbo frames for storage traffic?
 - Should I use LACP or active-backup for external networks?
-- How do I isolate core fabric from external traffic?
+- How do I isolate core fabric from external traffic? 
 
 ## Quick Reference
 
@@ -61,6 +61,8 @@ Networks connecting VMs and workloads to users, internet, and other infrastructu
 
 **Access the switch** via console/SSH and enter configuration mode.
 
+<div class="grid" markdown>
+
 === "Cisco IOS/IOS-XE"
 
     **Enter configuration mode:**
@@ -72,13 +74,13 @@ Networks connecting VMs and workloads to users, internet, and other infrastructu
     **Create VLANs:**
     ```
     vlan 900
-     name VergeOS-Core-Fabric-1
+        name VergeOS-Core-Fabric-1
     vlan 901
-     name VergeOS-Core-Fabric-2
+        name VergeOS-Core-Fabric-2
     vlan 10
-     name VergeOS-External-Management
+        name VergeOS-External-Management
     vlan 20
-     name VergeOS-External-Production
+        name VergeOS-External-Production
     exit
     ```
 
@@ -98,21 +100,21 @@ Networks connecting VMs and workloads to users, internet, and other infrastructu
     **Create VLANs:**
     ```
     interface vlan 900
-     description VergeOS-Core-Fabric-1
-     no shutdown
-     exit
+        description VergeOS-Core-Fabric-1
+        no shutdown
+        exit
     interface vlan 901
-     description VergeOS-Core-Fabric-2
-     no shutdown
-     exit
+        description VergeOS-Core-Fabric-2
+        no shutdown
+        exit
     interface vlan 10
-     description VergeOS-External-Management
-     no shutdown
-     exit
+        description VergeOS-External-Management
+        no shutdown
+        exit
     interface vlan 20
-     description VergeOS-External-Production
-     no shutdown
-     exit
+        description VergeOS-External-Production
+        no shutdown
+        exit
     ```
 
     **Enable jumbo frames globally:**
@@ -131,13 +133,13 @@ Networks connecting VMs and workloads to users, internet, and other infrastructu
     **Create VLANs:**
     ```
     vlan 900
-     name VergeOS-Core-Fabric-1
+        name VergeOS-Core-Fabric-1
     vlan 901
-     name VergeOS-Core-Fabric-2
+        name VergeOS-Core-Fabric-2
     vlan 10
-     name VergeOS-External-Management
+        name VergeOS-External-Management
     vlan 20
-     name VergeOS-External-Production
+        name VergeOS-External-Production
     exit
     ```
 
@@ -146,12 +148,15 @@ Networks connecting VMs and workloads to users, internet, and other infrastructu
     max-frame-size 9216
     ```
 
+</div>
+
 !!! warning "MTU Size Requirement"
     VergeOS requires MTU 9216 on switch ports to accommodate the 9000-byte payload plus VLAN tags, headers, and overhead for Tenants. Setting MTU below 9216 will cause packet fragmentation and degrade storage performance.
 
 ### 2. Configure Core Fabric Ports
 
 Configure each port connecting to node core fabric NICs as an access port with jumbo frames.
+<div class="grid" markdown>
 
 === "Cisco IOS/IOS-XE"
 
@@ -227,7 +232,7 @@ Configure each port connecting to node core fabric NICs as an access port with j
      spanning-tree port-type normal
      exit
     ```
-
+</div>
 **Repeat for all nodes:**
 
 - Node1: Core fabric ports 1-2
@@ -245,6 +250,7 @@ Configure each port connecting to node core fabric NICs as an access port with j
 ### 3. Configure External Network Ports (LACP)
 
 For external networks, configure LACP port-channels for redundancy and bandwidth aggregation.
+<div class="grid" markdown>
 
 === "Cisco IOS/IOS-XE"
 
@@ -323,7 +329,7 @@ For external networks, configure LACP port-channels for redundancy and bandwidth
      lag 1
      exit
     ```
-
+</div>
 **Repeat for additional nodes** (Po2, Po3, etc.)
 
 **Key settings:**
@@ -336,6 +342,7 @@ For external networks, configure LACP port-channels for redundancy and bandwidth
 ### 4. Configure External Ports (Active-Backup Alternative)
 
 If LACP isn't available or preferred, configure individual trunk ports without bonding.
+<div class="grid" markdown>
 
 === "Cisco IOS/IOS-XE"
 
@@ -375,17 +382,19 @@ If LACP isn't available or preferred, configure individual trunk ports without b
      spanning-tree port-type admin-edge
      exit
     ```
-
+</div>
 !!! note
     VergeOS can handle failover in software using active-backup bonding if LACP is not available.
 
 
 ---
 
+
 ## Verification
 
-
 ### Check Core Fabric Configuration
+
+<div class="grid" markdown>
 
 === "Cisco IOS/IOS-XE"
 
@@ -428,7 +437,11 @@ If LACP isn't available or preferred, configure individual trunk ports without b
     - Access VLAN: 900
     - MTU: 9216
 
+</div>
+
 ### Check External Network Configuration (LACP)
+
+<div class="grid" markdown>
 
 === "Cisco IOS/IOS-XE"
 
@@ -474,16 +487,22 @@ If LACP isn't available or preferred, configure individual trunk ports without b
     - Allowed VLANs: 10,20
     - LACP mode: active
 
+</div>
+
 ### Test Connectivity After Node Connection
+
+<div class="grid" markdown>
 
 === "Cisco IOS/IOS-XE"
 
     **Verify links are up:**
+    
     ```
     show interfaces status
     ```
 
     **Check LACP negotiation:**
+    
     ```
     show lacp neighbor
     ```
@@ -491,11 +510,13 @@ If LACP isn't available or preferred, configure individual trunk ports without b
 === "Dell OS10"
 
     **Verify links are up:**
+    
     ```
     show interface status
     ```
 
     **Check LACP negotiation:**
+    
     ```
     show lacp interfaces
     ```
@@ -503,16 +524,21 @@ If LACP isn't available or preferred, configure individual trunk ports without b
 === "HPE/Aruba"
 
     **Verify links are up:**
+    
     ```
     show interface brief
     ```
 
     **Check LACP negotiation:**
+    
     ```
     show lacp interfaces
     ```
 
+</div>
+
 **Test jumbo frames from VergeOS node:**
+
 ```bash
 ping -M do -s 9188 <other-node-core-ip>
 ```
