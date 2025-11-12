@@ -110,6 +110,33 @@ You can configure the profile used for taking system snapshots to automatically 
 
 The snapshot remains protected and undeletable until the displayed date (seven days from the unlock request or the snapshot's natural expiration date, whichever comes first).
 
+### Understanding Unlock Behavior and Expiration
+
+**Critical concept:** The snapshot's original expiration date always takes precedence over the 7-day unlock period.
+
+When you request an unlock:
+
+- **If expiration < 7 days**: Snapshot deletes at expiration (e.g., 3-day expiration = deletes in 3 days)
+- **If expiration > 7 days**: Snapshot deletes after 7-day unlock period
+- **If expiration = never**: Snapshot deletes after 7-day unlock period
+
+**Examples:**
+
+| Snapshot Expiration | Unlock Requested | Actual Deletion Time | Why |
+|---------------------|------------------|---------------------|-----|
+| 12 hours | Now | 12 hours from creation | Expiration happens first |
+| 3 days | Now | 3 days from creation | Expiration happens first |
+| 10 days | Now | 7 days from unlock request | Unlock period happens first |
+| Never | Now | 7 days from unlock request | No expiration to compete with |
+
+!!! info "**How Expiration Affects Protection**"
+    Immutable snapshots provide protection for their entire expiration period - whether that's 3 hours or 30 days. An attacker cannot delete them immediately, even with admin access.
+    
+    - **Short expirations (3 hours)**: Provide rapid protection against recent attacks while minimizing storage impact
+    - **Long expirations (7+ days)**: Provide extended protection but consume more storage
+    
+    The 7-day unlock period only matters if you need to manually delete a snapshot before its natural expiration.
+
 ## Troubleshooting
 
 ### Storage Emergency with Immutable Snapshots
