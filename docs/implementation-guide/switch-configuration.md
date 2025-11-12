@@ -1,9 +1,8 @@
-# VergeOS Network Switch Configuration Guide
-
+# VergeOS Switch Configuration Guide
 
 ## Overview
 
-This guide covers switch port configuration for VergeOS deployments. You'll configure two network types: **core fabric** (internal System/vSAN Storage) and **external** (workload connectivity). Proper switch configuration ensures optimal performance, security, and reliability.
+This guide covers switch port configuration for VergeOS node deployments. You'll configure two network types: **Core Fabric** (internal System/vSAN Storage) and **External** (workload connectivity). Proper switch configuration ensures optimal performance, security, and reliability.
 
 **Target Audience:** Infrastructure and network administrators deploying VergeOS Systems
 
