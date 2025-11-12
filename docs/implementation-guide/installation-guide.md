@@ -32,7 +32,7 @@ Before you proceed with the installation please make sure you've reviewed the fo
 !!! warning "VergeOS is installed as a complete operating system on each node. Selected drives are formatted and existing data on those drives will be lost."
 
 1. Boot the first node with the install ISO. The full installer will load into memory with loading progress indicated on the screen. Loading times will vary depending on the medium used to install.
-2. Select **Standard Install** (default).  This is the default selection; the installation will automatically continue with a standard install.  Non-standard install options should only be selected when you are working closely with VergeIO Support.
+2. Select **Install (Standard)** (default).  This is the default selection; the installation will automatically continue with a standard install.  Non-standard install options should only be selected when you are working closely with VergeIO Support.
 
 3. Select **Controller** (default selection). The first two nodes of the system will be controller nodes.
 4. Select **Yes** to indicate this is a **New Install**.
@@ -41,13 +41,13 @@ Before you proceed with the installation please make sure you've reviewed the fo
     !!! tip "Time zone selection is generally based on the geographical location of the servers, but can alternately be configured based on administration preference.  Windows VMs will, by default, inherit the system time zone; a registry change is required to configure a Windows VM to UTC time."
 
 6. Select appropriate **date/time**.
-    !!! warning "Correct date/time are very important for vSAN operation.  Be sure that during installation, date is set correctly and time is set reasonably close to the accurate time, to avoid potential problems."
+    !!! warning "Correct date/time are very important for vSAN operation.  Be sure that, during installation, date is set correctly and time is set reasonably close to the accurate time, to avoid potential problems."
 
-7. Enter a **System Name**. This is also known as your Cloud name and will identify your system in: your dashboard, alerts/reports coming from this system, and site syncs. This name can be changed post-install, within System Settings.
+7. Enter a **System Name**. This is also known as your System name and will identify your system in: your dashboard, alerts/reports coming from this system, and site syncs. This name can be changed post-install, within System Settings.
 
 8. Enter **admin user credentials**.  The password must be at least 8 characters. These credentials can be changed post-install, however it is important to have username/password available for initial login to the system.
 
-9. Enter **admin email address**.  This address is used for admin account password resets and receiving subscription alerts/reports directed to the admin user.  An admin mail address must be entered during installation and is also configurable in the UI post-install.
+9. Enter **admin email address**.  This address is used for admin account password resets and receiving subscription alerts/reports directed to the admin user.  An admin email address must be entered during installation and is also configurable in the UI post-install.
 
 ### Configuring Physical Networks
 
@@ -89,32 +89,25 @@ Before you proceed with the installation please make sure you've reviewed the fo
 
     * **DHCP:** An entry of blank or "dhcp" allows the network to receive an external DHCP address.  Using DHCP will limit the network to a single IP address; this is typically only appropriate for test/evaluation systems or storage-only systems. If DHCP is selected, you will also be prompted for the name/domain to be used by this DHCP client.
 
-16. Select the type of license you will be using for this system. This is also configurable in the UI post-install.
-
-17. Enter **license server settings** (username and password).  License server credentials are provided by your VergeOS sales or Implementation representative. These settings can be left blank during installation and added post-install within the VergeOS UI.  
-
-    !!! note "Although license key credentials are not needed to complete the installation, they must be in place in order to run workloads or syncs on your system."
-
-18. Configure **Encryption settings**. (optional, at-rest encryption).  
+16. Configure **Encryption settings**. (optional, at-rest encryption).  
 
 * If encryption is selected, you will be prompted for an **AES256 encryption key passphrase**.
 Passphrase must be between 8 and 64 characters.
 
-* Optionally, you can **write the generated encryption key to a USB drive/dedicated device**.  Before selecting "Yes" to this option you must make sure the USB drive/dedicated storage device is plugged in.  On the next screen, verify the intended device is selected before hitting < OK >.
+* Optionally, you can **write the generated encryption key to a USB drive/dedicated device**.  Before selecting "Yes" to this option you must make sure the USB drive/dedicated storage device is plugged in.  On the next screen, **verify the intended device is selected before hitting < OK >.**
 
     !!! warning "Encryption selection is not reversible post-install; changing from encrypted to unencrypted or vice-versa would require a system reinstall."
 
-19. **Select drives that will be used in the vSAN**.  All detected drives are displayed and selected by default. **Deselect any drives that should be excluded.  Make sure to deselect any removable devices or any drives that will be used to store an optional encryption key.**
-The system will display an automatically-selected tier for each drive.  Take notice of these tier assignments; they can be modified in a subsequent dialog, if needed.
+17. **Select drives that will be used in the vSAN**.  All detected drives are displayed and selected by default. **Deselect any drives that should be excluded.  Make sure to deselect any removable devices or any drives that will be used to store an optional encryption key.**
+The system will display an automatically-selected tier for each drive. Tier assignments can be modified in a subsequent dialog. 
 
     !!! warning "Selected drives display an asterisk; make sure any drives that you want to deselect do not have the asterisk on the far left before hitting < OK >. "
 
-20. **Manually Set Drive Tier Assignments (optional)**:
+18. **Manually Set Drive Tier Assignments (optional)**:
 
-If you verified all drive tiers were selected as desired (previous screen), simply press [Enter] to proceed.  Otherwise, select **< Yes >**
- and **[Enter]** to view all drives and optionally change any tier assignments.  When finished manually selecting tier assignments, select "Done" and [Enter].
+Select **< Yes >** and **[Enter]** to view all drives and optionally change any tier assignments.  When finished manually selecting tier assignments, select "Done" and [Enter].
 
-21. Configure Linux **Swap** (optional):
+19. Configure **RAM for over-provisioning/failovers (Swap)** (optional): 
 
 There are multiple factors to consider in planning swap, including: availability of storage, system use, disk type, etc. Consult with the VergeIO implementation team for further information. Swap is configurable in the UI, post-install, for new and reformatted drives.
 
@@ -129,19 +122,20 @@ There are multiple factors to consider in planning swap, including: availability
     !!! warning
         - Generally, no more than 16GB of swap should be configured per node.  
         - Large amounts of swap can degrade performance.
-         
 
-22. Select **drives to format for boot**.  This prompt will only appear if any drives were not selected to be included in the vSAN.  Older hardware (e.g. legacy Chassis, BOSS card) may require you to specify drives to format for boot.  In most cases, you can press [Enter] to continue with the installation without selecting boot drives.
+* A message will be presented with the total amount of swap/number of drives.  Review this information, selecting < Yes > to confirm, or < No > to reconfigure.
 
-23. **UEFI partitions** - Some UEFI systems do not auto-detect EFI partitions.  If prompted to register UEFI boot options, it is recommended to select "yes".
+20. Select **drives to format for boot**.  This prompt will only appear if any drives were not selected to be included in the vSAN.  Older hardware (e.g. legacy Chassis, BOSS card) may require you to specify drives to format for boot.  In most cases, you can press [Enter] to continue with the installation without selecting boot drives.
+
+21. **UEFI partitions** - Some UEFI systems do not auto-detect EFI partitions.  If prompted to register UEFI boot options, it is recommended to select "yes".
 
 When installation selections are finalized, the vSAN will be initialized and packages installed.  Each selected drive is formatted one by one (large drives may take several minutes to format) and added to the vSAN.
 
-24. The install will indicate when it is complete.  **Remove the install media and hit [Enter] to reboot.**
+22. The install will indicate when it is complete.  **Remove the installation media and hit [Enter] to reboot.**
 
 ### After Reboot
 
-25. When the vSAN is successfully mounted and the system is started, the user menu will appear. Press **[Enter]** to select **User Interface** and enter admin login credentials.
+23. When the vSAN is successfully mounted and the system is started, the user menu will appear. Press **[Enter]** to select **User Interface** and enter admin login credentials.
 The main dashboard for your new system will display.  Status indicators should all be green.  
 
 ---
