@@ -4,7 +4,7 @@ This method allows for the import of many VMs at once. It does not require uploa
 
 !!! warning "Import should be performed from VMs that are powered down."
 
-!!! info "NAS Import is only for VMs, not disks. This process is for VMX or OVF files only. Any other formats will need to [Import from Media Images](/knowledge-base/import-vms-from-media)."
+!!! info "NAS Import is only for VMs, not disks. This process is for VMX or OVF files only. Any other formats will need to [Importing VMs from Files](/knowledge-base/import-vms-from-files)."
 
 ## Import from Volume
 
