@@ -49,28 +49,28 @@ After completing this guide, you'll be able to:
 Full UCI implements complete separation of functions across three specialized clusters:
 
 ```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                    CLUSTER 1: Dedicated Controllers                         │
-├─────────────────┬─────────────────┬─────────────────────────────────────────┤
-│   Node 1        │   Node 2        │   Additional Controllers (optional)     │
-│ Controller Only │ Controller Only │                                         │
-│ (High Memory)   │ (High Memory)   │   • API & Management Operations         │
-│ • Tier 0 Only   │ • Tier 0 Only   │   • Metadata Caching (750GB+ RAM)       │
-│ • 1TB+ Memory   │ • 1TB+ Memory   │   • No Compute Workloads                │
-└─────────────────┴─────────────────┴─────────────────────────────────────────┘
+┌───────────────────────────────────┐
+│ CLUSTER 1: Dedicated Controllers  │
+├─────────────────┬─────────────────┤
+│   Node 1        │   Node 2        │
+│ Controller Only │ Controller Only │
+│ (High Memory)   │ (High Memory)   │
+│ • Tier 0 Only   │ • Tier 0 Only   │
+│ • 1TB+ Memory   │ • 1TB+ Memory   │
+└─────────────────┴─────────────────┘
 
 ┌───────────────────────────────────────────────────────────────────────────┐
 │                    CLUSTER 2: Dedicated Storage                           │
 ├─────────────────┬─────────────────┬─────────────────┬─────────────────────┤
 │   Node 3        │   Node 4        │   Node 5        │   Node N (scale)    │
 │ Storage Only    │ Storage Only    │ Storage Only    │ Storage Only        │
-│ • Max Drives    │ • Max Drives    │ • Max Drives    │ • Max Drives        │
+│ • 4+ NVME.      │ • 4+ NVME       │ • 4+ NVME.      │ • 4+ NVME           │
 │ • Tier 1        │ • Tier 1        │ • Tier 1        │ • Tier 1            │
 │ • No Compute    │ • No Compute    │ • No Compute    │ • No Compute        │
 └─────────────────┴─────────────────┴─────────────────┴─────────────────────┘
 
 ┌───────────────────────────────────────────────────────────────────────────┐
-│                    CLUSTER 3: Specialized Compute                         │
+│                  CLUSTERS 3+: Specialized Compute                         │
 ├─────────────────┬─────────────────┬─────────────────┬─────────────────────┤
 │   Standard      │   GPU Compute   │   High-Memory   │   Additional        │
 │   Compute       │                 │   Compute       │   Specialized       │
@@ -98,7 +98,7 @@ Full UCI implements complete separation of functions across three specialized cl
 - **Independent Scaling:** Add storage capacity without affecting compute resources
 - **Performance Isolation:** No compute overhead impacting storage performance
 
-**Specialized Compute (Cluster 3):**
+**Specialized Compute (Cluster 3 +):**
 
 - **Maximum Compute Efficiency:** All resources available for VM workloads
 - **Hardware Specialization:** Different node types optimized for specific workloads
@@ -112,7 +112,7 @@ Full UCI implements complete separation of functions across three specialized cl
 **Scale Requirements:**
 
 - 10+ nodes with plans for significant growth
-- Need for independent scaling of compute, storage, and management functions
+- Need for independent scaling of compute and storage
 - Complex multi-tenant environments requiring resource isolation
 
 **Performance Requirements:**
@@ -152,12 +152,12 @@ Controller Cluster: 2 nodes
 Storage Cluster: 3-12+ nodes  
 - Minimum: 3 nodes for balanced distribution
 - Recommended: 5-8 nodes for optimal performance
-- Hardware: Maximum drives, high-bandwidth networking
+- Hardware: 4+ NVME, high-bandwidth networking
 
-Compute Cluster: 5-50+ nodes
+Compute Clusters: 5-50+ nodes
 - Variable based on workload requirements
 - Multiple specialized node types supported
-- Hardware: Optimized for specific compute workloads
+- Hardware: Optimized for specific compute workloads, fast networking for storage access
 ```
 
 **Hardware Specialization Planning:**
@@ -166,7 +166,7 @@ Compute Cluster: 5-50+ nodes
 |------------------|---------------|------------------|-------------------|-------------------|
 | **Controller** | Moderate (management) | **Maximum** (metadata cache) | **Tier 0 only** (high-endurance) | High (management traffic) |
 | **Storage** | Moderate (I/O processing) | High (storage buffer) | **Maximum** (capacity + performance) | **Maximum** (storage traffic) |
-| **Compute** | **Maximum** (VM workloads) | **Maximum** (VM memory) | Minimal (OS only) | Moderate (VM traffic) |
+| **Compute** | **Maximum** (VM workloads) | **Maximum** (VM memory) | Minimal (Boot only) | High (VM and Storage traffic) |
 
 ### Phase 2: Controller Cluster Deployment
 
@@ -175,18 +175,17 @@ Compute Cluster: 5-50+ nodes
 1. **Install Primary Controllers:**
    ```
    Node 1 Configuration:
-   - CPU: Moderate core count (16-32 cores)
+   - CPU: 1 x 3GHz+ 8-32 cores
    - Memory: 1TB+ for large deployments
-   - Storage: Tier 0 only (800GB-1.6TB high-endurance NVMe)
-   - Network: High-bandwidth for management traffic
+   - Storage: 2 x high-endurance NVMe (10GB per 1TB of useable vSAN capacity for Tier 0)
+   - Network: High-bandwidth for storage traffic (25-100GbE)
    
    Node 2 Configuration: (Match Node 1 specifications)
    ```
 
 2. **Configure Controller Optimization:**
 
-   - Set storage buffer allocation to 750GB+ per controller
-   - Configure memory allocation for metadata caching
+   - Set storage buffer allocation to 75% of RAM per controller
    - Disable compute workload scheduling on controllers
    - Optimize network settings for management traffic
 
@@ -211,9 +210,9 @@ Compute Cluster: 5-50+ nodes
 1. **Configure Storage Nodes:**
    ```
    Storage Node Configuration:
-   - CPU: Moderate (sufficient for I/O processing)
-   - Memory: 256-512GB (1GB per TB of raw storage)
-   - Storage: Maximum drive density (12-24 drives per node)
+   - CPU: 1 x CPU 3GHz+ with 1 core per disk
+   - Memory: 256-512GB (2GB per TB of raw storage)
+   - Storage: Maximum drive density (4+ drives per node depending on CPU cores)
    - Network: High-bandwidth for storage traffic (25-100GbE)
    ```
 
@@ -221,15 +220,7 @@ Compute Cluster: 5-50+ nodes
 
    - Configure Tier 1+ across storage nodes (exclude Tier 0)
    - Maintain consistent drive configurations within tiers
-   - Implement balanced distribution across storage nodes
    - Plan for different performance tiers based on workload requirements
-
-3. **Storage Performance Optimization:**
-
-   - Configure storage-specific buffer allocation
-   - Optimize network settings for storage traffic
-   - Implement storage QoS policies
-   - Monitor and tune storage performance
 
 **Step 2: Storage Scaling and Management**
 
@@ -255,7 +246,8 @@ Compute Cluster: 5-50+ nodes
    - CPU: Maximum cores for VM workloads (32-64+ cores)
    - Memory: Maximum RAM for VMs (512GB-2TB+)
    - Storage: Minimal (OS and cache only)
-   - Network: Sufficient for VM traffic
+   - Storage Network: High-bandwidth for storage traffic (25-100GbE) 
+   - VM Network: Sufficient for ingress/egress VM traffic
    ```
 
 2. **Configure Compute Optimization:**
@@ -306,15 +298,8 @@ Controller to Compute: Moderate bandwidth for management operations
 
 Recommended Network Architecture:
 - Core Network: 100GbE for storage traffic
-- Management Network: 25GbE for control plane
 - External Network: Based on VM requirements
 ```
-
-**Network Optimization Strategies:**
-- Implement spine-leaf architecture for large deployments
-- Use dedicated networks for different traffic types
-- Implement QoS policies for traffic prioritization
-- Plan for network redundancy and failover
 
 ### Performance Monitoring and Management
 
@@ -329,9 +314,8 @@ Recommended Network Architecture:
 ### Independent Scaling Strategies
 
 **Controller Scaling:**
-- Add additional controller nodes for API capacity
+- Add additional Tier 0 NVME as you add storage capacity
 - Scale memory and storage buffer allocation
-- Implement load balancing across controllers
 
 **Storage Scaling:**
 - Add storage nodes based on capacity and performance requirements
@@ -384,44 +368,8 @@ Recommended Network Architecture:
 - Rolling updates with minimal service impact
 - Independent testing and validation per cluster
 
-## Troubleshooting Full UCI
-
-### Complex Environment Challenges
-
-| **Challenge** | **Symptoms** | **Resolution Strategy** |
-|---------------|--------------|-------------------------|
-| **Inter-Cluster Latency** | Slow VM I/O, delayed operations | Upgrade networking, optimize traffic routing |
-| **Controller Bottlenecks** | API timeouts, slow management | Scale controller cluster, optimize buffer allocation |
-| **Storage Imbalance** | Uneven performance across storage nodes | Rebalance storage distribution, add capacity |
-| **Compute Resource Waste** | Underutilized specialized nodes | Optimize workload placement, adjust node types |
-| **Network Congestion** | High latency, packet loss | Implement QoS, upgrade network infrastructure |
-
-### Monitoring and Maintenance
-
-**Comprehensive Monitoring Strategy:**
-- Cluster-specific performance dashboards
-- Inter-cluster communication monitoring
-- Resource utilization tracking across all clusters
-- Predictive capacity planning and alerting
-
-**Regular Maintenance Procedures:**
-- Monthly performance review across all clusters
-- Quarterly capacity planning and optimization
-- Semi-annual disaster recovery testing
-- Annual architecture review and optimization
-
-## Next Steps
-
-After implementing Full UCI:
-
-1. **Advanced Optimization:** Complete [Architecture Sizing and Performance Tuning](vergeos-architecture-sizing.md)
-2. **Operational Excellence:** Implement comprehensive monitoring, alerting, and automation
-3. **Capacity Planning:** Develop long-term scaling strategies for each cluster type
-4. **Disaster Recovery:** Implement multi-site Full UCI for maximum availability
-
 ## Related Resources
 
-- [VergeOS Architecture Sizing and Performance Tuning](vergeos-architecture-sizing.md) - Essential for Full UCI optimization
 - [VergeOS Hybrid UCI Architecture](vergeos-hybrid-uci-architecture.md) - Migration path to Full UCI
 - [Network Design Models](../implementation-guide/network-design.md) - Network architecture for Full UCI
 - [Node Sizing Requirements](../implementation-guide/sizing.md) - Hardware specifications for specialized nodes
