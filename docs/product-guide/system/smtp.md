@@ -10,7 +10,7 @@ This page provides instructions for configuration and administration of SMTP in 
 
 ## SMTP Configuration
 
-1. Start at the **SMTP Dashboard (Home > System > SMTP)**.
+1. Start at the **SMTP Dashboard (System > SMTP)**.
 2. Click **Edit Settings** on the left menu.
 3. Configure **settings:**
     * **Use TLS:** enables/disables TLS encryption; must be set to correspond with target system requirements when using an email relay host. When it is supported, always use TLS. 
@@ -24,7 +24,7 @@ This page provides instructions for configuration and administration of SMTP in 
 
 ## Test SMTP Configuration
 
-1. Start at the **SMTP Dashboard (Home > System > SMTP)**.
+1. Start at the **SMTP Dashboard (System > SMTP)**.
 2. Click **Send Test Email** on the left menu.
 3. Enter an **email address** to send to.  
 4. Click **Send**.
@@ -38,7 +38,7 @@ The **Mail Queue** contains email messages waiting to be sent.
 
 Deleting the SMTP queue might be necessary in situations related to email delivery, such as a large backlog after a prolonged SMTP outage or when troubleshooting, to start with a clean slate.  The following instructions will wipe out all entries in the email queue and those entries will not be regenerated.
 
-1. Start at the **SMTP Dashboard (Home > System > SMTP)**.
+1. Start at the **SMTP Dashboard (System > SMTP)**.
 2. **Assess queue entries before deleting:** the most recent entries are displayed in the ***Mail Queue*** section of this page; to view a larger queue, click the **Mail Queue** entry on the left menu. 
 3. Click **Delete Queue** on the left menu.
 
@@ -46,19 +46,19 @@ Deleting the SMTP queue might be necessary in situations related to email delive
 
 Flushing the SMTP queue expedites sending messages by forcing the mail server to re-evaluate and attempt sending each entry in the queue.  This is often used when there were numerous messages stuck from a previous issue (misconfiguration, network outage, service delay, etc.) that may now be resolved.  Flushing the queue does not delete messages, but rather, expedites the sending process. 
 
-1. Start at the **SMTP Dashboard (Home > System > SMTP)**.
+1. Start at the **SMTP Dashboard (System > SMTP)**.
 2. Click **Flush Queue** on the left menu.
 3. Click **Yes** to confirm the operation.
 
 ## SMTP Logs 
 
 ### View a Log of Sent Messages (Mail Log)
-1. Start at the **SMTP Dashboard (Home > System > SMTP)**.
+1. Start at the **SMTP Dashboard (System > SMTP)**.
 2. View the most recent entries in the **Mail Log** section of the dashboard.
 3. To view more entries (going farther back), click **Mail Log** on the left menu.  **Next/Prev** buttons at the bottom of the page allow you to scroll through pages of large logs. 
 
 ### View SMTP System Events
-1. Start at the **SMTP Dashboard (Home > System > SMTP)**.
+1. Start at the **SMTP Dashboard (System > SMTP)**.
 2. View the most recent entries in the **Logs** section at the bottom of the dashboard.
 3. To view more entries (going farther back), click **Logs** on the left menu.  **Next/Prev** buttons at the bottom of the page allow you to scroll through 
 pages of large logs. 

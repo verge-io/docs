@@ -65,7 +65,7 @@ Subscriptions are available from both the sending system and the receiving syste
 
 ### Get a Daily Report of the Sync Dashboard (Sending Site)
 
-1. Navigate to the **Incoming Sync Dashboard** page.
+1. Navigate to the **Incoming Sync Dashboard** page (Backup/DR > Incoming Syncs > double-click the intended incoming sync).
 2. Click **Subscriptions** on the left menu.
 3. Click **New** on the left menu.
 4. Provide a **Name** for the subscription (the name will appear in the subject of the received email notification.)

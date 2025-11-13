@@ -38,7 +38,7 @@ This guide provides instructions on how to connect a root system to a tenant sit
 ## Steps
 
 1. **Access External Networks**
-   - In the **Root** system, navigate to **Networks** and then **External Networks**.
+   - In the **Root** system, navigate to the **Networks Dashboard** and then **Externals**.
    - Double-click on the **External** network.
 
 2. **Add the Rule**
@@ -68,8 +68,7 @@ After the rule is applied, the root system should now be able to connect to the 
 
 To verify that the rule works, follow these steps:
 
-1. From the **Home** screen, click **System** in the left menu.
-2. Click on **Nodes** in the left menu.
+1. From the top menu, navigate to: **Infrastructure** > **Nodes**. 
 3. **Double-click** on **Node1** or select **Node1** and click **View**.
 4. In the left menu, click on **Diagnostics**.
 5. Change the **Query** to **TCP Connection Test**.

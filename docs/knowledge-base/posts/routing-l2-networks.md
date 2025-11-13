@@ -50,7 +50,7 @@ In our sample scenario below, we'll be routing the 192.168.2.0/24 address space 
 - Verge Physical Interface: phys1
 
 #### Create the L2 network
-	In Home > Networks > Externals
+	From the Networks Menu:
 1. Click New External
 2. Name: l2demo
 3. Description: Optional

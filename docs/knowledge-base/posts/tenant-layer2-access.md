@@ -69,15 +69,15 @@ dateCreated: 2025-02-10T19:58:59.133Z
 
 ### Set the Physical Network to Bridge Mode
 
-1. Navigate to **Networks** in the left menu to access the Networks Dashboard.
-2. Select **Networks** again to view all networks in the environment.
-3. Double-click the **Physical Network** (NIC) that the VLANs are trunked to on the physical switch.
+1. From the top menu, select **Networks** > **List**.
+2. Double-click the **Physical Network** (NIC) that the VLANs are trunked to on the physical switch.
 !!! tip
        A physical Network typically has "Switch" appended to the name and represents a physical NIC on a node.
-4. Select **Edit** to enter the network configuration page.
-5. In the configuration page, enable **Physical Bridged** to activate Bridge Mode. It is best to set the **On Power Loss** setting to ***Power On*** so that the network starts up automatically after a system power loss.
-6. **Submit** your changes.
-7. **Reboot** the necessary nodes for Bridge Mode to become active.
+       You can filter the list of networks by "Type" to display only the physical networks.
+3. Select **Edit** to enter the network configuration page.
+4. In the configuration page, enable **Physical Bridged** to activate Bridge Mode. It is best to set the **On Power Loss** setting to ***Power On*** so that the network starts up automatically after a system power loss.
+5. **Submit** your changes.
+6. **Reboot** the necessary nodes for Bridge Mode to become active.
 !!! warning "Follow proper [**Maintenance Mode**](/product-guide/operations/maintenance-mode) procedures when rebooting a node to avoid workload disruptions."
 
 ### Configuring a Trunk Mode Virtual Switch Port

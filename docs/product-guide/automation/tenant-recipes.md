@@ -14,7 +14,7 @@ Tenant recipes allow automating tenant deployment. A tenant recipe can include e
 1. **Build a tenant to serve as the base template.**  A tenant recipe is based on a tenant that serves as the beginning template.  Create the tenant to include settings, VMs, and networks that should be part of the generic configuration.  The tenant must be powered off prior to creating the recipe.  
 !!! tip "A tenant used as the base of a recipe should be dedicated for this purpose.  If you would like to base a recipe from a tenant that is in use, you may want to work from a clone of the original.  Be sure to remove any specific information, such as passwords, particular usernames, customer data, etc. from the cloned tenant instance prior to using it as a recipe template."
 
-2. Navigate to the **Tenant Recipes dashboard** (Home > Catalogs > Tenant Recipes).
+2. Navigate to the **Tenant Recipes dashboard** (Repositories > Tenant Recipes).
 3. Click **New** on the left menu.
 4. Configure tenant recipe **fields:**
     * **Name:** Use a name that adequately identifies the recipe to help users in locating suitable recipes.
