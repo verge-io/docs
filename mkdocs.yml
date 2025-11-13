@@ -142,6 +142,7 @@ nav:
     - Core Concepts: implementation-guide/concepts.md
     - Node Sizing: implementation-guide/sizing.md
     - Network Design: implementation-guide/network-design.md
+    - Switch Config Guide: implementation-guide/switch-configuration.md
     - Installation:
       - Pre-Installation: implementation-guide/pre-installation.md
       - Bootable Media: implementation-guide/install-media.md
