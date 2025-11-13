@@ -1,5 +1,5 @@
 ---
-title: IPsec Configuration Example - Dedicated IP/bridged internal network
+title: IPsec Example - Dedicated Public IP
 slug: ipsec-example-dedicated-ip
 description: IPsec Tunnel - Configuration Example - Dedicated IP Address, bridged network for workloads
 author: VergeOS Documentation Team
