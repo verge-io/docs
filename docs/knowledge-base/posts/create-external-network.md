@@ -28,7 +28,7 @@ This guide provides steps for creating an external network in VergeOS. The examp
 
 1. **Access Network Configuration:**
    
-   - From the home screen of the UI, click on **Networks** and select **New External**.
+   - Navigate to **Networks** > **New External**.
 
 2. **Configure Network Settings:**
    

@@ -19,8 +19,8 @@ dateCreated: 2023-03-16T15:25:45.176Z
 
 ## Tenant Consumption Statistics:
 
-- Navigate to **Tenants Dashboard**
-- Browse for your tenant, click **View**
+- Navigate to **Tenants** > **List**
+- Locate and select your tenant, click **View**
 - Click on **History** in the left menu
 - Choose your month/year and click **Apply**
 - Scroll down to the bottom.

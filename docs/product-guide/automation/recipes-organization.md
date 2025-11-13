@@ -42,7 +42,7 @@ Catalogs allow you to group your related recipes within a repository.  For examp
 
 ### Create a New Catalog
 
-1. Navigate to **Repositories** and **double-click the repository** where the catalog should reside.  This will need to be a local Repository; remote repositories are maintained at the remote system. (The default *"Local"* repository created in every new VergeOS system/tenant would typically be used.)
+1. Navigate to **Repositories** > **List** from the top menu, and **double-click the repository** where the catalog should reside.  This will need to be a local Repository; remote repositories are maintained at the remote system. (The default *"Local"* repository created in every new VergeOS system/tenant would typically be used.)
 2. Click **Catalogs** on the left menu and then click **New**.
 3. Provide a descriptive **Name** for the catalog.  Optionally, additional administrative information can be added to the description field.
 4. Select a **Publishing Scope** to define the accessibility of the catalog:  
@@ -72,7 +72,7 @@ When a recipe displays a status of *Online* it is available for use.
 **Give Access to a Catalog (sharing side)**  
 
 1. Create a **new User, with Type: API** to be used for authentication by the remote system/tenant.  Note the username and password.
-2. Navigate to the **Catalog dashboard**.
+2. Navigate to the **Catalog dashboard** (Repositories > Catalogs > double-click the intended catalog).
 3. Click **Permissions** on the left menu.
 4. Click **Add User** on the left menu.
 5. Set the following fields for the new permission:
