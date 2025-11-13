@@ -29,7 +29,7 @@ Before you proceed with the installation please make sure you've reviewed the fo
 
 ## Install the Primary Controller Node
 
-!!! warning "VergeOS is installed as a complete operating system on each node. Selected drives are formatted and existing data on those drives will be lost."
+!!! warning "VergeOS is installed as a complete operating system on each node. Selected drives are formatted, and existing data on those drives will be lost."
 
 1. Boot the first node with the install ISO. The full installer will load into memory with loading progress indicated on the screen. Loading times will vary depending on the medium used to install.
 2. Select **Install (Standard)** (default).  This is the default selection; the installation will automatically continue with a standard install.  Non-standard install options should only be selected when you are working closely with VergeIO Support.
@@ -38,14 +38,14 @@ Before you proceed with the installation please make sure you've reviewed the fo
 4. Select **Yes** to indicate this is a **New Install**.
 5. Select **time zone and NTP server settings**.  
 
-    !!! tip "Time zone selection is generally based on the geographical location of the servers, but can alternately be configured based on administration preference.  Windows VMs will, by default, inherit the system time zone; a registry change is required to configure a Windows VM to UTC time."
+    !!! tip "Time zone selection is generally based on the geographical location of the servers, but can alternatively be configured based on administration preference.  Windows VMs will, by default, inherit the system time zone; a registry change is required to configure a Windows VM to UTC time."
 
 6. Select appropriate **date/time**.
     !!! warning "Correct date/time are very important for vSAN operation.  Be sure that, during installation, date is set correctly and time is set reasonably close to the accurate time, to avoid potential problems."
 
-7. Enter a **System Name**. This is also known as your System name and will identify your system in: your dashboard, alerts/reports coming from this system, and site syncs. This name can be changed post-install, within System Settings.
+7. Enter a **System Name**. This will identify your system in your dashboard, alerts/reports coming from this system, and site syncs. This name can be changed post-install, within System Settings.
 
-8. Enter **admin user credentials**.  The password must be at least 8 characters. These credentials can be changed post-install, however it is important to have username/password available for initial login to the system.
+8. Enter **admin user credentials**.  The password must be at least 8 characters. These credentials can be changed post-install, however, it is important to have username/password available for initial login to the system.
 
 9. Enter **admin email address**.  This address is used for admin account password resets and receiving subscription alerts/reports directed to the admin user.  An admin email address must be entered during installation and is also configurable in the UI post-install.
 
@@ -80,7 +80,7 @@ Before you proceed with the installation please make sure you've reviewed the fo
 
 13. Select a **physical external network that will provide UI/LAN/WAN access**.
 
-14. Enter appropriate **VLAN ID for the External/UI network** Use PVID ports when possible (0 or blank), otherwise enter the appropriate VLAN ID.  
+14. Enter appropriate **VLAN ID for the External/UI network**. Use PVID ports when possible (0 or blank), otherwise enter the appropriate VLAN ID.  
 
 15. Specify a **network address** for the external/UI network:
     * **Static:** Enter the address in CIDR format (for example 10.0.0.2/24).  You will also be prompted for the default gateway and DNS server address(es).
@@ -94,7 +94,7 @@ Before you proceed with the installation please make sure you've reviewed the fo
 * If encryption is selected, you will be prompted for an **AES256 encryption key passphrase**.
 Passphrase must be between 8 and 64 characters.
 
-* Optionally, you can **write the generated encryption key to a USB drive/dedicated device**.  Before selecting "Yes" to this option you must make sure the USB drive/dedicated storage device is plugged in.  On the next screen, **verify the intended device is selected before hitting < OK >.**
+* Optionally, you can **write the generated encryption key to a USB drive/dedicated device**.  Before selecting "Yes" to this option you must ensure the USB drive/dedicated storage device is plugged in.  On the next screen, **verify the intended device is selected before hitting < OK >.**
 
     !!! warning "Encryption selection is not reversible post-install; changing from encrypted to unencrypted or vice-versa would require a system reinstall."
 
@@ -114,10 +114,10 @@ There are multiple factors to consider in planning swap, including: availability
 * Select storage **tier** to use for swap. 
 
     !!! note "Selecting Swap Tier"
-        - Typically, tier 0 drives are not preferred; select the next fastest-drive tier, when possible.
+        - Typically, tier 0 drives are not preferred; select the next fastest-drive tier when possible.
         - Do not select HDD drives for swap unless the node only contains this type of storage.
     
-* Enter the amount of swap to be established **per drive (in MB)**; e.g. if there are 8 drives in the selected tier, you can enter 2048 to give you 16,384MB (16GB) of swap.
+* Enter the amount of swap to be established **per drive (in MB)**; e.g., if there are 8 drives in the selected tier, you can enter 2048 to give you 16,384MB (16GB) of swap.
 
     !!! warning
         - Generally, no more than 16GB of swap should be configured per node.  
@@ -127,9 +127,9 @@ There are multiple factors to consider in planning swap, including: availability
 
 20. Select **drives to format for boot**.  This prompt will only appear if any drives were not selected to be included in the vSAN.  Older hardware (e.g. legacy Chassis, BOSS card) may require you to specify drives to format for boot.  In most cases, you can press [Enter] to continue with the installation without selecting boot drives.
 
-21. **UEFI partitions** - Some UEFI systems do not auto-detect EFI partitions.  If prompted to register UEFI boot options, it is recommended to select "yes".
+21. **UEFI partitions** - Some UEFI systems do not auto-detect EFI partitions.  If prompted to register UEFI boot options, selecting "yes" is recommended.
 
-When installation selections are finalized, the vSAN will be initialized and packages installed.  Each selected drive is formatted one by one (large drives may take several minutes to format) and added to the vSAN.
+When installation selections are finalized, the vSAN will be initialized and packages installed.  Each selected drive is formatted one at a time (large drives may take several minutes to format) and added to the vSAN.
 
 22. The install will indicate when it is complete.  **Remove the installation media and hit [Enter] to reboot.**
 
