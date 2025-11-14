@@ -32,6 +32,9 @@ A full backup of source virtual machines into VergeOS is performed using the VMw
 **Storage Optimization Note:**
 VMs imported from thick-provisioned VMDKs will benefit from immediate TRIM operations post-import to reclaim unused space.
 
+!!! note "Storage Optimization - Trim"
+    VMs imported from thick-provisioned VMDKs will benefit from immediate TRIM operations post-import to reclaim unused space.
+
 **Additional Resources:**
 - [VMware Backup DR Guide](/knowledge-base/vmwarebackupdrguide)
 - [Importing VMs from VMware Service Backup Jobs](/product-guide/virtual-machines/import-from-vmware)
@@ -57,6 +60,9 @@ Upload VM configuration and disk files (VMX, VMDK, OVF, VHD, QCOW2, etc.) to the
 
 **Storage Optimization Note:**
 Uploaded thick-provisioned images should be trimmed after import to optimize vSAN storage utilization.
+
+!!! note "Storage Optimization - Trim"
+    Uploaded thick-provisioned images should be trimmed after import to optimize vSAN storage utilization.
 
 #### [**NAS Volume Import**](/product-guide/virtual-machines/import-from-nas)
 
