@@ -34,12 +34,11 @@ These tasks run at predefined times or intervals:
 
 ## Modular Automation Architecture
 
-Modular Automation Architecture
 The VergeOS Task Engine supports flexible orchestration of tasks, events, schedules, and webhooks. This modular design enables scalable, reusable automation tailored to your environment:
 
 * **Assign multiple tasks or events to a single webhook** — for example, you can configure a webhook to notify an external system, and have it triggered by several different events such as sync failures, login attempts, or system alerts. This reduces duplication and centralizes external integrations.
 * **Trigger a single task from multiple distinct events** — such as powering on a virtual machine when either a specific user logs in or when a scheduled maintenance window begins. This allows you to consolidate logic and reuse task definitions across scenarios.
-* **Create a schedule once and apply it to multiple tasks or webhooks** — for example, define a weekly maintenance window and link it to several update, alerting, or shutdown tasks. This promotes consistency and simplifies configuration management.
+* **Create a schedule once and apply it to multiple tasks** — for example, define a weekly maintenance window and link it to several update, alerting, or shutdown tasks. This promotes consistency and simplifies configuration management.
 
 
 This modular design enables scalable, reusable automation tailored to your environment.
@@ -51,7 +50,7 @@ This modular design enables scalable, reusable automation tailored to your envir
 - [Creating Tasks](/product-guide/automation/create-tasks)  
 - [Using Webhooks](/product-guide/automation/webhooks) 
 - [Defining Schedules](/product-guide/automation/schedules) 
-- [Event Triggers](/product-guide/automation/events) 
+
 
 ---
 
