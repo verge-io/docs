@@ -2,7 +2,7 @@
 
 !!! info "Release Information"
     - **Release Date**: October 2025
-    - **Latest Version**: 26.0.1.2 (October 2025)
+    - **Latest Version**: 26.0.2 (November 2025)
     - **Status**: Latest Production Release
     - **End-of-Life**: TBD
 
@@ -40,6 +40,159 @@
     - Multiple SSL certificate management
     - Enhanced alarm system with email notifications
     - Improved audit logging capabilities
+
+## 26.0.2 (November 2025)
+
+### Features & Fixes
+
+#### User Interface & Experience
+- Enhanced navigation and organization:
+    - Changed "Tasks" to "Tasks Dashboard" in main navigation
+    - Added tags to tag categories list
+    - Added tags to most list pages where applicable
+    - Added select all/none to filter menu
+    - Alphabetical sorting applied to actions on home
+    - Added automatic sort for action menu
+    - Added colors for form controls
+- Fixed multiple breadcrumb navigation issues
+- Fixed "Building List..." bug appearing randomly on forms
+- Enhanced form components:
+    - Fixed network selector to account for current network (core or disabled networks)
+    - Toned down task script max height for better display
+    - Fixed cloud-init header column arrangement
+- Improved dashboard displays:
+    - Added CPU base clock rate to node dashboard
+    - Removed duplicate alerts on VM dashboard
+    - Fixed machines dashboard issues
+    - Fixed resource dashboard JavaScript error
+    - Fixed VM dashboard infinity bug when cluster in maintenance
+- Enhanced list views and actions:
+    - Fixed migrate/popups on VM/VMs/Tenant Node/Service Container/VMware Container
+    - Added new device shortcuts to tenant/machine dashboards and main navigation
+
+#### Task Automation & Events
+- Enhanced task event functionality:
+    - Made event field read-only for consistency
+    - Prevented edits on task events with owners
+    - Task events list now has clickable link back to task
+    - Task dashboard displays events table with clickable tasks
+    - Fixed handling of non-string values
+    - Changed VM fire event behavior
+    - New VM events delayed to handle recipes making API calls
+- Improved task logging and audit:
+    - Fixed task logs name for executing state
+    - Fixed audit log for task edits
+    - Fixed audit log for task creation/deletion
+    - Fixed audit log for task creation
+    - Fixed counts on task dashboard with condensed lists and sorting
+- Enhanced task management UI:
+    - Made task event edit UI more user-friendly
+    - Added task-related features to scripts page for ease of use
+    - Fixed task dashboard owner field display
+- Fixed delete messages on task events/schedule triggers and task scripts
+
+#### Virtual Machine Management
+- Enhanced VM operations:
+    - Fixed issue starting machines with multiple devices from same resource group
+    - Fixed potential issue where failed machine starts could leave devices reserved
+    - Fixed VM import duplicate fields
+    - Fixed cloning TPM devices
+- Improved VM creation and recovery:
+    - Changed error message to friendlier version when creating VM from recipe
+    - Fixed issue restoring VMs from system snapshot when recovery took >2 minutes
+    - Fixed issue restoring NAS VM from cloud snapshot where network no longer exists
+    - Fixed event issue when creating VM from wizard
+- Fixed issue triggering tasks on VMs that aren't snapshots
+
+#### Tenant Management
+- Enhanced tenant functionality:
+    - Fixed tenant device status display
+    - New tenant node form now adds tenant filter to hide snapshots
+    - Fixed vnet rule headers
+- Theme management improvements:
+    - Fixed breadcrumb on modify tenant theme access page
+    - Fixed theme access removal code
+    - Fixed real-time tenant theme access changes
+    - Fixed notification to nodes for specified themes
+
+#### Storage & Snapshots
+- Immutable snapshot enhancements:
+    - Log user attempts to delete immutable snapshots
+    - On unlock, clear snapshot alarm for immutable snapshots
+    - Fixed unlocking to unlocked status transition
+- File management improvements:
+    - File upload overwrite now carries description over
+    - Fixed potential browser credential popup when downloading files
+    - Added bzip download filter via API for URL downloads
+
+#### Sites & Synchronization
+- Fixed site status for refreshing on down/unreachable systems
+- Fixed map pin icon display
+- Fixed site dashboard JavaScript error when adding logs with nothing enabled
+- Fixed authentication to invalid URLs
+
+#### Networking & WireGuard
+- Fixed WireGuard interface dashboard display
+- Fixed issue with IPSec Phase 1 modifications (JavaScript error)
+
+#### Security & Alarms
+- Admin 2FA alarm can now be acknowledged to dismiss
+- Fixed issue with vSAN repair alarms
+
+#### VMware Integration
+- Fixed backup VM expiration from list view
+- Fixed pause backup job/restore job functionality
+- Added hidden setting to purge VMware container snapshots from cloud snapshots
+
+#### System Administration
+- Enhanced help system:
+    - Added handling for help links with query parameters
+- Enhanced resource management:
+    - Fixed Host GPU settings typo
+- Improved error handling:
+    - Fixed issue clicking error dialog with "View References" option
+- Swagger generation now refreshes page even with autorefresh disabled
+- Added failback code for updates/marketplace/system diagnostics/license refreshes when part of internet is down
+- Fixed issue verifying node versions during install
+- Fixed issue installing asset packages
+
+#### Permissions & Access
+- Fixed issue where modifypermissions page might not load correct row
+
+#### Notes & Documentation
+- Added notes field to service container and VMware container dashboards
+- Updated notes edit capability for service containers and outgoing syncs
+
+### OS & Installation
+
+#### Installation Process
+- Fixed issue replacing node with 26.0.x
+- Removed ability to replace drives while replacing node (support involvement now required)
+- Fixed several bonding-related issues
+- Added more accurate progress bar while installing packages on first node
+- Fixed several node and version validation issues
+
+#### Core System
+- Enhanced appserver functionality:
+    - Added pm and pt filters (pattern match and pattern match text compare)
+    - Added support for et (equal text compare) filter operator
+    - Added filter support for delimlist(rows)
+    - Increased max passwords to 8K
+    - Fixed issue where invalid token in cookies could temporarily prevent login
+    - Deleting credentials now auto-deletes all sessions using it
+    - Added support for range HTTP header for partial downloads
+- Removed rndis-host USB driver
+- Enhanced GCS functionality:
+    - Removed some functions from usermode
+
+#### vSAN Management
+- Enhanced vSAN operations:
+    - Changed initial dev file state to add tier
+    - Fixed scale-out used redundancy check
+    - Fixed node tier removal refresh
+    - Fixed stacking transaction snapshots when tier walking slowly with active repairs
+    - Fixed issue where new tier on node required reboot
+    - Added automatic tier deletion when no drives remain on tier
 
 ## 26.0.1.2 (October 2025)
 
