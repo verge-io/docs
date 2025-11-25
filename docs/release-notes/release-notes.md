@@ -41,6 +41,17 @@
     - Enhanced alarm system with email notifications
     - Improved audit logging capabilities
 
+## 26.0.2.1 (November 2025)
+
+!!! info "Hotfix Release"
+    No reboot required (if System is currently on 26.0.2).
+
+### Bug Fixes
+- Fixed kernel issue with NAS where extended attributes stopped working (resolved Storware backup issues)
+- Fixed New VM and New Tenant forms where hitting enter on search filters caused unintended form submission
+- General improvements to New VM and New Tenant forms
+- Fixed auto-refresh functionality on VMware backup VM dashboard
+
 ## 26.0.2 (November 2025)
 
 ### Features & Fixes
