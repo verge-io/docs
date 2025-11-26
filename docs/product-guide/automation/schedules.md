@@ -1,6 +1,6 @@
 # Schedules
 
-VergeOS includes a **Schedule** feature as a modular component within the task manager, enabling you to fully customize when and how often tasks are executed.
+VergeOS includes a **Schedule** feature as a modular component within the Task Engine, enabling you to fully customize when and how often tasks are executed.
 
 ## Key features
 
@@ -32,6 +32,14 @@ VergeOS includes a set of commonly-used default schedules. You can also create y
 4. Click **Submit** to save the schedule.  
    Once saved, it will be available to assign as a **schedule trigger** for any task.
 
+---
+
+## Related Guides
+
+- [Task Engine Overview](/product-guide/automation/task-engine)  
+- [Creating Tasks](/product-guide/automation/create-tasks)  
+
+---
 
 **Version Compatibility**: This functionality is available in VergeOS 26.0 and later.
 

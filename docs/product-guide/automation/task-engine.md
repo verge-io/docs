@@ -1,11 +1,11 @@
-# Task Manager
+# Task Engine
 
-The **Task Manager** enables automated operations in VergeOS, triggered either by specific events or scheduled times. Tasks can run once or recur based on your configuration.
+The **Task Engine** enables automated operations in VergeOS, triggered either by specific events or scheduled times. Tasks can run once or recur based on your configuration.
 
 
 ## Event-Based Task Examples
 
-These tasks are triggered automatically when a defined event occurs:
+Tasks are triggered automatically when a defined event occurs:
 
 - Send an email notification when a system update completes  
 - Power on a specific virtual machine when a designated user logs into VergeOS  
@@ -14,20 +14,20 @@ These tasks are triggered automatically when a defined event occurs:
 
 ## Schedule-Based Task Examples
 
-These tasks run at predefined times or intervals:
+Tasks run at predefined times or intervals:
 
 - Check for and download system updates every Saturday at 5:00 PM  
 - Disable a user account (e.g., for a temporary employee) 30 days after creation  
 - Power off a tenant on a specific date  
 
 
-## Task Manager Components
+## Task Engine Components
 
 | Component       | Description                                                                 |
 |----------------|-----------------------------------------------------------------------------|
 | **Tasks**       | Define the action to perform (e.g., power off a VM, send a notification)    |
 | **Schedules**   | Specify when and how often a task should run (e.g., daily, weekly)          |
-| **Events**      | Define the conditions that trigger a task (e.g., user login, sync failure)  |
+| **Events**      | Define conditions that trigger a task (e.g., user login, sync failure)  |
 | **Webhooks**    | Special tasks that push data to external systems in real time               |
 | **Task Logs**   | Record task creation and execution history for auditing and troubleshooting |
 
@@ -50,7 +50,6 @@ This modular design enables scalable, reusable automation tailored to your envir
 - [Creating Tasks](/product-guide/automation/create-tasks)  
 - [Using Webhooks](/product-guide/automation/webhooks) 
 - [Defining Schedules](/product-guide/automation/schedules) 
-
 
 ---
 

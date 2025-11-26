@@ -67,4 +67,10 @@ Schedule triggers allow tasks to run at a specific time or on a recurring basis.
 4. Click **Submit** to save the schedule trigger. 
  It will now be associated with the selected task.
 
+---
 
+## Related Guides
+
+- [Task Engine Overview](/product-guide/automation/task-engine)  
+- [Using Webhooks](/product-guide/automation/webhooks) 
+- [Defining Schedules](/product-guide/automation/schedules) 

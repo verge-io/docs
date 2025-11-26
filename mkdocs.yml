@@ -318,8 +318,8 @@ nav:
         - VM Recipes: product-guide/automation/vm-recipes.md
         - Tenant Recipes: product-guide/automation/tenant-recipes.md 
         - Marketplace VM Recipes: product-guide/automation/marketplace-vm-recipes.md
-      - Task Manager:
-        - Overview: product-guide/automation/task-manager.md
+      - Task Engine:
+        - Overview: product-guide/automation/task-engine.md
         - Create Tasks: product-guide/automation/create-tasks.md
         - Schedules: product-guide/automation/schedules.md
     - Device Passthrough:
