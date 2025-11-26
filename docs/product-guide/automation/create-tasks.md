@@ -1,4 +1,4 @@
-# Creating Tasks
+# Creating Automated Tasks
 
 This page provides general instructions for creating tasks in VergeOS, including how to configure event-based and schedule-based triggers. 
 

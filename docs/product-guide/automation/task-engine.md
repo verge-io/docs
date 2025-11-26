@@ -1,6 +1,6 @@
 # Task Engine
 
-The **Task Engine** enables automated operations in VergeOS, triggered either by specific events or scheduled times. Tasks can run once or recur based on your configuration.
+The **Task Engine** enables automated operations in VergeOS, triggered either by specific events or scheduled times. Defined tasks can run once or recur based on your configuration.
 
 
 ## Event-Based Task Examples
@@ -47,7 +47,7 @@ This modular design enables scalable, reusable automation tailored to your envir
 
 ## Related Guides
 
-- [Creating Tasks](/product-guide/automation/create-tasks)  
+- [Creating Automated Tasks](/product-guide/automation/create-tasks)  
 - [Using Webhooks](/product-guide/automation/webhooks) 
 - [Defining Schedules](/product-guide/automation/schedules) 
 
