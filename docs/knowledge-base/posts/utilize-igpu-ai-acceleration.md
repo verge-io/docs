@@ -27,9 +27,10 @@ Benefits:
 * lower, more efficient power use, requires less cooling
 * allows you to leverage igpus that are already included in CPUs rather than being an additional purchase
 
+? why make resource instead of make passthrough?
 
+Performance boost can be substantial depending on the onboard gpu. modern servers have pretty fast igpus, even when they are a bit older and not that hefty you get the advantage of utilizing this built-in hardware and taking the burden off your cores.
 
-How much of an AI performance boost/acceleration can you get?
 
 Steps:
 
@@ -38,7 +39,17 @@ Steps:
 3. A listing of all the node's PCI devices is presented. Select ***Display Controller*** from the dropdown at the top of the Type column to filter the list to only display controllers.  
 4. Click to select the iGPU device from the filtered list.
 5. Click **Make Resource** on the left menu.
-6. 
+6. Create a new Resource Group:
+If no resource groups exist, the Resource Group entry form will be presented
+
+
+? why does the resource still show up in the PCI devices list? - i thought when resources were used they came off the list?
+
+why does resource group created show 2 rules, one with type Host GPU and one with type PCI?, the one with PCI shows 0 resources
+
+7. message at the top of the screen that driver reload is required. 
+
+* when creating resource groups, it is important to use care to select intended device; selecting an incorrect device for passthrough can cause problems
 
 To add additional node iGPUs to the same resource group
 * repeat steps 1-5 above.
@@ -46,15 +57,10 @@ To add additional node iGPUs to the same resource group
 
 by adding iGPUs from different nodes and placing them in the same resource group, you create a pool of igpus that your AI models can pull from.
 
-To learn more about vergeos resource groups, see: [Resource Groups](/product-guide/system/device-pass-overview#
+To learn more about vergeos resource groups, see: [Resource Groups](/product-guide/system/device-pass-overview#resource-groups)
 
 
-?'s 
-- do you have to create a resource group for each different node? or does this work like other resource group types where there are rules/filters?
-- how do you give AI this resource?  is it across the board for all AI or per model/assistant?
-- is there a system where I can experiment or view this setup?
-- are there any cautions, best practices, tips that we should include in the documentation?
-- how exactly does vRAM work with this?  does it require vRAM?  otherwise, does it utilize regular RAM as well?
-- can iGPU (host gpu resource group) be used for anything else other than AI now? what about in the future - will it maybe be used for other services too?
+
+
 
 
