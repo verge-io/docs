@@ -2,7 +2,7 @@
 
 !!! info "Release Information"
     - **Release Date**: October 2025
-    - **Latest Version**: 26.0.2 (November 2025)
+    - **Latest Version**: 26.0.2.2 (December 2025)
     - **Status**: Latest Production Release
     - **End-of-Life**: TBD
 
@@ -40,6 +40,35 @@
     - Multiple SSL certificate management
     - Enhanced alarm system with email notifications
     - Improved audit logging capabilities
+
+## 26.0.2.2 (December 2025)
+
+!!! info "Hotfix Release"
+    No reboot required (if System is currently on 26.0.2.x).
+
+### Features & Fixes
+
+#### User Interface & Caching
+* Added cache buster to custom themes
+* Fixed issue where modifying current theme wouldn't reload page
+* Added cache busting to all dependencies and JavaScript modules
+* Fixed issue where xterm was being minified, causing serial console issues for VMs
+
+#### Snapshots & Synchronization
+* Fixed immutable snapshots showing up on remote sites
+* Fixed immutable snapshots not appearing after sync
+* Fixed system snapshot manual-sync prefix on destination
+* Fixed timing scenario where vSAN incorrectly triggered transaction snapshot due to settier operation
+
+#### System Administration
+* Fixed action menu item for restore job dashboard
+* Fixed action menu items on site syncs outgoing
+* Fixed delete tag category functionality
+* Added action to update manual certificates
+* Fixed 'allow insecure' flag not functioning in webhooks
+
+#### Authentication & Users
+* Fixed modify user form for auth sources
 
 ## 26.0.2.1 (November 2025)
 
