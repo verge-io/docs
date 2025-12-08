@@ -23,7 +23,7 @@ Navigate to a **specific node** where the NVIDIA hardware is installed.
 4. Click the **PCI Devices** box / menu item.
 5. In the list view, select the **Type** filter to **Display controller** near the top of the page.
 6. **Select the desired NVIDIA physical device(s).**
-7. Click **Make Passthrough** on the left menu.
+7. Click **Make Resource** on the left menu.
 8. **Select an existing vGPU resource group** **-OR-** **select --New Group--** to attach the device.
 
 9. **Creating a New NVIDIA vGPU Resource Group**:

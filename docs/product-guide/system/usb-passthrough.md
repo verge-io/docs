@@ -20,7 +20,7 @@ Navigate to a **specific node** where the USB devices are plugged in. (*Infrastr
 3. **Select** the appropriate **USB device(s)** from the list.
 !!! note "All selected devices will be added to the same resource group (resource pool), but each will have a separate resource rule created."
 
-4. Click **Make Passthrough** on the left menu.
+4. Click **Make Resource** on the left menu.
 5. **Create a new USB resource group** **-OR-** **Select a USB resource group** from the list.
 
 ### USB Resource Group Fields
