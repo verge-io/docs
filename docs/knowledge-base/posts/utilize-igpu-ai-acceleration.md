@@ -33,12 +33,21 @@ How much of an AI performance boost/acceleration can you get?
 
 Steps:
 
-Navigate to **Infrastructure** > **Resources**.
-Click **New** on the left menu.
-Configure Resource Group:
-* **Name**:
-* **Type**: select ***Host GPU***
-* **Max vRAM**: (limit the amount of vRAM that can be used?)
+1. Navigate to **Infrastructure** > **Nodes** and **double-click the node** containing the iGPU.
+2. Select the **PCI Devices** card or left-menu option.
+3. A listing of all the node's PCI devices is presented. Select ***Display Controller*** from the dropdown at the top of the Type column to filter the list to only display controllers.  
+4. Click to select the iGPU device from the filtered list.
+5. Click **Make Resource** on the left menu.
+6. 
+
+To add additional node iGPUs to the same resource group
+* repeat steps 1-5 above.
+* When prompted for a resource group to ***Attach to***, you can select the resource group (created above) from the dropdown list. 
+
+by adding iGPUs from different nodes and placing them in the same resource group, you create a pool of igpus that your AI models can pull from.
+
+To learn more about vergeos resource groups, see: [Resource Groups](/product-guide/system/device-pass-overview#
+
 
 ?'s 
 - do you have to create a resource group for each different node? or does this work like other resource group types where there are rules/filters?
