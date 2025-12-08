@@ -13,7 +13,7 @@ The following instructions will configure virtual function passthrough by automa
 1. Navigate to the **Resource Manager Dashboard** (**Infrastructure** > **Resources**) **-OR-** Navigate to a **specific node dashboard** (**Infrastructure** > **Nodes** > double-click desired node in the list.)
 2. Click **SR-IOV NICs**. Any existing configured SR-IOV virtual devices will display in the listing that appears.
 3. Click **NIC PCI Devices** on the left menu.  The listing of compatible physical devices will display.
-4. **Select the desired device(s)** in the list and click **Make Passthrough** on the left menu.
+4. **Select the desired device(s)** in the list and click **Make Resource** on the left menu.
 5. **Select an SR-IOV resource group** from the list **-OR-** **Create a new SR-IOV resource group**.
 
 ### Creating an SR-IOV NIC Resource Group

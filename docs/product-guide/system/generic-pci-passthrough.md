@@ -10,7 +10,7 @@ One-to-One PCI passthrough involves giving a single VM at a time, access to a PC
 **-OR-**
 Navigate to a **specific node dashboard** (**Infrastructure** > **Nodes** from the top menu *-OR-**Main Dashboard > Nodes**, then double-click desired node in the list.)
 2. Click **PCI Devices**.
-3. Select the desired device(s) in the list and click **Make Passthrough** on the left menu.
+3. Select the desired device(s) in the list and click **Make Resource** on the left menu.
 4. **Select an existing PCI device resource group** from the list **-OR-** **Create a new PCI resource group**.
 
 ### Creating a PCI Devices Resource Group

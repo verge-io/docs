@@ -25,7 +25,7 @@ dateCreated: 2024-11-10T16:53:09.094Z
 
 # Device Passthrough Advanced Configuration (Manual Creation/Editing of Resource Rules)
 
-Although allowing auto-generation of resource rules (e.g. when you select a device and use the *Make Passthrough* menu option) is easiest and usually recommended,
+Although allowing auto-generation of resource rules (e.g. when you select a device and use the *Make Resource* menu option) is easiest and usually recommended,
 there may be situations where it may be useful to manually create a resource rule or to modify an auto-generated resource rule.
 
 !!! danger "It is important to read and be familiar with [**PCI Passthrough Risks and Precautions**](/product-guide/system/device-pass-overview#pci-passthrough-risksprecautions) before making passthrough configurations."
