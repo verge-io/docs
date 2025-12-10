@@ -5,10 +5,8 @@ description: Instructions for configuring an iGPU (integrated GPU) for AI accele
 draft: false
 date: 2025-12-04T12:39:06.743Z
 tags:
-  - verge.io
   - ai
   - private ai
-  - device passthrough
   - resource groups
   - performance
 categories:
