@@ -20,6 +20,7 @@ dateCreated: 2025-12-01T16:29:03.267Z
 
 # Using an iGPU for AI Acceleration
 
+
 An **iGPU** (integrated graphics processing unit) is built directly into the CPU rather than existing as a separate graphics card. Within VergeOS, an iGPU can be used for private AI acceleration, allowing you to leverage hardware already present in many modern servers. This approach reduces the processing burden on CPU cores while typically requiring less power and cooling than dedicated add‑on GPUs. Because iGPUs are optimized for parallel matrix and vector operations, they are generally more efficient than CPUs for inference workloads.
 
 iGPUs share system memory with the CPU, which can be a bottleneck. However, for small to medium models this limitation is usually manageable. If your goal is maximum performance, discrete GPU hardware remains the preferred option.
@@ -42,22 +43,23 @@ Modern servers often include capable iGPUs. Even older or less powerful models c
 
 1. Navigate to **Infrastructure** > **Nodes** and **double‑click the node** containing the iGPU.  
 2. Select the **PCI Devices** card or left‑menu option.  
-3. From the device list, set the **Type** filter to ***Display Controller*** to show only display devices.  
-4. Select the iGPU device from the filtered list. ⚠️ *Be careful when selecting devices for passthrough. Choosing the wrong device can cause issues.*  
+3. From the device list, set the **Type** filter (top of the Type column) to ***Display Controller*** to show only display devices.  
+4. Select the iGPU device from the filtered list. ⚠️ *Be careful when selecting devices for resource groups. Choosing the wrong device can cause issues.*  
 5. Click **Make Resource** in the left menu.  
 6. Create a new Resource Group:  
    * If no groups exist, the entry form will appear automatically.  
-   * Otherwise, select **Attach to**: ***--New Group--***.  
+   * Otherwise, select **Attach to**: ***--New Group--*** and click **Next**  
 7. Configure Resource Group fields:  
-   * **Name**: Enter a descriptive name, e.g. "iGPU"
-   * **Type**: Select ***Host GPU***.  
+   * **Name**: Provide a descriptive name, e.g. "iGPU"
+   * **Type**: Select ***Host GPU***
    * **Max vRAM**: Limit the amount of system RAM available to the iGPU (default = 0; no limit).  
   *vRAM Considerations:*  
        * On systems running other workloads, set a max vRAM to prevent contention between workloads and iGPU usage.  
        * If max vRAM is set too low, models may fail to load and produce errors.  
 8. Click **Submit** to save the new Resource Group with the selected iGPU.  
+9. Follow the prompt with link at the top of the dashboard to navigate to the node. 
 9. Place the node into **Maintenance Mode** (see message at top of node dashboard).  
-10. Reload the driver (prompted at the top of the dashboard).  
+10. Reload the driver (prompted at the top of the dashboard once the node is in maintenance mode).  
 11. Exit Maintenance Mode on the node once the driver reload completes.  
 
 ---
@@ -78,4 +80,4 @@ To add more iGPUs:
 
 ## Assigning the iGPU Resource Group to a Model
 
-Once configured, assign the Host GPU resource group to your AI model using the ***GPU Resource Group Allocation*** setting.
+Once configured, assign the Host GPU resource group to your AI model using the ***GPU Resource Group Allocation*** setting.  This allows the model to draw from any available iGPUs in the resource group.
