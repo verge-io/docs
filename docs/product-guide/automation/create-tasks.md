@@ -5,7 +5,7 @@ This page provides general instructions for creating tasks in VergeOS, including
 
 ## Create a New Task
 
-1. Navigate to **System** > **Tasks**.
+1. Navigate to **System** > **Tasks Dashboard**.
 2. Click **New Task** in the left menu.
 3. Configure the task fields:  
     - **Name**: Enter a descriptive name for the task.
