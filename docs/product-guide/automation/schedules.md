@@ -13,7 +13,7 @@ VergeOS includes a set of commonly-used default schedules. You can also create y
 
 ## Create a Custom Schedule
 
-1. Navigate to **System** > **Tasks**, then select **Schedules** from the left-hand menu.  
+1. Navigate to **System** > **Tasks Dashboard**, then select **Schedules** from the left-hand menu.  
    The list of existing schedules will appear.
 
 2. Click **New** in the left-hand menu to begin creating a new schedule.
