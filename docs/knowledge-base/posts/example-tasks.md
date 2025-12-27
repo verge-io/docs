@@ -22,7 +22,7 @@ dateCreated: 2025-12-09-11T18:16:54.516Z
 
 
 !!! info "Key Points"
-    * The **VergeOS Task Engine** allows you to automate operations, triggered by specific events or scheduled times. Using modular, reusable components (tasks, events, schedules, and webhooks) you can easily configure automation tailored to your environment.
+    * The ***VergeOS Task Engine*** allows you to automate operations, triggered by specific events or scheduled times. Using modular, reusable components (tasks, events, schedules, and webhooks) you can easily configure automation tailored to your environment.
     * The following example displays the use of tags, tasks, events and schedules used together to seamlessly bring workloads online and offline as they are needed, improving resource efficiency. 
 
 #### Use Case
