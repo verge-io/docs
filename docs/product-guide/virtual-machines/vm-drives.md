@@ -44,8 +44,14 @@
 !!! info
     The Discard option is enabled by default, and is typically recommended to be enabled as it allows storage space to be recovered from deleted files.
 
-12. Click **Submit.**
-13. **Repeat** the process to add more drives to the VM, **as needed**.
+12. The ***Optimize For*** field can be used to override the default IO chuck size:
+    - **General Usage** 64 KB chunks, with read-ahead (default)
+    - **Large Files** up to 1 MB chunks
+!!! info
+    The default **Optimize For** choice is **General Usage**, which should be the preferred choice for most use cases.  **Large Files** could be beneficial for VMs that only store very large files and that are only accessed sequentially. In most cases, the performance gains from choosing **Large Files** will be minimal.
+
+13. Click **Submit.**
+14. **Repeat** the process to add more drives to the VM, **as needed**.
 
 ## Erase the Data on a Drive
 
