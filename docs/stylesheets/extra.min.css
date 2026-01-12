@@ -1,1 +1,38 @@
 .md-header{position:sticky;top:0;z-index:100}[data-md-color-scheme=slate]{--md-primary-fg-color:#0a0f1a;--md-primary-fg-color--light:#0f1729;--md-primary-fg-color--dark:#050811;--md-primary-bg-color:#f8fafc;--md-default-bg-color:#0f172a;--md-default-fg-color:#e2e8f0;--md-default-fg-color--light:#94a3b8;--md-default-fg-color--lighter:#64748b;--md-default-fg-color--lightest:#475569;--md-accent-fg-color:#D9693B;--md-accent-fg-color--transparent:rgba(217, 105, 59, 0.1);--md-accent-bg-color:#f1f5f9;--md-typeset-a-color:#D9693B;--md-code-bg-color:#1e293b;--md-code-fg-color:#e2e8f0}[data-md-color-scheme=slate] .md-header,[data-md-color-scheme=slate] .md-header__inner,[data-md-color-scheme=slate] .md-tabs{background-color:#0a0f1a!important;border-bottom:1px solid #1e293b}[data-md-color-scheme=slate] .md-header__button,[data-md-color-scheme=slate] .md-header__title,[data-md-color-scheme=slate] .md-nav__link{color:#e2e8f0!important}[data-md-color-scheme=slate] .md-search__input{background-color:#1e293b;color:#e2e8f0;border:1px solid #334155}[data-md-color-scheme=slate] .md-search__input::placeholder{color:#64748b}[data-md-color-scheme=slate] .md-tabs__link{color:#94a3b8!important}[data-md-color-scheme=slate] .md-tabs__link--active,[data-md-color-scheme=slate] .md-tabs__link:hover{color:#d9693b!important}[data-md-color-scheme=slate] .md-nav__title{background-color:#0a0f1a!important;color:#e2e8f0}[data-md-color-scheme=default]{--md-primary-fg-color:#ffffff;--md-primary-fg-color--light:#f8fafc;--md-primary-fg-color--dark:#f1f5f9;--md-primary-bg-color:#0a0f1a;--md-default-bg-color:#ffffff;--md-default-fg-color:#1e293b;--md-default-fg-color--light:#475569;--md-default-fg-color--lighter:#64748b;--md-default-fg-color--lightest:#94a3b8;--md-accent-fg-color:#C4502D;--md-accent-fg-color--transparent:rgba(196, 80, 45, 0.1);--md-accent-bg-color:#0f172a;--md-typeset-a-color:#C4502D;--md-code-bg-color:#f1f5f9;--md-code-fg-color:#1e293b}[data-md-color-scheme=default] .md-header,[data-md-color-scheme=default] .md-header__inner,[data-md-color-scheme=default] .md-tabs{background-color:#fff!important;border-bottom:1px solid #e2e8f0}[data-md-color-scheme=default] .md-header__button,[data-md-color-scheme=default] .md-header__title,[data-md-color-scheme=default] .md-nav__link{color:#1e293b!important}[data-md-color-scheme=default] .md-search__input{background-color:#f8fafc;color:#1e293b;border:1px solid #e2e8f0}[data-md-color-scheme=default] .md-search__input::placeholder{color:#94a3b8}[data-md-color-scheme=default] .md-tabs__link{color:#64748b!important}[data-md-color-scheme=default] .md-tabs__link--active,[data-md-color-scheme=default] .md-tabs__link:hover{color:#c4502d!important}[data-md-color-scheme=default] .md-nav__title{background-color:#fff!important;color:#1e293b}.md-header::before,.md-tabs::before{display:none}.md-header__button.md-icon,.md-nav__button.md-icon{color:inherit}[data-md-color-scheme=slate] .md-footer{background-color:#0a0f1a;border-top:1px solid #1e293b}[data-md-color-scheme=default] .md-footer{background-color:#f8fafc;border-top:1px solid #e2e8f0}@media screen and (max-width:76.1875em){.md-nav--primary .md-nav__title{padding-top:calc(var(--md-header-height,3rem) + .6rem)}.md-nav--primary{padding-top:var(--md-header-height,3rem)}}[data-md-color-scheme=slate] .md-header__button.md-logo img{content:url('../assets/vergeosfulllogowhite.svg')}[data-md-color-scheme=default] .md-header__button.md-logo img{content:url('../assets/vergeosfulllogoblack.svg')}[data-md-color-scheme=default] .card-diagram rect{fill:#f8fafc}[data-md-color-scheme=default] .card-diagram text{fill:#C4502D}[data-md-color-scheme=default] .card-diagram circle,[data-md-color-scheme=default] .card-diagram line,[data-md-color-scheme=default] .card-diagram path{stroke:#C4502D}
+
+
+/* styling for step detail admonitions */
+:root {
+  --md-admonition-icon--step-detail: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='currentColor'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3E%3Crect%20x='3'%20y='5'%20width='18'%20height='14'%20rx='2'%20ry='2'/%3E%3Crect%20x='7'%20y='10'%20width='4'%20height='5'/%3E%3Cpath%20d='M13%2012h5l-2%202m2-2l-2-2'/%3E%3C/svg%3E")
+}
+.md-typeset .admonition.step-detail,
+.md-typeset details.step-detail {
+  border-color: rgb(196, 80, 45);
+}
+.md-typeset .step-detail > .admonition-title,
+.md-typeset .step-detail > summary {
+  background-color: rgb(255, 239, 233);
+}
+.md-typeset .step-detail > .admonition-title::before,
+.md-typeset .step-detail > summary::before {
+  background-color: rgb(196, 80, 45);
+  -webkit-mask-image: var(--md-admonition-icon--step-detail);
+          mask-image: var(--md-admonition-icon--step-detail);
+}
+
+/* Dark mode overrides for step detail admonitions */
+[data-md-color-scheme="slate"] .md-typeset .step-detail > .admonition-title,
+[data-md-color-scheme="slate"] .md-typeset .step-detail > summary {
+  background-color: rgb(255, 239, 233); /* same as light mode */
+  color: #000; /* force black text in dark mode */
+}
+
+[data-md-color-scheme="slate"] .md-typeset .admonition.step-detail,
+[data-md-color-scheme="slate"] .md-typeset details.step-detail {
+  border-color: rgb(196, 80, 45);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .step-detail > .admonition-title::before,
+[data-md-color-scheme="slate"] .md-typeset .step-detail > summary::before {
+  background-color: rgb(196, 80, 45);
+}
