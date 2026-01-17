@@ -28,12 +28,12 @@ The VergeOS NAS supports a volume type specifically for exporting selected virtu
 
 The following steps describe how to configure and use a NAS-hosted VM export volume.
 
-## 1. Preparing the VMs for Export
+## Preparing the VMs for Export
 
 1. **Edit each VM** you want to export:
     - Navigate to the VM settings and enable the option for **Allow Export**.
 
-## 2. Setting Up the NAS Service
+## Setting Up the NAS Service
 
 To host the VM export volume, you will need a NAS service.  Use an existing NAS service or create a new service using the following instructions:
 
@@ -43,12 +43,12 @@ To host the VM export volume, you will need a NAS service.  Use an existing NAS 
 3. Provide **Name, Hostname, TimeZone, and Networking** for the NAS service.
 6. Click **Submit** to initialize the NAS service.
 
-## 3. Starting the NAS Service
+## Starting the NAS Service
 
 1. Select the NAS service from the list.
 2. Click **Power On** to bring the NAS online and prepare it to host the export volume.
 
-## 4. Creating a NAS User
+## Creating a NAS User
 
 You’ll need to create a user to access the NAS:
 
@@ -57,7 +57,7 @@ You’ll need to create a user to access the NAS:
 3. Provide a username and password.
 4. Click **Submit** to save the new NAS user.
 
-## 5. Creating a New Volume for VM Export
+## Creating a New Volume for VM Export
 
 1. Select **NAS > + New Volume** from the top menu.
 2. Configure the volume:  
