@@ -121,11 +121,11 @@ You can schedule regular exports by configuring a task and a schedule trigger.
 1. Navigate to the VM Export Volume: **NAS** > **Volumes** > locate and double-click the export volume.
 2. In the **Export VMs** section, click the **Tasks** button.
 3. Click **New** on the left menu to create a new export task. 
-3. Configure the new task fields: 
-  **Name**: provide a descriptive name, e.g. *start-vm-export*.
-  **Object Type**: ***VM Export***
-  **Object**: select the Export Volume created above
-  **Action**: **Start Export**
+3. Configure the new task fields:  
+    * **Name**: provide a descriptive name, e.g. *start-vm-export*.
+    * **Object Type**: ***VM Export***
+    * **Object**: select the Export Volume created above
+    * **Action**: **Start Export**
 4. Click **Submit** to save the new task.
 5. Click **Schedule Triggers** > **New** on the left menu.  
 6. Select desired **schedule from the dropdown list** and click **Submit**
