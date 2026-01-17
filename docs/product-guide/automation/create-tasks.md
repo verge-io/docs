@@ -27,7 +27,7 @@ This page provides general instructions for creating tasks in VergeOS, including
 
 To activate a task, define one or more **Event Triggers** and/or **Schedule Triggers**.
 
-!!! tip "The instructions below begin at the task dashboard, which appears immediately after task creation. To return to the dashboard later: go to **System** > **Tasks** > **Tasks**, then **double-click** the task in the list."
+!!! tip "The instructions below begin at the task dashboard, which appears immediately after task creation. To return to the dashboard later: go to **System** > **Tasks Dashboard** > **Tasks**, then **double-click** the task in the list."
 
 ---
 
