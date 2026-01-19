@@ -1,66 +1,67 @@
-# VergeOS OpenAI-Compatible Router
+# VergeOS OpenAI-Compatible API
 
 ## Overview
 
-VergeOS includes an integrated OpenAI-compatible router that enables seamless access to multiple large language models (LLMs) through a unified API interface. This functionality allows you to deploy AI assistants within your VergeOS environment and route requests to various LLM providers using the standardized OpenAI API format.
+VergeOS provides an OpenAI-compatible API endpoint that enables applications to interact with locally-hosted large language models (LLMs) using the standard OpenAI API format. This allows you to use familiar tools and libraries while running models entirely within your VergeOS environment.
 
-The router acts as a middleware layer that translates requests between VergeOS and external LLM services, providing a consistent interface regardless of the underlying model provider.
+The API automatically routes requests to your configured assistants and their underlying models, providing a unified interface for AI interactions.
 
-## Key Features
+## Prerequisites
 
-- **OpenAI API Compatibility**: Uses the standard OpenAI API format for requests and responses
-- **Multi-Model Support**: Connect to various LLM providers through a single interface
-- **Workspace-Level Configuration**: Configure router settings at the workspace level for isolated AI services
-- **Assistant Management**: Create and manage AI assistants with customizable models and parameters
-- **Flexible Routing**: Direct requests to different models based on your configuration
+Before using the OpenAI-compatible API, ensure the following components are running:
 
-## Architecture
+1. **AI-Helper Worker**: This worker handles API requests and must be running. It starts automatically when the AI service is enabled.
 
-The OpenAI-compatible router operates at the workspace level in VergeOS:
+2. **At least one assistant with an Online model**: An assistant must be configured and its underlying model must be in the "Online" state.
 
-1. **Generic OpenAI Settings**: Configure the router endpoint and API authentication at the workspace level
-2. **Assistant Configuration**: Create individual assistants that use specific models and parameters
-3. **API Routing**: Requests are routed through the VergeOS endpoint to the configured LLM provider
+To verify these prerequisites:
 
-## How It Works
+1. Navigate to **AI → View Workers** to confirm the AI-Helper Worker is running
+2. Navigate to **AI → Assistants** to confirm at least one assistant shows "Online" status
 
-### Request Flow
+## API Endpoints
 
-1. **Client Request**: Applications make standard OpenAI API calls to your VergeOS endpoint
-2. **Router Processing**: The VergeOS router receives the request and applies workspace-level settings
-3. **Model Selection**: The router identifies the target model based on the assistant configuration
-4. **Provider Communication**: The request is forwarded to the appropriate LLM provider
-5. **Response Handling**: The provider's response is returned through the router to the client
+The OpenAI-compatible API is available at:
 
-### Configuration Components
+```
+https://<your-vergeos-url>/v1
+```
 
-#### Workspace-Level Settings
+### Supported Endpoints
 
-Configure the OpenAI router at the workspace level through the **Generic OpenAI Settings** dialog:
+| Endpoint | Description |
+|----------|-------------|
+| `/v1/models` | List available models (returns configured assistants) |
+| `/v1/chat/completions` | Generate chat completions |
 
-- **Base URL**: The API endpoint for your VergeOS instance (e.g., `https://your-system-url/v1`)
-- **API Key**: Authentication key for securing access to the router
-- **Token Context Window**: Maximum number of tokens the model can process in a single request (e.g., 40% or 4096 tokens)
-- **Max Tokens**: Maximum number of tokens the model can generate in a response (e.g., 1024 tokens)
+## Authentication
 
-#### Assistant Configuration
+API requests require authentication using a Bearer token:
 
-Create AI assistants through the **AI → Assistants** interface:
+```
+Authorization: Bearer <your-api-key>
+```
 
-- **Name**: Identifier for the assistant (e.g., `qwen3-coder-14B`)
-- **Description**: Optional description of the assistant's purpose
-- **Model Selection**: Choose from available models (dropdown shows compatible models)
-- **System Prompt**: Define the assistant's behavior and role
-- **Chat History**: Configure whether chat context is maintained across conversations
-- **Temperature**: Control response randomness (0.8 = creative, 0.0 = deterministic)
-- **Quality Score**: Minimum score threshold for response quality (0-100)
-- **Max Tokens**: Per-assistant token limit override
+### Creating an API Key
 
-## Using the OpenAI Router
+1. Navigate to **System → Users**
+2. Select the user that will own the API key (or create a new user)
+3. Click **New API Key** on the left menu
+4. Configure the key settings:
+   - **Name**: A descriptive name for the key (e.g., `my-app-key`)
+   - **Description** (optional): Additional details about the key's purpose
+   - **Expiration Type**: Choose "Set Date" or "Never"
+   - **Expires**: If using Set Date, select the expiration date/time
+5. Save the key and copy the generated token
 
-### Basic Usage
+!!! warning "Security"
+    The API key is only displayed once when created. Store it securely as it cannot be retrieved later.
 
-Applications interact with the VergeOS OpenAI router using standard OpenAI client libraries:
+API keys inherit the permissions of their associated user. For production use, consider creating a dedicated API user with appropriate permissions.
+
+## Basic Usage
+
+### Python Example
 
 ```python
 from openai import OpenAI
@@ -71,152 +72,215 @@ client = OpenAI(
 )
 
 response = client.chat.completions.create(
-    model="qwen3-coder-14B",  # Assistant name
+    model="qwen3-coder-14B",  # Use the assistant name
     messages=[
-        {"role": "user", "content": "Your question here"}
+        {"role": "user", "content": "Write a hello world function in Python"}
+    ],
+    max_tokens=1024,
+    temperature=0.7
+)
+
+print(response.choices[0].message.content)
+```
+
+### cURL Example
+
+```bash
+curl https://your-vergeos-instance.com/v1/chat/completions \
+  -H "Authorization: Bearer your-api-key" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "qwen3-coder-14B",
+    "messages": [{"role": "user", "content": "Hello!"}],
+    "max_tokens": 100
+  }'
+```
+
+### List Available Models
+
+```bash
+curl https://your-vergeos-instance.com/v1/models \
+  -H "Authorization: Bearer your-api-key"
+```
+
+!!! note "Model Names"
+    In API requests, use the **assistant name** (e.g., `qwen3-coder-14B`) as the `model` parameter, not the underlying model name (e.g., `Qwen3-14B-Q6_K`).
+
+## Response Format
+
+Responses follow the standard OpenAI format with additional timing information:
+
+```json
+{
+  "id": "unique-completion-id",
+  "object": "chat.completion",
+  "created": 1768822431,
+  "model": "assistant-name",
+  "system_fingerprint": "assistant-name",
+  "choices": [
+    {
+      "index": 0,
+      "finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "Response content here"
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 32,
+    "completion_tokens": 100,
+    "total_tokens": 132
+  },
+  "timings": {
+    "prompt_n": 12,
+    "prompt_ms": 365.388,
+    "prompt_per_token_ms": 30.449,
+    "prompt_per_second": 32.84,
+    "predicted_n": 100,
+    "predicted_ms": 1620.788,
+    "predicted_per_token_ms": 16.21,
+    "predicted_per_second": 61.70
+  }
+}
+```
+
+The `timings` field provides performance metrics not available in the standard OpenAI API.
+
+## Configuring Assistants
+
+Assistants define how the API interacts with underlying models. The assistant **Name** is used as the `model` parameter in API requests.
+
+For detailed instructions on creating and configuring assistants, see the [AI Configuration Guide](/product-guide/private-ai/configuration/#ai-assistant-management).
+
+!!! tip "Key Settings for API Usage"
+    - **Name**: This becomes the `model` parameter in API calls
+    - **Disable think**: Enable this for models with thinking capabilities to return content via API
+    - **System Prompt**: Applied to every API request automatically
+
+## Workers
+
+The AI system uses two types of workers:
+
+- **AI-Helper Worker**: Processes API requests and routes them to models. Starts automatically and is required for the API to function.
+- **Model Workers**: Handle inference for each running model. Created automatically when a model starts.
+
+View worker status at **AI → View Workers**.
+
+## Multi-Turn Conversations
+
+The API supports multi-turn conversations by including message history:
+
+```python
+response = client.chat.completions.create(
+    model="qwen3-coder-14B",
+    messages=[
+        {"role": "user", "content": "What is Python?"},
+        {"role": "assistant", "content": "Python is a programming language..."},
+        {"role": "user", "content": "Show me a simple example"}
     ]
 )
 ```
 
-### Configuration Steps
+When **Chat History** is enabled on the assistant, the system can also maintain context across separate API calls within a session.
 
-1. **Configure Workspace Settings**:
-   - Navigate to your workspace dashboard
-   - Access the Generic OpenAI Settings
-   - Set the Base URL to your VergeOS endpoint
-   - Generate and configure an API key
-   - Set token limits appropriate for your models
+## Working with Thinking Models
 
-2. **Create Assistants**:
-   - Go to **AI → Assistants**
-   - Click **New** or edit an existing assistant
-   - Configure the assistant name, model, and parameters
-   - Define the system prompt for the assistant's behavior
-   - Save the configuration
+Some models (like Qwen3) have "thinking" capabilities where they reason through problems internally before responding.
 
-3. **Connect Applications**:
-   - Use the workspace Base URL as your OpenAI endpoint
-   - Authenticate with the configured API key
-   - Reference assistants by name in the `model` parameter
+If you're using such a model via the API and receiving empty responses, the model may be outputting thinking tokens that are filtered from the response. To get the actual response content:
 
-## Model Selection
+1. Navigate to **AI → Assistants**
+2. Click on your assistant
+3. Click **Edit Assistant**
+4. Enable the **Disable think** toggle
+5. Click **Submit**
 
-The router supports various LLM models through the dropdown interface. Available models may include:
+This suppresses the thinking process and returns only the final response.
 
-- **Qwen3-coder-14B**: Code-focused model variants
-- **Ollama models**: Models served through Ollama
-- **DeepSeek models**: DeepSeek AI model series
-- **Custom models**: Any OpenAI-compatible model endpoint
+## Integration Examples
 
-Select the appropriate model based on your use case:
-- Code generation and technical tasks → Code-specialized models
-- General conversation → General-purpose models
-- Domain-specific tasks → Fine-tuned or specialized models
+### IDE Integration
 
-## Chat History and Context
+Many IDEs support custom OpenAI-compatible endpoints. Configure your IDE with:
 
-The **Chat History** setting determines how the router handles conversation context:
-
-- **Default On**: Maintains chat history across requests, enabling multi-turn conversations
-- **Disable Think**: Alternative mode for different context handling
-- **Off**: Each request is treated independently without retained context
-
-Context is managed automatically by the router when chat history is enabled, allowing for coherent multi-turn interactions.
-
-## Token Management
-
-Token limits control the size of requests and responses:
-
-- **Token Context Window**: Maximum input size (prompt + history)
-- **Max Tokens**: Maximum output size (response generation)
-
-These settings prevent runaway costs and ensure predictable model behavior. Configure limits based on:
-- Model capabilities and context window size
-- Application requirements for response length
-- Cost management for token-based billing
-
-## Integration Patterns
-
-### Direct API Integration
-
-Use standard OpenAI client libraries in any language:
-- Python: `openai` package
-- JavaScript: `openai` npm package
-- Go: OpenAI Go client
-- Other languages: Any HTTP client with JSON support
+- **API Base URL**: `https://your-vergeos-instance.com/v1`
+- **API Key**: Your VergeOS API key
+- **Model**: Your assistant name (e.g., `qwen3-coder-14B`)
 
 ### Application Integration
 
-The router enables AI functionality in existing applications:
-- Development tools and IDEs
-- Custom applications requiring LLM capabilities
-- Workflow automation and processing pipelines
-- Interactive chat interfaces
+Use any OpenAI client library:
 
-### Multi-Tenant Deployment
+=== "Python"
+    ```python
+    from openai import OpenAI
+    client = OpenAI(base_url="https://your-vergeos-instance.com/v1", api_key="your-key")
+    ```
 
-Workspace-level configuration supports multi-tenant scenarios:
-- Separate API keys per workspace
-- Isolated assistant configurations
-- Independent model access and limits
-- Tenant-specific customization
+=== "JavaScript"
+    ```javascript
+    import OpenAI from 'openai';
+    const client = new OpenAI({
+      baseURL: 'https://your-vergeos-instance.com/v1',
+      apiKey: 'your-key'
+    });
+    ```
 
-## Best Practices
+=== "cURL"
+    ```bash
+    curl https://your-vergeos-instance.com/v1/chat/completions \
+      -H "Authorization: Bearer your-key" \
+      -H "Content-Type: application/json" \
+      -d '{"model": "assistant-name", "messages": [...]}'
+    ```
 
-### Security
+## Troubleshooting
 
-- Rotate API keys regularly
-- Use workspace-level isolation for different teams or projects
-- Implement rate limiting at the application level
-- Monitor API usage through VergeOS logs
+### Login Required Error
 
-### Performance
+```json
+{"err":"Login required"}
+```
 
-- Configure appropriate token limits for your use cases
-- Use chat history selectively (disable for stateless operations)
-- Select models matched to task complexity
-- Monitor response times and adjust as needed
+**Cause**: Missing or invalid API key.
 
-### Cost Management
+**Solution**: Include a valid API key in the Authorization header.
 
-- Set conservative max token limits initially
-- Monitor usage patterns through logs
-- Adjust temperature and quality scores to balance cost and quality
-- Consider using smaller models for simpler tasks
+### Empty Response Content
 
-## Monitoring and Troubleshooting
+**Cause**: Model is using thinking tokens that are filtered from output.
 
-### Logs
+**Solution**: Enable "Disable think" in the assistant settings.
 
-Access logs through the VergeOS interface to monitor:
-- API request patterns and volume
-- Model performance and response times
-- Error conditions and failed requests
-- Authentication and access patterns
+### Model Not Found
 
-### Common Issues
+**Cause**: The specified model name doesn't match any assistant.
 
-**Authentication Failures**:
-- Verify API key configuration in workspace settings
-- Check that client is using correct Base URL
-- Ensure API key has appropriate permissions
+**Solution**:
 
-**Model Not Found**:
-- Confirm assistant name matches exactly (case-sensitive)
-- Verify assistant is configured in the correct workspace
-- Check that model is available and running
+- Use the exact assistant name (case-sensitive)
+- Verify the assistant exists at **AI → Assistants**
+- Ensure the assistant's model is Online
 
-**Token Limit Errors**:
-- Reduce input prompt length
-- Increase Token Context Window in settings
-- Check Max Tokens setting for response generation
-- Review chat history length if enabled
+### Connection Refused
 
-**Response Quality Issues**:
-- Adjust Quality Score threshold
-- Modify Temperature setting for desired creativity level
-- Review and refine System Prompt
-- Consider switching to a different model variant
+**Cause**: AI-Helper Worker is not running.
+
+**Solution**:
+
+- Check **AI → View Workers** to verify AI-Helper Worker status
+- Restart the AI service if needed
+
+### Slow Responses
+
+**Cause**: Model is loading or under heavy load.
+
+**Solution**:
+
+- Check worker resource usage at **AI → View Workers**
+- Consider allocating more CPU cores or RAM to the model
+- Use a smaller model for faster responses
 
 ---
 

@@ -16,9 +16,9 @@ Navigate to **AI** on the top menu, and click **AI Settings** to configure defau
 
 The AI Settings page allows you to configure system-wide defaults for AI components:
 
-* **Default AI Cluster**: Specifies the default compute cluster for AI workloads. New AI models will deploy to this cluster by default. 
+* **Default AI Cluster**: Specifies the default compute cluster for AI workloads. New AI models will deploy to this cluster by default.
 
-* **Default AI Network**: Sets the default network for AI services. New AI models will use this network unless selection is overridden.
+* **Chat History Lifetime**: Sets how long chat session history is retained (in days). Default is 60 days.
 
 ---
 
@@ -56,7 +56,9 @@ AI models provide the underlying intelligence for your AI assistants and applica
     * Start with a generous allocation, then monitor actual usage via the model dashboard.  If observed consumption is significantly lower than the allocated amount, scale back to optimize resource efficiency.
 
 
-* **Cluster** (defaults to the cluster defined in global AI settings): Select the VergeOS cluster where the model will run. 
+* **Cluster** (defaults to the cluster defined in global AI settings): Select the VergeOS cluster where the model will run.
+
+* **HA Group**: Specifies the high availability group for the model. Members of the same HA group will run on different nodes if possible.
 
 * **GPU Resource Group Allocation**: - Choose a GPU resource group to assign GPU devices, or select *--CPU Only--* to run exclusively on CPUs.
 
