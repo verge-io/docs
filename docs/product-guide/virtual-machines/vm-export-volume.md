@@ -11,7 +11,7 @@ The VergeOS NAS service provides a special volume type (*Verge.io VM Export*) to
 - Each export produces a set of VM snapshots stored within the volume, organized by timestamped folders.
 - To make the exported data accessible to external system, such as third-party backup tools or external storage platforms:
     * The volume can be [shared over CIFS or NFS](/product-guide/nas/nas-shares)
-    * A Data can be [volume synchronized](/product-guide/nas/volume-syncs) to an external system (e.g. NAS appliance) via CIFS/NFS using a mounted [remote volume](/product-guide/nas/nas-remote-volumes) 
+    * Data can be [volume synchronized](/product-guide/nas/volume-syncs) to an external system (e.g. NAS appliance) via CIFS/NFS using a mounted [remote volume](/product-guide/nas/nas-remote-volumes) 
 
 
 Thorough instructions for configuring and accessing a VM export volume can be found in the KB article: **[How to Configure a Volume for VM Exports](/knowledge-base/configuring-a-vm-export-volume)**
