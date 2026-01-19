@@ -127,7 +127,7 @@ AI assistants are configured AI models that provide specific capabilities and be
     * ***Default On*** - chat history is automatically enabled at the start of a session, but can be disabled
     * ***Default Off*** - chat history is automatically disabled at the start of a session, but can be enabled
     * ***Always On*** - chat history is always enabled; cannot be disabled
-    * ***Always Off** - chat history is always disabled; cannot be enabled
+    * ***Always Off*** - chat history is always disabled; cannot be enabled
 
 !!! tip "There is also an option to delete chat history for the previous session each time you are starting a new chat session."
 
