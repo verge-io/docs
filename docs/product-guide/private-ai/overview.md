@@ -1,91 +1,86 @@
-# Private AI (VergeIQ)
+# Private AI Overview
 
-Enterprise AI adoption faces a critical challenge: balancing AI capabilities with data sovereignty, cost predictability, and operational control. Public AI services expose sensitive data to external processing, create unpredictable usage-based costs, and introduce network latency that limits real-time applications.
+VergeOS Private AI enables you to deploy and run large language models (LLMs) locally within your VergeOS environment. Models run entirely on your infrastructure with no external API calls or data transmission.
 
-Private AI funcationlity eliminates these tradeoffs by integrating AI capabilities directly into your VergeOS infrastructure. **Deploy and manage production AI models locally in minutes**—no external dependencies, no data exposure, no usage-based pricing surprises.
+## Architecture
 
-## Key Features and Benefits
+Private AI consists of five core components:
 
-**Data Privacy & Sovereignty**
+```mermaid
+graph LR
+    A[Client Application] --> B[OpenAI-Compatible API]
+    B --> C[Assistant]
+    C --> D[Model]
+    D --> E[Worker]
+```
 
-Keep all AI processing and data entirely within your private environment. Unlike cloud AI services that process your data on shared infrastructure, VergeOS keeps all inference completely private—no external API calls, no external processing, no data exposure. This is essential for complying with data regulations like HIPAA and protecting proprietary information, especially in edge or air-gapped environments.
+### Models
 
-**Native Infrastructure Integration**
+Models are the LLM files that provide AI capabilities. VergeOS supports:
 
-Private AI isn't bolted-on software—it's built into VergeOS at the platform level. Deploy production-ready inference servers in minutes using the same infrastructure that runs your existing workloads. No separate licensing, no integration complexity, no additional vendors to manage.
+- **Curated models**: Pre-configured models available for one-click installation (Llama, Gemma, Phi, Qwen, and others)
+- **Custom models**: Any GGUF-format model from Hugging Face or other sources
 
-**Optimized Performance & Consistency**
+Models define resource requirements (CPU cores, RAM, GPU allocation) and inference parameters (context size, parallel requests).
 
-By running AI locally, you eliminate the 50-200ms round-trip latency inherent in cloud API calls. Network variability, packet loss, and internet connectivity issues become non-factors. For applications requiring sub-second response times or operating in remote locations, this architectural advantage is decisive. Offline availability guarantees uninterrupted service regardless of connectivity.
+### Assistants
 
-**Seamless Integration & Customization**
+Assistants are configured instances that define how users and applications interact with a model. Each assistant specifies:
 
-VergeOS's OpenAI-compatible API enables drop-in replacement of external AI services—existing applications integrate without code changes. Seamlessly connect to your local data stores and existing workloads without complex integration projects.
+- Which model to use
+- System prompt (behavioral instructions)
+- Temperature and other generation parameters
+- Context scoring for RAG scenarios
+- Workspace files for document context
 
-**Predictable Economics at Scale**
+Multiple assistants can use the same underlying model with different configurations.
 
-Avoid unexpected per-token or subscription expenses associated with cloud AI services. For organizations running thousands of daily AI interactions, local hosting provides 10-100x better unit economics after the first year, with a reliable CapEx model that delivers predictable, economical operation for high-volume AI workloads.
+### Workers
 
-## Practical Applications
+Workers are the inference engines that run models. The system manages two types:
 
-VergeOS's on-premises approach to AI is ideal for organizations handling sensitive or large-scale data.
+- **AI-Helper Worker**: Handles API requests and routing (starts automatically)
+- **Model Workers**: Execute inference for each running model (scale automatically based on Min/Max Workers settings)
 
-**HIPAA-Compliant Healthcare AI**
+### Chat Sessions
 
-A medical research university can process Protected Health Information (PHI) and clinical data securely, leveraging AI to accelerate research without any external data exposure. Process millions of patient records without per-token costs or HIPAA business associate agreements with external AI vendors.
+Chat sessions maintain conversation history and context. Sessions can be:
 
-**Proprietary Financial AI**
+- Created through the VergeOS UI for interactive testing
+- Managed programmatically via the API for application integration
 
-A private equity firm can create a domain-specific AI expert by training it on 10+ years of proprietary deal data and institutional knowledge—intellectual property that would create unacceptable risk if sent to external AI providers. This leads to faster, more secure investment decisions while safeguarding competitive advantages.
+### OpenAI-Compatible API
 
-**Cost-Predictable Enterprise AI**
+The API provides standard OpenAI endpoints at `https://<your-vergeos-url>/v1`, enabling integration with:
 
-A Fortune 500 manufacturing company can automate and streamline cross-functional operations—from supply chain optimization to quality control—while maintaining predictable costs by eliminating expensive, uncertain cloud AI service expenditures.
+- Any OpenAI client library (Python, JavaScript, Go, etc.)
+- IDEs and development tools
+- Existing applications built for OpenAI/Ollama
 
-## How Private AI in VergeOS Works
+See [OpenAI-Compatible API](open-ai-router.md) for endpoint documentation.
 
-VergeOS provides a complete, self-contained AI infrastructure within your VergeOS environment:
+## Prerequisites
 
-**Models** - The core intelligence layer. VergeOS includes curated open-source models (Meta's Llama, Google's Gemma, and others) and supports custom model deployment from Hugging Face or proprietary sources. Models are the foundation that powers your AI assistants and applications.
+- VergeOS 26.0 or later
+- Sufficient RAM for model files (varies by model, typically 5-50GB)
+- Storage for model downloads
 
-**Assistants** - Pre-configured AI agents with specific behaviors, system prompts, and parameters. Create specialized assistants for different use cases (customer support, code analysis, document processing) without managing underlying model details. Each assistant can have its own configuration optimized for specific tasks.
+### GPU Support
 
-**Workers** - Serverless inference engines that auto-scale based on demand. Workers handle model loading, request processing, and response generation—with built-in load balancing and fault tolerance. Spin up multiple workers to handle concurrent requests and ensure high availability.
+GPU acceleration is recommended for production workloads. VergeOS supports GPUs from any vendor (NVIDIA, AMD, Intel) through Resource Groups. Models can also run on CPU-only systems, though inference will be slower.
 
-**Chat Sessions** - Stateful conversation contexts that maintain history and continuity across multiple interactions. Drive sessions through the VergeOS UI or programmatically via the OpenAI-compatible API for application integration.
+## Quick Start
 
-**OpenAI-Compatible Router** - Standards-based API gateway that makes VergeOS a drop-in replacement for Ollama, OpenAI, Anthropic, or other cloud AI services. Existing applications integrate without code changes, enabling seamless migration from cloud to private AI infrastructure.
+1. Navigate to **AI → Models**
+2. Click **Click to Install** on a curated model, or click **New Model** for custom models
+3. Configure resource allocation (cores, RAM, GPU)
+4. An assistant is created automatically with the new model
+5. Test via **AI → Assistants → [Your Assistant] → Chat**
 
-## Verge vs. Cloud AI Services
+For detailed setup instructions, see the [Configuration Guide](configuration.md).
 
-| Capability | Cloud AI Services | VergeOS Private AI |
-|------------|------------------|---------|
-| **Data Privacy** | Shared infrastructure, external processing | 100% private, never leaves your environment |
-| **Latency** | 100-300ms (network + processing) | <10ms (local processing) |
-| **Pricing Model** | Per-token usage fees, unpredictable scaling costs | Fixed infrastructure cost, predictable economics |
-| **Offline Operation** | Requires internet connectivity | Fully functional air-gapped |
-| **Compliance** | Complex BAAs, data processing agreements | Direct organizational control |
-| **Customization** | Limited to provider offerings | Full model and configuration control |
+## Related Documentation
 
-## Getting Started
-
-**Prerequisites:**
-
-- VergeOS 26.0+ installation
-- GPU-capable hardware (NVIDIA recommended for optimal performance)
-- Sufficient storage for model files (varies by model, typically 5-50GB)
-
-!!! note "CPU Support"
-    Models can run on CPU-only systems for testing or low-volume use cases, though inference performance will be significantly slower than GPU-accelerated deployments.
-
-**Deployment Time:** First inference server operational in under 15 minutes
-
-**Scaling:** Add additional workers in seconds as demand grows
-
-## Next Steps
-
-**Deploy Your First AI Model:** Follow our [configuration guide](/product-guide/private-ai/configuration) to deploy a production-ready inference server in minutes.
-
----
-
-**Version Compatibility**: This functionality is available in VergeOS 26.0 and later.
+- [Configuration](configuration.md) - Model and assistant setup
+- [OpenAI-Compatible API](open-ai-router.md) - API endpoints and integration
+- [Chat Sessions](chat-sessions.md) - Interactive UI usage
