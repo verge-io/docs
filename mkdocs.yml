@@ -153,11 +153,16 @@ nav:
       - Compute Nodes: implementation-guide/compute-nodes.md
       - Storage Nodes: implementation-guide/storage-nodes.md
     - Reference Architecture:
-      - Edge / ROBO: reference-architecture/edge.md
-      #- Enterprise Multi-Site: reference-architecture/enterprise-multi-site.md
-      - Cloud Providers: reference-architecture/csp.md
-      - Life / Data Science: reference-architecture/data-science.md
-      - Homelab: reference-architecture/homelab.md
+      - Architecture Patterns:
+        - Architecture Guide: reference-architecture/architecture-guide.md
+        - HCI: reference-architecture/hci.md
+        - HCI + Compute: reference-architecture/hci-compute.md
+        - UCI: reference-architecture/uci.md
+      - Deployment Scenarios:
+        - Edge / ROBO: reference-architecture/edge.md
+        - Cloud Providers: reference-architecture/csp.md
+        - Life / Data Science: reference-architecture/data-science.md
+        - Homelab: reference-architecture/homelab.md
   - Knowledge Base:
     - knowledge-base/index.md
   - Product Guide:
