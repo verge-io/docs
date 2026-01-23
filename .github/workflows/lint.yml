@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Check internal links
-        uses: byrnereese/github-action-mkdocs-link-check@v1
+        uses: byrnereese/github-action-mkdocs-link-check@1.0
         with:
           folder-path: docs/
           local-only: "yes"
