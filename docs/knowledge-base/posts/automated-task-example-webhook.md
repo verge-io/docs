@@ -1,7 +1,7 @@
 ---
 title: Automated Task Example - Send Slack Channel and Email Alerts Upon a Sync Error
 slug: automated-task-example-webhook
-description: automation example showing specific configuration to send an email alert and a slack channel notification if a sync error is encountered
+description: Automation example showing specific configuration to send an email alert and a Slack channel notification if a sync error is encountered.
 draft: false
 date: 2025-12-11T16:29:41.109Z
 tags:
@@ -68,22 +68,39 @@ Using VergeOS Task Engine components, administrators can instantly trigger alert
     From the *Send-slack-payload* task dashboard:
     ***Event Triggers > New*** 
 
-    ![Assign Event Trigger to Slack Task- Light Mode](/product-guide/screenshots/slack-send-event-trigger-light.png#only-light#only-light)
-    ![Assign Event Trigger to Slack Task- Dark Mode](/product-guide/screenshots/slack-send-event-trigger-dark.png#only-dark#only-dark) 
+    ![Assign Event Trigger to Slack Task- Light Mode](/product-guide/screenshots/slack-send-event-trigger-light.png#only-light)
+    ![Assign Event Trigger to Slack Task- Dark Mode](/product-guide/screenshots/slack-send-event-trigger-dark.png#only-dark) 
 
-??? step-detail "4. Assign an Event Trigger to the *'send-email-alert'* Task"
+??? step-detail "5. Assign an Event Trigger to the *'send-email-alert'* Task"
     
     We apply the same event trigger to this task so that the email alert is also sent when there is a sync error. 
 
-    ***System > Tasks Dashboard > Tasks > **select *send-email-alert* task** > ***Event Triggers > New***
+    ***System > Tasks Dashboard > Tasks >*** select the *send-email-alert* task ***> Event Triggers > New***
 
-    ![Assign Event Trigger to Email Task - Light Mode](/product-guide/screenshots/send-email-event-trigger-light.png#only-light#only-light)
-    ![Assign Event Trigger to Email Task - Dark Mode](/product-guide/screenshots/send-email-event-trigger-dark.png#only-dark#only-dark) 
+    ![Assign Event Trigger to Email Task - Light Mode](/product-guide/screenshots/send-email-event-trigger-light.png#only-light)
+    ![Assign Event Trigger to Email Task - Dark Mode](/product-guide/screenshots/send-email-event-trigger-dark.png#only-dark) 
 
 This automation ensures that administrators are notified immediately when a sync job encounters an error, allowing them to act promptly, providing the best chance to resolve the issue before the synchronization window closes. 
 
 !!! tip "Triggers Based on Multiple Objects"
-    In this example, the trigger is tied to a single outgoing sync.  
+    In this example, the trigger is tied to a single outgoing sync.
     If you want the same trigger to apply to multiple, or even all, outgoing sync jobs, assign a shared [Tag](/product-guide/system/tags) to those syncs. You can then configure the trigger to fire whenever any sync with that tag produces an error.
 
+## Troubleshooting
 
+!!! warning "Common Issues"
+    - **Webhook not firing**: Verify the webhook URL is correct and the external service (Slack) is accessible from your VergeOS environment.
+    - **Email not received**: Check that SMTP settings are properly configured under System > Settings > SMTP.
+    - **Event trigger not activating**: Ensure the trigger is assigned to the correct sync object and the event type is set to "Error".
+
+## Additional Resources
+
+- [Task Manager Overview](/product-guide/automation/task-manager)
+- [Configuring Webhooks](/product-guide/automation/webhooks)
+- [Working with Tags](/product-guide/system/tags)
+- [SMTP Configuration](/product-guide/system/smtp)
+
+## Feedback
+
+!!! question "Need Help?"
+    If you need further assistance or have any questions about this article, please don't hesitate to reach out to the [VergeOS Support Team](/support).
