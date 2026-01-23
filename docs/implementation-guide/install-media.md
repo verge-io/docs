@@ -19,9 +19,10 @@ This guide explains how to create a bootable USB to install VergeOS on different
     - Click the **Select** button and choose the VergeOS installation ISO.
     - Click **Start**.
 
-5. **Choose ISO mode** when prompted by Rufus, then select **DD** mode to proceed.
+5. When prompted, select **DD mode** to write the image.
 
-    !!! danger "It is critical to choose **DD mode** during this step. Selecting the wrong mode can result in an unbootable USB drive"
+    !!! danger "Important: Select DD Mode"
+        Rufus defaults to ISO mode, but you **must select DD mode** for VergeOS. Selecting ISO mode will result in an unbootable USB drive.
 
 6. Rufus will begin creating the bootable USB. Once complete, your USB is ready to be used for VergeOS installation.
 
