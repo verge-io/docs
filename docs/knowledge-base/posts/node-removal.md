@@ -46,18 +46,16 @@ Before removing a node, ensure the following:
 
 Before powering off the node, all drives must be removed from the vSAN.
 
-1. Navigate to **System** > **vSAN** > **Drives**.
-2. For each drive on the node being removed:
-    1. Double-click the drive to open its dashboard.
-    2. Click **Offline** on the left menu.
-    3. Click **Yes** to confirm.
-    4. Wait for the drive status to show **Offline**.
-    5. Click **Delete** on the left menu.
-    6. Click **Yes** to confirm the deletion.
-3. Repeat for all drives on the node.
+1. From the node's dashboard, click **Drives** on the left menu.
+2. Select all drives listed for the node.
+3. Click **Offline** from the action menu.
+4. Click **Yes** to confirm.
+5. Wait for all drives to show **Offline** status.
+6. With all drives still selected, click **Delete** from the action menu.
+7. Click **Yes** to confirm the deletion.
 
 !!! warning "Wait for Data Migration"
-    After offlining each drive, the vSAN will migrate data to other drives. Monitor the vSAN dashboard and wait for repairs to complete before deleting the drive.
+    After deleting the drives, the vSAN will migrate data to remaining drives. Monitor the vSAN dashboard and wait for repairs to complete before proceeding to the next step.
 
 ### Step 3: Power Off the Node
 
