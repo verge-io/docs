@@ -64,7 +64,8 @@ You’ll need to create a user to access the NAS:
     * **NAS Service**: select the NAS service from above  
     * **Name**: provide a name for the volume, e.g. "VM-export"  
     * **Filesystem Type**: ***VergeOS VM Export***  
-    * **Quiesced**: Typically should be selected to provide application-consistent VM snapshots.  
+    * **Quiesced**: Typically should be selected to provide application-consistent VM snapshots.
+!!! note "Guest Agent must be installed and registered to provide a quiesced VM snapshot."  
     * **Max exports to store**: default=3; determines the maximum number of export instances that will be stored at a time  
     * **Enable current folder**: default=enabled. Exports are contained in folders named according to date/time of the export.  With this option enabled, an additional folder named "current" is created to continually contain a branch of the most recent export. This is often helpful to provide an absolute path to retrieve the latest VM snapshots.  
 3. Click **Submit**.
