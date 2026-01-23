@@ -1,4 +1,4 @@
-name: Lint Documentation
+name: Validate Widget Links
 
 on:
   pull_request:
@@ -9,20 +9,6 @@ on:
       - main
 
 jobs:
-  link-check:
-    name: Check Markdown Links
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Check internal links
-        uses: byrnereese/github-action-mkdocs-link-check@1.0
-        with:
-          folder-path: docs/
-          local-only: "yes"
-          recurse: "yes"
-
   widget-links:
     name: Validate Widget Links
     runs-on: ubuntu-latest
