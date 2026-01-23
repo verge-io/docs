@@ -100,4 +100,30 @@ Before installing VergeOS on physical nodes, you must disable UEFI Secure Boot i
 2. Navigate to the Security or Boot section
 3. Locate the Secure Boot option and set it to **Disabled**
 4. Save changes and exit
-5.
+5. Proceed with the VergeOS installation
+
+!!! tip "Pro Tip"
+    Document your BIOS settings before making changes. Some enterprise servers may have additional security settings that interact with Secure Boot, such as TPM configuration or boot device restrictions.
+
+## Troubleshooting
+
+!!! warning "Common Issues"
+    - **Problem:** Node fails to boot after VergeOS installation
+      - **Solution:** Verify that UEFI Secure Boot is disabled in BIOS settings. Some systems may re-enable Secure Boot after firmware updates.
+
+    - **Problem:** "Boot integrity check failed" error message
+      - **Solution:** This indicates the VergeOS image has been modified. Re-download and reinstall VergeOS from an official source.
+
+    - **Problem:** Cannot find Secure Boot option in BIOS
+      - **Solution:** Check under Security, Boot, or Authentication menus. Some systems label it as "UEFI Security" or require administrator/setup password to access.
+
+## Additional Resources
+
+- [VergeOS Installation Guide](/implementation-guide/installation-guide/)
+- [Pre-Installation Requirements](/implementation-guide/pre-installation/)
+- [Creating Bootable Installation Media](/implementation-guide/install-media/)
+
+## Feedback
+
+!!! question "Need Help?"
+    If you need further assistance or have any questions about this article, please don't hesitate to reach out to the [VergeOS Support Team](/support).
