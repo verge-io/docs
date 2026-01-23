@@ -42,20 +42,37 @@ Before removing a node, ensure the following:
 !!! note "Non-Migratable Workloads"
     VMs with GPU passthrough or host CPU type must be powered off manually before the node can enter maintenance mode.
 
-### Step 2: Power Off the Node
+### Step 2: Offline and Delete Drives
 
-1. Once the node status shows **Maintenance Mode**, click **Power Off** on the left menu.
+Before powering off the node, all drives must be removed from the vSAN.
+
+1. Navigate to **System** > **vSAN** > **Drives**.
+2. For each drive on the node being removed:
+    1. Double-click the drive to open its dashboard.
+    2. Click **Offline** on the left menu.
+    3. Click **Yes** to confirm.
+    4. Wait for the drive status to show **Offline**.
+    5. Click **Delete** on the left menu.
+    6. Click **Yes** to confirm the deletion.
+3. Repeat for all drives on the node.
+
+!!! warning "Wait for Data Migration"
+    After offlining each drive, the vSAN will migrate data to other drives. Monitor the vSAN dashboard and wait for repairs to complete before deleting the drive.
+
+### Step 3: Power Off the Node
+
+1. Once all drives are deleted and the node status shows **Maintenance Mode**, click **Power Off** on the left menu.
 2. Click **Yes** to confirm.
 3. Wait for the node to fully power down.
 
-### Step 3: Delete the Node
+### Step 4: Delete the Node
 
 1. With the node powered off, click **Delete** on the left menu.
 2. Click **Yes** to confirm the deletion.
 
-### Step 4: Wait for Repairs
+### Step 5: Wait for Final Repairs
 
-After the node is deleted, the vSAN will redistribute data across the remaining nodes.
+After the node is deleted, the vSAN will perform final data redistribution across the remaining nodes.
 
 1. Navigate to **System** > **vSAN** to monitor repair progress.
 2. Wait for all tiers to return to **green** (healthy) status before performing any other operations.
