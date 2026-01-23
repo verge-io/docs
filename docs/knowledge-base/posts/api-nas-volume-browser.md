@@ -7,7 +7,7 @@ published: true
 date: 2026-01-23
 tags: [api, nas, volumes, automation]
 categories:
-  - API
+  - API Reference
   - NAS
 editor: markdown
 dateCreated: 2026-01-23
