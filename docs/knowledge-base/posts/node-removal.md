@@ -4,7 +4,7 @@ slug: removing-a-node-from-cluster
 description: How to safely remove a physical node from a VergeOS system
 author: VergeOS Documentation Team
 published: true
-date: 2025-01-23
+date: 2026-01-23
 tags: [nodes, cluster, maintenance, decommission]
 categories:
   - System Administration
