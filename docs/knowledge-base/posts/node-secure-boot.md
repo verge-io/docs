@@ -3,19 +3,19 @@ title: Secure Boot and Boot Integrity for Physical Nodes
 slug: node-secure-boot
 description: Understanding VergeOS boot integrity protection and why traditional UEFI Secure Boot is not used
 author: VergeOS Documentation Team
-draft: false
-date: 2026-01-16T10:30:00.000Z
+published: true
+date: 2026-01-16
 tags:
   - security
-  - UEFI
-  - secure boot
-  - boot integrity
-  - tamper protection
+  - uefi
+  - secure-boot
+  - boot-integrity
+  - tamper-protection
 categories:
   - Installation
   - Security
 editor: markdown
-dateCreated: 2026-01-16T10:30:00.000Z
+dateCreated: 2026-01-16
 ---
 
 # Secure Boot and Boot Integrity for Physical Nodes
@@ -100,5 +100,4 @@ Before installing VergeOS on physical nodes, you must disable UEFI Secure Boot i
 2. Navigate to the Security or Boot section
 3. Locate the Secure Boot option and set it to **Disabled**
 4. Save changes and exit
-
----
+5.

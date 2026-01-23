@@ -70,10 +70,4 @@ resource:
 ## Feedback
 
 !!! question "Need Help?"
-    If you need further assistance or have any questions about this article, please don't hesitate to reach out to our support team.
-
----
-
-!!! note "Document Information"
-    - Last Updated: [YYYY-MM-DD]
-    - VergeOS Version: [x.x.x]
+    If you need further assistance or have any questions about this article, please don't hesitate to reach out to the [VergeOS Support Team](/support).
