@@ -16,7 +16,7 @@ editor: markdown
 dateCreated: 2025-12-01T16:29:03.267Z
 ---
 
-# Using an iGPU for AI Acceleration
+# Utilizing an iGPU for AI Acceleration
 
 !!! note "Key Points"
     * iGPUs (built directly into many modern server CPUs) can provide accelerated AI inference for small to medium-sized AI models
@@ -42,6 +42,11 @@ dateCreated: 2025-12-01T16:29:03.267Z
 
     Modern servers often include capable iGPUs. Even older or less powerful servers can provide meaningful acceleration by utilizing this built‑in hardware.
 
+!!! warning "Prerequisites"
+    * Server CPU must have an integrated GPU (iGPU)
+    * Verify iGPU is enabled in BIOS settings
+    * IOMMU/VT-d (Intel) or AMD-Vi (AMD) may need to be enabled for passthrough
+
 ---
 
 ## High-Level Steps
@@ -49,7 +54,7 @@ dateCreated: 2025-12-01T16:29:03.267Z
 To use iGPU for private AI models, the following high-level steps are necessary:
 
 * Create Resource Group: type = "Host GPU"
-* Add iGPU device(s) physical nodes to the resource group
+* Add iGPU device(s) from physical nodes to the resource group
 * Assign the resource group to one or more AI models
 
 ## Configuring a Resource Group with an iGPU
@@ -69,9 +74,9 @@ To use iGPU for private AI models, the following high-level steps are necessary:
     - On systems running other workloads, set a max vRAM to prevent contention between workloads and iGPU usage.  
     - If max vRAM is set too low, models may fail to load and produce errors.  
 8. Click **Submit** to save the new Resource Group with the selected iGPU.  
-9. Follow the prompt with link at the top of the dashboard to 
-**View the node**, place the node into **Maintenance Mode** (see message at top of node dashboard), and **Reload the driver** (prompted at the top of the dashboard once the node is in maintenance mode).  
-10. **Exit Maintenance Mode** on the node once the driver reload completes.  
+9. Follow the prompts at the top of the dashboard to **View the node**, place the node into **Maintenance Mode** (see message at top of node dashboard), and **Reload the driver** (prompted at the top of the dashboard once the node is in maintenance mode).  
+10. **Exit Maintenance Mode** on the node once the driver reload completes.
+11. Navigate to **Infrastructure** > **Resources** > **Groups** and verify your new resource group appears with **Enabled** checked. Double-click the group to confirm the **Node Resources** section lists your iGPU device.
 
 ---
 
@@ -91,4 +96,12 @@ To add more iGPUs:
 
 ## Assigning the iGPU Resource Group to a Model
 
-Once configured, assign the Host GPU resource group to your AI model using the ***GPU Resource Group Allocation*** setting.  This allows the model to draw from any available iGPUs in the resource group.
+Once configured, assign the Host GPU resource group to your AI model:
+
+1. Navigate to **Private AI** > **Models**.
+2. Select the AI model you want to accelerate.
+3. Click **Edit** in the left menu.
+4. In the **GPU Resource Group Allocation** field, select your iGPU resource group.
+5. Click **Submit** to save.
+
+The model will now draw from any available iGPUs in the resource group. For more information on Private AI configuration, see [Private AI Configuration](/product-guide/private-ai/configuration).
