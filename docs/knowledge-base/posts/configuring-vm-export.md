@@ -3,7 +3,7 @@ title: Configuring a Volume for Exporting VMs
 slug: configuring-a-vm-export-volume
 description: How to configure the VergeOS NAS VM Export Volume for backup purposes.
 draft: false
-date: 2026-01-13T12:42:16.752Z
+date: 2026-01-23T12:00:00.000Z
 tags:
   - vm export
   - export
@@ -20,7 +20,6 @@ dateCreated: 2023-05-25T19:53:15.389Z
 ---
 
 # How to Configure a Volume for VM Exports
-
 
 The VergeOS NAS supports a volume type specifically for exporting selected virtual machines (VMs).  The *VM Export volume* provides a controlled way to export selected VMs to a NAS volume that can then be synchronized to a remote storage system (e.g. existing NAS appliance) or shared via CIFS or NFS for access by external backup tools or other applications. 
 
@@ -63,7 +62,7 @@ You’ll need to create a user to access the NAS:
 2. Configure the volume:  
     * **NAS Service**: select the NAS service from above  
     * **Name**: provide a name for the volume, e.g. "VM-export"  
-    * **Filesystem Type**: ***VergeOS VM Export***  
+    * **Filesystem Type**: ***Verge.io VM Export***  
     * **Quiesced**: Typically should be selected to provide application-consistent VM snapshots.
 !!! note "Guest Agent must be installed and registered to provide a quiesced VM snapshot."  
     * **Max exports to store**: default=3; determines the maximum number of export instances that will be stored at a time  
@@ -116,20 +115,29 @@ Exported VM data can be pushed to an external system using a NAS volume sync.
 You can schedule regular exports by configuring a task and a schedule trigger.
 
 !!! tip "Available Schedules"
-    The following instructions allow you to create a task and assign a schedule.  VergeOS includes multiple pre-installed schedules. Refer to the [Schedules Guide](/product-guide/automation/schedules) for instructions on creating custom schedules.  
+    VergeOS includes multiple pre-installed schedules (e.g., "Daily at midnight"). Refer to the [Schedules Guide](/product-guide/automation/schedules) for instructions on creating custom schedules.
 
+### Creating a Scheduled Export Task
 
-1. Navigate to the VM Export Volume: **NAS** > **Volumes** > locate and double-click the export volume.
-2. In the **Export VMs** section, click the **Tasks** button.
-3. Click **New** on the left menu to create a new export task. 
-3. Configure the new task fields:  
-    * **Name**: provide a descriptive name, e.g. *start-vm-export*.
-    * **Object Type**: ***VM Export***
-    * **Object**: select the Export Volume created above
-    * **Action**: **Start Export**
-4. Click **Submit** to save the new task.
-5. Click **Schedule Triggers** > **New** on the left menu.  
-6. Select desired **schedule from the dropdown list** and click **Submit**
+1. Navigate to the VM Export Volume: **NAS** > **Volumes** > double-click the export volume.
+2. Scroll down to the **Export VMs** section and click the **Tasks** button.
+3. Click **New** on the left menu to create a new export task.
+4. Configure the new task fields:
+    * **Name**: provide a descriptive name, e.g. *start-vm-export*
+    * **Object Type**: ***VM Export*** (pre-selected when accessed from the volume)
+    * **Object**: select the export volume (pre-selected when accessed from the volume)
+    * **Action**: ***Start Export***
+5. Click **Submit** to save the new task.
+
+### Assigning a Schedule to the Task
+
+1. After submitting, the task detail page opens. Click **Schedule Triggers** in the left menu.
+2. Click **New** on the left menu.
+3. Select the desired **Schedule** from the dropdown list (e.g., "Daily at midnight").
+4. Click **Submit** to activate the scheduled export.
+
+!!! tip "Configuring Export Settings"
+    Use the **Settings** button in the Export VMs section to modify export options such as the quiesce setting and maximum exports to store.
 
 
 By completing these steps, you will have a VM export volume configured to generate exportable snapshots of selected VMs and make them available to third‑party backup solutions or external storage systems.
@@ -139,7 +147,7 @@ For most environments, VergeOS’s built‑in snapshot and replication features 
 ---
 
 !!! note "Document Information"
-    - Last Updated: 2026-01-15
+    - Last Updated: 2026-01-23
     - vergeOS Version: 26.0.2.2
 
 
