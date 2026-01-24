@@ -36,17 +36,21 @@ Import-Module ./PSVergeOS/PSVergeOS.psd1
 
 ## Connection Methods
 
-The module supports three authentication approaches:
+The module supports multiple authentication approaches:
 
 ```powershell
 # Interactive credential prompt
-Connect-VergeOS -Server "vergeos.example.com"
+Connect-VergeOS -Server "vergeos.example.com" -Credential (Get-Credential)
 
-# Token-based authentication for automation
+# Credential object for automation
+$cred = New-Object PSCredential("username", (ConvertTo-SecureString "password" -AsPlainText -Force))
+Connect-VergeOS -Server "vergeos.example.com" -Credential $cred
+
+# Token-based authentication
 Connect-VergeOS -Server "vergeos.example.com" -Token $apiToken
 
 # Self-signed certificate environments
-Connect-VergeOS -Server "vergeos.example.com" -SkipCertificateCheck
+Connect-VergeOS -Server "vergeos.example.com" -Credential $cred -SkipCertificateCheck
 ```
 
 ## Available Cmdlets
@@ -85,14 +89,12 @@ Get-VergeVM | Select-Object Name, CPUCores, RAM, Status | Export-Csv vms.csv
 
 ```powershell
 # Connect to multiple VergeOS systems
-Connect-VergeOS -Server "site1.example.com" -Name "Site1"
-Connect-VergeOS -Server "site2.example.com" -Name "Site2"
+$cred = Get-Credential
+Connect-VergeOS -Server "site1.example.com" -Credential $cred
+Connect-VergeOS -Server "site2.example.com" -Credential $cred
 
-# Query a specific server
-Get-VergeVM -Server "Site1"
-
-# Switch default connection
-Set-VergeOSConnection -Name "Site2"
+# View current connection
+Get-VergeConnection
 ```
 
 ### Network Configuration
