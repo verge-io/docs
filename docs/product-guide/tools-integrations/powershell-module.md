@@ -60,9 +60,15 @@ The module contains over 200 cmdlets organized by category:
 | Monitoring | Alarms, logs, tasks |
 | Backup & DR | Profiles, cloud snapshots, site management |
 
-## Examples
+## Common Use Cases
 
-For usage examples and code samples, see the [Examples directory](https://github.com/verge-io/PSVergeOS/tree/main/Examples){target="_blank"} in the GitHub repository.
+- **Bulk VM operations**: Stop, start, snapshot, or migrate multiple VMs with pipeline support
+- **Infrastructure reporting**: Export VM inventory, resource usage, and configuration data
+- **Network automation**: Create networks, configure DHCP, and manage firewall rules
+- **Scheduled maintenance**: Integrate with Task Scheduler or cron for automated operations
+- **CI/CD integration**: Provision test environments as part of deployment pipelines
+
+For code samples, see the [Examples directory](https://github.com/verge-io/PSVergeOS/tree/main/Examples){target="_blank"} in the GitHub repository.
 
 ## Documentation and Resources
 
