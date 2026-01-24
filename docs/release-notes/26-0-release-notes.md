@@ -3,7 +3,7 @@
 !!! info "Release Information"
     - **Release Date**: October 2025
     - **Latest Version**: 26.0.2.2 (December 2025)
-    - **Status**: Latest Production Release
+    - **Status**: Supported
     - **End-of-Life**: TBD
 
 ## Major Features & Themes
