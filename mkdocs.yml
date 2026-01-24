@@ -54,7 +54,7 @@ plugins:
   - social:
       cards_layout_options:
         logo: docs/assets/social-icon.png
-        background_color: "#061D31"
+        background_color: "#324FBE"
   - blog:
       blog_dir: knowledge-base
       post_url_format: "{slug}"
