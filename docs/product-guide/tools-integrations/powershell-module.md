@@ -60,46 +60,9 @@ The module contains over 200 cmdlets organized by category:
 | Monitoring | Alarms, logs, tasks |
 | Backup & DR | Profiles, cloud snapshots, site management |
 
-## Usage Examples
+## Examples
 
-### Bulk VM Operations
-
-```powershell
-# Stop all VMs matching a pattern
-Get-VergeVM -Name "test-*" | Stop-VergeVM
-
-# Snapshot all production VMs
-Get-VergeVM -Tag "production" | New-VergeVMSnapshot -Name "daily-backup"
-
-# Export VM inventory to CSV
-Get-VergeVM | Select-Object Name, CPUCores, RAM, Status | Export-Csv vms.csv
-```
-
-### Multi-Server Management
-
-```powershell
-# Connect to multiple VergeOS systems
-$cred = Get-Credential
-Connect-VergeOS -Server "site1.example.com" -Credential $cred
-Connect-VergeOS -Server "site2.example.com" -Credential $cred
-
-# View current connection
-Get-VergeConnection
-```
-
-### Network Configuration
-
-```powershell
-# Create a network with DHCP
-$network = New-VergeNetwork -Name "app-network" -Address "10.0.1.0/24" -DHCPEnabled
-
-# Add a firewall rule
-New-VergeNetworkRule -Network $network -Name "Allow-HTTPS" `
-    -Direction Incoming -Protocol TCP -Port 443 -Action Accept
-
-# Apply network changes
-Update-VergeNetwork -Network $network
-```
+For usage examples and code samples, see the [examples directory](https://github.com/verge-io/PSVergeOS/tree/main/examples){target="_blank"} in the GitHub repository.
 
 ## Documentation and Resources
 
