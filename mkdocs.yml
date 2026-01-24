@@ -347,12 +347,17 @@ nav:
         - Installation Procedures: product-guide/operations/sop-verge-install.md
         - vSAN Scale Up: product-guide/operations/vsan-scale-up-sop.md
     - Tools and Integrations:
-      - Cirrus Data Migration: product-guide/tools-integrations/cirrus-data.md
-      - Inuvika Virtual Apps and Desktops: product-guide/tools-integrations/inuvika.md
-      - NVIDIA vGPU: product-guide/tools-integrations/nvidia-vgpu.md
-      - Prometheus Exporter: product-guide/tools-integrations/prometheus-exporter.md
-      - Storware Backup and Recovery: product-guide/tools-integrations/storware-backup-recovery.md
-      - Terraform Provider: product-guide/tools-integrations/terraform-provider.md
+      - Automation & API:
+        - Terraform Provider: product-guide/tools-integrations/terraform-provider.md
+        - PowerShell Module: product-guide/tools-integrations/powershell-module.md
+      - Monitoring:
+        - Prometheus Exporter: product-guide/tools-integrations/prometheus-exporter.md
+      - Backup & Migration:
+        - Storware Backup and Recovery: product-guide/tools-integrations/storware-backup-recovery.md
+        - Cirrus Data Migration: product-guide/tools-integrations/cirrus-data.md
+      - VDI & Desktop Delivery:
+        - Inuvika Virtual Apps and Desktops: product-guide/tools-integrations/inuvika.md
+        - NVIDIA vGPU: product-guide/tools-integrations/nvidia-vgpu.md
   - Release Notes:
     - Overview: release-notes/release-notes-overview.md
     - 26.1 (latest): release-notes/26-1-release-notes.md
