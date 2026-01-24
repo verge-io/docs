@@ -34,24 +34,14 @@ git clone https://github.com/verge-io/PSVergeOS.git
 Import-Module ./PSVergeOS/PSVergeOS.psd1
 ```
 
-## Connection Methods
+## Authentication
 
-The module supports multiple authentication approaches:
+The module supports multiple authentication methods:
 
-```powershell
-# Interactive credential prompt
-Connect-VergeOS -Server "vergeos.example.com" -Credential (Get-Credential)
-
-# Credential object for automation
-$cred = New-Object PSCredential("username", (ConvertTo-SecureString "password" -AsPlainText -Force))
-Connect-VergeOS -Server "vergeos.example.com" -Credential $cred
-
-# Token-based authentication
-Connect-VergeOS -Server "vergeos.example.com" -Token $apiToken
-
-# Self-signed certificate environments
-Connect-VergeOS -Server "vergeos.example.com" -Credential $cred -SkipCertificateCheck
-```
+- **Interactive credentials**: Prompt for username and password at runtime
+- **PSCredential objects**: Automate authentication with stored credentials
+- **API tokens**: Use pre-generated tokens for non-interactive scenarios
+- **Self-signed certificates**: Option to skip certificate validation for test environments
 
 ## Available Cmdlets
 
