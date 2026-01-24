@@ -12,6 +12,10 @@ The VergeOS alarm system provides proactive monitoring and alerting to notify of
 
 ## Alarm Notifications
 
+!!! tip "Default Administrator Email Notifications"
+    By default, the built‑in admin user and the Administrators group receive automatic email notifications whenever a system alarm is raised or lowered (cleared)
+
+
 ### Top Bar Indicator
 
 When active alarms are present in your system, a notification badge will appear next to the alarm icon <i class="bi bi-bell"></i> (bell) on the right side of the top navigation bar. This badge displays the total number of current, active, **non-snoozed** alarms requiring attention.

@@ -47,20 +47,21 @@ The VergeOS interface will provide warnings or alerts to indicate when there is 
 ## Replace a Drive
 
 !!! danger "**CAUTION: Before** initiating a drive repair operation, **verify**:"
-    1. All cluster nodes are operational (no nodes powered off or in maintenance mode)
+    1. The node that the drive to be replaced resides on will need to be placed into maintenance mode. All other nodes should be online and fully operational (i.e. not in maintenance mode or offline).
     2. No other drive repairs are running on different nodes within the same storage tier *(Drive repairs on the same physical node are acceptable)*
     3. You have positively identified the correct physical drive using the LED activation process above
 
-1. From the node dashboard, click **Drives**.
-2. Click to **select the particular drive** (Selected drive shows a check mark on the left.)
-3. Click **Close/Take Offline** on the left menu.
-4. When the drive status appears as **Offline:** physically remove the drive, **being extremely careful to remove the correct drive.**
-5. **Verify** the UI reflects the drive is missing to verify that the proper drive was removed.
-6. **Insert the replacement drive**.
-7. **Wait** for the drive to be detected; the dashboard will show the new drive as **Offline**.
-8. Click **Format** on the left menu.
-9. **Wait** until the dashboard no longer indicates the disk is formatting.
-10. Click **Initialize** on the left menu.
+1. **Place the node** that has the faulty drive **into Maintenance Mode**.
+2. From the node dashboard, click **Drives**.
+3. Click to **select the particular drive** (Selected drive shows a check mark on the left.)
+4. Click **Close/Take Offline** on the left menu. In the resulting modal pop-up that appears, click the checkbox for "I understand the risks" regarding the warning that the node should be in maintenance mode.
+5. When the drive status appears as **Offline:** physically remove the drive, **being extremely careful to remove the correct drive.**
+6. **Verify** the UI reflects the drive is missing to verify that the proper drive was removed.
+7. **Insert the replacement drive**.
+8. **Wait** for the drive to be detected; the dashboard will show the new drive as **Offline**.
+9. Click **Format** on the left menu. In the resulting modal pop-up that appears, click the checkbox for "I understand the risks" regarding the warning that the node should be in maintenance mode.
+10. **Wait** until the dashboard no longer indicates the disk is formatting.
+11. Click **Initialize** on the left menu. In the resulting modal pop-up that appears, click the checkbox for "I understand the risks" regarding the warning that the node should be in maintenance mode.
 
 !!! success
     After the vSAN has completed a full walk, the repair process will begin, and the drive status will change to "Repairing"; at this point the drive dashboard will indicate an **Estimated Repair Completion date and time.**

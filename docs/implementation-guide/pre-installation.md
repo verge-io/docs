@@ -15,6 +15,7 @@
 - [ ] BIOS hyperthreading enabled
 - [ ] BIOS all processor cores enabled
 - [ ] BIOS clocks set correctly
+- [ ] BIOS Secure Boot disabled
 - [ ] Redundant Power supplies setup and connected (recommended)
 - [ ] IPMI ports patched and configured
 - [ ] IPMI setup / configured / tested

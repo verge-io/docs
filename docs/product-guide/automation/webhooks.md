@@ -24,7 +24,7 @@ To put a webhook into action, follow these steps:
 
 ## Create a Webhook
 
-1. Navigate to **System** > **Tasks**.
+1. Navigate to **System** > **Tasks Dashboard**.
 2. Click **New Webhook** on the left menu.
 3. Configure webhook:  
 
@@ -52,7 +52,7 @@ By default, a header is included to specify a payload *content-type: application
 
 ## Create a Task 
 
-1. Navigate to **System** > **Tasks**.
+1. Navigate to **System** > **Tasks Dashboard**.
 2. Click **New Task** on the left menu.
 3. Configure task:
     * **Name**: Provide a descriptive name for the task.
@@ -73,7 +73,7 @@ By default, a header is included to specify a payload *content-type: application
 
 ## Create an Event
 
-1. Navigate to **System** > **Tasks**.
+1. Navigate to **System** > **Tasks Dashboard**.
 2. Click **New Event** on the left menu.
 3. Configure event:
     * **Type**: Select the applicable area of the VergeOS system where the trigger will occur. 
