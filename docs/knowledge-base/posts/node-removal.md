@@ -59,6 +59,9 @@ Before powering off the node, all drives must be removed from the vSAN.
 
 ### Step 3: Power Off the Node
 
+!!! danger "Verify vSAN Health Before Proceeding"
+    Before powering off the node, navigate to **System** > **vSAN** and confirm all tiers are **green** (healthy). Do not proceed until the vSAN has fully recovered from the drive removal in Step 2.
+
 1. Once all drives are deleted and the node status shows **Maintenance Mode**, click **Power Off** on the left menu.
 2. Click **Yes** to confirm.
 3. Wait for the node to fully power down.
