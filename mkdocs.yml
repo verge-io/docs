@@ -51,6 +51,7 @@ theme:
         icon: material/brightness-7
         name: Switch to dark mode
 plugins:
+  - social
   - blog:
       blog_dir: knowledge-base
       post_url_format: "{slug}"
