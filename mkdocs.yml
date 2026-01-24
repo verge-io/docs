@@ -53,7 +53,8 @@ theme:
 plugins:
   - social:
       cards_layout_options:
-        logo: docs/assets/logo-noname.png
+        logo: docs/assets/social-icon.png
+        background_color: "#061D31"
   - blog:
       blog_dir: knowledge-base
       post_url_format: "{slug}"
