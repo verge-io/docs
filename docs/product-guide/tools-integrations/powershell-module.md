@@ -62,7 +62,7 @@ The module contains over 200 cmdlets organized by category:
 
 ## Examples
 
-For usage examples and code samples, see the [examples directory](https://github.com/verge-io/PSVergeOS/tree/main/examples){target="_blank"} in the GitHub repository.
+For usage examples and code samples, see the [Examples directory](https://github.com/verge-io/PSVergeOS/tree/main/Examples){target="_blank"} in the GitHub repository.
 
 ## Documentation and Resources
 
