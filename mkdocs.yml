@@ -353,9 +353,10 @@ nav:
       - Prometheus Exporter: product-guide/tools-integrations/prometheus-exporter.md
       - Storware Backup and Recovery: product-guide/tools-integrations/storware-backup-recovery.md
       - Terraform Provider: product-guide/tools-integrations/terraform-provider.md
-  - Release Notes: 
+  - Release Notes:
     - Overview: release-notes/release-notes-overview.md
-    - 26.0 (latest): release-notes/release-notes.md
+    - 26.1 (latest): release-notes/26-1-release-notes.md
+    - "26.0": release-notes/26-0-release-notes.md
     - 4.13: release-notes/4-13-release-notes.md
     - 4.12: release-notes/4-12-release-notes.md
     - 4.11: release-notes/4-11-release-notes.md

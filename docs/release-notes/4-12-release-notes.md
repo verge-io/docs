@@ -1,6 +1,7 @@
 ---
 description: Release notes for the 4.12 series of VergeOS
 #icon: material/text-box-outline
+status: deprecated
 ---
 
 # 4.12 Release Notes
@@ -8,8 +9,8 @@ description: Release notes for the 4.12 series of VergeOS
 !!! info "Series Information"
     - **Initial Release**: February 2024 (4.12.0)
     - **Latest Version**: 4.12.6 (July 2024)
-    - **Status**: Supported (Superseded by 4.13)
-    - **End-of-Life**: TBD
+    - **Status**: Deprecated
+    - **End-of-Life**: January 2026
 
 ## Major Features & Themes
 
@@ -444,4 +445,3 @@ Over 50 additional minor fixes and enhancements were also included in this relea
 - Fixed hostname validation for NAS
 - Improved BGP functionality
 - Various minor performance and stability improvements
-
