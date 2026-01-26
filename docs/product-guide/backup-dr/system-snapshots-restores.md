@@ -63,7 +63,8 @@ See [Snapshot Profiles](/product-guide/backup-dr/snapshot-profiles) for detailed
 
 ## Manual System Snapshots
 
-A manual system snapshot can be taken at any time. 
+A manual system snapshot can be taken at any time. Creating a short‑term manual snapshot before a major configuration change or maintenance task provides a restore point if you need to roll back.
+
 
 
 
@@ -81,3 +82,6 @@ A manual system snapshot can be taken at any time.
 * !!! warning "Ensure your System Snapshots profile includes scheduled periods that *take full snapshots*. Full system snapshots provide the system‑wide recovery point needed to restore from unpredictable hardware failures or configuration errors."
 
 * To provide more-frequent protection and/or longer retention of select VMs and tenants, include partial snapshots in addition to full snapshots. 
+
+## Related Documentation
+

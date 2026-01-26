@@ -1,60 +1,102 @@
 # Snapshot Profiles (Snapshot Scheduling)
 
-A snapshot profile defines a schedule for taking and expiring snapshots. A snapshot profile can be assigned to an entire VergeOS cloud, a VM, or a NAS volume. Multiple, default snapshot profiles are created by the installation; these default profiles can be modified. Additionally, new snapshot profiles can be created.
+A snapshot profile defines a schedule for taking and expiring snapshots. Snapshot profiles can be used to schedule the following different types of snapshots: 
+- Full System 
+- Partial System (select VMs/tenants)
+- Individual VM
+- Individual NAS volume. 
+
+
 
 ## Default Snapshot Profiles
 
-The following are default snapshot profiles automatically created at system installation.
+Multiple, default snapshot profiles are created by the installation. These default profiles can be modified, and new snapshot profiles can be created, to provide custom scheduling. 
 
-### SOX (Sarbanes-Oxley)
 
-* Yearly snapshots retained for 7 years
-* Monthly snapshots retained for 1 year
-* Weekly snapshots retained for 31 days
-* Daily snapshots retained for 7 days
+??? "Snapshots Profiles Included with Installation" 
+    The following are default snapshot profiles automatically created at system installation.  
+    ### **SOX (Sarbanes-Oxley)**  
+       * Yearly snapshots retained for 7 years  
+       * Monthly snapshots retained for 1 year  
+       * Weekly snapshots retained for 31 days  
+       * Daily snapshots retained for 7 days  
 
-### HIPAA (Health Insurance Portability & Accountability Act)
+    ### HIPAA (Health Insurance Portability & Accountability Act)  
+    * Yearly snapshots retained indefinitely (no expiration)
+    * Monthly snapshots retained for 1 year  
+    * Weekly snapshots retained for 31 days  
+    * Daily snapshots retained for 7 days  
 
-* Yearly snapshots retained indefinitely (no expiration)
-* Monthly snapshots retained for 1 year
-* Weekly snapshots retained for 31 days
-* Daily snapshots retained for 7 days
+    ### NAS Volume Syncs
+    * Daily (at 6pm) snapshots retained for 3 days
 
-### NAS Volume Syncs
+    ### *System Snapshots (Default Profile for entire-system snapshots)
+    * hourly snapshots retained for 3 hours 
+    * Daily-at midnight snapshots retained for 3 days
+    * Daily-at noon snapshots retained for 1 day
 
-* Daily (at 6pm) snapshots retained for 3 days
+    * profile assigned at installation to take full snapshots of the entire system according to this schedule. 
+    * More detail about system snapshots can be found at: [System Snapshots and Restores](/product-guide/backup-dr/system-snapshots-restores)
 
-### *System Snapshots (Default Profile for entire-system snapshots)
+## Creating a Custom Snapshot Schedule (New Snapshot Profile)
 
-* Hourly for 3 hours
-* Daily (at midnight) snapshots retained for 3 days
-* Daily (at noon) snapshots retained for 1 day
-
-!!! note "The **System Snapshots** profile is assigned to any new VergeOS installation to provide snapshots of the entire system according to this schedule. The schedule for system snapshots can be modified by altering this default profile.
-
-## Create a New Snapshot Profile
-
-1. Navigate **System* > **Snapshot Profiles**.
+1. Navigate to **System* > **Snapshot Profiles**.
 2. Select **New** from the left menu.
-3. Enter a ***Name*** for the new profile (required). It is recommended to use a name that is descriptive of the frequency/retention (e.g. houly3hrs-daily-4days) or descriptive of the elements to which it will be assigned (e.g. WebServers)
+3. Enter a ***Name*** for the new profile (required). Use a descriptive name that notes the frequency/retention and/or elements to be snapped (e.g. Webservers, premium tenants, etc.)
 4. Optionally, a ***Description*** can be entered.
-5. Click **Submit** at the bottom of the page.  The snapshot profile is created, and its dashboard is displayed. At this point it is an empty profile; periods need to be added to actually implement a schedule.
+5. Click **Submit** to save the profile.   
+6. The new snapshot profile is created. At this point, it is an empty profile; **Add profile periods** to implement a schedule within the profile.   
 
-6. **Add Periods to the Profile:**
-      * A period defines a frequency and retention term. Adding multiple periods allows incorporating various frequencies and retentions within the same profile.
-      * Click the ***+Add Period*** link midway down the page.
-      * Enter a ***Period Name*** (required) (ex: weekly, 6pm, Mondays, etc).
-      * Select a ***Max Tier for Storing Snapshot*** (default = Tier 1, which is most expensive Tier). Snapshot data will be stored on the same tier as source data except when the max tier defined here is a less expensive tier (less expensive = higher number). See [**Storage Tiers**](/product-guide/storage/storage-tiers) for more information about storage tiering.
-      * Select ***Frequency*** for how often to take the snapshots.
-      * Select values for ***(Month, Day of Month, Day of Week Hour, Minute)*** to schedule the snapshots (fields will vary depending upon the frequency selected)
-      * Select ***Retention*** (value) and ***Units*** to define the length of time for which to keep this period's snapshots. *Days* (default), *Hours*, *Years*, *Forever* (retained indefinitely)
+!!! tip "After following the instructions above to create a new snapshot profile, the dashboard for that new profile is displayed, where you can create new periods.  To return to this page later, navigate to: **System** > **Snapshot Profiles** > **double-click the profile** in the list." 
+
+## Profile Periods
+
+A profile period defines a frequency and retention term. Adding multiple periods allows incorporating various frequencies and retentions within the same profile.
+     
+**To Add a Period**: Click **Add Period** on the left menu.  The snapshot profile field is automatically populated. 
+
+**Profile Period Configuration**:
+* **Snapshot Profile**: Pre-selected when accessed from the snapshot profile dashboard. 
+* **Name**: (required). Enter a descriptive name to identify the period (ex: weekly, 6pm, Mondays, etc).
+  
+* **Frequency**: select options for how often to take the snapshots for this period.  
+  * values for ***Month, Day of Month, Day of Week Hour, Minute*** allow you to schedule the snapshots
+  * input fields will vary depending on the frequency selected
+  * the *Custom* option allows you to define specific date and time for one-time execution
+
+* ***Retention*** 
+** enter (value) and **Units** to set length of time to set for the expiration :*Days* (default), *Hours*, *Years*, *Forever* (retained indefinitely).  This determines when the system is scheduled to automatically purge/cleanup the snapshots.
+
 !!! warning "Snapshots retained indefinitely or for long periods are likely to greatly increase storage usage over time; it is important to consider your data change rate and the amount of storage available for storing long term snapshots."
 
-7. The **Quiesce VM Snapshots** option can be selected to freeze disk activity while the snapshot is being taken. This provides application-consistent backups for VMs. The [**VM Guest Agent**](/product-guide/virtual-machines/vm-guest-agent) must be installed and registered on VM for quiesced snapshots.
-8. Click **Submit** at the bottom of the page to add the period to the snapshot profile.
-9. Click the ***+Add Period*** link and repeat steps 7-10 if additional periods are desired within this profile.
+* **Minimum Snapshots**: (default:1) Snapshots for this period are kept past their expiration, if necessary to maintain the defined minimum; this helps to ensure there are available recovery points after prolonged outages by preventing automatic purging of an expired snapshot when there is no replacement snapshot. 
 
-## Modify the Scheduling of an Existing Snapshot Profile
+!!! tip "Snapshots kept past expiration to maintain a minimum will show as "X days over" in the 'Time to Expiration' column, but they won't be deleted until: a new scheduled snapshot replaces it, OR It's manually deleted."
+      
+**System Snapshot Settings**
+* **Private**: when selected, snapshot from this period are hidden from tenants (applies to system snapshots only)
+* **Immutable**: when selected, deletion of snapshots is blocked for all users until expiration or the immutable flag is removed with a mandatory waiting period.  
+!!! warning "It is important to understand how immutable snapshots work and possible risks.  See the [Immutable Snapshots Guide](/product-guide/backup-dr/immutable-snapshots) for detailed information."
+* **Snapshot Type**:
+  * ***Full***: snapshot includes the entire system, can be used for complete system recovery
+  * ***Partial Exclude Tags***: snapshot of all VMs/tenants without the specified tag
+  * ***Partial Include Tags***: snapshot of VMs/tenants with the specified tag
+
+**Machine Snapshot Settings**
+* **Quiesce Snapshots**: If enabled, disk activity will temporarily freeze while the snapshot is being taken.
+  * Applies to VMs and volumes only
+  * provides application-consistent backups for VMs
+  * Requires [VM guest agent](/product-guide/virtual-machines/vm-guest-agent) support 
+  * **Does not apply to System Snapshots**
+  
+* **Max Tier for Storing Snapshot**: (default= Tier 1). Snapshot data will be stored on the same tier as source data except when the max tier defined here is a less expensive tier (less expensive = higher number). 
+  * Tier 1 means no restrictions because it is the most expensive tier
+  * If the source tier is higher than this max, tier will be set this tier. 
+  * See [**Storage Tiers**](/product-guide/storage/storage-tiers) for more information about storage tiering.
+  * **Does not apply to System Snapshots**
+
+
+## Modify an Existing Snapshot Profile
 
 1. Navigate **System* > **Snapshot Profiles**.
 2. **Double-click the desired profile** in the list.
@@ -63,21 +105,15 @@ The following are default snapshot profiles automatically created at system inst
     * To modify an existing period: click the (pencil icon) to the far right.
     * To remove existing periods: click the (trash can icon) to the far right.
 
-## Change the Snapshot Profile Assigned at the System level
 
-The profile set here determines the schedule used for creating snapshots of the entire system. At install, a new VergeOS system is assigned the built-in "System Snapshots" profile.
+## Assigning Snapshot Profiles
 
-1. Navigate **System** > **Settings**
-2. Click **Advanced Settings** on the left menu.
-3. Locate and select the **System snapshot profile** setting. (Use the search bar at the top to easily locate the setting.)
-4. Click **Edit** on the left menu.
-5. Select desired profile. 
-6. Click **Submit** to save the change.
 
-## Assign a Snapshot Profile to a VM
+## System Snapshots
+It is typically recommended that you use the default *'System Snapshots'* profile for system snapshots.  This default profile can be modified to customize scheduling and can include partial snapshots in addition to full system snapshots.  See [System Snapshots and Restores](/product-guide/backup-dr/system-snapshots-restores) for detailed information. 
 
-Virtual machines do not necessarily need a snapshot profile defined because system snapshots automatically include restorable snapshots of each VM. You can assign a snapshot profile to an individual VM in order to provide a different schedule. For example, it may be desirable to capture more frequent snapshots and/or retain snapshots longer for certain VMs. VM-level snapshots also provide for quiescing (guest agent required), which a system snapshot does not provide.
+## Individual NAS Volumes
+[NAS Volume Snapshots and Restores - Schedule Volume Snapshots ](/product-guide/nas/volume-snapshots-restores#schedule-volume-snapshots)
 
-1. From the VM dashboard, click **Edit** on the left menu.
-2. In the **Snapshot profile** field, ***select the desired profile*** from the dropdown list.
-3. Click **Submit** at the bottom of the page.
+## Individual VMs
+[VM Snapshots and Restores - Assign a Snapshot Profile](/product-guide/backup-dr/vm-snapshots-restores#assign-a-snapshot-profile-to-an-individual-vm)

@@ -10,7 +10,7 @@ Snapshots provide nearly-instant, non-disruptive, point-in-time backups that all
 - **Business Continuity & Disaster Recovery (BC/DR)** – System snapshots can be synchronized to another VergeOS system for offsite protection.
 - **Flexible Restore Options** – Users can recover individual VMs and tenants, clone copies for testing, or revert entire environments.
 
-## Automated Snapshots
+## Automated Snapshots (Scheduled Snapshots)
 
 Snapshots can be automated to take at regularly-scheduled intervals using snapshot profiles. A snapshot profile consists of one or more profile periods. Each period determines a frequency for taking a snapshot as well as a retention time. More information about snapshot profiles is available here: [**Snapshot Profiles (Snapshot Scheduling)**](/product-guide/backup-dr/snapshot-profiles)
 
@@ -18,15 +18,17 @@ Snapshots can be automated to take at regularly-scheduled intervals using snapsh
 
 Snapshots can also be taken manually, with settable expiration. Manual snapshots can be useful for backup (of a VM, volume, or entire system) immediately before a configuration change, upgrade, or maintenance operation.
 
-## Cloud (System) Snapshot/Restore
+## System Snapshot/Restore
 
-System snapshots provide backup of the entire VergeOS system, including all tenants, VMs, networks, and settings.
+System snapshots can be 
+* **Full** - providing backup of the entire VergeOS system
+* **Partial** select VMs/tenants based on tagging
 
 ### What can be restored from a System Snapshot?
 
 A system snapshot can be used to restore:
 
-- Entire VergeOS system
+- Entire VergeOS system (Full snapshots only)
 - Individual VMs (un-quiesced)
 - Individual tenants
 
