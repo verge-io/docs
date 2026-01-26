@@ -62,6 +62,30 @@ Pre-allocates all VM memory at startup instead of allocating on demand.
 
 **Use case:** Reduces memory allocation latency for performance-critical workloads. Useful for real-time applications or when using hugepages.
 
+### UUID Configuration
+
+You can customize the VM's UUID (Universally Unique Identifier) to match specific requirements, such as software licensing or migration scenarios.
+
+#### System UUID
+```
+smbios.type1.uuid=550e8400-e29b-41d4-a716-446655440000
+```
+
+Sets the system UUID presented to the guest OS. This is the primary UUID that most software checks.
+
+**Use cases:**
+- Migrating VMs from other platforms while preserving licensing
+- Software that validates against a specific UUID
+- Cloning VMs that need unique identifiers
+
+!!! warning "UUID Format"
+    UUIDs must be in standard format: `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx` (8-4-4-4-12 hexadecimal characters). Invalid formats will prevent the VM from starting.
+
+!!! tip "Generating UUIDs"
+    On Linux: `uuidgen`
+    On Windows PowerShell: `[guid]::NewGuid()`
+    Online: Use any UUID generator tool
+
 ### SMBIOS Customization
 
 SMBIOS (System Management BIOS) options allow you to customize the hardware information presented to the guest OS.
@@ -178,6 +202,12 @@ smbios.type1.product=PowerEdge R740
 smbios.type1.serial=ABC123
 ```
 
+### Preserving UUID After Migration
+```
+smbios.type1.uuid=550e8400-e29b-41d4-a716-446655440000
+```
+Use when migrating a VM from another platform and the guest OS has software tied to the original UUID.
+
 ### Network Optimization
 ```
 nic1.txqueuelen=5000
@@ -207,5 +237,5 @@ If your VM fails to start after adding advanced options:
 
 
 !!! note "Document Information"
-    - Last Updated: 2025-07-07
-    - VergeOS Version: 4.13.4
+    - Last Updated: 2026-01-24
+    - VergeOS Version: 26.1

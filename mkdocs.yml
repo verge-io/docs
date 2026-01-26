@@ -52,6 +52,7 @@ theme:
         name: Switch to dark mode
 plugins:
   - social:
+      enabled: !ENV [CI, false]
       cards_layout_options:
         logo: docs/assets/social-icon.png
         background_color: "#324FBE"
@@ -176,6 +177,7 @@ nav:
        - vSAN Architecture: product-guide/storage/vsan-architecture.md  # Added from PR
        - Storage Tiers: product-guide/storage/storage-tiers.md
        - Preferred Tier: product-guide/storage/preferred-tiers.md
+       - External Storage Integration: product-guide/storage/external-storage-integration.md
        - Fibre Channel: product-guide/storage/fibre-channel.md
        - vSAN Deletion Process: product-guide/storage/vsan-deletion-process.md
        - vSAN Diagnostics: product-guide/storage/vsan-diagnostics.md
