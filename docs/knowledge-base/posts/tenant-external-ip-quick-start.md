@@ -1,6 +1,6 @@
 ---
 title: Tenant External IP Quick Start Guide
-slug: tenant-external-ip-quick-start
+slug: configuring-tenant-external-ips
 description: Step-by-step guide to configuring external/public IP addresses for tenant VMs with common scenarios
 published: true
 date: 2026-01-24
@@ -193,8 +193,3 @@ This is the same as Scenario 1 but uses only the DNAT/SNAT rules. The VM keeps i
 | Create SNAT rule | Tenant Internal > Rules | Action: Translate, Direction: Outgoing |
 | Allow traffic | Tenant Internal > Rules | Action: Accept, specify port |
 
----
-
-!!! note "Document Information"
-    - Last Updated: 2026-01-24
-    - VergeOS Version: 26.1
