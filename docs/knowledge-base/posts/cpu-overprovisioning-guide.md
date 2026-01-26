@@ -174,8 +174,6 @@ Some software (Oracle, SQL Server) is licensed per physical core or socket. Verg
 
 For VMs with many vCPUs, VergeOS attempts to keep memory and CPU allocations within the same NUMA node when possible. For best NUMA performance, keep VM vCPU counts at or below a single socket's core count.
 
----
-
 ## Related Topics
 
 - [Clusters Overview](/product-guide/system/clusters-overview/) - Understanding cluster architecture
