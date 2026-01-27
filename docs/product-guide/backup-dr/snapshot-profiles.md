@@ -1,6 +1,6 @@
 # Snapshot Profiles (Snapshot Scheduling)
 
-A snapshot profile defines a schedule for taking and expiring snapshots. 
+A snapshot profile defines a schedule for taking and expiring snapshots.
 
 
 ## Default Snapshot Profiles
@@ -43,7 +43,7 @@ Multiple, default snapshot profiles are created by the installation. These defau
 6. The new snapshot profile is created.   
 **Add profile periods** to implement a schedule within the profile.   
 
-!!! tip "After following the instructions above to create a new snapshot profile, the dashboard for that new profile is displayed, where you can create new periods.  To return to this page later, navigate to: **System** > **Snapshot Profiles** > **double-click the profile** in the list." 
+!!! tip "After following the instructions above to create a new snapshot profile, the dashboard for that profile is displayed, where you can create new periods.  To return to this page later, navigate to: **System** > **Snapshot Profiles** > **double-click the profile** in the list." 
 
 ## Profile Periods
 

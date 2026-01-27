@@ -34,8 +34,8 @@ A system snapshot can be used to restore:
 - Individual VMs (un-quiesced)
 - Individual tenants
 
-For information regarding system snapshots, see:
-* [**System Snapshots**](/product-guide/backup-dr/system-snapshots) 
+For more information see:  
+* [**System Snapshots**](/product-guide/backup-dr/system-snapshots)   
 * [**Restores from System Snapshot**](/product-guide/backup-dr/system-snapshot-restores)                      
 
 ## VM Snapshot/Restore
@@ -46,9 +46,9 @@ VM-level snapshots allow for quiesced capture (requires guest agent) and schedul
 
 Individual tenants can be restored from the parent's system snapshot. For related instructions, see: [**Tenant Restores**](/product-guide/tenants/tenant-restores)
 
-Additionally, each tenant can utilize [**System Snapshots**](/product-guide/backup-dr/cloud-snapshot-restore), independently within their environment, to back up their own complete system.
+Additionally, each tenant can utilize [**System Snapshots**](/product-guide/backup-dr/system-snapshot-restores), independently within their own environment, to back up their complete system.
 
 ## NAS Snapshot/Restore
 
-Volume snapshots provide quiesced backup/restore of individual NAS volumes. For related instructions, see: [**NAS Volume Snapshots and Restores**](/product-guide/nas/volume-snapshots-restores)
+Volume snapshots provide quiesced backup/restore of individual NAS volumes. For related instructions, see:  [**NAS Volume Snapshots and Restores**](/product-guide/nas/volume-snapshots-restores)
 

@@ -3,7 +3,7 @@
 Site sync provides replication of ***system snapshots*** to a separate VergeOS system.  Replicating full system snapshots provides comprehensive off-site data backup to facilitate disaster recovery and business continuity.  
 
 !!! tip "New in 26.1 - Partial System Snapshots available for Site Sync"
-   Partial System Snapshots allow selective snapshotting of tagged VMs and tenants. Because sync replication uses system snapshots, you can now replicate only the workloads that need higher‑frequency protection or longer retention, instead of replicating the entire system every time. Full system snapshots remain essential for full‑system recovery.
+    Partial System Snapshots allow selective snapshotting of tagged VMs and tenants. Because sync replication uses system snapshots, you can now replicate only the workloads that need higher‑frequency protection or longer retention, instead of replicating the entire system every time. Full system snapshots remain essential for full‑system recovery.
 
 ## Site Sync Configuration Steps
 
@@ -171,7 +171,7 @@ When a specific tier(1-5) is selected here, the sync directs all data to the sel
 The Configuration form will appear.
 ![sync-periodretention.png](/product-guide/screenshots/sync-periodretention.png)
 
-5. In the **Sync Snapshots From** dropdown list, select a desired profile period (e.g. ***"Hourly for 3 hours"***, ***"Midnight"***, ***"Noon"***). The options that appear will depend on the periods defined in the snapshot profile assigned for the local system (by default, this will be the *System Snapshots* profile.)
+5. In the **Sync Snapshots From** dropdown list, select a desired profile period (e.g. ***"Hourly for 3 hours"***, ***"Midnight"***, ***"Noon"***). The options that appear will depend on the periods defined in the snapshot profile assigned for the local system snapshots (by default, this will be the *System Snapshots* profile.)
 6. **Remote Retention** will default to the local retention of the selected period; change if a different retention setting is desired for the remote copy. (Changing the Remote Retention does not affect the local retention.)
 7. **Priority** (0-9) can be specified to arrange different periods into sequence by priority, with lower number taking precedence over a higher number; for example: a period set to priority 1 will sync before a different period set to priority 2.
 8. **Do not expire snapshot** option can be selected to ensure a snapshot will not expire locally before it syncs; this can be important for snapshots configured with a short retention period locally, but a longer retention on the remote system.
