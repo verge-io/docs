@@ -22,7 +22,8 @@
   * Can also be used for selective object restores, including:
     * Tenants
     * NAS volumes
-    * VMs*  
+    * VMs* 
+  * Select Snapshot Type=*Full*
 
 !!! tip "Default settings on a new system are configured to perform Full snapshots at multiple intervals with different retentions."
 
@@ -30,7 +31,7 @@
   * Include or exclude VMs and tenants based on custom tagging
   * Allow more frequent backup and sync replication of select VMs and tenants 
   * Support longer retention for specific workloads without increasing system‑wide retention
-
+  * Select Snapshot Type=*Partial Exclude Tags* OR *Partial Include Tags*
 
 ## Automated System Snapshots
 
@@ -65,7 +66,20 @@ See [Snapshot Profiles](/product-guide/backup-dr/snapshot-profiles) for detailed
 
 A manual system snapshot can be taken at any time. Creating a short‑term manual snapshot before a major configuration change or maintenance task provides a restore point if you need to roll back.
 
+### Take a Manual Snapshot of Entire System
 
+1. Navigate to **System** > **System Snapshots**.
+2. Select **New** from the left menu.
+3. Configure snapshot options:  
+    * **Name** (required): provide a descriptive name (e.g. before x2 reconfig) 
+    * **Description** (optional): 
+    * **Expires**: select/enter a date and time for expiration.
+    !!! warning "Snapshot Expiration"
+    Always consider vSAN usage: initially source and snapshot are the same and thus there is no impact on storage; but, as source data diverges more from the snapshot data, there is less deduplication between the two and thus more vSAN usage. Using the *Never Expire* option is not recommended unless necessary.
+    * **Private** (default=enabled): this option can be deselected to allow tenants access to their own data within this snapshot.
+    * **Immutable** (default=disabled): when selected, the snapshot is locked and cannot be deleted by anyone until it is unlocked, with a mandatory waiting period.
+!!! warning "Immutable snapshots are locked for the duration of their retention period and cannot be deleted early. Ensure retention settings align with available storage. For more guidance, see the [Immutable Snapshots Guide](/product-guide/backup-dr/immutable-snapshots)."
+4. Click **Submit** to take the snapshot.
 
 
 ## Best Practices 
@@ -85,3 +99,10 @@ A manual system snapshot can be taken at any time. Creating a short‑term manua
 
 ## Related Documentation
 
+* [Snapshots Overview](/product-guide/backup-dr/snapshots-overview)
+* [Snapshot Profiles](/product-guide/backup-dr/snapshot-profiles)
+* [Site Syncs](/product-guide/backup-dr/sync-overview)
+* [Tenant Snapshots](/product-guide/tenants/tenant-snapshots)
+* [Tenant Restores](/product-guide/tenants/tenant-restores)
+* [VM Snapshots and Restores](/product-guide/backup-dr/vm-snapshots-restores)
+* [NAS Volume Snapshots and Restores](/product-guide/nas/volume-snapshots-restores)

@@ -1,6 +1,6 @@
 # Snapshots
 
-Snapshots provide nearly-instant, non-disruptive, point-in-time backups that allow for rollback to a previous instance in the event of a hardware failure, faulty application upgrade, VM bluescreen, etc. Snapshot captures and restores can be done at various levels: cloud (entire system), tenant, individual virtual machine, NAS volume.
+Snapshots provide nearly-instant, non-disruptive, point-in-time backups that allow for rollback to a previous instance in the event of a hardware failure, faulty application upgrade, VM bluescreen, etc. Snapshot captures and restores can be done at various levels: full system, partial system (select VMs/tenants based on custom tagging) individual virtual machine, or NAS volume.
 
 ## Key Features
 
@@ -12,17 +12,19 @@ Snapshots provide nearly-instant, non-disruptive, point-in-time backups that all
 
 ## Automated Snapshots (Scheduled Snapshots)
 
-Snapshots can be automated to take at regularly-scheduled intervals using snapshot profiles. A snapshot profile consists of one or more profile periods. Each period determines a frequency for taking a snapshot as well as a retention time. More information about snapshot profiles is available here: [**Snapshot Profiles (Snapshot Scheduling)**](/product-guide/backup-dr/snapshot-profiles)
+Snapshots can be automated to take at regularly-scheduled intervals using snapshot profiles. A snapshot profile consists of one or more profile periods. Each period determines a frequency for taking snapshots and the default retention time. More information about snapshot profiles is available here: [**Snapshot Profiles (Snapshot Scheduling)**](/product-guide/backup-dr/snapshot-profiles)
 
 ## Manual Snapshots
 
-Snapshots can also be taken manually, with settable expiration. Manual snapshots can be useful for backup (of a VM, volume, or entire system) immediately before a configuration change, upgrade, or maintenance operation.
+Snapshots can also be taken manually, with settable expiration. Manual snapshots can be useful for backup  immediately before a configuration change, upgrade, or maintenance operation.
 
 ## System Snapshot/Restore
 
-System snapshots can be 
-* **Full** - providing backup of the entire VergeOS system
-* **Partial** select VMs/tenants based on tagging
+System snapshots can be:  
+
+* **Full** - providing backup of the entire VergeOS system  
+-OR-
+* **Partial** - containing select VMs/tenants based on tagging
 
 ### What can be restored from a System Snapshot?
 
@@ -32,7 +34,9 @@ A system snapshot can be used to restore:
 - Individual VMs (un-quiesced)
 - Individual tenants
 
-For information regarding system snapshots, see: [**System Snapshots and Restores**](/product-guide/backup-dr/cloud-snapshot-restore)
+For information regarding system snapshots, see:
+* [**System Snapshots**](/product-guide/backup-dr/system-snapshots) 
+* [**Restores from System Snapshot**](/product-guide/backup-dr/system-snapshot-restores)                      
 
 ## VM Snapshot/Restore
 
@@ -42,7 +46,7 @@ VM-level snapshots allow for quiesced capture (requires guest agent) and schedul
 
 Individual tenants can be restored from the parent's system snapshot. For related instructions, see: [**Tenant Restores**](/product-guide/tenants/tenant-restores)
 
-Additionally, each tenant can utilize [**System Snapshots**](/product-guide/backup-dr/cloud-snapshot-restore), independently within their environments, to back up their own complete systems.
+Additionally, each tenant can utilize [**System Snapshots**](/product-guide/backup-dr/cloud-snapshot-restore), independently within their environment, to back up their own complete system.
 
 ## NAS Snapshot/Restore
 

@@ -1,47 +1,8 @@
-# System Snapshots and Restores
-
-System snapshots contain a backup of everything in a system, including all tenants, VMs, NAS volumes, networks, and settings. A system snapshot can be used to restore an entire system. Additionally, the following can be imported and restored from a system snapshot:
-
-- Individual tenants
-- Individual NAS volumes
-- Individual VMs*
-
-!!! tip "VM snapshots contained within a system snapshot are crash-consistent. Individual VM snapshots allow a quiesce option (guest agent required). See [**VM Snapshots and Restores**](/product-guide/backup-dr/vm-snapshots-restores) for VM-level snapshot instructions."
-
-## Automated System Snapshots
-
-By default, system snapshots run according to the included **System Snapshots** profile. The system snapshot schedule can be changed by modifying this default profile or assigning a different profile.
-
-### Assigning a Different Schedule to be Used for Automated System Snapshots
-
-1. Navigate to **System** > **System Snapshots**.
-2. Click **Select Snapshot Profile** on the left menu.
-3. **Select the desired snapshot profile** from the dropdown list. For instructions regarding modifying or adding new snapshot profiles, see: [**Snapshot Profiles**](/product-guide/backup-dr/vm-snapshots-restores).
-4. Click **Submit** at the bottom of the page.
-
-## Manual System Snapshots
-
-A manual snapshot can be taken at any time.
-
-### Take a Manual Snapshot of Entire System
-
-1. Navigate to **System** > **System Snapshots**.
-2. Select **New** from the left menu.
-3. Enter a ***Name*** (required) for the snapshot.
-4. Enter a ***Description*** (optional).
-5. In the ***Expires*** field, select/enter a date and time for expiration.
-6. Click **Submit** at the bottom of the page.
-!!! warning "Snapshot Expiration"
-    Always consider vSAN usage: initially source and snapshot are the same and thus there is no impact on storage; but, as source data diverges more from the snapshot data, there is less deduplication between the two and thus more vSAN usage. Using the *Never Expire* option is not recommended unless necessary."
-
-7. The ***Private*** checkbox is selected by default; this option can be deselected to allow tenants access to their own data within this snapshot.
-8. Click **Submit** at the bottom of the page.
-
 ## Restores from System Snapshots
 
 ### Access System Snapshots from Your Provider/Host
 
-!!! note "The following directions are applicable to systems that are tenants themselves. If provider has allowed it, a tenant can access a snapshot of their own environment from the provider's system snapshots. Once requested from the provider, the snapshot is then available to use for restoring individual VMs or their entire environment."
+!!! note "This set of instructions apply to systems that are tenants themselves. If your provider has allowed it, you can request to access a snapshot of your environment from the provider's system snapshots. Once requested, the snapshot is then available to use for restoring individual VMs or your complete environment."
 
 1. Navigate to **System** > **System Snapshots**.
 3. A listing of available snapshots is displayed; those displayed with a type of ***Provider*** are snapshots taken by the host. **Click to select the desired provider snapshots** (selected snapshots will show a checkmark).
@@ -51,10 +12,13 @@ A manual snapshot can be taken at any time.
 
 !!! warning "After a snapshot is requested from provider, and displays as *type=Local*, the snapshot can be edited to modify description and expiration. When changing expiration to a longer period it is important to consider effects on storage; long-term snapshots can substantially increase storage usage as data divergence between snapshot and live data increases over time."
 
+___
+
 ### Restore Entire System from Snapshot
 
 !!! note "System Requirements"
-    Full system restoration is only supported on the local System where the snapshot was taken. This operation cannot be used to restore one site over another (for example, you cannot restore Site A over Site B). This operation requires a complete reboot of all nodes in the system.
+    * Full system restoration is only supported on the local System where the snapshot was taken. This operation cannot be used to restore one site over another (for example, you cannot restore Site A over Site B). 
+    * Restoring a full system requires a complete reboot of all nodes.
 
 !!! warning "Critical Impact"
     A full system restoration will revert all system components to the snapshot state, including:
@@ -82,6 +46,8 @@ A manual snapshot can be taken at any time.
 
 ### Restore Select Tenants from a System Snapshot
 
+Full system snapshots include all tenants at the time the snapshot is taken.  Partial system snapshots will only include tenants per the include/exclude tag configuration.
+
 1. Navigate to **System** > **System Snapshots**.
 2. **Select the desired system snapshot** from the list.
 3. Click **View Tenants** on the left menu. You will be presented with a listing of all VMs contained in the selected system snapshot; this may take up to a few minutes.
@@ -94,6 +60,8 @@ A manual snapshot can be taken at any time.
 
 ### Restore Select VMs from a System Snapshot (creates new VM instance(s))
 
+Full system snapshots include all the host's VMs at the time the snapshot is taken.  Partial system snapshots will only include VMs per the include/exclude tag configuration.
+
 1. Navigate to **System** > **System Snapshots**.
 2. **Select the desired system snapshot** from the list.
 3. Click **View VMs** on the left menu. You will be presented with a listing of all VMs contained in the selected system snapshot; this may take up to a few minutes.
@@ -104,6 +72,9 @@ A manual snapshot can be taken at any time.
 
 !!! note "An individual VM can also be restored from the VM dashboard; restoring from the VM dashboard allows the option to create a new VM instance or overwrite the current. Instructions can be found [**here**](/product-guide/backup-dr/vm-snapshots-restores#restore-a-vm-snapshot-to-overwrite-existing-current-version-of-vm)."
 
-- See [**VM Snapshots and Restores**](/product-guide/backup-dr/vm-snapshots-restores) for instructions on restoring an individual VM from a system snapshot.
-- See [**Tenant Restores**](/product-guide/tenants/tenant-restores) for instructions on restoring an individual tenant from a system snapshot.
-- See [**Volume Snapshots and Restores**](/product-guide/nas/volume-snapshots-restores) for instructions on restoring NAS volumes from a system snapshot.
+
+### Related Documentation
+
+* [**VM Snapshots and Restores**](/product-guide/backup-dr/vm-snapshots-restores) 
+* [**Tenant Restores**](/product-guide/tenants/tenant-restores) 
+* [**Volume Snapshots and Restores**](/product-guide/nas/volume-snapshots-restores) 

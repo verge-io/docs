@@ -179,7 +179,8 @@ nav:
       - Overview: product-guide/backup-dr/overview.md
       - Snapshots:
         - Overview: product-guide/backup-dr/snapshots-overview.md
-        - System Snapshots and Restore: product-guide/backup-dr/cloud-snapshot-restore.md
+        - System Snapshots: product-guide/backup-dr/system-snapshots.md
+        - Restores from System Snapshot: product-guide/backup-dr/system-snapshot-restores.md
         - Profiles: product-guide/backup-dr/snapshot-profiles.md
         - Immutable Snapshots: product-guide/backup-dr/immutable-snapshots.md
         - VM Snapshots and Restore: product-guide/backup-dr/vm-snapshots-restores.md

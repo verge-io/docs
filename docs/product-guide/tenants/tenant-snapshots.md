@@ -15,7 +15,7 @@ Snapshots provide a way to obtain quick recovery points. System snapshots allow 
 
 ## Restore a Tenant from Snapshot (overwrite existing)
 
-Completing these instructions will overwrite the existing tenant. A tenant can be restored to a new instance from the Cloud Dashboard: [System Snapshots and Restores](/product-guide/backup-dr/cloud-snapshot-restore#restore-select-tenants-from-a-cloud-snapshot).
+Completing these instructions will overwrite the existing tenant. A tenant can be restored to a new instance from the [System Snapshot Dashboard](/product-guide/backup-dr/system-snapshot-restores#restore-select-tenants-from-a-cloud-snapshot).
 
 1. **Power off the tenant offline**; the tenant must be offline before it can be restored.
 2. Navigate to the tenant dashboard (from the top menu: Tenants > Dashboard > double-click the desired tenant in the list.)

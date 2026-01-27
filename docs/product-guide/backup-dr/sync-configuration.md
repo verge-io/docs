@@ -155,7 +155,7 @@ When a specific tier(1-5) is selected here, the sync directs all data to the sel
 
 ## Specify Snapshots to Auto Sync and Remote Retention
 
-!!! success "The system snapshot profile determines the snapshot take and retention schedule for the entire local system (system snapshots include a complete recovery point of the entire VDC, including: VMs, networks, tenants, vSAN, NAS, etc.) These are the snapshots that can be selected for an automatic site sync. To change the profile used to control local system snapshots: System > System Snapshots > Select Snapshot Profile. For more information about system snapshots: see [**System Snapshots and Restores**](/product-guide/backup-dr/cloud-snapshot-restore)"
+!!! success "The system snapshot profile determines the snapshot take and retention schedule for the entire local system (system snapshots include a complete recovery point of the entire VDC, including: VMs, networks, tenants, vSAN, NAS, etc.) These are the snapshots that can be selected for an automatic site sync. To change the profile used to control local system snapshots: System > System Snapshots > Select Snapshot Profile. For more information about system snapshots: see [**System Snapshots**](/product-guide/backup-dr/system-snapshots) and [**System Snapshot Restores**](product-guide/backup-dr/system-snapshots)
 
 ### Select Snapshots and Remote Retentions for Auto Sync
 
