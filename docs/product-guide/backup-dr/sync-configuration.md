@@ -1,6 +1,9 @@
 # Configuring a Site Sync
 
-Site sync provides replication of system snapshots to a separate VergeOS system; this allows off-site data backup, facilitating disaster recovery and business continuity.
+Site sync provides replication of ***system snapshots*** to a separate VergeOS system.  Replicating full system snapshots provides comprehensive off-site data backup to facilitate disaster recovery and business continuity.  
+
+!!! tip "New in 26.1 - Partial System Snapshots available for Site Sync"
+   Partial System Snapshots allow selective snapshotting of tagged VMs and tenants. Because sync replication uses system snapshots, you can now replicate only the workloads that need higher‑frequency protection or longer retention, instead of replicating the entire system every time. Full system snapshots remain essential for full‑system recovery.
 
 ## Site Sync Configuration Steps
 
@@ -155,7 +158,9 @@ When a specific tier(1-5) is selected here, the sync directs all data to the sel
 
 ## Specify Snapshots to Auto Sync and Remote Retention
 
-!!! success "The system snapshot profile determines the snapshot take and retention schedule for the entire local system (system snapshots include a complete recovery point of the entire VDC, including: VMs, networks, tenants, vSAN, NAS, etc.) These are the snapshots that can be selected for an automatic site sync. To change the profile used to control local system snapshots: System > System Snapshots > Select Snapshot Profile. For more information about system snapshots: see [**System Snapshots**](/product-guide/backup-dr/system-snapshots) and [**System Snapshot Restores**](product-guide/backup-dr/system-snapshots)
+
+!!! success "System snapshots can be selected for automatic site sync; this includes full and partial (available in version 26.1) system snapshots.  See [**Snapshots Overview**](/product-guide/backup-dr/snapshots-overview) and [**System Snapshots**](/product-guide/backup-dr/system-snapshots) for more information."  
+
 
 ### Select Snapshots and Remote Retentions for Auto Sync
 
