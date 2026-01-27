@@ -8,7 +8,7 @@ New to VergeOS backup and disaster recovery? Follow this path:
 
 1. **[Configure automated snapshots](/product-guide/backup-dr/snapshot-profiles)** - Set up regular system backups with customizable schedules
 2. **[Plan your DR strategy](/product-guide/backup-dr/sync-configuration)** - Implement offsite replication to secondary sites  
-3. **[Test recovery procedures](/product-guide/backup-dr/cloud-snapshot-restore)** - Validate your backup strategy with practice restores
+3. **[Test recovery procedures](/product-guide/backup-dr/system-snapshot-restore)** - Validate your backup strategy with practice restores
 
 ## Core Capabilities
 
