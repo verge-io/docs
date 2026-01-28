@@ -1,6 +1,6 @@
-## Restores from System Snapshots
+# Restores from System Snapshots
 
-### Access System Snapshots from Your Provider/Host
+## Access System Snapshots from Your Provider/Host
 
 !!! note "This section of instructions apply to systems that are tenants themselves. If your provider has allowed it, you can request to access a snapshot of your environment from the provider's system snapshots. Once requested, the snapshot is then available to use for restoring individual VMs or your complete environment."
 
@@ -14,7 +14,7 @@
 
 ___
 
-### Restore Entire System from Snapshot
+## Restore Entire System from Snapshot
 
 !!! note "System Requirements"
     * Full system restoration is only supported on the local System where the snapshot was taken. This operation cannot be used to restore one site over another (for example, you cannot restore Site A over Site B). 
@@ -58,7 +58,7 @@ Full system snapshots include all tenants at the time the snapshot is taken.  Pa
 
 !!! note "An individual tenant can also be restored from the tenant dashboard, with a restore that overwrites the existing tenant, rather than creating a new tenant instance. Instructions can be found [**here**](/product-guide/tenants/tenant-snapshots#restore-a-tenant-from-snapshot-overwrite-existing)."
 
-### Restore Select VMs from a System Snapshot (creates new VM instance(s))
+## Restore Select VMs from a System Snapshot (creates new VM instance(s))
 
 Full system snapshots include all the host's VMs at the time the snapshot is taken.  Partial system snapshots will only include VMs per the include/exclude tag configuration.
 
@@ -73,7 +73,7 @@ Full system snapshots include all the host's VMs at the time the snapshot is tak
 !!! note "An individual VM can also be restored from the VM dashboard; restoring from the VM dashboard allows the option to create a new VM instance or overwrite the current. Instructions can be found [**here**](/product-guide/backup-dr/vm-snapshots-restores#restore-a-vm-snapshot-to-overwrite-existing-current-version-of-vm)."
 
 
-### Related Documentation
+## Related Documentation
 
 * [**VM Snapshots and Restores**](/product-guide/backup-dr/vm-snapshots-restores) 
 * [**Tenant Restores**](/product-guide/tenants/tenant-restores) 
