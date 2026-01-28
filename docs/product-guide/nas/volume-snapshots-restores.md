@@ -1,10 +1,10 @@
 # NAS Volume Snapshots and Restores
 
-Volume-level snapshots allow for customizing snapshot schedule and retention rules per individual NAS volume and provide the option for a quiesced snapshot. (Non-quiesced NAS volumes can be imported from system snapshots to be used for restore.)
+Volume-level snapshots allow for customizing snapshot schedule and retention rules per individual NAS volume and provide the option for a quiesced snapshot. (Non-quiesced NAS volumes can be imported from full system snapshots to be used for restore.)
 
 ## Quiesced Snapshots
 
-Quiesced volume snapshots freeze file system I/O during the snapshot process. The quiesce option can be selected when taking a manual volume snapshot and can be enabled within the snapshot profile for automated snapshots.
+Quiesced volume snapshots freeze file system I/O during the snapshot process. The quiesce option can be selected when taking a manual volume snapshot and can be enabled within the snapshot profile used for automated snapshots.
 
 ## Schedule Volume Snapshots
 
@@ -36,7 +36,7 @@ Quiesced volume snapshots freeze file system I/O during the snapshot process. Th
 
 ## Restore a Volume from Snapshot
 
-!!! note "To restore a volume from a system snapshot, the volume must first be imported from the system snapshot as detailed below. To restore from an individual volume snapshot, skip the import section of instructions and continue to Restore to overwrite -OR- Restore to create new instructions"
+!!! note "To restore a volume from a full system snapshot, the volume must first be imported from the system snapshot as detailed below. To restore from an individual volume snapshot, skip the import section of instructions and continue to Restore to overwrite -OR- Restore to create new instructions"
 
 ### *Import Volume Snapshot from a System Snapshot (to make it available for a volume restore)*
 

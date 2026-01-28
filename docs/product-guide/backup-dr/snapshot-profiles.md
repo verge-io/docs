@@ -78,7 +78,7 @@ A profile period defines a frequency and retention term. Adding multiple periods
 
 * **Private** (applies to system snapshots only): when selected, snapshot from this period are hidden from tenants (applies to system snapshots only)
 * **Immutable** (applies to system snapshots only): when selected, deletion of snapshots is blocked for all users until expiration or the immutable flag is removed with a mandatory waiting period.  
-!!! warning "It is important to understand how immutable snapshots work and possible risks.  See the [Immutable Snapshots Guide](/product-guide/backup-dr/immutable-snapshots) for detailed information."
+!!! warning "Immutable snapshots are locked, requiring a mandatory waiting period before they can be deleted. Ensure retention settings align with available storage. For more guidance, see the [Immutable Snapshots Guide](/product-guide/backup-dr/immutable-snapshots)."
 * **Snapshot Type** (applies to system snapshots only):
     * ***Full***: snapshot includes the entire system, can be used for complete system recovery
     * ***Partial Exclude Tags***: snapshot of all VMs/tenants without the specified tag
