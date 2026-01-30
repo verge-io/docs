@@ -2,11 +2,11 @@
 
 
 !!! note "New in 26.1 - Partial System Snapshots Based on Custom Tagging"
-      With the introduction of partial snapsets, system snapshots allow you to selectively include only the VMs or tenants you want to include, giving you far more flexibility in how you design your replication and retention strategy.
+      Partial snapsets allow system snapshots to selectively include only the VMs or tenants you choose, giving you far more flexibility in designing replication and retention strategies.
 
       Full system snapshots remain the foundation of protection and are still required for full‑system recovery. However, you can now include partial system snapshots within your schedule to give specific VMs or tenants their own replication and retention cadence.
 
-      By adding partial snaps alongside your regular full system snapshots, you can:  
+      Adding partial snaps alongside your regular full system snapshots enables you to 
       - Replicate high‑priority VMs or tenants more frequently  
       - Retain targeted workloads for longer without expanding system‑wide retention  
       - Sync different subsets of workloads to different locations   
@@ -17,35 +17,36 @@
 ## Full vs. Partial 
 
 ### Full System Snapshots:
-  * Contain a backup of everything in a system, including all tenants, VMs, NAS volumes, networks, and settings 
-  * Can be used to restore an entire system. 
-  * Can also be used for selective object restores, including:
+  * Capture the entire system, including all tenants, VMs, NAS volumes, networks, and settings 
+  * Support full-sytem recovery
+  * Support selective object restores, including:
     * Tenants
     * NAS volumes
     * VMs 
-  * Select: Snapshot Type=*Full*
+  * Select: **Snapshot Type=*Full***
 
-!!! tip "Default settings on a new system are configured to perform *Full* system snapshots at multiple intervals with different retentions."
+!!! tip "New systems are preconfigured to perform *Full* system snapshots at multiple intervals with different retentions."
 
 ### Partial System Snapshots:
   * Include or exclude VMs and tenants based on custom tagging
   * Allow more frequent backup and sync replication of select VMs and tenants 
   * Support longer retention for specific workloads without increasing system‑wide retention
-  * Select: Snapshot Type=*Partial - Exclude Tags* OR *Partial - Include Tags*
+  * Select: **Snapshot Type=*Partial - Exclude Tags** or ***Partial - Include Tags***
   
+!!! tip "Both Full and Partial system snapshots can be used in VergeOS Site syncs to replicate data to a remote system."
 
 ## Automated System Snapshots
 
-By default, system snapshots run according to the included ***System Snapshots*** profile.  It is recommended to keep the System snapshot profile set to this value. The periods within this default profile can be tailored to meet your schedule and retention needs.  
+By default, system snapshots run according to the included ***System Snapshots*** profile.  It is recommended to keep this profile assigned. The periods within this default profile can be tailored to meet your schedule and retention needs.  
 
 ??? tip "Default Schedule"
-    The default *"System Snapshots"* profile includes the following schedule of Full snapshots  
+    The default ***"System Snapshots"*** profile includes the following schedule of Full snapshots  
 
       * hourly snapshots retained for 3 hours
       * a daily snapshot at midnight retained for 3 days
       * a daily snapshot at noon retained for 1 day.  
 
-    For many environments, this provides a solid starting point that balances system protection with storage usage.
+    This provides a solid starting point for most environments, balancing system protection with storage usage.
 
 
 ## Modifying Your System Snapshot Schedule 
@@ -55,17 +56,17 @@ To modify the system snapshot schedule:
 
 1. Navigate to **System** > **System Snapshots**.
 2. Click **View Snapshot Profile** on the left menu.  
-This takes you to the profile currently set for taking automatic system snapshots (default setting="*System Snapshots*").  
+This opens the profile currently assigned for automatic system snapshots (default:"*System Snapshots*").  
 
-3. Scroll to the **Periods** section of the dashboard.   
-Each period listed defines a frequency and retention.  You can modify, remove, or add periods to customize your automatic system snapshot activity.  
+3. Scroll to the **Periods** section.   
+Each period listed defines a frequency and retention.  You can add, modify, and remove periods to customize the schedule.  
 
-See [Snapshot Profiles - Profile Periods](/product-guide/backup-dr/snapshot-profiles#profile-periods) for detailed information on configuring profile periods. 
+For detailed instructions on configuring periods, see [Snapshot Profiles - Profile Periods](/product-guide/backup-dr/snapshot-profiles#profile-periods). 
 
 
 ## Manual System Snapshots
 
-A manual system snapshot can be taken at any time. Creating a short‑term manual snapshot before a major configuration change or maintenance task provides a restore point if you need to roll back.
+A manual system snapshot can be taken at any time. Creating a short‑term manual snapshot before major configuration changes or maintenance provides a rollback point if needed.
 
 ### Take a Manual Snapshot of the Entire System
 
@@ -74,24 +75,16 @@ A manual system snapshot can be taken at any time. Creating a short‑term manua
 3. Configure snapshot options:  
     * **Name** (required): provide a descriptive name (e.g. 'before drive maintenance') 
     * **Description** (optional): 
-    * **Expires**: select/enter a date and time for expiration.
+    * **Expires**: select/enter a date and time for expiration. 
+    ⚠️ Consider vSAN usage when setting expirations. Initially, source and snapshot are identical, but as they diverge, deduplication decreases between the two and storage usage increases.  Avoid the *"Never Expire"* option unless necessary.
     * **Snapshot Type**:
-        * ***Full***:
+        * ***Full***
         * ***Partial - Exclude Tags***
         * ***Partial - Include Tags***
     * **Private** (default=enabled): this option can be deselected to allow tenants access to their own data within this snapshot.  
-    * **Immutable** (default=disabled): when selected, the snapshot is locked and cannot be deleted by anyone until it is unlocked, with a mandatory waiting period.
+    * **Immutable** (default=disabled): prevents deletion until unlocked, with a mandatory waiting period.
 
-!!! warning "Immutable snapshots are locked, requiring a mandatory waiting period before they can be deleted. Ensure retention settings align with available storage. For more guidance, see the [Immutable Snapshots Guide](/product-guide/backup-dr/immutable-snapshots)."  
-
-!!! warning "Snapshot Expiration"
-    Always consider vSAN usage: initially source and snapshot are the same and thus there is no impact on storage; but, as source data diverges more from the snapshot data, there is less deduplication between the two and thus more vSAN usage. Using the *Never Expire* option is not recommended unless necessary.
-
-
-
-
-    
-
+!!! warning "Immutable snapshots cannot be deleted (even by administrators) until unlocked, and the waiting period has elapsed. Ensure retention settings align with available storage. For more guidance, refer to the [Immutable Snapshots Guide](/product-guide/backup-dr/immutable-snapshots)."  
 
 4. Click **Submit** to take the snapshot.
 
@@ -102,22 +95,23 @@ A manual system snapshot can be taken at any time. Creating a short‑term manua
 
 * Retaining an excessive number of snapshots can significantly increase storage consumption and operational overhead. A well‑designed retention policy preserves essential restore points while automatically pruning older, less relevant snapshots, helping you meet recovery objectives without accumulating unnecessary historical data.
 * Monitor storage utilization regularly to ensure that snapshot growth remains aligned with your retention strategy.
-* Review retention settings after major environment changes—such as adding new VMs, expanding tenants, or increasing workload churn—to confirm that storage usage remains predictable and sustainable.
+* Reevalutate retention settings after major environment changes, such as adding new VMs, expanding tenants, or increasing workload churn, to confirm that storage usage remains predictable and sustainable.
 * Avoid creating overly granular snapshot periods unless they are required for specific workloads. High‑frequency snapshots can increase metadata and storage overhead without providing meaningful recovery benefits for all systems.  
 
 ### System Protection
 
 * !!! warning "Ensure your System Snapshots profile includes scheduled periods that *take full snapshots*. Full system snapshots provide the system‑wide recovery point needed to restore from unpredictable hardware failures or configuration errors."
 
-* When more-frequent protection and/or longer retention of select VMs and tenants is needed, add profile periods that take partial snapshots.
+* Add partial snapshot periods when specific VMs or tenants require more frequent protection or longer retention.
 
 
 ## Related Documentation
 
 * [Snapshots Overview](/product-guide/backup-dr/snapshots-overview)
 * [Snapshot Profiles](/product-guide/backup-dr/snapshot-profiles)
-* [Site Syncs](/product-guide/backup-dr/sync-overview)
+* [Restores from System Snapshot](/product-guide/backup-dr/system-snapshot-restores)
 * [Tenant Snapshots](/product-guide/tenants/tenant-snapshots)
 * [Tenant Restores](/product-guide/tenants/tenant-restores)
 * [VM Snapshots and Restores](/product-guide/backup-dr/vm-snapshots-restores)
 * [NAS Volume Snapshots and Restores](/product-guide/nas/volume-snapshots-restores)
+* [Site Syncs](/product-guide/backup-dr/syncs-overview)
