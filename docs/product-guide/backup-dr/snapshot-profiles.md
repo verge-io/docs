@@ -89,8 +89,7 @@ A profile period defines both the frequency and retention for snapshots. Adding 
 
 
 
-#### Machine Snapshot Settings  
-**(Applies to VM and volume snapshots; not used for system snapshots)**
+#### Machine Snapshot Settings (Applies to VM and volume snapshots; not used for system snapshots)
 
 * **Quiesce Snapshots**: If enabled, disk activity will temporarily freeze while the snapshot is being taken.
     * Provides application-consistent backups for VMs  

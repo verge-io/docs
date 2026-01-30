@@ -3,7 +3,7 @@
 Site sync provides replication of ***system snapshots*** to a separate VergeOS system.  Replicating full system snapshots provides comprehensive off-site data backup to facilitate disaster recovery and business continuity.  
 
 !!! tip "New in 26.1 - Partial System Snapshots available for Site Sync"
-    Partial System Snapshots allow selective snapshotting of tagged VMs and tenants. Because sync replication uses system snapshots, you can now replicate only the workloads that need higher‑frequency protection or longer retention, instead of replicating the entire system every time. Full system snapshots remain essential for full‑system recovery.
+    Partial System Snapshots allow selective snapshotting of tagged VMs and tenants. Because sync replication uses system snapshots, you can now replicate workloads that need higher‑frequency protection or longer retention, instead of replicating the entire system every time. Full system snapshots remain essential for full‑system recovery.
 
 ## Site Sync Configuration Steps
 
