@@ -357,6 +357,7 @@ nav:
         - Terraform Provider: product-guide/tools-integrations/terraform-provider.md
         - PowerShell Module: product-guide/tools-integrations/powershell-module.md
         - Python SDK: product-guide/tools-integrations/python-sdk.md
+        - Go SDK: product-guide/tools-integrations/go-sdk.md
       - Monitoring:
         - Prometheus Exporter: product-guide/tools-integrations/prometheus-exporter.md
       - Backup & Migration:
