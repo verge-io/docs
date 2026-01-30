@@ -116,14 +116,14 @@ A profile period defines both the frequency and retention for snapshots. Adding 
 
 Snapshot profiles can be assigned to different snapshot types:
 
-* **Full System Snapshots**  
- It is typically recommended that you use the default *'System Snapshots'* profile for your full system snapshots. This profile can be modified to customize scheduling and can include partial snapshots in addition to full system snapshots.  See [System Snapshots](/product-guide/backup-dr/system-snapshots) for additional information
+### Full System Snapshots
+ It is typically recommended that you use the default *'System Snapshots'* profile for your full system snapshots. This profile can be modified to customize scheduling and can include partial snapshots in addition to full system snapshots.  See [System Snapshots](/product-guide/backup-dr/system-snapshots) for more information
 
-* **Partial System Snapshots**  
+### Partial System Snapshots  
 Select VMs and/or tenants based on custom tagging.  These can be added to your [System Snapshots](/product-guide/backup-dr/system-snapshots) schedule or added to a separate snapshot profile. 
 
-* **Individual NAS Volumes**  
+### Individual NAS Volumes  
  See [NAS Volume Snapshots and Restores - Schedule Volume Snapshots ](/product-guide/nas/volume-snapshots-restores#schedule-volume-snapshots)
 
-* **Individual VMs**  
+### Individual VMs  
 See [VM Snapshots and Restores - Assign a Snapshot Profile](/product-guide/backup-dr/vm-snapshots-restores#assign-a-snapshot-profile-to-an-individual-vm) 

@@ -8,7 +8,7 @@ Virtual machine protection in VergeOS is built on a flexible snapshot framework 
 | Snapshot Method | What It Captures | Restore Capability | Quiesced Option | Typical Use Case |
 |-----------------|------------------|--------------------|------------------|------------------|
 | **Full System Snapshot** | Entire system: all tenants, all VMs, all settings | Restore entire system or restore individual VMs (crash‑consistent) | No | System‑wide protection, DR recovery points |
-| **Partial System Snapshot** | Only VMs/tenants included by tag rules in the profile period | Restore included VMs | Yes (if quiesce tag is set) or crash‑consistent | Higher‑frequency or longer‑retention protection for selected workloads |
+| **Partial System Snapshot** | Only VMs/tenants included by tag rules in the profile period | Restore included VMs | Yes (if quiesce tag is set) otherwise crash‑consistent | Higher‑frequency or longer‑retention protection for selected workloads |
 | **Individual VM Snapshot** (scheduled via VM snapshot profile or taken manually) | A single VM | Restore that VM | Yes (if selected) | Per‑VM protection, ad‑hoc snapshots before maintenance or changes |
 
 
