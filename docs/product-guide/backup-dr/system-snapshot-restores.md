@@ -2,7 +2,7 @@
 
 ## Access System Snapshots from Your Provider/Host
 
-!!! note "This section of instructions apply to systems that are tenants themselves. If your provider has allowed it, you can request to access a snapshot of your environment from the provider's system snapshots. Once requested, the snapshot is then available to use for restoring your individual VMs or complete environment."
+!!! note "This section of instructions apply to systems that are tenants themselves. If your provider has allowed it, you can request to access a snapshot of your environment from the provider's snapshots. Once requested, the snapshot is then available to use for restoring your individual VMs or complete environment."
 
 1. Navigate to **System** > **System Snapshots**.
 3. A listing of available snapshots is displayed; those displayed with a type of ***Provider*** are snapshots taken by the host. **Click to select the desired provider snapshots** (selected snapshots will show a checkmark).

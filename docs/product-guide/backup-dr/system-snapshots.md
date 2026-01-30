@@ -6,7 +6,7 @@
 
       Full system snapshots remain the foundation of protection and are still required for full‑system recovery. However, you can now include partial system snapshots within your schedule to give specific VMs or tenants their own replication and retention cadence.
 
-      Adding partial snaps alongside your regular full system snapshots enables you to 
+      Adding partial snaps alongside your regular full system snapshots enables you to:   
       - Replicate high‑priority VMs or tenants more frequently  
       - Retain targeted workloads for longer without expanding system‑wide retention  
       - Sync different subsets of workloads to different locations   
@@ -16,24 +16,44 @@
     
 ## Full vs. Partial 
 
+Both Full and Partial system snapshots can be used in VergeOS Site syncs to replicate data to a remote system
+
+
 ### Full System Snapshots:
-  * Capture the entire system, including all tenants, VMs, NAS volumes, networks, and settings 
-  * Support full-sytem recovery
-  * Support selective object restores, including:
+  * Contain a backup of everything in a system, including all tenants, VMs, NAS volumes, networks, and settings 
+  * supports full-system restore
+  * supports selective object restores, including:
     * Tenants
     * NAS volumes
     * VMs 
-  * Select: **Snapshot Type=*Full***
+  * VergeOS Site Sync support
+  * Select: Snapshot Type=*Full*
 
-!!! tip "New systems are preconfigured to perform *Full* system snapshots at multiple intervals with different retentions."
+!!! tip "Default settings on a new system are configured to perform *Full* system snapshots at multiple intervals with different retentions."
 
 ### Partial System Snapshots:
   * Include or exclude VMs and tenants based on custom tagging
   * Allow more frequent backup and sync replication of select VMs and tenants 
-  * Support longer retention for specific workloads without increasing system‑wide retention
+  * Support longer retention for specific workloads *without increasing system‑wide retention*
+  * VergeOS Site Sync support
   * Select: **Snapshot Type=*Partial - Exclude Tags** or ***Partial - Include Tags***
   
-!!! tip "Both Full and Partial system snapshots can be used in VergeOS Site syncs to replicate data to a remote system."
+---
+
+### Full vs. Partial System Snapshots — Quick Reference
+
+| Feature / Behavior | **Full System Snapshots** | **Partial System Snapshots** |
+|--------------------|---------------------------|-------------------------------|
+| **What they capture** | Entire system: tenants, VMs, NAS volumes, networks, settings | Only selected VMs/tenants based on include/exclude tags |
+| **Primary purpose** | Full‑system recovery and broad protection | Targeted protection for specific workloads |
+| **Supports selective restores** | Yes — tenants, NAS volumes, VMs | Yes — only for objects included in the partial snapshot |
+| **Use cases** | System‑wide rollback, disaster recovery | Higher‑frequency protection or longer retention for specific VMs/tenants |
+| **Retention impact** | Affects system‑wide retention | Allows extended retention without increasing system‑wide retention |
+| **Replication behavior** | Can be used in Site Syncs | Can also be used in Site Syncs |
+| **Snapshot Type selection** | `Full` | `Partial – Exclude Tags` or `Partial – Include Tags` |
+| **Default behavior on new systems** | Preconfigured with multiple Full snapshot intervals and retentions | Not enabled by default; added as needed |
+
+---
 
 ## Automated System Snapshots
 
@@ -49,14 +69,14 @@ By default, system snapshots run according to the included ***System Snapshots**
     This provides a solid starting point for most environments, balancing system protection with storage usage.
 
 
-## Modifying Your System Snapshot Schedule 
+### Modifying Your System Snapshot Schedule 
 
 
 To modify the system snapshot schedule: 
 
 1. Navigate to **System** > **System Snapshots**.
 2. Click **View Snapshot Profile** on the left menu.  
-This opens the profile currently assigned for automatic system snapshots (default:"*System Snapshots*").  
+This opens the profile currently assigned for automatic system snapshots (default: "***System Snapshots***").  
 
 3. Scroll to the **Periods** section.   
 Each period listed defines a frequency and retention.  You can add, modify, and remove periods to customize the schedule.  
@@ -73,16 +93,19 @@ A manual system snapshot can be taken at any time. Creating a short‑term manua
 1. Navigate to **System** > **System Snapshots**.
 2. Select **New** from the left menu.
 3. Configure snapshot options:  
-    * **Name** (required): provide a descriptive name (e.g. 'before drive maintenance') 
+    * **Name** (required): Provide a descriptive name (e.g. 'before drive maintenance') 
     * **Description** (optional): 
-    * **Expires**: select/enter a date and time for expiration. 
+    * **Expires**: Select/enter a date and time for expiration. 
     ⚠️ Consider vSAN usage when setting expirations. Initially, source and snapshot are identical, but as they diverge, deduplication decreases between the two and storage usage increases.  Avoid the *"Never Expire"* option unless necessary.
     * **Snapshot Type**:
-        * ***Full***
-        * ***Partial - Exclude Tags***
-        * ***Partial - Include Tags***
-    * **Private** (default=enabled): this option can be deselected to allow tenants access to their own data within this snapshot.  
-    * **Immutable** (default=disabled): prevents deletion until unlocked, with a mandatory waiting period.
+        * ***Full***: capture of entire system; required for system-wide recovery
+        * ***Partial - Exclude Tags***: capture all VMs and tenants *except* those with specified tags
+        * ***Partial - Include Tags***: capture all VMs and tenants with the assigned tags.
+            * **Exclude/Include Tags** (Partial snapshots only): Click the ellipse button [<i class="bi bi-three-dots"></i>] to select one or more tags. 
+            * **Quiesce Tags**: (optional; Partial snapshots only); Click the ellipse button [<i class="bi bi-three-dots"></i>] to select one or more tags. VMs with the specified tags will temporarily freeze disk activity during capture to provide an application-consistent snapshot.  Requires [VM Guest Agent](/product-guide/virtual-machines/vm-guest-agent) support.
+    * **Private** (default:enabled): This option can be deselected to allow tenants access to their own data within this snapshot.  
+    * **Immutable** (default:disabled): Prevents deletion until unlocked, with a mandatory waiting period.
+   
 
 !!! warning "Immutable snapshots cannot be deleted (even by administrators) until unlocked, and the waiting period has elapsed. Ensure retention settings align with available storage. For more guidance, refer to the [Immutable Snapshots Guide](/product-guide/backup-dr/immutable-snapshots)."  
 

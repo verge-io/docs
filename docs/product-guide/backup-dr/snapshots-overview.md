@@ -22,9 +22,9 @@ Snapshots can also be taken manually, with settable expiration. Manual snapshots
 
 System snapshots can be:  
 
-* **Full** - providing backup of the entire VergeOS system  
+* **Full** - captures the entire VergeOS system  
 **-OR-**
-* **Partial** - containing select VMs/tenants based on tagging
+* **Partial** - capture of select VMs/tenants based on tagging
 
 ### What can be restored from a System Snapshot?
 

@@ -64,16 +64,16 @@ A profile period defines both the frequency and retention for snapshots. Adding 
 
 
 * **Retention**: Determines how long snapshots to keep snapshots before automatic expiration.
-    * Enter a **(value)** and select **Units**:*Days*(default),* Hours*, *Years*, *Forever* (retained indefinitely) 
+    * Enter a **(value)** and select **Units**: *Days*(default),* Hours*, *Years*, *Forever* (retained indefinitely) 
      
-!!! warning Long‑term or indefinite retention can significantly increase storage usage. Consider your data‑change rate and available storage when configuring retention
+!!! warning "Long‑term or indefinite retention can significantly increase storage usage. Consider your data‑change rate and available storage when configuring retention."
 
 
 * **Minimum Snapshots**: (default:1) Ensures a minimum number of snapshots are always available. 
     * Snapshots may be kept past expiration, if necessary to maintain the defined minimum. 
     * This helps to ensure there are available recovery points after prolonged outages by preventing automatic purging of an expired snapshot when there is no replacement snapshot. 
 
-!!! tip "Snapshots kept past expiration to satisfy the minimum will show as "x days over" in the 'Time to Expiration' column. They are deleted only when a new scheduled snapshot replaces them or if manually removed."  
+!!! tip "Snapshots kept past expiration to satisfy the minimum will be marked as "Held" and display "x days over" in the 'Time to Expiration' column. They are deleted only when a new scheduled snapshot replaces them or if manually removed."  
       
 #### System Snapshot Settings (applies only to system snapshots) 
 
@@ -82,15 +82,19 @@ A profile period defines both the frequency and retention for snapshots. Adding 
 !!! warning "Immutable snapshots cannot be deleted until unlocked and mandatory waiting period expires. Ensure retention settings align with available storage. For more guidance, see the [Immutable Snapshots Guide](/product-guide/backup-dr/immutable-snapshots)."
 * **Snapshot Type**:
     * ***Full***: captures the entire system; required for full-system recovery
-    * ***Partial Exclude Tags***: captures of all VMs/tenants *except* those with specified tag
+    * ***Partial Exclude Tags***: capture of all VMs/tenants *except* those with specified tag
     * ***Partial Include Tags***: captures only VMs/tenants with the specified tag
+        * **Exclude/Include Tags** (Partial snapshots only): Click the ellipse button [<i class="bi bi-three-dots"></i>] to select one or more tags. 
+        * **Quiesce Tags** (optional; Partial snapshots only): Click the ellipse button [<i class="bi bi-three-dots"></i>] to select one or more tags. VMs with the specified tags will temporarily freeze disk activity during capture to provide an application-consistent snapshot.  Requires [VM Guest Agent](/product-guide/virtual-machines/vm-guest-agent) support.
+
+
 
 #### Machine Snapshot Settings  
 **(Applies to VM and volume snapshots; not used for system snapshots)**
 
 * **Quiesce Snapshots**: If enabled, disk activity will temporarily freeze while the snapshot is being taken.
     * Provides application-consistent backups for VMs  
-    * VMs requires [VM guest agent](/product-guide/virtual-machines/vm-guest-agent) support 
+    * VMs require [VM guest agent](/product-guide/virtual-machines/vm-guest-agent) support 
 
 * **Max Tier for Storing Snapshot**: (default= Tier 1). Controls the highest storage tier allowed for snapshot data.
     * Snapshot data normally uses the same tier as the source.
@@ -114,13 +118,13 @@ A profile period defines both the frequency and retention for snapshots. Adding 
 Snapshot profiles can be assigned to different snapshot types:
 
 * **Full System Snapshots**  
- It is typically recommended that you use the default *'System Snapshots'* profile for your full system snapshots. This profile can be modified to customize scheduling and can include partial snapshots in addition to full system snapshots.  See [System Snapshots](/product-guide/backup-dr/system-snapshots). 
+ It is typically recommended that you use the default *'System Snapshots'* profile for your full system snapshots. This profile can be modified to customize scheduling and can include partial snapshots in addition to full system snapshots.  See [System Snapshots](/product-guide/backup-dr/system-snapshots) for additional information
 
 * **Partial System Snapshots**  
 Select VMs and/or tenants based on custom tagging.  These can be added to your [System Snapshots](/product-guide/backup-dr/system-snapshots) schedule or added to a separate snapshot profile. 
 
 * **Individual NAS Volumes**  
- See [NAS Volume Snapshots and Restores - Schedule Volume Snapshots ](/product-guide/nas/volume-snapshots-restores#schedule-volume-snapshots).
+ See [NAS Volume Snapshots and Restores - Schedule Volume Snapshots ](/product-guide/nas/volume-snapshots-restores#schedule-volume-snapshots)
 
 * **Individual VMs**  
-See [VM Snapshots and Restores - Assign a Snapshot Profile](/product-guide/backup-dr/vm-snapshots-restores#assign-a-snapshot-profile-to-an-individual-vm). 
+See [VM Snapshots and Restores - Assign a Snapshot Profile](/product-guide/backup-dr/vm-snapshots-restores#assign-a-snapshot-profile-to-an-individual-vm) 
