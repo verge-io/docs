@@ -63,7 +63,7 @@ A profile period defines both the frequency and retention for snapshots. Adding 
     * ***Custom*** allows specifying a one‑time execution at an exact date and time. 
 
 
-* **Retention**: Determines how long snapshots to keep snapshots before automatic expiration.
+* **Retention**: Specifies how long to keep snapshots before automatic expiration.
     * Enter a **(value)** and select **Units**: *Days*(default),* Hours*, *Years*, *Forever* (retained indefinitely) 
      
 !!! warning "Long‑term or indefinite retention can significantly increase storage usage. Consider your data‑change rate and available storage when configuring retention."
