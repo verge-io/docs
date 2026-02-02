@@ -46,7 +46,7 @@ VM-level snapshots allow for quiesced capture (requires guest agent) and schedul
 
 Individual tenants can be restored from the parent's system snapshot. For related instructions, see: [**Tenant Restores**](/product-guide/tenants/tenant-restores)
 
-Additionally, each tenant can utilize [**System Snapshots**](/product-guide/backup-dr/system-snapshot-restores), independently within their own environment, to back up their complete system or partial snapsets based on custom
+Additionally, each tenant can utilize [**System Snapshots**](/product-guide/backup-dr/system-snapshot-restores), independently within their own environment, to back up their complete system or partial snapsets based on custom tagging.
 
 ## NAS Snapshot/Restore
 
