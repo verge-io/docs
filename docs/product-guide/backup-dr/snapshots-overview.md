@@ -35,7 +35,7 @@ A system snapshot can be used to restore:
 - Individual tenants
 
 For more information see:  
-- [**System Snapshots**](/product-guide/backup-dr/system-snapshot-restores)  
+- [**System Snapshots**](/product-guide/backup-dr/system-snapshots)  
 - [**Restores from System Snapshot**](/product-guide/backup-dr/system-snapshot-restores)                      
 
 ## VM Snapshot/Restore
