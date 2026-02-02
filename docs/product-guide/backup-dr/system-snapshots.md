@@ -88,7 +88,7 @@ For detailed instructions on configuring periods, see [Snapshot Profiles - Profi
 
 A manual system snapshot can be taken at any time. Creating a short‑term manual snapshot before major configuration changes or maintenance provides a rollback point if needed.
 
-### Take a Manual Snapshot of the Entire System
+### Take a Manual System Snapshot
 
 1. Navigate to **System** > **System Snapshots**.
 2. Select **New** from the left menu.
