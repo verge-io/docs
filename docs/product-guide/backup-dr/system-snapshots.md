@@ -123,7 +123,7 @@ A manual system snapshot can be taken at any time. Creating a short‑term manua
 
 ### System Protection
 
-* !!! warning "Ensure your System Snapshots profile includes scheduled periods that *take full snapshots*. Full system snapshots provide the system‑wide recovery point needed to restore from unpredictable hardware failures or configuration errors."
+!!! warning "Ensure your System Snapshots profile includes scheduled periods that *take full snapshots*. Full system snapshots provide the system‑wide recovery point needed to restore from unpredictable hardware failures or configuration errors."
 
 * Add partial snapshot periods when specific VMs or tenants require more frequent protection or longer retention.
 
