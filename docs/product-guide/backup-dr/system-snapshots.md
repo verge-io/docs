@@ -118,7 +118,7 @@ A manual system snapshot can be taken at any time. Creating a short‑term manua
 
 * Retaining an excessive number of snapshots can significantly increase storage consumption and operational overhead. A well‑designed retention policy preserves essential restore points while automatically pruning older, less relevant snapshots, helping you meet recovery objectives without accumulating unnecessary historical data.
 * Monitor storage utilization regularly to ensure that snapshot growth remains aligned with your retention strategy.
-* Reevalutate retention settings after major environment changes, such as adding new VMs, expanding tenants, or increasing workload churn, to confirm that storage usage remains predictable and sustainable.
+* Reevaluate retention settings after major environment changes, such as adding new VMs, expanding tenants, or increasing workload churn, to confirm that storage usage remains predictable and sustainable.
 * Avoid creating overly granular snapshot periods unless they are required for specific workloads. High‑frequency snapshots can increase metadata and storage overhead without providing meaningful recovery benefits for all systems.  
 
 ### System Protection
