@@ -1,4 +1,27 @@
-# Tenant Crash Cart
+---
+title: Tenant Crash Cart Guide
+slug: tenant-crash-cart-guide
+description: Description and instructions for the tenant crash cart utility available in the Recipe Marketplace
+author: vergeOS Documentation Team
+draft: false
+date: 2026-02-03T19:21:32.815Z
+tags:
+  - tenants
+  - recipes
+  - recovery
+  - networking
+categories:
+  - Tenant
+  - Tenants
+  - Network Configuration
+  - Network
+editor: markdown
+dateCreated: 2026-02-02T17:52:09.082Z
+---
+
+
+
+# Tenant Crash Cart Guide
 
 ## Overview
 The **Tenant Crash Cart** is a utility virtual machine designed to provide emergency access to a tenant’s VergeOS environment when the tenant’s external network is misconfigured or otherwise unreachable. By attaching directly to the tenant’s core network, the Crash Cart allows parent-system administrators to log into the tenant UI even when normal access paths are unavailable.
