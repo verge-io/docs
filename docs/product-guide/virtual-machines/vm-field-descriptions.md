@@ -77,7 +77,10 @@ Emulated board architecture.
   * *PC* - IDE
 
 **Allow Hotplug (selected by default)**
-This allows drives and NICs to be added without restarting the VM. Disable if guest OS or emulated hardware does not support it.
+This allows drives and NICs to be added or removed without restarting the VM. Disable if guest OS or emulated hardware does not support it.
+
+!!! note "Hot-Plug Limitations"
+    Hot-plug applies only to **drives and NICs**. Changes to CPU cores or RAM always require a power cycle to take effect. See [VM Hot-Plug Capabilities](/knowledge-base/vm-hotplug-capabilities) for details.
 
 **Console Type \[dropdown\]**
 
