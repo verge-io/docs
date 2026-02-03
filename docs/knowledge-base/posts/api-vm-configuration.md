@@ -489,10 +489,13 @@ curl "https://your-vergeos.example.com/api/v4/vms/42?fields=allow_hotplug" \
 ```
 
 !!! tip "Hotplug Support"
-    - Modern guest operating systems generally support CPU and RAM hotplug
-    - Drive hotplug depends on the guest OS and drive interface
-    - Network interface hotplug is widely supported
-    - Always test hotplug capabilities in your environment
+    The `allow_hotplug` setting enables hot-adding and hot-removing **drives and NICs** while the VM is running:
+
+    - **Drives**: Can be added/removed on the fly (guest OS must support it; Virtio-SCSI recommended)
+    - **NICs**: Can be added/removed on the fly (widely supported by guest operating systems)
+    - **CPU/RAM**: Changes always require a VM power cycle
+
+    See [VM Hot-Plug Capabilities](/knowledge-base/vm-hotplug-capabilities) for complete details.
 
 ## Error Handling
 
