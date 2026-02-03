@@ -17,14 +17,13 @@ A Crash Cart is appropriate when:
 ## Key Characteristics
 - Available as a **recipe** in the Marketplace.
 - Provides a connection path from the **parent system** into the tenant.
-- Requires sufficient parent‑system permissions to access recipes, deploy a VM, and attach it to a tenant network.
 - Does **not** bypass tenant authentication — valid tenant admin credentials are still required.
 - Contains no special tools; its purpose is to present the tenant UI internally.
 
 ---
 
 ## Prerequisites
-- Ability to create and start VMs on the parent system.
+- Permissions to create/start VMs and intended tenant on the parent system
 - Access to the **Services (Marketplace)** catalog.
 - Tenant administrator‑level credentials for the tenant you intend to repair.
 - Basic understanding of tenant networking and external network configuration.
@@ -51,7 +50,7 @@ The VM will be created and automatically attached to the tenant’s core network
 2. Open the console using **Remote Console** or the console button in the top left.
 3. Log into the OS shell using the username and password shown in the VM’s **Note** section.
 
-!!! tip "Upon boot, the VM may auto‑login to the OS shell. The Crash Cart never auto‑logs into the VergeOS UI."
+!!! tip "Upon boot, the VM may auto‑login to the OS shell. The Crash Cart never automatically logs into the VergeOS UI."
 
 ---
 
@@ -70,12 +69,13 @@ The Crash Cart is the right tool for resolving issues such as:
 
 - Incorrectly updated tenant URL or external IP address
 - Firewall rules blocking UI access (e.g., ports 80/443 disabled)
-- External network powered off or failing to start automatically
+- External network powered off and failing to restart automatically
 - Other tenant external network issues that prevent normal UI connectivity
 
 ---
 
 ## Best Practices
+
 - **Keep a Crash Cart VM powered off for reuse** to avoid delays during urgent recovery.
 - If reusing:
   - Power off the VM.
