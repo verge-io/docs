@@ -60,9 +60,11 @@ You’ll need to create a user to access the NAS:
 
 1. Select **NAS > + New Volume** from the top menu.
 2. Configure the volume:  
-    * **NAS Service**: select the NAS service from above  
-    * **Name**: provide a name for the volume, e.g. "VM-export"  
-    * **Filesystem Type**: ***Verge.io VM Export***  
+    * **NAS Service**: Select the NAS service from above  
+    * **Name**: Provide a name for the volume, e.g. "VM-export"  
+    * **VM configuration output file format**: Select the format used for the exported VM configuration file.  
+        * ***Verge.io Virtual Machine (.ybvm)*** — A human‑readable, JSON‑based format that is non‑binary and non‑proprietary. This format is ideal for portability, transparency, and interoperability with external tools or workflows that prefer open, inspectable configuration data.  
+        * ***Open Virtualization Format (.ovf)*** — A widely supported industry-standard format used by many third‑party virtualization platforms and import utilities.  
     * **Quiesced**: Typically should be selected to provide application-consistent VM snapshots. ⚠️ **[VM Guest Agent](/product-guide/virtual-machines/vm-guest-agent) must be installed and registered to provide a quiesced VM snapshot.**   
     * **Max exports to store**: default=3; determines the maximum number of export instances that will be stored at a time  
     * **Enable current folder**: default=enabled. Exports are contained in folders named according to date/time of the export.  With this option enabled, an additional folder named "current" is created to continually contain a branch of the most recent export. This is often helpful to provide an absolute path to retrieve the latest VM snapshots.  
