@@ -1,6 +1,16 @@
 # VM Snapshots and Restores
 
-Although system snapshots include all VMs and allow for restoring individual VMs, VM-level snapshots allow for customizing schedule and retention rules per individual virtual machine (for example, it may be desirable to capture more frequently or retain snapshots longer for certain VMs). Additionally, VM-level snapshots provide the option for a quiesced snapshot.
+Virtual machine protection in VergeOS is built on a flexible snapshot framework that supports system‑wide recovery as well as targeted VM‑level protection. VMs can be safeguarded through **Full System snapshots**, **Partial System snapshots**, or **individual VM snapshots**, each offering different levels of granularity, quiescing options, and restore capabilities. Together, these mechanisms allow administrators to balance broad disaster‑recovery coverage with workload‑specific protection needs.
+
+
+## Snapshot Methods Overview
+
+| Snapshot Method | What It Captures | Restore Capability | Quiesced Option | Typical Use Case |
+|-----------------|------------------|--------------------|------------------|------------------|
+| **Full System Snapshot** | Entire system: all tenants, all VMs, all settings | Restore entire system or restore individual VMs (crash‑consistent) | No | System‑wide protection, DR recovery points |
+| **Partial System Snapshot** | Only VMs/tenants included by tag rules in the profile period | Restore included VMs | Yes (if quiesce tag is set) otherwise crash‑consistent | Higher‑frequency or longer‑retention protection for selected workloads |
+| **Individual VM Snapshot** (scheduled via VM snapshot profile or taken manually) | A single VM | Restore that VM | Yes (if selected) | Per‑VM protection, ad‑hoc snapshots before maintenance or changes |
+
 
 ## Quiesced Snapshots
 
@@ -27,11 +37,10 @@ The quiesce option provides an **application-consistent snapshot** of a running 
 !!! warning "**Consider vSAN space when selecting snapshot expirations**"
      Snapshots held for long periods can have a significant effect on vSAN space; initially, source and snapshot are the same and thus have no impact on storage utilization; however, as source data diverges more from the snapshot data, there is less deduplication between the two and therefore more vSAN utilization. The *Never Expire* option should not be used unless necessary.
 
-## Restore an Individual VM from Snapshot
+## Restore an Individual VM from System Snapshot
 
 !!! note "Restoring VMs from a System Snapshot"
-    **To restore an individual VM from a system snapshot, it must first be imported from the system snapshot as detailed below.** To restore from an individual VM snapshot, skip the import section of instructions and continue to **Restore Overwrite -OR- Restore to a Clone instructions.** Multiple VMs can be restored from system snapshot simultaneously from the [System Snapshots Dashboard](/product-guide/backup-dr/cloud-snapshot-restore#restore-select-vms-from-a-cloud-snapshot-creates-new-vm-instances).
-
+    **To restore an individual VM from a system snapshot, it must first be imported from the system snapshot as detailed below.** To restore from an individual VM snapshot, skip the import section of instructions and continue to **Restore Overwrite -OR- Restore to a Clone instructions.** Multiple VMs can be restored from system snapshot simultaneously from the System Snapshots Dashboard (**System** > **System Snapshots** > **select the snapshot** >  **View VMs**)
 ### *Import VM Snapshot from a System Snapshot (to make it available for a VM restore)*
 
 1. From the **VM dashboard** select **Snapshots** from the left menu.
