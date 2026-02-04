@@ -67,7 +67,7 @@ You’ll need to create a user to access the NAS:
         * ***Open Virtualization Format (.ovf)*** — A widely supported industry-standard format used by many third‑party virtualization platforms and import utilities.  
     * **Quiesced**: Typically should be selected to provide application-consistent VM snapshots. ⚠️ **[VM Guest Agent](/product-guide/virtual-machines/vm-guest-agent) must be installed and registered to provide a quiesced VM snapshot.**   
     * **Max exports to store**: default=3; determines the maximum number of export instances that will be stored at a time  
-    * **Enable current folder**: default=enabled. Exports are contained in folders named according to date/time of the export.  With this option enabled, an additional folder named "current" is created to continually contain a branch of the most recent export. This is often helpful to provide an absolute path to retrieve the latest VM snapshots.  
+    * **Enable current folder**: default=enabled; Exports are contained in folders named according to date/time of the export.  With this option enabled, an additional folder named "current" is created to continually contain a branch of the most recent export. This is often helpful to provide an absolute path to retrieve the latest VM snapshots.  
 3. Click **Submit**.
 
 !!! tip "After you click Submit, the export volume’s dashboard opens where you can run operations on it.  To access this dashboard later, navigate to **NAS** > **Volumes** in the top menu, then double-click the volume in the list." 
