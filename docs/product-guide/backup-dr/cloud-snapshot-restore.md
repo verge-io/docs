@@ -19,6 +19,13 @@ By default, system snapshots run according to the included **System Snapshots** 
 3. **Select the desired snapshot profile** from the dropdown list. For instructions regarding modifying or adding new snapshot profiles, see: [**Snapshot Profiles**](/product-guide/backup-dr/vm-snapshots-restores).
 4. Click **Submit** at the bottom of the page.
 
+### Snapshot Logs
+
+Each system snapshot includes a **Logs** link, accessible from the snapshot dashboard. This provides direct access to log entries associated with the snapshot operation, making it easier to review snapshot activity and troubleshoot issues.
+
+!!! info "Audit Log: Deleted vs. Expired Snapshots"
+    The audit log now differentiates between snapshots that were **manually deleted** and those that **expired automatically** based on their retention policy. This distinction helps administrators understand snapshot lifecycle activity when reviewing audit records.
+
 ## Manual System Snapshots
 
 A manual snapshot can be taken at any time.

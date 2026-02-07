@@ -63,6 +63,7 @@ This guide walks you through the process of configuring VergeOS as an identity p
    - **Force Authorization Source**: Optionally select a third-party provider
    - **Map User**: Choose if all verified users should map to a specific account
    - Set **Scope Settings** (Profile, Email, Groups)
+   - **Allowed Users / Allowed Groups**: Optionally specify which users or groups are permitted to authenticate through this application
    - Configure access restrictions if needed
 
 5. **Save Configuration**

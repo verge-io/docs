@@ -20,6 +20,17 @@ A provider can restore a tenant from system snapshot **\-OR-** can expose a syst
 8. Click **Restore** on the left menu.
 9. A Warning message will appear to caution that this will overwrite the entire existing tenant. Click the **Proceed** button to continue/ **Cancel** to abort.
 
+### Cancel or Overwrite a Pending Restore
+
+If a tenant restore is already in progress (pending), you can cancel or overwrite it:
+
+- **Cancel:** Select the pending restore and click **Cancel Restore** on the left menu. This stops the in-progress restore operation and returns the tenant to its previous state.
+- **Overwrite:** If you initiate a new restore while one is already pending, the system provides the option to overwrite the pending restore with the newly selected snapshot.
+
+## Restoring Sub-Tenants
+
+When restoring a tenant that itself contains sub-tenants (tenants within tenants), the restore operation includes the full sub-tenant hierarchy. The restore process correctly resolves sub-tenant paths, ensuring nested tenant environments are restored accurately.
+
 ## Restore a Deleted Tenant from Snapshot
 
 1. From the top menu, click **System**.

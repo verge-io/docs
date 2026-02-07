@@ -72,7 +72,7 @@ This subsection allows you to enable/disable various performance and security-re
 
 This section configures compute resource policies for your cluster.  These settings will not apply for storage-only clusters.
 
-1. **Max RAM per machine:** Specifies the maximum amount of RAM that can be allocated to a single workload (such as a virtual machine, tenant node, or NAS service). 
+1. **Max RAM per machine:** Specifies the maximum amount of RAM that can be allocated to a single workload (such as a virtual machine, tenant node, or NAS service). RAM can be specified in GB or TB, accommodating clusters with very large memory configurations.
 
 !!! tip "Considerations"
     - If any running workloads (e.g. VMs) are using more RAM than this limit, they will be unable to migrate after the setting is lowered.

@@ -6,6 +6,10 @@ Although system snapshots include all VMs and allow for restoring individual VMs
 
 The quiesce option provides an **application-consistent snapshot** of a running VM in which the system freezes the filesystem and flushes write buffers; additionally, VSS writers are invoked for VSS-aware applications (Windows VMs) to prepare for the snapshot. The Quiesce option can be selected when taking a manual snapshot and can be enabled within the snapshot profile for automated snapshots.
 
+!!! info "Quiesce Timeout and Non-Freezable Disks"
+    - Quiesce operations have a **15-minute timeout**. If the guest filesystem cannot be frozen within this window, the snapshot proceeds without quiescing.
+    - VMs without freezable disks (e.g., VMs with only raw or passthrough devices) are handled gracefully — the snapshot completes normally without attempting a freeze.
+
 ## Scheduled VM-level Snapshots
 
 !!! tip "By default, VM-level snapshots are not configured (VM Snapshot Profile setting="--None--")."

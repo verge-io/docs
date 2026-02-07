@@ -46,7 +46,9 @@ The following are default snapshot profiles automatically created at system inst
       * Enter a ***Period Name*** (required) (ex: weekly, 6pm, Mondays, etc).
       * Select a ***Max Tier for Storing Snapshot*** (default = Tier 1, which is most expensive Tier). Snapshot data will be stored on the same tier as source data except when the max tier defined here is a less expensive tier (less expensive = higher number). See [**Storage Tiers**](/product-guide/storage/storage-tiers) for more information about storage tiering.
       * Select ***Frequency*** for how often to take the snapshots.
-      * Select values for ***(Month, Day of Month, Day of Week Hour, Minute)*** to schedule the snapshots (fields will vary depending upon the frequency selected)
+      * Select values for ***(Month, Day of Month, Day of Week, Hour, Minute)*** to schedule the snapshots (fields will vary depending upon the frequency selected).
+!!! note "Weekly Frequency — \"Any\" Defaults to Sunday"
+    When using a **weekly** frequency, selecting **"Any"** for the day of week will default to **Sunday**.
       * Select ***Retention*** (value) and ***Units*** to define the length of time for which to keep this period's snapshots. *Days* (default), *Hours*, *Years*, *Forever* (retained indefinitely)
 !!! warning "Snapshots retained indefinitely or for long periods are likely to greatly increase storage usage over time; it is important to consider your data change rate and the amount of storage available for storing long term snapshots."
 
@@ -73,6 +75,10 @@ The profile set here determines the schedule used for creating snapshots of the 
 4. Click **Edit** on the left menu.
 5. Select desired profile. 
 6. Click **Submit** to save the change.
+
+## Audit Logging
+
+Changes to snapshot profiles and their periods are recorded in the system audit log. This includes creating, modifying, and deleting profiles as well as adding, editing, or removing individual periods. Audit entries allow administrators to track who made scheduling changes and when.
 
 ## Assign a Snapshot Profile to a VM
 

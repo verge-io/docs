@@ -115,7 +115,7 @@ VM recipes are available for use when creating a new Virtual Machine. All access
 
 ## Recipe Instances
 
-An Instance refers to a virtual machine that is associated with a VM recipe.  When a virtual machine is created with a recipe it is considered an instance of the recipe until it is deleted or detached from the recipe.
+An Instance refers to a virtual machine that is associated with a VM recipe.  When a virtual machine is created with a recipe it is considered an instance of the recipe until it is deleted or detached from the recipe. The **Name** field on a recipe instance is editable, allowing you to rename the instance directly from the instances listing.
 
 Click **Instances** on the left menu of a VM recipe dashboard to quickly access a listing of associated VMs. A VM recipe cannot be deleted when there are any associated VM instances.
 

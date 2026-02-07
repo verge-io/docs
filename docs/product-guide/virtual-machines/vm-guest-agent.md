@@ -89,3 +89,7 @@ On Linux VMs, the **qemu-guest-agent package** must be installed. Installation i
 When a guest agent is successfully connected, the version number will display next to the checked Guest Agent checkbox on the VM dashboard.
 
 ![agent-connected-version.png](/product-guide/screenshots/agent-connected-version.png)
+
+## Automatic Agent Refresh on NIC Online
+
+The host automatically refreshes the guest agent connection **5 seconds after a VM NIC reports as online**. This improves reliability of agent connectivity after network changes, such as NIC hot-plug events, network reconfiguration, or VM migration. No manual intervention is required — the refresh occurs transparently to maintain a consistent agent connection.

@@ -19,6 +19,10 @@ VergeOS provides OIDC functionality to allow centralized identity management for
 * Tokens containing user information are sent back to the initial VergeOS system
 * Tokens are verified and a user session is created
 
+## Access Control
+
+When editing an OIDC application, you can specify **Allowed Users** and **Allowed Groups** to control which accounts are permitted to authenticate through the application. This provides granular access control, allowing administrators to restrict OIDC application usage to specific users or group memberships rather than allowing all authenticated users.
+
 ## Configuration Steps
 
 Configuring a central VergeOS identity provider involves the following steps:

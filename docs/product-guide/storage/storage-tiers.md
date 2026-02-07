@@ -120,8 +120,13 @@ For vSAN sizing recommendations, see the [Node Sizing Guide](/implementation-gui
 
 ## Monitoring and Management
 
+### Tier Redundancy Level
+
+The vSAN tier dashboard displays the **redundancy level** for each tier, indicating how many simultaneous node failures the tier can tolerate without data loss. This information is visible on the cluster tier view, allowing administrators to quickly verify that each tier meets the desired level of data protection.
+
 ### Key Metrics to Monitor
 
+- Redundancy level per tier
 - Capacity utilization per tier
 - I/O performance metrics
 - Deduplication ratios

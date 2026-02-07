@@ -175,6 +175,29 @@ ip [COMMAND] [OPTIONS]
 
 ---
 
+### Statistics
+
+**Purpose:** Displays network statistics for IP interfaces, providing counters and metrics for network traffic analysis.
+
+**When to Use:**
+
+- Monitoring network interface traffic volumes
+- Identifying interfaces with high error rates or packet loss
+- Baseline performance measurement and capacity planning
+- Troubleshooting network throughput issues
+
+**Parameters:**
+
+- **Interface:** (optional) Specific network interface to display statistics for
+
+**CLI Syntax:**
+
+```bash
+ip -s link show [INTERFACE]
+```
+
+---
+
 ### IPsec
 
 **Purpose:** Controls and monitors IPsec VPN connections and IKE daemon.

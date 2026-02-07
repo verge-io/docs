@@ -36,6 +36,10 @@ This guide provides instructions for creating an active-backup bond on an Extern
 
 See KB article: [How to Create an External Network](/knowledge-base/create-external-network) for information on configuring other external network options.
 
+## Audit Logging
+
+Changes to VLAN bond interfaces — including adding or removing interfaces from a bond — are recorded in the system audit log. This provides a traceable record of network configuration changes for compliance and troubleshooting purposes.
+
 ## Testing and Verification
 
 ### Basic Connectivity Test
