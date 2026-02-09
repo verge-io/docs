@@ -40,16 +40,16 @@ This guide walks you through the process of configuring VergeOS as an identity p
 
 ## Steps to Create an OIDC Application
 
-1. **Access OIDC Settings**
+1. **Access OIDC Settings**  
    - Navigate to **System** > **OIDC Applications** from the top menu
    - Click **New**
 
-2. **Configure Basic Settings**
+2. **Configure Basic Settings**  
    - Enter a descriptive **Name** for the application
    - Check the **Enabled** box
    - Add an optional **Description**
 
-3. **Set Up Redirect URIs**
+3. **Set Up Redirect URIs**  
    - Enter the callback URL(s) where users will be redirected after authentication
    - Format: `https://your-system-name.example.com`
    - Multiple URIs can be added for different client systems
@@ -59,27 +59,26 @@ This guide walks you through the process of configuring VergeOS as an identity p
        - For multiple systems: `https://examplecorp-site*.example.com`
        - For multiple subdomains: `https://vergesystem.*.example.com`
 
-4. **Configure Authentication Options**
+4. **Configure Authentication Options**  
    - **Force Authorization Source**: Optionally select a third-party provider
    - **Map User**: Choose if all verified users should map to a specific account
    - Set **Scope Settings** (Profile, Email, Groups)
-   - **Allowed Users / Allowed Groups**: Optionally specify which users or groups are permitted to authenticate through this application
-   - Configure access restrictions if needed
+   - Optionally, enable the **Restrict Access** option to select **Allowed Users / Allowed Groups**: to specify users/groups that are permitted to authenticate through this application
 
-5. **Save Configuration**
-   - Click **Submit** to create the OIDC application
+5. **Save Configuration**  
+   - Click **Submit** to create the OIDC application  
    - The system will generate a Client ID and Secret
 
 ## Retrieving Client Credentials
 
-1. **Access Application Dashboard**
+1. **Access Application Dashboard**  
    - Navigate to **System > OIDC Applications**
    - Double-click your OIDC application
 
-2. **Copy Required Information**
-   - **Client ID**: Copy using the displayed value or copy icon
-   - **Client Secret**: Use the copy icon (value is hidden)
-   - **Well Known Configuration URL**: Copy the displayed URL
+2. **Copy Required Information**  
+   - **Client ID**: Copy using the displayed value or copy icon  
+   - **Client Secret**: Use the copy icon (value is hidden)  
+   - **Well Known Configuration URL**: Copy the displayed URL  
 
 ## Best Practices
 
