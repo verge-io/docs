@@ -50,6 +50,7 @@ Understanding VergeOS terms in VMware context is crucial for a smooth transition
 | **Virtual Switch**    | **VergeFabric Physical Network**             | VergeOS can present the physical network uplinks across multiple nodes into a logical switch that is referred to as a "Physical Network" in VergeOS. |
 | **VM**                | **VM**                                       | Virtual machines are similar, but VergeOS supports larger specs (e.g., 256TB disks). |
 | **dvPortGroup**       | **VergeFabric External Network**             | Virtual Networks that can represent a Layer 2 Network (e.g. a VLAN) that a VM can have it's virtual NIC on. Can also do Layer 3 services (routing, DNS, DHCP, BGP/OSPF, VPN)|
+| **vMotion**           | **Migrate**                                  | Live migration of running VMs between nodes with no downtime. |
 | **Resource Pool**     | **Tenant**                                   | Tenants are isolated virtual data centers with their own resources and management. |
 
 **Takeaway**: While some terms overlap (e.g., VM, vSAN), VergeOS’s concepts like “Tenants” and “Internal Networks” offer more integrated and flexible options than VMware equivalents.
