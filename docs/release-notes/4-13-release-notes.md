@@ -9,7 +9,7 @@ description: Release notes for the 4.13 series of VergeOS
 !!! info "Series Information"
     - **Initial Release**: November 2024 (4.13.0)
     - **Latest Version**: 4.13.4.2 (August 2025)
-    - **Status**: Latest
+    - **Status**: Supported
     - **End-of-Life**: TBD
 
 ## Major Features & Themes
