@@ -1,6 +1,6 @@
 # Snapshots
 
-Snapshots provide nearly-instant, non-disruptive, point-in-time backups that allow for rollback to a previous instance in the event of a hardware failure, faulty application upgrade, VM bluescreen, etc. Snapshot captures and restores can be done at various levels: full system, partial system (select VMs/tenants based on custom tagging), individual virtual machine, and individual NAS volume.
+Snapshots provide nearly-instant, non-disruptive, point-in-time backups that allow for rollback to a previous instance in the event of a hardware failure, faulty application upgrade, VM bluescreen, etc. Snapshot captures and restores can be done at various levels: full system, partial system (select VMs, tenants, VMware services, and volumes based on custom tagging), individual virtual machine, and individual NAS volume.
 
 ## Key Features
 
@@ -24,7 +24,7 @@ System snapshots can be:
 
 * **Full** - captures the entire VergeOS system  
 *or*
-* **Partial** - capture of select VMs/tenants based on tagging
+* **Partial** - capture of select VMs, tenants, VMware services, and volumes based on tagging
 
 ### What can be restored from a System Snapshot?
 
@@ -46,7 +46,7 @@ VM-level snapshots allow for quiesced capture (requires guest agent) and schedul
 
 Individual tenants can be restored from the parent's system snapshot. For related instructions, see: [**Tenant Restores**](/product-guide/tenants/tenant-restores)
 
-Additionally, each tenant can utilize [**System Snapshots**](/product-guide/backup-dr/system-snapshot-restores), independently within their own environment, to back up their complete system or partial snapsets based on custom tagging.
+Additionally, each tenant can utilize [**System Snapshots**](/product-guide/backup-dr/system-snapshot-restores), independently within their own environment, to back up their complete system or partial snapshots based on custom tagging.
 
 ## NAS Snapshot/Restore
 

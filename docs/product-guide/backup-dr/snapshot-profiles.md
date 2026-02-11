@@ -8,30 +8,33 @@ A **snapshot profile** defines a schedule for taking snapshots and automatically
 Multiple, default snapshot profiles are created by the VergeOS installation. These profiles can be modified, and you can create additional profiles to provide custom scheduling. 
 
 
-??? "Snapshots Profiles Included with Installation" 
-    The following are default snapshot profiles automatically created at system installation.  
-    ### **SOX (Sarbanes-Oxley)**  
-       * Yearly snapshots retained for 7 years  
-       * Monthly snapshots retained for 1 year  
-       * Weekly snapshots retained for 31 days  
-       * Daily snapshots retained for 7 days  
+??? "Snapshot Profiles Included with Installation"
+    The following are default snapshot profiles automatically created at system installation.
 
-    ### HIPAA (Health Insurance Portability & Accountability Act)  
+    ### SOX (Sarbanes-Oxley)
+    * Yearly snapshots retained for 7 years
+    * Monthly snapshots retained for 1 year
+    * Weekly snapshots retained for 31 days
+    * Daily snapshots retained for 7 days
+
+    ### HIPAA (Health Insurance Portability & Accountability Act)
     * Yearly snapshots retained indefinitely (no expiration)
-    * Monthly snapshots retained for 1 year  
-    * Weekly snapshots retained for 31 days  
-    * Daily snapshots retained for 7 days  
+    * Monthly snapshots retained for 1 year
+    * Weekly snapshots retained for 31 days
+    * Daily snapshots retained for 7 days
 
     ### NAS Volume Syncs
     * Daily (at 6pm) snapshots retained for 3 days
 
-    ### *System Snapshots (Default Profile for entire-system snapshots)
-    * hourly snapshots retained for 3 hours 
-    * Daily-at midnight snapshots retained for 3 days
-    * Daily-at noon snapshots retained for 1 day
+    ### System Snapshots (Default Profile for entire-system snapshots)
+    * Hourly snapshots retained for 3 hours
+    * Daily at midnight snapshots retained for 3 days
+    * Daily at noon snapshots retained for 1 day
+    * Profile assigned at installation to take full snapshots of the entire system according to this schedule.
+    * More detail about system snapshots can be found at: [System Snapshots](/product-guide/backup-dr/system-snapshots)
 
-    * profile assigned at installation to take full snapshots of the entire system according to this schedule. 
-    * More detail about system snapshots can be found at: [System Snapshots and Restores](/product-guide/backup-dr/system-snapshots)
+    ### Volume Antivirus Scan
+    * Default profile for volume antivirus scan scheduling
 
 ## Creating a Custom Snapshot Schedule (New Snapshot Profile)
 
@@ -58,13 +61,13 @@ A profile period defines both the frequency and retention for snapshots. Adding 
 * **Name**: (required). Enter a descriptive name to identify the period (ex: weekly, 6pm, Mondays, etc).
   
 * **Frequency**: defines how often snapshots are taken.
-    * Options include ***Month, Day of Month, Day of Week Hour, Minute***.
-    * Available fields vary based on the frequency selected
-    * ***Custom*** allows specifying a one‑time execution at an exact date and time. 
+    * Options: ***Hourly***, ***Daily***, ***Weekly***, ***Monthly***, ***Yearly***, ***Custom***
+    * Additional scheduling fields (Month, Day of Month, Day of Week, Hour, Minute) vary based on the frequency selected.
+    * ***Custom*** allows specifying a one‑time execution at an exact date and time.
 
 
 * **Retention**: Specifies how long to keep snapshots before automatic expiration.
-    * Enter a **(value)** and select **Units**: *Days*(default),* Hours*, *Years*, *Forever* (retained indefinitely) 
+    * Enter a **(value)** and select **Units**: *Days* (default), *Hours*, *Years*, *Forever* (retained indefinitely)
      
 !!! warning "Long‑term or indefinite retention can significantly increase storage usage. Consider your data‑change rate and available storage when configuring retention."
 
@@ -82,10 +85,10 @@ A profile period defines both the frequency and retention for snapshots. Adding 
 !!! warning "Immutable snapshots cannot be deleted until unlocked and mandatory waiting period expires. Ensure retention settings align with available storage. For more guidance, see the [Immutable Snapshots Guide](/product-guide/backup-dr/immutable-snapshots)."
 * **Snapshot Type**:
     * ***Full***: captures the entire system; required for full-system recovery
-    * ***Partial Exclude Tags***: capture of all VMs/tenants *except* those with specified tag
-    * ***Partial Include Tags***: captures only VMs/tenants with the specified tag
-        * **Exclude/Include Tags** (Partial snapshots only): Click the ellipse button [<i class="bi bi-three-dots"></i>] to select one or more tags. 
-        * **Quiesce Tags** (optional; Partial snapshots only): Click the ellipse button [<i class="bi bi-three-dots"></i>] to select one or more tags. VMs with the specified tags will temporarily freeze disk activity during capture to provide an application-consistent snapshot.  Requires [VM Guest Agent](/product-guide/virtual-machines/vm-guest-agent) support.
+    * ***Partial - Exclude Tags***: captures all VMs, tenants, VMware services, and volumes *except* those with the specified tags
+    * ***Partial - Include Tags***: captures only VMs, tenants, VMware services, and volumes with the specified tags
+        * **Exclude/Include Tags** (Partial snapshots only): Click the ellipse button [<i class="bi bi-three-dots"></i>] to select one or more tags.
+        * **Quiesce Tags** (optional; Partial snapshots only): Click the ellipse button [<i class="bi bi-three-dots"></i>] to select one or more tags. VMs with the specified tags will temporarily freeze disk activity during capture to provide an application-consistent snapshot. Requires [VM Guest Agent](/product-guide/virtual-machines/vm-guest-agent) support.
 
 
 

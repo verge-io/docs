@@ -5,10 +5,10 @@
 !!! note "This section of instructions apply to systems that are tenants themselves. If your provider has allowed it, you can request to access a snapshot of your environment from the provider's snapshots. Once requested, the snapshot is then available to use for restoring your individual VMs or complete environment."
 
 1. Navigate to **System** > **System Snapshots**.
-3. A listing of available snapshots is displayed; those displayed with a type of ***Provider*** are snapshots taken by the host. **Click to select the desired provider snapshots** (selected snapshots will show a checkmark).
-4. Click **Request From Provider** on the left menu.
-5. A confirmation dialog appears. Click **Yes** to continue pulling down the selected snapshots.
-6. After the process is confirmed, transferring a snapshot down from the host can take 15 or more seconds. Once transferred the snapshot will now display with a type of ***Local*** with a green indicator; at this point it can be used for entire system, tenant, VM and volume restores from system snapshots as described below.
+2. A listing of available snapshots is displayed; those displayed with a type of ***Provider*** are snapshots taken by the host. **Click to select the desired provider snapshots** (selected snapshots will show a checkmark).
+3. Click **Request From Provider** on the left menu.
+4. A confirmation dialog appears. Click **Yes** to continue pulling down the selected snapshots.
+5. After the process is confirmed, transferring a snapshot down from the host can take 15 or more seconds. Once transferred the snapshot will now display with a type of ***Local*** with a green indicator; at this point it can be used for entire system, tenant, VM and volume restores from system snapshots as described below.
 
 !!! warning "After a snapshot is requested from provider, and displays as *type=Local*, the snapshot can be edited to modify description and expiration. When changing expiration to a longer period it is important to consider effects on storage; long-term snapshots can substantially increase storage usage as data divergence between snapshot and live data increases over time."
 
@@ -44,7 +44,7 @@ ___
 
 !!! warning "To cancel the operation, the *Cancel* button must be clicked within 60 seconds; otherwise, the restore operation will continue."
 
-### Restore Select Tenants from a System Snapshot
+## Restore Select Tenants from a System Snapshot
 
 Full system snapshots include all tenants at the time the snapshot is taken.  Partial system snapshots will only include tenants per the include/exclude tag configuration.
 
@@ -77,4 +77,4 @@ Full system snapshots include all the host's VMs at the time the snapshot is tak
 
 * [**VM Snapshots and Restores**](/product-guide/backup-dr/vm-snapshots-restores) 
 * [**Tenant Restores**](/product-guide/tenants/tenant-restores) 
-* [**Volume Snapshots and Restores**](/product-guide/nas/volume-snapshots-restores) 
+* [**Volume Snapshots and Restores**](/product-guide/nas/volume-snapshots-restores)
