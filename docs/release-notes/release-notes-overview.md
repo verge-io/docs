@@ -11,7 +11,7 @@ Welcome to the VergeOS Release Notes. This section provides information about ea
 
 | Release | Initial Release | Latest Version | Status | End-of-Life |
 |--------|----------------|----------------|---------|-------------|
-| [26.1](26-1-release-notes.md) | January 2026 | 26.1.1 (January 2026) | Latest | TBD |
+| [26.1](26-1-release-notes.md) | January 2026 | 26.1.2 (February 2026) | Latest | TBD |
 | [26.0](26-0-release-notes.md) | October 2025 | 26.0.2.2 (December 2025) | Supported | TBD |
 | [4.13](4-13-release-notes.md) | November 2024 | 4.13.4.2 (August 2025) | Supported | TBD |
 | [4.12](4-12-release-notes.md) | February 2024 | 4.12.6 (July 2024) | Deprecated | January 2026 |

@@ -2,7 +2,7 @@
 
 !!! info "Release Information"
     - **Release Date**: January 2026
-    - **Latest Version**: 26.1.1 (January 2026)
+    - **Latest Version**: 26.1.2 (February 2026)
     - **Status**: Latest Production Release
     - **End-of-Life**: TBD
 
@@ -24,6 +24,68 @@
     - Improved sync performance with cross-directory file threading
     - Enhanced storage cache usage for database on controller nodes
     - Faster node start times through CPU type property caching
+
+### oVirt API Compatibility
+
+!!! success "Third-Party Backup Integration"
+    - Native oVirt-compatible API endpoint for third-party backup integration
+    - Enables backup support for VergeOS environments via oVirt-compatible tools
+
+### N+2 Redundancy (RF3)
+
+!!! success "Enhanced Data Protection"
+    - Added support for N+2 (RF3) vSAN redundancy, also known as Replication Factor 3
+    - Provides additional fault tolerance beyond standard N+1 configurations
+
+## 26.1.2 (February 2026)
+
+### New Features
+
+#### oVirt API Compatibility
+- Implemented oVirt-compatible API endpoint for third-party backup integration
+
+#### Storage & vSAN
+- Added support for N+2 (RF3) vSAN redundancy, also known as Replication Factor 3
+
+### Bug Fixes
+
+#### Snapshots & Restore
+- Fixed issue where only one snapshot profile period would run when two are scheduled at the same time
+- Fixed weekly snapshot frequency with "Any Day" option incorrectly taking snapshots daily
+- Fixed tenant snapshot restore from host only allowing one attempt
+- Fixed "Pending restore does not exist" error when restoring tenant snapshots
+- Fixed error message appearing when overwriting a pending tenant snapshot restore
+- Added audit logging for snapshot profile and profile period deletions
+
+#### Virtual Machines & Export
+- Fixed tags not being included with exported VMs
+- Fixed VM event filter categories showing "Value" instead of proper labels (Snapshot, OS Family, Console Type)
+
+#### Tenants & Themes
+- Fixed cloned tenant reverting theme access setting to default instead of inheriting source tenant setting
+- Fixed all themes being exposed to tenants regardless of theme access permissions
+- Fixed tenants only retaining one marketplace recipe per catalog
+
+#### User Interface
+- Fixed tag alphabetization sorting capitalized tags separately from lowercase
+- Fixed grammar issue (missing apostrophe) when creating a new site
+- Fixed missing name field on NAS Service edit screen
+- Fixed blank page when clicking browser back button from Sites History
+- Fixed "Reboot & Apply Updates" modal getting stuck until reboot begins
+- Fixed Download menu link appearing active but not functioning for optional updates
+
+#### Sites & History
+- Fixed "ID and Section are required" error when viewing a site's history
+
+#### Authentication & Users
+- Fixed auth source edit form defaulting to visible client secret
+- Fixed forgot password link generating an invalid token
+
+#### System Administration
+- Fixed removing system help URL from tenants causing a 404 error
+- Fixed editing a cluster resetting the RAM amount per machine
+
+---
 
 ## 26.1.1 (January 2026)
 
@@ -129,11 +191,9 @@
 #### User Interface
 - Fixed product help links broken or incorrect on multiple dashboards
 - Fixed VM NIC "Add IP Address" breadcrumb navigation
-- Fixed VMware backup VM page not refreshing during backup
 - Fixed link to LLDP neighbors from node NICs
 - Fixed cluster tier dashboard not showing all nodes
 - Fixed incorrect verbiage on NIC asset field note (mentioned drive instead of NIC)
-- Fixed JavaScript error when modifying IPSec Phase 1 configurations
 - Fixed issue recovering large number of objects simultaneously from system snapshot
 
 #### Certificates

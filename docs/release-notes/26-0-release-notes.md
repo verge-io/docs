@@ -140,7 +140,7 @@
 - Improved VM creation and recovery:
     - Changed error message to friendlier version when creating VM from recipe
     - Fixed issue restoring VMs from system snapshot when recovery took >2 minutes
-    - Fixed issue restoring NAS VM from cloud snapshot where network no longer exists
+    - Fixed issue restoring NAS VM from system snapshot where network no longer exists
     - Fixed event issue when creating VM from wizard
 - Fixed issue triggering tasks on VMs that aren't snapshots
 
@@ -182,7 +182,7 @@
 #### VMware Integration
 - Fixed backup VM expiration from list view
 - Fixed pause backup job/restore job functionality
-- Added hidden setting to purge VMware container snapshots from cloud snapshots
+- Added hidden setting to purge VMware container snapshots from system snapshots
 
 #### System Administration
 - Enhanced help system:
