@@ -157,31 +157,9 @@ See [VM Snapshots and Restores - Assign a Snapshot Profile](/product-guide/backu
     When a VM is unsubscribed from a snapshot profile, any snapshots previously taken by that profile are **not** automatically deleted. These orphaned snapshots continue to appear in the **VM Snapshots** and **Machines** tiles on the profile dashboard, even though the **VMS** tile shows 0. Combined with the **Minimum Snapshots** setting (default: 1), these snapshots can persist indefinitely. See [Cleaning Up Orphaned VM Snapshots](#cleaning-up-orphaned-vm-snapshots) for resolution steps.
 
 
-## Troubleshooting
-
-??? question "Why do my snapshots show as expired but are not deleted?"
-    This is expected behavior caused by the **Minimum Snapshots** setting on the profile period (default: 1). When a snapshot expires but no newer snapshot exists to replace it, the system holds it to ensure at least one recovery point remains available. These held snapshots display **"x days over"** in the *Time to Expiration* column.
-
-    **Resolution:** The held snapshot is automatically deleted when a new scheduled snapshot is taken by the same period. If you no longer need the snapshot, you can manually delete it from the snapshot list. To change this behavior, edit the profile period and set **Minimum Snapshots** to **0** — though this is not recommended, as it can leave you with no recovery points during prolonged outages.
-
-??? question "Why do I see VMs in Machines but 0 in VMS?"
-    This occurs when VMs were previously assigned to the profile, snapped at least once, and then removed from the profile. The **VMS** tile counts only currently subscribed VMs, while **VM Snapshots** (and therefore **Machines**) retains the count of snapshot records from any VM ever snapped by this profile.
-
-    **Resolution:** Navigate to the **VM Snapshots** tile on the profile dashboard, review the listed snapshots, and manually delete any that are no longer needed.
-
-??? question "How do I clean up orphaned VM snapshots?"
-    Orphaned VM snapshots occur when a VM is removed from a snapshot profile but its previously taken snapshots remain. To clean them up:
-
-    1. Navigate to **System** > **Snapshot Profiles** and double-click the profile.
-    2. Click the **VM Snapshots** tile on the profile dashboard.
-    3. Review the listed snapshots and identify those belonging to VMs no longer subscribed to the profile.
-    4. Select the orphaned snapshots and click **Delete** on the left menu.
-
-    !!! tip "If the Minimum Snapshots setting is preventing deletion, the system will hold at least that many snapshots per period. You may need to manually delete them from this view."
-
 ### Cleaning Up Orphaned VM Snapshots
 
-When a VM is removed from a snapshot profile, its existing snapshots are retained. Over time these orphaned snapshots can accumulate, especially when the **Minimum Snapshots** setting (default: 1) prevents automatic expiration.
+When a VM is removed from a snapshot profile, its existing snapshots are retained. Over time these orphaned snapshots can accumulate, especially when the [Minimum Snapshots](#profile-period-configuration) setting (default: 1) prevents automatic expiration.
 
 **Symptoms:**
 
@@ -193,6 +171,3 @@ When a VM is removed from a snapshot profile, its existing snapshots are retaine
 1. From the profile dashboard, click the **VM Snapshots** tile.
 2. Identify snapshots belonging to VMs no longer assigned to the profile.
 3. Select the snapshots and click **Delete** from the left menu.
-
-!!! info "Storage impact of long-lived snapshots"
-    Snapshots initially consume minimal additional storage because of vSAN deduplication — the snapshot and source share the same data blocks. Over time, as the source VM's data diverges from the snapshot, deduplication decreases and the snapshot's effective storage usage grows. Orphaned snapshots that persist for extended periods can have a significant impact on vSAN utilization. For more details, see [VM Snapshots and Restores](/product-guide/backup-dr/vm-snapshots-restores).
