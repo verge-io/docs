@@ -2,7 +2,7 @@
 title: Tenant Crash Cart Guide
 slug: tenant-crash-cart-guide
 description: Description and instructions for the tenant crash cart utility available in the Recipe Marketplace
-author: vergeOS Documentation Team
+author: VergeOS Documentation Team
 draft: false
 date: 2026-02-03T19:21:32.815Z
 tags:
@@ -12,14 +12,10 @@ tags:
   - networking
 categories:
   - Tenant
-  - Tenants
-  - Network Configuration
   - Network
 editor: markdown
 dateCreated: 2026-02-02T17:52:09.082Z
 ---
-
-
 
 # Tenant Crash Cart Guide
 
@@ -56,15 +52,16 @@ A Crash Cart is appropriate when:
 ## Deploying a Tenant Crash Cart
 
 ### 1. Create the Crash Cart VM
-1. Navigate to **Virtual Machines** > **+ New VM**.
-2. In the first section, choose **Services (Marketplace)**.
-3. Select **Tenant Crash Cart**, then click **Next**.
-4. Provide a **Name** for the VM. 
-5. Select a **Cluster** (or leave the default).
-6. Under **Select the tenant to attach to**, choose the tenant the Crash Cart should connect to.
-7. Click **Submit** to create the VM instance.
+1. Navigate to **Tenants** and select the tenant that needs recovery.
+2. In the **Tenant Network** section, find the **Crash cart** field and click **-- CREATE --**.
+3. Provide a **Name** for the VM.
+4. Select a **Cluster** (or leave the default).
+5. Click **Submit** to create the VM instance.
 
-The VM will be created and automatically attached to the tenant’s core network.
+The VM will be created and automatically attached to the tenant's core network.
+
+!!! tip "Alternative: Create from the Marketplace"
+    You can also create a Crash Cart from **Virtual Machines** > **+ New VM**. Under **Catalogs**, select **Services (Marketplace)**, choose **Tenant Crash Cart**, then click **Next**. From there, provide a name, select a cluster, and choose the tenant to attach to.
 
 ---
 
