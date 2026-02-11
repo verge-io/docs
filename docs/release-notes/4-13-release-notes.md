@@ -2,7 +2,6 @@
 title: 4.13 Release Notes
 description: Release notes for the 4.13 series of VergeOS
 #icon: material/text-box-outline
-status: new
 ---
 
 # 4.13 Release Notes
