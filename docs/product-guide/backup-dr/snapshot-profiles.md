@@ -115,6 +115,28 @@ A profile period defines both the frequency and retention for snapshots. Adding 
     * **remove** an existing period: click the trash can icon <i class="bi bi-trash"></i> 
 
 
+## Profile Dashboard
+
+Double-clicking a snapshot profile from the **System** > **Snapshot Profiles** list opens its dashboard. The dashboard displays summary tiles across the top showing counts of resources associated with the profile.
+
+### Dashboard Tile Reference
+
+| Tile | Description |
+|------|-------------|
+| **Machines** | Total count of VMs and VM Snapshots combined. This includes both currently subscribed VMs and snapshot records from VMs that were previously snapped by this profile. |
+| **VMS** | Count of VMs **currently subscribed** (assigned) to this snapshot profile. |
+| **VM Snapshots** | Count of VM-level snapshots retained by this profile, including snapshots from VMs that are no longer subscribed to the profile. |
+| **System Snapshots** | Count of system snapshots taken by this profile. |
+| **Volumes** | Count of NAS volumes currently assigned to this profile. |
+| **Volumes Antivirus** | Count of volume antivirus scan snapshots associated with this profile. |
+| **Volume Syncs** | Count of volume sync snapshots associated with this profile. |
+
+Click any tile to drill down into the corresponding resource list.
+
+!!! note "Understanding Machines vs. VMS counts"
+    It is normal for **Machines** to be greater than **VMS**. The Machines tile is the sum of VMS (currently subscribed VMs) plus VM Snapshots (retained snapshot records). If a VM is removed from the profile but its snapshots remain, VMS will decrease while VM Snapshots and Machines retain the previous count. See [Cleaning Up Orphaned VM Snapshots](#cleaning-up-orphaned-vm-snapshots) for guidance on resolving this.
+
+
 ## Assigning Snapshot Profiles
 
 Snapshot profiles can be assigned to different snapshot types:
@@ -122,11 +144,55 @@ Snapshot profiles can be assigned to different snapshot types:
 ### Full System Snapshots
  It is typically recommended that you use the default *'System Snapshots'* profile for your full system snapshots. This profile can be modified to customize scheduling and can include partial snapshots in addition to full system snapshots.  See [System Snapshots](/product-guide/backup-dr/system-snapshots) for more information
 
-### Partial System Snapshots  
-Select VMs and/or tenants based on custom tagging.  These can be added to your [System Snapshots](/product-guide/backup-dr/system-snapshots) schedule or added to a separate snapshot profile. 
+### Partial System Snapshots
+Select VMs and/or tenants based on custom tagging.  These can be added to your [System Snapshots](/product-guide/backup-dr/system-snapshots) schedule or added to a separate snapshot profile.
 
-### Individual NAS Volumes  
+### Individual NAS Volumes
  See [NAS Volume Snapshots and Restores - Schedule Volume Snapshots ](/product-guide/nas/volume-snapshots-restores#schedule-volume-snapshots)
 
-### Individual VMs  
-See [VM Snapshots and Restores - Assign a Snapshot Profile](/product-guide/backup-dr/vm-snapshots-restores#assign-a-snapshot-profile-to-an-individual-vm) 
+### Individual VMs
+See [VM Snapshots and Restores - Assign a Snapshot Profile](/product-guide/backup-dr/vm-snapshots-restores#assign-a-snapshot-profile-to-an-individual-vm)
+
+!!! warning "Removing a VM from a profile does not delete its existing snapshots"
+    When a VM is unsubscribed from a snapshot profile, any snapshots previously taken by that profile are **not** automatically deleted. These orphaned snapshots continue to appear in the **VM Snapshots** and **Machines** tiles on the profile dashboard, even though the **VMS** tile shows 0. Combined with the **Minimum Snapshots** setting (default: 1), these snapshots can persist indefinitely. See [Cleaning Up Orphaned VM Snapshots](#cleaning-up-orphaned-vm-snapshots) for resolution steps.
+
+
+## Troubleshooting
+
+??? question "Why do my snapshots show as expired but are not deleted?"
+    This is expected behavior caused by the **Minimum Snapshots** setting on the profile period (default: 1). When a snapshot expires but no newer snapshot exists to replace it, the system holds it to ensure at least one recovery point remains available. These held snapshots display **"x days over"** in the *Time to Expiration* column.
+
+    **Resolution:** The held snapshot is automatically deleted when a new scheduled snapshot is taken by the same period. If you no longer need the snapshot, you can manually delete it from the snapshot list. To change this behavior, edit the profile period and set **Minimum Snapshots** to **0** — though this is not recommended, as it can leave you with no recovery points during prolonged outages.
+
+??? question "Why do I see VMs in Machines but 0 in VMS?"
+    This occurs when VMs were previously assigned to the profile, snapped at least once, and then removed from the profile. The **VMS** tile counts only currently subscribed VMs, while **VM Snapshots** (and therefore **Machines**) retains the count of snapshot records from any VM ever snapped by this profile.
+
+    **Resolution:** Navigate to the **VM Snapshots** tile on the profile dashboard, review the listed snapshots, and manually delete any that are no longer needed.
+
+??? question "How do I clean up orphaned VM snapshots?"
+    Orphaned VM snapshots occur when a VM is removed from a snapshot profile but its previously taken snapshots remain. To clean them up:
+
+    1. Navigate to **System** > **Snapshot Profiles** and double-click the profile.
+    2. Click the **VM Snapshots** tile on the profile dashboard.
+    3. Review the listed snapshots and identify those belonging to VMs no longer subscribed to the profile.
+    4. Select the orphaned snapshots and click **Delete** on the left menu.
+
+    !!! tip "If the Minimum Snapshots setting is preventing deletion, the system will hold at least that many snapshots per period. You may need to manually delete them from this view."
+
+### Cleaning Up Orphaned VM Snapshots
+
+When a VM is removed from a snapshot profile, its existing snapshots are retained. Over time these orphaned snapshots can accumulate, especially when the **Minimum Snapshots** setting (default: 1) prevents automatic expiration.
+
+**Symptoms:**
+
+- The **VMS** tile shows **0** but **VM Snapshots** and **Machines** show a count
+- Snapshots display **"x days over"** in the *Time to Expiration* column and are not being deleted
+
+**To resolve:**
+
+1. From the profile dashboard, click the **VM Snapshots** tile.
+2. Identify snapshots belonging to VMs no longer assigned to the profile.
+3. Select the snapshots and click **Delete** from the left menu.
+
+!!! info "Storage impact of long-lived snapshots"
+    Snapshots initially consume minimal additional storage because of vSAN deduplication — the snapshot and source share the same data blocks. Over time, as the source VM's data diverges from the snapshot, deduplication decreases and the snapshot's effective storage usage grows. Orphaned snapshots that persist for extended periods can have a significant impact on vSAN utilization. For more details, see [VM Snapshots and Restores](/product-guide/backup-dr/vm-snapshots-restores).
