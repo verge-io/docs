@@ -137,7 +137,7 @@ extra_files:
   - robots.txt
 
 copyright: |
-  Copyright &copy; 2025 <a href="https://verge.io" target="_blank" rel="noopener"> Verge.io</a> |
+  Copyright &copy; 2026 <a href="https://verge.io" target="_blank" rel="noopener"> Verge.io</a> |
   <a href="#__consent">Change cookie settings</a>
 
 nav:
@@ -185,12 +185,13 @@ nav:
       - Overview: product-guide/backup-dr/overview.md
       - Snapshots:
         - Overview: product-guide/backup-dr/snapshots-overview.md
-        - System Snapshots and Restore: product-guide/backup-dr/cloud-snapshot-restore.md
-        - Profiles: product-guide/backup-dr/snapshot-profiles.md
+        - System Snapshots: product-guide/backup-dr/system-snapshots.md
+        - Restores from System Snapshots: product-guide/backup-dr/system-snapshot-restores.md
+        - Snapshot Profiles: product-guide/backup-dr/snapshot-profiles.md
         - Immutable Snapshots: product-guide/backup-dr/immutable-snapshots.md
-        - VM Snapshots and Restore: product-guide/backup-dr/vm-snapshots-restores.md
+        - VM Snapshots and Restores: product-guide/backup-dr/vm-snapshots-restores.md
         - Tenant Snapshots: product-guide/tenants/tenant-snapshots.md
-        - NAS Snapshots and Restore: product-guide/nas/volume-snapshots-restores.md
+        - NAS Volume Snapshots and Restores: product-guide/nas/volume-snapshots-restores.md
       - Site Syncs:
         - Overview: product-guide/backup-dr/syncs-overview.md
         - Configuration: product-guide/backup-dr/sync-configuration.md

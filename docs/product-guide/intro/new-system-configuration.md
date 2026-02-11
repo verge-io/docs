@@ -62,7 +62,7 @@ Configuring **[Subscriptions](/product-guide/system/subscriptions-overview)** al
 
 ## System Snapshot Settings
  
-System Snapshots provide a point-in-time backup of your entire system.  By default, your VergeOS system is configured to perform regular system snapshots.  You can customize this schedule to align with your organizational needs. See **[System Snapshots and Restores](/product-guide/backup-dr/cloud-snapshot-restore)** for instructions on adjusting the default frequency and retention of system snapshots.   
+*Full* System Snapshots provide a point-in-time backup of your entire system.  By default, your VergeOS system is configured to perform regular full system snapshots.  You can customize this schedule to align with your organizational needs. See **[System Snapshots](/product-guide/backup-dr/system-snapshots)** for instructions on adjusting the default frequency and retention of system snapshots.   
 
 
 !!! tip "After creating tenants, VMs and NAS volumes, you can also create individualized snapshot frequency and retention for these items where needed."  

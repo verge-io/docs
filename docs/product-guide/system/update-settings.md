@@ -162,7 +162,8 @@ For environments without outbound internet access, VergeOS supports air-gap lice
 - [Updating the VergeOS System](/knowledge-base/updating-vergeos-system/)
 - [Requesting an Airgap License](/knowledge-base/requesting-an-airgap-license/)
 - [Updating a VergeOS System with Airgap License](/knowledge-base/updating-vergeos-system-with-airgap-license/)
-- [System Snapshots and Restores](/product-guide/backup-dr/cloud-snapshot-restore/)
+- [System Snapshots](/product-guide/backup-dr/system-snapshots)
+- [Restores from System Snapshots](/product-guide/backup-dr/system-snapshot-restores)
 
 !!! tip
     Regular monitoring of the Update Status Dashboard helps ensure system health and security.
