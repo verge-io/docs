@@ -65,6 +65,58 @@ Some question types allow you to lookup database information or create/edit data
 
 The *Database Context* field allows you to choose to interact with the local database (the parent system) or the database of the newly-created tenant.  This applies to question types: *Database Create, Database Edit, and Database Find*.
 
+### System Questions Reference
+
+When a tenant recipe is created, the system automatically generates a set of built-in questions organized into sections. Many of these questions are **disabled by default** and must be enabled if you wish to use them. System questions cannot be deleted, but they can be enabled or disabled.
+
+To enable a disabled system question: navigate to **Questions** (left menu or dashboard card), **select the question(s)**, and click **Enable** on the left menu.
+
+#### Tenant Section
+
+These questions control core tenant settings such as identity, admin credentials, and SSL configuration.
+
+| Name | Display | Type | Default | Enabled by Default |
+|------|---------|------|---------|--------------------|
+| YB_URL | URL | String | | Yes |
+| YB_DESCRIPTION | Description | Text Area | | Yes |
+| YB_USER_NAME | Admin User | String | admin | Yes |
+| YB_USER_PASSWORD | Password | Password | | Yes |
+| YB_USER_EMAIL | Email | String | | No |
+| YB_USER_CHANGE_PASSWORD | Require Password Change | Boolean | false | No |
+| YB_EXPOSE_CLOUD_SNAPSHOTS | Expose System Snapshots | Boolean | true | No |
+| YB_HELP_URL | Help URL | String | default | No |
+| YB_THEME_ACCESS | Theme access | List | host_only | Yes |
+| YB_SPECIFIED_THEME | Theme | Row Selection | | Yes |
+| YB_CLUSTER | Cluster | Cluster | | No |
+| YB_CERT_TYPE | SSL Certificate Type | Hidden | manual | No |
+| YB_CERT_DOMAIN | SSL Certificate Domain | String | | No |
+| YB_CERT_PUBLIC | Public SSL Certificate | Text Area | | No |
+| YB_CERT_PRIVATE | Private SSL Certificate | Text Area | | No |
+| YB_CERT_CHAIN | SSL Certificate Chain | Text Area | | No |
+
+#### Nodes Section
+
+These questions define the compute resources allocated to the tenant's node(s).
+
+| Name | Display | Type | Default | Enabled by Default |
+|------|---------|------|---------|--------------------|
+| YB_NODE_1_CPU_CORES | Node 1 Cores | Number | 8 | Yes |
+| YB_NODE_1_RAM | Node 1 RAM | RAM | 16384 | Yes |
+| YB_NODE_1_INSTANCES | Node 1 Instances | Number | 1 | No |
+| YB_NODE_1_CLUSTER | Node 1 Cluster | Cluster | | No |
+| YB_NODE_1_CLUSTER_FAILOVER | Node 1 Failover Cluster | Cluster | | No |
+
+#### Network Section
+
+These questions configure the tenant's network addresses.
+
+| Name | Display | Type | Default | Enabled by Default |
+|------|---------|------|---------|--------------------|
+| YB_NET_1_IP | UI IP Address | Virtual IP Address | | Yes |
+| YB_NET_2_IP | IP Address | Virtual IP Address | | Yes |
+
+!!! tip "These are the default system questions as of VergeOS 26.1. You can add custom questions beyond these to capture additional input such as expiration dates, custom hostnames, or other tenant-specific values."
+
 ## Modify a Recipe
 
 When any changes are made to a recipe, it will need to be republished in order to make those changes available.  The top of the recipe dashboard will display a message indicating that it must be republished for changes to take effect.  You can use the **Republish** link within this message or click Republish on the left menu.
