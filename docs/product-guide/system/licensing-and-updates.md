@@ -1,6 +1,6 @@
 # Licensing and Software Updates
 
-This guide explains how to manage software updates and licensing in VergeOS.
+This guide explains how to manage software updates and licensing in VergeOS. For an overview of how licensing works, including System IDs and license types, see [Licensing Overview](/product-guide/system/licensing-overview/).
 
 ## Accessing System Updates
 
@@ -71,7 +71,7 @@ The update process consists of three main steps:
     - "Verge.io Updates" for normal installations
     - "Verge.io Trial/NFR" for POC and Not-for-resale licenses
 
-- **User/Password**: Authentication credentials provided by [Verge.io Support](/support) team
+- **User/Password**: Authentication credentials provided by the [VergeIO team](/support)
 
 - **Branch**: Selects product version (e.g., 4.13 Release)
     - Updates are available within the selected branch

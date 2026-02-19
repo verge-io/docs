@@ -29,7 +29,7 @@ VergeOS offers two primary license types, each with a different update source:
 | **Production** | Verge.io Updates | Production deployments with full support |
 | **Trial / NFR** | Verge.io Trial/NFR | Proof-of-concept labs, demos, and not-for-resale environments |
 
-Both license types require authentication credentials provided by the VergeOS support team. The license type determines which update server your system connects to for software updates and license validation.
+Both license types require authentication credentials provided by the VergeIO team. The license type determines which update server your system connects to for software updates and license validation.
 
 !!! note
     Valid licensing configuration is required for core system functionality, including running virtual machines and NAS services — not just software updates.
