@@ -217,6 +217,7 @@ nav:
         - API Keys: product-guide/system/api-keys.md
       - Nodes:
         - Overview: product-guide/system/nodes-overview.md
+        - Core Fabric Status: product-guide/system/core-fabric-status.md
         - IPMI: product-guide/system/ipmi.md
         - System Event Log (SEL): product-guide/system/sel.md
         - Node Diagnostics: product-guide/system/node-diagnostics.md
