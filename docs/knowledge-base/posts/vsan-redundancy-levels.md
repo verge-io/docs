@@ -81,7 +81,7 @@ Redundancy level is typically configured during [system installation](/implement
 It is possible to upgrade an N+1 system to N+2 (provided the minimum node requirement is met) or downgrade from N+2 to N+1. This transition involves a data rebalancing process.
 
 !!! warning
-    To perform a redundancy level change, contact **Verge.io Support**
+    To perform a redundancy level change, contact **Verge.io Support.**
 
 ## Viewing Tier Redundancy Status
 
