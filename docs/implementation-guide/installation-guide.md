@@ -177,17 +177,15 @@ The main dashboard for your new system will display.  Status indicators should a
 
 12. Verify green status indicators before proceeding with a subsequent node install.  
 
-!!! note "N+2 vSAN Redundancy"
-    Default configuration is N+1
-    N+2 also supported, requiring installation of 3 controller nodes
-    more information see kb article
-    note about reboot after the 3 controller nodes installed
-    note that changing from one level to another involves data rebalancing, downtime, working closely with support.  
+!!! note "N+2 vSAN Redundancy (3 Controller Nodes)"
+    Two controller nodes provides the default **N+1** redundancy configuration, which maintains two copies of each data block and is well suited for most environments. 
+    
+    **N+2** configurations are also supported, maintaining three copies of each data block across the system. N+2 requires **3 controller nodes** to be installed. For more details on redundancy levels, requirements, and use cases, see [Understanding vSAN Redundancy Levels](/knowledge-base/understanding-vsan-redundancy-levels/).
 
-    Two controller nodes provides the default N+1 configuration, delivering robust redundancy. N+2 configurations are also supported which maintain three copies of each piece of data across the system and require 3 controller nodes.  (provide a link to the kb article)  
+    After all 3 controller nodes have been installed, a **reboot of all 3 nodes is required** to activate the N+2 redundancy level.
 
-    !!! note
-        When installing N+2 configurations, a **reboot of all 3 nodes is required** after all have been installed, to activate the new redundancy level.
+    !!! warning
+        Changing between redundancy levels on an existing system involves a full data rebalancing process that can require **significant downtime**, particularly on systems with large amounts of stored data. This change should only be performed in coordination with **Verge.io Support**.
 
 ## Install Additional Nodes (as needed)
 

@@ -10,6 +10,11 @@ tags:
   - storage
   - replication
   - fault tolerance
+  - RF3
+  - RF2
+  - redundancy factor
+  - FTT
+  - resiliency factor
 categories:
   - vSAN
   - Storage
@@ -22,11 +27,11 @@ dateCreated: 2026-02-14T00:00:00.000Z
 ## Overview
 
 !!! info "Key Points"
-    - **N+1** maintains 2 copies of every data block and can survive one simultaneous node or drive failure.
-    - **N+2** (Available starting in 26.1.2) maintains 3 copies of every data block and can survive two simultaneous failures.
-    - Redundancy is configured per system
+    - **N+1** (default) maintains 2 copies of every data block and can survive one simultaneous node or drive failure. N+1 provides robust protection suitable for most production environments.
+    - **N+2** (official support starting in 26.1.2) maintains 3 copies of every data block and can survive two simultaneous failures.
+    - Redundancy is configured per system and applies per vSAN tier.
 
-VergeOS vSAN supports configurable redundancy levels (also known as  replication factors, resiliency levels) that determine how many copies of each data block are maintained across the system.
+VergeOS vSAN supports configurable redundancy levels that determine how many copies of each data block are maintained across the system. Choosing the right level is a balance between fault tolerance, storage overhead, and infrastructure cost.
 
 ## N+1 Redundancy
 
@@ -47,7 +52,7 @@ VergeOS N+1 is the default configuration and well suited for most scenarios. It 
 
 ## N+2 Redundancy
 
-N+2 vSAN redundancy is available for environments that have a specific requirement to maintains **3 copies** of every data block and/or for a system to survive **two simultaneous failures**. N+2 can survive two simultaneous node failures, disk failures across two nodes, or a combination of both.
+N+2 vSAN redundancy is available for environments that have a specific requirement to maintain **3 copies** of every data block and/or for a system to survive **two simultaneous failures**. N+2 can survive two simultaneous node failures, disk failures across two nodes, or a combination of both.
 
 | Requirement | Detail |
 |---|---|
@@ -58,14 +63,14 @@ N+2 vSAN redundancy is available for environments that have a specific requireme
 
 ### When to Use N+2
 
-N+2 is designed for **ultra-critical workloads** with a specific requriement to withstand more than one simultaneous node failure. For example, in a critical remote site where it is difficult to replace a failed drive or node immediately, the extra hardware cost of N+2 may be justified.
+N+2 is designed for environments with a specific requirement to withstand more than one simultaneous failure. Common scenarios include **ultra-critical workloads** where even the brief exposure during a rebuild is unacceptable, or **remote/edge sites** where failed hardware cannot be replaced quickly. In these cases, the extra infrastructure cost of N+2 may be justified.
 
 !!! info "Availability"
     Official support for N+2 redundancy was introduced in **VergeOS 26.1.2**.
 
 ## Per-Tier Redundancy
 
-- A failure only affects the tier where the failed drives reside. For example, in an N+2 configuration, if drives on Tier 1 fail on two nodes **and** a Tier 4 drive fails on a different node, the cluster remains fully operational and no data is lost.
+A failure only affects the tier where the failed drives reside. For example, in an N+2 configuration, if drives on Tier 1 fail on two nodes **and** a Tier 4 drive fails on a different node, the cluster remains fully operational, and no data is lost.
 
 ## Configuring vSAN Redundancy Level
 
