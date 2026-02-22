@@ -168,7 +168,9 @@ The main dashboard for your new system will display.  Status indicators should a
 !!! note "N+2 vSAN Redundancy (3 Controller Nodes)"
     Two controller nodes provides the default **N+1** redundancy configuration, which maintains two copies of each data block and is well suited for most environments. 
     
-    **N+2** configurations are also supported, maintaining three copies of each data block across the system. N+2 requires **3 controller nodes** to be installed. For more details on redundancy levels, requirements, and use cases, see [Understanding vSAN Redundancy Levels](/knowledge-base/understanding-vsan-redundancy-levels/).
+    **N+2** configurations are also supported, maintaining three copies of each data block across the system. 
+    
+    N+2 requires **3 controller nodes** to be installed. For more details on redundancy levels, requirements, and use cases, see [Understanding vSAN Redundancy Levels](/knowledge-base/understanding-vsan-redundancy-levels/).
 
     After all three controller nodes have been installed, a **reboot of all 3 nodes is required** to activate the N+2 redundancy level.
 
