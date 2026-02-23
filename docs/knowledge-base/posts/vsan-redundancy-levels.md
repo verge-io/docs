@@ -27,7 +27,7 @@ dateCreated: 2026-02-14T00:00:00.000Z
 ## Overview
 
 !!! info "Key Points"
-    - **N+1** (default) maintains 2 copies of every data block and can survive one simultaneous node or drive failure. N+1 provides robust protection suitable for most production environments.
+    - **N+1** (default) maintains 2 copies of every data block and can survive one simultaneous node failure. N+1 provides robust protection suitable for most production environments.
     - **N+2** (official support starting in 26.1.2) maintains 3 copies of every data block and can survive two simultaneous failures.
     - Redundancy is configured per system and applies per vSAN tier.
 
