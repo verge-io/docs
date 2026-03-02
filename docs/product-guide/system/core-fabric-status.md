@@ -1,26 +1,11 @@
 ---
 title: "Core Fabric Status Guide"
 description: "How to read, interpret, and troubleshoot core fabric status in VergeOS"
-tags: [networking, monitoring, troubleshooting]
+tags: [networking, monitoring, troubleshooting, core]
 categories: [Networking, System Administration, Nodes]
 ---
 
-# Core Fabric Status Guide
-
-The core fabric is the backbone of every VergeOS system, handling vSAN traffic, node-to-node communication, VM migrations, and management operations. Understanding how to read and interpret fabric status is essential for maintaining a healthy cluster.
-
-## Overview
-
-Every VergeOS node communicates with its peers over a VXLAN overlay network called the **core fabric**. The `ybfabric` daemon runs on each node, discovering peers, managing VXLAN forwarding entries, synchronizing time across the cluster, and continuously monitoring path health.
-
-Fabric status data is available through the VergeOS UI and the CLI. This guide explains what each field means, how to recognize healthy and degraded states, and how to troubleshoot common fabric issues.
-
-!!! info "What You'll Learn"
-    - How to access fabric status through the UI and CLI
-    - What each fabric status field means (`confirmed`, `score`, paths)
-    - How to identify healthy, degraded, and critical fabric states
-    - How to troubleshoot common fabric connectivity issues
-    - When and why to verify fabric health before maintenance operations
+# Fabric Status Guide
 
 ## Prerequisites
 
@@ -29,129 +14,101 @@ Fabric status data is available through the VergeOS UI and the CLI. This guide e
 
 ## What is the Core Fabric?
 
-The core fabric is a flat Layer 2 network segment that spans all nodes in a VergeOS system. It is built on a VXLAN overlay (VNI 2, UDP port 4789) and carried over dedicated physical NICs configured with jumbo frames.
+The fabric is the backbone of your VergeOS system, utilizing the core network to manage all node-to-node communications, including vSAN traffic, peer discovery, management operations, cross-node network traffic, VM and network migrations, and other functions.
 
-The fabric handles:
+A typical VergeOS deployment uses **two independent physical core networks** ("Core 1 Switch", "Core 2 Switch") for redundancy. Each node should have two independent physical paths to every other node in the cluster.
 
-- **vSAN traffic** — All distributed storage reads and writes between nodes
-- **Node-to-node communication** — Cluster coordination and heartbeat
-- **VM live migrations** — Memory and state transfer during workload moves
-- **Management operations** — Controller-to-node commands and status updates
+This core fabric redundancy is vital to maintain system resiliency and uninterrupted operation, even during a node or drive failure, and allows maintenance operations without downtime.
 
-A typical VergeOS deployment uses **two separate physical core networks** (Core1 and Core2) for redundancy. Each node should have two independent paths to every other node in the cluster.
+??? info "How Core Fabric Redundancy Works"
+    The core fabric handles redundancy at a low level, creating a mesh where every node maintains redundant paths to every other node in the system. Because of this built-in redundancy, physical LAG or port bonding should **not** be used on core fabric networks — doing so will interfere with the fabric's own mechanisms.
 
-### The ybfabric Daemon
+    The VergeOS core fabric provides more comprehensive detection and resiliency than traditional link aggregation. LAG only detects and protects against link-level failures, while the VergeOS fabric operates at the application layer, detecting a much wider range of problems including dropped packets, MTU mismatches, NIC lockups, and bad firmware — in addition to simple disconnected links.
 
-The `ybfabric` daemon is a VergeOS service that runs on every node and provides:
 
-| Function | Description |
-|----------|-------------|
-| **Peer discovery** | Identifies other VergeOS nodes on the core network via multicast (UDP 14202) |
-| **VXLAN FDB management** | Programs the kernel VXLAN forwarding database with remote endpoint addresses |
-| **Time synchronization** | Synchronizes clocks across the cluster during boot |
-| **Health monitoring** | Tracks path scores and peer reachability |
-| **Status reporting** | Writes live status to `/run/ybfabric.json` |
+## Accessing Fabric Status (UI)
 
-!!! note "Automatic Recovery"
-    The `vsan-watchdog` service monitors `ybfabric` every 10 seconds. If the process exits unexpectedly, the watchdog automatically restarts it. Unlike a vSAN crash, an `ybfabric` crash does **not** trigger a node reboot.
+Fabric status is available in the VergeOS UI at multiple levels of detail.
 
-## Accessing Fabric Status
+| Method | Detail Level | Use Case |
+|--------|-------------|----------|
+| **Alarms** | Summary | Day-to-day monitoring — alerts when paths are degraded or lost |
+| **Node NICs List** | Per-NIC | Quick status check of all Node NICs |
+| **Node Dashboard** | Per-NIC (selected node) | Quick status check of individual NICs and their connections to other nodes |
+| **Node Diagnostics** | Full JSON report | Advanced troubleshooting — complete path, score, and peer details |
 
-### Through the UI
+### Alarms
 
-There are two ways to view fabric status in the VergeOS interface:
+On a day-to-day basis, monitoring fabric status can be handled through the same alarm system used for the rest of your VergeOS environment. A **warning** alarm is raised when bidirectional communication is unavailable on a core network path.
 
-**Node Diagnostics (detailed JSON output):**
+!!! tip
+    Clicking an alarm in the list will navigate directly to the affected Node Dashboard, where further detail is available.
 
-1. Navigate to **Infrastructure** > **Nodes**
-2. Select the desired **node** from the list
-3. Click **Diagnostics** in the left menu
-4. Select **Fabric Configuration** from the **Query** dropdown
-5. Click **Send** to execute
+For more information on viewing and managing alarms, see the [Alarms Guide](/product-guide/operations/alarms/).
 
-This returns the full JSON fabric status as seen by the selected node, including all discovered peers, their paths, scores, and confirmation status.
 
-**NIC Fabric Status (quick visual check):**
+!!! warning "Address Core Network Alarms Immediately"
+    Core network alarms indicate that your system may not have full fabric redundancy. Resolve these promptly to ensure your cluster can tolerate a failure without disruption.
+    Event triggers can be configured to send notifications via email, text alerting systems, monitored Slack channels, and more, ensuring administrators are notified immediately. See the [Task Engine Product Guide](/product-guide/automation/task-engine/) for more information about creating automated tasks; this [Automation Example](/knowledge-base/automated-task-example-webhook/) KB article provides an example of setting up event-driven notifications.
 
-1. Navigate to **Infrastructure** > **Nodes**
-2. Select the desired **node** from the list
-3. Scroll down to the **NICs** section on the node dashboard
 
-Each NIC connected to the core fabric displays a globe icon with a **Confirmed** or **Not Confirmed** status indicator.
+### Node NICs List
 
-### Through the CLI
+This is a quick way to view fabric status on all core network NICs from a single page.
 
-Access the fabric status file directly:
+1. Navigate to **Infrastructure** > **Nodes**.
+2. Click **NICs** on the left menu.
+3. A list of all NICs from all nodes is displayed. The **Fabric Status** column shows the status for core network NICs (e.g. 'Confirmed', 'No Path', 'Degraded'). A *Fabric Status* of 'None' is shown for NICs that do not participate in the core fabric (e.g. external networks).
 
-```bash
-cat /run/ybfabric.json
-```
 
-For a formatted view:
+### Node Dashboards
 
-```bash
-cat /run/ybfabric.json | python3 -m json.tool
-```
+Status information is available per NIC from each Node Dashboard.
 
-## Understanding Fabric Status Fields
+1. Navigate to **Infrastructure** > **Nodes**.
+2. Double-click the desired **node** from the list.
+3. Scroll down to the **NICs** section on the Node Dashboard.
+   Each core fabric NIC displays either a **Confirmed** status indicator or a problem status message (e.g. No Path, Degraded).
+4. For more detailed information, click the globe icon <i class="bi bi-globe"></i> on the right. This provides a popup showing NIC details:
+    - Vendor, Model, Interface, and Driver
+    - **Confirmed** / **No Path** / **Degraded** status per connection to each other node in the system
+    - **Score** per connection to each other node (see [Score Values](#score-values) below)
+5. Each path should show **Confirmed** status. Any path showing **No Path** or **Degraded** indicates a connectivity issue that should be investigated and resolved.
 
-The fabric status is a JSON document where each peer node is represented as a key with its connection details. Here is an annotated example:
+### Node Diagnostics 
 
-```json
-{
-    "$sysid": "a1b2c3d4e5f6...",
-    "$last_update": "02/19/2026 14:30:00",
-    "syncing_time": false,
-    "node1": {
-        "paths": [
-            {
-                "ip": "172.16.1.1",
-                "iface": "enp6s18",
-                "score": 200,
-                "confirmed": true
-            },
-            {
-                "ip": "172.16.2.1",
-                "iface": "enp6s19",
-                "score": 200,
-                "confirmed": true
-            }
-        ],
-        "vxlans": ["vx2 via 172.16.1.1"]
-    },
-    "node2": {
-        "paths": [
-            {
-                "ip": "172.16.1.2",
-                "iface": "enp6s18",
-                "score": 200,
-                "confirmed": true
-            },
-            {
-                "ip": "172.16.2.2",
-                "iface": "enp6s19",
-                "score": 200,
-                "confirmed": true
-            }
-        ],
-        "vxlans": ["vx2 via 172.16.1.2"]
-    }
-}
-```
+More extensive fabric status details (useful for advanced troubleshooting) are available through Node Diagnostics. This returns a full JSON report of fabric status as seen by the selected node, including all discovered peers, their paths, scores, and confirmation status.
 
-### Field Reference
+1. Navigate to **Infrastructure** > **Nodes**.
+2. Select the desired **node** from the list.
+3. Click **Diagnostics** in the left menu.
+4. Select **Fabric Configuration** from the **Query** dropdown.
+5. Click **Send** to execute.
+6. The fabric status is a JSON document where each peer node is represented as a key with its connection details. 
+
+#### Field Reference
+
+The following fields appear in the fabric status JSON output.
 
 | Field | Description |
 |-------|-------------|
 | `$sysid` | SHA-1 hash identifying this VergeOS system (sourced from `/.system_id`) |
 | `$last_update` | Timestamp of the most recent fabric status refresh |
-| `syncing_time` | Whether the node is currently synchronizing its clock with the cluster. Must be `false` before the node fully joins |
+| `syncing_time` | Indicates whether the node is currently synchronizing its clock with the cluster. This must be `false` before the node fully joins. During initial node join, it is normal for the value to be `true`. |
 | `paths` | Array of network paths to this peer node |
 | `paths[].ip` | IP address of the remote node on the core network |
 | `paths[].iface` | Local network interface used to reach this path |
-| `paths[].score` | Numeric connectivity quality score (higher is better; **200** = perfect) |
+| `paths[].score` | Numeric connectivity quality score (higher is better; **200** = perfect). See [Score Values](#score-values) below. |
 | `paths[].confirmed` | Whether this path has been verified as active and reachable (`true` / `false`) |
 | `vxlans` | VXLAN tunnel endpoints programmed for this peer |
+
+
+#### Confirmed Status
+
+| Value | Meaning |
+|-------|---------|
+| `true` | The path has been verified — bidirectional communication is working |
+| `false` | The path could not be verified — connectivity is lost or never established |
 
 ### Score Values
 
@@ -167,14 +124,12 @@ The `score` field represents the quality of the connection to a peer node throug
 !!! note "Interpreting Scores"
     A "perfect" score means the value matches the expected maximum for your NIC speed. For example, a score of **50** on a 25Gbps NIC is healthy, while a score of **50** on a 100Gbps NIC indicates degradation. Always compare the score against the maximum for your link speed.
 
-A score significantly **below** the expected maximum indicates degradation — possible causes include network latency, packet loss, or suboptimal routing. A score of **0** indicates severe connectivity issues where the path may be unusable.
+A score significantly **below** the expected maximum indicates degradation - possible causes include network latency, packet loss, or suboptimal routing.  A score of **0** indicates a complete loss of bidirectional communication.
 
-### Confirmed Status
 
-| Value | Meaning |
-|-------|---------|
-| `true` | The path has been verified — bidirectional communication is working |
-| `false` | The path could not be verified — connectivity is lost or never established |
+!!! tip "Confirmed vs Score"
+    *confirmed* indicates whether the path is reachable, while *score* reflects the quality of that path.
+
 
 ## Healthy vs. Unhealthy Fabric Examples
 
@@ -267,14 +222,7 @@ A node that should be in the cluster does not appear in the fabric output at all
 
 ## Pre-Maintenance Fabric Verification
 
-Several VergeOS maintenance operations require a healthy fabric as a prerequisite. Before performing any of the following, verify that **all nodes show two paths with `confirmed: true`**:
-
-| Operation | Why Fabric Matters |
-|-----------|-------------------|
-| [System updates](/product-guide/system/running-updates/) | Nodes reboot sequentially; remaining nodes must communicate reliably |
-| [vSAN scale-up](/product-guide/operations/vsan-scale-up-sop/) | New drives join the distributed storage pool; fabric carries replication traffic |
-| [Scale-out (adding nodes)](/product-guide/operations/sop-scale-out/) | New nodes must discover and join the existing fabric mesh |
-| Node maintenance | Workloads migrate to other nodes over the fabric network |
+VergeOS maintenance operations require a healthy fabric as a prerequisite. Before performing maintenance operations, verify that **all nodes show two paths with `confirmed: true`**:
 
 !!! tip "Quick Verification"
     From any node, run the **Fabric Configuration** diagnostic and confirm every peer shows two paths with `"confirmed": true` before proceeding with maintenance.
@@ -323,10 +271,6 @@ Several VergeOS maintenance operations require a healthy fabric as a prerequisit
 
     If the process is not running, the `vsan-watchdog` should restart it automatically. Check the watchdog status:
 
-    ```bash
-    journalctl -u vsan.service | grep fabric
-    ```
-
 ### Single Path Only
 
 **Symptoms:** Nodes show only one path instead of two
@@ -337,10 +281,6 @@ Several VergeOS maintenance operations require a healthy fabric as a prerequisit
 2. **Switch port failure** — The switch port for one core network may be down. Check switch status.
 3. **NIC failure** — One of the two core NICs may have failed. Check the NIC status on the node dashboard.
 4. **Bond member down** — If core NICs are bonded, check the bond status:
-
-    ```bash
-    cat /proc/net/bonding/bond0
-    ```
 
 ### Time Synchronization Issues
 
@@ -353,8 +293,8 @@ Several VergeOS maintenance operations require a healthy fabric as a prerequisit
 
 ## Best Practices
 
+- **Address core network alarms immediately** - Resolve issues quickly to maintain full fabric redundancy
 - **Verify fabric before every maintenance operation** — Make it a habit to check fabric status before updates, scale-ups, scale-outs, and node maintenance
-- **Monitor NIC fabric status regularly** — Use the globe icon on the Nodes dashboard for a quick visual check
 - **Maintain two core networks** — Always keep both Core1 and Core2 paths healthy for redundancy
 - **Test after physical changes** — After any cabling, switch, or NIC changes, re-verify fabric status
 - **Use the Refresh Fabric action** — After resolving a connectivity issue, use the **Refresh Fabric** button on the node dashboard (or batch action from the nodes list) to force a status update
