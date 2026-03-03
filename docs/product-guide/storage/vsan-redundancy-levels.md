@@ -10,13 +10,13 @@ categories: [Storage, vSAN]
 ## Overview
 
 !!! info "Key Points"
-    - **N+1** (default) maintains 2 copies of every data block and can survive one simultaneous node failure. N+1 provides robust protection suitable for most production environments.
-    - **N+2** maintains 3 copies of every data block and can survive two simultaneous failures.
+    - **N+1 / RF2** (default) maintains 2 copies of every data block and can survive one simultaneous node failure. N+1 provides robust protection suitable for most production environments.
+    - **N+2 / RF3** maintains 3 copies of every data block and can survive two simultaneous failures.
     - Redundancy is configured per system and applies per vSAN tier.
 
-VergeOS vSAN supports configurable redundancy levels that determine how many copies of each data block are maintained across the system. Choosing the right level is a balance between fault tolerance, storage overhead, and infrastructure cost.
+VergeOS vSAN supports configurable redundancy levels — also known as **Replication Factors (RF)** — that determine how many copies of each data block are maintained across the system. Choosing the right level is a balance between fault tolerance, storage overhead, and infrastructure cost.
 
-## N+1 Redundancy
+## N+1 Redundancy (RF2)
 
 N+1 redundancy maintains **2 copies** of every data block in the vSAN. This allows a cluster to survive **one simultaneous failure** — either a node failure or drive failures within a single node.
 
@@ -33,7 +33,7 @@ VergeOS N+1 is the default configuration and well suited for most scenarios. It 
 !!! tip
     For additional protection, a [Repair Server](/product-guide/backup-dr/repair-server) can be configured to automatically attempt to retrieve missing data blocks from a sync destination if failures exceed the configured redundancy level, potentially avoiding a full snapshot rollback.
 
-## N+2 Redundancy
+## N+2 Redundancy (RF3)
 
 N+2 vSAN redundancy is available for environments that have a specific requirement to maintain **3 copies** of every data block and/or for a system to survive **two simultaneous failures**. N+2 can survive two simultaneous node failures, disk failures across two nodes, or a combination of both.
 
@@ -75,7 +75,7 @@ To check the current redundancy configuration and status of a vSAN tier:
 
 ## Quick Comparison
 
-| Feature | N+1 | N+2 |
+| Feature | N+1 (RF2) | N+2 (RF3) |
 |---|---|---|
 | Copies of data | 2 | 3 |
 | Simultaneous failures tolerated | 1 | 2 |
