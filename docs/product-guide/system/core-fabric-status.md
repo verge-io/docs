@@ -5,7 +5,7 @@ tags: [networking, monitoring, troubleshooting, core]
 categories: [Networking, System Administration, Nodes]
 ---
 
-# Fabric Status Guide
+# Core Fabric Status Guide
 
 ## Prerequisites
 
@@ -124,7 +124,7 @@ The `score` field represents the quality of the connection to a peer node throug
 !!! note "Interpreting Scores"
     A "perfect" score means the value matches the expected maximum for your NIC speed. For example, a score of **50** on a 25Gbps NIC is healthy, while a score of **50** on a 100Gbps NIC indicates degradation. Always compare the score against the maximum for your link speed.
 
-A score significantly **below** the expected maximum indicates degradation - possible causes include network latency, packet loss, or suboptimal routing.  A score of **0** indicates a complete loss of bidirectional communication.
+A score significantly **below** the expected maximum indicates degradation - possible causes include network latency, packet loss, or suboptimal routing. A score of **0** indicates a complete loss of bidirectional communication.
 
 
 !!! tip "Confirmed vs Score"
@@ -245,7 +245,7 @@ VergeOS maintenance operations require a healthy fabric as a prerequisite. Befor
 
 ### Score Degradation
 
-**Symptoms:** Paths are confirmed but score is below 200
+**Symptoms:** Paths are confirmed but score is below the expected maximum for your NIC speed
 
 **Common causes and actions:**
 
@@ -262,14 +262,7 @@ VergeOS maintenance operations require a healthy fabric as a prerequisite. Befor
 1. **Node offline** — Verify the node is powered on and running. Check IPMI if the node is unresponsive.
 2. **Both core NICs down** — If both core network interfaces are down, the node cannot participate in fabric discovery.
 3. **VLAN isolation** — Confirm the switch ports for the missing node are on the same VLANs as the other nodes.
-4. **ybfabric not running** — On the affected node, check if the daemon is running:
-
-    ```bash
-    cat /run/ybfabric.pid
-    ps -p $(cat /run/ybfabric.pid) -o pid,comm,etime
-    ```
-
-    If the process is not running, the `vsan-watchdog` should restart it automatically. Check the watchdog status:
+4. **ybfabric not running** — The `ybfabric` daemon must be running for a node to participate in fabric discovery. If the process is not running, the `vsan-watchdog` should restart it automatically. If the node remains missing after several minutes, contact VergeOS support.
 
 ### Single Path Only
 
@@ -277,10 +270,9 @@ VergeOS maintenance operations require a healthy fabric as a prerequisite. Befor
 
 **Common causes and actions:**
 
-1. **Cable failure** — One core network cable may be disconnected or damaged.
-2. **Switch port failure** — The switch port for one core network may be down. Check switch status.
-3. **NIC failure** — One of the two core NICs may have failed. Check the NIC status on the node dashboard.
-4. **Bond member down** — If core NICs are bonded, check the bond status:
+1. **Cable failure** — One core network cable may be disconnected or damaged. Try a known-good cable.
+2. **Switch port failure** — The switch port for one core network may be down. Check switch interface status and logs.
+3. **NIC failure** — One of the two core NICs may have failed. Check the NIC status on the node dashboard. Use **Node Diagnostics** > **Ethernet Tool** to verify link state.
 
 ### Time Synchronization Issues
 
