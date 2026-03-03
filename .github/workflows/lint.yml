@@ -44,5 +44,5 @@ jobs:
       - name: Check links
         uses: lycheeverse/lychee-action@v2
         with:
-          args: --offline --no-progress '_site/**/*.html'
+          args: --offline --no-progress --root-dir _site '_site/**/*.html'
           fail: true

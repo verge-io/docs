@@ -147,7 +147,7 @@ For a detailed guide on planning your network configuration, see [Network Design
 
 Now that you've migrated your VMware workloads, explore these resources to get the most out of VergeOS:
 
-- [VM Best Practices](/product-guide/virtual-machines/best-practices) - Optimize your virtual machine configurations.
+- [VM Best Practices](/product-guide/virtual-machines/vm-best-practices) - Optimize your virtual machine configurations.
 - [Network Design](/implementation-guide/network-design) - Plan and refine your network architecture.
 - [Snapshots Overview](/product-guide/backup-dr/snapshots-overview) - Set up backup and disaster recovery.
 - [Creating Tenants](/product-guide/tenants/create-tenants) - Organize workloads with multi-tenancy.

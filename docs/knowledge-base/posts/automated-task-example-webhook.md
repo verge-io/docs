@@ -95,7 +95,7 @@ This automation ensures that administrators are notified immediately when a sync
 
 ## Additional Resources
 
-- [Task Manager Overview](/product-guide/automation/task-manager)
+- [Task Engine Overview](/product-guide/automation/task-engine)
 - [Configuring Webhooks](/product-guide/automation/webhooks)
 - [Working with Tags](/product-guide/system/tags)
 - [SMTP Configuration](/product-guide/system/smtp)
