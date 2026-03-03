@@ -1,7 +1,3 @@
----
-status: new
----
-
 # vSAN I/O Scheduling and Workload Management
 
 This page explains how the vSAN distributes storage I/O, what automatic protections are in place when tiers approach capacity, and what options are available for managing workload isolation.
