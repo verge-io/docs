@@ -1,25 +1,8 @@
 ---
 title: Understanding vSAN Redundancy Levels
-slug: understanding-vsan-redundancy-levels
-description: Learn about VergeOS vSAN N+1 and N+2 redundancy levels, their requirements, use cases, and considerations 
-published: true
-date: 2026-02-14T00:00:00.000Z
-tags:
-  - vsan
-  - redundancy
-  - storage
-  - replication
-  - fault tolerance
-  - RF3
-  - RF2
-  - redundancy factor
-  - FTT
-  - resiliency factor
-categories:
-  - vSAN
-  - Storage
-editor: markdown
-dateCreated: 2026-02-14T00:00:00.000Z
+description: Learn about VergeOS vSAN N+1 and N+2 redundancy levels, their requirements, use cases, and considerations
+tags: [vsan, storage, redundancy, fault tolerance]
+categories: [Storage, vSAN]
 ---
 
 # Understanding vSAN Redundancy Levels
@@ -28,7 +11,7 @@ dateCreated: 2026-02-14T00:00:00.000Z
 
 !!! info "Key Points"
     - **N+1** (default) maintains 2 copies of every data block and can survive one simultaneous node failure. N+1 provides robust protection suitable for most production environments.
-    - **N+2** (official support starting in 26.1.2) maintains 3 copies of every data block and can survive two simultaneous failures.
+    - **N+2** maintains 3 copies of every data block and can survive two simultaneous failures.
     - Redundancy is configured per system and applies per vSAN tier.
 
 VergeOS vSAN supports configurable redundancy levels that determine how many copies of each data block are maintained across the system. Choosing the right level is a balance between fault tolerance, storage overhead, and infrastructure cost.
@@ -41,14 +24,14 @@ N+1 redundancy maintains **2 copies** of every data block in the vSAN. This allo
 |---|---|
 | **Minimum Nodes** | 2 controller nodes |
 | **Copies of Data** | 2 |
-| **Storage Overhead** | ~2x |
+| **Storage Overhead** | ~2x (before deduplication) |
 
 ### When to Use N+1
 
 VergeOS N+1 is the default configuration and well suited for most scenarios. It provides a strong balance between capacity efficiency and fault tolerance and is appropriate for many production environments when combined with best practices for data protection such as regular snapshots and off-site data replication.
 
 !!! tip
-    VergeOS's **Repair Server** feature and native fabric redundancy extend N+1 protection beyond what a typical two-factor data redundancy scheme provides. Even in the unlikely event of a double failure, data can be automatically, live-recovered from a VergeOS repair server, often without downtime.
+    For additional protection, a [Repair Server](/product-guide/backup-dr/repair-server) can be configured to automatically attempt to retrieve missing data blocks from a sync destination if failures exceed the configured redundancy level, potentially avoiding a full snapshot rollback.
 
 ## N+2 Redundancy
 
@@ -59,14 +42,11 @@ N+2 vSAN redundancy is available for environments that have a specific requireme
 | **Minimum Nodes** | 3 (all controller nodes) |
 | **Recommended Nodes** | 5 (provides a witness node to completely avoid split-brain scenarios) |
 | **Copies of Data** | 3 |
-| **Storage Overhead** | ~3x |
+| **Storage Overhead** | ~3x (before deduplication) |
 
 ### When to Use N+2
 
 N+2 is designed for environments with a specific requirement to withstand more than one simultaneous failure. Common scenarios include **ultra-critical workloads** where even the brief exposure during a rebuild is unacceptable, or **remote/edge sites** where failed hardware cannot be replaced quickly. In these cases, the extra infrastructure cost of N+2 may be justified.
-
-!!! info "Availability"
-    Official support for N+2 redundancy was introduced in **VergeOS 26.1.2**.
 
 ## Per-Tier Redundancy
 
@@ -74,11 +54,11 @@ A failure only affects the tier where the failed drives reside. For example, in 
 
 ## Configuring vSAN Redundancy Level
 
-Redundancy level is typically configured during [system installation](/implementation-guide/installation-guide).  
+Redundancy level is typically configured during [system installation](/implementation-guide/installation-guide).
 
 ## Changing a System's Redundancy Levels
 
-It is possible to upgrade an N+1 system to N+2 (provided the minimum node requirement is met) or downgrade from N+2 to N+1. This transition involves a data rebalancing process.
+It is possible to upgrade an N+1 system to N+2 (provided the minimum node requirement is met). This transition involves a data rebalancing process.
 
 !!! warning
     To perform a redundancy level change, contact **Verge.io Support.**
@@ -101,11 +81,11 @@ To check the current redundancy configuration and status of a vSAN tier:
 | Simultaneous failures tolerated | 1 | 2 |
 | Minimum controller nodes | 2 | 3 |
 | Recommended nodes | 3 | 5 |
-| Storage overhead | ~2x | ~3x |
+| Storage overhead (before dedup) | ~2x | ~3x |
 | Default  | Yes | No |
 
 ---
 
 !!! note "Document Information"
-    - Last Updated: 2026-02-14
+    - Last Updated: 2026-03-03
     - VergeOS Version: 26.1.2

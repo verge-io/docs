@@ -166,11 +166,11 @@ The main dashboard for your new system will display.  Status indicators should a
 10. The installation program will indicate when it has finished.  Remove the install media and hit [Enter] to reboot.
 
 !!! note "N+2 vSAN Redundancy (3 Controller Nodes)"
-    Two controller nodes provides the default **N+1** redundancy configuration, which maintains two copies of each data block and is well suited for most environments. 
-    
-    **N+2** configurations are also supported, maintaining three copies of each data block across the system. 
-    
-    N+2 requires **3 controller nodes** to be installed. For more details on redundancy levels, requirements, and use cases, see [Understanding vSAN Redundancy Levels](/knowledge-base/understanding-vsan-redundancy-levels/).
+    Two controller nodes provides the default **N+1** redundancy configuration, which maintains two copies of each data block and is well suited for most environments.
+
+    **N+2** configurations are also supported, maintaining three copies of each data block across the system.
+
+    N+2 requires **3 controller nodes** to be installed. For more details on redundancy levels, requirements, and use cases, see [Understanding vSAN Redundancy Levels](/product-guide/storage/vsan-redundancy-levels/).
 
     After all three controller nodes have been installed, a **reboot of all 3 nodes is required** to activate the N+2 redundancy level.
 
@@ -204,4 +204,3 @@ If issues arise during installation:
 * Press `Esc` to cancel and get a command prompt
 * Type `yb-install` to resume or `yb-install --restart` to start over.
 
-  
