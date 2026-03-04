@@ -86,7 +86,9 @@ After the resource group is selected or new one created, a **Success** message s
 * Place the node into [**Maintenance Mode**](/product-guide/operations/maintenance-mode) and click **Reload Drivers**.
 * Monitor the Node Dashboard logs (bottom of page) to verify the driver is successfully installed before disabling maintenance mode. 
 
-The resource group dashboard contains the resource rules that were auto-generated based on your selected NVIDIA devices. You can click an individual rule to view configuration detail. A system-created rule can be modified as needed. For example, the *Node* filter can be changed to *-- None --* to include matching devices from all nodes; the *slot* filter can be removed or modified to accommodate devices that may reside on different slots across different nodes .  Information regarding resource rules is available at: [**Device Passthrough Overview - Resource Rules**](/product-guide/system/device-pass-overview#resource-rules)
+
+!!! tip 
+The resource group dashboard contains the resource rules that were auto-generated based on your selected NVIDIA devices. You can click an individual rule to view configuration detail. A system-created rule can be modified as needed. For example, the *Node* filter can be changed to *-- None --* to include matching devices from all nodes; the *slot* filter can be removed or modified to accommodate devices that may reside on different slots across different nodes. Information regarding resource rules is available at: [**Device Passthrough Overview - Resource Rules**](/product-guide/system/device-pass-overview#resource-rules)
 
 ## VM/Guest Configuration
 
