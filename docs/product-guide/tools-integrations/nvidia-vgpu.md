@@ -2,7 +2,7 @@
 
 ## Overview
 
-The NVIDIA integration with VergeOS enables GPU acceleration for virtual machines through NVIDIA's GRID vGPU technology. This integration allows multiple VMs to share physical GPU resources while maintaining performance isolation, making it ideal for AI/ML workloads, virtual desktop infrastructure, content creation, and high-performance computing applications.
+The NVIDIA integration with VergeOS enables GPU acceleration for virtual machines, supporting both NVIDIA traditional vGPU and MIG vGPU technologies. This integration allows multiple VMs to share physical GPU resources while maintaining performance isolation, making it ideal for AI/ML workloads, virtual desktop infrastructure, content creation, and high-performance computing applications.
 
 ## Key Features
 
@@ -53,7 +53,7 @@ The NVIDIA integration consists of three main layers:
 **Physical Layer:**
 
 - NVIDIA GPU hardware
-- NVIDIA GRID host drivers installed on VergeOS nodes
+- NVIDIA host drivers installed on VergeOS nodes
 - IOMMU/SR-IOV hardware virtualization support
 
 **Virtualization Layer:**
@@ -71,7 +71,7 @@ The NVIDIA integration consists of three main layers:
 ## Supported Hardware
 
 !!! info "Hardware Requirements"
-    - NVIDIA vGPU functionality requires a valid **NVIDIA vGPU software license**, such as Virtual PC, Virtual Apps, or Virtual Workstation. These licenses must match the selected vGPU profile and workload type.
+    - NVIDIA vGPU functionality requires a valid **NVIDIA vGPU software license**, such as Virtual PC, Virtual Apps, Virtual Workstation, or Virtual Compute Server. These licenses must match the selected vGPU profile and workload type.
     - Only select data center and professional GPUs support vGPU. Verify hardware and driver compatibility in the [NVIDIA vGPU Support Matrix](https://docs.nvidia.com/grid/latest/grid-vgpu-release-notes-generic-linux-kvm/index.html#supported-gpus){target="_blank"}.
     - For an overview of licensing options, refer to the [NVIDIA Licensing Guide](https://www.nvidia.com/en-us/data-center/virtual-solutions/){target="_blank"}.
 
@@ -98,7 +98,7 @@ The NVIDIA integration consists of three main layers:
 
 ### External Documentation
 
-- [NVIDIA GRID Documentation](https://docs.nvidia.com/grid/){target="_blank"} - Official NVIDIA vGPU documentation
+- [NVIDIA vGPU Documentation](https://docs.nvidia.com/vgpu/){target="_blank"} - Official NVIDIA vGPU documentation
 - [NVIDIA Developer Portal](https://developer.nvidia.com/){target="_blank"} - CUDA development resources and tools
 - [NVIDIA Enterprise Support](https://www.nvidia.com/en-us/support/enterprise/){target="_blank"} - Professional support services
 
