@@ -7,20 +7,20 @@ VergeOS supports both NVIDIA traditional vGPU (time-sliced) mode and MIG (Multi-
 
 ## High-level Steps
 
-Overall workflow for enabling and assigning NVIDIA vGPU resources within VergeOS: 
+Overall workflow for VergeOS NVIDIA vGPU configuration:  
 
 * **Upload Driver** - [Upload](/product-guide/storage/uploading-files-to-vsan) the bundled NVIDIA driver to the VergeOS environment. 
 
-* **Create a Resource Group** - This defines the resource pool based on the physical device(s), with settings for vGPU profile, number of instances, etc. Optionally, you may select to automatically create the client driver ISO.
+* **Create a Resource Group** - This generates a resource pool based on selected physical GPU device(s), allowing you to define vGPU profiles, number of instances, and other settings. 
 
-* **Load Drivers** - The node(s) are placed into maintenance mode to load the NVIDIA driver. (Node reboot may be necessary if IOMMU has not been enabled yet)
+* **Load Drivers** - Node(s) should be placed into maintenance mode to load the NVIDIA driver. (Node reboot may be necessary if IOMMU has not been enabled yet.)
 
-* **Add device to individual VMs** - Add a device to a VM, selecting the creating resource group; this allows the VM to pull from the pool of available virtual function devices within the resource group.  **Share to a tenant** to allow a tenant to assign devices to their own VMs. 
+* **Add devices to individual VMs** - Add a device to a VM, selecting the created resource group; this allows the VM to pull from the pool of available virtual function devices within the resource group.  **Share to a tenant** to allow a tenant to assign the vGPU devices to their own VMs. 
 
 
 ---
 
-The following sections provide step-by-step instructions for configuring VergeOS to use NVIDIA vGPU and assigning GPU resources to tenants and VMs. 
+The following sections provide step-by-step instructions to enable and assign NVIDIA vGPU resources within VergeOS.  
 
 ## Host Installation/Configuration
 
@@ -58,6 +58,8 @@ After the resource group is selected or new one created, a **Success** message s
    * After the node(s) are rebooted, navigate to the NVIDIA vGPU resource group just created (Infrastructure > Resources > Groups > double-click the group)
    * Click **Edit** on the left menu.
 
+--- 
+
 ### Traditional vGPU Configuration
 
    * **NVIDIA vGPU Profile**: select the desired traditional profile.
@@ -74,6 +76,7 @@ After the resource group is selected or new one created, a **Success** message s
 
 ??? example "Example: NVIDIA RTX Pro 6000 Blackwell DC with MIG"
        For the NVIDIA RTX Pro 6000 Blackwell DC-2-12Q-MIG 2g.48gb+gfx (7680x4320, 12288 MiB), creating 1 MIG instance with the maximum number of vGPU instances will consume 48 GB total, with 4 individual virtual function instances consuming 12 GB each.
+---
 
    * The **Make Guest Driver ISO** option can be used to automatically create a guest driver ISO file from the NVIDIA driver bundle selected above.  If you have already created guest drivers, select the ISO in the next step.
    * The **Driver ISO** file specifies an ISO file that can be attached to consuming VMs, providing a convenient way to access client drivers for installation within the guest operating system.  (Select the ***Attach Guest Drivers*** option when attaching the device to a VM or tenant.)
