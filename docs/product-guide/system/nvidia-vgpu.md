@@ -1,10 +1,19 @@
 
 # NVIDIA vGPU (Virtual GPU)
 
-VergeOS supports both NVIDIA traditional vGPU (time-sliced) mode and MIG (Multi-Instance GPU) vGPU mode, allowing multiple VMs to access a single physical GPU simultaneously. This support provides extreme flexibility in "carving up" GPU devices to maximize efficient usage in your VergeOS environment. 
-
+VergeOS supports both NVIDIA traditional vGPU (time-sliced) mode and MIG (Multi-Instance GPU) vGPU mode, allowing multiple VMs to access a single physical GPU simultaneously. This support provides extreme flexibility in dividing GPU devices for efficient usage by tenants and VMs in your VergeOS environment. 
 
 !!! info "NVIDIA vGPU functionality requires NVIDIA's commercial vGPU licensing. This applies to both traditional vGPU (time‑sliced) and MIG‑backed vGPU configurations."
+
+## High-level Steps
+
+The following list provides an at-a-glance look at the steps involved to provide NVIDIA vGPU instances for use in virtual machines: 
+
+* **Upload NVIDIA driver**: upload the NVIDIA bundle driver to your VergeOS files. 
+* **Create a Resource Group** based on the detected physical NVIDIA PCI device - selecting a vGPU profile, number of instances, and settings for the resource pool. Optionally, you may select to automatically create the client driver ISO.
+* **Node Maintenance** - Place node into maintenance mode and reload driver. (Node reboot may be necessary if IOMMU has not been enabled yet)
+* **Include like NVIDIA devices from other nodes (Optional)** - resource group filters such as *node* or *slot* can be modified to include NVIDIA devices installed on other nodes into the same resource pool. (Maintenance mode, driver reload, and reboot of additional nodes as needed) 
+* **Add device to individual VMs**: Selecting the resource group created to allow the VM to pull from the pool of available virtual function devices within the resource group.  **Share to a tenant** to allow a tenant to assign devices to their own VMs. 
 
 ---
 
@@ -63,10 +72,11 @@ After the resource group is selected or new one created, a **Success** message s
 
    * The **Make Guest Driver ISO** option can be used to automatically create a guest driver ISO file from the NVIDIA driver bundle selected above.  If you have already created guest drivers, select the ISO in the next step.
    * The **Driver ISO** file specifies an ISO file that can be attached to consuming VMs, providing a convenient way to access client drivers for installation within the guest operating system.  (Select the ***Attach Guest Drivers*** option when attaching the device to a VM or tenant.)
-!!! note "If you selected *Make Guest Driver ISO* option, leave the Driver ISO field set to *-- None --*; the system will automatically create the ISO file ,based on the bundle driver selected, and specify it as the Driver ISO for the resource group."
+!!! note "If you selected the *Make Guest Driver ISO* option, leave the Driver ISO field set to *-- None --*; the system will automatically create the ISO file(based on the bundle driver selected) for installing client drivers to VMs."
 
 * Click **Submit** to save the settings for the resource group.
 * Place the node into [**Maintenance Mode**](/product-guide/operations/maintenance-mode) and click **Reload Drivers**.
+* Monitor the Node Dashboard logs (bottom of page) to verify the driver is successfully installed before disabling maintenance mode. 
 
 The resource group dashboard contains the resource rules that were auto-generated for your selected NVIDIA devices. You can click an individual rule to view configuration detail. A system-created rule can be modified as needed. For example, the *Node* filter can be changed to *-- None --* to include matching devices from all nodes; the *slot* filter can be removed or modified to accommodate devices that may reside on different slots across different nodes .  Information regarding resource rules is available at: [**Device Passthrough Overview - Resource Rules**](/product-guide/system/device-pass-overview#resource-rules)
 
