@@ -1,9 +1,10 @@
 
 # NVIDIA vGPU (Virtual GPU)
 
-VergeOS allows seamless utilization of NVIDIA's GRID vGPU platform to provide multiple VMs access to a single physical GPU at the same time. vGPU access delivers accelerated graphics and high-processing throughput for machine learning, blockchain applications, etc.
+VergeOS supports both NVIDIA traditional vGPU (time-sliced) mode and MIG (Multi-Instance GPU) vGPU mode, allowing multiple VMs to access a single physical GPU simultaneously. This support provides extreme flexibility in "carving up" GPU devices to maximize efficient usage in your VergeOS environment. 
 
-!!! info "NVIDIA GRID licensing is required to use NVIDIA vGPU."
+
+!!! info "NVIDIA vGPU functionality requires NVIDIA's commercial vGPU licensing. This applies to both traditional vGPU (time‑sliced) and MIG‑backed vGPU configurations."
 
 ---
 
@@ -11,11 +12,11 @@ VergeOS allows seamless utilization of NVIDIA's GRID vGPU platform to provide mu
 
 !!! danger "It is important to read and be familiar with [**PCI Passthrough Risks and Precautions**](/product-guide/system/device-pass-overview#pci-passthrough-risksprecautions) before making passthrough configurations."
 
-1. Obtain the appropriate NVIDIA Linux-KVM driver for your GPU hardware. GRID vGPU drivers can be downloaded from your NVIDIA licensing portal or by registering for an NVIDIA free evaluation: [**https://nvidia.com/en-us/data-center/resources/vgpu-evaluation**](https://nvidia.com/en-us/data-center/resources/vgpu-evaluation).
+1. Obtain the appropriate NVIDIA Linux-KVM driver for your GPU hardware. NVIDIA vGPU drivers can be downloaded from your NVIDIA licensing portal or by registering for an NVIDIA free evaluation: [**https://nvidia.com/en-us/data-center/resources/vgpu-evaluation**](https://nvidia.com/en-us/data-center/resources/vgpu-evaluation).
 !!! tip "VergeOS supports bundle-version NVIDIA drivers.  For a list of currently supported NVIDIA drivers, navigate to Resource Manager > Groups > New. Set Type=*NVIDIA vGPU* and click the button to view compatible 3rd Party drivers.  Typically, you will want to use the most recent driver in this list that is compatible with your NVIDIA hardware."
 
 2. Upload the NVIDIA bundle driver to the VergeOS vSAN. See [**Uploading to the vSAN (Files)**](/product-guide/storage/uploading-files-to-vsan) for directions on uploading to the vSAN.  
-The following instructions configure selected vGPU device(s) for virtual function passthrough by automatically creating necessary resource rules for each selected device and attaching the device(s) to a resource group. For more information about resource groups and resource rules, see: [**Device Passthrough - Overview**](/product-guide/system/device-pass-overview#resource-group).
+The following instructions configure selected vGPU device(s) for virtual function passthrough by automatically creating necessary resource rules for each selected device and attaching the device(s) to a resource group.  This creates a pool of virtual function devices that can be assigned to tenants and virtual machines to draw from. For more information about resource groups and resource rules, see: [**Device Passthrough - Overview**](/product-guide/system/device-pass-overview#resource-group).
 
 3. Navigate to the **Resource Manager Dashboard** (**Infrastructure** > **Resources** from the top menu)   
 **-OR-**
@@ -33,24 +34,41 @@ Navigate to a **specific node** where the NVIDIA hardware is installed.
    * **Description**: optional field to provide more administrative text about the resource group.
    * **Class**: select ***vGPU***. This field is only used to apply an associated icon to the resource group, and does not affect functionality.
    * **NVIDIA vGPU Profile**: set this to the vGPU type that you want this resource group to create.
-!!! info "If this list is empty, you will need to come back to this step after the drivers have been installed.  Once the drivers have been installed on at least one node, this list will contain the available profiles provided by NVIDIA and the hardware."  
+!!! info "If this list is empty, you will need to come back to this step after the drivers have been installed.  Once the drivers have been installed on at least one node, this list will contain the available profiles provided by the driver."
+!!! info "**New in 26.1.3:** Heterogeneous profiles within the same NVIDIA device are supported. Note that MIG profiles and traditional profiles cannot be selected for the same device."
    * The **Driver** dropdown list will contain NVIDIA vGPU drivers found in the *Files* section.  The appropriate driver will need to be uploaded to the vSAN before it can be selected (Steps 1-2 above). Select the appropriate driver. 
    * Click **Submit** to save the resource group.  
 After the resource group is selected or new one created, a **Success** message should appear indicating resource rules were created for the device(s)
-   * If this driver has not been used previously or IOMMU is not yet enabled for the system, **a reboot of the associated node(s)** will be necessary before you can complete the vGPU configuration.  
+   * If a driver has not been previously loaded or IOMMU is not yet enabled for the system, **a reboot of the associated node(s)** will be necessary before you can complete the vGPU configuration.  
 !!! warning "Follow proper [**Maintenance Mode**](/product-guide/operations/maintenance-mode) procedures when rebooting a node to avoid workload disruptions.  Also, ensure that IOMMU / VT-d / SR-IOV is enabled in the BIOS."
-   * After the node(s) are rebooted, if necessary, navigate to the NVIDIA vGPU resource group just created (Infrastructure > Resources > Groups > double-click the group)
+   * After the node(s) are rebooted, navigate to the NVIDIA vGPU resource group just created (Infrastructure > Resources > Groups > double-click the group)
    * Click **Edit** on the left menu.
-   * Select the desired **NVIDIA vGPU Profile** from the dropdown list.  Consult NVIDIA vGPU documentation for information regarding available profile types for your hardware.
+
+### Traditional vGPU Configuration
+
+   * **NVIDIA vGPU Profile**: select the desired traditional profile.
+   * **Total vGPU Instances**: number of virtual instances to create with the given profile.
+   * **Scheduler Policy**, **Frequency**, **Averaging Factor**, **Time Slice Length (ms)**: NVIDIA-specific settings — consult NVIDIA documentation for more information.
+   * **Driver**: pre-populated from previous step.
+
+### MIG vGPU Configuration
+
+   * **NVIDIA vGPU Profile**: select the desired MIG profile.
+   * **MIG GPU Instances**: (maximum is listed in the description) number of MIG instances to create.
+   * **Total vGPU Instances**: the number of virtual function GPUs to create per MIG instance; default=0 creates the maximum number.
+   * **Driver**: pre-populated from previous step.
+
+??? example "Example: NVIDIA RTX Pro 6000 Blackwell DC with MIG"
+       For the NVIDIA RTX Pro 6000 Blackwell DC-2-12Q-MIG 2g.48gb+gfx (7680x4320, 12288 MiB), creating 1 MIG instance with the maximum number of vGPU instances will consume 48 GB total, with 4 individual virtual function instances consuming 12 GB each.
+
    * The **Make Guest Driver ISO** option can be used to automatically create a guest driver ISO file from the NVIDIA driver bundle selected above.  If you have already created guest drivers, select the ISO in the next step.
-   * The **Driver ISO** file specifies an ISO file that can be attached to consuming VMs, providing a convenient way to access client drivers for installation within the guest operating system.  (Select the ***Attach Guest Drivers*** option when attaching the device to a VM or tenant.)  
-!!! note "If you selected *Make Guest Driver ISO* option, leave the Driver ISO field set to *-- None --*; the system will automatically create the ISO file (based on the bundle driver selected), and specify it as the Driver ISO for the resource group."
+   * The **Driver ISO** file specifies an ISO file that can be attached to consuming VMs, providing a convenient way to access client drivers for installation within the guest operating system.  (Select the ***Attach Guest Drivers*** option when attaching the device to a VM or tenant.)
+!!! note "If you selected *Make Guest Driver ISO* option, leave the Driver ISO field set to *-- None --*; the system will automatically create the ISO file ,based on the bundle driver selected, and specify it as the Driver ISO for the resource group."
 
-* Click **Submit** to save the client driver settings for the resource group.  
+* Click **Submit** to save the settings for the resource group.
+* Place the node into [**Maintenance Mode**](/product-guide/operations/maintenance-mode) and click **Reload Drivers**.
 
-!!! tip "Once changes have been made, it may be required to put the node into [**Maintenance Mode**](/product-guide/operations/maintenance-mode) and click **Reload Drivers**."
-
-The resource group dashboard contains the resource rules that were auto-generated for your selected NVIDIA devices. You can click an individual rule to view configuration detail. A system-created rule can be modified as needed; for example, the *Node* filter can be changed to *-- None --* to include matching devices from all nodes.  Information regarding resource rules is available at: [**Device Passthrough Overview - Resource Rules**](/product-guide/system/device-pass-overview#resource-rules)
+The resource group dashboard contains the resource rules that were auto-generated for your selected NVIDIA devices. You can click an individual rule to view configuration detail. A system-created rule can be modified as needed. For example, the *Node* filter can be changed to *-- None --* to include matching devices from all nodes; the *slot* filter can be removed or modified to accommodate devices that may reside on different slots across different nodes .  Information regarding resource rules is available at: [**Device Passthrough Overview - Resource Rules**](/product-guide/system/device-pass-overview#resource-rules)
 
 ## VM/Guest Configuration
 
