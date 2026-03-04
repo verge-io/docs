@@ -7,15 +7,20 @@ VergeOS supports both NVIDIA traditional vGPU (time-sliced) mode and MIG (Multi-
 
 ## High-level Steps
 
-The following list provides an at-a-glance look at the steps involved to provide NVIDIA vGPU instances for use in virtual machines: 
+Overall workflow for enabling and assigning NVIDIA vGPU resources within VergeOS: 
 
-* **Upload NVIDIA driver**: upload the NVIDIA bundle driver to your VergeOS files. 
-* **Create a Resource Group** based on the detected physical NVIDIA PCI device - selecting a vGPU profile, number of instances, and settings for the resource pool. Optionally, you may select to automatically create the client driver ISO.
-* **Node Maintenance** - Place node into maintenance mode and reload driver. (Node reboot may be necessary if IOMMU has not been enabled yet)
-* **Include like NVIDIA devices from other nodes (Optional)** - resource group filters such as *node* or *slot* can be modified to include NVIDIA devices installed on other nodes into the same resource pool. (Maintenance mode, driver reload, and reboot of additional nodes as needed) 
-* **Add device to individual VMs**: Selecting the resource group created to allow the VM to pull from the pool of available virtual function devices within the resource group.  **Share to a tenant** to allow a tenant to assign devices to their own VMs. 
+* **Upload Driver** - [Upload](/product-guide/storage/uploading-files-to-vsan) the bundled NVIDIA driver to the VergeOS environment. 
+
+* **Create a Resource Group** - This defines the resource pool based on the physical device(s), with settings for vGPU profile, number of instances, etc. Optionally, you may select to automatically create the client driver ISO.
+
+* **Load Drivers** - The node(s) are placed into maintenance mode to load the NVIDIA driver. (Node reboot may be necessary if IOMMU has not been enabled yet)
+
+* **Add device to individual VMs** - Add a device to a VM, selecting the creating resource group; this allows the VM to pull from the pool of available virtual function devices within the resource group.  **Share to a tenant** to allow a tenant to assign devices to their own VMs. 
+
 
 ---
+
+The following sections provide step-by-step instructions for configuring VergeOS to use NVIDIA vGPU and assigning GPU resources to tenants and VMs. 
 
 ## Host Installation/Configuration
 
@@ -29,7 +34,7 @@ The following instructions configure selected vGPU device(s) for virtual functio
 
 3. Navigate to the **Resource Manager Dashboard** (**Infrastructure** > **Resources** from the top menu)   
 **-OR-**
-Navigate to a **specific node** where the NVIDIA hardware is installed.
+Navigate to a **specific node** where the NVIDIA hardware is installed (**Infrastructure** > **Nodes**).
 4. Click the **PCI Devices** box / menu item.
 5. In the list view, select the **Type** filter to **Display controller** near the top of the page.
 6. **Select the desired NVIDIA physical device(s).**
@@ -42,10 +47,10 @@ Navigate to a **specific node** where the NVIDIA hardware is installed.
    * **Type**: should be set to ***NVIDIA vGPU***.
    * **Description**: optional field to provide more administrative text about the resource group.
    * **Class**: select ***vGPU***. This field is only used to apply an associated icon to the resource group, and does not affect functionality.
-   * **NVIDIA vGPU Profile**: set this to the vGPU type that you want this resource group to create.
+   * **NVIDIA vGPU Profile**: Set this to the vGPU type that you want this resource group to create.
 !!! info "If this list is empty, you will need to come back to this step after the drivers have been installed.  Once the drivers have been installed on at least one node, this list will contain the available profiles provided by the driver."
-!!! info "**New in 26.1.3:** Heterogeneous profiles within the same NVIDIA device are supported. Note that MIG profiles and traditional profiles cannot be selected for the same device."
-   * The **Driver** dropdown list will contain NVIDIA vGPU drivers found in the *Files* section.  The appropriate driver will need to be uploaded to the vSAN before it can be selected (Steps 1-2 above). Select the appropriate driver. 
+!!! info "**New in 26.1.3:** Heterogeneous profiles within the same NVIDIA device are supported, allowing you to use multiple traditional or MIG vGPU profiles within the same resource group. Note that MIG profiles and traditional profiles cannot be used together for the same device."
+   * The **Driver** dropdown list will contain all NVIDIA vGPU drivers (.zip) found in the *Files* section.  The appropriate driver will need to be uploaded to the vSAN before it can be selected (Steps 1-2 above). Select the appropriate driver. 
    * Click **Submit** to save the resource group.  
 After the resource group is selected or new one created, a **Success** message should appear indicating resource rules were created for the device(s)
    * If a driver has not been previously loaded or IOMMU is not yet enabled for the system, **a reboot of the associated node(s)** will be necessary before you can complete the vGPU configuration.  
@@ -78,7 +83,7 @@ After the resource group is selected or new one created, a **Success** message s
 * Place the node into [**Maintenance Mode**](/product-guide/operations/maintenance-mode) and click **Reload Drivers**.
 * Monitor the Node Dashboard logs (bottom of page) to verify the driver is successfully installed before disabling maintenance mode. 
 
-The resource group dashboard contains the resource rules that were auto-generated for your selected NVIDIA devices. You can click an individual rule to view configuration detail. A system-created rule can be modified as needed. For example, the *Node* filter can be changed to *-- None --* to include matching devices from all nodes; the *slot* filter can be removed or modified to accommodate devices that may reside on different slots across different nodes .  Information regarding resource rules is available at: [**Device Passthrough Overview - Resource Rules**](/product-guide/system/device-pass-overview#resource-rules)
+The resource group dashboard contains the resource rules that were auto-generated based on your selected NVIDIA devices. You can click an individual rule to view configuration detail. A system-created rule can be modified as needed. For example, the *Node* filter can be changed to *-- None --* to include matching devices from all nodes; the *slot* filter can be removed or modified to accommodate devices that may reside on different slots across different nodes .  Information regarding resource rules is available at: [**Device Passthrough Overview - Resource Rules**](/product-guide/system/device-pass-overview#resource-rules)
 
 ## VM/Guest Configuration
 
