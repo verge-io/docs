@@ -26,4 +26,3 @@ warning per Larry:
 if you do a node 1 replacement, and it fails but the node+vsan connected, DO NOT TRY AGAIN .. unless you wait for a full journal walk with either node1 connected, or not .. ideally you dont want node1's vsan to connect and then disconnect without a full journal walk
 
 run thru test on virtual - clone the node to take out and replace, change its mac addresses
-
