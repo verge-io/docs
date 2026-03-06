@@ -175,7 +175,6 @@ nav:
     - Storage:
        - Overview: product-guide/storage/overview.md
        - vSAN Architecture: product-guide/storage/vsan-architecture.md
-       - vSAN I/O Scheduling: product-guide/storage/vsan-io-scheduling.md
        - vSAN Redundancy Levels: product-guide/storage/vsan-redundancy-levels.md
        - Storage Tiers: product-guide/storage/storage-tiers.md
        - Preferred Tier: product-guide/storage/preferred-tiers.md
