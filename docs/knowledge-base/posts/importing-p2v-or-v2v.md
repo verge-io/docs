@@ -57,7 +57,7 @@ The **VergeOS Clone Utility (VergeOS-clone.iso)** can be used to import external
 4. Locate the ISO file on your local machine (e.g. the Downloads folder)   
 
 
-!!! note "You can make a bootable USB using the [Creating Bootable Installation Media](/knowledge-base/creating-bootable-installation-media/) guide, substituting the Clone ISO."
+!!! note "You can make a bootable USB using the [Creating Bootable Installation Media](/implementation-guide/install-media/) guide, substituting the Clone ISO."
 
 ## Using the VergeOS Clone Utility
 
