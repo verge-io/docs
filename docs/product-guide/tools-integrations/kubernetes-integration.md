@@ -25,6 +25,9 @@ helm repo add verge-io https://verge-io.github.io/helm-charts
 helm repo update
 ```
 
+!!! info "Self-Signed Certificates"
+    If the VergeOS environment uses a self-signed certificate, set `vergeos.verifySSL=false` when installing the CSI driver and CCM Helm charts. This is the default, but worth noting if we change it later.
+
 ---
 
 ## CSI Driver
@@ -194,7 +197,7 @@ Basic installation (node management only):
 ```bash
 helm install vergeos-ccm verge-io/vergeos-cloud-controller-manager \
   --namespace kube-system \
-  --set vergeos.host=<VERGEOS_HOST> \
+  --set vergeos.host=https://<VERGEOS_HOST> \
   --set vergeos.apiKey=<API_KEY> \
   --set loadBalancer.enabled=false
 ```
@@ -204,7 +207,7 @@ With load balancing enabled (requires a VergeOS VNet network ID and IP pool):
 ```bash
 helm install vergeos-ccm verge-io/vergeos-cloud-controller-manager \
   --namespace kube-system \
-  --set vergeos.host=<VERGEOS_HOST> \
+  --set vergeos.host=https://<VERGEOS_HOST> \
   --set vergeos.apiKey=<API_KEY> \
   --set loadBalancer.enabled=true \
   --set loadBalancer.networkID=<VNET_ID> \
@@ -268,11 +271,49 @@ The CCM will automatically allocate an IP from the pool and create the appropria
 
 ---
 
-## Repositories and Resources
+## Cluster Autoscaler
 
-| Repository | Description |
-|------------|-------------|
-| [helm-charts](https://github.com/verge-io/helm-charts){target="_blank"} | Helm chart repository (CSI + CCM) |
+The [Kubernetes Cluster Autoscaler](https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler){target="_blank"} works with VergeOS-backed clusters provisioned through [Rancher](rancher-integration.md). It automatically adjusts the number of nodes in a pool based on pending pod resource requests — scaling up when pods can't be scheduled and scaling down when nodes are underutilized.
+
+### How It Works
+
+The autoscaler uses Rancher's API to manage node pools:
+
+1. **Scale up** — When pods are pending due to insufficient resources, the autoscaler increases the node pool size. Rancher then uses the Docker Machine driver to provision new VergeOS VMs.
+2. **Scale down** — When nodes are underutilized for a configurable period, the autoscaler cordons, drains, and removes them. The driver deletes the backing VergeOS VMs.
+
+### Enabling in Rancher
+
+Cluster autoscaling is configured per node pool in Rancher:
+
+1. Navigate to **Cluster Management** > select the cluster > **Machine Pools**
+2. Edit the node pool and enable **Auto Replace** and set min/max node counts
+3. The autoscaler respects these bounds when scaling
+
+!!! tip "Resource Requests"
+    The autoscaler makes scaling decisions based on pod resource requests, not actual usage. Make sure workloads define `requests` in their pod specs for accurate scaling behavior.
+
+---
+
+## Helm Charts Reference
+
+All VergeOS Kubernetes components are distributed as Helm charts from a single repository.
+
+### Repository Setup
+
+```bash
+helm repo add verge-io https://verge-io.github.io/helm-charts
+helm repo update
+helm search repo verge-io
+```
+
+### Available Charts
+
+| Chart | Version | App Version | Kubernetes | Description |
+|-------|---------|-------------|------------|-------------|
+| `verge-io/vergeos-csi` | `0.1.0` | `0.1.0` | >= 1.16 | CSI driver for NAS (NFS/EXT4) and Block (VM drive) storage |
+| `verge-io/vergeos-cloud-controller-manager` | `0.1.0` | `0.1.0` | >= 1.16 | Cloud controller for node lifecycle and load balancing |
+| `verge-io/vergeos-node-driver` | `0.1.0` | `1.0.0` | >= 1.16 | Node driver and UI extension for [Rancher](rancher-integration.md) |
 
 ### Container Images
 
@@ -280,3 +321,7 @@ The CCM will automatically allocate an IP from the pool and create the appropria
 |-------|---------|
 | `ghcr.io/verge-io/csi-vergeos` | `v0.1.0` |
 | `ghcr.io/verge-io/vergeos-cloud-controller-manager` | `v0.1.0` |
+
+### Source
+
+Charts are published to [verge-io/helm-charts](https://github.com/verge-io/helm-charts){target="_blank"} on GitHub Pages.

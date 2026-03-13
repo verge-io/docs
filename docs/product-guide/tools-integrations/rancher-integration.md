@@ -82,44 +82,33 @@ Before provisioning clusters, we need a template VM in VergeOS with the followin
 
 Docker is **not** required on the template — Rancher installs its own container runtime (containerd) via the system agent. The template only needs cloud-init and the guest agent.
 
-### Installing the Node Driver in Rancher
+### Installing in Rancher
 
-The driver must be registered in Rancher via `kubectl` (the Rancher UI's "Add Node Driver" form does not support the required credential field annotations).
+The node driver and UI extension are packaged together in a single Helm chart. This installs the Docker Machine driver binary, registers the NodeDriver resource, and deploys the UI extension.
 
-1. Download the driver binary from the [GitHub Releases](https://github.com/verge-io/docker-machine-driver-vergeos/releases){target="_blank"} page
-2. Host it on an HTTP/HTTPS server accessible from the Rancher cluster
-3. Apply the node driver manifest:
+**Via Helm CLI:**
 
 ```bash
-kubectl apply -f - <<'EOF'
-apiVersion: management.cattle.io/v3
-kind: NodeDriver
-metadata:
-  annotations:
-    lifecycle.cattle.io/create.node-driver-controller: "true"
-    privateCredentialFields: "apiKey"
-    publicCredentialFields: "host,insecure"
-  finalizers:
-  - controller.cattle.io/node-driver-controller
-  labels:
-    cattle.io/creator: norman
-  name: vergeos
-spec:
-  active: true
-  displayName: vergeos
-  url: "http://<hostname-or-ip>/docker-machine-driver-vergeos-linux-amd64"
-EOF
+helm repo add verge-io https://verge-io.github.io/helm-charts
+helm repo update
+
+helm install vergeos-node-driver verge-io/vergeos-node-driver \
+  -n cattle-system \
+  --set "vergeosHosts={vergeos.example.com}"
 ```
 
-Replace the `url` with the actual location of the hosted binary.
+The `vergeosHosts` value is a whitelist of VergeOS hostnames that Rancher's proxy is allowed to reach. Replace `vergeos.example.com` with the hostname(s) of the VergeOS environment(s).
 
-After applying, restart Rancher so it picks up the new driver schema:
+**Via Rancher UI:**
 
-```bash
-kubectl rollout restart deployment rancher -n cattle-system
-```
+1. Navigate to **Extensions** and click the **⋮** menu > **Manage Repositories**
+2. Add a new repository with URL `https://verge-io.github.io/helm-charts`
+3. Return to **Extensions** and install the **VergeOS Node Driver** extension
 
-Once Rancher restarts, **VergeOS** will appear as a node driver option when creating clusters.
+Once installed, **VergeOS** will appear as a node driver option when creating clusters.
+
+!!! info "Self-Signed Certificates"
+    If the VergeOS environment uses a self-signed certificate, set `insecure` to `true` when creating the cloud credential in Rancher. This tells the driver to skip TLS verification when communicating with the VergeOS API.
 
 ### Driver Options
 
@@ -131,7 +120,7 @@ Once Rancher restarts, **VergeOS** will appear as a node driver option when crea
 | `--vergeos-template-vm` | `VERGEOS_TEMPLATE_VM` | — | Name of the template VM to clone (required) |
 | `--vergeos-network` | `VERGEOS_NETWORK` | — | Name of the network to attach to (required) |
 | `--vergeos-cpu-cores` | `VERGEOS_CPU_CORES` | `2` | Number of CPU cores |
-| `--vergeos-ram` | `VERGEOS_RAM` | `2048` | RAM in MB |
+| `--vergeos-ram` | `VERGEOS_RAM` | `4096` | RAM in MB |
 | `--vergeos-disk-size` | `VERGEOS_DISK_SIZE` | `0` | Primary disk size in GB (0 = keep template size) |
 | `--vergeos-userdata` | `VERGEOS_USERDATA` | — | Path to cloud-init user-data file, or inline cloud-config |
 | `--vergeos-ssh-user` | `VERGEOS_SSH_USER` | `root` | SSH username |
@@ -175,32 +164,17 @@ The UI extension adds VergeOS-specific components to the Rancher interface, prov
 
 **Machine Configuration Form** — provides:
 
-- Template VM selector (auto-populated from VergeOS API, filtered to Ubuntu 24.04 VMs with guest agent)
-- Network selector (auto-populated from VergeOS VNets)
+- Template VM name (name of the VergeOS VM to clone)
+- Network name (VergeOS VNet to attach to)
 - CPU cores, RAM, and disk size inputs
 - Cloud-init user-data field
 - SSH user and port configuration
 
-### Installation
-
-The extension is deployed as a Helm chart into the Rancher cluster:
-
-```bash
-helm install vergeos-ui oci://ghcr.io/verge-io/ui-extension-vergeos/charts/vergeos \
-  --namespace cattle-ui-plugin-system \
-  --create-namespace \
-  --version 0.1.0
-```
-
-Alternatively, add it via the Rancher **Extensions** page:
-
-1. Navigate to **Extensions** in Rancher
-2. Click the **⋮** menu and select **Manage Repositories**
-3. Add a new repository with the chart URL
-4. Install the **VergeOS Node Driver** extension
-
 !!! info "Compatibility"
     The UI extension requires Rancher v2.10+ and the Rancher Extensions framework v3.x.
+
+!!! note "Installation"
+    The UI extension is installed automatically as part of the [combined Helm chart](#installing-in-rancher). There is no separate installation step.
 
 ---
 
@@ -210,3 +184,4 @@ Alternatively, add it via the Rancher **Extensions** page:
 |------------|-------------|
 | [docker-machine-driver-vergeos](https://github.com/verge-io/docker-machine-driver-vergeos){target="_blank"} | Docker Machine / Rancher node driver |
 | [ui-extension-vergeos](https://github.com/verge-io/ui-extension-vergeos){target="_blank"} | Rancher UI extension |
+| [helm-charts](https://github.com/verge-io/helm-charts){target="_blank"} | Helm chart repository |
