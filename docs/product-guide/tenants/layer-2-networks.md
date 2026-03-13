@@ -64,6 +64,7 @@ Before configuring Tenant Layer 2 Networks, ensure you have:
 - VergeOS cluster running version 26.0 or later
 - Cluster Admin access level
 - An existing tenant environment
+- A Layer 2 External network in the root system. For details on how to create a Layer 2 External network, see [Creating a Layer 2 External Network](/knowledge-base/routing-l2-networks/)
 - Physical switch ports configured with appropriate VLAN access
 - Understanding of the VLAN IDs that need to be passed to the tenant
 
@@ -82,7 +83,7 @@ This includes creating the Tenant Layer 2 Network, verification within the tenan
 | Select network | Network dropdown | Choose which VLAN to pass through |
 | Enable network | Toggle `Enabled` | Activate Layer 2 pass-through |
 | Verify in tenant | Tenant UI → `Networks` | Confirm automatic network creation |
-| Attach VM | Tenant VM → `NICs` → Select External or Physical network | Connect workload to VLAN |
+| Attach VM | Tenant VM → `NICs` → Select External network | Connect workload to VLAN |
 
 ## Understanding Tenant Layer 2 Networks
 
@@ -128,6 +129,9 @@ Tenant Layer 2 Networks are ideal for scenarios requiring:
 
 This section walks you through creating a Tenant Layer 2 Network to pass a VLAN to a tenant environment. The process involves selecting the tenant, choosing the network, and enabling the pass-through.
 
+!!! note "Prerequisite"
+    You must have a Layer 2 External network already created in the root system before proceeding. See [Creating a Layer 2 External Network](/knowledge-base/routing-l2-networks/) for instructions.
+
 ### Step 1: Navigate to Tenant Networks
 
 First, access the tenant's network configuration area where you'll create the Layer 2 network pass-through.
@@ -150,18 +154,17 @@ Next, initiate the creation of a new Layer 2 network pass-through for your tenan
 
 Now configure which network (VLAN) you want to pass through to the tenant and enable the connection.
 
-!!! warning
-    VLANs 1, 100, 101, and 102 cannot be used in a Virtual Switch Port capacity. These VLANs are reserved for internal traffic.
+!!! warning "Reserved VLANs"
+    VLANs 1, 100, 101, and 102 cannot be used for Tenant Layer 2 Networks. These VLANs are reserved for internal traffic.
 
-1. In the **Network** dropdown field, select the VLAN you want to pass through to the tenant
+1. In the **Network** dropdown field, select the external Layer 2 network tied to the VLAN you want to pass through to the tenant
 
-   - Available options include External networks and VLANs configured on your host
-   - The dropdown displays all Layer 2 networks available for pass-through
+   - The dropdown includes all internal and external networks on the host; only select an **external Layer 2 network** tied to the VLAN you are passing
 
 2. Toggle the **Enabled** switch to the ON position (blue)
 
    - This activates the Layer 2 pass-through
-   - When disabled, the configuration remains but the VLAN is not accessible to the tenant
+   - When disabled after creation, the configuration remains but the VLAN is not accessible to the tenant
 
 3. Click **Submit** to save the configuration
 
@@ -173,15 +176,15 @@ After submitting the configuration, VergeOS automatically creates the required n
 
 1. Wait 10-15 seconds for the configuration to propagate
 2. Log into the **tenant UI** using tenant admin credentials
-3. From the tenant's Main Dashboard, navigate to **Networks**
+3. From the tenant's Main Dashboard, navigate to **Networks** → **List**
 4. Verify the following networks appear in the tenant's network list:
-   - **External Network** - Named after the selected VLAN (e.g., "External")
-   - **Physical Network** - Backend infrastructure network (typically named "Physical")
+   - **External Network** - Named after the selected network (e.g., "External VLAN 400")
+   - **Physical Network** - Backend infrastructure network (typically named "Physical - [Network Name]", e.g., "Physical - External VLAN 400")
 
-Both networks should show **Status: Running** and appear in the tenant's network dashboard.
+Both networks will show **Status: Stopped**. You can start the External network if you need to pass that traffic to a sub-tenant.
 
 !!! success "Verification Checkpoint"
-    At this point, you should see both the External and Physical networks running in the tenant's network dashboard. These networks represent the Layer 2 connectivity to the host VLAN.
+    At this point, you should see both the External and Physical networks in the tenant's network list. These networks represent the Layer 2 connectivity to the host VLAN.
 
 ## Using Tenant Layer 2 Networks
 
@@ -193,19 +196,15 @@ Tenant administrators attach VMs to the passed-through VLAN by selecting the app
 
 1. **Within the tenant UI**, navigate to the VM you want to connect
 2. Access the VM's **NICs** section
-3. When creating or editing a NIC, select either:
-   - **External Network** - For direct VLAN attachment
-   - **Physical Network** - For backend connectivity
+3. When creating or editing a NIC, select the **External** network for the passed-through VLAN
 
 4. Save the NIC configuration
 5. Power on or restart the VM for changes to take effect
 
 ### Network Placement Best Practices
 
-When designing tenant network architecture with Layer 2 Networks:
+Set the gateway of internal VM networks to the **External** network. For a new VM Network, the Gateway field is in the wizard. For existing networks, the gateway is a default gateway under the rules section. See [Internal Networks](/product-guide/networks/internal-networks/) for more information.
 
-- **VM Networks:** Place tenant-managed internal VM networks in the **External** network
-- **Direct Workloads:** Attach VMs requiring direct VLAN access to the **External** or **Physical** network
 - **Isolation:** Consider which VMs truly need Layer 2 access vs. those that can use internal tenant networks
 
 ### Tenant Management Considerations
@@ -214,7 +213,6 @@ Once configured, tenant administrators have full control over:
 
 - Which VMs connect to the Layer 2 networks
 - Network addressing and DHCP configuration (if IP management is required)
-- Firewall rules governing traffic on these networks
 - Internal routing between Layer 2 networks and other tenant networks
 
 ## Verification and Testing
@@ -237,16 +235,15 @@ Within the tenant environment, perform these checks:
 1. **Network Presence:**
 
    - Log into tenant UI
-   - Navigate to **Networks**
+   - Navigate to **Networks** → **List**
    - Verify External and Physical networks exist
-   - Confirm both show **Status: Running**
+   - Confirm both networks are present (they will show **Status: Stopped**)
 
 2. **VM NIC Configuration:**
 
    - Open a test VM's configuration
    - Navigate to **NICs**
-   - Verify the External or Physical network appears as a selectable option
-   - Confirm VMs attached to these networks can power on successfully
+   - Verify the External network appears as a selectable option
 
 3. **Connectivity Testing:**
 
@@ -281,13 +278,13 @@ Follow these recommendations for optimal Tenant Layer 2 Network implementation a
 
 - **Test Before Production:** Create test VMs in tenant to verify connectivity before migrating production workloads
 - **Staged Rollout:** Configure Layer 2 networks for one tenant at a time, verifying each before proceeding
+- **External VLAN Network in Root:** Add all Layer 2 External Networks in the Root system and test connectivity there first
 - **Physical Infrastructure First:** Ensure physical switch configuration is complete before creating Tenant Layer 2 Networks
 - **Tenant Communication:** Inform tenant administrators before configuring Layer 2 pass-through
 
 ### Security Considerations
 
 - **VLAN Isolation:** Ensure physical switch properly isolates tenant VLANs
-- **Firewall Rules:** Consider whether tenant-managed firewall rules are appropriate for your security model
 - **Access Control:** Limit which administrators can create and modify Tenant Layer 2 Networks
 - **Audit Trail:** Regularly review logs for any unauthorized network configuration changes
 
@@ -301,7 +298,7 @@ When a Tenant Layer 2 Network is no longer needed, follow this process carefully
 ### Step 1: Disable the Layer 2 Network
 
 1. From the top menu, navigate to **Tenants** > **List**
-2. Click on the **tenant name** to open the tenant dashboard
+2. Double-click the **tenant name** to open the tenant dashboard
 3. In the left navigation menu, expand **Network** and click **Layer2 Networks**
 4. Select the checkbox next to the Layer 2 network you want to remove
 5. Click **Disable** in the left sidebar
@@ -320,7 +317,7 @@ When a Tenant Layer 2 Network is no longer needed, follow this process carefully
 The auto-created **networks** inside the tenant are **not** automatically removed when you delete the Layer 2 network from the host side. You must manually remove them from within the tenant.
 
 1. Log into the **tenant UI** using tenant admin credentials
-2. Navigate to **Networks**
+2. Navigate to **Networks** → **List**
 3. Delete the **External network** first (named to match the root-side network)
 4. Then delete the **Physical network** (prefixed with "Physical -")
 
@@ -336,7 +333,6 @@ After successfully configuring Tenant Layer 2 Networks, consider these related t
 
 - **Advanced Tenant Networking:** Explore routing between tenant Layer 2 and internal networks
 - **Virtual Switch Ports:** Learn when to use Virtual Switch Ports for more complex multi-VLAN scenarios
-- **Tenant Network Rules:** Understand how to configure firewall rules within tenant environments
 - **Network Monitoring:** Set up monitoring and alerting for tenant network health
 
 ### Related Documentation
