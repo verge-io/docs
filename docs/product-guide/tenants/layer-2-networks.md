@@ -1,6 +1,6 @@
 ---
 requirements:
-  vergeos_version: "v25.2 or later"
+  vergeos_version: "26.0 or later"
   access_levels: ["Cluster Admin"]
   background_knowledge: ["Networking fundamentals", "VLAN concepts", "Tenant management"]
 
@@ -113,7 +113,7 @@ Tenant Layer 2 Networks are ideal for scenarios requiring:
 | Feature | Tenant Layer 2 Networks | Virtual Switch Ports |
 |---------|-------------------------|---------------|
 | Configuration Complexity | Simple - single UI action | More complex - multiple steps |
-| Supported VergeOS Version | v25.2 or later | All versions |
+| Supported VergeOS Version | 26.0 or later | All versions |
 | Automatic Network Creation | Yes | No - manual configuration required |
 | VLAN Trunking Support | Single VLAN per configuration | Can trunk multiple VLANs |
 | Typical Use Case | Single VLAN pass-through | Complex multi-VLAN scenarios |

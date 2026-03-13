@@ -22,7 +22,6 @@ You'll understand:
 
 **Environment Setup:**
 
-- VergeOS v25.2.0 or later (Theme functionality introduced in this version)
 - Administrative access (Cluster Admin or Tenant Admin permissions)
 
 **Background Knowledge:**
@@ -157,9 +156,6 @@ Manages the top header bar and its components including buttons, navigation elem
 Controls fundamental interface elements including overall backgrounds, card components, borders, and primary text colors. These properties establish the foundation visual appearance that other components build upon.
 
 ## Integration with Existing Branding
-
-### Relationship to UI Branding
-The Theme functionality introduced in VergeOS v25.2.0 represents an evolution from the previous UI Branding system. What was formerly called "UI Branding" in earlier versions has been enhanced and rebranded as the "Theme" system, providing expanded customization capabilities beyond the original branding features.
 
 ### Asset Integration
 Custom logos and favicons uploaded through the Theme system integrate with the color schemes to provide complete visual customization. Assets maintain their quality and positioning while adapting to the chosen color palette.
