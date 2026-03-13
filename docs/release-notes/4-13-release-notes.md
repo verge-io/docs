@@ -63,11 +63,11 @@ description: Release notes for the 4.13 series of VergeOS
 ## 4.13.4.1 (August 2025)
 
 !!! info "Hotfix Release"
-    No reboot required (if System is currently on 4.13.x). Required update for our upcoming major release where we're moving to a different versioning system. Future updates will start with the last two digits of the year, followed by the quarter the development work started in on that release. i.e. 25.2
+    No reboot required (if System is currently on 4.13.x). Required update for our upcoming major release where we're moving to a different versioning system. Future updates will start with the last two digits of the year, followed by the quarter the development work started in on that release. i.e. 26.0
 
 #### Bug Fixes
 * Fixed two-factor authentication issues affecting TOTP authentication methods
-* Enhanced UI version handling in preparation for the 25.2 release
+* Enhanced UI version handling in preparation for the 26.0 release
 * Various system stability improvements
 
 ## 4.13.4 (March 2025)
