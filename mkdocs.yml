@@ -366,6 +366,9 @@ nav:
       - Backup & Migration:
         - Storware Backup and Recovery: product-guide/tools-integrations/storware-backup-recovery.md
         - Cirrus Data Migration: product-guide/tools-integrations/cirrus-data.md
+      - Kubernetes & Containers:
+        - Kubernetes Integration: product-guide/tools-integrations/kubernetes-integration.md
+        - Rancher Integration: product-guide/tools-integrations/rancher-integration.md
       - VDI & Desktop Delivery:
         - Inuvika Virtual Apps and Desktops: product-guide/tools-integrations/inuvika.md
         - NVIDIA vGPU: product-guide/tools-integrations/nvidia-vgpu.md
