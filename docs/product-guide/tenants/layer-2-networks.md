@@ -43,6 +43,7 @@ In this guide, you'll learn how to:
 - Create Layer 2 network pass-through for tenants
 - Verify automatic network creation within tenants
 - Attach tenant VMs to passed-through VLANs
+- Properly remove a Tenant Layer 2 Network and clean up tenant-side components
 - Troubleshoot common Layer 2 connectivity issues
 
 **Common Questions This Guide Answers:**
@@ -52,6 +53,7 @@ In this guide, you'll learn how to:
 - How do I give tenant VMs direct access to physical network VLANs?
 - What networks are automatically created when I configure a Tenant Layer 2 Network?
 - How can I verify that my tenant has Layer 2 network access?
+- How do I properly remove a Tenant Layer 2 Network without errors?
 - Why would I use Tenant Layer 2 Networks instead of routed tenant connectivity?
 - Can tenant administrators manage the passed-through VLANs themselves?
 
@@ -92,10 +94,14 @@ Tenant Layer 2 Networks provide direct VLAN connectivity from the host infrastru
 
 ### Automatic Network Creation
 
-When you create a Tenant Layer 2 Network, VergeOS automatically provisions two networks within the tenant:
+When you create a Tenant Layer 2 Network, VergeOS automatically provisions the following components within the tenant:
 
-1. **External Network** - Appears in the tenant's network list with the name of the network you're passing through
-2. **Physical Network** - Backend network infrastructure. Appears in the tenant's network list with the name of the network you're passing through, prepended by "**Physical -**"
+1. **NIC Interface on the Tenant Node** - A new virtual NIC is added to the tenant node, connected to the specified VLAN
+2. **Physical Network** - Backend network infrastructure that the NIC plugs into. Appears in the tenant's network list with the name of the network you're passing through, prepended by "**Physical -**"
+3. **External Network** - Plugs into the Physical network above. Appears in the tenant's network list with the name of the network you're passing through
+
+!!! info "Understanding These Components"
+    All three components are created automatically and work together to provide Layer 2 connectivity. If you later remove the Tenant Layer 2 Network from the host side, the NIC is automatically removed, but the Physical and External networks inside the tenant must be cleaned up manually. See [Removing a Tenant Layer 2 Network](#removing-a-tenant-layer-2-network) for details.
 
 Tenant virtual machines can attach NICs to these networks to gain direct access to the passed-through VLAN.
 
@@ -129,9 +135,9 @@ First, access the tenant's network configuration area where you'll create the La
 1. From the top menu, navigate to **Tenants** > **List**
 2. Locate your target tenant in the tenant list
 3. Click on the **tenant name** to open the tenant dashboard
-4. In the left navigation menu, click **Networks**
+4. In the left navigation menu, expand **Network** and click **Layer2 Networks**
 
-You should now see the Tenant Networks view, which displays any existing Layer 2 networks configured for this tenant.
+You should now see the Tenant Layer2 Networks view, which displays any existing Layer 2 networks configured for this tenant.
 
 ### Step 2: Create New Tenant Layer 2 Network
 
@@ -284,6 +290,45 @@ Follow these recommendations for optimal Tenant Layer 2 Network implementation a
 - **Firewall Rules:** Consider whether tenant-managed firewall rules are appropriate for your security model
 - **Access Control:** Limit which administrators can create and modify Tenant Layer 2 Networks
 - **Audit Trail:** Regularly review logs for any unauthorized network configuration changes
+
+## Removing a Tenant Layer 2 Network
+
+When a Tenant Layer 2 Network is no longer needed, follow this process carefully. Attempting to delete the network while it is still enabled or while the tenant is running will result in errors.
+
+!!! warning "Follow This Order"
+    You **must** disable the Layer 2 network before deleting it. Skipping the disable step or leaving tenant-side components behind will cause errors on deletion or prevent successful recreation.
+
+### Step 1: Disable the Layer 2 Network
+
+1. From the top menu, navigate to **Tenants** > **List**
+2. Click on the **tenant name** to open the tenant dashboard
+3. In the left navigation menu, expand **Network** and click **Layer2 Networks**
+4. Select the checkbox next to the Layer 2 network you want to remove
+5. Click **Disable** in the left sidebar
+6. Confirm the disable action when prompted
+
+### Step 2: Delete the Layer 2 Network
+
+1. With the Layer 2 network still selected, click **Delete** in the left sidebar
+2. Confirm the deletion when prompted
+
+!!! info "NIC Removal"
+    The NIC interface that was added to the tenant node is automatically removed when the Layer 2 network is disabled and deleted from the host side.
+
+### Step 3: Clean Up Tenant-Side Networks
+
+The auto-created **networks** inside the tenant are **not** automatically removed when you delete the Layer 2 network from the host side. You must manually remove them from within the tenant.
+
+1. Log into the **tenant UI** using tenant admin credentials
+2. Navigate to **Networks**
+3. Delete the **External network** first (named to match the root-side network)
+4. Then delete the **Physical network** (prefixed with "Physical -")
+
+!!! warning "Deletion Order Matters"
+    You must delete the External network **before** the Physical network. The External network references the Physical network as its interface network, so attempting to delete the Physical network first will result in an error.
+
+!!! tip "Verify Cleanup"
+    After removing all components, confirm that no orphaned networks remain. Leftover networks can cause errors if you attempt to recreate the Layer 2 network later.
 
 ## Next Steps
 
