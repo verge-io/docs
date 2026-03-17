@@ -104,6 +104,9 @@ When you create a Tenant Layer 2 Network, VergeOS automatically provisions the f
 !!! info "Understanding These Components"
     All three components are created automatically and work together to provide Layer 2 connectivity. If you later remove the Tenant Layer 2 Network from the host side, the NIC is automatically removed, but the Physical and External networks inside the tenant must be cleaned up manually. See [Removing a Tenant Layer 2 Network](#removing-a-tenant-layer-2-network) for details.
 
+!!! warning "Do Not Tag the External Network"
+    The External Network created inside the tenant will not have a VLAN tag on it. The interface is already tagged for this VLAN. Leave this network **untagged**. Adding a VLAN tag to the tenant-side External Network is a common misconfiguration that will break connectivity.
+
 Tenant virtual machines can attach NICs to these networks to gain direct access to the passed-through VLAN.
 
 ### Use Cases
