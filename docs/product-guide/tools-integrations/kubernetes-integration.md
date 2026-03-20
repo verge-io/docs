@@ -6,8 +6,8 @@ VergeOS provides native Kubernetes integration through a CSI storage driver and 
 
 | Component | Type | Version | Purpose |
 |-----------|------|---------|---------|
-| [CSI Driver](#csi-driver) | Container image | v0.1.0 | Persistent storage for Kubernetes pods via VergeOS vSAN |
-| [Cloud Controller Manager](#cloud-controller-manager) | Container image | v0.1.0 | Node lifecycle and load balancer integration |
+| [CSI Driver](#csi-driver) | Container image | v0.2.0 | Persistent storage for Kubernetes pods via VergeOS vSAN |
+| [Cloud Controller Manager](#cloud-controller-manager) | Container image | v0.2.0 | Node lifecycle and load balancer integration |
 
 ### Prerequisites
 
@@ -311,16 +311,16 @@ helm search repo verge-io
 
 | Chart | Version | App Version | Kubernetes | Description |
 |-------|---------|-------------|------------|-------------|
-| `verge-io/vergeos-csi` | `0.1.0` | `0.1.0` | >= 1.16 | CSI driver for NAS (NFS/EXT4) and Block (VM drive) storage |
-| `verge-io/vergeos-cloud-controller-manager` | `0.1.0` | `0.1.0` | >= 1.16 | Cloud controller for node lifecycle and load balancing |
+| `verge-io/vergeos-csi` | `0.2.0` | `0.2.0` | >= 1.16 | CSI driver for NAS (NFS/EXT4) and Block (VM drive) storage |
+| `verge-io/vergeos-cloud-controller-manager` | `0.2.0` | `0.2.0` | >= 1.16 | Cloud controller for node lifecycle and load balancing |
 | `verge-io/vergeos-node-driver` | `0.1.0` | `1.0.0` | >= 1.16 | Node driver and UI extension for [Rancher](rancher-integration.md) |
 
 ### Container Images
 
 | Image | Version |
 |-------|---------|
-| `ghcr.io/verge-io/csi-vergeos` | `v0.1.0` |
-| `ghcr.io/verge-io/vergeos-cloud-controller-manager` | `v0.1.0` |
+| `ghcr.io/verge-io/csi-vergeos` | `0.2.0` |
+| `ghcr.io/verge-io/vergeos-cloud-controller-manager` | `0.2.0` |
 
 ### Source
 
