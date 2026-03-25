@@ -103,7 +103,7 @@ VergeFabric delivers software-defined networking (SDN) for simplified and flexib
 * **[VMware Connector](/knowledge-base/vmwarebackupdrguide)** - Backup VMware workloads to VergeOS resilient storage for BC/DR purposes or for import
 * **[Inuvika](/product-guide/tools-integrations/inuvika)** - Leverage the advantages of VergeOS combined with Inuvika's advanced virtual desktop infrastructure (VDI) features
 * **[Storware](/product-guide/tools-integrations/storware-backup-recovery)** - Utilize Storware integration to layer additional enterprise backup functionality and/or comply with mandatory third-party backup requirements
-* **[Terraform Provider](/product-guide/tools-integrations/terraform-provider)** - Manage VergeOS as part of your infrastructure-as-code (IaC) workflows
+* **[Terraform Provider](/developer-guide/iac/terraform-provider)** - Manage VergeOS as part of your infrastructure-as-code (IaC) workflows
 * **[Export Volumes](/knowledge-base/configuring-a-vm-export-volume)** - Easily extract VergeOS VMs for third-party backup, compliance, or migration purposes
 * **[VergeOS API](/knowledge-base/verge-api-guide)** - Integrate with external systems, such as ticketing, billing, or alerting to streamline workflows with VergeOS's developer-ready, complete-access API
 

@@ -74,5 +74,5 @@ Or check the dev server terminal for errors if it's running.
 - [x] Task 1: Delete migrated KB API articles
 - [x] Task 2: Delete migrated Product Guide SDK/IaC files
 - [x] Task 3: Delete migrated K8s/Rancher files (if present)
-- [ ] Task 4: Verify no broken references
+- [x] Task 4: Verify no broken references
 - [ ] Task 5: Final build verification

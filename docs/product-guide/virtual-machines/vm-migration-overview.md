@@ -219,7 +219,7 @@ VergeOS supports a wide range of VM file formats:
 
 ### Tools and Integrations
 - [Cirrus Data Migration Platform](/product-guide/tools-integrations/cirrus-data) - Enterprise migration solutions
-- [Terraform Provider](/product-guide/tools-integrations/terraform-provider) - Infrastructure as code for automated deployments
+- [Terraform Provider](/developer-guide/iac/terraform-provider) - Infrastructure as code for automated deployments
 
 !!! success "Migration Success Tips"
     - **Start with a pilot migration** of non-critical VMs to validate the process
