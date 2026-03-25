@@ -54,7 +54,7 @@ The VMware service establishes a direct agent connection with vSphere; network a
     -   ***Power On*** - Service will be powered on when power is restored (regardless of its state at the time of power loss).
 1.  Select a **Network** on which to run the VMware service.  
 
-!!! note "DHCP is required on the selected network."
+!!! note "The service VM NIC defaults to DHCP. To assign a static IP instead, see [Configuring VMware Service VM NIC IPv4 Settings](/knowledge-base/vmware-service-vm-nic-ipv4-configuration/)."
 
 
 ---
@@ -300,7 +300,7 @@ Note: Check Logs (at the bottom of the Dashboard page) for possible additional i
 -   **Verify network connection** 
 -   If using a domain name, verify DNS resolution of the name. 
 -   The network on which the VMware service is running must have access to the Vsphere address/port provided on port 443 (or port selected). 
--   The network on which the VMware service is running must be DHCP.  
+-   The service VM NIC must have a valid IP configuration (DHCP or [static IP](/knowledge-base/vmware-service-vm-nic-ipv4-configuration/)).  
 
 !!! note "The built-in Diagnostics engine can assist in testing the network connection.  (VMware Services Dashboard -> View Service -> Diagnostics)"
 

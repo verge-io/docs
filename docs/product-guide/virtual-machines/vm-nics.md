@@ -56,3 +56,6 @@
 
 !!! info
     You can also modify a NIC's *Network* field to ***--None--*** **to "unplug"** it from the network while the VM is running (does not require a reset/reboot.)
+
+!!! note "VMware Service VM NICs"
+    VMware service VMs use a different NIC type that includes an **IPv4 Configuration** panel for assigning static IP settings. For details, see [Configuring VMware Service VM NIC IPv4 Settings](/knowledge-base/vmware-service-vm-nic-ipv4-configuration/).
