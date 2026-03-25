@@ -369,6 +369,38 @@ nav:
         - Cirrus Data Migration: product-guide/tools-integrations/cirrus-data.md
       - VDI & Desktop Delivery:
         - Inuvika Virtual Apps and Desktops: product-guide/tools-integrations/inuvika.md
+  - Developer Guide:
+    - Overview: developer-guide/overview.md
+    - Getting Started: developer-guide/getting-started.md
+    - API Reference:
+      - Overview: developer-guide/api-reference/overview.md
+      - API Tables: developer-guide/api-reference/api-tables.md
+      - Helper Script: developer-guide/api-reference/helper-script.md
+      - Virtual Machines:
+        - Creation: developer-guide/api-reference/vm-creation.md
+        - Configuration: developer-guide/api-reference/vm-configuration.md
+        - Power Management: developer-guide/api-reference/vm-power-management.md
+        - Lifecycle Management: developer-guide/api-reference/vm-lifecycle-management.md
+        - Advanced Operations: developer-guide/api-reference/vm-advanced-operations.md
+      - NAS:
+        - Volume Browser: developer-guide/api-reference/nas-volume-browser.md
+    - SDKs:
+      - PowerShell Module: developer-guide/sdks/powershell-module.md
+      - Python SDK: developer-guide/sdks/python-sdk.md
+      - Go SDK: developer-guide/sdks/go-sdk.md
+    - CLI:
+      - vrg: developer-guide/cli/vrg.md
+    - CI/CD & Infrastructure as Code:
+      - Terraform Provider: developer-guide/iac/terraform-provider.md
+      - Ansible Collection: developer-guide/iac/ansible-collection.md
+      - Packer Plugin: developer-guide/iac/packer-plugin.md
+    - Kubernetes & Containers:
+      - Kubernetes Integration: developer-guide/kubernetes/kubernetes-integration.md
+      - Rancher Integration: developer-guide/kubernetes/rancher-integration.md
+    - Monitoring & Observability:
+      - Prometheus Exporter: developer-guide/monitoring/prometheus-exporter.md
+    - Webhooks & Events: developer-guide/webhooks-events.md
+    - Code Examples: developer-guide/code-examples.md
   - Release Notes:
     - Overview: release-notes/release-notes-overview.md
     - 26.1 (latest): release-notes/26-1-release-notes.md
