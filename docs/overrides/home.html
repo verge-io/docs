@@ -257,7 +257,7 @@
     }
     .get-started-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 24px;
     }
     .get-started-card {
@@ -606,45 +606,75 @@
             </div>
         </a>
 
-        <a href="/implementation-guide/intro/" class="main-card">
+        <a href="/developer-guide/overview/" class="main-card">
             <div class="main-card-header">
-                <h2 class="main-card-title">Get Started</h2>
-                <p class="main-card-description">Implementation guides, migration paths, and tutorials for deploying VergeOS</p>
+                <h2 class="main-card-title">Developer Guide</h2>
+                <p class="main-card-description">APIs, SDKs, CLI tools, and infrastructure as code for automating and extending VergeOS</p>
             </div>
             <div class="main-card-visual">
                 <svg class="card-diagram" viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Journey path -->
-                    <path d="M 20 60 Q 60 30, 100 60 T 180 60" stroke="#fbbf24" stroke-width="2" fill="none"/>
-                    
-                    <!-- Milestone points -->
-                    <circle cx="20" cy="60" r="4" fill="#fbbf24"/>
-                    <circle cx="100" cy="60" r="4" fill="#fbbf24"/>
-                    <circle cx="180" cy="60" r="4" fill="#fbbf24"/>
-                    
-                    <!-- Labels -->
-                    <text x="20" y="80" text-anchor="middle" fill="#fbbf24" font-size="8" font-family="monospace">Plan</text>
-                    <text x="100" y="45" text-anchor="middle" fill="#fbbf24" font-size="8" font-family="monospace">Deploy</text>
-                    <text x="180" y="80" text-anchor="middle" fill="#fbbf24" font-size="8" font-family="monospace">Optimize</text>
-                    
-                    <!-- Arrow at end -->
-                    <line x1="180" y1="60" x2="190" y2="60" stroke="#fbbf24" stroke-width="2"/>
-                    <line x1="190" y1="60" x2="185" y2="55" stroke="#fbbf24" stroke-width="2"/>
-                    <line x1="190" y1="60" x2="185" y2="65" stroke="#fbbf24" stroke-width="2"/>
+                    <!-- Terminal window frame -->
+                    <rect x="20" y="5" width="160" height="100" rx="5" fill="#1e293b" stroke="#fbbf24" stroke-width="2"/>
+                    <rect x="20" y="5" width="160" height="18" rx="5" fill="#1e293b" stroke="#fbbf24" stroke-width="2"/>
+                    <!-- Window dots -->
+                    <circle cx="33" cy="14" r="3" fill="#fbbf24" opacity="0.5"/>
+                    <circle cx="43" cy="14" r="3" fill="#fbbf24" opacity="0.5"/>
+                    <circle cx="53" cy="14" r="3" fill="#fbbf24" opacity="0.5"/>
+                    <!-- Code lines -->
+                    <text x="30" y="40" fill="#fbbf24" font-size="8" font-family="monospace" opacity="0.6">$</text>
+                    <text x="40" y="40" fill="#fbbf24" font-size="8" font-family="monospace">vrg vm list</text>
+                    <text x="30" y="55" fill="#fbbf24" font-size="8" font-family="monospace" opacity="0.6">$</text>
+                    <text x="40" y="55" fill="#fbbf24" font-size="8" font-family="monospace">curl /api/v4/vms</text>
+                    <text x="30" y="70" fill="#fbbf24" font-size="8" font-family="monospace" opacity="0.6">$</text>
+                    <text x="40" y="70" fill="#fbbf24" font-size="8" font-family="monospace">terraform apply</text>
+                    <!-- Tagline -->
+                    <text x="100" y="92" text-anchor="middle" fill="#fbbf24" font-size="7" font-family="monospace" opacity="0.8">API  ·  SDK  ·  CLI  ·  IaC</text>
                 </svg>
             </div>
         </a>
     </div>
 </div>
-    <!-- SDKs / Product guides Section -->
+    <!-- Get Started Section -->
+    <div class="get-started-section" style="border-top: none;">
+        <div class="get-started-header">
+            <h2>Get Started</h2>
+            <a href="/implementation-guide/intro" class="view-all-link">View deployment guide ›</a>
+        </div>
+
+        <div class="get-started-grid">
+            <a href="/product-guide/intro/what-is-vergeos/" class="get-started-card">
+                <div class="get-started-icon">📖</div>
+                <h3>Platform Introduction</h3>
+                <p>Learn about VergeOS architecture, components, and key differentiators</p>
+            </a>
+            <a href="/implementation-guide/installation-guide" class="get-started-card">
+                <div class="get-started-icon">🚀</div>
+                <h3>Installation Guide</h3>
+                <p>Deploy your first VergeOS cluster step-by-step</p>
+            </a>
+            <a href="/product-guide/intro/transition-from-vmware" class="get-started-card">
+                <div class="get-started-icon">🔄</div>
+                <h3>Migrate from VMware</h3>
+                <p>Transition workloads with simplified migration tools and native compatibility</p>
+            </a>
+            <a href="/implementation-guide/concepts" class="get-started-card">
+                <div class="get-started-icon">💡</div>
+                <h3>Core Concepts</h3>
+                <p>Understand tenants, networks, storage tiers, and key terminology</p>
+            </a>
+        </div>
+    </div>
+
+    <!-- Product Guides Section -->
     <div class="secondary-section">
         <div class="secondary-header-actions">
             <div class="secondary-header">
                 <h2>Product Guides</h2>
-                <p>Explore features, product guides, and documentation</p>
+                <p>Explore platform features and documentation</p>
             </div>
-            <a href="/product-guide/intro/platform-capabilities/" class="view-all-link">View all product guides›</a>
+            <a href="/product-guide/intro/platform-capabilities/" class="view-all-link">View all product guides ›</a>
         </div>
-        
+
         <div class="secondary-grid">
             <a href="/product-guide/virtual-machines/overview" class="secondary-card">
                 <div class="secondary-card-icon">🖥️</div>
@@ -674,60 +704,47 @@
                     <p>Built-in backup and recovery capabilities</p>
                 </div>
             </a>
-            <a href="/product-guide/tools-integrations/nvidia-gpu-virtualization/" class="secondary-card">
-                <div class="secondary-card-icon">🤖</div>
-                <div class="secondary-card-content">
-                    <h3>NVIDIA vGPU</h3>
-                    <p>GPU virtualization with vGPU and MIG technologies</p>
-                </div>
-            </a>
-            <a href="/product-guide/tools-integrations/cirrus-data/" class="secondary-card">
-                <div class="secondary-card-icon">🔌</div>
-                <div class="secondary-card-content">
-                    <h3>Tools and Integrations</h3>
-                    <p>Integration with third-party tools and services</p>
-                </div>
-            </a>
         </div>
     </div>
 
-    <!-- Get Started Section -->
-    <div class="get-started-section">
-        <div class="get-started-header">
-            <h2>Get started</h2>
-            <a href="/implementation-guide/intro" class="view-all-link">View deployment guide ›</a>
+    <!-- Developer Section -->
+    <div class="secondary-section">
+        <div class="secondary-header-actions">
+            <div class="secondary-header">
+                <h2>Developer Tools</h2>
+                <p>Automate and extend VergeOS with APIs, SDKs, and infrastructure as code</p>
+            </div>
+            <a href="/developer-guide/overview/" class="view-all-link">View developer guide ›</a>
         </div>
-        
-        <div class="get-started-grid">
-            <a href="/product-guide/intro/what-is-vergeos/" class="get-started-card">
-                <div class="get-started-icon">📖</div>
-                <h3>Platform Introduction</h3>
-                <p>Learn about VergeOS architecture, components, and key differentiators</p>
+
+        <div class="secondary-grid">
+            <a href="/developer-guide/api-reference/overview" class="secondary-card">
+                <div class="secondary-card-icon">⚡</div>
+                <div class="secondary-card-content">
+                    <h3>API Reference</h3>
+                    <p>REST API documentation for automating VergeOS operations</p>
+                </div>
             </a>
-            <a href="/product-guide/ui-overview/" class="get-started-card">
-                <div class="get-started-icon">🖥️</div>
-                <h3>User Interface</h3>
-                <p>Navigate the VergeOS management console and unified dashboard</p>
+            <a href="/developer-guide/sdks/python-sdk" class="secondary-card">
+                <div class="secondary-card-icon">📦</div>
+                <div class="secondary-card-content">
+                    <h3>SDKs</h3>
+                    <p>Official Python, Go, and PowerShell libraries</p>
+                </div>
             </a>
-            <a href="/knowledge-base/category/api-reference/" class="get-started-card">
-                <div class="get-started-icon">⚙️</div>
-                <h3>API Reference</h3>
-                <p>Automate operations with comprehensive REST API documentation</p>
+            <a href="/developer-guide/cli/vrg" class="secondary-card">
+                <div class="secondary-card-icon">💻</div>
+                <div class="secondary-card-content">
+                    <h3>CLI</h3>
+                    <p>Command-line interface for managing VergeOS resources</p>
+                </div>
             </a>
-            <a href="/implementation-guide/installation-guide" class="get-started-card">
-                <div class="get-started-icon">🚀</div>
-                <h3>Installation Guide</h3>
-                <p>Deploy your first VergeOS cluster step-by-step</p>
-            </a>
-            <a href="/product-guide/intro/transition-from-vmware" class="get-started-card">
-                <div class="get-started-icon">🔄</div>
-                <h3>Migrate from VMware</h3>
-                <p>Enterprise VMware alternative: Transition workloads with simplified migration tools and native compatibility</p>
-            </a>
-            <a href="/implementation-guide/concepts" class="get-started-card">
-                <div class="get-started-icon">💡</div>
-                <h3>Core Concepts</h3>
-                <p>Understand tenants, networks, storage tiers, and key terminology</p>
+            <a href="/developer-guide/iac/terraform-provider" class="secondary-card">
+                <div class="secondary-card-icon">🔧</div>
+                <div class="secondary-card-content">
+                    <h3>Infrastructure as Code</h3>
+                    <p>Terraform, Ansible, and Packer integrations</p>
+                </div>
             </a>
         </div>
     </div>

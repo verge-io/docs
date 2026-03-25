@@ -163,8 +163,6 @@ nav:
       - Cloud Providers: reference-architecture/csp.md
       - Life / Data Science: reference-architecture/data-science.md
       - Homelab: reference-architecture/homelab.md
-  - Knowledge Base:
-    - knowledge-base/index.md
   - Product Guide:
     - Introduction:
       - What is VergeOS?: product-guide/intro/what-is-vergeos.md
@@ -394,6 +392,8 @@ nav:
       - Prometheus Exporter: developer-guide/monitoring/prometheus-exporter.md
     - Webhooks & Events: developer-guide/webhooks-events.md
     - Code Examples: developer-guide/code-examples.md
+  - Knowledge Base:
+    - knowledge-base/index.md
   - Release Notes:
     - Overview: release-notes/release-notes-overview.md
     - 26.1 (latest): release-notes/26-1-release-notes.md
