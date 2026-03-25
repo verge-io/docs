@@ -2,7 +2,7 @@
 
 !!! info "Release Information"
     - **Release Date**: January 2026
-    - **Latest Version**: 26.1.2 (February 2026)
+    - **Latest Version**: 26.1.3.1 (March 2026)
     - **Status**: Latest Production Release
     - **End-of-Life**: TBD
 
@@ -36,6 +36,111 @@
 !!! success "Enhanced Data Protection"
     - Added support for N+2 (RF3) vSAN redundancy, also known as Replication Factor 3
     - Provides additional fault tolerance beyond standard N+1 configurations
+
+## 26.1.3.1 (March 2026)
+
+### Bug Fixes
+
+#### Virtual Machines
+- Fixed VM power on regression
+- Fixed VM Console paste when toggling hidden text for the first time
+- VM dashboard fixes and refactoring
+- Added a check for modifying a VM recipe instance
+
+#### VMware Service
+- Fixed an issue starting a VMware service container if the node does not have `/dev/dri`
+
+#### User Interface
+- Fixed device list refresh on no-type list, added tenant column, and improved parent display
+- Fixed dashboard delete actions causing 404 errors due to breadcrumb issues
+
+#### System Administration
+- Refactored system group creation and deletion based on validation with automatic cleanup for stray groups
+- Changed swappiness from 0 to 1 to improve memory overcommit behavior
+
+### Operating System & Performance
+
+#### Core System
+- Fixed SSL error causing some downloads to fail when write buffer is full
+- Fixed a vSAN stability issue when using 2 drives on an N+2 system
+
+---
+
+## 26.1.3 (March 2026)
+
+### New Features
+
+#### Alarms & Monitoring
+- Added alarms to the home dashboard
+- Alarms now show friendly resolution names
+- Added ability to acknowledge alarms (or snooze if acknowledgment isn't available)
+- Update server can now raise alarms
+
+#### Security & SSL/TLS
+- Improved SSL/TLS security by disabling older protocols (SSLv2/SSLv3) and enforcing TLS 1.2+
+- Added configurable SSL version controls
+- Auto-created certificates can now be deleted
+
+#### vGPU & Hardware
+- Added support for NVIDIA vGPU profiles (including RTX 8000, RTX PRO 6000 Blackwell, and heterogeneous profiles)
+- Added MIG vGPU support for newer NVIDIA cards
+
+#### System Snapshots
+- Added ability to recover Files and VMware Services from system snapshots
+- Remote snapshots can now be made immutable
+- Added more audit logging for system snapshots
+
+### Bug Fixes
+
+#### Tenant & Site Management
+- Fixed storage and node button issues on tenant dashboard
+- Fixed cluster status to ignore offline clusters
+- Tenant dashboard now redirects to the correct page after creating a new IP address
+- Fixed issue where provider snapshot expiration wasn't updating in tenants
+- Reduced log noise when snapshot expiration settings change in the root tenant
+
+#### VMware Service
+- Fixed VM placement when "Default" cluster is selected
+- Fixed an issue where cloning a VM with quiescing could leave behind a snapshot that prevents future clones
+
+#### Security & Authentication
+- Fixed 2FA setup when password change is required
+- Fixed password validation during 2FA setup
+- Physical access users now require a name starting with a letter (not a number)
+- Fixed editing users when physical access is enabled
+- Fixed displaying certificate chains when editing certificates
+- Fixed an issue editing an authorization source's private key
+- Fixed certificate domain matching for mixed and uppercase domains
+
+#### Storage & Volumes
+- Fixed editing volume notes
+- Fixed SMART metrics when drives are replaced with models that don't support the same metrics
+
+#### UI Improvements
+- Fixed breadcrumbs across multiple areas (logs, NAS, recipes, snapshots, device lists)
+- Added enable/disable options to list views that were missing them
+- Fixed remote statistics display
+- Fixed various button issues on dashboards
+- Fixed delete errors when users have a mix of owned VMs
+- Reworded the Appserver Exit alarm to include timestamp
+
+#### Network
+- Fixed bug preventing new IPSec tunnels from being created
+- Added note when changing WireGuard listening port
+- Blocked setting remote expiration to dates earlier than currently set
+
+#### VM Recipes
+- Preserved original ISO names on CD-ROMs
+- Fixed errors displaying in UI
+
+#### SR-IOV
+- Fixed SR-IOV to properly clean up virtual functions when disabled
+
+#### Installation & Updates
+- Fixed N+2 install on 3rd controller
+- Added delays when installing updates and restarting on node 1
+
+---
 
 ## 26.1.2 (February 2026)
 
