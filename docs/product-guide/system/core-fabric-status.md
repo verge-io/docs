@@ -11,6 +11,8 @@ categories: [Networking, System Administration, Nodes]
 
 - Access to the VergeOS interface with node management privileges
 - Basic understanding of [VergeOS core network architecture](/implementation-guide/concepts/#core-fabric-network)
+- Physical console or IPMI access to nodes (for troubleshooting)
+- Knowledge of your core VLAN assignments (Core 1 and Core 2) and expected NIC link speed
 
 ## What is the Core Fabric?
 
@@ -18,7 +20,18 @@ The fabric is the backbone of your VergeOS system, utilizing the core network to
 
 A typical VergeOS deployment uses **two independent physical core networks** ("Core 1 Switch", "Core 2 Switch") for redundancy. Each node should have two independent physical paths to every other node in the cluster.
 
+!!! warning "Zero Switch Hops Required"
+    All nodes must be connected to the same switching fabric with **zero switch hops** between them. Target latency between nodes on core fabric networks is less than 0.05ms. Adding switch hops introduces latency that degrades fabric scores and cluster performance.
+
 This core fabric redundancy is vital to maintain system resiliency and uninterrupted operation, even during a node or drive failure, and allows maintenance operations without downtime.
+
+**Core Fabric MTU Requirements:**
+
+| Component | MTU |
+|-----------|-----|
+| Physical switch port | >= 9216 |
+| Physical NIC | 9192 (typical) |
+| VXLAN overlay | NIC MTU minus 50 bytes overhead |
 
 ??? info "How Core Fabric Redundancy Works"
     The core fabric handles redundancy at a low level, creating a mesh where every node maintains redundant paths to every other node in the system. Because of this built-in redundancy, physical LAG or port bonding should **not** be used on core fabric networks — doing so will interfere with the fabric's own mechanisms.
@@ -84,7 +97,7 @@ More extensive fabric status details (useful for advanced troubleshooting) are a
 3. Click **Diagnostics** in the left menu.
 4. Select **Fabric Configuration** from the **Query** dropdown.
 5. Click **Send** to execute.
-6. The fabric status is a JSON document where each peer node is represented as a key with its connection details. 
+6. Review the output. Key fields to check first: `paths[].confirmed` and `paths[].score` for each peer node.
 
 #### Field Reference
 
@@ -94,13 +107,13 @@ The following fields appear in the fabric status JSON output.
 |-------|-------------|
 | `$sysid` | SHA-1 hash identifying this VergeOS system (sourced from `/.system_id`) |
 | `$last_update` | Timestamp of the most recent fabric status refresh |
-| `syncing_time` | Indicates whether the node is currently synchronizing its clock with the cluster. This must be `false` before the node fully joins. During initial node join, it is normal for the value to be `true`. |
+| `syncing_time` | Top-level field indicating whether the node is currently synchronizing its clock with the cluster. This must be `false` before the node fully joins. During initial node join, it is normal for the value to be `true`. |
 | `paths` | Array of network paths to this peer node |
 | `paths[].ip` | IP address of the remote node on the core network |
 | `paths[].iface` | Local network interface used to reach this path |
-| `paths[].score` | Numeric connectivity quality score (higher is better; **200** = perfect). See [Score Values](#score-values) below. |
+| `paths[].score` | Numeric connectivity quality score (higher is better). The maximum depends on NIC link speed — see [Score Values](#score-values) below. |
 | `paths[].confirmed` | Whether this path has been verified as active and reachable (`true` / `false`) |
-| `vxlans` | VXLAN tunnel endpoints programmed for this peer |
+| `vxlans` | VXLAN tunnel endpoints programmed for this peer. These are the overlay tunnels used for cross-node virtual network traffic. |
 
 
 #### Confirmed Status
@@ -135,29 +148,35 @@ A score significantly **below** the expected maximum indicates degradation - pos
 
 ### Healthy Fabric (2-Node System)
 
-All nodes visible, two paths each, score 200, all confirmed:
+All nodes visible, two paths each, scores at maximum for NIC speed, all confirmed:
 
 ```json
 {
-    "node1": {
-        "paths": [
-            { "ip": "172.16.1.1", "score": 200, "confirmed": true },
-            { "ip": "172.16.2.1", "score": 200, "confirmed": true }
-        ]
-    },
+    "$sysid": "68e1925057aa7c6afaf9a255dcfc623794a6398e",
+    "$last_update": "03/24/2026 13:31:46",
+    "syncing_time": false,
     "node2": {
         "paths": [
-            { "ip": "172.16.1.2", "score": 200, "confirmed": true },
-            { "ip": "172.16.2.2", "score": 200, "confirmed": true }
-        ]
+            { "ip": "172.16.1.2", "iface": "enp148s0f0np0", "score": 200, "confirmed": true },
+            { "ip": "172.16.2.2", "iface": "enp148s0f1np1", "score": 200, "confirmed": true }
+        ],
+        "vxlans": ["vx2 via 172.16.1.2", "vx1 via 172.16.2.2"]
+    },
+    "node1": {
+        "paths": [
+            { "ip": "172.16.1.1", "iface": "enp148s0f0np0", "score": 200, "confirmed": true },
+            { "ip": "172.16.2.1", "iface": "enp148s0f1np1", "score": 200, "confirmed": true }
+        ],
+        "vxlans": ["vx2 via 172.16.1.1", "vx1 via 172.16.2.1"]
     }
 }
 ```
 
 !!! success "What to Look For"
-    - Every node in the cluster appears in the output
+    - Every node in the cluster appears in the output (in a 4-node cluster, you should see all 4 node entries)
     - Each node has **two paths** (one per core network)
     - All paths show `"confirmed": true`
+    - `"syncing_time": false` at the top level
     - Scores match the expected maximum for your NIC speed (e.g., 200 for 100Gbps, 50 for 25Gbps)
 
 ### Degraded Fabric — Lost Redundancy
@@ -222,10 +241,18 @@ A node that should be in the cluster does not appear in the fabric output at all
 
 ## Pre-Maintenance Fabric Verification
 
-VergeOS maintenance operations require a healthy fabric as a prerequisite. Before performing maintenance operations, verify that **all nodes show two paths with `confirmed: true`**:
+VergeOS maintenance operations — including [system updates](/product-guide/operations/sop-update/), [vSAN scale-ups](/product-guide/operations/vsan-scale-up-sop/), and [scale-outs](/product-guide/operations/sop-scale-out/) — require a healthy fabric as a prerequisite. **Do not proceed with maintenance if the fabric is unhealthy.** Resolve any issues first using the [Troubleshooting](#troubleshooting-fabric-issues) section below.
+
+A healthy fabric means:
+
+- All peer nodes are visible in the output
+- Each peer has **two paths** (one per core network)
+- All paths show `"confirmed": true`
+- Scores match the expected maximum for your NIC link speed
+- `"syncing_time": false` at the top level
 
 !!! tip "Quick Verification"
-    From any node, run the **Fabric Configuration** diagnostic and confirm every peer shows two paths with `"confirmed": true` before proceeding with maintenance.
+    From any node, run **Node Diagnostics** > **Fabric Configuration** and confirm every peer meets the criteria above before proceeding with maintenance.
 
 ## Troubleshooting Fabric Issues
 
@@ -249,7 +276,7 @@ VergeOS maintenance operations require a healthy fabric as a prerequisite. Befor
 
 **Common causes and actions:**
 
-1. **Network latency** — Check for excessive hops between nodes. Core traffic should ideally traverse a single Layer 2 switch or a directly connected pair.
+1. **Network latency** — All nodes must be on the same switching fabric with **zero switch hops** between them (target latency <0.05ms). Adding switch hops in the core fabric path introduces latency that can significantly degrade cluster performance and scores.
 2. **Switch congestion** — Review switch interface counters for errors, drops, or CRC failures.
 3. **Duplex/speed mismatch** — Use **Node Diagnostics** > **Ethernet Tool** to verify the NIC is negotiating at the expected speed (10Gbps+).
 
@@ -285,7 +312,7 @@ VergeOS maintenance operations require a healthy fabric as a prerequisite. Befor
 
 ## Best Practices
 
-- **Address core network alarms immediately** - Resolve issues quickly to maintain full fabric redundancy
+- **Address core network alarms immediately** — Resolve issues quickly to maintain full fabric redundancy
 - **Verify fabric before every maintenance operation** — Make it a habit to check fabric status before updates, scale-ups, scale-outs, and node maintenance
 - **Maintain two core networks** — Always keep both Core1 and Core2 paths healthy for redundancy
 - **Test after physical changes** — After any cabling, switch, or NIC changes, re-verify fabric status
