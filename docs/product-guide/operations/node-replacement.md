@@ -69,7 +69,10 @@ The approach depends on whether the original node is still functional.
 ### Step 3: Boot from the VergeOS ISO
 
 1. Ensure the install media (e.g., USB drive containing the VergeOS ISO) is connected to the replacement node.
-2. Power on the node and boot from the ISO. You may need to access the server's one-time boot menu (commonly **F11** or **F12** at POST) to select the USB device.
+2. Power on the node and boot from the ISO.
+
+    !!! tip "Boot Menu"
+        You may need to access the server's one-time boot menu (commonly **F11** or **F12** at POST) to select the USB device.
 3. When the installer menu appears, select **Replace Node**.
 4. The node to replace is detected. Confirm the correct node is selected and press **Enter**.
 
