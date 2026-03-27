@@ -7,6 +7,8 @@ categories: [System Administration, Operations]
 
 # Replacing a Node Using the ISO Installer
 
+This guide covers replacing a physical VergeOS node by moving drives from the original server to replacement hardware and using the VergeOS ISO installer's **Replace Node** option to re-register the new chassis with the existing cluster.
+
 ## Overview
 
 !!! info "Key Points"
