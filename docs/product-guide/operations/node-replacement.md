@@ -7,8 +7,6 @@ categories: [System Administration, Operations]
 
 # Replacing a Node Using the ISO Installer
 
-This guide covers replacing a physical VergeOS node by moving drives from the original server to replacement hardware and using the VergeOS ISO installer's **Replace Node** option to re-register the new chassis with the existing cluster.
-
 ## Overview
 
 !!! info "Key Points"
@@ -112,20 +110,27 @@ Open the replacement node's dashboard (**Infrastructure** > **Nodes** > double-c
 After the replacement has been fully verified, workloads can be migrated back to or restarted on the replacement node as needed.
 
 
+## Summary
+
+We've successfully replaced a physical node by moving the original drives into new hardware and using the VergeOS ISO installer's **Replace Node** option. The replacement node is now registered with the cluster and ready to run workloads.
+
 ## Troubleshooting
 
 ### No Suitable Node Found
 
-#### Behavior:
+**Symptoms:**
+
 - Error during installation indicating no suitable node was found for replacement
 
-#### Solution:
+**Resolution:**
+
 - The original node must be powered off/disconnected. A node simply put into maintenance mode cannot be replaced.
 - Verify the original node does not display as "Running" or "Maintenance Mode" in the VergeOS UI and boot the new node with the VergeOS install ISO again.
 
-### Replacement install does not finish as expected
+### Replacement Install Does Not Finish as Expected
 
-#### Behavior:
+**Symptoms:**
+
 - The process stops after displaying "Stopping the appserver" and does not complete
 - The installation drops to the command line reporting: "vergeos install cancelled"
 - System log entries:
@@ -133,7 +138,7 @@ After the replacement has been fully verified, workloads can be migrated back to
     ybsan: Error writing root key to node 'node2': (5) input/output error
     ```
 
-#### Resolution:
+**Resolution:**
 
 - These conditions may indicate:
     - **Insufficient privileges:** Verify you are using credentials with administrator-level permissions
@@ -141,12 +146,6 @@ After the replacement has been fully verified, workloads can be migrated back to
 
 - After making necessary adjustments, you can restart the installation without a reboot:
     `yb-install --restart`
-
-
-
-## Summary
-
-We've successfully replaced a physical node by moving the original drives into new hardware and using the VergeOS ISO installer's **Replace Node** option. The replacement node is now registered with the cluster and ready to run workloads.
 
 ## Additional Resources
 
