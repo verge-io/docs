@@ -89,7 +89,7 @@ The installer scans the network and lists all detected NICs. Review each entry a
 
     !!! info "When replacing a node along with its drives, contact [VergeOS Support](/support)."
 
-2. Wait for the installation to fully complete. The installer completes the node replacement and registers the new chassis with the existing cluster. A message will indicate when the installation has completed and the node will automatically reboot. This process may take several minutes or more.
+2. Wait for the installation to fully complete. The installer completes the node replacement and registers the new chassis with the existing cluster. A message will indicate when the installation has completed and the node will automatically reboot. This process typically takes 5-15 minutes.
 
 
 ## Post-Replacement Steps
