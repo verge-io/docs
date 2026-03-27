@@ -29,7 +29,7 @@ Each time a VM is powered on or migrated, the system decides where to run the VM
 * **HA Group**
 
     * **Node Affinity:** (value starts with a "+", e.g. "+commapp") The system attempts to run VMs with the same HA Group value on the same node. This is used to coalesce application-related workloads to a single physical node for performance optimization.
-    * **Node Anti-affinity:** (value does NOT with "+", e.g. "webservers") VMs with the same HA Group value are run on separate nodes to provide high availability of applications or services.  
+    * **Node Anti-affinity:** (value does NOT start with "+", e.g. "webservers") VMs with the same HA Group value are run on separate nodes to provide high availability of applications or services.  
 
 * **Preferred Node:** a specific node is selected as the first-choice
 * **Preferred Cluster:** nodes in specified cluster used as first choice
