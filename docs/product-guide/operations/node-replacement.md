@@ -137,4 +137,4 @@ After the replacement has been fully verified, workloads can be migrated back to
 
 - [Maintenance Mode](/product-guide/operations/maintenance-mode/)
 - [Nodes Overview](/product-guide/system/nodes-overview/)
-- [Creating Bootable Installation Media](/knowledge-base/creating-bootable-installation-media/)
+- [Creating Bootable Installation Media](/implementation-guide/install-media/)
