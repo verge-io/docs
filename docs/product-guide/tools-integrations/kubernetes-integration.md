@@ -313,7 +313,7 @@ helm search repo verge-io
 |-------|---------|-------------|------------|-------------|
 | `verge-io/vergeos-csi` | `0.2.0` | `0.2.0` | >= 1.16 | CSI driver for NAS (NFS/EXT4) and Block (VM drive) storage |
 | `verge-io/vergeos-cloud-controller-manager` | `0.2.0` | `0.2.0` | >= 1.16 | Cloud controller for node lifecycle and load balancing |
-| `verge-io/vergeos-node-driver` | `0.1.0` | `1.0.0` | >= 1.16 | Node driver and UI extension for [Rancher](rancher-integration.md) |
+| `verge-io/vergeos-node-driver` | `0.2.0` | `1.0.1` | >= 1.16 | Node driver and UI extension for [Rancher](rancher-integration.md) |
 
 ### Container Images
 

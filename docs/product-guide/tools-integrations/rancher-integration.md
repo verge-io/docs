@@ -6,8 +6,8 @@ VergeOS integrates with [Rancher](https://www.rancher.com/){target="_blank"} thr
 
 | Component | Type | Version | Purpose |
 |-----------|------|---------|---------|
-| [Docker Machine Driver](#docker-machine-driver) | Go binary | v1.0.0 | Provisions VergeOS VMs as Kubernetes nodes |
-| [UI Extension](#ui-extension) | Vue.js / Helm | v0.1.0 | Adds VergeOS cloud credential and machine config to Rancher |
+| [Docker Machine Driver](#docker-machine-driver) | Go binary | v1.0.1 | Provisions VergeOS VMs as Kubernetes nodes |
+| [UI Extension](#ui-extension) | Vue.js / Helm | v0.2.0 | Adds VergeOS cloud credential and machine config to Rancher |
 
 Once clusters are running, the [Kubernetes Integration](kubernetes-integration.md) components (CSI Driver and Cloud Controller Manager) provide persistent storage and node lifecycle management — these work with any Kubernetes cluster on VergeOS, not just Rancher-provisioned ones.
 
@@ -122,7 +122,7 @@ Once installed, **VergeOS** will appear as a node driver option when creating cl
 | `--vergeos-cpu-cores` | `VERGEOS_CPU_CORES` | `2` | Number of CPU cores |
 | `--vergeos-ram` | `VERGEOS_RAM` | `4096` | RAM in MB |
 | `--vergeos-disk-size` | `VERGEOS_DISK_SIZE` | `0` | Primary disk size in GB (0 = keep template size) |
-| `--vergeos-userdata` | `VERGEOS_USERDATA` | — | Path to cloud-init user-data file, or inline cloud-config |
+| `--vergeos-cloudinit` | `VERGEOS_CLOUDINIT` | — | Path to cloud-init user-data file, or inline cloud-config |
 | `--vergeos-ssh-user` | `VERGEOS_SSH_USER` | `root` | SSH username |
 | `--vergeos-ssh-port` | `VERGEOS_SSH_PORT` | `22` | SSH port |
 
@@ -146,7 +146,7 @@ docker-machine create \
 ```
 
 !!! note "Docker Required for Standalone Use"
-    When used as a standalone Docker Machine driver (not through Rancher), the template VM also needs Docker installed, or we can use `--vergeos-userdata` to install it on first boot.
+    When used as a standalone Docker Machine driver (not through Rancher), the template VM also needs Docker installed, or we can use `--vergeos-cloudinit` to install it on first boot.
 
 ---
 
