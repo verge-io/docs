@@ -1,4 +1,13 @@
+---
+title: "Replacing a Node Using the ISO Installer"
+description: "How to replace a physical VergeOS node by moving drives to new hardware and using the ISO installer's Replace Node option."
+tags: [nodes, installation, hardware, maintenance, cluster]
+categories: [System Administration, Operations]
+---
+
 # Replacing a Node Using the ISO Installer
+
+This guide covers replacing a physical VergeOS node by moving drives from the original server to replacement hardware and using the VergeOS ISO installer's **Replace Node** option to re-register the new chassis with the existing cluster.
 
 ## Overview
 
@@ -8,18 +17,21 @@
     - Requires the VergeOS ISO installer matching the installed system version
     - Only one node should be replaced at a time
 
-This guide covers replacing a physical VergeOS node by moving drives from the original server to replacement hardware and using the VergeOS ISO installer's **Replace Node** option to re-register the new chassis with the existing cluster.
-
 !!! warning "Drives Must Be Moved from the Original Node"
     This procedure only applies when the original drives are transferred to the replacement node. If you need to replace a node **and** its drives, contact [VergeOS Support](/support) for assistance.
 
-## Prerequisites
+### What You'll Learn
 
-- An existing, healthy VergeOS cluster
-    - with the exception of a failed node that this procedure is intended to replace
+- How to safely take a node offline and prepare replacement hardware
+- How to use the VergeOS ISO installer's **Replace Node** option
+- How to verify the replacement node is healthy and rejoin the cluster
+
+### What You'll Need
+
+- An existing, healthy VergeOS cluster (with the exception of a failed node being replaced)
 - Replacement server with all drives installed (transferred from the original node)
     - Replacement hardware must be compatible with the existing cluster nodes; exact duplicate hardware is preferred
-- Bootable media containing VergeOS ISO installer - must match the version currently installed on the system
+- Bootable media containing the VergeOS ISO installer matching the version currently installed on the system
 - Administrator-level credentials for the VergeOS system
 
 ## Before You Begin
@@ -71,11 +83,10 @@ The installer scans the network and lists all detected NICs. Review each entry a
 ### Step 5: Complete the Installation
 
 1. A dialog will ask whether you are replacing the node's drives. Select **No** to indicate that the original drives have been moved into this new chassis.
-!!! info "When replacing a node along with its drives contact Verge.io Support."
 
+    !!! info "When replacing a node along with its drives, contact [VergeOS Support](/support)."
 
-2. Wait for the installation to fully complete.
-The installer completes the node replacement and registers the new chassis with the existing cluster. A message will indicate when the installation has completed and the node will automatically reboot. This process may take several minutes or more.
+2. Wait for the installation to fully complete. The installer completes the node replacement and registers the new chassis with the existing cluster. A message will indicate when the installation has completed and the node will automatically reboot. This process may take several minutes or more.
 
 
 ## Post-Replacement Steps
@@ -133,8 +144,15 @@ After the replacement has been fully verified, workloads can be migrated back to
 
 
 
+## Summary
+
+We've successfully replaced a physical node by moving the original drives into new hardware and using the VergeOS ISO installer's **Replace Node** option. The replacement node is now registered with the cluster and ready to run workloads.
+
 ## Additional Resources
 
 - [Maintenance Mode](/product-guide/operations/maintenance-mode/)
 - [Nodes Overview](/product-guide/system/nodes-overview/)
 - [Creating Bootable Installation Media](/implementation-guide/install-media/)
+
+!!! question "Need Help?"
+    If you encounter issues or have questions, contact [VergeOS Support](/support).
