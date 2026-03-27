@@ -87,7 +87,7 @@ Docker is **not** required on the template — Rancher installs its own containe
 The VergeOS network specified in `--vergeos-network` must meet the following requirements for Rancher-provisioned clusters to function.
 
 !!! warning "DHCP Required"
-    The network must have DHCP enabled. The driver discovers node IPs via DHCP leases (QEMU guest agent or NIC fallback), and cloned VMs will not receive addresses without it.
+    The network must have DHCP enabled. The driver discovers node IPs via the QEMU guest agent, and cloned VMs will not receive addresses without DHCP.
 
 !!! info "Rancher Connectivity"
     Nodes must be able to reach the Rancher server, and Rancher must be able to reach the nodes. Ensure the following ports are open between them:
