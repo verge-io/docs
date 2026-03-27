@@ -356,6 +356,7 @@ nav:
         - System Updates: product-guide/operations/sop-update.md
         - Installation Procedures: product-guide/operations/sop-verge-install.md
         - vSAN Scale Up: product-guide/operations/vsan-scale-up-sop.md
+      - Node Replacement: product-guide/operations/node-replacement.md
     - Tools and Integrations:
       - Automation & API:
         - Terraform Provider: product-guide/tools-integrations/terraform-provider.md
