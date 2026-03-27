@@ -82,6 +82,25 @@ Before provisioning clusters, we need a template VM in VergeOS with the followin
 
 Docker is **not** required on the template — Rancher installs its own container runtime (containerd) via the system agent. The template only needs cloud-init and the guest agent.
 
+### Network Requirements
+
+The VergeOS network specified in `--vergeos-network` must meet the following requirements for Rancher-provisioned clusters to function.
+
+!!! warning "DHCP Required"
+    The network must have DHCP enabled. The driver discovers node IPs via DHCP leases (QEMU guest agent or NIC fallback), and cloned VMs will not receive addresses without it.
+
+!!! info "Rancher Connectivity"
+    Nodes must be able to reach the Rancher server, and Rancher must be able to reach the nodes. Ensure the following ports are open between them:
+
+    | Direction | Port | Protocol | Purpose |
+    |-----------|------|----------|---------|
+    | Node → Rancher | 443 | TCP | System agent registration and communication |
+    | Rancher → Node | 9345 | TCP | RKE2 node registration |
+    | Rancher → Node | 6443 | TCP | Kubernetes API server |
+    | Node → Internet | 443 | TCP | Pull container images from registries |
+
+    For the full port matrix including node-to-node requirements (which vary by CNI), see the [Rancher RKE2 port requirements](https://docs.rke2.io/install/requirements#networking){target="_blank"}.
+
 ### Installing in Rancher
 
 The node driver and UI extension are packaged together in a single Helm chart. This installs the Docker Machine driver binary, registers the NodeDriver resource, and deploys the UI extension.
