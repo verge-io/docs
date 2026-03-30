@@ -177,3 +177,47 @@
 [data-md-color-scheme="slate"] .md-typeset .step-detail > summary::before {
     background-color: rgb(196, 80, 45);
 }
+
+/* styling for new feature admonitions */
+
+:root {
+  --md-admonition-icon--new-feature: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2300B8A9"><path d="M12 2L14.09 8.26L20.88 8.27L15.39 12.5L17.5 18.74L12 15.27L6.5 18.74L8.61 12.5L3.12 8.27L9.91 8.26L12 2Z"/><path d="M12 4.5L13.36 8.73L17.88 8.74L14.24 11.5L15.6 15.73L12 13L8.4 15.73L9.76 11.5L6.12 8.74L10.64 8.73L12 4.5Z" fill="%23FFFFFF" fill-opacity="0.9"/></svg>');
+}
+
+
+.md-typeset .admonition.new-feature,
+.md-typeset details.new-feature {
+    border-color: rgb(0, 188, 212); /* teal border */
+}
+
+.md-typeset .new-feature > .admonition-title,
+.md-typeset .new-feature > summary {
+    background-color: rgb(230, 250, 255); /* soft aqua */
+}
+
+.md-typeset .new-feature > .admonition-title::before,
+.md-typeset .new-feature > summary::before {
+    background-color: rgb(0, 188, 212); /* teal icon background */
+    -webkit-mask-image: var(--md-admonition-icon--new-feature);
+    mask-image: var(--md-admonition-icon--new-feature);
+}
+
+/* Dark mode overrides for new feature admonitions */
+[data-md-color-scheme="slate"] .md-typeset .new-feature > .admonition-title,
+[data-md-color-scheme="slate"] .md-typeset .new-feature > summary {
+    background-color: rgb(230, 250, 255); /* same as light mode */
+    color: #000; /* force black text in dark mode */
+}
+
+[data-md-color-scheme="slate"] .md-typeset .admonition.new-feature,
+[data-md-color-scheme="slate"] .md-typeset details.new-feature {
+    border-color: rgb(0, 188, 212);
+}
+
+[data-md-color-scheme="slate"]
+    .md-typeset
+    .new-feature
+    > .admonition-title::before,
+[data-md-color-scheme="slate"] .md-typeset .new-feature > summary::before {
+    background-color: rgb(0, 188, 212);
+}
