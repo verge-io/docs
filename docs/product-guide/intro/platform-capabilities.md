@@ -31,7 +31,7 @@ Whether you're evaluating VergeOS for your organization or planning your impleme
 * **[Live VM Migrations](/product-guide/virtual-machines/live-migrations/#vm-live-migration)** - Understand VergeOS resiliency that automatically handles VM migrations during maintenance, updates, and after hardware failures (sufficient resources required)
 * **[Manual VM Migrations](/product-guide/virtual-machines/vm-manual-migration)** - Manually move workloads as needed for optimal resource utilization
 * **[Resource Assignment (Device Passthrough)](/product-guide/system/device-pass-overview)** - Efficiently leverage host hardware within your virtual machines:
-    - **[NVIDIA vGPU](/product-guide/system/nvidia-vgpu)** - Virtualize GPU resources for high-performance computing workloads
+    - **[NVIDIA vGPU](/product-guide/tools-integrations/nvidia-vgpu-virtualization)** - Virtualize GPU resources for high-performance computing workloads
     - **[Direct PCI Passthrough](/product-guide/system/generic-pci-passthrough)** - Provide VMs with direct access to physical hardware devices
     - **[SRIOV NICs](/product-guide/system/sriov-nics)** - Enable high-performance network virtualization with hardware acceleration
     - **[USB Passthrough](/product-guide/system/usb-passthrough)** - Connect physical USB devices directly to virtual machines

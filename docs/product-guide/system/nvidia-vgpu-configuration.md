@@ -85,11 +85,12 @@ After the resource group is selected or a new one created, a **Success** message
    * **Driver**: pre-populated from previous step.
 
 !!! note "Flexible Profile Configuration"
-    Starting in version 26.1.3, VergeOS supports heterogeneous vGPU profiles. This enables greater flexibility, allowing a physical device to host a mix of different profile types and sizes simultaneously (requires NVIDIA driver version 17.2 or later and device support).  
-    - NVIDIA only allows mixing vGPU profiles that share the same architecture and belong to the same compatibility group - consult NVIDIA documentation for more information.
-    - Combined profiles must fit within the GPU's total framebuffer (available VRAM).
-    - MIG and traditional profiles **cannot** be mixed on the same physical device.
-    - NVIDIA SMI queries can provide information about vGPU profiles compatible with those that have already been configured for a device.  See [Troubleshooting Tips](#troubleshooting-tips) for more information.  
+    Starting in version 26.1.3, VergeOS supports heterogeneous vGPU profiles. This enables greater flexibility, allowing a physical device to host a mix of different profile types and sizes simultaneously (requires NVIDIA driver version 17.2 or later and device support).
+
+    * NVIDIA only allows mixing vGPU profiles that share the same architecture and belong to the same compatibility group - consult NVIDIA documentation for more information.  
+    * Combined profiles must fit within the GPU's total framebuffer (available VRAM).  
+    * MIG and traditional profiles **cannot** be mixed on the same physical device.  
+    * NVIDIA SMI queries can provide information about vGPU profiles compatible with those that have already been configured for a device.  See [Troubleshooting Tips](#troubleshooting-tips) for more information.  
 
 ---
 
@@ -111,7 +112,7 @@ After the resource group is selected or a new one created, a **Success** message
 
     ![MIG-vGPU - Dark Mode](/product-guide/screenshots/mig-vgpu-dark.png#only-dark)
 
-    - **MIG profile added**: Selecting the profile *NVIDIA RTX Pro 6000 Blackwell DC‑2‑12Q‑MIG (2g.48gb+gfx)* and specifying *MIG GPU Instances*:1 creates one MIG slice with 48 GB of dedicated framebuffer. This MIG slice supports **four vGPU instances**, each using **12 GB** (the “12Q” profile)
+    - **MIG profile added**: Selecting the profile *NVIDIA RTX Pro 6000 Blackwell DC‑2‑12Q‑MIG (2g.48gb+gfx)* and specifying *MIG GPU Instances*:1 creates one MIG slice with 48 GB of dedicated framebuffer. This MIG slice supports **four vGPU instances**, each using **12 GB** (the “12A” profile)
     - **Remaining capacity**: After allocating this 48 GB MIG slice, **48 GB of framebuffer** remains available for additional MIG profiles
 
 ---
