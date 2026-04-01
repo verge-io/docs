@@ -4,30 +4,32 @@
 
 VergeOS integrates with [Rancher](https://www.rancher.com/){target="_blank"} through a Docker Machine node driver and a UI extension. Together, these components let us provision and manage RKE2/K3s clusters on VergeOS infrastructure directly from the Rancher interface.
 
-| Component | Type | Version | Purpose |
-|-----------|------|---------|---------|
-| [Docker Machine Driver](#docker-machine-driver) | Go binary | v1.0.1 | Provisions VergeOS VMs as Kubernetes nodes |
-| [UI Extension](#ui-extension) | Vue.js / Helm | v0.2.0 | Adds VergeOS cloud credential and machine config to Rancher |
+| Component | Purpose |
+|-----------|---------|
+| [Docker Machine Driver](#docker-machine-driver) | Provisions VergeOS VMs as Kubernetes nodes |
+| [UI Extension](#ui-extension) | Adds VergeOS cloud credential and machine config to Rancher |
 
 Once clusters are running, the [Kubernetes Integration](kubernetes-integration.md) components (CSI Driver and Cloud Controller Manager) provide persistent storage and node lifecycle management — these work with any Kubernetes cluster on VergeOS, not just Rancher-provisioned ones.
 
-```
-┌──────────────────────────────────────────────────────────┐
-│                    Rancher Server                         │
-│           (UI Extension for VergeOS)                      │
-│                                                          │
-│  Cloud Credentials ──► Docker Machine Driver ──► VMs     │
-└────────────────────────────┬─────────────────────────────┘
-                             │
-                             ▼
-┌──────────────────────────────────────────────────────────┐
-│              RKE2/K3s Cluster (VergeOS VMs)               │
-│                                                          │
-│  Cloud Controller Manager    CSI Driver                  │
-│  ├── Node metadata           ├── NAS (ReadWriteMany)     │
-│  ├── Node lifecycle          └── Block (ReadWriteOnce)   │
-│  └── Load balancers                                      │
-└──────────────────────────────────────────────────────────┘
+```mermaid
+graph TD
+    subgraph rancher["Rancher Server"]
+        ui["UI Extension for VergeOS"]
+        creds["Cloud Credentials"] --> driver["Docker Machine Driver"]
+    end
+
+    driver --> vms["VergeOS VMs"]
+
+    subgraph cluster["RKE2/K3s Cluster (VergeOS VMs)"]
+        ccm["Cloud Controller Manager"]
+        csi["CSI Driver"]
+        ccm_features["Node metadata · Node lifecycle · Load balancers"]
+        csi_features["NAS ReadWriteMany · Block ReadWriteOnce"]
+        ccm --- ccm_features
+        csi --- csi_features
+    end
+
+    vms --> cluster
 ```
 
 ### Prerequisites
@@ -60,11 +62,8 @@ Before provisioning clusters, we need a template VM in VergeOS with the followin
 
 **Required:**
 
-- **cloud-init** installed and enabled — the driver injects SSH keys and sets the hostname via a multi-part MIME cloud-init payload
-
-**Required:**
-
 - **Ubuntu 24.04** (Noble Numbat) — the only supported template OS at this time
+- **cloud-init** installed and enabled — the driver injects SSH keys and sets the hostname via a multi-part MIME cloud-init payload
 
 **Recommended:**
 
@@ -129,22 +128,6 @@ Once installed, **VergeOS** will appear as a node driver option when creating cl
 !!! info "Self-Signed Certificates"
     If the VergeOS environment uses a self-signed certificate, set `insecure` to `true` when creating the cloud credential in Rancher. This tells the driver to skip TLS verification when communicating with the VergeOS API.
 
-### Driver Options
-
-| Flag | Env Variable | Default | Description |
-|------|-------------|---------|-------------|
-| `--vergeos-host` | `VERGEOS_HOST` | — | VergeOS host or URL (defaults to https://) |
-| `--vergeos-api-key` | `VERGEOS_API_KEY` | — | API key for authentication (required) |
-| `--vergeos-insecure` | `VERGEOS_INSECURE` | `false` | Skip TLS certificate verification |
-| `--vergeos-template-vm` | `VERGEOS_TEMPLATE_VM` | — | Name of the template VM to clone (required) |
-| `--vergeos-network` | `VERGEOS_NETWORK` | — | Name of the network to attach to (required) |
-| `--vergeos-cpu-cores` | `VERGEOS_CPU_CORES` | `2` | Number of CPU cores |
-| `--vergeos-ram` | `VERGEOS_RAM` | `4096` | RAM in MB |
-| `--vergeos-disk-size` | `VERGEOS_DISK_SIZE` | `0` | Primary disk size in GB (0 = keep template size) |
-| `--vergeos-cloudinit` | `VERGEOS_CLOUDINIT` | — | Path to cloud-init user-data file, or inline cloud-config |
-| `--vergeos-ssh-user` | `VERGEOS_SSH_USER` | `root` | SSH username |
-| `--vergeos-ssh-port` | `VERGEOS_SSH_PORT` | `22` | SSH port |
-
 ### Standalone Usage
 
 The driver also works outside of Rancher with Docker Machine directly:
@@ -166,6 +149,13 @@ docker-machine create \
 
 !!! note "Docker Required for Standalone Use"
     When used as a standalone Docker Machine driver (not through Rancher), the template VM also needs Docker installed, or we can use `--vergeos-cloudinit` to install it on first boot.
+
+For the full list of driver flags and environment variables, see the driver repository:
+
+[https://github.com/verge-io/docker-machine-driver-vergeos](https://github.com/verge-io/docker-machine-driver-vergeos){target="_blank"}
+
+!!! note "SSH User Default"
+    The driver defaults to `root` for the SSH user, but the Rancher UI extension defaults to `ubuntu`. When using the CLI directly, set `--vergeos-ssh-user ubuntu` for Ubuntu templates.
 
 ---
 
@@ -197,10 +187,18 @@ The UI extension adds VergeOS-specific components to the Rancher interface, prov
 
 ---
 
-## Repositories
+## Documentation and Resources
+
+For detailed configuration, driver flags, chart values, and release notes, see the GitHub repositories:
 
 | Repository | Description |
 |------------|-------------|
 | [docker-machine-driver-vergeos](https://github.com/verge-io/docker-machine-driver-vergeos){target="_blank"} | Docker Machine / Rancher node driver |
 | [ui-extension-vergeos](https://github.com/verge-io/ui-extension-vergeos){target="_blank"} | Rancher UI extension |
 | [helm-charts](https://github.com/verge-io/helm-charts){target="_blank"} | Helm chart repository |
+
+## Support
+
+If you encounter issues or have feature requests, please open an issue on the relevant GitHub repository:
+
+[https://github.com/verge-io/docker-machine-driver-vergeos/issues](https://github.com/verge-io/docker-machine-driver-vergeos/issues){target="_blank"}

@@ -4,10 +4,10 @@
 
 VergeOS provides native Kubernetes integration through a CSI storage driver and a Cloud Controller Manager (CCM). These components connect any Kubernetes cluster running on VergeOS VMs — whether provisioned through [Rancher](rancher-integration.md), kubeadm, or any other method — to the underlying VergeOS platform.
 
-| Component | Type | Version | Purpose |
-|-----------|------|---------|---------|
-| [CSI Driver](#csi-driver) | Container image | v0.2.0 | Persistent storage for Kubernetes pods via VergeOS vSAN |
-| [Cloud Controller Manager](#cloud-controller-manager) | Container image | v0.2.0 | Node lifecycle and load balancer integration |
+| Component | Purpose |
+|-----------|---------|
+| [CSI Driver](#csi-driver) | Persistent storage for Kubernetes pods via VergeOS vSAN |
+| [Cloud Controller Manager](#cloud-controller-manager) | Node lifecycle and load balancer integration |
 
 ### Prerequisites
 
@@ -15,15 +15,6 @@ VergeOS provides native Kubernetes integration through a CSI storage driver and 
 - A VergeOS API key (generated in User Settings)
 - `kubectl` and `helm` CLI tools
 - Access to the cluster's kubeconfig
-
-### Add the Helm Repository
-
-Both components are installed from the same Helm repository:
-
-```bash
-helm repo add verge-io https://verge-io.github.io/helm-charts
-helm repo update
-```
 
 !!! info "Self-Signed Certificates"
     If the VergeOS environment uses a self-signed certificate, set `vergeos.verifySSL=false` when installing the CSI driver and CCM Helm charts. This is the default, but worth noting if we change it later.
@@ -38,10 +29,10 @@ The Container Storage Interface (CSI) driver lets Kubernetes pods request and mo
 
 The CSI driver supports two backends, both served by a single Go binary:
 
-| Backend | CSI Driver Name | Access Mode | Description |
-|---------|----------------|-------------|-------------|
-| **NAS** | `csi-nas.verge.io` | ReadWriteMany | EXT4 volumes on VergeOS NAS services, exposed over NFS |
-| **Block** | `csi-block.verge.io` | ReadWriteOnce | VM drives hotplugged to VergeOS VMs via the vSAN |
+| Backend | Access Mode | Description |
+|---------|-------------|-------------|
+| **NAS** | ReadWriteMany | EXT4 volumes on VergeOS NAS services, exposed over NFS |
+| **Block** | ReadWriteOnce | VM drives hotplugged to VergeOS VMs via the vSAN |
 
 ??? note "Why Not Longhorn?"
     Longhorn runs its own replicated storage engine *inside* Kubernetes, layering replication, snapshots, and scheduling on top of the hypervisor. On VergeOS, the native CSI driver is a better fit:
@@ -51,133 +42,20 @@ The CSI driver supports two backends, both served by a single Go binary:
     - **Multi-tier placement** — volumes land on the correct vSAN tier (NVMe, SSD, HDD) based on the StorageClass
     - **Unified management** — volumes appear in the VergeOS UI alongside VMs, snapshots, and NAS shares
 
-### Prerequisites
+### Block Storage Pool VM
 
-1. **Kubeconfig access** — if using Rancher, download the kubeconfig from Cluster Management > select the cluster > **⋮** > Download KubeConfig:
+For block storage, create an empty VM in VergeOS named `k8spool`. It never needs to boot — it just holds idle block drives. The VM's ID is passed to the Helm chart during installation.
 
-    ```bash
-    export KUBECONFIG=~/Downloads/<cluster>-kubeconfig.yaml
-    kubectl get nodes  # verify access
-    ```
+### Installation
 
-2. **Create a pool VM in VergeOS** (for block storage) — create an empty VM named `k8spool`. It never needs to boot; it just holds idle block drives. Look up its ID:
+For installation instructions, Helm values, and configuration options, see the CSI driver repository:
 
-    ```bash
-    curl -sk -H "x-yottabyte-token: <API_KEY>" \
-      'https://<VERGEOS_HOST>/api/v4/vms?fields=name,$key' | grep k8spool
-    ```
+[https://github.com/verge-io/vergeos-csi](https://github.com/verge-io/vergeos-csi){target="_blank"}
 
-    ```
-    {"name":"k8spool","$key":65}
-    ```
+The chart can also be installed through the **Rancher Apps UI** on downstream clusters — add `https://verge-io.github.io/helm-charts` as a repository, then install from **Charts**.
 
-### Installation with Helm
-
-```bash
-helm install vergeos-csi verge-io/vergeos-csi \
-  --namespace kube-system \
-  --set vergeos.host=https://<VERGEOS_HOST> \
-  --set vergeos.apiKey=<API_KEY> \
-  --set block.poolVmId=<POOL_VM_ID>
-```
-
-To install only the NAS driver (skip block):
-
-```bash
-helm install vergeos-csi verge-io/vergeos-csi \
-  --namespace kube-system \
-  --set vergeos.host=https://<VERGEOS_HOST> \
-  --set vergeos.apiKey=<API_KEY> \
-  --set block.enabled=false
-```
-
-Verify the installation:
-
-```bash
-kubectl -n kube-system get pods | grep csi
-kubectl get csidrivers
-kubectl get storageclasses
-```
-
-### Helm Values
-
-| Value | Default | Description |
-|-------|---------|-------------|
-| `vergeos.host` | `""` | VergeOS API URL (include `https://`) |
-| `vergeos.apiKey` | `""` | VergeOS API key |
-| `vergeos.existingSecret` | `""` | Use a pre-created Secret instead |
-| `nas.enabled` | `true` | Deploy the NAS driver |
-| `nas.storageClass.nasServiceName` | `k8s-nas` | VergeOS NAS service name |
-| `nas.storageClass.preferredTier` | `1` | vSAN tier for NAS volumes (1–5) |
-| `block.enabled` | `true` | Deploy the Block driver |
-| `block.poolVmId` | `0` | VergeOS VM ID to hold idle block drives |
-| `block.storageClass.interface` | `virtio-scsi` | VM drive interface type |
-| `logLevel` | `5` | klog verbosity (0–10) |
-
-### StorageClass Examples
-
-The Helm chart creates default StorageClasses automatically. Here are the definitions for reference:
-
-```yaml
-# NAS StorageClass — ReadWriteMany
-apiVersion: storage.k8s.io/v1
-kind: StorageClass
-metadata:
-  name: vergeos-nas
-provisioner: csi-nas.verge.io
-parameters:
-  nasServiceName: "k8s-nas"
-  preferredTier: "1"
-reclaimPolicy: Delete
-volumeBindingMode: Immediate
-```
-
-```yaml
-# Block StorageClass — ReadWriteOnce
-apiVersion: storage.k8s.io/v1
-kind: StorageClass
-metadata:
-  name: vergeos-block
-provisioner: csi-block.verge.io
-parameters:
-  interface: "virtio-scsi"
-reclaimPolicy: Delete
-volumeBindingMode: Immediate
-```
-
-### Using Persistent Volumes
-
-Once the CSI driver is installed, pods can request storage using PersistentVolumeClaims:
-
-```yaml
-# NAS volume (shared across pods)
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: shared-data
-spec:
-  accessModes:
-    - ReadWriteMany
-  storageClassName: vergeos-nas
-  resources:
-    requests:
-      storage: 10Gi
-```
-
-```yaml
-# Block volume (single pod)
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: database-data
-spec:
-  accessModes:
-    - ReadWriteOnce
-  storageClassName: vergeos-block
-  resources:
-    requests:
-      storage: 50Gi
-```
+!!! warning "Downstream Cluster"
+    The Helm repository must be added on the **downstream cluster**, not the Rancher management cluster. ClusterRepos do not propagate from the management cluster.
 
 ---
 
@@ -189,51 +67,6 @@ The Cloud Controller Manager (CCM) is the standard Kubernetes cloud provider int
 
 - **Node Management** — Populates Kubernetes node metadata (provider ID, instance type, internal IPs) from VergeOS VMs. Detects VM existence and power state for node lifecycle management.
 - **Load Balancing** — Provisions VergeOS VNet NAT/translate rules for `type: LoadBalancer` Services. Allocates IPs from a configurable pool and maps service ports to node ports automatically.
-
-### Installation with Helm
-
-Basic installation (node management only):
-
-```bash
-helm install vergeos-ccm verge-io/vergeos-cloud-controller-manager \
-  --namespace kube-system \
-  --set vergeos.host=https://<VERGEOS_HOST> \
-  --set vergeos.apiKey=<API_KEY> \
-  --set loadBalancer.enabled=false
-```
-
-With load balancing enabled (requires a VergeOS VNet network ID and IP pool):
-
-```bash
-helm install vergeos-ccm verge-io/vergeos-cloud-controller-manager \
-  --namespace kube-system \
-  --set vergeos.host=https://<VERGEOS_HOST> \
-  --set vergeos.apiKey=<API_KEY> \
-  --set loadBalancer.enabled=true \
-  --set loadBalancer.networkID=<VNET_ID> \
-  --set 'loadBalancer.ipPool[0]=10.0.0.100' \
-  --set 'loadBalancer.ipPool[1]=10.0.0.101'
-```
-
-Verify the installation:
-
-```bash
-kubectl -n kube-system get pods -l app=vergeos-ccm
-kubectl get nodes -o wide  # check for ProviderID and addresses
-```
-
-### Helm Values
-
-| Value | Default | Description |
-|-------|---------|-------------|
-| `vergeos.host` | `""` | VergeOS API host |
-| `vergeos.apiKey` | `""` | API key for authentication |
-| `vergeos.verifySSL` | `false` | TLS certificate verification |
-| `vergeos.existingSecret` | `""` | Use an existing Secret for credentials |
-| `loadBalancer.enabled` | `true` | Enable LoadBalancer support |
-| `loadBalancer.networkID` | `0` | VNet network ID for load balancer rules |
-| `loadBalancer.ipPool` | `[]` | Available load balancer IP addresses |
-| `replicaCount` | `1` | Number of replicas |
 
 ### How Node Lifecycle Works
 
@@ -251,23 +84,13 @@ The CCM implements the Kubernetes `LoadBalancer` interface using VergeOS VNet ru
 2. **UpdateLoadBalancer** — Updates the target IPs on existing rules when nodes change
 3. **EnsureLoadBalancerDeleted** — Deletes all VNet rules for the service and applies the change
 
-To use a load balancer, create a Service with `type: LoadBalancer`:
+### Installation
 
-```yaml
-apiVersion: v1
-kind: Service
-metadata:
-  name: my-app
-spec:
-  type: LoadBalancer
-  ports:
-    - port: 80
-      targetPort: 8080
-  selector:
-    app: my-app
-```
+For installation instructions, Helm values, and configuration options, see the CCM repository:
 
-The CCM will automatically allocate an IP from the pool and create the appropriate VNet rules.
+[https://github.com/verge-io/vergeos-cloud-controller-manager](https://github.com/verge-io/vergeos-cloud-controller-manager){target="_blank"}
+
+Like the CSI driver, the CCM can also be installed through the Rancher Apps UI on the downstream cluster.
 
 ---
 
@@ -282,24 +105,14 @@ The autoscaler uses Rancher's API to manage node pools:
 1. **Scale up** — When pods are pending due to insufficient resources, the autoscaler increases the node pool size. Rancher then uses the Docker Machine driver to provision new VergeOS VMs.
 2. **Scale down** — When nodes are underutilized for a configurable period, the autoscaler cordons, drains, and removes them. The driver deletes the backing VergeOS VMs.
 
-### Enabling in Rancher
-
-Cluster autoscaling is configured per node pool in Rancher:
-
-1. Navigate to **Cluster Management** > select the cluster > **Machine Pools**
-2. Edit the node pool and enable **Auto Replace** and set min/max node counts
-3. The autoscaler respects these bounds when scaling
-
 !!! tip "Resource Requests"
     The autoscaler makes scaling decisions based on pod resource requests, not actual usage. Make sure workloads define `requests` in their pod specs for accurate scaling behavior.
 
 ---
 
-## Helm Charts Reference
+## Helm Charts
 
-All VergeOS Kubernetes components are distributed as Helm charts from a single repository.
-
-### Repository Setup
+All VergeOS Kubernetes components are distributed as Helm charts from a single repository:
 
 ```bash
 helm repo add verge-io https://verge-io.github.io/helm-charts
@@ -307,21 +120,14 @@ helm repo update
 helm search repo verge-io
 ```
 
-### Available Charts
+For chart versions, values, and detailed installation instructions, see the Helm charts repository:
 
-| Chart | Version | App Version | Kubernetes | Description |
-|-------|---------|-------------|------------|-------------|
-| `verge-io/vergeos-csi` | `0.2.0` | `0.2.0` | >= 1.16 | CSI driver for NAS (NFS/EXT4) and Block (VM drive) storage |
-| `verge-io/vergeos-cloud-controller-manager` | `0.2.0` | `0.2.0` | >= 1.16 | Cloud controller for node lifecycle and load balancing |
-| `verge-io/vergeos-node-driver` | `0.2.0` | `1.0.1` | >= 1.16 | Node driver and UI extension for [Rancher](rancher-integration.md) |
+[https://github.com/verge-io/helm-charts](https://github.com/verge-io/helm-charts){target="_blank"}
 
-### Container Images
+## Support
 
-| Image | Version |
-|-------|---------|
-| `ghcr.io/verge-io/csi-vergeos` | `0.2.0` |
-| `ghcr.io/verge-io/vergeos-cloud-controller-manager` | `0.2.0` |
+If you encounter issues or have feature requests, please open an issue on the relevant GitHub repository:
 
-### Source
-
-Charts are published to [verge-io/helm-charts](https://github.com/verge-io/helm-charts){target="_blank"} on GitHub Pages.
+- [CSI Driver Issues](https://github.com/verge-io/vergeos-csi/issues){target="_blank"}
+- [CCM Issues](https://github.com/verge-io/vergeos-cloud-controller-manager/issues){target="_blank"}
+- [Helm Charts Issues](https://github.com/verge-io/helm-charts/issues){target="_blank"}
