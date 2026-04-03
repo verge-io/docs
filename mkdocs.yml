@@ -172,12 +172,15 @@ nav:
       - Transitioning from VMware: product-guide/intro/transition-from-vmware.md
       - UI Overview: product-guide/ui-overview.md
       - New System Configuration: product-guide/intro/new-system-configuration.md
-    - Storage:
+    - vSAN Storage:
        - Overview: product-guide/storage/overview.md
+       - vSAN Fundamentals: product-guide/storage/vsan-fundamentals.md
        - vSAN Architecture: product-guide/storage/vsan-architecture.md
        - vSAN Redundancy Levels: product-guide/storage/vsan-redundancy-levels.md
+       - vSAN Health Monitoring: product-guide/storage/vsan-health-monitoring.md
        - Storage Tiers: product-guide/storage/storage-tiers.md
        - Preferred Tier: product-guide/storage/preferred-tiers.md
+       - Capacity Planning: product-guide/storage/capacity-planning.md
        - External Storage Integration: product-guide/storage/external-storage-integration.md
        - Fibre Channel: product-guide/storage/fibre-channel.md
        - vSAN Deletion Process: product-guide/storage/vsan-deletion-process.md

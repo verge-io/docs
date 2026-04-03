@@ -1,216 +1,203 @@
-# VergeOS vSAN Block-Level Architecture and Data Distribution
+---
+title: "vSAN Block-Level Architecture"
+description: "How the VergeOS vSAN stores, distributes, and protects data at the block level. Covers the write path, read path, data distribution, master node coordination, and core network transport."
+semantic_keywords:
+  - "vSAN block architecture, content-addressed storage, 64 KB block hashing"
+  - "vSAN write path, read path, data distribution across nodes"
+  - "vSAN master node failover, storage redundancy, crash-consistent journal"
+  - "distributed storage internals, deduplication, core network fabric"
+use_cases:
+  - storage_management
+  - capacity_planning
+  - performance_tuning
+  - troubleshooting
+tags:
+  - vsan
+  - storage
+  - architecture
+  - block-storage
+  - deduplication
+  - redundancy
+  - core-network
+categories:
+  - Storage
+---
+
+# vSAN Block-Level Architecture
 
 ## Overview
 
-VergeOS vSAN employs a sophisticated block-level architecture that forms the foundation of its distributed storage system. This architecture enables efficient data distribution, high availability, and optimal performance across the entire storage infrastructure.
+VergeOS vSAN stores all data as 64 KB blocks distributed across cluster nodes. This page explains how those blocks are written, read, distributed, and protected.
 
-## Related Documentation
+The entire VergeOS control plane lives within the vSAN: the application database, VM disk images, volume data, and NAS shares are all stored and served through this unified storage layer.
 
-- [Scale Out Guide](/implementation-guide/scale-out-nodes) - Detailed instructions for adding nodes to expand capacity
-- [Scaling Up a vSAN](/knowledge-base/scaling-up-a-vsan) - Guide for increasing resources on existing nodes
+**Related guides:**
 
-## Block-Level Operations
+- [Scale Out Guide](/implementation-guide/scale-out-nodes) -- Adding nodes to expand capacity
+- [Scaling Up a vSAN](/knowledge-base/scaling-up-a-vsan) -- Increasing resources on existing nodes
 
-### Data Block Management
+---
 
-- **Block Creation**:
-    - VM disks are divided into multiple blocks
-    - Each block is assigned a unique cryptographic hash
-    - Block size is optimized for performance and efficiency
-    - Metadata tracks block relationships and locations
+## Content-Addressed Storage
 
-### Hash-Based Distribution
+At the core of the vSAN is a **content-addressed storage** model. Rather than tracking data by its file name or disk location, every 64 KB data block is identified by a SHA-based cryptographic hash of its contents. This design has several important implications for day-to-day operations:
 
-- **Block Identification**:
-    - Each data block receives a cryptographic hash value
-    - Hash serves as a unique identifier for the block
-    - Used for both location mapping and deduplication
+- **Transparent deduplication** -- If two VMs (or two hundred VMs) write an identical block of data, only one physical copy is stored. The hash is the same, so the vSAN recognizes the block already exists and simply adds a reference to it. There is no deduplication job to schedule or tune; it happens automatically at write time.
+- **Built-in integrity verification** -- Because a block's identity *is* its hash, the system can re-compute the hash at any time and compare it to the stored value. A mismatch means the data has changed unexpectedly, enabling automatic corruption detection. Corrupted blocks are automatically repaired by fetching a good copy from a redundancy target.
+- **Efficient snapshots and clones** -- Snapshots and clones share all unchanged blocks with the original data through copy-on-write. Only blocks that are actually modified require new storage, making these operations both fast and space-efficient.
 
-- **Distribution Algorithm**:
-    - Blocks are distributed based on hash values
-    - Ensures even distribution across available nodes
-    - Prevents hot spots in the storage system
-    - Facilitates efficient data retrieval
-
-## Data Distribution Architecture
-
-### Primary Storage
-
-- **Block Placement**:
-    - Primary copy of each block stored on optimal node
-    - Placement determined by hash-based algorithm
-    - Considers storage tier requirements
-    - Optimizes for performance and capacity
-
-### Primary Storage
-
-- **Access Patterns**:
-    - Reads prioritize single-copy access for efficiency
-    - System defaults to reading from primary copy
-    - Automatically reads from redundant copy if primary is slow/unresponsive
-    - Optimizes by reading from local redundant copy when on same node
-    - Write operations always update both primary and redundant copies
-    - Automatic redistribution as needed
-
-### Data Access
-
-- **Read Operations**:
-    - Quick block location lookup via hash
-    - Intelligent source selection:
-        - Prioritizes primary copy
-        - Uses local redundant copy when on same node
-        - Fails over to redundant copy if primary is unresponsive
-    - Optimized for minimal network traffic
-    - Performance optimization through locality awareness
-
-- **Write Operations**:
-    - New block hash generation
-    - Simultaneous update of primary and redundant copies
-    - Guaranteed write consistency across copies
-    - Metadata updates
-    - Consistency maintenance
-
-### Redundant Storage
-
-- **Redundancy Management**:
-    - Secondary copies maintained for data protection
-    - Distribution across different nodes
-    - Automatic synchronization of copies
-    - Configurable redundancy levels
-
-- **Failover Handling**:
-    - Automatic failover to redundant copies
-    - Transparent to applications and VMs
-    - Immediate availability during node failures
-    - Self-healing capabilities
-
-## Hash Map Functionality
-
-### Core Components
-
-- **Hash Map Structure**:
-    - Maps block hashes to physical locations
-    - Maintains block metadata
-    - Tracks redundant copies
-    - Handles version control
-
-- **Location Tracking**:
-    - Real-time block location updates
-    - Efficient lookup mechanisms
-    - Optimized for large-scale systems
-    - Supports dynamic redistribution
-
-## Cross-Node Distribution
-
-### Distribution Mechanics
-
-- **Node Management**:
-    - Dynamic node addition and removal
-    - Automatic rebalancing
-    - Workload distribution
-    - Resource optimization
-
-- **Data Flow**:
-    - Inter-node communication protocols
-    - Efficient data transfer
-    - Bandwidth optimization
-    - Latency management
-
-## Performance Optimization
-
-### Data Access Optimization
-
-- **Caching**:
-    - Block-level cache management
-    - Frequently accessed data optimization
-    - Cache coherency maintenance
-    - Performance acceleration
-
-- **I/O Path**:
-    - Optimized read/write paths
-    - Minimal hop routing
-    - Direct block access
-    - Reduced latency
-
-### Efficiency Features
-
-- **Deduplication**:
-    - Block-level deduplication
-    - Hash-based identification
-    - Space efficiency
-    - Performance impact management
+!!! tip "Deduplication Ratio"
+    You can monitor your environment's deduplication effectiveness in the VergeOS UI under storage tier statistics. The **dedupe ratio** shows the ratio of logical data to physical data stored -- a higher ratio means more space savings from identical blocks.
 
 !!! note "Compression"
     VergeOS vSAN does not perform inline compression on stored data. Compression is only applied when syncing data between sites over the network to optimize bandwidth usage.
 
-## System Resilience
+---
 
-### Fault Tolerance
+## Data Distribution Across Nodes
 
-- **Node Failures**:
-    - Automatic failure detection
-    - Immediate failover
-    - Data accessibility maintenance
-    - Recovery initiation
+The vSAN distributes data blocks across all participating nodes and drives within each storage tier. Each tier maintains a **distribution map** that assigns every block range to a specific node for its primary copy and a *different* node for its redundancy copy.
 
-- **Network Issues**:
-    - Path redundancy
-    - Alternative route selection
-    - Communication reliability
-    - Performance maintenance
+```
+┌─────────────────────────────────────────────────────────┐
+│                    vSAN Cluster                         │
+│                                                         │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐     │
+│  │   Node 1    │  │   Node 2    │  │   Node 3    │     │
+│  │             │  │             │  │             │     │
+│  │ ┌─────────┐ │  │ ┌─────────┐ │  │ ┌─────────┐ │     │
+│  │ │ Tier 1  │ │  │ │ Tier 1  │ │  │ │ Tier 1  │ │     │
+│  │ │ NVMe    │ │  │ │ NVMe    │ │  │ │ NVMe    │ │     │
+│  │ │         │ │  │ │         │ │  │ │         │ │     │
+│  │ │ Block A │ │  │ │ Block B │ │  │ │ Block C │ │     │
+│  │ │ Block C'│ │  │ │ Block A'│ │  │ │ Block B'│ │     │
+│  │ └─────────┘ │  │ └─────────┘ │  │ └─────────┘ │     │
+│  │ ┌─────────┐ │  │ ┌─────────┐ │  │ ┌─────────┐ │     │
+│  │ │ Tier 2  │ │  │ │ Tier 2  │ │  │ │ Tier 2  │ │     │
+│  │ │ SSD     │ │  │ │ SSD     │ │  │ │ SSD     │ │     │
+│  │ └─────────┘ │  │ └─────────┘ │  │ └─────────┘ │     │
+│  └─────────────┘  └─────────────┘  └─────────────┘     │
+│                                                         │
+│  Block A  = Primary on Node 1, Redundancy on Node 2    │
+│  Block B  = Primary on Node 2, Redundancy on Node 3    │
+│  Block C  = Primary on Node 3, Redundancy on Node 1    │
+│  (A', B', C' = redundancy copies)                      │
+└─────────────────────────────────────────────────────────┘
+```
 
-### Data Integrity
+The primary copy and redundancy copy of every block are always placed on **different nodes** (and different drives), ensuring that a single node failure never results in data loss. When a node or drive fails, the vSAN automatically fails over to redundancy copies and begins re-replicating data to restore the target redundancy level -- no manual intervention is required.
 
-- **Block Validation**:
-    - Continuous integrity checking
-    - Hash validation
-    - Corruption detection
-    - Automatic repair initiation
+For details on configuring how many copies are maintained, see [vSAN Redundancy Levels](/product-guide/storage/vsan-redundancy-levels).
 
-- **Consistency Maintenance**:
-    - Transaction consistency
-    - Data coherency
-    - Version control
-    - Synchronization management
+---
 
-## Scaling Considerations
+## Write Path
 
-### Horizontal Scaling (Scaling Out)
+When a VM or volume writes data, the vSAN follows a well-defined sequence to ensure consistency and redundancy:
 
-- **Node Addition**:
-    - Seamless integration of new nodes
-    - Requires minimum of two nodes per cluster for redundancy
-    - New nodes must match existing cluster configuration:
-        - Processor type
-        - Memory configuration
-        - Physical disk drive configuration
-    - Maintains N+1 redundancy for high availability
-    - Automatic data redistribution
-    - Performance optimization
-    - Capacity expansion
+1. **Data arrives** -- The application (VM, NAS volume, etc.) issues a write through the vSAN filesystem layer.
+2. **Block hashing** -- The incoming data is divided into 64 KB blocks, and a SHA-based hash is computed for each block.
+3. **Deduplication check** -- The hash is looked up in the block index. If the block already exists (identical content was previously written), the vSAN simply adds a reference to the existing block -- no new data is written to disk. If the block is new, the write continues to step 4.
+4. **Tier selection** -- For new blocks, the vSAN determines which [storage tier](/product-guide/storage/storage-tiers) to use based on the volume's or file's preferred tier setting. Tiers range from the fastest media (NVMe) to the slowest (archive).
+5. **Primary block write** -- The block is written to the assigned primary node and drive for that tier, as determined by the tier's distribution map.
+6. **Redundancy copy write** -- One or more copies of the block are simultaneously written to different nodes (the redundancy targets from the distribution map). Under the default RF2 configuration, one redundancy copy is written. Under RF3 (N+2), two redundancy copies are written to two separate nodes, protecting against two concurrent node failures. See [vSAN Redundancy Levels](/product-guide/storage/vsan-redundancy-levels) for details.
+7. **Journal entry** -- The write is recorded in a transactional journal that enables crash-consistent recovery. The journal tracks in-progress transactions, so if a node restarts unexpectedly, the vSAN can recover to a consistent state without a lengthy repair scan.
+8. **Acknowledgment** -- Once all required copies (primary and redundancy) are confirmed written, the write is acknowledged back to the application.
 
-- **Cluster Expansion**:
-    - Linear scalability
-    - Option to create new clusters if matching nodes unavailable
-    - Each new cluster requires minimum of two matching nodes
-    - Resource optimization
-    - Performance maintenance
-    - Balanced distribution
+``` mermaid
+graph TD
+    A[Data Arrives] --> B[Compute Block Hash]
+    B --> C{Block Already Exists?}
+    C -->|Yes| D[Increment Reference Count]
+    C -->|No| E[Select Target Tier]
+    E --> F[Write Primary Block]
+    F --> G[Write Redundancy Copies]
+    G --> H[Record Journal Entry]
+    D --> I[Acknowledge Write]
+    H --> I
+```
 
-### Vertical Scaling (Scaling Up)
+!!! note "Write Consistency"
+    All required copies must be confirmed before a write is acknowledged. This guarantees that your data is protected against node failure from the moment the write completes.
 
-- **Resource Enhancement**:
-    - Storage capacity increase:
-        - Requires equal drive additions across all cluster nodes
-        - Maintains balanced storage distribution
-    - Memory expansion:
-        - Requires maintenance mode before power off
-        - Ensures graceful workload migration
-    - Performance improvement
-    - Capability expansion
-    - Efficiency optimization
+---
 
-!!! note "Important"
-    Consult with our [support](/support) team to determine the optimal expansion strategy for your specific environment.
+## Read Path
+
+The vSAN optimizes reads for the lowest possible latency:
+
+1. **Hash lookup** -- The vSAN resolves the requested file offset to a block hash using its multi-level hash tree index.
+2. **Cache check** -- The system first checks the local read cache (an in-memory cache allocated per node). If the block is cached, it is returned immediately without any disk or network I/O.
+3. **Locality-aware source selection** -- If the block is not cached, the vSAN determines the best source:
+      - **Local primary copy** -- If the primary copy resides on the same node as the requesting workload, it is read directly from the local drive (fastest path).
+      - **Local redundancy copy** -- If the redundancy copy is local, it can be used instead, avoiding network traffic.
+      - **Remote primary copy** -- If neither copy is local, the block is fetched from the primary node over the core network fabric.
+4. **Automatic failover** -- If the primary copy's node is slow or unresponsive, the vSAN transparently falls back to the redundancy copy with no application-level interruption.
+5. **Cache population** -- Retrieved blocks are added to the local read cache for future access, improving performance for repeated reads.
+
+``` mermaid
+graph TD
+    A[Read Request] --> B[Hash Lookup]
+    B --> C{Block in Cache?}
+    C -->|Yes| D[Serve from Cache]
+    C -->|No| E{Local Copy Available?}
+    E -->|Yes| F[Read from Local Drive]
+    E -->|No| G[Fetch from Remote Node]
+    F --> H[Populate Cache]
+    G --> H
+    H --> I[Return Data]
+    D --> I
+```
+
+!!! tip "Read Cache Sizing"
+    The read cache size is configured per node during installation. For workloads with high read locality (such as databases or frequently accessed VM images), a larger cache can significantly reduce cross-node network traffic.
+
+---
+
+## vSAN Master Node
+
+The vSAN designates one node in the cluster as the **master node**. The master coordinates key cluster-wide storage operations:
+
+- **Write transaction coordination** -- All write transactions across the cluster are coordinated through the master node to maintain consistency.
+- **Redundancy verification** -- The master continuously walks each storage tier, verifying that every data block has the required number of copies and initiating repairs when needed.
+- **Tier device map management** -- The master maintains the distribution maps that determine which nodes and drives are responsible for each block range.
+
+### Master Node Failover
+
+If the current master node goes offline (due to maintenance, a restart, or an unexpected failure), the vSAN automatically promotes another node to the master role:
+
+- **Automatic promotion** -- A surviving node takes over master responsibilities without administrator intervention.
+- **Graceful handoff during maintenance** -- When the master node is shut down gracefully, the system waits for the application server to fail over and for the storage journal to reach an idle state before completing the shutdown. This ensures a clean transition.
+- **No data loss** -- Because all data blocks are already replicated across multiple nodes, the failover does not require any data movement. The new master simply picks up coordination duties.
+
+!!! info "Operational Impact"
+    Master node failover is transparent to running VMs and applications. You may notice a brief pause in new write transactions during the transition, but existing data remains fully accessible throughout the process.
+
+---
+
+## Network Transport Layer
+
+The vSAN uses a dedicated **core network fabric** for all inter-node storage communication. This is separate from your management and VM traffic networks, ensuring that storage I/O is never contended by other network activity.
+
+### Core Network Characteristics
+
+| Characteristic | Description |
+|---|---|
+| **Dedicated NICs** | The core network uses dedicated network interfaces, isolating storage traffic from management and tenant networks |
+| **Jumbo frames** | The fabric uses large MTU sizes (typically ~9000 bytes) to maximize throughput and reduce per-packet overhead for block transfers |
+| **Low-latency design** | The transport layer is purpose-built for distributed storage, prioritizing low latency and high throughput over general-purpose flexibility |
+| **Time synchronization** | The fabric synchronizes clocks across all nodes, which is critical for transaction ordering and journal consistency |
+
+### How the Fabric Is Used
+
+Every block-level operation that crosses a node boundary travels over the core fabric:
+
+- **Write replication** -- When a block's redundancy copy is placed on a remote node, the data is sent over the core fabric.
+- **Remote reads** -- When a workload needs a block that is not stored locally, the read request is served across the fabric.
+- **Repair traffic** -- When the vSAN detects a missing redundancy copy (for example, after a drive failure), re-replication traffic flows over the core fabric.
+- **Tier migration** -- When data is moved between tiers that span multiple nodes, the fabric carries the migration traffic.
+
+!!! warning "Core Network Planning"
+    The core network is the backbone of vSAN performance. Ensure dedicated, high-bandwidth interfaces are allocated for core traffic and that jumbo frames are enabled on all switches in the core network path. Misconfigured MTU is one of the most common causes of storage performance issues.
 
 ---

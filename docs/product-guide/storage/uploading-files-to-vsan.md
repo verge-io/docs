@@ -1,57 +1,100 @@
-# Uploading Files to the vSAN 
+---
+title: "Uploading Files to the vSAN"
+description: "Upload ISO images, VM disk images, and other files to the VergeOS vSAN from a local computer or web URL, and optionally share them via public download links."
+semantic_keywords:
+  - "upload ISO to vSAN, upload disk image to VergeOS, add files to vSAN storage"
+  - "URL upload, download ISO from URL, import media images"
+  - "public download link, share file from vSAN, file sharing"
+  - "supported file formats, qcow2 vmdk raw vhd iso upload"
+use_cases:
+  - vm_provisioning
+  - storage_management
+  - initial_setup
+tags:
+  - vsan
+  - upload
+  - files
+  - iso
+  - media-images
+  - storage
+  - disk-images
+  - public-links
+categories:
+  - Storage
+  - Virtual Machines
+---
 
-The *Files* section provides for uploading files to the VergeOS vSAN, allowing *.iso files, drive images, VM definition files, etc. to be easily accessible for creating/installing/importing VMs.  
+# Uploading Files to the vSAN
+
+The **Files** section provides for uploading files to the VergeOS vSAN, allowing ISO images, drive images, VM definition files, and other media to be easily accessible for creating, installing, and importing VMs.
+
+!!! info "Supported File Formats"
+    The vSAN accepts the following file types:
+
+    | Category | Formats |
+    |----------|---------|
+    | **VM disk images** | `.raw`, `.qcow2`, `.qcow`, `.qed`, `.vmdk`, `.vdi`, `.vhd`, `.vhdx`, `.img` |
+    | **VM packages** | `.ova`, `.ovf`, `.vmx` |
+    | **Disc images** | `.iso` |
+
+    For large files (over 10 GB), the URL upload method is recommended to avoid browser timeout issues.
 
 !!! note
-    Optionally, files that are uploaded to the *Files* section can be shared via a public link.
+    Optionally, files uploaded to the **Files** section can be shared via a public download link.
 
 ## Upload a File from the Local Computer
 
-1. Select **Files** from the top menu.
+1. From the main dashboard, select **Files** from the top menu.
 2. Select **Upload**.
-3. Click the **Choose Files** button
-4. The File Browser Dialog appears. Browse to the desired folder and select the desired file(s). Holding down the ctrl or shift key allows for multi-selection.
-5. Click the **Open** button
-    - Selected Files, along with size and type are displayed.
+3. Click the **Choose Files** button.
+4. Browse to the desired folder and select the file(s). Multiple files can be selected.
+5. Click the **Open** button.
 6. Click the **Upload** button.
-7. An Upload Progress popup window will appear showing the upload progress. From this window, the upload can be canceled or paused, if needed. When the upload operation is complete, the file(s) will display in green in the Upload Progress popup.
+7. An upload progress popup tracks each file. From this window, you can pause or cancel individual uploads. Completed files display in green.
 
 !!! warning
-    Reloading the browser window will interfere with the file upload.
+    Reloading the browser window will interrupt the file upload.
 
 ## Upload a File from a Web Link (URL)
 
-1. Select **Files** from the top menu.
-2. Select **Upload from URL**
-3. Enter a valid URL (for example: `https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso`)
-4. Enter desired **Name** for the file.
-5. Optionally, a **File Description** can be entered to provide additional information.
-6. Select a **Preferred Tier** or leave the setting at Default.
-7. The **Allow insecure SSL links to be used** option will permit the file download from a site without a valid CA-signed certificate (e.g. missing, invalid, expired, or self-signed certs).
-8. The **Skip header check** option bypasses standard header security validation policies which may improve upload time but may potentially increase data integrity and security risk.  Use with caution.   
-9. Click the **Submit** button
-10. The file will appear in the *Files* listing.
+1. From the main dashboard, select **Files** from the top menu.
+2. Select the **Upload from URL** button.
+3. Enter a valid URL (for example: `https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso`).
+4. Enter a **Name** for the file.
+5. Optionally, enter a **File Description** to provide additional information.
+6. Select a **Preferred Tier** to control which storage tier hosts this file, or leave at **Default** to use the system-configured tier. See [Preferred Tiers](/product-guide/storage/preferred-tiers) for details on tier behavior.
+7. **Allow insecure SSL links** permits downloads from HTTPS servers with invalid, expired, or self-signed certificates. Enable this for internal servers or lab environments that do not have CA-signed certificates. Do not enable for downloads from untrusted sources.
+8. **Skip header check** disables HTTP response header validation during the download. This can resolve issues with servers that return non-standard headers, but skips integrity checks on the downloaded content. Only enable this if the URL upload fails with header validation errors.
+9. Click the **Submit** button.
+10. The file will appear in the **Files** listing.
 
-## Create a Download Link for an uploaded File
+## Create a Download Link for an Uploaded File
 
-1. Select **Files** from the top menu.
-3. Select the desired **File** from the list.
-4. Click **Add Public Link** on the left menu.
-5. Select a **Link Format**
-    - **Anonymous(uuid)** - creates a public download link using a GUID(128-bit number)
-      *ex: `https://verge.example.com/273b5d6a--b205-1e1b-6ae6-01cfa7ed1233`*
-    - **Custom** - creates a public download link using the name entered
-      *ex: `https://verge.example.com/customname`*
-    - **Use File Name (recommended)** - creates a public download link using the original filename
-      *ex: `https://verge.example.com/virtio-win-1.9.6.iso`*
-6. Select **Expiration Type**
-    - **Never Expire (default)** to make the download link perpetual. (Public Link can be manually edited or deleted later if needed.)
-    - **Set Date** to select a specific date/time to cease the download link.
-7. Click **Submit** to save the link.
+1. From the main dashboard, select **Files** from the top menu.
+2. Select the desired **File** from the list.
+3. Click **Add Public Link** on the left menu.
+4. Select a **Link Format**:
+    - **Anonymous (uuid)** -- creates a public download link using a GUID (128-bit number).
+      *Example: `https://verge.example.com/273b5d6a--b205-1e1b-6ae6-01cfa7ed1233`*
+    - **Custom** -- creates a public download link using the name entered.
+      *Example: `https://verge.example.com/customname`*
+    - **Use File Name (recommended)** -- creates a public download link using the original filename.
+      *Example: `https://verge.example.com/virtio-win-1.9.6.iso`*
+5. Select an **Expiration Type**:
+    - **Never Expire (default)** -- the download link remains active indefinitely. It can be manually edited or deleted later.
+    - **Set Date** -- select a specific date and time for the link to expire.
+6. Click **Submit** to save the link.
 
-![Media Images Link Copy](/product-guide/screenshots/mediaimages-link-copy.png)
+![Files list showing download link and copy icon](/product-guide/screenshots/mediaimages-link-copy.png)
 
 The Files list appears. Download options appear on the far right of the given file:
 
 - Click **Link** to directly download the file from the page.
 - Click the **copy icon** to copy the download address to the clipboard.
+
+## Related Pages
+
+- [Preferred Tiers](/product-guide/storage/preferred-tiers) -- control which storage tier hosts specific files and workloads.
+- [Importing VMs from Uploaded Media Images](/product-guide/virtual-machines/import-from-upload) -- use uploaded disk images to create VMs.
+- [Virtual Machine Drives](/product-guide/virtual-machines/vm-drives) -- attach uploaded disk images and ISOs to VMs.
+- [Removing ISO References](/product-guide/storage/removing-iso-refs) -- detach ISO files from VMs before deletion.

@@ -1,196 +1,157 @@
-# VergeOS vSAN Deletion Process
+---
+title: "vSAN Deletion and Storage Reclamation"
+description: "Understand how VergeOS reclaims storage when VMs, drives, files, NAS volumes, and tenants are deleted, including reference counting, deduplication, garbage collection, and reclamation timing."
+semantic_keywords:
+  - "vSAN deletion process, storage reclamation, garbage collection"
+  - "reference counting, block deduplication, vSAN walk cleanup"
+  - "delete VM storage, tenant deletion storage, free disk space after delete"
+  - "slow reclamation troubleshooting, snapshot preventing space free"
+use_cases:
+  - storage_management
+  - capacity_planning
+  - troubleshooting
+  - tenant_management
+  - administration
+tags:
+  - vsan
+  - storage
+  - deletion
+  - garbage-collection
+  - reclamation
+  - reference-counting
+  - deduplication
+  - snapshots
+  - tenants
+categories:
+  - Storage
+---
 
-## Block-Level Architecture Foundation
+# vSAN Deletion and Storage Reclamation
 
-VergeOS vSAN operates on a **block-level architecture** where:
-
-- VM and Tenant disks are divided into multiple blocks
-- Each block receives a unique cryptographic hash
-- Blocks are distributed across nodes using hash-based algorithms
-- Both primary and redundant copies are maintained
-- **Tenants operate as LXC containers** with their own storage allocations within the parent vSAN
+When you delete a VM, drive, file, NAS volume, or tenant in VergeOS, the underlying storage is not freed instantly. This page explains how the vSAN reclaims space and what factors affect reclamation timing.
 
 ## How Deletion Works
 
-### 1. **Reference Counting System**
+Every deletion in VergeOS -- whether a VM, drive, file, or tenant -- follows the same three-phase process:
 
-When you delete a VM, drive, or tenant in VergeOS:
+### 1. Reference Removal
 
-- The system doesn't immediately delete the actual data blocks
-- Instead, it removes the references to those blocks from the hash map
-- Each block maintains reference counts tracking how many objects use it
-- **Tenant storage follows the same reference counting** as individual VMs, but operates within LXC container boundaries
+The system removes references to the deleted object's data blocks from the vSAN hash map. Each block maintains a **reference count** tracking how many objects use it. Deleting an object decrements the reference count on each of its blocks.
 
-### 2. **Deduplication Impact**
+### 2. Deduplication Evaluation
 
-Since VergeOS uses **block-level deduplication**:
+Because the vSAN uses **block-level deduplication**, multiple objects can share identical blocks. A block is only marked for reclamation when its reference count reaches **zero** -- meaning no VM, drive, file, snapshot, or tenant still references it.
 
-- Multiple VMs may share identical blocks (same hash)
-- **Tenant storage can share blocks with parent system or other tenants**
-- Deleting one VM or tenant only decrements the reference count
-- Blocks are only marked for deletion when reference count reaches zero
+**Example:** If VM-A and VM-B both use an identical Windows base image, deleting VM-A decrements the reference count on shared blocks but frees zero physical space because VM-B still references them.
 
-### 3. **Garbage Collection Process**
+### 3. Garbage Collection (vSAN Walk)
 
-The actual deletion happens through background processes:
+A background process called the **vSAN walk** scans for blocks with zero references and reclaims the physical storage. Walk frequency and progress can be monitored through [vSAN Diagnostics](/product-guide/storage/vsan-diagnostics).
 
-- **vSAN Walk**: The system periodically scans for unreferenced blocks
-- Blocks with zero references are marked for reclamation
-- Physical storage space is then freed and made available
-- **Tenant deletions trigger the same garbage collection** as VM deletions
+!!! note "Immediate vs. Actual Reclamation"
+    The VergeOS UI reports space as freed immediately after deletion, but **physical reclamation happens during background vSAN walk operations**. This is why storage utilization may not decrease right away.
 
-### 4. **Immediate vs. Actual Reclamation**
+!!! warning "Snapshots Prevent Space Reclamation"
+    System snapshots that reference deleted objects keep those blocks alive. Space is only freed after the snapshots containing those references are also deleted or expire. This is the most common cause of unexpectedly slow reclamation.
 
-- **Immediate**: UI shows space as "freed" immediately
-- **Actual**: Physical space reclamation happens during background vSAN operations
+## Deletion by Object Type
 
-!!! note "Storage Reclamation Timing"
-    This is why you might not see storage space decrease immediately after deletion
+Each section below covers what is unique to that object type. The core mechanism (reference removal, deduplication evaluation, garbage collection) described above applies to all of them.
 
-## Drive/VM Deletion
+### VM and Drive Deletion
 
-When you delete a VM or drive:
+- Deleting a VM removes all references from its virtual drives.
+- **VM-level snapshots** are deleted along with the VM.
+- The VM remains in any **system-level snapshots** taken while it existed. Those snapshot references prevent block reclamation until the system snapshots are removed or expire.
 
-1. References are removed from the system
-2. Hash map entries are updated
-3. Background processes handle actual block cleanup
+### File Deletion (ISOs, Disk Images, Media)
 
-#### **Snapshots and Deletion**
+- Files stored on the vSAN (ISOs, imported disk images, Cloud-Init files) follow the same reference counting process.
+- A file **cannot be deleted** while it is still referenced by a VM drive. Remove the drive association first, or use the **Delete Reference** action to clear the association.
+- Directory-type files are deleted recursively.
 
-1. Deleting a VM also deletes its VM snapshots
-2. However, the VM remains in system snapshots taken while it existed
+For more detail on file management, see [Uploading Files to vSAN](/product-guide/storage/uploading-files-to-vsan).
 
-## Tenant Deletion Scenarios
+### NAS Volume Deletion
 
-### **Complete Tenant Deletion**
+- Deleting a NAS volume removes references for all files and directories within the volume.
+- NAS volumes that are shared via CIFS or NFS should have active connections terminated before deletion.
+- As with other deletions, blocks shared with other volumes or snapshots are retained until all references are cleared.
 
-When deleting a Tenant:
+For NAS configuration, see [NAS Overview](/product-guide/nas/overview).
 
-1. All tenant VMs, drives, and metadata references are removed
-2. **Tenant storage tiers** are dereferenced from the parent vSAN
-3. **LXC container filesystem and allocated storage** are cleaned up
-4. Hash map entries for all tenant blocks are updated
-5. Background processes handle block cleanup across all tenant data
+### Tenant Deletion
 
-### **Tenant Storage Tier Deletion**
+Tenants are complete [virtual data centers](/product-guide/tenants/overview) with their own VMs, drives, files, and storage allocations. At the vSAN storage layer, tenant data resides in the same block pool as the parent system, which means deduplication and reference counting operate across tenant boundaries.
 
-When removing a provisioned storage tier from a tenant:
+#### Prerequisites
 
-1. **All data must be migrated off the tier** before removal (VMs, drives, files)
-2. **Tenant storage tier allocation is removed** from the parent vSAN provisioning
-3. **Volume tier throttling controls are released** for that specific tier
-4. Hash map entries for tenant blocks on that tier are updated
-5. Background processes handle block cleanup for the removed tier allocation
+- **Power off** the tenant and its tenant networks before deletion.
+- All tenant nodes must be offline.
+
+#### What Happens During Tenant Deletion
+
+1. All tenant VMs, drives, files, and metadata references are removed.
+2. Tenant storage tier allocations are released back to the parent vSAN.
+3. The standard garbage collection process reclaims unreferenced blocks.
+
+#### Nested Tenants
+
+For tenants hosting sub-tenants, the cleanup process works from the innermost tenant outward. Each level follows the same deletion mechanism.
+
+#### Tenant Restore After Deletion
+
+Restoring a deleted tenant from a system snapshot recreates references to previously deleted blocks. This means storage usage may increase when a tenant is restored, and blocks that were pending garbage collection become active again.
+
+### Tenant Storage Tier Removal
+
+Removing a provisioned storage tier from a tenant (without deleting the tenant itself) requires a different approach:
+
+1. **Migrate all data** off the tier before removal -- VMs, drives, and files must be moved to other tiers.
+2. Remove the tier allocation from the tenant.
+3. Garbage collection reclaims the freed blocks.
 
 !!! warning "Data Migration Required"
     Unlike complete tenant deletion, removing a storage tier requires **manual data migration** to other tiers before the tier can be deprovisioned from the tenant.
 
-## Key Considerations
+## Shared Objects and Cross-Tenant References
 
-### **VM/Drive Deletion Within Tenants**
+- **Files shared between parent and tenant** maintain additional block references. These references must be cleared before those blocks can be reclaimed.
+- **Shared VM snapshots** similarly prevent block cleanup until the shared object is removed from both sides.
 
-When deleting VMs or drives inside a tenant:
+Consider shared objects when estimating reclamation timing.
 
-1. References are removed from tenant's local hash map
-2. **Parent vSAN hash map entries are also updated**
-3. Background processes handle actual block cleanup
+## Reclamation Timing
 
-### **Tenant vs. Parent vSAN Relationship**
+| Scenario | Typical Reclamation Timeframe |
+|----------|-------------------------------|
+| Small VM deletion (few GB, no shared blocks) | Minutes to tens of minutes |
+| Large VM or tenant deletion (hundreds of GB+) | Hours, depending on vSAN walk progress |
+| Deletion with active snapshots referencing data | No reclamation until snapshots expire or are deleted |
 
-- **Tenants operate as LXC containers within the parent vSAN** - they don't have separate vSANs
-- Tenant storage is allocated from parent vSAN tiers through container filesystem layers
-- **Block deduplication works across tenant boundaries** and between containers
-- Parent system manages all physical storage cleanup for tenant containers
+Exact timing depends on cluster size, vSAN load, and the volume of unreferenced blocks. Monitor progress through [vSAN Diagnostics](/product-guide/storage/vsan-diagnostics).
 
-### **Snapshots and Tenant Deletion**
+## Monitoring Reclamation
 
-- Deleting a tenant also deletes its local VM snapshots
-- **Tenant remains in parent system snapshots** taken while it existed
-- **System snapshots can prevent immediate storage reclamation**
-- Tenant can be restored from system snapshots even after deletion
+Track deletion progress through the parent system:
 
-### **Shared Objects and File Sharing**
+- **Storage Dashboard** -- watch overall tier utilization trending downward after deletion.
+- **[vSAN Diagnostics](/product-guide/storage/vsan-diagnostics)** -- monitor vSAN walk status and progress.
+- **System Logs** -- review deletion and cleanup events.
 
-- **Files shared between parent and tenant** may maintain references
-- Shared VM snapshots can prevent complete storage cleanup
-- **Files provided to tenants** create additional block references
-- Consider shared objects when estimating storage reclamation
+## Troubleshooting Slow Reclamation
 
-!!! info "Network Resource Cleanup"
-    When a tenant is deleted, all associated network resources are automatically cleaned up:
-    
-    - **IP addresses** assigned to tenant VMs and networks are released back to the pool
-    - **Network blocks** (subnets) allocated to the tenant are unassigned and returned to available inventory
-    - **Network interfaces** and routing configurations are automatically removed
-    - **DNS entries** and network policies associated with the tenant are cleaned up
-    
-### **Tenant Storage Isolation**
+If storage space is not decreasing after a deletion:
 
-- Each tenant has **dedicated storage volumes** with encryption support within their LXC container
-- **Network and administrative separation** doesn't affect vSAN block sharing between containers
-- Storage isolation is logical through LXC containerization, not physical at the block level
-- **Container filesystem layers** provide tenant separation while sharing underlying blocks
+1. **Check for system snapshots** -- snapshots containing the deleted object prevent reclamation. Review snapshot schedules and expiration policies.
+2. **Check for shared objects** -- files or VM snapshots shared with tenants maintain block references.
+3. **Monitor the vSAN walk** -- use [vSAN Diagnostics](/product-guide/storage/vsan-diagnostics) to confirm the walk is progressing and not stalled.
+4. **Review system logs** -- look for vSAN operation errors that may indicate a problem with the cleanup process.
 
-## Advanced Tenant Deletion Scenarios
+## Related Documentation
 
-### **Nested Tenant Deletion**
-
-For tenants that host their own sub-tenants:
-
-- Sub-tenants operate as **nested LXC containers**
-- Sub-tenant deletion follows same reference counting within container hierarchy
-- **Parent tenant container manages sub-tenant storage cleanup**
-- Multiple layers of containerization and reference counting may apply
-- Cleanup processes work from innermost to outermost container
-
-### **Tenant Restore Impact on Deletion**
-
-- **Restoring deleted tenants from system snapshots** recreates references
-- Previously "deleted" blocks may become active again
-- **Storage usage may increase** when restoring tenants
-- Background cleanup processes adapt to restored references
-
-## Safety Mechanisms
-
-### **Data Integrity During Tenant Deletion**
-
-- The system maintains data integrity during all deletion operations
-- **Redundant copies ensure no data loss** during tenant cleanup
-- Hash validation prevents accidental deletion of referenced blocks
-- **Cross-tenant block sharing is preserved** until all references are removed
-
-### **Tenant Deletion Prerequisites**
-
-- **Tenants and their corresponding Tenant Networks must be powered off** before deletion
-- All tenant nodes must be offline
-- **Cannot delete the original tenant node** while tenant container is active
-- System validates no active references before allowing container deletion
-
-## Monitoring Tenant Storage Deletion
-
-You can monitor the process through:
-
-### **Parent System Monitoring**
-- **Storage dashboard** for overall tier utilization
-- **vSAN diagnostics** for background operation status
-- **System logs** for tenant deletion and cleanup details
-- **Tenant statistics** showing storage consumption trends
-
-### **Tenant-Level Monitoring** (before deletion)
-- **Tenant dashboard** for internal storage usage
-- **Tenant history** for consumption statistics
-- **Internal vSAN statistics** within tenant environment
-
-### **Post-Deletion Verification**
-- **Storage tier utilization** should decrease over time
-- **vSAN walk statistics** show cleanup progress
-- **Reference count verification** through vSAN diagnostics
-
-## Troubleshooting
-
-### **Troubleshooting Slow Reclamation**
-
-- Check for **remaining system snapshots** containing tenant data
-- Verify **shared objects** are properly cleaned up
-- Review **system logs** for vSAN operation errors
-- Use **vSAN diagnostics** to monitor cleanup progress
+- [vSAN Architecture](/product-guide/storage/vsan-architecture)
+- [vSAN Diagnostics](/product-guide/storage/vsan-diagnostics)
+- [Storage Tiers](/product-guide/storage/storage-tiers)
+- [Snapshots Overview](/product-guide/backup-dr/snapshots-overview)
+- [Tenants Overview](/product-guide/tenants/overview)
