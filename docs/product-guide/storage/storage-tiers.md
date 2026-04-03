@@ -28,7 +28,7 @@ categories:
 
 ## Overview
 
-VergeOS vSAN organizes physical drives into up to 6 tiers (0-5), allowing administrators to match data placement to workload performance requirements. Each tier is optimized for different workloads and data types, enabling cost-effective storage management based on performance needs and access patterns.
+VergeOS vSAN organizes physical drives into tiers numbered 0 through 7. Tiers 1-5 are user-facing and available for data placement; Tier 0 is reserved for system metadata; Tiers 6-7 are reserved for custom configurations. Each tier is optimized for different workloads and data types, enabling cost-effective storage management based on performance needs and access patterns.
 
 For vSAN sizing recommendations, see the [Node Sizing Guide](/implementation-guide/sizing). For detailed guidance on estimating capacity needs, snapshot overhead, and deduplication expectations, see [Capacity Planning](/product-guide/storage/capacity-planning).
 
@@ -45,7 +45,7 @@ For vSAN sizing recommendations, see the [Node Sizing Guide](/implementation-gui
 - **Use Case**: System metadata management
 
 !!! danger "Tier 0 Is System-Managed"
-    Tier 0 is **not** a user-selectable storage tier. It is reserved exclusively for vSAN metadata and is managed automatically by the system. Administrators cannot assign volumes, VM drives, or files to Tier 0. Unlike Tiers 1-5, Tier 0 does not appear as a preferred tier option. **Tier 0 exhaustion is catastrophic** -- if the metadata tier runs out of space, all vSAN write operations halt across every tier. Monitor Tier 0 utilization from **System > vSAN > Tiers** and maintain at least 10% free space at all times.
+    Tier 0 is **not** a user-selectable storage tier. It is reserved exclusively for vSAN metadata and is managed automatically by the system. Administrators cannot assign volumes, VM drives, or files to Tier 0. Unlike Tiers 1-5, Tier 0 does not appear as a preferred tier option. **Tier 0 exhaustion is catastrophic** -- if the metadata tier runs out of space, vSAN write operations are throttled across every tier, potentially causing severe performance degradation or write failures. Monitor Tier 0 utilization from **System > vSAN > Tiers** and maintain at least 10% free space at all times.
 
 ### Tier 1: High-Performance Tier
 
@@ -67,15 +67,15 @@ For vSAN sizing recommendations, see the [Node Sizing Guide](/implementation-gui
     - Mixed application workloads
     - Development environments
 
-### Tier 3: Read-Optimized Tier
+### Tier 3: Bulk Storage Tier
 
-- **Hardware**: Read-optimized SSDs
-- **Purpose**: Read-intensive workloads
-- **Characteristics**: Optimized for read operations
+- **Hardware**: High-speed HDDs or SAS drives
+- **Purpose**: Bulk storage and large sequential workloads
+- **Characteristics**: Balanced performance and capacity
 - **Use Cases**:
-    - Content delivery
-    - Application repositories
-    - Reference data
+    - Large file storage
+    - Backup targets
+    - Sequential read/write workloads
 
 ### Tier 4: Capacity Tier
 

@@ -28,14 +28,7 @@ The **Preferred Tier** setting controls which [vSAN storage tier](/product-guide
 
 ## How It Works
 
-When data is written, the vSAN attempts to place it on the preferred tier. If that tier is offline, degraded, or has insufficient free space, the system falls back automatically using the following logic:
-
-1. **Try the preferred tier** (e.g., Tier 4).
-2. **Fall back to the next less expensive tier** (higher-numbered). If Tier 4 is unavailable, try Tier 5.
-3. **Continue to the next less expensive tier** if available.
-4. **If no less expensive tier is available**, fall back to the next more expensive tier (lower-numbered) -- Tier 3, then Tier 2, then Tier 1.
-
-This ensures data is always placed on an available tier, even when the preferred tier cannot accept new writes.
+When data is written, the vSAN attempts to place it on the preferred tier. The preferred tier setting is advisory -- the system honors it when capacity is available on the requested tier. If the preferred tier is unavailable (offline, degraded, or full), the system selects an alternative tier automatically to ensure data is always written successfully.
 
 ![Preferred tier fallback: Tier 4 selected, system falls back to Tier 5, then Tier 3, then Tier 2, then Tier 1](/product-guide/screenshots/preferredtier.png)
 
@@ -73,7 +66,7 @@ To change the tier of an existing file, select the file, click **Edit**, and upd
 
 ### Tenant Storage
 
-When provisioning storage for a tenant, the preferred tier can be set on the tenant's storage allocation. Tenants may also have tier restrictions that limit which tiers they can use. If a tenant requests a tier they are not authorized for, the system rejects the request and falls back to an authorized tier.
+When provisioning storage for a tenant, the preferred tier can be set on the tenant's storage allocation. Tenants may also have tier restrictions that limit which tiers they can use. If a tenant requests a tier they are not authorized for, the system rejects the request.
 
 ## Live Tier Migration
 

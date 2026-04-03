@@ -3,7 +3,7 @@ title: Selecting Storage Hardware for vSAN
 slug: selecting-storage-hardware
 description: Guide to choosing the right storage hardware for VergeOS vSAN deployments, including drive types, tier mapping, endurance planning, and capacity tradeoffs.
 author: VergeOS Documentation Team
-draft: false
+published: true
 date: 2026-04-03T00:00:00Z
 semantic_keywords:
   - "vSAN storage hardware selection, drive recommendations, tier mapping"
@@ -52,7 +52,7 @@ Choosing the right storage hardware is one of the most impactful decisions you w
 
 ## Drive Types and Tier Mapping
 
-The vSAN supports up to six storage tiers (0-5). When you add a physical drive, the system auto-detects the drive type and suggests a tier assignment. You can override this assignment if your deployment strategy requires it.
+The vSAN uses tiers numbered 0 through 7. Tiers 1-5 are user-facing and available for data placement; Tier 0 is reserved for system metadata; Tiers 6-7 are reserved for custom configurations. When you add a physical drive, the system auto-detects the drive type and suggests a tier assignment. You can override this assignment if your deployment strategy requires it.
 
 ### NVMe SSDs
 
@@ -68,19 +68,19 @@ NVMe drives connect directly to the PCIe bus, delivering the lowest latency and 
 
 ### SATA/SAS SSDs
 
-SATA and SAS SSDs offer strong read/write performance at a lower cost per gigabyte than NVMe. They are a good fit for mixed and read-heavy workloads.
+SATA and SAS SSDs offer strong read/write performance at a lower cost per gigabyte than NVMe. They are a good fit for mixed workloads.
 
 | Tier | Role | Drive Recommendation |
 |------|------|---------------------|
 | **Tier 2** | Mixed workloads | Mid-range enterprise SATA/SAS SSD |
-| **Tier 3** | Read-optimized workloads | Read-optimized enterprise SSD |
 
 ### HDDs (Hard Disk Drives)
 
-Rotational drives provide the highest capacity per dollar and are appropriate for data that does not require low-latency access.
+Rotational drives provide the highest capacity per dollar and are appropriate for bulk storage and data that does not require low-latency access.
 
 | Tier | Role | Drive Recommendation |
 |------|------|---------------------|
+| **Tier 3** | Bulk storage | High-speed HDD or SAS drive |
 | **Tier 4** | Capacity / bulk storage | Enterprise SAS or SATA HDD |
 | **Tier 5** | Archive / cold storage | High-capacity archival HDD |
 

@@ -3,7 +3,7 @@ title: vSAN Encryption Information
 slug: vsan-encryption
 description: Overview of VergeOS vSAN at-rest encryption, key management options, and site sync encryption.
 author: VergeOS Documentation Team
-draft: false
+published: true
 date: 2026-04-03T00:00:00Z
 semantic_keywords:
   - "vSAN at-rest encryption, AES-256 drive encryption, data protection"

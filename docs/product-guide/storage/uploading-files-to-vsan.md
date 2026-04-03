@@ -37,7 +37,10 @@ The **Files** section provides for uploading files to the VergeOS vSAN, allowing
     | **VM packages** | `.ova`, `.ovf`, `.vmx` |
     | **Disc images** | `.iso` |
 
-    For large files (over 10 GB), the URL upload method is recommended to avoid browser timeout issues.
+    The maximum individual file size is **256 TiB**. For large files (over 10 GB), the URL upload method is recommended to avoid browser timeout issues.
+
+!!! warning "File Record Limit"
+    The files subsystem supports a maximum of **50,000 file records** per system. When this limit is reached, new file uploads and VM disk image creation will fail until existing file records are removed. Implement lifecycle policies to remove obsolete VM images and ISOs.
 
 !!! note
     Optionally, files uploaded to the **Files** section can be shared via a public download link.
@@ -64,7 +67,7 @@ The **Files** section provides for uploading files to the VergeOS vSAN, allowing
 5. Optionally, enter a **File Description** to provide additional information.
 6. Select a **Preferred Tier** to control which storage tier hosts this file, or leave at **Default** to use the system-configured tier. See [Preferred Tiers](/product-guide/storage/preferred-tiers) for details on tier behavior.
 7. **Allow insecure SSL links** permits downloads from HTTPS servers with invalid, expired, or self-signed certificates. Enable this for internal servers or lab environments that do not have CA-signed certificates. Do not enable for downloads from untrusted sources.
-8. **Skip header check** disables HTTP response header validation during the download. This can resolve issues with servers that return non-standard headers, but skips integrity checks on the downloaded content. Only enable this if the URL upload fails with header validation errors.
+8. **Skip header check** skips the HTTP HEAD pre-flight validation that checks content type and size before downloading. Enable this if the remote server does not support HEAD requests or returns non-standard headers that cause the upload to fail. This does not affect the integrity of the downloaded file itself.
 9. Click the **Submit** button.
 10. The file will appear in the **Files** listing.
 
@@ -84,6 +87,9 @@ The **Files** section provides for uploading files to the VergeOS vSAN, allowing
     - **Never Expire (default)** -- the download link remains active indefinitely. It can be manually edited or deleted later.
     - **Set Date** -- select a specific date and time for the link to expire.
 6. Click **Submit** to save the link.
+
+!!! note "Link Names Are Permanent"
+    Once a public link is created, its name (URL path) cannot be changed. To use a different link name, delete the existing link and create a new one.
 
 ![Files list showing download link and copy icon](/product-guide/screenshots/mediaimages-link-copy.png)
 

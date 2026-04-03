@@ -3,7 +3,7 @@ title: vSAN Performance Tuning
 slug: vsan-performance-tuning
 description: Guide to optimizing vSAN storage performance through tier selection, cache tuning, and workload placement.
 author: VergeOS Documentation Team
-draft: false
+published: true
 date: 2026-04-03T00:00:00Z
 semantic_keywords:
   - "vSAN performance optimization, storage tuning, I/O bottleneck resolution"

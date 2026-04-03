@@ -82,7 +82,7 @@ Not every deployment needs all five tiers. Many environments run with just two (
 !!! danger "Tier 0 Exhaustion is Catastrophic"
     Tier 0 stores critical metadata for the entire vSAN, including block maps and volume structures. If Tier 0 runs out of space, **the entire vSAN is affected** -- not just one workload or tier. New writes across all tiers will fail until Tier 0 capacity is restored.
 
-Tier 0 is backed by the same drives as Tier 1 (typically NVMe or fast SSD) but serves a distinct purpose. As a sizing rule of thumb, allocate **5--10 GB of Tier 0 capacity per 1 TB of total usable capacity** across all tiers. Monitor Tier 0 usage alongside your user-facing tiers, especially as overall data volume grows.
+Tier 0 is a dedicated system tier backed by the fastest available local storage (typically NVMe or fast SSD). As a sizing rule of thumb, allocate **5--10 GB of Tier 0 capacity per 1 TB of total usable capacity** across all tiers. Monitor Tier 0 usage alongside your user-facing tiers, especially as overall data volume grows.
 
 **Where to check:** Navigate to the main dashboard and click the **vSAN Tiers** count box, then review Tier 0 usage. You can also use **System > vSAN Diagnostics > Get Tier Status** for detailed utilization.
 
