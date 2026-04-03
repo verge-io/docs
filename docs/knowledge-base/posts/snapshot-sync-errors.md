@@ -1,9 +1,20 @@
 ---
 title: Snapshot Synchronization Errors Explained
 slug: snapshot-synchronization-errors-explained
-description: 
+description: Reference guide explaining common VergeOS site sync error messages, their causes, and recommended resolutions for snapshot synchronization issues.
+author: VergeOS Documentation Team
 draft: false
 date: 2023-01-24T19:17:04.187Z
+semantic_keywords:
+  - "snapshot sync error messages"
+  - "site sync troubleshooting connection timeout"
+  - "sync-back configuration errors"
+  - "CBT changed block tracking sync failures"
+use_cases:
+  - "troubleshoot_snapshot_sync_errors"
+  - "diagnose_site_sync_failures"
+  - "resolve_sync_back_configuration_issues"
+  - "fix_snapshot_naming_conflicts"
 tags:
   - snapshot
   - error

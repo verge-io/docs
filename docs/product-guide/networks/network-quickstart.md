@@ -1,3 +1,25 @@
+---
+title: "Quick Start Links"
+description: "Quick reference links to common VergeOS networking tasks including connecting to LANs, creating internal networks, configuring DHCP, assigning external IPs, and setting up NAT."
+semantic_keywords:
+  - "VergeOS networking quick start common tasks"
+  - "quick links network configuration guides"
+  - "get started VergeOS networking setup"
+  - "common network tasks DHCP NAT external IP"
+use_cases:
+  - find_common_networking_guides_quickly
+  - get_started_with_vergeos_networking
+  - navigate_to_network_configuration_tasks
+tags:
+  - networking
+  - quick-start
+  - getting-started
+  - reference
+  - configuration
+categories:
+  - Networking
+---
+
 # Quick Start Links
 
 ### [Connect VergeOS to your Existing LAN/WAN](/product-guide/networks/connect-lan-wan)

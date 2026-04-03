@@ -1,3 +1,32 @@
+---
+title: "Users and Groups"
+description: "How to create and manage users and groups in VergeOS, including user types, password policies, two-factor authentication, SSH keys, physical access, and group membership."
+semantic_keywords:
+  - "VergeOS user account creation management"
+  - "user types normal API VDI groups"
+  - "two-factor authentication password complexity"
+  - "SSH keys physical access console"
+  - "group membership permissions administration"
+use_cases:
+  - create_new_user_account
+  - create_user_group
+  - add_members_to_group
+  - configure_two_factor_authentication
+  - manage_ssh_keys_for_user
+  - set_user_type_and_permissions
+tags:
+  - users
+  - groups
+  - authentication
+  - two-factor-authentication
+  - ssh
+  - security
+  - access-control
+  - vdi
+categories:
+  - System Administration
+---
+
 # Users and Groups
 
 ## Users

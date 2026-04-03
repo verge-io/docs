@@ -1,9 +1,20 @@
 ---
 title: Utilizing an iGPU for AI Acceleration
 slug: using-igpu-ai-acceleration
-description: Instructions for configuring an iGPU (integrated GPU) for AI acceleration
+description: Instructions for configuring an iGPU (integrated GPU) for AI acceleration in VergeOS, including resource group setup and model assignment.
+author: VergeOS Documentation Team
 draft: false
 date: 2025-12-04T12:39:06.743Z
+semantic_keywords:
+  - "igpu integrated gpu ai acceleration inference"
+  - "resource group host gpu pci passthrough"
+  - "private ai model gpu assignment"
+  - "igpu configuration maintenance mode driver reload"
+use_cases:
+  - igpu_ai_acceleration_setup
+  - resource_group_gpu_configuration
+  - private_ai_model_gpu_assignment
+  - multi_node_igpu_pooling
 tags:
   - ai
   - private ai

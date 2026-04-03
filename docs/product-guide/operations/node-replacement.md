@@ -1,8 +1,27 @@
 ---
 title: "Replacing a Node Using the ISO Installer"
 description: "How to replace a physical VergeOS node by moving drives to new hardware and using the ISO installer's Replace Node option."
-tags: [nodes, installation, hardware, maintenance, cluster]
-categories: [System Administration, Operations]
+semantic_keywords:
+  - "replace failed node VergeOS ISO installer"
+  - "move drives to new server chassis node replacement"
+  - "VergeOS Replace Node option installer menu"
+  - "decommission end-of-life node hardware swap"
+  - "rejoin replacement node to cluster verify health"
+use_cases:
+  - replace_failed_node_hardware
+  - decommission_end_of_life_node
+  - boot_iso_installer_replace_node
+  - verify_replacement_node_health
+  - migrate_workloads_during_replacement
+tags:
+  - nodes
+  - installation
+  - hardware
+  - maintenance
+  - cluster
+categories:
+  - System Administration
+  - Operations
 ---
 
 # Replacing a Node Using the ISO Installer

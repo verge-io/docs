@@ -1,9 +1,19 @@
 ---
 title: Identifying a Failed Disk Drive
 slug: identifying-a-failed-disk-drive
-description: Learn how to identify and locate a failed disk drive in your VergeOS environment using diagnostic tools.
+description: Learn how to identify and locate a failed disk drive in your VergeOS environment using the LED control diagnostic tool for physical drive location.
+author: VergeOS Documentation Team
 draft: false
 date: 2023-01-24T19:14:51.610Z
+semantic_keywords:
+  - "failed disk drive LED identification"
+  - "vsan drive diagnostics LED control"
+  - "physically locate failed drive server"
+  - "disk replacement troubleshooting"
+use_cases:
+  - identify_failed_disk_drive
+  - physically_locate_drive_with_led
+  - prepare_for_drive_replacement
 tags:
   - disk
   - failed

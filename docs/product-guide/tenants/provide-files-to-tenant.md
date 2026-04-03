@@ -1,3 +1,25 @@
+---
+title: "Providing Files to a Tenant"
+description: "How to share files from the parent vSAN with a tenant, including ISO images, VM disk images, and other uploaded files."
+semantic_keywords:
+  - "provide share files with tenant VergeOS"
+  - "tenant file sharing ISO images vSAN"
+  - "transfer files to tenant virtual data center"
+  - "make files available to tenant environment"
+use_cases:
+  - "share_files_with_tenant"
+  - "provide_iso_to_tenant"
+  - "distribute_vm_images_to_tenant"
+tags:
+  - tenants
+  - files
+  - vsan
+  - file-sharing
+  - iso
+categories:
+  - Tenants
+---
+
 # Providing Files to a Tenant
 
 A service provider can provide files, that are uploaded to the vSAN, to a tenant. For help in the initial upload of files to the parent vSAN, see: [**Uploading Files to the vSAN**](/product-guide/storage/uploading-files-to-vsan)

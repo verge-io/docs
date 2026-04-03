@@ -1,3 +1,28 @@
+---
+title: "VPN"
+description: "Overview of VergeOS VPN capabilities including WireGuard and IPsec for secure site-to-site connections and remote user access."
+semantic_keywords:
+  - "VPN site-to-site secure tunnel connection"
+  - "WireGuard IPsec remote user access"
+  - "VergeOS VPN branch office connectivity"
+  - "third-party IPsec peer Cisco pfSense"
+use_cases:
+  - site_to_site_vpn
+  - remote_user_access
+  - third_party_ipsec_connection
+  - branch_office_connectivity
+tags:
+  - vpn
+  - wireguard
+  - ipsec
+  - site-to-site
+  - remote-access
+  - networking
+  - security
+categories:
+  - VPN
+---
+
 # VPN
 
 VPN provides a secure communications tunnel over a public network for remote user access and site-to-site connections (e.g. branch offices that need to collaborate and share resources) VergeOS software provides WireGuard and IPsec functionality for VPN connectivity.

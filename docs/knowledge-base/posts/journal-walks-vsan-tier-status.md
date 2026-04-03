@@ -1,13 +1,25 @@
 ---
 title: Understanding vSAN Tier Status/Journal Walks
 slug: understanding-journal-walks-and-vsan-tier-status
-description: Understanding status metrics provided on the vSAN Tier Dashboard
+description: Understanding vSAN Tier Dashboard status metrics including Journal Walk types, progress tracking, redundancy checks, and repair counts for storage integrity monitoring.
 author: VergeOS Documentation Team
 draft: false
 date: 2025-07-01T14:20:54.833Z
+semantic_keywords:
+  - "vsan journal walk status progress"
+  - "tier dashboard redundancy repairs"
+  - "full partial mixed walk types"
+  - "storage integrity verification monitoring"
+  - "walk time optimization controller memory"
+use_cases:
+  - monitor_vsan_tier_health
+  - troubleshoot_journal_walk_issues
+  - understand_walk_types_and_progress
+  - optimize_walk_performance
+  - plan_maintenance_windows
 tags:
   - storage
-  - vSAN
+  - vsan
   - tiers
 categories:
   - Storage

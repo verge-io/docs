@@ -1,3 +1,33 @@
+---
+title: "AI Configuration"
+description: "Step-by-step guide for configuring AI models, assistants, and workspace files in VergeOS Private AI, including resource allocation, system prompts, and troubleshooting."
+semantic_keywords:
+  - "configure AI model install GGUF curated models"
+  - "create AI assistant system prompt temperature settings"
+  - "upload workspace files RAG context knowledge base"
+  - "GPU resource group CPU cores RAM allocation"
+  - "AI model troubleshooting performance tuning"
+use_cases:
+  - install_ai_model
+  - configure_ai_assistant
+  - upload_workspace_files
+  - allocate_gpu_resources
+  - tune_model_performance
+  - troubleshoot_ai_issues
+tags:
+  - private-ai
+  - configuration
+  - models
+  - assistants
+  - gpu
+  - gguf
+  - workspace
+  - system-prompt
+  - resource-allocation
+categories:
+  - Private AI
+---
+
 # AI Configuration
 
 ## Using AI - General Steps

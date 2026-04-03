@@ -1,18 +1,28 @@
 ---
 title: How to Create an External Network
 slug: create-external-network
-description: How to Create an External Network
+description: Step-by-step guide to creating an external network in VergeOS with VLAN, static IP, and default routing rule configuration.
+author: VergeOS Documentation Team
 draft: false
 date: 2024-10-20T12:00:00.000Z
+semantic_keywords:
+  - "create external network vergeos vlan static ip"
+  - "configure wan network routing rules gateway"
+  - "external network setup vlan id interface"
+  - "default route rule outgoing gateway configuration"
+use_cases:
+  - create_external_network_vlan
+  - configure_static_ip_external_network
+  - add_default_routing_rule
 tags:
   - network
-  - VLAN
+  - vlan
   - network setup
   - external routing
   - gateway
-  - static IP
+  - static ip
   - routing rules
-  - WAN
+  - wan
   - network management
 categories:
   - Network

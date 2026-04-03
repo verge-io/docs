@@ -1,3 +1,27 @@
+---
+title: "Increasing a Tenant's Resources"
+description: "Instructions for adding compute and storage resources to a tenant, including scaling existing tenant nodes, adding new nodes, and provisioning additional storage tiers."
+semantic_keywords:
+  - "increase tenant resources cores RAM storage"
+  - "add tenant node scale compute resources"
+  - "provision additional storage tier to tenant"
+  - "tenant resource planning node sizing"
+use_cases:
+  - "add_compute_resources_to_tenant"
+  - "add_tenant_node"
+  - "provision_tenant_storage"
+  - "scale_tenant_resources"
+tags:
+  - tenants
+  - resources
+  - scaling
+  - tenant-nodes
+  - storage
+  - provisioning
+categories:
+  - Tenants
+---
+
 # Increasing a Tenant's Resources
 
 ## Tenant Node Planning

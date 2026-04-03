@@ -1,3 +1,28 @@
+---
+title: "VDI User Instructions"
+description: "End-user guide for accessing virtual desktops via the VDI dashboard, using the VM console, changing passwords, and managing two-factor authentication."
+semantic_keywords:
+  - "VDI user how to access virtual desktop"
+  - "use VM console from VDI dashboard"
+  - "change password two-factor authentication VDI"
+  - "VDI favorites and message center"
+use_cases:
+  - access_virtual_desktop
+  - use_vm_console
+  - change_vdi_password
+  - configure_two_factor_authentication
+tags:
+  - vdi
+  - virtual-desktops
+  - user-guide
+  - console
+  - authentication
+  - password
+  - virtual-machines
+categories:
+  - Virtual Machines
+  - VDI
+---
 
 # VDI User Instructions
 

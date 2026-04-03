@@ -1,9 +1,20 @@
 ---
 title: Database Best Practices
 slug: database-best-practices
-description: Best practices for optimizing database performance on Microsoft Windows in VergeOS.
+description: Best practices for optimizing database performance on Microsoft Windows in VergeOS, covering backup location, defrag, Defender exclusions, core allocation, and VirtIO drivers.
+author: VergeOS Documentation Team
 draft: false
 date: 2023-04-21T13:37:38.002Z
+semantic_keywords:
+  - "database performance optimization Windows VM"
+  - "SQL Server best practices virtual environment"
+  - "disable defrag Defender fsync database VM"
+  - "core allocation NUMA memory database"
+use_cases:
+  - optimize_database_vm_performance
+  - configure_windows_for_database_workloads
+  - tune_disk_io_for_sql_server
+  - allocate_cpu_memory_for_database_vm
 tags:
   - sql
   - best practice

@@ -1,3 +1,32 @@
+---
+title: "WireGuard"
+description: "Guide for configuring WireGuard VPN in VergeOS, including interface creation, peer definitions, auto-generated configurations, and firewall rule setup for site-to-site and remote access."
+semantic_keywords:
+  - "WireGuard VPN interface configuration VergeOS"
+  - "create WireGuard peer public key allowed IPs"
+  - "site-to-site VPN remote user access setup"
+  - "auto-generate peer configuration file download"
+  - "WireGuard firewall rules NAT routing"
+use_cases:
+  - create_wireguard_interface
+  - configure_wireguard_peer
+  - setup_site_to_site_vpn
+  - setup_remote_user_access
+  - auto_generate_peer_config
+  - apply_vpn_firewall_rules
+tags:
+  - vpn
+  - wireguard
+  - site-to-site
+  - remote-access
+  - peer
+  - encryption
+  - firewall
+  - networking
+categories:
+  - VPN
+---
+
 # WireGuard
 
 WireGuard is a modern, open-source VPN software and tunnel protocol that provides fast communication, utilizing state-of-the-art cryptography. WireGuard has been integrated into VergeOS for the implementation of secure tunnels with minimal setup effort. These secure tunnels can be used for both remote user access and site-to-site connectivity. The following outlines the fundamental components of setup; for detailed reference examples, see [**WireGuard Examples**](/product-guide/vpn/wireguard-examples)

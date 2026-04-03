@@ -1,9 +1,18 @@
 ---
 title: Exporting a Virtual Machine
 slug: exporting-a-virtual-machine
-description: Learn how to export a virtual machine from VergeOS and download its disk as a .raw file.
+description: Learn how to export a virtual machine from VergeOS and download its disk as a .raw file for use in other hypervisor environments.
+author: VergeOS Documentation Team
 draft: false
 date: 2023-01-24T19:22:21.109Z
+semantic_keywords:
+  - "export virtual machine raw disk download"
+  - "vm disk image conversion hypervisor"
+  - "vergeos vm export backup"
+use_cases:
+  - export_vm_disk_as_raw
+  - migrate_vm_to_another_hypervisor
+  - download_vm_disk_image
 tags:
   - vm
   - export

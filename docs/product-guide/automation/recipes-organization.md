@@ -1,3 +1,30 @@
+---
+title: "Recipe Organization"
+description: "How to organize recipes using repositories and catalogs in VergeOS, including instructions for sharing recipes with tenants and remote systems."
+semantic_keywords:
+  - "organize recipes with repositories and catalogs"
+  - "share VergeOS recipes between tenants and systems"
+  - "marketplace repository and local catalog setup"
+  - "remote repository recipe sharing configuration"
+use_cases:
+  - organize_recipes_into_catalogs
+  - create_local_repositories
+  - share_recipes_with_tenants
+  - connect_remote_repositories
+  - manage_recipe_access_permissions
+tags:
+  - recipe
+  - repository
+  - catalog
+  - sharing
+  - tenant
+  - remote
+  - marketplace
+  - access control
+categories:
+  - Automation
+---
+
 # Recipe Organization
 
 This page discusses repositories and catalogs, the containers used to organize tenant and VM recipes.  Instructions for sharing recipes are also included.  

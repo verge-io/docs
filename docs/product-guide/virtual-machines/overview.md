@@ -1,3 +1,30 @@
+---
+title: "Virtual Machine Management (VergeHV)"
+description: "Overview of VergeOS virtual machine management capabilities powered by the VergeHV hypervisor, covering enterprise-grade compute, storage, networking, and automation features."
+semantic_keywords:
+  - "VergeOS virtual machine management overview"
+  - "VergeHV hypervisor KVM enterprise features"
+  - "getting started with VergeOS VMs"
+  - "server consolidation virtualization platform"
+  - "hyperconverged VM management compute storage networking"
+use_cases:
+  - evaluate_vergeos_vm_capabilities
+  - plan_vm_deployment_strategy
+  - onboard_new_vergeos_administrator
+  - server_consolidation_planning
+tags:
+  - virtual-machines
+  - overview
+  - vergehv
+  - hypervisor
+  - kvm
+  - getting-started
+  - architecture
+  - high-availability
+categories:
+  - Virtual Machines
+---
+
 # Virtual Machine Management (VergeHV)
 
 VergeHV is the integrated hypervisor at the heart of VergeOS, providing enterprise-grade virtual machine management through a unified platform that converges compute, storage, and networking. Built on proven KVM technology and designed as a Type-1 hypervisor, VergeHV delivers near bare-metal performance while simplifying infrastructure management through a single, comprehensive interface.

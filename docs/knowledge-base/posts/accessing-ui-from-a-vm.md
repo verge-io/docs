@@ -1,18 +1,27 @@
 ---
 title: Accessing the VergeOS UI from a VM
 slug: accessing-the-ui-from-a-vm
-description: Learn how to set up hair-pinning to access the VergeOS UI from a virtual machine within your environment.
-author: vergeOS Documentation Team
+description: Learn how to set up hair-pinning to access the VergeOS UI from a virtual machine within your environment using a translate network rule.
+author: VergeOS Documentation Team
 draft: false
 date: 2023-01-24T19:21:32.815Z
+semantic_keywords:
+  - "hairpin network rule vergeos ui vm access"
+  - "translate rule internal network ui browser"
+  - "access vergeos dashboard from virtual machine"
+  - "hair-pinning network configuration vm"
+use_cases:
+  - access_ui_from_vm_hairpin
+  - create_translate_rule_for_ui
+  - configure_internal_network_hairpin
 tags:
-  - [vm
+  - vm
   - access
   - ui
   - hairpin
   - hair-pin
   - hairpinning
-  - hair-pinning]
+  - hair-pinning
 categories:
   - Network Rules
   - Network

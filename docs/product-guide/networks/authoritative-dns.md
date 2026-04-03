@@ -1,3 +1,33 @@
+---
+title: "VergeOS Authoritative DNS"
+description: "Comprehensive guide to VergeOS authoritative DNS service built on BIND, covering zone management, DNS views, split-horizon configurations, zone transfers, and security best practices."
+semantic_keywords:
+  - "authoritative DNS server BIND VergeOS"
+  - "DNS zone management split-horizon configuration"
+  - "DNS views recursion access control"
+  - "zone transfer primary secondary DNS redundancy"
+  - "host domain name resolution VergeOS network"
+use_cases:
+  - host_authoritative_dns_zones
+  - configure_split_horizon_dns
+  - manage_dns_views_and_access_control
+  - setup_zone_transfers_for_redundancy
+  - implement_corporate_dns_infrastructure
+  - provide_dns_services_to_tenants
+tags:
+  - networking
+  - dns
+  - bind
+  - authoritative-dns
+  - zone-management
+  - split-horizon
+  - dns-views
+  - zone-transfer
+  - security
+categories:
+  - Networking
+---
+
 # VergeOS Authoritative DNS
 
 ## Overview

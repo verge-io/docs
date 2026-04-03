@@ -1,3 +1,34 @@
+---
+title: "26.1 Release Notes"
+description: "Release notes for VergeOS 26.1, introducing partial snapshots with tag-based filtering, oVirt API compatibility for third-party backups, N+2 (RF3) vSAN redundancy, and significant disk repair and sync performance improvements."
+semantic_keywords:
+  - "VergeOS 26.1 release notes new features"
+  - "VergeOS partial snapshots tag-based backup"
+  - "VergeOS oVirt API backup integration"
+  - "VergeOS N+2 RF3 vSAN redundancy"
+  - "VergeOS 26.1 performance improvements and bug fixes"
+use_cases:
+  - review_26_1_new_features
+  - plan_upgrade_to_26_1
+  - configure_partial_snapshots
+  - integrate_ovirt_backup_tools
+  - enable_rf3_redundancy
+  - check_26_1_bug_fixes
+tags:
+  - release-notes
+  - vergeos-26
+  - partial-snapshots
+  - ovirt-api
+  - rf3-redundancy
+  - vsan
+  - performance
+  - ssl-tls
+  - vgpu
+  - site-syncs
+categories:
+  - Release Notes
+---
+
 # 26.1 Release Notes
 
 !!! info "Release Information"

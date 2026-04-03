@@ -1,3 +1,29 @@
+---
+title: "Creating Bootable Installation Media"
+description: "Step-by-step instructions for creating a bootable USB drive with the VergeOS ISO on Windows, macOS, and Linux using Rufus, BalenaEtcher, or native tools."
+semantic_keywords:
+  - "create bootable USB VergeOS ISO"
+  - "Rufus DD mode VergeOS installation USB"
+  - "BalenaEtcher macOS VergeOS boot drive"
+  - "Linux bootable USB stick VergeOS installer"
+use_cases:
+  - create_install_media
+  - usb_boot_drive_preparation
+  - iso_to_usb_conversion
+tags:
+  - installation-media
+  - usb
+  - iso
+  - rufus
+  - balenaetcher
+  - bootable
+  - windows
+  - macos
+  - linux
+categories:
+  - Installation
+---
+
 # Creating Bootable Installation Media
 
 This guide explains how to create a bootable USB to install VergeOS on different operating systems.

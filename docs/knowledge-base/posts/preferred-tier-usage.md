@@ -1,9 +1,19 @@
 ---
 title: Preferred Tier Usage
 slug: preferred-tier-usage
-description: 
+description: Explains how VergeOS determines which vSAN storage tier to use when a VM disk's preferred tier is set to a non-existent tier, including fallback behavior.
+author: VergeOS Documentation Team
 draft: false
 date: 2023-01-24T19:25:57.114Z
+semantic_keywords:
+  - "preferred tier fallback behavior"
+  - "vm disk storage tier selection"
+  - "non-existent tier default assignment"
+  - "vsan tier configuration settings"
+use_cases:
+  - understand_preferred_tier_behavior
+  - configure_vm_disk_storage_tier
+  - troubleshoot_tier_assignment
 tags:
   - tier
   - preferred tier

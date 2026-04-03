@@ -1,3 +1,29 @@
+---
+title: "Importing VMs from Uploaded Media Images"
+description: "Guide to importing virtual machines by uploading disk image and configuration files (VMX, VMDK, OVF, VHD, QCOW) to the vSAN for individual VM import."
+semantic_keywords:
+  - "import VM from uploaded VMDK VHD OVF file"
+  - "upload disk image to vSAN and create VM"
+  - "import Hyper-V VM into VergeOS"
+  - "create VM shell and import disk images"
+use_cases:
+  - import_vm_from_uploaded_files
+  - create_vm_shell_import_disks
+  - migrate_single_vm_from_disk_image
+tags:
+  - virtual-machines
+  - import
+  - migration
+  - vmdk
+  - ovf
+  - vhd
+  - qcow
+  - media-images
+  - vsan
+categories:
+  - Virtual Machines
+---
+
 # Importing VMs from Uploaded Media Images
 
 Importing via Media Images is a convenient way to import a single VM at a time. VM Data files, such as VMX, VMDK, OVF, VHD(X) are uploaded to the vSAN and then selected for import.

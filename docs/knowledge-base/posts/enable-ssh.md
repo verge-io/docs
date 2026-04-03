@@ -1,9 +1,20 @@
 ---
 title: Enabling System SSH Access
 slug: enabling-system-ssh
-description: Instructions for enabling SSH access to a System
+description: Instructions for temporarily enabling SSH access to a VergeOS system by configuring core and external network rules with source-controlled access restrictions.
+author: VergeOS Documentation Team
 draft: false
 date: 2025-02-17T19:25:40.109Z
+semantic_keywords:
+  - "enable SSH access VergeOS system"
+  - "core external network rule SSH"
+  - "source-controlled SSH security access"
+  - "temporary SSH hardware diagnostics"
+use_cases:
+  - enable_ssh_access_temporarily
+  - configure_ssh_network_rules
+  - restrict_ssh_source_addresses
+  - perform_hardware_diagnostics_via_ssh
 tags:
   - rules
   - network

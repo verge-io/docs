@@ -1,3 +1,30 @@
+---
+title: "Storage Tiers in VergeOS vSAN"
+description: "Comprehensive guide to the VergeOS vSAN tiered storage system covering Tier 0 through Tier 5, including hardware specifications, workload recommendations, best practices, and scaling considerations."
+semantic_keywords:
+  - "vSAN storage tiers NVMe SSD HDD configuration"
+  - "VergeOS tier 0 metadata tier 1 performance tier"
+  - "storage tier selection workload optimization"
+  - "capacity archive tier planning scaling"
+use_cases:
+  - storage_tier_planning
+  - workload_tier_assignment
+  - capacity_scaling
+  - performance_optimization
+  - tier_monitoring_and_troubleshooting
+tags:
+  - storage-tiers
+  - vsan
+  - nvme
+  - ssd
+  - hdd
+  - performance
+  - capacity-planning
+  - tiering
+categories:
+  - Storage
+---
+
 # Storage Tiers in VergeOS vSAN
 
 ## Overview

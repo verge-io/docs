@@ -1,3 +1,34 @@
+---
+title: "26.0 Release Notes"
+description: "Release notes for VergeOS 26.0, featuring AI services integration, new theme engine, immutable snapshots, API key authentication, task automation engine, and numerous storage, networking, and security enhancements."
+semantic_keywords:
+  - "VergeOS 26.0 release notes new features"
+  - "VergeOS AI model hosting and theme engine"
+  - "VergeOS immutable snapshots and task automation"
+  - "VergeOS 26.0 upgrade notes and known issues"
+  - "VergeOS API key authentication and alarm system"
+use_cases:
+  - review_26_0_new_features
+  - plan_upgrade_to_26_0
+  - check_26_0_bug_fixes
+  - verify_26_0_known_issues
+  - configure_ai_services
+  - implement_immutable_snapshots
+tags:
+  - release-notes
+  - vergeos-26
+  - ai-services
+  - immutable-snapshots
+  - theme-engine
+  - task-automation
+  - api-keys
+  - alarms
+  - vsan
+  - networking
+categories:
+  - Release Notes
+---
+
 # 26.0 Release Notes
 
 !!! info "Release Information"

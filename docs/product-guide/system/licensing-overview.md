@@ -1,3 +1,28 @@
+---
+title: "Licensing Overview"
+description: "Overview of VergeOS licensing, including System IDs, license types (production and trial/NFR), license details, reinstallation reactivation, and air-gap licensing."
+semantic_keywords:
+  - "VergeOS licensing system ID how licensing works"
+  - "license types production trial NFR"
+  - "reinstall reactivate license new system ID"
+  - "air-gap licensing offline environment"
+  - "find system ID license validity period"
+use_cases:
+  - understand_vergeos_licensing_model
+  - find_system_id
+  - reactivate_license_after_reinstall
+  - configure_air_gap_licensing
+  - review_license_details_and_validity
+tags:
+  - licensing
+  - system-id
+  - air-gap
+  - configuration
+  - installation
+categories:
+  - System Administration
+---
+
 # Licensing Overview
 
 This guide explains how VergeOS licensing works, including System IDs, license types, and what to expect during common scenarios like reinstallation.

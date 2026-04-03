@@ -1,3 +1,27 @@
+---
+title: "Port Mirroring"
+description: "Enable port mirroring on a VergeOS network to replicate traffic to a VM NIC for packet analysis, monitoring, and diagnostics using North/South or East/West modes."
+semantic_keywords:
+  - "port mirroring network traffic replication VergeOS"
+  - "mirror packets to VM NIC packet analysis"
+  - "north south east west port mirroring"
+  - "network traffic capture monitoring diagnostics"
+use_cases:
+  - enable_port_mirroring_for_diagnostics
+  - capture_network_traffic_to_vm
+  - monitor_north_south_traffic
+  - analyze_east_west_intranetwork_traffic
+tags:
+  - networking
+  - port-mirroring
+  - monitoring
+  - diagnostics
+  - packet-analysis
+  - traffic-capture
+categories:
+  - Networking
+---
+
 # Port Mirroring
 
 Port mirroring replicates a network's traffic to a VM NIC, allowing packet analysis for monitoring or diagnostics.

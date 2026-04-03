@@ -1,3 +1,29 @@
+---
+title: "System Settings"
+description: "Overview of VergeOS system settings, including general configuration, version information, license details, location settings, connection details, and how to modify settings."
+semantic_keywords:
+  - "VergeOS system settings configuration overview"
+  - "cloud name system ID version license details"
+  - "location timezone latitude longitude domain"
+  - "vSAN host port connection settings"
+  - "modify system settings request license"
+use_cases:
+  - review_system_settings_and_version
+  - modify_general_system_configuration
+  - view_license_details
+  - configure_location_information
+  - request_or_modify_license
+tags:
+  - settings
+  - configuration
+  - licensing
+  - system-info
+  - version
+  - location
+categories:
+  - System Administration
+---
+
 # System Settings
 
 The *System Settings* page provides access to various configuration options for your VergeOS environment. This guide will walk you through the different sections and their functionalities.

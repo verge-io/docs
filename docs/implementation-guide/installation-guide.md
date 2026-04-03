@@ -1,3 +1,30 @@
+---
+title: "Installation Guide"
+description: "Complete VergeOS installation guide covering primary and secondary controller node setup, physical network configuration, vSAN initialization, drive tier assignments, and encryption settings."
+semantic_keywords:
+  - "VergeOS installation guide step by step"
+  - "install primary secondary controller node VergeOS"
+  - "vSAN drive tier configuration during install"
+  - "VergeOS physical network NIC configuration"
+  - "VergeOS encryption at-rest setup"
+use_cases:
+  - initial_system_installation
+  - controller_node_setup
+  - vsan_initialization
+  - network_configuration_during_install
+  - encryption_setup
+tags:
+  - installation
+  - controller-node
+  - vsan
+  - drive-tiers
+  - encryption
+  - networking
+  - uefi
+categories:
+  - Installation
+---
+
 # Installation Guide
 
 ## Introduction

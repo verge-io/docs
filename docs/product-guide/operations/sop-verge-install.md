@@ -1,3 +1,33 @@
+---
+title: "VergeOS Installation Guide"
+description: "Standard operating procedure for performing an initial VergeOS system installation, covering hardware preparation, network configuration, primary and secondary controller setup, and post-installation verification."
+semantic_keywords:
+  - "install VergeOS initial system deployment"
+  - "primary secondary controller node installation"
+  - "network core external interface configuration"
+  - "vSAN encryption storage tier disk assignment"
+  - "post-installation verification health checks"
+use_cases:
+  - perform_initial_installation
+  - configure_hardware_prerequisites
+  - install_primary_controller
+  - install_secondary_controller
+  - verify_post_installation_health
+  - configure_network_interfaces
+tags:
+  - installation
+  - deployment
+  - setup
+  - nodes
+  - networking
+  - vsan
+  - sop
+  - operations
+  - storage
+categories:
+  - System Administration
+---
+
 # VergeOS Installation Guide
 
 This guide provides standardized procedures and best practices for VergeOS Engineers and Administrators performing an initial system installation using the updated installer interface.

@@ -1,3 +1,31 @@
+---
+title: "SR-IOV NICs"
+description: "How to configure SR-IOV NIC passthrough in VergeOS, including creating resource groups, configuring virtual functions, VM guest setup, and sharing SR-IOV devices to tenants."
+semantic_keywords:
+  - "VergeOS SR-IOV NIC passthrough virtual functions"
+  - "SR-IOV resource group VF devices configuration"
+  - "NIC passthrough VM guest driver installation"
+  - "share SR-IOV devices tenant passthrough"
+  - "VLAN bandwidth trust spoof checking settings"
+use_cases:
+  - configure_sriov_nic_passthrough
+  - create_sriov_resource_group
+  - attach_sriov_device_to_vm
+  - share_sriov_devices_to_tenant
+  - configure_virtual_function_settings
+tags:
+  - sriov
+  - nic
+  - passthrough
+  - networking
+  - resource-groups
+  - virtual-machines
+  - tenants
+  - vlan
+categories:
+  - System Administration
+---
+
 # SR-IOV NICs
 
 VergeOS provides support for SR-IOV-capable network cards, allowing multiple device instances (virtual functions) to be shared to tenants and VMs from a single PCIe network controller device.

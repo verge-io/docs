@@ -1,19 +1,30 @@
 ---
-title: Max RAM per machine  
-slug: max-ram-per-machine  
-description: Adjusting the Max RAM per machine Cluster Setting  
-draft: false  
-date: 2024-04-18T23:14:17.032Z  
+title: Max RAM per machine
+slug: max-ram-per-machine
+description: How to adjust the Max RAM per machine cluster setting in VergeOS to allow virtual machines that require more than the default 64GB of RAM.
+author: VergeOS Documentation Team
+draft: false
+date: 2024-04-18T23:14:17.032Z
+semantic_keywords:
+  - "max RAM per machine cluster setting"
+  - "increase VM memory limit allocation"
+  - "cluster configuration RAM exceeded error"
+  - "virtual machine resource limits adjustment"
+use_cases:
+  - increase_max_ram_per_machine
+  - resolve_ram_exceeded_error
+  - configure_cluster_memory_limits
+  - run_high_memory_virtual_machines
 tags:
   - cluster settings
   - cluster
   - configuration
   - vm
   - settings
-categories:  
-  - Cluster Settings  
-editor: markdown  
-dateCreated: 2024-04-18T16:22:33.961Z  
+categories:
+  - Cluster Settings
+editor: markdown
+dateCreated: 2024-04-18T16:22:33.961Z
 ---
 
 # Max RAM per machine setting explained

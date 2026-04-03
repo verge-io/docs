@@ -1,9 +1,20 @@
 ---
 title: VM Disk Discard
 slug: vm-disk-discard
-description: Managing disk discard settings for virtual machines in VergeOS to optimize storage usage.
+description: Managing disk discard settings for virtual machines in VergeOS to optimize storage usage and reclaim unused vSAN space through TRIM/DISCARD commands.
+author: VergeOS Documentation Team
 draft: false
 date: 2023-09-12T16:53:09.094Z
+semantic_keywords:
+  - "vm disk discard trim settings"
+  - "vsan storage space reclamation"
+  - "enable disable discard virtual machine"
+  - "storage efficiency unused blocks"
+use_cases:
+  - optimize_vm_storage_usage
+  - reclaim_unused_vsan_space
+  - configure_disk_discard_settings
+  - troubleshoot_storage_bloat
 tags:
   - disk management
   - trim

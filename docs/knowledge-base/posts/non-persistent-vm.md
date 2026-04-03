@@ -1,9 +1,18 @@
 ---
 title: Making a Non-Persistent VM
 slug: making-a-nonpersistent-vm
-description: 
+description: How to create a non-persistent virtual machine in VergeOS that reverts to its original state after each reboot, ideal for VDI environments.
+author: VergeOS Documentation Team
 draft: false
 date: 2023-01-24T19:25:26.189Z
+semantic_keywords:
+  - "non-persistent vm revert reboot vdi"
+  - "non-persistent disk media type clone"
+  - "virtual desktop infrastructure reset"
+use_cases:
+  - create_non_persistent_vm
+  - configure_vdi_reset_on_reboot
+  - clone_disk_as_non_persistent
 tags:
   - vm
   - persistent

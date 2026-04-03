@@ -1,14 +1,30 @@
 ---
 title: Removing a Node from a VergeOS Cluster
 slug: removing-a-node-from-cluster
-description: How to safely remove a physical node from a VergeOS system
+description: How to safely remove a physical node from a VergeOS system, including maintenance mode, drive removal, and vSAN repair procedures.
 author: VergeOS Documentation Team
-published: true
+draft: false
 date: 2026-01-23
-tags: [nodes, cluster, maintenance, decommission]
+semantic_keywords:
+  - "node removal decommission cluster downsizing"
+  - "maintenance mode drive offline delete vsan"
+  - "vsan repair data redistribution node removal"
+  - "hardware decommission node replacement procedure"
+use_cases:
+  - node_decommissioning
+  - cluster_downsizing
+  - hardware_replacement_removal
+  - vsan_drive_removal_repair
+tags:
+  - nodes
+  - cluster
+  - maintenance
+  - decommission
 categories:
   - System Administration
   - Maintenance
+editor: markdown
+dateCreated: 2026-01-23
 ---
 
 # Removing a Node from a VergeOS Cluster

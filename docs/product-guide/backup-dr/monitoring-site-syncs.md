@@ -1,3 +1,27 @@
+---
+title: "Monitoring Site Syncs"
+description: "How to monitor site sync operations using outgoing and incoming sync dashboards, sync statistics, logs, and email subscriptions for ongoing replication oversight."
+semantic_keywords:
+  - "monitor site sync dashboard status VergeOS"
+  - "sync statistics checked scanned sent net"
+  - "site sync subscription alerts reports"
+  - "incoming outgoing sync monitoring logs"
+use_cases:
+  - "monitor_outgoing_sync_status"
+  - "monitor_incoming_sync_progress"
+  - "configure_sync_monitoring_subscriptions"
+  - "review_sync_statistics_logs"
+tags:
+  - site-syncs
+  - monitoring
+  - dashboards
+  - subscriptions
+  - replication
+  - logs
+categories:
+  - Backup and DR
+---
+
 # Monitoring Site Syncs
 
 Given the importance of syncs, which are used to provide off-site data protection, best practices include regular monitoring to verify expected ongoing sync operations.

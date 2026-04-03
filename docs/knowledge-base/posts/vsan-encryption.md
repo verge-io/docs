@@ -1,9 +1,20 @@
 ---
 title: vSAN Encryption Information
 slug: vsan-encryption-information
-description: 
+description: Overview of vSAN encryption in VergeOS, including AES256 encryption verification, USB key boot configuration, password-based startup, and site sync encryption defaults.
+author: VergeOS Documentation Team
 draft: false
 date: 2023-01-24T19:18:29.667Z
+semantic_keywords:
+  - "vsan aes256 encryption configuration"
+  - "usb encryption key controller boot"
+  - "verify vsan encryption status"
+  - "site sync encryption defaults"
+use_cases:
+  - verify_vsan_encryption_status
+  - understand_encryption_boot_options
+  - configure_usb_encryption_keys
+  - review_site_sync_encryption
 tags:
   - encryption
   - vsan

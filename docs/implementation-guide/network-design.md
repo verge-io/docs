@@ -1,3 +1,32 @@
+---
+title: "Network Design Models"
+description: "Reference network design models for VergeOS deployments including Layer 2 static, Layer 3 dynamic, Layer 3 static, and 2-port configurations with core fabric and external network requirements."
+semantic_keywords:
+  - "VergeOS network design models Layer 2 Layer 3"
+  - "core fabric network requirements jumbo frames MTU"
+  - "external network LACP bonding VLAN trunk"
+  - "VergeOS 2 NIC edge deployment network design"
+  - "network redundancy architecture VergeOS"
+use_cases:
+  - network_architecture_planning
+  - core_fabric_design
+  - external_network_configuration
+  - edge_deployment_networking
+  - production_network_design
+tags:
+  - networking
+  - network-design
+  - core-fabric
+  - vlan
+  - lacp
+  - bonding
+  - mtu
+  - layer2
+  - layer3
+categories:
+  - Installation
+---
+
 # Network Design Models
 
 Please review the [core concepts](concepts.md) first to learn more about VergeOS Network types before reviewing this document.

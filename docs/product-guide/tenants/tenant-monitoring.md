@@ -1,3 +1,27 @@
+---
+title: "Monitoring Tenants"
+description: "Guide to monitoring tenants using dashboards, usage statistics, logs, and email subscriptions for alerts and scheduled reports."
+semantic_keywords:
+  - "monitor tenant dashboard usage statistics VergeOS"
+  - "tenant CPU RAM storage network usage tracking"
+  - "tenant subscription alerts reports notifications"
+  - "tenant storage provisioned used allocated monitoring"
+use_cases:
+  - "monitor_tenant_resource_usage"
+  - "configure_tenant_alert_subscriptions"
+  - "review_tenant_dashboard_statistics"
+  - "track_tenant_storage_utilization"
+tags:
+  - tenants
+  - monitoring
+  - dashboards
+  - subscriptions
+  - usage-statistics
+  - alerts
+categories:
+  - Tenants
+---
+
 # Monitoring Tenants
 
 This page discusses the use of dashboards and subscriptions to oversee tenants. Dashboards provide a lot of helpful information about tenants. Subscriptions allow for sending reports and on-demand alerts based upon various events.

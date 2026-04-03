@@ -1,9 +1,20 @@
 ---
 title: Importing Physical Machines and Individual VMs into VergeOS
 slug: importing-a-physicalvirtual-machine-into-vergeio
-description: Learn how to use the VergeOS Clone Utility to import physical or virtual machines into the VergeOS environment.
+description: Learn how to use the VergeOS Clone Utility to import physical or virtual machines into VergeOS, including PtoV and VtoV migrations with HTTPS and vSAN-direct transfer methods.
+author: VergeOS Documentation Team
 draft: false
 date: 2024-02-07T14:21:34.627Z
+semantic_keywords:
+  - "physical to virtual p2v clone import"
+  - "virtual to virtual v2v migration vergeos"
+  - "vergeos clone utility iso transfer"
+  - "vsan direct sync network rules"
+use_cases:
+  - import_physical_machine_to_vergeos
+  - migrate_vm_cross_platform
+  - configure_vsan_direct_transfer
+  - clone_machine_using_iso_utility
 tags:
   - vtov
   - ptov

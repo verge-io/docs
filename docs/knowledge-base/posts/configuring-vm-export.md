@@ -1,9 +1,20 @@
 ---
 title: Configuring a Volume for Exporting VMs
 slug: configuring-a-vm-export-volume
-description: How to configure the VergeOS NAS VM Export Volume for backup purposes.
+description: How to configure the VergeOS NAS VM Export Volume for backup purposes, including CIFS/NFS sharing, scheduled exports, and synchronization to external storage.
+author: VergeOS Documentation Team
 draft: false
 date: 2026-01-23T12:00:00.000Z
+semantic_keywords:
+  - "vm export volume nas backup configuration"
+  - "cifs nfs share exported vm snapshots"
+  - "scheduled vm export task automation"
+  - "synchronize vm data external storage"
+use_cases:
+  - configure_vm_export_volume
+  - share_exported_vms_via_cifs_nfs
+  - schedule_automated_vm_exports
+  - synchronize_exports_to_external_storage
 tags:
   - vm export
   - export

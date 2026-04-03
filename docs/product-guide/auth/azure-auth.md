@@ -1,3 +1,32 @@
+---
+title: "Using Entra ID (Azure AD) for Authentication"
+description: "Step-by-step guide for configuring Microsoft Entra ID (Azure AD) as an OAuth2 authorization source in VergeOS, including app registration, group integration, and user provisioning."
+semantic_keywords:
+  - "configure Azure AD Entra ID authentication VergeOS"
+  - "Azure app registration client secret tenant ID setup"
+  - "auto-create users from Azure AD groups"
+  - "sync Entra ID group membership to VergeOS"
+  - "Azure single sign-on SSO VergeOS login"
+use_cases:
+  - configure_azure_ad_auth_source
+  - register_azure_app_for_vergeos
+  - sync_azure_group_membership
+  - auto_create_users_from_entra_id
+  - manually_add_azure_users
+  - configure_token_claims
+tags:
+  - authentication
+  - azure-ad
+  - entra-id
+  - oauth2
+  - sso
+  - identity-provider
+  - user-management
+  - groups
+  - microsoft
+categories:
+  - Security
+---
 
 # Using Entra ID (Azure AD) for Authentication
 

@@ -1,8 +1,30 @@
 ---
 title: "Core Fabric Status Guide"
-description: "How to read, interpret, and troubleshoot core fabric status in VergeOS"
-tags: [networking, monitoring, troubleshooting, core]
-categories: [Networking, System Administration, Nodes]
+description: "How to read, interpret, and troubleshoot core fabric status in VergeOS, including score values, healthy vs. unhealthy fabric examples, and pre-maintenance verification."
+semantic_keywords:
+  - "core fabric status troubleshooting VergeOS"
+  - "node-to-node connectivity score degraded path"
+  - "fabric confirmed no path network health check"
+  - "pre-maintenance fabric verification vSAN"
+  - "core network redundancy switch hops MTU"
+use_cases:
+  - verify_fabric_health_before_maintenance
+  - troubleshoot_degraded_core_network_path
+  - interpret_fabric_score_values
+  - diagnose_missing_node_in_fabric
+  - monitor_core_network_alarms
+tags:
+  - networking
+  - monitoring
+  - troubleshooting
+  - core-fabric
+  - nodes
+  - vsan
+  - diagnostics
+  - redundancy
+categories:
+  - System Administration
+  - Networking
 ---
 
 # Core Fabric Status Guide

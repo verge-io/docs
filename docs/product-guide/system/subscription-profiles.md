@@ -1,3 +1,25 @@
+---
+title: "Subscription Profiles"
+description: "Overview of VergeOS subscription profiles, which define the information included in subscription notification emails for alerts and scheduled reports."
+semantic_keywords:
+  - "VergeOS subscription profiles notification content"
+  - "subscription alert report profile selection"
+  - "default subscription profiles installation"
+  - "custom subscription profile creation"
+use_cases:
+  - understand_subscription_profiles
+  - select_profile_for_subscription
+  - review_available_subscription_profiles
+tags:
+  - subscriptions
+  - profiles
+  - notifications
+  - alerts
+  - reports
+  - monitoring
+categories:
+  - System Administration
+---
 
 # Subscription Profiles
 

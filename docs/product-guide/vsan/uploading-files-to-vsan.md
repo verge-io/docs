@@ -1,4 +1,30 @@
-# Uploading Files to the vSAN 
+---
+title: "Uploading Files to the vSAN"
+description: "Step-by-step instructions for uploading files to the VergeOS vSAN from a local computer or URL, and creating public download links for shared file access."
+semantic_keywords:
+  - "upload ISO image file to VergeOS vSAN"
+  - "upload file from URL to vSAN storage"
+  - "create public download link VergeOS files"
+  - "manage media images drive files vSAN"
+use_cases:
+  - upload_iso_images
+  - upload_files_from_url
+  - create_public_download_links
+  - manage_vsan_files
+tags:
+  - vsan
+  - storage
+  - upload
+  - files
+  - iso
+  - media-images
+  - public-link
+  - download
+categories:
+  - Storage
+---
+
+# Uploading Files to the vSAN
 
 The *Files* section provides for uploading files to the VergeOS vSAN, allowing *.iso files, drive images, VM definition files, etc. to be easily accessible for creating/installing/importing VMs.  
 

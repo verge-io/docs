@@ -1,3 +1,27 @@
+---
+title: "Site Syncs"
+description: "Overview of VergeOS site sync capabilities for offsite backup, disaster recovery, and system migration through block-level snapshot replication with encryption and compression."
+semantic_keywords:
+  - "VergeOS site syncs overview offsite backup replication"
+  - "block-level sync deduplication compression encryption"
+  - "disaster recovery migration offsite archival"
+  - "site sync repair server ioGuardian features"
+use_cases:
+  - "evaluate_site_sync_capabilities"
+  - "plan_offsite_backup_strategy"
+  - "understand_sync_features"
+  - "plan_system_migration"
+tags:
+  - site-syncs
+  - replication
+  - backup
+  - disaster-recovery
+  - migration
+  - encryption
+categories:
+  - Backup and DR
+---
+
 # Site Syncs
 
 Site Syncs replicate system snapshots to another VergeOS system, simplifying and streamlining:   

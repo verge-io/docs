@@ -1,11 +1,26 @@
 ---
 title: NAS Volume Browser API Reference
 slug: nas-volume-browser-api
-description: How to use the VergeOS volume_browser API to browse NAS volume contents programmatically
+description: How to use the VergeOS volume_browser API to browse NAS volume contents programmatically, including the asynchronous job workflow, polling for results, and troubleshooting common issues.
 author: VergeOS Documentation Team
-published: true
+draft: false
 date: 2026-01-23
-tags: [api, nas, volumes, automation]
+semantic_keywords:
+  - "volume_browser API, NAS file browsing, asynchronous API jobs"
+  - "NAS volume listing, directory browsing, file system API"
+  - "API polling workflow, job status, result retrieval"
+  - "NAS automation, programmatic file management, volume integration"
+use_cases:
+  - "nas_volume_browsing"
+  - "file_listing_automation"
+  - "custom_file_management_tools"
+  - "nas_api_integration"
+  - "programmatic_directory_traversal"
+tags:
+  - api
+  - nas
+  - volumes
+  - automation
 categories:
   - API Reference
   - NAS

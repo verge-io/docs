@@ -1,9 +1,22 @@
 ---
 title: Configuring VergeOS as an OIDC Client
 slug: configuring-vergeos-as-oidc-client
-description: Step-by-step guide on setting up a VergeOS system or tenant to use OIDC authentication with another VergeOS identity provider
+description: Step-by-step guide on setting up a VergeOS system or tenant to use OIDC authentication with another VergeOS identity provider.
+author: VergeOS Documentation Team
 draft: false
 date: 2025-01-22T15:41:14.296Z
+semantic_keywords:
+  - "oidc client configuration openid connect"
+  - "single sign-on sso authentication setup"
+  - "vergeos auth source authorization driver"
+  - "auto-create users group membership sync"
+  - "redirect uri client id client secret"
+use_cases:
+  - configure_oidc_client_authentication
+  - enable_single_sign_on_across_systems
+  - connect_tenant_to_identity_provider
+  - auto_create_users_from_oidc_provider
+  - customize_login_button_appearance
 tags:
   - oidc
   - client

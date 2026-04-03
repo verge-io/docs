@@ -1,9 +1,20 @@
 ---
 title: Recovering a Single VM from a Remote System Snapshot
 slug: recovering-a-single-vm-from-a-remote-cloud-snapshot
-description: 
+description: Step-by-step instructions for recovering a single virtual machine from a remote system snapshot using VergeOS site sync and sync-back functionality.
+author: VergeOS Documentation Team
 draft: false
 date: 2023-01-24T19:26:35.798Z
+semantic_keywords:
+  - "recover VM from remote snapshot"
+  - "site sync sync-back VM restore"
+  - "cloud snapshot single VM recovery"
+  - "request snapshot download sync"
+use_cases:
+  - "recover_single_vm_from_backup"
+  - "sync_back_remote_snapshot"
+  - "disaster_recovery_vm_restore"
+  - "offsite_backup_vm_retrieval"
 tags:
   - vm
   - snapshot

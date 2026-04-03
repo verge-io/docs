@@ -1,13 +1,24 @@
 ---
 title: Provide Layer 2 Access to a Tenant - LEGACY
 slug: provide-layer2-to-tenant
-description: Instructions for using Virtual Switch Ports to provide Vlanned layer 2 network access to a tenant
+description: Instructions for using Virtual Switch Ports (formerly Virtual Wires) to provide VLAN-based Layer 2 network access to a tenant, including 1:1 and trunk mode configurations.
+author: VergeOS Documentation Team
 draft: false
 status: deprecated
 date: 2025-02-10T21:42:46.809Z
+semantic_keywords:
+  - "virtual switch port VLAN tenant layer 2"
+  - "trunk mode virtual wire tenant network"
+  - "bridge mode physical network VLAN passthrough"
+  - "tenant layer 2 access VLAN configuration"
+use_cases:
+  - provide_single_vlan_to_tenant
+  - configure_trunk_mode_vlan_access_for_tenant
+  - setup_bridge_mode_for_physical_network
+  - pass_layer2_network_to_tenant_environment
 tags:
   - vlan
-  - Virtual Switch Port
+  - virtual switch port
   - network
   - tenant
 categories:
@@ -16,7 +27,6 @@ categories:
   - Network
 editor: markdown
 dateCreated: 2025-02-10T19:58:59.133Z
-
 ---
 
 !!! tip "Newer Configuration Method"

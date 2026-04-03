@@ -1,3 +1,31 @@
+---
+title: "Device Passthrough Overview"
+description: "Overview of device passthrough in VergeOS, including PCI passthrough risks, IOMMU grouping, resource groups, resource rules, and supported passthrough types (PCI, USB, vGPU, SR-IOV)."
+semantic_keywords:
+  - "VergeOS device passthrough PCI USB vGPU SR-IOV"
+  - "IOMMU grouping resource groups resource rules"
+  - "GPU passthrough virtual machine tenant"
+  - "PCI passthrough risks precautions BIOS VT-d"
+  - "passthrough configuration host VM guest"
+use_cases:
+  - understand_passthrough_types_and_risks
+  - configure_resource_groups_for_passthrough
+  - pass_pci_device_to_vm_or_tenant
+  - review_iommu_grouping_requirements
+  - plan_device_passthrough_architecture
+tags:
+  - passthrough
+  - pci
+  - usb
+  - vgpu
+  - sriov
+  - iommu
+  - resource-groups
+  - virtual-machines
+categories:
+  - System Administration
+---
+
 # Device Passthrough Overview
 
 VergeOS supports various types of device passthrough, allowing virtual machines to access physical devices connected to their host servers 

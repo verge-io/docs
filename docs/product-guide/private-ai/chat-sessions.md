@@ -1,3 +1,29 @@
+---
+title: "Interactive Chat Sessions"
+description: "Guide for conducting interactive chat sessions with AI assistants in the VergeOS UI, including file attachments, token metrics, and chat history management."
+semantic_keywords:
+  - "interactive AI chat session VergeOS UI"
+  - "attach files to AI prompt context"
+  - "chat history previous session conversation"
+  - "token usage metrics prompt response"
+use_cases:
+  - start_chat_session
+  - attach_files_to_prompt
+  - view_token_metrics
+  - manage_chat_history
+  - test_ai_assistant
+tags:
+  - private-ai
+  - chat
+  - sessions
+  - file-attachments
+  - tokens
+  - chat-history
+  - assistants
+categories:
+  - Private AI
+---
+
 # Interactive Chat Sessions
 
 This page provides a guide for conducting interactive chat sessions with an AI assistant from the VergeOS UI.

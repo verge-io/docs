@@ -1,14 +1,26 @@
 ---
+title: Settings that Influence VM Node Selection
 slug: determine-node-where-vm-runs
-description: VM options that control where a VM will run (which node)
+description: Explains VM options that control which node a VM runs on, including HA group affinity and anti-affinity, preferred node, preferred cluster, and failover cluster settings.
+author: VergeOS Documentation Team
 draft: false
 date: 2025-02-16T22:25:43.163Z
+semantic_keywords:
+  - "vm node selection affinity anti-affinity"
+  - "ha group preferred node cluster failover"
+  - "virtual machine placement host separation"
+  - "workload balancing node scheduling"
+use_cases:
+  - control_vm_node_placement
+  - configure_ha_group_affinity
+  - set_preferred_cluster_failover
+  - ensure_vm_host_separation
 tags:
   - virtual machine
   - vms
   - node affinity
-  - VM-host affinity
-  - VM-host anti-affinity
+  - vm-host affinity
+  - vm-host anti-affinity
   - host separation
   - node separation
   - clusters

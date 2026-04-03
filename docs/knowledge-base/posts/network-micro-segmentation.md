@@ -1,15 +1,28 @@
 ---
 title: How to Achieve Network Micro-Segmentation on VergeOS
 slug: how-to-achieve-network-micro-segmentation-on-vergeos
-description: A comprehensive guide on implementing network micro-segmentation using VergeOS features
+description: A comprehensive guide on implementing network micro-segmentation using VergeOS features including internal networks, firewall rules, VPNs, tenant isolation, and network aliases.
+author: VergeOS Documentation Team
 draft: false
 date: 2024-08-04T14:30:00.000Z
+semantic_keywords:
+  - "network micro-segmentation zero trust vergeos"
+  - "isolated internal networks firewall rules security"
+  - "tenant isolation multi-tenancy network separation"
+  - "network aliases vpn encrypted tunnel segmentation"
+  - "port mirroring traffic monitoring security analysis"
+use_cases:
+  - implement_network_micro_segmentation
+  - configure_firewall_rules_between_networks
+  - setup_tenant_isolation
+  - create_network_aliases_policy_management
+  - monitor_traffic_port_mirroring
 tags:
   - micro-segmentation
   - network security
   - internal networks
   - network rules
-  - VPN
+  - vpn
   - tenant isolation
   - zero trust
 categories:

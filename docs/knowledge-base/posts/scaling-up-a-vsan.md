@@ -1,9 +1,20 @@
 ---
 title: Scaling Up a vSAN
 slug: scaling-up-a-vsan
-description: 
+description: Step-by-step procedure for scaling up a VergeOS vSAN by adding new drives or Fibre Channel LUNs to existing nodes, including capacity requirements and verification steps.
+author: VergeOS Documentation Team
 draft: false
 date: 2025-07-27T19:15:40.203Z
+semantic_keywords:
+  - "vsan scale up add drives"
+  - "expand storage capacity existing nodes"
+  - "fibre channel lun vsan tier"
+  - "refresh drives nics scale up"
+use_cases:
+  - scale_up_vsan_storage
+  - add_drives_to_existing_tier
+  - expand_cluster_storage_capacity
+  - add_fibre_channel_luns
 tags:
   - scale up
   - vsan

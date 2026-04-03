@@ -1,3 +1,30 @@
+---
+title: "Snapshot Profiles (Snapshot Scheduling)"
+description: "How to create and manage snapshot profiles in VergeOS for automated snapshot scheduling, including profile periods, retention settings, quiescing, immutable options, and compliance templates."
+semantic_keywords:
+  - "snapshot profile scheduling retention VergeOS"
+  - "create custom snapshot schedule frequency retention"
+  - "snapshot profile periods immutable quiesce settings"
+  - "SOX HIPAA compliance snapshot profiles"
+  - "assign snapshot profile VM volume system"
+use_cases:
+  - "create_custom_snapshot_schedule"
+  - "configure_snapshot_retention_policy"
+  - "assign_snapshot_profile_to_vm"
+  - "setup_compliance_snapshot_schedule"
+  - "manage_orphaned_vm_snapshots"
+tags:
+  - snapshots
+  - snapshot-profiles
+  - scheduling
+  - retention
+  - compliance
+  - automation
+  - quiescing
+categories:
+  - Backup and DR
+---
+
 # Snapshot Profiles (Snapshot Scheduling)
 
 A **snapshot profile** defines a schedule for taking snapshots and automatically expiring them based on retention settings.

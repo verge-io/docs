@@ -2,9 +2,19 @@
 title: Configuring VMware Service VM NIC IPv4 Settings
 slug: vmware-service-vm-nic-ipv4-configuration
 description: How to configure static IPv4 settings for VMware service VM NICs in VergeOS, including IP address, DNS, and routing.
-author: VergeOS Documentation
-published: true
+author: VergeOS Documentation Team
+draft: false
 date: 2026-03-13
+semantic_keywords:
+  - "VMware service VM static IP configuration"
+  - "NIC IPv4 settings DNS gateway routes"
+  - "VMware backup service network setup"
+  - "CIDR notation static IP assignment"
+use_cases:
+  - "configure_static_ip_vmware_service"
+  - "set_dns_servers_vmware_nic"
+  - "add_default_gateway_route_vmware_vm"
+  - "troubleshoot_vmware_service_network"
 tags:
   - vmware
   - networking

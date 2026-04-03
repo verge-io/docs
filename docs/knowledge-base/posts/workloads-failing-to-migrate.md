@@ -1,9 +1,20 @@
 ---
 title: Workloads Failing to Migrate
 slug: workloads-failing-to-migrate
-description: Possible reasons why workloads fail to migrate from node to node
+description: Common reasons why workloads fail to migrate between nodes, including insufficient resources, pinned VM configurations, and tenant node issues.
+author: VergeOS Documentation Team
 draft: false
 date: 2023-01-23T22:27:27.361Z
+semantic_keywords:
+  - "workload migration failure troubleshooting"
+  - "insufficient ram resources node migration"
+  - "pinned vm host processor cpu type"
+  - "tenant node migration issues"
+use_cases:
+  - workload_migration_troubleshooting
+  - resource_insufficient_migration_fix
+  - pinned_vm_migration_resolution
+  - tenant_node_migration_issues
 tags:
   - vm
   - workloads

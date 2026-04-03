@@ -5,6 +5,16 @@ description: Learn how to use the VergeIO Terraform Provider to manage VergeOS r
 author: VergeOS Documentation Team
 draft: false
 date: 2024-09-01T14:20:54.833Z
+semantic_keywords:
+  - "terraform provider vergeos infrastructure as code"
+  - "terraform vm network resource management"
+  - "infrastructure automation iac vergeos"
+  - "terraform init apply configuration hcl"
+use_cases:
+  - terraform_infrastructure_automation
+  - programmatic_vm_provisioning
+  - infrastructure_as_code_deployment
+  - vergeos_resource_management_terraform
 tags:
   - terraform
   - automation

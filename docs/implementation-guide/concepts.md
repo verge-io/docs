@@ -1,3 +1,29 @@
+---
+title: "Core Concepts"
+description: "Overview of key VergeOS concepts including physical infrastructure, node types, clusters, network architecture, vSAN, tenants, and virtual networking fundamentals."
+semantic_keywords:
+  - "VergeOS core concepts nodes clusters"
+  - "VergeOS network architecture core fabric external"
+  - "vSAN virtual storage area network overview"
+  - "VergeOS tenants and multi-tenant environments"
+  - "controller nodes compute nodes storage nodes"
+use_cases:
+  - understanding_vergeos_architecture
+  - deployment_planning
+  - network_design_fundamentals
+  - infrastructure_component_selection
+tags:
+  - concepts
+  - architecture
+  - nodes
+  - clusters
+  - networking
+  - vsan
+  - tenants
+categories:
+  - Installation
+---
+
 ## Overview
 
 This document provides an overview of the key concepts related to VergeOS's physical infrastructure and network architecture. Understanding these foundational elements is crucial for a successful VergeOS deployment and will prepare you for the subsequent sections of our Implementation Guide.

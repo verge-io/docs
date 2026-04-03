@@ -1,11 +1,20 @@
 ---
 title: Change External Network to VLAN Bonded
 slug: change-external-vlan-to-bonded
-description: Instuctions to change an existing external network to a vlan bonded across physical networks
+description: Instructions to change an existing external network to a VLAN bonded configuration across physical networks for active-backup redundancy.
 author: VergeOS Documentation Team
 draft: false
 date: 2024-11-24T18:38:59.908Z
-tags: 
+semantic_keywords:
+  - "bond external network vlan physical networks"
+  - "active-backup bond redundancy two nics"
+  - "change external network bonded vlan configuration"
+  - "network bonding failover bare-metal"
+use_cases:
+  - configure_bonded_external_network
+  - enable_vlan_bonding_redundancy
+  - test_bond_failover
+tags:
   - bonded
   - network
   - bonding

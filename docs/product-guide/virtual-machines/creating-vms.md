@@ -1,3 +1,30 @@
+---
+title: "Creating Virtual Machines (VMs)"
+description: "Guide to creating virtual machines in VergeOS, including custom VMs, recipe-based deployments, imports, and cloning existing VMs."
+semantic_keywords:
+  - "how to create a virtual machine in VergeOS"
+  - "deploy VM from recipe template catalog"
+  - "clone an existing virtual machine"
+  - "custom VM creation with drives and NICs"
+  - "new VM from ISO or disk image"
+use_cases:
+  - create_custom_vm
+  - deploy_vm_from_recipe
+  - clone_existing_vm
+  - import_vm_from_file
+tags:
+  - virtual-machines
+  - vm-creation
+  - cloning
+  - recipes
+  - deployment
+  - provisioning
+  - iso
+  - templates
+categories:
+  - Virtual Machines
+---
+
 # Creating Virtual Machines (VMs)
 
 There are multiple methods to Create a VM

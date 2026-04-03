@@ -1,3 +1,24 @@
+---
+title: "Reducing a Tenant's Resources"
+description: "Instructions for reducing tenant compute resources by deleting tenant nodes or decreasing cores and RAM allocated to existing nodes."
+semantic_keywords:
+  - "reduce tenant resources cores RAM VergeOS"
+  - "delete tenant node reclaim compute resources"
+  - "downsize tenant allocation"
+  - "scale down tenant compute capacity"
+use_cases:
+  - "reduce_tenant_compute_resources"
+  - "delete_tenant_node"
+  - "reclaim_unused_tenant_resources"
+tags:
+  - tenants
+  - resources
+  - scaling
+  - tenant-nodes
+  - resource-management
+categories:
+  - Tenants
+---
 
 # Reducing a Tenant's Resources
 

@@ -1,3 +1,29 @@
+---
+title: "Joining a NAS to a Windows AD Network"
+description: "How to join a VergeOS NAS service to a Windows Active Directory domain for AD-integrated file sharing, including CIFS settings configuration and troubleshooting."
+semantic_keywords:
+  - "join NAS to Windows Active Directory domain"
+  - "VergeOS NAS CIFS Active Directory integration"
+  - "NAS domain join troubleshooting and configuration"
+  - "AD authenticated file sharing SMB CIFS setup"
+use_cases:
+  - join_nas_to_ad_domain
+  - configure_cifs_ad_settings
+  - troubleshoot_domain_join_failures
+  - enable_ad_authenticated_file_sharing
+tags:
+  - nas
+  - active directory
+  - domain join
+  - cifs
+  - smb
+  - authentication
+  - windows
+  - samba
+categories:
+  - NAS
+---
+
 # Joining a NAS to a Windows AD Network
 
 A NAS service can be joined to an existing Active Directory domain to provide AD integration.

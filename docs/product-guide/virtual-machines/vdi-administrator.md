@@ -1,3 +1,29 @@
+---
+title: "VDI Administrator Instructions"
+description: "Administrator guide for configuring VDI user access, assigning VM console permissions, managing VM favorites, and setting VM ownership in VergeOS."
+semantic_keywords:
+  - "configure VDI user access virtual desktops"
+  - "assign VM console permissions to users"
+  - "manage VM favorites for normal users"
+  - "set VM owner user auto-delete permissions"
+use_cases:
+  - configure_vdi_user_access
+  - assign_vm_console_permissions
+  - manage_vm_favorites
+  - assign_vm_owner_user
+tags:
+  - vdi
+  - administration
+  - user-management
+  - permissions
+  - virtual-desktops
+  - console-access
+  - virtual-machines
+categories:
+  - Virtual Machines
+  - VDI
+---
+
 # VDI Administrator Instructions
 
 ## User type=VDI

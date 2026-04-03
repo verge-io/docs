@@ -1,3 +1,29 @@
+---
+title: "Using Google for Authentication"
+description: "Step-by-step guide for configuring Google as an OAuth2 authorization source in VergeOS, including obtaining credentials and creating users."
+semantic_keywords:
+  - "configure Google OAuth authentication VergeOS"
+  - "Google client ID client secret setup for login"
+  - "Google single sign-on SSO VergeOS"
+  - "add VergeOS users with Google auth"
+  - "remote user fields Google identity provider"
+use_cases:
+  - configure_google_auth_source
+  - obtain_google_oauth_credentials
+  - create_users_with_google_auth
+  - sync_google_display_name_email
+tags:
+  - authentication
+  - google
+  - oauth2
+  - sso
+  - identity-provider
+  - user-management
+  - login
+categories:
+  - Security
+---
+
 # Using Google for Authentication
 
 VergeOS can be configured to allow users to authenticate using their corporate Google credentials.  This page will walk you through the configuration process.

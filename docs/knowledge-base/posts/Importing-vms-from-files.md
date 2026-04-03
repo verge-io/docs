@@ -1,9 +1,20 @@
 ---
 title: Importing VMs from Files
 slug: import-vms-from-files
-description: Learn how to import VMs using Files into VergeOS.
+description: Learn how to import VMs into VergeOS from uploaded files including VMX, VMDK, OVF, VHD/X, and QCOW2 formats, with troubleshooting steps for boot failures.
+author: VergeOS Documentation Team
 draft: false
 date: 2025-11-11T00:26:24.755Z
+semantic_keywords:
+  - "import vm from files vmx vmdk ovf vhd"
+  - "upload disk image vsan vergeos migration"
+  - "vm shell import disk boot failure"
+  - "virtio driver compatibility disk interface"
+use_cases:
+  - import_vm_from_uploaded_files
+  - create_vm_shell_and_import_disks
+  - troubleshoot_imported_vm_boot_failure
+  - convert_disk_format_for_vergeos
 tags:
   - vm
   - import

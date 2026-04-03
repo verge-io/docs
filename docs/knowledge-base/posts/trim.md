@@ -1,9 +1,21 @@
 ---
 title: Virtual Drive TRIM
 slug: virtual-drive-trim
-description: How to regain space on a virtual SSD
+description: How to perform TRIM/UNMAP operations on virtual drives in Windows and Linux to reclaim unused vSAN space, especially after importing thick-provisioned VMs.
+author: VergeOS Documentation Team
 draft: false
 date: 2023-01-24T14:15:07.757Z
+semantic_keywords:
+  - "trim unmap virtual drive reclaim space"
+  - "thick provisioned vm import storage"
+  - "windows powershell optimize-volume retrim"
+  - "linux fstrim automatic trim timer"
+use_cases:
+  - reclaim_space_after_vm_import
+  - perform_manual_trim_windows
+  - perform_manual_trim_linux
+  - enable_automatic_trim_schedule
+  - resolve_storage_usage_discrepancy
 tags:
   - disk management
   - trim

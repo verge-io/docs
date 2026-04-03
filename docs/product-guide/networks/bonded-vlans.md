@@ -1,3 +1,28 @@
+---
+title: "Bonded VLAN-tagged Networks"
+description: "Create active-backup bonded network interfaces with VLAN tagging on external or maintenance networks for network redundancy and failover."
+semantic_keywords:
+  - "bonded VLAN tagged network configuration"
+  - "active-backup NIC bonding VergeOS"
+  - "network redundancy failover bond interface"
+  - "VLAN bond external maintenance network"
+use_cases:
+  - configure_bonded_vlan_network
+  - enable_nic_failover_redundancy
+  - setup_active_backup_bonding
+  - test_bond_failover
+tags:
+  - networking
+  - vlan
+  - bonding
+  - redundancy
+  - failover
+  - external-network
+  - high-availability
+categories:
+  - Networking
+---
+
 # Bonded VLAN-tagged Networks
 
 ## Overview

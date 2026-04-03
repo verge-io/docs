@@ -2,8 +2,19 @@
 title: Automated Task Example - Send Slack Channel and Email Alerts Upon a Sync Error
 slug: automated-task-example-webhook
 description: Automation example showing specific configuration to send an email alert and a Slack channel notification if a sync error is encountered.
+author: VergeOS Documentation Team
 draft: false
 date: 2025-12-11T16:29:41.109Z
+semantic_keywords:
+  - "webhook slack email alert automation"
+  - "sync error notification task engine"
+  - "automated event trigger alerting"
+  - "disaster recovery sync monitoring"
+use_cases:
+  - automated_sync_error_alerting
+  - webhook_integration_slack
+  - email_notification_configuration
+  - task_engine_event_triggers
 tags:
   - automation
   - tasks

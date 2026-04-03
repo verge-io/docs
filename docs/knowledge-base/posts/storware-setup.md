@@ -1,14 +1,25 @@
 ---
 title: Setting Up Storware on VergeOS
 slug: setup-storware-vergeos
-description: Guide to setting up Storware for virtual machine protection on VergeOS
+description: Guide to setting up Storware for virtual machine protection on VergeOS, including NAS service configuration and NFS setup.
+author: VergeOS Documentation Team
 draft: false
 date: 2024-11-07T12:00:00.000Z
+semantic_keywords:
+  - "storware backup recovery vergeos setup"
+  - "nas nfs nfsv4 storware configuration"
+  - "virtual machine protection backup integration"
+  - "storware virtualization provider connection"
+use_cases:
+  - storware_backup_integration
+  - nas_nfs_service_setup
+  - vm_backup_protection
+  - third_party_backup_configuration
 tags:
   - backup
-  - Storware
+  - storware
   - virtual machines
-  - NFS
+  - nfs
 categories:
   - Storage
   - Backup

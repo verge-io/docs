@@ -1,10 +1,20 @@
 ---
 title: IPsec Configuration Example - Tenant/NAT
 slug: ipsec-example-tenant-nat-ui-ip
-description: IPsec Tunnel - Configuration Example - Tenant/Nat Translated Public IP Address
+description: IPsec tunnel configuration example within a VergeOS tenant using the dedicated UI IP address with NAT rules for directing tunnel traffic.
 author: VergeOS Documentation Team
 draft: false
 date: 2025-04-04T15:19:47.449Z
+semantic_keywords:
+  - "ipsec tenant nat translated public ip address"
+  - "vpn configuration tenant ui ip address tunnel"
+  - "external network esp udp nat translate rules"
+  - "phase 1 phase 2 ipsec tenant vpn setup"
+use_cases:
+  - configure_ipsec_in_tenant_with_nat
+  - create_vpn_nat_and_snat_rules
+  - translate_ipsec_traffic_on_external_network
+  - connect_internal_networks_to_vpn
 tags:
   - vpn
   - networking

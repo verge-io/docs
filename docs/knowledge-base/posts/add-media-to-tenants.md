@@ -1,10 +1,19 @@
 ---
 title: Sharing Files to Tenants
 slug: sharing-files-to-tenants
-description: Learn how to share files from a Service Provider to Tenants in the VergeOS system.
-author: vergeOS Documentation Team
+description: How to share files such as media images from a Service Provider to Tenants using the VergeOS branch command feature.
+author: VergeOS Documentation Team
 draft: false
 date: 2023-01-24T19:20:42.724Z
+semantic_keywords:
+  - "share files media images tenants"
+  - "service provider tenant file sharing"
+  - "vsan branch command file distribution"
+  - "tenant media image upload"
+use_cases:
+  - share_media_images_with_tenants
+  - distribute_files_to_tenant_environments
+  - provide_vm_disk_images_to_tenants
 tags:
   - media
   - tenant

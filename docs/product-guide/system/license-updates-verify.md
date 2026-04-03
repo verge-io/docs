@@ -1,3 +1,26 @@
+---
+title: "Verify Licensing and Update Server Configuration"
+description: "How to verify connectivity to the VergeOS update server and troubleshoot licensing configuration issues, including credentials and update source selection."
+semantic_keywords:
+  - "VergeOS verify licensing update server connection"
+  - "troubleshoot update server authentication credentials"
+  - "check for updates green status indicator"
+  - "update source trial NFR production"
+  - "air-gap licensing offline environment"
+use_cases:
+  - verify_update_server_connectivity
+  - troubleshoot_licensing_credentials
+  - configure_update_source
+tags:
+  - licensing
+  - updates
+  - troubleshooting
+  - configuration
+  - connectivity
+categories:
+  - System Administration
+---
+
 # Verify Licensing and Update Server Configuration
 
 Valid licensing configuration is required to run workloads and NAS services and to perform system updates.  Normal licensing and updates will require connection and authentication to a VergeOS Update Server. 

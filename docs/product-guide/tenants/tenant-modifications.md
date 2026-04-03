@@ -1,3 +1,27 @@
+---
+title: "Modifying Tenants"
+description: "Reference for editing tenant properties including name, URL, admin password, theme access, OIDC authentication, UI address, and snapshot exposure settings."
+semantic_keywords:
+  - "modify edit tenant properties settings VergeOS"
+  - "change tenant admin password URL configuration"
+  - "tenant theme access OIDC authentication settings"
+  - "update tenant UI address FQDN proxy"
+use_cases:
+  - "edit_tenant_configuration"
+  - "reset_tenant_admin_password"
+  - "configure_tenant_theme_access"
+  - "change_tenant_ui_address"
+tags:
+  - tenants
+  - configuration
+  - tenant-settings
+  - authentication
+  - oidc
+  - themes
+categories:
+  - Tenants
+---
+
 # Modifying Tenants
 
 This page provides information for **editing the base configuration** of a tenant.  

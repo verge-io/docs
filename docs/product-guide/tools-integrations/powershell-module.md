@@ -1,3 +1,28 @@
+---
+title: "VergeOS PowerShell Module (PSVergeOS)"
+description: "PSVergeOS is a PowerShell module providing over 200 cmdlets for managing VergeOS infrastructure through the REST API, enabling automation of VMs, networking, storage, tenants, and disaster recovery."
+semantic_keywords:
+  - "VergeOS PowerShell module automation cmdlets"
+  - "PSVergeOS VM management scripting"
+  - "automate VergeOS with PowerShell"
+  - "bulk VM operations pipeline PowerShell"
+use_cases:
+  - bulk_vm_operations
+  - infrastructure_reporting
+  - network_automation
+  - scheduled_maintenance
+  - ci_cd_integration
+tags:
+  - powershell
+  - automation
+  - api
+  - cmdlets
+  - scripting
+  - psverge
+categories:
+  - Automation
+---
+
 # VergeOS PowerShell Module (PSVergeOS)
 
 ## Overview

@@ -1,15 +1,28 @@
 ---
 title: Understanding and Explaining Unexpected vSAN Growth
 slug: understanding-and-explaining-unexpected-vsan-growth
-description: 
+description: Troubleshooting guide for diagnosing unexpected vSAN storage growth, including how to review tier history and identify common causes like snapshots, backups, and tenant storage.
+author: VergeOS Documentation Team
 draft: false
 date: 2023-01-24T19:17:41.331Z
+semantic_keywords:
+  - "unexpected vsan storage growth troubleshooting"
+  - "vsan tier history growth analysis"
+  - "snapshot retention storage consumption"
+  - "tenant storage usage investigation"
+  - "vmware backup job storage impact"
+use_cases:
+  - diagnose_unexpected_storage_growth
+  - review_vsan_tier_growth_history
+  - identify_snapshot_retention_issues
+  - investigate_tenant_storage_usage
+  - plan_storage_capacity_expansion
 tags:
   - unexpected
   - unexplained
   - growth
   - disk growth
-  - maleware
+  - malware
   - vsan
 categories:
   - VM

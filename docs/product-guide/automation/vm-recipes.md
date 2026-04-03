@@ -1,3 +1,32 @@
+---
+title: "VM Recipes"
+description: "How to create, configure, and use VM recipes in VergeOS for rapid deployment of standardized virtual machines with customizable questions and cloud-init integration."
+semantic_keywords:
+  - "create VM recipes for automated virtual machine deployment"
+  - "cloud-init cloudbase-init recipe integration"
+  - "VM template recipe questions configuration"
+  - "marketplace VM recipe customization and simulation"
+use_cases:
+  - create_vm_recipes
+  - deploy_vms_from_recipes
+  - configure_recipe_questions
+  - integrate_cloud_init
+  - simulate_and_test_recipes
+  - manage_recipe_instances
+tags:
+  - vm
+  - recipe
+  - automation
+  - cloud-init
+  - template
+  - deployment
+  - provisioning
+  - marketplace
+  - questions
+categories:
+  - Automation
+---
+
 # VM Recipes
 
 VM recipes provide a powerful way to quickly deploy instance-specific virtual machines from a standard configuration. This page will walk you through the process of creating and using VM recipes.

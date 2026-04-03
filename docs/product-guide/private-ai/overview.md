@@ -1,3 +1,31 @@
+---
+title: "Private AI Overview"
+description: "Overview of VergeOS Private AI, which enables deploying and running large language models locally within your infrastructure with no external API calls or data transmission."
+semantic_keywords:
+  - "run LLMs locally on-premises private infrastructure"
+  - "self-hosted AI models inference engine workers"
+  - "OpenAI compatible API local deployment"
+  - "private AI architecture models assistants workers"
+  - "GPU accelerated local language model deployment"
+use_cases:
+  - deploy_local_llm
+  - private_ai_infrastructure
+  - openai_api_integration
+  - gpu_accelerated_inference
+  - on_premises_ai_chat
+tags:
+  - private-ai
+  - llm
+  - models
+  - assistants
+  - workers
+  - gpu
+  - openai-api
+  - inference
+categories:
+  - Private AI
+---
+
 # Private AI Overview
 
 VergeOS Private AI enables you to deploy and run large language models (LLMs) locally within your VergeOS environment. Models run entirely on your infrastructure with no external API calls or data transmission.

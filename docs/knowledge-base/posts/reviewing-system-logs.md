@@ -1,9 +1,21 @@
 ---
 title: System Logs
 slug: system-logs
-description: 
+description: Guide to reviewing system logs, sync logs, and the System Event Log (SEL) in VergeOS, including log retention, third-party log forwarding, and best practices.
+author: VergeOS Documentation Team
 draft: false
 date: 2023-08-30T18:05:00.332Z
+semantic_keywords:
+  - "system logs review monitoring troubleshooting"
+  - "sync logs snapshot synchronization statistics"
+  - "SEL system event log IPMI hardware"
+  - "third-party syslog forwarding retention"
+use_cases:
+  - review_system_logs
+  - monitor_sync_log_activity
+  - clear_sel_capacity
+  - configure_third_party_log_forwarding
+  - troubleshoot_system_events
 tags:
   - logs
   - cluster

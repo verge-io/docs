@@ -1,3 +1,27 @@
+---
+title: "Snapshots"
+description: "Overview of VergeOS snapshot capabilities including system, partial, VM, tenant, and NAS volume snapshots with instant recovery, application-consistent capture, and flexible restore options."
+semantic_keywords:
+  - "VergeOS snapshots overview system VM NAS tenant"
+  - "point-in-time backup snapshot restore options"
+  - "application-consistent quiesced snapshot capabilities"
+  - "full partial system snapshot comparison"
+use_cases:
+  - "understand_snapshot_types"
+  - "evaluate_snapshot_capabilities"
+  - "plan_snapshot_strategy"
+  - "compare_snapshot_methods"
+tags:
+  - snapshots
+  - backup
+  - data-protection
+  - system-snapshots
+  - vm-snapshots
+  - nas-snapshots
+categories:
+  - Backup and DR
+---
+
 # Snapshots
 
 Snapshots provide nearly-instant, non-disruptive, point-in-time backups that allow for rollback to a previous instance in the event of a hardware failure, faulty application upgrade, VM bluescreen, etc. Snapshot captures and restores can be done at various levels: full system, partial system (select VMs, tenants, VMware services, and volumes based on custom tagging), individual virtual machine, and individual NAS volume.

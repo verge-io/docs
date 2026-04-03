@@ -1,3 +1,32 @@
+---
+title: "Volume Syncs"
+description: "How to create and configure volume syncs in VergeOS to synchronize data between local and remote NAS volumes, including scheduling, advanced sync options, and destination delete policies."
+semantic_keywords:
+  - "synchronize data between NAS volumes in VergeOS"
+  - "volume sync for file-level backup and data transfer"
+  - "configure recurring volume sync schedules"
+  - "rsync and VergeOS sync methods with ACL preservation"
+  - "remote and local volume data synchronization"
+use_cases:
+  - sync_data_between_volumes
+  - transfer_external_data_to_vsan
+  - schedule_recurring_file_backups
+  - configure_sync_advanced_options
+  - migrate_data_between_storage_systems
+tags:
+  - nas
+  - volume sync
+  - data transfer
+  - backup
+  - rsync
+  - synchronization
+  - scheduling
+  - acl
+  - remote volume
+categories:
+  - NAS
+---
+
 # Volume Syncs
 
 Volume syncs allow for synchronizing data between two volumes. A volume sync can be used as a one-time transfer or recurring in order to synchronize data on a regular schedule. Volume syncs can involve both [**Remote Volumes**](/product-guide/nas/nas-remote-volumes) and [**Local Volumes**](/product-guide/nas/nas-local-volumes), providing the ability to:

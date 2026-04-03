@@ -1,9 +1,22 @@
 ---
 title: Device Passthrough Advanced Configuration
 slug: dev-passthrough-advanced
-description: Advanced configuration information for device passthrough - manual creation/editing of resource rules
+description: Advanced configuration information for device passthrough including manual creation and editing of resource rules for PCI, USB, SR-IOV, and NVIDIA vGPU devices.
+author: VergeOS Documentation Team
 draft: false
 date: 2024-11-10T16:53:09.094Z
+semantic_keywords:
+  - "pci device passthrough resource rules"
+  - "sriov sr-iov nvidia vgpu configuration"
+  - "resource group filter device pool"
+  - "usb pci passthrough virtual machine"
+  - "manual resource rule creation editing"
+use_cases:
+  - manually_create_device_passthrough_rules
+  - edit_existing_resource_rules
+  - configure_sriov_nvidia_vgpu_passthrough
+  - filter_pci_usb_devices_for_vms
+  - manage_device_resource_groups
 tags:
   - device passthrough
   - passthrough
@@ -14,7 +27,7 @@ tags:
   - resource rules
   - device pool
 categories:
-  - system administration
+  - System Administration
   - VM
   - Virtual Machines
   - Tenant

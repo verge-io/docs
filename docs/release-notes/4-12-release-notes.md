@@ -1,6 +1,30 @@
 ---
-description: Release notes for the 4.12 series of VergeOS
-#icon: material/text-box-outline
+title: "4.12 Release Notes"
+description: "Release notes for the 4.12 series of VergeOS, introducing dark mode UI, TOTP two-factor authentication, nested virtualization with live migration, offline licensing, 25% faster network migrations, and dedicated vSAN meta cache."
+semantic_keywords:
+  - "VergeOS 4.12 release notes and features"
+  - "VergeOS dark mode and TOTP authentication"
+  - "VergeOS nested virtualization and live migration"
+  - "VergeOS 4.12 offline licensing and network performance"
+use_cases:
+  - review_4_12_features
+  - check_4_12_deprecation_status
+  - plan_upgrade_from_4_12
+  - review_dark_mode_introduction
+  - review_totp_2fa_introduction
+tags:
+  - release-notes
+  - vergeos-4
+  - deprecated
+  - dark-mode
+  - totp
+  - two-factor-auth
+  - nested-virtualization
+  - offline-licensing
+  - vsan
+  - networking
+categories:
+  - Release Notes
 status: deprecated
 ---
 

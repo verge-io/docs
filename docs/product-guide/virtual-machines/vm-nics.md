@@ -1,3 +1,28 @@
+---
+title: "Virtual Machine Network Interfaces (NICs)"
+description: "Guide to adding, modifying, deleting, and disabling virtual network interfaces on VergeOS VMs, including interface types, MAC address management, and network assignment."
+semantic_keywords:
+  - "add NIC network interface to virtual machine"
+  - "VirtIO Intel E1000 network driver interface"
+  - "change VM MAC address network assignment"
+  - "delete disable NIC on running VM"
+use_cases:
+  - add_nic_to_vm
+  - configure_network_interface
+  - modify_vm_mac_address
+  - delete_disable_vm_nic
+tags:
+  - virtual-machines
+  - nics
+  - networking
+  - virtio
+  - mac-address
+  - network-interface
+  - drivers
+categories:
+  - Virtual Machines
+---
+
 # Virtual Machine Network Interfaces (NICs)
 
 ## Add a NIC to a VM

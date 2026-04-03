@@ -1,9 +1,22 @@
 ---
 title: API Tables Description
 slug: api-tables-description
-description: 
-published: false
+description: A reference of all VergeOS API tables with brief descriptions, covering resources such as billing, catalogs, clusters, certificates, machines, drives, NICs, snapshots, and more.
+author: VergeOS Documentation Team
+draft: true
 date: 2023-10-06T14:10:54.764Z
+semantic_keywords:
+  - "API tables reference, VergeOS API resources, table descriptions"
+  - "billing API, catalog API, cluster API, machine API"
+  - "Swagger documentation, API schema, table actions"
+  - "machine drives, machine NICs, device management API"
+  - "system snapshots, cloud snapshots, file management API"
+use_cases:
+  - "api_table_discovery"
+  - "api_endpoint_reference"
+  - "swagger_documentation_lookup"
+  - "developer_onboarding"
+  - "integration_planning"
 tags:
   - api
   - tables

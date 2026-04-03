@@ -1,3 +1,33 @@
+---
+title: "Network Diagnostics Guide"
+description: "Reference guide for built-in VergeOS network diagnostic tools including ping, traceroute, DNS lookup, ARP scan, TCP dump, NMAP, firewall debugging, and BGP/OSPF troubleshooting."
+semantic_keywords:
+  - "VergeOS network diagnostics troubleshooting tools"
+  - "ping traceroute DNS lookup ARP scan"
+  - "TCP dump packet capture network analysis"
+  - "firewall debug NMAP port scan diagnostics"
+  - "BGP OSPF routing diagnostics VergeOS"
+use_cases:
+  - run_network_diagnostic_commands
+  - troubleshoot_connectivity_with_ping_traceroute
+  - perform_dns_lookup_and_arp_scan
+  - capture_packets_with_tcpdump
+  - debug_firewall_rules
+  - scan_network_with_nmap
+tags:
+  - networking
+  - diagnostics
+  - troubleshooting
+  - ping
+  - traceroute
+  - dns
+  - tcpdump
+  - nmap
+  - firewall
+categories:
+  - Networking
+---
+
 # Network Diagnostics Guide
 
 ## Overview

@@ -1,3 +1,30 @@
+---
+title: "Licensing and Software Updates"
+description: "How to manage VergeOS software updates and licensing, including the update process, update settings, automatic updates, snapshot settings, and air-gap licensing."
+semantic_keywords:
+  - "VergeOS software update process download install reboot"
+  - "licensing update server configuration credentials"
+  - "automatic updates scheduled update time branch"
+  - "air-gap licensing offline environment ISO"
+  - "system snapshot before update rollback"
+use_cases:
+  - configure_update_server_settings
+  - run_system_software_update
+  - enable_automatic_updates
+  - configure_air_gap_licensing
+  - set_snapshot_before_update_policy
+tags:
+  - licensing
+  - updates
+  - software
+  - air-gap
+  - snapshots
+  - configuration
+  - maintenance
+categories:
+  - System Administration
+---
+
 # Licensing and Software Updates
 
 This guide explains how to manage software updates and licensing in VergeOS. For an overview of how licensing works, including System IDs and license types, see [Licensing Overview](/product-guide/system/licensing-overview/).

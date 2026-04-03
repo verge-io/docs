@@ -1,12 +1,23 @@
 ---
 title: CPU Overprovisioning and Resource Planning
 slug: cpu-overprovisioning-guide
-description: Understanding CPU allocation, overcommit ratios, and performance implications in VergeOS
-author: Verge.io
-published: true
+description: Understanding CPU allocation, overcommit ratios, and performance implications in VergeOS, including recommended ratios by workload type and capacity planning calculations.
+author: VergeOS Documentation Team
+draft: false
 date: 2026-01-24
+semantic_keywords:
+  - "CPU overprovisioning overcommit ratio vCPU"
+  - "capacity planning cluster resource allocation"
+  - "max cores per machine NUMA performance"
+  - "VM CPU sizing scheduling migration"
+use_cases:
+  - plan_cpu_capacity
+  - configure_overcommit_ratios
+  - set_max_cores_per_machine
+  - right_size_vm_cpu_allocation
+  - monitor_cpu_health
 tags:
-  - CPU
+  - cpu
   - performance
   - capacity planning
   - cluster
@@ -15,6 +26,8 @@ tags:
 categories:
   - System Administration
   - Best Practices
+editor: markdown
+dateCreated: 2026-01-24
 ---
 
 # CPU Overprovisioning and Resource Planning

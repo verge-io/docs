@@ -1,3 +1,30 @@
+---
+title: "NVIDIA vGPU (Virtual GPU)"
+description: "How to configure NVIDIA vGPU passthrough in VergeOS, including host driver installation, resource group creation, VM guest configuration, and sharing vGPU devices to tenants."
+semantic_keywords:
+  - "VergeOS NVIDIA vGPU virtual GPU configuration"
+  - "GRID vGPU driver installation host setup"
+  - "vGPU resource group profile VM guest"
+  - "share vGPU device to tenant passthrough"
+  - "NVIDIA CUDA machine learning GPU acceleration"
+use_cases:
+  - install_nvidia_vgpu_drivers
+  - create_vgpu_resource_group
+  - attach_vgpu_device_to_vm
+  - share_vgpu_to_tenant
+  - configure_vgpu_frame_rate_and_settings
+tags:
+  - vgpu
+  - nvidia
+  - gpu
+  - passthrough
+  - resource-groups
+  - virtual-machines
+  - tenants
+  - machine-learning
+categories:
+  - System Administration
+---
 
 # NVIDIA vGPU (Virtual GPU)
 

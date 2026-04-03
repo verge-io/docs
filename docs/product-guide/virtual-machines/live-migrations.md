@@ -1,5 +1,29 @@
 ---
-status: new
+title: "Live Migrations"
+description: "Guide to performing live migrations of running VMs between nodes and virtual disks between storage tiers in VergeOS without service interruption."
+semantic_keywords:
+  - "live migrate running VM between nodes"
+  - "move virtual disk between storage tiers online"
+  - "zero downtime VM migration VergeOS"
+  - "vGPU nested virtualization live migration"
+  - "bulk VM migration across cluster nodes"
+use_cases:
+  - live_migrate_vm_between_nodes
+  - migrate_disk_between_storage_tiers
+  - enable_vgpu_live_migration
+  - enable_nested_virtualization_migration
+  - bulk_migrate_running_vms
+tags:
+  - virtual-machines
+  - live-migration
+  - storage-tiers
+  - high-availability
+  - maintenance
+  - vgpu
+  - nested-virtualization
+  - cluster
+categories:
+  - Virtual Machines
 ---
 
 # Live Migrations

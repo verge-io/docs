@@ -1,9 +1,18 @@
 ---
 title: Changing Resolution on a UEFI VM
 slug: changing-resolution-on-a-uefi-vm
-description: Steps to change the screen resolution on a UEFI-based VM.
+description: Steps to change the screen resolution on a UEFI-based VM by modifying the OVMF Platform Configuration display settings.
+author: VergeOS Documentation Team
 draft: false
 date: 2023-11-15T21:13:25.425Z
+semantic_keywords:
+  - "uefi vm screen resolution change"
+  - "ovmf platform configuration display"
+  - "virtual machine display settings firmware"
+use_cases:
+  - change_uefi_vm_resolution
+  - configure_ovmf_display_settings
+  - troubleshoot_vm_display_issues
 tags:
   - vm
   - uefi

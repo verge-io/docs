@@ -1,3 +1,30 @@
+---
+title: "Configuring a Site Sync"
+description: "Complete guide to configuring site sync replication between VergeOS systems, including network rules, incoming/outgoing sync setup, auto sync scheduling, throttling, and repair server creation."
+semantic_keywords:
+  - "configure site sync replication VergeOS step by step"
+  - "incoming outgoing sync setup registration key"
+  - "site sync network rules PAT 14201 configuration"
+  - "sync scheduling throttle bandwidth encryption settings"
+  - "auto sync snapshot retention remote destination"
+use_cases:
+  - "configure_site_sync_replication"
+  - "setup_incoming_outgoing_sync"
+  - "schedule_sync_operations"
+  - "configure_sync_throttle_bandwidth"
+  - "setup_offsite_disaster_recovery"
+tags:
+  - site-syncs
+  - replication
+  - configuration
+  - networking
+  - disaster-recovery
+  - scheduling
+  - encryption
+categories:
+  - Backup and DR
+---
+
 # Configuring a Site Sync
 
 Site sync provides replication of ***system snapshots*** to a separate VergeOS system.  Replicating full system snapshots provides comprehensive off-site data backup to facilitate disaster recovery and business continuity.  

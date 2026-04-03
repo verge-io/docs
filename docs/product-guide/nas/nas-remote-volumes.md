@@ -1,3 +1,29 @@
+---
+title: "Remote Volumes"
+description: "How to create remote NAS volumes in VergeOS by mounting external CIFS and NFS file systems for data import, backup, and integration with external storage."
+semantic_keywords:
+  - "mount remote CIFS NFS volumes in VergeOS"
+  - "external file system integration NAS remote mount"
+  - "import external data into VergeOS vSAN"
+  - "remote NFS and CIFS volume creation and configuration"
+use_cases:
+  - mount_remote_cifs_shares
+  - mount_remote_nfs_exports
+  - import_external_data
+  - configure_remote_volume_options
+tags:
+  - nas
+  - volume
+  - remote
+  - cifs
+  - nfs
+  - mount
+  - external storage
+  - data import
+categories:
+  - NAS
+---
+
 # Remote Volumes
 
 Remote volumes are external file systems mounted to the VergeOS system via standard NFS or CIFS. A common use for a remote volume would be to allow syncing external data into the VergeOS vSAN (from other VergeOS sites or other storage systems), for a one-time operation or recurring backups.

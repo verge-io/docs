@@ -1,3 +1,25 @@
+---
+title: "VergeOS Implementation Guide & Reference Architectures"
+description: "Introduction to the VergeOS implementation guide covering deployment, configuration, and optimization of VergeOS systems from small edge deployments to large-scale enterprise environments."
+semantic_keywords:
+  - "VergeOS implementation guide getting started"
+  - "VergeOS deployment planning and setup"
+  - "software-defined data center installation overview"
+  - "VergeOS reference architecture introduction"
+use_cases:
+  - new_deployment_planning
+  - implementation_overview
+  - reference_architecture_selection
+tags:
+  - implementation
+  - deployment
+  - getting-started
+  - reference-architecture
+  - overview
+categories:
+  - Installation
+---
+
 # VergeOS Implementation Guide & Reference Architectures
 
 Welcome to the VergeOS Implementation Guide and Reference Architectures section. This comprehensive resource is designed to help you successfully deploy, configure, and optimize your VergeOS System.
