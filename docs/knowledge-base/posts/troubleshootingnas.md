@@ -3,7 +3,7 @@ title: Troubleshooting NAS Shares
 slug: troubleshooting-nas-shares
 description: Troubleshooting guide for common NAS CIFS share issues including connectivity errors, permission denied errors, slow performance, and MacOS compatibility.
 author: VergeOS Documentation Team
-draft: true
+draft: false
 date: 2023-09-18T15:54:21.904Z
 semantic_keywords:
   - "cifs smb share connectivity troubleshooting"

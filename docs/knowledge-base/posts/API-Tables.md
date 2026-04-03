@@ -3,7 +3,7 @@ title: API Tables Description
 slug: api-tables-description
 description: A reference of all VergeOS API tables with brief descriptions, covering resources such as billing, catalogs, clusters, certificates, machines, drives, NICs, snapshots, and more.
 author: VergeOS Documentation Team
-draft: true
+draft: false
 date: 2023-10-06T14:10:54.764Z
 semantic_keywords:
   - "API tables reference, VergeOS API resources, table descriptions"
