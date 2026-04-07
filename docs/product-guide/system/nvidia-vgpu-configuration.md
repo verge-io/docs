@@ -6,7 +6,7 @@ VergeOS allows seamless utilization of NVIDIA's vGPU platform to assign virtuali
 !!! new-feature "New in 26.1.3"
     VergeOS now includes expanded NVIDIA feature support, providing increased flexibility for dividing GPU devices across workloads  
 
-    - **Heterogeneous vGPU profiles** - use multiple traditional vGPU profiles within the same device and resource group. Requires NVIDIA driver version 17.2 or later and device support.
+    - **Heterogeneous vGPU profiles** - use multiple traditional vGPU profiles within the same device. Requires NVIDIA driver version 17.2 or later and device support.
 
     - **MIG profiles** - a single GPU can be partitioned into up to seven hardware-isolated instances, for guaranteed service to multiple simultaneous workloads. Requires device support; latest NVIDIA data-center driver recommended.  
 
