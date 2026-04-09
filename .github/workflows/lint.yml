@@ -9,6 +9,21 @@ on:
       - main
 
 jobs:
+  frontmatter:
+    name: Validate Frontmatter
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Validate frontmatter
+        run: python .github/scripts/validate_frontmatter.py
+
   widget-links:
     name: Validate Widget Links
     runs-on: ubuntu-latest
