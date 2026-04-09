@@ -13,8 +13,6 @@ from pathlib import Path
 # Files and directories excluded from frontmatter requirements
 EXCLUDE_PATHS = {
     "docs/index.md",
-    "docs/support.md",
-    "docs/how-to-write-a-verge-guide.md",
     "docs/knowledge-base/template.md",
     "docs/knowledge-base/index.md",
 }
