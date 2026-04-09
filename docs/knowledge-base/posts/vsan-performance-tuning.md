@@ -80,7 +80,23 @@ NVMe provides less advantage for:
 - Workloads that fit entirely in the read cache
 - Lightly loaded VMs that do not generate enough I/O to saturate slower tiers
 
-## Read Cache Optimization
+## RAM Cache and Buffer Optimization
+
+The vSAN uses two separate per-node RAM allocations that directly affect storage performance: a **read cache** and a **write buffer**. For a detailed explanation of how these work at the architecture level, see [RAM-Based Caching and Buffering](/product-guide/storage/vsan-architecture/#ram-based-caching-and-buffering).
+
+!!! info "No SSD Cache Tier"
+    Unlike traditional HCI platforms (such as VMware vSAN) that dedicate SSD capacity as a read/write cache layer, the VergeOS vSAN handles all caching in RAM. SSDs and NVMe drives are full storage tiers — all their capacity is available for user data. Cache sizing is determined by your node memory budget, not your drive configuration.
+
+### Write Buffer
+
+Each node allocates a RAM-based write buffer (default 2 GB, configurable via the **Storage buffer per node** cluster setting). The write buffer absorbs incoming writes while they are hashed, deduplicated, and committed to disk through the transactional journal. This allows the vSAN to batch and order writes efficiently rather than issuing many small random writes directly to drives.
+
+The write buffer is not a write-back cache — it does not defer writes indefinitely. All buffered data is flushed to persistent storage as part of the journaled transaction before the write is acknowledged. The buffer improves write throughput by batching I/O, not by caching it.
+
+!!! tip "When to Increase the Write Buffer"
+    If your workloads generate frequent write bursts (such as database checkpoints or batch imports), increasing the write buffer can help absorb spikes without stalling. Monitor write latency trends and consider increasing the buffer if you see latency spikes that correlate with bursty write patterns.
+
+### Read Cache
 
 The vSAN read cache sits in front of all tiers and serves frequently accessed data from memory. A well-tuned read cache can make even slower tiers feel fast for read-heavy workloads.
 
@@ -162,7 +178,7 @@ Regular monitoring helps you catch issues before they become user-visible proble
 | **Tier utilization** | System Dashboard > vSAN | Watch for tiers approaching 90% -- write throttling begins at this threshold |
 | **Read cache hit rate** | vSAN Diagnostics > Get Cache Info | Declining hit rates may indicate a growing working set |
 | **Cluster I/O rates** | vSAN Diagnostics > Get Cluster Rates | Baseline your normal I/O and watch for anomalies |
-| **High usage rate** | vSAN Diagnostics > Get High Usage Rate | Identifies the hottest files/volumes driving the most I/O |
+| **Top usage rates** | vSAN Diagnostics > Get Top Usage Rates | Identifies the hottest files/volumes driving the most I/O |
 | **Drive latency** | Node Dashboard > Drives | Individual drives with high latency may indicate hardware issues |
 
 ### Establishing a Baseline

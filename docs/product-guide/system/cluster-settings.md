@@ -24,11 +24,12 @@ This section defines the fundamental properties of your cluster.
 !!! warning "All nodes within a cluster should contain the same CPU hardware; mixed CPU types within the same cluster can cause performance and workload migration issues."
 
 
-5. **Storage buffer per node (default 2 GB):** The amount of additional RAM to allocate per node for vSAN performance caching.     
+5. **Storage buffer per node (default 2 GB):** The amount of RAM to allocate per node for the vSAN **write buffer**. This buffer absorbs incoming writes while they are hashed, deduplicated, and committed to disk through the transactional journal — it is not a traditional write-back cache. A separate per-node **read cache** (configured during installation) stores recently accessed blocks in RAM for fast read access. For details on how both allocations work, see [RAM-Based Caching and Buffering](/product-guide/storage/vsan-architecture/#ram-based-caching-and-buffering).
 !!! note "Considerations"
     - When there is available RAM, beyond system and virtual workload needs, consider increasing this setting
-    - Increasing the *Storage buffer per node* can significantly improve read/write performance
-    - As a general rule of thumb, aim for no more than 80% RAM utilization during normal operation  
+    - A larger write buffer helps absorb write bursts (such as database checkpoints or batch imports) without stalling I/O
+    - The write buffer and read cache both consume node RAM — balance storage performance against the memory available for VM workloads
+    - As a general rule of thumb, aim for no more than 80% RAM utilization during normal operation
 
 
 ### Cluster Security/Performance
@@ -44,14 +45,14 @@ This subsection allows you to enable/disable various performance and security-re
    
 4. **Disable SMT:** If selected, disables simultaneous multi-threading (SMT) at runtime.  
 
-!!! Notes
-    - Disabling SMT will significantly impair performance as it disables hyper-threading 
-    - While modern software and microcode updates generally mitigate many of the vulnerabilities involved with SMT, some highly-sensitive environments may choose to disable it, even if it comes at a performance cost 
-    - The recommended way to disable SMT is in the BIOS.  The exact name of the setting can vary by manufacturer; consult your hardware documentation if unsure 
+!!! note "Notes"
+    - Disabling SMT will significantly impair performance as it disables hyper-threading
+    - While modern software and microcode updates generally mitigate many of the vulnerabilities involved with SMT, some highly-sensitive environments may choose to disable it, even if it comes at a performance cost
+    - The recommended way to disable SMT is in the BIOS.  The exact name of the setting can vary by manufacturer; consult your hardware documentation if unsure
 
 5. **Disable sleep states for CPUs:** If selected, VergeOS automatically disables low level sleep state(s). This can eliminate unnecessary sleep state transitions due to short idle bursts that would otherwise cause a notable drop in performance with minimal benefit in power efficiency. 
 
-!!! Considerations
+!!! note "Considerations"
     - Disabling CPU sleep states can be especially beneficial on newly deployed systems, where workloads are gradually added. In these cases, idle nodes must quickly respond as demand increases
     - Selecting this option can lead to higher temperatures and power usage, depending on system workloads
 
@@ -107,6 +108,26 @@ This section configures compute resource policies for your cluster.  These setti
     - Consider rightsizing VMs by reducing RAM allocations where usage is consistently low
     - If too many VMs demand their full memory allocation simultaneously, workload performance may be degraded as virtual RAM is orders of magnitude slower than physical RAM (milliseconds vs. nanoseconds)
      
+
+!!! warning "RAM Budget: How These Settings Interact"
+    The **write buffer**, **read cache**, **Target max ram pct**, and **Max RAM per machine** settings all draw from the same physical RAM on each node. When planning your configuration, account for all of them together:
+
+    - **vSAN overhead first:** The write buffer (default 2 GB) and read cache (default 1 GB) are reserved per node before any RAM is available for workloads. Hugepages for storage also consume a fixed allocation.
+    - **Target max ram pct second:** The remaining RAM is governed by this percentage (default 80%). Only this portion is available for starting new workloads under normal conditions.
+    - **Max RAM per machine last:** No single workload can exceed this cap, regardless of available RAM.
+
+    **Example:** A node with 256 GB physical RAM (252 GB usable after BIOS overhead):
+
+    | Allocation | Amount |
+    |---|---|
+    | Write buffer | 2 GB |
+    | Read cache | 1 GB |
+    | Other system/vSAN overhead | ~13 GB |
+    | **Subtotal reserved** | **~16 GB** |
+    | RAM governed by Target max ram pct (80% of 252 GB) | ~200 GB |
+    | **Available for workloads** | ~200 GB minus 16 GB = **~184 GB** |
+
+    If you increase the write buffer or read cache, the RAM available for workloads decreases accordingly. Always verify that your largest expected VM fits within the remaining budget after all storage allocations.
 
 5. **Nested Virtualization:** Enables using a virtual machine inside another virtual machine using hardware acceleration from the host.
 !!! note "Nested virtualization can involve security implications and issues with fair queuing/metering."  

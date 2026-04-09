@@ -201,3 +201,41 @@ Every block-level operation that crosses a node boundary travels over the core f
     The core network is the backbone of vSAN performance. Ensure dedicated, high-bandwidth interfaces are allocated for core traffic and that jumbo frames are enabled on all switches in the core network path. Misconfigured MTU is one of the most common causes of storage performance issues.
 
 ---
+
+## RAM-Based Caching and Buffering
+
+The vSAN uses two separate RAM allocations on every node to accelerate I/O. Understanding these is important for capacity planning and performance tuning.
+
+### Read Cache
+
+Each node maintains an in-memory **read cache** that stores recently accessed 64 KB blocks. When a block is read, a copy is kept in RAM so that subsequent reads for the same block are served directly from memory without any disk or network I/O. The cache uses a least-recently-used (LRU) eviction policy — frequently accessed blocks remain cached while cold data is evicted to make room.
+
+The read cache size is set per node during installation. You can view the current allocation by running **Get Cache Info** under **System > vSAN Diagnostics** (the `total` field shows the cache size for the selected node).
+
+### Write Buffer
+
+Each node also allocates a RAM-based **write buffer** (the **Storage buffer per node** cluster setting, default 2 GB). The write buffer absorbs incoming writes and works in conjunction with the vSAN's transactional journal. Writes are held in the buffer while they are being hashed, deduplicated, and committed to disk — this allows the vSAN to coalesce and order writes efficiently rather than issuing many small random writes directly to the underlying drives.
+
+The write buffer is **not** a write-back cache in the traditional sense — it does not defer writes indefinitely. All buffered data is flushed to persistent storage as part of the journaled transaction before the write is acknowledged to the application. The buffer improves write throughput by batching I/O, not by caching it.
+
+!!! tip "Hugepages"
+    Both the read cache and write buffer benefit from hugepages (2 MB pages), which reduce memory management overhead. Hugepages are enabled by default during installation and can be verified under **Cluster Settings > Allocate Hugepages for Storage**.
+
+### No SSD Cache Tier
+
+Unlike traditional HCI platforms that dedicate an SSD tier as a read/write cache in front of slower HDD storage, the VergeOS vSAN does **not** use a discrete SSD cache layer. All caching happens in RAM (read cache and write buffer), while SSDs and NVMe drives participate as full storage tiers that hold persistent data.
+
+This distinction matters for capacity planning:
+
+- **Traditional HCI:** SSD capacity is "consumed" by the cache and unavailable for user data. You must size SSDs for cache working set, not data capacity.
+- **VergeOS vSAN:** All SSD/NVMe capacity is available for user data. Caching is handled entirely in RAM, so cache sizing is a function of your node memory budget — not your drive configuration.
+
+Tier placement (assigning workloads to faster or slower tiers via [preferred tier settings](/product-guide/storage/preferred-tiers)) serves the role that cache tiering plays in other platforms. Rather than hoping a cache algorithm promotes your hot data to SSD, you explicitly place performance-sensitive workloads on NVMe or SSD tiers and bulk/archival data on HDD tiers.
+
+### Read-Ahead Prefetching
+
+The vSAN includes a **read-ahead** mechanism that pre-fetches sequential blocks into the read cache. This benefits workloads that read data sequentially (such as media streaming or large file transfers). Random I/O workloads (such as databases) generally do not benefit from aggressive read-ahead.
+
+You can check the current read-ahead configuration from **System > vSAN Diagnostics** using the **Get Read Ahead** query.
+
+---

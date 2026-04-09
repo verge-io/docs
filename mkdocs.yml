@@ -174,17 +174,17 @@ nav:
       - New System Configuration: product-guide/intro/new-system-configuration.md
     - vSAN Storage:
        - Overview: product-guide/storage/overview.md
-       - vSAN Fundamentals: product-guide/storage/vsan-fundamentals.md
-       - vSAN Architecture: product-guide/storage/vsan-architecture.md
-       - vSAN Redundancy Levels: product-guide/storage/vsan-redundancy-levels.md
-       - vSAN Health Monitoring: product-guide/storage/vsan-health-monitoring.md
+       - Fundamentals: product-guide/storage/vsan-fundamentals.md
+       - Architecture: product-guide/storage/vsan-architecture.md
+       - Redundancy Levels: product-guide/storage/vsan-redundancy-levels.md
+       - Health Monitoring: product-guide/storage/vsan-health-monitoring.md
        - Storage Tiers: product-guide/storage/storage-tiers.md
        - Preferred Tier: product-guide/storage/preferred-tiers.md
        - Capacity Planning: product-guide/storage/capacity-planning.md
        - External Storage Integration: product-guide/storage/external-storage-integration.md
        - Fibre Channel: product-guide/storage/fibre-channel.md
-       - vSAN Deletion Process: product-guide/storage/vsan-deletion-process.md
-       - vSAN Diagnostics: product-guide/storage/vsan-diagnostics.md
+       - Deletion Process: product-guide/storage/vsan-deletion-process.md
+       - Diagnostics: product-guide/storage/vsan-diagnostics.md
     - Backup & DR:
       - Overview: product-guide/backup-dr/overview.md
       - Snapshots:
@@ -359,7 +359,7 @@ nav:
         - Scale Out Nodes: product-guide/operations/sop-scale-out.md
         - System Updates: product-guide/operations/sop-update.md
         - Installation Procedures: product-guide/operations/sop-verge-install.md
-        - vSAN Scale Up: product-guide/operations/vsan-scale-up-sop.md
+        - Scale Up vSAN: product-guide/operations/vsan-scale-up-sop.md
       - Node Replacement: product-guide/operations/node-replacement.md
     - Tools and Integrations:
       - Automation & API:

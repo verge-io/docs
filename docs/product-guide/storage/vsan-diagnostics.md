@@ -78,18 +78,50 @@ Each vSAN storage tier reports a health status that reflects its current operati
 **Example -- Get Tier Status output (normal):**
 
 ```
-Tier 0: status=online  used=4.2TB  max=12TB  pct=35%
-Tier 1: status=online  used=1.8TB  max=8TB   pct=22%
+vcmd gettierstatus
+
+0) tier_1 = (serstring)
+{
+    0) tier = (int) 1
+    1) redundancy = (int) 2
+    2) redundant = (bool) true
+    3) working = (bool) false
+    4) last_walk_time_ms = (uint64) 136
+    5) last_fullwalk_time_ms = (uint64) 78650
+    6) last_inc_count = (uint64) 0
+    7) last_dec_count = (uint64) 0
+    8) transaction = (uint64) 3605536
+    9) transaction_start = (string) "04/09/2026 13:54:23"
+   10) transaction_start_stamp = (uint64) 1775757263
+   11) repairs = (uint64) 0
+   12) bad_drives = (int) 0
+}
 ```
 
 **Example -- Get Tier Status output (degraded):**
 
 ```
-Tier 0: status=online       used=4.2TB  max=12TB  pct=35%
-Tier 1: status=noredundant  used=1.8TB  max=8TB   pct=22%  repairing=0
+vcmd gettierstatus
+
+0) tier_1 = (serstring)
+{
+    0) tier = (int) 1
+    1) redundancy = (int) 2
+    2) redundant = (bool) false
+    3) working = (bool) true
+    4) last_walk_time_ms = (uint64) 210
+    5) last_fullwalk_time_ms = (uint64) 91200
+    6) last_inc_count = (uint64) 0
+    7) last_dec_count = (uint64) 0
+    8) transaction = (uint64) 3605536
+    9) transaction_start = (string) "04/09/2026 14:02:10"
+   10) transaction_start_stamp = (uint64) 1775757730
+   11) repairs = (uint64) 4218
+   12) bad_drives = (int) 1
+}
 ```
 
-In the degraded example, Tier 1 shows `noredundant` with `repairing=0`, meaning redundancy is lost but automatic repair has not started -- likely because the failed device has not been replaced or spare capacity is insufficient.
+In the degraded example, Tier 1 shows `redundant = (bool) false` with `bad_drives = (int) 1`, meaning redundancy is lost due to a failed drive. The `repairs` field shows blocks being re-replicated. If `repairs` is 0 and `redundant` is false, automatic repair has not started -- likely because the failed device has not been replaced or spare capacity is insufficient.
 
 ---
 
@@ -128,10 +160,14 @@ The vSAN journal is a write-ahead log that ensures crash-consistent recovery. Al
 
 | Field | Description |
 |---|---|
-| **status** | Current journal state: `idle` (no active writes), `active` (writes in progress), or `paused` (manually paused for maintenance). |
+| **status** | Current journal state: `"idle"` (no active writes), `"active"` (writes in progress), or `"paused"` (manually paused for maintenance). |
+| **alive** | Whether the journal process is running. |
 | **cur_transaction** | The current transaction sequence number. This increments with each committed write batch. |
 | **redundant** | Whether journal data is being written to a redundant location for crash safety. |
+| **min_online** | Whether the minimum number of nodes required for operation are online. |
+| **curmaster** | The node currently acting as the vSAN master. |
 | **index_unique** | Total number of unique index nodes tracked by the journal. |
+| **encrypted** | Whether vSAN encryption is enabled. |
 
 ### What to Look For
 
@@ -145,16 +181,47 @@ The vSAN journal is a write-ahead log that ensures crash-consistent recovery. Al
 **Example -- Get Journal Status output (normal):**
 
 ```
-status=idle  cur_transaction=584210  redundant=true  index_unique=12847
+vcmd getjournalstatus
+
+ 0) status = (string) "idle"
+ 1) alive = (bool) true
+ 2) cur_transaction = (uint64) 3605531
+ 3) redundant = (bool) true
+ 4) min_online = (bool) true
+ 5) tier 1_last_ms = (uint64) 120
+ 6) curmaster = (string) "node1"
+ 7) clearing_refs = (bool) false
+ 8) clear_ref_request = (bool) false
+ 9) cleared_refs = (bool) false
+10) index_refcount = (uint64) 128255
+11) index_unique = (uint64) 27440
+12) cur_transaction_start = (string) "04/09/2026 13:53:40"
+13) last_index_time_ms = (uint64) 176
+14) last_flush_time_ms = (uint64) 0
+15) repairs = (uint64) 0
+16) scaleout = (bool) false
+17) scaleout_remaining = (uint64) 0
+18) encrypted = (bool) false
+19) vol_stats_ready = (bool) true
+20) curtime = (string) "04/09/2026 13:53:49"
 ```
 
 **Example -- Get Journal Status output (potential issue):**
 
 ```
-status=active  cur_transaction=584210  redundant=true  index_unique=12847
+vcmd getjournalstatus
+
+ 0) status = (string) "active"
+ 1) alive = (bool) true
+ 2) cur_transaction = (uint64) 3605531
+ 3) redundant = (bool) true
+ 4) min_online = (bool) true
+ 5) tier 1_last_ms = (uint64) 8450
+ 6) curmaster = (string) "node1"
+...
 ```
 
-If `status=active` and `cur_transaction` remains the same value across multiple checks, writes may be stalled. Investigate device health and node connectivity.
+If `status` remains `"active"` and `cur_transaction` stays at the same value across multiple checks, writes may be stalled. Investigate device health and node connectivity.
 
 ---
 
@@ -196,30 +263,77 @@ Beyond SMART data, the vSAN tracks operational metrics for each drive:
 
 | Metric | Description |
 |---|---|
-| **vsan_used / vsan_max** | Current usage versus maximum capacity for this drive in the vSAN. |
-| **vsan_read_errors / vsan_write_errors** | Count of I/O errors encountered by the vSAN on this drive. |
-| **vsan_max_latency** | Peak I/O latency observed on this drive. |
-| **vsan_throttle** | Write throttle rate in bytes/sec. Non-zero values indicate the drive is being space-throttled. |
-| **vsan_repairing** | Number of blocks currently being repaired on this drive. |
-| **vsan_repair_estimate** | Estimated bytes remaining in the repair process for this drive. |
+| **used / max** | Current usage versus maximum capacity (in bytes) for this drive in the vSAN. |
+| **rd_errs / wr_errs** | Count of read/write errors encountered by the vSAN on this drive. |
+| **mismatch** | Number of data integrity mismatches detected on this drive. |
+| **throttle** | Write throttle value. Non-zero values indicate the drive is being space-throttled. |
+| **repairs** | Number of blocks currently being repaired on this drive. |
+| **oos_blocks** | Out-of-space blocks -- blocks that could not be written due to capacity constraints. |
+| **rops / wops** | Current read/write operations per second. |
+| **rrate / wrate** | Current read/write throughput rates (human-readable). |
+| **lat_r_max_full / lat_w_max_full** | Peak read/write latency observed on this drive (in microseconds). |
 
 **Example -- Get Device Status output (healthy drive):**
 
 ```
-device=3  status=online  vsan_used=1.4TB  vsan_max=3.6TB
-vsan_read_errors=0  vsan_write_errors=0  vsan_max_latency=12ms
-vsan_throttle=0  vsan_repairing=0
+vcmd getdevicestatus
+
+0) device_0 = (serstring)
+{
+     0) id = (int) 0
+     1) path = (string) "/dev/nvme0n1p2"
+     2) online = (bool) true
+     3) online_since = (int) 1775756817
+     4) tier = (int) 1
+     5) used = (uint64) 1175833346048
+     6) max = (uint64) 2046327455744
+     7) rd_errs = (uint64) 0
+     8) wr_errs = (uint64) 0
+     9) mismatch = (uint64) 0
+    10) repairs = (uint64) 0
+    11) pending_delete = (uint64) 0
+    12) oos_blocks = (uint64) 0
+    13) throttle = (uint64) 0
+    14) reads = (uint64) 45545
+    15) writes = (uint64) 10295
+    ...
+    20) rops = (uint64) 0
+    21) rops_max = (uint64) 14542
+    22) rrate = (string) "0B/sec"
+    23) rrate_max = (string) "908MB/sec"
+    24) wops = (uint64) 1
+    25) wops_max = (uint64) 1206
+    26) wrate = (string) "64.0KB/sec"
+    27) wrate_max = (string) "75.3MB/sec"
+    ...
+}
 ```
 
 **Example -- Get Device Status output (failing drive):**
 
 ```
-device=3  status=error  vsan_used=1.4TB  vsan_max=3.6TB
-vsan_read_errors=47  vsan_write_errors=12  vsan_max_latency=850ms
-vsan_throttle=0  vsan_repairing=2814
+vcmd getdevicestatus
+
+0) device_2 = (serstring)
+{
+     0) id = (int) 2
+     1) path = (string) "/dev/sda2"
+     2) online = (bool) false
+     4) tier = (int) 1
+     5) used = (uint64) 1048576000000
+     6) max = (uint64) 2046327455744
+     7) rd_errs = (uint64) 47
+     8) wr_errs = (uint64) 12
+     9) mismatch = (uint64) 3
+    10) repairs = (uint64) 2814
+    11) pending_delete = (uint64) 0
+    12) oos_blocks = (uint64) 891
+    13) throttle = (uint64) 0
+    ...
+}
 ```
 
-A high error count and elevated latency indicate the drive should be replaced. Wait for `vsan_repairing` to reach 0 and the tier to return to **online** before physically removing the drive.
+A high `rd_errs` or `wr_errs` count and `online = (bool) false` indicate the drive should be replaced. Wait for `repairs` to reach 0 and the tier to return to **online** before physically removing the drive.
 
 ---
 
@@ -321,7 +435,23 @@ graph TD
 **Example -- Get Cluster Rates output (normal):**
 
 ```
-read_rate=245MB/s  write_rate=128MB/s  iops_read=12400  iops_write=6800
+vcmd getclusterrates
+
+0) tier_1 = (serstring)
+{
+    0) rops = (uint64) 1250
+    1) rops_max = (uint64) 5162
+    2) rrate_bytes = (uint64) 81920000
+    3) rrate = (string) "78.1MB/sec"
+    4) rrate_max = (string) "508MB/sec"
+    5) wops = (uint64) 340
+    6) wops_max = (uint64) 690
+    7) wrate_bytes = (uint64) 22282240
+    8) wrate = (string) "21.2MB/sec"
+    9) wrate_max = (string) "43.1MB/sec"
+   10) write_throttle = (string) "unlimited"
+}
+1) prefetch = (uint64) 0
 ```
 
 ---
@@ -350,13 +480,13 @@ read_rate=245MB/s  write_rate=128MB/s  iops_read=12400  iops_write=6800
     | UI Command | Purpose | CLI Syntax |
     |---|---|---|
     | **Find Inode** | Locate a specific inode in the vSAN filesystem. **Parameter:** Inode Number | `vcmd findinode [INODE_NUMBER]` |
-    | **Get Cache Info** | Display read cache statistics and hit rates | `vcmd getcacheinfo` |
+    | **Get Cache Info** | Display read cache statistics and hit rates. **Parameter:** Node | `vcmd getcacheinfo` |
     | **Get Clients** | Show active vSAN client connections | `vcmd getclients` |
     | **Get Cluster Rates** | Display cluster-wide I/O throughput rates | `vcmd getclusterrates` |
     | **Get Cluster Usage** | Show storage utilization by tier | `vcmd getclusterusage` |
     | **Get Current Master** | Identify the current vSAN master node | `vcmd getcurmaster` |
     | **Get Device List** | List all storage devices in the vSAN | `vcmd getdevicelist` |
-    | **Get Device Status** | Show detailed status for a specific device. **Parameter:** Device ID | `vcmd getdevicestatus [DEVICE_ID]` |
+    | **Get Device Status** | Show detailed status for all devices on a node. **Parameter:** Node | `vcmd getdevicestatus` |
     | **Get Device Usage** | Show usage statistics for a specific device. **Parameter:** Device ID | `vcmd getdeviceusage [DEVICE_ID]` |
     | **Get File Status** | Retrieve inode info, tier, and size for a file. **Parameter:** File Path | `vcmd stat [FILE_PATH]` |
     | **Get Fuse Info** | Display FUSE filesystem mount and operation statistics | `vcmd getfuseinfo` |

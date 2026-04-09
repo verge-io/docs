@@ -75,7 +75,30 @@ Tier health is the single most important metric. Each vSAN tier reports a status
 !!! warning "Noredundant is Urgent"
     A **noredundant** tier is still serving data, but it has zero safety margin. Treat this as a high-priority condition and ensure repair completes or failed hardware is replaced before performing any maintenance that could take another node or drive offline.
 
-**Where to check:** Navigate to the main dashboard and click the **vSAN Tiers** count box. You can also use **System > vSAN Diagnostics > Get Tier Status** for detailed per-tier information.
+**Where to check:** Navigate to the main dashboard and click the **vSAN Tiers** count box. You can also navigate to **System > vSAN Diagnostics**, select **Get Tier Status** from the Query dropdown, and click **Send** for detailed per-tier information.
+
+??? example "Sample Tier Status Output (Healthy)"
+    ```
+    vcmd gettierstatus
+
+    0) tier_1 = (serstring)
+    {
+        0) tier = (int) 1
+        1) redundancy = (int) 2
+        2) redundant = (bool) true
+        3) working = (bool) false
+        4) last_walk_time_ms = (uint64) 136
+        5) last_fullwalk_time_ms = (uint64) 78650
+        6) last_inc_count = (uint64) 0
+        7) last_dec_count = (uint64) 0
+        8) transaction = (uint64) 3605536
+        9) transaction_start = (string) "04/09/2026 13:54:23"
+       10) transaction_start_stamp = (uint64) 1775757263
+       11) repairs = (uint64) 0
+       12) bad_drives = (int) 0
+    }
+    ```
+    The tier shows `redundant = (bool) true`, `repairs = 0`, and `bad_drives = 0` -- this is a healthy tier with full redundancy and no active repairs.
 
 ### Capacity Utilization
 
@@ -91,7 +114,7 @@ Monitor per-tier capacity usage to avoid running out of space on any individual 
 !!! tip "Snapshot Accumulation"
     One of the most common causes of unexpected capacity growth is snapshot retention. Workloads with high write rates can cause snapshot space to grow rapidly. Review and adjust retention policies as part of regular capacity management.
 
-**Where to check:** Use **System > vSAN Diagnostics > Get Cluster Usage** for an overall view, or **Summarize Disk Usage** for a per-tier breakdown.
+**Where to check:** Navigate to **System > vSAN Diagnostics**, select **Get Cluster Usage** from the Query dropdown, and click **Send** for an overall view. Select **Summarize Disk Usage** for a per-tier breakdown.
 
 ### Cache Hit Rates
 
@@ -113,7 +136,32 @@ A sudden drop in cache hit rate often indicates a workload change, such as a new
     3. **Increase cache capacity** -- Cache size is determined by the RAM allocated to the vSAN on each node. To increase cache, either add RAM to existing nodes or add nodes to the cluster.
     4. **Schedule heavy I/O** -- If adding resources is not an option, schedule backup jobs and large data imports during off-peak hours to reduce cache contention with production workloads.
 
-**Where to check:** Use **System > vSAN Diagnostics > Get Cache Info**.
+**Where to check:** Navigate to **System > vSAN Diagnostics**, select **Get Cache Info** from the Query dropdown, and click **Send**.
+
+??? example "Sample Cache Info Output"
+    ```
+    vcmd getcacheinfo
+
+     0) total = (string) "6.00GB"
+     1) free = (string) "411MB"
+     2) pages = (int) 98304
+     3) used_pages = (int) 91728
+     4) meta_cache_hits = (uint64) 221919
+     5) meta_cache_misses = (uint64) 60661
+     6) meta_cache_pages = (uint64) 820
+     7) buffer_pages = (int) 2
+     8) disk_index_pages = (int) 30700
+     9) cache_pages = (int) 60196
+    10) cache_hits = (uint64) 0
+    11) cache_misses = (uint64) 221
+    12) cbuck_min = (int) 193
+    13) cbuck_max = (int) 280
+    14) cbuck_avg = (int) 235
+    15) hashcache = (uint64) 6891
+    16) writers = (int) 1
+    17) writers_busy = (int) 0
+    ```
+    The `total` field shows the cache size for this node (6 GB). Compare `cache_hits` against `cache_misses` to assess hit rate. The `meta_cache_hits` vs `meta_cache_misses` ratio indicates metadata lookup efficiency.
 
 ### I/O Rates and Latency
 
@@ -123,17 +171,50 @@ Cluster-wide read and write throughput should remain consistent with your establ
 - **Elevated latency** on individual drives, which may indicate a failing device
 - **Write throttling** (non-zero throttle values on drives or tiers), which signals space pressure
 
-**Where to check:** Use **Get Cluster Rates** for cluster-wide throughput and **Get Device Status** for per-drive latency.
+**Where to check:** Navigate to **System > vSAN Diagnostics**, select **Get Cluster Rates** from the Query dropdown for cluster-wide throughput, or select **Get Device Status** for per-drive latency.
 
 ### Redundancy and Repair Status
 
-After any drive or node failure, the vSAN automatically begins repairing data by re-replicating blocks to restore redundancy. During repair:
+After any drive or node failure, the vSAN automatically begins repairing data by re-replicating blocks to restore redundancy.
 
-- **Do not reboot** any nodes until repair completes
-- Monitor repair progress -- watch for the progress value approaching 1.0
-- The tier status returns to **online** once repair finishes
+!!! danger "Do Not Reboot Nodes During Repair"
+    While a tier is in the **repairing** state, do not reboot, shut down, or place any node into maintenance mode. Doing so removes another node from the cluster during a period when redundancy is already degraded, which can lead to data loss if a second failure occurs before repair completes.
 
-**Where to check:** Use **Get Repair Status** to track blocks re-replicated, progress (0.0 to 1.0), and bad drive count.
+Monitor repair progress by watching for the progress value approaching 1.0. The tier status returns to **online** once repair finishes.
+
+**Where to check:** Navigate to **System > vSAN Diagnostics**, select **Get Repair Status** from the Query dropdown, and click **Send** to track blocks re-replicated, progress (0.0 to 1.0), and bad drive count.
+
+??? example "Sample Repair Status Output (No Active Repairs)"
+    ```
+    vcmd getrepairstatus
+
+    0) device_0 = (uint64) 0
+    1) device_1 = (uint64) 0
+    ```
+    All devices show 0 blocks being repaired -- this is the expected healthy state. When repairs are active, each device shows the number of blocks currently being re-replicated.
+
+??? example "Sample Device Status Output (Healthy)"
+    ```
+    vcmd getdevicestatus
+
+    0) device_0 = (serstring)
+    {
+         0) id = (int) 0
+         1) path = (string) "/dev/nvme0n1p2"
+         2) online = (bool) true
+         4) tier = (int) 1
+         5) used = (uint64) 1175833346048
+         6) max = (uint64) 2046327455744
+         7) rd_errs = (uint64) 0
+         8) wr_errs = (uint64) 0
+         9) mismatch = (uint64) 0
+        10) repairs = (uint64) 0
+        12) oos_blocks = (uint64) 0
+        13) throttle = (uint64) 0
+        ...
+    }
+    ```
+    This shows a healthy drive: `online = true`, zero read/write errors, zero mismatches, no repairs in progress, and no throttling. SMART data (temperature, wear level, reallocated sectors) is visible in the **Drives** section of the node dashboard.
 
 ### Drive Health (SMART Monitoring)
 
@@ -150,7 +231,7 @@ The vSAN continuously monitors physical drive health through SMART indicators. T
 
 Each indicator has a configurable warning threshold at the cluster level. When a drive exceeds any threshold, VergeOS generates an alert.
 
-**Where to check:** Review drive health from the dashboard under the drives section, or use **Get Device Status** for per-drive details.
+**Where to check:** Review drive health from the node dashboard under the drives section, or navigate to **System > vSAN Diagnostics**, select **Get Device Status** from the Query dropdown, and click **Send** for per-drive details.
 
 ---
 
@@ -208,10 +289,10 @@ Establishing a regular monitoring cadence helps catch issues before they become 
 
 ### Weekly Checks
 
-- [ ] **Tier capacity** -- Review per-tier usage trends using **Get Cluster Usage**. Look for tiers approaching 80% utilization
-- [ ] **Drive health** -- Scan the drives section for any new SMART warnings or error counts
-- [ ] **Cache performance** -- Check cache hit rates with **Get Cache Info** and compare against your baseline
-- [ ] **Top I/O consumers** -- Run **Get Top Usage Rates** to identify any unexpectedly busy workloads
+- [ ] **Tier capacity** -- Navigate to **System > vSAN Diagnostics**, select **Get Cluster Usage**, and review per-tier usage trends. Look for tiers approaching 80% utilization
+- [ ] **Drive health** -- Navigate to **System > vSAN Diagnostics**, select **Get Device Status**, and scan for any new SMART warnings or error counts
+- [ ] **Cache performance** -- Navigate to **System > vSAN Diagnostics**, select **Get Cache Info**, and compare hit rates against your baseline
+- [ ] **Top I/O consumers** -- Navigate to **System > vSAN Diagnostics**, select **Get Top Usage Rates**, and identify any unexpectedly busy workloads
 
 ### Monthly Checks
 
