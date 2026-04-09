@@ -1,3 +1,8 @@
+---
+title: "Glossary of Key Terms"
+description: "Definitions of key terms and concepts used throughout VergeOS documentation, including networking, storage, virtualization, and multi-tenancy terminology."
+---
+
 # Glossary of Key Terms
 
 ## A

@@ -1,3 +1,8 @@
+---
+title: "Edge Cluster Deployments"
+description: "Reference architecture for deploying VergeOS edge clusters at branch offices and remote locations using low-power, small form factor hardware."
+---
+
 # Edge Cluster Deployments
 
 

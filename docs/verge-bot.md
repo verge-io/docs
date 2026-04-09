@@ -1,4 +1,6 @@
 ---
+title: "VergeBot"
+description: "AI-powered chatbot assistant for VergeOS documentation and support questions."
 hide:
   - navigation
   - toc

@@ -1,3 +1,8 @@
+---
+title: "Multi-tenant Deployments"
+description: "Reference architecture for Cloud Service Providers deploying VergeOS as a multi-tenant IaaS platform with tenant isolation, resource allocation, and scalable infrastructure."
+---
+
 # Multi-tenant Deployments
 
 

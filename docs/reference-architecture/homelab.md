@@ -1,3 +1,8 @@
+---
+title: "VergeOS Homelab Reference Architecture"
+description: "Reference architecture for deploying VergeOS in homelab environments, covering single-node, two-node cluster, and production-grade configurations with multi-tiered storage."
+---
+
 # VergeOS Homelab Reference Architecture
 
 ## Overview
