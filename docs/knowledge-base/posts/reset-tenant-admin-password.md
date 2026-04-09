@@ -1,9 +1,19 @@
 ---
 title: Reset a Tenant's Administrative Password
 slug: reset-a-tenants-administrative-password
-description: 
+description: Step-by-step instructions for resetting the administrative password for a tenant environment in VergeOS.
+author: VergeOS Documentation Team
 draft: false
 date: 2023-01-24T19:20:02.121Z
+semantic_keywords:
+  - "reset tenant admin password"
+  - "change tenant administrative credentials"
+  - "tenant password recovery reset"
+  - "tenant edit admin user password"
+use_cases:
+  - reset_forgotten_tenant_admin_password
+  - change_tenant_administrative_credentials
+  - recover_tenant_login_access
 tags:
   - tenant
   - password

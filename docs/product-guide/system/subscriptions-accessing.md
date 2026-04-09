@@ -1,3 +1,25 @@
+---
+title: "Viewing and Accessing Subscriptions"
+description: "How to view and access your own subscriptions and all system subscriptions in VergeOS, including navigation paths and permission considerations."
+semantic_keywords:
+  - "VergeOS view access subscriptions list"
+  - "my subscriptions page subscriptions icon"
+  - "all subscriptions system administration"
+  - "subscription permissions edit delete manage"
+use_cases:
+  - view_own_subscriptions
+  - access_all_system_subscriptions
+  - manage_subscription_permissions
+tags:
+  - subscriptions
+  - notifications
+  - alerts
+  - monitoring
+  - permissions
+categories:
+  - System Administration
+---
+
 # Viewing and Accessing Subscriptions
 
 ## Access Your Own Subscriptions

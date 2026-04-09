@@ -1,3 +1,29 @@
+---
+title: "Permissions"
+description: "How to configure and manage user and group permissions in VergeOS, including permission levels, scopes, effective permissions, and assigning permissions to specific objects."
+semantic_keywords:
+  - "VergeOS user group permissions access control"
+  - "permission levels list read create modify delete"
+  - "assign permissions cloud object type instance"
+  - "effective permissions cumulative user group"
+  - "admin root account default permissions"
+use_cases:
+  - assign_full_permissions_to_user
+  - configure_group_permissions
+  - grant_permissions_to_specific_object
+  - view_user_effective_permissions
+  - review_all_system_permissions
+tags:
+  - permissions
+  - users
+  - groups
+  - access-control
+  - security
+  - authorization
+  - rbac
+categories:
+  - System Administration
+---
 
 # Permissions
 

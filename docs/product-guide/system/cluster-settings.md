@@ -1,3 +1,33 @@
+---
+title: "Cluster Settings"
+description: "Reference for all VergeOS cluster configuration settings, including CPU type, RAM allocation, security mitigations, compute resource policies, swap, and node temperature monitoring."
+semantic_keywords:
+  - "VergeOS cluster settings configuration"
+  - "CPU type security mitigations hugepages performance tuning"
+  - "max RAM cores per machine compute allocation"
+  - "nested virtualization vGPU live migration"
+  - "node temperature monitoring swap storage"
+use_cases:
+  - configure_cluster_cpu_and_ram_settings
+  - tune_security_performance_mitigations
+  - set_compute_resource_limits
+  - configure_node_temperature_alerts
+  - enable_nested_virtualization
+  - adjust_swap_settings
+tags:
+  - clusters
+  - configuration
+  - cpu
+  - ram
+  - security
+  - performance
+  - temperature
+  - swap
+  - nested-virtualization
+categories:
+  - System Administration
+---
+
 # Cluster Settings
 
 The *Cluster Settings* form enables you to configure key parameters relating to performance, security, allocation, thermal monitoring, and swap. While the majority of default settings are appropriate for most environments, it's recommended to review them when creating a new cluster and periodically thereafter to ensure alignment with your organization's policies and operational requirements.

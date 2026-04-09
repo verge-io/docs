@@ -1,3 +1,31 @@
+---
+title: "VergeOS Switch Configuration Guide"
+description: "Switch port configuration guide for VergeOS deployments covering core fabric access ports with jumbo frames, external VLAN trunk ports with LACP, and verification steps for Cisco, Dell, and HPE/Aruba switches."
+semantic_keywords:
+  - "VergeOS switch configuration Cisco Dell HPE Aruba"
+  - "core fabric VLAN access port jumbo frames MTU 9216"
+  - "LACP port-channel trunk configuration VergeOS"
+  - "switch port configuration storage network isolation"
+use_cases:
+  - switch_port_configuration
+  - core_fabric_switch_setup
+  - external_network_lacp_setup
+  - switch_verification_troubleshooting
+tags:
+  - switch-configuration
+  - cisco
+  - dell
+  - hpe
+  - aruba
+  - vlan
+  - lacp
+  - jumbo-frames
+  - mtu
+  - networking
+categories:
+  - Installation
+---
+
 # VergeOS Switch Configuration Guide
 
 ## Overview

@@ -1,9 +1,22 @@
 ---
 title: How to Use External IPs in Tenants
 slug: how-to-use-external-ips-in-tenants
-description: Examples of Route-based and Translation-based common methods for using Public/External IP addresses inside Tenants
+description: Examples of route-based and translation-based methods for using public/external IP addresses inside VergeOS tenants, including network blocks, virtual switch ports, and address translation.
+author: VergeOS Documentation Team
 draft: false
 date: 2025-02-17T14:30:00.000Z
+semantic_keywords:
+  - "external public ip address tenant network blocks"
+  - "virtual switch port layer 2 tenant connectivity"
+  - "dnat snat address translation tenant vm"
+  - "assign public ip tenant internal network"
+  - "network blocks cidr tenant ip assignment"
+use_cases:
+  - assign_external_ip_to_tenant
+  - create_network_block_for_tenant
+  - configure_virtual_switch_port
+  - setup_dnat_snat_translation_rules
+  - route_public_ip_to_tenant_vm
 tags:
   - tenant networking
   - network security

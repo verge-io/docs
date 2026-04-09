@@ -1,3 +1,25 @@
+---
+title: "Manual Site Sync"
+description: "How to manually add system snapshots to the site sync queue for on-demand replication to a remote VergeOS system outside of the automatic sync schedule."
+semantic_keywords:
+  - "manual site sync snapshot queue VergeOS"
+  - "manually sync snapshot to remote system"
+  - "on-demand snapshot replication site sync"
+  - "add snapshot to sync queue priority retention"
+use_cases:
+  - "manually_sync_specific_snapshot"
+  - "on_demand_offsite_replication"
+  - "sync_snapshot_outside_schedule"
+tags:
+  - site-syncs
+  - snapshots
+  - replication
+  - manual-sync
+  - backup
+categories:
+  - Backup and DR
+---
+
 # Manual Site Sync
 
 Typically, site syncs will be handled with an auto sync configuration, which defines particular cloud sync periods or tasks to be synchronized automatically. Snapshots can also be manually added to the sync queue in order to sync snapshots not included in the auto sync config.

@@ -1,9 +1,23 @@
 ---
 title: API Guide
 slug: verge-api-guide
-description: A comprehensive guide to using the VergeOS API.
+description: A comprehensive guide to using the VergeOS API, covering authentication, HTTP methods, endpoint conventions, filtering, sorting, error handling, and example requests for VMs and virtual networks.
+author: VergeOS Documentation Team
 draft: false
 date: 2024-09-02T16:54:06.293Z
+semantic_keywords:
+  - "VergeOS REST API, API authentication, token-based auth"
+  - "API GET POST PUT DELETE, HTTP methods, CRUD operations"
+  - "API filtering, sorting, pagination, query parameters"
+  - "Swagger documentation, API schema, table definitions"
+  - "virtual machine API, virtual network API, vnet management"
+use_cases:
+  - "api_getting_started"
+  - "rest_api_authentication"
+  - "vm_management_via_api"
+  - "network_management_via_api"
+  - "api_query_filtering_sorting"
+  - "swagger_documentation_reference"
 tags:
   - api
   - tables

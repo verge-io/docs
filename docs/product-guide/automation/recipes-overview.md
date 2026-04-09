@@ -1,3 +1,31 @@
+---
+title: "Recipes"
+description: "Overview of VergeOS recipes for automating VM and tenant deployments, including key features, use cases for service providers, enterprises, and development teams."
+semantic_keywords:
+  - "VergeOS recipes for automated VM and tenant deployment"
+  - "golden image templates for standardized provisioning"
+  - "recipe marketplace cloud-init automation"
+  - "self-service deployment templates for service providers and enterprises"
+use_cases:
+  - automate_vm_deployments
+  - automate_tenant_deployments
+  - standardize_infrastructure_templates
+  - enable_self_service_provisioning
+  - enforce_compliance_policies
+tags:
+  - recipe
+  - automation
+  - vm
+  - tenant
+  - deployment
+  - template
+  - cloud-init
+  - marketplace
+  - provisioning
+categories:
+  - Automation
+---
+
 # Recipes
 
 Recipes empower you to streamline and expedite your tenant and VM deployments. A recipe consists of a pre-built golden image and defined customizable options that simplify new implementations while reinforcing adherence to compliance standards, or other policies and protocols.

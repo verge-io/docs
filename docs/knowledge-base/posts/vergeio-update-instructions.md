@@ -1,15 +1,26 @@
 ---
 title: VergeOS Update Instructions
 slug: VergeOS-update-instructions
-description: 
+description: Step-by-step instructions for updating a VergeOS environment with zero downtime, including troubleshooting common update issues.
+author: VergeOS Documentation Team
 draft: false
 date: 2023-01-24T15:39:06.743Z
+semantic_keywords:
+  - "vergeos update upgrade zero downtime"
+  - "rolling reboot node update procedure"
+  - "vsan verify repair update process"
+  - "update server dns troubleshooting"
+use_cases:
+  - vergeos_system_update
+  - rolling_reboot_procedure
+  - update_troubleshooting
+  - version_upgrade_planning
 tags:
   - verge.io
   - update
   - upgrade
   - maintenance
-  - vergeOS
+  - vergeos
 categories:
   - Maintenance
   - Troubleshooting

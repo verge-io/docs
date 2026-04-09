@@ -1,3 +1,29 @@
+---
+title: "USB Passthrough"
+description: "How to configure USB device passthrough in VergeOS, including host setup, resource group creation, VM guest configuration, and passing USB devices to tenants."
+semantic_keywords:
+  - "VergeOS USB device passthrough configuration"
+  - "USB passthrough VM guest resource group"
+  - "pass USB device to tenant virtual machine"
+  - "USB resource rules host node"
+  - "license key security camera USB passthrough"
+use_cases:
+  - configure_usb_passthrough_for_vm
+  - create_usb_resource_group
+  - pass_usb_device_to_tenant
+  - attach_usb_device_to_guest
+tags:
+  - usb
+  - passthrough
+  - resource-groups
+  - virtual-machines
+  - tenants
+  - hardware
+  - devices
+categories:
+  - System Administration
+---
+
 # USB Passthrough
 
 USB devices connected to a host can be passed to VMs (and tenants to pass to their VMs), allowing a device to appear and behave as if it were directly attached within the VM.  

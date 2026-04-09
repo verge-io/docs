@@ -1,10 +1,20 @@
 ---
 title: Tenant Crash Cart Guide
 slug: tenant-crash-cart-guide
-description: Description and instructions for the tenant crash cart utility available in the Recipe Marketplace
+description: How to deploy and use the Tenant Crash Cart utility VM to gain emergency access to a tenant's VergeOS UI when normal network access is unavailable.
 author: VergeOS Documentation Team
 draft: false
 date: 2026-02-03T19:21:32.815Z
+semantic_keywords:
+  - "tenant crash cart emergency access"
+  - "tenant UI unreachable network recovery"
+  - "crash cart recipe marketplace VM"
+  - "tenant external network misconfiguration fix"
+use_cases:
+  - recover_access_to_tenant_with_broken_network
+  - deploy_crash_cart_vm_for_tenant_recovery
+  - troubleshoot_tenant_external_network_issues
+  - emergency_tenant_ui_access
 tags:
   - tenants
   - recipes

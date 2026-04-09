@@ -1,3 +1,28 @@
+---
+title: "Cirrus Data Integration with VergeOS"
+description: "Cirrus Data integration provides advanced data mobility and migration solutions for VergeOS, enabling zero-downtime workload migration between hypervisors, cloud platforms, and storage systems."
+semantic_keywords:
+  - "data migration to VergeOS zero downtime"
+  - "VMware Hyper-V Nutanix to VergeOS migration"
+  - "cloud to on-premises workload migration"
+  - "non-disruptive storage migration Cirrus Data"
+use_cases:
+  - cross_hypervisor_migration
+  - cloud_repatriation
+  - database_migration
+  - storage_platform_migration
+tags:
+  - cirrus-data
+  - migration
+  - data-mobility
+  - vmware
+  - hyper-v
+  - cloud-migration
+  - zero-downtime
+categories:
+  - Automation
+---
+
 # Cirrus Data Integration with VergeOS
 
 ## Overview

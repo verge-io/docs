@@ -1,3 +1,27 @@
+---
+title: "IPMI"
+description: "How to configure and use IPMI integration in VergeOS for remote server power control, connectivity testing, credential management, and accessing the IPMI web interface."
+semantic_keywords:
+  - "VergeOS IPMI remote management configuration"
+  - "IPMI connectivity test status credentials"
+  - "remote server power control power cycle"
+  - "IPMI web interface access node"
+  - "baseboard management controller BMC"
+use_cases:
+  - test_ipmi_connectivity
+  - change_ipmi_credentials
+  - access_ipmi_web_interface
+  - remote_power_control_node
+tags:
+  - ipmi
+  - remote-management
+  - nodes
+  - hardware
+  - power-control
+  - bmc
+categories:
+  - System Administration
+---
 
 # IPMI
 

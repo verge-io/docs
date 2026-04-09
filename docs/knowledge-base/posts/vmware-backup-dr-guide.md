@@ -1,15 +1,29 @@
 ---
 title: VMware-Backup-DR-Guide
 slug: vmwarebackupdrguide
-description: 
+description: Comprehensive guide for setting up VMware backup and disaster recovery in VergeOS, including creating VMware services, configuring backup schedules, and performing restores from vSphere environments.
+author: VergeOS Documentation Team
 draft: false
 date: 2023-01-24T19:34:49.819Z
+semantic_keywords:
+  - "VMware vSphere backup VergeOS agent"
+  - "VMware backup schedule differential full"
+  - "CBT changed block tracking VMware DR"
+  - "VMware service vSphere connection setup"
+  - "VMware VM restore disaster recovery"
+use_cases:
+  - "configure_vmware_backup_service"
+  - "create_vmware_backup_schedules"
+  - "assign_backup_schedules_to_vms"
+  - "perform_manual_vmware_backup"
+  - "restore_vmware_vms_from_backup"
+  - "vmware_disaster_recovery_planning"
 tags:
-  - VMware
+  - vmware
   - backups
-  - vSphere
+  - vsphere
   - scheduling
-  - DR
+  - dr
 categories:
   - Best Practices
   - Backup

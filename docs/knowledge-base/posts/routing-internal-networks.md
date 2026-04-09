@@ -1,9 +1,19 @@
 ---
 title: Routing Between Internal VergeOS Networks
 slug: routing-between-internal-vergeio-networks
-description: 
+description: Step-by-step instructions for establishing routing between two internal networks in VergeOS by creating route and accept rules on each network.
+author: VergeOS Documentation Team
 draft: false
 date: 2023-01-24T15:45:22.430Z
+semantic_keywords:
+  - "route traffic between internal networks vergeos"
+  - "create network rule route accept outgoing incoming"
+  - "dmz ip inter-network routing configuration"
+  - "bidirectional routing internal network rules"
+use_cases:
+  - configure_routing_between_internal_networks
+  - create_route_and_accept_rules
+  - enable_inter_network_communication
 tags:
   - routing
   - internal

@@ -1,7 +1,17 @@
 ---
 title: Understanding vSAN Redundancy Levels
 description: Learn about VergeOS vSAN N+1 and N+2 redundancy levels, their requirements, use cases, and considerations
-tags: [vsan, storage, redundancy, fault tolerance]
+semantic_keywords:
+  - "vSAN N+1 N+2 redundancy replication factor"
+  - "RF2 RF3 fault tolerance node failure"
+  - "data block copies redundancy configuration"
+  - "storage redundancy level comparison VergeOS"
+use_cases:
+  - redundancy_level_selection
+  - fault_tolerance_planning
+  - n_plus_2_upgrade_evaluation
+  - tier_redundancy_status_monitoring
+tags: [vsan, storage, redundancy, fault tolerance, data-protection]
 categories: [Storage, vSAN]
 ---
 

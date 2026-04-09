@@ -1,9 +1,20 @@
 ---
 title: Updating the VergeOS System
 slug: updating-vergeos-system
-description: A comprehensive guide on performing system updates in VergeOS environments
+description: Comprehensive guide on performing on-demand and scheduled system updates in VergeOS, including zero-downtime update procedures and automatic tenant updates.
+author: VergeOS Documentation Team
 draft: false
 date: 2024-12-19T16:30:00.000Z
+semantic_keywords:
+  - "VergeOS system update on-demand scheduled"
+  - "zero downtime update node reboot migration"
+  - "download install reboot update process"
+  - "tenant automatic update host system"
+use_cases:
+  - perform_on_demand_system_update
+  - schedule_recurring_updates
+  - apply_zero_downtime_updates
+  - troubleshoot_update_failures
 tags:
   - license
   - verge

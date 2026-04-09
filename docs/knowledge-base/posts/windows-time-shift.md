@@ -1,19 +1,30 @@
 ---
 title: Windows - Time Shift
 slug: windows-time-shift
-description: Addressing time drift issues with Windows VMs on VergeOS.
+description: How to resolve time drift in Windows VMs on VergeOS by configuring the RTC Base setting and the RealTimeIsUniversal registry key for proper UTC time handling.
+author: VergeOS Documentation Team
 draft: false
 date: 2023-01-24T14:20:54.833Z
+semantic_keywords:
+  - "windows VM time drift shift incorrect clock"
+  - "RTC base UTC local time hypervisor KVM QEMU"
+  - "RealTimeIsUniversal registry key windows fix"
+  - "daylight saving time DST NTP synchronization"
+use_cases:
+  - fix_windows_vm_time_drift
+  - configure_rtc_base_utc_local
+  - set_realtimeisuniversal_registry_key
+  - resolve_dst_clock_issues_windows_vm
 tags:
-- windows
-- time
-- ntp
-- utc
-- dst
-- drift
+  - windows
+  - time
+  - ntp
+  - utc
+  - dst
+  - drift
 categories:
-- Troubleshooting
-- VM
+  - Troubleshooting
+  - VM
 editor: markdown
 dateCreated: 2022-10-12T14:45:26.462Z
 ---

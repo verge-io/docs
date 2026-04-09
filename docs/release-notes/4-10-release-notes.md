@@ -1,6 +1,27 @@
 ---
-description: Release notes for the 4.10 series of VergeOS
-#icon: material/text-box-outline
+title: "4.10 Release Notes"
+description: "Release notes for the 4.10 series of VergeOS, introducing NVIDIA vGPU support, CPU C-States management, enhanced vSAN performance, CPU pinning, and improved GPU passthrough and live migration capabilities."
+semantic_keywords:
+  - "VergeOS 4.10 release notes and features"
+  - "VergeOS NVIDIA vGPU support and GPU passthrough"
+  - "VergeOS CPU pinning and C-States management"
+  - "VergeOS 4.10 deprecated version end of life"
+use_cases:
+  - review_4_10_features
+  - check_4_10_deprecation_status
+  - plan_upgrade_from_4_10
+  - review_vgpu_introduction
+tags:
+  - release-notes
+  - vergeos-4
+  - deprecated
+  - vgpu
+  - gpu-passthrough
+  - cpu-pinning
+  - vsan-performance
+  - live-migration
+categories:
+  - Release Notes
 status: deprecated
 ---
 

@@ -1,3 +1,32 @@
+---
+title: "Node Diagnostics Guide"
+description: "Comprehensive reference for VergeOS node diagnostic tools, including IPMI commands, SMART tests, network diagnostics, fabric configuration, and hardware troubleshooting."
+semantic_keywords:
+  - "VergeOS node diagnostics troubleshooting commands"
+  - "IPMI sensors event log BMC chassis status"
+  - "SMART drive health test diagnostic"
+  - "network ping traceroute tcpdump ARP ethernet"
+  - "fabric configuration hardware DMI PCI diagnostics"
+use_cases:
+  - run_node_level_hardware_diagnostics
+  - check_ipmi_sensors_and_event_logs
+  - test_smart_drive_health
+  - troubleshoot_network_connectivity_from_node
+  - verify_fabric_configuration
+  - monitor_cpu_and_network_usage
+tags:
+  - diagnostics
+  - nodes
+  - ipmi
+  - smart
+  - networking
+  - troubleshooting
+  - hardware
+  - monitoring
+categories:
+  - System Administration
+---
+
 # Node Diagnostics Guide
 
 ## Overview

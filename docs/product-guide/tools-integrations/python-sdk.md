@@ -1,3 +1,29 @@
+---
+title: "VergeOS Python SDK (pyvergeos)"
+description: "pyvergeos is a Python SDK for managing VergeOS infrastructure through the REST API, providing a Pythonic, type-annotated interface for automating VMs, networking, storage, tenants, and disaster recovery."
+semantic_keywords:
+  - "VergeOS Python SDK API client library"
+  - "automate VergeOS infrastructure with Python"
+  - "pyvergeos VM networking storage automation"
+  - "programmatic VergeOS management Python scripting"
+use_cases:
+  - infrastructure_automation
+  - ci_cd_environment_provisioning
+  - monitoring_and_reporting
+  - backup_automation
+  - multi_tenant_provisioning
+tags:
+  - python
+  - sdk
+  - api
+  - automation
+  - pyvergeos
+  - scripting
+  - development
+categories:
+  - Automation
+---
+
 # VergeOS Python SDK (pyvergeos)
 
 ## Overview

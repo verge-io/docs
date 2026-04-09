@@ -1,3 +1,33 @@
+---
+title: "Transitioning from VMware to VergeOS"
+description: "Guide for VMware administrators migrating to VergeOS, covering architecture differences, terminology mapping, networking and storage comparisons, and step-by-step VM migration instructions."
+semantic_keywords:
+  - "VMware to VergeOS migration guide"
+  - "vSphere ESXi to VergeOS transition"
+  - "VMware terminology mapping VergeOS equivalents"
+  - "migrate VMs from VMware import OVF OVA"
+  - "VMware vs VergeOS architecture comparison"
+use_cases:
+  - vmware_migration_planning
+  - terminology_reference
+  - architecture_comparison
+  - vm_import_from_vmware
+  - post_migration_optimization
+tags:
+  - vmware
+  - migration
+  - transition
+  - vsphere
+  - esxi
+  - import
+  - networking
+  - storage
+  - comparison
+  - onboarding
+categories:
+  - Getting Started
+---
+
 # Transitioning from VMware to VergeOS
 
 ## Overview

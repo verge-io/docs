@@ -1,9 +1,21 @@
 ---
 title: API Helper Script
 slug: api-helper-script
-description: A guide to using the VergeOS API helper script, yb-api, for managing VMs and making API calls.
+description: A guide to using the VergeOS yb-api helper script for simplified API interactions, including listing, creating, cloning, and managing virtual machines from the command line.
+author: VergeOS Documentation Team
 draft: false
 date: 2024-08-03T16:30:00.000Z
+semantic_keywords:
+  - "yb-api helper script, CLI API tool, command-line API access"
+  - "VM management commands, list VMs, create VM, clone VM"
+  - "API script examples, curl alternative, simplified API calls"
+  - "VergeOS automation, server-side scripting, node SSH access"
+use_cases:
+  - "cli_based_vm_management"
+  - "api_scripting_automation"
+  - "vm_cloning_via_cli"
+  - "quick_api_queries"
+  - "server_side_administration"
 tags:
   - api
   - helper script

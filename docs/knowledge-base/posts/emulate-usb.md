@@ -1,12 +1,22 @@
 ---
 title: Emulate a USB Device
 slug: emulate-usb
-description: Instructions for creating/attaching an emulated USB device to a VM
+description: Instructions for creating and attaching an emulated USB device to a VM in VergeOS, including hotplug configuration and VirtIO driver requirements.
 author: VergeOS Documentation Team
 draft: false
 date: 2024-11-19T15:19:47.449Z
+semantic_keywords:
+  - "emulated usb device virtual machine"
+  - "hotplug usb drive vm configuration"
+  - "virtio drivers usb emulation"
+  - "legacy application usb support"
+use_cases:
+  - create_emulated_usb_device
+  - hotplug_usb_drive_to_running_vm
+  - install_drivers_via_usb_emulation
+  - support_legacy_usb_applications
 tags:
-  - USB
+  - usb
   - device
   - drive
   - hotplug

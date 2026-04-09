@@ -1,3 +1,28 @@
+---
+title: "Tenants (Virtual Data Centers)"
+description: "Overview of VergeOS multi-tenancy, providing secure, encapsulated virtual data centers with full network isolation, nested tenancy, resource tracking, and portable self-contained environments."
+semantic_keywords:
+  - "VergeOS multi-tenancy virtual data center overview"
+  - "tenant isolation network encapsulation security"
+  - "nested multi-tenant service provider infrastructure"
+  - "virtual data center resource management delegation"
+use_cases:
+  - "evaluate_tenant_capabilities"
+  - "plan_multi_tenant_deployment"
+  - "understand_tenant_isolation_model"
+  - "service_provider_virtual_data_centers"
+tags:
+  - tenants
+  - multi-tenancy
+  - virtual-data-center
+  - isolation
+  - security
+  - resource-management
+  - nested-tenants
+categories:
+  - Tenants
+---
+
 # Tenants (Virtual Data Centers)
 
 VergeOS provides native support for multi-tenancy, allowing a single installation to host multiple, encapsulated, secure enclaves called **tenants**. Each tenant is a separate and complete virtual data center that includes all the functionality of a base VergeOS environment (excluding hardware management). Every tenant has access to its own user interface via a unique URL.

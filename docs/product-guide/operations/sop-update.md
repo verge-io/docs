@@ -1,3 +1,31 @@
+---
+title: "VergeOS Version Update Guide"
+description: "Standard operating procedure for safely updating a VergeOS system to a new point release, including preparation, staging, execution, post-update verification, and rollback guidance."
+semantic_keywords:
+  - "update VergeOS system software new version"
+  - "pre-update verification checklist snapshot rollback"
+  - "install VergeOS update node reboot sequential"
+  - "post-update version confirmation health checks"
+  - "troubleshoot failed stalled VergeOS update"
+use_cases:
+  - plan_system_update
+  - stage_and_download_update
+  - execute_version_update
+  - verify_post_update_health
+  - troubleshoot_update_issues
+  - rollback_failed_update
+tags:
+  - updates
+  - upgrades
+  - versioning
+  - sop
+  - operations
+  - maintenance
+  - rollback
+categories:
+  - System Administration
+---
+
 # VergeOS Version Update Guide
 
 This guide provides best practices for safely updating a VergeOS system to a new point release. It focuses on data security and system resilience through a methodical approach.

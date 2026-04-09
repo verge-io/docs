@@ -1,9 +1,19 @@
 ---
 title: Reasons a Windows VM Restarted Unexpectedly
 slug: reasons-a-windows-vm-restarted-unexpectedly
-description: 
+description: How to diagnose why a Windows VM restarted unexpectedly by reviewing VergeOS log messages including kill, poweroff, shutdown, and reset events.
+author: VergeOS Documentation Team
 draft: false
 date: 2023-01-24T14:19:20.724Z
+semantic_keywords:
+  - "windows VM restarted unexpectedly diagnosis"
+  - "VergeOS VM log messages kill poweroff shutdown reset"
+  - "unexpected reboot windows virtual machine"
+  - "windows update automatic restart VM"
+use_cases:
+  - diagnose_unexpected_vm_restart
+  - review_vm_logs_for_shutdown_cause
+  - identify_windows_update_forced_reboot
 tags:
   - vm
   - windows

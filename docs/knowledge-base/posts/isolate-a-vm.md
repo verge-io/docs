@@ -1,17 +1,26 @@
 ---
-title: Isolating a VM  
-slug: isolating-a-vm  
-description:  
-draft: false  
-date: 2023-01-24T19:25:06.933Z  
+title: Isolating a VM
+slug: isolating-a-vm
+description: Methods for isolating a virtual machine in VergeOS, including removing network connections and creating a dedicated internal network for restricted access.
+author: VergeOS Documentation Team
+draft: false
+date: 2023-01-24T19:25:06.933Z
+semantic_keywords:
+  - "isolate virtual machine network access"
+  - "remove nic disconnect vm network"
+  - "internal network restricted connectivity"
+use_cases:
+  - isolate_vm_from_network
+  - create_internal_network_for_vm
+  - restrict_vm_network_access
 tags:
   - vm
   - network
   - isolate
-categories:  
-  - VM  
-editor: markdown  
-dateCreated: 2022-09-07T17:13:03.825Z  
+categories:
+  - VM
+editor: markdown
+dateCreated: 2022-09-07T17:13:03.825Z
 ---
 
 # How to Isolate a Virtual Machine

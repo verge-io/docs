@@ -1,9 +1,19 @@
 ---
-title: Loading Virtio Drivers in Windows Recovery Console  
-slug: loading-virtio-drivers-in-windows-recovery-console  
-description: How to load Virtio Disk and Storage drivers in Windows Recovery Console  
-draft: false  
-date: 2023-01-24T14:18:13.900Z  
+title: Loading Virtio Drivers in Windows Recovery Console
+slug: loading-virtio-drivers-in-windows-recovery-console
+description: How to load Virtio SCSI and storage drivers in Windows Recovery Console so that Virtio-SCSI disks become visible for recovery operations.
+author: VergeOS Documentation Team
+draft: false
+date: 2023-01-24T14:18:13.900Z
+semantic_keywords:
+  - "virtio drivers windows recovery console"
+  - "vioscsi viostor drvload command prompt"
+  - "windows recovery disk not visible"
+  - "load storage drivers recovery mode"
+use_cases:
+  - load_virtio_drivers_in_recovery_console
+  - access_virtio_scsi_disk_in_recovery
+  - troubleshoot_missing_disk_in_windows_recovery
 tags:
   - virtio
   - storage
@@ -12,11 +22,11 @@ tags:
   - console
   - drivers
   - hard drive
-categories:  
-  - VM  
-  - Troubleshooting  
-editor: markdown  
-dateCreated: 2022-07-29T15:28:29.904Z  
+categories:
+  - VM
+  - Troubleshooting
+editor: markdown
+dateCreated: 2022-07-29T15:28:29.904Z
 ---
 
 # Loading Virtio Drivers in Windows Recovery Console

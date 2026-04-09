@@ -1,3 +1,26 @@
+---
+title: "Share a VM Snapshot between Provider and Tenant"
+description: "How to use the Shared Objects feature to share VM snapshots between a service provider and tenant, enabling snapshot-based VM transfers in both directions."
+semantic_keywords:
+  - "share VM snapshot between provider and tenant"
+  - "shared objects VM transfer VergeOS"
+  - "import export virtual machine tenant provider"
+  - "snapshot-based VM sharing multi-tenant"
+use_cases:
+  - "share_vm_with_tenant"
+  - "import_shared_vm_from_provider"
+  - "transfer_vm_between_provider_and_tenant"
+tags:
+  - tenants
+  - virtual-machines
+  - snapshots
+  - shared-objects
+  - vm-sharing
+  - data-sharing
+categories:
+  - Tenants
+---
+
 # Share a VM Snapshot between Provider and Tenant
 
 The *Shared Objects* feature provides convenient, snapshot-based VM sharing between provider and tenant. The provider or tenant can make a specific VM snapshot available to the other to create a new VM within their own system.

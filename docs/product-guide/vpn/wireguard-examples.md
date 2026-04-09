@@ -1,3 +1,31 @@
+---
+title: "WireGuard Configuration Examples"
+description: "Example WireGuard VPN configurations for VergeOS, including site-to-site tunnels between two VergeOS systems and remote access setup for Windows clients."
+semantic_keywords:
+  - "WireGuard site-to-site VPN example two VergeOS systems"
+  - "remote access Windows client WireGuard configuration"
+  - "WireGuard public key peer exchange setup"
+  - "download WireGuard config file activate tunnel"
+  - "ping test VPN connection diagnostics"
+use_cases:
+  - configure_site_to_site_vpn
+  - setup_windows_remote_access
+  - exchange_wireguard_keys
+  - download_peer_configuration
+  - test_vpn_connection
+tags:
+  - vpn
+  - wireguard
+  - site-to-site
+  - remote-access
+  - windows
+  - examples
+  - configuration
+  - networking
+categories:
+  - VPN
+---
+
 # WireGuard Configuration Examples
 
 The following are provided as example WireGuard implementations. Refer to the general WireGuard help page for more guidance on individual field settings. Note: The following examples use sample addressing scenarios; actual implementations should be configured with addresses/settings appropriate to the particular environments.

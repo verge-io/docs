@@ -1,3 +1,29 @@
+---
+title: "Importing VMs from VMware Service Backup Jobs"
+description: "Guide to importing VMware virtual machines into VergeOS using the VMware service backup connector with incremental backup and minimal downtime migration."
+semantic_keywords:
+  - "migrate VMware VMs to VergeOS backup import"
+  - "VMware service connector incremental backup"
+  - "import production VMware virtual machines"
+  - "VMware to VergeOS migration with minimal downtime"
+use_cases:
+  - import_vmware_vms_via_backup
+  - migrate_production_vmware_environment
+  - incremental_vmware_backup_import
+  - batch_import_vmware_vms
+tags:
+  - virtual-machines
+  - import
+  - migration
+  - vmware
+  - backup
+  - incremental
+  - production
+  - connector
+categories:
+  - Virtual Machines
+---
+
 # Importing VMs from VMware Service Backup Jobs
 
 ## Overview

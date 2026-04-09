@@ -1,3 +1,27 @@
+---
+title: "Restores from System Snapshots"
+description: "Instructions for restoring from system snapshots including full system restore, selective tenant recovery, selective VM recovery, and accessing provider snapshots as a tenant."
+semantic_keywords:
+  - "restore from system snapshot VergeOS"
+  - "recover VM tenant from system snapshot"
+  - "full system restore rollback snapshot"
+  - "request provider snapshot tenant restore"
+use_cases:
+  - "restore_entire_system_from_snapshot"
+  - "recover_individual_vm_from_system_snapshot"
+  - "recover_tenant_from_system_snapshot"
+  - "access_provider_snapshots_as_tenant"
+tags:
+  - snapshots
+  - restores
+  - system-snapshots
+  - disaster-recovery
+  - vm-recovery
+  - tenant-recovery
+categories:
+  - Backup and DR
+---
+
 # Restores from System Snapshots
 
 ## Access System Snapshots from Your Provider/Host

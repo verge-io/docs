@@ -1,15 +1,26 @@
 ---
 title: Configuring Remote Log Forwarding (Syslog)
 slug: configuring-remote-log-forwarding
-description: 
+description: How to configure VergeOS to forward system logs to a remote syslog server for centralized log management, archival, and compliance.
+author: VergeOS Documentation Team
 draft: false
 date: 2023-08-30T18:05:00.332Z
+semantic_keywords:
+  - "remote syslog log forwarding configuration"
+  - "centralized log management archival compliance"
+  - "rsyslog tcp udp template format"
+  - "advanced settings syslog server setup"
+use_cases:
+  - remote_syslog_configuration
+  - centralized_log_management
+  - compliance_log_archival
+  - log_retention_extension
 tags:
- - logs
- - troubleshooting
- - support
+  - logs
+  - troubleshooting
+  - support
 categories:
- - Troubleshooting
+  - Troubleshooting
 editor: markdown
 dateCreated: 2022-08-23T19:19:56.461Z
 ---

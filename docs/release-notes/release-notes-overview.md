@@ -1,3 +1,27 @@
+---
+title: "Release Notes"
+description: "Overview of all VergeOS release versions, version numbering conventions, update process guidance, and links to detailed release notes for each version."
+semantic_keywords:
+  - "VergeOS release notes overview all versions"
+  - "VergeOS version history and update path"
+  - "VergeOS semantic versioning and version numbering"
+  - "VergeOS end of life and supported versions"
+use_cases:
+  - check_current_supported_versions
+  - plan_upgrade_path
+  - understand_version_numbering
+  - find_release_notes_by_version
+tags:
+  - release-notes
+  - versioning
+  - updates
+  - upgrade-path
+  - end-of-life
+  - supported-versions
+categories:
+  - Release Notes
+---
+
 # Release Notes
 
 Welcome to the VergeOS Release Notes. This section provides information about each release version of VergeOS. Click on any version number to view the detailed release notes for that version.

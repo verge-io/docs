@@ -1,9 +1,21 @@
 ---
 title: Windows Restored VM Not Bootable
 slug: windows-restored-vm-not-bootable
-description: Troubleshooting steps for a Windows VM that is not booting after being restored from a snapshot.
+description: Troubleshooting steps for a Windows VM that is not booting after being restored from a snapshot, including fixes for non-quiesced snapshots, pending updates, driver issues, and corrupted boot loaders.
+author: VergeOS Documentation Team
 draft: false
 date: 2023-01-23T22:31:03.605Z
+semantic_keywords:
+  - "windows VM not booting after snapshot restore"
+  - "BSOD blue screen restored virtual machine"
+  - "quiesced snapshot windows backup boot failure"
+  - "bootrec fixmbr fixboot rebuildbcd repair"
+  - "windows update pending reboot VM crash"
+use_cases:
+  - troubleshoot_restored_vm_boot_failure
+  - repair_windows_bootloader_after_restore
+  - configure_quiesced_snapshots_for_windows
+  - resolve_bsod_after_vm_restore
 tags:
   - windows
   - restored

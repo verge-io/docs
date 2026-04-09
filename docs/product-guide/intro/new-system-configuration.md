@@ -1,3 +1,34 @@
+---
+title: "New System Configuration"
+description: "Post-installation checklist for preparing a new VergeOS system for production, covering cluster settings, licensing, SMTP, certificates, alerting, snapshots, and authentication configuration."
+semantic_keywords:
+  - "VergeOS new system setup checklist"
+  - "post-installation configuration production readiness"
+  - "SMTP certificates licensing initial setup"
+  - "authentication MFA alerting snapshot configuration"
+  - "VergeOS first-time system configuration"
+use_cases:
+  - initial_system_setup
+  - production_readiness_checklist
+  - security_configuration
+  - alerting_and_reporting_setup
+  - snapshot_schedule_configuration
+  - authentication_setup
+tags:
+  - configuration
+  - setup
+  - post-installation
+  - licensing
+  - smtp
+  - certificates
+  - alerting
+  - snapshots
+  - authentication
+  - mfa
+categories:
+  - Getting Started
+---
+
 # New System Configuration
 
 

@@ -1,9 +1,20 @@
 ---
 title: Customizing the User Interface
 slug: customizing-the-user-interface
-description: Guide on how to customize branding and colors in the VergeOS UI.
+description: Guide on how to customize branding, logos, colors, and themes in the VergeOS UI, including light and dark mode support and multi-tenant branding.
+author: VergeOS Documentation Team
 draft: false
 date: 2025-10-29T14:02:02.831Z
+semantic_keywords:
+  - "VergeOS UI branding customization themes"
+  - "custom logo favicon dashboard appearance"
+  - "light dark mode theme variants"
+  - "tenant branding white-label interface"
+use_cases:
+  - customize_ui_branding
+  - upload_custom_logo_favicon
+  - create_light_dark_themes
+  - enforce_tenant_branding
 tags:
   - branding
   - color

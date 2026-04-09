@@ -1,3 +1,26 @@
+---
+title: "Manual VM Migration"
+description: "Instructions for manually migrating running VMs between host nodes in VergeOS, including single VM and bulk migration procedures."
+semantic_keywords:
+  - "manually migrate VM to another node"
+  - "move running virtual machine between hosts"
+  - "bulk migrate multiple VMs simultaneously"
+  - "VM migration resource balancing auto select"
+use_cases:
+  - migrate_single_vm_to_node
+  - bulk_migrate_multiple_vms
+  - balance_vm_workloads_across_nodes
+tags:
+  - virtual-machines
+  - migration
+  - nodes
+  - load-balancing
+  - maintenance
+  - high-availability
+categories:
+  - Virtual Machines
+---
+
 # Manual VM Migration
 
 Migrating a VM moves it from running on one host node to run on another, while keeping the VM running. Migration operations are handled automatically during VergeOS updates and when nodes are put into maintenance mode (provided there are adequate systems resources). VMs can also be manually migrated, when needed.

@@ -1,3 +1,27 @@
+---
+title: "Post-Installation Configuration Guide"
+description: "Essential post-installation steps for VergeOS including system health verification, core network redundancy testing, external connectivity validation, and initial system configuration."
+semantic_keywords:
+  - "VergeOS post-installation configuration steps"
+  - "verify system health after VergeOS install"
+  - "test core network redundancy failover"
+  - "VergeOS external connection redundancy check"
+use_cases:
+  - post_install_verification
+  - network_redundancy_testing
+  - system_health_check
+  - initial_system_configuration
+tags:
+  - post-installation
+  - verification
+  - network-redundancy
+  - system-health
+  - configuration
+  - failover-testing
+categories:
+  - Installation
+---
+
 # Post-Installation Configuration Guide
 
 ## Introduction

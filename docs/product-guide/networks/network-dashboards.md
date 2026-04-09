@@ -1,3 +1,27 @@
+---
+title: "Network Dashboards"
+description: "Navigate and interpret VergeOS network dashboards for real-time monitoring, traffic statistics, status indicators, and historical network performance data."
+semantic_keywords:
+  - "VergeOS network dashboard monitoring"
+  - "network status indicators traffic statistics"
+  - "real-time network utilization graphs"
+  - "network history performance metrics"
+use_cases:
+  - monitor_network_status_and_health
+  - view_real_time_traffic_statistics
+  - analyze_historical_network_performance
+  - navigate_network_dashboard_interface
+tags:
+  - networking
+  - dashboard
+  - monitoring
+  - statistics
+  - performance
+  - troubleshooting
+categories:
+  - Networking
+---
+
 # Network Dashboards
 
 Network Dashboards provide a wealth of helpful information: data that can assist to monitor, tune, and troubleshoot networks in your system. They provide at-a-glance information and allow many clickable areas for "drilling down" to access more specific information where needed. There is a Networks Dashboard that displays summary information for all your Networks and links to more detailed information, such as the Dashboard for any individual Network.

@@ -1,3 +1,29 @@
+---
+title: "Licensing and Software Updates"
+description: "Reference for VergeOS update settings, including update source, authentication, automatic updates, warm reboot, multi-cluster updates, snapshot policies, and privacy settings."
+semantic_keywords:
+  - "VergeOS update settings configuration reference"
+  - "update source branch authentication credentials"
+  - "automatic update schedule warm reboot kexec"
+  - "multi-cluster update vSAN usage threshold"
+  - "cloud snapshot update rollback privacy"
+use_cases:
+  - configure_update_settings
+  - set_automatic_update_schedule
+  - enable_warm_reboot_for_updates
+  - configure_multi_cluster_updates
+  - manage_update_snapshot_settings
+tags:
+  - updates
+  - settings
+  - configuration
+  - licensing
+  - snapshots
+  - maintenance
+categories:
+  - System Administration
+---
+
 # Licensing and Software Updates
 
 This guide explains how to manage software updates and licensing in VergeOS.

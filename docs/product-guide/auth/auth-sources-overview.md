@@ -1,3 +1,29 @@
+---
+title: "Authorization Sources - Overview"
+description: "Overview of third-party OAuth2 authorization sources in VergeOS, including driver options, user creation settings, and login styling configuration."
+semantic_keywords:
+  - "VergeOS OAuth2 authorization source overview"
+  - "configure external identity provider for VergeOS login"
+  - "client ID secret redirect URI auth source setup"
+  - "auto-create users remote user fields OAuth"
+  - "sign-in button styling Font Awesome icon color"
+use_cases:
+  - configure_oauth2_auth_source
+  - set_remote_user_fields
+  - enable_auto_create_users
+  - customize_login_button_styling
+  - sync_group_membership_from_idp
+tags:
+  - authentication
+  - authorization
+  - oauth2
+  - sso
+  - identity-provider
+  - user-management
+  - login
+categories:
+  - Security
+---
 
 # Authorization Sources - Overview
 

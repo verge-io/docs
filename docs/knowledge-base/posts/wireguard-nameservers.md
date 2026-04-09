@@ -1,9 +1,20 @@
 ---
 title: Wireguard - Adding Nameserver entries to Client Configs
 slug: wireguard--adding-nameserver-entries-to-client-configs
-description: 
+description: How to add PostUp and PostDown scripts to WireGuard client configurations for DNS nameserver resolution on Windows and Linux.
+author: VergeOS Documentation Team
 draft: false
 date: 2023-01-24T15:48:19.439Z
+semantic_keywords:
+  - "wireguard dns nameserver client config"
+  - "postup postdown script powershell resolvectl"
+  - "windows linux wireguard dns resolution"
+  - "dns client nrpt rule vpn domain"
+use_cases:
+  - add_dns_nameserver_to_wireguard_config
+  - configure_windows_wireguard_dns_resolution
+  - configure_linux_wireguard_dns_resolution
+  - automate_dns_rules_on_vpn_connect_disconnect
 tags:
   - windows
   - wireguard

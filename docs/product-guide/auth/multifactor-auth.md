@@ -1,3 +1,30 @@
+---
+title: "Two-Factor Authentication (MFA)"
+description: "Configure and manage two-factor authentication in VergeOS using TOTP authenticator apps or email-based verification codes, including system-wide and per-user settings."
+semantic_keywords:
+  - "enable two-factor authentication MFA VergeOS"
+  - "TOTP authenticator app Google Microsoft Authenticator setup"
+  - "email-based security code login verification"
+  - "MFA system settings expiration time configuration"
+  - "require multi-factor authentication all users"
+use_cases:
+  - enable_totp_two_factor_auth
+  - configure_email_based_mfa
+  - set_mfa_system_policy
+  - manage_security_code_expiration
+  - enable_mfa_per_user
+tags:
+  - authentication
+  - mfa
+  - two-factor
+  - totp
+  - security
+  - login
+  - user-management
+categories:
+  - Security
+---
+
 # Two-Factor Authentication (MFA)
 
 Two-factor authentication (also known as Multi-factor Authentication or MFA) is a strongly recommended option that provides a significant, additional layer of security to user logins. When two-factor authentication is enabled, login requires authorization via the user's email address or a TOTP authenticator program in addition to the username and password.

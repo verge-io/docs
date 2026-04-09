@@ -1,3 +1,31 @@
+---
+title: "Replacing a Defective or End-of-life Drive"
+description: "Procedures for replacing failed, degraded, or end-of-life vSAN drives in VergeOS, including identifying defective drives, LED activation, and both reactive and proactive replacement scenarios."
+semantic_keywords:
+  - "replace failed defective drive vSAN VergeOS"
+  - "drive error warning missing status replacement procedure"
+  - "LED activation identify physical drive for replacement"
+  - "proactive drive replacement wear level reallocated sectors"
+  - "vSAN drive repair process format initialize"
+use_cases:
+  - replace_failed_missing_drive
+  - proactively_replace_degraded_drive
+  - identify_physical_drive_with_led
+  - monitor_drive_repair_progress
+  - diagnose_drive_warning_errors
+tags:
+  - drives
+  - vsan
+  - storage
+  - hardware
+  - maintenance
+  - repair
+  - troubleshooting
+  - replacement
+categories:
+  - System Administration
+---
+
 # Replacing a Defective or End-of-life Drive
 
 This page covers replacing a drive (participating in the vSAN) due to defect or end of lifespan. Expedient replacement of problem drives is crucial to maintaining vSAN data protection.

@@ -1,3 +1,32 @@
+---
+title: "Alarms"
+description: "Understanding and managing the VergeOS alarm system for proactive monitoring, including viewing, resolving, and snoozing alarms for hardware failures, configuration issues, and security concerns."
+semantic_keywords:
+  - "VergeOS alarm system monitoring alerts notifications"
+  - "resolve snooze system alarms hardware failure"
+  - "alarm dashboard notification badge status indicator"
+  - "critical error warning alarm severity levels"
+  - "auto-resolvable alarms firewall rules VM restart"
+use_cases:
+  - view_active_alarms
+  - resolve_system_alarms
+  - snooze_alarm_notifications
+  - monitor_hardware_failures
+  - manage_alarm_severity_priorities
+  - configure_alarm_email_notifications
+tags:
+  - alarms
+  - monitoring
+  - alerts
+  - notifications
+  - troubleshooting
+  - dashboard
+  - maintenance
+  - hardware
+categories:
+  - System Administration
+---
+
 # Alarms
 
 ## Overview

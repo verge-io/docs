@@ -1,3 +1,30 @@
+---
+title: "API Keys"
+description: "How to create, manage, and use API keys for programmatic access to the VergeOS REST API, including authentication, IP access controls, expiration settings, and security best practices."
+semantic_keywords:
+  - "VergeOS API key creation management"
+  - "REST API authentication bearer token programmatic access"
+  - "API key IP allow deny list access control"
+  - "automate VergeOS scripts third-party integration"
+  - "API key expiration rotation security"
+use_cases:
+  - create_api_key_for_automation
+  - configure_ip_access_restrictions
+  - authenticate_rest_api_requests
+  - manage_api_key_lifecycle
+  - integrate_third_party_tools
+tags:
+  - api
+  - api-keys
+  - authentication
+  - security
+  - automation
+  - rest-api
+  - integration
+categories:
+  - System Administration
+---
+
 # API Keys
 
 ## Overview

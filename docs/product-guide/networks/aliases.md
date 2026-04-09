@@ -1,3 +1,27 @@
+---
+title: "Aliases"
+description: "Manage reusable IP address sets (aliases) for use across multiple network rules, simplifying administration of complex firewall and routing configurations."
+semantic_keywords:
+  - "network alias IP address set management"
+  - "reusable address list for firewall rules"
+  - "centralized IP group management VergeOS"
+  - "alias source destination network rule"
+use_cases:
+  - manage_ip_address_groups
+  - simplify_firewall_rule_administration
+  - share_address_sets_across_networks
+  - global_alias_for_tenants
+tags:
+  - networking
+  - aliases
+  - firewall
+  - ip-management
+  - network-rules
+  - administration
+categories:
+  - Networking
+---
+
 # Aliases
 
 Aliases centralize the management of IP address sets that will be used across multiple network rules. This helps streamline administration by allowing you to maintain address lists in one place rather than updating individual rules.

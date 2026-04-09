@@ -1,9 +1,19 @@
 ---
 title: Sharing a VM into a Tenant
 slug: sharing-a-vm-into-a-tenant
-description: 
+description: How to share a virtual machine image from a parent environment into a tenant using snapshots and shared objects in VergeOS.
+author: VergeOS Documentation Team
 draft: false
 date: 2023-01-24T19:28:10.839Z
+semantic_keywords:
+  - "share VM into tenant snapshot"
+  - "shared objects virtual machine tenant"
+  - "move VM parent environment to tenant"
+  - "import shared object tenant VM"
+use_cases:
+  - share_vm_image_to_tenant
+  - import_shared_object_in_tenant
+  - migrate_vm_from_parent_to_tenant
 tags:
   - vm
   - tenant

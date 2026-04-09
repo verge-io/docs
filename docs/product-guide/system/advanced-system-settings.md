@@ -1,3 +1,33 @@
+---
+title: "Advanced System Settings"
+description: "Reference for all advanced system settings in VergeOS, including NTP, SMART thresholds, session timeouts, MAC prefix, migration controls, two-factor authentication, and vSAN configuration."
+semantic_keywords:
+  - "VergeOS advanced system settings configuration"
+  - "NTP SMART drive monitoring thresholds"
+  - "session timeout login lockout two-factor authentication"
+  - "VM migration throttle concurrent limits"
+  - "vSAN host override MAC address prefix MTU"
+use_cases:
+  - configure_ntp_time_synchronization
+  - set_smart_drive_warning_thresholds
+  - adjust_session_timeout_and_lockout_policy
+  - tune_vm_migration_speed_and_concurrency
+  - enable_two_factor_authentication_defaults
+  - configure_remote_syslog_export
+tags:
+  - advanced-settings
+  - configuration
+  - ntp
+  - smart
+  - security
+  - migration
+  - two-factor-authentication
+  - session-management
+  - vsan
+categories:
+  - System Administration
+---
+
 hide: - toc
 
 # Advanced System Settings

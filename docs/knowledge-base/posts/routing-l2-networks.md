@@ -1,15 +1,26 @@
 ---
 title: Routing Layer 2 Networks with VergeOS
 slug: routing-l2-networks
-description: Describes an overview and specific scenario in which physical devices are routed via Layer 3 Verge networks.
+description: Guide to routing Layer 3 IP traffic for Layer 2 physical networks in VergeOS, enabling communication between physical devices and internal VM workloads on different subnets.
+author: VergeOS Documentation Team
 draft: false
 date: 2025-04-09T18:42:31.354Z
+semantic_keywords:
+  - "route layer 2 physical network layer 3 vergeos"
+  - "network blocks ip routing external l2 vlan"
+  - "physical devices edge deployment vm communication"
+  - "create l2 external network ip block assignment"
+use_cases:
+  - route_ip_traffic_to_l2_physical_network
+  - create_l2_external_network_with_ip_block
+  - enable_physical_device_vm_communication
+  - configure_dhcp_on_l2_network
 tags:
   - network
   - networking
   - network blocks
   - subnet
-  - Virtual Switch Port
+  - virtual switch port
   - vwire
   - layer2
   - l2

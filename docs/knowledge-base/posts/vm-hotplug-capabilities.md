@@ -1,10 +1,20 @@
 ---
 title: VM and Tenant Hot-Plug Capabilities
 slug: vm-hotplug-capabilities
-description: Understanding which resources can be modified on running VMs and tenants without requiring a restart
-author: Verge.io
-published: true
+description: Understanding which resources can be modified on running VMs and tenants without requiring a restart, including drives, NICs, RAM, and CPU cores.
+author: VergeOS Documentation Team
+draft: false
 date: 2026-02-03
+semantic_keywords:
+  - "vm hotplug drives nics live modification"
+  - "tenant node live resource adjustment ram cpu"
+  - "power cycle required vm configuration changes"
+  - "hot-plug requirements virtio-scsi guest os"
+use_cases:
+  - determine_hotplug_capable_resources
+  - add_drives_nics_to_running_vm
+  - modify_tenant_node_resources_live
+  - plan_vm_resource_changes
 tags:
   - virtual machines
   - tenants
@@ -13,6 +23,8 @@ tags:
 categories:
   - Virtual Machines
   - Tenants
+editor: markdown
+dateCreated: 2026-02-03
 ---
 
 # VM and Tenant Hot-Plug Capabilities

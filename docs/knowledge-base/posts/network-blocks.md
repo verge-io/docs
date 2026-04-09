@@ -1,9 +1,19 @@
 ---
 title: Network Blocks
 slug: network-blocks
-description: Creating Network Blocks
+description: How to create and assign network blocks in VergeOS for delivering IP address ranges to tenants or networks using Layer 3 connectivity.
+author: VergeOS Documentation Team
 draft: false
 date: 2024-01-03T18:42:31.354Z
+semantic_keywords:
+  - "network blocks ip assignment cidr tenant"
+  - "create network block external network vergeos"
+  - "assign ip addresses tenant vm network block"
+  - "layer 3 connectivity public ip direct assignment"
+use_cases:
+  - create_network_block
+  - assign_network_block_to_tenant
+  - create_network_from_block
 tags:
   - network
   - networking

@@ -1,9 +1,19 @@
 ---
 title: Windows - Slow to Format a New Disk
 slug: windows--slow-to-format-a-new-disk
-description: Troubleshooting slow disk formatting in Windows VMs.
+description: How to fix slow virtual disk formatting in Windows Server 2012 and later by temporarily disabling SCSI TRIM and Unmap commands using fsutil.
+author: VergeOS Documentation Team
 draft: false
 date: 2023-01-23T22:31:24.436Z
+semantic_keywords:
+  - "windows slow format virtual disk TRIM unmap"
+  - "fsutil DisableDeleteNotify SCSI quick format"
+  - "windows server 2012 disk formatting performance"
+  - "virtual disk format takes long time"
+use_cases:
+  - speed_up_windows_virtual_disk_formatting
+  - disable_scsi_trim_unmap_during_format
+  - troubleshoot_slow_disk_format_windows_server
 tags:
   - vm
   - windows

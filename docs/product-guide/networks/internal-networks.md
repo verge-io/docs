@@ -1,3 +1,32 @@
+---
+title: "Internal Networks (General Instructions)"
+description: "Complete guide to creating and configuring internal virtual networks in VergeOS, including Layer 2/Layer 3 options, DHCP, DNS, clustering, port mirroring, rate limiting, and high availability settings."
+semantic_keywords:
+  - "create internal network VergeOS configuration"
+  - "internal virtual network DHCP DNS settings"
+  - "VergeOS network HA group cluster failover"
+  - "configure internal network gateway routing rules"
+  - "port mirroring rate limiting network options"
+use_cases:
+  - create_internal_network
+  - configure_dhcp_and_dns
+  - setup_network_high_availability
+  - enable_port_mirroring
+  - configure_rate_limiting
+  - set_default_gateway
+tags:
+  - networking
+  - internal-network
+  - dhcp
+  - dns
+  - high-availability
+  - configuration
+  - port-mirroring
+  - rate-limiting
+categories:
+  - Networking
+---
+
 # Internal Networks (General Instructions)
 
 Internal networks are VNets originated within VergeOS; an internal network can be created as [**Layer3**](/product-guide/networks/internal-layer3) (typically recommended) or [**Layer2**](/product-guide/networks/internal-layer2).

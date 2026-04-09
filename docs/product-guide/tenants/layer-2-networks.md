@@ -1,28 +1,26 @@
 ---
-requirements:
-  vergeos_version: "26.0 or later"
-  access_levels: ["Cluster Admin"]
-  background_knowledge: ["Networking fundamentals", "VLAN concepts", "Tenant management"]
-
-key_concepts:
-  - "Tenant Layer 2 Networks"
-  - "VLAN pass-through"
-  - "Physical network mapping"
-  - "Tenant network isolation"
-
+title: "Configure Tenant Layer 2 Networks"
+description: "How to configure Tenant Layer 2 Networks in VergeOS to pass VLANs directly to tenant environments, including creation, verification, VM attachment, and removal procedures."
 semantic_keywords:
   - "VergeOS tenant Layer 2 networks"
   - "tenant Layer 2 network configuration steps"
-  - "how to configure tenant Layer2 networks in VergeOS"
   - "pass VLAN to tenant VergeOS"
   - "tenant physical network access"
   - "troubleshoot tenant Layer 2 connectivity VergeOS"
-
 use_cases:
   - "Providing direct VLAN access to tenant environments"
   - "Enabling tenant-managed network infrastructure"
   - "Isolating tenant traffic at Layer 2"
   - "Multi-tenant network segmentation"
+tags:
+  - tenants
+  - layer-2
+  - networking
+  - vlan
+  - network-configuration
+  - tenant-networks
+categories:
+  - Tenants
 ---
 
 # Configure Tenant Layer 2 Networks

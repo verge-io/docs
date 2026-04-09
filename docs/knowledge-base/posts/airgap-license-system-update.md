@@ -1,9 +1,20 @@
 ---
 title: Updating a VergeOS System with Airgap License
 slug: updating-vergeos-system-with-airgap-license
-description: Step-by-step guide on how to perform a software update on a VergeOS system using air-gap licensing
+description: Step-by-step guide on how to perform a software update on an air-gapped VergeOS system using an ISO file, including downloading, uploading, configuring update settings, and applying the update.
+author: VergeOS Documentation Team
 draft: false
 date: 2024-08-19T16:30:00.000Z
+semantic_keywords:
+  - "airgap system update ISO file"
+  - "air-gapped software update offline"
+  - "VergeOS manual update process"
+  - "update source ISO upload install"
+use_cases:
+  - update_airgap_system
+  - upload_update_iso
+  - configure_offline_update_source
+  - apply_manual_system_update
 tags:
   - airgap
   - license

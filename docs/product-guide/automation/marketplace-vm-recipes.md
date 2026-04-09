@@ -1,10 +1,18 @@
 ---
-title: Marketplace Catalog - VM Recipes
-slug: marketplace-vm-recipes
-description: Explore the pre-configured virtual machine recipes available in the VergeOS Marketplace Catalog for rapid, self-service VM deployment.
-author: VergeOS Documentation Team
-draft: false
-date: 2024-07-29T10:00:00.000Z
+title: "VergeOS Marketplace Catalog: VM Recipes"
+description: "Explore the pre-configured virtual machine recipes available in the VergeOS Marketplace Catalog for rapid, self-service VM deployment across Linux, Windows, and application stacks."
+semantic_keywords:
+  - "VergeOS marketplace VM recipes catalog"
+  - "pre-configured virtual machine templates for quick deployment"
+  - "Linux and Windows VM recipes with cloud-init"
+  - "self-service VM provisioning from marketplace"
+  - "automated VM deployment configuration options"
+use_cases:
+  - deploy_marketplace_vm_recipes
+  - provision_linux_vms
+  - provision_windows_vms
+  - deploy_application_stacks
+  - customize_vm_configuration_options
 tags:
   - vm
   - recipe
@@ -12,11 +20,12 @@ tags:
   - catalog
   - automation
   - operating system
+  - cloud-init
+  - deployment
+  - provisioning
 categories:
   - Automation
   - Virtual Machines
-editor: markdown
-dateCreated: 2024-07-29T10:00:00.000Z
 ---
 
 # VergeOS Marketplace Catalog: VM Recipes

@@ -1,3 +1,30 @@
+---
+title: "VergeOS OIDC Applications Overview"
+description: "Overview of VergeOS OpenID Connect (OIDC) functionality for centralized identity management, single sign-on across VergeOS systems and tenants, and upstream provider integration."
+semantic_keywords:
+  - "VergeOS OIDC identity provider single sign-on"
+  - "centralized authentication across tenants and systems"
+  - "OpenID Connect SSO configuration VergeOS"
+  - "upstream identity provider Google Azure integration"
+  - "MSP provider central login tenant management"
+use_cases:
+  - configure_vergeos_as_oidc_provider
+  - configure_vergeos_as_oidc_client
+  - enable_sso_across_tenants
+  - integrate_upstream_auth_provider
+  - centralize_user_management_msp
+tags:
+  - authentication
+  - oidc
+  - sso
+  - identity-provider
+  - tenants
+  - user-management
+  - centralized-auth
+categories:
+  - Security
+---
+
 # VergeOS OIDC Applications Overview
 
 VergeOS provides OIDC functionality to allow centralized identity management for multiple VergeOS systems and or tenants.

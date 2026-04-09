@@ -1,3 +1,29 @@
+---
+title: "Creating Automated Tasks"
+description: "Step-by-step instructions for creating automated tasks in VergeOS, including how to configure event-based and schedule-based triggers for system automation."
+semantic_keywords:
+  - "how to create automated tasks in VergeOS"
+  - "event trigger task automation configuration"
+  - "schedule trigger recurring task setup"
+  - "task engine event-driven and time-based automation"
+use_cases:
+  - automate_system_operations
+  - configure_event_triggers
+  - configure_schedule_triggers
+  - create_recurring_tasks
+  - tag_based_event_automation
+tags:
+  - task
+  - automation
+  - event trigger
+  - schedule trigger
+  - task engine
+  - recurring task
+  - system operations
+categories:
+  - Automation
+---
+
 # Creating Automated Tasks
 
 This page provides general instructions for creating tasks in VergeOS, including how to configure event-based and schedule-based triggers. 

@@ -1,3 +1,31 @@
+---
+title: "VergeOS Clusters Overview"
+description: "Overview of VergeOS clusters, including cluster types (HCI, compute-only, storage-only), cluster requirements, scalability design, and best practices for workload organization."
+semantic_keywords:
+  - "VergeOS cluster types HCI compute storage"
+  - "cluster architecture scaling nodes resource pool"
+  - "workload organization failover cluster assignment"
+  - "cluster requirements minimum nodes controller"
+  - "cluster best practices hardware standardization"
+use_cases:
+  - understand_cluster_types_and_purpose
+  - plan_cluster_architecture
+  - scale_out_cluster_nodes
+  - organize_workloads_across_clusters
+  - review_cluster_requirements
+tags:
+  - clusters
+  - hci
+  - compute
+  - storage
+  - scaling
+  - architecture
+  - nodes
+  - high-availability
+categories:
+  - System Administration
+---
+
 VergeOS Clusters Overview
 # VergeOS Clusters Overview
 

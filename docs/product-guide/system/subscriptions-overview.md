@@ -1,3 +1,31 @@
+---
+title: "Creating Subscriptions"
+description: "How to create on-demand alert and scheduled report subscriptions in VergeOS, including subscription types, configuration options, throttling, reminders, and practical examples."
+semantic_keywords:
+  - "VergeOS create subscription alert notification"
+  - "on-demand triggered alert threshold warning error"
+  - "scheduled subscription report daily weekly"
+  - "subscription profile target type owner"
+  - "subscription throttle reminder interval"
+use_cases:
+  - create_on_demand_alert_subscription
+  - create_scheduled_report_subscription
+  - configure_subscription_throttle_and_reminders
+  - set_up_storage_usage_alerts
+  - monitor_system_warnings_and_errors
+tags:
+  - subscriptions
+  - alerts
+  - notifications
+  - monitoring
+  - reports
+  - email
+  - smtp
+  - automation
+categories:
+  - System Administration
+---
+
 # Creating Subscriptions
 
 Subscriptions deliver emails for scheduled reporting and triggered alerting.

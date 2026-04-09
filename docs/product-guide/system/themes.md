@@ -1,3 +1,30 @@
+---
+title: "VergeOS Theme Functionality"
+description: "How to create and manage custom UI themes in VergeOS, including color customization for graphs, navigation, headers, loader elements, custom logos, favicons, and theme hierarchy."
+semantic_keywords:
+  - "VergeOS theme customization UI branding"
+  - "custom theme colors graphs navigation header"
+  - "logo favicon branding corporate identity"
+  - "light dark theme color picker property groups"
+  - "tenant theme hierarchy persistence"
+use_cases:
+  - create_custom_ui_theme
+  - customize_interface_colors_and_branding
+  - upload_custom_logo_and_favicon
+  - configure_theme_for_tenant
+  - manage_theme_activation
+tags:
+  - themes
+  - branding
+  - customization
+  - ui
+  - logos
+  - colors
+  - tenants
+categories:
+  - System Administration
+---
+
 # VergeOS Theme Functionality
 
 VergeOS provides a comprehensive Theme system that allows administrators to customize the visual appearance of the user interface. The Theme functionality offers granular control over colors across different UI components including graphs, navigation elements, headers, loaders, and general interface elements.

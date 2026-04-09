@@ -1,3 +1,26 @@
+---
+title: "Removing ISO Files with References"
+description: "How to view and remove references to ISO files loaded on VM CD-ROM drives so the ISO files can be deleted from the VergeOS vSAN."
+semantic_keywords:
+  - "delete ISO file references VergeOS"
+  - "remove ISO CD-ROM drive VM references"
+  - "ISO media image must be empty to delete"
+  - "vSAN file management ISO cleanup"
+use_cases:
+  - iso_reference_removal
+  - vsan_file_cleanup
+  - media_image_management
+tags:
+  - iso
+  - files
+  - vsan
+  - cd-rom
+  - references
+  - cleanup
+categories:
+  - Storage
+---
+
 # Removing ISO Files with References
 
 ISO files that are currently referenced (loaded on a VM's CD-ROM drive) cannot be deleted until those references are removed.  

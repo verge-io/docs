@@ -1,9 +1,19 @@
 ---
 title: Allow Root to Tenant Site Connection
 slug: allow-root-to-tenant-site-connection
-description: Instructions for how to create a site from a root system to a tenant
+description: How to configure a network rule on the root system's external network to allow site-to-site connectivity between the root system and a tenant.
+author: VergeOS Documentation Team
 draft: false
 date: 2023-09-12T15:19:47.449Z
+semantic_keywords:
+  - "root to tenant site connection rule"
+  - "DMZ translate rule external network"
+  - "tenant site connectivity root system"
+  - "allow tenant root network rule"
+use_cases:
+  - connect_root_system_to_tenant_site
+  - enable_dmz_tenant_connectivity
+  - configure_translate_rule_for_tenant_access
 tags:
   - routing
   - network

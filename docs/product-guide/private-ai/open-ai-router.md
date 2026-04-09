@@ -1,3 +1,33 @@
+---
+title: "VergeOS OpenAI-Compatible API"
+description: "Documentation for the VergeOS OpenAI-compatible API endpoint, enabling applications to interact with locally-hosted LLMs using standard OpenAI API format with Python, JavaScript, and cURL."
+semantic_keywords:
+  - "OpenAI compatible API endpoint local LLM"
+  - "API key authentication bearer token VergeOS"
+  - "chat completions Python JavaScript cURL integration"
+  - "thinking models disable think empty response"
+  - "IDE integration custom OpenAI endpoint"
+use_cases:
+  - integrate_openai_api
+  - create_api_key
+  - multi_turn_conversations
+  - ide_ai_integration
+  - troubleshoot_api_errors
+  - configure_thinking_models
+tags:
+  - private-ai
+  - openai-api
+  - api
+  - integration
+  - python
+  - javascript
+  - curl
+  - authentication
+  - workers
+categories:
+  - Private AI
+---
+
 # VergeOS OpenAI-Compatible API
 
 ## Overview

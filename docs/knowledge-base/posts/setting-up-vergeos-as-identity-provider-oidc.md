@@ -1,9 +1,22 @@
 ---
 title: Setting Up VergeOS as an Identity Provider with OIDC
 slug: setting-up-vergeos-as-identity-provider-oidc
-description: Guide on configuring VergeOS as an OpenID Connect (OIDC) identity provider for centralized authentication across multiple systems
+description: Guide on configuring VergeOS as an OpenID Connect (OIDC) identity provider for centralized authentication across multiple systems and tenants.
+author: VergeOS Documentation Team
 draft: false
 date: 2025-01-22T15:41:14.296Z
+semantic_keywords:
+  - "oidc identity provider openid connect setup"
+  - "single sign-on sso centralized authentication"
+  - "client id client secret well known configuration"
+  - "redirect uri wildcard oidc application"
+  - "vergeos multi-system tenant authentication"
+use_cases:
+  - configure_vergeos_as_oidc_identity_provider
+  - enable_centralized_sso_for_multiple_systems
+  - generate_oidc_client_credentials
+  - set_up_redirect_uris_with_wildcards
+  - restrict_oidc_access_by_scope
 tags:
   - oidc
   - authentication

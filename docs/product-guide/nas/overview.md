@@ -1,3 +1,30 @@
+---
+title: "NAS Overview"
+description: "Overview of the VergeOS NAS feature for file-level storage, including benefits, setup steps, local and remote volumes, Active Directory integration, and share creation."
+semantic_keywords:
+  - "VergeOS NAS file-level storage overview"
+  - "NAS setup steps volumes shares and AD integration"
+  - "network attached storage with vSAN deduplication"
+  - "mount external file systems and manage backups"
+use_cases:
+  - understand_nas_capabilities
+  - plan_nas_deployment
+  - manage_file_level_storage
+  - import_external_data
+  - export_data_for_backup_compliance
+tags:
+  - nas
+  - overview
+  - file storage
+  - vsan
+  - volumes
+  - shares
+  - active directory
+  - deduplication
+categories:
+  - NAS
+---
+
 # NAS Overview
 
 The NAS feature provides file-level storage/access within a VergeOS system, allowing you to create volumes of files to store on your distributed storage and mount external

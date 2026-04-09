@@ -1,3 +1,24 @@
+---
+title: "Tenant Restores"
+description: "Instructions for restoring an existing or deleted tenant from system snapshots, including provider-initiated and tenant self-service restore workflows."
+semantic_keywords:
+  - "restore tenant from system snapshot VergeOS"
+  - "recover deleted tenant from snapshot"
+  - "tenant self-service restore provider snapshot"
+  - "tenant disaster recovery rollback"
+use_cases:
+  - "restore_existing_tenant_from_snapshot"
+  - "recover_deleted_tenant"
+  - "tenant_disaster_recovery"
+tags:
+  - tenants
+  - restores
+  - snapshots
+  - disaster-recovery
+  - data-recovery
+categories:
+  - Tenants
+---
 
 # Tenant Restores
 

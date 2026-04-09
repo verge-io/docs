@@ -1,9 +1,19 @@
 ---
 title: Windows is Unable to Detect a Virtual Disk Drive
 slug: windows-is-unable-to-detect-a-virtual-disk-drive
-description: 
+description: How to resolve Windows not detecting a virtual disk drive by loading virtIO drivers during installation or changing the disk interface type to SATA.
+author: VergeOS Documentation Team
 draft: false
 date: 2023-01-23T22:31:40.674Z
+semantic_keywords:
+  - "windows cannot detect virtual disk drive installation"
+  - "virtIO SCSI drivers windows VM setup"
+  - "load virtio drivers during windows install"
+  - "change disk interface SATA virtio-scsi"
+use_cases:
+  - install_virtio_drivers_during_windows_setup
+  - resolve_missing_disk_drive_windows_vm
+  - change_virtual_disk_interface_type
 tags:
   - vm
   - windows

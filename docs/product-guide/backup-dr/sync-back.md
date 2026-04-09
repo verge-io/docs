@@ -1,3 +1,26 @@
+---
+title: "Retrieving a Snapshot back (Sync Back)"
+description: "How to configure sync-back and retrieve a copy of a snapshot from the remote sync destination back to the source VergeOS system for local restore operations."
+semantic_keywords:
+  - "sync back retrieve snapshot remote destination VergeOS"
+  - "configure sync-back incoming sync recovery"
+  - "pull snapshot from remote system local restore"
+  - "disaster recovery retrieve remote snapshot"
+use_cases:
+  - "configure_sync_back"
+  - "retrieve_remote_snapshot_locally"
+  - "restore_from_remote_sync_destination"
+tags:
+  - site-syncs
+  - sync-back
+  - snapshots
+  - disaster-recovery
+  - data-recovery
+  - replication
+categories:
+  - Backup and DR
+---
+
 # Retrieving a Snapshot back (Sync Back)
 
 This page provides instructions for retrieving a copy of a snapshot from the sync destination back to the source system. This would allow for performing a local restore from the retrieved snapshot. Before a remote snapshot can be recovered to the source system, the sync-back must be configured; once sync-back is configured it is then available for all subsequent sync back requests.

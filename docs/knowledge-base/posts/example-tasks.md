@@ -1,9 +1,20 @@
 ---
 title: Automated Task Example - Power on/off VMs Automatically as Needed
 slug: automated-task-example-1
-description: specific configuration example of an automated task that is used to conserve resources by powering on VMs when the designated user logs in, power them off if the user logs out, with an additional automatic power off at the end of business hours each week
+description: Configuration example of an automated task that conserves resources by powering on VMs when a designated user logs in, powering them off on logout, and scheduling automatic shutdown at end of business hours.
+author: VergeOS Documentation Team
 draft: false
 date: 2025-12-10T19:25:40.109Z
+semantic_keywords:
+  - "automated vm power on off user login logout"
+  - "task engine schedule trigger event"
+  - "resource conservation gpu workload automation"
+  - "tag-based vm power management scheduling"
+use_cases:
+  - automated_vm_power_management
+  - user_login_event_trigger
+  - scheduled_vm_shutdown
+  - resource_conservation_automation
 tags:
   - automation
   - tasks

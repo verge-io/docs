@@ -1,3 +1,28 @@
+---
+title: "Standard Operating Procedures Overview"
+description: "Overview of standardized operating procedures (SOPs) for critical VergeOS system operations, including installation, scaling, updates, and storage expansion."
+semantic_keywords:
+  - "VergeOS standard operating procedures SOP overview"
+  - "system operations best practices change management"
+  - "installation scale out update vSAN procedures"
+  - "operational consistency repeatable process templates"
+  - "service provider enterprise IT operational framework"
+use_cases:
+  - plan_system_operations
+  - integrate_sops_with_change_management
+  - review_available_procedures
+  - establish_operational_consistency
+tags:
+  - sop
+  - operations
+  - best-practices
+  - change-management
+  - planning
+  - procedures
+categories:
+  - System Administration
+---
+
 # Standard Operating Procedures Overview
 
 This section provides standardized operating procedures (SOPs) for critical VergeOS system operations. These procedures are designed to be integrated into your organization's existing operational framework and adapted to meet your specific environmental requirements and change management processes.

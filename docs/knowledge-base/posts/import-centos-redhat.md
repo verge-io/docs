@@ -1,9 +1,20 @@
 ---
 title: How to Import a Linux VM (RHEL, CentOS, SUSE, Debian, Ubuntu)
 slug: import-rhel-centos-vm
-description: Importing Linux VMs from other hypervisors and configuring virtio drivers for proper booting in VergeOS.
+description: Importing Linux VMs from other hypervisors into VergeOS and configuring virtio drivers by rebuilding initramfs for proper booting across RHEL, CentOS, SUSE, Debian, and Ubuntu.
+author: VergeOS Documentation Team
 draft: false
 date: 2025-01-23T00:00:00.000Z
+semantic_keywords:
+  - "import linux vm rhel centos suse debian ubuntu"
+  - "virtio drivers initramfs dracut rebuild"
+  - "vm migration boot failure troubleshooting"
+  - "hypervisor migration linux rescue mode chroot"
+use_cases:
+  - import_linux_vm_from_other_hypervisor
+  - rebuild_initramfs_with_virtio_drivers
+  - troubleshoot_linux_vm_boot_failure
+  - migrate_rhel_centos_suse_debian_ubuntu
 tags:
   - vm
   - import

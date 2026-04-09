@@ -1,3 +1,27 @@
+---
+title: "Immutable Snapshots"
+description: "How to enable, manage, and understand immutable snapshots in VergeOS, which prevent deletion of system snapshots for ransomware protection with a mandatory seven-day unlock delay."
+semantic_keywords:
+  - "immutable snapshots ransomware protection VergeOS"
+  - "prevent snapshot deletion lock unlock"
+  - "seven day unlock delay immutable flag"
+  - "storage capacity planning immutable snapshot retention"
+use_cases:
+  - "enable_immutable_snapshot_protection"
+  - "automate_immutable_snapshots_via_profile"
+  - "unlock_immutable_snapshot"
+  - "ransomware_recovery_planning"
+tags:
+  - snapshots
+  - immutable
+  - ransomware-protection
+  - security
+  - data-protection
+  - storage-planning
+categories:
+  - Backup and DR
+---
+
 # Immutable Snapshots
 
 ## Overview

@@ -1,9 +1,22 @@
 ---
 title: Configure Authoritative DNS in VergeOS
 slug: configure-authoritative-dns-vergeos
-description: Complete guide to setting up authoritative DNS services in VergeOS using BIND, including DNS views, zones, records, and firewall configuration
+description: Complete guide to setting up authoritative DNS services in VergeOS using BIND, including DNS views, zones, records, and firewall configuration.
+author: VergeOS Documentation Team
 draft: false
 date: 2025-09-10T14:10:54.764Z
+semantic_keywords:
+  - "authoritative dns bind vergeos configuration"
+  - "dns views zones records split-horizon setup"
+  - "firewall rules dns port 53 udp tcp"
+  - "zone transfers secondary dns redundancy"
+  - "lan wan dns view recursion configuration"
+use_cases:
+  - configure_authoritative_dns_bind
+  - create_dns_views_split_horizon
+  - manage_dns_zones_and_records
+  - configure_firewall_rules_for_dns
+  - setup_zone_transfers_redundancy
 tags:
   - dns
   - bind

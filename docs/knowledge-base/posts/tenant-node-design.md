@@ -1,9 +1,22 @@
 ---
 title: Tenant Node Planning Guide
 slug: tenant-node-planning-guide
-description: Considerations for determining number of tenant nodes and resource allocation of tenant nodes
+description: Guide for determining the optimal number of tenant nodes, compute resource allocation, and physical placement strategies for VergeOS tenant deployments.
+author: VergeOS Documentation Team
 draft: false
 date: 2025-07-23T22:27:27.361Z
+semantic_keywords:
+  - "tenant node planning resource allocation"
+  - "single node vs multi node tenant design"
+  - "tenant compute memory CPU sizing"
+  - "tenant node scaling horizontal vertical"
+  - "tenant workload placement cluster strategy"
+use_cases:
+  - plan_tenant_node_count_and_resources
+  - determine_single_vs_multi_node_tenant
+  - allocate_compute_resources_across_tenant_nodes
+  - design_tenant_for_mixed_hardware_workloads
+  - scale_tenant_resources_non_disruptively
 tags:
   - workloads
   - tenants

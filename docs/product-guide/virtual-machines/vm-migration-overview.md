@@ -1,3 +1,34 @@
+---
+title: "Migrating Workloads into VergeOS"
+description: "Comprehensive overview of VM migration methods for importing workloads into VergeOS from VMware, Hyper-V, KVM, and physical servers, including planning guidance and supported file formats."
+semantic_keywords:
+  - "migrate VMs to VergeOS from VMware Hyper-V"
+  - "VM import methods VMDK VHD OVF QCOW2"
+  - "physical to virtual P2V migration VergeOS"
+  - "choose VM migration method planning guide"
+  - "Cirrus Data enterprise zero downtime migration"
+use_cases:
+  - plan_vm_migration_strategy
+  - migrate_vmware_workloads
+  - migrate_hyperv_workloads
+  - physical_to_virtual_migration
+  - evaluate_migration_methods
+  - post_migration_optimization
+tags:
+  - virtual-machines
+  - migration
+  - import
+  - vmware
+  - hyper-v
+  - p2v
+  - vmdk
+  - ovf
+  - vhd
+  - qcow2
+categories:
+  - Virtual Machines
+---
+
 # Migrating Workloads into VergeOS
 
 VergeOS offers flexible options for importing workloads from other systems, including tools for bulk migrations and comprehensive support for import from media images (VMDK/VHD/VHDX, OVF/OVA, VMX, QCOW2, etc.). Virtual machines can be transferred directly into the environment, allowing upload and configuration manually or through automated tools. This versatility makes it easy to transition from other platforms while maintaining control and continuity.

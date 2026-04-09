@@ -1,15 +1,26 @@
 ---
 title: Tenant External IP Quick Start Guide
 slug: configuring-tenant-external-ips
-description: Step-by-step guide to configuring external/public IP addresses for tenant VMs with common scenarios
-published: true
+description: Step-by-step guide to configuring external and public IP addresses for tenant VMs, covering single IP, IP block, and NAT-only scenarios.
+author: VergeOS Documentation Team
+draft: false
 date: 2026-01-24
+semantic_keywords:
+  - "tenant external public IP configuration"
+  - "NAT DNAT SNAT rules tenant VM"
+  - "assign IP block tenant network"
+  - "tenant firewall accept rules external access"
+use_cases:
+  - assign_single_external_ip_to_tenant_vm
+  - configure_ip_block_for_multiple_tenant_vms
+  - setup_nat_rules_for_tenant_internet_access
+  - create_firewall_rules_for_tenant_services
 tags:
   - tenant
   - networking
   - external ip
   - public ip
-  - NAT
+  - nat
   - firewall
 categories:
   - Tenant

@@ -1,3 +1,26 @@
+---
+title: "Storage Node Installation Guide"
+description: "Step-by-step instructions for installing storage-only nodes in VergeOS to expand vSAN storage capacity without adding compute resources."
+semantic_keywords:
+  - "VergeOS storage only node installation"
+  - "expand vSAN storage capacity additional nodes"
+  - "storage node USB installer VergeOS"
+  - "add storage cluster VergeOS"
+use_cases:
+  - storage_node_installation
+  - vsan_capacity_expansion
+  - storage_cluster_creation
+tags:
+  - installation
+  - storage-node
+  - vsan
+  - scale-out
+  - storage-cluster
+  - expansion
+categories:
+  - Installation
+---
+
 # Storage Node Installation Guide
 
 

@@ -1,9 +1,22 @@
 ---
 title: Proper VergeOS System Shutdown Procedure
 slug: proper-vergeos-system-shutdown-procedure
-description: Complete step-by-step guide for safely shutting down VergeOS systems and clusters
+description: Complete step-by-step guide for safely shutting down VergeOS systems and clusters, including tenant workload shutdown, multi-cluster sequencing, and proper power-on procedures.
+author: VergeOS Documentation Team
 draft: false
 date: 2025-07-02T00:00:00.000Z
+semantic_keywords:
+  - "VergeOS system shutdown procedure safe"
+  - "cluster power off sequence controller nodes"
+  - "tenant workload graceful shutdown"
+  - "multi-cluster shutdown power-on order"
+  - "system maintenance shutdown checklist"
+use_cases:
+  - shutdown_vergeos_system_safely
+  - follow_multi_cluster_shutdown_order
+  - power_on_vergeos_after_maintenance
+  - inventory_running_workloads_before_shutdown
+  - troubleshoot_shutdown_issues
 tags:
   - shutdown
   - power-off

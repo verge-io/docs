@@ -1,3 +1,28 @@
+---
+title: "Pre-Installation Checklist"
+description: "Checklist of prerequisites, hardware BIOS settings, and network configurations to verify before beginning a VergeOS installation."
+semantic_keywords:
+  - "VergeOS pre-installation checklist prerequisites"
+  - "BIOS settings for VergeOS virtualization UEFI"
+  - "network switch VLAN configuration before install"
+  - "IPMI setup and hardware burn-in verification"
+use_cases:
+  - pre_install_verification
+  - hardware_preparation
+  - network_readiness_check
+  - bios_configuration
+tags:
+  - pre-installation
+  - checklist
+  - bios
+  - ipmi
+  - networking
+  - vlan
+  - hardware
+categories:
+  - Installation
+---
+
 # Pre-Installation Checklist
 
 ## Prerequisites
