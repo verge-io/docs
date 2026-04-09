@@ -135,23 +135,75 @@ Supported types: `note`, `abstract`, `info`, `tip`, `success`, `question`, `warn
 - Use relative paths: `![Alt text](../assets/image.png)`
 - Glightbox plugin enables click-to-zoom
 
-### Knowledge Base Articles
+### Frontmatter
 
-KB articles require YAML frontmatter:
+All documentation files require YAML frontmatter. A CI check enforces this on every pull request.
+
+#### Product Guide / Implementation Guide / Reference Architecture
+
+At minimum, every page needs `title` and `description`:
 
 ```yaml
 ---
-title: Article Title
-slug: url-friendly-title
-description: Brief description
-author: Author Name
-published: true
-date: YYYY-MM-DD
-tags: [tag1, tag2]
+title: "Page Title"
+description: "Brief description of the page content."
+semantic_keywords:
+  - "search phrase one"
+  - "search phrase two"
+use_cases:
+  - use_case_one
+  - use_case_two
+tags:
+  - tag1
+  - tag2
 categories:
-  - Category
+  - Category Name
 ---
 ```
+
+| Field | Required | Description |
+|-------|----------|-------------|
+| `title` | Yes | Page title |
+| `description` | Yes | Brief summary used for SEO and search |
+| `semantic_keywords` | No | Natural-language search phrases for AI/vector search |
+| `use_cases` | No | Machine-readable use case identifiers |
+| `tags` | No | Topic tags for filtering and discovery |
+| `categories` | No | Broad category grouping |
+
+#### Knowledge Base Articles
+
+KB articles in `docs/knowledge-base/posts/` have additional required fields:
+
+```yaml
+---
+title: "Article Title"
+slug: url-friendly-title
+description: "Brief description"
+author: Author Name
+draft: false
+date: 2025-01-15
+tags:
+  - tag1
+  - tag2
+categories:
+  - Category
+editor: markdown
+dateCreated: 2025-01-15
+---
+```
+
+| Field | Required | Description |
+|-------|----------|-------------|
+| `title` | Yes | Article title |
+| `slug` | Yes | URL-friendly identifier |
+| `description` | Yes | Brief summary |
+| `date` | Yes | Last updated date |
+| `tags` | Yes | Topic tags |
+| `categories` | Yes | Article categories |
+| `author` | No | Author name |
+| `draft` | No | Set `true` to hide from published site |
+| `editor` | No | Editor format (typically `markdown`) |
+| `dateCreated` | No | Original creation date |
 
 ## Resources
 
