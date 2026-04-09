@@ -1,3 +1,31 @@
+---
+title: "NVIDIA vGPU Configuration"
+description: "Step-by-step guide to configuring NVIDIA vGPU in VergeOS, including traditional vGPU profiles, MIG partitioning, heterogeneous profiles, resource group setup, and tenant sharing."
+semantic_keywords:
+  - "NVIDIA vGPU setup, virtual GPU configuration, GPU virtualization VergeOS"
+  - "MIG partitioning, multi-instance GPU, hardware-isolated GPU instances"
+  - "heterogeneous vGPU profiles, mixed GPU workloads, GPU resource sharing"
+  - "vGPU resource group, GPU passthrough configuration, NVIDIA driver installation"
+  - "tenant GPU sharing, vGPU device assignment, VM GPU acceleration"
+use_cases:
+  - configuration
+  - resource_allocation
+  - tenant_management
+  - vm_management
+tags:
+  - nvidia
+  - vgpu
+  - gpu
+  - mig
+  - device-passthrough
+  - resource-group
+  - configuration
+  - tenants
+categories:
+  - System Administration
+  - Virtual Machines
+---
+
 # NVIDIA vGPU Configuration
 
 VergeOS allows seamless utilization of NVIDIA's vGPU platform to assign virtualized GPU devices among tenants and VMs.
