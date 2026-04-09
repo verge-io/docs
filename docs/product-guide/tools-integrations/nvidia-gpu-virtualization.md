@@ -99,7 +99,7 @@ MIG profiles appear in the VergeOS resource group profile dropdown with a `MIG` 
 
 - **Shared GPU Resources**: Multiple VMs share a single physical GPU, maximizing hardware utilization instead of dedicating a GPU per VM
 - **Live Migration**: Move GPU-accelerated VMs between nodes without downtime (requires matching GPU model and vGPU profile on source and destination nodes)
-- **Tenant Isolation**: Hardware-level separation and performance guarantees between GPU workloads, with support for [passing vGPU devices to tenants](/product-guide/system/nvidia-vgpu#share-an-nvidia-vgpu-to-a-tenant)
+- **Tenant Isolation**: Hardware-level separation and performance guarantees between GPU workloads, with support for [passing vGPU devices to tenants](/product-guide/system/nvidia-vgpu-configuration#share-an-nvidia-vgpu-to-a-tenant)
 - **Dynamic Allocation**: Scale GPU resources based on workload demands and priorities
 
 !!! tip "Full GPU Passthrough"
@@ -110,7 +110,7 @@ MIG profiles appear in the VergeOS resource group profile dropdown with a `MIG` 
 ### Getting Started
 
 1. Review [Device Passthrough Overview](/product-guide/system/device-pass-overview) for foundation concepts
-2. Follow the [NVIDIA vGPU Configuration](/product-guide/system/nvidia-vgpu) guide for step-by-step setup
+2. Follow the [NVIDIA vGPU Configuration](/product-guide/system/nvidia-vgpu-configuration) guide for step-by-step setup
 
 ### Advanced Configuration
 
