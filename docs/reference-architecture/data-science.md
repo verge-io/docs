@@ -1,6 +1,25 @@
 ---
 title: "High-Performance Cluster Deployments"
 description: "Reference architecture for deploying VergeOS high-performance clusters for data science, machine learning, and analytics workloads with GPU acceleration and scalable storage."
+semantic_keywords:
+  - "VergeOS high-performance cluster GPU data science machine learning"
+  - "HPC deployment analytics workloads scalable compute"
+  - "GPU acceleration model training inference cluster architecture"
+  - "data science infrastructure VergeOS reference design"
+use_cases:
+  - hpc_cluster_planning
+  - gpu_workload_deployment
+  - data_science_infrastructure
+  - ml_training_cluster
+tags:
+  - reference-architecture
+  - hpc
+  - gpu
+  - data-science
+  - machine-learning
+  - clustering
+categories:
+  - Private AI
 ---
 
 # High-Performance Cluster Deployments

@@ -1,6 +1,21 @@
 ---
 title: "Support Options"
 description: "Contact VergeOS support via phone, email, or the customer portal for assistance with your VergeOS environment."
+semantic_keywords:
+  - "VergeOS support contact phone email ticket"
+  - "technical support hours availability emergency"
+  - "open support ticket help desk assistance"
+use_cases:
+  - contact_support
+  - open_support_ticket
+  - emergency_support
+tags:
+  - support
+  - contact
+  - help
+  - ticket
+categories:
+  - Support
 ---
 
 # Support Options

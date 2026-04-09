@@ -1,6 +1,24 @@
 ---
 title: "Edge Cluster Deployments"
 description: "Reference architecture for deploying VergeOS edge clusters at branch offices and remote locations using low-power, small form factor hardware."
+semantic_keywords:
+  - "VergeOS edge cluster branch office remote location deployment"
+  - "small form factor low-power hardware edge computing"
+  - "distributed infrastructure remote site management"
+  - "edge deployment reference architecture VergeOS"
+use_cases:
+  - edge_deployment_planning
+  - branch_office_infrastructure
+  - remote_site_management
+  - distributed_cluster_design
+tags:
+  - reference-architecture
+  - edge
+  - branch-office
+  - remote
+  - small-form-factor
+categories:
+  - System Administration
 ---
 
 # Edge Cluster Deployments

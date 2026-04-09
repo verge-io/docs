@@ -1,6 +1,24 @@
 ---
 title: "How to Write a VergeOS Guide"
 description: "Style guide for writing VergeOS documentation, covering structure, formatting, Markdown features, and the publication process."
+semantic_keywords:
+  - "VergeOS documentation writing style guide conventions"
+  - "Markdown formatting admonitions MkDocs Material syntax"
+  - "guide structure steps overview prerequisites best practices"
+  - "documentation contribution review publishing process"
+use_cases:
+  - write_new_documentation
+  - follow_style_conventions
+  - format_markdown_content
+  - structure_guide_steps
+tags:
+  - documentation
+  - style-guide
+  - writing
+  - markdown
+  - contributing
+categories:
+  - Best Practices
 ---
 
 ## 1. Overview
