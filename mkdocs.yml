@@ -335,7 +335,7 @@ nav:
     - GPU & Device Passthrough:
       - Overview: product-guide/system/device-pass-overview.md
       - NVIDIA GPU Virtualization: product-guide/tools-integrations/nvidia-gpu-virtualization.md
-      - NVIDIA vGPU Configuration: product-guide/system/nvidia-vgpu.md
+      - NVIDIA vGPU Configuration: product-guide/system/nvidia-vgpu-configuration.md
       - SR-IOV NIC: product-guide/system/sriov-nics.md
       - USB Passthrough: product-guide/system/usb-passthrough.md
       - One-to-One PCI Passthrough: product-guide/system/generic-pci-passthrough.md
