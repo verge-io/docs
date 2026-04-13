@@ -242,6 +242,7 @@ nav:
         - Uploading Media Images: product-guide/storage/uploading-files-to-vsan.md
         - Creating Virtual Machines: product-guide/virtual-machines/creating-vms.md
         - Virtual Machine Drives: product-guide/virtual-machines/vm-drives.md
+        - Sharing Disks Between VMs: product-guide/virtual-machines/sharing-disks-between-vms.md
         - Virtual Machine Network Interfaces: product-guide/virtual-machines/vm-nics.md
         - Virtual Machine Fields: product-guide/virtual-machines/vm-field-descriptions.md
         - VM Guest Agent: product-guide/virtual-machines/vm-guest-agent.md
