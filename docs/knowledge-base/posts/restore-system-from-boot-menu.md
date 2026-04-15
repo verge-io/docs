@@ -28,7 +28,7 @@ dateCreated: 2026-04-08
 
 # Restoring a VergeOS System from the Boot Menu
 
-A full-system restore can be performed directly from the VergeOS boot menu. This article walks through the steps to restore a complete VergeOS system from a previously taken system snapshot using the boot menu restore option.
+A full-system restore can be performed directly from the VergeOS boot menu.  This option is intended for system recovery when you are unable to access the user interface.  The following article walks through the steps to restore a complete VergeOS system from a previously taken system snapshot using the boot menu restore option.
 
 !!! warning "This process will overwrite the existing system."
     Proceeding with a boot menu restore replaces the current system fully with the selected snapshot, reverting all system components to the snapshot state, including:
