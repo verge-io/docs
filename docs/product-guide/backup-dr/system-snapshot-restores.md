@@ -40,9 +40,15 @@ ___
 
 ## Restore Entire System from Snapshot
 
-!!! note "System Requirements"
-    * Full system restoration is only supported on the local System where the snapshot was taken. This operation cannot be used to restore one site over another (for example, you cannot restore Site A over Site B). 
-    * Restoring a full system requires a complete reboot of all nodes.
+This section provides instructions for restoring an entire system from within the VergeOS user interface.  
+
+!!! tip "Restore from Boot Menu"   
+    To restore a host system where the user interface is inaccessible, see KB article: [Restoring a VergeOS System from the Boot Menu](/knowledge-base/restore-vergeos-system-from-boot-menu).
+
+### System Requirements
+    
+* Full system restoration is only supported on the local System where the snapshot was taken. This operation cannot be used to restore one site over another (for example, you cannot restore Site A over Site B). 
+* Restoring a full system requires a complete reboot of all nodes.
 
 !!! warning "Critical Impact"
     A full system restoration will revert all system components to the snapshot state, including:
