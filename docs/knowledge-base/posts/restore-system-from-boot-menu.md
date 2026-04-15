@@ -69,7 +69,7 @@ A full-system restore can be performed directly from the VergeOS boot menu.  Thi
 5. **Select the snapshot to restore from.**
    - A numbered list of available system snapshots is displayed.  Enter the number corresponding to the desired snapshot and press **Enter**. 
 
-    !!! tip "Snapshots are listed alphabetically by name — not by the date/time they were taken. 
+    !!! tip "Snapshots are listed alphabetically by name — not by the date/time they were taken."
    
 
 6. **Confirm the restore snapshot.**
