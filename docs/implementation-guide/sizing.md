@@ -40,7 +40,7 @@ categories:
 - 1 x 10GbE NIC for Core Fabric Network (Intel, NVIDIA Mellanox, or Broadcom)
 
 !!! warning "Multi-Node Chassis Servers"
-    We strongly advise against using multi-node chassis servers (twin servers, quad-node servers, etc.) for VergeOS deployments. These devices share power supplies, backplane, and management controllers across multiple nodes, creating a shared failure domain that undermines high availability. A single chassis-level failure can take out multiple nodes simultaneously. Use independent, standalone rack-mount servers instead. See [Why Multi-Node Chassis Servers Are Not Recommended](/knowledge-base/posts/why-multi-node-chassis-not-recommended/) for details.
+    We strongly advise against using multi-node chassis servers (twin servers, quad-node servers, etc.) for VergeOS deployments. These devices share power supplies, backplane, and management controllers across multiple nodes, creating a shared failure domain that undermines high availability. A single chassis-level failure can take out multiple nodes simultaneously. Use independent, standalone rack-mount servers instead. See [Why Multi-Node Chassis Servers Are Not Recommended](/knowledge-base/why-multi-node-chassis-not-recommended/) for details.
 
 ### Controller Nodes (Node 1 and Node 2)
 
