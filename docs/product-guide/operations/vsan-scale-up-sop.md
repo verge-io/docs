@@ -183,6 +183,5 @@ After successful scale up completion:
 - [ ] Review backup and snapshot policies for increased data
 - [ ] Plan for future scaling needs based on growth projections
 - [ ] Schedule follow-up performance monitoring
-- [ ] Note: if you ever need to **remove drives** to reduce capacity, this requires a support ticket — it is not a self-service operation
 
 
