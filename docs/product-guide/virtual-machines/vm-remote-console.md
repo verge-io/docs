@@ -40,7 +40,7 @@ Exits the console and returns to the previous screen.
 Activates/deactivates the console's full-screen option (expand to entire browser tab)
 
 #### ![virtkeyboard-icon.png](/product-guide/screenshots/virtkeyboard-icon.png) Virtual Keyboard
-Provides a virtual keyboard on devices that do not have a physical keyboard (cellphones, tables, etc.)
+Provides a virtual keyboard on devices that do not have a physical keyboard (cellphones, tablets, etc.)
 
 #### ![dragview-icon.png](/product-guide/screenshots/dragview-icon.png) Drag view port
 Alows moving the viewable portion of the console when the guest system screen exceeds the viewable area.
