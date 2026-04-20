@@ -35,7 +35,7 @@ dateCreated: 2026-04-20
     - Drive removal must be coordinated with VergeOS Support
     - The process requires data redistribution across the remaining drives before any drives can be safely removed
 
-Scaling down a vSAN — removing physical drives to reduce storage capacity — is fundamentally different from [scaling up](/knowledge-base/scaling-up-a-vsan). Adding drives is an additive, low-risk operation. Removing them requires the system to first safely redistribute all data off the target drives, which involves careful coordination to avoid disruption or data loss.
+Scaling down a vSAN (removing physical drives to reduce storage capacity) is fundamentally different from [scaling up](/knowledge-base/scaling-up-a-vsan). Adding drives is an additive, low-risk operation. Removing them requires the system to first safely redistribute all data off the target drives, which involves careful coordination to avoid disruption or data loss.
 
 For this reason, vSAN scale-down is handled exclusively by VergeOS Support.
 
@@ -44,7 +44,7 @@ For this reason, vSAN scale-down is handled exclusively by VergeOS Support.
 When a drive is removed from a vSAN tier, VergeOS must:
 
 1. Confirm the remaining drives have sufficient free capacity to absorb the data from the drives being removed
-2. Migrate all data off the target drives while maintaining redundancy throughout
+2. Migrate all data off the target drives to maintain redundancy
 3. Monitor repair and redistribution to completion before drives are physically pulled
 
 If any of these steps are rushed or sequenced incorrectly, the vSAN tier can enter a degraded or unrecoverable state. Support engineers coordinate this process and monitor it through to a healthy green status before physical removal occurs.
@@ -56,7 +56,7 @@ Gathering the following information in advance will help Support scope the reque
 - **Why you need to scale down** — repurposing drives, tier restructuring, etc.
 - **Which tier** the drives belong to (Tier 0, Tier 1, Tier 2, etc.)
 - **Number and size of drives** to be removed per node
-- **Current tier capacity and usage** — available in the VergeOS UI under **System > vSAN**
+- **Current tier capacity and usage** — available in the VergeOS UI under **Infrastructure > vSAN Tiers**
 - **Current vSAN tier status** — confirm the tier is green/healthy before the call
 - **Preferred maintenance window** — drive removal and data redistribution may take hours to complete depending on data volume
 
