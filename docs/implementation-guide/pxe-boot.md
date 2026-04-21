@@ -258,6 +258,7 @@ Work through this list first when PXE isn't behaving. Most failures trace back t
 - **External vNet status is `Running`?** If the vNet is stopped/initializing, dnsmasq isn't answering.
 - **VergeOS cluster is healthy?** A cluster that's degraded or with controllers down may not be serving PXE properly. Check the main dashboard.
 - **MAC registration (for nodes previously joined)?** If a NIC was swapped or a Service Profile rebuilt, the new MAC may not be recognized. See §8.
+- **Try forcing the correct NIC via the BIOS boot manager.** If the persistent boot order isn't picking the right NIC, use the server's one-time boot manager (typically F11/F12 at POST, or a one-time boot override in the BMC / management controller) to explicitly select the PXE NIC. This isolates whether the issue is boot-order selection vs. something downstream like DHCP or PXE serving.
 
 ### 9.2 Specific error codes
 
