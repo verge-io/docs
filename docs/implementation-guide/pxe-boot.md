@@ -23,8 +23,6 @@ tags:
 **Audience:** System administrators and support engineers deploying VergeOS nodes without creating USB installers or having boot disks
 **Covers:** First-time PXE installs AND every-boot PXE for diskless compute nodes
 
-> TODO flags throughout mark places that need verification against real config or screenshots.
-
 ---
 
 ## 1. Overview
@@ -265,9 +263,3 @@ Work through this list first when PXE isn't behaving. Most failures trace back t
 - [Installation Guide](https://docs.verge.io/implementation-guide/installation-guide/)
 - [Scale-out Node Installation Guide](https://docs.verge.io/implementation-guide/scale-out-nodes/)
 - Docs issue for this guide: [verge-io/docs#435](https://github.com/verge-io/docs/issues/435)
-
----
-
-## Open questions / TODOs
-
-- [ ] Recommended minimum VergeOS version for PXE install of new nodes (any version caveats?)
