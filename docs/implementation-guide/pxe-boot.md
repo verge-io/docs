@@ -184,7 +184,7 @@ No local storage, no per-node customization. Scale identically across N nodes wi
 
 - **PXE server must be up for the node to boot** — if the Verge cluster is down during a node reboot, the node hangs waiting for PXE response. Healthy cluster = never a problem, but worth noting for DR scenarios
 - **Boot policy retry behavior** — check the platform's "reboot on boot failure" settings to avoid stuck-in-loop scenarios
-- **All nodes share the same image** — what the provider serves, all nodes boot. Updates to the provider propagate to all nodes at their next reboot
+- **No per-node image management** — when the cluster is updated on the provider side, nodes pick up the new VergeOS version at their next reboot. You don't maintain separate OS images per node
 
 ---
 
