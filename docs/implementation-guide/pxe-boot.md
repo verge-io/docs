@@ -193,7 +193,7 @@ No local storage, no per-node customization. Scale identically across N nodes wi
 > ⚠️ **Changing the NIC or interface used by a PXE-booting node can break its ability to boot.** Proceed carefully, especially for every-boot PXE (diskless) nodes that depend on PXE for every startup.
 
 The PXE boot path is tied to a specific NIC and interface:
-- VergeOS identifies and registers nodes by MAC address
+- **Node identity is tied to the MAC address of the NIC used during install** — this MAC must remain constant for the life of the node. If it changes, the cluster sees the node as new/unknown and it will not rejoin automatically
 - Managed boot policies (where applicable) reference a specific vNIC by name
 - BIOS/UEFI boot order points at a specific physical NIC
 - The switch port (or vNIC, where applicable) carries a specific native VLAN matching the PXE network
