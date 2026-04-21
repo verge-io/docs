@@ -109,7 +109,16 @@ Pick a VLAN that:
 
 ### 4.3 Redundant switch ports
 
-TODO: recommendations for bonded/redundant NICs on the install VLAN vs single-path.
+**Recommended pattern: a single dedicated PXE NIC/port per node** (on the maintenance network). PXE booting runs before the OS forms any bond or team, so PXE will always use a single physical NIC anyway — making it dedicated keeps the boot path simple and predictable.
+
+**If you must run PXE over an existing bonded pair of externals** (e.g. you don't have a spare NIC for a dedicated maintenance link):
+
+- Designate one of the two physical NICs in the bond as the **primary** PXE NIC
+- Configure the node's BIOS/UEFI (or boot policy) to boot from **that specific NIC only** — not the bond abstraction
+- Make sure that primary NIC is on a switch port carrying the PXE VLAN as native
+- After VergeOS boots, the OS forms the bond and uses both links for runtime traffic — PXE only cares about the one link it boots through
+
+You lose PXE redundancy this way (if the primary NIC's switch port is down, PXE won't succeed), but you keep full runtime network redundancy once the node is up. For every-boot diskless nodes this is the main tradeoff to be aware of.
 
 ---
 
@@ -268,4 +277,3 @@ Work through this list first when PXE isn't behaving. Most failures trace back t
 - [ ] Recommended minimum VergeOS version for PXE install of new nodes (any version caveats?)
 - [ ] Document the actual packets on the wire for someone troubleshooting (what DHCP options Verge sets, what the iPXE script looks like)
 - [ ] Add Dell iDRAC / HPE iLO / Supermicro BMC boot-order notes to §5.3
-- [ ] Redundant NIC recommendations for the install VLAN in §4.3
