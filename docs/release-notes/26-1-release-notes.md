@@ -97,10 +97,10 @@ categories:
 
 ### Known Issues
 
-#### Veeam Integration (oVirt API)
+#### oVirt API
 
-!!! warning "Veeam / oVirt API Issues in 26.1.3.1"
-    The following issues affect Veeam and other oVirt-compatible backup integrations in this release. All are resolved in **26.1.4**.
+!!! warning "oVirt API Issues in 26.1.3.1"
+    The following issues affect oVirt-compatible backup integrations in this release. All are resolved in **26.1.4**.
 
 - **Authentication does not reuse tokens** — The oVirt API logs in on every request (~every minute), creating excessive audit log entries and hitting the 100-session-per-user limit
 - **Tenant backups fail** with the error `the ovirt kvm manager already exists`
