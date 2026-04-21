@@ -1,11 +1,10 @@
 ---
 title: "PXE Boot Setup Guide"
-description: "Configure VergeOS to PXE boot nodes for installation or every-boot runtime — no USB installer required. Covers External vNet setup, VLAN/DHCP requirements, and UCS blade configuration."
+description: "Configure VergeOS to PXE boot nodes for installation or every-boot runtime — no USB installer required. Covers External vNet setup, VLAN/DHCP requirements, and boot configuration for virtualized-NIC platforms."
 semantic_keywords:
   - "VergeOS PXE boot setup"
   - "diskless compute node PXE"
   - "PXE install VergeOS nodes"
-  - "UCS blade PXE boot VergeOS"
   - "ybos PXE option"
 use_cases:
   - pxe_boot_node_installation
@@ -16,7 +15,6 @@ tags:
   - pxe
   - networking
   - diskless
-  - ucs
 ---
 
 # PXE Boot Guide for VergeOS Nodes
@@ -24,7 +22,6 @@ tags:
 **Status:** DRAFT — working version
 **Audience:** System administrators and support engineers installing or running VergeOS nodes without USB media
 **Covers:** First-time PXE installs AND every-boot PXE for diskless compute nodes
-**Source material:** Internal KB + field experience (MacStadium UCS deployment, Cody Robinson IZT deployment, Jeff's own lab work)
 
 > TODO flags throughout mark places that need verification against real config or screenshots.
 
@@ -37,7 +34,7 @@ VergeOS has a built-in PXE boot service that lets you install and/or run nodes w
 | Scenario | Use case |
 |----------|----------|
 | **First-time install via PXE** | Alternative to USB installer. Node PXE-boots to the installer, you select Scale-Out / Compute / Storage, installer completes and node joins the cluster |
-| **Every-boot PXE (diskless)** | Node has no local drives (or none configured as bootable). Every reboot pulls the running VergeOS image from the cluster over PXE. Standard pattern for UCS-based compute blades |
+| **Every-boot PXE (diskless)** | Node has no local drives (or none configured as bootable). Every reboot pulls the running VergeOS image from the cluster over PXE. Common pattern for diskless compute blades |
 
 Both use the same underlying service: the provider cluster runs dnsmasq on a designated vNet, serves the iPXE loader over TFTP, and the full VergeOS image over HTTP.
 
@@ -48,8 +45,8 @@ Both use the same underlying service: the provider cluster runs dnsmasq on a des
 - An **operational VergeOS cluster** (at minimum, controller nodes up and reachable)
 - An **External network** in VergeOS that will carry the PXE install traffic
 - **Switch configuration** allowing the target PXE NIC to reach the Verge PXE network
-- **Native VLAN match** — the native/access VLAN on the target node's switch port (or UCS vNIC) **must match the VLAN of the Verge PXE network**. PXE boot broadcasts leave the NIC untagged, so they land on whatever VLAN the port treats as native. If the native VLAN doesn't match where Verge is serving PXE, the boot request never reaches Verge's dnsmasq and the node will get no PXE response.
-- **BIOS/UEFI or Service Profile** on the target node configured to boot from NIC/LAN
+- **Native VLAN match** — the native/access VLAN on the target node's switch port (or vNIC, if applicable) **must match the VLAN of the Verge PXE network**. PXE boot broadcasts leave the NIC untagged, so they land on whatever VLAN the port treats as native. If the native VLAN doesn't match where Verge is serving PXE, the boot request never reaches Verge's dnsmasq and the node will get no PXE response.
+- **BIOS/UEFI or boot policy** on the target node configured to boot from NIC/LAN
 - **No competing DHCP** on the PXE segment (see §4 below — this is the #1 cause of silent PXE failures)
 
 ---
@@ -105,7 +102,7 @@ Recommended pattern: **dedicated install VLAN**, isolated at L2 from any other D
 ### 4.2 VLAN planning
 
 Pick a VLAN that:
-- Is trunked from your switch fabric to the physical nodes (or UCS Fabric Interconnects)
+- Is trunked from your switch fabric to the physical nodes (or upstream fabric interconnects / blade chassis if applicable)
 - Has Verge as the only DHCP source
 - Is reachable from the Verge cluster's External network
 
@@ -124,21 +121,21 @@ TODO: recommendations for bonded/redundant NICs on the install VLAN vs single-pa
 3. Ensure **PXE / Network Boot** is enabled on the NIC
 4. Save and reboot
 
-### 5.2 Cisco UCS (blade servers)
+### 5.2 Managed / virtualized NIC platforms (if applicable)
 
-For UCS-managed blades, configuration lives in the **Service Profile** and **Boot Policy**, not in per-blade BIOS.
+Some hardware platforms (blade chassis, converged infrastructure, virtualized environments) present NICs as **vNICs** configured through a management layer rather than per-blade BIOS. In these cases, the configuration lives in a service profile and boot policy, not in per-node BIOS.
 
-**Boot Policy:**
-- Add **LAN Boot** entry
-- Set as primary (or only) boot entry
-- For diskless blades that need to PXE every boot: do NOT add a Local Disk entry, OR leave it lower priority with no bootable content
+**Boot policy:**
+- Add a **LAN Boot** entry
+- Set it as the primary (or only) boot entry
+- For diskless nodes that need to PXE every boot: do NOT add a Local Disk entry, OR leave it lower priority with no bootable content
 
 **vNIC / VLAN for PXE** — two options:
 
-1. **Native VLAN on the vNIC** — Service Profile → vNICs → edit the boot vNIC → add VLAN 505 to allowed list, check `Native VLAN`. Untagged PXE broadcasts hit VLAN 505.
-2. **Boot VLAN on the LAN Boot entry** — set the VLAN explicitly in the Boot Policy's LAN Boot configuration. UCS tags the PXE boot request regardless of vNIC native VLAN.
+1. **Native VLAN on the vNIC** — edit the boot vNIC in its service profile, add VLAN 505 to the allowed list, and mark 505 as the native VLAN. Untagged PXE broadcasts hit VLAN 505.
+2. **Boot VLAN on the LAN Boot entry** — set the VLAN explicitly in the boot policy's LAN Boot configuration. The platform tags the PXE boot request regardless of the vNIC's native VLAN.
 
-Use option 1 if the blade is dedicated to this network. Use option 2 if the blade will run production on a different native VLAN post-install.
+Use option 1 if the node is dedicated to this network. Use option 2 if the node will run production on a different native VLAN post-install.
 
 ### 5.3 Other vendors
 
@@ -164,25 +161,25 @@ TODO: Dell iDRAC / HPE iLO / Supermicro BMC notes.
 
 ## 7. Every-boot PXE (diskless nodes)
 
-Use case: compute blades with no local disks, or nodes that should always pull a fresh OS image from the cluster.
+Use case: compute nodes with no local disks, or nodes that should always pull a fresh OS image from the cluster.
 
 ### 7.1 Boot flow
 
-1. Blade powers on → Boot Policy → LAN Boot
+1. Node powers on → boot policy → LAN Boot
 2. NIC sends DHCP on the install VLAN
 3. Verge's dnsmasq responds with IP + `next-server` + boot filename
-4. Blade TFTPs the iPXE loader from Verge
+4. Node TFTPs the iPXE loader from Verge
 5. iPXE pulls the full VergeOS image over HTTP
 6. VergeOS loads into RAM, node rejoins the cluster
 7. Reboot → repeat from step 1
 
-No local storage, no per-blade customization. Scale identically across N blades with the same Service Profile.
+No local storage, no per-node customization. Scale identically across N nodes with the same boot policy / service profile.
 
 ### 7.2 Considerations
 
-- **PXE server must be up for the node to boot** — if the Verge cluster is down during a blade reboot, the blade hangs waiting for PXE response. Healthy cluster = never a problem, but worth noting for DR scenarios
-- **Boot Policy retry behavior** — check UCS "reboot on boot failure" settings to avoid stuck-in-loop scenarios
-- **All blades share the same image** — what the provider serves, all blades boot. Updates to the provider propagate to all blades at their next reboot
+- **PXE server must be up for the node to boot** — if the Verge cluster is down during a node reboot, the node hangs waiting for PXE response. Healthy cluster = never a problem, but worth noting for DR scenarios
+- **Boot policy retry behavior** — check the platform's "reboot on boot failure" settings to avoid stuck-in-loop scenarios
+- **All nodes share the same image** — what the provider serves, all nodes boot. Updates to the provider propagate to all nodes at their next reboot
 
 ---
 
@@ -192,17 +189,17 @@ No local storage, no per-blade customization. Scale identically across N blades 
 
 The PXE boot path is tied to a specific NIC and interface:
 - VergeOS identifies and registers nodes by MAC address
-- UCS Boot Policies reference a specific vNIC by name
+- Managed boot policies (where applicable) reference a specific vNIC by name
 - BIOS/UEFI boot order points at a specific physical NIC
-- The switch port (or UCS vNIC) carries a specific native VLAN matching the PXE network
+- The switch port (or vNIC, where applicable) carries a specific native VLAN matching the PXE network
 
 Any change to that chain can prevent PXE from working on the next reboot.
 
 ### What to watch out for
 
 - **Replacing the physical NIC** — new hardware = new MAC. VergeOS may not recognize the node, and any MAC-based DHCP reservations will no longer match
-- **Swapping which vNIC is used for LAN Boot** (UCS) — the new vNIC needs the correct native VLAN (or Boot VLAN set in the Boot Policy) to reach the Verge PXE network
-- **Rebuilding a UCS Service Profile** — unless MACs are preserved (via a MAC pool or explicit assignment), the blade will get a new MAC and Verge will see it as a new node
+- **Swapping which vNIC is used for LAN Boot** — the new vNIC needs the correct native VLAN (or Boot VLAN set in the boot policy) to reach the Verge PXE network
+- **Rebuilding a managed service profile** — unless MACs are preserved (via a MAC pool or explicit assignment), the node will get a new MAC and Verge will see it as a new node
 - **Moving the cable to a different switch port** — the new port must carry the same native VLAN as the PXE network
 - **Changing bond configuration or NIC teaming** — PXE boots before the OS forms the bond, so it uses a single physical NIC; make sure that NIC is still on the PXE VLAN
 
@@ -216,9 +213,9 @@ Any change to that chain can prevent PXE from working on the next reboot.
 ### If the node fails to boot after a NIC change
 
 - Check console output for PXE error codes
-- Verify the new NIC/vNIC is on the correct VLAN (`Native VLAN` in UCS, or access VLAN on the switch)
+- Verify the new NIC/vNIC is on the correct VLAN (native VLAN on the vNIC, or access VLAN on the switch)
 - Check VergeOS infrastructure → Nodes for the new MAC; if it's not registered, the node may need to be re-added
-- In UCS, verify the Boot Policy still references a valid vNIC
+- If using a managed boot policy, verify it still references a valid vNIC
 
 ---
 
@@ -229,7 +226,7 @@ Any change to that chain can prevent PXE from working on the next reboot.
 | Node gets DHCP lease, no PXE menu | Competing DHCP on segment, OR PXE option not set to `ybos` | Verify only Verge DHCP is on the VLAN; verify the vNet's PXE option |
 | `PXE-E53: No boot filename received` | PXE option missing or DHCP not enabled on the vNet | Enable DHCP; set PXE option to `ybos` |
 | `PXE-E32: TFTP open timeout` | Firewall or VLAN isolation between node and Verge | Check L2 path from node to the Verge vNet |
-| Boot loops | BIOS/boot order issue — node booting from empty local disk | Fix boot order, or remove Local Disk from UCS Boot Policy |
+| Boot loops | BIOS/boot order issue — node booting from empty local disk | Fix boot order, or remove Local Disk from the boot policy |
 | Node hangs at "PXE-MOF: Exiting..." | Usually a boot order issue — PXE succeeded but machine tried to fall through to another boot device that isn't bootable | Set PXE as the only boot option, or ensure local disk is actually bootable post-install |
 
 ---
@@ -246,7 +243,7 @@ Any change to that chain can prevent PXE from working on the next reboot.
 ## Open questions / TODOs
 
 - [ ] Verify exact UI location and label for the PXE option (is it literally "PXE" dropdown with `ybos` as a choice? Text field? Advanced setting?)
-- [ ] Screenshots for each major step (PXE vNet form, Boot Policy config, the `Verge.io OS PXE` boot menu)
+- [ ] Screenshots for each major step (PXE vNet form, boot policy config, the `Verge.io OS PXE` boot menu)
 - [ ] iPXE config boot — 4.12.6 release notes mentioned support for "iPXE config boot"; figure out what this means and when/why you'd use it
 - [ ] Recommended minimum VergeOS version for PXE install of new nodes (any version caveats?)
 - [ ] Document the actual packets on the wire for someone troubleshooting (what DHCP options Verge sets, what the iPXE script looks like)
