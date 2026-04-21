@@ -20,7 +20,7 @@ tags:
 # PXE Boot Guide for VergeOS Nodes
 
 **Status:** DRAFT — working version
-**Audience:** System administrators and support engineers running VergeOS nodes without USB media, or adding compute nodes that are diskless
+**Audience:** System administrators and support engineers deploying VergeOS nodes without creating USB installers or having boot disks
 **Covers:** First-time PXE installs AND every-boot PXE for diskless compute nodes
 
 > TODO flags throughout mark places that need verification against real config or screenshots.
