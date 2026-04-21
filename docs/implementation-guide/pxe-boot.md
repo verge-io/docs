@@ -17,7 +17,7 @@ tags:
   - diskless
 ---
 
-# PXE Boot Guide for VergeOS Nodes
+# PXE Boot Setup Guide
 
 **Audience:** System administrators and support engineers deploying VergeOS nodes without creating USB installers or having boot disks
 **Covers:** First-time PXE installs AND every-boot PXE for diskless compute nodes
@@ -31,7 +31,7 @@ VergeOS has a built-in PXE boot service that lets you install and/or run nodes w
 | Scenario | Use case |
 |----------|----------|
 | **First-time install via PXE** | Alternative to USB installer. Node PXE-boots to the installer, you select Scale-Out / Compute / Storage, installer completes and node joins the cluster |
-| **Every-boot PXE (diskless)** | Node has no local drives (or none configured as bootable). Every reboot pulls the running VergeOS image from the cluster over PXE. Common pattern for diskless compute blades |
+| **Every-boot PXE (diskless)** | Node has no local drives (or none configured as bootable). Every reboot pulls the running VergeOS image from the cluster over PXE. Common pattern for diskless compute nodes |
 
 Both use the same underlying service: the provider cluster runs dnsmasq on a designated vNet and serves the VergeOS boot image over the network.
 
