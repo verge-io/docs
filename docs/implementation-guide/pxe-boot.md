@@ -44,6 +44,7 @@ Both use the same underlying service: the provider cluster runs dnsmasq on a des
 
 - An **operational VergeOS cluster** (at minimum, controller node up and reachable)
 - An **External network** in VergeOS that will carry the PXE install traffic
+- **Dedicated PXE NIC (recommended)** — the PXE network should be on a separate NIC on each node, dedicated to PXE booting. Typically implemented as a maintenance network, isolated from production data paths so that PXE traffic doesn't compete with other network roles on the same interface
 - **Switch configuration** allowing the target PXE NIC to reach the Verge PXE network
 - **Native VLAN match** — the native/access VLAN on the target node's switch port (or vNIC, if applicable) **must match the VLAN of the Verge PXE network**. PXE boot broadcasts leave the NIC untagged, so they land on whatever VLAN the port treats as native. If the native VLAN doesn't match where Verge is serving PXE, the boot request never reaches Verge's dnsmasq and the node will get no PXE response.
 - **BIOS/UEFI or boot policy** on the target node configured to boot from NIC/LAN
