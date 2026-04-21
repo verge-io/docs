@@ -271,4 +271,3 @@ Work through this list first when PXE isn't behaving. Most failures trace back t
 ## Open questions / TODOs
 
 - [ ] Recommended minimum VergeOS version for PXE install of new nodes (any version caveats?)
-- [ ] Document the actual packets on the wire for someone troubleshooting (what DHCP options Verge sets)
