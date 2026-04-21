@@ -75,9 +75,9 @@ The PXE service runs on a VergeOS **External vNet** with DHCP enabled and a spec
 - VergeOS's dnsmasq will be the authoritative DHCP for this segment
 - **Gateway setting** — leave the DHCP **Gateway** field blank (VergeOS defaults it to the vNet's own router IP, which is fine), or explicitly set it to the vNet's router IP. Do NOT set it to an upstream/off-segment gateway — that makes PXE clients try to route their TFTP/HTTP fetches off-network, and installs a default route that can conflict with the production networks the node will use after install
 
-### 3.3 Set the PXE option to `ybos`
+### 3.3 Set the PXE Boot option to `ybos`
 
-TODO: confirm exact UI location of the PXE option (is it on the External vNet form itself, or on an advanced settings tab?). The value must be the literal string `ybos` — this is what tells Verge to serve the VergeOS installer/runtime over PXE.
+On the External vNet form, locate the **PXE Boot** dropdown and select `ybos`. This tells Verge to serve the VergeOS installer/runtime over PXE on this network.
 
 ### 3.4 Power on the vNet
 
@@ -264,7 +264,6 @@ Work through this list first when PXE isn't behaving. Most failures trace back t
 
 ## Open questions / TODOs
 
-- [ ] Verify exact UI location and label for the PXE option (is it literally "PXE" dropdown with `ybos` as a choice? Text field? Advanced setting?)
 - [ ] Screenshots for each major step (PXE vNet form, boot policy config, the `Verge.io OS PXE` boot menu)
 - [ ] iPXE config boot — 4.12.6 release notes mentioned support for "iPXE config boot"; figure out what this means and when/why you'd use it
 - [ ] Recommended minimum VergeOS version for PXE install of new nodes (any version caveats?)
