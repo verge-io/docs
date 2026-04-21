@@ -222,6 +222,25 @@ Any change to that chain can prevent PXE from working on the next reboot.
 
 ## 9. Troubleshooting
 
+### 9.1 Common things to verify
+
+Work through this list first when PXE isn't behaving. Most failures trace back to one of these:
+
+- **Did the node get a DHCP lease?** Watch the boot console — it should show "DHCP..." followed by an IP. If no IP, the DHCP phase itself is failing.
+- **Is the IP in the expected subnet?** If the node gets a lease but the IP isn't from the pool you configured on the Verge External vNet, a different DHCP server answered. A rogue/corporate DHCP on the same L2 will usually win the race.
+- **No competing DHCP server on the segment?** This is the #1 cause of silent PXE failures. Verge's dnsmasq must be the only DHCP on the VLAN. See §4.1.
+- **PXE option set to `ybos`** on the External vNet? Without this, Verge answers DHCP but doesn't hand out the PXE boot filename.
+- **DHCP enabled on the vNet** (not just configured)? The checkbox must be checked and the network powered on.
+- **Gateway field on the DHCP scope blank?** Handing out a gateway causes PXE clients to try routing TFTP/HTTP off-network. See §3.2.
+- **Native VLAN match?** The switch port (or vNIC) carrying the node's PXE NIC must have the Verge PXE VLAN as its native/access VLAN. PXE broadcasts are untagged. See §2 and §5.2.
+- **Correct NIC configured for PXE?** BIOS/UEFI boot order (or the boot policy on managed platforms) must point at the NIC actually cabled to the PXE network.
+- **Physical connectivity?** Link lights on both ends, cable seated, switch port not administratively down or error-disabled.
+- **External vNet status is `Running`?** If the vNet is stopped/initializing, dnsmasq isn't answering.
+- **VergeOS cluster is healthy?** A cluster that's degraded or with controllers down may not be serving PXE properly. Check the main dashboard.
+- **MAC registration (for nodes previously joined)?** If a NIC was swapped or a Service Profile rebuilt, the new MAC may not be recognized. See §8.
+
+### 9.2 Specific error codes
+
 | Symptom | Likely cause | Fix |
 |---------|--------------|-----|
 | Node gets DHCP lease, no PXE menu | Competing DHCP on segment, OR PXE option not set to `ybos` | Verify only Verge DHCP is on the VLAN; verify the vNet's PXE option |
@@ -229,6 +248,8 @@ Any change to that chain can prevent PXE from working on the next reboot.
 | `PXE-E32: TFTP open timeout` | Firewall or VLAN isolation between node and Verge | Check L2 path from node to the Verge vNet |
 | Boot loops | BIOS/boot order issue — node booting from empty local disk | Fix boot order, or remove Local Disk from the boot policy |
 | Node hangs at "PXE-MOF: Exiting..." | Usually a boot order issue — PXE succeeded but machine tried to fall through to another boot device that isn't bootable | Set PXE as the only boot option, or ensure local disk is actually bootable post-install |
+| Node gets IP but from the wrong subnet | Rogue/competing DHCP server answered first | Isolate the PXE VLAN; disable other DHCP on the segment |
+| No DHCP lease at all | Native VLAN mismatch, cable issue, NIC not configured for PXE/LAN Boot | Verify switch port native VLAN matches Verge PXE VLAN; check physical link; enable PXE/network boot on the NIC |
 
 ---
 
