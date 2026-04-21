@@ -279,4 +279,3 @@ Work through this list first when PXE isn't behaving. Most failures trace back t
 - [Connect VergeOS to an Existing LAN/WAN](https://docs.verge.io/product-guide/networks/connect-lan-wan/)
 - [Installation Guide](https://docs.verge.io/implementation-guide/installation-guide/)
 - [Scale-out Node Installation Guide](https://docs.verge.io/implementation-guide/scale-out-nodes/)
-- Docs issue for this guide: [verge-io/docs#435](https://github.com/verge-io/docs/issues/435)
