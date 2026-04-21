@@ -217,11 +217,26 @@ Any change to that chain can prevent PXE from working on the next reboot.
 
 ### If the node fails to boot after a NIC change
 
+Start by verifying the basics:
+
 - Check console output for PXE error codes
 - Verify the new NIC/vNIC is on the correct VLAN (native VLAN on the vNIC, or access VLAN on the switch)
-- **Refresh the node's drives and NICs in VergeOS** — on the node's dashboard in the provider UI, run the **Refresh → Drives and NICs** action. PXE-booting nodes need this to pick up the new MAC after a hardware change; without it, the cluster still references the old MAC and the node won't be recognized
-- Check VergeOS infrastructure → Nodes for the new MAC; if it's still not registered after the refresh, the node may need to be re-added
 - If using a managed boot policy, verify it still references a valid vNIC
+
+If the hardware side looks correct but the cluster still references the old MAC, you have two ways to update VergeOS's view of the node:
+
+**Option 1 — Refresh Drives and NICs (node is running / bootable):**
+On the node's dashboard in the provider UI, run the **Refresh → Drives and NICs** action. The cluster re-detects the current hardware and picks up the new MAC automatically.
+
+**Option 2 — Manually edit the NIC's MAC (node is down, same NIC slot, new MAC):**
+Useful when the NIC hardware / slot hasn't changed but the MAC did — for example, a vNIC rebuild or service profile change on a managed platform. With the node offline:
+- Navigate to the node's dashboard → NICs
+- Edit the NIC entry corresponding to the PXE network
+- Update the stored MAC to match the new one
+- **Reboot the PXE network** (power-cycle the External vNet) so dnsmasq picks up the new MAC-to-config mapping
+- The node should boot correctly on the next attempt
+
+If neither option resolves it, the node may need to be removed from the cluster and re-added.
 
 ---
 
