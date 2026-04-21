@@ -19,7 +19,6 @@ tags:
 
 # PXE Boot Guide for VergeOS Nodes
 
-**Status:** DRAFT — working version
 **Audience:** System administrators and support engineers deploying VergeOS nodes without creating USB installers or having boot disks
 **Covers:** First-time PXE installs AND every-boot PXE for diskless compute nodes
 
@@ -251,8 +250,8 @@ Work through this list first when PXE isn't behaving. Most failures trace back t
 - **No competing DHCP server on the segment?** This is the #1 cause of silent PXE failures. Verge's dnsmasq must be the only DHCP on the VLAN. See §4.1.
 - **PXE option set to `ybos`** on the External vNet? Without this, Verge answers DHCP but doesn't hand out the PXE boot filename.
 - **DHCP enabled on the vNet** (not just configured)? The checkbox must be checked and the network powered on.
-- **Gateway field on the DHCP scope blank?** Handing out a gateway causes PXE clients to try routing TFTP/HTTP off-network. See §3.2.
-- **Native VLAN match?** The switch port (or vNIC) carrying the node's PXE NIC must have the Verge PXE VLAN as its native/access VLAN. PXE broadcasts are untagged. See §2 and §5.2.
+- **Gateway on the DHCP scope is sensible?** Blank or the vNet's own router IP is fine; an upstream/off-segment gateway will make PXE clients try to route off-network. See §3.2.
+- **Native VLAN match?** The switch port (or vNIC) carrying the node's PXE NIC must have the Verge PXE VLAN as its native/access VLAN. PXE broadcasts are untagged. See §2 and §5.1.
 - **Correct NIC configured for PXE?** BIOS/UEFI boot order (or the boot policy on managed platforms) must point at the NIC actually cabled to the PXE network.
 - **Physical connectivity?** Link lights on both ends, cable seated, switch port not administratively down or error-disabled.
 - **External vNet status is `Running`?** If the vNet is stopped/initializing, dnsmasq isn't answering.
