@@ -109,7 +109,7 @@ categories:
 
 #### Deprecated Hardware
 
-- **NVIDIA Tesla P40** — The Tesla P40 GPU is deprecated and no longer recommended for use with VergeOS. Existing deployments should plan to migrate to a supported GPU model.
+- **NVIDIA Tesla P40** — The Tesla P40 GPU is not functional in this release. Existing deployments using Tesla P40 cards should plan to migrate to a supported GPU model.
 
 ---
 
