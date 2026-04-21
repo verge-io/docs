@@ -107,6 +107,10 @@ categories:
 - **Incorrect HTTP error codes** — Some API errors are not returned per the oVirt specification (wrong HTTP status codes and error format)
 - **Upload/download activity not visible** — File uploads and downloads do not show activity on the oVirt dashboard
 
+#### Deprecated Hardware
+
+- **NVIDIA Tesla P40** — The Tesla P40 GPU is deprecated and no longer recommended for use with VergeOS. Existing deployments should plan to migrate to a supported GPU model.
+
 ---
 
 ## 26.1.3 (March 2026)
