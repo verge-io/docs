@@ -73,7 +73,7 @@ The PXE service runs on a VergeOS **External vNet** with DHCP enabled and a spec
 - Check the **DHCP** option
 - Set **DHCP Start Address** and **DHCP Stop Address** for the install pool
 - VergeOS's dnsmasq will be the authoritative DHCP for this segment
-- **Do NOT set a client Gateway** on this DHCP scope — leave the **Gateway** field blank. The PXE network should be a flat, self-contained install segment. Handing out a gateway causes PXE clients to try routing their TFTP/HTTP fetches off-network, and installs a default route that can conflict with the production networks the node will use after install
+- **Gateway setting** — leave the DHCP **Gateway** field blank (VergeOS defaults it to the vNet's own router IP, which is fine), or explicitly set it to the vNet's router IP. Do NOT set it to an upstream/off-segment gateway — that makes PXE clients try to route their TFTP/HTTP fetches off-network, and installs a default route that can conflict with the production networks the node will use after install
 
 ### 3.3 Set the PXE option to `ybos`
 
