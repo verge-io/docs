@@ -36,7 +36,7 @@ VergeOS has a built-in PXE boot service that lets you install and/or run nodes w
 | **First-time install via PXE** | Alternative to USB installer. Node PXE-boots to the installer, you select Scale-Out / Compute / Storage, installer completes and node joins the cluster |
 | **Every-boot PXE (diskless)** | Node has no local drives (or none configured as bootable). Every reboot pulls the running VergeOS image from the cluster over PXE. Common pattern for diskless compute blades |
 
-Both use the same underlying service: the provider cluster runs dnsmasq on a designated vNet, serves the iPXE loader over TFTP, and the full VergeOS image over HTTP.
+Both use the same underlying service: the provider cluster runs dnsmasq on a designated vNet and serves the VergeOS boot image over the network.
 
 ---
 
@@ -176,10 +176,9 @@ Use case: compute nodes with no local disks, or nodes that should always pull a 
 1. Node powers on → boot policy → LAN Boot
 2. NIC sends DHCP on the install VLAN
 3. Verge's dnsmasq responds with IP + `next-server` + boot filename
-4. Node TFTPs the iPXE loader from Verge
-5. iPXE pulls the full VergeOS image over HTTP
-6. VergeOS loads into RAM, node rejoins the cluster
-7. Reboot → repeat from step 1
+4. Node downloads the VergeOS boot image from Verge
+5. VergeOS loads into RAM, node rejoins the cluster
+6. Reboot → repeat from step 1
 
 No local storage, no per-node customization. Scale identically across N nodes with the same boot policy / service profile.
 
@@ -271,6 +270,5 @@ Work through this list first when PXE isn't behaving. Most failures trace back t
 
 ## Open questions / TODOs
 
-- [ ] iPXE config boot — 4.12.6 release notes mentioned support for "iPXE config boot"; figure out what this means and when/why you'd use it
 - [ ] Recommended minimum VergeOS version for PXE install of new nodes (any version caveats?)
-- [ ] Document the actual packets on the wire for someone troubleshooting (what DHCP options Verge sets, what the iPXE script looks like)
+- [ ] Document the actual packets on the wire for someone troubleshooting (what DHCP options Verge sets)
