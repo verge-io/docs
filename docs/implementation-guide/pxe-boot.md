@@ -124,32 +124,30 @@ You lose PXE redundancy this way (if the primary NIC's switch port is down, PXE 
 
 ## 5. Configure the node to PXE boot
 
-### 5.1 Generic BIOS/UEFI
+The node must be configured to boot from the NIC cabled into the PXE network. **Specific steps are vendor-specific and out of scope for this guide** — consult your server / BIOS / management controller documentation.
 
-1. Enter BIOS/UEFI setup
-2. Set **Boot Order** so the PXE NIC is first (or only)
-3. Ensure **PXE / Network Boot** is enabled on the NIC
-4. Save and reboot
+At minimum, ensure the following is true before reboot:
 
-### 5.2 Managed / virtualized NIC platforms (if applicable)
+- **PXE / network boot is enabled** on the target NIC
+- **The PXE NIC is first in the boot order**
+- For diskless / every-boot PXE scenarios: **no other bootable device takes priority** (e.g. a local disk with stale content)
 
-Some hardware platforms (blade chassis, converged infrastructure, virtualized environments) present NICs as **vNICs** configured through a management layer rather than per-blade BIOS. In these cases, the configuration lives in a service profile and boot policy, not in per-node BIOS.
+### 5.1 Managed / virtualized NIC platforms (if applicable)
+
+Some hardware platforms (blade chassis, converged infrastructure, virtualized environments) present NICs as **vNICs** configured through a management layer rather than per-node BIOS. In these cases, the PXE configuration lives in a service profile and boot policy, not in per-node BIOS.
+
+The PXE-relevant settings to configure (exact UI / menu paths are vendor-specific):
 
 **Boot policy:**
-- Add a **LAN Boot** entry
-- Set it as the primary (or only) boot entry
-- For diskless nodes that need to PXE every boot: do NOT add a Local Disk entry, OR leave it lower priority with no bootable content
+- Add a **LAN Boot** entry as the primary (or only) boot entry
+- For diskless every-boot PXE: do not include a Local Disk entry, or leave it lower priority with no bootable content
 
 **vNIC / VLAN for PXE** — two options:
 
-1. **Native VLAN on the vNIC** — edit the boot vNIC in its service profile, add VLAN 505 to the allowed list, and mark 505 as the native VLAN. Untagged PXE broadcasts hit VLAN 505.
+1. **Native VLAN on the vNIC** — add the PXE VLAN to the vNIC's allowed list and mark it as the vNIC's native VLAN. Untagged PXE broadcasts land on the PXE VLAN.
 2. **Boot VLAN on the LAN Boot entry** — set the VLAN explicitly in the boot policy's LAN Boot configuration. The platform tags the PXE boot request regardless of the vNIC's native VLAN.
 
 Use option 1 if the node is dedicated to this network. Use option 2 if the node will run production on a different native VLAN post-install.
-
-### 5.3 Other vendors
-
-TODO: Dell iDRAC / HPE iLO / Supermicro BMC notes.
 
 ---
 
@@ -276,4 +274,3 @@ Work through this list first when PXE isn't behaving. Most failures trace back t
 - [ ] iPXE config boot — 4.12.6 release notes mentioned support for "iPXE config boot"; figure out what this means and when/why you'd use it
 - [ ] Recommended minimum VergeOS version for PXE install of new nodes (any version caveats?)
 - [ ] Document the actual packets on the wire for someone troubleshooting (what DHCP options Verge sets, what the iPXE script looks like)
-- [ ] Add Dell iDRAC / HPE iLO / Supermicro BMC boot-order notes to §5.3
