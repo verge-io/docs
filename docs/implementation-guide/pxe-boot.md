@@ -236,7 +236,7 @@ Useful when the NIC hardware / slot hasn't changed but the MAC did — for examp
 - **Reboot the PXE network** (power-cycle the External vNet) so dnsmasq picks up the new MAC-to-config mapping
 - The node should boot correctly on the next attempt
 
-If neither option resolves it, the node may need to be removed from the cluster and re-added.
+If neither option resolves it, contact support.
 
 ---
 
