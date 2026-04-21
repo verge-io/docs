@@ -95,6 +95,18 @@ categories:
 - Fixed SSL error causing some downloads to fail when write buffer is full
 - Fixed a vSAN stability issue when using 2 drives on an N+2 system
 
+### Known Issues
+
+#### Veeam Integration (oVirt API)
+
+!!! warning "Veeam / oVirt API Issues in 26.1.3.1"
+    The following issues affect Veeam and other oVirt-compatible backup integrations in this release. All are resolved in **26.1.4**.
+
+- **Authentication does not reuse tokens** — The oVirt API logs in on every request (~every minute), creating excessive audit log entries and hitting the 100-session-per-user limit
+- **Tenant backups fail** with the error `the ovirt kvm manager already exists`
+- **Incorrect HTTP error codes** — Some API errors are not returned per the oVirt specification (wrong HTTP status codes and error format)
+- **Upload/download activity not visible** — File uploads and downloads do not show activity on the oVirt dashboard
+
 ---
 
 ## 26.1.3 (March 2026)
