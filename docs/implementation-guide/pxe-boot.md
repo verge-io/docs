@@ -270,6 +270,7 @@ Work through this list first when PXE isn't behaving. Most failures trace back t
 | Node hangs at "PXE-MOF: Exiting..." | Usually a boot order issue — PXE succeeded but machine tried to fall through to another boot device that isn't bootable | Set PXE as the only boot option, or ensure local disk is actually bootable post-install |
 | Node gets IP but from the wrong subnet | Rogue/competing DHCP server answered first | Isolate the PXE VLAN; disable other DHCP on the segment |
 | No DHCP lease at all | Native VLAN mismatch, cable issue, NIC not configured for PXE/LAN Boot | Verify switch port native VLAN matches Verge PXE VLAN; check physical link; enable PXE/network boot on the NIC |
+| After a diskless install completes, the node only PXE-boots back into the installer (not the running OS) | PXE server's state hasn't refreshed post-install — it's still serving the install image for that node | Reboot the PXE network (power-cycle the External vNet) and apply rules. On next boot, the node should get the running OS image |
 
 ---
 
