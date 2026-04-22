@@ -95,6 +95,22 @@ categories:
 - Fixed SSL error causing some downloads to fail when write buffer is full
 - Fixed a vSAN stability issue when using 2 drives on an N+2 system
 
+### Known Issues
+
+#### oVirt API
+
+!!! warning "oVirt API Issues in 26.1.3.1"
+    The following issues affect oVirt-compatible backup integrations in this release. All are resolved in **26.1.4**.
+
+- **Authentication does not reuse tokens** — The oVirt API logs in on every request (~every minute), creating excessive audit log entries and hitting the 100-session-per-user limit
+- **Tenant backup connectivity issues** — Shared GUIDs (e.g., cluster IDs) between tenants and the root tenant can cause backup vendors to misidentify tenant infrastructure, leading to connectivity and identification errors
+- **Incorrect HTTP error codes** — Some API errors are not returned per the oVirt specification (wrong HTTP status codes and error format)
+- **Upload/download activity not visible** — File uploads and downloads do not show activity on the oVirt dashboard
+
+#### Deprecated Hardware
+
+- **NVIDIA Tesla P40** — The Tesla P40 GPU is not functional in this release. Existing deployments using Tesla P40 cards should plan to migrate to a supported GPU model.
+
 ---
 
 ## 26.1.3 (March 2026)
