@@ -103,7 +103,7 @@ categories:
     The following issues affect oVirt-compatible backup integrations in this release. All are resolved in **26.1.4**.
 
 - **Authentication does not reuse tokens** — The oVirt API logs in on every request (~every minute), creating excessive audit log entries and hitting the 100-session-per-user limit
-- **Tenant backups fail** with the error `the ovirt kvm manager already exists`
+- **Tenant backup connectivity issues** — Shared GUIDs (e.g., cluster IDs) between tenants and the root tenant can cause backup vendors to misidentify tenant infrastructure, leading to connectivity and identification errors
 - **Incorrect HTTP error codes** — Some API errors are not returned per the oVirt specification (wrong HTTP status codes and error format)
 - **Upload/download activity not visible** — File uploads and downloads do not show activity on the oVirt dashboard
 
