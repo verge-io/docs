@@ -91,6 +91,17 @@ categories:
 - 2 x NVMe or SATA/SAS SSD per node for guest usage; more SSDs recommended for enhanced performance
 - At least 2 nodes with the same disk configuration for data redundancy (required for vSAN)
 
+!!! tip "vSAN RAM guidelines by use case"
+    The figures above are minimum and recommended baselines for hardware procurement. When configuring a running system, use the following as a target for total vSAN RAM allocation per node (auto-reserved minimum plus the **Storage buffer per node** cluster setting):
+
+    | Use case | Target RAM per TB of raw storage |
+    |---|---|
+    | Archive / cold storage | 0.5 GB/TB |
+    | Standard general use | 1 GB/TB |
+    | High performance | 1–2 GB/TB |
+
+    If storage was added or significantly scaled after installation, re-evaluate the **Storage buffer per node** setting in [Cluster Settings](/product-guide/system/cluster-settings/) to ensure adequate allocation.
+
 ### Compute-only Nodes - Recommended
 
 - Only the [generic requirements](#generic-requirements-all-node-types) apply to Compute-only nodes

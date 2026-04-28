@@ -54,11 +54,25 @@ This section defines the fundamental properties of your cluster.
 !!! warning "All nodes within a cluster should contain the same CPU hardware; mixed CPU types within the same cluster can cause performance and workload migration issues."
 
 
-5. **Storage buffer per node (default 2 GB):** The amount of additional RAM to allocate per node for vSAN performance caching.     
-!!! note "Considerations"
-    - When there is available RAM, beyond system and virtual workload needs, consider increasing this setting
-    - Increasing the *Storage buffer per node* can significantly improve read/write performance
-    - As a general rule of thumb, aim for no more than 80% RAM utilization during normal operation  
+5. **Storage buffer per node (default 2 GB):** The amount of additional RAM to allocate per node for vSAN caching and buffering, beyond the bare minimum that VergeOS reserves automatically.
+
+!!! info "How vSAN RAM allocation works"
+    VergeOS always automatically reserves the bare minimum RAM required for vSAN operation. This setting allocates **additional** RAM on top of that baseline to improve caching, buffering, and overall vSAN performance — including [journal walk](/knowledge-base/understanding-journal-walks-and-vsan-tier-status) times.
+
+    **Installation behavior:** During installation, this setting is automatically adjusted based on detected storage. If little or no storage was present at install time, or if storage has been added or significantly scaled post-installation, the setting may be at its 2 GB default and should be manually re-evaluated.
+
+!!! note "RAM per TB guidelines"
+    Use the following as a starting point when sizing this setting:
+
+    | Use case | Target RAM per TB of raw storage |
+    |---|---|
+    | Archive / cold storage | 0.5 GB/TB (minimum) |
+    | Standard general use | 1 GB/TB |
+    | High performance | 1–2 GB/TB |
+
+    Multiply the target by the total raw storage per node to arrive at an appropriate value. As a general rule, aim for no more than 80% total RAM utilization during normal operation.
+
+    For a full discussion of factors affecting vSAN performance, see [Optimizing vSAN Performance](/knowledge-base/optimizing-vsan-performance).
 
 
 ### Cluster Security/Performance

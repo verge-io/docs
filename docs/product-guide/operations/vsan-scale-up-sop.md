@@ -180,5 +180,6 @@ After successful scale up completion:
 - [ ] Review backup and snapshot policies for increased data
 - [ ] Plan for future scaling needs based on growth projections
 - [ ] Schedule follow-up performance monitoring
+- [ ] Re-evaluate the **Storage buffer per node** cluster setting — adding significant storage post-installation may require increasing this value to maintain vSAN performance. See [Cluster Settings](/product-guide/system/cluster-settings/) for guidelines.
 
 
