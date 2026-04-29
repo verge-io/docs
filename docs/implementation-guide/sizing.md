@@ -120,5 +120,5 @@ The following table outlines the maximum supported hardware specifications for v
 | vSAN Fault domains per system   | 2       | vSAN          |
 
 [^1]: Graphics cards are supported for VM usage and may not function for console access.
-[^2]: vSAN storage nodes require a minimum of 1GB of RAM per 1TB of storage; 1.5GB/TB is recommended for both storage nodes and controller nodes (Node 1 and Node 2)
+[^2]: vSAN storage nodes require a minimum of 1GB of RAM per 1TB of storage; 1.5GB/TB is recommended for controller nodes (Node 1 and Node 2)
 [^3]: Virtio-SCSI Interface required
