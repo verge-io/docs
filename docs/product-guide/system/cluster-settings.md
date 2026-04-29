@@ -64,8 +64,6 @@ This section defines the fundamental properties of your cluster.
     During installation, this setting is automatically adjusted based on detected storage. If little or no storage was present at install time, or if storage has been added or significantly scaled post-installation, the setting may be at its 2 GB default and should be manually re-evaluated.
 
 
-    For a full discussion of factors affecting vSAN performance, see [Optimizing vSAN Performance](/knowledge-base/optimizing-vsan-performance).
-
 
 ### Cluster Security/Performance
 
