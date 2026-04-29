@@ -54,14 +54,12 @@ This section defines the fundamental properties of your cluster.
     !!! warning "All nodes within a cluster should contain the same CPU hardware; mixed CPU types within the same cluster can cause performance and workload migration issues."
 
 
-5. **Storage buffer per node:** The amount of RAM to dedicate per node for vSAN caching and buffering. 
+5. **Storage buffer per node:** The amount of RAM to dedicate per node for vSAN caching and buffering.  The RAM specified here is dedicated to vSAN and therefore not available for workloads. 
 
     !!! info "How vSAN RAM allocation works"
         VergeOS always automatically reserves the bare minimum RAM required for vSAN operation. The 
         "*Storage buffer per node*" setting allows reserving a higher amount of dedicated RAM for improved caching, buffering, and overall vSAN performance — including [journal walk](/knowledge-base/understanding-journal-walks-and-vsan-tier-status) times.
-
-    **Installation Behavior**: 
-    During installation, this setting is automatically adjusted based on detected storage. If little or no storage was present at install time, or if storage has been added or significantly scaled post-installation, the setting may be at its 2 GB default and should be manually re-evaluated.
+       **Installation Behavior**: During installation, this setting is automatically adjusted based on detected storage. If little or no storage was present at install time, or if storage has been added or significantly scaled post-installation, the setting may be at its 2 GB default and should be manually re-evaluated.
 
 
 
