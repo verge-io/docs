@@ -105,7 +105,7 @@ Walk times depend on the tier size and rate of data change.  Adequate resources 
 
 #### Tips to Optimize Journal Walk Times
 
-* **Allocate adequate RAM for vSAN** — VergeOS auto-reserves a bare minimum, but performance improves significantly with additional allocation. Use the **Storage buffer per node** setting in [Cluster Settings](/product-guide/system/cluster-settings/) to increase this. General guidelines: 0.5 GB/TB for archive/cold storage, 1 GB/TB for standard use, 1–2 GB/TB for high performance. 
+* **Allocate adequate RAM for vSAN** — VergeOS auto-reserves a bare minimum, but performance improves significantly with additional allocation. Use the **Storage buffer per node** setting in [Cluster Settings](/product-guide/system/cluster-settings/) to increase this. General guidelines: 0.5 GB/TB for archive/cold storage, 1.5 GB/TB for controllers, 1 GB/TB for standard-use storage nodes, 1–2 GB/TB for high performance. 
 * Follow recommended [Node Sizing Requirements](/implementation-guide/sizing) (e.g. dedicated Tier 0 using NVMe drives)
 * Implement [Network Design](/implementation-guide/network-design) recommendations (e.g. adequate internode bandwidth of at least 10Gb, isolated, dedicated core networks) 
 * Avoid overprovisioning workload RAM on compute-and-storage (HCI) nodes.  
