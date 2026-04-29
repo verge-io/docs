@@ -62,7 +62,7 @@ For each cluster, it's advisable to review and fine-tune settings during initial
    * Most cluster changes require node reboots  
    * Some cluster settings will be important to establish before putting your system into production
 
-The **[Cluster Settings Guide](/product-guide/system/cluster-settings)** provides detailed information about this setting and other available cluster configuration.
+The **[Cluster Settings Guide](/product-guide/system/cluster-settings)** provides detailed information regarding cluster configuration settings.
 
 Learn about **VergeOS Cluster Basics** here: [Clusters Overview Guide](/product-guide/system/clusters-overview)"
 
