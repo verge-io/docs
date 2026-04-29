@@ -80,6 +80,7 @@ categories:
 ### Controller Nodes (Node 1 and Node 2) - Recommended
 
 - 1 x +3.0GHz CPU
+- 1.5GB of RAM per 1TB of storage for each node (recommended)
 - **Tier 0**: 2 x NVMe direct-attached SSD for vSAN metadata with 3 Drive Writes Per Day (DWPD) or equivalent (redundant configuration)
 - **Tier 0**: 10GB of storage per 1TB of usable capacity for vSAN metadata (dedicated metadata storage)
 
@@ -97,7 +98,7 @@ categories:
     | Use case | Target RAM per TB of raw storage |
     |---|---|
     | Archive / cold storage | 0.5 GB/TB |
-    | Standard general use | 1 GB/TB |
+    | Standard general use | 1 GB/TB (1.5 GB/TB for controller nodes) |
     | High performance | 1–2 GB/TB |
 
     If storage was added or significantly scaled after installation, re-evaluate the **Storage buffer per node** setting in [Cluster Settings](/product-guide/system/cluster-settings/) to ensure adequate allocation.
@@ -128,5 +129,5 @@ The following table outlines the maximum supported hardware specifications for v
 | vSAN Fault domains per system   | 2       | vSAN          |
 
 [^1]: Graphics cards are supported for VM usage and may not function for console access.
-[^2]: vSAN nodes require a minimum 1GB of RAM per 1TB of Storage
+[^2]: vSAN storage nodes require a minimum of 1GB of RAM per 1TB of storage; 1.5GB/TB is recommended for both storage nodes and controller nodes (Node 1 and Node 2)
 [^3]: Virtio-SCSI Interface required

@@ -233,7 +233,7 @@ For CloudHoster's VergeOS deployment, the following hardware is recommended:
 
 
 * Intel Xeon or AMD EPYC Processor, 8c – 16t Processor 3.0 GHz
-* 2GB per RAW TB of storage
+* 2GB per RAW TB of storage (high-performance storage cluster)
 * (16x) 2.5 or 3.5 in Drive Bays
 * (2x) 25 Gbe Ports
 * (2x) 10 Gbe Port

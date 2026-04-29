@@ -78,6 +78,9 @@ Complete these steps well before your scheduled maintenance window:
 - [ ] Check cluster resource utilization
     - For HCI Systems (combined storage+compute nodes), ensure you have sufficient free memory to reboot 1 node
     - For UCI Systems (dedicated storage nodes) ensure no workloads are running on your storage cluster
+- [ ] Confirm sufficient RAM headroom exists to support the increased storage after scale-up
+    - Calculate the additional RAM needed: multiply new raw storage per node by your target GB/TB rate (e.g. 1 GB/TB standard; 1.5 GB/TB for controller nodes; 2 GB/TB for high-performance storage)
+    - Verify available RAM can accommodate an increase to the **Storage buffer per node** cluster setting as needed post-scale-up
 - [ ] Confirm network paths among nodes
     - From Node1: Node Diagnostics -> 'Fabric Configuration' reports Core1 and Core2 paths 'confirmed:true' for all nodes
     - From Node2, verify the same

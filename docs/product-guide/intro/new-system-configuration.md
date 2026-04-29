@@ -62,9 +62,13 @@ For each cluster, it's advisable to review and fine-tune settings during initial
    * Most cluster changes require node reboots  
    * Some cluster settings will be important to establish before putting your system into production
 
- The **[Cluster Settings Guide](/product-guide/system/cluster-settings)** provides detailed information regarding available settings.
+The **[Cluster Settings Guide](/product-guide/system/cluster-settings)** provides detailed information about this setting and other available cluster configuration.
 
-!!! tip "Learn about **VergeOS Cluster Basics** here: [Clusters Overview Guide](/product-guide/system/clusters-overview)"
+Learn about **VergeOS Cluster Basics** here: [Clusters Overview Guide](/product-guide/system/clusters-overview)"
+
+!!! tip "RAM for vSAN caching"
+    The “Storage buffer per node” setting defines how much RAM is reserved for vSAN read caching and internal performance operations such as journal walks. Size this value according to the cluster’s total storage capacity and the recommended RAM‑per‑TB guidelines to ensure predictable and stable vSAN performance. See the [Implementation Guide – Sizing and Hardware Requirements](/implementation-guide/sizing) for details.
+
 
 
 ## Licensing/Updates
