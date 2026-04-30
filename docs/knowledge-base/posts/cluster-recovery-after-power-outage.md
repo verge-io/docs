@@ -1,9 +1,9 @@
 ---
 title: Cluster Recovery After Full Power Outage
-slug: cluster-recovery-after-full-power-outage
+slug: cluster-recovery-after-power-outage
 description: Recovery procedure and best practices for VergeOS clusters after an unplanned full power loss, including power-on order, vSAN integrity verification, and prevention guidance.
 author: Carl Rodabaugh
-draft: true
+draft: false
 date: 2026-04-27T00:00:00.000Z
 tags: [power-outage, recovery, vsan, cluster-management, troubleshooting, best-practices]
 categories:
@@ -19,7 +19,7 @@ dateCreated: 2026-04-27T00:00:00.000Z
 ## Overview
 
 !!! info "Key Points"
-    - Power on **Node1** first; it will boot to **"Waiting for the vSAN to mount"** and stop there until it sees a peer's vote. Once you see that prompt on Node1, power on **Node2**; once vSAN mounts, power on remaining nodes one at a time, ~1 minute apart
+    - Power on **Node1** first; it will boot but halt before mounting the vSAN until it sees a peer's vote. Once Node1 has reached that wait state, power on **Node2**; once vSAN mounts, power on remaining nodes one at a time, ~1 minute apart
     - In systems with more than 2 nodes, vSAN requires at least 2 nodes online for quorum -- storage will not mount until then
     - A non-zero **Repairs** count after recovery is normal; it should decrease as Journal Walks complete
     - Engage VergeIO Support before any destructive action if anomalies persist
@@ -41,7 +41,7 @@ This article covers recovery of a VergeOS cluster after an **unplanned full powe
 
 - VergeFS is designed to survive abrupt power loss. On controller startup it triggers a **Full Journal Walk** to verify each block and reconcile against peers.
 - Until at least 2 nodes are online, vSAN cannot establish quorum, storage will not mount, and VMs will not start.
-- Node1 will boot to **"Waiting for the vSAN to mount"** and stop there until Node2's vote arrives.
+- Node1 will boot but halt before mounting the vSAN until Node2's vote arrives.
 - Once quorum is reached, VergeOS handles vSAN reconciliation automatically -- no manual repair commands are needed.
 - A non-zero **Repairs** count after recovery is normal and should decrease as the Walk progresses. A non-zero **Bad Drives** count reflects drives missing since the current Walk began (typically nodes still coming up), not physical failures.
 
@@ -55,18 +55,18 @@ This article covers recovery of a VergeOS cluster after an **unplanned full powe
 ### Power-On Sequence
 
 1. **Power on Node1.**
-   - Watch the console/IPMI. Node1 will boot the OS but **stop at "Waiting for the vSAN to mount"** -- it cannot become the active controller on its own. It needs to see another controller node's vote before vSAN will mount.
-   - Do not power on other nodes yet. Wait until you see that prompt on Node1.
+   - Watch the console/IPMI. Node1 will boot the OS but **halt before mounting the vSAN** -- it cannot become the active controller on its own. It needs to see another controller node's vote before vSAN will mount.
+   - Do not power on other nodes yet. Wait until Node1 has reached that point.
 2. **Power on Node2.**
-   - Once Node2 boots far enough to register its vote, Node1's "Waiting for the vSAN to mount" message clears, vSAN mounts, and the cluster comes online.
+   - Once Node2 boots far enough to register its vote, Node1 proceeds, vSAN mounts, and the cluster comes online.
    - At this point the management UI becomes reachable.
 3. **Power on remaining nodes one at a time, approximately 1 minute apart.**
    - Sequential, paced power-on prevents resource contention and lets each node cleanly join the existing cluster.
    - You don't need to wait for each node to show Online before powering on the next -- the 1-minute spacing is enough.
-4. **Multi-cluster environments:** bring the controller cluster (containing Node1 and Node2) **fully online first**, then power on additional clusters using the same Node1 → wait-for-"Waiting for the vSAN to mount" → Node2 → remaining sequence within each.
+4. **Multi-cluster environments:** bring the controller cluster (containing Node1 and Node2) **fully online first**, then power on additional clusters using the same Node1 → wait-for-vSAN-mount → Node2 → remaining sequence within each.
 
 !!! tip "Pro Tip"
-    Node1 will sit at **"Waiting for the vSAN to mount"** until a peer (Node2) is online to provide a vote -- that's the signal it's ready for the next step, not a green dashboard. vSAN can't form quorum with only one controller, which is why the cluster won't come up until Node2 is also booting. Once quorum is reached, VergeOS handles vSAN reconciliation automatically; no manual repair commands are needed.
+    Node1 will sit and wait for a peer (Node2) before mounting the vSAN -- that wait state is the signal it's ready for the next step, not a green dashboard. vSAN can't form quorum with only one controller, which is why the cluster won't come up until Node2 is also booting. Once quorum is reached, VergeOS handles vSAN reconciliation automatically; no manual repair commands are needed.
 
 ### Post-Recovery Verification
 
@@ -106,7 +106,7 @@ This article covers recovery of a VergeOS cluster after an **unplanned full powe
     - **Problem:** Suspected split-brain or inconsistent cluster state.
       - **Solution:** If two subsets of nodes formed clusters independently during the outage (rare, but possible after prolonged network partitions), **do not attempt to merge them yourself**. Capture sysdiags from every node and engage support immediately.
 
-### Prevention
+## Prevention
 
 - **UPS sizing and coverage** -- size the UPS to cover graceful shutdown duration plus margin for every node. Include core network switches in the same coverage. Test UPS runtime annually -- batteries degrade.
 - **Automated graceful shutdown** -- VergeOS does not ship a built-in "shut down on power loss" signal, so this has to be driven externally. Use UPS management software (NUT, IPMI scripting, or your UPS vendor's agent on a management host) to detect a low-battery event and trigger a graceful cluster shutdown -- either via the Cluster Dashboard's **Power Off** action, the VergeOS API (`POST /v4/cluster_actions` with `action: shutdown`), or our [**VRG CLI**](https://github.com/verge-io/vrg) wrapper, which can script the same shutdown call from a Linux/macOS/Windows host. Validate the automation in a maintenance window before relying on it.
@@ -116,9 +116,9 @@ This article covers recovery of a VergeOS cluster after an **unplanned full powe
     - ***Power On*** -- VM powers on when power is restored, regardless of prior state
 - **Repair server (ioGuardian)** -- a configured [repair server](/product-guide/backup-dr/repair-server/) gives VergeFS a fallback source for missing blocks if peer nodes can't supply them after an outage. It pulls needed blocks from a synchronized remote VergeOS system and is built from an existing outgoing site sync configuration. Strongly recommended for any production deployment, and often auto-created when sites are added to the dashboard.
 - **Off-site snapshots** -- maintain replicated system snapshots at a remote site. If post-outage integrity issues require restoring data, a recent off-site copy is often the cleanest path back.
-- **Fencing (handled internally)** -- VergeOS doesn't expose Pacemaker-style STONITH because vSAN is shared-nothing: every block is redundantly stored, and writes require quorum. A partitioned node can't commit to the authoritative copy without the controller's vote, so split-brain corruption is prevented by design rather than by an external fencing agent. The operator-facing equivalents are **Maintenance Mode** (graceful) and **Kill Mode** (IPMI-driven hard power-off of an unresponsive node) -- both available from the node dashboard.
+- **Fencing (handled internally)** -- VergeOS doesn't expose Pacemaker-style STONITH because vSAN is shared-nothing: every block is redundantly stored, and writes require quorum. A partitioned node can't commit to the authoritative copy without the controller's vote, so split-brain corruption is prevented by design rather than by an external fencing agent. The operator-facing equivalents are [**Maintenance Mode**](/product-guide/operations/maintenance-mode/) (graceful) and an IPMI-driven hard power-off for an unresponsive node, both available from the node dashboard.
 
-### When to Engage Support
+## When to Engage Support
 
 Open a support case **before** taking destructive action if any of the following are true:
 
@@ -130,7 +130,7 @@ Open a support case **before** taking destructive action if any of the following
 - You suspect split-brain or inconsistent cluster state
 - Any node fails to rejoin and the cause isn't obviously hardware
 
-### Generating a System Diagnostic for Support
+## Generating a System Diagnostic for Support
 
 Before opening the case, capture a sysdiag and attach it (or send it directly to support):
 
