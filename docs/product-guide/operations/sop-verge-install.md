@@ -70,7 +70,7 @@ Complete these steps prior to scheduling installation:
     - [ ] 64bit CPU with hardware virtualization support
   - [ ] **Memory Requirements:**
     - [ ] 16GB RAM per vSAN Node available for OS
-    - [ ] +1GB RAM per 1 TB Raw vSAN storage (minimum); 1.5GB/TB recommended for controller nodes — e.g. 16GB + 6GB = 22GB RAM for a controller node with 4TB of raw vSAN storage
+    - [ ] +1GB RAM per 1 TB Raw vSAN storage (minimum); e.g. 16GB + 4GB = 20GB RAM for a Node with 4TB of raw vSAN storage
   - [ ] **IPMI/Remote Management:**
     - [ ] IPMI; iDRAC, iLO, or similar
   - [ ] **Disk Controller:**
