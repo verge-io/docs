@@ -50,7 +50,7 @@ For block storage, create an empty VM in VergeOS named `k8spool`. It never needs
 
 For installation instructions, Helm values, and configuration options, see the CSI driver repository:
 
-[https://github.com/verge-io/vergeos-csi](https://github.com/verge-io/vergeos-csi){target="_blank"}
+[https://github.com/verge-io/csi-vergeos](https://github.com/verge-io/csi-vergeos){target="_blank"}
 
 The chart can also be installed through the **Rancher Apps UI** on downstream clusters — add `https://verge-io.github.io/helm-charts` as a repository, then install from **Charts**.
 
@@ -128,6 +128,6 @@ For chart versions, values, and detailed installation instructions, see the Helm
 
 If you encounter issues or have feature requests, please open an issue on the relevant GitHub repository:
 
-- [CSI Driver Issues](https://github.com/verge-io/vergeos-csi/issues){target="_blank"}
+- [CSI Driver Issues](https://github.com/verge-io/csi-vergeos/issues){target="_blank"}
 - [CCM Issues](https://github.com/verge-io/vergeos-cloud-controller-manager/issues){target="_blank"}
 - [Helm Charts Issues](https://github.com/verge-io/helm-charts/issues){target="_blank"}
