@@ -1,3 +1,33 @@
+---
+title: "Rancher Integration"
+description: "VergeOS integrates with Rancher through a Docker Machine node driver and UI extension, enabling provisioning and management of RKE2/K3s clusters on VergeOS infrastructure directly from the Rancher interface."
+semantic_keywords:
+  - "Rancher VergeOS node driver, Docker Machine driver vergeos, Rancher cluster provisioning"
+  - "RKE2 K3s clusters on VergeOS, downstream cluster Rancher, Rancher cloud credentials"
+  - "Rancher UI extension VergeOS, vergeos-node-driver Helm chart, Rancher Apps charts"
+  - "VergeOS template VM Ubuntu 24.04 cloud-init, Rancher node template, QEMU guest agent"
+  - "Rancher cluster autoscaler, node pool scaling, infrastructure as code Kubernetes"
+use_cases:
+  - rancher_cluster_provisioning
+  - kubernetes_node_template_setup
+  - rke2_k3s_deployment
+  - rancher_ui_extension_install
+  - cluster_node_lifecycle_management
+tags:
+  - rancher
+  - rke2
+  - k3s
+  - docker-machine
+  - kubernetes
+  - node-driver
+  - ui-extension
+  - helm
+  - cloud-init
+  - ubuntu
+categories:
+  - Automation
+---
+
 # Rancher Integration
 
 ## Overview
@@ -150,9 +180,7 @@ docker-machine create \
 !!! note "Docker Required for Standalone Use"
     When used as a standalone Docker Machine driver (not through Rancher), the template VM also needs Docker installed, or we can use `--vergeos-cloudinit` to install it on first boot.
 
-For the full list of driver flags and environment variables, see the driver repository:
-
-[https://github.com/verge-io/docker-machine-driver-vergeos](https://github.com/verge-io/docker-machine-driver-vergeos){target="_blank"}
+For the full list of driver flags and environment variables, see the driver repository in [Documentation and Resources](#documentation-and-resources) below.
 
 !!! note "SSH User Default"
     The driver defaults to `root` for the SSH user, but the Rancher UI extension defaults to `ubuntu`. When using the CLI directly, set `--vergeos-ssh-user ubuntu` for Ubuntu templates.
@@ -186,6 +214,22 @@ The UI extension adds VergeOS-specific components to the Rancher interface, prov
     The UI extension is installed automatically as part of the [combined Helm chart](#installing-in-rancher). There is no separate installation step.
 
 ---
+
+## Summary
+
+The Rancher integration consists of two components packaged in a single Helm chart:
+
+- **Docker Machine Driver** — clones VergeOS template VMs and manages their lifecycle for cluster provisioning
+- **UI Extension** — adds VergeOS cloud credential and machine configuration forms to the Rancher interface
+
+Together, they let us provision RKE2/K3s clusters on VergeOS infrastructure directly from the Rancher UI. Once clusters are running, the [Kubernetes Integration](kubernetes-integration.md) components handle persistent storage and node lifecycle.
+
+## Next Steps
+
+- Prepare a template VM (Ubuntu 24.04 + cloud-init + QEMU guest agent) in VergeOS
+- Install the [VergeOS Node Driver](#installing-in-rancher) Helm chart in the Rancher cluster
+- Provision a downstream cluster using **VergeOS** as the node driver
+- Install the [CSI Driver and Cloud Controller Manager](kubernetes-integration.md) on the downstream cluster for persistent storage and load balancers
 
 ## Documentation and Resources
 
