@@ -1,27 +1,28 @@
 ---
-requirements:
-  vergeos_version: "26.0 or later"
-  access_levels: ["Cluster Admin", "Tenant Admin"]
-  background_knowledge: ["VergeOS UI navigation"]
-
-key_concepts:
-  - "Tag Categories"
-  - "Tag Assignment"
-  - "Object Labeling"
-  - "Asset Organization"
-
+title: "Tags"
+description: "How to create, manage, and assign tags and tag categories in VergeOS to organize and classify system objects such as VMs, tenants, and nodes."
 semantic_keywords:
-  - "VergeOS tags"
-  - "tagging system configuration"
-  - "how to create tags in VergeOS"
-  - "assign tags to virtual machines"
-  - "organize VergeOS objects"
-  - "tag categories setup"
-
+  - "VergeOS tags tagging system configuration"
+  - "how to create tags and tag categories"
+  - "assign tags to virtual machines tenants nodes"
+  - "organize classify VergeOS objects labeling"
+  - "filter report tagged assets categories"
 use_cases:
-  - "Categorizing VMs by operating system or application"
-  - "Organizing tenants by support level or time zone"
-  - "Filtering and reporting on tagged assets"
+  - categorize_vms_by_os_or_application
+  - organize_tenants_by_support_level
+  - create_tag_categories
+  - assign_tags_to_objects
+  - filter_assets_by_tag
+tags:
+  - tags
+  - categories
+  - organization
+  - labeling
+  - virtual-machines
+  - tenants
+  - asset-management
+categories:
+  - System Administration
 ---
 
 # Tags

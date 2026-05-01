@@ -1,3 +1,30 @@
+---
+title: "VM Snapshots and Restores"
+description: "Complete guide to VM snapshot and restore operations in VergeOS including scheduled and manual snapshots, quiesced capture, restoring from system snapshots, overwrite restores, and clone restores."
+semantic_keywords:
+  - "VM snapshot restore VergeOS virtual machine"
+  - "quiesced application-consistent VM snapshot"
+  - "restore VM from system snapshot import"
+  - "clone VM from snapshot restore to new"
+  - "scheduled VM snapshot profile assignment"
+use_cases:
+  - "take_manual_vm_snapshot"
+  - "schedule_vm_snapshots"
+  - "restore_vm_from_system_snapshot"
+  - "restore_vm_overwrite_existing"
+  - "restore_vm_to_clone"
+tags:
+  - snapshots
+  - virtual-machines
+  - restores
+  - quiescing
+  - vm-snapshots
+  - data-protection
+  - cloning
+categories:
+  - Backup and DR
+---
+
 # VM Snapshots and Restores
 
 Virtual machine protection in VergeOS is built on a flexible snapshot framework that supports system‑wide recovery as well as targeted VM‑level protection. VMs can be safeguarded through **Full System snapshots**, **Partial System snapshots**, or **individual VM snapshots**, each offering different levels of granularity, quiescing options, and restore capabilities. Together, these mechanisms allow administrators to balance broad disaster‑recovery coverage with workload‑specific protection needs.

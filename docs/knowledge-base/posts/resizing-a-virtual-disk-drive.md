@@ -1,9 +1,19 @@
 ---
 title: Resizing a Virtual Disk Drive
 slug: resizing-a-virtual-disk-drive
-description: 
+description: Step-by-step instructions for increasing the size of a virtual disk drive in VergeOS, including notes on hot-plug support and guest OS requirements.
+author: VergeOS Documentation Team
 draft: false
 date: 2024-01-24T19:27:42.060Z
+semantic_keywords:
+  - "resize increase virtual disk drive VergeOS"
+  - "expand VM disk size hot-plug virtio-scsi"
+  - "virtual machine disk drive cannot shrink reduce"
+  - "guest OS partition resize after disk increase"
+use_cases:
+  - increase_virtual_disk_size
+  - expand_vm_storage_without_power_cycle
+  - resize_disk_with_guest_os_changes
 tags:
   - resize
   - disk

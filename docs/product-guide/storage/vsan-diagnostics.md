@@ -1,3 +1,30 @@
+---
+title: "vSAN Diagnostics Guide"
+description: "Comprehensive reference for VergeOS vSAN diagnostic commands, covering storage performance monitoring, integrity checking, device health, cluster analysis, and troubleshooting workflows."
+semantic_keywords:
+  - "vSAN diagnostics commands troubleshooting"
+  - "storage performance monitoring cluster health"
+  - "integrity check repair status vSAN"
+  - "vcmd diagnostic CLI storage analysis"
+use_cases:
+  - storage_performance_troubleshooting
+  - vsan_health_monitoring
+  - data_integrity_verification
+  - capacity_planning_analysis
+  - device_health_assessment
+tags:
+  - vsan
+  - diagnostics
+  - troubleshooting
+  - monitoring
+  - performance
+  - integrity-check
+  - vcmd
+  - storage-health
+categories:
+  - Storage
+---
+
 # vSAN Diagnostics Guide
 
 ## Overview

@@ -1,3 +1,33 @@
+---
+title: "VergeOS Diagnostics Overview"
+description: "Overview of all diagnostic tools available in VergeOS, including component-specific diagnostics for networks, nodes, vSAN, and NAS, as well as system-wide tools like subscriptions and Prometheus integration."
+semantic_keywords:
+  - "VergeOS diagnostics troubleshooting tools"
+  - "network node vSAN NAS diagnostics"
+  - "system monitoring and alerting VergeOS"
+  - "Prometheus Grafana integration VergeOS"
+  - "proactive monitoring best practices"
+use_cases:
+  - system_troubleshooting
+  - performance_monitoring
+  - proactive_alerting
+  - diagnostic_data_collection
+  - third_party_monitoring_integration
+tags:
+  - diagnostics
+  - monitoring
+  - troubleshooting
+  - alerting
+  - prometheus
+  - subscriptions
+  - network
+  - vsan
+  - nas
+  - nodes
+categories:
+  - System Administration
+---
+
 # VergeOS Diagnostics Overview
 
 VergeOS provides comprehensive diagnostic tools integrated throughout the platform to help system administrators monitor, troubleshoot, and maintain optimal performance across all virtualization components.

@@ -1,3 +1,27 @@
+---
+title: "Creating Tenants"
+description: "Step-by-step instructions for creating new tenants in VergeOS using the Tenant Wizard, cloning an existing tenant, or deploying from a tenant recipe."
+semantic_keywords:
+  - "how to create a new tenant in VergeOS"
+  - "tenant wizard clone recipe deployment"
+  - "provision tenant node storage resources"
+  - "assign external IP to new tenant"
+use_cases:
+  - "create_new_tenant"
+  - "clone_existing_tenant"
+  - "deploy_tenant_from_recipe"
+  - "provision_tenant_resources"
+tags:
+  - tenants
+  - tenant-creation
+  - tenant-wizard
+  - cloning
+  - tenant-recipes
+  - provisioning
+categories:
+  - Tenants
+---
+
 # Creating Tenants
 
 ## Tenant Creation Methods

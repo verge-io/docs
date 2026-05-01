@@ -1,3 +1,31 @@
+---
+title: "Device Passthrough Overview"
+description: "Overview of device passthrough in VergeOS, including PCI passthrough risks, IOMMU grouping, resource groups, resource rules, and supported passthrough types (PCI, USB, vGPU, SR-IOV)."
+semantic_keywords:
+  - "VergeOS device passthrough PCI USB vGPU SR-IOV"
+  - "IOMMU grouping resource groups resource rules"
+  - "GPU passthrough virtual machine tenant"
+  - "PCI passthrough risks precautions BIOS VT-d"
+  - "passthrough configuration host VM guest"
+use_cases:
+  - understand_passthrough_types_and_risks
+  - configure_resource_groups_for_passthrough
+  - pass_pci_device_to_vm_or_tenant
+  - review_iommu_grouping_requirements
+  - plan_device_passthrough_architecture
+tags:
+  - passthrough
+  - pci
+  - usb
+  - vgpu
+  - sriov
+  - iommu
+  - resource-groups
+  - virtual-machines
+categories:
+  - System Administration
+---
+
 # Device Passthrough Overview
 
 VergeOS supports various types of device passthrough, allowing virtual machines to access physical devices connected to their host servers 
@@ -42,6 +70,6 @@ The KB Article: [Device Passthrough - Advanced Configuration](/knowledge-base/de
 
 * [**USB Device Passthrough**](/product-guide/system/usb-passthrough) - allows a VM to access a USB device connected to the host machine. This allows users to access USB devices within a VM as if they were directly connected to the VM. Single device to single VM access (at a time) is provided.
 
-* [**NVIDIA vGPU**](/product-guide/system/nvidia-vgpu) - a physical NVIDIA GPU installed on the host node is dissected into multiple virtual GPUs; vGPU provides multiple VMs access to a single piece of GPU hardware.
+* [**NVIDIA vGPU**](/product-guide/system/nvidia-vgpu-configuration) - a physical NVIDIA GPU installed on the host node is dissected into multiple virtual GPUs; vGPU provides multiple VMs access to a single piece of GPU hardware.
 
 * [**SR-IOV VF NICs**](/product-guide/system/sriov-nics) -- the Single Root I/O Virtualization (SR-IOV) specification is utilized to create multiple virtual functions (virtualized instances of a network adapter) from one physical, SR-IOV-capable, NIC which are then made available for use in VMs.

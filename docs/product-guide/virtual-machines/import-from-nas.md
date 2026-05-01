@@ -1,3 +1,28 @@
+---
+title: "Importing VMs from a NAS Volume"
+description: "Instructions for bulk importing virtual machines from NFS or CIFS network shares into VergeOS using the NAS volume import method."
+semantic_keywords:
+  - "import VMs from NFS CIFS network share"
+  - "bulk VM import from NAS volume"
+  - "migrate virtual machines from network storage"
+  - "import VMX OVF files from remote volume"
+use_cases:
+  - bulk_import_vms_from_nas
+  - migrate_vms_from_network_share
+  - import_vmx_ovf_from_remote_volume
+tags:
+  - virtual-machines
+  - import
+  - migration
+  - nas
+  - nfs
+  - cifs
+  - bulk-import
+  - remote-volume
+categories:
+  - Virtual Machines
+---
+
 # Importing VMs from a NAS Volume
 
 This method allows for the import of many VMs at once. It does not require uploading any files to the vSAN, but rather, allows for pulling data from an NFS or CIFS share. Note: For production, live, VMware environments, it is best to utilize the VMware Service to [**Import from a VMware Backup Job**](/product-guide/virtual-machines/import-from-vmware)

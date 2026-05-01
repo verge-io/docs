@@ -1,3 +1,32 @@
+---
+title: "VergeOS vSAN Scale Out Guide"
+description: "Standard operating procedure for scaling out a VergeOS system by adding a new node, including preparation, pre-checks, execution, post-verification, and rollback procedures."
+semantic_keywords:
+  - "scale out VergeOS add new node to cluster"
+  - "vSAN data redistribution rebuild after adding node"
+  - "pre-scale out verification checklist system health"
+  - "node installation join cluster USB installer"
+  - "post-scale out verification performance validation"
+use_cases:
+  - scale_out_add_new_node
+  - prepare_for_node_addition
+  - verify_pre_scale_out_health
+  - monitor_vsan_redistribution
+  - validate_post_scale_out
+  - rollback_failed_scale_out
+tags:
+  - scale-out
+  - nodes
+  - vsan
+  - cluster
+  - capacity
+  - sop
+  - operations
+  - installation
+categories:
+  - System Administration
+---
+
 # VergeOS vSAN Scale Out Guide
 
 This guide provides best practices for safely scaling out a VergeOS system by adding a new node. It focuses on data security and system resilience through a methodical approach.

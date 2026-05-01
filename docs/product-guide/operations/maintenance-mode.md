@@ -1,3 +1,30 @@
+---
+title: "Maintenance Mode"
+description: "How to put a VergeOS node into and out of maintenance mode, including workload migration, monitoring progress, and handling non-migratable VMs."
+semantic_keywords:
+  - "VergeOS node maintenance mode enable disable"
+  - "migrate workloads before node reboot power off"
+  - "graceful VM migration maintenance operations"
+  - "node status migrating leaving maintenance running"
+  - "non-migratable VM GPU passthrough maintenance"
+use_cases:
+  - enable_node_maintenance_mode
+  - disable_node_maintenance_mode
+  - migrate_workloads_for_maintenance
+  - monitor_maintenance_progress
+  - handle_non_migratable_vms
+tags:
+  - maintenance
+  - nodes
+  - migration
+  - workloads
+  - cluster
+  - operations
+  - reboot
+categories:
+  - System Administration
+---
+
 # Maintenance Mode
 
 Maintenance Mode prepares a node to be taken offline. **Maintenance Mode should be used prior to any operation that will include a reboot / powercycle or will otherwise render the node unavailable.**

@@ -1,15 +1,29 @@
 ---
 title: VMware-Backup-DR-Guide
 slug: vmwarebackupdrguide
-description: 
+description: Comprehensive guide for setting up VMware backup and disaster recovery in VergeOS, including creating VMware services, configuring backup schedules, and performing restores from vSphere environments.
+author: VergeOS Documentation Team
 draft: false
 date: 2023-01-24T19:34:49.819Z
+semantic_keywords:
+  - "VMware vSphere backup VergeOS agent"
+  - "VMware backup schedule differential full"
+  - "CBT changed block tracking VMware DR"
+  - "VMware service vSphere connection setup"
+  - "VMware VM restore disaster recovery"
+use_cases:
+  - "configure_vmware_backup_service"
+  - "create_vmware_backup_schedules"
+  - "assign_backup_schedules_to_vms"
+  - "perform_manual_vmware_backup"
+  - "restore_vmware_vms_from_backup"
+  - "vmware_disaster_recovery_planning"
 tags:
-  - VMware
+  - vmware
   - backups
-  - vSphere
+  - vsphere
   - scheduling
-  - DR
+  - dr
 categories:
   - Best Practices
   - Backup
@@ -54,7 +68,7 @@ The VMware service establishes a direct agent connection with vSphere; network a
     -   ***Power On*** - Service will be powered on when power is restored (regardless of its state at the time of power loss).
 1.  Select a **Network** on which to run the VMware service.  
 
-!!! note "DHCP is required on the selected network."
+!!! note "The service VM NIC defaults to DHCP. To assign a static IP instead, see [Configuring VMware Service VM NIC IPv4 Settings](/knowledge-base/vmware-service-vm-nic-ipv4-configuration/)."
 
 
 ---
@@ -300,7 +314,7 @@ Note: Check Logs (at the bottom of the Dashboard page) for possible additional i
 -   **Verify network connection** 
 -   If using a domain name, verify DNS resolution of the name. 
 -   The network on which the VMware service is running must have access to the Vsphere address/port provided on port 443 (or port selected). 
--   The network on which the VMware service is running must be DHCP.  
+-   The service VM NIC must have a valid IP configuration (DHCP or [static IP](/knowledge-base/vmware-service-vm-nic-ipv4-configuration/)).  
 
 !!! note "The built-in Diagnostics engine can assist in testing the network connection.  (VMware Services Dashboard -> View Service -> Diagnostics)"
 

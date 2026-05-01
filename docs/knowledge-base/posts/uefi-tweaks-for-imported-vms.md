@@ -1,12 +1,20 @@
 ---
 title: UEFI Tweaks for Imported VMs
 slug: uefi-tweaks-for-imported-vms
-description: Addressing UEFI Devices on Imported VMs
+description: How to resolve boot issues with imported VMs that use UEFI boot devices, including boot order and secure boot adjustments.
+author: VergeOS Documentation Team
 draft: false
 date: 2023-01-24T14:15:45.862Z
-categories:
-  - VM
-  - Troubleshooting
+semantic_keywords:
+  - "uefi boot imported vm not booting"
+  - "boot order bios configuration imported vm"
+  - "secure boot disable imported virtual machine"
+  - "vm import uefi boot device troubleshooting"
+use_cases:
+  - imported_vm_boot_troubleshooting
+  - uefi_boot_order_configuration
+  - secure_boot_disable_imported_vm
+  - vm_migration_boot_fix
 tags:
   - vm
   - import
@@ -15,6 +23,9 @@ tags:
   - troubleshooting
   - bios
   - boot order
+categories:
+  - VM
+  - Troubleshooting
 editor: markdown
 dateCreated: 2022-06-28T14:46:35.084Z
 ---

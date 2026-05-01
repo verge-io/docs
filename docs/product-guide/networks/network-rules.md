@@ -1,3 +1,31 @@
+---
+title: "Network Rules"
+description: "Create and manage VergeOS network rules for firewall filtering, NAT/PAT translation, and static routing, including rule ordering, modification, and copying."
+semantic_keywords:
+  - "VergeOS network rules firewall NAT routing"
+  - "create firewall rule accept drop reject"
+  - "NAT PAT translate rule port forwarding"
+  - "static route rule default gateway"
+  - "network rule order priority management"
+use_cases:
+  - create_firewall_rules
+  - configure_nat_pat_translation
+  - setup_static_routing_rules
+  - manage_rule_ordering_and_priority
+  - copy_and_modify_existing_rules
+  - pin_rules_to_top_or_bottom
+tags:
+  - networking
+  - firewall
+  - network-rules
+  - nat
+  - routing
+  - security
+  - configuration
+categories:
+  - Networking
+---
+
 # Network Rules
 
 Rules define behavior for incoming and outgoing traffic in a network, providing the functionality traditionally provided by firewalls, routers, and switches.

@@ -1,9 +1,19 @@
 ---
 title: Adding Tier 0 to an Existing System
 slug: adding-tier-zero
-description: How to add Tier 0 storage to an existing VergeOS system
+description: Step-by-step guide for adding Tier 0 metadata storage to an existing VergeOS system that was not configured with Tier 0 during initial installation.
+author: VergeOS Documentation Team
 draft: false
 date: 2024-11-25T18:16:54.516Z
+semantic_keywords:
+  - "tier 0 metadata storage post-installation"
+  - "add vsan tier after install"
+  - "vsan diagnostics add drive"
+  - "controller node storage configuration"
+use_cases:
+  - add_tier_0_to_existing_system
+  - post_installation_storage_configuration
+  - vsan_metadata_tier_setup
 tags:
   - tier
   - storage

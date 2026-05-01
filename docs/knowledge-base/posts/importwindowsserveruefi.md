@@ -1,9 +1,20 @@
 ---
-title: Importing Windows Server with UEFI into VergeOS  
-slug: importing-windows-server-with-uefi-into-vergeos  
-description:  
-draft: false  
-date: 2024-04-03T13:55:51.067Z  
+title: Importing Windows Server with UEFI into VergeOS
+slug: importing-windows-server-with-uefi-into-vergeos
+description: Guide to migrating a UEFI-enabled Windows Server VM from VMware into VergeOS, including disk interface changes, Virtio driver installation, and QEMU guest agent configuration.
+author: VergeOS Documentation Team
+draft: false
+date: 2024-04-03T13:55:51.067Z
+semantic_keywords:
+  - "windows server uefi import vmware migration"
+  - "virtio drivers sata scsi disk interface"
+  - "qemu guest agent windows server"
+  - "efi drive boot order configuration"
+use_cases:
+  - import_windows_server_uefi_from_vmware
+  - install_virtio_drivers_on_windows
+  - configure_qemu_guest_agent
+  - migrate_uefi_vm_to_vergeos
 tags:
   - vm
   - windows
@@ -16,10 +27,10 @@ tags:
   - vms
   - media file
   - guest agent
-categories:  
-  - Migration  
-editor: markdown  
-dateCreated: 2024-03-14T16:15:12.992Z  
+categories:
+  - Migration
+editor: markdown
+dateCreated: 2024-03-14T16:15:12.992Z
 ---
 
 # Importing Windows Server with UEFI into VergeOS

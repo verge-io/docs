@@ -1,3 +1,26 @@
+---
+title: "Scale-out Node Installation Guide"
+description: "Step-by-step instructions for installing scale-out nodes with matching hardware specifications to expand both compute and storage capacity in a VergeOS cluster."
+semantic_keywords:
+  - "VergeOS scale-out node installation"
+  - "expand HCI cluster compute and storage"
+  - "scale-out node USB installer VergeOS"
+  - "add nodes to existing vSAN cluster"
+use_cases:
+  - scale_out_node_installation
+  - hci_cluster_expansion
+  - vsan_and_compute_scaling
+tags:
+  - installation
+  - scale-out
+  - hci
+  - cluster-expansion
+  - vsan
+  - nodes
+categories:
+  - Installation
+---
+
 # Scale-out Node Installation Guide
 
 

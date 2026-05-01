@@ -1,3 +1,31 @@
+---
+title: "Network Troubleshooting"
+description: "Common network troubleshooting procedures for VergeOS, including ping tests, IP address verification, NIC driver checks, DNS diagnostics, and default gateway rule configuration."
+semantic_keywords:
+  - "VergeOS network troubleshooting connectivity issues"
+  - "VM cannot reach internet DNS not working"
+  - "verify IP address NIC interface driver"
+  - "default gateway route rule troubleshooting"
+  - "network diagnostics ping DNS lookup"
+use_cases:
+  - troubleshoot_vm_connectivity
+  - verify_vm_ip_address_assignment
+  - diagnose_dns_resolution_failures
+  - create_default_gateway_route_rule
+  - check_nic_interface_and_driver
+tags:
+  - networking
+  - troubleshooting
+  - diagnostics
+  - dns
+  - dhcp
+  - routing
+  - virtual-machines
+  - connectivity
+categories:
+  - Networking
+---
+
 # Network Troubleshooting
 
 This page contains common network testing/troubleshooting steps.

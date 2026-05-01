@@ -1,3 +1,28 @@
+---
+title: "VergeOS vSAN Deletion Process"
+description: "Explains how VergeOS vSAN handles deletion of VMs, drives, and tenants through reference counting, deduplication-aware block cleanup, and background garbage collection."
+semantic_keywords:
+  - "vSAN deletion process reference counting"
+  - "VM tenant drive deletion storage reclamation"
+  - "garbage collection vSAN walk block cleanup"
+  - "tenant deletion storage deduplication impact"
+use_cases:
+  - vm_deletion_understanding
+  - tenant_deletion_planning
+  - storage_reclamation_monitoring
+  - snapshot_deletion_impact_assessment
+tags:
+  - vsan
+  - deletion
+  - garbage-collection
+  - reference-counting
+  - deduplication
+  - tenants
+  - storage-reclamation
+categories:
+  - Storage
+---
+
 # VergeOS vSAN Deletion Process
 
 ## Block-Level Architecture Foundation

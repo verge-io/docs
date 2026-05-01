@@ -2,13 +2,23 @@
 title: Best Practices - Running a pfSense Virtual Firewall
 slug: running-a-pfsense-virtual-firewall
 description: Best practices for deploying and managing pfSense as a virtual firewall within VergeOS.
+author: VergeOS Documentation Team
 draft: false
 date: 2023-01-24T19:25:40.944Z
+semantic_keywords:
+  - "pfsense virtual firewall best practices"
+  - "virtio network disk configuration pfsense"
+  - "hardware checksum offloading virtual NIC"
+  - "pfsense vm resource allocation snapshots"
+use_cases:
+  - pfsense_virtual_firewall_deployment
+  - virtio_nic_disk_optimization
+  - firewall_vm_resource_sizing
+  - pfsense_snapshot_rollback
 tags:
   - pfsense
   - firewall
-  - best
-  - practice
+  - best practices
 categories:
   - Firewall
   - Best Practices

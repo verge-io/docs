@@ -1,9 +1,20 @@
 ---
-title: Managing Files  
-slug: managing-files 
-description:  
-draft: false  
-date: 2025-11-11T22:25:11.107Z  
+title: Managing Files
+slug: managing-files
+description: How to upload, manage, and share files in VergeOS including ISOs, VM disk images, and creating public links for file sharing between sites and tenants.
+author: VergeOS Documentation Team
+draft: false
+date: 2025-11-11T22:25:11.107Z
+semantic_keywords:
+  - "upload iso vm disk image files"
+  - "public link file sharing tenant"
+  - "media images file management vergeos"
+  - "file url upload download public link"
+use_cases:
+  - iso_file_upload_management
+  - public_link_file_sharing
+  - tenant_file_distribution
+  - media_image_management
 tags:
   - files
   - media
@@ -12,10 +23,10 @@ tags:
   - cd
   - dvd
   - iso
-categories:  
-  - Media Images  
-editor: markdown  
-dateCreated: 2022-07-11T18:35:05.374Z  
+categories:
+  - Media Images
+editor: markdown
+dateCreated: 2022-07-11T18:35:05.374Z
 ---
 
 ## How To Create, Upload, and Manage Files

@@ -1,9 +1,20 @@
 ---
 title: Understanding VergeOS VM Memory Management
 slug: guest-memory-management
-description: Explains why VergeOS shows allocated memory rather than active usage, the benefits of no memory ballooning, and best practices for memory monitoring and capacity planning
+description: Explains why VergeOS shows allocated memory rather than active usage, the benefits of no memory ballooning, and best practices for memory monitoring and capacity planning.
+author: VergeOS Documentation Team
 draft: false
 date: 2025-08-15T18:30:00.000Z
+semantic_keywords:
+  - "vm memory allocation vs usage reporting"
+  - "memory ballooning elimination predictable performance"
+  - "capacity planning memory monitoring best practices"
+  - "workload migration guaranteed memory availability"
+use_cases:
+  - vm_memory_capacity_planning
+  - memory_allocation_monitoring
+  - vm_right_sizing_optimization
+  - migration_reliability_assessment
 tags:
   - memory management
   - vm

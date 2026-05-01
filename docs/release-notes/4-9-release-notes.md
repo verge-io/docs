@@ -1,6 +1,27 @@
 ---
-description: Release notes for the 4.9 series of VergeOS
-#icon: material/text-box-outline
+title: "4.9 Release Notes"
+description: "Release notes for the 4.9 series of VergeOS, featuring a complete UI revamp, email-based two-factor authentication, GPU pass-through, port mirroring, and enhanced snapshot and NAS management."
+semantic_keywords:
+  - "VergeOS 4.9 release notes and features"
+  - "VergeOS UI revamp and two-factor authentication"
+  - "VergeOS GPU pass-through and port mirroring"
+  - "VergeOS 4.9 deprecated version end of life"
+use_cases:
+  - review_4_9_features
+  - check_4_9_deprecation_status
+  - plan_upgrade_from_4_9
+  - review_legacy_release_history
+tags:
+  - release-notes
+  - vergeos-4
+  - deprecated
+  - ui-revamp
+  - two-factor-auth
+  - gpu-passthrough
+  - port-mirroring
+  - snapshots
+categories:
+  - Release Notes
 status: deprecated
 ---
 

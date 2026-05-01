@@ -1,3 +1,26 @@
+---
+title: "Assigning External IP Addresses to a Tenant"
+description: "Instructions for assigning external IP addresses to a tenant, including creating virtual IPs and applying network rules for tenant external access."
+semantic_keywords:
+  - "assign external IP address to tenant VergeOS"
+  - "tenant virtual IP network access configuration"
+  - "tenant external network routing rules"
+  - "provide internet access to tenant"
+use_cases:
+  - "assign_external_ip_to_tenant"
+  - "configure_tenant_network_access"
+  - "create_virtual_ip_for_tenant"
+tags:
+  - tenants
+  - networking
+  - ip-addresses
+  - virtual-ip
+  - external-network
+  - network-rules
+categories:
+  - Tenants
+---
+
 # Assigning External IP Addresses to a Tenant
 
 External IP addresses can be assigned to tenants. When an external IP is assigned, appropriate routing rules are created automatically.

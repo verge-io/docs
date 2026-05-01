@@ -1,10 +1,20 @@
 ---
 title: IPsec Example - Dedicated Public IP
 slug: ipsec-example-dedicated-ip
-description: IPsec Tunnel - Configuration Example - Dedicated IP Address, bridged network for workloads
+description: IPsec tunnel configuration example using a dedicated public IP address with a bridged internal network for workload connectivity.
 author: VergeOS Documentation Team
 draft: false
 date: 2025-04-04T15:19:47.449Z
+semantic_keywords:
+  - "ipsec tunnel dedicated public ip bridged network"
+  - "vpn network configuration phase 1 phase 2"
+  - "translate route rules vpn internal network"
+  - "static lease vpn router bridged internal"
+use_cases:
+  - configure_ipsec_with_dedicated_public_ip
+  - bridge_vpn_to_internal_network
+  - create_vpn_translate_and_route_rules
+  - assign_public_ip_to_vpn_network
 tags:
   - vpn
   - networking

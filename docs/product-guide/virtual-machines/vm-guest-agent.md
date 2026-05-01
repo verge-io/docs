@@ -1,3 +1,29 @@
+---
+title: "VM Guest Agent"
+description: "Guide to enabling and installing the QEMU guest agent on VergeOS VMs for consistent snapshots, graceful shutdown, and enhanced host-guest communication."
+semantic_keywords:
+  - "install QEMU guest agent on VM"
+  - "enable guest agent for consistent snapshots"
+  - "VirtIO guest tools Windows Linux installation"
+  - "guest agent graceful shutdown file system freeze"
+use_cases:
+  - enable_vm_guest_agent
+  - install_guest_agent_windows
+  - install_guest_agent_linux
+  - verify_guest_agent_connection
+tags:
+  - virtual-machines
+  - guest-agent
+  - qemu
+  - virtio
+  - snapshots
+  - windows
+  - linux
+  - installation
+categories:
+  - Virtual Machines
+---
+
 # VM Guest Agent
 
 The guest agent is a program installed inside the guest OS allowing the host to run commands within the VM. This allows consistent, reliable backups by freezing the guest file system before snapshots and proper shutdown of a guest without reliance on ACPI, policies, etc.

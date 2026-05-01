@@ -1,3 +1,29 @@
+---
+title: "Using the Virtual Machine Remote Console"
+description: "Guide to using the VergeOS VM remote console for direct keyboard and mouse interaction, including toolbar features, clipboard, power controls, and extra keys."
+semantic_keywords:
+  - "VM remote console keyboard mouse access"
+  - "virtual machine console toolbar controls"
+  - "clipboard paste text into VM console"
+  - "power reset ACPI kill VM from console"
+  - "full screen virtual keyboard mobile console"
+use_cases:
+  - access_vm_remote_console
+  - use_console_clipboard
+  - control_vm_power_from_console
+  - use_console_on_mobile_device
+tags:
+  - virtual-machines
+  - remote-console
+  - vnc
+  - spice
+  - clipboard
+  - power-controls
+  - toolbar
+categories:
+  - Virtual Machines
+---
+
 # Using the Virtual Machine Remote Console
 
 The remote console provides direct interaction (mouse/keyboard) with Virtual Machines.
@@ -14,7 +40,7 @@ Exits the console and returns to the previous screen.
 Activates/deactivates the console's full-screen option (expand to entire browser tab)
 
 #### ![virtkeyboard-icon.png](/product-guide/screenshots/virtkeyboard-icon.png) Virtual Keyboard
-Provides a virtual keyboard on devices that do not have a physical keyboard (cellphones, tables, etc.)
+Provides a virtual keyboard on devices that do not have a physical keyboard (cellphones, tablets, etc.)
 
 #### ![dragview-icon.png](/product-guide/screenshots/dragview-icon.png) Drag view port
 Alows moving the viewable portion of the console when the guest system screen exceeds the viewable area.

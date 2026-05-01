@@ -218,6 +218,7 @@ nav:
         - API Keys: product-guide/system/api-keys.md
       - Nodes:
         - Overview: product-guide/system/nodes-overview.md
+        - Core Fabric Status: product-guide/system/core-fabric-status.md
         - IPMI: product-guide/system/ipmi.md
         - System Event Log (SEL): product-guide/system/sel.md
         - Node Diagnostics: product-guide/system/node-diagnostics.md
@@ -241,6 +242,7 @@ nav:
         - Uploading Media Images: product-guide/storage/uploading-files-to-vsan.md
         - Creating Virtual Machines: product-guide/virtual-machines/creating-vms.md
         - Virtual Machine Drives: product-guide/virtual-machines/vm-drives.md
+        - Sharing Disks Between VMs: product-guide/virtual-machines/sharing-disks-between-vms.md
         - Virtual Machine Network Interfaces: product-guide/virtual-machines/vm-nics.md
         - Virtual Machine Fields: product-guide/virtual-machines/vm-field-descriptions.md
         - VM Guest Agent: product-guide/virtual-machines/vm-guest-agent.md
@@ -331,9 +333,10 @@ nav:
         - Overview: product-guide/automation/task-engine.md
         - Create Tasks: product-guide/automation/create-tasks.md
         - Schedules: product-guide/automation/schedules.md
-    - Device Passthrough:
+    - GPU & Device Passthrough:
       - Overview: product-guide/system/device-pass-overview.md
-      - NVIDIA vGPU: product-guide/system/nvidia-vgpu.md
+      - NVIDIA GPU Virtualization: product-guide/tools-integrations/nvidia-gpu-virtualization.md
+      - NVIDIA vGPU Configuration: product-guide/system/nvidia-vgpu-configuration.md
       - SR-IOV NIC: product-guide/system/sriov-nics.md
       - USB Passthrough: product-guide/system/usb-passthrough.md
       - One-to-One PCI Passthrough: product-guide/system/generic-pci-passthrough.md
@@ -355,6 +358,7 @@ nav:
         - System Updates: product-guide/operations/sop-update.md
         - Installation Procedures: product-guide/operations/sop-verge-install.md
         - vSAN Scale Up: product-guide/operations/vsan-scale-up-sop.md
+      - Node Replacement: product-guide/operations/node-replacement.md
     - Tools and Integrations:
       - Automation & API:
         - Terraform Provider: product-guide/tools-integrations/terraform-provider.md
@@ -371,7 +375,6 @@ nav:
         - Rancher Integration: product-guide/tools-integrations/rancher-integration.md
       - VDI & Desktop Delivery:
         - Inuvika Virtual Apps and Desktops: product-guide/tools-integrations/inuvika.md
-        - NVIDIA vGPU: product-guide/tools-integrations/nvidia-vgpu.md
   - Release Notes:
     - Overview: release-notes/release-notes-overview.md
     - 26.1 (latest): release-notes/26-1-release-notes.md

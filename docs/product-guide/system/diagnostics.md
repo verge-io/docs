@@ -1,3 +1,29 @@
+---
+title: "System Diagnostics"
+description: "How to generate, download, and send VergeOS system diagnostics files for troubleshooting, including file contents, layout, and usage guidance."
+semantic_keywords:
+  - "VergeOS system diagnostics troubleshooting file"
+  - "generate diagnostic build send to support"
+  - "system logs SMART reports vSAN diagnostics"
+  - "air-gapped system diagnostic download"
+  - "point-in-time system information capture"
+use_cases:
+  - generate_system_diagnostics_for_support
+  - download_diagnostics_for_airgapped_system
+  - capture_baseline_before_system_change
+  - review_diagnostic_file_contents
+tags:
+  - diagnostics
+  - troubleshooting
+  - support
+  - logs
+  - smart
+  - vsan
+  - system-health
+categories:
+  - System Administration
+---
+
 # System Diagnostics
 
 The *System Diagnostics* feature allows quickly and easily gathering extensive system information into a single compressed file, capturing a point-in-time collection of system details, including: unfiltered logs, configuration information, network and state data, and other metrics useful for analyzing and troubleshooting.  While these information points can generally be easier to obtain from within the VergeOS UI, generating the System Diagnostics file can be a convenient way to collect all the information and send directly to VergeIO Support for professional analysis.

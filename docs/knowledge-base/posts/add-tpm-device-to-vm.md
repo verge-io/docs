@@ -1,19 +1,29 @@
 ---
 title: How to Add a TPM Device to a Virtual Machine
 slug: add-tpm-device-to-vm
-description: Step-by-step instructions for adding a Trusted Platform Module (TPM) device to a virtual machine in VergeOS
+description: Step-by-step instructions for adding a Trusted Platform Module (TPM) device to a virtual machine in VergeOS, including UEFI configuration, guest OS setup, and BitLocker enablement.
 author: VergeOS Documentation Team
 draft: false
 date: 2025-07-02T15:30:00.000Z
+semantic_keywords:
+  - "tpm trusted platform module virtual machine"
+  - "uefi secure boot bitlocker encryption"
+  - "windows 11 tpm 2.0 requirement"
+  - "vm security device configuration"
+use_cases:
+  - add_tpm_device_to_vm
+  - enable_bitlocker_encryption
+  - meet_windows_11_requirements
+  - configure_secure_boot_with_tpm
 tags:
-  - TPM
+  - tpm
   - virtual machine
   - device
   - security
-  - UEFI
+  - uefi
   - secure boot
-  - BitLocker
-  - Windows 11
+  - bitlocker
+  - windows 11
 categories:
   - VM
   - Security

@@ -1,3 +1,30 @@
+---
+title: "VM Export Volume"
+description: "Overview of the VergeOS NAS VM Export volume type for creating exportable VM snapshots accessible to external systems and third-party backup software."
+semantic_keywords:
+  - "export VM snapshots to external backup software"
+  - "VergeOS NAS VM export volume CIFS NFS"
+  - "third-party backup integration VM export"
+  - "schedule automated VM export snapshots"
+use_cases:
+  - export_vm_snapshots_externally
+  - integrate_third_party_backup
+  - configure_vm_export_volume
+  - automate_vm_export_schedule
+tags:
+  - virtual-machines
+  - export
+  - backup
+  - nas
+  - snapshots
+  - cifs
+  - nfs
+  - volume
+categories:
+  - Virtual Machines
+  - Backup
+---
+
 # VM Export Volume
 
 The VergeOS NAS service provides a special volume type (*Verge.io VM Export*) to facilitate export of VMs. This special volume contains VM snapshots, created each time the export is run, that can then be made available to external systems and third-party backup software.

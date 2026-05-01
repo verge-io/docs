@@ -1,15 +1,26 @@
 ---
 title: Configuring Proxy
 slug: configuring-proxy
-description: Configuring a Proxy Connection for a Tenant
+description: How to configure a proxy connection to serve multiple tenant environments using a single IP address mapped to FQDN hostnames.
+author: VergeOS Documentation Team
 draft: false
 date: 2024-04-11T16:30:54.826Z
+semantic_keywords:
+  - "proxy tenant fqdn single ip address"
+  - "ip alias proxy configuration network"
+  - "tenant proxy ui management setup"
+  - "multi-tenant ip address conservation proxy"
+use_cases:
+  - tenant_proxy_configuration
+  - ip_address_conservation
+  - fqdn_tenant_access_setup
+  - multi_tenant_proxy_management
 tags:
   - proxy setup
   - network
-  - alia
+  - alias
   - tenant
-  - DNS
+  - dns
   - proxy
 categories:
   - Tenant

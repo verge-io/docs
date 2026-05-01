@@ -1,11 +1,22 @@
 ---
 title: Proper Power Sequence
 slug: proper-power-sequence-for-vergeos
-description: Proper Power Sequence
+description: Correct shutdown and power-on sequence for a VergeOS environment, including multi-cluster considerations and the order for controller nodes.
+author: VergeOS Documentation Team
 draft: false
 date: 2023-01-23T22:25:43.163Z
+semantic_keywords:
+  - "VergeOS shutdown power on sequence"
+  - "cluster node power off order"
+  - "controller node startup sequence"
+  - "graceful shutdown workloads tenants"
+use_cases:
+  - shutdown_vergeos_environment
+  - power_on_vergeos_cluster
+  - follow_proper_node_startup_order
+  - perform_planned_maintenance_shutdown
 tags:
-  - vergeOS
+  - vergeos
   - shutdown
   - power on
   - troubleshooting

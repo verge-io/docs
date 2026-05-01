@@ -1,3 +1,26 @@
+---
+title: "Viewing Import Jobs"
+description: "Instructions for viewing and monitoring VM import job status, child jobs, and imported VM listings in VergeOS."
+semantic_keywords:
+  - "view VM import job status and progress"
+  - "monitor import child jobs and logs"
+  - "list VMs imported from import job"
+  - "check import job dashboard details"
+use_cases:
+  - monitor_import_job_progress
+  - view_imported_vm_listing
+  - troubleshoot_import_job_status
+tags:
+  - virtual-machines
+  - import
+  - monitoring
+  - jobs
+  - migration
+  - dashboard
+categories:
+  - Virtual Machines
+---
+
 # Viewing Import Jobs
 
 ## View All Import Jobs

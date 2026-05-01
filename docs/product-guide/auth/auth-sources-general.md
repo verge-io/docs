@@ -1,3 +1,29 @@
+---
+title: "Authorization Sources - Overview"
+description: "General instructions for configuring third-party OAuth2 identity providers such as Okta, GitLab, Azure AD, and Google for user authentication in VergeOS."
+semantic_keywords:
+  - "configure OAuth2 authorization source VergeOS"
+  - "third-party identity provider SSO login setup"
+  - "external authentication source client ID client secret"
+  - "auto-create users from OAuth provider group membership"
+  - "VergeOS login page sign-in button customization"
+use_cases:
+  - configure_oauth2_auth_source
+  - set_remote_user_fields
+  - enable_auto_create_users
+  - customize_login_button_styling
+  - sync_group_membership_from_idp
+tags:
+  - authentication
+  - authorization
+  - oauth2
+  - sso
+  - identity-provider
+  - user-management
+  - login
+categories:
+  - Security
+---
 
 # Authorization Sources - Overview
 

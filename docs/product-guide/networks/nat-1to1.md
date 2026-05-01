@@ -1,3 +1,27 @@
+---
+title: "Configuring NAT 1-to-1 Translation"
+description: "Create a NAT 1-to-1 translate rule to map an external public IP address to an internal private IP address for full bidirectional traffic forwarding."
+semantic_keywords:
+  - "NAT 1-to-1 translation external to internal IP"
+  - "map public IP to private IP address VergeOS"
+  - "translate rule NAT external internal network"
+  - "one-to-one NAT port forwarding VergeOS"
+use_cases:
+  - configure_1to1_nat_translation
+  - map_external_ip_to_internal_vm
+  - enable_bidirectional_nat
+  - expose_internal_server_with_public_ip
+tags:
+  - networking
+  - nat
+  - translation
+  - external-ip
+  - internal-network
+  - firewall-rules
+categories:
+  - Networking
+---
+
 # Configuring NAT 1-to-1 Translation
 
 Before creating the translate rule to NAT an external IP to an internal IP:

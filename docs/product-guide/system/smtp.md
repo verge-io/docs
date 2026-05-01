@@ -1,3 +1,32 @@
+---
+title: "SMTP"
+description: "How to configure, test, and troubleshoot SMTP email settings in VergeOS, including relay configuration, TLS, queue management, mail logs, and troubleshooting delivery issues."
+semantic_keywords:
+  - "VergeOS SMTP email configuration relay"
+  - "SMTP troubleshooting delivery failure SPF DMARC"
+  - "test SMTP send email queue flush delete"
+  - "TLS relay host port SASL authentication"
+  - "mail log SMTP reports subscription alerts"
+use_cases:
+  - configure_smtp_email_settings
+  - test_smtp_configuration
+  - troubleshoot_email_delivery
+  - manage_smtp_queue
+  - configure_relay_host
+  - review_smtp_logs_and_reports
+tags:
+  - smtp
+  - email
+  - configuration
+  - troubleshooting
+  - tls
+  - relay
+  - notifications
+  - subscriptions
+categories:
+  - System Administration
+---
+
 # SMTP
 
 This page provides instructions for configuration and administration of SMTP in a VergeOS system. [Subscriptions](/product-guide/system/subscriptions-overview) (used for system alerts and notifications) rely on effective SMTP configuration. 

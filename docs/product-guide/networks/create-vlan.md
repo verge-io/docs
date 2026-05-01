@@ -1,3 +1,27 @@
+---
+title: "Configuring VLANs"
+description: "Step-by-step instructions for creating VLAN-tagged external networks in VergeOS, including host-level and tenant configurations."
+semantic_keywords:
+  - "configure VLAN network VergeOS"
+  - "create VLAN tagged external network"
+  - "VLAN setup host tenant switchport"
+  - "layer 2 VLAN network segmentation"
+use_cases:
+  - create_vlan_network
+  - segment_network_traffic_by_vlan
+  - configure_tenant_vlan_access
+  - attach_vm_to_vlan
+tags:
+  - networking
+  - vlan
+  - external-network
+  - layer-2
+  - segmentation
+  - configuration
+categories:
+  - Networking
+---
+
 # Configuring VLANs
 
 ## Prerequisites

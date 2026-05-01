@@ -1,3 +1,29 @@
+---
+title: "Working With Virtual Machines (VMs)"
+description: "Day-to-day VM management operations in VergeOS including console access, cloning, deleting, and power operations like restart, reset, and kill."
+semantic_keywords:
+  - "VM console access remote desktop VergeOS"
+  - "clone virtual machine create copy replica"
+  - "delete power off restart VM operations"
+  - "kill power hard reset graceful shutdown VM"
+use_cases:
+  - access_vm_console
+  - clone_virtual_machine
+  - delete_virtual_machine
+  - manage_vm_power_operations
+tags:
+  - virtual-machines
+  - management
+  - cloning
+  - power-operations
+  - console
+  - delete
+  - restart
+  - acpi
+categories:
+  - Virtual Machines
+---
+
 # Working With Virtual Machines (VMs)
 
 ## VM Console Access

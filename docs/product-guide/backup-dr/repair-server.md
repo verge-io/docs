@@ -1,3 +1,27 @@
+---
+title: "Repair Server (ioGuardian)"
+description: "How to create and configure a repair server (ioGuardian) that automatically recovers corrupted or missing data blocks from a synchronized remote VergeOS system."
+semantic_keywords:
+  - "repair server ioGuardian VergeOS data recovery"
+  - "automatic data block repair sync destination"
+  - "create repair server from outgoing sync"
+  - "vSAN data integrity hardware failure recovery"
+use_cases:
+  - "create_repair_server_from_sync"
+  - "configure_automatic_data_repair"
+  - "recover_from_multi_drive_failure"
+  - "setup_ioguardian_data_healing"
+tags:
+  - repair-server
+  - ioguardian
+  - data-recovery
+  - site-syncs
+  - vsan
+  - redundancy
+categories:
+  - Backup and DR
+---
+
 # Repair Server (ioGuardian)
 
 A repair server provides a potential repair mechanism after a system experiences a problem that extends beyond its redundancy tolerance (e.g. simultaneous, multiple drive failures spanning multiple nodes). Typically, a repair server is a sync destination that contains a fairly recent replication of the given system. A repair server will automatically attempt to pull back any needed blocks from the remote system, potentially avoiding the need to roll back using a snapshot. It is generally recommended that you have a repair server in place whenever possible.

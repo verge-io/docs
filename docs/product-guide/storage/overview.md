@@ -1,3 +1,29 @@
+---
+title: "Storage Overview"
+description: "Overview of VergeOS integrated storage capabilities including vSAN (VergeFS), data protection with snapshots and replication, and file-level storage with NAS services."
+semantic_keywords:
+  - "VergeOS storage overview vSAN VergeFS"
+  - "hyperconverged storage deduplication self-healing"
+  - "integrated data protection snapshots replication"
+  - "VergeOS NAS file management ISO uploads"
+use_cases:
+  - storage_architecture_understanding
+  - vsan_feature_evaluation
+  - data_protection_planning
+  - file_management_overview
+tags:
+  - storage
+  - vsan
+  - vergefs
+  - deduplication
+  - snapshots
+  - replication
+  - nas
+  - overview
+categories:
+  - Storage
+---
+
 # Storage Overview
 
 VergeOS provides an integrated storage solution that can be tailored to meet diverse workload requirements and provide simplified administration.

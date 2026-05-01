@@ -1,9 +1,23 @@
 ---
 title: Wireguard - Setup Remote Access VPN
 slug: wireguard--setup-remote-access-vpn
-description: How to setup a Remote Access VPN using Wireguard
+description: Complete guide to setting up a WireGuard remote access VPN in VergeOS, including interface creation, PAT rules, SNAT configuration, and client peer setup.
+author: VergeOS Documentation Team
 draft: false
 date: 2024-02-06T18:49:12.726Z
+semantic_keywords:
+  - "wireguard remote access vpn setup"
+  - "pat rule port address translation external network"
+  - "snat rule outgoing traffic dmz ip"
+  - "wireguard peer configuration client tunnel"
+  - "vergeos internal network vpn firewall rules"
+use_cases:
+  - set_up_wireguard_remote_access_vpn
+  - create_external_pat_rule_for_vpn
+  - configure_snat_for_non_ui_ip
+  - add_remote_user_peer_to_wireguard
+  - download_wireguard_client_config
+  - install_wireguard_client_software
 tags:
   - network
   - vpn

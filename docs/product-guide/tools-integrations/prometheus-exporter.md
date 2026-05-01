@@ -1,3 +1,27 @@
+---
+title: "VergeOS Prometheus Exporter (ioMetrics)"
+description: "The VergeOS Prometheus Exporter collects metrics from VergeOS environments and exposes them in Prometheus format for monitoring vSAN tiers, clusters, and nodes."
+semantic_keywords:
+  - "VergeOS Prometheus metrics exporter monitoring"
+  - "vSAN cluster node metrics Grafana"
+  - "VergeOS infrastructure monitoring observability"
+  - "storage performance metrics Prometheus format"
+use_cases:
+  - infrastructure_monitoring
+  - storage_performance_tracking
+  - grafana_dashboard_integration
+  - cluster_health_observability
+tags:
+  - prometheus
+  - monitoring
+  - metrics
+  - grafana
+  - observability
+  - vsan
+categories:
+  - Automation
+---
+
 # VergeOS Prometheus Exporter (ioMetrics)
 
 ## Overview

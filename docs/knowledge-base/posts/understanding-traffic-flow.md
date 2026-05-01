@@ -1,9 +1,19 @@
 ---
 title: Understanding Traffic Flow
 slug: understanding-traffic-flow
-description: 
+description: Visual diagrams illustrating VergeOS network traffic flow, including external VLAN wiring, internal network connectivity, and core network configuration.
+author: VergeOS Documentation Team
 draft: false
 date: 2024-03-21T18:44:21.203Z
+semantic_keywords:
+  - "vergeos network traffic flow diagram"
+  - "external vlan internal network wiring"
+  - "core network configuration overview"
+  - "network architecture traffic routing visual"
+use_cases:
+  - understand_vergeos_traffic_flow
+  - review_network_wiring_diagrams
+  - learn_core_network_architecture
 tags:
   - network
   - traffic

@@ -1,3 +1,27 @@
+---
+title: "Release Notes"
+description: "Overview of all VergeOS release versions, version numbering conventions, update process guidance, and links to detailed release notes for each version."
+semantic_keywords:
+  - "VergeOS release notes overview all versions"
+  - "VergeOS version history and update path"
+  - "VergeOS semantic versioning and version numbering"
+  - "VergeOS end of life and supported versions"
+use_cases:
+  - check_current_supported_versions
+  - plan_upgrade_path
+  - understand_version_numbering
+  - find_release_notes_by_version
+tags:
+  - release-notes
+  - versioning
+  - updates
+  - upgrade-path
+  - end-of-life
+  - supported-versions
+categories:
+  - Release Notes
+---
+
 # Release Notes
 
 Welcome to the VergeOS Release Notes. This section provides information about each release version of VergeOS. Click on any version number to view the detailed release notes for that version.
@@ -11,7 +35,7 @@ Welcome to the VergeOS Release Notes. This section provides information about ea
 
 | Release | Initial Release | Latest Version | Status | End-of-Life |
 |--------|----------------|----------------|---------|-------------|
-| [26.1](26-1-release-notes.md) | January 2026 | 26.1.2 (February 2026) | Latest | TBD |
+| [26.1](26-1-release-notes.md) | January 2026 | 26.1.3.1 (March 2026) | Latest | TBD |
 | [26.0](26-0-release-notes.md) | October 2025 | 26.0.2.2 (December 2025) | Supported | TBD |
 | [4.13](4-13-release-notes.md) | November 2024 | 4.13.4.2 (August 2025) | Supported | TBD |
 | [4.12](4-12-release-notes.md) | February 2024 | 4.12.6 (July 2024) | Deprecated | January 2026 |

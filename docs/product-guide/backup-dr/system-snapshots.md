@@ -1,3 +1,28 @@
+---
+title: "System Snapshots"
+description: "How to manage system snapshots in VergeOS including full and partial snapshots with custom tagging, automated scheduling via profiles, manual snapshot creation, and storage best practices."
+semantic_keywords:
+  - "system snapshots full partial VergeOS"
+  - "automated system snapshot schedule profile"
+  - "manual system snapshot before maintenance"
+  - "partial system snapshot custom tagging include exclude"
+use_cases:
+  - "configure_automated_system_snapshots"
+  - "take_manual_system_snapshot"
+  - "setup_partial_system_snapshots"
+  - "manage_system_snapshot_retention"
+tags:
+  - snapshots
+  - system-snapshots
+  - scheduling
+  - automation
+  - data-protection
+  - storage
+  - tagging
+categories:
+  - Backup and DR
+---
+
 # System Snapshots
 
 

@@ -1,3 +1,30 @@
+---
+title: "Connect VergeOS to an Existing LAN/WAN"
+description: "Create and configure external networks to connect VergeOS to existing LAN, WAN, or other physical network infrastructure with full Layer 2 and Layer 3 options."
+semantic_keywords:
+  - "connect VergeOS to existing LAN WAN network"
+  - "create external network physical connection"
+  - "external network VLAN DHCP configuration"
+  - "integrate VergeOS with corporate network infrastructure"
+use_cases:
+  - create_external_network
+  - connect_to_existing_lan
+  - configure_wan_connectivity
+  - setup_vlan_external_network
+  - integrate_with_physical_infrastructure
+tags:
+  - networking
+  - external-network
+  - lan
+  - wan
+  - vlan
+  - dhcp
+  - routing
+  - configuration
+categories:
+  - Networking
+---
+
 # Connect VergeOS to an Existing LAN/WAN
 
 ## How to Connect to an Existing Network

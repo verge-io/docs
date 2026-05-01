@@ -1,9 +1,19 @@
 ---
 title: Viewing Tenant Consumption Statistics
 slug: viewing-tenant-consumption-statistics
-description: 
+description: How to view tenant RAM and storage consumption statistics using the tenant history dashboard, including 95th percentile calculations.
+author: VergeOS Documentation Team
 draft: false
 date: 2023-03-16T15:34:52.280Z
+semantic_keywords:
+  - "tenant consumption statistics 95th percentile"
+  - "tenant RAM storage usage dashboard"
+  - "tenant history billing consumption"
+  - "tenant resource allocation monitoring"
+use_cases:
+  - view_tenant_ram_consumption_statistics
+  - check_tenant_storage_tier_usage
+  - review_tenant_monthly_resource_consumption
 tags:
   - tenant
   - stats

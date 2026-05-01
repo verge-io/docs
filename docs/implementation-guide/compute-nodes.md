@@ -1,3 +1,25 @@
+---
+title: "Compute Only Node Installation Guide"
+description: "Step-by-step instructions for installing compute-only nodes in VergeOS to expand processing capacity without impacting existing storage infrastructure."
+semantic_keywords:
+  - "VergeOS compute only node installation"
+  - "add compute resources without storage"
+  - "compute node USB installer VergeOS"
+  - "expand processing power VergeOS cluster"
+use_cases:
+  - compute_node_installation
+  - processing_capacity_expansion
+  - compute_cluster_creation
+tags:
+  - installation
+  - compute-node
+  - compute-cluster
+  - expansion
+  - processing
+categories:
+  - Installation
+---
+
 # Compute Only Node Installation Guide
 
 ## Introduction

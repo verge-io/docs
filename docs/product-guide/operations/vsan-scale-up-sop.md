@@ -1,3 +1,32 @@
+---
+title: "VergeOS vSAN Scale Up Guide"
+description: "Standard operating procedure for scaling up vSAN storage capacity by adding drives to existing VergeOS nodes, including preparation, verification, execution, and post-scale-up checks."
+semantic_keywords:
+  - "scale up vSAN add drives to existing nodes"
+  - "expand storage capacity VergeOS vSAN tier"
+  - "add new drives format initialize vSAN repair"
+  - "pre-scale up verification checklist storage health"
+  - "post-scale up drive detection capacity validation"
+use_cases:
+  - scale_up_vsan_storage
+  - prepare_for_drive_addition
+  - verify_pre_scale_up_health
+  - add_drives_to_vsan_tier
+  - validate_post_scale_up
+  - troubleshoot_drive_detection
+tags:
+  - scale-up
+  - vsan
+  - storage
+  - drives
+  - capacity
+  - sop
+  - operations
+  - maintenance
+categories:
+  - System Administration
+---
+
 # VergeOS vSAN Scale Up Guide
 
 This guide provides best practices for safely scaling up storage capacity in a VergeOS system by adding drives to existing nodes. It focuses on data security and system resilience through a methodical approach.

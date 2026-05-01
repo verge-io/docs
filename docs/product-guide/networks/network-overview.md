@@ -1,3 +1,32 @@
+---
+title: "Networking (VergeFabric)"
+description: "Overview of VergeFabric software-defined networking in VergeOS, covering SDN features, network types, security, automation, multi-cloud support, and use cases for service providers, enterprises, and developers."
+semantic_keywords:
+  - "VergeFabric software-defined networking SDN overview"
+  - "VergeOS networking features capabilities"
+  - "micro-segmentation distributed firewall automation"
+  - "multi-tenant network isolation service provider"
+  - "API-driven networking infrastructure as code"
+use_cases:
+  - understand_vergefabric_sdn_capabilities
+  - evaluate_networking_features
+  - plan_network_architecture
+  - implement_multi_tenant_networking
+  - integrate_api_driven_network_automation
+tags:
+  - networking
+  - sdn
+  - vergefabric
+  - overview
+  - micro-segmentation
+  - firewall
+  - automation
+  - multi-tenant
+  - vpn
+categories:
+  - Networking
+---
+
 # Networking (VergeFabric)
 
 *VergeFabric* provides integrated, software-defined networking (SDN) to your VergeOS environment, enabling the creation of logical networks independent of physical infrastructure. With VergeFabric, you can create and manage virtual networks on demand and deploy networks instantly, without complicated configurations or reliance on networking specialists.

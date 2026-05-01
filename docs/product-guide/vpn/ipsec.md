@@ -1,3 +1,33 @@
+---
+title: "IPsec Configuration"
+description: "Step-by-step instructions for configuring an IPsec VPN tunnel between a VergeOS network and a third-party IPsec peer, including Phase 1, Phase 2, and firewall rule setup."
+semantic_keywords:
+  - "IPsec VPN tunnel configuration third-party peer"
+  - "Phase 1 Phase 2 IKE encryption pre-shared key"
+  - "VPN network firewall routing rules ESP AH"
+  - "dead peer detection rekey IPsec troubleshooting"
+  - "site-to-site IPsec Cisco pfSense VergeOS"
+use_cases:
+  - configure_ipsec_tunnel
+  - create_vpn_network
+  - setup_phase1_encryption
+  - setup_phase2_encryption
+  - configure_vpn_firewall_rules
+  - troubleshoot_ipsec_connection
+tags:
+  - vpn
+  - ipsec
+  - site-to-site
+  - encryption
+  - firewall
+  - networking
+  - security
+  - phase1
+  - phase2
+categories:
+  - VPN
+---
+
 # IPsec Configuration
 
 VergeOS includes IPsec compatibility to allow for configuration of a VPN tunnel between a VergeOS network and a third-party IPsec Peer.

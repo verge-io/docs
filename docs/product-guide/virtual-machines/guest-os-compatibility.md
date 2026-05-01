@@ -1,3 +1,31 @@
+---
+title: "VergeOS Guest OS Compatibility"
+description: "Reference guide for supported guest operating systems on VergeOS, including Windows, Linux, and FreeBSD versions with recommended interfaces and minimum requirements."
+semantic_keywords:
+  - "supported operating systems for VergeOS VMs"
+  - "Windows server guest compatibility KVM"
+  - "Linux distribution support VirtIO drivers"
+  - "FreeBSD virtual machine compatibility"
+  - "guest OS minimum RAM and interface requirements"
+use_cases:
+  - verify_os_compatibility
+  - select_disk_interface_for_guest
+  - plan_vm_resource_requirements
+  - evaluate_legacy_os_support
+tags:
+  - compatibility
+  - guest-os
+  - windows
+  - linux
+  - freebsd
+  - virtio
+  - kvm
+  - drivers
+  - virtual-machines
+categories:
+  - Virtual Machines
+---
+
 # VergeOS Guest OS Compatibility
 
 VergeOS, built on Linux KVM technology, provides extensive compatibility for x86_64 guest operating systems. This includes Windows, Linux distributions, FreeBSD, and virtual appliances designed for KVM environments. While any x86_64-compatible operating system should work without issues, this guide outlines commonly tested configurations.

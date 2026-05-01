@@ -1,3 +1,28 @@
+---
+title: "Task Engine"
+description: "Overview of the VergeOS Task Engine for automating operations with event-based and schedule-based triggers, including modular architecture for tasks, schedules, events, and webhooks."
+semantic_keywords:
+  - "VergeOS task engine automated operations"
+  - "event-driven and schedule-based task automation"
+  - "modular automation with tasks events schedules webhooks"
+  - "system automation orchestration overview"
+use_cases:
+  - automate_event_driven_operations
+  - schedule_recurring_system_tasks
+  - orchestrate_modular_automation
+  - configure_task_engine_components
+tags:
+  - task engine
+  - automation
+  - event
+  - schedule
+  - webhook
+  - orchestration
+  - modular
+categories:
+  - Automation
+---
+
 # Task Engine
 
 The **Task Engine** enables automated operations in VergeOS, triggered either by specific events or scheduled times. Defined tasks can run once or recur based on your configuration.

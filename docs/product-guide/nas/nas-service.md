@@ -1,3 +1,30 @@
+---
+title: "Add a NAS Service"
+description: "How to deploy and configure a NAS service in VergeOS by implementing the NAS VM recipe, including network, IP, hostname, and domain settings."
+semantic_keywords:
+  - "add NAS service to VergeOS system"
+  - "deploy NAS VM recipe for file-level storage"
+  - "configure NAS service network IP and hostname"
+  - "NAS service setup and initial configuration"
+use_cases:
+  - deploy_nas_service
+  - configure_nas_networking
+  - set_nas_hostname_and_domain
+  - download_nas_vm_recipe
+  - create_nas_volumes
+tags:
+  - nas
+  - service
+  - setup
+  - deployment
+  - vm recipe
+  - networking
+  - hostname
+  - file storage
+categories:
+  - NAS
+---
+
 # Add a NAS Service
 
 The NAS feature provides file-level storage/access within a VergeOS system. NAS functionality can be added by downloading and implementing an instance of the standard NAS VM Recipe.

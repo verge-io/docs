@@ -1,3 +1,31 @@
+---
+title: "Server Certificates"
+description: "How to manage TLS/SSL certificates in VergeOS, including requesting Let's Encrypt certificates, installing manual certificates, configuring listeners, and registering custom root CAs."
+semantic_keywords:
+  - "VergeOS TLS SSL certificate management"
+  - "Let's Encrypt ACME certificate request auto-renewal"
+  - "manual certificate install public private key chain"
+  - "HTTPS listener port cipher configuration"
+  - "custom root CA trust store enterprise"
+use_cases:
+  - request_lets_encrypt_certificate
+  - install_manual_tls_certificate
+  - configure_custom_listener_port
+  - register_custom_root_ca
+  - manage_certificate_lifecycle
+tags:
+  - certificates
+  - tls
+  - ssl
+  - lets-encrypt
+  - acme
+  - https
+  - security
+  - listeners
+categories:
+  - System Administration
+---
+
 # Server Certificates
 
 The VergeOS web server requires HTTPS and must be configured with at least one TLS certificate. By default, the system installs with a self-signed certificate. VergeOS also includes built-in functionality to request and apply a free TLS certificate from **Let’s Encrypt**.  You can also manually install a certificate from any other Certificate Authority (CA).

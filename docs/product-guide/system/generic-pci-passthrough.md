@@ -1,3 +1,29 @@
+---
+title: "One-to-One PCI Passthrough"
+description: "How to configure one-to-one PCI passthrough in VergeOS, including host setup, VM guest configuration, resource group creation, and passing PCI devices to tenants."
+semantic_keywords:
+  - "VergeOS PCI passthrough configuration VM"
+  - "one-to-one PCI device passthrough host guest"
+  - "GPU passthrough resource group rules"
+  - "pass PCI device to tenant virtual machine"
+  - "PCI device make resource node reboot"
+use_cases:
+  - configure_pci_passthrough_for_vm
+  - create_pci_resource_group
+  - pass_pci_device_to_tenant
+  - attach_pci_device_to_guest
+tags:
+  - pci
+  - passthrough
+  - gpu
+  - resource-groups
+  - virtual-machines
+  - tenants
+  - hardware
+categories:
+  - System Administration
+---
+
 # One-to-One PCI Passthrough
 
 One-to-One PCI passthrough involves giving a single VM at a time, access to a PCI device that is physically attached to a host node. The VM guest operating system utilizes the device as if it were directly attached.

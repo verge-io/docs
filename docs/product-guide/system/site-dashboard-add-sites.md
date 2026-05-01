@@ -1,3 +1,29 @@
+---
+title: "Configuring the Sites Dashboard (Adding Sites)"
+description: "How to add remote VergeOS systems to the Sites Dashboard, including configuring sync, statistics monitoring, machine management, and repair server options."
+semantic_keywords:
+  - "VergeOS sites dashboard add remote system"
+  - "site sync system snapshots send receive"
+  - "remote machine management cross-system"
+  - "repair server bidirectional site configuration"
+  - "statistics monitoring multi-site dashboard"
+use_cases:
+  - add_remote_site_to_dashboard
+  - configure_site_sync_snapshots
+  - enable_remote_machine_management
+  - configure_repair_server
+  - enable_statistics_monitoring
+tags:
+  - sites
+  - dashboard
+  - sync
+  - disaster-recovery
+  - monitoring
+  - multi-site
+  - repair-server
+categories:
+  - System Administration
+---
 
 # Configuring the Sites Dashboard (Adding Sites)
 

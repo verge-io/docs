@@ -1,3 +1,28 @@
+---
+title: "Backup & Disaster Recovery (BC/DR)"
+description: "Overview of VergeOS built-in data protection and business continuity capabilities including snapshots, site syncs, and repair servers for comprehensive BC/DR."
+semantic_keywords:
+  - "VergeOS backup disaster recovery overview"
+  - "business continuity data protection snapshots syncs"
+  - "ransomware protection offsite replication DR"
+  - "backup strategy RTO RPO planning VergeOS"
+use_cases:
+  - "evaluate_bcdr_capabilities"
+  - "plan_backup_strategy"
+  - "understand_data_protection_options"
+  - "design_disaster_recovery_architecture"
+tags:
+  - backup
+  - disaster-recovery
+  - business-continuity
+  - snapshots
+  - site-syncs
+  - data-protection
+  - replication
+categories:
+  - Backup and DR
+---
+
 # Backup & Disaster Recovery (BC/DR)
 
 VergeOS provides comprehensive, built-in data protection and business continuity capabilities that safeguard your critical operations from cyberattacks, ransomware, hardware failures, accidental deletions, natural disasters, and extended outages. Unlike traditional solutions that require separate backup software and complex integrations, VergeOS delivers enterprise-grade BC/DR functionality natively within the platform.

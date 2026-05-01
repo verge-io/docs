@@ -1,3 +1,31 @@
+---
+title: "Local Volumes"
+description: "How to create and configure local NAS volumes in VergeOS, including encryption, storage tiering, snapshot profiles, and size management on the vSAN."
+semantic_keywords:
+  - "create local NAS volumes in VergeOS vSAN"
+  - "NAS volume encryption tiering and snapshot settings"
+  - "local file system volume configuration and management"
+  - "EXT4 volume creation with storage tier preferences"
+use_cases:
+  - create_local_nas_volumes
+  - configure_volume_encryption
+  - set_storage_tier_preferences
+  - assign_snapshot_profiles
+  - manage_volume_size_limits
+tags:
+  - nas
+  - volume
+  - local
+  - vsan
+  - encryption
+  - storage tier
+  - snapshot
+  - ext4
+  - file storage
+categories:
+  - NAS
+---
+
 # Local Volumes
 
 Local volumes are file systems stored within VergeOS, consuming storage in the VergeOS vSAN. Each local volume can have different sharing, syncing, tiering, and permission settings.

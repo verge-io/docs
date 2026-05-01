@@ -1,3 +1,27 @@
+---
+title: "Tenant Usage Reports"
+description: "How to run tenant usage history reports for 95th percentile billing, view average and maximum statistics, export CSV data, and configure subscription-based usage report emails."
+semantic_keywords:
+  - "tenant usage reports 95th percentile billing VergeOS"
+  - "tenant history statistics CSV export"
+  - "tenant resource usage reporting subscription email"
+  - "tenant billing capacity planning reports"
+use_cases:
+  - "run_tenant_usage_history_report"
+  - "export_tenant_usage_csv"
+  - "configure_tenant_usage_subscription"
+  - "tenant_billing_reporting"
+tags:
+  - tenants
+  - usage-reports
+  - billing
+  - statistics
+  - subscriptions
+  - csv-export
+categories:
+  - Tenants
+---
+
 # Tenant Usage Reports
 
 VergeOS stores usage statistics per tenant to accommodate 95th percentile billing. Additionally, max and average information are recorded.

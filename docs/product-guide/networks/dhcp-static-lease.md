@@ -1,3 +1,27 @@
+---
+title: "Create a DHCP Static Lease"
+description: "Reserve a fixed IP address for a virtual machine by creating a DHCP static lease entry tied to its MAC address."
+semantic_keywords:
+  - "DHCP static lease reservation VergeOS"
+  - "reserve fixed IP address for VM"
+  - "static IP MAC address DHCP binding"
+  - "convert dynamic DHCP to static lease"
+use_cases:
+  - reserve_static_ip_for_vm
+  - convert_dynamic_lease_to_static
+  - create_dhcp_reservation_by_mac
+  - ensure_consistent_vm_ip_address
+tags:
+  - networking
+  - dhcp
+  - static-lease
+  - ip-reservation
+  - virtual-machines
+  - configuration
+categories:
+  - Networking
+---
+
 # Create a DHCP Static Lease
 
 A network with the **Dynamic DHCP** option enabled will automatically assign IP addresses to clients. For virtual machines where it's advantageous to ensure the same address is always assigned, you can create a static IP address assigned to the associated MAC address.

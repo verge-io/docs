@@ -1,14 +1,25 @@
 ---
 title: VM Network Connectivity Issues
 slug: vm-network-connectivity-issues
-description: 
+description: Troubleshooting guide for common VM network connectivity problems including missing NIC configuration, incorrect network assignment, improper IP settings, and missing Virtio drivers.
+author: VergeOS Documentation Team
 draft: false
 date: 2023-01-24T19:28:39.954Z
+semantic_keywords:
+  - "vm network connectivity troubleshooting"
+  - "nic configuration missing driver"
+  - "virtio driver installation networking"
+  - "ip address configuration guest os"
+use_cases:
+  - troubleshoot_vm_network_connectivity
+  - diagnose_missing_nic_configuration
+  - fix_incorrect_network_assignment
+  - resolve_virtio_driver_issues
 tags:
   - vm
   - networking
-  - NIC
-  - IP
+  - nic
+  - ip
   - virtio
   - troubleshooting
 categories:

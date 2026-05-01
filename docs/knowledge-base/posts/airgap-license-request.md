@@ -1,9 +1,20 @@
 ---
 title: Requesting an Airgap License
 slug: requesting-an-airgap-license
-description: Guide on how to request and obtain an airgap license for VergeOS Systems with no outbound Internet access
+description: Guide on how to request and obtain an airgap license for VergeOS systems with no outbound Internet access, including generating the license request file and emailing it to Verge.
+author: VergeOS Documentation Team
 draft: false
 date: 2024-08-19T15:41:14.296Z
+semantic_keywords:
+  - "airgap license request air-gapped environment"
+  - "offline licensing no internet access"
+  - "license request file download email"
+  - "VergeOS system licensing activation"
+use_cases:
+  - request_airgap_license
+  - license_air_gapped_system
+  - generate_license_request_file
+  - offline_system_activation
 tags:
   - airgap
   - license

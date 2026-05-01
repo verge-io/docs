@@ -1,3 +1,31 @@
+---
+title: "Nodes Overview"
+description: "Overview of VergeOS node management, including node status, hardware configuration, resource metrics, drives, NICs, fabric status, running machines, and management operations."
+semantic_keywords:
+  - "VergeOS node dashboard status monitoring"
+  - "node hardware drives NICs memory PCI devices"
+  - "node management power control maintenance mode"
+  - "CPU RAM temperature resource metrics"
+  - "fabric status running machines workloads"
+use_cases:
+  - monitor_node_health_and_resources
+  - manage_node_power_and_maintenance
+  - review_node_hardware_configuration
+  - track_running_workloads_per_node
+  - monitor_drive_and_nic_status
+tags:
+  - nodes
+  - monitoring
+  - hardware
+  - drives
+  - nics
+  - maintenance
+  - workloads
+  - dashboard
+categories:
+  - System Administration
+---
+
 # Nodes Overview
 
 A node in VergeOS represents a physical or virtual server that contributes compute, storage, and networking resources to your environment. The Nodes dashboard provides comprehensive monitoring and management capabilities for each node in your system.

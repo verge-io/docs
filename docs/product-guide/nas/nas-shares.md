@@ -1,3 +1,30 @@
+---
+title: "Shares"
+description: "How to create NFS and CIFS shares on NAS volumes in VergeOS, including host access controls, user permissions, and advanced sharing options."
+semantic_keywords:
+  - "create NFS and CIFS shares on NAS volumes"
+  - "NAS share permissions access control configuration"
+  - "SMB CIFS share setup with valid users and groups"
+  - "NFS share squashing and host access settings"
+use_cases:
+  - create_nfs_shares
+  - create_cifs_shares
+  - configure_share_permissions
+  - restrict_host_access
+  - set_user_group_squashing
+tags:
+  - nas
+  - shares
+  - nfs
+  - cifs
+  - smb
+  - permissions
+  - access control
+  - file sharing
+categories:
+  - NAS
+---
+
 # Shares
 
 Shares can be created to provide NFS and/or CIFS access to a NAS volume.

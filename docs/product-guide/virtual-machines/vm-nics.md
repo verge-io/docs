@@ -1,3 +1,28 @@
+---
+title: "Virtual Machine Network Interfaces (NICs)"
+description: "Guide to adding, modifying, deleting, and disabling virtual network interfaces on VergeOS VMs, including interface types, MAC address management, and network assignment."
+semantic_keywords:
+  - "add NIC network interface to virtual machine"
+  - "VirtIO Intel E1000 network driver interface"
+  - "change VM MAC address network assignment"
+  - "delete disable NIC on running VM"
+use_cases:
+  - add_nic_to_vm
+  - configure_network_interface
+  - modify_vm_mac_address
+  - delete_disable_vm_nic
+tags:
+  - virtual-machines
+  - nics
+  - networking
+  - virtio
+  - mac-address
+  - network-interface
+  - drivers
+categories:
+  - Virtual Machines
+---
+
 # Virtual Machine Network Interfaces (NICs)
 
 ## Add a NIC to a VM
@@ -56,3 +81,6 @@
 
 !!! info
     You can also modify a NIC's *Network* field to ***--None--*** **to "unplug"** it from the network while the VM is running (does not require a reset/reboot.)
+
+!!! note "VMware Service VM NICs"
+    VMware service VMs use a different NIC type that includes an **IPv4 Configuration** panel for assigning static IP settings. For details, see [Configuring VMware Service VM NIC IPv4 Settings](/knowledge-base/vmware-service-vm-nic-ipv4-configuration/).

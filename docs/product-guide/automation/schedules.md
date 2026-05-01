@@ -1,3 +1,28 @@
+---
+title: "Schedules"
+description: "How to create and manage custom schedules in the VergeOS Task Engine for one-time or recurring task automation."
+semantic_keywords:
+  - "create custom task schedules in VergeOS"
+  - "recurring and one-time schedule configuration"
+  - "task engine schedule triggers setup"
+  - "automated task timing and frequency settings"
+use_cases:
+  - create_custom_schedules
+  - configure_recurring_automation
+  - define_one_time_task_schedules
+  - assign_schedules_to_tasks
+tags:
+  - schedule
+  - automation
+  - task engine
+  - recurring
+  - one-time
+  - trigger
+  - cron
+categories:
+  - Automation
+---
+
 # Schedules
 
 VergeOS includes a **Schedule** feature as a modular component within the Task Engine, enabling you to fully customize when and how often tasks are executed.

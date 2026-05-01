@@ -1,3 +1,31 @@
+---
+title: "External Storage Integration"
+description: "Guide to integrating external SAN, NAS, and iSCSI storage with VergeOS, covering Fibre Channel LUNs as vSAN tiers, NFS/CIFS remote volumes, and in-guest storage passthrough options."
+semantic_keywords:
+  - "external SAN NAS storage VergeOS integration"
+  - "Fibre Channel LUN vSAN tier configuration"
+  - "iSCSI NFS CIFS passthrough VergeOS VMs"
+  - "existing storage infrastructure VergeOS migration"
+use_cases:
+  - fibre_channel_san_integration
+  - nfs_cifs_remote_volume_mounting
+  - in_guest_iscsi_passthrough
+  - legacy_storage_migration
+  - backup_target_integration
+tags:
+  - external-storage
+  - san
+  - nas
+  - iscsi
+  - fibre-channel
+  - nfs
+  - cifs
+  - vsan
+  - integration
+categories:
+  - Storage
+---
+
 # External Storage Integration
 
 ## Overview

@@ -1,14 +1,26 @@
 ---
+title: Settings that Influence VM Node Selection
 slug: determine-node-where-vm-runs
-description: VM options that control where a VM will run (which node)
+description: Explains VM options that control which node a VM runs on, including HA group affinity and anti-affinity, preferred node, preferred cluster, and failover cluster settings.
+author: VergeOS Documentation Team
 draft: false
 date: 2025-02-16T22:25:43.163Z
+semantic_keywords:
+  - "vm node selection affinity anti-affinity"
+  - "ha group preferred node cluster failover"
+  - "virtual machine placement host separation"
+  - "workload balancing node scheduling"
+use_cases:
+  - control_vm_node_placement
+  - configure_ha_group_affinity
+  - set_preferred_cluster_failover
+  - ensure_vm_host_separation
 tags:
   - virtual machine
   - vms
   - node affinity
-  - VM-host affinity
-  - VM-host anti-affinity
+  - vm-host affinity
+  - vm-host anti-affinity
   - host separation
   - node separation
   - clusters
@@ -29,7 +41,7 @@ Each time a VM is powered on or migrated, the system decides where to run the VM
 * **HA Group**
 
     * **Node Affinity:** (value starts with a "+", e.g. "+commapp") The system attempts to run VMs with the same HA Group value on the same node. This is used to coalesce application-related workloads to a single physical node for performance optimization.
-    * **Node Anti-affinity:** (value does NOT with "+", e.g. "webservers") VMs with the same HA Group value are run on separate nodes to provide high availability of applications or services.  
+    * **Node Anti-affinity:** (value does NOT start with "+", e.g. "webservers") VMs with the same HA Group value are run on separate nodes to provide high availability of applications or services.  
 
 * **Preferred Node:** a specific node is selected as the first-choice
 * **Preferred Cluster:** nodes in specified cluster used as first choice

@@ -1,3 +1,30 @@
+---
+title: "Tenant Recipes"
+description: "How to create and use tenant recipes in VergeOS for automating complete tenant deployments including networking, VMs, settings, and custom configuration questions."
+semantic_keywords:
+  - "create tenant recipes for automated deployment"
+  - "tenant provisioning templates with custom questions"
+  - "automate tenant onboarding with recipes"
+  - "tenant recipe configuration and database interaction"
+use_cases:
+  - create_tenant_recipes
+  - automate_tenant_provisioning
+  - customize_tenant_deployment_questions
+  - manage_recipe_instances
+  - configure_recipe_versioning
+tags:
+  - tenant
+  - recipe
+  - automation
+  - provisioning
+  - deployment
+  - template
+  - onboarding
+  - questions
+categories:
+  - Automation
+---
+
 # Tenant Recipes
 
 Tenant recipes allow automating tenant deployment. A tenant recipe can include everything needed to spawn a completely functional new tenant instance, including: tenant settings, networking configuration, included virtual machines, and automation for tasks such as creating randomized passwords, establishing unique hostnames/passwords/usernames, registering DHCP and DNS entries, sending notifications, and more. This page will walk you through the basic process of creating and using tenant recipes.

@@ -1,3 +1,30 @@
+---
+title: "Webhooks"
+description: "How to configure webhooks in VergeOS for push-based messaging to external systems, including webhook creation, task payload setup, and event trigger configuration."
+semantic_keywords:
+  - "configure VergeOS webhooks for external notifications"
+  - "push-based event-driven messaging to third-party systems"
+  - "webhook task and event trigger setup"
+  - "integrate VergeOS with Slack Zapier external APIs"
+use_cases:
+  - configure_webhooks
+  - send_event_notifications_to_external_systems
+  - integrate_with_third_party_services
+  - automate_alert_workflows
+  - create_webhook_task_event_chain
+tags:
+  - webhook
+  - automation
+  - integration
+  - notification
+  - event
+  - task
+  - api
+  - external system
+categories:
+  - Automation
+---
+
 # Webhooks
 
 Webhooks enable push-based messaging to external systems when specific events occur. When a trigger event takes place, a webhook sends an HTTP request (typically a POST) to a predefined URL. This push mechanism is more efficient than polling for both notifications and workflow automation, as the receiving system doesn't need to periodically check for updates.

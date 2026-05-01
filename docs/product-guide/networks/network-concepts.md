@@ -1,3 +1,32 @@
+---
+title: "Networking Concepts"
+description: "Foundational introduction to VergeOS networking concepts including physical, core, DMZ, internal, and external network types, tenant networking, Layer 2/3 support, network rules, and monitoring tools."
+semantic_keywords:
+  - "VergeOS networking concepts fundamentals"
+  - "internal external core DMZ network types"
+  - "software defined networking SDN virtual networks"
+  - "tenant networking layer 2 layer 3 support"
+  - "network rules firewall routing NAT overview"
+use_cases:
+  - understand_vergeos_network_types
+  - learn_sdn_fundamentals
+  - understand_tenant_networking
+  - review_layer2_layer3_differences
+  - explore_network_monitoring_tools
+tags:
+  - networking
+  - concepts
+  - sdn
+  - internal-network
+  - external-network
+  - dmz
+  - tenant
+  - layer-2
+  - layer-3
+categories:
+  - Networking
+---
+
 # Networking Concepts
 
 This guide provides a foundational introduction to VergeOS networking, helping beginners get familiar with its key concepts and features.

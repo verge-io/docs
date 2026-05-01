@@ -1,3 +1,32 @@
+---
+title: "Virtual Machine Best Practices"
+description: "Comprehensive best practices for VergeOS virtual machines covering RAM allocation, CPU selection, networking, storage, security, guest OS configuration, and data protection."
+semantic_keywords:
+  - "VergeOS VM best practices and recommendations"
+  - "virtual machine RAM CPU sizing guidelines"
+  - "VirtIO drivers performance optimization"
+  - "VM security remote console ACPI configuration"
+  - "snapshot sync data protection strategy"
+use_cases:
+  - optimize_vm_performance
+  - configure_vm_best_practices
+  - plan_vm_resource_allocation
+  - secure_vm_remote_console
+  - configure_guest_os_settings
+tags:
+  - virtual-machines
+  - best-practices
+  - performance
+  - security
+  - virtio
+  - ram
+  - cpu
+  - networking
+  - snapshots
+categories:
+  - Virtual Machines
+---
+
 # Virtual Machine Best Practices
 
 The following recommendations are for creating virtual machines to be used within VergeOS. Some involve the settings of the machine e.g. (RAM allocation, NICs, etc), while others pertain to configuration within the guest OS. Following best practice guidelines can avoid potential issues and provide better performance.

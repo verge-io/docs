@@ -1,9 +1,19 @@
 ---
 title: Windows Disks Showing Offline After Restarting
 slug: windows-disks-showing-offline-after-restarting
-description: 
+description: How to fix secondary virtual disks that show as offline after restarting a Windows VM imported into VergeOS, using the Set-StorageSetting PowerShell command.
+author: VergeOS Documentation Team
 draft: false
 date: 2023-01-24T14:16:57.949Z
+semantic_keywords:
+  - "windows disks offline after reboot restart"
+  - "Set-StorageSetting NewDiskPolicy OnlineAll PowerShell"
+  - "imported VM secondary disk not online"
+  - "windows disk management virtual machine"
+use_cases:
+  - fix_offline_disks_after_vm_restart
+  - resolve_imported_vm_disk_issues
+  - configure_windows_disk_online_policy
 tags:
   - windows
   - offline

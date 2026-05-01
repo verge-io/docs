@@ -1,3 +1,30 @@
+---
+title: "VergeOS Go SDK (govergeos)"
+description: "govergeos is a Go client library for managing VergeOS infrastructure through the REST API, providing type-safe interfaces for automating VMs, networking, storage, tenants, and disaster recovery."
+semantic_keywords:
+  - "VergeOS Go SDK API client library"
+  - "automate VergeOS infrastructure with Go"
+  - "govergeos VM networking storage automation"
+  - "programmatic VergeOS management Go lang"
+use_cases:
+  - infrastructure_automation
+  - kubernetes_operator_development
+  - ci_cd_environment_provisioning
+  - custom_monitoring_tooling
+  - backup_automation
+  - multi_tenant_provisioning
+tags:
+  - go
+  - sdk
+  - api
+  - automation
+  - infrastructure-as-code
+  - development
+  - govergeos
+categories:
+  - Automation
+---
+
 # VergeOS Go SDK (govergeos)
 
 ## Overview

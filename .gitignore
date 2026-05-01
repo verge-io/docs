@@ -85,3 +85,4 @@ debug
 .claude/CLAUDE.local.md
 .claude/logs/*.log
 .mcp.json
+.env

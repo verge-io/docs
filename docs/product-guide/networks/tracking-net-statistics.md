@@ -1,3 +1,27 @@
+---
+title: "Tracking Network Statistics"
+description: "Enable and view per-rule traffic statistics tracking for network rules in VergeOS, including packets and bytes counters for firewall, NAT, and translate rules."
+semantic_keywords:
+  - "track network rule statistics packets bytes"
+  - "enable per-rule traffic statistics VergeOS"
+  - "network rule counters monitoring"
+  - "view reset clear rule statistics"
+use_cases:
+  - enable_statistics_tracking_for_all_rules
+  - track_individual_rule_traffic
+  - view_packets_and_bytes_per_rule
+  - reset_rule_statistics_counters
+tags:
+  - networking
+  - statistics
+  - monitoring
+  - network-rules
+  - traffic-analysis
+  - firewall
+categories:
+  - Networking
+---
+
 # Tracking Network Statistics
 
 Statistics tracking can be enabled for *Accept, Drop, Reject* and *Translate* rules. This allows viewing the total number of packets/bytes processed by a rule. Currently, statistics cannot be tracked for *Route* rules.

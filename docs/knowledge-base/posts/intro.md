@@ -6,6 +6,15 @@ author: VergeOS Documentation Team
 pin: true
 draft: false
 date: 2025-03-10T12:00:00.000Z
+semantic_keywords:
+  - "knowledge base navigation search categories"
+  - "vergeos documentation getting started guide"
+  - "troubleshooting articles how-to best practices"
+  - "knowledge base article structure tags"
+use_cases:
+  - knowledge_base_navigation
+  - documentation_search_discovery
+  - getting_started_orientation
 tags:
   - getting started
   - knowledge base

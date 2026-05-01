@@ -1,3 +1,28 @@
+---
+title: "Using Fibre Channel Storage with vSAN"
+description: "How to configure Fibre Channel LUNs as storage devices within VergeOS vSAN tiers, including hardware requirements, multipath configuration, fabric setup, and best practices."
+semantic_keywords:
+  - "Fibre Channel LUN vSAN storage configuration"
+  - "FC HBA multipath VergeOS setup"
+  - "SAN storage integration vSAN tier"
+  - "Fibre Channel zoning WWPN VergeOS nodes"
+use_cases:
+  - fibre_channel_vsan_tier_setup
+  - multipath_configuration
+  - san_infrastructure_integration
+  - storage_capacity_expansion
+tags:
+  - fibre-channel
+  - vsan
+  - san
+  - multipath
+  - hba
+  - storage-tiers
+  - lun
+categories:
+  - Storage
+---
+
 # Using Fibre Channel Storage with vSAN
 
 ## Overview

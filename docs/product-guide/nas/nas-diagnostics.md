@@ -1,3 +1,34 @@
+---
+title: "NAS Diagnostics Guide"
+description: "Comprehensive reference for NAS diagnostic commands in VergeOS, covering network troubleshooting, file sharing protocol analysis, and performance monitoring for SMB/CIFS and NFS services."
+semantic_keywords:
+  - "NAS diagnostics troubleshooting commands VergeOS"
+  - "SMB CIFS NFS file sharing service diagnostics"
+  - "network storage performance monitoring and analysis"
+  - "NAS connectivity authentication and protocol troubleshooting"
+  - "Samba Winbind Active Directory NAS diagnostics"
+use_cases:
+  - troubleshoot_nas_connectivity
+  - diagnose_smb_cifs_issues
+  - diagnose_nfs_issues
+  - monitor_nas_performance
+  - troubleshoot_active_directory_integration
+  - analyze_network_traffic
+tags:
+  - nas
+  - diagnostics
+  - troubleshooting
+  - smb
+  - cifs
+  - nfs
+  - samba
+  - winbind
+  - network
+  - performance
+categories:
+  - NAS
+---
+
 # NAS Diagnostics Guide
 
 ## Overview

@@ -1,3 +1,30 @@
+---
+title: "NAS Volume Snapshots and Restores"
+description: "How to create, schedule, and restore NAS volume snapshots in VergeOS, including quiesced snapshots, snapshot profiles, and restore-to-new or restore-over-source options."
+semantic_keywords:
+  - "NAS volume snapshot and restore procedures"
+  - "quiesced snapshot freeze filesystem for consistent backup"
+  - "schedule automated volume snapshots with profiles"
+  - "restore volume from snapshot to new or overwrite existing"
+use_cases:
+  - take_manual_volume_snapshots
+  - schedule_automated_snapshots
+  - restore_volume_from_snapshot
+  - import_snapshots_from_system_snapshots
+  - create_quiesced_snapshots
+tags:
+  - nas
+  - snapshot
+  - restore
+  - backup
+  - quiesce
+  - volume
+  - snapshot profile
+  - data protection
+categories:
+  - NAS
+---
+
 # NAS Volume Snapshots and Restores
 
 Volume-level snapshots allow for customizing snapshot schedule and retention rules per individual NAS volume and provide the option for a quiesced snapshot. (Non-quiesced NAS volumes can be imported from full system snapshots to be used for restore.)

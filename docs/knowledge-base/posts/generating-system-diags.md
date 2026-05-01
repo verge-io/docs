@@ -1,9 +1,20 @@
 ---
 title: Generating System Diagnostics
 slug: generating-system-diagnostics
-description: 
+description: How to generate and submit a system diagnostics report in VergeOS, which packages detailed logs from all nodes into a compressed file for support analysis.
+author: VergeOS Documentation Team
 draft: false
 date: 2024-03-28T15:48:32.403Z
+semantic_keywords:
+  - "system diagnostics report generation"
+  - "VergeOS support log collection"
+  - "compressed diagnostic file download"
+  - "troubleshooting node logs send support"
+use_cases:
+  - generate_system_diagnostics_report
+  - send_diagnostics_to_support
+  - download_diagnostic_log_file
+  - troubleshoot_system_issues
 tags:
   - troubleshooting
   - diagnostics

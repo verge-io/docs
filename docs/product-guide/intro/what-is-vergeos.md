@@ -1,3 +1,34 @@
+---
+title: "What is VergeOS"
+description: "Introduction to VergeOS, an ultraconverged infrastructure operating system that unifies compute, storage, networking, and multi-tenancy into a single platform. Covers core architecture, key features, deployment models, and common use cases."
+semantic_keywords:
+  - "what is VergeOS hyperconverged infrastructure"
+  - "VergeOS architecture overview VDC virtual data center"
+  - "VergeHV VergeFS VergeFabric platform components"
+  - "HCI vs UCI ultraconverged infrastructure comparison"
+  - "VergeOS use cases data center consolidation edge computing"
+use_cases:
+  - platform_evaluation
+  - architecture_understanding
+  - deployment_model_selection
+  - vmware_alternative_research
+  - infrastructure_modernization
+  - multi_tenancy_planning
+tags:
+  - overview
+  - architecture
+  - vergeos
+  - hci
+  - uci
+  - vergehv
+  - vergefs
+  - vergefabric
+  - multi-tenancy
+  - security
+categories:
+  - Getting Started
+---
+
 # What is VergeOS
 
 ## Overview

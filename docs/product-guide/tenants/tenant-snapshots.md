@@ -1,3 +1,27 @@
+---
+title: "Tenant Snapshots"
+description: "How to manage tenant snapshots including exposing provider snapshots to tenants, restoring tenants from snapshots, and tenant self-service snapshot access and VM recovery."
+semantic_keywords:
+  - "tenant snapshot management VergeOS"
+  - "expose provider snapshots to tenant self-service"
+  - "restore tenant from snapshot overwrite"
+  - "tenant VM recovery from provider snapshot"
+use_cases:
+  - "expose_provider_snapshots_to_tenant"
+  - "restore_tenant_from_snapshot"
+  - "tenant_self_service_snapshot_recovery"
+  - "recover_tenant_vm_from_provider_snapshot"
+tags:
+  - tenants
+  - snapshots
+  - restores
+  - self-service
+  - data-protection
+  - disaster-recovery
+categories:
+  - Tenants
+---
+
 # Tenant Snapshots
 
 Snapshots provide a way to obtain quick recovery points, allowing for a complete rollback of a system (to the point in time of a snapshot) to protect in the event of major unforeseen issues that may arise. A *Full* System Snapshot includes whole-system snapshots for each tenant as well. A tenant can be allowed (a per-tenant setting) to browse a listing of available provider snapshots and "self-serve" download selected timestamps to restore their entire system or individual VMs.

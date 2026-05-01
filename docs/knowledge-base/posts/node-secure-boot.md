@@ -1,10 +1,20 @@
 ---
 title: Secure Boot and Boot Integrity for Physical Nodes
 slug: node-secure-boot
-description: Understanding VergeOS boot integrity protection and why traditional UEFI Secure Boot is not used
+description: Understanding VergeOS boot integrity protection and why traditional UEFI Secure Boot is not used for physical nodes.
 author: VergeOS Documentation Team
-published: true
+draft: false
 date: 2026-01-16
+semantic_keywords:
+  - "secure boot uefi boot integrity verification"
+  - "vergeos tamper protection image validation"
+  - "bios secure boot disable installation"
+  - "boot integrity vs uefi secure boot comparison"
+use_cases:
+  - boot_integrity_understanding
+  - secure_boot_bios_configuration
+  - node_security_assessment
+  - pre_installation_bios_setup
 tags:
   - security
   - uefi

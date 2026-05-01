@@ -1,3 +1,27 @@
+---
+title: "Inuvika Integration with VergeOS"
+description: "Inuvika OVD Enterprise integration with VergeOS delivers virtual desktop infrastructure (VDI) and application delivery, enabling secure remote access to Windows and Linux desktops and applications."
+semantic_keywords:
+  - "virtual desktop infrastructure VDI VergeOS"
+  - "Inuvika OVD remote application delivery"
+  - "secure virtual workspace desktop access"
+  - "centralized desktop management VergeOS"
+use_cases:
+  - virtual_desktop_deployment
+  - remote_application_delivery
+  - centralized_workspace_management
+  - endpoint_security_hardening
+tags:
+  - inuvika
+  - vdi
+  - virtual-desktop
+  - application-delivery
+  - remote-access
+  - ovd
+categories:
+  - Automation
+---
+
 # Inuvika Integration with VergeOS
 
 ## Overview

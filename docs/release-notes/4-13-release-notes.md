@@ -1,7 +1,32 @@
 ---
-title: 4.13 Release Notes
-description: Release notes for the 4.13 series of VergeOS
-#icon: material/text-box-outline
+title: "4.13 Release Notes"
+description: "Release notes for the 4.13 series of VergeOS, featuring hardware passthrough (USB/PCI/SRIOV), experimental vGPU live migration, enhanced bonding with split brain detection, parallel update support, multipath/multichannel vSAN, and comprehensive HA improvements."
+semantic_keywords:
+  - "VergeOS 4.13 release notes and features"
+  - "VergeOS hardware passthrough USB PCI SRIOV"
+  - "VergeOS vGPU live migration and bonding improvements"
+  - "VergeOS 4.13 parallel updates and maintenance mode"
+  - "VergeOS multipath multichannel vSAN storage"
+use_cases:
+  - review_4_13_features
+  - plan_upgrade_from_4_13
+  - configure_hardware_passthrough
+  - enable_vgpu_live_migration
+  - review_bonding_split_brain_detection
+  - plan_parallel_updates
+tags:
+  - release-notes
+  - vergeos-4
+  - hardware-passthrough
+  - sriov
+  - vgpu
+  - live-migration
+  - bonding
+  - split-brain
+  - parallel-updates
+  - multipath
+categories:
+  - Release Notes
 ---
 
 # 4.13 Release Notes
@@ -63,11 +88,11 @@ description: Release notes for the 4.13 series of VergeOS
 ## 4.13.4.1 (August 2025)
 
 !!! info "Hotfix Release"
-    No reboot required (if System is currently on 4.13.x). Required update for our upcoming major release where we're moving to a different versioning system. Future updates will start with the last two digits of the year, followed by the quarter the development work started in on that release. i.e. 25.2
+    No reboot required (if System is currently on 4.13.x). Required update for our upcoming major release where we're moving to a different versioning system. Future updates will start with the last two digits of the year, followed by the quarter the development work started in on that release. i.e. 26.0
 
 #### Bug Fixes
 * Fixed two-factor authentication issues affecting TOTP authentication methods
-* Enhanced UI version handling in preparation for the 25.2 release
+* Enhanced UI version handling in preparation for the 26.0 release
 * Various system stability improvements
 
 ## 4.13.4 (March 2025)

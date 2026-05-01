@@ -1,3 +1,27 @@
+---
+title: "VergeOS Terraform Provider"
+description: "The VergeOS Terraform Provider enables infrastructure-as-code management of VergeOS resources including VMs, networks, and users through Terraform and OpenTofu configurations."
+semantic_keywords:
+  - "VergeOS Terraform provider infrastructure as code"
+  - "automate VergeOS deployment Terraform OpenTofu"
+  - "version-controlled VergeOS infrastructure provisioning"
+  - "HCL configuration VergeOS virtual machines networks"
+use_cases:
+  - infrastructure_as_code
+  - automated_vm_provisioning
+  - network_configuration_management
+  - reproducible_environment_deployment
+tags:
+  - terraform
+  - opentofu
+  - infrastructure-as-code
+  - automation
+  - provisioning
+  - hcl
+categories:
+  - Automation
+---
+
 # VergeOS Terraform Provider
 
 ## Overview

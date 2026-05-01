@@ -1,3 +1,32 @@
+---
+title: "Virtual Machine Drives"
+description: "Guide to adding, modifying, erasing, and removing virtual machine drives in VergeOS, including disk types, interfaces, media options, and storage tier selection."
+semantic_keywords:
+  - "add drive to virtual machine VergeOS"
+  - "VM disk interface VirtIO SCSI SATA IDE"
+  - "non-persistent golden image drive VDI"
+  - "import disk clone disk CD-ROM drive"
+  - "modify resize erase delete VM drive"
+use_cases:
+  - add_drive_to_vm
+  - configure_drive_interface
+  - create_non_persistent_drive
+  - import_disk_image
+  - modify_vm_drive_settings
+tags:
+  - virtual-machines
+  - drives
+  - storage
+  - virtio
+  - disk
+  - cd-rom
+  - non-persistent
+  - golden-image
+  - preferred-tier
+categories:
+  - Virtual Machines
+---
+
 # Virtual Machine Drives
 
 ## Add a Drive to a VM

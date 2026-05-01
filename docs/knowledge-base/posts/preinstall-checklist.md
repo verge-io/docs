@@ -1,9 +1,20 @@
 ---
 title: Pre-installation Checklist
 slug: preinstallation-checklist
-description: 
+description: Comprehensive checklist of hardware, network, and site requirements to complete before installing VergeOS on physical nodes.
+author: VergeOS Documentation Team
 draft: false
 date: 2023-04-21T13:29:50.040Z
+semantic_keywords:
+  - "pre-installation checklist hardware network"
+  - "site survey ipmi bios configuration"
+  - "jbod drive setup uefi boot settings"
+  - "switch vlan nic cabling requirements"
+use_cases:
+  - pre_installation_verification
+  - hardware_readiness_check
+  - network_infrastructure_validation
+  - site_deployment_preparation
 tags:
   - installation
   - checklist

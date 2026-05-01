@@ -1,16 +1,26 @@
 ---
 title: Adjusting BGP Timers
 slug: adjusting-bgp-timers
-description: Learn how to adjust BGP timers
+description: Learn how to configure BGP hold down timers for keepalive interval and hold time in VergeOS using FRR routing commands.
+author: VergeOS Documentation Team
 draft: false
 date: 2024-11-13T14:45:26.463Z
-author: VergeOS Documentation Team
+semantic_keywords:
+  - "bgp hold down timers keepalive interval"
+  - "configure bgp timers frr routing vergeos"
+  - "bgp session stability router configuration"
+  - "frrouting bgp ospf running config"
+use_cases:
+  - configure_bgp_hold_timers
+  - adjust_bgp_keepalive_interval
+  - verify_bgp_running_config
 tags:
   - network
   - networking
   - bgp
 categories:
   - Network
+editor: markdown
 dateCreated: 2024-11-13T14:45:26.463Z
 ---
 

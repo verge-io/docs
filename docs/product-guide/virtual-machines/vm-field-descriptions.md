@@ -1,3 +1,33 @@
+---
+title: "Virtual Machine Fields"
+description: "Complete reference for all VergeOS virtual machine configuration fields including name, RAM, CPU, boot order, machine type, console type, UEFI, and power settings."
+semantic_keywords:
+  - "VM configuration fields reference VergeOS"
+  - "virtual machine settings RAM cores CPU type"
+  - "boot order machine type UEFI BIOS options"
+  - "console type VNC Spice serial port settings"
+  - "HA group cluster failover power loss options"
+use_cases:
+  - configure_vm_settings
+  - reference_vm_field_options
+  - set_vm_boot_order_machine_type
+  - configure_console_type_security
+  - assign_ha_group_cluster
+tags:
+  - virtual-machines
+  - configuration
+  - reference
+  - fields
+  - cpu
+  - ram
+  - boot-order
+  - uefi
+  - console
+  - ha-group
+categories:
+  - Virtual Machines
+---
+
 # Virtual Machine Fields
 
 **Name (required)**

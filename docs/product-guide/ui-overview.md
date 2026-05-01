@@ -1,29 +1,24 @@
 ---
-# Prerequisites: None (standalone guide)
-
-# Environment & access details
-requirements:
-  vergeos_version: "26.0 or later"
-  access_levels: ["Any authenticated user"]
-  background_knowledge: ["Basic web browser usage"]
-
-key_concepts:
-  - "VergeOS dashboard navigation model"
-  - "Module vs. object views"
-  - "Status indicators and monitoring"
-  - "Theme customization"
-
+title: "Getting Started with the VergeOS 26 UI"
+description: "An introduction to the VergeOS 26 user interface, covering dashboard navigation, menus, themes, auto-refresh, and help access to help new and transitioning administrators navigate the platform confidently."
 semantic_keywords:
-  - "VergeOS UI navigation"
-  - "VergeOS 26 interface overview"
-  - "getting started VergeOS UI"
-  - "VergeOS dashboard explained"
-  - "migrate from VergeOS 4.13 to 26.0"
-
+  - "VergeOS UI navigation, interface overview, getting started with VergeOS"
+  - "dashboard navigation model, module dashboards, object dashboards"
+  - "VergeOS menus, top navigation bar, left context menu, user menu"
+  - "VergeOS themes, auto-refresh, UI customization, dark mode light mode"
 use_cases:
   - "New administrator onboarding"
   - "4.13 user transition to 26.0"
   - "Daily system navigation and monitoring"
+tags:
+  - ui
+  - navigation
+  - dashboard
+  - getting-started
+  - onboarding
+categories:
+  - Getting Started
+  - UI
 ---
 
 # Getting Started with the VergeOS 26 UI

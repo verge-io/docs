@@ -1,3 +1,30 @@
+---
+title: "Sizing & Hardware Requirements"
+description: "Minimum and recommended hardware requirements for VergeOS nodes including CPU, RAM, storage, and networking specifications for controller, storage, and compute-only nodes."
+semantic_keywords:
+  - "VergeOS minimum hardware requirements"
+  - "VergeOS node sizing CPU RAM storage"
+  - "controller node storage node compute node specifications"
+  - "vSAN storage tier requirements NVMe SSD HDD"
+  - "maximum supported hardware specifications VergeOS"
+use_cases:
+  - hardware_procurement
+  - capacity_planning
+  - node_sizing
+  - storage_tier_design
+tags:
+  - sizing
+  - hardware
+  - requirements
+  - cpu
+  - ram
+  - storage
+  - nvme
+  - vsan
+categories:
+  - Installation
+---
+
 !!! note "Workload Resources"
     The resources listed below are the **minimum requirements for VergeOS**. Additional resources will be required to support your specific workloads. When planning your deployment, ensure you account for the resources needed by your virtual machines, applications, and other workloads running on the system.
 
