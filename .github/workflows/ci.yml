@@ -36,7 +36,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y libcairo2-dev libfreetype6-dev libffi-dev libjpeg-dev libpng-dev libz-dev
       - run: if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-      - run: pip install git+https://${GH_TOKEN}@github.com/squidfunk/mkdocs-material-insiders.git
+      - run: pip install mkdocs-material
       - run: mkdocs build --site-dir ./_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
