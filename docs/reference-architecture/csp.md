@@ -1,3 +1,26 @@
+---
+title: "Multi-tenant Deployments"
+description: "Reference architecture for Cloud Service Providers deploying VergeOS as a multi-tenant IaaS platform with tenant isolation, resource allocation, and scalable infrastructure."
+semantic_keywords:
+  - "VergeOS CSP cloud service provider multi-tenant IaaS"
+  - "tenant isolation resource allocation scalable infrastructure"
+  - "service provider deployment architecture hosting platform"
+  - "multi-tenancy managed services VergeOS reference design"
+use_cases:
+  - csp_deployment_planning
+  - multi_tenant_architecture
+  - resource_allocation
+  - service_provider_infrastructure
+tags:
+  - reference-architecture
+  - csp
+  - multi-tenancy
+  - iaas
+  - tenants
+categories:
+  - Tenants
+---
+
 # Multi-tenant Deployments
 
 

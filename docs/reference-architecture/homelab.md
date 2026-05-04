@@ -1,3 +1,26 @@
+---
+title: "VergeOS Homelab Reference Architecture"
+description: "Reference architecture for deploying VergeOS in homelab environments, covering single-node, two-node cluster, and production-grade configurations with multi-tiered storage."
+semantic_keywords:
+  - "VergeOS homelab single-node two-node cluster setup"
+  - "home virtualization lab environment hardware recommendations"
+  - "multi-tiered storage NVMe SSD homelab configuration"
+  - "homelab reference architecture VergeOS deployment"
+use_cases:
+  - homelab_deployment_planning
+  - single_node_setup
+  - two_node_cluster_design
+  - homelab_storage_configuration
+tags:
+  - reference-architecture
+  - homelab
+  - single-node
+  - clustering
+  - storage-tiers
+categories:
+  - Getting Started
+---
+
 # VergeOS Homelab Reference Architecture
 
 ## Overview

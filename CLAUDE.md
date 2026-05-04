@@ -62,9 +62,37 @@ mkdocs build --site-dir ./_site
 - **Knowledge Base:** Step-by-step articles in `docs/knowledge-base/posts/`
 - **Implementation Guide:** Installation and deployment procedures
 
-### Knowledge Base Article Template
+### Frontmatter
 
-All KB articles use frontmatter:
+All documentation files require YAML frontmatter. CI enforces this on every PR.
+
+#### Product Guide / Implementation Guide / Reference Architecture
+
+At minimum, `title` and `description` are required:
+
+```yaml
+---
+title: "Page Title"
+description: "Brief description of the page content."
+semantic_keywords:
+  - "natural language search phrase"
+use_cases:
+  - use_case_identifier
+tags:
+  - tag1
+  - tag2
+categories:
+  - Category Name
+---
+```
+
+- `semantic_keywords` — natural-language phrases for AI/vector search
+- `use_cases` — machine-readable identifiers for intent matching
+- `tags` / `categories` — topic filtering and discovery
+
+#### Knowledge Base Articles
+
+KB articles in `docs/knowledge-base/posts/` have additional required fields (`slug`, `date`, `tags`, `categories`):
 
 ```yaml
 ---
@@ -72,11 +100,13 @@ title: [Article Title]
 slug: [url-friendly-title]
 description: [Brief description]
 author: [Author Name]
-published: true
+draft: false
 date: YYYY-MM-DD
 tags: [tag1, tag2, tag3]
 categories:
   - [Category]
+editor: markdown
+dateCreated: YYYY-MM-DD
 ---
 ```
 
@@ -123,6 +153,7 @@ Site navigation is defined in `mkdocs.yml` under `nav:`. The structure mirrors t
 - **Trigger:** Push to `main` branch
 - **Build:** `mkdocs build` with Material Insiders theme
 - **Deploy:** GitHub Pages via `deploy-pages` action
+- **PR Checks:** Frontmatter validation, widget link validation, internal link checking
 
 ## Resources
 

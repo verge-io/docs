@@ -1,4 +1,20 @@
 ---
+title: "VergeBot"
+description: "AI-powered chatbot assistant for VergeOS documentation and support questions."
+semantic_keywords:
+  - "VergeOS chatbot AI assistant documentation help"
+  - "VergeBot support questions automated assistance"
+use_cases:
+  - get_quick_answers
+  - search_documentation
+  - troubleshooting_assistance
+tags:
+  - ai
+  - chatbot
+  - support
+  - search
+categories:
+  - Support
 hide:
   - navigation
   - toc
