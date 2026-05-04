@@ -364,6 +364,7 @@ nav:
         - Verge CLI (vrg): product-guide/tools-integrations/vrg-cli.md
         - Terraform Provider: product-guide/tools-integrations/terraform-provider.md
         - PowerShell Module: product-guide/tools-integrations/powershell-module.md
+        - TypeScript SDK: product-guide/tools-integrations/typescript-sdk.md
         - Python SDK: product-guide/tools-integrations/python-sdk.md
         - Go SDK: product-guide/tools-integrations/go-sdk.md
       - Monitoring:
