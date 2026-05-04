@@ -361,6 +361,7 @@ nav:
       - Node Replacement: product-guide/operations/node-replacement.md
     - Tools and Integrations:
       - Automation & API:
+        - Verge CLI (vrg): product-guide/tools-integrations/vrg-cli.md
         - Terraform Provider: product-guide/tools-integrations/terraform-provider.md
         - PowerShell Module: product-guide/tools-integrations/powershell-module.md
         - Python SDK: product-guide/tools-integrations/python-sdk.md
