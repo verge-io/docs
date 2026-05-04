@@ -1,0 +1,71 @@
+---
+title: VergeOS Documentation
+description: Comprehensive technical documentation for the VergeOS hyperconverged infrastructure platform.
+template: splash
+hero:
+  tagline: Architect, deploy, and operate VergeOS hyperconverged infrastructure.
+  image:
+    file: ../../assets/vergeosfulllogowhite.svg
+  actions:
+    - text: Get Started
+      link: /implementation-guide/intro/
+      icon: right-arrow
+      variant: primary
+    - text: Browse Product Guide
+      link: /product-guide/intro/what-is-vergeos/
+      variant: secondary
+    - text: GitHub
+      link: https://github.com/verge-io
+      icon: external
+      variant: minimal
+      attrs:
+        target: _blank
+        rel: noopener noreferrer
+---
+
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+## Featured
+
+<CardGrid>
+  <LinkCard title="What is VergeOS?" href="/product-guide/intro/what-is-vergeos/" description="Platform overview and architecture fundamentals." />
+  <LinkCard title="NVIDIA GPU Virtualization" href="/product-guide/tools-integrations/nvidia-gpu-virtualization/" description="vGPU passthrough and licensing for accelerated workloads." />
+  <LinkCard title="Get Started" href="/implementation-guide/intro/" description="Install VergeOS and bring your first cluster online." />
+</CardGrid>
+
+## Product Guides
+
+<CardGrid>
+  <LinkCard title="Virtualization" href="/product-guide/virtual-machines/overview/" description="VM creation, recipes, templates, GPU passthrough, migrations." />
+  <LinkCard title="Storage" href="/product-guide/storage/overview/" description="vSAN, tiers, NAS, Fibre Channel." />
+  <LinkCard title="Networking" href="/product-guide/networks/network-overview/" description="VergeFabric, VLANs, firewall, routing." />
+  <LinkCard title="Backup & DR" href="/product-guide/backup-dr/overview/" description="Snapshots, syncs, disaster recovery." />
+  <LinkCard title="NVIDIA vGPU" href="/product-guide/tools-integrations/nvidia-gpu-virtualization/" description="Configure NVIDIA vGPU on VergeOS." />
+  <LinkCard title="Knowledge Base" href="/knowledge-base/" description="How-tos, troubleshooting, and best practices." />
+</CardGrid>
+
+## Get Started
+
+<CardGrid>
+  <LinkCard title="What is VergeOS?" href="/product-guide/intro/what-is-vergeos/" />
+  <LinkCard title="UI Overview" href="/product-guide/ui-overview/" />
+  <LinkCard title="API Guide" href="/knowledge-base/verge-api-guide/" />
+  <LinkCard title="Installation Guide" href="/implementation-guide/installation-guide/" />
+  <LinkCard title="Transition from VMware" href="/product-guide/intro/transition-from-vmware/" />
+  <LinkCard title="Concepts" href="/implementation-guide/concepts/" />
+</CardGrid>
+
+## Developer & DevOps
+
+<CardGrid>
+  <LinkCard title="API Reference" href="/developer-guide/api-reference/overview/" />
+  <LinkCard title="Terraform Provider" href="/developer-guide/iac/terraform-provider/" />
+  <LinkCard title="PowerShell Module" href="/developer-guide/sdks/powershell-module/" />
+  <LinkCard title="Python SDK" href="/developer-guide/sdks/python-sdk/" />
+  <LinkCard title="Go SDK" href="/developer-guide/sdks/go-sdk/" />
+  <LinkCard title="Webhooks & Events" href="/developer-guide/webhooks-events/" />
+</CardGrid>
+
+---
+
+[Release Notes](/release-notes/release-notes-overview/) · [Support](/support/) · [Case Studies](https://www.verge.io/case-studies-registration-page/)

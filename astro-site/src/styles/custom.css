@@ -1,0 +1,76 @@
+/* VergeOS brand accent color - burnt orange from official Verge docs */
+:root {
+  --sl-color-accent-low: #2a1510;
+  --sl-color-accent: #d9693b;
+  --sl-color-accent-high: #f0c4ad;
+  --sl-color-bg: #0f172a;
+  --sl-color-bg-nav: #0a0f1a;
+  --sl-color-bg-sidebar: #0a0f1a;
+  --sl-color-hairline-light: #1e293b;
+  --sl-color-hairline: #334155;
+  --sl-color-text: #e2e8f0;
+  --sl-color-text-accent: #d9693b;
+}
+
+:root[data-theme="light"] {
+  --sl-color-accent-low: #fae6db;
+  --sl-color-accent: #c4502d;
+  --sl-color-accent-high: #3a1a0e;
+  --sl-color-bg: #ffffff;
+  --sl-color-bg-nav: #ffffff;
+  --sl-color-bg-sidebar: #f8fafc;
+  --sl-color-hairline-light: #e2e8f0;
+  --sl-color-hairline: #cbd5e1;
+  --sl-color-text: #1e293b;
+  --sl-color-text-accent: #c4502d;
+}
+
+/* Header styling */
+header.header {
+  border-bottom: 1px solid var(--sl-color-hairline-light);
+}
+
+/* Sidebar refinements */
+.sidebar-pane {
+  border-right: 1px solid var(--sl-color-hairline-light);
+}
+
+/* Code block theming */
+:root {
+  --sl-color-code-bg: #1e293b;
+  --sl-color-code-text: #e2e8f0;
+}
+
+:root[data-theme="light"] {
+  --sl-color-code-bg: #f1f5f9;
+  --sl-color-code-text: #1e293b;
+}
+
+/* Logo sizing */
+.site-title img {
+  height: 2rem;
+}
+
+/* Footer styling */
+footer {
+  border-top: 1px solid var(--sl-color-hairline-light);
+}
+
+/* Aside/admonition styling to match MkDocs Material feel */
+.starlight-aside {
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+/* Card diagram SVG styling for light mode */
+:root[data-theme="light"] .card-diagram rect {
+  fill: #f8fafc;
+}
+:root[data-theme="light"] .card-diagram text {
+  fill: #C4502D;
+}
+:root[data-theme="light"] .card-diagram line,
+:root[data-theme="light"] .card-diagram path,
+:root[data-theme="light"] .card-diagram circle {
+  stroke: #C4502D;
+}

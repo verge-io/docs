@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#0a2240"/>
+  
+  <!-- Gradient overlay -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a2240" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#164785" stop-opacity="1"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- Abstract network pattern -->
+  <g opacity="0.15">
+    <circle cx="200" cy="200" r="5" fill="#ffffff"/>
+    <circle cx="400" cy="150" r="5" fill="#ffffff"/>
+    <circle cx="600" cy="250" r="5" fill="#ffffff"/>
+    <circle cx="800" cy="180" r="5" fill="#ffffff"/>
+    <circle cx="1000" cy="220" r="5" fill="#ffffff"/>
+    <circle cx="300" cy="400" r="5" fill="#ffffff"/>
+    <circle cx="500" cy="380" r="5" fill="#ffffff"/>
+    <circle cx="700" cy="450" r="5" fill="#ffffff"/>
+    <circle cx="900" cy="420" r="5" fill="#ffffff"/>
+    
+    <line x1="200" y1="200" x2="400" y2="150" stroke="#ffffff" stroke-width="1.5"/>
+    <line x1="400" y1="150" x2="600" y2="250" stroke="#ffffff" stroke-width="1.5"/>
+    <line x1="600" y1="250" x2="800" y2="180" stroke="#ffffff" stroke-width="1.5"/>
+    <line x1="800" y1="180" x2="1000" y2="220" stroke="#ffffff" stroke-width="1.5"/>
+    <line x1="300" y1="400" x2="500" y2="380" stroke="#ffffff" stroke-width="1.5"/>
+    <line x1="500" y1="380" x2="700" y2="450" stroke="#ffffff" stroke-width="1.5"/>
+    <line x1="700" y1="450" x2="900" y2="420" stroke="#ffffff" stroke-width="1.5"/>
+    <line x1="400" y1="150" x2="300" y2="400" stroke="#ffffff" stroke-width="1.5"/>
+    <line x1="600" y1="250" x2="500" y2="380" stroke="#ffffff" stroke-width="1.5"/>
+    <line x1="800" y1="180" x2="700" y2="450" stroke="#ffffff" stroke-width="1.5"/>
+  </g>
+  
+  <!-- Main VergeOS Logo -->
+  <g transform="translate(300, 180)">
+    <!-- Create a simplified version of VergeOS logo - hexagon shape -->
+    <path d="M300,0 L600,173 L600,519 L300,692 L0,519 L0,173 Z" fill="none" stroke="#4a90e2" stroke-width="8"/>
+    <path d="M150,175 L450,175 L450,517 L150,517 Z" fill="none" stroke="#4a90e2" stroke-width="8"/>
+    <line x1="150" y1="280" x2="450" y2="280" stroke="#4a90e2" stroke-width="8"/>
+    <line x1="150" y1="390" x2="450" y2="390" stroke="#4a90e2" stroke-width="8"/>
+  </g>
+  
+  <!-- Main Text -->
+  <text x="600" y="540" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="#ffffff" text-anchor="middle">VergeOS Documentation</text>
+  
+  <!-- Tagline -->
+  <text x="600" y="590" font-family="Arial, sans-serif" font-size="32" fill="#cccccc" text-anchor="middle">Virtualize. Optimize. Simplify.</text>
+</svg>

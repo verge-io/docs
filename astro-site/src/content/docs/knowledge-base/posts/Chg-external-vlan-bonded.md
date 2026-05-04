@@ -1,0 +1,58 @@
+---
+title: Change External Network to VLAN Bonded
+slug: knowledge-base/change-external-vlan-to-bonded
+description: Instuctions to change an existing external network to a vlan bonded across physical networks
+date: 2024-11-24
+---
+
+## Overview
+
+:::note[Key Points]
+- This procedure creates an active-backup bond across vlanned physical networks.
+- It is recommended for bare-metal installations with a limitation of 2 NICs per node.
+- System downtime is not required to make this change.
+:::
+
+This guide outlines the process to create a bonded external network across vlanned physical networks.  The outlined method provides optimal redundancy for bare-metal installations that are limited to two NICs per node, allowing for two independent core-fabric networks and a single-VLAN, bonded external network.
+
+## Prerequisites
+
+:::caution
+- This process should be performed with local server access because external network changes can affect remote UI access. This will also allow you to test the bond configuration by removing one of the network cables to verify expected bond failover.
+- Before making any significant system changes confirm you have the name/password for the "admin" user (user ID #1), in case command-line operations become needed.
+:::
+
+## Steps
+
+1. Navigate to the **External Network dashboard**
+    - Networks > Dashboard > Externals
+    - Double-click External Network
+    - Click **Edit** on the left menu
+2. Change **Layer 2 Type** to ***vLAN*** and enter appropriate **Layer 2 ID** (VLAN number).
+3. **Select** the option to **Enable Bonding**.
+3. **Select** the **Physical Networks** you want to participate in the bonding.
+4. Click **Submit** to save the change.
+
+## Post Configuration
+
+1. Check the external network by accessing the UI from a remote connection.
+2. Test Bond failover: Navigate to the external network dashboard and select **NICs** to view the network adapters. Physically disconnect one network cable. The UI should now indicate the NIC is in a "Down" status; verify remote UI access is still available.
+
+:::caution
+Verify core network redundancy is in place before disconnecting network cables.
+:::
+
+## Troubleshooting
+
+:::caution[Common Issues]
+- Problem: Loss of remote access
+  - Solution:
+    1. Check correct VLAN was entered in the external network config
+    2. Verify network switch ports are correctly configured for the VLAN tag.
+:::
+
+## Additional Resources
+
+- [Network Design Models](/implementation-guide/network-design)
+
+---

@@ -1,0 +1,626 @@
+---
+// Homepage.astro - Custom homepage component for VergeOS Docs Starlight site
+---
+
+<div class="homepage">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1 class="hero-title">VergeOS Docs</h1>
+      <p class="hero-subtitle">
+        Learn how to get up and running with VergeOS through tutorials, APIs and other resources.
+      </p>
+    </div>
+  </section>
+
+  <!-- Tip Banner -->
+  <section class="tip-banner">
+    <div class="tip-inner">
+      <svg class="tip-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 18h6"></path>
+        <path d="M10 22h4"></path>
+        <path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"></path>
+      </svg>
+      <span>Search the docs by pressing <kbd>Ctrl</kbd>+<kbd>K</kbd> (or <kbd>&#8984;</kbd>+<kbd>K</kbd> on Mac)</span>
+    </div>
+  </section>
+
+  <!-- Main Cards -->
+  <section class="main-cards">
+    <a href="/product-guide/intro/what-is-vergeos/" class="card main-card">
+      <div class="card-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 160" class="card-svg">
+          <!-- Convergence diagram -->
+          <defs>
+            <linearGradient id="grad-converge" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#D9693B;stop-opacity:0.8" />
+              <stop offset="100%" style="stop-color:#D9693B;stop-opacity:0.4" />
+            </linearGradient>
+          </defs>
+          <!-- Source boxes -->
+          <rect x="10" y="10" width="70" height="28" rx="4" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.7"/>
+          <text x="45" y="28" text-anchor="middle" fill="currentColor" font-size="10" opacity="0.8">Compute</text>
+          <rect x="10" y="45" width="70" height="28" rx="4" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.7"/>
+          <text x="45" y="63" text-anchor="middle" fill="currentColor" font-size="10" opacity="0.8">Storage</text>
+          <rect x="10" y="80" width="70" height="28" rx="4" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.7"/>
+          <text x="45" y="98" text-anchor="middle" fill="currentColor" font-size="10" opacity="0.8">Network</text>
+          <rect x="10" y="115" width="70" height="28" rx="4" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.7"/>
+          <text x="45" y="133" text-anchor="middle" fill="currentColor" font-size="10" opacity="0.8">GPU</text>
+          <!-- Arrows -->
+          <line x1="85" y1="24" x2="150" y2="75" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+          <line x1="85" y1="59" x2="150" y2="75" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+          <line x1="85" y1="94" x2="150" y2="85" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+          <line x1="85" y1="129" x2="150" y2="90" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+          <!-- VergeOS box -->
+          <rect x="150" y="50" width="120" height="60" rx="8" fill="url(#grad-converge)" opacity="0.9"/>
+          <text x="210" y="78" text-anchor="middle" fill="white" font-size="13" font-weight="600">VergeOS</text>
+          <text x="210" y="96" text-anchor="middle" fill="white" font-size="9" opacity="0.8">Unified Platform</text>
+        </svg>
+      </div>
+      <h3 class="card-title">Platform Overview</h3>
+      <p class="card-desc">Unified infrastructure converging compute, storage, networking, GPU, and DR into a single operating system</p>
+    </a>
+
+    <a href="/product-guide/tools-integrations/nvidia-gpu-virtualization/" class="card main-card">
+      <div class="card-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 160" class="card-svg">
+          <!-- GPU chip diagram -->
+          <defs>
+            <linearGradient id="grad-gpu" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#76b900;stop-opacity:0.8" />
+              <stop offset="100%" style="stop-color:#76b900;stop-opacity:0.4" />
+            </linearGradient>
+          </defs>
+          <!-- GPU chip outline -->
+          <rect x="70" y="20" width="140" height="120" rx="6" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
+          <!-- GPU label -->
+          <text x="140" y="42" text-anchor="middle" fill="currentColor" font-size="11" font-weight="600" opacity="0.8">NVIDIA GPU</text>
+          <!-- MIG partitions -->
+          <rect x="82" y="50" width="56" height="36" rx="3" fill="url(#grad-gpu)" opacity="0.7"/>
+          <text x="110" y="72" text-anchor="middle" fill="white" font-size="9">MIG 1</text>
+          <rect x="142" y="50" width="56" height="36" rx="3" fill="url(#grad-gpu)" opacity="0.7"/>
+          <text x="170" y="72" text-anchor="middle" fill="white" font-size="9">MIG 2</text>
+          <rect x="82" y="92" width="56" height="36" rx="3" fill="url(#grad-gpu)" opacity="0.7"/>
+          <text x="110" y="114" text-anchor="middle" fill="white" font-size="9">MIG 3</text>
+          <rect x="142" y="92" width="56" height="36" rx="3" fill="url(#grad-gpu)" opacity="0.7"/>
+          <text x="170" y="114" text-anchor="middle" fill="white" font-size="9">vGPU</text>
+          <!-- Pins -->
+          <line x1="90" y1="140" x2="90" y2="155" stroke="currentColor" stroke-width="1.5" opacity="0.3"/>
+          <line x1="110" y1="140" x2="110" y2="155" stroke="currentColor" stroke-width="1.5" opacity="0.3"/>
+          <line x1="130" y1="140" x2="130" y2="155" stroke="currentColor" stroke-width="1.5" opacity="0.3"/>
+          <line x1="150" y1="140" x2="150" y2="155" stroke="currentColor" stroke-width="1.5" opacity="0.3"/>
+          <line x1="170" y1="140" x2="170" y2="155" stroke="currentColor" stroke-width="1.5" opacity="0.3"/>
+          <line x1="190" y1="140" x2="190" y2="155" stroke="currentColor" stroke-width="1.5" opacity="0.3"/>
+        </svg>
+      </div>
+      <h3 class="card-title">NVIDIA GPU Virtualization</h3>
+      <p class="card-desc">NVIDIA RTX Blackwell 6000 support with vGPU and MIG technologies for GPU-accelerated virtual machines</p>
+    </a>
+
+    <a href="/implementation-guide/intro/" class="card main-card">
+      <div class="card-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 160" class="card-svg">
+          <!-- Journey path -->
+          <defs>
+            <linearGradient id="grad-path" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:#D9693B;stop-opacity:0.6" />
+              <stop offset="100%" style="stop-color:#D9693B;stop-opacity:0.9" />
+            </linearGradient>
+          </defs>
+          <!-- Path line -->
+          <path d="M 40 80 Q 100 40 140 80 Q 180 120 240 80" fill="none" stroke="url(#grad-path)" stroke-width="2.5" stroke-dasharray="6 3"/>
+          <!-- Step circles -->
+          <circle cx="40" cy="80" r="22" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.6"/>
+          <text x="40" y="76" text-anchor="middle" fill="currentColor" font-size="16" opacity="0.7">1</text>
+          <text x="40" y="90" text-anchor="middle" fill="currentColor" font-size="8" opacity="0.6">Plan</text>
+          <circle cx="140" cy="80" r="22" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.6"/>
+          <text x="140" y="76" text-anchor="middle" fill="currentColor" font-size="16" opacity="0.7">2</text>
+          <text x="140" y="90" text-anchor="middle" fill="currentColor" font-size="8" opacity="0.6">Deploy</text>
+          <circle cx="240" cy="80" r="22" fill="none" stroke="#D9693B" stroke-width="2" opacity="0.8"/>
+          <text x="240" y="76" text-anchor="middle" fill="#D9693B" font-size="16" font-weight="600">3</text>
+          <text x="240" y="90" text-anchor="middle" fill="#D9693B" font-size="8" font-weight="500">Optimize</text>
+          <!-- Arrow tip -->
+          <polygon points="258,80 252,74 252,86" fill="#D9693B" opacity="0.8"/>
+        </svg>
+      </div>
+      <h3 class="card-title">Get Started</h3>
+      <p class="card-desc">Implementation guides, migration paths, and tutorials for deploying VergeOS</p>
+    </a>
+  </section>
+
+  <!-- Product Guides Section -->
+  <section class="section">
+    <h2 class="section-title">Product Guides</h2>
+    <div class="guide-grid two-col">
+      <a href="/product-guide/virtual-machines/overview" class="card guide-card">
+        <svg class="guide-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+          <line x1="8" y1="21" x2="16" y2="21"></line>
+          <line x1="12" y1="17" x2="12" y2="21"></line>
+        </svg>
+        <span>Virtualization</span>
+      </a>
+      <a href="/product-guide/storage/overview" class="card guide-card">
+        <svg class="guide-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+          <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+          <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+        </svg>
+        <span>Storage</span>
+      </a>
+      <a href="/product-guide/networks/network-overview" class="card guide-card">
+        <svg class="guide-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="1" y="1" width="6" height="6" rx="1"></rect>
+          <rect x="17" y="1" width="6" height="6" rx="1"></rect>
+          <rect x="9" y="17" width="6" height="6" rx="1"></rect>
+          <path d="M4 7v3a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7"></path>
+          <line x1="12" y1="13" x2="12" y2="17"></line>
+        </svg>
+        <span>Networking</span>
+      </a>
+      <a href="/product-guide/backup-dr/overview" class="card guide-card">
+        <svg class="guide-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21.5 2v6h-6"></path>
+          <path d="M2.5 22v-6h6"></path>
+          <path d="M2.5 16A10 10 0 0 1 5.64 5.64"></path>
+          <path d="M21.5 8a10 10 0 0 1-3.14 10.36"></path>
+        </svg>
+        <span>Disaster Recovery</span>
+      </a>
+      <a href="/product-guide/tools-integrations/nvidia-gpu-virtualization/" class="card guide-card">
+        <svg class="guide-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+          <rect x="9" y="9" width="6" height="6"></rect>
+          <path d="M15 2v2"></path>
+          <path d="M15 20v2"></path>
+          <path d="M2 15h2"></path>
+          <path d="M2 9h2"></path>
+          <path d="M20 15h2"></path>
+          <path d="M20 9h2"></path>
+          <path d="M9 2v2"></path>
+          <path d="M9 20v2"></path>
+        </svg>
+        <span>NVIDIA vGPU</span>
+      </a>
+      <a href="/knowledge-base/" class="card guide-card">
+        <svg class="guide-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+          <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+        </svg>
+        <span>Knowledge Base</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Get Started Section -->
+  <section class="section">
+    <h2 class="section-title">Get Started</h2>
+    <div class="guide-grid three-col">
+      <a href="/product-guide/intro/what-is-vergeos/" class="card start-card">
+        <svg class="start-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="16" x2="12" y2="12"></line>
+          <line x1="12" y1="8" x2="12.01" y2="8"></line>
+        </svg>
+        <span>Platform Introduction</span>
+      </a>
+      <a href="/product-guide/ui-overview/" class="card start-card">
+        <svg class="start-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="3" y1="9" x2="21" y2="9"></line>
+          <line x1="9" y1="21" x2="9" y2="9"></line>
+        </svg>
+        <span>User Interface</span>
+      </a>
+      <a href="/knowledge-base/verge-api-guide/" class="card start-card">
+        <svg class="start-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="16 18 22 12 16 6"></polyline>
+          <polyline points="8 6 2 12 8 18"></polyline>
+        </svg>
+        <span>API Reference</span>
+      </a>
+      <a href="/implementation-guide/installation-guide" class="card start-card">
+        <svg class="start-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        <span>Installation Guide</span>
+      </a>
+      <a href="/product-guide/intro/transition-from-vmware" class="card start-card">
+        <svg class="start-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="17 1 21 5 17 9"></polyline>
+          <path d="M3 11V9a4 4 0 0 1 4-4h14"></path>
+          <polyline points="7 23 3 19 7 15"></polyline>
+          <path d="M21 13v2a4 4 0 0 1-4 4H3"></path>
+        </svg>
+        <span>Migrate from VMware</span>
+      </a>
+      <a href="/implementation-guide/concepts" class="card start-card">
+        <svg class="start-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+          <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+        </svg>
+        <span>Core Concepts</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Developer & DevOps Section -->
+  <section class="section">
+    <h2 class="section-title">Developer & DevOps</h2>
+    <div class="guide-grid three-col">
+      <a href="/developer-guide/api-reference/overview/" class="card start-card">
+        <svg class="start-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="16 18 22 12 16 6"></polyline>
+          <polyline points="8 6 2 12 8 18"></polyline>
+        </svg>
+        <span>API Reference</span>
+      </a>
+      <a href="/developer-guide/iac/terraform-provider/" class="card start-card">
+        <svg class="start-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path>
+          <line x1="4" y1="22" x2="4" y2="15"></line>
+        </svg>
+        <span>Terraform Provider</span>
+      </a>
+      <a href="/developer-guide/sdks/powershell-module/" class="card start-card">
+        <svg class="start-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="4 17 10 11 4 5"></polyline>
+          <line x1="12" y1="19" x2="20" y2="19"></line>
+        </svg>
+        <span>PowerShell Module</span>
+      </a>
+      <a href="/developer-guide/sdks/python-sdk/" class="card start-card">
+        <svg class="start-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+          <path d="M2 17l10 5 10-5"></path>
+          <path d="M2 12l10 5 10-5"></path>
+        </svg>
+        <span>Python SDK</span>
+      </a>
+      <a href="/developer-guide/sdks/go-sdk/" class="card start-card">
+        <svg class="start-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"></path>
+        </svg>
+        <span>Go SDK</span>
+      </a>
+      <a href="/developer-guide/webhooks-events/" class="card start-card">
+        <svg class="start-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+        <span>Webhooks & Events</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer Links -->
+  <section class="footer-links">
+    <a href="/release-notes/release-notes-overview/" class="footer-link">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+        <polyline points="14 2 14 8 20 8"></polyline>
+        <line x1="16" y1="13" x2="8" y2="13"></line>
+        <line x1="16" y1="17" x2="8" y2="17"></line>
+        <polyline points="10 9 9 9 8 9"></polyline>
+      </svg>
+      Release Notes
+    </a>
+    <a href="/support/" class="footer-link">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+      </svg>
+      Support
+    </a>
+    <a href="https://www.verge.io/case-studies-registration-page/" class="footer-link" target="_blank" rel="noopener noreferrer">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+      </svg>
+      Case Studies
+    </a>
+  </section>
+</div>
+
+<style>
+  /* ===== Base / Reset ===== */
+  .homepage {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem 3rem;
+    font-family: var(--sl-font, system-ui, sans-serif);
+  }
+
+  /* ===== Hero Section ===== */
+  .hero-section {
+    text-align: center;
+    padding: 3rem 1rem 2rem;
+    margin: -1rem -1.5rem 0;
+    background: linear-gradient(135deg, #0f1729 0%, #0a0f1a 100%);
+    border-radius: 0 0 16px 16px;
+  }
+
+  .hero-title {
+    font-size: 2.75rem;
+    font-weight: 800;
+    margin: 0 0 0.75rem;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-subtitle {
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* ===== Tip Banner ===== */
+  .tip-banner {
+    margin: 1.5rem 0;
+  }
+
+  .tip-inner {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.25rem;
+    background: rgba(234, 179, 8, 0.1);
+    border: 1px solid rgba(234, 179, 8, 0.3);
+    border-radius: 8px;
+    color: #eab308;
+    font-size: 0.9rem;
+  }
+
+  .tip-icon {
+    flex-shrink: 0;
+  }
+
+  .tip-inner kbd {
+    display: inline-block;
+    padding: 0.1em 0.45em;
+    font-size: 0.85em;
+    font-family: var(--sl-font-mono, monospace);
+    background: rgba(234, 179, 8, 0.15);
+    border: 1px solid rgba(234, 179, 8, 0.4);
+    border-radius: 4px;
+    line-height: 1;
+  }
+
+  /* ===== Cards (shared) ===== */
+  .card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.2s ease;
+  }
+
+  .card:hover {
+    border-color: #D9693B;
+    background: rgba(217, 105, 59, 0.05);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  }
+
+  /* ===== Main Cards Grid ===== */
+  .main-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .main-card .card-icon {
+    margin-bottom: 1rem;
+  }
+
+  .card-svg {
+    width: 100%;
+    height: auto;
+    max-height: 140px;
+    color: var(--sl-color-white, #e0e0e0);
+  }
+
+  .card-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem;
+    color: #D9693B;
+  }
+
+  .card-desc {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  /* ===== Section Headings ===== */
+  .section {
+    margin-bottom: 2.5rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid rgba(217, 105, 59, 0.3);
+    color: var(--sl-color-white, #ffffff);
+  }
+
+  /* ===== Guide Grid (2-col) ===== */
+  .guide-grid.two-col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .guide-card {
+    display: flex !important;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem !important;
+  }
+
+  .guide-icon {
+    flex-shrink: 0;
+    color: #D9693B;
+  }
+
+  .guide-card span {
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+
+  /* ===== Start Grid (3-col) ===== */
+  .guide-grid.three-col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+  }
+
+  .start-card {
+    display: flex !important;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.85rem 1.1rem !important;
+  }
+
+  .start-icon {
+    flex-shrink: 0;
+    color: #D9693B;
+  }
+
+  .start-card span {
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  /* ===== Footer Links ===== */
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .footer-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+  }
+
+  .footer-link:hover {
+    color: #D9693B;
+  }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 900px) {
+    .main-cards {
+      grid-template-columns: 1fr;
+    }
+    .guide-grid.two-col {
+      grid-template-columns: 1fr;
+    }
+    .guide-grid.three-col {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .hero-title {
+      font-size: 2rem;
+    }
+    .guide-grid.three-col {
+      grid-template-columns: 1fr;
+    }
+    .footer-links {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+
+  /* ===== Light Mode ===== */
+  :global([data-theme="light"]) .hero-section {
+    background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+  }
+
+  :global([data-theme="light"]) .hero-title {
+    color: #1a202c;
+  }
+
+  :global([data-theme="light"]) .hero-subtitle {
+    color: rgba(26, 32, 44, 0.7);
+  }
+
+  :global([data-theme="light"]) .tip-inner {
+    background: rgba(234, 179, 8, 0.08);
+    border-color: rgba(234, 179, 8, 0.35);
+    color: #92600a;
+  }
+
+  :global([data-theme="light"]) .tip-inner kbd {
+    background: rgba(234, 179, 8, 0.12);
+    border-color: rgba(234, 179, 8, 0.35);
+    color: #92600a;
+  }
+
+  :global([data-theme="light"]) .card {
+    background: rgba(0, 0, 0, 0.02);
+    border-color: rgba(0, 0, 0, 0.1);
+  }
+
+  :global([data-theme="light"]) .card:hover {
+    border-color: #C4502D;
+    background: rgba(196, 80, 45, 0.04);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  }
+
+  :global([data-theme="light"]) .card-title {
+    color: #C4502D;
+  }
+
+  :global([data-theme="light"]) .card-desc {
+    color: rgba(26, 32, 44, 0.6);
+  }
+
+  :global([data-theme="light"]) .card-svg {
+    color: #2d3748;
+  }
+
+  :global([data-theme="light"]) .section-title {
+    color: #1a202c;
+    border-bottom-color: rgba(196, 80, 45, 0.3);
+  }
+
+  :global([data-theme="light"]) .guide-icon,
+  :global([data-theme="light"]) .start-icon {
+    color: #C4502D;
+  }
+
+  :global([data-theme="light"]) .footer-links {
+    border-top-color: rgba(0, 0, 0, 0.1);
+  }
+
+  :global([data-theme="light"]) .footer-link {
+    color: rgba(26, 32, 44, 0.5);
+  }
+
+  :global([data-theme="light"]) .footer-link:hover {
+    color: #C4502D;
+  }
+</style>

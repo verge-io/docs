@@ -1,0 +1,190 @@
+---
+title: Snapshot Profiles (Snapshot Scheduling)
+---
+
+A **snapshot profile** defines a schedule for taking snapshots and automatically expiring them based on retention settings.
+
+
+## Default Snapshot Profiles
+
+Multiple, default snapshot profiles are created by the VergeOS installation. These profiles can be modified, and you can create additional profiles to provide custom scheduling.
+
+
+<details><summary>Snapshot Profiles Included with Installation</summary>
+
+The following are default snapshot profiles automatically created at system installation.
+
+### SOX (Sarbanes-Oxley)
+* Yearly snapshots retained for 7 years
+* Monthly snapshots retained for 1 year
+* Weekly snapshots retained for 31 days
+* Daily snapshots retained for 7 days
+
+### HIPAA (Health Insurance Portability & Accountability Act)
+* Yearly snapshots retained indefinitely (no expiration)
+* Monthly snapshots retained for 1 year
+* Weekly snapshots retained for 31 days
+* Daily snapshots retained for 7 days
+
+### NAS Volume Syncs
+* Daily (at 6pm) snapshots retained for 3 days
+
+### System Snapshots (Default Profile for entire-system snapshots)
+* Hourly snapshots retained for 3 hours
+* Daily at midnight snapshots retained for 3 days
+* Daily at noon snapshots retained for 1 day
+* Profile assigned at installation to take full snapshots of the entire system according to this schedule.
+* More detail about system snapshots can be found at: [System Snapshots](/product-guide/backup-dr/system-snapshots)
+
+### Volume Antivirus Scan
+* Default profile for volume antivirus scan scheduling
+
+</details>
+
+## Creating a Custom Snapshot Schedule (New Snapshot Profile)
+
+1. Navigate to **System** > **Snapshot Profiles**
+2. Click **New** on the left menu.
+3. Enter a descriptive **Name** for the new profile.  (e.g. Webservers, premium tenants, weekly-quiesce,  etc.)
+4. Optionally, you can enter additional **Description** information.
+5. Click **Submit** to save the profile.
+6. The new snapshot profile is created.
+**Add profile periods** to implement a schedule within the profile.
+
+:::tip
+After creating a new snapshot profile, its dashboard opens automatically, where you can create new periods.  To return to this page later, navigate to: **System** > **Snapshot Profiles** > **double-click the profile**.
+:::
+
+## Profile Periods
+
+A profile period defines both the frequency and retention for snapshots. Adding multiple periods allows incorporating various frequencies and retentions within the same profile.
+
+**To Add a Period**:
+
+* Click **Add Period** on the left menu.
+
+### Profile Period Configuration
+* **Snapshot Profile**: Pre-selected when accessed from the snapshot profile dashboard.
+* **Name**: (required). Enter a descriptive name to identify the period (ex: weekly, 6pm, Mondays, etc).
+
+* **Frequency**: defines how often snapshots are taken.
+    * Options: ***Hourly***, ***Daily***, ***Weekly***, ***Monthly***, ***Yearly***, ***Custom***
+    * Additional scheduling fields (Month, Day of Month, Day of Week, Hour, Minute) vary based on the frequency selected.
+    * ***Custom*** allows specifying a one-time execution at an exact date and time.
+
+
+* **Retention**: Specifies how long to keep snapshots before automatic expiration.
+    * Enter a **(value)** and select **Units**: *Days* (default), *Hours*, *Years*, *Forever* (retained indefinitely)
+
+:::caution
+Long-term or indefinite retention can significantly increase storage usage. Consider your data-change rate and available storage when configuring retention.
+:::
+
+
+* **Minimum Snapshots**: (default:1) Ensures a minimum number of snapshots are always available.
+    * Snapshots may be kept past expiration, if necessary to maintain the defined minimum.
+    * This helps to ensure there are available recovery points after prolonged outages by preventing automatic purging of an expired snapshot when there is no replacement snapshot.
+
+:::tip
+Snapshots kept past expiration to satisfy the minimum will be marked as "Held" and display "x days over" in the 'Time to Expiration' column. They are deleted only when a new scheduled snapshot replaces them or if manually removed.
+:::
+
+#### System Snapshot Settings (applies only to system snapshots)
+
+* **Private**: when selected, snapshots from this period are hidden from tenants
+* **Immutable**: when selected, deletion of snapshots is blocked for all users until expiration or the immutable flag is removed with a mandatory waiting period.
+
+:::caution
+Immutable snapshots cannot be deleted until unlocked and mandatory waiting period expires. Ensure retention settings align with available storage. For more guidance, see the [Immutable Snapshots Guide](/product-guide/backup-dr/immutable-snapshots).
+:::
+
+* **Snapshot Type**:
+    * ***Full***: captures the entire system; required for full-system recovery
+    * ***Partial - Exclude Tags***: captures all VMs, tenants, VMware services, and volumes *except* those with the specified tags
+    * ***Partial - Include Tags***: captures only VMs, tenants, VMware services, and volumes with the specified tags
+        * **Exclude/Include Tags** (Partial snapshots only): Click the ellipse button to select one or more tags.
+        * **Quiesce Tags** (optional; Partial snapshots only): Click the ellipse button to select one or more tags. VMs with the specified tags will temporarily freeze disk activity during capture to provide an application-consistent snapshot. Requires [VM Guest Agent](/product-guide/virtual-machines/vm-guest-agent) support.
+
+
+
+#### Machine Snapshot Settings (Applies to VM and volume snapshots; not used for system snapshots)
+
+* **Quiesce Snapshots**: If enabled, disk activity will temporarily freeze while the snapshot is being taken.
+    * Provides application-consistent backups for VMs
+    * VMs require [VM guest agent](/product-guide/virtual-machines/vm-guest-agent) support
+
+* **Max Tier for Storing Snapshot**: (default= Tier 1). Controls the highest storage tier allowed for snapshot data.
+    * Snapshot data normally uses the same tier as the source.
+    * If the source tier exceeds the max tier, the snapshot is stored at the max tier instead.
+    * Tier 1 means no restrictions because it is the most expensive tier
+    * See [**Storage Tiers**](/product-guide/storage/storage-tiers) for details.
+
+
+## Modify an Existing Snapshot Profile
+
+1. Navigate to **System** > **Snapshot Profiles**.
+2. **Double-click the profile** to open it.
+3. Scroll to the *Periods* section.  Add, modify or remove periods to alter the existing schedule as desired. (Reference above instructions for configuring periods.)
+    * **Add** a period: click the **+Add Period** link.
+    * **modify** an existing period: click the pencil icon.
+    * **remove** an existing period: click the trash can icon.
+
+
+## Profile Dashboard
+
+Double-clicking a snapshot profile from the **System** > **Snapshot Profiles** list opens its dashboard. The dashboard displays summary tiles across the top showing counts of resources associated with the profile.
+
+### Dashboard Tile Reference
+
+| Tile | Description |
+|------|-------------|
+| **Machines** | Total count of VMs and VM Snapshots combined. This includes both currently subscribed VMs and snapshot records from VMs that were previously snapped by this profile. |
+| **VMS** | Count of VMs **currently subscribed** (assigned) to this snapshot profile. |
+| **VM Snapshots** | Count of VM-level snapshots retained by this profile, including snapshots from VMs that are no longer subscribed to the profile. |
+| **System Snapshots** | Count of system snapshots taken by this profile. |
+| **Volumes** | Count of NAS volumes currently assigned to this profile. |
+| **Volumes Antivirus** | Count of volume antivirus scan snapshots associated with this profile. |
+| **Volume Syncs** | Count of volume sync snapshots associated with this profile. |
+
+Click any tile to drill down into the corresponding resource list.
+
+:::note[Understanding Machines vs. VMS counts]
+It is normal for **Machines** to be greater than **VMS**. The Machines tile is the sum of VMS (currently subscribed VMs) plus VM Snapshots (retained snapshot records). If a VM is removed from the profile but its snapshots remain, VMS will decrease while VM Snapshots and Machines retain the previous count. See [Cleaning Up Orphaned VM Snapshots](#cleaning-up-orphaned-vm-snapshots) for guidance on resolving this.
+:::
+
+
+## Assigning Snapshot Profiles
+
+Snapshot profiles can be assigned to different snapshot types:
+
+### Full System Snapshots
+ It is typically recommended that you use the default *'System Snapshots'* profile for your full system snapshots. This profile can be modified to customize scheduling and can include partial snapshots in addition to full system snapshots.  See [System Snapshots](/product-guide/backup-dr/system-snapshots) for more information
+
+### Partial System Snapshots
+Select VMs and/or tenants based on custom tagging.  These can be added to your [System Snapshots](/product-guide/backup-dr/system-snapshots) schedule or added to a separate snapshot profile.
+
+### Individual NAS Volumes
+ See [NAS Volume Snapshots and Restores - Schedule Volume Snapshots ](/product-guide/nas/volume-snapshots-restores#schedule-volume-snapshots)
+
+### Individual VMs
+See [VM Snapshots and Restores - Assign a Snapshot Profile](/product-guide/backup-dr/vm-snapshots-restores#assign-a-snapshot-profile-to-an-individual-vm)
+
+:::caution[Removing a VM from a profile does not delete its existing snapshots]
+When a VM is unsubscribed from a snapshot profile, any snapshots previously taken by that profile are **not** automatically deleted. These orphaned snapshots continue to appear in the **VM Snapshots** and **Machines** tiles on the profile dashboard, even though the **VMS** tile shows 0. Combined with the **Minimum Snapshots** setting (default: 1), these snapshots can persist indefinitely. See [Cleaning Up Orphaned VM Snapshots](#cleaning-up-orphaned-vm-snapshots) for resolution steps.
+:::
+
+
+### Cleaning Up Orphaned VM Snapshots
+
+When a VM is removed from a snapshot profile, its existing snapshots are retained. Over time these orphaned snapshots can accumulate, especially when the [Minimum Snapshots](#profile-period-configuration) setting (default: 1) prevents automatic expiration.
+
+**Symptoms:**
+
+- The **VMS** tile shows **0** but **VM Snapshots** and **Machines** show a count
+- Snapshots display **"x days over"** in the *Time to Expiration* column and are not being deleted
+
+**To resolve:**
+
+1. From the profile dashboard, click the **VM Snapshots** tile.
+2. Identify snapshots belonging to VMs no longer assigned to the profile.
+3. Select the snapshots and click **Delete** from the left menu.

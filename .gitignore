@@ -85,3 +85,7 @@ debug
 .claude/CLAUDE.local.md
 .claude/logs/*.log
 .mcp.json
+
+# Astro
+astro-site/.astro/
+.env
