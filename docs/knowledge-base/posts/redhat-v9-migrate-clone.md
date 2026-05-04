@@ -59,16 +59,13 @@ RHEL 9 and its derivatives (AlmaLinux 9, Rocky Linux 9, CentOS Stream 9) use a `
 This means any operation that changes a VM's drive serial numbers — importing from another hypervisor, cloning within VergeOS with new serial numbers generated, or restoring a snapshot where serial numbers changed — will cause the boot process to fail. The VM hangs or drops to a dracut emergency shell because the whitelisted hardware IDs no longer match what's present.
 
 !!! info "VergeOS 26.1.5 and Later"
-    Starting in VergeOS 26.1.5, VM clones and snapshot restores **preserve the original drive serial numbers by default**, eliminating the serial number mismatch for most operations. This issue primarily affects:
+    Starting in VergeOS 26.1.5, VM clones and snapshot restores **preserve the original drive serial numbers by default**, eliminating the serial number mismatch for most clone and restore operations. This issue most commonly affects:
 
     - VMs imported from another hypervisor (VMware, Hyper-V, KVM, etc.)
     - Clones or restores where **New Hardware Serial Numbers** was explicitly selected
     - Environments running VergeOS versions earlier than 26.1.5
 
-There are two ways to fix this, depending on whether you still have access to the VM on the source system:
-
-- **Before migration (preferred):** While the VM is still running on the original hypervisor, clear the device whitelist and rebuild the initramfs generically. After import into VergeOS, the VM boots without needing rescue mode.
-- **After clone/import/restore (rescue mode):** If the VM is already in VergeOS and failing to boot, use rescue mode to clear the device rules and rebuild the initramfs from inside the broken system.
+The steps below walk through fixing a VM that is already in VergeOS and failing to boot using rescue mode.
 
 !!! info "Applies To"
     - Red Hat Enterprise Linux 9.x
@@ -79,72 +76,12 @@ There are two ways to fix this, depending on whether you still have access to th
 ## Prerequisites
 
 - Access to the VergeOS UI and VM console
-- For the post-clone/import/restore approach: the VM is already in VergeOS and failing to boot
-- For the post-clone/import/restore approach: a RHEL 9 family installation ISO available in VergeOS media (required only if the VM cannot reach the GRUB menu)
+- A RHEL 9 family installation ISO available in VergeOS media (required only if the VM cannot reach the GRUB menu)
 
-## Option 1: Prepare the VM Before Import (Recommended)
+!!! tip "Importing from another hypervisor? You can avoid rescue mode."
+    If the source VM is still running on the original hypervisor, you can clear the device whitelist before migrating. On the source VM, remove the persistent device rules (`sudo rm -f /etc/udev/rules.d/70-persistent-net.rules /etc/udev/rules.d/70-persistent-cd.rules`) and rebuild the initramfs generically (`sudo dracut -f --no-hostonly --add-drivers "virtio_scsi virtio_net virtio_pci virtio_blk" --regenerate-all`), then shut down and import. The VM will boot directly in VergeOS without needing rescue mode.
 
-If you still have access to the VM on the source hypervisor, this approach avoids rescue mode entirely. You clear the device-specific configuration while the system is still running normally, then import into VergeOS and boot directly.
-
-### Why this device whitelisting doesn't apply to VergeOS VMs
-
-The `hostonly` initramfs behavior and persistent device naming rules exist to solve a problem specific to bare-metal servers attached to SAN storage. In those environments, a host may have access to many LUNs across a fabric, and the device whitelist ensures the OS mounts only the LUNs it owns — not neighboring hosts' volumes. Explicit device enumeration is a safety mechanism, not a convenience feature.
-
-In a VergeOS VM, there is no SAN fabric and no risk of mounting the wrong LUN. The VM sees only the virtual disks assigned to it, presented through a virtio-scsi controller. The whitelist adds no safety value here and only causes problems when virtual hardware changes during migration. Rebuilding the initramfs without hostonly mode is the correct configuration for a virtualized workload.
-
-### 1. Remove Persistent Device Rules on the Source VM
-
-Log into the running VM on the source hypervisor and remove the udev persistent naming rules that tie device names to the current hardware:
-
-```bash
-sudo rm -f /etc/udev/rules.d/70-persistent-net.rules
-sudo rm -f /etc/udev/rules.d/70-persistent-cd.rules
-```
-
-Check for any additional rules referencing hardware-specific identifiers (serial numbers, WWNs, PCI slot addresses):
-
-```bash
-ls /etc/udev/rules.d/
-```
-
-Remove any rule files that are specific to the source hypervisor's hardware. Leave rules that ship with the distribution in place.
-
-If the VM uses multipath storage, clear the WWID whitelist as well:
-
-```bash
-sudo bash -c '[ -f /etc/multipath/wwids ] && > /etc/multipath/wwids'
-```
-
-### 2. Rebuild the Initramfs Without Host-Specific Device Constraints
-
-Rebuilding with `--no-hostonly` produces a generic initramfs that includes a broader set of drivers and doesn't encode any specific device paths — appropriate for a VM that may move between hypervisors or run on different virtual hardware.
-
-```bash
-sudo dracut -f --no-hostonly --add-drivers "virtio_scsi virtio_net virtio_pci virtio_blk" --regenerate-all
-```
-
-Wait for the command to complete without errors.
-
-### 3. Shut Down and Proceed with Import or Clone
-
-Cleanly shut down the VM:
-
-```bash
-sudo shutdown -h now
-```
-
-Import or clone the VM into VergeOS using your normal process (VMware migration, OVF/OVA import, disk image import, or VergeOS clone). Once in VergeOS:
-
-1. Open the VM's **Drives** settings and change each hard drive's interface to **virtio-scsi**.
-2. Confirm the OS disk is **Boot Order ID 0**.
-3. Open the VM's **NICs** settings and change all NICs to **virtio**.
-4. Start the VM — it should boot normally without needing rescue mode.
-
----
-
-## Option 2: Fix After Clone, Import, or Restore Using Rescue Mode
-
-Use this approach when the VM is already in VergeOS and failing to boot — whether the cause was an import from another hypervisor, a clone with new serial numbers, or a snapshot restore. The steps below achieve the same result as Option 1, but performed from inside a rescue environment rather than the running OS.
+## Steps
 
 ### 1. Configure VM Hardware in VergeOS
 
@@ -232,7 +169,7 @@ mount -a
 
 ### 5. Clear Persistent Device Rules
 
-Remove the udev persistent naming rules that tie device names to the original hypervisor's hardware identifiers. Without this step, udev will fail to name devices correctly on the new virtio hardware.
+Remove the udev persistent naming rules that tie device names to the original hardware identifiers. Without this step, udev will fail to name devices correctly on the new virtio hardware.
 
 ```bash
 rm -f /etc/udev/rules.d/70-persistent-net.rules
@@ -245,7 +182,7 @@ Check for any additional rules referencing hardware-specific identifiers (serial
 ls /etc/udev/rules.d/
 ```
 
-Remove any rule files that are specific to the old hypervisor's hardware. Rules that ship with the distribution (e.g., in `/usr/lib/udev/rules.d/`) don't need to be touched.
+Remove any rule files that are specific to the original hardware. Rules that ship with the distribution (e.g., in `/usr/lib/udev/rules.d/`) don't need to be touched.
 
 If the system was configured with multipath storage, clear the device WWID whitelist:
 
