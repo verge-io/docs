@@ -1,0 +1,57 @@
+---
+title: "Module 6: Virtual Machines"
+description: "Create and manage VMs in VergeOS, deploy from recipes and templates, configure GPU passthrough, and import VMs from VMware and other platforms."
+sidebar:
+  order: 0
+---
+
+import { CardGrid, LinkCard } from "@astrojs/starlight/components";
+
+## Learning Objectives
+
+By the end of this module, you will be able to:
+
+- **Create and manage VMs** in VergeOS using the UI and API
+- **Deploy VMs from recipes and templates** to standardize provisioning workflows
+- **Configure GPU passthrough** for specialized workloads (VDI, AI/ML, rendering)
+- **Import VMs from VMware and other platforms** using built-in migration tools
+
+## Prerequisites
+
+- Completion of [Module 1: Architecture Fundamentals](/training/01-architecture/) -- understanding of VergeOS platform architecture
+- Completion of [Module 4: Networking](/training/04-networking/) -- understanding of virtual networks and network configuration
+- Completion of [Module 5: Storage](/training/05-storage/) -- understanding of vSAN tiers and storage provisioning
+
+## Estimated Time
+
+**3 hours** (1.5 hours reading + 1.5 hours lab)
+
+## Topics
+
+<CardGrid>
+  <LinkCard
+    title="VM Creation & Lifecycle"
+    description="Creating VMs, configuring CPU/memory/disk, managing VM lifecycle (start, stop, snapshot, clone), live migration between nodes, and HA failover."
+    href="/training/06-virtual-machines/01-vm-creation-lifecycle/"
+  />
+  <LinkCard
+    title="Recipes & Marketplace"
+    description="Building reusable VM recipes for standardized deployments, organizing catalogs, Cloud-Init integration, and the VergeOS Marketplace."
+    href="/training/06-virtual-machines/02-recipes-marketplace/"
+  />
+  <LinkCard
+    title="GPU & Device Passthrough"
+    description="Configuring PCI, NVIDIA vGPU, SR-IOV NIC, and USB device passthrough using resource groups and resource rules."
+    href="/training/06-virtual-machines/03-gpu-passthrough/"
+  />
+  <LinkCard
+    title="VM Migration & Import"
+    description="Migrating workloads from VMware, Hyper-V, KVM, and physical machines using the VMware Connector, file uploads, NAS volumes, and the Clone Utility."
+    href="/training/06-virtual-machines/04-vm-migration-import/"
+  />
+  <LinkCard
+    title="Lab: Virtual Machine Operations"
+    description="Create VMs, deploy from recipes, configure GPU passthrough, and import a VM from an external format."
+    href="/training/06-virtual-machines/lab/"
+  />
+</CardGrid>

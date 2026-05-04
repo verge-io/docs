@@ -1,0 +1,319 @@
+---
+title: "Clusters & Node Types"
+description: "Learn how VergeOS organizes physical servers into clusters, understand the different node types (controller, scale-out, storage-only, compute-only), and how systems scale."
+sidebar:
+  order: 5
+---
+
+## What is a Cluster?
+
+A **cluster** in VergeOS is a logical grouping of nodes with the same hardware characteristics, forming a resource pool presented as usable assets in the VergeOS user interface. Clusters enable efficient management, scaling, and high availability for virtualized workloads.
+
+Every VergeOS system starts with at least one cluster — the initial two controller nodes form the first cluster during installation. From there, you can add nodes to the existing cluster or create additional clusters with different roles and hardware profiles.
+
+### Why Clusters Matter
+
+Clusters serve several purposes:
+
+- **Compute isolation** — CPU, memory, and VM workloads are bound to a specific cluster. VMs run only on nodes within their assigned cluster (with optional failover to another cluster).
+- **Shared storage pool** — vSAN tiers span across clusters into a single logical storage pool. A storage drive on Cluster 1 and a storage drive on Cluster 2 can both contribute to the same tier. Compute-only nodes access this shared storage over the core fabric.
+- **Hardware optimization** — Different clusters can have different hardware profiles: high-memory nodes for databases, GPU-equipped nodes for rendering, NVMe-dense nodes for storage-intensive workloads
+- **Independent scaling** — Add compute capacity to one cluster without affecting others; storage scales across the entire system
+
+## Cluster Types
+
+VergeOS supports three distinct cluster types that can be mixed and matched within a single system:
+
+| Cluster Type       | Provides          | vSAN Participation                                 | Typical Use Case                                       |
+| ------------------ | ----------------- | -------------------------------------------------- | ------------------------------------------------------ |
+| **Combined (HCI)** | Compute + Storage | Yes — nodes contribute storage disks to vSAN tiers | General-purpose workloads, small-to-medium deployments |
+| **Storage-Only**   | Storage only      | Yes — nodes contribute storage only                | Dedicated storage expansion in UCI architectures       |
+| **Compute-Only**   | Compute only      | No — boot-only or PXE boot                         | High-compute workloads (ML, rendering, data analytics) |
+
+**Common deployment examples:**
+
+```mermaid
+graph TB
+    subgraph hci["HCI (Single Cluster)"]
+        N1["Controller 1<br/>Compute + Storage"]
+        N2["Controller 2<br/>Compute + Storage"]
+        N3["Scale-out<br/>Compute + Storage"]
+    end
+
+    subgraph hybrid["Hybrid (2 Clusters)"]
+        H1["Controller 1<br/>Storage + Mgmt"]
+        H2["Controller 2<br/>Storage + Mgmt"]
+        HC1["Compute Node 1"]
+        HC2["Compute Node 2"]
+    end
+
+    subgraph uci["UCI (3 Clusters)"]
+        U1["Controller 1<br/>Mgmt"]
+        U2["Controller 2<br/>Mgmt"]
+        US1["Storage Node 1"]
+        US2["Storage Node 2"]
+        UC1["Compute Node 1"]
+        UC2["Compute Node 2"]
+    end
+
+    style N1 fill:#e3f2fd,stroke:#1565c0
+    style N2 fill:#e3f2fd,stroke:#1565c0
+    style N3 fill:#e3f2fd,stroke:#1565c0
+    style H1 fill:#e3f2fd,stroke:#1565c0
+    style H2 fill:#e3f2fd,stroke:#1565c0
+    style HC1 fill:#fff3e0,stroke:#e65100
+    style HC2 fill:#fff3e0,stroke:#e65100
+    style U1 fill:#e3f2fd,stroke:#1565c0
+    style U2 fill:#e3f2fd,stroke:#1565c0
+    style US1 fill:#e8f5e9,stroke:#2e7d32
+    style US2 fill:#e8f5e9,stroke:#2e7d32
+    style UC1 fill:#fff3e0,stroke:#e65100
+    style UC2 fill:#fff3e0,stroke:#e65100
+```
+
+## Node Types
+
+Every physical server in a VergeOS system is a **node**. Nodes differ in how they join the system, what role they play, and which cluster they belong to. VergeOS defines four node types:
+
+### Controller Nodes
+
+Every VergeOS system starts with at least two **controller nodes**. A third controller node is required for N+2 redundancy. They are special because:
+
+- **Node 1** creates a brand-new VergeOS system. It initializes the vSAN, creates the first cluster, and runs post-install configuration (network setup, cluster creation for additional node types, etc.)
+- **Node 2** joins the system created by Node 1 as the second controller, providing redundancy for all system management functions (N+1)
+- **Node 3 (optional)** — a third controller node can be added for N+2 redundancy, allowing the system to tolerate two simultaneous node failures
+
+Controller nodes always belong to **Cluster 1**. In an HCI topology, they provide both compute and storage. In a hybrid topology, they commonly provide **storage and management only** — no production VMs — while a separate compute cluster handles all workloads. In a full UCI topology, they manage the system but delegate storage and compute to dedicated clusters.
+
+The first cluster must include at least two nodes with **Tier 0 storage** (metadata drives) — this is a hard requirement because Tier 0 holds the vSAN filesystem index and must be redundant.
+
+### Scale-Out Nodes
+
+Scale-out nodes expand an existing HCI cluster by adding more compute and storage capacity. Key characteristics:
+
+- **Identical hardware** to the controller nodes in the cluster they join (same CPU generation, similar storage layout, matching NIC configuration)
+- Join the existing cluster automatically via **network auto-detection** — the node discovers the VergeOS system on the core fabric and joins without manual cluster assignment
+- Disks join the existing vSAN tiers automatically
+- Contribute both compute (run VMs) and storage (vSAN participation)
+
+Scale-out nodes are the simplest way to grow an HCI deployment — add a node and the cluster's compute and storage capacity increases proportionally.
+
+### Storage-Only Nodes
+
+Storage-only nodes are dedicated exclusively to expanding vSAN capacity. They:
+
+- Contribute disks to vSAN tiers but do **not** run VM workloads
+- Belong to a **storage-only cluster** (e.g., Cluster 2)
+- Require creating the storage cluster in the VergeOS UI before adding the first storage node
+- Are used in UCI architectures where storage and compute scale independently
+
+### Compute-Only Nodes
+
+Compute-only nodes provide processing power without participating in vSAN storage. They:
+
+- Run VM workloads but have **no local vSAN storage** (boot-only disk or PXE boot)
+- Belong to a **compute-only cluster** (e.g., Cluster 3)
+- Require creating the compute cluster in the VergeOS UI before adding the first compute node
+- Access storage over the core fabric from nodes in HCI or storage-only clusters
+
+Compute-only nodes are ideal for workloads that need high CPU/RAM/GPU density without proportional storage growth — machine learning, rendering, data analytics, or VDI.
+
+### Node Type Summary
+
+| Node Type               | Role                          | Cluster    | vSAN                          | Runs VMs              | Join Method                      |
+| ----------------------- | ----------------------------- | ---------- | ----------------------------- | --------------------- | -------------------------------- |
+| **Controller (Node 1)** | Creates new system            | Cluster 1  | Yes (Tier 0 + workload tiers) | Yes (HCI) or No (UCI) | New system creation              |
+| **Controller (Node 2)** | Joins as redundant controller | Cluster 1  | Yes (Tier 0 + workload tiers) | Yes (HCI) or No (UCI) | Joins Cluster 1                  |
+| **Scale-out**           | Adds HCI capacity             | Cluster 1  | Yes (workload tiers)          | Yes                   | Auto-detect on core fabric       |
+| **Storage-only**        | Dedicated storage expansion   | Cluster 2+ | Yes (workload tiers)          | No                    | Joins designated storage cluster |
+| **Compute-only**        | Dedicated compute expansion   | Cluster 2+ | No (boot-only / PXE)          | Yes                   | Joins designated compute cluster |
+
+:::note[Coming from VMware or Nutanix?]
+Neither platform has a native concept of storage-only or compute-only members within a single cluster. VergeOS does, and it lets you type clusters for independent scaling.
+
+| VergeOS node role | VMware vSphere closest analog | Nutanix closest analog |
+| --- | --- | --- |
+| Controller | ESXi host + vCenter services (no separate appliance) | First node in a cluster, but no separate CVM |
+| Scale-out | Additional ESXi host joining a vSAN cluster | Additional node joining a Nutanix cluster |
+| Storage-only | No native equivalent (vSAN witness is closest) | No equivalent — every Nutanix node runs a CVM and participates in compute |
+| Compute-only | ESXi host with no local vSAN, mounting external storage (here, vSAN over the core fabric) | No direct equivalent |
+
+VMware and Nutanix clusters are uniform; VergeOS clusters can be HCI, storage-only, or compute-only, and a system can mix multiple typed clusters.
+:::
+
+## How Nodes Join a System
+
+The node joining process follows a strict sequence to prevent race conditions:
+
+```mermaid
+flowchart TD
+    A["Node 1 (Controller)<br/>Creates new VergeOS system<br/>Initializes vSAN, creates Cluster 1"] --> B["Node 2 (Controller)<br/>Joins Cluster 1<br/>Establishes HA pair"]
+    B --> C{"Additional nodes?"}
+    C -->|"Scale-out"| D["Scale-out Nodes<br/>Auto-detect system on core fabric<br/>Join Cluster 1 sequentially"]
+    C -->|"Storage-only"| E["Create Storage Cluster<br/>(Cluster 2 in UI)"]
+    C -->|"Compute-only"| F["Create Compute Cluster<br/>(Cluster 2 or 3 in UI)"]
+    E --> G["Storage Nodes<br/>Join storage cluster sequentially"]
+    F --> H["Compute Nodes<br/>Join compute cluster sequentially"]
+    G --> F
+
+    style A fill:#e3f2fd,stroke:#1565c0
+    style B fill:#e3f2fd,stroke:#1565c0
+    style D fill:#e3f2fd,stroke:#1565c0
+    style G fill:#e8f5e9,stroke:#2e7d32
+    style H fill:#fff3e0,stroke:#e65100
+```
+
+Key rules for node joining:
+
+1. **Node 1 must complete installation** before Node 2 can join — Node 2 needs an existing system to connect to
+2. **Nodes join sequentially** within a cluster — Node 3 after Node 2, Node 4 after Node 3, etc. — to prevent race conditions during cluster membership changes
+3. **Storage clusters must exist** before storage nodes can join — create the cluster in the VergeOS UI first
+4. **Compute clusters must exist** before compute nodes can join — same prerequisite
+5. **If deploying both storage and compute clusters**, storage nodes should be added first so compute nodes can immediately access vSAN storage
+
+## Cluster Numbering and Naming
+
+Clusters are numbered starting from 1 and can be renamed in the VergeOS UI:
+
+| Cluster Number | Default Role                                      | Typical Name                       |
+| -------------- | ------------------------------------------------- | ---------------------------------- |
+| Cluster 1      | HCI (controllers + optional scale-out)            | "HCI", "Default", or "Controllers" |
+| Cluster 2      | Storage-only (if UCI) or Compute-only (if hybrid) | "Storage" or "Compute"             |
+| Cluster 3      | Compute-only (in full UCI with 3 clusters)        | "Compute"                          |
+
+In a full UCI deployment with 3 clusters:
+
+- **Cluster 1**: Controllers (system management, Tier 0 metadata)
+- **Cluster 2**: Storage nodes (all vSAN workload storage)
+- **Cluster 3**: Compute nodes (all VM execution)
+
+## Minimum Requirements and High Availability
+
+| Requirement                   | Detail                                                                                                                       |
+| ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| **Minimum nodes per system**  | 2 (one controller pair)                                                                                                      |
+| **Minimum nodes per cluster** | 2 (for redundancy during maintenance or failure)                                                                             |
+| **Controller nodes**          | Minimum 2 per system (N+1 default); 3 required for N+2 redundancy — must have Tier 0 storage for vSAN metadata               |
+| **HA behavior**               | If one node fails, its workloads migrate to the surviving node(s) in the same cluster                                        |
+| **Maintenance mode**          | Nodes can be placed in maintenance mode; workloads are live-migrated to other nodes in the cluster before maintenance begins |
+
+## Scaling
+
+VergeOS systems scale from a minimum 2-node HCI cluster to multi-cluster deployments. A practical guideline is to keep all nodes within a single rack so the core fabric stays on the same switching plane — this maintains the low-latency, zero-hop requirement. The scaling strategy depends on your architecture:
+
+### HCI Scaling (Simple)
+
+Add scale-out nodes to Cluster 1. Each node adds both compute and storage proportionally.
+
+```mermaid
+graph LR
+    subgraph "Start: 2-Node HCI"
+        A1["Node 1"] --- A2["Node 2"]
+    end
+
+    subgraph "Grow: 4-Node HCI"
+        B1["Node 1"] --- B2["Node 2"]
+        B3["Node 3"] --- B4["Node 4"]
+        B1 --- B3
+        B2 --- B4
+    end
+
+    subgraph "Scale: 8+ Node HCI"
+        C1["Node 1-2<br/>(Controllers)"]
+        C2["Node 3-8<br/>(Scale-out)"]
+    end
+```
+
+**Best for**: Balanced growth where compute and storage needs increase together.
+
+### UCI Scaling (Independent)
+
+Add nodes to specific clusters based on which resource is the bottleneck:
+
+- **Need more storage?** Add nodes to the storage cluster
+- **Need more compute?** Add nodes to the compute cluster
+- **Need more of both?** Add to both clusters independently
+
+**Best for**: Workloads with unbalanced resource demands (e.g., heavy storage with light compute, or GPU-dense compute with modest storage).
+
+### Best Practices for Scaling
+
+- **Hardware consistency within clusters** — Use the same hardware specs for all nodes in a cluster. Mixing different hardware within a cluster can cause performance and reliability issues.
+- **Plan for N+1 redundancy** — Size each cluster so that losing one node still leaves enough capacity for all workloads
+- **Monitor before scaling** — Use VergeOS dashboard metrics (CPU utilization, RAM usage, vSAN capacity) to identify which resource needs expansion
+- **Scale without downtime** — New nodes can be added to a running system without interrupting existing workloads
+
+## Deployment Topology Examples
+
+Common topologies that map to real-world deployment patterns:
+
+| Topology                   | Nodes                                         | Clusters                                 | When to Use                                       |
+| -------------------------- | --------------------------------------------- | ---------------------------------------- | ------------------------------------------------- |
+| **2-Node HCI**             | 2 controllers                                 | 1 (HCI)                                  | Small sites, edge, PoC, basic evaluation          |
+| **HCI + Scale-Out**        | 2 controllers + N scale-out                   | 1 (HCI)                                  | Growing HCI deployments needing balanced scaling  |
+| **Hybrid (2 clusters)**    | 2 controllers + N compute                     | 2 (Storage + Compute)                    | Compute-heavy workloads with modest storage       |
+| **UCI (3 clusters)**       | 2 controllers + N storage + M compute         | 3 (Controller + Storage + Compute)       | Independent compute/storage scaling               |
+| **UCI + GPU (4 clusters)** | 2 controllers + N storage + M compute + G GPU | 4 (Controller + Storage + Compute + GPU) | AI/ML, rendering, or VDI with dedicated GPU nodes |
+
+```mermaid
+graph TB
+    subgraph "2-Node HCI"
+        direction LR
+        H1["Controller 1<br/>HCI"] --- H2["Controller 2<br/>HCI"]
+    end
+
+    subgraph "HCI + Scale-Out"
+        direction LR
+        S1["Controller 1"] --- S2["Controller 2"]
+        S3["Scale-out 1"] --- S4["Scale-out 2"]
+    end
+
+    subgraph "Hybrid (2 Clusters)"
+        direction LR
+        subgraph "Cluster 1 (Storage)"
+            Y1["Controller 1"]
+            Y2["Controller 2"]
+        end
+        subgraph "Cluster 2 (Compute)"
+            Y3["Compute 1"]
+            Y4["Compute 2"]
+        end
+    end
+
+    subgraph "UCI + GPU (4 Clusters)"
+        direction LR
+        subgraph "Cluster 1 (Ctrl)"
+            U1["Ctrl 1"]
+            U2["Ctrl 2"]
+        end
+        subgraph "Cluster 2 (Storage)"
+            U3["Stor 1"]
+            U4["Stor 2"]
+        end
+        subgraph "Cluster 3 (Compute)"
+            U5["Comp 1"]
+            U6["Comp 2"]
+        end
+        subgraph "Cluster 4 (GPU)"
+            G1["GPU Node 1"]
+            G2["GPU Node 2"]
+        end
+    end
+```
+
+## Key Takeaways
+
+| Concept                  | Summary                                                                                       |
+| ------------------------ | --------------------------------------------------------------------------------------------- |
+| **Cluster**              | Logical grouping of nodes with same hardware, forming a resource pool                         |
+| **Three cluster types**  | HCI (compute + storage), Storage-only, Compute-only — mixable within one system               |
+| **Four node types**      | Controller, Scale-out, Storage-only, Compute-only — each with a specific role and join method |
+| **Minimum 2 nodes**      | Per cluster for redundancy; controllers require Tier 0 storage                                |
+| **Sequential joining**   | Nodes join one at a time to prevent race conditions                                           |
+| **Hardware consistency** | All nodes in a cluster should have matching hardware specifications                           |
+| **Independent scaling**  | UCI architecture allows adding compute or storage capacity independently                      |
+| **Scaling**              | Systems scale from 2-node HCI to multi-cluster deployments within a single switching plane    |
+
+## Next Steps
+
+You now understand how VergeOS organizes nodes into clusters and how different node types serve different roles. In the hands-on lab, you will explore these concepts using the Terraform playground: **[Lab: Architecture Exploration →](/training/01-architecture/lab/)**

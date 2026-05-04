@@ -1,0 +1,84 @@
+---
+title: "Lab: Network Configuration"
+description: "Build a multi-network VergeOS environment with external access, internal segmentation, VLANs, and firewall rules."
+sidebar:
+  order: 1
+---
+
+## Objective
+
+Configure a complete networking environment in VergeOS, including external network connectivity, internal virtual networks, VLAN segmentation, and firewall rules to control traffic flow.
+
+## Prerequisites
+
+- Completed Module 1: Architecture Fundamentals
+- Completed Module 3: Installation
+- Completed Module 4 reading (External Networks, Internal Networks, VLANs & Firewall Rules, Dynamic Routing)
+- A running VergeOS cluster with at least 2 nodes
+
+## Difficulty
+
+**Intermediate** -- Requires understanding of networking concepts (IP addressing, VLANs, firewall rules)
+
+## Estimated Time
+
+**1.5 hours**
+
+## Steps
+
+### Part 1: External Network Configuration
+
+Connect your VergeOS cluster to the upstream physical network.
+
+1. Navigate to the Networks section in the VergeOS UI
+2. Configure the external network:
+   - Assign the external-facing NIC
+   - Configure IP addressing (static or DHCP from upstream)
+   - Set the default gateway
+3. Verify external connectivity by pinging an upstream resource
+4. Document the external network configuration for later reference
+
+### Part 2: Internal Network Creation
+
+Create isolated virtual networks for workloads.
+
+1. Create a new internal network for application workloads:
+   - Define the subnet (e.g., 10.100.1.0/24)
+   - Enable DHCP and configure the address pool
+   - Configure DNS forwarding
+2. Create a second internal network for management traffic:
+   - Define a separate subnet (e.g., 10.100.2.0/24)
+   - Enable DHCP with a different address range
+3. Verify both networks appear in the Networks dashboard
+
+### Part 3: VLAN and Firewall Rules
+
+Segment traffic and apply security policies.
+
+1. Configure VLAN tagging on the external network (if applicable):
+   - Assign a VLAN ID to match your physical network configuration
+2. Create firewall rules:
+   - Allow HTTP/HTTPS traffic from the external network to the application network
+   - Allow SSH from the management network only
+   - Block all other inter-network traffic by default
+3. Test firewall rules by attempting allowed and blocked connections
+
+### Part 4: Routing Between Networks
+
+Enable controlled communication between internal networks.
+
+1. Configure routing between the application and management networks
+2. Set up NAT for internal networks to access external resources
+3. Verify routing by testing connectivity between VMs on different internal networks
+4. Review the routing table to confirm expected routes
+
+## Verification
+
+Your networking lab is complete when you can answer **yes** to all of the following:
+
+- [ ] External network is configured and has upstream connectivity
+- [ ] At least two internal networks are created with DHCP enabled
+- [ ] Firewall rules are in place allowing only intended traffic
+- [ ] VMs on internal networks can reach external resources via NAT
+- [ ] Inter-network routing works as configured
+- [ ] Blocked traffic is correctly denied by firewall rules

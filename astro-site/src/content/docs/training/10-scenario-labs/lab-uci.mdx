@@ -1,0 +1,90 @@
+---
+title: "Lab: UCI Deployment"
+description: "Deploy a UCI 3-cluster topology with separate compute and storage clusters using the Terraform playground."
+sidebar:
+  order: 2
+---
+
+## Objective
+
+Deploy VergeOS in a Unified Cluster Infrastructure (UCI) configuration using the Terraform playground. You will provision a multi-cluster topology with dedicated compute and storage clusters, then validate cross-cluster resource allocation and networking.
+
+## Prerequisites
+
+- Completed all prior modules (1–9)
+- Completed the HCI Deployment Lab
+- Access to the vergeos-terraform-playground repository
+- Terraform CLI installed and configured
+- A VergeOS environment or lab that supports nested deployments
+
+## Difficulty
+
+**Advanced** -- Requires understanding of UCI architecture, multi-cluster networking, and resource allocation
+
+## Estimated Time
+
+**2 hours**
+
+## Steps
+
+### Part 1: UCI Topology Review
+
+Understand the UCI architecture before deploying.
+
+1. Review `docs/architecture.md` in the terraform playground -- focus on UCI sections
+2. Review `docs/deployment-scenarios.md` -- trace the UCI topology diagram
+3. Identify the UCI `.tfvars` file in the examples directory
+4. Examine the configuration and identify:
+   - How many clusters are defined and their roles (compute vs storage)
+   - Node assignments per cluster
+   - Cross-cluster networking configuration
+   - Storage tier allocation across clusters
+5. Compare the UCI `.tfvars` with the HCI `.tfvars` files -- document key structural differences
+
+### Part 2: UCI 3-Cluster Deployment
+
+Deploy the UCI topology.
+
+1. Run `terraform init` (if needed) and `terraform plan -var-file=<uci-3-cluster>.tfvars`
+2. Review the planned resources -- note the additional cluster and networking resources compared to HCI
+3. Run `terraform apply -var-file=<uci-3-cluster>.tfvars` to deploy
+4. In the VergeOS UI, verify:
+   - All clusters appear and are correctly labeled (compute, storage)
+   - Nodes are assigned to their correct clusters
+   - Cross-cluster core fabric networking is established
+   - Storage pools are available to compute clusters
+   - Controller VMs are running on appropriate nodes
+
+### Part 3: Resource Allocation & Scaling
+
+Practice working with the UCI topology.
+
+1. Create a VM on a compute cluster and verify it uses storage from the storage cluster
+2. Monitor cross-cluster I/O in the dashboard
+3. Explore how you would add a node to an existing cluster
+4. Document the advantages of this UCI topology:
+   - Independent scaling of compute and storage
+   - Failure domain isolation between clusters
+   - Workload placement flexibility
+5. Compare the operational model to the HCI deployments from the previous lab
+
+### Part 4: Design Decision Exercise
+
+Apply what you've learned to a customer scenario.
+
+1. **Scenario**: A customer has 200 VMs, 50TB of storage, needs to independently scale compute and storage, and has strict compliance requirements for data isolation. They currently run VMware vSAN with separate management and workload clusters.
+2. Recommend a VergeOS topology (HCI or UCI) and justify your choice
+3. Sketch the cluster layout (number of clusters, nodes per cluster, roles)
+4. Identify which terraform playground example most closely matches your design
+5. Document any modifications needed to the example `.tfvars` to match the customer requirements
+
+## Verification
+
+Your UCI deployment lab is complete when you can answer **yes** to all of the following:
+
+- [ ] Successfully deployed a UCI 3-cluster topology via Terraform
+- [ ] Verified all clusters, nodes, and cross-cluster networking in the VergeOS UI
+- [ ] Created a VM on a compute cluster using storage from the storage cluster
+- [ ] Documented the key differences between UCI and HCI operational models
+- [ ] Completed the design decision exercise with a justified topology recommendation
+- [ ] Cleaned up all lab resources with `terraform destroy`

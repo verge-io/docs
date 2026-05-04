@@ -516,6 +516,56 @@ export default defineConfig({
           ],
         },
             {
+              label: 'Training',
+              link: '/training/',
+              icon: 'puzzle',
+              badge: 'New',
+              id: 'training',
+              items: [
+                { label: 'Overview', slug: 'training' },
+                {
+                  label: '1. Architecture Fundamentals',
+                  autogenerate: { directory: 'training/01-architecture' },
+                },
+                {
+                  label: '2. Sizing & Design',
+                  autogenerate: { directory: 'training/02-sizing-design' },
+                },
+                {
+                  label: '3. Installation',
+                  autogenerate: { directory: 'training/03-installation' },
+                },
+                {
+                  label: '4. Networking',
+                  autogenerate: { directory: 'training/04-networking' },
+                },
+                {
+                  label: '5. Storage',
+                  autogenerate: { directory: 'training/05-storage' },
+                },
+                {
+                  label: '6. Virtual Machines',
+                  autogenerate: { directory: 'training/06-virtual-machines' },
+                },
+                {
+                  label: '7. Multi-Tenancy',
+                  autogenerate: { directory: 'training/07-multi-tenancy' },
+                },
+                {
+                  label: '8. Developer / DevOps',
+                  autogenerate: { directory: 'training/08-developer-devops' },
+                },
+                {
+                  label: '9. Monitoring & Troubleshooting',
+                  autogenerate: { directory: 'training/09-monitoring-troubleshooting' },
+                },
+                {
+                  label: '10. Scenario Labs',
+                  autogenerate: { directory: 'training/10-scenario-labs' },
+                },
+              ],
+            },
+            {
               label: 'Release Notes',
               link: '/release-notes/release-notes-overview/',
               icon: 'list-format',

@@ -1,0 +1,76 @@
+---
+title: "Lab: Sizing & Design Exercise"
+description: "Design a VergeOS deployment for a customer scenario, including topology selection and hardware sizing."
+sidebar:
+  order: 1
+---
+
+## Objective
+
+Given a fictional customer scenario, you will evaluate requirements, select an appropriate VergeOS topology, size the hardware, and produce a deployment diagram.
+
+## Prerequisites
+
+- Completed Module 1: Architecture Fundamentals
+- Completed Module 2 reading (Hardware Requirements, Reference Architectures, Customer Scoping)
+- Access to VergeOS reference architecture documentation
+
+## Difficulty
+
+**Beginner** -- Step-by-step guidance provided
+
+## Estimated Time
+
+**1 hour**
+
+## Steps
+
+### Part 1: Requirements Gathering
+
+Review the following customer scenario and extract the key sizing inputs.
+
+> **Scenario**: A mid-size logistics company needs to consolidate 3 aging VMware clusters (40 VMs total) onto VergeOS. They run a mix of Windows Server (AD, file services, SQL Server) and Linux (web apps, monitoring). Peak memory usage across all VMs is ~384 GB. Total storage consumed is 12 TB with 20% annual growth expected. They have a single datacenter with one network rack and want high availability.
+
+**Questions to answer:**
+
+1. What is the total vCPU, memory, and storage requirement?
+2. What growth runway should you plan for (1-year, 3-year)?
+3. What availability requirements exist?
+4. Are there any workloads that need special consideration (e.g., SQL Server IOPS)?
+
+### Part 2: Topology Selection
+
+Based on your requirements analysis:
+
+1. Should this be an HCI or UCI deployment? Why?
+2. How many nodes do you recommend?
+3. What node roles are needed (controller, scale-out, storage-only, compute-only)?
+4. Which reference architecture is the closest starting point?
+
+### Part 3: Hardware Sizing
+
+Produce a bill of materials for each node:
+
+1. CPU model and core count
+2. Memory per node
+3. Storage configuration (boot drive, performance tier (e.g., NVMe for Tier 1), capacity tier (e.g., HDD for Tier 4))
+4. Network interfaces (how many, what speed)
+
+### Part 4: Diagram
+
+Draw or describe a topology diagram showing:
+
+1. Node layout (which nodes, which roles)
+2. Network connections (core fabric, external)
+3. Storage tiers
+4. How HA is achieved
+
+## Verification
+
+Your design is complete when you can answer **yes** to all of the following:
+
+- [ ] Total resources meet or exceed the customer's current usage + growth plan
+- [ ] The topology provides high availability (no single point of failure)
+- [ ] Network design includes redundant core fabric connections
+- [ ] Storage is sized with appropriate tier separation (fast tier for performance-sensitive workloads, capacity tier for archive/snapshots)
+- [ ] You can justify your HCI vs UCI decision with specific customer requirements

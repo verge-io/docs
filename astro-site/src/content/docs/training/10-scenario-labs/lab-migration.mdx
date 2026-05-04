@@ -1,0 +1,105 @@
+---
+title: "Lab: VMware Migration"
+description: "Plan and execute a VMware-to-VergeOS migration end-to-end, including VM import, network reconfiguration, and validation."
+sidebar:
+  order: 3
+---
+
+## Objective
+
+Plan and execute a full VMware-to-VergeOS migration. You will assess existing VMware workloads, plan the migration, import VMs into VergeOS, reconfigure networking, and validate that workloads are running correctly post-migration.
+
+## Prerequisites
+
+- Completed all prior modules (1–9)
+- Completed the HCI and UCI Deployment Labs
+- A running VergeOS cluster (from a previous lab or dedicated environment)
+- Access to a VMware environment with at least 1–2 VMs to migrate (or exported VM files)
+- Understanding of VMware networking concepts (vSwitches, port groups, VLANs)
+
+## Difficulty
+
+**Advanced** -- Requires hands-on experience with both VMware and VergeOS environments
+
+## Estimated Time
+
+**2 hours**
+
+## Steps
+
+### Part 1: Migration Planning
+
+Assess the source environment and plan the migration.
+
+1. Inventory the VMware environment:
+   - List VMs to migrate (name, OS, vCPU, RAM, disk size)
+   - Document network configuration (port groups, VLANs, IP addresses)
+   - Identify storage requirements (thin/thick provisioned, total capacity)
+   - Note any special configurations (GPU passthrough, RDMs, snapshots)
+2. Create a migration plan document that includes:
+   - Source-to-target resource mapping (VMware → VergeOS)
+   - Network mapping (vSphere port groups → VergeOS virtual networks)
+   - Migration order and dependencies between VMs
+   - Rollback strategy
+   - Estimated downtime per VM
+3. Verify the target VergeOS cluster has sufficient capacity for all migrated workloads
+
+### Part 2: VM Import
+
+Import VMs from VMware into VergeOS.
+
+:::tip[VMware Connector]
+For live production migrations, consider using the **VMware Connector** (Backup/DR → VMware Services → New) which connects directly to vSphere via API and performs incremental backups using Change Block Tracking (CBT) — no downtime on the source VMs required. The steps below use the OVF/file import method, which is suitable for lab environments.
+:::
+
+1. Export VMs from VMware (OVF/OVA format) or prepare for direct import
+2. In the VergeOS UI, navigate to **Machines → Virtual Machines → New → Import from Files**
+3. Import the first VM and configure:
+   - CPU and memory allocation
+   - Disk assignment to the appropriate storage tier
+   - Network interface mapping to VergeOS virtual networks
+4. Start the imported VM and verify it boots successfully
+5. Repeat for additional VMs
+6. Document any issues encountered during import and how they were resolved
+
+### Part 3: Network Reconfiguration
+
+Ensure migrated VMs have proper network connectivity.
+
+1. Verify each migrated VM's network interface is connected to the correct VergeOS virtual network
+2. Confirm IP addressing:
+   - If using DHCP, verify the VM received an address
+   - If using static IPs, verify the configuration is correct
+3. Test connectivity:
+   - VM-to-VM communication within the same network
+   - VM access to external networks
+   - Any required firewall rules are in place
+4. Compare network performance before and after migration (if measurable)
+
+### Part 4: Validation & Documentation
+
+Validate the migration and create a runbook.
+
+1. For each migrated VM, verify:
+   - Application/service is running correctly
+   - Performance is acceptable (CPU, memory, disk I/O)
+   - All network connectivity is functional
+   - Any scheduled tasks or cron jobs are running
+2. Run a basic load test or application test to confirm stability
+3. Create a migration runbook documenting:
+   - Step-by-step process followed
+   - Issues encountered and resolutions
+   - Time taken per VM
+   - Recommendations for future migrations at scale
+4. Identify what you would do differently in a production migration
+
+## Verification
+
+Your VMware migration lab is complete when you can answer **yes** to all of the following:
+
+- [ ] Created a detailed migration plan with source-to-target resource mapping
+- [ ] Successfully imported at least one VM from VMware into VergeOS
+- [ ] Verified the imported VM boots and runs its application/service correctly
+- [ ] Confirmed network connectivity for all migrated VMs
+- [ ] Documented the migration process as a reusable runbook
+- [ ] Identified lessons learned and recommendations for production migrations

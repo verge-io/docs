@@ -1,0 +1,96 @@
+---
+title: "Lab: Virtual Machine Operations"
+description: "Create VMs, deploy from recipes, configure GPU passthrough, and import a VM from an external format in VergeOS."
+sidebar:
+  order: 1
+---
+
+## Objective
+
+Perform core virtual machine operations in VergeOS, including manual VM creation, recipe-based deployment, GPU passthrough configuration, and VM import from an external platform.
+
+## Prerequisites
+
+- Completed Module 1: Architecture Fundamentals
+- Completed Module 4: Networking
+- Completed Module 5: Storage
+- Completed Module 6 reading (VM Creation, Recipes & Templates, GPU Passthrough, VM Migration)
+- A running VergeOS cluster with available compute and storage resources
+
+## Difficulty
+
+**Intermediate** -- Requires understanding of virtualization concepts (CPU, memory, disk, networking)
+
+## Estimated Time
+
+**1.5 hours**
+
+## Steps
+
+### Part 1: VM Creation & Lifecycle
+
+Create a virtual machine from scratch and perform lifecycle operations.
+
+1. Navigate to the Virtual Machines section in the VergeOS UI
+2. Create a new VM with the following configuration:
+   - Name: "lab-vm-01"
+   - CPU: 2 vCPUs
+   - Memory: 4 GB
+   - Disk: 40 GB on your preferred storage tier
+   - Network: Attach to an existing internal network
+3. Attach an ISO and install a guest operating system
+4. Perform lifecycle operations:
+   - Take a snapshot of the running VM
+   - Clone the VM to create "lab-vm-02"
+   - Stop, start, and restart the cloned VM
+5. Verify both VMs are running and accessible on the network
+
+### Part 2: Recipe-Based Deployment
+
+Deploy a VM using a pre-built recipe for standardized provisioning.
+
+1. Browse the available VM recipes in the VergeOS recipe catalog
+2. Select a recipe appropriate for your environment (e.g., Linux server template)
+3. Deploy a new VM from the recipe:
+   - Customize the VM name and resource allocation
+   - Review the recipe-defined configuration before deploying
+4. Verify the deployed VM matches the recipe specifications
+5. Compare the recipe-deployed VM to your manually created VM
+
+### Part 3: GPU Passthrough (Optional)
+
+Configure GPU passthrough for a compute-intensive workload.
+
+1. Identify available GPU devices in the VergeOS hardware inventory
+2. Configure PCI passthrough for a GPU device:
+   - Select the target VM for GPU assignment
+   - Assign the GPU device to the VM
+3. Start the VM and verify the GPU is recognized by the guest OS
+4. Install appropriate GPU drivers in the guest OS
+5. Validate GPU functionality with a basic test (e.g., GPU info query)
+
+> **Note:** This section requires physical GPU hardware in your cluster. Skip if GPUs are not available.
+
+### Part 4: VM Import from VMware
+
+Import a virtual machine from an external platform.
+
+1. Prepare a VM export from VMware (OVA/VMDK) or another hypervisor
+2. Use the VergeOS import tools to bring the VM into the platform:
+   - Upload the VM image
+   - Map the virtual hardware (CPU, memory, disk, network)
+   - Review and adjust the import configuration
+3. Start the imported VM and verify it boots successfully
+4. Validate network connectivity and application functionality
+5. Compare performance metrics between the imported VM and a native VergeOS VM
+
+## Verification
+
+Your VM lab is complete when you can answer **yes** to all of the following:
+
+- [ ] A VM was created manually with specified CPU, memory, disk, and network settings
+- [ ] Snapshot and clone operations were performed successfully
+- [ ] A VM was deployed from a recipe with correct configuration
+- [ ] GPU passthrough was configured (or skipped with justification if no GPU hardware)
+- [ ] A VM was imported from an external format and boots successfully
+- [ ] All VMs are accessible on the network and functioning as expected

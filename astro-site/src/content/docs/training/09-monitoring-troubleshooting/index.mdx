@@ -1,0 +1,73 @@
+---
+title: "Module 9: Monitoring & Troubleshooting"
+description: "Monitor VergeOS system health, configure alerts and log forwarding, diagnose common issues, and know when to escalate to Verge support."
+sidebar:
+  order: 0
+---
+
+import { CardGrid, LinkCard } from "@astrojs/starlight/components";
+
+## Learning Objectives
+
+By the end of this module, you will be able to:
+
+- **Navigate the VergeOS dashboard** for real-time system health monitoring
+- **Configure alerts and log forwarding** to proactively detect and respond to issues
+- **Diagnose common issues** using system logs, diagnostics, and built-in tools
+- **Know when and how to escalate** to Verge support with the right diagnostic information
+
+## Prerequisites
+
+- Completion of [Module 1: Architecture Fundamentals](/training/01-architecture/) -- understanding of VergeOS platform architecture
+- Completion of [Module 4: Networking](/training/04-networking/) -- understanding of VergeOS networking concepts
+- Completion of [Module 5: Storage](/training/05-storage/) -- understanding of vSAN/VergeFS storage
+- Familiarity with the VergeOS UI dashboard
+
+## Estimated Time
+
+**3 hours** (1.5 hours reading + 1.5 hours lab)
+
+## Topics
+
+<CardGrid>
+  <LinkCard
+    title="Dashboard & System Health"
+    description="Navigating the VergeOS dashboard for real-time visibility into node status, resource utilization, and cluster health."
+    href="/training/09-monitoring-troubleshooting/01-dashboard-health/"
+  />
+  <LinkCard
+    title="Alerts & Notifications"
+    description="Configuring system alerts, notification rules, and email/webhook alerting for proactive issue detection."
+    href="/training/09-monitoring-troubleshooting/02-alerts/"
+  />
+  <LinkCard
+    title="Log Management & Forwarding"
+    description="System log access, filtering, search, and syslog forwarding to external SIEM and monitoring platforms."
+    href="/training/09-monitoring-troubleshooting/03-log-management/"
+  />
+  <LinkCard
+    title="Prometheus & Grafana"
+    description="Exposing VergeOS metrics via the built-in Prometheus endpoint and building Grafana dashboards for advanced monitoring."
+    href="/training/09-monitoring-troubleshooting/04-prometheus-grafana/"
+  />
+  <LinkCard
+    title="Diagnostics Toolkit"
+    description="Built-in diagnostic tools, network troubleshooting utilities, storage health checks, and system diagnostics bundles."
+    href="/training/09-monitoring-troubleshooting/05-diagnostics-toolkit/"
+  />
+  <LinkCard
+    title="Common Issues & Resolution"
+    description="Troubleshooting runbooks for the most frequently encountered VergeOS issues across compute, storage, and networking."
+    href="/training/09-monitoring-troubleshooting/06-common-issues/"
+  />
+  <LinkCard
+    title="Support Escalation"
+    description="Knowing when to escalate issues, gathering the right diagnostic data, and working effectively with Verge support."
+    href="/training/09-monitoring-troubleshooting/07-support-escalation/"
+  />
+  <LinkCard
+    title="Lab: Monitoring & Troubleshooting"
+    description="Explore the VergeOS dashboard, configure alerts, analyze logs, and practice diagnosing simulated issues."
+    href="/training/09-monitoring-troubleshooting/lab/"
+  />
+</CardGrid>

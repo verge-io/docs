@@ -1,0 +1,61 @@
+---
+title: "Module 1: Architecture Fundamentals"
+description: "Understand the VergeOS platform architecture, deployment models, storage, networking, and cluster concepts."
+sidebar:
+  order: 0
+---
+
+import { CardGrid, LinkCard } from "@astrojs/starlight/components";
+
+## Learning Objectives
+
+By the end of this module, you will be able to:
+
+- **Describe what VergeOS is** and how its unified operating system approach differs from traditional 3-tier infrastructure and other HCI platforms
+- **Compare HCI and UCI deployment models** and recommend the right topology for a given use case
+- **Explain VergeFS (vSAN) storage** including tier architecture, data distribution, and redundancy mechanisms
+- **Describe the core fabric network** and how inter-node communication, vSAN replication, and VM live migration traffic flow
+- **Identify VergeOS node types and cluster concepts** including controller nodes, scale-out nodes, compute-only, and storage-only roles
+
+## Prerequisites
+
+None -- this is the first module in the training program. No prior VergeOS experience is required.
+
+## Estimated Time
+
+**2 hours** (1.5 hours reading + 0.5 hours lab)
+
+## Topics
+
+<CardGrid>
+  <LinkCard
+    title="What is VergeOS?"
+    description="The unified ultraconverged operating system: VergeHV (compute), VergeFS (storage), and VergeFabric (networking) in a single platform. How it compares to VMware, Nutanix, and traditional infrastructure."
+    href="/training/01-architecture/01-vergeos-overview/"
+  />
+  <LinkCard
+    title="HCI vs UCI"
+    description="Two deployment models for different scaling needs. Hyperconverged (HCI) scales compute and storage together; Ultra Converged (UCI) scales them independently with specialized node types."
+    href="/training/01-architecture/02-hci-vs-uci/"
+  />
+  <LinkCard
+    title="vSAN & VergeFS Storage"
+    description="Software-defined distributed storage with tiered drives (Tier 0 for metadata, Tiers 1–5 for workload data), global deduplication, and self-healing redundancy."
+    href="/training/01-architecture/03-vsan-vergefs/"
+  />
+  <LinkCard
+    title="Core Fabric & Networking"
+    description="The private inter-node mesh that carries vSAN replication, cluster coordination, and live migration traffic. Dual-switch redundancy and jumbo frame requirements."
+    href="/training/01-architecture/04-core-fabric/"
+  />
+  <LinkCard
+    title="Clusters & Node Types"
+    description="How VergeOS organizes nodes into clusters with distinct roles: controller, scale-out, compute-only, and storage-only."
+    href="/training/01-architecture/05-clusters-nodes/"
+  />
+  <LinkCard
+    title="Lab: Explore the Architecture"
+    description="Hands-on exploration of the VergeOS Terraform playground to trace deployment topologies, examine infrastructure-as-code patterns, and design a deployment for a customer scenario."
+    href="/training/01-architecture/lab/"
+  />
+</CardGrid>

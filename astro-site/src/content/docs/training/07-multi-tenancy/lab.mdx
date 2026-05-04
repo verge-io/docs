@@ -1,0 +1,88 @@
+---
+title: "Lab: Multi-Tenant Environment"
+description: "Create tenants, allocate resources, deploy from a tenant recipe, and verify tenant isolation in VergeOS."
+sidebar:
+  order: 1
+---
+
+## Objective
+
+Design and deploy a multi-tenant environment in VergeOS, including manual tenant creation, recipe-based tenant provisioning, and verification of tenant isolation at the network and storage layers.
+
+## Prerequisites
+
+- Completed Module 1: Architecture Fundamentals
+- Completed Module 4: Networking
+- Completed Module 5: Storage
+- Completed Module 6: Virtual Machines
+- Completed Module 7 reading (Multi-Tenancy Concepts, Tenant Creation, Tenant Recipes, Isolation & Security)
+- A running VergeOS cluster with sufficient compute, memory, and storage resources for at least 2 tenants
+
+## Difficulty
+
+**Intermediate** -- Requires understanding of resource allocation, networking, and virtualization concepts
+
+## Estimated Time
+
+**1.5 hours**
+
+## Steps
+
+### Part 1: Manual Tenant Creation
+
+Create a tenant from scratch and configure its resources.
+
+1. Navigate to the Tenants section in the VergeOS UI
+2. Create a new tenant with the following configuration:
+   - Name: "lab-tenant-01"
+   - CPU cores: 4
+   - Memory: 8 GB
+   - Storage: 100 GB
+3. Configure tenant networking:
+   - Create an internal network for the tenant
+   - Configure external network access (NAT or direct, depending on your environment)
+4. Log into the tenant UI and verify the allocated resources are visible
+5. Create a simple VM inside the tenant to confirm compute and storage are functional
+
+### Part 2: Tenant Recipe Deployment
+
+Deploy a tenant using a pre-built recipe for standardized provisioning.
+
+1. Examine the available tenant recipes in the VergeOS recipe catalog
+2. Select or create a tenant recipe that includes:
+   - Pre-defined resource allocations (CPU, memory, storage)
+   - Pre-configured internal networking
+   - One or more VM templates
+3. Deploy a new tenant from the recipe:
+   - Name: "lab-tenant-02"
+   - Review and accept the recipe-defined configuration
+4. Log into the recipe-deployed tenant and verify:
+   - Resources match the recipe specification
+   - Pre-configured VMs and networks are present
+5. Compare the recipe-deployed tenant to your manually created tenant
+
+### Part 3: Tenant Isolation Verification
+
+Confirm that tenants are properly isolated from each other and from the host environment.
+
+1. From "lab-tenant-01", attempt to access resources in "lab-tenant-02":
+   - Try to ping VMs in the other tenant's network
+   - Verify that cross-tenant network traffic is blocked
+2. From the host (provider) environment, verify:
+   - Both tenants are visible and manageable
+   - Tenant resources are accounted for in host resource usage
+3. Test resource boundaries:
+   - Attempt to exceed the allocated storage quota in a tenant
+   - Note: Storage quotas are **soft limits** — the system generates log alerts when approaching the threshold, but writes are not immediately hard-blocked at the exact boundary; observe the alerts generated as you approach the limit
+4. Review tenant logs and audit trails from the host environment
+
+## Verification
+
+Your multi-tenancy lab is complete when you can answer **yes** to all of the following:
+
+- [ ] A tenant was created manually with specified CPU, memory, storage, and networking
+- [ ] A VM was created and runs successfully inside the manual tenant
+- [ ] A tenant was deployed from a recipe with correct pre-configured resources
+- [ ] Network isolation between tenants was verified (cross-tenant traffic blocked)
+- [ ] Resource limits were tested and enforced
+- [ ] Both tenants are manageable from the host (provider) environment

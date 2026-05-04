@@ -1,0 +1,118 @@
+---
+title: VergeOS Technical Training
+description: Hands-on training for architecting, deploying, and operating VergeOS infrastructure.
+tableOfContents: false
+hero:
+  tagline: Hands-on technical training for architecting, deploying, and operating VergeOS infrastructure.
+  actions:
+    - text: Start Module 1
+      link: /training/01-architecture/
+      icon: right-arrow
+      variant: primary
+    - text: View All Modules
+      link: "#modules"
+      variant: minimal
+---
+
+import { Card, CardGrid, LinkCard } from "@astrojs/starlight/components";
+
+## About This Program
+
+This training portal is a hands-on lab workbook for anyone architecting, deploying, and operating VergeOS infrastructure. The program follows a linear progression from foundational concepts through advanced scenario-based labs.
+
+### Who Is This For?
+
+- **IT Administrators** deploying, configuring, and maintaining VergeOS clusters
+- **Solutions Architects** scoping and designing VergeOS environments
+- **Operations Staff** monitoring and troubleshooting day-to-day infrastructure
+- **DevOps Engineers** automating VergeOS with APIs, Terraform, and scripting tools
+- **Channel Partners** building expertise to support customer deployments
+
+### Prerequisites
+
+- Hands-on experience with server and network infrastructure
+- Familiarity with virtualization concepts (hypervisors, virtual machines, virtual networking)
+- VMware or Nutanix experience is helpful but not required -- **VMware Bridge** and **Nutanix Bridge** callouts throughout the modules map VergeOS concepts to their equivalents on each platform
+- Access to bare-metal hardware for lab exercises (or a VergeOS lab environment)
+
+---
+
+## Modules
+
+The curriculum is organized into 10 modules that progress from architecture fundamentals through real-world deployment scenarios.
+
+<CardGrid>
+  <LinkCard
+    title="1. Architecture Fundamentals"
+    description="HCI vs UCI, VergeFS storage, core fabric networking, clusters and node types."
+    href="/training/01-architecture/"
+  />
+  <LinkCard
+    title="2. Sizing & Design"
+    description="Hardware requirements, reference architectures, and customer scoping exercises."
+    href="/training/02-sizing-design/"
+  />
+  <LinkCard
+    title="3. Installation"
+    description="Bare-metal install, BIOS/disk prep, network prerequisites, and post-install checklist."
+    href="/training/03-installation/"
+  />
+  <LinkCard
+    title="4. Networking"
+    description="VergeFabric, VLANs, firewall rules, routing (BGP/OSPF), and network design."
+    href="/training/04-networking/"
+  />
+  <LinkCard
+    title="5. Storage"
+    description="vSAN tiers, storage provisioning, NAS configuration, and best practices."
+    href="/training/05-storage/"
+  />
+  <LinkCard
+    title="6. Virtual Machines"
+    description="VM creation, recipes, templates, GPU passthrough, and migration workflows."
+    href="/training/06-virtual-machines/"
+  />
+  <LinkCard
+    title="7. Multi-Tenancy"
+    description="Tenant creation, resource allocation, isolation boundaries, and tenant recipes."
+    href="/training/07-multi-tenancy/"
+  />
+  <LinkCard
+    title="8. Developer / DevOps"
+    description="API, Terraform provider, pyvergeos, PowerShell, automation, and cloud-init."
+    href="/training/08-developer-devops/"
+  />
+  <LinkCard
+    title="9. Monitoring & Troubleshooting"
+    description="Dashboard, logs, alerts, common issues, and support escalation."
+    href="/training/09-monitoring-troubleshooting/"
+  />
+  <LinkCard
+    title="10. Scenario Labs"
+    description="Deploy HCI/UCI/hybrid topologies and perform VMware migrations using the Terraform playground."
+    href="/training/10-scenario-labs/"
+  />
+</CardGrid>
+
+---
+
+## How to Use This Training
+
+Each module includes:
+
+- **Concept pages** with diagrams, explanations, and VMware/Nutanix Bridge callouts
+- **Hands-on lab exercises** with step-by-step instructions (early modules) progressing to guided challenges (later modules)
+- **Architecture diagrams** rendered as Mermaid visualizations you can reference during labs
+
+Start with **Module 1: Architecture Fundamentals** and work through the modules in order. Each module builds on concepts from previous ones.
+
+---
+
+## Lab Environment
+
+Labs use a combination of:
+
+- **Your own VergeOS environment** on bare-metal hardware for installation and configuration exercises
+- **The [Terraform Playground](https://github.com/verge-io/vergeos-terraform-playground)** for exploring deployment topologies and automation scenarios
+
+Specific environment requirements are listed at the beginning of each lab exercise.

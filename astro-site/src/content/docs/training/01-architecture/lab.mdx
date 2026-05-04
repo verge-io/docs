@@ -1,0 +1,280 @@
+---
+title: "Lab: Explore the Architecture"
+description: "Hands-on exploration of VergeOS deployment topologies using the Terraform playground. Trace infrastructure-as-code patterns, compare deployment scenarios, and design a topology for a customer use case."
+sidebar:
+  order: 6
+---
+
+import { Steps, Tabs, TabItem } from "@astrojs/starlight/components";
+
+## Lab Overview
+
+In this lab, you will explore the **VergeOS Terraform Playground** — an open-source project that deploys virtual VergeOS systems using Terraform. By reading the code and documentation, you will reinforce the architecture concepts covered in this module: core fabric networking, vSAN storage tiers, cluster organization, and HCI vs UCI topologies.
+
+### What You Will Do
+
+- **Part 1** — Read the playground's architecture documentation and Terraform code to identify how VergeOS concepts map to infrastructure-as-code
+- **Part 2** — Given a customer scenario, recommend and diagram a deployment topology
+- **Part 3** — Compare the four example deployment configurations and analyze their differences
+
+### Prerequisites
+
+- A GitHub account (to clone the repository)
+- Git installed on your workstation
+- A text editor or IDE (VS Code recommended)
+- No VergeOS system access is required — this lab is a reading and design exercise
+
+### Estimated Time
+
+**30 minutes**
+
+---
+
+## Part 1: Explore the Architecture
+
+In this section, you will clone the Terraform playground repository and trace how VergeOS architecture concepts are expressed in infrastructure-as-code.
+
+<Steps>
+
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/verge-io/vergeos-terraform-playground.git
+   cd vergeos-terraform-playground
+   ```
+
+2. **Read the architecture documentation**
+
+   Open `docs/architecture.md` and read through the entire document. As you read, identify the answers to these questions:
+   - What are the **four deployment scenarios** supported by the playground?
+   - What is an **install seed file** and how does it enable unattended installation?
+   - What is the **minimum deployment** size?
+
+   :::tip[Hint]
+   The four scenarios are listed in `docs/deployment-scenarios.md` with topology diagrams. The minimum deployment is two controller nodes forming a single HCI cluster.
+   :::
+
+3. **Examine the deployment scenario diagrams**
+
+   Open `docs/deployment-scenarios.md` and study the Mermaid topology diagrams for each scenario. For each one, note:
+   - How many **nodes** are involved
+   - How many **clusters** are created
+   - Which **node types** appear (controller, scale-out, storage, compute)
+   - How all nodes connect to the **core fabric** and **external network**
+
+4. **Trace the core fabric in Terraform**
+
+   Open `main.tf` (the root module) and find the two core fabric network resources. Answer these questions:
+   - What are the resources named? (`core_fabric_1` and `core_fabric_2`)
+   - What **MTU** is configured? (9142 — jumbo frames for vSAN replication)
+   - Is DHCP enabled on these networks? (No — `dhcp_enabled = false`)
+   - What `ipaddress_type` is set? (`none` — these are Layer 2 transports)
+
+   ```hcl
+   # You should find resources like this in main.tf:
+   resource "vergeio_network" "core_fabric_1" {
+     name           = "${var.system_name}-core-fabric-1"
+     enabled        = true
+     dhcp_enabled   = false
+     on_power_loss  = "power_on"
+     mtu            = 9142
+     ipaddress_type = "none"
+   }
+   ```
+
+5. **Examine how Node 1 differs from Node 2**
+
+   Open `modules/controllers/main.tf` and compare `verge_node_1` and `verge_node_2`. Key differences to identify:
+   - **Cloud-init template** — Node 1 uses `user-data-node1.yaml` (creates a new system with `YC_VSAN_NEW=1`). Node 2 uses `user-data-node2.yaml` (joins the existing system with `YC_VSAN_NEW=0`).
+   - **Post-install API setup** — Node 1's cloud-init includes a script that configures update sources, enables SSH, and optionally creates storage/compute clusters via the VergeOS API. Node 2 has no post-install script.
+   - **Dependency chain** — Node 2 has a `depends_on` reference to Node 1, ensuring the system is fully initialized before the second controller attempts to join.
+
+   Both nodes share the same VM structure: Linux OS family, nested virtualization enabled, three virtio NICs (external, core fabric 1, core fabric 2), CD-ROM with the VergeOS ISO, and a cloud-init nocloud datasource.
+
+6. **Answer the comprehension questions**
+
+   Write your answers to the following (or discuss with your training partner):
+
+   | #   | Question                                                                                | Expected Answer                                                                                             |
+   | --- | --------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+   | 1   | Why does the core fabric use two separate switches?                                     | Redundancy — if one switch or path fails, the other maintains inter-node connectivity                       |
+   | 2   | Why is DHCP disabled on the core fabric networks?                                       | Core fabric uses static IP addressing; the VergeOS installer configures addresses via the install seed      |
+   | 3   | Why must Node 2 wait for Node 1 to complete before starting?                            | Node 1 creates the VergeOS system; Node 2 needs an existing system to join                                  |
+   | 4   | What traffic types flow over the core fabric?                                           | vSAN replication, cluster coordination, VM live migration, control plane communication                      |
+   | 5   | Why is `quantity_tier_1_disks` set to 0 for controllers when storage nodes are enabled? | In UCI mode, dedicated storage nodes provide all tier-1 capacity; controllers only need tier-0 for metadata |
+
+</Steps>
+
+---
+
+## Part 2: Design Exercise
+
+Now apply what you have learned. Given a customer scenario, recommend a deployment topology and justify your decision.
+
+### Customer Scenario
+
+> **Midwest Manufacturing Co.** is migrating from a VMware vSphere environment with 3 ESXi hosts. They currently run 50 VMs (mix of Windows and Linux), have ~10 TB of usable storage, and expect moderate growth over the next 2 years. They have a small IT team (2 people) and want to minimize operational complexity. Budget is constrained.
+
+<Steps>
+
+1. **Choose HCI or UCI**
+
+   Based on the customer profile, which deployment model do you recommend? Consider:
+   - **Team size** — A 2-person IT team favors simplicity
+   - **Growth pattern** — "Moderate growth" suggests balanced compute/storage scaling
+   - **Budget** — HCI requires fewer total nodes than UCI for the same capacity
+   - **Current environment** — 3 ESXi hosts maps well to a small HCI cluster
+
+   :::tip[Recommended Answer]
+   **HCI** is the better fit. The small team benefits from the simpler architecture (single cluster type), balanced scaling matches their moderate growth, fewer nodes reduce cost, and HCI closely mirrors their existing VMware cluster model.
+   :::
+
+2. **Determine the node count and layout**
+
+   Sketch or describe your proposed topology:
+   - How many **controller nodes**? (Minimum 2 for HA)
+   - Do you need **scale-out nodes**? (Consider: 50 VMs on 2 nodes may be tight; 2 scale-out nodes give headroom)
+   - How many **clusters**? (1 for HCI)
+   - What about **storage capacity**? (10 TB usable means ~20 TB raw with replication across nodes)
+
+   A reasonable design:
+
+   ```mermaid
+   graph TB
+       subgraph "Cluster 1 (HCI)"
+           N1["Node 1 — Controller<br/>Storage + Compute"]
+           N2["Node 2 — Controller<br/>Storage + Compute"]
+           N3["Node 3 — Scale-out<br/>Storage + Compute"]
+           N4["Node 4 — Scale-out<br/>Storage + Compute"]
+       end
+       CF["Core Fabric (dual switches)"]
+       EXT["External Network"]
+       N1 --- CF
+       N2 --- CF
+       N3 --- CF
+       N4 --- CF
+       N1 --- EXT
+       N2 --- EXT
+       N3 --- EXT
+       N4 --- EXT
+   ```
+
+3. **Map to a playground example**
+
+   Which Terraform playground example file most closely matches your design?
+
+   :::tip[Answer]
+   **`examples/4-node-hci.tfvars`** — 2 controllers + 2 scale-out nodes in a single HCI cluster. This matches the recommended 4-node HCI design for balanced compute and storage scaling.
+   :::
+
+</Steps>
+
+---
+
+## Part 3: Topology Comparison
+
+Compare all four example `.tfvars` files from the `examples/` directory. Fill in the comparison table below.
+
+### Instructions
+
+Open each file and identify the configuration values. Use the table to record your findings.
+
+<Tabs>
+  <TabItem label="2-node-hci.tfvars">
+    **File:** `examples/2-node-hci.tfvars`
+
+    - **Scenario:** 2-Node HCI (Single Cluster)
+    - **Total nodes:** 2
+    - **Clusters:** 1
+    - **Node types:** 2 controllers (storage + compute)
+    - **Toggle variables:** None (all defaults)
+    - **Tier-1 disks on controllers:** Yes (2 × 1000 GB each)
+    - **Best for:** Basic testing, evaluation, smallest possible deployment
+
+  </TabItem>
+  <TabItem label="4-node-hci.tfvars">
+    **File:** `examples/4-node-hci.tfvars`
+
+    - **Scenario:** HCI + Scale-Out (Single Cluster)
+    - **Total nodes:** 4
+    - **Clusters:** 1
+    - **Node types:** 2 controllers + 2 scale-out
+    - **Toggle variables:** `create_scale_out_nodes = true`
+    - **Tier-1 disks on controllers:** Yes (2 × 1000 GB each)
+    - **Best for:** Larger HCI clusters, testing scale-out behavior, balanced growth
+
+  </TabItem>
+  <TabItem label="4-node-hybrid.tfvars">
+    **File:** `examples/4-node-hybrid-hci-2-cluster.tfvars`
+
+    - **Scenario:** Hybrid HCI (2 Clusters)
+    - **Total nodes:** 4
+    - **Clusters:** 2
+    - **Node types:** 2 controllers (storage + compute) + 2 compute-only
+    - **Toggle variables:** `create_compute_nodes = true`
+    - **Tier-1 disks on controllers:** Yes (controllers provide all storage)
+    - **Best for:** Separating compute scaling from storage, adding compute burst capacity
+
+  </TabItem>
+  <TabItem label="6-node-uci.tfvars">
+    **File:** `examples/6-node-uci-3-cluster.tfvars`
+
+    - **Scenario:** UCI (3 Clusters)
+    - **Total nodes:** 6
+    - **Clusters:** 3
+    - **Node types:** 2 controllers + 2 storage-only + 2 compute-only
+    - **Toggle variables:** `create_storage_nodes = true`, `create_compute_nodes = true`
+    - **Tier-1 disks on controllers:** No (storage nodes provide all tier-1 capacity)
+    - **Best for:** Production-like UCI, independent scaling of storage and compute, larger environments
+
+  </TabItem>
+</Tabs>
+
+### Comparison Summary Table
+
+Complete this table as you review each file:
+
+| Attribute                          | 2-Node HCI    | 4-Node HCI        | Hybrid 2-Cluster  | UCI 3-Cluster               |
+| ---------------------------------- | ------------- | ----------------- | ----------------- | --------------------------- |
+| **Total nodes**                    | 2             | 4                 | 4                 | 6                           |
+| **Clusters**                       | 1             | 1                 | 2                 | 3                           |
+| **Controller nodes**               | 2             | 2                 | 2                 | 2                           |
+| **Scale-out nodes**                | 0             | 2                 | 0                 | 0                           |
+| **Storage-only nodes**             | 0             | 0                 | 0                 | 2                           |
+| **Compute-only nodes**             | 0             | 0                 | 2                 | 2                           |
+| **Controllers have tier-1 disks?** | Yes           | Yes               | Yes               | No                          |
+| **Storage scaling**                | Add HCI nodes | Add HCI nodes     | Add controllers   | Add storage nodes           |
+| **Compute scaling**                | Add HCI nodes | Add HCI nodes     | Add compute nodes | Add compute nodes           |
+| **Complexity**                     | Low           | Low               | Medium            | High                        |
+| **Ideal use case**                 | Small / eval  | Mid-size balanced | Compute burst     | Large / independent scaling |
+
+### Analysis Questions
+
+After completing the table, consider these questions:
+
+1. **Why do controllers in the UCI scenario have zero tier-1 disks?**
+
+   > In UCI, dedicated storage nodes provide all workload storage. Controllers only need tier-0 disks for vSAN metadata. This is visible in `main.tf` where `quantity_tier_1_disks` is conditionally set to 0 when `create_storage_nodes = true`.
+
+2. **What is the dependency chain when both storage and compute nodes are enabled?**
+
+   > Controllers → Storage nodes → Compute nodes. The compute module has an explicit `depends_on` to the storage module, ensuring the storage cluster exists before compute nodes attempt to join. This mirrors how VergeOS cluster creation works: storage must be available before compute workloads can run.
+
+3. **How would you modify the 4-node HCI example to support 6 HCI nodes?**
+   > Change `quantity_scale_out_nodes` from `2` to `4`. The Terraform module creates additional scale-out nodes sequentially, each joining the same HCI cluster. No additional toggle variables are needed.
+
+---
+
+## Key Takeaways
+
+After completing this lab, you should be able to:
+
+- ✅ Navigate the VergeOS Terraform playground and understand its structure
+- ✅ Identify how core fabric networks, vSAN storage tiers, and node types are expressed in Terraform
+- ✅ Explain the differences between the four deployment scenarios (2-node HCI, 4-node HCI, hybrid 2-cluster, UCI 3-cluster)
+- ✅ Recommend an appropriate VergeOS topology for a given customer scenario
+- ✅ Trace the dependency chain from controllers through optional node types
+
+## Next Steps
+
+Proceed to **[Module 2: Sizing & Design](/training/02-sizing-design/)** to learn how to translate customer requirements into specific hardware configurations and deployment plans.

@@ -1,0 +1,56 @@
+---
+title: "Module 4: Networking"
+description: "Configure external and internal networks, VLANs, firewall rules, and dynamic routing in VergeOS."
+sidebar:
+  order: 0
+---
+
+import { CardGrid, LinkCard } from "@astrojs/starlight/components";
+
+## Learning Objectives
+
+By the end of this module, you will be able to:
+
+- **Configure external and internal networks** in VergeOS for production workloads
+- **Set up VLANs and firewall rules** to segment and secure network traffic
+- **Configure dynamic routing** (BGP/OSPF) for enterprise environments
+- **Troubleshoot common networking issues** using VergeOS diagnostic tools
+
+## Prerequisites
+
+- Completion of [Module 1: Architecture Fundamentals](/training/01-architecture/) -- understanding of core fabric networking
+- Completion of [Module 3: Installation](/training/03-installation/) -- a running VergeOS cluster to configure
+
+## Estimated Time
+
+**3 hours** (1.5 hours reading + 1.5 hours lab)
+
+## Topics
+
+<CardGrid>
+  <LinkCard
+    title="Network Concepts & Types"
+    description="The VergeOS networking model: network types (internal, external, core, DMZ, maintenance), default-secure isolation, and software-defined networking fundamentals."
+    href="/training/04-networking/01-network-concepts/"
+  />
+  <LinkCard
+    title="External Networks"
+    description="Connecting VergeOS to upstream physical networks, IP addressing, gateway configuration, bonding modes, and provider network integration."
+    href="/training/04-networking/02-external-networks/"
+  />
+  <LinkCard
+    title="Internal Networks & DHCP/DNS"
+    description="Creating isolated virtual networks for workloads, built-in DHCP and DNS services, inter-network routing via DMZ, and tenant self-service networking."
+    href="/training/04-networking/03-internal-networks/"
+  />
+  <LinkCard
+    title="Firewall Rules, NAT & VLANs"
+    description="Rule types (accept/drop/reject, NAT/PAT translate), rule processing order, VLAN trunking, VPN overview (WireGuard/IPsec), and micro-segmentation."
+    href="/training/04-networking/04-firewall-nat-vlans/"
+  />
+  <LinkCard
+    title="Lab: Network Configuration"
+    description="Build a multi-network environment with external access, internal segmentation, and firewall rules."
+    href="/training/04-networking/lab/"
+  />
+</CardGrid>

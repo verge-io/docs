@@ -1,0 +1,105 @@
+---
+title: "Lab: Monitoring & Troubleshooting"
+description: "Explore the VergeOS dashboard, configure alerts, analyze system logs, and practice diagnosing common issues."
+sidebar:
+  order: 1
+---
+
+## Objective
+
+Practice monitoring VergeOS infrastructure health, configuring alerts, analyzing system logs, and diagnosing common issues. By the end of this lab, you will be comfortable navigating the VergeOS monitoring tools and following a structured troubleshooting workflow.
+
+## Prerequisites
+
+- Completed Module 1: Architecture Fundamentals
+- Completed Module 4: Networking
+- Completed Module 5: Storage
+- Completed Module 9 reading (Dashboard, Alerts, Diagnostics, Escalation)
+- A running VergeOS cluster with admin access
+
+## Difficulty
+
+**Intermediate** -- Requires familiarity with the VergeOS UI and basic system administration concepts
+
+## Estimated Time
+
+**1.5 hours**
+
+## Steps
+
+### Part 1: Dashboard Exploration
+
+Familiarize yourself with the VergeOS monitoring dashboard.
+
+1. Log into the VergeOS UI with administrator credentials
+2. Navigate to the main dashboard and identify:
+   - Node status indicators (online, offline, maintenance)
+   - CPU, memory, and storage utilization graphs
+   - Network connectivity status
+   - Active alerts and notifications
+3. Drill down into an individual node's detail page
+4. Review the cluster health overview and identify key metrics
+5. Explore the storage pool status and verify all drives are healthy
+6. Document the current resource utilization baseline for your cluster
+
+### Part 2: Alert Configuration
+
+Set up alerts and notification rules.
+
+1. Navigate to the alerts configuration section (System → Subscriptions)
+2. Review the existing subscription rules and their configured alert criteria
+3. Create a custom subscription alert for:
+   - High CPU utilization (>85% sustained)
+   - Low storage capacity (less than 20% free space)
+   - Node connectivity loss
+4. Configure a notification channel (email or syslog)
+5. Test the alert notification by triggering a threshold (if possible in your lab environment)
+6. Configure log forwarding to an external syslog server (or a local log collector)
+
+### Part 3: Log Analysis & Diagnostics
+
+Practice analyzing system logs and using diagnostic tools.
+
+1. Navigate to the system logs section
+2. Filter logs by severity level (error, warning, info)
+3. Search for specific events related to:
+   - VM operations (start, stop, migrate)
+   - Storage events (drive errors, rebalancing)
+   - Network events (link state changes)
+4. Identify common error patterns and their likely causes
+5. Use the built-in diagnostic tools to check:
+   - Storage subsystem health
+   - Network connectivity between nodes
+   - Service status across the cluster
+6. Practice generating a diagnostic bundle for support escalation
+
+### Part 4: Troubleshooting Scenarios
+
+Diagnose simulated issues using the tools you've learned.
+
+1. **Scenario A: Slow VM Performance** -- A user reports a VM is running slowly. Use the dashboard and logs to:
+   - Check the VM's resource allocation and utilization
+   - Identify if the host node is overcommitted
+   - Check storage I/O latency
+   - Recommend a resolution
+2. **Scenario B: Network Connectivity Issue** -- A tenant reports they cannot reach external networks. Investigate:
+   - Tenant network configuration
+   - Virtual network layer connectivity
+   - Physical network status on the host nodes
+   - Identify the root cause and resolution
+3. **Scenario C: Storage Alert** -- The system generates a storage capacity warning. Determine:
+   - Which storage pool is affected
+   - What is consuming the most space
+   - Recommended actions (cleanup, expansion, or migration)
+
+## Verification
+
+Your monitoring and troubleshooting lab is complete when you can answer **yes** to all of the following:
+
+- [ ] Successfully navigated the VergeOS dashboard and identified key health metrics
+- [ ] Created custom alert rules with appropriate thresholds
+- [ ] Configured at least one notification channel (email or syslog)
+- [ ] Filtered and searched system logs to find specific events
+- [ ] Used diagnostic tools to check storage, network, and service health
+- [ ] Worked through at least two troubleshooting scenarios and identified root causes
+- [ ] Generated a diagnostic bundle suitable for support escalation

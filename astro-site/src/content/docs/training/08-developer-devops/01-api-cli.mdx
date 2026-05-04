@@ -1,0 +1,365 @@
+---
+title: "REST API & CLI Tools"
+description: "Master the VergeOS REST API, yb-api helper script, and vrg CLI for programmatic infrastructure management and automation."
+sidebar:
+  order: 1
+---
+
+import { Card, CardGrid } from "@astrojs/starlight/components";
+
+Every operation you perform in the VergeOS UI maps directly to a REST API call. This **API-first design** means anything you can click in the dashboard — creating VMs, configuring networks, managing tenants — can be automated through HTTP endpoints. This section covers the three primary interfaces for programmatic access: the **REST API** itself, the **yb-api helper script** for on-box automation, and the **vrg CLI** for remote management.
+
+## REST API Overview
+
+The VergeOS API follows standard REST conventions with JSON payloads, supporting the full lifecycle of every resource in the platform.
+
+### HTTP Methods
+
+| Method     | Purpose                             | Example                       |
+| ---------- | ----------------------------------- | ----------------------------- |
+| **GET**    | Retrieve resources                  | `GET /api/v4/vms?fields=most` |
+| **POST**   | Create resources or trigger actions | `POST /api/v4/vms`            |
+| **PUT**    | Update existing resources           | `PUT /api/v4/vms/36`          |
+| **DELETE** | Remove resources                    | `DELETE /api/v4/vms/36`       |
+
+### Query Parameters
+
+Every GET request supports OData-style filtering and field selection:
+
+- **`fields`** — Specify which fields to return (e.g., `fields=name,$key,ram` or `fields=most` for all common fields)
+- **`filter`** — OData-style filter expressions (e.g., `filter=is_snapshot eq false`)
+- **`sort`** — Sort results by field (e.g., `sort=name`)
+- **`limit`** / **`offset`** — Pagination controls for large result sets
+
+### Data Formats
+
+All API responses are returned in **JSON format**. Request bodies for POST and PUT operations must also be JSON with the `Content-Type: application/json` header.
+
+### Rate Limits
+
+The API supports a maximum of **1,000 requests per hour** per API key. For high-volume automation, batch operations where possible and implement retry logic with exponential backoff.
+
+## Authentication
+
+VergeOS supports three authentication methods, each suited to different use cases:
+
+### 1. Basic HTTP Authentication
+
+The simplest method — pass credentials directly with each request. All API traffic requires HTTPS.
+
+```bash
+curl -X GET "https://vergeos.example.com/api/v4/vms?fields=most" \
+  --basic --user "admin:password" \
+  -H "Accept: application/json"
+```
+
+### 2. Token-Based Authentication (Session Tokens)
+
+Request a session token by POSTing credentials to `/sys/tokens`. Use the returned token in subsequent requests via the `x-yottabyte-token` header:
+
+```bash
+# Step 1: Obtain a token
+curl --basic \
+  --data-ascii '{"login": "admin", "password": "secret"}' \
+  --request "POST" \
+  --header "Content-Type: application/json" \
+  "https://vergeos.example.com/api/sys/tokens"
+
+# Response includes the token key:
+# {"location":"/sys/tokens/3a334...","$key":"3a334..."}
+
+# Step 2: Use the token in subsequent requests
+curl -X GET "https://vergeos.example.com/api/v4/vms?fields=most" \
+  -H "x-yottabyte-token: 3a334..." \
+  -H "Accept: application/json"
+
+# Step 3: Logout when done
+curl -X DELETE "https://vergeos.example.com/api/sys/tokens/3a334..."
+```
+
+### 3. API Keys (Long-Lived Bearer Tokens)
+
+For production automation, create persistent API keys through **System → Users → [User] → API Keys**. These keys function as Bearer tokens and remain valid until expiration or deletion:
+
+```bash
+curl -X GET "https://vergeos.example.com/api/v4/vms?fields=most" \
+  -H "Authorization: Bearer your-api-key-string" \
+  -H "Content-Type: application/json"
+```
+
+API keys support **IP allow/deny lists** for security and configurable **expiration dates**. Store them in environment variables rather than hardcoding:
+
+```bash
+export VERGEOS_API_KEY="your-api-key-string"
+curl -X GET "https://vergeos.example.com/api/v4/system" \
+  -H "Authorization: Bearer ${VERGEOS_API_KEY}"
+```
+
+:::caution
+API keys are shown only once at creation time. If lost, you must delete the key and create a new one.
+:::
+
+## API Explorer (Swagger)
+
+VergeOS includes a built-in **Swagger documentation page** that is dynamically generated from the running system, showing every available table and operation.
+
+**To access it:**
+
+1. Log in to the VergeOS UI
+2. Navigate to **System → API Documentation**
+3. Browse available endpoints, view schemas, and test API calls directly
+
+The Swagger interface lets you execute API calls in-browser and see the resulting `curl` command, response body, and headers — making it an excellent tool for prototyping automation scripts.
+
+## Key API Endpoints
+
+The API organizes resources into tables. Here are the most commonly used endpoints:
+
+| Endpoint                      | Purpose                              |
+| ----------------------------- | ------------------------------------ |
+| `/api/v4/vms`                 | Virtual machine CRUD operations      |
+| `/api/v4/vm_actions`          | VM power operations, clone, snapshot |
+| `/api/v4/machine_drives`      | Attach/manage VM storage drives      |
+| `/api/v4/machine_nics`        | Configure VM network interfaces      |
+| `/api/v4/machine_devices`     | GPU/PCI device passthrough           |
+| `/api/v4/machine_status/{id}` | Runtime power state and status       |
+| `/api/v4/vnets`               | Virtual network management           |
+| `/api/v4/vnet_rules`          | Firewall and NAT rules               |
+| `/api/v4/tenants`             | Tenant (VDC) management              |
+| `/api/v4/nodes`               | Physical node information            |
+| `/api/v4/clusters`            | Cluster configuration                |
+| `/api/sys/tokens`             | Session token management             |
+
+### Schema Introspection
+
+Append `/$table` to any endpoint to retrieve its full database schema, including all available fields and types:
+
+```bash
+# Get the VM table schema
+curl -X GET "https://vergeos.example.com/api/v4/vms/\$table" \
+  -H "Authorization: Bearer ${VERGEOS_API_KEY}"
+```
+
+## VM Lifecycle API Walkthrough
+
+The most common automation workflow is provisioning a complete VM through the API. This four-step process mirrors what the UI does behind the scenes:
+
+```mermaid
+graph LR
+    A["1. Create VM"] --> B["2. Add Drive"]
+    B --> C["3. Add NIC"]
+    C --> D["4. Power On"]
+    style A fill:#e8f5e9,stroke:#2e7d32
+    style B fill:#e3f2fd,stroke:#1565c0
+    style C fill:#fff3e0,stroke:#ef6c00
+    style D fill:#fce4ec,stroke:#c62828
+```
+
+### Step 1: Create the VM
+
+```bash
+curl -X POST "https://vergeos.example.com/api/v4/vms" \
+  -H "Authorization: Bearer ${VERGEOS_API_KEY}" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "web-server-01",
+    "description": "Production web server",
+    "machine_type": "pc-q35-9.0",
+    "cpu_cores": 4,
+    "cpu_type": "Cascadelake-Server",
+    "ram": 8192,
+    "os_family": "linux",
+    "boot_order": "cd",
+    "uefi": true,
+    "allow_hotplug": true
+  }'
+
+# Response: {"location":"/v4/vms/42","$key":"42"}
+```
+
+### Step 2: Add a Storage Drive
+
+```bash
+curl -X POST "https://vergeos.example.com/api/v4/machine_drives" \
+  -H "Authorization: Bearer ${VERGEOS_API_KEY}" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "machine": 42,
+    "name": "boot-disk",
+    "size": 107374182400,
+    "interface": "virtio",
+    "media": "disk",
+    "tier": 1
+  }'
+```
+
+### Step 3: Add a Network Interface
+
+```bash
+curl -X POST "https://vergeos.example.com/api/v4/machine_nics" \
+  -H "Authorization: Bearer ${VERGEOS_API_KEY}" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "machine": 42,
+    "network": 6,
+    "model": "virtio"
+  }'
+```
+
+### Step 4: Power On
+
+```bash
+curl -X POST "https://vergeos.example.com/api/v4/vm_actions" \
+  -H "Authorization: Bearer ${VERGEOS_API_KEY}" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "vm": 42,
+    "action": "poweron"
+  }'
+```
+
+### Additional Actions
+
+Once the VM exists, you can trigger advanced operations through the same `vm_actions` endpoint:
+
+```bash
+# Clone a VM
+curl -X POST ".../api/v4/vm_actions" \
+  -d '{"vm": 42, "action": "clone", "params": {"name": "web-server-clone", "quiesce": "true"}}'
+
+# Take a snapshot
+curl -X POST ".../api/v4/vm_actions" \
+  -d '{"vm": 42, "action": "snapshot", "params": {"name": "pre-upgrade"}}'
+
+# Power off gracefully
+curl -X POST ".../api/v4/vm_actions" \
+  -d '{"vm": 42, "action": "poweroff"}'
+```
+
+## yb-api Helper Script
+
+The `yb-api` script is a built-in command-line wrapper available on every VergeOS node via SSH. It simplifies making API calls without having to construct full `curl` commands.
+
+### Basic Syntax
+
+```bash
+yb-api --get|--post|--put|--delete [options] /v4/<endpoint>
+```
+
+### Common Options
+
+| Flag             | Purpose                             |
+| ---------------- | ----------------------------------- |
+| `--get`          | Retrieve resources                  |
+| `--post='JSON'`  | Create a resource with JSON payload |
+| `--put='JSON'`   | Update a resource with JSON payload |
+| `--delete`       | Delete a resource                   |
+| `--server=IP`    | Target a specific VergeOS system    |
+| `--user=NAME`    | Authenticate as a specific user     |
+| `--fields='...'` | Select fields to return             |
+| `--filter='...'` | OData filter expression             |
+
+### Usage Examples
+
+```bash
+# List all VMs (excluding snapshots) with status
+yb-api --get --user=admin --server=10.0.0.100 \
+  --fields='name,$key,ram,machine#status#status as machine_status' \
+  --filter='is_snapshot eq false' /v4/vms
+
+# Get detailed VM info including drives and NICs
+yb-api --get --fields='most,machine[most,drives[most],nics[most]]' /v4/vms/1
+
+# Create a new VM
+yb-api --post='{"name":"api-vm","enabled":true,"os_family":"linux",
+  "cpu_cores":4,"ram":"8192"}' --user=admin --server=10.0.0.100 /v4/vms
+
+# Rename a VM
+yb-api --put='{"name":"new-name"}' --user=admin --server=10.0.0.100 /v4/vms/1
+
+# Power on a VM
+yb-api --post='{"vm":1, "action": "poweron"}' /v4/vm_actions
+
+# Get table schema for VMs
+yb-api --get '/v4/vms/$table'
+```
+
+:::tip
+The `yb-api` script is ideal for quick ad-hoc queries and scripting directly on VergeOS nodes. For remote automation from workstations, use the vrg CLI or the Python/PowerShell SDKs.
+:::
+
+## vrg CLI
+
+The **vrg** command-line tool provides a full-featured remote management interface for VergeOS, built in Python with over **200 commands** covering VMs, networks, storage, tenants, and system administration.
+
+### Installation
+
+```bash
+# macOS (Homebrew)
+brew install verge-io/tap/vrg
+
+# Linux / Windows (pip or pipx)
+pip install vrg
+```
+
+### Key Capabilities
+
+<CardGrid>
+  <Card title="VM Management" icon="laptop">
+    Create, list, start, stop, snapshot, clone, and delete virtual machines with
+    simple commands.
+  </Card>
+  <Card title="Network Operations" icon="rocket">
+    Manage virtual networks, firewall rules, DHCP settings, and VPN
+    configurations.
+  </Card>
+  <Card title="Storage Control" icon="document">
+    Administer NAS volumes, CIFS/NFS shares, and monitor vSAN tiers.
+  </Card>
+  <Card title="Tenant Management" icon="setting">
+    Provision tenants, allocate resources, and manage multi-tenant environments.
+  </Card>
+</CardGrid>
+
+The vrg CLI wraps the same REST API documented above, providing tab completion, formatted output, and a more ergonomic interface for day-to-day operations from your workstation.
+
+## API Error Handling
+
+When API calls fail, VergeOS returns standard HTTP status codes with descriptive JSON error bodies:
+
+| Status Code | Meaning          | Common Cause                                       |
+| ----------- | ---------------- | -------------------------------------------------- |
+| **401**     | Unauthorized     | Invalid credentials or expired token               |
+| **403**     | Forbidden        | Insufficient permissions for the operation         |
+| **404**     | Not Found        | Resource does not exist or invalid endpoint        |
+| **409**     | Conflict         | Resource state conflict (e.g., VM already running) |
+| **422**     | Validation Error | Invalid parameters or missing required fields      |
+| **429**     | Rate Limited     | Exceeded 1,000 requests/hour limit                 |
+| **500**     | Server Error     | Internal error — check system logs                 |
+
+:::note[Coming from VMware or Nutanix?]
+The VergeOS API is the only management surface — the UI itself is a client of it. Both VMware and Nutanix carry multiple parallel API surfaces.
+
+| Platform | API surface | CLI helpers |
+| --- | --- | --- |
+| VMware | vSphere REST API (6.5+) alongside the older SOAP-based SDK | `govc` (REST), PowerCLI (SOAP heritage) |
+| Nutanix | Prism Central v4 alongside legacy v2/v3, scoped per feature set | `nuclei` |
+| VergeOS | Single versioned `/api/v4/` for all operations; built-in Swagger explorer | `yb-api` (on-box helper), `vrg` (REST-native, PowerCLI-like) |
+:::
+
+## Best Practices for API Automation
+
+1. **Use API keys** for production automation instead of session tokens — they don't expire on inactivity
+2. **Apply IP restrictions** on API keys to limit where they can be used
+3. **Select specific fields** (`fields=name,$key,ram`) instead of `fields=most` to reduce payload size
+4. **Implement pagination** with `limit` and `offset` for large result sets
+5. **Handle async operations** — actions like clone and snapshot return immediately; poll `machine_status` for completion
+6. **Store credentials in environment variables** — never hardcode tokens in scripts
+7. **Use schema introspection** (`/$table`) to discover available fields before writing automation
+
+## What's Next
+
+Now that you understand the raw API, the following pages cover higher-level tools that wrap this API into language-native interfaces:
+
+- **Python SDK (pyvergeos)** — Pythonic, type-annotated wrapper with resource managers and OData filter builder
+- **PowerShell Module (PSVergeOS)** — 200+ cmdlets with pipeline support for Windows-native automation

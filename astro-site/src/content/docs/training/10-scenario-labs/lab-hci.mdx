@@ -1,0 +1,87 @@
+---
+title: "Lab: HCI Deployment"
+description: "Deploy 2-node and 4-node HCI topologies using the Terraform playground and validate cluster health, storage, and networking."
+sidebar:
+  order: 1
+---
+
+## Objective
+
+Deploy VergeOS in Hyper-Converged Infrastructure (HCI) configurations using the Terraform playground. You will provision both a minimal 2-node cluster and a scaled 4-node cluster, then validate storage, networking, and overall cluster health.
+
+## Prerequisites
+
+- Completed all prior modules (1–9)
+- Access to the vergeos-terraform-playground repository (cloned locally)
+- Terraform CLI installed and configured
+- A VergeOS environment or lab that supports nested deployments
+- Familiarity with Terraform basics (init, plan, apply)
+
+## Difficulty
+
+**Intermediate** -- Requires understanding of VergeOS architecture and basic Terraform usage
+
+## Estimated Time
+
+**2 hours**
+
+## Steps
+
+### Part 1: 2-Node HCI Deployment
+
+Deploy the minimal HCI topology.
+
+1. Clone the vergeos-terraform-playground repository (if not already done)
+2. Review the `examples/` directory and identify the 2-node HCI `.tfvars` file
+3. Examine the variables to understand:
+   - Node count and roles
+   - Network configuration (core fabric, external)
+   - Storage tier configuration
+4. Run `terraform init` to initialize the provider
+5. Run `terraform plan -var-file=<2-node-hci>.tfvars` and review the planned resources
+6. Run `terraform apply -var-file=<2-node-hci>.tfvars` to deploy
+7. Log into the VergeOS UI and verify:
+   - Both nodes appear online in the dashboard
+   - Core fabric network is established
+   - vSAN storage pool is healthy with expected capacity
+   - Controller VMs are running on the correct nodes
+
+### Part 2: 4-Node HCI Deployment
+
+Scale up to a 4-node HCI cluster.
+
+1. Identify the 4-node HCI `.tfvars` file in the examples directory
+2. Compare it with the 2-node configuration -- note the differences in:
+   - Node count
+   - Storage redundancy settings
+   - Any additional network configuration
+3. Deploy the 4-node topology using `terraform plan` and `terraform apply`
+4. In the VergeOS UI, verify:
+   - All four nodes are online and healthy
+   - Storage has redistributed across all nodes
+   - Controller VM failover is properly configured
+   - Network connectivity between all nodes is established
+
+### Part 3: Validation & Comparison
+
+Compare the two deployments and validate production readiness.
+
+1. Create a test VM on each cluster and verify it starts successfully
+2. Test VM live migration between nodes
+3. Compare resource utilization between the 2-node and 4-node deployments
+4. Document the differences in:
+   - Storage redundancy and capacity
+   - Compute headroom
+   - Failure domain considerations
+5. Clean up both deployments with `terraform destroy`
+
+## Verification
+
+Your HCI deployment lab is complete when you can answer **yes** to all of the following:
+
+- [ ] Successfully deployed a 2-node HCI topology via Terraform
+- [ ] Successfully deployed a 4-node HCI topology via Terraform
+- [ ] Verified cluster health, storage pools, and networking in the VergeOS UI
+- [ ] Created and migrated a test VM on at least one cluster
+- [ ] Documented the key differences between 2-node and 4-node HCI deployments
+- [ ] Cleaned up all lab resources with `terraform destroy`

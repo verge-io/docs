@@ -1,0 +1,50 @@
+---
+title: "Module 2: Sizing & Design"
+description: "Hardware requirements, reference architectures, and customer scoping exercises for VergeOS deployments."
+sidebar:
+  order: 0
+---
+
+import { CardGrid, LinkCard } from "@astrojs/starlight/components";
+
+## Learning Objectives
+
+By the end of this module, you will be able to:
+
+- **Evaluate customer requirements** and recommend an appropriate VergeOS topology (HCI, UCI, or hybrid)
+- **Size hardware** for HCI and UCI deployments based on workload profiles
+- **Use reference architectures** as starting points for customer designs
+- **Create a bill of materials** for a VergeOS deployment proposal
+
+## Prerequisites
+
+- Completion of [Module 1: Architecture Fundamentals](/training/01-architecture/) -- you should understand HCI vs UCI trade-offs, node types, and cluster concepts
+
+## Estimated Time
+
+**2 hours** (1 hour reading + 1 hour lab)
+
+## Topics
+
+<CardGrid>
+  <LinkCard
+    title="Hardware Requirements"
+    description="Minimum and recommended specs for controller nodes, scale-out nodes, and storage-only nodes. CPU, memory, disk, and NIC considerations."
+    href="/training/02-sizing-design/01-hardware-requirements/"
+  />
+  <LinkCard
+    title="Reference Architectures"
+    description="Pre-validated designs for common deployment sizes: small (2-node HCI), medium (4-node HCI), large (UCI multi-cluster), and edge."
+    href="/training/02-sizing-design/02-reference-architectures/"
+  />
+  <LinkCard
+    title="Customer Scoping"
+    description="How to gather requirements, translate workload profiles into resource estimates, and select the right topology."
+    href="/training/02-sizing-design/03-customer-scoping/"
+  />
+  <LinkCard
+    title="Lab: Design Exercise"
+    description="Given a customer scenario, produce a hardware recommendation and topology diagram."
+    href="/training/02-sizing-design/lab/"
+  />
+</CardGrid>

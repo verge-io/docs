@@ -1,0 +1,391 @@
+---
+title: "Python SDK (pyvergeos)"
+description: "Automate VergeOS infrastructure with the pyvergeos Python SDK — VM lifecycle, networking, multi-tenancy, storage, and disaster recovery from Python scripts."
+sidebar:
+  order: 2
+---
+
+import { Card, CardGrid } from "@astrojs/starlight/components";
+
+The **pyvergeos** SDK provides a Pythonic, type-annotated interface for the entire VergeOS REST API. Rather than crafting raw HTTP requests, you work with **resource managers** — `client.vms`, `client.networks`, `client.tenants` — that map directly to VergeOS objects. The SDK handles authentication, pagination, retries, and async task polling so your automation scripts stay clean and focused on business logic.
+
+## Requirements & Installation
+
+**Prerequisites:**
+
+- **Python 3.9** or later
+- **VergeOS 26.0** or later
+- Works on **Windows, macOS, and Linux**
+
+**Install from PyPI (recommended):**
+
+```bash
+pip install pyvergeos
+```
+
+**Or with uv (faster alternative):**
+
+```bash
+uv add pyvergeos
+```
+
+**From source (development):**
+
+```bash
+git clone https://github.com/verge-io/pyvergeos.git
+cd pyvergeos
+pip install .
+```
+
+## Authentication
+
+The SDK supports three authentication methods, each suited to different environments.
+
+### Username & Password
+
+The simplest approach for interactive scripts and development:
+
+```python
+from pyvergeos import VergeClient
+
+client = VergeClient(
+    host="192.168.1.100",
+    username="admin",
+    password="secret",
+    verify_ssl=False  # Only for self-signed certificates
+)
+```
+
+### API Token
+
+For production automation where you have a pre-generated API key:
+
+```python
+client = VergeClient(
+    host="192.168.1.100",
+    token="your-api-token"
+)
+```
+
+### Environment Variables
+
+The recommended approach for production — keeps credentials out of source code:
+
+```bash
+export VERGE_HOST=192.168.1.100
+export VERGE_USERNAME=admin
+export VERGE_PASSWORD=secret
+export VERGE_VERIFY_SSL=false      # Optional
+export VERGE_TIMEOUT=30            # Optional
+export VERGE_RETRY_TOTAL=3         # Optional
+export VERGE_RETRY_BACKOFF=1       # Optional
+```
+
+```python
+client = VergeClient.from_env()
+```
+
+### Context Manager
+
+Always use the context manager in production code to ensure connections are properly closed, even when exceptions occur:
+
+```python
+with VergeClient(host="192.168.1.100", token="api-token") as client:
+    vms = client.vms.list()
+    for vm in vms:
+        print(f"{vm.name}: {vm.ram}MB RAM")
+# Connection automatically closed here
+```
+
+## Resource Managers
+
+Every VergeOS resource type is exposed through a **resource manager** on the client object. Each manager provides consistent `list()`, `get()`, `create()`, and action methods.
+
+<CardGrid>
+  <Card title="Virtual Machines" icon="laptop">
+    `client.vms` — Create, configure, power control, clone, snapshot, and manage
+    drives/NICs for VMs.
+  </Card>
+  <Card title="Networks" icon="random">
+    `client.networks` — Virtual networks, firewall rules, DHCP, DNS, and network
+    power management.
+  </Card>
+  <Card title="Tenants" icon="seti:folder">
+    `client.tenants` — Multi-tenant provisioning, resource isolation, snapshots,
+    storage and network blocks.
+  </Card>
+  <Card title="NAS & Storage" icon="document">
+    `client.nas` — NAS services, volumes, CIFS/NFS shares, and volume
+    synchronization.
+  </Card>
+  <Card title="Disaster Recovery" icon="approve-check">
+    `client.dr` — Cloud snapshots, site synchronization, and recovery workflows.
+  </Card>
+  <Card title="Users & Groups" icon="seti:config">
+    `client.users` — User accounts, groups, permissions, and API key management.
+  </Card>
+  <Card title="Tasks & Monitoring" icon="list-format">
+    `client.tasks` — Async task tracking, waiting, timeouts. Also: alarms and
+    logs.
+  </Card>
+  <Card title="System & GPU" icon="rocket">
+    `client.clusters`, `client.nodes`, `client.gpu` — Cluster/node info, storage
+    tiers, GPU device management.
+  </Card>
+</CardGrid>
+
+### Full Resource Table
+
+| Category             | Resources Available                                          |
+| -------------------- | ------------------------------------------------------------ |
+| **Virtual Machines** | VMs, drives, NICs, snapshots                                 |
+| **Networking**       | Networks, firewall rules, DNS, DHCP, aliases, hosts          |
+| **VPN**              | IPSec connections, WireGuard interfaces and peers            |
+| **NAS/Storage**      | NAS services, volumes, CIFS/NFS shares, volume syncs         |
+| **Tenants**          | Tenant management, snapshots, storage blocks, network blocks |
+| **Users & Groups**   | Users, groups, permissions, API keys                         |
+| **System**           | Clusters, nodes, storage tiers, certificates                 |
+| **Monitoring**       | Alarms, logs, tasks                                          |
+| **Backup & DR**      | Snapshot profiles, cloud snapshots, sites, site syncs        |
+
+## Filtering Resources
+
+The SDK provides three approaches for filtering resources, from simple keyword arguments to a full OData filter builder.
+
+### Keyword Arguments
+
+The simplest approach for basic filters — pass field names directly:
+
+```python
+# Find all running Linux VMs
+vms = client.vms.list(status="running", os_family="linux")
+
+# Wildcard matching
+vms = client.vms.list(name="prod-*")
+```
+
+### OData Filter Strings
+
+For complex queries, pass raw OData filter expressions:
+
+```python
+# Combine conditions with operators
+vms = client.vms.list(filter="os_family eq 'linux' and ram gt 2048")
+```
+
+### Filter Builder (Fluent API)
+
+Build filters programmatically with type safety and auto-completion:
+
+```python
+from pyvergeos import Filter
+
+# Fluent chaining with operator methods
+f = Filter().eq("os_family", "linux").and_().gt("ram", 2048)
+vms = client.vms.list(filter=str(f))
+```
+
+**Available filter operators:**
+
+| Method    | OData Operator | Example                               |
+| --------- | -------------- | ------------------------------------- |
+| `.eq()`   | `eq`           | `Filter().eq("status", "running")`    |
+| `.ne()`   | `ne`           | `Filter().ne("os_family", "windows")` |
+| `.gt()`   | `gt`           | `Filter().gt("ram", 4096)`            |
+| `.lt()`   | `lt`           | `Filter().lt("cpu_cores", 8)`         |
+| `.ge()`   | `ge`           | `Filter().ge("ram", 2048)`            |
+| `.le()`   | `le`           | `Filter().le("ram", 8192)`            |
+| `.and_()` | `and`          | Chain multiple conditions             |
+
+## Async Task Handling
+
+Many VergeOS operations — snapshots, clones, migrations — run **asynchronously** and return a task ID immediately. The SDK provides a task manager to poll for completion:
+
+```python
+# Snapshot returns a task reference
+result = vm.snapshot(retention=86400, quiesce=True)
+
+# Wait for the snapshot to complete (blocks up to 300 seconds)
+task = client.tasks.wait(result["task"], timeout=300)
+print(f"Snapshot completed: {task}")
+```
+
+If the task does not complete within the timeout, a `TaskTimeoutError` is raised with the `task_id` property so you can check status later:
+
+```python
+from pyvergeos import TaskTimeoutError
+
+try:
+    task = client.tasks.wait(task_id, timeout=60)
+except TaskTimeoutError as e:
+    print(f"Task {e.task_id} still running — check back later")
+```
+
+## Error Handling
+
+The SDK provides a structured exception hierarchy so you can catch specific failure modes:
+
+| Exception             | Description                                        |
+| --------------------- | -------------------------------------------------- |
+| `VergeError`          | Base exception for all SDK errors                  |
+| `AuthenticationError` | Invalid credentials or expired token               |
+| `NotFoundError`       | Requested resource does not exist                  |
+| `ConflictError`       | Resource state conflict (e.g., VM already running) |
+| `ValidationError`     | Invalid parameter values                           |
+| `TaskTimeoutError`    | Task did not complete within timeout               |
+| `TaskError`           | Task failed during execution                       |
+
+```python
+from pyvergeos import NotFoundError, AuthenticationError
+
+try:
+    vm = client.vms.get(name="nonexistent-vm")
+except NotFoundError:
+    print("VM not found — check the name")
+except AuthenticationError:
+    print("Authentication failed — verify credentials")
+```
+
+## Retry Configuration
+
+The SDK automatically retries transient errors (HTTP 429, 500, 502, 503, 504) with exponential backoff:
+
+```python
+client = VergeClient(
+    host="192.168.1.100",
+    token="api-token",
+    retry_total=5,            # Max retry attempts (default: 3)
+    retry_backoff_factor=2,   # Backoff multiplier (default: 1)
+)
+```
+
+Set `retry_total=0` to disable retries entirely for time-sensitive operations.
+
+## Tenant Context Switching
+
+pyvergeos can **connect into tenant contexts** from the host system, enabling centralized automation scripts that manage resources across multiple tenants:
+
+```python
+# Get a tenant from the host system
+tenant = client.tenants.get(name="customer-a")
+
+# Connect into the tenant's context
+tenant_client = tenant.connect()
+
+# Now manage resources INSIDE the tenant
+tenant_vms = tenant_client.vms.list()
+for vm in tenant_vms:
+    print(f"Tenant VM: {vm.name}")
+
+# Create a network inside the tenant
+tenant_client.networks.create(
+    name="tenant-app-net",
+    network_address="10.50.1.0/24",
+    ip_address="10.50.1.1",
+    dhcp_enabled=True
+)
+```
+
+This is particularly valuable for **MSPs and service providers** who need to automate provisioning across dozens or hundreds of tenant environments from a single script.
+
+## Practical Examples
+
+### VM Lifecycle Management
+
+```python
+with VergeClient.from_env() as client:
+    # Create a new VM
+    vm = client.vms.create(
+        name="web-server-01",
+        ram=4096,
+        cpu_cores=2,
+        os_family="linux"
+    )
+
+    # Add a 50 GB data drive
+    vm.drives.add(name="data", size=50 * 1024 * 1024 * 1024)
+
+    # Attach to a network
+    network = client.networks.get(name="app-network")
+    vm.nics.add(network=network.key)
+
+    # Power on
+    vm.power_on()
+    print(f"VM {vm.name} is running")
+```
+
+### Network with Firewall Rules
+
+```python
+with VergeClient.from_env() as client:
+    # Create a network
+    network = client.networks.create(
+        name="web-tier",
+        network_address="10.20.1.0/24",
+        ip_address="10.20.1.1",
+        dhcp_enabled=True
+    )
+    network.power_on()
+
+    # Add firewall rules
+    network.rules.create(
+        name="Allow HTTPS",
+        action="accept",
+        protocol="tcp",
+        dest_port=443
+    )
+    network.rules.create(
+        name="Allow SSH",
+        action="accept",
+        protocol="tcp",
+        dest_port=22
+    )
+    network.apply_rules()
+```
+
+### Bulk Operations with Filtering
+
+```python
+with VergeClient.from_env() as client:
+    # Snapshot all running production VMs
+    prod_vms = client.vms.list(name="prod-*", status="running")
+
+    for vm in prod_vms:
+        result = vm.snapshot(retention=86400, quiesce=True)
+        task = client.tasks.wait(result["task"], timeout=300)
+        print(f"Snapshotted {vm.name}")
+```
+
+### Multi-Tenant Inventory Report
+
+```python
+with VergeClient.from_env() as client:
+    for tenant in client.tenants.list():
+        tenant_client = tenant.connect()
+        vms = tenant_client.vms.list()
+        print(f"\n--- {tenant.name} ---")
+        for vm in vms:
+            print(f"  {vm.name}: {vm.ram}MB RAM, {vm.cpu_cores} cores")
+```
+
+## Important Notes
+
+:::caution[Thread Safety]
+The pyvergeos client is **not thread-safe**. If you need concurrent operations, create separate `VergeClient` instances for each thread. For truly parallel workloads, consider the **govergeos** Go SDK which is designed for concurrent use with goroutines.
+:::
+
+:::note[Coming from VMware or Nutanix?]
+pyvergeos compresses several patterns that VMware and Nutanix expose as separate primitives.
+
+| Platform SDK | Filtering | Task polling | Tenant context |
+| --- | --- | --- | --- |
+| vSphere Automation SDK for Python | `PropertyFilterSpec` via ServiceContent → ViewManager → PropertyCollector | Manual | No equivalent — connect to a different vCenter |
+| Nutanix Prism v3/v4 Python SDK | REST query parameters | Manual task polling on Prism | No nested infrastructure tenancy |
+| pyvergeos | Fluent `Filter()` builder (OData-style) | `client.tasks.wait()` built in | `tenant.connect()` switches to a child VDC in-place |
+:::
+
+## Additional Resources
+
+- [GitHub Repository](https://github.com/verge-io/pyvergeos) — Source code, issues, and contributions
+- [PyPI Package](https://pypi.org/project/pyvergeos/) — Latest release and version history
+- [VergeOS API Documentation](https://docs.verge.io/product-guide/tools-integrations/python-sdk/) — Official SDK reference

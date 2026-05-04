@@ -1,0 +1,111 @@
+---
+title: "Lab: Infrastructure Automation"
+description: "Use the VergeOS REST API, Terraform provider, and scripting tools to automate VM and tenant provisioning end-to-end."
+sidebar:
+  order: 1
+---
+
+## Objective
+
+Automate VergeOS infrastructure operations using the REST API, Terraform provider, and scripting tools (pyvergeos or PowerShell). By the end of this lab, you will have provisioned VMs and tenants programmatically and understand how to integrate VergeOS into CI/CD and automation workflows.
+
+## Prerequisites
+
+- Completed Module 1: Architecture Fundamentals
+- Completed Module 6: Virtual Machines
+- Completed Module 7: Multi-Tenancy
+- Completed Module 8 reading (REST API, Terraform, Python/PowerShell, Cloud-Init)
+- A running VergeOS cluster with API access enabled
+- Terraform installed locally (v1.5+)
+- Python 3.9+ or PowerShell 7+ installed locally
+- Access to the [vergeos-terraform-playground](https://github.com/verge-io/vergeos-terraform-playground) repository
+
+## Difficulty
+
+**Intermediate** -- Requires familiarity with REST APIs, infrastructure-as-code concepts, and basic scripting
+
+## Estimated Time
+
+**2 hours**
+
+## Steps
+
+### Part 1: REST API Exploration
+
+Authenticate with the VergeOS API and perform basic operations.
+
+1. Obtain an API key from the VergeOS UI (System > Users > [your user] > API Keys)
+2. Use `curl` or a REST client to authenticate:
+   ```bash
+   curl -X GET https://<your-vergeos-host>/api/v4/vms \
+     -H "x-yottabyte-token: <your-api-key>"
+   ```
+3. List all VMs using the `/api/v4/vms` endpoint
+4. Create a new VM via the API:
+   - POST to `/api/v4/vms` with a JSON body specifying name, CPU, memory, and disk
+5. Start and stop the VM using the API
+6. Delete the VM via the API
+7. Explore additional endpoints: networks (`/api/v4/networks`), tenants (`/api/v4/tenants`)
+
+### Part 2: Terraform Provider
+
+Use the VergeOS Terraform provider to manage infrastructure declaratively.
+
+1. Clone the vergeos-terraform-playground repository:
+   ```bash
+   git clone https://github.com/verge-io/vergeos-terraform-playground.git
+   cd vergeos-terraform-playground
+   ```
+2. Review the provider configuration in `main.tf`
+3. Copy and customize an example `.tfvars` file for your environment
+4. Run `terraform init` to download the VergeOS provider
+5. Run `terraform plan` to preview the infrastructure changes
+6. Run `terraform apply` to provision resources
+7. Verify the created resources in the VergeOS UI
+8. Modify a resource in the Terraform configuration and re-apply
+9. Run `terraform destroy` to clean up
+
+### Part 3: Scripting Automation
+
+Automate a workflow using pyvergeos (Python) or the PowerShell module.
+
+1. Install pyvergeos:
+   ```bash
+   pip install pyvergeos
+   ```
+2. Write a script that:
+   - Connects to your VergeOS cluster
+   - Lists all VMs and their current status
+   - Creates a new VM from a recipe/template
+   - Waits for the VM to be running
+   - Outputs the VM's IP address and connection details
+3. Extend the script to:
+   - Create a tenant with predefined resource allocations
+   - Deploy a VM inside the tenant
+   - Verify tenant isolation by checking network connectivity
+
+### Part 4: Cloud-Init
+
+Configure unattended VM provisioning using cloud-init.
+
+1. Create a cloud-init configuration file with:
+   - Hostname and network settings
+   - User accounts and SSH keys
+   - Package installation commands
+   - Post-boot scripts
+2. Attach the cloud-init configuration to a new VM via the API or UI
+3. Boot the VM and verify that the cloud-init configuration was applied:
+   - Check hostname and network settings
+   - Verify user accounts exist
+   - Confirm packages were installed
+
+## Verification
+
+Your infrastructure automation lab is complete when you can answer **yes** to all of the following:
+
+- [ ] Successfully authenticated with the VergeOS REST API and performed CRUD operations on VMs
+- [ ] Provisioned infrastructure using the Terraform provider from the playground repository
+- [ ] Modified and re-applied Terraform configuration, observing incremental changes
+- [ ] Created a script (Python or PowerShell) that automates VM and/or tenant provisioning
+- [ ] Configured a VM with cloud-init for unattended setup and verified the configuration was applied
+- [ ] Cleaned up all lab resources (VMs, tenants, Terraform state)
