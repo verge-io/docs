@@ -37,14 +37,14 @@ tsvergeos is a TypeScript SDK for managing VergeOS infrastructure through the RE
 - **Zero Dependencies**: Nothing to audit, nothing to break
 - **Tree-Shakeable**: Import only the services you use; unused services are dead-code eliminated
 - **Full Type Coverage**: Every resource, parameter, and response is typed with TSDoc documentation
-- **84 Services**: Complete coverage of every VergeOS API endpoint
+- **93 Services**: Complete coverage of every VergeOS API endpoint
 - **Multi-Site Built In**: Query and manage multiple VergeOS deployments from a single `SiteManager`
-- **Cross-Platform**: Works in Node.js 18+, Deno, Bun, and modern browsers
+- **Cross-Platform**: Works in Node.js 20+, Deno, Bun, and modern browsers
 - **Filtering**: OData filter support with both a fluent `Filter` builder and a functional `buildFilter` shorthand
 
 ## Requirements
 
-- Node.js 18+ (also supports Deno and Bun)
+- Node.js 20+ (also supports Deno and Bun)
 - VergeOS 6.x (API v4)
 
 ## Installation
@@ -82,7 +82,7 @@ const client = await VergeClient.connect({
 ```
 
 !!! note "SSL Certificate Verification"
-    Set `verifySsl: false` only for environments with self-signed certificates. For production environments with valid certificates, omit this parameter or set it to `true`.
+Set `verifySsl: false` only for environments with self-signed certificates. For production environments with valid certificates, omit this parameter or set it to `true`.
 
 ### Username / Password
 
@@ -109,7 +109,7 @@ const client = await VergeClient.connectFromEnv();
 ```
 
 !!! tip "Recommended for Production"
-    Using environment variables keeps credentials out of your source code and makes it easy to use different credentials across environments.
+Using environment variables keeps credentials out of your source code and makes it easy to use different credentials across environments.
 
 ## Service Registration
 
@@ -118,10 +118,10 @@ The SDK uses tree-shakeable imports — services are registered via side-effect 
 ### Three Import Levels
 
 ```typescript
-// 1. Default: ~40 most-used services (VMs, networks, tenants, storage, etc.)
+// 1. Default: ~48 most-used services (VMs, networks, tenants, storage, etc.)
 import { VergeClient } from "@vergeio/tsvergeos";
 
-// 2. Full: all 84 services (alarms, update settings, storage tiers, etc.)
+// 2. Full: all 93 services (alarms, update settings, storage tiers, etc.)
 import { VergeClient } from "@vergeio/tsvergeos";
 import "@vergeio/tsvergeos/full";
 
@@ -132,37 +132,43 @@ import "@vergeio/tsvergeos/services/storage-tier";
 ```
 
 !!! warning "Unregistered Services"
-    The default import does not include every service. If you access a service that isn't registered (e.g., `client.alarms` without importing it), you'll get `undefined`. For dashboards, admin tools, or backend scripts where bundle size doesn't matter, use `import '@vergeio/tsvergeos/full'` to register everything.
+The default import does not include every service. If you access a service that isn't registered (e.g., `client.alarms` without importing it), you'll get `undefined`. For dashboards, admin tools, or backend scripts where bundle size doesn't matter, use `import '@vergeio/tsvergeos/full'` to register everything.
 
 ### Type-Only Imports
 
 Type imports have zero bundle impact regardless of which services are registered:
 
 ```typescript
-import type { VM, Alarm, Network, Tenant, Volume } from "@vergeio/tsvergeos/types";
+import type {
+  VM,
+  Alarm,
+  Network,
+  Tenant,
+  Volume,
+} from "@vergeio/tsvergeos/types";
 ```
 
 ## Available Resources
 
-The SDK provides access to 84 services covering the full VergeOS API:
+The SDK provides access to 93 services covering the full VergeOS API:
 
-| Category | Resources |
-|----------|-----------|
-| **Compute** | VMs, drives, devices, NICs, snapshots, stats |
-| **Networking** | Networks, rules, aliases, addresses, hosts, DNS zones/records/views |
-| **VPN** | WireGuard interfaces and peers, IPSec connections and phases |
-| **Storage** | Volumes, snapshots, CIFS/NFS shares, syncs, browser, storage tiers |
-| **NAS** | NAS services, users, files |
-| **Tenants** | Tenants, nodes, storage, snapshots, Layer 2 |
-| **Recipes** | VM and tenant recipes, instances, catalogs, repositories |
-| **Snapshots** | Snapshot profiles, periods, cloud snapshots |
-| **Sites** | Sites, incoming/outgoing syncs, sync profile periods |
-| **System** | System, clusters, nodes, settings, logs, tasks |
-| **Monitoring** | Alarms, alarm types, webhooks, webhook URLs |
-| **Auth** | Users, groups, members, permissions, API keys |
-| **Tags** | Tags, categories, members |
-| **Updates** | Update settings, sources, packages, branches |
-| **Other** | Certificates, cloud-init, resource groups |
+| Category       | Resources                                                                                                   |
+| -------------- | ----------------------------------------------------------------------------------------------------------- |
+| **Compute**    | VMs, drives, devices, NICs, machine snapshots, stats                                                        |
+| **Networking** | Networks, rules, aliases, addresses, hosts, DNS zones/records/views                                         |
+| **VPN**        | WireGuard interfaces and peers, IPSec connections and phases                                                |
+| **Storage**    | Volumes, volume snapshots, CIFS/NFS shares, syncs, browser, storage tiers                                   |
+| **NAS**        | NAS services, users, files                                                                                  |
+| **Tenants**    | Tenants, nodes, storage, snapshots, Layer 2                                                                 |
+| **Recipes**    | VM and tenant recipes, instances, catalogs, repositories                                                    |
+| **Snapshots**  | Snapshot profiles, periods, cloud snapshots                                                                 |
+| **Sites**      | API `sites` service — incoming/outgoing syncs, sync profile periods (distinct from the SDK's `SiteManager`) |
+| **System**     | System, clusters, nodes, settings, logs, tasks                                                              |
+| **Monitoring** | Alarms, alarm types, webhooks, webhook URLs                                                                 |
+| **Auth**       | Users, groups, members, permissions, API keys                                                               |
+| **Tags**       | Tags, categories, members                                                                                   |
+| **Updates**    | Update settings, sources, packages, branches                                                                |
+| **Other**      | Certificates, cloud-init, resource groups                                                                   |
 
 ## Usage Examples
 
@@ -198,7 +204,7 @@ const newVm = await client.vms.create({
 
 // Power operations
 await client.vms.powerOn(newVm.$key);
-await client.vms.powerOff(newVm.$key);
+await client.vms.powerOff(newVm.$key); // graceful ACPI shutdown
 
 // Update a VM
 await client.vms.update(newVm.$key, { ram: 4096 });
@@ -206,6 +212,44 @@ await client.vms.update(newVm.$key, { ram: 4096 });
 // Delete a VM
 await client.vms.delete(newVm.$key);
 ```
+
+!!! note "Reliable Power State"
+The `powerstate` field on a VM resource is often omitted by the API. For
+authoritative live power state, query the machine status service:
+
+```typescript
+import "@vergeio/tsvergeos/services/machine-status";
+
+const status = await client.machineStatuses.getByMachine(newVm.$key);
+console.log(status.running, status.status);
+```
+
+### Console Access
+
+`getConsoleInfo()` returns connection details for opening a direct WebSocket
+console to a VM. Three auth methods are supported — pick based on where the
+console is rendered:
+
+```typescript
+// Browser-compatible: token embedded in WebSocket URL
+const info = await client.vms.getConsoleInfo(42, {
+  username: "admin",
+  password: "secret",
+});
+if (info.isAvailable) {
+  const rfb = new RFB(container, info.websocketUrl);
+}
+
+// Node / Deno / Bun: API key via Authorization header
+const info = await client.vms.getConsoleInfo(42, { apiKey: "..." });
+const ws = new WebSocket(info.websocketUrl, {
+  headers: { Authorization: `Bearer ${info.apiKey}` },
+});
+```
+
+The browser `WebSocket` API does not support custom headers — use
+username/password or a pre-existing token in browsers. For a no-API-call
+shortcut to the web UI console, use `client.vms.getConsoleURL(42)`.
 
 ### Filtering Resources
 
@@ -249,8 +293,10 @@ The SDK supports multiple filtering approaches:
       fields: ["name", "status", "ram"],
     });
 
-    // Or fetch all pages automatically
-    const allVms = await client.vms.listAll();
+    // Or iterate all pages automatically (async generator)
+    for await (const vm of client.vms.listAll()) {
+      console.log(vm.name);
+    }
     ```
 
 ### Multi-Site Management
@@ -284,13 +330,20 @@ const eastVms = await manager.site("dc-east").vms.list();
 const allSiteVms = await manager.all.vms.list();
 // → { data: SiteResource<VM>[], errors: SiteError[] }
 
-for (const vm of allSiteVms.data) {
-  console.log(`${vm.site}: ${vm.name}`);
+for (const item of allSiteVms.data) {
+  console.log(`${item.site}: ${item.resource.name}`);
 }
+
+// Fan out only to sites with a given tag
+const prodVms = await manager.tagged("production").vms.list();
+
+// Or register a pre-built VergeClient synchronously (no version check)
+const existing = new VergeClient({ host: "10.0.3.1", apiKey: "key-edge" });
+manager.addSite("edge-01", existing, ["edge"]);
 ```
 
 !!! tip "Multi-Site Queries"
-    The `SiteManager` fans out read queries across all registered sites in parallel and returns aggregated results along with any per-site errors.
+The `SiteManager` fans out read queries across all registered sites in parallel and returns aggregated results along with any per-site errors. Use `manager.tagged(tag)` to scope the fan-out to a subset of sites. Mutations always go through a named site (`manager.site("dc-east").vms.create(...)`); the cross-site proxy exposes only `list()`.
 
 ## Error Handling
 
@@ -318,18 +371,18 @@ try {
 ```
 
 ??? example "Available Error Types"
-    | Error Class | Description |
-    |-------------|-------------|
-    | `VergeError` | Base error for all SDK errors |
-    | `ApiError` | Any HTTP error from the API |
-    | `NotFoundError` | Resource not found (404) |
-    | `AuthError` | Authentication failure (401/403) |
-    | `ConflictError` | Resource state conflict (409) |
-    | `ValidationError` | Invalid client-side input |
-    | `UnsupportedVersionError` | Server version too old |
-    | `TaskError` | Async task failed |
-    | `TaskTimeoutError` | Task exceeded wait timeout |
-    | `SiteError` | Multi-site operation failure |
+| Error Class | Description |
+|-------------|-------------|
+| `VergeError` | Base error for all SDK errors |
+| `ApiError` | Any HTTP error from the API |
+| `NotFoundError` | Resource not found (404) |
+| `AuthError` | Authentication failure (401/403) |
+| `ConflictError` | Resource state conflict (409) |
+| `ValidationError` | Invalid client-side input |
+| `UnsupportedVersionError` | Server version too old |
+| `TaskError` | Async task failed |
+| `TaskTimeoutError` | Task exceeded wait timeout |
+| `SiteError` | Multi-site operation failure |
 
 ## Client Configuration
 
@@ -337,16 +390,16 @@ The full set of configuration options:
 
 ```typescript
 interface ClientConfig {
-  host: string;          // Server hostname or URL
-  apiKey?: string;       // API key for bearer auth
-  username?: string;     // Username for basic auth
-  password?: string;     // Password for basic auth
-  verifySsl?: boolean;   // TLS verification (default: true)
-  timeout?: number;      // Request timeout in ms (default: 30000)
-  retries?: number;      // Retry attempts (default: 3)
+  host: string; // Server hostname or URL
+  apiKey?: string; // API key for bearer auth
+  username?: string; // Username for basic auth
+  password?: string; // Password for basic auth
+  verifySsl?: boolean; // TLS verification (default: true)
+  timeout?: number; // Request timeout in ms (default: 30000)
+  retries?: number; // Retry attempts (default: 3)
   retryBackoff?: number; // Backoff between retries in ms (default: 1000)
-  fetch?: typeof fetch;  // Custom fetch implementation
-  signal?: AbortSignal;  // Cancellation signal
+  fetch?: typeof fetch; // Custom fetch implementation
+  signal?: AbortSignal; // Cancellation signal
 }
 ```
 
@@ -363,18 +416,18 @@ interface ClientConfig {
 
 For complete documentation, including the full API reference and detailed usage examples, visit the official repository:
 
-- [GitHub Repository](https://github.com/verge-io/tsvergeos){target="_blank"}
-- [npm Package](https://www.npmjs.com/package/@vergeio/tsvergeos){target="_blank"}
+- [GitHub Repository](https://github.com/verge-io/tsvergeos){target="\_blank"}
+- [npm Package](https://www.npmjs.com/package/@vergeio/tsvergeos){target="\_blank"}
 
 ## Support
 
 If you encounter issues or have feature requests, please open an issue on the GitHub repository:
 
-[https://github.com/verge-io/tsvergeos/issues](https://github.com/verge-io/tsvergeos/issues){target="_blank"}
+[https://github.com/verge-io/tsvergeos/issues](https://github.com/verge-io/tsvergeos/issues){target="\_blank"}
 
 ## Additional Resources
 
-- [TypeScript Documentation](https://www.typescriptlang.org/docs/){target="_blank"}
+- [TypeScript Documentation](https://www.typescriptlang.org/docs/){target="\_blank"}
 - [VergeOS API Documentation](/knowledge-base/category/api-reference/)
 - [Python SDK](python-sdk.md) - Python alternative
 - [Go SDK](go-sdk.md) - Go alternative
