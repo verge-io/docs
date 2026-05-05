@@ -2,6 +2,8 @@
 title: "VergeOS Go SDK (govergeos)"
 ---
 
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
 ## Overview
 
 govergeos is a Go client library for managing VergeOS infrastructure through the REST API. It provides a type-safe, idiomatic Go interface for automating VM lifecycle, networking, storage, multi-tenant operations, and disaster recovery workflows, making it ideal for building tools, operators, and infrastructure automation.
@@ -241,17 +243,16 @@ _ = client.Networks.ApplyRules(ctx, network.ID.Int())
 
 The SDK supports flexible filtering with list options:
 
-=== "Basic Filtering"
-
+<Tabs>
+  <TabItem label="Basic Filtering">
     ```go
     // Filter VMs by power state (running)
     vms, err := client.VMs.List(ctx,
         vergeos.WithFilter("powerstate eq true"),
     )
     ```
-
-=== "Multiple Options"
-
+  </TabItem>
+  <TabItem label="Multiple Options">
     ```go
     // Combine filter, sort, and pagination
     vms, err := client.VMs.List(ctx,
@@ -261,15 +262,16 @@ The SDK supports flexible filtering with list options:
         vergeos.WithOffset(0),
     )
     ```
-
-=== "Field Selection"
-
+  </TabItem>
+  <TabItem label="Field Selection">
     ```go
     // Return only specific fields (use $key for the ID field)
     vms, err := client.VMs.List(ctx,
         vergeos.WithFields("$key,name,powerstate,ram"),
     )
     ```
+  </TabItem>
+</Tabs>
 
 ### Concurrent Operations
 
@@ -353,18 +355,18 @@ if err != nil {
 
 For complete documentation, including all available methods and detailed usage examples, visit the official repository:
 
-- [GitHub Repository](https://github.com/verge-io/govergeos){target="_blank"}
-- [Go Package Documentation](https://pkg.go.dev/github.com/verge-io/govergeos){target="_blank"}
+- [GitHub Repository](https://github.com/verge-io/govergeos)
+- [Go Package Documentation](https://pkg.go.dev/github.com/verge-io/govergeos)
 
 ## Support
 
 If you encounter issues or have feature requests, please open an issue on the GitHub repository:
 
-[https://github.com/verge-io/govergeos/issues](https://github.com/verge-io/govergeos/issues){target="_blank"}
+[https://github.com/verge-io/govergeos/issues](https://github.com/verge-io/govergeos/issues)
 
 ## Additional Resources
 
-- [Go Documentation](https://go.dev/doc/){target="_blank"}
+- [Go Documentation](https://go.dev/doc/)
 - [VergeOS API Documentation](/knowledge-base/category/api-reference/)
 - [Python SDK (pyvergeos)](python-sdk) - Python alternative
 - [Terraform Provider](terraform-provider) - Infrastructure as code

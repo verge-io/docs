@@ -2,6 +2,8 @@
 title: "VergeOS Python SDK (pyvergeos)"
 ---
 
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
 ## Overview
 
 pyvergeos is a Python SDK for managing VergeOS infrastructure through the REST API. It provides a Pythonic, type-annotated interface for automating VM lifecycle, networking, storage, multi-tenant operations, and disaster recovery workflows, making it ideal for automation scripts, tooling development, and integrations.
@@ -189,22 +191,20 @@ network.rules.create(
 
 The SDK supports multiple filtering approaches:
 
-=== "Keyword Arguments"
-
+<Tabs>
+  <TabItem label="Keyword Arguments">
     ```python
     # Simple and readable for basic filters
     vms = client.vms.list(status="running", name="prod-*")
     ```
-
-=== "OData Filter String"
-
+  </TabItem>
+  <TabItem label="OData Filter String">
     ```python
     # Full OData filter syntax for complex queries
     vms = client.vms.list(filter="os_family eq 'linux' and ram gt 2048")
     ```
-
-=== "Filter Builder"
-
+  </TabItem>
+  <TabItem label="Filter Builder">
     ```python
     # Fluent API for building filters programmatically
     from pyvergeos import Filter
@@ -212,6 +212,8 @@ The SDK supports multiple filtering approaches:
     f = Filter().eq("os_family", "linux").and_().gt("ram", 2048)
     vms = client.vms.list(filter=str(f))
     ```
+  </TabItem>
+</Tabs>
 
 ### Task Waiting
 
@@ -273,18 +275,18 @@ except TaskTimeoutError as e:
 
 For complete documentation, including all available methods and detailed usage examples, visit the official repository:
 
-- [GitHub Repository](https://github.com/verge-io/pyvergeos){target="_blank"}
-- [PyPI Package](https://pypi.org/project/pyvergeos/){target="_blank"}
+- [GitHub Repository](https://github.com/verge-io/pyvergeos)
+- [PyPI Package](https://pypi.org/project/pyvergeos/)
 
 ## Support
 
 If you encounter issues or have feature requests, please open an issue on the GitHub repository:
 
-[https://github.com/verge-io/pyvergeos/issues](https://github.com/verge-io/pyvergeos/issues){target="_blank"}
+[https://github.com/verge-io/pyvergeos/issues](https://github.com/verge-io/pyvergeos/issues)
 
 ## Additional Resources
 
-- [Python Documentation](https://docs.python.org/3/){target="_blank"}
+- [Python Documentation](https://docs.python.org/3/)
 - [VergeOS API Documentation](/knowledge-base/category/api-reference/)
 - [PSVergeOS PowerShell Module](powershell-module) - PowerShell alternative
 - [Terraform Provider](terraform-provider) - Infrastructure as code
