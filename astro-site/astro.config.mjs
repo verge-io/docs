@@ -407,7 +407,6 @@ export default defineConfig({
                 },
                 { label: 'System Diagnostics', slug: 'product-guide/system/diagnostics' },
                 { label: 'Alarms', slug: 'product-guide/operations/alarms' },
-                { label: 'Prometheus Exporter', slug: 'product-guide/tools-integrations/prometheus-exporter' },
               ],
             },
             {
@@ -430,15 +429,6 @@ export default defineConfig({
             {
               label: 'Tools and Integrations',
               items: [
-                {
-                  label: 'Automation & API',
-                  items: [
-                    { label: 'Terraform Provider', slug: 'product-guide/tools-integrations/terraform-provider' },
-                    { label: 'PowerShell Module', slug: 'product-guide/tools-integrations/powershell-module' },
-                    { label: 'Python SDK', slug: 'product-guide/tools-integrations/python-sdk' },
-                    { label: 'Go SDK', slug: 'product-guide/tools-integrations/go-sdk' },
-                  ],
-                },
                 {
                   label: 'Backup & Migration',
                   items: [
@@ -491,6 +481,7 @@ export default defineConfig({
               items: [
                 { label: 'Python SDK', slug: 'developer-guide/sdks/python-sdk' },
                 { label: 'Go SDK', slug: 'developer-guide/sdks/go-sdk' },
+                { label: 'TypeScript SDK', slug: 'developer-guide/sdks/typescript-sdk' },
                 { label: 'PowerShell Module', slug: 'developer-guide/sdks/powershell-module' },
               ],
             },

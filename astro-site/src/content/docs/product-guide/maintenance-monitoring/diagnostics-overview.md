@@ -62,7 +62,7 @@ Integration with external monitoring systems (Grafana, AlertManager)
 
 **Access:** System → Prometheus Exporter
 
-[Prometheus Exporter](/product-guide/tools-integrations/prometheus-exporter)
+[Prometheus Exporter](/developer-guide/monitoring/prometheus-exporter)
 
 ## Best Practices
 
