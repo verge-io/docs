@@ -94,7 +94,7 @@ This guide explains how to import Linux virtual machines from other hypervisors 
 ### 3. Mount the Root Filesystem and Chroot
 
 !!! tip "RHEL version 9+"
-    By default, RHEL v9-family VMs use an LVM configuration file to explicitly whitelist devices based on hardware ID.  If a VM was imported without preserving drive hardware IDs/serial numbers, run `pvscan --cache` and `vgchange -ay` to force LVM to re-scan all block devices.  See KB article: [RHEL 9 Family VMs Failing to Boot After Clone or Snapshot Restore](/knowledge-base/rhel9-boot-failure-clone-snapshot-restore) for additional information.
+    By default, RHEL 9 family VMs (e.g. RHEL, AlmaLinux 9, Rocky Linux 9, CentOS Stream 9) use an LVM configuration file to explicitly whitelist devices based on hardware ID.  If a VM was imported without preserving drive hardware IDs/serial numbers, run `pvscan --cache` and `vgchange -ay` to force LVM to re-scan all block devices.  See KB article: [RHEL 9 Family VMs Failing to Boot After Clone or Snapshot Restore](/knowledge-base/rhel9-boot-failure-clone-snapshot-restore) for additional information.
 
 Once booted into rescue mode, log in as root and mount the root filesystem.
 
