@@ -51,7 +51,7 @@ dateCreated: 2026-04-22T00:00:00.000Z
 
 # RHEL 9 Family VMs Failing to Boot After Clone or Snapshot Restore
 
-This guide covers a specific boot failure: a RHEL 9 family VM (RHEL, AlmaLinux 9, Rocky Linux 9, or CentOS Stream 9) that boots fine before a clone or snapshot restore in VergeOS, then fails afterward because LVM's system.devices file no longer matches the VM's disk serial numbers. The steps below repair the VM from rescue mode.  if you haven't performed the clone or restore yet, see the "*Preventing this on future clones, snapshots, or exports*" note further down.
+This guide covers a specific boot failure: a RHEL 9 family VM (RHEL, AlmaLinux 9, Rocky Linux 9, or CentOS Stream 9) that boots fine on the source, then fails on cloned or restored snapshot instance because LVM's system.devices file no longer matches the VM's disk serial numbers. The steps below repair the VM from rescue mode.  if you haven't performed the clone or restore yet, see the "*Preventing this on future clones, snapshots, or exports*" note further down.
 
 ## Symptoms
 * After restoring a VM from a snapshot, or cloning a VM, the RHEL 9 VM fails to boot (drops to emergency mode or hangs at boot)
