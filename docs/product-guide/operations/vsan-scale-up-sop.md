@@ -31,6 +31,9 @@ categories:
 
 This guide provides best practices for safely scaling up storage capacity in a VergeOS system by adding drives to existing nodes. It focuses on data security and system resilience through a methodical approach.
 
+!!! warning "Scaling Down vSAN Storage Requires Support"
+    This guide covers **adding** drives to increase capacity. **Removing drives to reduce vSAN capacity is not a self-service operation.** Due to the complexity of safely redistributing data, drive removal must be coordinated with VergeOS Support. [Open a support ticket](/support) to initiate a scale-down request.
+
 !!! abstract "Overview"
     Scaling up a vSAN requires careful planning and execution to ensure minimal disruption to your services. This guide breaks down the process into main phases:
 
