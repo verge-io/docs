@@ -71,7 +71,7 @@ This means any operation that gives a VM new disk serial numbers — cloning a V
     - Environments running VergeOS versions earlier than 26.1.5
 
 !!! note "Imports from another hypervisor"
-    The same boot failure can occur when importing a VM from another hypervisor *if* the VM was exported without preserving its original device serial numbers.  Additionally, Imported VMs may fail to boot due to missing virtio drivers for VergeOS hardware.  See  [Importing a Linux VM Guide](/knowledge-base/import-rhel-centos-vm) for instructions including adjusting VM configuration and regenerating the initramfs.
+    The same boot failure can occur when importing a VM from another hypervisor *if* the VM was exported without preserving its original device serial numbers.  Additionally, Imported VMs may fail to boot due to missing virtio drivers for VergeOS hardware.  See  [Importing a Linux VM Guide](/knowledge-base/import-rhel-centos-vm) for instructions that include adjusting VM configuration and regenerating the initramfs with virtio drivers.
 
 
 !!! note "Preventing this on future clones, snapshots, or exports"
@@ -90,20 +90,20 @@ The VM will likely fail to boot normally. Use one of the following methods to re
 
 #### Option A — GRUB Rescue Kernel (preferred)
 
-1. Power on the VM and open the console in VergeOS.
-2. During boot, press and hold **Shift** (BIOS) or **Esc** (UEFI) to access the GRUB menu.
-3. Select **Advanced options** and choose the **rescue** kernel entry.
-4. Follow any prompts — if asked whether to mount the root filesystem, select **Continue**.
+  * Power on the VM and open the console in VergeOS.
+  * During boot, press and hold **Shift** (BIOS) or **Esc** (UEFI) to access the GRUB menu.
+  * Select **Advanced options** and choose the **rescue** kernel entry.
+  * Follow any prompts — if asked whether to mount the root filesystem, select **Continue**.
 
 #### Option B — Boot from Installation ISO
 
 If the GRUB menu is unreachable or the VM won't get that far:
 
-1. In VergeOS, attach a RHEL 9 family installation ISO to the VM as a CD/DVD drive.
-2. Adjust the VM's boot order to boot from the ISO first, or use a one-time boot option.
-3. At the installer menu, navigate to **Troubleshooting → Rescue a [distro] system**.
-4. When prompted about mounting the installed system, choose option **1** (mount under `/mnt/sysimage`).
-5. Select **Shell** to open a command prompt.
+  * In VergeOS, attach a RHEL 9 family installation ISO to the VM as a CD/DVD drive.
+  * Adjust the VM's boot order to boot from the ISO first, or use a one-time boot option.
+  * At the installer menu, navigate to **Troubleshooting → Rescue a [distro] system**.
+  * When prompted about mounting the installed system, choose option **1** (mount under `/mnt/sysimage`).
+  * Select **Shell** to open a command prompt.
 
 !!! warning "ISO rescue uses a different mount path"
     When using installer rescue mode, your installed system is at `/mnt/sysimage` rather than `/mnt`. Adjust next steps accordingly.
@@ -129,12 +129,12 @@ If the GRUB menu is unreachable or the VM won't get that far:
     !!! tip "RHEL 9 installations typically use LVM, with the root logical volume at `/dev/mapper/rhel-root` (or `almalinux-root`, `rocky-root`)." 
 
 
-### 3. Verify volume groups are now visible
+  * Verify volume groups are now visible
 
-    * `lvdisplay`
+    `lvdisplay`
 
 
-### 4. Mount the root partition and verify 
+### 3. Mount the root partition and bind the filesystems
 
   * `mount /dev/<device_name> /mnt`  
     Replace <device_name> with your root partition (e.g., sda2, mapper/vg0-root).  
@@ -146,14 +146,14 @@ If the GRUB menu is unreachable or the VM won't get that far:
 
     You should see directories like /root, /boot, /home, /etc, and /var.
 
-### 5. Bind the Filesystems
+  * **Bind the Filesystems:**
 
- * **Use the following for-loop to bind the necessary virtual filesystems:** 
+    **Use the following for-loop to bind the necessary virtual filesystems:** 
 
     `for i in proc sys dev run; do mount --rbind /$i /mnt/$i; done`
 
 
- * **OR mount them individually:**
+    **OR mount them individually:**
 
     `mount --rbind /proc /mnt/proc`  
     `mount --rbind /sys /mnt/sys`      
@@ -161,36 +161,33 @@ If the GRUB menu is unreachable or the VM won't get that far:
     `mount --rbind /run /mnt/run`  
 
 
-### 6. Chroot into the Installed System
+### 4. Chroot into the Installed System and mount additional filesystems
 
+  * **Change the root directory**
 
     `chroot /mnt`
 
-### 7. Mount remaining filesystems:
-
-After chrooting, mount any additional partitions defined in fstab:
+  * After chrooting, **mount any additional partitions** defined in fstab:
 
     `mount -a`
 
-### 7. Regenerate the Initramfs
+### 5. Regenerate the Initramfs
 
-  * Rebuild the initramfs so it picks up the cleaned-up device configuration:
+  * **Rebuild the initramfs** so it picks up the cleaned-up device configuration:
 
     `dracut -f --regenerate-all` 
 
-### 7. Reboot and Verify
+### 6. Reboot and Verify
 
-  * Exit the chroot environment:
+  * **Exit the chroot environment:**
 
     `exit`
 
-  * Reboot the VM:
+  * **Reboot the VM:**
 
     `reboot`
 
-  * Verify Boot 
-
-Confirm that the VM boots successfully, all drives appear as expected, and network connectivity. 
+  * **Verify Boot:**Confirm that the VM boots successfully, and all drives appear as expected. 
 
 
 
