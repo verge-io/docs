@@ -1,3 +1,4 @@
+---
 title: "PXE Boot Setup Guide"
 description: "Configure VergeOS to PXE boot nodes for installation or every-boot runtime. Covers External vNet setup, VLAN/DHCP requirements, and boot configuration."
 semantic_keywords:
@@ -19,24 +20,24 @@ tags:
 
 # PXE Boot Setup Guide
 
-**Audience:** System administrators and support engineers that want to setup a pxe network for installing VergeOS nodes from the network and/or deploying nodes without boot disks
+**Audience:** System administrators and support engineers that want to implement a PXE network for installing VergeOS nodes from the network and/or deploying nodes without boot disks
 
 
 ## Overview
 
-VergeOS has a built-in PXE boot service that allows installing nodes from the network (eliminating the need for USB installers, remote BMC ISO mounting, etc.) and network boot of registered, diskless nodes.  These are two distinct scenarios:
+VergeOS has a built-in PXE boot service that allows optionally installing nodes from the network (replacing USB installers, remote BMC ISO mounting, etc.) and network boot of registered, diskless nodes.  These are two distinct scenarios:
 
 | Scenario | Use case |
 |----------|----------|
 | **First-time install via PXE** | The VergeOS install is initiated from the network providing an alternative to USB installer, IPMI virtual media, etc. Node PXE-boots to the installer, you select Scale-Out / Compute / Storage, installer completes and node joins the cluster |
-| **Every-boot PXE (diskless)** | Node has no local drives (or none configured as bootable). Every reboot pulls the running VergeOS image from the cluster over PXE. Common pattern for diskless compute nodes |
+| **Every-boot PXE (diskless)** | Node has no local drives (or none configured as bootable). Every reboot pulls the running VergeOS image from the cluster over PXE. Common  |
 
 Both use the same underlying service: the provider cluster runs dnsmasq on a designated vNet and serves the VergeOS boot image over the network.
 
 
 ##  Prerequisites
 
-- An **operational VergeOS cluster** (at minimum, controller node up and reachable)
+- An **operational VergeOS cluster** (at minimum, controller node up and reachable for pxe-installing, two controllers up and running for pxe node every-boot)
 - **Dedicated PXE NIC (recommended)** — the PXE network should be on a separate NIC on each node, dedicated to PXE booting. Typically implemented as a maintenance network, isolated from production data paths so that PXE traffic doesn't compete with other network roles on the same interface
 - **Switch configuration** allowing the target PXE NIC to reach the Verge PXE network. Using a dedicated, inexpensive, basic switch for this network to serve pxe and provide out-of-band maintenance is recommended. 
 - **Native VLAN match** — the native/access VLAN on the target node's switch port (or vNIC, if applicable) **must match the VLAN of the Verge PXE network**. PXE boot broadcasts leave the NIC untagged, so they land on whatever VLAN the port treats as native. If the native VLAN doesn't match where Verge is serving PXE, the boot request never reaches Verge's dnsmasq and the node will get no PXE response.
@@ -49,24 +50,23 @@ Both use the same underlying service: the provider cluster runs dnsmasq on a des
 The PXE service runs on a VergeOS **External vNet** with DHCP enabled and a specific PXE option set.
 
 1. **Networks → New External** (or edit an existing External vNet)
-2. Configure basic network settings:
-   - **Name** — something like `pxe-install` or `pxe`
-   - **Layer 2 Type** — set to none or `vLan` and **Layer 2 ID** — your VLAN ID (e.g. `505`)
-   - **Interface Network** — the physical network backing this vNet 
-   - **IP Address Type** — `Static`
-   - **IP Address** — the router IP for this network (clients will use this as gateway), e.g. `10.50.5.10`
-   - **Network Address** — CIDR, e.g. `10.50.5.0/24`
-3. Enable DHCP
+2. Configure basic network settings:  
+    - **Name** — a descriptive name, such as "pxe-boot" or "pxe"
+    - **Layer 2 Type** — set to *none*;* or *vLan* and **Layer 2 ID** — your VLAN ID (e.g. 50)
+    - **Interface Network** — the physical network backing this vNet 
+    - **IP Address Type** — *Static*
+    - **IP Address** — the router IP for this network e.g. 10.50.5.10
+    - **Network Address** — CIDR, e.g. 10.50.5.0/24
+3. Enable DHCP (VergeOS's dnsmasq will be the authoritative DHCP for this segment)
     - Check the **DHCP** option
-    - Set **DHCP Start Address** and **DHCP Stop Address** for the install pool
+    - Set **DHCP Start Address** and **DHCP Stop Address** for the address pool
     - Check the **Dynamic DHCP** option
-    - VergeOS's dnsmasq will be the authoritative DHCP for this segment
-    - **Gateway setting** — leave the DHCP **Gateway** field blank (VergeOS defaults it to the vNet's own router IP, which is fine), or explicitly set it to the vNet's router IP. Do NOT set it to an upstream/off-segment gateway — that makes PXE clients try to route their TFTP/HTTP fetches off-network, and installs a default route that can conflict with the production networks the node will use after install
-4. Set the **PXE Boot** option to ***`ybos`***
+    - **Gateway setting** — leave the DHCP **Gateway** field blank (VergeOS defaults it to the vNet's own router IP. Do NOT set it to an upstream/off-segment gateway — that makes PXE clients try to route their TFTP/HTTP fetches off-network, and installs a default route that can conflict with the production networks the node will use after install
+4. Set the **PXE Boot** option to ***ybos***
 5. Power on the vNet
     - **Submit** the form
     - On the resulting dashboard, click **Power On**
-    - Verify the network status is `Running`
+    - Verify the network status is *Running*
 
 
 
@@ -89,15 +89,15 @@ Use case: compute nodes with no local disks, or nodes that should always pull a 
 
 ### Boot Flow
 1. Node powers on → boot policy → LAN Boot
-2. NIC sends DHCP on the install VLAN
-3. Verge's dnsmasq responds with IP + `next-server` + boot filename
+2. NIC sends DHCP on the pxe network
+3. Verge's dnsmasq responds with IP + 'next-server` + boot filename
 4. Node downloads the VergeOS boot image from Verge
 5. VergeOS loads into RAM, node rejoins the cluster
 6. Reboot → repeat from step 1
 
-No local storage, no per-node customization. Scale identically across N nodes with the same boot policy / service profile.
+No per-node customization. Scale identically across N nodes with the same configuration.
 
-See KB article: [Configuring a Node for Diskless PXE Boot (PXE every-boot)](/knowledge-base/pxe-every-boot-node-config) for additional information. 
+See KB article: [Configuring a Node for Diskless PXE Boot (PXE every-boot)](/knowledge-base/pxe-every-boot-node-config) for step-by-step instructions. 
 
 
 ## Considerations
@@ -110,7 +110,8 @@ See KB article: [Configuring a Node for Diskless PXE Boot (PXE every-boot)](/kno
 
 ### Changing a node's NIC configuration (caution)
 
-> ⚠️ **Changing the NIC or interface used by a PXE-booting node can break its ability to boot.** Proceed carefully, especially for every-boot PXE (diskless) nodes that depend on PXE for every startup.
+!!! warning 
+    **Changing the NIC or interface used by a PXE-booting node can break its ability to boot.** Proceed carefully, especially for every-boot PXE (diskless) nodes that depend on PXE for every startup.
 
 The PXE boot path is tied to a specific NIC and interface:
 - **Node identity is tied to the MAC address of the NIC used during install** — this MAC must remain constant for the life of the node. If it changes, the cluster sees the node as new/unknown and it will not rejoin automatically
@@ -149,12 +150,13 @@ If the hardware side looks correct but the cluster still references the old MAC,
 On the node's dashboard in the provider UI, run the **Refresh → Drives and NICs** action. The cluster re-detects the current hardware and picks up the new MAC automatically.
 
 **Option 2 — Manually edit the NIC's MAC (node is down, same NIC slot, new MAC):**
-Useful when the NIC hardware / slot hasn't changed but the MAC did — for example, a vNIC rebuild or service profile change on a managed platform. With the node offline:
-- Navigate to the node's dashboard → NICs
-- Edit the NIC entry corresponding to the PXE network
-- Update the stored MAC to match the new one
-- **Reboot the PXE network** (power-cycle the External vNet) so dnsmasq picks up the new MAC-to-config mapping
-- The node should boot correctly on the next attempt
+Useful when the NIC hardware / slot hasn't changed but the MAC did — for example, a vNIC rebuild or service profile change on a managed platform. With the node offline:  
+
+- Navigate to the node's dashboard → NICs  
+- Edit the NIC entry corresponding to the PXE network  
+- Update the stored MAC to match the new one  
+- **Reboot the PXE network** (power-cycle the External vNet) so dnsmasq picks up the new MAC-to-config mapping  
+- The node should boot correctly on the next attempt  
 
 If neither option resolves it, contact support.
 
@@ -169,13 +171,13 @@ Work through this list first when PXE isn't behaving. Most failures trace back t
 - **Did the node get a DHCP lease?** Watch the boot console — it should show "DHCP..." followed by an IP. If no IP, the DHCP phase itself is failing.
 - **Is the IP in the expected subnet?** If the node gets a lease but the IP isn't from the pool you configured on the Verge External vNet, a different DHCP server answered. A rogue/corporate DHCP on the same L2 will usually win the race.
 - **No competing DHCP server on the segment?** This is the #1 cause of silent PXE failures. Verge's dnsmasq must be the only DHCP on the VLAN. 
-- **PXE option set to `ybos`** on the External vNet? Without this, Verge answers DHCP but doesn't hand out the PXE boot filename.
+- **PXE option set to *ybos*** on the External vNet? Without this, Verge answers DHCP but doesn't hand out the PXE boot filename.
 - **DHCP enabled on the vNet** (not just configured)? The checkbox must be checked and the network powered on.
 - **Gateway on the DHCP scope is sensible?** Blank or the vNet's own router IP is fine; an upstream/off-segment gateway will make PXE clients try to route off-network. 
 - **Native VLAN match?** The switch port (or vNIC) carrying the node's PXE NIC must have the Verge PXE VLAN as its native/access VLAN. PXE broadcasts are untagged. 
 - **Correct NIC configured for PXE?** BIOS/UEFI boot order (or the boot policy on managed platforms) must point at the NIC actually cabled to the PXE network.
 - **Physical connectivity?** Link lights on both ends, cable seated, switch port not administratively down or error-disabled.
-- **External vNet status is `Running`?** If the vNet is stopped/initializing, dnsmasq isn't answering.
+- **External vNet status is "Running"** If the vNet is stopped/initializing, dnsmasq isn't answering.
 - **VergeOS cluster is healthy?** A cluster that's degraded or with controllers down may not be serving PXE properly. Check the main dashboard.
 - **MAC registration (for nodes previously joined)?** If a NIC was swapped or a Service Profile rebuilt, the new MAC may not be recognized. See *Changing a node's NIC configuration* above. 
 - **Try forcing the correct NIC via the BIOS boot manager.** If the persistent boot order isn't picking the right NIC, use the server's one-time boot manager (typically F11/F12 at POST, or a one-time boot override in the BMC / management controller) to explicitly select the PXE NIC. This isolates whether the issue is boot-order selection vs. something downstream like DHCP or PXE serving.
