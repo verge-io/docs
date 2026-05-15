@@ -20,7 +20,7 @@ tags:
 
 # PXE Boot Setup Guide
 
-**Audience:** System administrators and support engineers that want to implement a PXE network for installing VergeOS nodes from the network and/or deploying nodes without boot disks
+**Audience:** System administrators and support engineers who want to implement a PXE network for installing VergeOS nodes from the network and/or deploying nodes without boot disks
 
 
 ## Overview
@@ -30,12 +30,12 @@ VergeOS has a built-in PXE boot service that allows optionally installing nodes 
 | Scenario | Use case |
 |----------|----------|
 | **First-time install via PXE** | The VergeOS install is initiated from the network providing an alternative to USB installer, IPMI virtual media, etc. Node PXE-boots to the installer, you select Scale-Out / Compute / Storage, installer completes and node joins the cluster |
-| **Every-boot PXE** | Node has no local drives (or none configured as bootable). Nodes is installed and registered as a pxe boot node. Every reboot pulls the running VergeOS image from the cluster over PXE.  Common for diskless compute-only nodes; can also be used for nodes with non-bootable storage|
+| **Every-boot PXE** | Node has no local drives (or none configured as bootable). Node is installed and registered as a pxe boot node. Every reboot pulls the running VergeOS image from the cluster over PXE.  Common for diskless compute-only nodes; can also be used for nodes with non-bootable storage |
 
 Both use the same underlying service: the provider cluster runs dnsmasq on a designated vNet and serves the VergeOS boot image over the network.
 
 
-##  Prerequisites
+## Prerequisites
 
 - An **operational VergeOS cluster** (at minimum, controller node up and reachable for pxe-installing, two controllers up and running for pxe node every-boot)
 - **Dedicated PXE NIC (recommended)** — the PXE network should be on a separate NIC on each node, dedicated to PXE booting. Typically implemented as a maintenance network, isolated from production data paths so that PXE traffic doesn't compete with other network roles on the same interface
@@ -52,7 +52,7 @@ The PXE service runs on a VergeOS **External vNet** with DHCP enabled and a spec
 1. **Networks → New External** (or edit an existing External vNet)
 2. Configure basic network settings:  
     - **Name** — a descriptive name, such as "pxe-boot" or "pxe"
-    - **Layer 2 Type** — set to *none*;* or *vLan* and **Layer 2 ID** — your VLAN ID (e.g. 50)
+    - **Layer 2 Type** — set to *none* or *vLan* with *Layer 2 ID* — your VLAN ID (e.g. 50)
     - **Interface Network** — the physical network backing this vNet 
     - **IP Address Type** — *Static*
     - **IP Address** — the router IP for this network e.g. 10.50.5.10
@@ -61,7 +61,7 @@ The PXE service runs on a VergeOS **External vNet** with DHCP enabled and a spec
     - Check the **DHCP** option
     - Set **DHCP Start Address** and **DHCP Stop Address** for the address pool
     - Check the **Dynamic DHCP** option
-    - **Gateway setting** — leave the DHCP **Gateway** field blank (VergeOS defaults it to the vNet's own router IP. Do NOT set it to an upstream/off-segment gateway — that makes PXE clients try to route their TFTP/HTTP fetches off-network, and installs a default route that can conflict with the production networks the node will use after install
+    - **Gateway setting** — leave the DHCP **Gateway** field blank (VergeOS defaults it to the vNet's own router IP.) Do NOT set it to an upstream/off-segment gateway — that makes PXE clients try to route their TFTP/HTTP fetches off-network, and installs a default route that can conflict with the production networks the node will use after install
 4. Set the **PXE Boot** option to ***ybos***
 5. Power on the vNet
     - **Submit** the form
@@ -90,7 +90,7 @@ Use case: compute nodes with no local bootable disks, or nodes that should alway
 ### Boot Flow
 1. Node powers on → boot policy → LAN Boot
 2. NIC sends DHCP on the pxe network
-3. Verge's dnsmasq responds with IP + 'next-server` + boot filename
+3. Verge's dnsmasq responds with IP + *next-server* + boot filename
 4. Node downloads the VergeOS boot image from Verge
 5. VergeOS loads into RAM, node rejoins the cluster
 6. Reboot → repeat from step 1
@@ -136,7 +136,7 @@ Any change to that chain can prevent PXE from working on the next reboot.
 3. If the node is part of a running cluster, consider putting it in maintenance / draining VMs first so you can take your time troubleshooting if needed
 4. For every-boot PXE nodes: verify after the change that the node successfully PXE-boots once before declaring the change complete
 
-####  If the node fails to boot after a NIC change
+#### If the node fails to boot after a NIC change
 
 Start by verifying the basics:
 
@@ -177,7 +177,7 @@ Work through this list first when PXE isn't behaving. Most failures trace back t
 - **Native VLAN match?** The switch port (or vNIC) carrying the node's PXE NIC must have the Verge PXE VLAN as its native/access VLAN. PXE broadcasts are untagged. 
 - **Correct NIC configured for PXE?** BIOS/UEFI boot order (or the boot policy on managed platforms) must point at the NIC actually cabled to the PXE network.
 - **Physical connectivity?** Link lights on both ends, cable seated, switch port not administratively down or error-disabled.
-- **External vNet status is "Running"** If the vNet is stopped/initializing, dnsmasq isn't answering.
+- **External vNet status is "Running"?** If the vNet is stopped/initializing, dnsmasq isn't answering.
 - **VergeOS cluster is healthy?** A cluster that's degraded or with controllers down may not be serving PXE properly. Check the main dashboard.
 - **MAC registration (for nodes previously joined)?** If a NIC was swapped or a Service Profile rebuilt, the new MAC may not be recognized. See *Changing a node's NIC configuration* above. 
 - **Try forcing the correct NIC via the BIOS boot manager.** If the persistent boot order isn't picking the right NIC, use the server's one-time boot manager (typically F11/F12 at POST, or a one-time boot override in the BMC / management controller) to explicitly select the PXE NIC. This isolates whether the issue is boot-order selection vs. something downstream like DHCP or PXE serving.

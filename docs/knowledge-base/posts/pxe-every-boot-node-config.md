@@ -35,9 +35,9 @@ dateCreated: 2026-05-12
     - PXE every-boot lets a registered VergeOS compute node load the running OS from the cluster on every startup, with no local boot media
     - Intended for nodes that have no local storage, or only non-bootable storage devices
     - Requires a PXE-capable physical network with no competing DHCP servers
-    - This guide covers nodes that are installed to PXE-boot on **every reboot**. It does **not** cover one-time PXE installs (where PXE only replaces the USB installer and the node boots from local disk afterward), or PXE networks for tenant workloads.
+    - This guide covers nodes that are installed to PXE-boot on **every reboot**. It does **not** cover one-time PXE installs (e.g. PXE only replaces the USB installer and the node boots from local disk afterward), or PXE networks for tenant workloads.
 
-VergeOS supports PXE booting for host nodes, allowing you to deploy nodes that network-boot from the cluster every time they start. This guide covers configuration of a PXE network and  registered VergeOS host node to use PXE diskless boot.
+VergeOS supports PXE booting for host nodes, allowing you to deploy nodes that network-boot from the cluster every time they start. This guide covers configuration of a PXE network and VergeOS host node to use PXE diskless boot.
 
 !!! note "When PXE every-boot applies (dedicated boot drive not needed)"
  
@@ -48,11 +48,10 @@ VergeOS supports PXE booting for host nodes, allowing you to deploy nodes that n
 
 Configuring a node for PXE every-boot involves:
 
-1. **Physical network configuration** — establish an accessible physical network in VergeOS (often already configured during initial controller node installation.)
-2. **Node NIC assignment** — connect the node's PXE NIC to the physical network
-3. **Create an external network** configure a VergeOS vNet (external network) to serve PXE.
-4. **BIOS / UEFI / boot policy** — configure the node to boot from the PXE NIC
-5. **Install the node** — boot the VergeOS ISO and select the PXE node install option
+1. **Physical network configuration** — establish an accessible physical network in VergeOS and **Node NIC assignment** — connect the node's PXE NIC to the physical network (Physical network/node NIC assignment is often already configured during initial controller node installation.)
+2. **Create an external network** - configure a VergeOS vNet (external network) to serve PXE.
+3. **BIOS / UEFI / boot policy** — configure the node to boot from the PXE NIC
+4. **Install the node** — boot the VergeOS ISO and select the PXE node install option
 
 Detailed PXE network prerequisites and configuration information is available at [PXE Implementation Guide](/implementation-guide/pxe-boot).
 
@@ -69,7 +68,7 @@ The physical network used for PXE must meet a few requirements:
 !!! tip "Recommended pattern: dedicated maintenance network"
     The preferred setup is a dedicated physical network used for maintenance traffic (IPMI / iDRAC) and PXE boot, using inexpensive basic switches (for example, 1 GbE). Keeping PXE on a dedicated maintenance network avoids interference with production traffic and removes the risk of DHCP contention with other system processes.
 
-The physical network **may already exist from initial system installation** (for example, a maintenance network created during controller node installation).  A physical network can also be created post-install. 
+The physical network **may already exist from initial system installation** (for example, a maintenance network created during the install of controller nodes).  A physical network can also be created post-install. 
 
 To create a new physical network post-install:
 
@@ -84,7 +83,7 @@ To create a new physical network post-install:
     - Click **NICs** on the left menu.
     - Double-click the NIC that is cabled to the PXE network.
     - Set **Interface** to **Direct**.
-    - Select the appropriate physical network (e.g. **Maintenance Switch**).
+    - Select the appropriate physical network (e.g. *Maintenance Switch*).
 
 ### Create an External network for PXE service
 
@@ -93,18 +92,18 @@ The physical network is the underlying L1/L2 fabric. To actually serve PXE (DHCP
 1. Navigate to **Networks** > **New External**.
 2. Configure network settings: 
     - **Name:** provide a descriptive name, such as "PXE boot" 
-    - **Layer 2 Type**: `none` for a dedicated management / PXE network (recommended). Alternately, **Layer 2 Type**: `vLan` with a dedicated **Layer 2 ID** if PXE will share a trunked uplink with other VLANs.
-    - **PXE Boot:** `ybos` 
-    - **Interface Network:** select the **physical network** for the pxe network (e.g. *Maintenance Switch*)
-    - **IP Address Type:** `Static`
-    - **DHCP:** `enabled`
+    - **Layer 2 Type**: ***none*** for a dedicated management / PXE network (recommended). Alternatively, Layer 2 Type: *vLan* with a dedicated *Layer 2 ID* (vLAN id) if PXE will share a trunked uplink with other VLANs.
+    - **PXE Boot:** ***ybos*** 
+    - **Interface Network:** select the **physical network** for the PXE network (e.g. *Maintenance Switch*)
+    - **IP Address Type:** ***Static***
+    - **DHCP:** ***enabled***
     - **DHCP Start Address:** and **DHCP Stop Address:** defining the address pool
-    - **Dynamic DHCP:** `enabled`  
+    - **Dynamic DHCP:** ***enabled***
  
 
 ## BIOS / UEFI / Boot Policy
 
-The target node must be configured to boot from the NIC cabled into the PXE network. The specific steps are vendor-specific and depend on the server hardware and/or management controller, but typically include:
+The target node must be configured to boot from the NIC cabled into the PXE network. The specific steps are **vendor-specific** and depend on the server hardware and/or management controller, but typically include:
 
 - **Enable PXE / network boot** on the target NIC
 - **Configure the PXE NIC first** in the boot order
@@ -129,10 +128,10 @@ The target node must be configured to boot from the NIC cabled into the PXE netw
 With the network and BIOS configured, install the node using the VergeOS ISO:
 
 1. Boot the node to the VergeOS installation ISO. **The ISO version must match the version of VergeOS running on the cluster.**
-2. From the install menu, select **PXE Compute node with optional storage**.
+2. From the install menu, select ***PXE Compute node with optional storage***.
 3. Enter **admin credentials** for the existing VergeOS system. The installer checks the network configuration to identify core network connections.
 4. If prompted, select the appropriate **cluster for the node to join**.
-5. For driverless (no-storage) nodes, the installer will report that no drives were discovered. Press **Enter** to proceed with the install.
+5. For diskless (no-storage) nodes, the installer will report that no drives were discovered. Press **Enter** to proceed with the install.
 6. The node registers with the system.
 7. When the install finishes processing, remove the install media and reboot the node.
 
@@ -155,16 +154,16 @@ After the install completes and the node reboots, you should see:
             - Ensure the underlying network infrastructure allows PXE traffic (broadcasts permitted, TFTP not blocked, no firewall or ACL filtering between the node and the VergeOS PXE network).
             - Confirm the PXE NIC is physically connected to the correct switch port and is receiving a DHCP lease from the configured VergeOS PXE network. Verify the lease is **not** coming from a competing DHCP server on the segment.
 
-    - See [PXE Implementation Guide](/implementation-guide/pxe-boot/) for Additional Troubleshooting information.
+    - See [PXE Implementation Guide](/implementation-guide/pxe-boot/) for additional Troubleshooting information.
 
 !!! tip "Pro Tip"
-    If you're stuck, use the - [Network Diagnostics Tool](/product-guide/networks/network-diagnostics) on the PXE external network, running the TCPDump command with a filter for `bootp || tftp`. This can show exactly where the PXE "conversation" stops. If you don't see any incoming packets at all, the issue is almost always upstream — a routing or switching problem, a VLAN mismatch, or a NIC not actually configured to send PXE requests.
+    If you're stuck, use the [Network Diagnostics Tool](/product-guide/networks/network-diagnostics) on the PXE external network, running the TCPDump command with a filter for `bootp || tftp`. This can show exactly where the PXE "conversation" stops. If you don't see any incoming packets at all, the issue is almost always upstream — a routing or switching problem, a VLAN mismatch, or a NIC not actually configured to send PXE requests.
 
 
 
 ## Additional Resources
 - [PXE Implementation Guide](/implementation-guide/pxe-boot)
-- [Installation Guide](/implementation-guide/installation-guide.md)
+- [Installation Guide](/implementation-guide/installation-guide)
 - [How to Create an External Network](/knowledge-base/create-external-network/)
 - [Network Diagnostics Tool](/product-guide/networks/network-diagnostics)
 
