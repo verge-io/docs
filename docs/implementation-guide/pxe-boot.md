@@ -200,6 +200,6 @@ Work through this list first when PXE isn't behaving. Most failures trace back t
 ## Related Resources
 
 - [Configuring a Node for Diskless PXE Boot (PXE every-boot)](/knowledge-base/pxe-every-boot-node-config/)
-- [Connect VergeOS to an Existing LAN/WAN](https://docs.verge.io/product-guide/networks/connect-lan-wan/)
-- [Installation Guide](https://docs.verge.io/implementation-guide/installation-guide/)
-- [Scale-out Node Installation Guide](https://docs.verge.io/implementation-guide/scale-out-nodes/)
+- [Connect VergeOS to an Existing LAN/WAN](/product-guide/networks/connect-lan-wan/)
+- [Installation Guide](/implementation-guide/installation-guide/)
+- [Scale-out Node Installation Guide](/implementation-guide/scale-out-nodes/)
