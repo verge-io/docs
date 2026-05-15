@@ -30,7 +30,7 @@ VergeOS has a built-in PXE boot service that allows optionally installing nodes 
 | Scenario | Use case |
 |----------|----------|
 | **First-time install via PXE** | The VergeOS install is initiated from the network providing an alternative to USB installer, IPMI virtual media, etc. Node PXE-boots to the installer, you select Scale-Out / Compute / Storage, installer completes and node joins the cluster |
-| **Every-boot PXE** | Node has no local drives (or none configured as bootable). Every reboot pulls the running VergeOS image from the cluster over PXE.  Common for diskless compute-only nodes; can also be used for nodes with non-bootable storage|
+| **Every-boot PXE** | Node has no local drives (or none configured as bootable). Nodes is installed and registered as a pxe boot node. Every reboot pulls the running VergeOS image from the cluster over PXE.  Common for diskless compute-only nodes; can also be used for nodes with non-bootable storage|
 
 Both use the same underlying service: the provider cluster runs dnsmasq on a designated vNet and serves the VergeOS boot image over the network.
 
@@ -85,7 +85,7 @@ The PXE service runs on a VergeOS **External vNet** with DHCP enabled and a spec
 
 ## Every-boot PXE (diskless nodes)
 
-Use case: compute nodes with no local disks, or nodes that should always pull a fresh OS image from the cluster.
+Use case: compute nodes with no local bootable disks, or nodes that should always pull a fresh OS image from the cluster.
 
 ### Boot Flow
 1. Node powers on → boot policy → LAN Boot

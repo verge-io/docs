@@ -37,7 +37,7 @@ dateCreated: 2026-05-12
     - Requires a PXE-capable physical network with no competing DHCP servers
     - This guide covers nodes that are installed to PXE-boot on **every reboot**. It does **not** cover one-time PXE installs (where PXE only replaces the USB installer and the node boots from local disk afterward), or PXE networks for tenant workloads.
 
-VergeOS supports PXE booting for host nodes, allowing you to deploy host nodes that network-boot from the cluster every time they start. This guide covers configuration of a PXE network and  registered VergeOS host node to use PXE diskless boot.
+VergeOS supports PXE booting for host nodes, allowing you to deploy nodes that network-boot from the cluster every time they start. This guide covers configuration of a PXE network and  registered VergeOS host node to use PXE diskless boot.
 
 !!! note "When PXE every-boot applies (dedicated boot drive not needed)"
  
@@ -54,7 +54,7 @@ Configuring a node for PXE every-boot involves:
 4. **BIOS / UEFI / boot policy** — configure the node to boot from the PXE NIC
 5. **Install the node** — boot the VergeOS ISO and select the PXE node install option
 
-!!! tip "Detailed PXE network prerequisites and configuration information is available at [PXE Implementation Guide](/implementation-guide/pxe-boot)
+Detailed PXE network prerequisites and configuration information is available at [PXE Implementation Guide](/implementation-guide/pxe-boot).
 
 
 ## Network Setup
@@ -109,7 +109,8 @@ The target node must be configured to boot from the NIC cabled into the PXE netw
 - **Enable PXE / network boot** on the target NIC
 - **Configure the PXE NIC first** in the boot order
 - **Verify no other bootable devices take priority** (for example, USB install media)
-- **PXE boot will be reliant on specific NIC and interface**: Node identity is tied to the MAC address of the NIC used during node installation - this MAC must remain constant.
+
+    !!! warning "**PXE boot will be reliant on specific NIC and interface**: Node identity is tied to the MAC address of the NIC used during node installation - this MAC must remain constant."
 
 !!! tip "Pro Tip"
     Consult your server hardware or BIOS documentation for the exact menus and options. On managed platforms (blade chassis, converged infrastructure), the boot configuration lives in a service profile or boot policy rather than per-node BIOS.
