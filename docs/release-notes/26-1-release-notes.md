@@ -33,7 +33,7 @@ categories:
 
 !!! info "Release Information"
     - **Release Date**: January 2026
-    - **Latest Version**: 26.1.3.1 (March 2026)
+    - **Latest Version**: 26.1.5 (May 2026)
     - **Status**: Latest Production Release
     - **End-of-Life**: TBD
 
@@ -67,6 +67,207 @@ categories:
 !!! success "Enhanced Data Protection"
     - Added support for N+2 (RF3) vSAN redundancy, also known as Replication Factor 3
     - Provides additional fault tolerance beyond standard N+1 configurations
+
+## 26.1.5 (May 2026)
+
+VergeOS 26.1.5 is a maintenance release focused on stability, security hardening, and improved tenant isolation. Highlights include enhanced audit logging for tags, categories, and members, expanded NVIDIA GRID driver support, critical fixes to VLAN validation and VM cloning, a universal pre-patched OVMF vars file for Secure Boot across all operating systems, and new hardware support for PERC H975i and Intel E610 controllers.
+
+### New Features
+
+#### Hardware Support
+- Added support for the Broadcom PERC H975i RAID controller
+- Added support for the Intel E610 network controller
+
+#### NVIDIA GRID vGPU
+- Added support for NVIDIA GRID driver versions 20.1, 19.5, and 16.14 (in addition to the previously supported 20.0)
+
+#### Secure Boot & OVMF
+- Universal pre-patched OVMF vars file (`OVMF_VARS_4M.ms.2023.fd`) now supports Windows, Debian, Ubuntu, Red Hat, and other operating systems with a single file
+- Pre-patched OVMF vars file now included in the overlay for immediate availability during installation
+- Added the 2023 Microsoft Cross-Root Certificate Authority Secure Boot EFI disk patch for Windows VMs
+
+#### Audit Logging
+- Added comprehensive audit logging for changes to tags, categories, and member assignments
+- Tasks now track the actual creator for accurate audit-trail attribution
+
+### Bug Fixes
+
+#### Security & Access Control
+- Tenant update settings are now hidden from tenant users (tenants can no longer access system update configuration or see branch information)
+- "Forgot Password" lookup is now case-insensitive (matches login behavior)
+
+#### Virtual Machines
+- Fixed VLAN ID 4095 being accepted during configuration but causing interface creation to fail (now properly rejected as invalid)
+- Added additional error handling for VMs when the controller is temporarily unavailable, improving resilience during brief outages
+- VM and drive clone operations now correctly preserve drive serial numbers from the source
+- Fixed VM console keyboard focus being lost after pasting text or executing Ctrl+Alt+Delete
+- Fixed reboot flag not being properly cleared when a VM is stopped
+
+#### Alarms & Diagnostics
+- Fixed syslog integration for raising and lowering alarms
+- Fixed issues with vSAN and appserver alarm generation and reporting
+- Fixed the resolve button on alarms so it correctly clears acknowledged alarms
+- Fixed vSAN diagnostics functionality that was not operating correctly
+- Fixed VM power-on events not being correctly recorded in the audit log
+
+#### User Interface
+- Fixed tenant dashboard tag member assignment and removed a debug console log
+- Confirmation popups now consistently place the positive/confirm action on the right, matching standard UI conventions
+- Clarified the misleading "vSAN Exit" button label on the node banner shown when vSAN has unexpectedly exited
+- Removed an errant link from the delete license section in settings
+
+### OS & Installer
+
+#### Installer Improvements
+- Updated the universal vars script with improvements
+- Removed an outdated script and binary from the installation
+
+---
+
+## 26.1.4 (April 2026)
+
+VergeOS 26.1.4 is a maintenance release focused on stability, security, and usability improvements. Highlights include a completely overhauled serial console with live migration support, critical fixes to API key IP allow/deny list enforcement, improved upgrade path reliability, and enhanced password generation that respects strict tenant password policies. This release also resolves the oVirt API issues identified in 26.1.3.1.
+
+### Bug Fixes
+
+#### Security
+- **API Keys IP Allow/Deny List enforcement** — IP Allow Lists now correctly restrict access to only listed addresses, and IP Deny Lists properly block specified addresses (previously not enforced)
+- **API Keys IP range conflict detection** — Creating an API key with overlapping CIDR ranges in Allow and Deny lists now shows a validation error; the IP range displayed in error messages for CIDR entries is now accurate
+- **Blocked `0.0.0.0/0` in IP allow/deny lists** — Using `0.0.0.0/0` is no longer allowed (previously had inverted or unexpected effects)
+- **TOTP bypass prevention** — Users created via API with TOTP enabled can no longer log in without providing the TOTP code
+- **Account lockout enforcement** — Changing the failed login lockout setting now takes effect immediately
+- **Login flood protection** — A flood of simultaneous login attempts no longer causes the system to become unresponsive
+- **Last logged-in IP tracking** — The "Last Logged In IP" field now correctly displays when authentication is performed via API calls
+- Additional obfuscation added for auth source credentials stored in the system
+- Temporary login credentials created during PAM authentication are now properly cleaned up
+- Added protection against deeply nested JSON payloads that could cause system issues
+
+#### Authentication & SSO
+- **`verge.io` auth driver removed** — The driver had a critical bug causing authentication to fail with "Invalid state" errors and has been removed until a proper fix is available. Use the `openid-well-known` driver instead.
+- Auth sources now support multiple redirect URIs, allowing systems accessible via multiple domains to authenticate correctly
+- Auth sources can now work through proxy servers
+- OAuth flows now support redirecting to a custom link after successful authentication
+- Entering Unicode characters in the login username field no longer causes the browser to hang
+- Submitting the "Forgot Username" form no longer generates a false "login failed" audit log entry
+- Enter/Return now works correctly on the TOTP setup modal
+
+#### Virtual Machines
+- Fixed an issue where provisioning a tenant from a recipe could leave the tenant in an unresponsive state when the tenant has strict password rules
+- Fixed the VergeOS marketplace recipe failing with a "preferred tier no such file or directory" error after the recent throttling change
+- Fixed the default node selection when migrating a VM
+- Guest-initiated reboots are now correctly logged as reboots instead of being reported as hard resets
+- NVMe drives for VMs are now available in the UI
+- NVIDIA vGPU improvements: fixed issues with legacy-mdev devices, added proper sorting for vGPU driver files, added support for client config tokens for licensing, and duplicate PCI devices are now detected and cleaned up
+- Fixed an issue adding multiple NICs on the same node to the same SR-IOV resource group
+- Added support for importing cloud-init files when using a VergeOS-generated OVF file
+- VM and tenant recipe icons now accept numeric characters, and the `bi-` prefix is optional when setting icons
+- Non-existent variables in recipe questions and cloud-init files now render as empty strings instead of leaving the variable placeholder in the output
+- Modifying tenant recipe questions no longer results in a blank page
+- Powering on a VM from the VM dashboard now works with a single click
+- Clipboard paste no longer defaults text to hidden
+
+#### Serial Console
+- **Complete serial console overhaul** — Replaced `vncterm` with a custom serial console that supports framebuffering, multiple simultaneous connections, and live migration. Serial consoles now auto-reconnect instead of showing a popup.
+- Serial port contents remain consistent during VM live migration
+- The new serial console is backward compatible with older versions of VergeOS
+- VM serial consoles now default to 80x24 (standard for most operating systems), with a resize toggle available
+- Changed default console type to `isa-serial` for better compatibility with older operating systems
+
+#### User Interface
+- Fixed power, guest info, and clipboard options that were non-functional in the node remote console; console now resizes properly on initial load
+- Fixed incorrect total disk space display on the vSAN Tiers dashboard
+- Fixed multiple issues with the VM Export volume browser: browsing volumes with only one item, the "Rename" modal not having input fields, and the UI hanging after selecting "New VM Import Job"
+- Fixed multiple issues on the VM dashboard
+- Fixed error display for new volume VM import jobs
+- Fixed display issues for schedule triggers and styling on the execute button in the task dashboard
+- Fixed alarm snooze intervals, snooze on listview, and acknowledgment loop issues; alarm history table has been streamlined
+- Added proper sorting to the permissions page
+- Added tenant name to the machine device list on resource groups
+- Fixed double "restart needed" alert on node dashboard; added overcommit RAM to RAM usage calculations
+- Two-factor auth type is hidden from the user dashboard when 2FA is not enabled
+- Deleting a group now fully removes all remnants, allowing a new group with the same name to be created
+- Creating a group with invalid characters no longer leaves stray data in the system
+- Deleting objects no longer creates 404 errors in the UI
+- Added order ID display in DNS zone records table; fixed breadcrumbs on the modify DNS zone record page
+- Fixed alignment issues in the DHCP section of the network dashboard; fixed IP alias display for Bind and Proxy-enabled networks
+- Fixed breadcrumbs on resource pages and user-initiated filters on Node USB/vGPU devices and NVIDIA PCI devices list pages
+
+#### Networking
+- Fixed fabric information not displaying in the UI on HP blade chassis systems when the physical network was in a trunked VLAN
+- Fixed proxy FQDN matching so that `test.example.com` no longer incorrectly matches `a-test.example.com`; added an option to match entire subdomains
+- Fixed deleting a proxy from the vnet dashboard leaving stale proxy configuration on the vnet (proxy options disappeared but edit view still showed proxy enabled with wiped config)
+- Fixed an issue where creating a new static IP could randomly assign ownership to a tenant; virtual IPs can now be assigned to tenants from internal networks
+- Added network conflict detection when configuring the network; quick installs now monitor network links before starting the core network
+- Fixed network issues that occurred on reboot
+- HA proxy now loads after IP aliases are configured
+
+#### Storage (vSAN)
+- When vSAN unexpectedly exits, a longer delay ensures other nodes receive confirmation before the host reboots
+- Fixed potential timing issues during outbound sync errors
+- Fixed device map assignment when there are insufficient drives
+- Fixed a crash in vSAN when the system has only 2 drives but is configured for N+2
+- vSAN issues are now properly surfaced in the UI after a restart
+- Added vSAN and Fabric status options to the CLI login menu
+
+#### NAS
+- Fixed missing `gcs2` binary on NAS update that caused NAS service VMs to spam "Error running command guest-info: -8" after power-on
+
+#### Scheduling & Tasks
+- Fixed multiple scheduler bugs including time-of-day filtering, future start date alignment, daylight saving time handling, and issues with minutely schedules and time range filters
+- Fixed the outgoing sync refresh task that was failing after migration
+- Fixed error messaging on task schedule UI, added a summary field to task schedules list, and fixed banner summary display for times
+- Fixed "Next Run Times" to show correct local time for noon and midnight schedules
+- Webhooks now update `last_attempt` timestamp; removed a required flag on headers
+
+#### oVirt & Veeam Integration
+- **oVirt engine ID uniqueness** — Fixed tenant system ID inheritance that caused duplicate oVirt engine IDs across the environment, which prevented Veeam from adding tenants as additional managed servers
+- Fixed an oVirt login regression introduced after upgrading that prevented Veeam from connecting to the oVirt KVM Manager
+- Fixed an error when attempting Veeam backups reporting "No available worker was found"
+- Veeam backup jobs with tags now work correctly
+- When restoring a VM to its original location, Veeam now allows characters in the name that are valid in VergeOS
+- Updated VMware Python scripts for updated SDKs; added a script to retrieve VMware tags
+- Removed the restriction requiring the "Network" field to be filled in for VMware services
+
+#### Password Management
+- Generated passwords now properly respect strict tenant password requirements; password generation no longer includes symbols when the policy doesn't allow them
+- Removed password complexity validation for node credentials
+
+#### System Stability
+- **Upgrade reliability** — Added backwards compatibility for node login during out-of-order upgrades; an older controller can now log in to updated nodes and vice versa, preventing migration stalls
+- Added guard pages to catch stack overflows immediately, with crash handling that fires even when the stack overflows
+- Improved detection and logging for stack crashes and malformed JSON
+- Session timeouts no longer affect internal system communication
+- Fixed an issue where powering off or rebooting node1 caused the UI to be unavailable for approximately one minute
+- Improved power-on sequencing after system restore and sped up network recovery; slowed down unresponsive machine detection on startup to reduce false positives
+- Changed log rotation to be more frequent to prevent runaway loggers from filling the root partition
+- Fixed memory leaks in proxy processing
+- Fixed an issue where web connections could get stuck during error floods
+
+#### Installer
+- Fixed network loading issues during quick-install and bonding configuration
+- Fixed an issue where the installer always installed `ovirt-engine` regardless of configuration
+- Improved error message when attempting to add more nodes than the license allows
+- SMTP is now disabled during install if the SMTP from address is empty
+
+#### API
+- API key logins now include IP address information in audit logs
+- Unique constraint errors now return HTTP 409 instead of 422
+- Improved audit log wording for invalid API calls; added token information to audit events
+
+### Other
+- Updated QEMU to 10.0.9
+- Added NVIDIA GRID vGPU support for version 20.0
+- Custom UI branding now gets properly enabled when using an offline license
+- Fixed an issue where removing the powered-by setting didn't revert to the default value
+- Fixed an error logged after snapshot expiration when all snapshot profile periods were deleted
+- Fixed minor issues with SMTP reports and SMTP settings alarm triggers; fixed an error when using the Send Test Email modal
+- Fixed the server setting in `boot/install-settings` rsyslog configuration
+- Nodes now flash boot partition on specific setting changes; fixed update boot partition and LED locate commands
+- Setting overcommit now properly flags online machines for reboot
+- Fixed an issue where the auth source client secret field was being cleared unexpectedly
+- Cleaned up headers to use VergeOS or generic naming
+
+---
 
 ## 26.1.3.1 (March 2026)
 
