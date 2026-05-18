@@ -103,7 +103,7 @@ Memory (RAM) is also reported using binary units following the same convention.
 When sizing a VergeOS deployment from manufacturer specifications:
 
 - Treat the "TB" figure on a drive's label as **SI TB** (10¹² bytes).
-- Convert to TiB before comparing to VergeOS figures: TiB ≈ SI TB × 0.9095.
+- Convert to binary calculations (TiB) before comparing to VergeOS figures: TiB ≈ SI TB × 0.9095.
 - Or, equivalently, multiply VergeOS "TB" figures by ~1.0995 to compare against drive-label capacity.
 
 For node sizing recommendations, see the [Node Sizing Guide](/implementation-guide/sizing).
