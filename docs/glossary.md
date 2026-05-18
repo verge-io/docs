@@ -1,23 +1,3 @@
----
-title: "Glossary of Key Terms"
-description: "Definitions of key terms and concepts used throughout VergeOS documentation, including networking, storage, virtualization, and multi-tenancy terminology."
-semantic_keywords:
-  - "VergeOS glossary terms definitions terminology"
-  - "virtualization networking storage multi-tenancy concepts"
-  - "VergeOS platform vocabulary key terms reference"
-use_cases:
-  - lookup_terminology
-  - onboarding_new_users
-  - reference_definitions
-tags:
-  - glossary
-  - terminology
-  - reference
-  - definitions
-categories:
-  - Getting Started
----
-
 # Glossary of Key Terms
 
 ## A
@@ -164,6 +144,12 @@ A feature in VergeOS that allows for monitoring a system (or components of a sys
 Definitions of the aspects of a subscription in VergeOS, such as on-demand/scheduled and trigger criteria/schedule.
 
 ## T
+
+### **TB (terabyte)**: 
+A unit of storage displayed throughout the VergeOS GUI and usage reports. In VergeOS, values labeled "TB" are calculated using tebibyte (base-1024) math: 1 TB = 1,099,511,627,776 bytes, which is approximately 9.95% larger than the SI terabyte (10¹² bytes) used by disk manufacturers. See [Storage Units and Capacity Reporting](/product-guide/storage/storage-units) for details.
+
+### **TiB (tebibyte)**: 
+The binary unit equal to 2⁴⁰ bytes (1,099,511,627,776 bytes). Used internally by VergeOS for all storage calculations and displayed in the GUI with the "TB" label — the same convention followed by Windows, most Linux tools, and other hypervisor and infrastructure platforms.
 
 ### **Tenant**: 
 A complete and separate Virtual Data Center running its own instance of the VergeOS OS, apportioned from a parent VergeOS cloud.
