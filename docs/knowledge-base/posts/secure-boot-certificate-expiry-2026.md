@@ -111,8 +111,8 @@ If you are unable to upgrade to VergeOS 26.1.5, Microsoft has published manual i
 
 ## Additional Resources
 
-- [VM Snapshots - VergeOS Docs](/product-guide/vms/vm-snapshots)
-- [Upgrading VergeOS](/product-guide/system/system-updates)
+- [VM Snapshots and Restores](/product-guide/backup-dr/vm-snapshots-restores)
+- [Licensing and Software Updates](/product-guide/system/licensing-and-updates)
 
 ## Feedback
 
