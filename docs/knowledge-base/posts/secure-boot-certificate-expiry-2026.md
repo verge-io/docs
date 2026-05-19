@@ -120,9 +120,3 @@ If you are unable to upgrade to VergeOS 26.1.5, Microsoft has published manual i
 
 !!! question "Need Help?"
     If you encounter issues applying the Secure Boot certificate fix or have questions about affected VMs, please don't hesitate to reach out to the [VergeOS Support Team](/support).
-
----
-
-!!! note "Document Information"
-    - Last Updated: 2026-05-19
-    - VergeOS Version: 26.1.5
