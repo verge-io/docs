@@ -21,6 +21,8 @@ tags:
   - certificate
   - vm
   - 26.1.5
+  - microsoft
+  - boot
 categories:
   - VMs
 editor: markdown
