@@ -27,7 +27,7 @@ categories:
 
 # Storage Units and Capacity Reporting
 
-VergeOS displays storage capacity using familiar labels (KB, MB, GB, TB) throughout the GUI, dashboards, and usage reports, with calculations of storage values using **base-1024 (binary) math**. The labels are SI-style ("TB"), but the underlying values are tebibytes (TiB), gibibytes (GiB), and so on. This page explains that behavior, why it matters, and how to reconcile VergeOS figures with the SI capacity figures that disk manufacturers advertise.
+VergeOS displays storage capacity using familiar labels (KB, MB, GB, TB) throughout the GUI, dashboards, and usage reports, with calculations of storage values using **base-1024 (binary) math**. The labels are SI-style ("TB"), with underlying values in tebibytes (TiB), gibibytes (GiB), and so on. This page explains that behavior, why it matters, and how to reconcile VergeOS figures with the SI capacity figures that disk manufacturers advertise.
 
 This labeling convention is not unique to VergeOS. Most operating systems and enterprise infrastructure storage products (Windows, most Linux tools, traditional SAN/NAS arrays, and competing HCI platforms) display storage values using SI-style labels — KB, MB, GB, TB — while performing the underlying math in base-1024. Disk manufacturers, by contrast, consistently use the strict SI definition (10¹² bytes per TB) on product labels and datasheets, which is what creates the apparent discrepancy described below.
 
@@ -72,9 +72,6 @@ The same effect at common drive sizes:
 | 12 TB drive | ~10.91 TB |
 | 16 TB drive | ~14.55 TB |
 
-!!! note "This is separate from redundancy and overhead"
-    Capacity is also reduced by vSAN redundancy levels and metadata reservation. Those reductions are independent of the unit-labeling effect described here. (Deduplication, by contrast, generally *increases* usable capacity by collapsing duplicate blocks.) See [vSAN Architecture](/product-guide/storage/vsan-architecture) and [vSAN Redundancy Levels](/product-guide/storage/vsan-redundancy-levels) for details.
-
 ## Unit reference
 
 | VergeOS label | Internal value (bytes) | SI equivalent | Difference vs. SI |
@@ -96,7 +93,11 @@ The TB-as-TiB convention applies throughout the VergeOS platform, including:
 - Tenant resource allocations and [usage reports](/product-guide/tenants/tenant-usagereports)
 - Backup and replication size reporting
 
-Memory (RAM) is also reported using binary units following the same convention.
+Beyond the labeling convention, vSAN usable capacity is also affected by redundancy levels, which reduce usable capacity in exchange for fault tolerance. Deduplication, by contrast, generally increases usable capacity by collapsing duplicate blocks. These effects are independent of the unit-labeling behavior described on this page. See [vSAN Architecture](/product-guide/storage/vsan-architecture) and [vSAN Redundancy Levels](/product-guide/storage/vsan-redundancy-levels) for details.
+
+## Display rounding across screens
+
+The same drive's capacity can appear differently from one screen to another in the VergeOS UI. Some pages — such as the node drive listing — round to whole numbers and tend to match the manufacturer's SI label (a drive sold as "2 TB" appears as "2 TB"). Other pages — such as the node drive dashboard — display the precise binary value rounded to the nearest tenth (the same drive appears as "1.8 TB"). Both figures refer to the identical physical drive; only the rounding convention differs.
 
 ## Planning guidance
 
