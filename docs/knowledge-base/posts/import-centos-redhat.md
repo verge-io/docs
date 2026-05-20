@@ -149,6 +149,12 @@ Once booted into rescue mode, log in as root and mount the root filesystem.
     mount --rbind /run /mnt/run
     ```
 
+    For EFI/UEFI systems, also mount the EFI partition:
+    ```bash
+    mount /dev/sdX1 /mnt/boot/efi
+    ```
+    Replace /dev/sdX1 with your actual EFI partition (check with lsblk or fdisk -l).
+
 5. **Chroot into the mounted filesystem**:
 
     ```bash
