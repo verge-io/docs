@@ -14,17 +14,25 @@ editor: markdown
 dateCreated: 2026-04-27T00:00:00.000Z
 ---
 
+
 # Cluster Recovery After Full Power Outage
 
 ## Overview
 
 !!! info "Key Points"
-    - Power on **Node1** first; it will boot but halt before mounting the vSAN until enough peers join. Once Node1 has reached that wait state, power on the remaining nodes one at a time, ~1 minute apart
-    - vSAN mounts automatically once **N-1 vSAN nodes** are online: a 4-node cluster needs 3, a 6-node needs 5, an 8-node needs 7
+    - Ungraceful shutdowns should be avoided where possible, particularly on production systems. 
+    - This guide provides best practices - to mitigate potential problems - for powering on a the cluster after an unexpected shutdown does occur 
+    - Power on **Node1** first. Wait 30 seconds to a minute, then power on all remaining nodes
     - A non-zero **Repairs** count after recovery is normal; it should decrease as Journal Walks complete
-    - Engage VergeIO Support before any destructive action if anomalies persist
+    - Engage VergeIO Support when anomalies persist
 
-This article covers recovery of a VergeOS cluster after an **unplanned full power loss** -- where every host went down at once and no graceful shutdown occurred. Following the correct sequence brings nodes back online safely, restores vSAN redundancy, and verifies integrity before workloads return to service. For a *planned* shutdown, see [Proper VergeOS System Shutdown Procedure](/knowledge-base/proper-vergeos-system-shutdown-procedure/).
+## Scope
+
+This guide covers powering a VergeOS cluster back on after an **ungraceful shutdown** -- where the cluster lost power abruptly due to a power outage, UPS exhaustion, facility failure, or similar event. For planned, controlled shutdown and power-on procedures, see [Proper Power Sequence](/knowledge-base/proper-power-sequence-for-vergeos/) and [Proper VergeOS System Shutdown Procedure](/knowledge-base/proper-vergeos-system-shutdown-procedure/).
+
+!!! warning "Avoid Ungraceful Shutdowns Where Possible"
+    While VergeOS includes multiple built-in protections to preserve data integrity, no distributed storage system can fully guarantee against data corruption when nodes lose power abruptly and simultaneously. Writes in flight at the moment of power loss may be incomplete or inconsistent across peers, and in some cases the only path back to integrity is rolling a volume back to a recent snapshot.  Additionallly, hardware, guest OS and application problems are  common after ungraceful shutdowns. Proper power infrastructure -- UPS coverage sized for graceful shutdown, redundant PSUs, and automated shutdown on low-battery -- is the most effective protection; see the [Prevention](#prevention) section for guidance. When an ungraceful shutdown does occur despite these precautions, the procedure that follows is designed to bring the cluster back online safely and surface any integrity issues that need attention.
+
 
 ## Prerequisites
 
@@ -33,58 +41,77 @@ This article covers recovery of a VergeOS cluster after an **unplanned full powe
 - Confirmation that upstream power, networking (core fabric switches), and IPMI are restored and stable
 - A recent backup or remote-replicated snapshot in case integrity issues are found
 - Familiarity with the [vSAN Tier Dashboard / Journal Walks](/knowledge-base/understanding-journal-walks-and-vsan-tier-status/)
-- Familiarity with [Proper Power Sequence](/knowledge-base/proper-power-sequence-for-vergeos/)
+
 
 ## Steps
 
 ### What to Expect
 
-- VergeFS is designed to survive abrupt power loss. On controller startup it triggers a **Full Journal Walk** to verify each block and reconcile against peers.
+- VergeFS includes multiple built-in protections to help preserve data integrity during power events -- including write journaling, peer replication, repair servers(ioGuardian), and on-startup verification. On controller startup, VergeFS triggers a **Full Journal Walk** to verify each block and reconcile against peers. These protections are effective in most cases, but no distributed storage system can fully guarantee against corruption from abrupt power loss; verification after startup is important, especially after an ungraceful shutdown.
 - vSAN requires **N-1 vSAN nodes** online before it will mount. Until that threshold is reached, storage stays offline and VMs will not start.
 - Node1 will boot but halt before mounting the vSAN until enough peers join to satisfy N-1.
-- Once quorum is reached, VergeOS handles vSAN reconciliation automatically -- no manual repair commands are needed.
 - A non-zero **Repairs** count after recovery is normal and should decrease as the Walk progresses.
 
 ### Pre-Power-On Checks
 
+!!! warning "Verify Infrastructure Is Ready First"
+    Before powering on any cluster nodes, confirm two critical conditions are met. These are covered in the prerequisites, but they bear repeating here -- skipping them can cause significantly more damage than the original shutdown:
+
+    1. **Facility power is fully restored and stable.** Bringing the cluster up during ongoing power instability -- flickers, brownouts, or a second outage -- risks compounding the original problem and can lead to further data integrity issues.
+    2. **Core network switches are powered on and fully booted.** Enterprise switches can take several minutes to complete their boot process, similar to a server. If cluster nodes come online before the network is ready, they will be unable to discover their peers, which can cause reconciliation problems.
+
 1. Confirm **upstream power** is stable. Bringing nodes up on an unstable feed risks a second outage mid-recovery.
-2. Confirm **core network switches** are online and the inter-node fabric is up. vSAN cannot reform without it.
+2. Confirm **core network switches** are online, **fully booted**, and the inter-node fabric is up. vSAN cannot reform without it, and advanced switches can take several minutes to finish booting.
 3. Verify **IPMI/BMC** access on each node so you can monitor boot remotely if needed.
 4. Note any nodes with visible hardware faults (failed PSUs, drive LEDs, fan alarms) -- these may need attention before being added back.
 
 ### Power-On Sequence
 
+Once power and network infrastructure are confirmed ready:
+
 1. **Power on Node1.**
    - Watch the console/IPMI. Node1 will boot the OS but **halt before mounting the vSAN** until enough peers join to reach N-1.
-2. **Power on the remaining nodes, one at a time, approximately 1 minute apart.**
-   - vSAN mounts automatically as soon as N-1 nodes are up (3 of 4, 5 of 6, 7 of 8); the rest join cleanly as they come online.
-   - Sequential, paced power-on prevents resource contention and lets each node cleanly join the existing cluster.
-3. **Multi-cluster environments:** bring the controller cluster fully online before powering on additional clusters, using the same sequence within each.
+2. **Wait 30 seconds to a minute.**
+   - This brief pause lets Node1 begin initializing before the rest of the cluster arrives. There is no need to wait for Node1 to fully reach its halt state before proceeding. 
+3. **Power on the remaining nodes.**
+   - The remaining nodes can be powered on together (or in close succession); there is no need to stagger them one at a time.
+   - The vSAN mounts automatically as soon as a minimum number of nodes are up (e.g. N-1 in a default N+1 configuration).
+4. **Multi-cluster environments:** bring the controller cluster fully online before powering on additional clusters.  
 
 !!! tip "Pro Tip"
     Node1 boots first and sits waiting while you power on the rest of the cluster -- that's expected, not a stuck state. vSAN mounts on its own as soon as enough peers are online, and VergeOS handles reconciliation automatically; no manual repair commands are needed.
 
 ### Post-Recovery Verification
 
-1. **Verify vSAN health.**
+Once all nodes are online and the cluster has had time to settle, verify that everything returned to a healthy state. Because the cluster was shut down ungracefully, perform these checks with heightened scrutiny -- abrupt power loss can leave behind issues that the cluster cannot fully resolve on its own. Look closely for persistent vSAN errors, failed or crash-looping workloads, and any guest-level filesystem errors. If unresolvable corruption is detected, rolling a volume back to a recent snapshot may be required.
+
+1. **Confirm Overall system health**  
+   Abrupt power loss increases the risk of hardware problems.  It is important to check for any issues:
+   - Review the [Alarms](/product-guide/operations/alarms) dashboard**.  Confirm no new alarms have been triggered. 
+   - Review system logs (Main Dashboard) for errors during boot or initial mount.  
+2. **Verify vSAN health**
    - Open the **Main Dashboard** -- all status lights should be **Green**.
    - Navigate to **System → vSAN → Tiers** and double-click each tier.
-   - Review the **Status** tile:
-     - **Redundant**: should be `true`. May briefly show `false` while the Full Walk runs.
-     - **Full Walk**: typically `true` immediately after recovery (controller startup triggers one).
-     - **Walk Progress**: should advance over time.
-     - **Repairs**: should be decreasing. A non-zero value is expected after an unplanned outage -- VergeFS is rebuilding redundancy from peers.
-     - **Bad Drives**: this is the count of drives the cluster currently can't see. It should drop to `0` once all nodes are fully Online and their drives have re-enumerated. If the count persists after every node is Online, treat it as a real fault and engage support before re-introducing the affected drives.
-   - Allow Full Journal Walks to complete on every tier before declaring recovery complete.
-   - For a CLI/diagnostics view of the same data, use **System → vSAN Diagnostics → Get Tier Status** (and **Get Repair Status** to monitor active repairs). See the [vSAN Diagnostics Guide](/product-guide/storage/vsan-diagnostics/).
-2. **Verify drive health.**
+   - Review the **Status** tile on each tier's dashboard.  The KB article: [Understanding vSAN Tier Status/Journal Walks](/product-guide/storage/vsan-diagnostics/) provides a guide for reading vSAN tier status fields.
+3. **Verify drive health**
    - Go to **System → vSAN → Drives**.
    - Look for any drives showing errors, warnings, or SMART alerts -- these can occur when drives don't return cleanly after abrupt power loss.
-   - Offline any drives with persistent errors and contact support before re-introducing them.
-3. **Verify workloads.**
-   - Confirm VMs auto-started per their **On Power Loss** settings.
-   - Spot-check critical VMs: console responsive, OS healthy, application services up.
-   - Review system logs (Main Dashboard) for errors during boot or initial mount.
+   - Faulty drives should be replaced expediently to maintain vSAN data protection.
+4. **Verify workloads**
+
+    !!! tip "VM Auto-Start Behavior"
+        By default, VMs are configured to auto-start when power is restored to the cluster. VMs with an alternate **On Power Loss** setting will need to be powered on manually.
+
+    - Verify critical VMs: console responsive, guest OS healthy, application services up. Ungraceful shutdowns can cause problems in the guest OS and installed applications -- watch for filesystem errors, services that fail to start, and applications that crash on launch.
+
+!!! warning "Snapshot Rollback Decisions Are Time-Sensitive"
+    If a VM shows signs of damage from the ungraceful shutdown that cannot be repaired in place, restoring from a pre-outage snapshot may be the only path back to a healthy state. **This determination should be made as promptly as possible**, for two reasons:
+
+    - **Snapshot retention is finite.** A viable pre-outage snapshot may roll off and become unavailable if too much time passes before the decision is made.
+    - **Newer data is lost on rollback.** The longer the affected VM stays in production use after the outage, the more legitimate post-recovery work is discarded when the rollback is performed.
+
+    Identify potential rollback candidates as early as possible -- ideally before applications return to heavy use.
+
 
 ## Troubleshooting
 
@@ -102,23 +129,23 @@ This article covers recovery of a VergeOS cluster after an **unplanned full powe
     - **Problem:** Suspected split-brain or inconsistent cluster state.
       - **Solution:** During recovery a network problem can cause two subsets of nodes to come up unable to see each other. If you see signs of two independent clusters forming (rare, but possible after partial network restoration), **do not attempt to merge them yourself**. Capture sysdiags from every node and engage support immediately.
 
-## Prevention
+## Prevention/Mitigation
 
 - **UPS sizing and coverage** -- size the UPS to cover graceful shutdown duration plus margin for every node. Include core network switches in the same coverage. Test UPS runtime annually -- batteries degrade.
-- **Automated graceful shutdown** -- VergeOS does not currently document a built-in UPS/NUT integration, so graceful-shutdown automation has to be driven externally. Use UPS management software (NUT, IPMI scripting, or your UPS vendor's agent on a management host) to detect a low-battery event and trigger a graceful cluster shutdown -- either via the Cluster Dashboard's **Power Off** action, the VergeOS API (`POST /v4/cluster_actions` with body `{"cluster": <cluster_id>, "action": "shutdown", "params": "{}"}`), or our [**VRG CLI**](https://github.com/verge-io/vrg) wrapper, which can script the same shutdown call from a Linux/macOS/Windows host. Validate the automation in a maintenance window before relying on it.
+- **Automated graceful shutdown** -- Use UPS management software (NUT, IPMI scripting, or your UPS vendor's agent on a management host) to detect a low-battery event and trigger a graceful cluster shutdown -- either via the Cluster Dashboard's **Power Off** action, the VergeOS API (`POST /v4/cluster_actions` with body `{"cluster": <cluster_id>, "action": "shutdown", "params": "{}"}`), or our [**VRG CLI**](https://github.com/verge-io/vrg) wrapper, which can script the same shutdown call from a Linux/macOS/Windows host. Validate the automation in a maintenance window before relying on it.
 - **"On Power Loss" VM settings** -- configure each VM's behavior deliberately so post-recovery state is predictable. Three options:
     - ***Last State*** -- VM powers on only if it was on at the time of power loss
     - ***Leave Off*** -- VM stays off when power is restored, regardless of prior state
     - ***Power On*** -- VM powers on when power is restored, regardless of prior state
-- **Repair server (ioGuardian)** -- a configured [repair server](/product-guide/backup-dr/repair-server/) gives VergeFS a fallback source for missing blocks if peer nodes can't supply them after an outage. It pulls needed blocks from a synchronized remote VergeOS system and is built from an existing outgoing site sync configuration. Strongly recommended for any production deployment.
-- **Off-site snapshots** -- maintain replicated system snapshots at a remote site. If post-outage integrity issues require restoring data, a recent off-site copy is often the cleanest path back.
-- **Fencing (handled internally)** -- VergeOS doesn't expose Pacemaker-style STONITH because vSAN is shared-nothing: every block is redundantly stored, and writes require quorum. A partitioned node can't commit to the authoritative copy without satisfying N-1, so split-brain corruption is prevented by design rather than by an external fencing agent. The operator-facing equivalents are [**Maintenance Mode**](/product-guide/operations/maintenance-mode/) (graceful) and an IPMI-driven hard power-off for an unresponsive node, both available from the node dashboard.
+- **Repair server (ioGuardian)** -- a configured [repair server](/product-guide/backup-dr/repair-server/) gives VergeFS a fallback source for missing blocks if peer nodes can't supply them after an outage. It pulls needed blocks from a synchronized remote VergeOS system and is built from an existing outgoing site sync configuration. Repair servers are trongly recommended for any production deployment.
+- **Adequate snapshot rotation** -- maintain a snapshot retention schedule that keeps recent, pre-event snapshots available for rollback when needed. Replicating snapshots to a remote site is also recommended as part of a comprehensive data protection strategy.
+
 
 ## When to Engage Support
 
-Open a support case **before** taking destructive action if any of the following are true:
+Open a support case **before** rebooting nodes if any of the following are true:
 
-- vSAN won't mount after N-1 nodes are online and quorum should be met
+- vSAN won't mount after N nodes are online (e.g. N-1 nodes in a default N+1 redundancy)
 - A tier shows **Redundant: false** for an extended period after Full Walks complete
 - The **Repairs** count is stuck or growing
 - A stuck-repairs alert is present (VergeOS 26+)
@@ -129,12 +156,6 @@ Open a support case **before** taking destructive action if any of the following
 ## Generating a System Diagnostic for Support
 
 Before opening the case, capture a sysdiag and attach it (or send it directly to support):
-
-1. **Log in to the parent/root environment** -- sysdiags can't be generated from a tenant.
-2. Navigate to **System → System Diagnostics** and click **Build** (or **New Report**) on the left menu.
-3. Give the report a **Name** and **Description** so support can identify it.
-4. Check the box for **"Send diagnostic information to Verge.io support"** to upload directly. (For air-gapped systems, leave it unchecked, download the file once it finishes building, and email it to **support@verge.io** -- or use a file-sharing link if the file is too large for email.)
-5. Click **Submit**. The status moves from *Building* → *Sending to Support* → *Sent to Support* when complete.
 
 See [Generating System Diagnostics](/knowledge-base/generating-system-diagnostics/) and the full [System Diagnostics](/product-guide/system/diagnostics/) reference.
 
