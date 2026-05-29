@@ -39,6 +39,9 @@ This guide provides a foundational introduction to VergeOS networking, helping b
 A physical network is a representation of each isolated layer 2 connection. Physical networks are typically all configured during VergeOS install. 
 !!! tip "The system automatically appends "Switch" to the end of the user-supplied name during install, for ex: for name "PXE", the system will give the physical network the name "PXE Switch""
 
+!!! info "Physical Bridge Mode"
+    Physical networks have a **Physical Bridged** toggle that puts the NIC into raw Layer 2 bridge mode, enabling tagged VLAN trunk passthrough for use cases like [Virtual Switch Ports](/knowledge-base/provide-layer2-to-tenant) and [Tenant Layer 2 Networks](/product-guide/tenants/layer-2-networks). **When bridge mode is enabled, all traffic on that interface must be VLAN-tagged.** External networks with VLAN type **None** (untagged/native VLAN) will not pass traffic on a bridged physical interface. Bridge mode requires a node reboot to take effect.
+
 ### Core Network
 
 A virtual network, created automatically during the VergeOS installation/tenant creation, to handle all vSAN and internode communication. Core traffic is run across multiple (typically two) physical networks to provide redundancy.
