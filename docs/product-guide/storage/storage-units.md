@@ -6,8 +6,6 @@ semantic_keywords:
   - "tebibyte terabyte capacity reporting"
   - "base-1024 base-1000 storage math"
   - "disk capacity SI binary prefix VergeOS"
-  - "apparent storage capacity discrepancy drive label mismatch"
-  - "missing storage capacity drive size smaller than expected"
   - "why does VergeOS show less storage than the drives I purchased"
 use_cases:
   - capacity_planning
@@ -27,17 +25,16 @@ categories:
 
 # Storage Units and Capacity Reporting
 
+## Overview
+
 VergeOS displays storage capacity using familiar labels (KB, MB, GB, TB) throughout the GUI, dashboards, and usage reports, with calculations of storage values using **base-1024 (binary) math**. The labels are SI-style ("TB"), with underlying values in tebibytes (TiB), gibibytes (GiB), and so on. This page explains that behavior, why it matters, and how to reconcile VergeOS figures with the SI capacity figures that disk manufacturers advertise.
 
-This labeling convention is not unique to VergeOS. Most operating systems and enterprise infrastructure storage products (Windows, most Linux tools, traditional SAN/NAS arrays, and competing HCI platforms) display storage values using SI-style labels — KB, MB, GB, TB — while performing the underlying math in base-1024. Disk manufacturers, by contrast, consistently use the strict SI definition (10¹² bytes per TB) on product labels and datasheets, which is what creates the apparent discrepancy described below.
+This labeling convention is not unique to VergeOS. Most operating systems and enterprise infrastructure storage products (Windows, most Linux tools, traditional SAN/NAS arrays, and other HCI platforms) display storage values using SI-style labels — KB, MB, GB, TB — while performing the underlying math in base-1024. Disk manufacturers, by contrast, consistently use the strict SI definition (10¹² bytes per TB) on product labels and datasheets, which is what creates the apparent discrepancy described below.
 
 ## Quick reference
 
-!!! info "What "TB" means in the VergeOS UI"
+!!! info "What “TB” means in the VergeOS UI"
     A value displayed as **1 TB** in VergeOS represents **1 TiB** — i.e. 2⁴⁰ bytes (1,099,511,627,776 bytes), not the SI definition of 10¹² bytes (1,000,000,000,000 bytes). The same principle applies to KB / MB / GB.
-
-!!! success "You still have every byte you purchased"
-    Although the number displayed in the VergeOS UI is smaller than the figure printed on the drive's label, **no capacity has been lost**. The drives still hold exactly as many bytes as the manufacturer specifies — for example, a "4 TB" drive still holds 4,000,000,000,000 bytes, and all of those bytes are available to VergeOS. The difference is only in how the same byte count is labeled and displayed, not in how much storage you can actually use.
 
 ## Why this matters
 
@@ -107,4 +104,10 @@ When sizing a VergeOS deployment from manufacturer specifications:
 - Convert to binary calculations (TiB) before comparing to VergeOS figures: TiB ≈ SI TB × 0.9095.
 - Or, equivalently, multiply VergeOS "TB" figures by ~1.0995 to compare against drive-label capacity.
 
-For node sizing recommendations, see the [Node Sizing Guide](/implementation-guide/sizing).
+## Related guides
+
+- [Node Sizing Guide](/implementation-guide/sizing) — sizing recommendations for VergeOS deployments
+- [vSAN Architecture](/product-guide/storage/vsan-architecture) — how vSAN distributes and protects data
+- [vSAN Redundancy Levels](/product-guide/storage/vsan-redundancy-levels) — how redundancy affects usable capacity
+- [Storage Tiers](/product-guide/storage/storage-tiers) — performance and capacity tiering
+- [Tenant Usage Reports](/product-guide/tenants/tenant-usagereports) — interpreting per-tenant capacity reporting
