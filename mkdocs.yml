@@ -379,6 +379,7 @@ nav:
         - Rancher Integration: product-guide/tools-integrations/rancher-integration.md
       - VDI & Desktop Delivery:
         - Inuvika Virtual Apps and Desktops: product-guide/tools-integrations/inuvika.md
+        - Leostream Connection Broker: product-guide/tools-integrations/leostream.md
   - Release Notes:
     - Overview: release-notes/release-notes-overview.md
     - 26.1 (latest): release-notes/26-1-release-notes.md
