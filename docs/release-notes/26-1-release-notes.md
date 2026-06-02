@@ -33,7 +33,7 @@ categories:
 
 !!! info "Release Information"
     - **Release Date**: January 2026
-    - **Latest Version**: 26.1.5 (May 2026)
+    - **Latest Version**: 26.1.6 (May 2026)
     - **Status**: Latest Production Release
     - **End-of-Life**: TBD
 
@@ -67,6 +67,70 @@ categories:
 !!! success "Enhanced Data Protection"
     - Added support for N+2 (RF3) vSAN redundancy, also known as Replication Factor 3
     - Provides additional fault tolerance beyond standard N+1 configurations
+
+## 26.1.6 (May 2026)
+
+VergeOS 26.1.6 is a maintenance release delivering targeted bug fixes and stability improvements across the platform. Key areas include NTP configuration in clustered environments, vSAN race condition fixes, boot loader improvements (GRUB/PXE), update installation reliability, and various UI corrections.
+
+### Bug Fixes
+
+#### Security
+- Added safeguards to prevent accidental deletion of the admin user, even when using CLI access
+- Removed debug logging from the well-known authentication source
+
+#### Authentication & Authorization
+- Deleting system snapshots as an administrator user other than `admin` now returns the correct error message
+
+#### User Interface
+- Fixed capitalization in the NAS Volume Snapshot "Restore To New" breadcrumb navigation for consistency
+- Fixed incorrect Resource Group display when viewing USB devices assigned to a tenant — the detail view now correctly shows the source group when multiple USB Resource Groups exist on the host
+- Editing the name of an SR-IOV NIC Resource Group no longer incorrectly prompts for a driver reload
+- Fixed the initial width of the xterm (serial) console to display properly on first connect
+- Emulated VM NVMe drives are temporarily hidden from the UI until live migration support is implemented
+
+#### Networking
+- Fixed NTP configuration in clustered environments: nodes 2 and beyond now correctly sync with node 1 instead of external NTP servers
+- NTP pool addresses (e.g., `0.pool.time.org`) are now correctly written to `ntp.conf` using the `pool` directive instead of `server`
+- Removed `time.nist.gov` from the default NTP server list (no longer recommended)
+
+#### Storage (vSAN)
+- Changed how snapshot metadata files are saved on the vSAN to prevent unintended tier changes
+- vSAN node add/delete operations now run outside of transactions with longer timeouts, improving reliability while scaling out
+- Fixed an issue where a vSAN sync completing could trigger an unwanted transaction snapshot
+- Fixed a race condition in `RefreshTierMap` where maps could be partially initialized during startup
+- Fixed a race condition when topology changes occur during writes
+
+#### Virtual Machines
+- Fixed custom scripts not executing properly
+- Fixed an issue where "VM unresponsive" detection could be accidentally disabled when powering off node 2 without maintenance mode in a 2-node cluster
+- VMs now attempt a graceful shutdown when the server is stopped outside of maintenance mode
+
+#### API & Integrations
+- Renaming a media image now automatically updates any associated public links, so they continue to work after the rename
+
+#### Performance & Stability
+- Fixed an issue where downloading an update would hold a database transaction open, potentially blocking other operations
+- Duplicate alarms are now cleaned up on system startup
+- SMTP refreshes are now serialized (one at a time) to prevent race conditions
+- Added proper alarm dependencies for SMTP tables — SMTP alarms are now only generated during a refresh
+- Fixed a timing issue when creating a new tenant where the appserver would restart before catalog refresh completed
+- Fixed connection lifecycle refcount and busycount issues in appserver
+- Fixed race conditions in appserver connection handling during errors
+- Added proper error codes to node drive loop logging
+
+#### Boot & Firmware
+- Fixed GRUB patching — the system now correctly uses GRUB instead of only syslinux
+- Improved the N+2 message to clearly indicate which nodes need to be rebooted
+
+#### Installer
+- All pre-install checks now complete before any packages are installed, preventing partial installations
+- Added a pre-flight check before installing updates that notifies users of required actions as deprecated features are removed in future versions
+- Fixed an issue where pressing `CTRL-C` on the Replace Drive form incorrectly continued as if "No" was selected
+- Early-boot vSAN mount interruption now drops to a shell without a panic warning
+- Added validation when setting the default gateway for the external network to ensure the gateway is within the netmask
+- Fixed an issue where PXE boot installs incorrectly reported failure despite completing successfully
+
+---
 
 ## 26.1.5 (May 2026)
 
