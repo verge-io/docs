@@ -5,7 +5,7 @@ semantic_keywords:
   - "VergeOS SNMP support, SNMP not supported, MIB trap agent"
   - "external monitoring integration VergeOS, observability tooling"
   - "Prometheus Exporter ioMetrics, vSAN cluster node metrics"
-  - "VergeOS REST API monitoring, x-yottabyte-token authentication"
+  - "VergeOS REST API monitoring, custom HTTP collector polling"
   - "IPMI hardware sensors per-node monitoring BMC"
   - "SolarWinds LogicMonitor VergeOS, SNMP-first monitoring tools"
 use_cases:
@@ -49,22 +49,12 @@ This page describes how to integrate VergeOS with external monitoring and observ
 
 The **VergeOS Prometheus Exporter (ioMetrics)** is the recommended path for platform-level metrics. It collects vSAN tier, cluster, and node-level metrics from VergeOS and exposes them in standard Prometheus format, ready for scraping by Prometheus, Grafana, VictoriaMetrics, or any Prometheus-compatible system.
 
-The exporter is open source and distributed from the [vergeos-exporter](https://github.com/verge-io/vergeos-exporter){target="_blank"} GitHub repository.
-
-### What It Exposes
-
-- vSAN tier metrics — capacity, IOPS, latency, throughput, dedup ratios
-- Cluster-wide aggregate metrics for distributed performance
-- Per-node metrics — CPU, memory, network, and storage
-
 ### Why This Is the Recommended Path
 
 - **First-party** — maintained in the verge-io organization
 - **Standards-based** — any Prometheus-compatible monitoring tool can consume the output
-- **Grafana-ready** — dashboards can be built directly on the exported metrics
-- **Bridges to SNMP-first tools** — Prometheus can be paired with a community Prometheus-to-SNMP bridge if a downstream tool still requires SNMP
 
-See the [Prometheus Exporter (ioMetrics) page](prometheus-exporter.md) for the in-product overview, or the [vergeos-exporter](https://github.com/verge-io/vergeos-exporter){target="_blank"} repository for installation, configuration, and the full metric list.
+See the [Prometheus Exporter (ioMetrics)](prometheus-exporter.md) page for the in-product overview, exposed metrics, and links to the open-source project.
 
 ---
 
@@ -74,11 +64,7 @@ The VergeOS REST API exposes every resource the UI can read, which makes it the 
 
 ### Authentication
 
-API requests authenticate with a token passed in the `x-yottabyte-token` HTTP header. Tokens are requested from the `/sys/tokens` endpoint and managed through **System > API Keys**.
-
-```http
-x-yottabyte-token: 3a334563456378845634563b7b82d2efcadce9
-```
+External monitoring collectors are long-running and should authenticate with an API Key rather than a session token. API Keys are created per user and can be IP-scoped and given an expiration. See [API Keys](../system/api-keys.md) for setup and the [API Guide](../../knowledge-base/posts/api-guide.md) for the full list of supported authentication methods.
 
 ### Swagger Documentation
 
@@ -91,7 +77,7 @@ The complete, version-accurate API reference is available inside VergeOS:
 The Swagger page lists every table and operation, with examples that can be run directly against the system.
 
 !!! tip "Where to Start"
-    For background on authentication, HTTP conventions, filtering, sorting, and example requests, see the [API Guide](../../knowledge-base/posts/api-guide.md) in the knowledge base.
+    For background on HTTP conventions, filtering, sorting, and example requests, see the [API Guide](../../knowledge-base/posts/api-guide.md) in the knowledge base.
 
 ### When to Use the REST API for Monitoring
 
@@ -118,7 +104,10 @@ For configuring stored IPMI credentials and testing connectivity, see the [IPMI]
 
 ## SNMP-First Tools
 
-Tools such as **SolarWinds**, **LogicMonitor**, **PRTG**, and **Nagios** are often configured to monitor infrastructure over SNMP. VergeOS has no turnkey integration for these tools because there is no SNMP agent to point them at. There are two practical options:
+Tools such as **SolarWinds**, **LogicMonitor**, **PRTG**, and **Nagios** are often configured to monitor infrastructure over SNMP. VergeOS has no turnkey integration for these tools because there is no SNMP agent to point them at.
+
+!!! tip "Check for Native Prometheus Support First"
+    Some of these platforms now ingest Prometheus metrics natively — **LogicMonitor** (OpenMetrics DataSource) and **SolarWinds Observability** (Prometheus integration). If your platform is one of them, point it at the [Prometheus Exporter](#prometheus-exporter-iometrics) and skip the rest of this section. The two options below cover tools that don't speak Prometheus — including the on-prem **SolarWinds Platform / SAM**, **PRTG**, and **Nagios**.
 
 ### Option 1 — Custom REST Collector
 
@@ -131,7 +120,7 @@ Most enterprise monitoring platforms allow custom HTTP/REST collectors:
 | PRTG | HTTP XML/REST Custom Sensor |
 | Nagios | `check_http` / custom plugin |
 
-Point the collector at the VergeOS REST API, authenticate with the `x-yottabyte-token` header, and parse the JSON response. This is the cleanest long-term integration and avoids translating through an intermediate protocol.
+Point the collector at the VergeOS REST API, authenticate per the [API Guide](../../knowledge-base/posts/api-guide.md), and parse the JSON response. This is the lowest-overhead path — no intermediate process to maintain, and the collector talks directly to the source of truth.
 
 ### Option 2 — Prometheus-to-SNMP Bridge
 
@@ -151,10 +140,6 @@ If the monitoring tool only speaks SNMP and a custom collector is not an option,
 | Monitoring tool that polls HTTP but not Prometheus | [REST API](#rest-api) custom collector |
 | Hardware health (temperature, fans, power) | [IPMI](#ipmi) |
 | SolarWinds / LogicMonitor / PRTG / Nagios (SNMP-first) | [Custom REST Collector](#option-1-custom-rest-collector) preferred, [Prometheus-to-SNMP Bridge](#option-2-prometheus-to-snmp-bridge) as a fallback |
-
-## Summary
-
-VergeOS does not support SNMP. External monitoring integrations use the **Prometheus Exporter (ioMetrics)** for platform metrics, the **REST API** for custom collectors and tool-specific integrations, and **IPMI** for per-node hardware sensors. SNMP-first tools can integrate via a custom REST collector or, as a fallback, a community Prometheus-to-SNMP bridge.
 
 ## Next Steps
 
