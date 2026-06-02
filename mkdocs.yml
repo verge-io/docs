@@ -349,6 +349,7 @@ nav:
         - Accessing Subscriptions: product-guide/system/subscriptions-accessing.md
       - System Diagnostics: product-guide/system/diagnostics.md
       - Alarms: product-guide/operations/alarms.md
+      - External Monitoring: product-guide/tools-integrations/external-monitoring.md
       - Prometheus Exporter: product-guide/tools-integrations/prometheus-exporter.md
     - Operations:
       - Drive Replacement: product-guide/operations/drive-replacement.md
