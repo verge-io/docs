@@ -22,7 +22,7 @@ dateCreated: 2026-06-03
 
 If your VergeOS system operates behind a restrictive egress firewall or proxy, you must allow outbound access to the **Update Server**. Access to the **Marketplace** is optional, but required if you want to use Verge.io-provided recipes. This article describes what to allow and how to find the exact destinations for your environment.
 
-!!! tip "Systems without any outbound internet access require air-gap licensing. See [Air-Gapped Environments](#air-gapped-environments) below."
+!!! tip "Systems that cannot allow any outbound internet access require a special air-gap license. See: [Requesting an Air-Gap License](/knowledge-base/requesting-an-airgap-license/) "
 
 
 ## Outbound Access
@@ -49,13 +49,6 @@ VergeOS may serve different regions from different hostnames. Locate the exact d
 2. Locate the **Marketplace** entry and note its URL (e.g., `https://marketplace.vergeos.com`).
 
 Allow outbound TCP 443 from your management IP to each of these hostnames.
-
-## Air-Gapped Environments
-
-Systems that cannot allow any outbound internet access require a special air-gap license. See the following resources:
-
-- [Requesting an Air-Gap License](/knowledge-base/requesting-an-airgap-license/)
-- [Updating a VergeOS System with Air-Gap License](/knowledge-base/updating-vergeos-system-with-airgap-license/)
 
 
 ## Additional Resources
