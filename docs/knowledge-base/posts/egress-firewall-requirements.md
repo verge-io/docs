@@ -43,7 +43,7 @@ VergeOS may serve different regions from different hostnames. Locate the exact d
 1. Navigate to **System > Updates**.
 2. The **URL** field on the dashboard shows the update server address (e.g., `https://updates.vergeos.com`).
 
-### Marketplace URL**
+### Marketplace URL
 
 1. From the top menu, navigate to **Repositories > List**.
 2. Locate the **Marketplace** entry and note its URL (e.g., `https://marketplace.vergeos.com`).
