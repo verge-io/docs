@@ -315,7 +315,8 @@ copied_assets = {}  # asset filename -> source Path
 
 def copy_asset(src_file):
     """Copy image into kb/.gitbook/assets, dedupe by filename."""
-    name = src_file.name
+    # parens in filenames produce ambiguous markdown link destinations
+    name = re.sub(r"[()]", "", src_file.name)
     existing = copied_assets.get(name)
     if existing is not None and existing != src_file:
         if existing.read_bytes() == src_file.read_bytes():

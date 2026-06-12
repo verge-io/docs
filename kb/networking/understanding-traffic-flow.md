@@ -5,7 +5,7 @@ description: "Visual diagrams illustrating VergeOS network traffic flow, includi
 # Understanding Traffic Flow
 
 ## Traffic/Network Flow Diagram
-![VergeOS-traffic-flow_(1).png](../.gitbook/assets/vergeio-traffic-flow_(1).png)
+![VergeOS-traffic-flow_(1).png](../.gitbook/assets/vergeio-traffic-flow_1.png)
 
 <br>
 
