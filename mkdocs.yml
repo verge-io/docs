@@ -302,6 +302,7 @@ nav:
         - Network Rules: product-guide/networks/network-rules.md
         - VLANs: product-guide/networks/create-vlan.md
         - Bonded VLANs: product-guide/networks/bonded-vlans.md
+        - Configuring BGP: product-guide/networks/configuring-bgp.md
       - Monitoring:
         - Network Dashboards: product-guide/networks/network-dashboards.md
         - Tracking Network Statistics: product-guide/networks/tracking-net-statistics.md
