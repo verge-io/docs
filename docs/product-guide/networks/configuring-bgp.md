@@ -38,6 +38,15 @@ Because the external peer could be any vendor (FortiGate, Cisco, Juniper, MikroT
 !!! note
     Tested on VergeOS 26.1.3.1 / FRR 8.4.4. Menu paths may differ slightly on other releases.
 
+## High-Level Steps
+
+- Create an **External network** to carry the peering
+- Verify Layer 2 / Layer 3 connectivity to the peer
+- Create a **Router** with your ASN
+- Add **Router Commands** (`neighbor`, `network`) and restart the network
+- Verify the session in **Network Diagnostics**
+- Delegate routed space to a tenant/network with a **Network Block**
+
 ---
 
 ## Prerequisites
@@ -54,17 +63,15 @@ Because the external peer could be any vendor (FortiGate, Cisco, Juniper, MikroT
 
 These values are used throughout the guide. Substitute your own.
 
-| Item | Value |
-|---|---|
-| Transit subnet | `10.10.11.0/30` |
-| VergeOS transit IP | `10.10.11.2` |
-| Peer transit IP | `10.10.11.1` |
-| VLAN (Layer 2 ID) | `11` |
-| VergeOS ASN | `65001` |
-| Peer ASN | `65000` (this makes the session **eBGP**) |
-| Prefix the peer advertises **into** VergeOS | `10.20.100.0/24` |
-| Prefix VergeOS advertises **out** to the peer | `10.10.64.0/24` |
-| Block delegated to a tenant/network inside VergeOS | `10.20.100.0/28` → `net-test` |
+* **Transit subnet:** `10.10.11.0/30`
+* **VergeOS transit IP:** `10.10.11.2`
+* **Peer transit IP:** `10.10.11.1`
+* **VLAN (Layer 2 ID):** `11`
+* **VergeOS ASN:** `65001`
+* **Peer ASN:** `65000` (this makes the session **eBGP**)
+* **Prefix the peer advertises into VergeOS:** `10.20.100.0/24`
+* **Prefix VergeOS advertises out to the peer:** `10.10.64.0/24`
+* **Block delegated to a tenant/network inside VergeOS:** `10.20.100.0/28` → `net-test`
 
 ---
 
@@ -87,20 +94,16 @@ Keep both sides' ASNs and neighbor IPs consistent — each device's `remote-as` 
 
 Navigate to **Networks → New External** and configure:
 
-| Field | Value |
-|---|---|
-| Name | `Provider_BGP` |
-| Layer 2 Type | `vLan` |
-| Layer 2 ID | `11` |
-| MTU size | `1500` |
-| Interface Network | your physical/bond interface (e.g., `Switch 1 Bond 1`) |
-| IP Address Type | **BGP/OSPF** |
-| IP Address | `10.10.11.2` |
-| Network Address | `10.10.11.0/30` |
+* **Name:** `Provider_BGP`
+* **Layer 2 Type:** `vLan`
+* **Layer 2 ID:** `11`
+* **MTU size:** `1500`
+* **Interface Network:** your physical/bond interface (e.g., `Switch 1 Bond 1`)
+* **IP Address Type:** **BGP/OSPF**
+* **IP Address:** `10.10.11.2`
+* **Network Address:** `10.10.11.0/30`
 
 Leave DHCP off. Click **Submit**.
-
-![External network edit form showing the Network and Network Router panels](../../assets/networks/bgp/external-network-form.png)
 
 ### Step 2 — Verify Layer 2 / Layer 3 first
 
@@ -115,23 +118,17 @@ If ping fails, stop and fix VLAN tagging, switch ports, or IP/mask before contin
 
 Open the `Provider_BGP` network → **Routers → New**. The Router has a single field:
 
-| Field | Value |
-|---|---|
-| ASN | `65001` |
+* **ASN:** `65001`
 
 Click **Submit**.
-
-![New Router dialog showing the ASN field](../../assets/networks/bgp/new-router-dialog.png)
 
 ### Step 4 — Add the Router Commands
 
 Open the ASN (`65001`) → **Router Commands**. VergeOS **pre-populates three baseline commands** when the Router is created:
 
-| Order | Command | Parameters | Negate | Resulting FRR line |
-|---|---|---|---|---|
-| 0 | `bgp` | `router-id 10.10.11.2` | off | `bgp router-id 10.10.11.2` |
-| 1 | `bgp` | `ebgp-requires-policy` | **on** | `no bgp ebgp-requires-policy` |
-| 2 | `bgp` | `network import-check` | **on** | `no bgp network import-check` |
+* **Order 0 — `bgp router-id 10.10.11.2`** (Negate off) → renders as `bgp router-id 10.10.11.2`
+* **Order 1 — `bgp ebgp-requires-policy`** (Negate **on**) → renders as `no bgp ebgp-requires-policy`
+* **Order 2 — `bgp network import-check`** (Negate **on**) → renders as `no bgp network import-check`
 
 What these do:
 
@@ -143,29 +140,17 @@ Now add the two commands that actually bring up the session and advertise your p
 
 **Neighbor (the peer):**
 
-| Field | Value |
-|---|---|
-| Enabled | on |
-| Negate | off |
-| Command | `neighbor` |
-| Parameters | `10.10.11.1 remote-as 65000` |
-
-![Router Command entry for the neighbor command with parameters 10.10.11.1 remote-as 65000](../../assets/networks/bgp/router-command-neighbor.png)
-
-![Command dropdown showing the available FRR commands](../../assets/networks/bgp/router-command-dropdown.png)
+* **Enabled:** on
+* **Negate:** off
+* **Command:** `neighbor`
+* **Parameters:** `10.10.11.1 remote-as 65000`
 
 **Network advertisement (one row per prefix you want VergeOS to advertise out):**
 
-| Field | Value |
-|---|---|
-| Enabled | on |
-| Negate | off |
-| Command | `network` |
-| Parameters | `10.10.64.0/24` |
-
-![Router Command entry for the network command with parameters 10.10.64.0/24](../../assets/networks/bgp/router-command-network.png)
-
-![Router Commands list showing all five rows](../../assets/networks/bgp/router-commands-list.png)
+* **Enabled:** on
+* **Negate:** off
+* **Command:** `network`
+* **Parameters:** `10.10.64.0/24`
 
 **Notes:**
 
@@ -195,12 +180,10 @@ In the neighbor row for `10.10.11.1`:
 
 Other useful commands in the same box:
 
-| Command | Shows |
-|---|---|
-| `show ip bgp summary` | Neighbor states and prefix counts |
-| `show ip bgp neighbors 10.10.11.1` | Detailed per-neighbor status and last reset reason |
-| `show ip route bgp` | Routes learned via BGP |
-| `show running-config` | The full FRR config VergeOS generated — confirms your commands landed |
+* **`show ip bgp summary`** — neighbor states and prefix counts
+* **`show ip bgp neighbors 10.10.11.1`** — detailed per-neighbor status and last reset reason
+* **`show ip route bgp`** — routes learned via BGP
+* **`show running-config`** — the full FRR config VergeOS generated, confirms your commands landed
 
 **What a healthy session looks like.** In `show ip bgp summary`, the neighbor row shows an uptime and a prefix count rather than a state word:
 
@@ -215,8 +198,6 @@ And `show ip route bgp` shows the peer's advertised prefix installed, flagged `B
 B>* 10.20.100.0/24 [20/0] via 10.10.11.1, eth0, weight 1, 00:41:20
 ```
 
-![Network Diagnostics output showing show ip bgp summary, show ip bgp neighbors, and show ip route bgp results](../../assets/networks/bgp/network-diagnostics-output.png)
-
 At this point you have a working BGP session.
 
 ### iBGP variation (same ASN on both sides)
@@ -225,9 +206,8 @@ The guide above builds **eBGP** — VergeOS (AS 65001) peering with a device in 
 
 - **Matching `remote-as`.** The neighbor command points at the peer with *your own* ASN. If VergeOS is AS 65001 and the peer is also 65001:
 
-  | Command | Parameters |
-  |---|---|
-  | `neighbor` | `10.10.11.1 remote-as 65001` |
+  * **Command:** `neighbor`
+  * **Parameters:** `10.10.11.1 remote-as 65001`
 
 - **The `no bgp ebgp-requires-policy` line is irrelevant.** That guard only applies to eBGP, so on a pure-iBGP router it has no effect. It's harmless to leave in place (the auto-generated baseline includes it), so no action is needed.
 - **iBGP doesn't re-advertise learned routes by default.** A route learned from one iBGP peer is *not* passed on to other iBGP peers — this is BGP's loop-prevention rule, not a misconfiguration. In a multi-router internal design this means you need a full mesh of iBGP sessions, or a route reflector. For a single VergeOS-to-peer link it doesn't matter; for anything larger, plan the topology accordingly.
@@ -246,22 +226,14 @@ BGP carries *reachability* for a block of addresses to and from the peer. A **Ne
 
 Open the External (BGP) network → **Network Blocks → New**:
 
-| Field | Value |
-|---|---|
-| Network Block | `10.20.100.0/28` (CIDR) |
-| Description | optional |
-| Owner Type | `None`, `Network`, or `Tenant` |
-| Owner | (appears after choosing Network or Tenant) |
+* **Network Block:** `10.20.100.0/28` (CIDR)
+* **Description:** optional
+* **Owner Type:** `None`, `Network`, or `Tenant`
+* **Owner:** (appears after choosing Network or Tenant)
 
-- **Owner Type → Network:** select an internal VergeOS network (e.g., `net-test`). Use this for non-tenantized environments.
-- **Owner Type → Tenant:** a second **Owner** dropdown appears listing tenants. Use this to hand public/routed space straight to a tenant.
-- **Owner Type → None:** the block is reserved/owned by nothing yet.
-
-![New Network Block dialog showing the Owner Type dropdown with None, Network, and Tenant options](../../assets/networks/bgp/network-block-owner-type.png)
-
-![Network Block Owner Type set to Network, showing the internal-network owner list](../../assets/networks/bgp/network-block-owner-network.png)
-
-![Network Block Owner Type set to Tenant, showing the tenant Owner dropdown](../../assets/networks/bgp/network-block-owner-tenant.png)
+    - **Owner Type → Network:** select an internal VergeOS network (e.g., `net-test`). Use this for non-tenantized environments.
+    - **Owner Type → Tenant:** a second **Owner** dropdown appears listing tenants. Use this to hand public/routed space straight to a tenant.
+    - **Owner Type → None:** the block is reserved/owned by nothing yet.
 
 ### Worked example
 
@@ -286,29 +258,23 @@ The basic guide negates `ebgp-requires-policy` so routes flow without filters. I
 
 Filter which prefixes you accept or advertise. Define the list, then reference it on the neighbor.
 
-| Command | Parameters (example) |
-|---|---|
-| `ip prefix-list` | `ALLOW-IN seq 10 permit 10.20.100.0/24` |
-| `neighbor` | `10.10.11.1 prefix-list ALLOW-IN in` |
-| `neighbor` | `10.10.11.1 prefix-list ALLOW-OUT out` |
+* **`ip prefix-list`** — `ALLOW-IN seq 10 permit 10.20.100.0/24`
+* **`neighbor`** — `10.10.11.1 prefix-list ALLOW-IN in`
+* **`neighbor`** — `10.10.11.1 prefix-list ALLOW-OUT out`
 
 ### Route maps
 
 Apply policy — set local-preference, MED, communities, or match prefixes — in a direction.
 
-| Command | Parameters (example) |
-|---|---|
-| `route-map` | `SET-LP permit 10` |
-| (within that map) | `set local-preference 200` |
-| `neighbor` | `10.10.11.1 route-map SET-LP in` |
+* **`route-map`** — `SET-LP permit 10`
+* *(within that map)* — `set local-preference 200`
+* **`neighbor`** — `10.10.11.1 route-map SET-LP in`
 
 ### BGP timers
 
 Tighten failure detection. The FRR form is `timers bgp <keepalive> <hold>`. For example, a 5-second keepalive and 15-second hold:
 
-| Command | Parameters |
-|---|---|
-| `timers` | `bgp 5 15` |
+* **`timers`** — `bgp 5 15`
 
 After applying, confirm via Network Diagnostics → `show running-config`.
 
@@ -316,9 +282,7 @@ After applying, confirm via Network Diagnostics → `show running-config`.
 
 Allow multiple equal-cost BGP paths to be installed:
 
-| Command | Parameters |
-|---|---|
-| `maximum-paths` | `4` |
+* **`maximum-paths`** — `4`
 
 !!! note
     For full FRR command syntax, refer to the FRRouting BGP documentation. The Network Diagnostics console runs against the live FRR instance, so anything valid in FRR can be verified there with `show running-config`.
@@ -327,14 +291,29 @@ Allow multiple equal-cost BGP paths to be installed:
 
 ## Troubleshooting
 
-| Symptom | Likely cause | Check / fix |
-|---|---|---|
-| Ping works, BGP stuck in `Active`/`Connect` | No `neighbor` line on one side, AS mismatch, TCP 179 blocked, or the network wasn't restarted | Confirm both sides have a matching neighbor + remote-as; restart the VergeOS network; verify nothing blocks TCP 179 between the two transit IPs |
-| Session reaches `Established` then drops | AS number mismatch (each side disagrees on the other's AS) | Compare local AS and the `remote-as` each side expects |
-| Established but **no routes** exchanged | Missing `network` statements, or eBGP policy holding routes | Add `network <prefix>` rows; ensure `no bgp ebgp-requires-policy` is set (or define policy) |
-| Advertised prefix never appears | Prefix not in the routing table | Either originate the route or keep `no bgp network import-check` set |
-| Config edits seem ignored | Network not restarted | Restart the network; recheck `show running-config` |
-| Delegated Network Block unreachable | Covering route not present, or owner not set | `show ip route bgp`; confirm the block has an Owner |
+* **Ping works, BGP stuck in `Active`/`Connect`**
+    - *Likely cause:* No `neighbor` line on one side, AS mismatch, TCP 179 blocked, or the network wasn't restarted
+    - *Check / fix:* Confirm both sides have a matching neighbor + remote-as; restart the VergeOS network; verify nothing blocks TCP 179 between the two transit IPs
+
+* **Session reaches `Established` then drops**
+    - *Likely cause:* AS number mismatch (each side disagrees on the other's AS)
+    - *Check / fix:* Compare local AS and the `remote-as` each side expects
+
+* **Established but no routes exchanged**
+    - *Likely cause:* Missing `network` statements, or eBGP policy holding routes
+    - *Check / fix:* Add `network <prefix>` rows; ensure `no bgp ebgp-requires-policy` is set (or define policy)
+
+* **Advertised prefix never appears**
+    - *Likely cause:* Prefix not in the routing table
+    - *Check / fix:* Either originate the route or keep `no bgp network import-check` set
+
+* **Config edits seem ignored**
+    - *Likely cause:* Network not restarted
+    - *Check / fix:* Restart the network; recheck `show running-config`
+
+* **Delegated Network Block unreachable**
+    - *Likely cause:* Covering route not present, or owner not set
+    - *Check / fix:* `show ip route bgp`; confirm the block has an Owner
 
 !!! tip "Fastest diagnosis path"
     Confirm ping both ways (isolates L2/L3), then `show running-config` in Network Diagnostics to confirm VergeOS built the config you expect, then `show ip bgp summary` for live state. On the peer side, a packet capture on TCP 179 will show whether the issue is connectivity (no handshake) or a BGP parameter rejection (handshake then reset).
