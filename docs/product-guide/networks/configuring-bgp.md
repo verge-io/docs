@@ -26,14 +26,7 @@ categories:
 
 This article covers establishing a BGP peering session between VergeOS and an external router or firewall, advertising prefixes in both directions, and using **Network Blocks** to delegate routed address space to an internal network or tenant.
 
-VergeOS runs **FRRouting (FRR)** under the hood. A working BGP setup is made of four pieces:
-
-1. An **External network** that carries the peering (holds the transit IP and VLAN).
-2. A **Router** that defines your local ASN.
-3. **Router Commands** — the FRR statements (`neighbor`, `network`, etc.).
-4. A **network restart** to load the configuration into FRR.
-
-Because the external peer could be any vendor (FortiGate, Cisco, Juniper, MikroTik, etc.), this guide keeps the far side generic and focuses on the VergeOS configuration.
+VergeOS runs **FRRouting (FRR)** under the hood — the Router Commands you add in the UI map directly to FRR configuration lines. Because the external peer could be any vendor (FortiGate, Cisco, Juniper, MikroTik, etc.), this guide keeps the far side generic and focuses on the VergeOS configuration.
 
 !!! note
     Tested on VergeOS 26.1.3.1 / FRR 8.4.4. Menu paths may differ slightly on other releases.
@@ -46,6 +39,40 @@ Because the external peer could be any vendor (FortiGate, Cisco, Juniper, MikroT
 - Add **Router Commands** (`neighbor`, `network`) and restart the network
 - Verify the session in **Network Diagnostics**
 - Delegate routed space to a tenant/network with a **Network Block**
+
+---
+
+## Quick Reference
+
+If you already know BGP and just want the config, this is everything Part 1 walks through:
+
+```
+External network:  IP Address Type = BGP/OSPF, IP 10.10.11.2, Network 10.10.11.0/30, VLAN 11
+Router:            ASN 65001
+Router Commands:
+  bgp       router-id 10.10.11.2
+  bgp       ebgp-requires-policy        (Negate)
+  bgp       network import-check        (Negate)
+  neighbor  10.10.11.1 remote-as 65000
+  network   10.10.64.0/24
+→ Restart the network
+→ Verify: Network Diagnostics → FRRouting BGP/OSPF → show ip bgp summary
+```
+
+Resulting FRR running-config:
+
+```
+router bgp 65001
+ bgp router-id 10.10.11.2
+ no bgp ebgp-requires-policy
+ no bgp network import-check
+ neighbor 10.10.11.1 remote-as 65000
+ !
+ address-family ipv4 unicast
+  network 10.10.64.0/24
+ exit-address-family
+exit
+```
 
 ---
 
@@ -103,7 +130,9 @@ Navigate to **Networks → New External** and configure:
 * **IP Address:** `10.10.11.2`
 * **Network Address:** `10.10.11.0/30`
 
-Leave DHCP off. Click **Submit**.
+If your link is untagged, set **Layer 2 Type** to `None` instead and skip the Layer 2 ID field.
+
+Leave DHCP off — this network only carries the BGP peering, it doesn't need to hand out addresses. Click **Submit**.
 
 ### Step 2 — Verify Layer 2 / Layer 3 first
 
@@ -126,7 +155,7 @@ Click **Submit**.
 
 Open the ASN (`65001`) → **Router Commands**. VergeOS **pre-populates three baseline commands** when the Router is created:
 
-* **Order 0 — `bgp router-id 10.10.11.2`** (Negate off) → renders as `bgp router-id 10.10.11.2`
+* **Order 0 — `bgp router-id 10.10.11.2`** (Negate off)
 * **Order 1 — `bgp ebgp-requires-policy`** (Negate **on**) → renders as `no bgp ebgp-requires-policy`
 * **Order 2 — `bgp network import-check`** (Negate **on**) → renders as `no bgp network import-check`
 
@@ -154,7 +183,7 @@ Now add the two commands that actually bring up the session and advertise your p
 
 **Notes:**
 
-- **Command order does not matter** for this set — every row renders inside the same `router bgp 65001` block and FRR assembles it regardless of Order ID. The only ordering rule in FRR is that a `neighbor … remote-as` line must precede any other line that references that neighbor (route-maps, passwords, timers). With no dependent neighbor sub-commands, this never bites you.
+- **Command order:** A `neighbor … remote-as` line must exist before any other line that references that neighbor (route-maps, passwords, timers).
 - Use the US spelling **`neighbor`** — FRR rejects `neighbour`.
 - **eBGP vs iBGP:** if the peer's ASN differs from yours (as here, 65000 vs 65001) the session is eBGP. If it's the *same* ASN on both sides, it's iBGP — use `remote-as 65001` and the `no bgp ebgp-requires-policy` line is unnecessary.
 
@@ -254,6 +283,14 @@ All advanced features are added the same way as the basic config: as **Router Co
 
 The basic guide negates `ebgp-requires-policy` so routes flow without filters. In production you may prefer to leave it enforced and define explicit policy. Remove the negate on the `ebgp-requires-policy` command and attach inbound/outbound route-maps to the neighbor (below).
 
+### Neighbor authentication (MD5)
+
+Add a shared secret so only a peer that knows it can establish the session — worth enabling for any peering with an external party:
+
+* **`neighbor`** — `10.10.11.1 password <shared-secret>`
+
+Both sides need the same password configured. A mismatch shows up as the session repeatedly resetting rather than reaching `Established` — if the session won't come up after adding this, confirm the password matches exactly on both ends before looking anywhere else.
+
 ### Prefix lists
 
 Filter which prefixes you accept or advertise. Define the list, then reference it on the neighbor.
@@ -315,39 +352,9 @@ Allow multiple equal-cost BGP paths to be installed:
     - *Likely cause:* Covering route not present, or owner not set
     - *Check / fix:* `show ip route bgp`; confirm the block has an Owner
 
+* **Session resets repeatedly right after adding a password**
+    - *Likely cause:* MD5 password mismatch between the two sides
+    - *Check / fix:* Confirm the `neighbor <ip> password <secret>` value matches exactly on both peers
+
 !!! tip "Fastest diagnosis path"
     Confirm ping both ways (isolates L2/L3), then `show running-config` in Network Diagnostics to confirm VergeOS built the config you expect, then `show ip bgp summary` for live state. On the peer side, a packet capture on TCP 179 will show whether the issue is connectivity (no handshake) or a BGP parameter rejection (handshake then reset).
-
----
-
-## Quick Reference
-
-**Minimum VergeOS config for a working eBGP session:**
-
-```
-External network:  IP Address Type = BGP/OSPF, IP 10.10.11.2, Network 10.10.11.0/30, VLAN 11
-Router:            ASN 65001
-Router Commands:
-  bgp       router-id 10.10.11.2
-  bgp       ebgp-requires-policy        (Negate)
-  bgp       network import-check        (Negate)
-  neighbor  10.10.11.1 remote-as 65000
-  network   10.10.64.0/24
-→ Restart the network
-→ Verify: Network Diagnostics → FRRouting BGP/OSPF → show ip bgp summary
-```
-
-**Resulting FRR running-config:**
-
-```
-router bgp 65001
- bgp router-id 10.10.11.2
- no bgp ebgp-requires-policy
- no bgp network import-check
- neighbor 10.10.11.1 remote-as 65000
- !
- address-family ipv4 unicast
-  network 10.10.64.0/24
- exit-address-family
-exit
-```
