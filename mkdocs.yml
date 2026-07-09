@@ -148,6 +148,7 @@ nav:
     - Node Sizing: implementation-guide/sizing.md
     - Network Design: implementation-guide/network-design.md
     - Switch Config Guide: implementation-guide/switch-configuration.md
+    - PXE-boot Setup Guide: implementation-guide/pxe-boot.md
     - Installation:
       - Pre-Installation: implementation-guide/pre-installation.md
       - Bootable Media: implementation-guide/install-media.md
