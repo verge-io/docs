@@ -116,7 +116,7 @@ VergeOS 26.1.7 is a maintenance release focused on stability improvements, bug f
 
 #### Virtual Machines
 - Improved oVirt/RHV import consistency: VM properties (OS type, CPU cores, RAM, disk driver interfaces) are now properly set during restore, drive/NIC interfaces are checked case-insensitively, and Windows VM OS types are correctly identified; added support for importing VMs with unplugged NICs and additional OVF file variants
-- Fixed an issue where Veeam backup jobs initiated from a tenant could not list the tenant's VMs
+- Fixed an issue where Ovirt backup jobs initiated from a tenant could not list the tenant's VMs
 - When a VM is detached from a recipe, its recipe metadata is now cleaned up properly
 
 #### Snapshots & Sites
@@ -302,7 +302,7 @@ VergeOS 26.1.4 is a maintenance release focused on stability, security, and usab
 - Clipboard paste no longer defaults text to hidden
 
 #### Serial Console
-- **Complete serial console overhaul** — Replaced `vncterm` with a custom serial console that supports framebuffering, multiple simultaneous connections, and live migration. Serial consoles now auto-reconnect instead of showing a popup.
+- **Complete serial console overhaul** — Replaced `vncterm` with a custom serial console that supports framebuffering, multiple simultaneous connections, and live migration. Serial consoles now auto-reconnect instead of showing a pop-up.
 - Serial port contents remain consistent during VM live migration
 - The new serial console is backward compatible with older versions of VergeOS
 - VM serial consoles now default to 80x24 (standard for most operating systems), with a resize toggle available
@@ -354,12 +354,12 @@ VergeOS 26.1.4 is a maintenance release focused on stability, security, and usab
 - Fixed "Next Run Times" to show correct local time for noon and midnight schedules
 - Webhooks now update `last_attempt` timestamp; removed a required flag on headers
 
-#### oVirt & Veeam Integration
-- **oVirt engine ID uniqueness** — Fixed tenant system ID inheritance that caused duplicate oVirt engine IDs across the environment, which prevented Veeam from adding tenants as additional managed servers
-- Fixed an oVirt login regression introduced after upgrading that prevented Veeam from connecting to the oVirt KVM Manager
-- Fixed an error when attempting Veeam backups reporting "No available worker was found"
-- Veeam backup jobs with tags now work correctly
-- When restoring a VM to its original location, Veeam now allows characters in the name that are valid in VergeOS
+#### oVirt Integration
+- **oVirt engine ID uniqueness** — Fixed tenant system ID inheritance that caused duplicate oVirt engine IDs across the environment, which prevented oVirt from adding tenants as additional managed servers
+- Fixed an oVirt login regression introduced after upgrading that prevented oVirt from connecting to the oVirt KVM Manager
+- Fixed an error when attempting oVirt backups reporting "No available worker was found"
+- oVirt backup jobs with tags now work correctly
+- When restoring a VM to its original location, oVirt now allows characters in the name that are valid in VergeOS
 - Updated VMware Python scripts for updated SDKs; added a script to retrieve VMware tags
 - Removed the restriction requiring the "Network" field to be filled in for VMware services
 
