@@ -33,7 +33,7 @@ categories:
 
 !!! info "Release Information"
     - **Release Date**: January 2026
-    - **Latest Version**: 26.1.6 (May 2026)
+    - **Latest Version**: 26.1.7 (July 2026)
     - **Status**: Latest Production Release
     - **End-of-Life**: TBD
 
@@ -67,6 +67,88 @@ categories:
 !!! success "Enhanced Data Protection"
     - Added support for N+2 (RF3) vSAN redundancy, also known as Replication Factor 3
     - Provides additional fault tolerance beyond standard N+1 configurations
+
+## 26.1.7 (July 2026)
+
+VergeOS 26.1.7 is a maintenance release focused on stability improvements, bug fixes, and usability enhancements. Highlights include a change to the update process for systems running 26.1.6, significant vSAN shutdown reliability improvements, serial console stability fixes, and UI/UX enhancements across VMware integration, advanced settings, and snapshot management.
+
+### Update Process
+
+!!! warning "Upgrading from 26.1.6"
+    When upgrading from 26.1.6, node1 is now updated **last**. This prevents large or busy systems from running a transaction validation (introduced in 26.1.6) when reconnecting back to node1 after the update.
+
+- A pre-flight check now runs before installing any update packages. This will be used going forward to notify users of any actions that must be taken before updating, particularly as features move from deprecated to removed.
+
+### New Features
+
+#### Networking
+- Added manually-configured PTP (Precision Time Protocol) support; UI support will follow in a future release
+
+#### Virtual Machines
+- Offline VM drives can now be erased while the VM is running, without shutting down the VM
+- The VergeOS icon can now be used in VM and tenant recipes
+
+#### User Interface
+- Browser tab titles now show the VM or object name first, making it easier to identify pages when multiple VergeOS tabs are open; this behavior can be changed in **System > Settings**
+- Removed upper limits on SMART warning thresholds (pending sectors, offline uncorrectable sectors, reallocated sectors), allowing administrators to configure higher values
+- Added tooltip titles to dashboard count boxes displaying large numbers
+
+### Bug Fixes
+
+#### Storage (vSAN)
+- Fixed a critical timing scenario during shutdown: on systems with dedicated controller nodes, if node1 was rebooted while a tier 0 walk was still running, the vSAN could stop before the walk completed, causing node2 to fail to take over as the UI controller with database I/O errors
+- Reworked the vSAN shutdown process with improved timeout handling
+- Fixed a potential race condition that could cause a vSAN crash when decreasing node channels live during heavy write activity
+- Improved timeout handling during forced node disconnect operations
+- Changed how snapshot files are saved on the vSAN to avoid unnecessary tier changes
+
+#### Serial Console
+- Fixed a reconnect issue with the VM serial console emulator that could cause the console to lock up after 64 connect/disconnect cycles
+- Fixed the initial width of the xterm-based serial console
+
+#### User Interface
+- Tenant name changes now appear on the login screen immediately, without requiring a restart
+- Fixed the VMware "New Restore Job" form where the Default Resource dropdown was rendered struck-through and unselectable, preventing users from submitting restore jobs
+- Relabeled the Interface Network dropdown on internal and external network forms from "-- Default --" to "-- None --" for clarity
+- Added numeric validation to Advanced Settings fields — SMART thresholds and other number-based settings now reject non-integer and non-numeric values
+- Fixed auto-disabling of UI actions that was incorrectly affecting actions not limited to multi or single selection
+- Fixed an issue where editing a USB machine device on a VM or tenant node could show the wrong resource group in the list
+
+#### Virtual Machines
+- Improved oVirt/RHV import consistency: VM properties (OS type, CPU cores, RAM, disk driver interfaces) are now properly set during restore, drive/NIC interfaces are checked case-insensitively, and Windows VM OS types are correctly identified; added support for importing VMs with unplugged NICs and additional OVF file variants
+- Fixed an issue where Veeam backup jobs initiated from a tenant could not list the tenant's VMs
+- When a VM is detached from a recipe, its recipe metadata is now cleaned up properly
+
+#### Snapshots & Sites
+- Fixed an issue where setting an existing system snapshot to immutable would incorrectly set the unlock period to one week from the current date
+- Fixed an issue where modifying a remote snapshot's expiration on the remote site would not persist — the expiration would revert on the next refresh
+- System snapshot expiration audit log entries are now hidden to reduce audit log noise
+
+#### Authentication & Email
+- Fixed an issue where the system allowed attempting to send email (via Test or a Task) even when SMTP was disabled
+- Added additional protection against deleting the admin user account
+
+#### Networking
+- Fixed an issue booting PXE nodes via UEFI
+
+#### NAS
+- NAS volumes now ignore the serial number property on a drive to avoid confusion and potential serial number duplicates that could cause volumes to lose their drive reference inside the guest
+
+#### Hardware & Alarms
+- Fixed an issue matching a DIMM to an ECC error on certain hardware
+- When an alarm type changes, the previous alarm is now properly lowered and a new one raised
+- Duplicate alarms are now cleaned up on system startup
+
+#### Installer
+- Fixed an issue where installing a compute node would not prompt to install boot partitions on smaller disks
+
+#### Performance & Stability
+- Fixed a potential stability issue in the web server
+- SMTP refreshes can now only happen one at a time to prevent conflicts
+- Modifying a resource group without changing any settings no longer triggers a "reload driver required" event
+- Renaming a File that has a public link now updates the public link to the new filename
+
+---
 
 ## 26.1.6 (May 2026)
 
