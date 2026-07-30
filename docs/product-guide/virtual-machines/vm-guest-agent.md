@@ -37,7 +37,7 @@ The guest agent is a program installed inside the guest OS allowing the host to 
 
 The guest agent must be enabled per VM; this can be done during VM creation or by editing an existing VM. The Guest Agent checkbox on the VM dashboard indicates if the agent is enabled.
 
-![agent-enabled-notconnected.png](/product-guide/screenshots/agent-enabled-notconnected.png)
+![agent-enabled-notconnected.png](../screenshots/agent-enabled-notconnected.png)
 
 ### Enable the Guest Agent on an existing VM
 
@@ -74,7 +74,7 @@ See the directions below for installing the guest agent software from the downlo
 
 1. Navigate to the **VM dashboard**.
 2. Click the CD-ROM selection button (top left)
-![fa-eject.png](/product-guide/screenshots/fa-eject.png)
+![fa-eject.png](../screenshots/fa-eject.png)
 3. Select **virtio-win.iso (or filename modified during download)**.
 4. Click **Submit** to apply the CD change.
 5. Click **Remote Console** on the left menu to console into the guest OS.
@@ -114,4 +114,4 @@ On Linux VMs, the **qemu-guest-agent package** must be installed. Installation i
 
 When a guest agent is successfully connected, the version number will display next to the checked Guest Agent checkbox on the VM dashboard.
 
-![agent-connected-version.png](/product-guide/screenshots/agent-connected-version.png)
+![agent-connected-version.png](../screenshots/agent-connected-version.png)

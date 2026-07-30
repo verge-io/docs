@@ -28,11 +28,11 @@ categories:
 **-OR-**
 * Click the **Subscriptions icon (top right)** and select **All My Subscriptions** (to view all) or select **Page Subscriptions** (to view only subscriptions associated to the current page.)  
 
-  ![subscriptions-icon-white.png](/product-guide/screenshots/subscriptions-icon-white.png)
+  ![subscriptions-icon-white.png](../screenshots/subscriptions-icon-white.png)
 
   The Subscriptions icon will be orange if you are subscribed to the current page (i.e. you own subscriptions that pertain to this part of the UI.)
 
-  ![subscriptions-icon-orange.png](/product-guide/screenshots/subscriptions-icon-orange.png)
+  ![subscriptions-icon-orange.png](../screenshots/subscriptions-icon-orange.png)
 
 ## Access All Subscriptions
 

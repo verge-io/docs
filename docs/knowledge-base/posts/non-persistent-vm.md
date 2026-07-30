@@ -35,9 +35,9 @@ A Non-Persistent VM reverts to its original state after a reboot, discarding any
        This ensures the data is in a good state for cloning.
 
 3. Click the **Copy** button next to the main disk on the VM.
-   ![nonpersistent-2.png](/product-guide/screenshots/non-persistent-copy.png)
+   ![nonpersistent-2.png](../../product-guide/screenshots/non-persistent-copy.png)
 4. Change the **Media Type** to **Non-Persistent** and click **Submit** at the bottom.
-5. Click the **Edit** icon ![edit icon pencil](/product-guide/screenshots/edit-icon-pencil.png) for the original **Disk Media Type**.
+5. Click the **Edit** icon ![edit icon pencil](../../product-guide/screenshots/edit-icon-pencil.png) for the original **Disk Media Type**.
 !!! note
    The new disk will show a **Media Type** of **Non-Persistent**. Any changes made to this disk will be reverted upon a reboot of the VM.
 6. Uncheck the **Enabled** checkbox.

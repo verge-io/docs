@@ -42,12 +42,12 @@ dateCreated: 2022-07-11T18:16:54.516Z
 SSH Access rules are auto-created, and disabled, during system installation.
 
 1. **Enable the core network rule:** Navigate to the Core network dashboard, modify the ***"SSH Access"*** rule, select the **Enabled** option and **Submit** to save the change.
-![ssh-rule-core.png](/product-guide/screenshots/ssh-rule-core.png)
+![ssh-rule-core.png](../../product-guide/screenshots/ssh-rule-core.png)
 
 2. **Add source control to the external network rule:** Navigate to the external network dashboard, modify the ***"SSH Access"*** rule to **configure specific source IP address(es) and/or address range(s) to tightly control access**.
 3. **Enable the external network rule:** select the **Enabled** option and **Submit** to save the change.  
 **Ex. External Network Rule:**
-![ssh-rule-external.png](/product-guide/screenshots/ssh-rule-external.png)
+![ssh-rule-external.png](../../product-guide/screenshots/ssh-rule-external.png)
 
 4. **Apply Rules** to both networks.
 

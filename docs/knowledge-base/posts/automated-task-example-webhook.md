@@ -49,8 +49,8 @@ Using VergeOS Task Engine components, administrators can instantly trigger alert
 
      ***System > Tasks Dashboard > New Webhook***
 
-    ![Create webhook - Light Mode](/product-guide/screenshots/webhook-slack-light.png#only-light)
-    ![Create webhook - Dark Mode](/product-guide/screenshots/webhook-slack-dark.png#only-dark) 
+    ![Create webhook - Light Mode](../../product-guide/screenshots/webhook-slack-light.png#only-light)
+    ![Create webhook - Dark Mode](../../product-guide/screenshots/webhook-slack-dark.png#only-dark) 
 
 
 ??? step-detail "2. Create a Task to Send the Email"
@@ -59,8 +59,8 @@ Using VergeOS Task Engine components, administrators can instantly trigger alert
 
     ***System > Tasks Dashboard > New Task***
 
-    ![Create webhook - Light Mode](/product-guide/screenshots/task-email-light.png#only-light)
-    ![Create webhook - Dark Mode](/product-guide/screenshots/task-email-dark.png#only-dark) 
+    ![Create webhook - Light Mode](../../product-guide/screenshots/task-email-light.png#only-light)
+    ![Create webhook - Dark Mode](../../product-guide/screenshots/task-email-dark.png#only-dark) 
 
  
 ??? step-detail "3. Create a Task to Send the Webhook"
@@ -69,8 +69,8 @@ Using VergeOS Task Engine components, administrators can instantly trigger alert
 
     ***System > Tasks Dashboard > New Task***
 
-    ![Create Slack webhook task - Light Mode](/product-guide/screenshots/task-webhook-light.png#only-light)
-    ![Create Slack webhook task - Dark Mode](/product-guide/screenshots/task-webhook-dark.png#only-dark) 
+    ![Create Slack webhook task - Light Mode](../../product-guide/screenshots/task-webhook-light.png#only-light)
+    ![Create Slack webhook task - Dark Mode](../../product-guide/screenshots/task-webhook-dark.png#only-dark) 
 
 ??? step-detail "4. Assign an Event Trigger to the *Send-slack-payload* Task"
 
@@ -79,8 +79,8 @@ Using VergeOS Task Engine components, administrators can instantly trigger alert
     From the *Send-slack-payload* task dashboard:
     ***Event Triggers > New*** 
 
-    ![Assign Event Trigger to Slack Task- Light Mode](/product-guide/screenshots/slack-send-event-trigger-light.png#only-light)
-    ![Assign Event Trigger to Slack Task- Dark Mode](/product-guide/screenshots/slack-send-event-trigger-dark.png#only-dark) 
+    ![Assign Event Trigger to Slack Task- Light Mode](../../product-guide/screenshots/slack-send-event-trigger-light.png#only-light)
+    ![Assign Event Trigger to Slack Task- Dark Mode](../../product-guide/screenshots/slack-send-event-trigger-dark.png#only-dark) 
 
 ??? step-detail "5. Assign an Event Trigger to the *'send-email-alert'* Task"
     
@@ -88,8 +88,8 @@ Using VergeOS Task Engine components, administrators can instantly trigger alert
 
     ***System > Tasks Dashboard > Tasks >*** select the *send-email-alert* task ***> Event Triggers > New***
 
-    ![Assign Event Trigger to Email Task - Light Mode](/product-guide/screenshots/send-email-event-trigger-light.png#only-light)
-    ![Assign Event Trigger to Email Task - Dark Mode](/product-guide/screenshots/send-email-event-trigger-dark.png#only-dark) 
+    ![Assign Event Trigger to Email Task - Light Mode](../../product-guide/screenshots/send-email-event-trigger-light.png#only-light)
+    ![Assign Event Trigger to Email Task - Dark Mode](../../product-guide/screenshots/send-email-event-trigger-dark.png#only-dark) 
 
 This automation ensures that administrators are notified immediately when a sync job encounters an error, allowing them to act promptly, providing the best chance to resolve the issue before the synchronization window closes. 
 

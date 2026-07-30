@@ -47,8 +47,8 @@ For this example, "SystemA" and "SystemB" will be used to denote the 2 VergeOS s
         - add an entry for the address of the **WireGuard interface on SystemA**.
         - add an entry for the **connected network on SystemA** (e.g. the network to which WireGuard is connected.
 
-![guard-b-peer.png](/product-guide/screenshots/guard-b-peer.png)
-![guard-b-peer2.png](/product-guide/screenshots/guard-b-peer2.png)
+![guard-b-peer.png](../screenshots/guard-b-peer.png)
+![guard-b-peer2.png](../screenshots/guard-b-peer2.png)
 5. **While still on SystemB**, copy the generated public key, using the copy icon.
 
 **On SystemA:**  
@@ -57,8 +57,8 @@ For this example, "SystemA" and "SystemB" will be used to denote the 2 VergeOS s
     - In the ***Allowed IPs*** section:
         - add an entry for the address of the WireGuard interface on **SystemB**.
         - add an entry for the **connected network on SystemB** (e.g. the network to which WireGuard is connected.)
-   ![guard-a-peer.png](/product-guide/screenshots/guard-a-peer.png)
-   ![guard-a-peer2.png](/product-guide/screenshots/guard-a-peer2.png)        
+   ![guard-a-peer.png](../screenshots/guard-a-peer.png)
+   ![guard-a-peer2.png](../screenshots/guard-a-peer2.png)        
 
 **On SystemA AND SystemB:**  
 7. **Apply Rules** (on the networks where Wireguard interfaces were created) to put system-generated network rules into effect.
@@ -67,7 +67,7 @@ For this example, "SystemA" and "SystemB" will be used to denote the 2 VergeOS s
 
 A simple ping test can be done using the Diagnostics Tool on each system as an initial test of the connection.
 
-**On SystemA:** navigate to the Network Dashboard (the network to which WireGuard is attached) ![guard-a-pingtest.png](/product-guide/screenshots/guard-a-pingtest.png)
+**On SystemA:** navigate to the Network Dashboard (the network to which WireGuard is attached) ![guard-a-pingtest.png](../screenshots/guard-a-pingtest.png)
 
 - **Select ping** from the Query list dropdown.
 - **Ping the interface address on SystemB**(from our example: 192.68.1.2)
@@ -89,22 +89,22 @@ This example covers setup for a single, remote access peer (a Windows client), a
 7. Enter the ***Endpoint*** for the Peer (the external-facing IP address, hostname, or URL this system will use to communicate with the peer.)
 8. In the ***Configure Firewall*** dropdown, select **Remote user**
 9. Click **Submit** to save the new peer entry.
-    ![client-peer-form.png](/product-guide/screenshots/client-peer-form.png)
+    ![client-peer-form.png](../screenshots/client-peer-form.png)
 
 ### Download the Configuration File
 
 Click the Download Config button on the peer record and select a location for the file; download to a location that will be accessible to the client computer or from which can otherwise be transferred to the client.
 
-![download-link.png](/product-guide/screenshots/download-link.png)
-![configuration-file.png](/product-guide/screenshots/configuration-file.png)
+![download-link.png](../screenshots/download-link.png)
+![configuration-file.png](../screenshots/configuration-file.png)
 
 ### Install WireGuard Software on Client
 
 WireGuard Client software can be downloaded from: https://wireguard.com/install.
 (In this example, we download and install WireGuard for Windows-64bit to use on a Windows 10 Pro machine.)
-    ![add-tunnel.png](/product-guide/screenshots/add-tunnel.png)
+    ![add-tunnel.png](../screenshots/add-tunnel.png)
 
 1. Click **Add Tunnel**.
 2. Navigate to and **select the generated configuration file**.
 3. The configuration file is used to automatically create an interface and peer on the client machine. Click the **Activate** button to open the tunnel, if it was not automatically activated.
-   ![tunnel-active.png](/product-guide/screenshots/tunnel-active.png)
+   ![tunnel-active.png](../screenshots/tunnel-active.png)

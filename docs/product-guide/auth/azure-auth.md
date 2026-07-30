@@ -35,9 +35,9 @@ VergeOS can be configured to allow users to authenticate using their corporate A
 ## Configure an Entra ID Authorization Source
 
 1. In Azure services: register a single-tenant web application, setting the ***Redirect URI*** to the URL of the VergeOS system and creating a new client secret. **Azure Active Directory > App Registrations > New Registration**
-    ![azurereg1.png](/product-guide/screenshots/azurereg1.png)
+    ![azurereg1.png](../screenshots/azurereg1.png)
 
-    ![azurereg2.png](/product-guide/screenshots/azurereg2.png)
+    ![azurereg2.png](../screenshots/azurereg2.png)
 
 2. Create a new client secret. **App Registrations > Client Credentials > Add a certificate or secret. Click +New client secret.**
    - Enter a **description and expiration date** for the new client secret.
@@ -46,14 +46,14 @@ VergeOS can be configured to allow users to authenticate using their corporate A
        - **Client ID** - **hint: *Azure App Registrations > Configured Item > Client Credentials***
        - **Client Secret** - **hint: *Azure App Registrations > Configured Item > Client Credentials* Use the "VALUE" field.**
 
-    ![azureclientsecretadd.png](/product-guide/screenshots/azureclientsecretadd.png)
-    ![azureclientsecret2.png](/product-guide/screenshots/azureclientsecret2.png)
+    ![azureclientsecretadd.png](../screenshots/azureclientsecretadd.png)
+    ![azureclientsecret2.png](../screenshots/azureclientsecret2.png)
 
 3. Click **System** on the top menu.
 4. Select **Auth Sources**.
 5. Click **New** on the left menu.
 6. Enter a ***Name*** for the source (such as "Azure"). This name will appear on the sign-in button of the VergeOS login page.
-    ![azureauthform.png](/product-guide/screenshots/azureauthform.png)
+    ![azureauthform.png](../screenshots/azureauthform.png)
 
 7. In the ***Driver*** field (dropdown list), select **Azure AD**.
 8. Enter the ***Tenant ID*** obtained in the previous step.
@@ -99,7 +99,7 @@ Interfacing with Azure groups requires a token on the Entra ID app registration 
 3. Check the appropriate **group types**.
 4. Set the **ID, Access, and SAML to sAMAccountName**.
 
-![azure-editgroupsclaim.pn](/product-guide/screenshots/azure-editgroupsclaim.png)
+![azure-editgroupsclaim.pn](../screenshots/azure-editgroupsclaim.png)
 
 ### Steps to Add Azure Groups
 
@@ -110,9 +110,9 @@ Interfacing with Azure groups requires a token on the Entra ID app registration 
 5. Copy the coordinating **Object Id** from the Groups/All Groups page in Entra ID to the ***Identifier*** field.
 6. Click **Submit** (bottom of the page) to save the new group.
 
-![azure-groupspage.png](/product-guide/screenshots/azure-groupspage.png)
+![azure-groupspage.png](../screenshots/azure-groupspage.png)
 
-![azure-creategroup.png](/product-guide/screenshots/azure-creategroup.png)
+![azure-creategroup.png](../screenshots/azure-creategroup.png)
 
 ## Manually Add Users from Azure
 
@@ -128,4 +128,4 @@ When creating the new user, use the following configuration:
 - ***Display Name:*** (optional) If *Update User Display Name* is enabled on the Entra ID auth source, display name will automatically synchronize from Entra ID.
 - ***Email Address:*** (optional) If *Update User Email Address* is enabled on the Entra ID auth source, email address will automatically synchronize from Entra ID.
 
-![azure-newuser.png](/product-guide/screenshots/azure-newuser.png)
+![azure-newuser.png](../screenshots/azure-newuser.png)
