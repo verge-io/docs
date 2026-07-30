@@ -34,14 +34,14 @@ This page covers replacing a drive (participating in the vSAN) due to defect or 
 
 The VergeOS interface will provide warnings or alerts to indicate when there is a problem with a physical drive. When a drive has a warning or error status, an indicator will "bubble up" to the System Dashboard page (Navigate to **System** > **Dashboard** from the top menu.)
 
-![Drive Count Box](/product-guide/screenshots/drivecountbox.png)
+![Drive Count Box](../screenshots/drivecountbox.png)
 
 - Click anywhere within the drive count box to access the full list of drives.
 - Double-click a drive with an error/warning to view its dashboard that displays more detail.
 
-![Drive listing warning](/product-guide/screenshots/drivelisting-warning.png)
+![Drive listing warning](../screenshots/drivelisting-warning.png)
 
-![Drive Dashboard](/product-guide/screenshots/drivedashboard.png)
+![Drive Dashboard](../screenshots/drivedashboard.png)
 
 ### Example Warning/Error Statuses
 
@@ -71,19 +71,19 @@ The replacement procedure depends on the current state of the drive:
 2. **Activate** the drive **LED**
     - If ***LED Status*** indicates **Off**, click **Turn on LED** on the left menu.
 
-    ![ledoff.png](/product-guide/screenshots/ledoff.png)
+    ![ledoff.png](../screenshots/ledoff.png)
 
     - If ***LED Status*** field indicates **Unsupported**, click **Locate LED** on the left menu.
 
-   ![ledunsupported.png](/product-guide/screenshots/ledunsupported.png)
+   ![ledunsupported.png](../screenshots/ledunsupported.png)
 
 3. The Diagnostics window will appear with settings pre-filled.  Click **Send ->** to activate the drive LED.
 
-    ![diag-ledon.png](/product-guide/screenshots/diag-ledon.png)
+    ![diag-ledon.png](../screenshots/diag-ledon.png)
 
 4. Once the LED is activated, the physical drive can be located by identifying the one with a solid light. After identifying the drive, **deactivate the LED**:
 
-![diag-ledoff.png](/product-guide/screenshots/diag-ledoff.png)
+![diag-ledoff.png](../screenshots/diag-ledoff.png)
 
 ## Scenario 1: Replace a Failed/Missing Drive
 

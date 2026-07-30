@@ -75,7 +75,7 @@ The *Files* section provides for uploading files to the VergeOS vSAN, allowing *
     - **Set Date** to select a specific date/time to cease the download link.
 7. Click **Submit** to save the link.
 
-![Media Images Link Copy](/product-guide/screenshots/mediaimages-link-copy.png)
+![Media Images Link Copy](../screenshots/mediaimages-link-copy.png)
 
 The Files list appears. Download options appear on the far right of the given file:
 

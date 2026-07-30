@@ -50,7 +50,7 @@ yb-api --help
 
 Connect to the node and execute this command to begin using the API helper.
 
-![yb-api Example](/product-guide/screenshots/api-helper.png)
+![yb-api Example](../../product-guide/screenshots/api-helper.png)
 
 ## Example Commands
 

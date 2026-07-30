@@ -153,7 +153,7 @@ For long rule lists, it may be helpful to filter the list (e.g. display Incoming
 5. Click **Submit** to save the change.
    - A right-side-up pin icon indicates the rule is pinned to the top
    - An upside-down pin icon indicates the rule is pinned to the bottom
-![pinnedrules.png](/product-guide/screenshots/pinnedrules.png)
+![pinnedrules.png](../screenshots/pinnedrules.png)
 
 ## Change the Order of Rules
 

@@ -66,7 +66,7 @@ This guide provides instructions on how to connect a root system to a tenant sit
      - **Destination**: Any/None.
      - **Target**: My Router IP.
 
-   ![Rule Configuration](/product-guide/screenshots/allow-tenant-root-rule.png)
+   ![Rule Configuration](../../product-guide/screenshots/allow-tenant-root-rule.png)
 
 3. **Submit and Apply**
    - Click **Submit**.

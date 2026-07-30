@@ -83,14 +83,14 @@ The Subscription engine allows you to customize how and when you receive reports
 
 ### I. Example configuration - receive alerts for any status errors or warnings related to tenants:
 
-![tenantssubscription-alert](/product-guide/screenshots/tenantssubscription-alert.png)
+![tenantssubscription-alert](../screenshots/tenantssubscription-alert.png)
 
 ### II. Example configuration - 7:15 am daily report of the All-Tenants Dashboard (overview information):
 
-![tenantssubscription-report](/product-guide/screenshots/tenantssubscription-report.png)
+![tenantssubscription-report](../screenshots/tenantssubscription-report.png)
 
 ### III. Example configuration - weekly report (to the Administrators Group) showing summary information for a specific tenant:
 
-![singletenantsubscription-report](/product-guide/screenshots/singletenantsubscription-report.png)
+![singletenantsubscription-report](../screenshots/singletenantsubscription-report.png)
 
 There are many options available when creating subscriptions. For more information see: [**Subscriptions-Overview**](/product-guide/system/subscriptions-overview)

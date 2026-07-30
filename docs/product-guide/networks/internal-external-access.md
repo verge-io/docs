@@ -28,4 +28,4 @@ Giving an internal network external access requires having the proper default ga
 
 Select an appropriate external network in the **Default Gateway** field when creating a new internal network. The gateway will automatically create the appropriate routing rules to provide LAN and/or WAN access (depending on the physical connection/settings of the external network selected) to the internal network.
 
-![setdefgw.png](/product-guide/screenshots/setdefgw.png)
+![setdefgw.png](../screenshots/setdefgw.png)

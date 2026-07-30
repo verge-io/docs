@@ -28,4 +28,4 @@ The *Preferred Tier* setting will establish a "first choice" for the storage tie
 
 **The following illustration shows an example where tier 4 has been specified as the preferred tier:**
 
-![preferredtier.png](/product-guide/screenshots/preferredtier.png)
+![preferredtier.png](../screenshots/preferredtier.png)

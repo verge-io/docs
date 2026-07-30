@@ -30,7 +30,7 @@ Ongoing tracking of sync activity can be done from the sending system or the rec
 
 ## Outgoing Sync Dashboard (Sending System)
 
-![outgoingsync-dash.png](/product-guide/screenshots/outgoingsync-dash.png)
+![outgoingsync-dash.png](../screenshots/outgoingsync-dash.png)
 
 ### Sync Status
 
@@ -54,7 +54,7 @@ The most recent synchronized snapshots are displayed in the destination snapshot
 
 ## Incoming Sync Dashboard (Receiving System)
 
-![incomingsync-dash.png](/product-guide/screenshots/incomingsync-dash.png)
+![incomingsync-dash.png](../screenshots/incomingsync-dash.png)
 
 ### Sync Status
 
@@ -97,7 +97,7 @@ Subscriptions are available from both the sending system and the receiving syste
 6. Set the **Subscription profile** = ***Site Sync Dashboard***.
 7. Click **Submit** to save the subscription.
 
-![subscription-syncdash.png](/product-guide/screenshots/subscription-syncdash.png)
+![subscription-syncdash.png](../screenshots/subscription-syncdash.png)
 
 ### Receive a Notification each Time a New Sync is Completed (Receiving Site)
 
@@ -109,4 +109,4 @@ Subscriptions are available from both the sending system and the receiving syste
 6. Set **Subscription profile** = ***Site Sync Received***
 7. Click **Submit** to save the subscription.
 
-![subscription-syncreceived.png](/product-guide/screenshots/subscription-syncreceived.png)
+![subscription-syncreceived.png](../screenshots/subscription-syncreceived.png)

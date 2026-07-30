@@ -51,14 +51,14 @@ The automation consists of creating tags, defining tasks, and attaching event an
     
     ***System >  Tags >  New*** 
        
-    ![Create tag category - Light Mode](/product-guide/screenshots/new-tag-category-vms-light.png#only-light)
-    ![Create tag category - Dark Mode](/product-guide/screenshots/new-tag-category-vms-dark.png#only-dark) 
+    ![Create tag category - Light Mode](../../product-guide/screenshots/new-tag-category-vms-light.png#only-light)
+    ![Create tag category - Dark Mode](../../product-guide/screenshots/new-tag-category-vms-dark.png#only-dark) 
 
     **Double-click category created above >**  ***New***   
     
-    ![New tag - Light Mode](/product-guide/screenshots/create-vm-tag-light.png#only-light)
+    ![New tag - Light Mode](../../product-guide/screenshots/create-vm-tag-light.png#only-light)
 
-    ![New tag - Dark Mode](/product-guide/screenshots/create-vm-tag-dark.png#only-dark)
+    ![New tag - Dark Mode](../../product-guide/screenshots/create-vm-tag-dark.png#only-dark)
 
 
 ??? step-detail "2. Assign the Tag to the VMs to Automatically Power On/Off"
@@ -67,16 +67,16 @@ The automation consists of creating tags, defining tasks, and attaching event an
 
     ***Virtual Machines >  List >***  **select VMs >**  ***Assign Tags*** **> select the tag from above**  
 
-    ![Assign tag to VMs - Light Mode](/product-guide/screenshots/assign-tag-vms-light.png#only-light)
+    ![Assign tag to VMs - Light Mode](../../product-guide/screenshots/assign-tag-vms-light.png#only-light)
 
-    ![Assign tag to VMs - Dark Mode](/product-guide/screenshots/assign-tag-vms-dark.png#only-dark) 
+    ![Assign tag to VMs - Dark Mode](../../product-guide/screenshots/assign-tag-vms-dark.png#only-dark) 
 
 
     The VMs will now show the assigned tag in the ***Tags*** column.
 
-    ![VMs with tag - Light Mode](/product-guide/screenshots/vms-tags-column-light.png#only-light)
+    ![VMs with tag - Light Mode](../../product-guide/screenshots/vms-tags-column-light.png#only-light)
 
-    ![VMs with tag - Dark Mode](/product-guide/screenshots/vms-tags-column-dark.png#only-dark)
+    ![VMs with tag - Dark Mode](../../product-guide/screenshots/vms-tags-column-dark.png#only-dark)
 
 
 ??? step-detail "3. Create a Task to Power On VMs"
@@ -85,9 +85,9 @@ The automation consists of creating tags, defining tasks, and attaching event an
 
     ***System > Tasks Dashboard > New Task***
 
-    ![Task to power on tagged VMs - Light Mode](/product-guide/screenshots/task-poweron-jthompson-light.png#only-light)
+    ![Task to power on tagged VMs - Light Mode](../../product-guide/screenshots/task-poweron-jthompson-light.png#only-light)
 
-    ![Task to power on tagged VMs  - Dark Mode](/product-guide/screenshots/task-poweron-jthompson-dark.png#only-dark)   
+    ![Task to power on tagged VMs  - Dark Mode](../../product-guide/screenshots/task-poweron-jthompson-dark.png#only-dark)   
 
 ??? step-detail "4. Configure an Event Trigger for User Login"
 
@@ -96,9 +96,9 @@ The automation consists of creating tags, defining tasks, and attaching event an
     From the new task dashboard:
     ***Event Triggers > New*** 
 
-    ![Event trigger user login - Light Mode](/product-guide/screenshots/jthompson-event-login-light.png#only-light)
+    ![Event trigger user login - Light Mode](../../product-guide/screenshots/jthompson-event-login-light.png#only-light)
 
-    ![Event trigger user login - Dark Mode](/product-guide/screenshots/jthompson-event-login-dark.png#only-dark) 
+    ![Event trigger user login - Dark Mode](../../product-guide/screenshots/jthompson-event-login-dark.png#only-dark) 
 
 
 ??? step-detail "5. Create a Task to Power Off the VMs"
@@ -107,9 +107,9 @@ The automation consists of creating tags, defining tasks, and attaching event an
 
     ***System > Tasks Dashboard > New Task***
 
-    ![Task to power off tagged VMs - Light Mode](/product-guide/screenshots/task-poweroff-jthompson-light.png#only-light)
+    ![Task to power off tagged VMs - Light Mode](../../product-guide/screenshots/task-poweroff-jthompson-light.png#only-light)
 
-    ![Task to power off tagged VMs - Dark Mode](/product-guide/screenshots/task-poweroff-jthompson-dark.png#only-dark) 
+    ![Task to power off tagged VMs - Dark Mode](../../product-guide/screenshots/task-poweroff-jthompson-dark.png#only-dark) 
 
 
 ??? step-detail "6. Configure an Event Trigger for User Logout"
@@ -119,9 +119,9 @@ The automation consists of creating tags, defining tasks, and attaching event an
     From the new task dashboard:  
     ***Event Triggers > New***
 
-    ![Event trigger user logout - Light Mode](/product-guide/screenshots/jthompson-event-logoff-light.png#only-light)
+    ![Event trigger user logout - Light Mode](../../product-guide/screenshots/jthompson-event-logoff-light.png#only-light)
 
-    ![Event trigger user logout - Dark Mode](/product-guide/screenshots/jthompson-event-logoff-dark.png#only-dark) 
+    ![Event trigger user logout - Dark Mode](../../product-guide/screenshots/jthompson-event-logoff-dark.png#only-dark) 
 
 ??? step-detail "7. Create a Schedule for Fridays at 6:00pm"
 
@@ -129,9 +129,9 @@ The automation consists of creating tags, defining tasks, and attaching event an
 
     ***System > Tasks Dashboard > New Schedule***
 
-    ![Schedule COB - Light Mode](/product-guide/screenshots/schedule-eob-friday-light.png#only-light)
+    ![Schedule COB - Light Mode](../../product-guide/screenshots/schedule-eob-friday-light.png#only-light)
 
-    ![Schedule COB - Dark Mode](/product-guide/screenshots/schedule-eob-friday-dark.png#only-dark) 
+    ![Schedule COB - Dark Mode](../../product-guide/screenshots/schedule-eob-friday-dark.png#only-dark) 
 
 ??? step-detail "8. Create a Schedule Trigger for the Power Off"
 
@@ -140,9 +140,9 @@ The automation consists of creating tags, defining tasks, and attaching event an
     From the dashboard of the new task:  
     ***Schedule Triggers > New***
 
-    ![Schedule trigger - Light Mode](/product-guide/screenshots/jthompson-schedule-poweroff-light.png#only-light)
+    ![Schedule trigger - Light Mode](../../product-guide/screenshots/jthompson-schedule-poweroff-light.png#only-light)
 
-    ![Schedule trigger - Dark Mode](/product-guide/screenshots/jthompson-schedule-poweroff-dark.png#only-dark) 
+    ![Schedule trigger - Dark Mode](../../product-guide/screenshots/jthompson-schedule-poweroff-dark.png#only-dark) 
 
 ### Verification
 - Log in as JThompson → tagged VMs should power on automatically

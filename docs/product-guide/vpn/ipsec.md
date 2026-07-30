@@ -192,7 +192,7 @@ Additional network configuration (e.g. firewall rules, routing) will be required
 1. From the **VPN Network Dashboard**, click **Power On** from the left menu.
 2. Click the Plug icon under **IPsec Connections**.  
 
-![IPsec Connect button](/product-guide/screenshots/ipsec-connect.png) 
+![IPsec Connect button](../screenshots/ipsec-connect.png) 
 
 3. Watch for the IPsec status to show connected.
 
