@@ -40,7 +40,7 @@ A physical network is a representation of each isolated layer 2 connection. Phys
 !!! tip "The system automatically appends "Switch" to the end of the user-supplied name during install, for ex: for name "PXE", the system will give the physical network the name "PXE Switch""
 
 !!! info "Physical Bridge Mode"
-    Physical networks have a **Physical Bridged** toggle that puts the NIC into raw Layer 2 bridge mode, enabling tagged VLAN trunk passthrough for use cases like [Virtual Switch Ports](/knowledge-base/provide-layer2-to-tenant) and [Tenant Layer 2 Networks](/product-guide/tenants/layer-2-networks). **When bridge mode is enabled, all traffic on that interface must be VLAN-tagged.** External networks with VLAN type **None** (untagged/native VLAN) will not pass traffic on a bridged physical interface. Bridge mode requires a node reboot to take effect.
+    Physical networks have a **Physical Bridged** toggle that puts the NIC into raw Layer 2 bridge mode. This setting exists to support legacy trunk-mode [Virtual Switch Port](/knowledge-base/provide-layer2-to-tenant) configurations. For passing VLANs to tenants, we recommend [Tenant Layer 2 Networks](/product-guide/tenants/layer-2-networks) instead, which do not require bridge mode. Leave bridge mode disabled unless existing Virtual Switch Ports depend on it — it has been observed to interfere with untagged (**Layer 2 Type: None**) external networks on the same interface. Changing this setting requires a node reboot.
 
 ### Core Network
 

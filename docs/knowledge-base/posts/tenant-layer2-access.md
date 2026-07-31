@@ -87,8 +87,8 @@ dateCreated: 2025-02-10T19:58:59.133Z
 3. Select **Edit** to enter the network configuration page.
 4. In the configuration page, enable **Physical Bridged** to activate Bridge Mode. It is best to set the **On Power Loss** setting to ***Power On*** so that the network starts up automatically after a system power loss.
 
-    !!! warning "Bridge Mode Requires All Traffic to Be VLAN-Tagged"
-        Enabling Physical Bridge Mode causes the interface to operate as a raw Layer 2 bridge — **all traffic must carry a VLAN tag**. Any external network configured with **VLAN type: None** (untagged/native VLAN) on this same physical interface will **stop passing traffic**. If you need untagged (native VLAN) access on a port, do not enable bridge mode on that physical network.
+    !!! note "Bridge Mode and Untagged Networks"
+        Bridge mode has been observed to interfere with untagged (**Layer 2 Type: None**) external networks on the same physical interface. If you need untagged (native VLAN) access on this port, see [Untagged external network is not passing traffic](#untagged-external-network-is-not-passing-traffic).
 
 5. **Submit** your changes.
 6. **Reboot** the necessary nodes for Bridge Mode to become active.
@@ -142,5 +142,5 @@ dateCreated: 2025-02-10T19:58:59.133Z
 
 ### Untagged external network is not passing traffic
 
-* Check whether **Physical Bridged** is enabled on the underlying physical network. Bridge mode requires all traffic on the interface to be VLAN-tagged, so any external network with **VLAN type: None** (untagged/native VLAN) on that physical interface will stop passing traffic.
-* If you need untagged (native VLAN) access on the port, disable Physical Bridge Mode on the physical network and reboot the affected nodes (following [**Maintenance Mode**](/product-guide/operations/maintenance-mode) procedures).
+* Check whether **Physical Bridged** is enabled on the underlying physical network. Bridge mode has been observed to interfere with untagged (**Layer 2 Type: None**) external networks on the same physical interface.
+* If nothing on the interface still requires bridge mode, disable it and reboot the affected nodes (following [**Maintenance Mode**](/product-guide/operations/maintenance-mode) procedures). Consider migrating remaining Virtual Switch Port configurations to [Tenant Layer 2 Networks](/product-guide/tenants/layer-2-networks), which do not require bridge mode.
