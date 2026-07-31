@@ -33,8 +33,8 @@ status: deprecated
 !!! info "Series Information"
     - **Initial Release**: February 2023 (4.11.0 Atria)
     - **Latest Version**: 4.11.4.3 (January 2024)
-    - **Status**: Supported (Superseded by 4.12)
-    - **End-of-Life**: TBD
+    - **Status**: Deprecated (Superseded by 4.12)
+    - **End-of-Life**: December 2024
 
 ## Major Features & Themes
 

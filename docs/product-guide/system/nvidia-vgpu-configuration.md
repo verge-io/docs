@@ -159,10 +159,10 @@ After the resource group is selected or a new one is created, a **Success** mess
     ??? example "Example: MIG instance further divided into virtual instances"
         - **Physical device**: The RTX Pro 6000 Blackwell DC provides 96 GB of framebuffer memory
 
-        ![MIG-vGPU- Light Mode](/product-guide/screenshots/mig-vgpu-light.png#only-light)
+        ![MIG-vGPU- Light Mode](../screenshots/mig-vgpu-light.png#only-light)
 
 
-        ![MIG-vGPU - Dark Mode](/product-guide/screenshots/mig-vgpu-dark.png#only-dark)
+        ![MIG-vGPU - Dark Mode](../screenshots/mig-vgpu-dark.png#only-dark)
 
         - **MIG profile added**: Selecting the profile *NVIDIA RTX Pro 6000 Blackwell DC‑2‑12Q‑MIG (2g.48gb+gfx)* and specifying *MIG GPU Instances*:1 creates one MIG slice with 48 GB of dedicated framebuffer. This MIG slice supports **four vGPU instances**, each using **12 GB** (the “12Q” profile)
         - **Remaining capacity**: After allocating this 48 GB MIG slice, **48 GB of framebuffer** remains available for additional MIG profiles

@@ -60,6 +60,6 @@ See directions below for viewing the tracked statistics.
 2. Right-click on the columns heading section at the top.
 3. Check the boxes for **Packets** and/or **Bytes** to display these columns.
 
-![Show Statistics](/product-guide/screenshots/trackstats-cols.png)
+![Show Statistics](../screenshots/trackstats-cols.png)
 
 !!! success "Enabling the Statistics column will show if statistics tracking is enabled for each rule."

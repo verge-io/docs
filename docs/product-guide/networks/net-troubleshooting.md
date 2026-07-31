@@ -54,7 +54,7 @@ To check a network's addressing, see: [Determine Network Addresses](#determining
 1. Navigate to the **VM Dashboard**.
 2. Scroll down to the **NICs** section of the screen.
 If the network assigned a DHCP address to the NIC, it will display in the **IP Address** field.
-![troubleshooting-verifyipaddress.png](/product-guide/screenshots/troubleshooting-verifyipaddress.png)
+![troubleshooting-verifyipaddress.png](../screenshots/troubleshooting-verifyipaddress.png)
 
 3. **If an IP address was manually assigned within the guest OS (rather than utilizing DHCP):**
     -Verify assigned IP address lies within the network's address range.
@@ -73,7 +73,7 @@ VirtIO is generally the recommended interface for NIC devices, as it typically w
 1. Navigate to the **VM Dashboard**.
 2. Scroll down to the **NICs** section of the screen.
 3. The **Interface** column will display for each NIC.
-![troubleshooting-verifyinterface.png](/product-guide/screenshots/troubleshooting-verifyinterface.png)
+![troubleshooting-verifyinterface.png](../screenshots/troubleshooting-verifyinterface.png)
 
 ## Check Guest Firewalls and AV software
 
@@ -104,7 +104,7 @@ In order for an internal network to receive Internet connectivity, it must have 
 2. Click **Rules** on the left menu.
 3. Verify there is a route rule with the appropriate external network defined as the Target.  
 Example:
-![showdefgwrule.png](/product-guide/screenshots/showdefgwrule.png)
+![showdefgwrule.png](../screenshots/showdefgwrule.png)
 
 !!! success "When creating a new internal network, select the external network in the **Default Gateway** setting; this will automatically create the needed default gateway route rule. A route rule can also be manually created after network creation, using the following instructions."
 
@@ -120,7 +120,7 @@ Example:
 8. In the **Target Network** field, select the appropriate external network.
 
 Example:
-![defaultgw-create.png](/product-guide/screenshots/defaultgw-create.png)
+![defaultgw-create.png](../screenshots/defaultgw-create.png)
 
 ## Determining Network Addresses
 
@@ -129,7 +129,7 @@ A network's gateway address and network segment can be found on the network dash
 - **Network**: network segment in CIDR format (ex: 192.168.0.0/24; 10.10.0.0/24)
 - **IP Address**: network router address (ex: 192.168.01; 10.10.0.1)
 
-![findnetworkaddress.png](/product-guide/screenshots/findnetworkaddress.png)
+![findnetworkaddress.png](../screenshots/findnetworkaddress.png)
 
 !!! info "By default, internal layer-3 networks are configured with network segment: 192.168.0.0/24 and router IP Address: 192.168.0.1"
 

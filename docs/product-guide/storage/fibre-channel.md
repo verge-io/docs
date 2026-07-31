@@ -62,7 +62,7 @@ VergeOS vSAN supports the use of Fibre Channel (FC) LUNs as storage devices with
     For maximum efficiency and to avoid duplicate redundancy, we recommend **mapping each FC LUN to a dedicated physical disk**.
 
 !!! tip "Deduplication"
-    VergeOS vSAN handles data deduplication natively at the block level. When using external storage with vSAN, you should disable deduplication on your SAN if it does not support cross-LUN deduplication. If your SAN supports global deduplication, we recommend leaving it enabled to reduce overall storage consumption. For redundancy, VergeOS will always store two copies of your data on the FC LUNs being used as a tier of vSAN storage.
+    VergeOS vSAN handles data deduplication natively at the block level. When using external storage with vSAN, you should disable deduplication on your SAN if it does not support cross-LUN deduplication. If your SAN supports global deduplication, we recommend leaving it enabled to reduce overall storage consumption. VergeOS replicates data across FC LUNs according to the system's configured [vSAN redundancy level](/product-guide/storage/vsan-redundancy-levels) (N+1 stores 2 copies; N+2 stores 3 copies).
 
 !!! warning "Turn Off Storage Redundancy"
     VergeOS vSAN handles data redundancy natively. You should **disable RAID and automatic tiering features** on the SAN for LUNs used by VergeOS.

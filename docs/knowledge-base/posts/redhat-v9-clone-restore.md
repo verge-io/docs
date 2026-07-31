@@ -160,6 +160,12 @@ If the GRUB menu is unreachable or the VM won't get that far:
     `mount --rbind /dev /mnt/dev`  
     `mount --rbind /run /mnt/run`  
 
+    For EFI/UEFI systems, also mount the EFI partition:
+    ```bash
+    mount /dev/sdX1 /mnt/boot/efi
+    ```
+    Replace /dev/sdX1 with your actual EFI partition (check with lsblk or fdisk -l).
+
 
 ### 4. Chroot into the Installed System and mount additional filesystems
 

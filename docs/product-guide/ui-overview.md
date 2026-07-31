@@ -143,8 +143,8 @@ The Networks Dashboard provides:
 - Network-specific logs and recent activity
 - Links to individual network dashboards for detailed management
 
-  ![Light mode Networks Dashboard](/product-guide/screenshots/networks-dashboard-light.png#only-light)
-  ![Dark mode Networks Dashboard](/product-guide/screenshots/networks-dashboard-dark.png#only-dark)
+  ![Light mode Networks Dashboard](screenshots/networks-dashboard-light.png#only-light)
+  ![Dark mode Networks Dashboard](screenshots/networks-dashboard-dark.png#only-dark)
 
 **Common Use Cases**:
 
@@ -185,8 +185,8 @@ A virtual machine's dashboard displays:
 - Network assignments and connectivity
 - Storage tier and volume information
 
-![Light mode VM Dashboard](/product-guide/screenshots/vm-dashboard-light.png#only-light)
-![Dark mode VM Dashboard](/product-guide/screenshots/vm-dashboard-dark.png#only-dark)
+![Light mode VM Dashboard](screenshots/vm-dashboard-light.png#only-light)
+![Dark mode VM Dashboard](screenshots/vm-dashboard-dark.png#only-dark)
 
 **Common Actions from VM Dashboard**:
 

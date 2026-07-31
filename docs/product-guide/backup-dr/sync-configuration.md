@@ -76,7 +76,7 @@ Network rules are necessary to translate incoming sync traffic to the vSAN. Thes
 10. Define Target values:
     - **Type**: ***IP/Custom***
     - **Target IP**: ***ui*** (This is a VergeOS keyword; it must be entered in lower case, exactly as noted)
-![rule-core-vsanpat.png](/product-guide/screenshots/rule-core-vsanpat.png)
+![rule-core-vsanpat.png](../screenshots/rule-core-vsanpat.png)
 
 11. Click **Submit** to save the new rule.
 12. The system will prompt to Apply Rules. Click **Apply Rules** on the left menu to put the rule into effect.
@@ -106,7 +106,7 @@ Network rules are necessary to translate incoming sync traffic to the vSAN. Thes
 10. Define **Target** values:
     - **Type**: ***IP/Custom***
     - **Target**: ***ui*** (This is a VergeOS keyword; it must be entered in lower case, exactly as noted)
-![sync-snat.png](/product-guide/screenshots/sync-snat.png)
+![sync-snat.png](../screenshots/sync-snat.png)
 
 11. Click **Submit** to save the new rule.
 12. Click **Apply Rules** on the left menu to put the rule into effect.
@@ -196,7 +196,7 @@ When a specific tier(1-5) is selected here, the sync directs all data to the sel
 3. Double-click the desired outgoing sync to access its dashboard.
 4. In the **Auto Sync Configuration** section, click the **Add Item** link.  
 The Configuration form will appear.
-![sync-periodretention.png](/product-guide/screenshots/sync-periodretention.png)
+![sync-periodretention.png](../screenshots/sync-periodretention.png)
 
 5. In the **Sync Snapshots From** dropdown list, select a desired profile period (e.g. ***"Hourly for 3 hours"***, ***"Midnight"***, ***"Noon"***). The options that appear will depend on the periods defined in the snapshot profile assigned for the local system snapshots (by default, this will be the *System Snapshots* profile.)
 6. **Remote Retention** will default to the local retention of the selected period; change if a different retention setting is desired for the remote copy. (Changing the Remote Retention does not affect the local retention.)
