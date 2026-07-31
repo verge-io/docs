@@ -1,7 +1,7 @@
 ---
 title: SonicWall NSv 7.1.1+ Will Not Boot on VergeOS
 slug: sonicwall-nsv-boot-failure-signed-firmware
-description: SonicWall NSv virtual firewalls running SonicOS 7.1.1 and later fail to boot after import into VergeOS because the appliance requires SonicWall's own signed OVMF firmware. Here is why it happens and what to run instead.
+description: SonicWall NSv virtual firewalls running SonicOS 7.1.1 and later fail to boot after import into VergeOS because the appliance requires SonicWall's own signed OVMF firmware. Support for custom EFI firmware is coming in Q3 2026; here is why the boot fails and what your options are in the meantime.
 author: VergeOS Documentation Team
 draft: false
 date: 2026-07-09T00:00:00.000Z
@@ -40,7 +40,7 @@ dateCreated: 2026-07-09T00:00:00.000Z
 
 # SonicWall NSv 7.1.1+ Will Not Boot on VergeOS
 
-SonicWall NSv virtual firewalls running SonicOS 7.1.1 and later cannot be imported and booted on VergeOS. This guide explains why the appliance fails to start and what we recommend running in its place.
+SonicWall NSv virtual firewalls running SonicOS 7.1.1 and later cannot currently be imported and booted on VergeOS. This guide explains why the appliance fails to start and what your options are in the meantime.
 
 !!! info "Support coming in Q3 2026"
     We are adding support for custom EFI firmware in Q3 2026, which will allow the SonicWall NSv appliance to boot on VergeOS. Until that support ships, use one of the alternatives described below.
@@ -55,7 +55,7 @@ SonicWall NSv virtual firewalls running SonicOS 7.1.1 and later cannot be import
 
 SonicWall ships the NSv image with its own custom OVMF firmware files — `OVMF_CODE.sw.fd` and `OVMF_VARS.sw.fd` — that carry SonicWall-specific Secure Boot certificates. At boot, SonicCoreX checks that it is running on exactly that firmware and aborts on anything else.
 
-VergeOS builds and manages each VM's UEFI variable disk itself, from standard OVMF templates, and does not allow the EFI disk's media source to be swapped through the UI or API. Because there is no supported way to present SonicWall's custom firmware files to the VM, the appliance's boot-time firmware check fails and the NSv never comes up.
+VergeOS builds and manages each VM's UEFI variable disk itself, from standard OVMF templates, and does not currently allow the EFI disk's media source to be swapped through the UI or API. Because there is no supported way to present SonicWall's custom firmware files to the VM, the appliance's boot-time firmware check fails and the NSv never comes up.
 
 !!! info "Why every import format fails the same way"
     The block is in the appliance's firmware validation, not in any one disk format. Converting or re-importing the image — QCOW2, OVA, or VHDX — does not change the outcome, because none of those paths let you supply SonicWall's signed `.fd` firmware.
@@ -63,11 +63,11 @@ VergeOS builds and manages each VM's UEFI variable disk itself, from standard OV
 !!! note "Applies to SonicOS 7.1.1 and later"
     Earlier SonicOS builds that did not enforce the signed-firmware check are not affected in the same way. The behavior described here is specific to NSv on 7.1.1+.
 
-## What to run instead
+## Options in the meantime
 
-For a virtual firewall on VergeOS, we recommend **pfSense** or **OPNsense**. Both boot cleanly on VergeOS's standard UEFI firmware and are well suited to running as a VM or inside a tenant.
+Any virtual firewall that boots on standard UEFI firmware — for example, pfSense or OPNsense — runs well on VergeOS, either as a VM or inside a tenant, and can fill the role until NSv support arrives.
 
-If you are set on SonicWall specifically, run it on physical SonicWall hardware and connect it to your VergeOS environment over the network, rather than trying to virtualize the NSv appliance.
+If you want to stay on SonicWall today, run the firewall on physical SonicWall hardware and connect it to your VergeOS environment over the network, rather than trying to virtualize the NSv appliance.
 
 ## Additional Resources
 
