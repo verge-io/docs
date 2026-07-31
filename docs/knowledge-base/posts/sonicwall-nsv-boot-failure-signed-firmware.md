@@ -65,13 +65,9 @@ VergeOS builds and manages each VM's UEFI variable disk itself, from standard OV
 
 ## Options in the meantime
 
-Any virtual firewall that boots on standard UEFI firmware — for example, pfSense or OPNsense — runs well on VergeOS, either as a VM or inside a tenant, and can fill the role until NSv support arrives.
+Any virtual firewall that boots on standard UEFI firmware runs well on VergeOS, either as a VM or inside a tenant, and can fill the role until NSv support arrives.
 
 If you want to stay on SonicWall today, run the firewall on physical SonicWall hardware and connect it to your VergeOS environment over the network, rather than trying to virtualize the NSv appliance.
-
-## Additional Resources
-
-- [Best Practices - Running a pfSense Virtual Firewall](/knowledge-base/running-a-pfsense-virtual-firewall)
 
 !!! question "Need Help?"
     If you are planning a firewall migration into VergeOS and want to talk through options, contact VergeOS support.
