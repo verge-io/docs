@@ -42,6 +42,9 @@ dateCreated: 2026-07-09T00:00:00.000Z
 
 SonicWall NSv virtual firewalls running SonicOS 7.1.1 and later cannot be imported and booted on VergeOS. This guide explains why the appliance fails to start and what we recommend running in its place.
 
+!!! info "Support coming in Q3 2026"
+    We are adding support for custom EFI firmware in Q3 2026, which will allow the SonicWall NSv appliance to boot on VergeOS. Until that support ships, use one of the alternatives described below.
+
 ## Symptoms
 
 - You import a SonicWall NSv appliance into VergeOS and it fails to boot.
