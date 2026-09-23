@@ -94,6 +94,6 @@ Contact VergeOS support, and include a sysdiag, if any of these apply:
 
 ## Additional Resources
 
-- [vSAN Tier Status (Journal Walks)](/knowledge-base/storage-vsan/understanding-journal-walks-and-vsan-tier-status)
-- [Generating System Diagnostics](/knowledge-base/troubleshooting/generating-system-diagnostics)
-- [Snapshot Synchronization Errors Explained](/knowledge-base/backup-dr/snapshot-synchronization-errors-explained)
+- [vSAN Tier Status (Journal Walks)](https://docs.verge.io/knowledge-base/storage-vsan/understanding-journal-walks-and-vsan-tier-status)
+- [Generating System Diagnostics](https://docs.verge.io/knowledge-base/troubleshooting/generating-system-diagnostics)
+- [Snapshot Synchronization Errors Explained](https://docs.verge.io/knowledge-base/backup-dr/snapshot-synchronization-errors-explained)
