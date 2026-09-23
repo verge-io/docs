@@ -92,5 +92,5 @@ Set each node's BIOS to hold high clocks on its own, without depending on the op
 
 ## Additional Resources
 
-- [Cluster Settings](/run-the-platform/system-administration/cluster-settings) (CPU Scaling Governor and Energy-Performance Policy)
-- [Dashboard & System Health](/learn-the-platform/module-9-monitoring-and-troubleshooting/01-dashboard-health) (node CPU and kernel details)
+- [Cluster Settings](https://docs.verge.io/run-the-platform/system-administration/cluster-settings) (CPU Scaling Governor and Energy-Performance Policy)
+- [Dashboard & System Health](https://docs.verge.io/learn-the-platform/module-9-monitoring-and-troubleshooting/01-dashboard-health) (node CPU and kernel details)
